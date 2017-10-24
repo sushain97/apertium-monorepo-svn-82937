@@ -1,0 +1,442 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<modes>
+
+  <!-- == Assamese → English == -->
+
+  <mode name="asm-eng-morph" install="no">
+    <pipeline>
+      <program name="lt-proc">
+        <file name="asm-eng.automorf.bin"/>
+      </program>
+    </pipeline>
+  </mode>
+
+  <mode name="asm-eng-disam" install="no">
+    <pipeline>
+      <program name="lt-proc">
+        <file name="asm-eng.automorf.bin"/>
+      </program>
+      <program name="cg-conv -a"/>
+      <program name="vislcg3 --trace -g">
+        <file name="asm-eng.rlx.bin"/>
+      </program>
+    </pipeline>
+  </mode>
+
+
+  <mode name="asm-eng-tagger" install="no">
+    <pipeline>
+      <program name="lt-proc">
+        <file name="asm-eng.automorf.bin"/>
+      </program>
+      <program name="cg-proc -n -1">
+        <file name="asm-eng.rlx.bin"/>
+      </program>
+    </pipeline>
+  </mode>
+
+  <mode name="asm-eng-biltrans" install="no">
+    <pipeline>
+      <program name="lt-proc">
+        <file name="asm-eng.automorf.bin"/>
+      </program>
+      <program name="cg-proc -n -1">
+        <file name="asm-eng.rlx.bin"/>
+      </program>
+      <program name="apertium-pretransfer"/>
+      <program name="lt-proc -b">
+        <file name="asm-eng.autobil.bin"/>
+      </program>
+    </pipeline>
+  </mode>
+
+  <mode name="asm-eng-lextor" install="no">
+    <pipeline>
+      <program name="lt-proc">
+        <file name="asm-eng.automorf.bin"/>
+      </program>
+      <program name="cg-proc -n -1">
+        <file name="asm-eng.rlx.bin"/>
+      </program>
+      <program name="apertium-pretransfer"/>
+      <program name="lt-proc -b">
+        <file name="asm-eng.autobil.bin"/>
+      </program>
+      <program name="lrx-proc -t">
+        <file name="asm-eng.autolex.bin"/>
+      </program>
+    </pipeline>
+  </mode>
+
+
+  <mode name="asm-eng-chunker" install="no">
+    <pipeline>
+      <program name="lt-proc">
+        <file name="asm-eng.automorf.bin"/>
+      </program>
+      <program name="cg-proc -n -1">
+        <file name="asm-eng.rlx.bin"/>
+      </program>
+      <program name="apertium-pretransfer"/>
+      <program name="lt-proc -b">
+        <file name="asm-eng.autobil.bin"/>
+      </program>
+      <program name="lrx-proc">
+        <file name="asm-eng.autolex.bin"/>
+      </program>
+      <program name="apertium-transfer -t -b">
+        <file name="apertium-asm-eng.asm-eng.t1x"/>
+        <file name="asm-eng.t1x.bin"/>
+      </program>
+    </pipeline>
+  </mode>
+
+
+  <mode name="asm-eng-interchunk1" install="no">
+    <pipeline>
+      <program name="lt-proc">
+        <file name="asm-eng.automorf.bin"/>
+      </program>
+      <program name="cg-proc -n -1">
+        <file name="asm-eng.rlx.bin"/>
+      </program>
+      <program name="apertium-pretransfer"/>
+      <program name="lt-proc -b">
+        <file name="asm-eng.autobil.bin"/>
+      </program>
+      <program name="lrx-proc">
+        <file name="asm-eng.autolex.bin"/>
+      </program>
+      <program name="apertium-transfer -b">
+        <file name="apertium-asm-eng.asm-eng.t1x"/>
+        <file name="asm-eng.t1x.bin"/>
+      </program>
+      <program name="apertium-interchunk">
+        <file name="apertium-asm-eng.asm-eng.t2x"/>
+        <file name="asm-eng.t2x.bin"/>
+      </program>
+    </pipeline>
+  </mode>
+
+  <mode name="asm-eng-postchunk" install="no">
+    <pipeline>
+      <program name="lt-proc">
+        <file name="asm-eng.automorf.bin"/>
+      </program>
+      <program name="cg-proc -n -1">
+        <file name="asm-eng.rlx.bin"/>
+      </program>
+      <program name="apertium-pretransfer"/>
+      <program name="lt-proc -b">
+        <file name="asm-eng.autobil.bin"/>
+      </program>
+      <program name="lrx-proc">
+        <file name="asm-eng.autolex.bin"/>
+      </program>
+      <program name="apertium-transfer -b">
+        <file name="apertium-asm-eng.asm-eng.t1x"/>
+        <file name="asm-eng.t1x.bin"/>
+      </program>
+      <program name="apertium-interchunk">
+        <file name="apertium-asm-eng.asm-eng.t2x"/>
+        <file name="asm-eng.t2x.bin"/>
+      </program>
+      <program name="apertium-postchunk">
+        <file name="apertium-asm-eng.asm-eng.t3x"/>
+        <file name="asm-eng.t3x.bin"/>
+      </program>
+    </pipeline>
+  </mode>
+
+
+  <mode name="asm-eng" install="yes">
+    <pipeline>
+      <program name="lt-proc">
+        <file name="asm-eng.automorf.bin"/>
+      </program>
+      <program name="cg-proc -n -1">
+        <file name="asm-eng.rlx.bin"/>
+      </program>
+      <program name="apertium-pretransfer"/>
+      <program name="lt-proc -b">
+        <file name="asm-eng.autobil.bin"/>
+      </program>
+      <program name="lrx-proc">
+        <file name="asm-eng.autolex.bin"/>
+      </program>
+      <program name="apertium-transfer -b">
+        <file name="apertium-asm-eng.asm-eng.t1x"/>
+        <file name="asm-eng.t1x.bin"/>
+      </program>
+      <program name="apertium-interchunk">
+        <file name="apertium-asm-eng.asm-eng.t2x"/>
+        <file name="asm-eng.t2x.bin"/>
+      </program>
+      <program name="apertium-postchunk">
+        <file name="apertium-asm-eng.asm-eng.t3x"/>
+        <file name="asm-eng.t3x.bin"/>
+      </program>
+      <program name="lt-proc $1">
+        <file name="asm-eng.autogen.bin"/>
+      </program>
+      <program name="lt-proc -p">
+        <file name="asm-eng.autopgen.bin"/>
+      </program>
+    </pipeline>
+  </mode>
+
+
+
+  <mode name="asm-eng-debug" install="no">
+    <pipeline>
+      <program name="lt-proc">
+        <file name="asm-eng.automorf.bin"/>
+      </program>
+      <program name="cg-proc -1 -n">
+        <file name="asm-eng.rlx.bin"/>
+      </program>
+      <program name="apertium-pretransfer"/>
+      <program name="lt-proc -b">
+        <file name="asm-eng.autobil.bin"/>
+      </program>
+      <program name="lrx-proc">
+        <file name="asm-eng.autolex.bin"/>
+      </program>
+      <program name="apertium-transfer -b">
+        <file name="apertium-asm-eng.asm-eng.t1x"/>
+        <file name="asm-eng.t1x.bin"/>
+      </program>
+      <program name="apertium-interchunk">
+        <file name="apertium-asm-eng.asm-eng.t2x"/>
+        <file name="asm-eng.t2x.bin"/>
+      </program>
+      <program name="apertium-postchunk">
+        <file name="apertium-asm-eng.asm-eng.t3x"/>
+        <file name="asm-eng.t3x.bin"/>
+      </program>
+      <program name="lt-proc -d">
+        <file name="asm-eng.autogen.bin"/>
+      </program>
+    </pipeline>
+  </mode>
+
+
+  <!-- English → Assamese -->
+
+  <mode name="eng-asm-morph" install="no">
+    <pipeline>
+      <program name="lt-proc">
+        <file name="eng-asm.automorf.bin"/>
+      </program>
+    </pipeline>
+  </mode>
+
+  <mode name="eng-asm-disam" install="no">
+    <pipeline>
+      <program name="lt-proc">
+        <file name="eng-asm.automorf.bin"/>
+      </program>
+      <program name="cg-conv -a"/>
+      <program name="vislcg3 --trace -g">
+        <file name="eng-asm.rlx.bin"/>
+      </program>
+    </pipeline>
+  </mode>
+
+
+  <mode name="eng-asm-tagger" install="no">
+    <pipeline>
+      <program name="lt-proc">
+        <file name="eng-asm.automorf.bin"/>
+      </program>
+      <program name="cg-proc -n -1">
+        <file name="eng-asm.rlx.bin"/>
+      </program>
+    </pipeline>
+  </mode>
+
+  <mode name="eng-asm-biltrans" install="no">
+    <pipeline>
+      <program name="lt-proc">
+        <file name="eng-asm.automorf.bin"/>
+      </program>
+      <program name="cg-proc -n -1">
+        <file name="eng-asm.rlx.bin"/>
+      </program>
+      <program name="apertium-pretransfer"/>
+      <program name="lt-proc -b">
+        <file name="eng-asm.autobil.bin"/>
+      </program>
+    </pipeline>
+  </mode>
+
+  <mode name="eng-asm-lextor" install="no">
+    <pipeline>
+      <program name="lt-proc">
+        <file name="eng-asm.automorf.bin"/>
+      </program>
+      <program name="cg-proc -n -1">
+        <file name="eng-asm.rlx.bin"/>
+      </program>
+      <program name="apertium-pretransfer"/>
+      <program name="lt-proc -b">
+        <file name="eng-asm.autobil.bin"/>
+      </program>
+      <program name="lrx-proc -t">
+        <file name="eng-asm.autolex.bin"/>
+      </program>
+    </pipeline>
+  </mode>
+
+
+  <mode name="eng-asm-chunker" install="no">
+    <pipeline>
+      <program name="lt-proc">
+        <file name="eng-asm.automorf.bin"/>
+      </program>
+      <program name="cg-proc -n -1">
+        <file name="eng-asm.rlx.bin"/>
+      </program>
+      <program name="apertium-pretransfer"/>
+      <program name="lt-proc -b">
+        <file name="eng-asm.autobil.bin"/>
+      </program>
+      <program name="lrx-proc">
+        <file name="eng-asm.autolex.bin"/>
+      </program>
+      <program name="apertium-transfer -t -b">
+        <file name="apertium-asm-eng.eng-asm.t1x"/>
+        <file name="eng-asm.t1x.bin"/>
+      </program>
+    </pipeline>
+  </mode>
+
+
+  <mode name="eng-asm-interchunk1" install="no">
+    <pipeline>
+      <program name="lt-proc">
+        <file name="eng-asm.automorf.bin"/>
+      </program>
+      <program name="cg-proc -n -1">
+        <file name="eng-asm.rlx.bin"/>
+      </program>
+      <program name="apertium-pretransfer"/>
+      <program name="lt-proc -b">
+        <file name="eng-asm.autobil.bin"/>
+      </program>
+      <program name="lrx-proc">
+        <file name="eng-asm.autolex.bin"/>
+      </program>
+      <program name="apertium-transfer -b">
+        <file name="apertium-asm-eng.eng-asm.t1x"/>
+        <file name="eng-asm.t1x.bin"/>
+      </program>
+      <program name="apertium-interchunk">
+        <file name="apertium-asm-eng.eng-asm.t2x"/>
+        <file name="eng-asm.t2x.bin"/>
+      </program>
+    </pipeline>
+  </mode>
+
+  <mode name="eng-asm-postchunk" install="no">
+    <pipeline>
+      <program name="lt-proc">
+        <file name="eng-asm.automorf.bin"/>
+      </program>
+      <program name="cg-proc -n -1">
+        <file name="eng-asm.rlx.bin"/>
+      </program>
+      <program name="apertium-pretransfer"/>
+      <program name="lt-proc -b">
+        <file name="eng-asm.autobil.bin"/>
+      </program>
+      <program name="lrx-proc">
+        <file name="eng-asm.autolex.bin"/>
+      </program>
+      <program name="apertium-transfer -b">
+        <file name="apertium-asm-eng.eng-asm.t1x"/>
+        <file name="eng-asm.t1x.bin"/>
+      </program>
+      <program name="apertium-interchunk">
+        <file name="apertium-asm-eng.eng-asm.t2x"/>
+        <file name="eng-asm.t2x.bin"/>
+      </program>
+      <program name="apertium-postchunk">
+        <file name="apertium-asm-eng.eng-asm.t3x"/>
+        <file name="eng-asm.t3x.bin"/>
+      </program>
+    </pipeline>
+  </mode>
+
+
+  <mode name="eng-asm" install="yes">
+    <pipeline>
+      <program name="lt-proc">
+        <file name="eng-asm.automorf.bin"/>
+      </program>
+      <program name="cg-proc -n -1">
+        <file name="eng-asm.rlx.bin"/>
+      </program>
+      <program name="apertium-pretransfer"/>
+      <program name="lt-proc -b">
+        <file name="eng-asm.autobil.bin"/>
+      </program>
+      <program name="lrx-proc">
+        <file name="eng-asm.autolex.bin"/>
+      </program>
+      <program name="apertium-transfer -b">
+        <file name="apertium-asm-eng.eng-asm.t1x"/>
+        <file name="eng-asm.t1x.bin"/>
+      </program>
+      <program name="apertium-interchunk">
+        <file name="apertium-asm-eng.eng-asm.t2x"/>
+        <file name="eng-asm.t2x.bin"/>
+      </program>
+      <program name="apertium-postchunk">
+        <file name="apertium-asm-eng.eng-asm.t3x"/>
+        <file name="eng-asm.t3x.bin"/>
+      </program>
+      <program name="lt-proc $1">
+        <file name="eng-asm.autogen.bin"/>
+      </program>
+    </pipeline>
+  </mode>
+
+
+
+  <mode name="eng-asm-debug" install="no">
+    <pipeline>
+      <program name="lt-proc">
+        <file name="eng-asm.automorf.bin"/>
+      </program>
+      <program name="cg-proc -1 -n">
+        <file name="eng-asm.rlx.bin"/>
+      </program>
+      <program name="apertium-pretransfer"/>
+      <program name="lt-proc -b">
+        <file name="eng-asm.autobil.bin"/>
+      </program>
+      <program name="lrx-proc">
+        <file name="eng-asm.autolex.bin"/>
+      </program>
+      <program name="apertium-transfer -b">
+        <file name="apertium-asm-eng.eng-asm.t1x"/>
+        <file name="eng-asm.t1x.bin"/>
+      </program>
+      <program name="apertium-interchunk">
+        <file name="apertium-asm-eng.eng-asm.t2x"/>
+        <file name="eng-asm.t2x.bin"/>
+      </program>
+      <program name="apertium-postchunk">
+        <file name="apertium-asm-eng.eng-asm.t3x"/>
+        <file name="eng-asm.t3x.bin"/>
+      </program>
+      <program name="lt-proc -d">
+        <file name="eng-asm.autogen.bin"/>
+      </program>
+    </pipeline>
+  </mode>
+
+
+
+</modes>

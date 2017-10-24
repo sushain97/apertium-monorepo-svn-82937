@@ -1,0 +1,115 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<modes>
+  <mode name="mfe-en" install="yes">
+    <pipeline>
+      <program name="lt-proc">
+        <file name="mfe-en.automorf.bin"/>
+      </program>
+      <program name="apertium-tagger -g $2">
+        <file name="mfe-en.prob"/>
+      </program>
+      <program name="apertium-pretransfer"/>
+      <program name="apertium-transfer">
+        <file name="apertium-mfe-en.mfe-en.t1x"/>
+        <file name="mfe-en.t1x.bin"/>
+        <file name="mfe-en.autobil.bin"/>
+      </program>
+      <program name="lt-proc $1">
+        <file name="mfe-en.autogen.bin"/>
+      </program>
+      <program name="lt-proc -p">
+        <file name="mfe-en.autopgen.bin"/>
+      </program>
+    </pipeline>
+  </mode>
+  
+  <mode name="mfe-en-morph" install="no">
+    <pipeline>
+      <program name="lt-proc">
+        <file name="mfe-en.automorf.bin"/>
+      </program>
+    </pipeline>
+  </mode>
+
+  <mode name="mfe-en-tagger" install="no">
+    <pipeline>
+      <program name="lt-proc">
+        <file name="mfe-en.automorf.bin"/>
+      </program>
+      <program name="apertium-tagger -g $2">
+        <file name="mfe-en.prob"/>
+      </program>
+      <program name="apertium-pretransfer"/>
+    </pipeline>
+  </mode>
+
+  <mode name="mfe-en-transfer" install="no">
+    <pipeline>
+      <program name="lt-proc">
+        <file name="mfe-en.automorf.bin"/>
+      </program>
+      <program name="apertium-tagger -g $2">
+        <file name="mfe-en.prob"/>
+      </program>
+      <program name="apertium-pretransfer"/>
+      <program name="apertium-transfer">
+        <file name="apertium-mfe-en.mfe-en.t1x"/>
+        <file name="mfe-en.t1x.bin"/>
+        <file name="mfe-en.autobil.bin"/>
+      </program>
+    </pipeline>
+  </mode>
+
+  <mode name="en-mfe" install="yes">
+    <pipeline>
+      <program name="lt-proc">
+        <file name="en-mfe.automorf.bin"/>
+      </program>
+      <program name="apertium-tagger -g $2">
+        <file name="en-mfe.prob"/>
+      </program>
+      <program name="apertium-pretransfer"/>
+      <program name="apertium-transfer">
+        <file name="apertium-mfe-en.en-mfe.t1x"/>
+        <file name="en-mfe.t1x.bin"/>
+        <file name="en-mfe.autobil.bin"/>
+      </program>
+      <program name="lt-proc $1">
+        <file name="en-mfe.autogen.bin"/>
+      </program>
+      <program name="lt-proc -p">
+        <file name="en-mfe.autopgen.bin"/>
+      </program>
+    </pipeline>
+  </mode>
+
+  <mode name="en-mfe-tagger" install="no">
+    <pipeline>
+      <program name="lt-proc">
+        <file name="en-mfe.automorf.bin"/>
+      </program>
+      <program name="apertium-tagger -g $2">
+        <file name="en-mfe.prob"/>
+      </program>
+      <program name="apertium-pretransfer"/>
+    </pipeline>
+  </mode>
+
+  <mode name="en-mfe-transfer" install="no">
+    <pipeline>
+      <program name="lt-proc">
+        <file name="en-mfe.automorf.bin"/>
+      </program>
+      <program name="apertium-tagger -g $2">
+        <file name="en-mfe.prob"/>
+      </program>
+      <program name="apertium-pretransfer"/>
+      <program name="apertium-transfer">
+        <file name="apertium-mfe-en.en-mfe.t1x"/>
+        <file name="en-mfe.t1x.bin"/>
+        <file name="en-mfe.autobil.bin"/>
+      </program>
+    </pipeline>
+  </mode>
+
+</modes>

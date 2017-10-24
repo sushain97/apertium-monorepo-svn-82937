@@ -1,0 +1,97 @@
+<rules>
+  <!-- 
+    This rule chooses "energía" as the translation of "power" when it is preceded by "wind". 
+    Add your own rules within <rule> here, using the resources below as a guide 
+  -->
+
+  <rule>
+    <match lemma="wind"/>
+    <match lemma="power" tags="n.*">
+      <select lemma="energía" tags="n.*"/>
+    </match>
+  </rule>
+  <rule>
+    <match lemma="na" tags="pr">
+      <select lemma="at" tags="pr"/>
+    </match>
+  </rule>
+  <rule>
+    <match lemma="musu">
+      <select lemma="must"/>
+    </match>
+  </rule>
+  <rule>
+    <match tags="aux"/>
+    <match lemma="wroko">
+      <select lemma="work" tags="vblex"/>
+    </match>
+  </rule>
+  <rule>
+    <match lemma="go"/>
+    <match lemma="na">
+      <select lemma="to" tags="pr"/>
+    </match>
+  </rule>
+  <rule>
+    <match tags="vbmod"/>
+    <match tags="vblex">
+      <select tags="vblex"/>
+    </match>
+  </rule>
+  <rule>
+    <match lemma="saka">
+      <select lemma="lower"/>
+    </match>
+  </rule>
+  <rule>
+    <match lemma="taki">
+      <select lemma="say"/>
+    </match>
+  </rule>
+  <rule>
+    <match lemma="tan">
+      <select lemma="stay"/>
+    </match>
+    <match tags="vblex"/>
+  </rule>
+  <rule>
+    <match lemma="nomo">
+      <select lemma="however"/>
+    </match>
+  </rule>
+  <rule>
+    <match lemma="rigeri">
+      <select lemma="raise"/>
+    </match>
+  </rule>
+  <rule>
+    <match lemma="piki">
+      <select lemma="answer"/>
+    </match>
+    <match tags="prn.*"/>
+</rule>
+<rule>
+        <match tags="det.pos.*"/>
+    <match lemma="ati">
+      <select lemma="heart"/>
+    </match>
+    </rule>
+  <rule>
+
+    <match lemma="fa">
+      <select lemma="because"/>
+    </match>
+    <match lemma="doro">
+      <select lemma="arrive"/>
+    </match>
+  </rule>
+</rules>
+
+<!-- 
+Resources: 
+    http://wiki.apertium.org/wiki/How_to_get_started_with_lexical_selection_rules
+    http://wiki.apertium.org/wiki/Constraint-based_lexical_selection
+    http://wiki.apertium.org/wiki/Lexical_selection
+    http://wiki.apertium.org/wiki/Learning_rules_from_parallel_and_non-parallel_corpora
+-->
+

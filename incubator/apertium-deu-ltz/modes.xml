@@ -1,0 +1,531 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<modes>
+
+  <!-- deu → ltz -->
+
+  <mode name="deu-ltz" install="yes">
+    <pipeline>
+      <program name="lt-proc -w">
+        <file name="deu-ltz.automorf.bin"/>
+      </program>
+
+
+      <program name="cg-proc -w">
+        <file name="deu-ltz.rlx.bin"/>
+      </program>
+      <program name="apertium-tagger -g $2">
+        <file name="deu-ltz.prob"/>
+      </program>
+      <program name="apertium-pretransfer"/>
+      <program name="lt-proc -b">
+        <file name="deu-ltz.autobil.bin"/>
+      </program>
+      <program name="lrx-proc">
+        <file name="deu-ltz.autolex.bin"/>
+      </program>
+      <program name="apertium-transfer -b">
+        <file name="apertium-deu-ltz.deu-ltz.t1x"/>
+        <file name="deu-ltz.t1x.bin"/>
+      </program>
+      <program name="apertium-interchunk">
+        <file name="apertium-deu-ltz.deu-ltz.t2x"/>
+        <file name="deu-ltz.t2x.bin"/>
+      </program>
+      <program name="apertium-postchunk">
+        <file name="apertium-deu-ltz.deu-ltz.t3x"/>
+        <file name="deu-ltz.t3x.bin"/>
+      </program>
+      <program name="lt-proc $1">
+        <file name="deu-ltz.autogen.bin"/>
+      </program>
+
+      <program name="lt-proc -p">
+        <file name="deu-ltz.autopgen.bin"/>
+      </program>
+    </pipeline>
+  </mode>
+
+  <mode name="deu-ltz-dgen" install="no">
+    <pipeline>
+      <program name="lt-proc -w">
+        <file name="deu-ltz.automorf.bin"/>
+      </program>
+
+
+      <program name="cg-proc -w">
+        <file name="deu-ltz.rlx.bin"/>
+      </program>
+      <program name="apertium-tagger -g $2">
+        <file name="deu-ltz.prob"/>
+      </program>
+      <program name="apertium-pretransfer"/>
+      <program name="lt-proc -b">
+        <file name="deu-ltz.autobil.bin"/>
+      </program>
+      <program name="apertium-transfer -b">
+        <file name="apertium-deu-ltz.deu-ltz.t1x"/>
+        <file name="deu-ltz.t1x.bin"/>
+      </program>
+      <program name="apertium-interchunk">
+        <file name="apertium-deu-ltz.deu-ltz.t2x"/>
+        <file name="deu-ltz.t2x.bin"/>
+      </program>
+      <program name="apertium-postchunk">
+        <file name="apertium-deu-ltz.deu-ltz.t3x"/>
+        <file name="deu-ltz.t3x.bin"/>
+      </program>
+      <program name="lt-proc -d">
+        <file name="deu-ltz.autogen.bin"/>
+      </program>
+    </pipeline>
+  </mode>
+
+  <mode name="deu-ltz-morph" install="no">
+    <pipeline>
+      <program name="lt-proc -w">
+        <file name="deu-ltz.automorf.bin"/>
+      </program>
+    </pipeline>
+  </mode>
+
+  <mode name="deu-ltz-disam" install="no">
+    <pipeline>
+      <program name="lt-proc -w">
+        <file name="deu-ltz.automorf.bin"/>
+      </program>
+      <program name="cg-conv -a"/>
+      <program name="vislcg3 --trace --grammar">
+        <file name="deu-ltz.rlx.bin"/>
+      </program>
+    </pipeline>
+  </mode>
+
+  <mode name="deu-ltz-tagger" install="no">
+    <pipeline>
+      <program name="lt-proc -w">
+        <file name="deu-ltz.automorf.bin"/>
+      </program>
+
+
+      <program name="cg-proc -w">
+        <file name="deu-ltz.rlx.bin"/>
+      </program>
+      <program name="apertium-tagger -g $2">
+        <file name="deu-ltz.prob"/>
+      </program>
+    </pipeline>
+  </mode>
+
+  <mode name="deu-ltz-pretransfer" install="no">
+    <pipeline>
+      <program name="lt-proc -w">
+        <file name="deu-ltz.automorf.bin"/>
+      </program>
+
+
+      <program name="cg-proc -w">
+        <file name="deu-ltz.rlx.bin"/>
+      </program>
+      <program name="apertium-tagger -g $2">
+        <file name="deu-ltz.prob"/>
+      </program>
+      <program name="apertium-pretransfer"/>
+    </pipeline>
+  </mode>
+
+  <mode name="deu-ltz-biltrans" install="no">
+    <pipeline>
+      <program name="lt-proc -w">
+        <file name="deu-ltz.automorf.bin"/>
+      </program>
+
+
+      <program name="cg-proc -w">
+        <file name="deu-ltz.rlx.bin"/>
+      </program>
+      <program name="apertium-tagger -g $2">
+        <file name="deu-ltz.prob"/>
+      </program>
+      <program name="apertium-pretransfer"/>
+      <program name="lt-proc -b">
+        <file name="deu-ltz.autobil.bin"/>
+      </program>
+    </pipeline>
+  </mode>
+
+  <mode name="deu-ltz-lex" install="no">
+    <pipeline>
+      <program name="lt-proc -w">
+        <file name="deu-ltz.automorf.bin"/>
+      </program>
+
+
+      <program name="cg-proc -w">
+        <file name="deu-ltz.rlx.bin"/>
+      </program>
+      <program name="apertium-tagger -g $2">
+        <file name="deu-ltz.prob"/>
+      </program>
+      <program name="apertium-pretransfer"/>
+      <program name="lt-proc -b">
+        <file name="deu-ltz.autobil.bin"/>
+      </program>
+      <program name="lrx-proc -t">
+        <file name="deu-ltz.autolex.bin"/>
+      </program>
+    </pipeline>
+  </mode>
+
+  <mode name="deu-ltz-transfer" install="no">
+    <pipeline>
+      <program name="lt-proc -w">
+        <file name="deu-ltz.automorf.bin"/>
+      </program>
+
+
+      <program name="cg-proc -w">
+        <file name="deu-ltz.rlx.bin"/>
+      </program>
+      <program name="apertium-tagger -g $2">
+        <file name="deu-ltz.prob"/>
+      </program>
+      <program name="apertium-pretransfer"/>
+      <program name="lt-proc -b">
+        <file name="deu-ltz.autobil.bin"/>
+      </program>
+      <program name="lrx-proc">
+        <file name="deu-ltz.autolex.bin"/>
+      </program>
+      <program name="apertium-transfer -b -t">
+        <file name="apertium-deu-ltz.deu-ltz.t1x"/>
+        <file name="deu-ltz.t1x.bin"/>
+      </program>
+    </pipeline>
+  </mode>
+
+  <mode name="deu-ltz-interchunk" install="no">
+    <pipeline>
+      <program name="lt-proc -w">
+        <file name="deu-ltz.automorf.bin"/>
+      </program>
+
+
+      <program name="cg-proc -w">
+        <file name="deu-ltz.rlx.bin"/>
+      </program>
+      <program name="apertium-tagger -g $2">
+        <file name="deu-ltz.prob"/>
+      </program>
+      <program name="apertium-pretransfer"/>
+      <program name="lt-proc -b">
+        <file name="deu-ltz.autobil.bin"/>
+      </program>
+      <program name="lrx-proc">
+        <file name="deu-ltz.autolex.bin"/>
+      </program>
+      <program name="apertium-transfer -b">
+        <file name="apertium-deu-ltz.deu-ltz.t1x"/>
+        <file name="deu-ltz.t1x.bin"/>
+      </program>
+      <program name="apertium-interchunk -t">
+        <file name="apertium-deu-ltz.deu-ltz.t2x"/>
+        <file name="deu-ltz.t2x.bin"/>
+      </program>
+    </pipeline>
+  </mode>
+
+  <mode name="deu-ltz-postchunk" install="no">
+    <pipeline>
+      <program name="lt-proc -w">
+        <file name="deu-ltz.automorf.bin"/>
+      </program>
+
+
+      <program name="cg-proc -w">
+        <file name="deu-ltz.rlx.bin"/>
+      </program>
+      <program name="apertium-tagger -g $2">
+        <file name="deu-ltz.prob"/>
+      </program>
+      <program name="apertium-pretransfer"/>
+      <program name="lt-proc -b">
+        <file name="deu-ltz.autobil.bin"/>
+      </program>
+      <program name="lrx-proc">
+        <file name="deu-ltz.autolex.bin"/>
+      </program>
+      <program name="apertium-transfer -b">
+        <file name="apertium-deu-ltz.deu-ltz.t1x"/>
+        <file name="deu-ltz.t1x.bin"/>
+      </program>
+      <program name="apertium-interchunk">
+        <file name="apertium-deu-ltz.deu-ltz.t2x"/>
+        <file name="deu-ltz.t2x.bin"/>
+      </program>
+      <program name="apertium-postchunk">
+        <file name="apertium-deu-ltz.deu-ltz.t3x"/>
+        <file name="deu-ltz.t3x.bin"/>
+      </program>
+    </pipeline>
+  </mode>
+
+  <!-- ltz → deu -->
+
+  <mode name="ltz-deu" install="yes">
+    <pipeline>
+      <program name="lt-proc -w">
+        <file name="ltz-deu.automorf.bin"/>
+      </program>
+
+
+      <program name="cg-proc -w">
+        <file name="ltz-deu.rlx.bin"/>
+      </program>
+      <program name="apertium-tagger -g $2">
+        <file name="ltz-deu.prob"/>
+      </program>
+      <program name="apertium-pretransfer"/>
+      <program name="lt-proc -b">
+        <file name="ltz-deu.autobil.bin"/>
+      </program>
+      <program name="lrx-proc">
+        <file name="ltz-deu.autolex.bin"/>
+      </program>
+      <program name="apertium-transfer -b">
+        <file name="apertium-deu-ltz.ltz-deu.t1x"/>
+        <file name="ltz-deu.t1x.bin"/>
+      </program>
+      <program name="apertium-interchunk">
+        <file name="apertium-deu-ltz.ltz-deu.t2x"/>
+        <file name="ltz-deu.t2x.bin"/>
+      </program>
+      <program name="apertium-postchunk">
+        <file name="apertium-deu-ltz.ltz-deu.t3x"/>
+        <file name="ltz-deu.t3x.bin"/>
+      </program>
+      <program name="lt-proc $1">
+        <file name="ltz-deu.autogen.bin"/>
+      </program>
+
+      <program name="lt-proc -p">
+        <file name="ltz-deu.autopgen.bin"/>
+      </program>
+    </pipeline>
+  </mode>
+
+  <mode name="ltz-deu-dgen" install="no">
+    <pipeline>
+      <program name="lt-proc -w">
+        <file name="ltz-deu.automorf.bin"/>
+      </program>
+
+
+      <program name="cg-proc -w">
+        <file name="ltz-deu.rlx.bin"/>
+      </program>
+      <program name="apertium-tagger -g $2">
+        <file name="ltz-deu.prob"/>
+      </program>
+      <program name="apertium-pretransfer"/>
+      <program name="lt-proc -b">
+        <file name="ltz-deu.autobil.bin"/>
+      </program>
+      <program name="apertium-transfer -b">
+        <file name="apertium-deu-ltz.ltz-deu.t1x"/>
+        <file name="ltz-deu.t1x.bin"/>
+      </program>
+      <program name="apertium-interchunk">
+        <file name="apertium-deu-ltz.ltz-deu.t2x"/>
+        <file name="ltz-deu.t2x.bin"/>
+      </program>
+      <program name="apertium-postchunk">
+        <file name="apertium-deu-ltz.ltz-deu.t3x"/>
+        <file name="ltz-deu.t3x.bin"/>
+      </program>
+      <program name="lt-proc -d">
+        <file name="ltz-deu.autogen.bin"/>
+      </program>
+    </pipeline>
+  </mode>
+
+  <mode name="ltz-deu-morph" install="no">
+    <pipeline>
+      <program name="lt-proc -w">
+        <file name="ltz-deu.automorf.bin"/>
+      </program>
+    </pipeline>
+  </mode>
+
+  <mode name="ltz-deu-disam" install="no">
+    <pipeline>
+      <program name="lt-proc -w">
+        <file name="ltz-deu.automorf.bin"/>
+      </program>
+      <program name="cg-conv -a"/>
+      <program name="vislcg3 --trace --grammar">
+        <file name="ltz-deu.rlx.bin"/>
+      </program>
+    </pipeline>
+  </mode>
+
+  <mode name="ltz-deu-tagger" install="no">
+    <pipeline>
+      <program name="lt-proc -w">
+        <file name="ltz-deu.automorf.bin"/>
+      </program>
+
+
+      <program name="cg-proc -w">
+        <file name="ltz-deu.rlx.bin"/>
+      </program>
+      <program name="apertium-tagger -g $2">
+        <file name="ltz-deu.prob"/>
+      </program>
+    </pipeline>
+  </mode>
+
+  <mode name="ltz-deu-pretransfer" install="no">
+    <pipeline>
+      <program name="lt-proc -w">
+        <file name="ltz-deu.automorf.bin"/>
+      </program>
+
+
+      <program name="cg-proc -w">
+        <file name="ltz-deu.rlx.bin"/>
+      </program>
+      <program name="apertium-tagger -g $2">
+        <file name="ltz-deu.prob"/>
+      </program>
+      <program name="apertium-pretransfer"/>
+    </pipeline>
+  </mode>
+
+  <mode name="ltz-deu-biltrans" install="no">
+    <pipeline>
+      <program name="lt-proc -w">
+        <file name="ltz-deu.automorf.bin"/>
+      </program>
+
+
+      <program name="cg-proc -w">
+        <file name="ltz-deu.rlx.bin"/>
+      </program>
+      <program name="apertium-tagger -g $2">
+        <file name="ltz-deu.prob"/>
+      </program>
+      <program name="apertium-pretransfer"/>
+      <program name="lt-proc -b">
+        <file name="ltz-deu.autobil.bin"/>
+      </program>
+    </pipeline>
+  </mode>
+
+  <mode name="ltz-deu-lex" install="no">
+    <pipeline>
+      <program name="lt-proc -w">
+        <file name="ltz-deu.automorf.bin"/>
+      </program>
+
+
+      <program name="cg-proc -w">
+        <file name="ltz-deu.rlx.bin"/>
+      </program>
+      <program name="apertium-tagger -g $2">
+        <file name="ltz-deu.prob"/>
+      </program>
+      <program name="apertium-pretransfer"/>
+      <program name="lt-proc -b">
+        <file name="ltz-deu.autobil.bin"/>
+      </program>
+      <program name="lrx-proc">
+        <file name="ltz-deu.autolex.bin"/>
+      </program>
+    </pipeline>
+  </mode>
+
+  <mode name="ltz-deu-transfer" install="no">
+    <pipeline>
+      <program name="lt-proc -w">
+        <file name="ltz-deu.automorf.bin"/>
+      </program>
+
+
+      <program name="cg-proc -w">
+        <file name="ltz-deu.rlx.bin"/>
+      </program>
+      <program name="apertium-tagger -g $2">
+        <file name="ltz-deu.prob"/>
+      </program>
+      <program name="apertium-pretransfer"/>
+      <program name="lt-proc -b">
+        <file name="ltz-deu.autobil.bin"/>
+      </program>
+      <program name="apertium-transfer -b -t">
+        <file name="apertium-deu-ltz.ltz-deu.t1x"/>
+        <file name="ltz-deu.t1x.bin"/>
+      </program>
+    </pipeline>
+  </mode>
+
+  <mode name="ltz-deu-interchunk" install="no">
+    <pipeline>
+      <program name="lt-proc -w">
+        <file name="ltz-deu.automorf.bin"/>
+      </program>
+
+
+      <program name="cg-proc -w">
+        <file name="ltz-deu.rlx.bin"/>
+      </program>
+      <program name="apertium-tagger -g $2">
+        <file name="ltz-deu.prob"/>
+      </program>
+      <program name="apertium-pretransfer"/>
+      <program name="lt-proc -b">
+        <file name="ltz-deu.autobil.bin"/>
+      </program>
+      <program name="apertium-transfer -b">
+        <file name="apertium-deu-ltz.ltz-deu.t1x"/>
+        <file name="ltz-deu.t1x.bin"/>
+      </program>
+      <program name="apertium-interchunk -t">
+        <file name="apertium-deu-ltz.ltz-deu.t2x"/>
+        <file name="ltz-deu.t2x.bin"/>
+      </program>
+    </pipeline>
+  </mode>
+
+  <mode name="ltz-deu-postchunk" install="no">
+    <pipeline>
+      <program name="lt-proc -w">
+        <file name="ltz-deu.automorf.bin"/>
+      </program>
+
+
+      <program name="cg-proc -w">
+        <file name="ltz-deu.rlx.bin"/>
+      </program>
+      <program name="apertium-tagger -g $2">
+        <file name="ltz-deu.prob"/>
+      </program>
+      <program name="apertium-pretransfer"/>
+      <program name="lt-proc -b">
+        <file name="ltz-deu.autobil.bin"/>
+      </program>
+      <program name="apertium-transfer -b">
+        <file name="apertium-deu-ltz.ltz-deu.t1x"/>
+        <file name="ltz-deu.t1x.bin"/>
+      </program>
+      <program name="apertium-interchunk">
+        <file name="apertium-deu-ltz.ltz-deu.t2x"/>
+        <file name="ltz-deu.t2x.bin"/>
+      </program>
+      <program name="apertium-postchunk">
+        <file name="apertium-deu-ltz.ltz-deu.t3x"/>
+        <file name="ltz-deu.t3x.bin"/>
+      </program>
+    </pipeline>
+  </mode>
+</modes>
+

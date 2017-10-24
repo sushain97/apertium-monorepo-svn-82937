@@ -1,0 +1,161 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<oor:node xmlns:oor="http://openoffice.org/2001/registry" xmlns:xs="http://www.w3.org/2001/XMLSchema" oor:name="Addons" oor:package="org.openoffice.Office">
+  <node oor:name="AddonUI">
+    <node oor:name="OfficeMenuBar">
+      <node oor:name="org.openoffice.Office.addon.apertium" oor:op="replace">
+        <prop oor:name="Context" oor:type="xs:string">
+          <value>com.sun.star.text.TextDocument</value>
+        </prop>
+        <prop oor:name="Title" oor:type="xs:string">
+          <value>Apertiu~m</value>
+        </prop>
+        <node oor:name="Submenu">
+          <node oor:name="menu01" oor:op="replace">
+            <prop oor:name="Context" oor:type="xs:string">
+              <value>com.sun.star.text.TextDocument</value>
+            </prop>
+            <prop oor:name="Title" oor:type="xs:string">
+              <value>Translate</value>
+              <value xml:lang="en">Translate</value>
+	      <value xml:lang="ca">Tradueix</value>
+	      <value xml:lang="es">Traducir</value>
+	      <value xml:lang="pl">Przetłumacz</value>
+	      <value xml:lang="fr">Traduire</value>
+	      <value xml:lang="gl">Traduzir</value>
+	      <value xml:lang="pt">Traduzir</value>
+	      <value xml:lang="eu">Itzuli</value>
+	      <value xml:lang="hr">Prevedi</value>
+	      <value xml:lang="sr">Prevedi</value>
+	      <value xml:lang="fa">ترجمه کن</value>
+	      <value xml:lang="tg">Тарҷума кун</value>
+            </prop>
+            <prop oor:name="URL" oor:type="xs:string">
+              <value>service:es.ua.apertium.transel?execute</value>
+            </prop>
+            <prop oor:name="Target" oor:type="xs:string">
+              <value>_self</value>
+            </prop>
+            <prop oor:name="ImageIdentifier" oor:type="xs:string">
+              <value/>
+            </prop>
+          </node>
+          <node oor:name="menu02" oor:op="replace">
+            <prop oor:name="Context" oor:type="xs:string">
+              <value>com.sun.star.text.TextDocument</value>
+            </prop>
+            <prop oor:name="Title" oor:type="xs:string">
+              <value>Pairs</value>
+              <value xml:lang="en">Pairs</value>
+	      <value xml:lang="ca">Parells</value>
+	      <value xml:lang="es">Parejas</value>
+	      <value xml:lang="pl">Pary</value>
+	      <value xml:lang="fr">Paires</value>
+	      <value xml:lang="gl">Pares</value>
+	      <value xml:lang="pt">Pares</value>
+	      <value xml:lang="eu">Pareak</value>
+	      <value xml:lang="hr">Parovi</value>
+	      <value xml:lang="sr">Parovi</value>
+	      <value xml:lang="fa">. جفت‌ها</value>
+	      <value xml:lang="tg">Ҷуфтҳо</value>
+            </prop>
+            <prop oor:name="URL" oor:type="xs:string">
+              <value>service:es.ua.apertium.modes?execute</value>
+            </prop>
+            <prop oor:name="Target" oor:type="xs:string">
+              <value>_self</value>
+            </prop>
+            <prop oor:name="ImageIdentifier" oor:type="xs:string">
+              <value>%origin%/icons/pairs</value>
+            </prop>
+          </node>
+        </node>
+      </node>
+    </node>
+    <node oor:name="OfficeToolBar">
+      <node oor:name="org.openoffice.Office.addon.apertium" oor:op="replace">
+        <node oor:name="btn01" oor:op="replace">
+          <prop oor:name="Context" oor:type="xs:string">
+            <value>com.sun.star.text.TextDocument</value>
+          </prop>
+          <prop oor:name="Title" oor:type="xs:string">
+            <value>Translate</value>
+  	      <value xml:lang="en">Translate</value>
+	      <value xml:lang="ca">Tradueix</value>
+	      <value xml:lang="es">Traducir</value>
+	      <value xml:lang="pl">Przetłumacz</value>
+	      <value xml:lang="fr">Traduire</value>
+	      <value xml:lang="gl">Traduzir</value>
+	      <value xml:lang="pt">Traduzir</value>
+	      <value xml:lang="eu">Itzuli</value>
+	      <value xml:lang="hr">Prevedi</value>
+	      <value xml:lang="sr">Prevedi</value>
+	      <value xml:lang="tg">Тарҷума кун</value>
+	      <value xml:lang="fa">ترجمه کن</value>
+          </prop>
+          <prop oor:name="URL" oor:type="xs:string">
+            <value>service:es.ua.apertium.transel?execute</value>
+          </prop>
+          <prop oor:name="Target" oor:type="xs:string">
+            <value>_self</value>
+          </prop>
+          <prop oor:name="ImageIdentifier" oor:type="xs:string">
+            <value>%origin%/icons/translate</value>
+          </prop>
+        </node>
+
+        <node oor:name="btn03" oor:op="replace">
+          <prop oor:name="Context" oor:type="xs:string">
+            <value>com.sun.star.text.TextDocument</value>
+          </prop>
+          <prop oor:name="Title" oor:type="xs:string">
+            <value>Correct *</value>
+  	      <value xml:lang="en">Correct *</value>
+	      <value xml:lang="ca">Corregeix *</value>
+	      <value xml:lang="es">Corrige *</value>
+          </prop>
+          <prop oor:name="URL" oor:type="xs:string">
+            <value>service:es.ua.apertium.correct?execute</value>
+          </prop>
+          <prop oor:name="Target" oor:type="xs:string">
+            <value>_self</value>
+          </prop>
+          <prop oor:name="ImageIdentifier" oor:type="xs:string">
+            <value>%origin%/icons/correct</value>
+          </prop>
+        </node>
+
+
+	<node oor:name="btn02" oor:op="replace">
+          <prop oor:name="Context" oor:type="xs:string">
+            <value>com.sun.star.text.TextDocument</value>
+          </prop>
+          <prop oor:name="Title" oor:type="xs:string">
+            <value>Translate *</value>
+  	      <value xml:lang="en">Translate *</value>
+	      <value xml:lang="ca">Tradueix *</value>
+	      <value xml:lang="es">Traducir *</value>
+	      <value xml:lang="pl">Przetłumacz *</value>
+	      <value xml:lang="fr">Traduire *</value>
+	      <value xml:lang="gl">Traduzir *</value>
+	      <value xml:lang="pt">Traduzir *</value>
+	      <value xml:lang="eu">Itzuli *</value>
+	      <value xml:lang="hr">Prevedi *</value>
+	      <value xml:lang="sr">Prevedi *</value>
+	      <value xml:lang="tg">Тарҷума кун *</value>
+	      <value xml:lang="fa">ترجمه کن *</value>
+          </prop>
+          <prop oor:name="URL" oor:type="xs:string">
+            <value>service:es.ua.apertium.tranfulldoc?execute</value>
+          </prop>
+          <prop oor:name="Target" oor:type="xs:string">
+            <value>_self</value>
+          </prop>
+          <prop oor:name="ImageIdentifier" oor:type="xs:string">
+            <value>%origin%/icons/translatefulldoc</value>
+          </prop>
+        </node>
+
+      </node>
+    </node>
+  </node>
+</oor:node>

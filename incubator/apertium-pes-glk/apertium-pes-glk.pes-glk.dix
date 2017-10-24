@@ -1,0 +1,27 @@
+<dictionary>
+  <alphabet/>
+  <sdefs>
+    <sdef n="n"          c="Noun"/>
+    <sdef n="vblex"      c="Verb"/>
+    <sdef n="sent"       c="Sentence marker"/>
+  </sdefs>
+  <section id="main" type="standard">
+
+    <!-- SECTION: Nouns -->
+
+    <e><p><l>کتاب<s n="n"/></l><r>کیتاب<s n="n"/></r></p></e>
+
+
+    <!-- SECTION: Verbs -->
+    <e><p><l>کردن<s n="vblex"/></l><r>کودن<s n="vblex"/></r></p></e>
+    <e><p><l>شدن<s n="vblex"/></l><r>بوستن<s n="vblex"/></r></p></e>
+    <e><p><l>رفتن<s n="vblex"/></l><r>شوئون<s n="vblex"/></r></p></e>
+    <e><p><l>گرفتن<s n="vblex"/></l><r>فیگیفتن<s n="vblex"/></r></p></e>
+    <e><p><l>زدن<s n="vblex"/></l><r>زِئن<s n="vblex"/></r></p></e>
+    <e><p><l>دادن<s n="vblex"/></l><r>دَئن<s n="vblex"/></r></p></e>
+  
+    <!-- SECTION: Punctuation -->
+    <e><re>[.\?;:!"]+</re><p><l><s n="sent"/></l><r><s n="sent"/></r></p></e>
+
+  </section>
+</dictionary>

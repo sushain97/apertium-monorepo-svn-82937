@@ -1,0 +1,89 @@
+DELIMITERS = "<.>" "<!>" "<?>" "<...>" "<¶>" "<:>";
+
+SUBREADINGS = LTR ;
+
+LIST N = n ; 
+LIST V = vblex ; 
+LIST Pr = pr ; 
+LIST Art = (det def) ; 
+
+LIST Masc = m ; 
+LIST Fem = f ; 
+
+LIST Sg = sg ; 
+LIST Pl = pl ; 
+
+LIST Nom = nom ; 
+LIST Dat = dat ; 
+LIST Gen = gen ; 
+LIST Voc = voc ; 
+
+LIST IV = iv ; 
+LIST TV = tv ; 
+
+LIST Pers = pers ; 
+
+LIST Vnoun = (vblex subst) ;
+
+LIST Copula = vbser ; 
+
+LIST AG = ("ag" preverb);
+
+LIST Len = len ; 
+
+LIST INITIAL-F = ("f.*"r) ;
+LIST INITIAL-V = ("[aeiouàèìòù].*"r) ;
+
+LIST LEN-TRIGGER = ("a" pr) ("de" pr) ("do" pr) ("fo" pr) ("gun" pr) ("mar" pr) 
+                   ("mu" pr) ("aon" num) ("dà" num) ("trì" num) ("ceithir" num) 
+                   ("còig" num) ("mo" det pos) ("do" det pos) ("a" det pos m) ; 
+
+LIST ADJ-PRENOM = "ath" "corra" "deagh" "dearbh" "droch" "fior" "sàr" "seann" ;
+
+LIST PREP-DAT = ("de" pr) ("do" pr); 
+
+SET GENDER = Masc | Fem ;
+SET NUMBER = Sg | Pl ; 
+SET NDGV = Nom | Gen | Dat | Voc ; 
+
+SET NOT-DAT = NDGV - Dat ; 
+
+SECTION
+
+SELECT Len IF (-1C LEN-TRIGGER); 
+
+SELECT Len IF (0 N + Gen + Pl);
+
+REMOVE $$GENDER IF (1 GENDER) (NOT 1 $$GENDER);
+
+REMOVE SUB:1 $$GENDER IF (0 Pr) (0/1 $$GENDER) (1 GENDER) (NOT 1 $$GENDER);
+    ## Bha mi a' dol dhan bhùth.
+
+REMOVE SUB:1 $$NUMBER IF (0 Pr) (0/1 $$NUMBER) (1 NUMBER) (NOT 1 $$NUMBER);
+    ## Bha mi a' dol dhan bhùth.
+
+REMOVE $$NDGV IF (0 Art + $$NDGV) (1C N) (NOT 1 N + $$NDGV)
+
+REMOVE $$NDGV IF (-1C Art) (NOT -1 Art + $$NDGV) (0 N + $$NDGV)
+    ## Bha mi a' dol dhan bhùth.
+
+REMOVE NOT-DAT IF (-1C PREP-DAT) ; 
+
+SELECT AG IF (1C Vnoun) ;
+    ## Bha mi a' dol dhan bhùth.
+
+SECTION
+
+MAP (@←SUBJ) TARGET Pers + Nom IF (-1 Copula) (1* IV) ;
+
+MAP (@+FMAINV) TARGET Copula IF (NOT 1* Vnoun) ; 
+
+MAP (@+FAUXV) TARGET Copula IF (1* Vnoun) ; 
+
+MAP (@-FMAINV) TARGET V IF (-1* Copula) ; 
+
+MAP (@→N) TARGET Art IF (1 N); 
+
+MAP (@P←) TARGET N + Dat IF (-1* PREP-DAT);
+
+MAP (@←ADVL) TARGET Pr (-1* (@-FMAINV)); 

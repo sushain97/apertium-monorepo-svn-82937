@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- -*- nxml -*- -->
+<transfer default="chunk">
+  <section-def-cats>
+    <def-cat n="any">
+      <cat-item tags="*"/>
+    </def-cat>
+    <def-cat n="sent">
+      <cat-item tags="sent"/>
+    </def-cat>
+  </section-def-cats>
+  <section-def-attrs>
+    <def-attr n="a_pos">
+      <attr-item tags="adv"/>
+    </def-attr>
+    <def-attr n="a_nom">
+      <attr-item tags="n"/>
+    </def-attr>
+  </section-def-attrs>
+  <section-def-vars>
+    <def-var n="number"/>
+  </section-def-vars>
+  <section-def-macros>
+    <def-macro n="f_adj1" npar="1">
+      <choose>
+        <when>
+          <test><equal><clip pos="1" side="tl" part="a_attr"/><lit-tag v="attr"/></equal></test>
+          <let><clip pos="1" side="tl" part="tags"/><lit-tag v="adj"/></let>
+        </when>
+      </choose>
+    </def-macro>
+  </section-def-macros>
+
+  <section-rules>
+
+    <rule comment="sent">
+      <pattern>
+        <pattern-item n="sent"/>
+      </pattern>
+      <action>
+        <out>
+          <chunk name="senty" case="caseFirstWord"> 
+            <tags> <tag> <lit-tag v="sent"/> </tag> </tags>
+            <lu>
+              <clip pos="1" side="tl" part="whole"/>
+            </lu> 
+          </chunk>
+        </out>
+      </action>
+    </rule>
+
+  </section-rules>
+</transfer>

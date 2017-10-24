@@ -1,0 +1,24 @@
+Config:
+  hfst:
+      App: hfst-lookup
+      Gen: ../wal.autogen.hfst
+      Morph: ../wal.automorf.hfst
+
+Tests:
+
+ "[lexc] kk becomes ss when verb becomes transitive":
+    aakk<v><iv><p3><sing><masc><prf> : aakkiis
+    aakk<v><tv><p3><sing><masc><prf> : aassiis
+
+ "[lexc] qq becomes ss when verb becomes transitive":
+    aduqq<v><iv><p3><sing><masc><prf> : aduqqiis
+    aduqq<v><tv><p3><sing><masc><prf> : adussiis
+
+ "[lexc] a few passive forms":
+    imm<v><tv><p3><sing><masc><prf> : immiis
+    imm<v><tv><pass><p3><sing><masc><prf> : imettiis
+    qachch<v><tv><p3><sing><masc><prf> : qachchiis
+    qachch<v><tv><pass><p3><sing><masc><prf> : qashettiis
+    m<v><tv><p3><sing><masc><prf> : miis
+    m<v><tv><cau><p3><sing><masc><prf> : miissiis
+    m<v><tv><pass><p3><sing><masc><prf> : meetettiis

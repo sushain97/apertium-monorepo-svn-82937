@@ -1,0 +1,731 @@
+
+Multichar_Symbols
+
+%<n%>   ! Имя существительное · Noun
+%<dat%> !
+%<gen%> !
+%<adj%> !
+
+%<prn%>
+%<comp%>
+%<det%>
+%<num%>
+%<qst%>
+%<dem%>
+%<np%>
+%<cnjcoo%>
+%<cnjsub%>
+%<v%>
+%<post%>
+
+%<pers%>
+%<ant%> 
+%<itg%>
+%<neg%>
+
+%<pres%> 
+%<past%>
+%<fut%>
+
+%<tv%>
+%<iv%>
+
+%<p1%>
+%<p2%>
+%<p3%>
+
+%<px1sg%>
+%<px2sg%>
+%<px3sg%>
+%<px1pl%>
+%<px2pl%>
+%<px3pl%>
+
+%<f%>
+%<m%>
+
+%<nom%>
+%<gen%>
+%<acc%>
+%<abl%>
+%<dat%>
+%<ins%>
+%<abe%>
+%<adc%>
+%<ine%>
+%<ill%>
+%<ela%>
+%<egr%>
+%<trm%>
+%<prl%>
+%<approx%>
+
+%<sent%>
+%<cm%>
+%<apos%>
+%<guio%>
+%<conneg%>
+
+%{E%}   ! э or е
+%{I%}   ! и or ӥ
+%>
+%{j%}   ! 
+%{s%}   ! 
+%{t%}   ! 
+
+LEXICON Root
+
+Nouns ; 
+
+Sojuzy ; 
+Poslelogy ; 
+Soobstvennoe ; 
+Narechija ; 
+Mestomenija ; 
+Glagoly ;
+Chisla ;
+Determinant ;
+Punktuacija ;
+Prilagatelnoe ;
+
+LEXICON K ! Clitics
+
+%+а%<qst%>:%-а # ;
+# ;
+
+
+
+LEXICON CXPXSG
+%<px1sg%>: K;
+%<px2sg%>:%>д K;
+%<px3sg%>:%>з K;
+
+LEXICON CXPXPL
+%<px1pl%>:%>мы K;
+%<px2pl%>:%>ды K;
+%<px3pl%>:%>зы K;
+
+
+LEXICON CXPX
+CXPXSG ;
+CXPXPL ;
+
+LEXICON PRECX
+%<nom%>:%>%{E%} CXPXSG ;
+%<nom%>:%> CXPXPL ; ! also for other cases?
+%<ins%>:%>%{E%}ны CXPX ;
+%<ine%>:%>а CXPX ;
+%<ill%>:%>а CXPX ;
+%<ela%>:%>ысьти CXPX ;
+%<egr%>:%>ысьены CXPX ;
+%<tra%>:%>%{E%}ти CXPX ;
+%<ter%>:%>озьа CXPX ;
+
+LEXICON PRECX-2 
+%<nom%>:%>ы CXPXSG ;
+%<nom%>:%> CXPXPL ; ! also for other cases?
+%<ins%>:%>%{E%}ны CXPX ;
+%<ine%>:%>а CXPX ;
+%<ill%>:%>а CXPX ;
+%<ela%>:%>ысьти CXPX ;
+%<egr%>:%>ысьены CXPX ;
+%<tra%>:%>%{E%}ти CXPX ;
+%<ter%>:%>озьа CXPX ;
+
+
+LEXICON PREPX
+%<px1sg%>%<acc%>:%>%{E%} K;
+%<px1sg%>%<gen%>:%>лялэн K;
+%<px1sg%>%<abl%>:%>лэсь K;
+%<px1sg%>%<dat%>:%>лы K;
+%<px1sg%>%<abe%>:%>тэк K;
+%<px1sg%>%<adc%>:%>ъя K;
+%<px1sg%>%<apr%>:%>лань K;
+%<px1sg%>%<prl%>:%>озь K;
+
+%<px2sg%>%<acc%>:%>дэ K;
+%<px2sg%>%<gen%>:%>длялэн K;
+%<px2sg%>%<abl%>:%>длэсь K;
+%<px2sg%>%<dat%>:%>длы K;
+%<px2sg%>%<abe%>:%>дтэк K;
+%<px2sg%>%<adc%>:%>дъя K;
+%<px2sg%>%<apr%>:%>длань K;
+%<px2sg%>%<prl%>:%>дозь K;
+
+%<px3sg%>%<acc%>:%>зэ K;
+%<px3sg%>%<gen%>:%>злялэн K;
+%<px3sg%>%<abl%>:%>злэсь K;
+%<px3sg%>%<dat%>:%>злы K;
+%<px3sg%>%<abe%>:%>зтэк K;
+%<px3sg%>%<adc%>:%>зъя K;
+%<px3sg%>%<apr%>:%>злань K;
+%<px3sg%>%<prl%>:%>зозь K;
+
+%<px1pl%>%<acc%>:%>мыэ K;
+%<px1pl%>%<gen%>:%>мылялэн K;
+%<px1pl%>%<abl%>:%>мылэсь K;
+%<px1pl%>%<dat%>:%>мылы K;
+%<px1pl%>%<abe%>:%>мытэк K;
+%<px1pl%>%<adc%>:%>мыя K;
+%<px1pl%>%<apr%>:%>мылань K;
+%<px1pl%>%<prl%>:%>мыозь K;
+
+%<px2pl%>%<acc%>:%>дыэ K;
+%<px2pl%>%<gen%>:%>дылялэн K;
+%<px2pl%>%<abl%>:%>дылэсь K;
+%<px2pl%>%<dat%>:%>дылы K;
+%<px2pl%>%<abe%>:%>дытэк K;
+%<px2pl%>%<adc%>:%>дыя K;
+%<px2pl%>%<apr%>:%>дылань K;
+%<px2pl%>%<prl%>:%>дыозь K;
+
+%<px3pl%>%<acc%>:%>зыэ K;
+%<px3pl%>%<gen%>:%>зылялэн K;
+%<px3pl%>%<abl%>:%>зылэсь K;
+%<px3pl%>%<dat%>:%>зылы K;
+%<px3pl%>%<abe%>:%>зытэк K;
+%<px3pl%>%<adc%>:%>зыъя K;
+%<px3pl%>%<apr%>:%>зылань K;
+%<px3pl%>%<prl%>:%>зыозь K;
+
+LEXICON CASE
+
+%<nom%>: K ; 
+%<acc%>:%>%{E%}з K ;
+%<gen%>:%>лэн K ; 
+%<abl%>:%>лэсь K ;
+%<dat%>:%>лы K ;
+%<ins%>:%>%{E%}н K ;
+%<abe%>:%>тэк K ;
+!%<adc%>:%>ъя K ;
+%<adc%>:%>я K ;
+%<ine%>:%>ын K ;
+%<ill%>:%>%{E%} K ;
+%<ela%>:%>ысь K ;
+%<egr%>:%>ысен K ;
+%<ter%>:%>озь K ;
+%<prl%>:%>%{E%}тӥ K ;
+%<apr%>:%>лань K ;
+
+LEXICON NUMBER
+
+%<sg%>: CASE ;
+%<pl%>:%>%{j%}ос CASE ;
+
+%<sg%>: PREPX ;
+%<pl%>:%>%{j%}ос PREPX ;
+
+%<sg%>: PRECX ;
+%<pl%>:%>%{j%}ос PRECX ;
+
+LEXICON NUMBER-2
+
+%<sg%>: CASE ;
+%<pl%>:%>%{j%}ос CASE ;
+
+%<sg%>: PREPX ;
+%<pl%>:%>%{j%}ос PREPX ;
+
+%<sg%>: PRECX-2 ;
+%<pl%>:%>%{j%}ос PRECX ;
+
+
+
+LEXICON PRON-PERS-P1-SG
+
+%<prn%>%<pers%>%<p1%>%<sg%>%<nom%>: # ;
+
+LEXICON PRON-PERS-P2-SG
+
+%<prn%>%<pers%>%<p2%>%<sg%>%<nom%>: # ;
+%<prn%>%<pers%>%<p2%>%<sg%>%<acc%>:э # ;
+
+LEXICON PRON-PERS-P3-SG
+
+%<prn%>%<pers%>%<p3%>%<sg%>%<nom%>: # ;
+%<prn%>%<pers%>%<p3%>%<sg%>%<gen%>:лэн # ;
+%<prn%>%<pers%>%<p3%>%<sg%>%<acc%>:е # ;
+%<prn%>%<pers%>%<p3%>%<sg%>%<abl%>:лэсь # ;
+%<prn%>%<pers%>%<p3%>%<sg%>%<dat%>:ы # ;
+%<prn%>%<pers%>%<p3%>%<sg%>%<ins%>:ин # ;
+%<prn%>%<pers%>%<p3%>%<sg%>%<abe%>:тэк # ;
+%<prn%>%<pers%>%<p3%>%<sg%>%<adc%>:я # ;
+%<prn%>%<pers%>%<p3%>%<sg%>%<approx%>:лань # ;
+
+LEXICON PRON-PERS-P1-PL
+
+%<prn%>%<pers%>%<p1%>%<pl%>%<nom%>: # ;
+
+LEXICON PRON-PERS-P2-PL
+
+%<prn%>%<pers%>%<p2%>%<pl%>%<nom%>: # ;
+
+LEXICON PRON-PERS-P3-PL
+
+%<prn%>%<pers%>%<p3%>%<pl%>%<nom%>: # ;
+%<prn%>%<pers%>%<p3%>%<pl%>%<gen%>:лэн # ;
+%<prn%>%<pers%>%<p3%>%<pl%>%<acc%>:ыз # ;
+%<prn%>%<pers%>%<p3%>%<pl%>%<acc%>:ты # ;
+%<prn%>%<pers%>%<p3%>%<pl%>%<abl%>:лэсь # ;
+%<prn%>%<pers%>%<p3%>%<pl%>%<dat%>:лы # ;
+%<prn%>%<pers%>%<p3%>%<pl%>%<ins%>:ын # ;
+%<prn%>%<pers%>%<p3%>%<pl%>%<abe%>:тэк # ;
+%<prn%>%<pers%>%<p3%>%<pl%>%<adc%>:ъя # ;
+%<prn%>%<pers%>%<p3%>%<pl%>%<approx%>:лань # ;
+
+
+LEXICON PRON-ITG-MA
+
+%<prn%>%<itg%>%<nom%>:ма # ;
+%<prn%>%<itg%>%<acc%>:мае # ;
+%<prn%>%<itg%>%<gen%>:малэн # ;
+%<prn%>%<itg%>%<abl%>:малэсь # ;
+%<prn%>%<itg%>%<dat%>:малы # ;
+%<prn%>%<itg%>%<ins%>:маин # ;
+%<prn%>%<itg%>%<abe%>:матэк # ;
+%<prn%>%<itg%>%<adc%>:мая # ;
+%<prn%>%<itg%>%<ine%>:кытын # ;
+%<prn%>%<itg%>%<ill%>:кытчы # ;
+%<prn%>%<itg%>%<ela%>:кытысь # ;
+%<prn%>%<itg%>%<egr%>:кытысен # ;
+%<prn%>%<itg%>%<term%>:кытчыозь # ;
+%<prn%>%<itg%>%<pro%>:кытӥ # ;
+%<prn%>%<itg%>%<approx%>:малань # ;
+
+
+LEXICON PRON-ITG-KIN
+
+%<prn%>%<itg%>%<nom%>: # ; 
+%<prn%>%<itg%>%<gen%>:лэн # ; 
+%<prn%>%<itg%>%<dat%>:лы # ; 
+%<prn%>%<itg%>%<acc%>:э # ; 
+%<prn%>%<itg%>%<ins%>:эн # ; 
+%<prn%>%<itg%>%<abe%>:тэк # ; 
+%<prn%>%<itg%>%<abl%>:лэсь # ; 
+%<prn%>%<itg%>%<adc%>:ъя # ; 
+%<prn%>%<itg%>%<approx%>:лань # ; 
+
+LEXICON PRON-DEM-TA ! местоимение "та"
+
+! та тае    талы   таин   талэсь 
+! та таосыз таослы таосын таослэсь
+
+%<prn%>%<dem%>%<sg%>%<nom%>: # ;
+%<prn%>%<dem%>%<pl%>%<nom%>: # ;
+
+LEXICON PRON-IND ! местоимение "та"
+
+%<prn%>%<ind%>%<sg%>: CASE ;
+
+
+LEXICON DET-DEM-TA ! местоимение "та"
+
+! та тае    талы   таин   талэсь 
+! та таосыз таослы таосын таослэсь
+
+%<det%>%<dem%>: # ;
+
+LEXICON NUM 
+
+! number+на+(мы,ды,зы) it's a way to say "(some number) of (we, you-pl, they)
+
+%<num%>: # ;
+
+
+LEXICON GLAGOL-1-IV
+%<v%>%<iv%>: GLAGOL-1 ;
+
+LEXICON GLAGOL-1-TV
+%<v%>%<tv%>: GLAGOL-1 ;
+
+LEXICON GLAGOL-1
+%<inf%>:%>ыны # ;
+%<pprs%>%<adv%>:%>ыса # ;
+%<pprs%>%<actv%>:%>%{I%}сь # ; ! деепричастие
+
+%<conneg%>:%>%{E%} # ;
+
+%<past%>%<p1%>%<sg%>:%>%{I%} # ; 
+%<past%>%<p2%>%<sg%>:%>%{I%}д # ; 
+%<past%>%<p3%>%<sg%>:%>%{I%}з # ; 
+%<past%>%<p1%>%<pl%>:%>%{I%}м # ; 
+%<past%>%<p2%>%<pl%>:%>%{I%}ды # ; 
+%<past%>%<p3%>%<pl%>:%>%{I%}зы # ; 
+
+%<pres%>%<p1%>%<sg%>:%>%{I%}сько # ; 
+%<pres%>%<p2%>%<sg%>:%>%{I%}ськод # ; 
+%<pres%>%<p3%>%<sg%>:%>%{E%} # ; 
+%<pres%>%<p1%>%<pl%>:%>%{I%}ськомы # ; 
+%<pres%>%<p2%>%<pl%>:%>%{I%}ськоды # ; 
+%<pres%>%<p3%>%<pl%>:%>о # ; 
+GLAGOL-BOTH ;
+
+LEXICON GLAGOL-2-COMMON
+
+%<inf%>:аны # ; 
+%<conneg%>:%>ы # ;
+%<pprs%>%<adv%>:%>ыса # ;
+GLAGOL-BOTH ;
+%<pres%>%<p1%>%<sg%>:%>сько # ; 
+%<pres%>%<p2%>%<sg%>:%>ськод # ; 
+%<pres%>%<p3%>%<sg%>:%> # ; 
+%<pres%>%<p1%>%<pl%>:%>ськомы # ; 
+%<pres%>%<p2%>%<pl%>:%>ськоды # ; 
+%<pres%>%<p3%>%<pl%>:%>о # ; 
+
+%<imp%>%<p2%>%<sg%>:%> # ;
+%<imp%>%<p2%>%<pl%>:%>лэ # ;
+
+LEXICON GLAGOL-2-IV
+
+%<v%>%<iv%>: GLAGOL-2-COMMON ;
+
+LEXICON GLAGOL-2-TV
+
+%<v%>%<tv%>: GLAGOL-2-COMMON ; 
+
+LEXICON GLAGOL-BOTH
+
+%<conneg%>%<pres%>%<p1%>%<sg%>:%>%{I%}ськы # ; 
+%<conneg%>%<pres%>%<p2%>%<sg%>:%>%{I%}ськы # ; 
+%<conneg%>%<pres%>%<p3%>%<sg%>:%>%{E%} # ; 
+%<conneg%>%<pres%>%<p1%>%<pl%>:%>%{I%}ськe # ; 
+%<conneg%>%<pres%>%<p2%>%<pl%>:%>%{I%}ськe # ; 
+%<conneg%>%<pres%>%<p3%>%<pl%>:%>о # ; 
+
+LEXICON GLAGOL-VAN
+
+%<v%>%<pres%>%<p3%>%<sg%>:вань # ;
+%<v%>%<neg%>%<pres%>%<p3%>%<sg%>:ӧвӧл # ;
+%<v%>%<past%>%<p3%>%<sg%>:вал # ;
+
+LEXICON GLAGOL-UG  ! отрицательные формы
+
+%<v%>%<neg%>%<pres%>%<p1%>%<sg%>:уг # ; 
+%<v%>%<neg%>%<pres%>%<p2%>%<sg%>:уд # ; 
+%<v%>%<neg%>%<pres%>%<p3%>%<sg%>:уз # ; 
+%<v%>%<neg%>%<pres%>%<p1%>%<pl%>:ум # ; 
+%<v%>%<neg%>%<pres%>%<p2%>%<pl%>:уд # ; 
+%<v%>%<neg%>%<pres%>%<p3%>%<pl%>:уз # ; 
+
+%<v%>%<neg%>%<past%>%<p1%>%<sg%>:ӧй # ; 
+%<v%>%<neg%>%<past%>%<p2%>%<sg%>:ӧд # ; 
+%<v%>%<neg%>%<past%>%<p3%>%<sg%>:ӧз # ; 
+%<v%>%<neg%>%<past%>%<p1%>%<pl%>:ӧм # ; 
+%<v%>%<neg%>%<past%>%<p2%>%<pl%>:ӧд # ; 
+%<v%>%<neg%>%<past%>%<p3%>%<pl%>:ӧз # ; 
+
+!%<v%>%<neg%>%<fut%>%<p1%>%<sg%>:уг # ; 
+!%<v%>%<neg%>%<fut%>%<p2%>%<sg%>:уд # ; 
+!%<v%>%<neg%>%<fut%>%<p3%>%<sg%>:уз # ; 
+!%<v%>%<neg%>%<fut%>%<p1%>%<pl%>:ум # ; 
+!%<v%>%<neg%>%<fut%>%<p2%>%<pl%>:уд # ; 
+!%<v%>%<neg%>%<fut%>%<p3%>%<pl%>:уз # ; 
+
+LEXICON CC 
+
+%<cnjcoo%>: # ;
+
+LEXICON CS
+
+%<cnjsub%>: # ;
+
+
+LEXICON ADV-ITG
+
+%<adv%>%<itg%>: # ;
+
+LEXICON ADV 
+
+%<adv%>: # ;
+
+LEXICON POST-INDECL 
+
+%<post%>: # ;
+
+LEXICON NP-ANT-F
+
+%<np%>%<ant%>%<f%>: NUMBER ;
+
+LEXICON NP-ANT-M
+
+%<np%>%<ant%>%<m%>: NUMBER ;
+
+LEXICON NP-TOP
+
+%<np%>%<top%>: NUMBER ;
+
+
+LEXICON NP-TOP-Я
+
+%<np%>%<top%>: NUMBER ;
+
+LEXICON A1
+
+%<adj%>: # ; 
+%<adj%>%<pred%>%<pl%>:%>%{E%}сь # ; 
+%<adj%>%<comp%>:%>гес # ; 
+
+LEXICON N1
+
+%<n%>: NUMBER ; 
+
+LEXICON N1-KORKA
+
+%<n%>: NUMBER ; 
+%<n%>%<sg%>%<ine%>:%>н # ;
+
+LEXICON N2
+
+%<n%>: NUMBER-2 ; 
+
+
+
+LEXICON POST-DECL
+
+%<post%>: NUMBER ;
+
+
+LEXICON Poslelogy
+
+аpтэ POST-INDECL ; 
+беpе POST-INDECL ; 
+быдэ POST-INDECL ; 
+валче POST-INDECL ; 
+дыpъя POST-INDECL ; 
+кyзя POST-INDECL ; 
+сямен POST-INDECL ; 
+сяpысь POST-INDECL ; 
+ӵоже POST-INDECL ; 
+ӵош POST-INDECL ; 
+
+дор POST-DECL ;
+кузя POST-INDECL ;
+котыр POST-INDECL ;
+
+LEXICON Sojuzy
+ 
+но CC ;  ! "и"
+оло CC ;  ! "или"
+нош CC ;  ! "а"
+ден CS ; ! ""
+куке CS ; ! "когда"
+
+LEXICON Mestomenija 
+
+кин PRON-ITG-KIN ; ! "кто"
+ма: PRON-ITG-MA ;  ! "что"
+
+мон PRON-PERS-P1-SG ; 
+тон PRON-PERS-P2-SG ; 
+со PRON-PERS-P3-SG ; 
+ми PRON-PERS-P1-PL ; 
+тӥ PRON-PERS-P2-PL ; 
+соос PRON-PERS-P3-PL ; 
+
+та PRON-DEM-TA ; 
+номыр PRON-IND ; 
+
+LEXICON Determinant
+
+та DET-DEM-TA ; 
+
+LEXICON Chisla
+
+кык NUM ;
+вить NUM ;
+куать NUM ;
+сюрс NUM ;
+дас NUM ;
+витьтон NUM ;
+
+LEXICON Narechija
+
+а%<qst%>:а # ;
+шат%<qst%>:шат # ;
+
+кытын ADV-ITG ; ! "где" 
+куке ADV-ITG ; ! "когда" 
+али ADV ; ! ""
+туж ADV ; ! ""
+шудо ADV ; ! ""
+туннэ ADV ; ! ""
+шуныт ADV ; ! ""
+котьку ADV ; ! ""
+ноку ADV ; ! ""
+толон ADV ; ! ""
+ни ADV ; ! "ещё / уже"
+гинэ ADV ; ! "только"
+
+ик ADV ; ! ""
+озьы ADV ; ! ""
+нокытын ADV ; ! ""
+собере ADV ; ! "затем"
+ӝог ADV ; ! "быстро"
+
+ог ADV ; ! "около"
+
+LEXICON Soobstvennoe
+
+Россия:Росси NP-TOP-Я ; 
+Удмуртия:Удмурти NP-TOP-Я ; 
+Турция:Турци NP-TOP-Я ; 
+Чувашия:Чуваши NP-TOP-Я ; 
+Сирия:Сири NP-TOP-Я ; 
+Башкирия:Башкири NP-TOP-Я ; 
+
+Татарстан:Татарстан NP-TOP ; 
+Москва:Москва NP-TOP ; 
+
+Маша NP-ANT-F ;
+Ваня NP-ANT-M ;
+
+LEXICON Glagoly
+
+уг: GLAGOL-UG ;
+вань: GLAGOL-VAN ; 
+
+сиыны:си GLAGOL-1-TV ; ! "есть"
+луыны:лу GLAGOL-1-TV ; ! "быть"
+тодыны:тод GLAGOL-1-TV ; ! "знать"
+!кыpӟаны:кыpӟа GLAGOL-2-TV ; ! "петь"
+шудыны:шуд GLAGOL-1-TV ; ! "играть"
+адӟыны:адӟ GLAGOL-1-TV ; ! "видеть"
+шуыны:шу GLAGOL-1-TV ; ! "сказать"
+шедьтыны:шедьт GLAGOL-1-TV ; ! "найти"
+учкыны:учк GLAGOL-1-TV ; ! "смотреть"
+улыны:ул GLAGOL-1-TV ; ! "жить"
+кылыны:кыл GLAGOL-1-TV ; ! "услышать"
+кылӥськыны:кылӥськ GLAGOL-1-IV ;! "слышаться"
+карыны:кар GLAGOL-1-TV ; ! "делать"
+быгатыны:быгат GLAGOL-1-TV ; ! "мочь"
+яратыны:ярат GLAGOL-1-TV ; ! "любить"
+юыны:ю GLAGOL-1-TV ; ! "пить"
+юаны:юа GLAGOL-2-TV ; ! "спросить"
+утчаны:утч GLAGOL-2-TV ; ! "искать"
+утчаськыны:утчаськ GLAGOL-1-TV ; ! "разыскивать"
+тыршыны:тырш GLAGOL-1-TV ; ! "стараться"
+серекъяны:серекъя GLAGOL-2-TV ; ! "смеяться"
+пытсаны:пытса GLAGOL-2-TV ; ! "закрыть"
+пырыны:пыр GLAGOL-1-TV ; ! "заходить"
+пукыны:пук GLAGOL-1-TV ; ! "сидеть"
+мыняны:мыня GLAGOL-2-TV ; ! "улыбаться"
+малпаны:малпа GLAGOL-2-TV ; ! "думать"
+лыктыны:лыкт GLAGOL-1-TV ; ! "приходить"
+лыдъяськыны:лыдъяськ GLAGOL-1-TV ; ! "считать"
+кылзӥськыны:кылзӥськ GLAGOL-1-TV ; ! "вслушиваться"
+кельшыны:кельш GLAGOL-1-TV ; ! "нравиться"
+изьыны:изь GLAGOL-2-IV ; ! "спать" 
+дугдыны:дугд GLAGOL-1-TV ; ! "остановиться"
+вуыны:ву GLAGOL-1-TV ; ! "прибыть"
+вераськыны:вераськ GLAGOL-1-TV ; ! "разговаривать"
+вераны:вер GLAGOL-2-TV ; ! "говорить"
+ватскыны:ватск GLAGOL-1-TV ; ! "спрятаться"
+вамышъяны:вамышъ GLAGOL-2-TV ; ! "шагать"
+бызьыны:бызь GLAGOL-1-TV ; ! "бегать"
+кылдыны:кылд GLAGOL-1-TV ; ! "строить, возникнуть"
+дышетыны:дышет GLAGOL-1-TV ; ! 
+дышетскыны:дышетск GLAGOL-1-TV ; ! 
+серекъяны:серекъя GLAGOL-2-TV ; ! "смеяться"
+малпаны:малпа GLAGOL-2-TV ; ! "мечтать"
+чупаны:чупа GLAGOL-2-TV ; ! "целовать"
+
+LEXICON Prilagatelnoe
+
+чебер A1 ; ! ""
+шуныт A1 ; ! ""
+кезьыт A1 ; ! ""
+пичи A1 ; ! ""
+бадӟым A1 ; ! ""
+вуж A1 ; ! ""
+матэ A1 ; ! ""
+умой A1 ; ! ""
+удмурт A1 ; ! ""
+кун A1 ; ! ""
+шудо A1 ; ! ""
+визьтэм A1 ; ! ""
+
+LEXICON Nouns
+!сэрег:сэре2г N1 ; ! "corner"
+адями N1 ; ! ""
+анай N1 ; ! "мама"
+ар N1 ; ! ""
+атай N1 ; ! "father"
+аудитория N1 ; ! "lecture hall"
+бакча N1 ; ! "garden"
+бусы N1 ; ! "field"
+валэктон N1 ; ! "ответ"
+ву N1 ; ! "вода"
+гурт N1 ; ! "village"
+дышетскись N1 ; ! "student"
+история N1 ; ! "history"
+йыр N1 ; ! "голова"
+кар N1 ; ! "nest; city"
+ки N1 ; ! "рука"
+комиссия N1 ; ! "committee"
+комната N1 ; ! "room"
+корка N1-KORKA ; ! "дом"
+котыр N1 ; ! ""
+коӵыш N1 ; ! "кошка"
+куазь N1 ; ! "погода"
+куара N1 ; ! "звук"
+кышно N1 ; ! "wife; woman"
+нылаш N1 ; ! "девочка"
+нылпи N1 ; ! ""
+нюлэс N1 ; ! "forest"
+пинал N1 ; ! "ребёнок"
+писпу N1 ; ! "дерево"
+пияш N1 ; ! "мальчик"
+пукон N1 ; ! "стул"
+пуны N1 ; ! "собака"
+пӧйшур N1 ; ! "животное"
+радио N1 ; ! "radio"
+редакция N1 ; ! "editorial staff"
+сад N1 ; ! "сад"
+син N1 ; ! "глаз"
+собрание N1 ; ! "meeting"
+студент N1 ; ! "student"
+сузэр N1 ; ! ""
+телевизор N1 ; ! "television"
+турын N1 ; ! "grass"
+ты N1 ; ! "lake; lungs"
+тылобурдо N1 ; ! "птица"
+укно N1 ; ! "окно"
+улон N1 ; ! "life"
+университет N1 ; ! "university"
+урам N1 ; ! "улица"
+философия N1 ; ! "philosophy"
+филология N1 ; ! ""
+шудон N1 ; ! "игра"
+юан N1 ; ! "вопрос"
+ӝӧк N1 ; ! "стол"
+программа N1 ; ! "программа"
+правило N1 ; ! "правило"
+школа N1 ; ! "школа"
+вариант N1 ; ! "вариант"
+система N1 ; ! "система"
+правописание N1 ; ! "правописание"
+проект N1 ; ! "проект"
+кун N1 ; ! "страна"
+кыл N1 ; ! "язык"
+кылбур N1 ; ! "стих"
+институт N1 ; ! "институт"
+литература N1 ; ! "литература"
+факультет N1 ; !
+мугор N2 ; ! "тело"
+зарни N1 ; ! "золото"
+шунды N1 ; ! "солнце"
+пушка N1 ; ! ""
+
+LEXICON Punktuacija
+
+.%<sent%>:. # ;
+%;%<sent%>:%; # ;
+%:%<sent%>:%: # ;
+%!%<sent%>:%! # ;
+%-%<guio%>:%- # ;
+%—%<guio%>:%— # ;
+,%<cm%>:, # ;
+%?%<sent%>:%? # ; 
+%'%<apos%>:%' # ;
+!%"%<sent%>:%" # ;

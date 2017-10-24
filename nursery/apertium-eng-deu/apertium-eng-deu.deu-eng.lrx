@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rules>
+
+  <rule>
+    <match lemma="tragen" tags="vblex.*">
+      <select lemma="wear" tags="vblex.*"/>
+    </match>
+    <match lemma="ein" tags="det.*"/>
+    <or>
+      <match lemma="Mantel" tags="n.*"/>
+      <match lemma="Anzug" tags="n.*"/>
+      <match lemma="Rock" tags="n.*"/>
+      <match lemma="Pelzmantel" tags="n.*"/>
+      <match lemma="Pelzumhang" tags="n.*"/>
+    </or>
+  </rule>
+
+  <rule weight="1.2">
+    <match lemma="fahren" tags="vblex.*">
+      <select lemma="ride" tags="vblex.*"/>
+    </match>
+    <match lemma="Fahrrad" tags="n.*"/>
+  </rule>
+
+  <rule weight="1.2">
+    <match lemma="fahren" tags="vblex.*">
+      <select lemma="ride" tags="vblex.*"/>
+    </match>
+    <match/>
+    <match lemma="Fahrrad" tags="n.*"/>
+  </rule>
+
+  <rule>
+    <or>
+      <match lemma="der" tags="det.*"/>
+      <match lemma="ein" tags="det.*"/>
+    </or>
+    <match lemma="Frau" tags="n.*">
+      <select lemma="woman" tags="n.*"/>
+    </match>
+  </rule>
+
+  <rule>
+    <match lemma="Frau" tags="n.*">
+      <select lemma="Mrs." tags="n.*"/>
+    </match>
+    <match lemma="Brown" tags="np.cog.*"/>
+  </rule>
+
+  <rule>
+    <or>
+      <match lemma="ein"/>
+      <match lemma="zwei"/>
+      <match lemma="drei"/>
+      <match lemma="vier"/>
+      <match lemma="fünf"/>
+      <match lemma="sechs"/>
+      <match lemma="sieben"/>
+      <match lemma="acht"/>
+      <match lemma="neun"/>
+      <match lemma="zehn"/>
+      <match lemma="elf"/>
+      <match lemma="zwölf"/>
+    </or>
+    <match lemma="Uhr" tags="n.*">
+      <select lemma="o'clock" tags="n.*"/>
+    </match>
+  </rule>
+
+  <rule> <!-- @weiter verbessern => +further improve -->
+    <match lemma="weiter" tags="adv">
+      <select lemma="further" tags="adv"/>
+    </match>
+    <match tags="vblex.*"/>
+  </rule>
+
+  <rule> <!-- @viel Disziplin => -many discipline -->
+    <match lemma="viel" tags="adj.*">
+      <remove lemma="many" tags="det.*"/>
+    </match>
+    <match tags="n.*.sg.*"/>
+  </rule>
+
+</rules>
+
+<!--
+Resources:
+    http://wiki.apertium.org/wiki/How_to_get_started_with_lexical_selection_rules
+    http://wiki.apertium.org/wiki/Constraint-based_lexical_selection
+    http://wiki.apertium.org/wiki/Lexical_selection
+    http://wiki.apertium.org/wiki/Learning_rules_from_parallel_and_non-parallel_corpora
+-->

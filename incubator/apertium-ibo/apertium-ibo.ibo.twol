@@ -1,0 +1,33 @@
+Alphabet
+ A B Ç D E Ä F G H I J Ž K L M N Ň O Ö P R S Ş T U Ü W Y Ý Z
+ a b ç d e ä f g h i j ž k l m n ň o ö p r s ş t u ü w y ý z
+
+ %{A%}:a
+ %{A%}:e
+
+
+ %>:0  ;
+
+Sets
+
+Vow = A E Ä I O Ö U Ü Y Ý 
+        a e ä i o ö u ü y ý ;
+
+Cns = B C D F G H J K L M N P R S T W Z 
+      b c d f g h j k l m n p r s t w z ; 
+
+Rules 
+
+"Vowel harmony in participle suffix"
+%{A%}:Vx <=> _ %>: (:Cns) :Vy ;
+       where Vy in ( a e i o u )
+             Vx in ( a e e a a )
+       matched ;
+
+! Resources:
+! http://wiki.apertium.org/wiki/Starting_a_new_language_with_HFST#Enter_twol
+! https://kitwiki.csc.fi/twiki/bin/view/KitWiki/HfstHome
+! http://hfst.sourceforge.net/
+! http://wiki.apertium.org/wiki/Twol
+! http://wiki.apertium.org/wiki/Hfst
+

@@ -1,0 +1,125 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- -*- nxml -*- -->
+
+<!--
+t1x local rules, chunking, chunk-internal movement/tagfixing
+t2x remove FOC chunk, put foc_tag on word before
+t3x coordination
+t4x match larger contexts
+t5x move foc_tag from wordfoc chunk to the word inside
+
+This file:
+Coordination – merge NP CNP NP chunks into one NP chunk.
+
+Rules:
+
+
+-->
+
+<interchunk>
+  <section-def-cats>
+    <def-cat n="NP">
+      <cat-item tags="NP.*"/>
+    </def-cat>
+    <def-cat n="SV">
+      <cat-item tags="SV.*"/>
+    </def-cat>
+    <def-cat n="CNP">
+      <cat-item tags="cnjcoo.@CNP.*"/>
+      <cat-item tags="cnjcoo.@CNP"/>
+    </def-cat>
+    <def-cat n="CVP">
+      <cat-item tags="cnjcoo.@CVP.*"/>
+      <cat-item tags="cnjcoo.@CVP"/>
+    </def-cat>
+  </section-def-cats>
+  <section-def-attrs>
+    <def-attr n="a_foc">
+       <attr-item tags="foc_ba"/>
+       <attr-item tags="foc_bahal"/>
+       <attr-item tags="foc_bahan"/>
+       <attr-item tags="foc_bason"/>
+       <attr-item tags="foc_ban"/>
+       <attr-item tags="foc_bat"/>
+       <attr-item tags="foc_be"/>
+       <attr-item tags="foc_behal"/>
+       <attr-item tags="foc_behan"/>
+       <attr-item tags="foc_beson"/>
+       <attr-item tags="foc_neg-ge"/>
+       <attr-item tags="foc_pos-ge"/>
+       <attr-item tags="foc_gen"/>
+       <attr-item tags="foc_ges"/>
+       <attr-item tags="foc_gin"/>
+       <attr-item tags="foc_gis"/>
+       <attr-item tags="foc_hal"/>
+       <attr-item tags="foc_han"/>
+       <attr-item tags="foc_naj"/>
+       <attr-item tags="foc_nii"/>
+       <attr-item tags="foc_uv"/>
+      <attr-item tags="foc_son"/>
+      <attr-item tags="foc_sun"/>
+  </def-attr>
+  <def-attr n="a_chunktype">
+    <attr-item tags="NP"/>
+    <attr-item tags="SV"/>
+    <attr-item tags="AP"/>
+    <attr-item tags="PP"/>
+  </def-attr>
+  </section-def-attrs>
+
+  <section-def-vars>
+    <def-var n="dummy"/>
+  </section-def-vars>
+
+  <section-rules>
+    <rule comment="REGLA: NP CNP NP">
+      <pattern>
+        <pattern-item n="NP"/>
+        <pattern-item n="CNP"/>
+        <pattern-item n="NP"/>
+      </pattern>
+      <action>
+      <let><clip pos="3" part="a_chunktype"/>
+           <lit-tag v="NPCOORD"/></let>
+       <out>
+         <chunk>
+           <clip pos="3" part="lem"/>
+           <clip pos="3" part="tags"/>
+           <lit v="{"/>
+           <clip pos="1" part="content"/>
+           <b pos="1"/>
+           <clip pos="2" part="content"/>
+           <b pos="2"/>
+           <clip pos="3" part="content"/>
+           <lit v="}"/>
+         </chunk>
+       </out>
+      </action>
+    </rule>
+
+    <rule comment="REGLA: SV CVP SV">
+      <pattern>
+        <pattern-item n="SV"/>
+        <pattern-item n="CVP"/>
+        <pattern-item n="SV"/>
+      </pattern>
+      <action>
+        <let><clip pos="3" part="a_chunktype"/><lit-tag v="SVCOORD"/></let>
+        <out>
+          <chunk>
+            <clip pos="3" part="lem"/>
+            <clip pos="3" part="tags"/>
+            <lit-tag v="coord"/>
+            <lit v="{"/>
+            <clip pos="1" part="content"/>
+            <b pos="1"/>
+            <clip pos="2" part="content"/>
+            <b pos="2"/>
+            <clip pos="3" part="content"/>
+            <lit v="}"/>
+          </chunk>
+        </out>
+      </action>
+    </rule>
+  </section-rules>
+</interchunk>

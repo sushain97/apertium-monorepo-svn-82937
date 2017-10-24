@@ -1,0 +1,911 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<interchunk>
+
+  <section-def-cats>
+	<!--noun phrase-->  
+    <def-cat n="SN">
+      <cat-item tags="SN"/>
+      <cat-item tags="SN.*"/>
+    </def-cat>
+	<!--verb-->
+    <def-cat n="SV">
+      <cat-item tags="SV"/>
+      <cat-item tags="SV.*"/>
+    </def-cat>
+    
+	<!--verb, present/past indefinite; am, is, are-->
+    <def-cat n="SVI">
+      <cat-item tags="SVPR"/><!--present-->
+      <cat-item tags="SVPR.*"/>
+      <cat-item tags="SVPS"/><!--past-->
+      <cat-item tags="SVPS.*"/>
+    </def-cat>
+
+	<!--only present indefinite-->
+    <def-cat n="SVP">
+      <cat-item tags="SVPR"/><!--present-->
+      <cat-item tags="SVPR.*"/>
+    </def-cat>
+
+	<!--only past indefinite-->
+    <def-cat n="SVPS">
+      <cat-item tags="SVPS"/><!--past-->
+      <cat-item tags="SVPS.*"/>
+    </def-cat>
+
+	<!--have verb; have, has, had-->
+    <def-cat n="SVH">
+      <cat-item tags="SVH"/>
+      <cat-item tags="SVH.*"/>
+    </def-cat>
+
+	<!--have been, had been-->
+    <def-cat n="SVHB">
+      <cat-item tags="SVHB"/>
+      <cat-item tags="SVHB.*"/>
+    </def-cat>
+
+	<!--future auxilary verb; shall be, will be-->
+    <def-cat n="SVF">
+      <cat-item tags="SVF"/>
+      <cat-item tags="SVF.*"/>
+    </def-cat>
+
+	<!--do verb; do, did, does-->
+    <def-cat n="SVD">
+      <cat-item tags="SVD"/>
+      <cat-item tags="SVD.*"/>
+    </def-cat>
+	<!--verb, gerund-->
+    <def-cat n="SVG">
+      <cat-item tags="SVG"/>
+      <cat-item tags="SVG.*"/>
+    </def-cat>
+	<!--postpositions-->
+    <def-cat n="ADV">
+      <cat-item tags="ADV"/>
+      <cat-item tags="ADV.*"/>
+    </def-cat>
+	<!--postpositions-->
+    <def-cat n="POST">
+      <cat-item tags="POST"/>
+      <cat-item tags="POST.*"/>
+    </def-cat>
+
+    <def-cat n="for">
+      <cat-item lemma="for" tags="pr"/>
+    </def-cat>
+
+  </section-def-cats>
+
+  <section-def-attrs>
+    <def-attr n="gen">
+      <attr-item tags="f"/>
+      <attr-item tags="m"/>
+      <attr-item tags="mf"/>
+      <attr-item tags="nt"/>
+      <attr-item tags="GD"/>
+    </def-attr>
+    <def-attr n="nbr">
+      <attr-item tags="sg"/>
+      <attr-item tags="pl"/>
+      <attr-item tags="sp"/>
+      <attr-item tags="ND"/>
+    </def-attr>
+    <def-attr n="pers">
+      <attr-item tags="p1"/>
+      <attr-item tags="p2"/>
+      <attr-item tags="p2.fam"/>
+      <attr-item tags="p2.pol"/>
+      <attr-item tags="p2.infml"/>
+      <attr-item tags="p3.pol"/>
+      <attr-item tags="p3.infml"/>
+      <attr-item tags="PD"/>
+    </def-attr>
+    <def-attr n="case">
+      <attr-item tags="nom"/>
+      <attr-item tags="obj"/>
+      <attr-item tags="loc"/>
+      <attr-item tags="gen"/>
+    </def-attr>
+    <def-attr n="temps">
+      <attr-item tags="pres"/>
+      <attr-item tags="pres.smpl"/>
+      <attr-item tags="pres.cnt"/>
+      <attr-item tags="past"/>
+      <attr-item tags="past.smpl"/>
+      <attr-item tags="past.cnt"/>  
+      <attr-item tags="ft"/>
+      <attr-item tags="ft.smpl"/>
+      <attr-item tags="ft.cnt"/> 
+      <attr-item tags="prft"/>     
+      <attr-item tags="plprft"/>     
+      <attr-item tags="inf"/>
+      <!-- present indefinite? -->
+      <attr-item tags="pri"/>
+      <attr-item tags="TD"/>
+    </def-attr>
+    <!-- Vblex Attribute -->
+    <def-attr n="a_vblex">
+      <attr-item tags="ger"/>
+      <attr-item tags="vpos"/>
+    </def-attr>
+  </section-def-attrs>
+
+  <section-def-vars>
+    <def-var n="nombre"/>
+    <def-var n="genere"/>
+  </section-def-vars>
+
+  <!--macros here-->
+  <section-def-macros>
+  	<def-macro n="set_third_person" npar="1">
+  		<let>
+		  <clip pos="1" part="pers"/>
+		  <lit-tag v="p3.infml"/>
+		</let>
+  	</def-macro>
+
+  	<def-macro n="fix_verb_possession" npar="2">
+		<choose>
+			<when>
+				<test>
+					<equal>
+						<clip pos="2" part="a_vblex"/>
+						<lit-tag v="vpos"/>
+					</equal>
+				</test>
+				<let>
+				  <clip pos="1" part="case"/>
+				  <lit-tag v="gen"/>
+				</let>
+				<let>
+				  <clip pos="2" part="a_vblex"/>
+				  <lit v=""/>
+				</let>
+				<call-macro n="set_third_person">
+					<with-param pos="2"/>
+				</call-macro>
+			</when>
+		</choose>
+  	</def-macro>
+
+  </section-def-macros>
+
+
+
+  <section-rules>
+
+    <rule comment="REGLA: SN">
+      <pattern>
+        <pattern-item n="SN"/>
+      </pattern>
+      <action>
+        <out>
+          <chunk>
+            <clip pos="1" part="whole"/>
+          </chunk>
+        </out>
+      </action>
+    </rule>
+
+    <rule comment="REGLA: SN SV">
+      <pattern>
+        <pattern-item n="SN"/>
+        <pattern-item n="SV"/>
+      </pattern>
+      <action>
+		<let>
+			<clip pos="2" part="pers"/>
+			<clip pos="1" part="pers"/>
+		</let>
+		<call-macro n="fix_verb_possession">
+			<with-param pos="1"/>
+			<with-param pos="2"/>
+		</call-macro>
+        <out>
+          <chunk>
+            <clip pos="1" part="whole"/>
+          </chunk>
+	  <b pos="1"/>
+          <chunk>
+            <clip pos="2" part="whole"/>
+          </chunk>
+        </out>
+      </action>
+    </rule>
+
+    <rule comment="REGLA: SN SV SN">
+      <pattern>
+        <pattern-item n="SN"/>
+        <pattern-item n="SV"/>
+        <pattern-item n="SN"/>
+      </pattern>
+      <action>
+        <let>
+          <clip pos="3" part="case"/>
+          <lit-tag v="obj"/>
+        </let>
+		<let>
+			<clip pos="2" part="pers"/>
+			<clip pos="1" part="pers"/>
+		</let>
+		<call-macro n="fix_verb_possession">
+			<with-param pos="1"/>
+			<with-param pos="2"/>
+		</call-macro>
+        <out>
+          <chunk>
+            <clip pos="1" part="whole"/>
+          </chunk>
+	  <b pos="1"/>
+          <chunk>
+            <clip pos="3" part="whole"/>
+          </chunk>
+	  <b pos="2"/>
+          <chunk>
+            <clip pos="2" part="whole"/>
+          </chunk>
+        </out>
+      </action>
+    </rule>
+
+	<!--simple present, simple past-->
+    <rule comment="REGLA: SN SVI SN">
+      <pattern>
+        <pattern-item n="SN"/>
+        <pattern-item n="SVI"/>
+        <pattern-item n="SN"/>
+      </pattern>
+      <action>
+		<choose>
+			<when>
+				<test>
+					<equal>
+						<clip pos="2" part="temps"/>
+						<lit-tag v="pres"/>
+					</equal>
+				</test>
+				<out>
+					<chunk>
+					<clip pos="1" part="whole"/>
+					</chunk>
+					<b pos="1"/>
+					<chunk>
+					<clip pos="3" part="whole"/>
+					</chunk>
+				</out>
+			</when>
+			<when>
+				<test>
+					<equal>
+						<clip pos="2" part="temps"/>
+						<lit-tag v="past"/>
+					</equal>
+				</test>
+				<let>
+					<clip pos="2" part="pers"/>
+					<clip pos="1" part="pers"/>
+				</let>
+				<out>
+				  <chunk>
+				    <clip pos="1" part="whole"/>
+				  </chunk>
+			  <b pos="1"/>
+				  <chunk>
+				    <clip pos="3" part="whole"/>
+				  </chunk>
+			  <b pos="2"/>
+				  <chunk>
+				    <clip pos="2" part="whole"/>
+				  </chunk>
+				</out>
+			</when>
+		</choose>
+
+      </action>
+    </rule>
+
+	<!--simple present, simple past with gerund-->
+    <rule comment="REGLA: SVG SVI SN">
+      <pattern>
+        <pattern-item n="SVG"/>
+        <pattern-item n="SVI"/>
+        <pattern-item n="SN"/>
+      </pattern>
+      <action>
+		<choose>
+			<when>
+				<test>
+					<equal>
+						<clip pos="2" part="temps"/>
+						<lit-tag v="pres"/>
+					</equal>
+				</test>
+				<out>
+					<chunk>
+					<clip pos="1" part="lem"/>
+					<lit-tag v="SVG"/>
+					<lit-tag v="ger"/>
+					<clip pos="1" part="chcontent"/>
+					</chunk>
+					<b pos="1"/>
+					<chunk>
+					<clip pos="3" part="whole"/>
+					</chunk>
+				</out>
+			</when>
+			<when>
+				<test>
+					<equal>
+						<clip pos="2" part="temps"/>
+						<lit-tag v="past"/>
+					</equal>
+				</test>
+				<let>
+					<clip pos="2" part="pers"/>
+					<clip pos="1" part="pers"/>
+				</let>
+				<out>
+				  <chunk>
+				    <clip pos="1" part="whole"/>
+				  </chunk>
+			  <b pos="1"/>
+				  <chunk>
+				    <clip pos="3" part="whole"/>
+				  </chunk>
+			  <b pos="2"/>
+				  <chunk>
+				    <clip pos="2" part="whole"/>
+				  </chunk>
+				</out>
+			</when>
+		</choose>
+
+      </action>
+    </rule>
+
+
+
+	<!--have been, had been-->
+    <rule comment="REGLA: SN SVHB SN">
+      <pattern>
+        <pattern-item n="SN"/>
+        <pattern-item n="SVHB"/>
+        <pattern-item n="SN"/>
+      </pattern>
+      <action>
+		<choose>
+			<when>
+				<test>
+					<equal>
+						<clip pos="2" part="temps"/>
+						<lit-tag v="prft"/>
+					</equal>
+				</test>
+				<out>
+					<chunk>
+					<clip pos="1" part="whole"/>
+					</chunk>
+					<b pos="1"/>
+					<chunk>
+					<clip pos="3" part="whole"/>
+					</chunk>
+				</out>
+			</when>
+			<otherwise>
+				<let>
+					<clip pos="2" part="pers"/>
+					<clip pos="1" part="pers"/>
+				</let>
+				<out>
+				  <chunk>
+				    <clip pos="1" part="whole"/>
+				  </chunk>
+			  <b pos="1"/>
+				  <chunk>
+				    <clip pos="3" part="whole"/>
+				  </chunk>
+			  <b pos="2"/>
+				  <chunk>
+				    <clip pos="2" part="whole"/>
+				  </chunk>
+				</out>
+			</otherwise>
+		</choose>
+
+      </action>
+    </rule>
+
+
+
+	<!--future; shall be, will be-->
+    <rule comment="REGLA: SN SVF SN">
+      <pattern>
+        <pattern-item n="SN"/>
+        <pattern-item n="SVF"/>
+        <pattern-item n="SN"/>
+      </pattern>
+      <action>
+		<let>
+			<clip pos="2" part="pers"/>
+			<clip pos="1" part="pers"/>
+		</let>
+        <out>
+          <chunk>
+            <clip pos="1" part="whole"/>
+          </chunk>
+	  <b pos="1"/>
+          <chunk>
+            <clip pos="3" part="whole"/>
+          </chunk>
+	  <b pos="2"/>
+          <chunk>
+            <clip pos="2" part="whole"/>
+          </chunk>
+        </out>
+      </action>
+    </rule>
+
+	<!--postposition-->
+    <rule comment="REGLA: SN SV POST SN">
+      <pattern>
+        <pattern-item n="SN"/>
+        <pattern-item n="SV"/>
+        <pattern-item n="POST"/>
+        <pattern-item n="SN"/>
+      </pattern>
+      <action>
+        <let>
+          <clip pos="4" part="case"/>
+          <lit-tag v="obj"/>
+        </let>
+		<let>
+			<clip pos="2" part="pers"/>
+			<clip pos="1" part="pers"/>
+		</let>
+        <out>
+          <chunk>
+            <clip pos="1" part="whole"/>
+          </chunk>
+	  <b pos="1"/>
+          <chunk>
+            <clip pos="4" part="whole"/>
+          </chunk>
+      <b pos="2"/>
+          <chunk>
+            <clip pos="3" part="whole"/>
+          </chunk>
+	  <b pos="3"/>
+          <chunk>
+            <clip pos="2" part="whole"/>
+          </chunk>
+        </out>
+      </action>
+    </rule>
+
+
+	<!--interrogative with SVI: Am I rich? Was I rich?-->
+    <rule comment="REGLA: SVI SN SN">
+      <pattern>
+        <pattern-item n="SVI"/>
+        <pattern-item n="SN"/>
+        <pattern-item n="SN"/>
+      </pattern>
+      <action>
+		<choose>
+			<when>
+				<test>
+					<equal>
+						<clip pos="1" part="temps"/>
+						<lit-tag v="pres"/>
+					</equal>
+				</test>
+				<out>
+				  <chunk>
+					<clip pos="2" part="whole"/>
+				  </chunk>
+			  <b pos="1"/>
+				  <chunk>
+					<lit v="what"/>
+					<lit-tag v="det.itg"/>
+					<lit v="{^"/>
+					<lit v="কি"/>
+					<lit-tag v="det.itg.sg"/>
+					<lit v="$}"/>
+				  </chunk>
+			  <b pos="2"/>
+				  <chunk>
+					<clip pos="3" part="whole"/>
+				  </chunk>
+				</out>
+			</when>
+			<when>
+				<test>
+					<equal>
+						<clip pos="1" part="temps"/>
+						<lit-tag v="past"/>
+					</equal>
+				</test>
+				<let>
+					<clip pos="1" part="pers"/>
+					<clip pos="2" part="pers"/>
+				</let>
+				<out>
+				  <chunk>
+				    <clip pos="2" part="whole"/>
+				  </chunk>
+			  <b/>
+				  <chunk>
+					<lit v="what"/>
+					<lit-tag v="det.itg"/>
+					<lit v="{^"/>
+					<lit v="কি"/>
+					<lit-tag v="det.itg.sg"/>
+					<lit v="$}"/>
+				  </chunk>
+			  <b/>
+				  <chunk>
+				    <clip pos="3" part="whole"/>
+				  </chunk>
+			  <b/>
+				  <chunk>
+				    <clip pos="1" part="whole"/>
+				  </chunk>
+				</out>
+			</when>
+		</choose>
+
+      </action>
+    </rule>
+
+	<!--interrogative with do verb: Do I work?-->
+    <rule comment="REGLA: SVD SN SV">
+      <pattern>
+        <pattern-item n="SVD"/>
+        <pattern-item n="SN"/>
+        <pattern-item n="SV"/>
+      </pattern>
+      <action>
+		<let>
+			<clip pos="3" part="temps"/>
+			<clip pos="1" part="temps"/>
+		</let>
+		<let>
+			<clip pos="3" part="pers"/>
+			<clip pos="2" part="pers"/>
+		</let>
+        <out>
+          <chunk>
+            <clip pos="2" part="whole"/>
+          </chunk>
+	  <b pos="1"/>
+          <chunk>
+            <clip pos="1" part="whole"/>
+          </chunk>
+	  <b pos="2"/>
+          <chunk>
+            <clip pos="3" part="whole"/>
+          </chunk>
+        </out>
+      </action>
+    </rule>
+
+	<!--interrogative with be verb: Am I working?-->
+    <rule comment="REGLA: SVI SN SVG">
+      <pattern>
+        <pattern-item n="SVI"/>
+        <pattern-item n="SN"/>
+        <pattern-item n="SVG"/>
+      </pattern>
+      <action>
+        <out>
+          <chunk>
+            <clip pos="2" part="whole"/>
+          </chunk>
+	  <b pos="1"/>
+          <chunk>
+			<lit v="what"/>
+			<lit-tag v="det.itg"/>
+			<lit v="{^"/>
+			<lit v="কি"/>
+			<lit-tag v="det.itg.sg"/>
+			<lit v="$}"/>
+          </chunk>
+	  <b pos="2"/>
+          <chunk>
+            <clip pos="3" part="lem"/>
+			<lit-tag v="SVG"/>
+            <clip pos="1" part="temps"/>
+			<lit-tag v="cnt"/>
+            <clip pos="2" part="pers"/>
+			<clip pos="3" part="chcontent"/>
+          </chunk>
+        </out>
+      </action>
+    </rule>
+
+	<!--interrogative with have verb: Have I worked?-->
+    <rule comment="REGLA: SVH SN SV">
+      <pattern>
+        <pattern-item n="SVH"/>
+        <pattern-item n="SN"/>
+        <pattern-item n="SV"/>
+      </pattern>
+      <action>
+		<choose>
+			<when>
+				<test>
+					<equal>
+						<clip pos="3" part="lem"/>
+						<lit v="verbcj"/>
+					</equal>
+				</test>
+				<let>
+					<clip pos="3" part="temps"/>
+					<clip pos="1" part="temps"/>
+				</let>
+			</when>
+		</choose>
+        <out>
+          <chunk>
+            <clip pos="2" part="whole"/>
+          </chunk>
+	  <b pos="1"/>
+          <chunk>
+			<lit v="what"/>
+			<lit-tag v="det.itg"/>
+			<lit v="{^"/>
+			<lit v="কি"/>
+			<lit-tag v="det.itg.sg"/>
+			<lit v="$}"/>
+          </chunk>
+	  <b pos="2"/>
+          <chunk>
+            <clip pos="3" part="lem"/>
+			<lit-tag v="SV"/>
+            <clip pos="3" part="temps"/>
+            <clip pos="2" part="pers"/>
+			<clip pos="3" part="chcontent"/>
+          </chunk>
+        </out>
+      </action>
+    </rule>
+
+
+	<!--interrogative with adverb: How are you?-->
+    <rule comment="REGLA: ADV SVI SN">
+      <pattern>
+        <pattern-item n="ADV"/>
+        <pattern-item n="SVI"/>
+        <pattern-item n="SN"/>
+      </pattern>
+      <action>
+		<let>
+			<clip pos="2" part="pers"/>
+			<clip pos="3" part="pers"/>
+		</let>
+		<out>
+		  	<chunk>
+				<clip pos="3" part="whole"/>
+		  	</chunk>
+			<b pos="1"/>
+		  	<chunk>
+				<clip pos="1" part="whole"/>
+		  	</chunk>
+			<b pos="2"/>
+		  	<chunk>
+				<clip pos="2" part="lem"/>
+				<clip pos="2" part="tags"/>
+				<clip pos="2" part="chcontent"/>
+		  	</chunk>
+		</out>
+      </action>
+    </rule>
+
+
+    <rule comment="REGLA: SN SVI SN POST SN; [The Bengali script] [is] [the writing system] [for] [the Bengali language].">
+      <pattern>
+        <pattern-item n="SN"/>
+        <pattern-item n="SVI"/>
+        <pattern-item n="SN"/>
+        <pattern-item n="POST"/>
+        <pattern-item n="SN"/>
+      </pattern>
+      <action>
+        <let>
+          <clip pos="5" part="case"/>
+          <lit-tag v="gen"/>
+        </let>
+		<choose>
+			<when>
+				<test>
+					<equal>
+						<clip pos="2" part="temps"/>
+						<lit-tag v="pres"/>
+					</equal>
+				</test>
+				<out>
+					<chunk>
+					<clip pos="1" part="whole"/>
+					</chunk>
+					<b pos="1"/>
+					<chunk>
+					<clip pos="5" part="whole"/>
+					</chunk>
+					<b pos="2"/>
+					<chunk>
+					<clip pos="4" part="whole"/>
+					</chunk>
+					<b pos="3"/>
+					<chunk>
+					<clip pos="3" part="whole"/>
+					</chunk>
+				</out>
+			</when>
+			<when>
+				<test>
+					<equal>
+						<clip pos="2" part="temps"/>
+						<lit-tag v="past"/>
+					</equal>
+				</test>
+				<let>
+					<clip pos="2" part="pers"/>
+					<clip pos="1" part="pers"/>
+				</let>
+				<out>
+				  <chunk>
+				    <clip pos="1" part="whole"/>
+				  </chunk>
+			  <b pos="1"/>
+				  <chunk>
+				    <clip pos="5" part="whole"/>
+				  </chunk>
+			  <b pos="2"/>
+				  <chunk>
+				    <clip pos="4" part="whole"/>
+				  </chunk>
+			  <b pos="3"/>
+				  <chunk>
+				    <clip pos="3" part="whole"/>
+				  </chunk>
+			  <b pos="4"/>
+				  <chunk>
+				    <clip pos="2" part="whole"/>
+				  </chunk>
+				</out>
+			</when>
+		</choose>
+      </action>
+    </rule>
+
+    <rule comment="REGLA: SVG SVI SN POST SN; [The Bengali script] [is] [the writing system] [for] [the Bengali language].">
+      <pattern>
+        <pattern-item n="SVG"/>
+        <pattern-item n="SVI"/>
+        <pattern-item n="SN"/>
+        <pattern-item n="POST"/>
+        <pattern-item n="SN"/>
+      </pattern>
+      <action>
+        <let>
+          <clip pos="5" part="case"/>
+          <lit-tag v="gen"/>
+        </let>
+		<choose>
+			<when>
+				<test>
+					<equal>
+						<clip pos="2" part="temps"/>
+						<lit-tag v="pres"/>
+					</equal>
+				</test>
+				<out>
+					<chunk>
+					<clip pos="1" part="lem"/>
+					<lit-tag v="SVG"/>
+					<lit-tag v="ger"/>
+					<clip pos="1" part="chcontent"/>
+					</chunk>
+					<b pos="1"/>
+					<chunk>
+					<clip pos="5" part="whole"/>
+					</chunk>
+					<b pos="2"/>
+					<chunk>
+					<clip pos="4" part="whole"/>
+					</chunk>
+					<b pos="3"/>
+					<chunk>
+					<clip pos="3" part="whole"/>
+					</chunk>
+				</out>
+			</when>
+			<when>
+				<test>
+					<equal>
+						<clip pos="2" part="temps"/>
+						<lit-tag v="past"/>
+					</equal>
+				</test>
+				<let>
+					<clip pos="2" part="pers"/>
+					<clip pos="1" part="pers"/>
+				</let>
+				<out>
+				  <chunk>
+				    <clip pos="1" part="whole"/>
+				  </chunk>
+			  <b pos="1"/>
+				  <chunk>
+				    <clip pos="5" part="whole"/>
+				  </chunk>
+			  <b pos="2"/>
+				  <chunk>
+				    <clip pos="4" part="whole"/>
+				  </chunk>
+			  <b pos="3"/>
+				  <chunk>
+				    <clip pos="3" part="whole"/>
+				  </chunk>
+			  <b pos="4"/>
+				  <chunk>
+				    <clip pos="2" part="whole"/>
+				  </chunk>
+				</out>
+			</when>
+		</choose>
+      </action>
+    </rule>
+
+
+
+    <rule comment="REGLA: SN SV SN POST SN">
+      <pattern>
+        <pattern-item n="SN"/>
+        <pattern-item n="SV"/>
+        <pattern-item n="SN"/>
+        <pattern-item n="POST"/>
+        <pattern-item n="SN"/>
+      </pattern>
+      <action>
+        <let>
+          <clip pos="5" part="case"/>
+          <lit-tag v="gen"/>
+        </let>
+		<let>
+			<clip pos="2" part="pers"/>
+			<clip pos="1" part="pers"/>
+		</let>
+		<call-macro n="fix_verb_possession">
+			<with-param pos="1"/>
+			<with-param pos="2"/>
+		</call-macro>
+        <out>
+          <chunk>
+            <clip pos="1" part="whole"/>
+          </chunk>
+	  <b pos="1"/>
+          <chunk>
+            <clip pos="5" part="whole"/>
+          </chunk>
+	  <b pos="2"/>
+          <chunk>
+            <clip pos="4" part="whole"/>
+          </chunk>
+	  <b pos="3"/>
+          <chunk>
+            <clip pos="3" part="whole"/>
+          </chunk>
+	  <b pos="4"/>
+          <chunk>
+            <clip pos="2" part="whole"/>
+          </chunk>
+        </out>
+      </action>
+    </rule>
+
+
+  </section-rules>
+</interchunk>

@@ -1,0 +1,28 @@
+DELIMITERS = "<.>" "<!>" "<?>" "<...>" "<¶>" ;
+SOFT-DELIMITERS = "<,>" ;
+
+SETS
+
+LIST N = n ; 
+LIST COP = cop ; 
+LIST Prop = (np ant) ; 
+
+LIST Gen = gen ; 
+LIST Acc = acc ; 
+
+SECTION
+
+SELECT N ;
+    ## 
+
+REMOVE COP IF (0 Prop + Gen) ; 
+    ## Yok Ananyň güjügi yok, onuň pişigi bar.
+
+REMOVE COP IF (0 Prop + Gen) ; 
+    ## Ananyňam güjügi barmy?
+
+REMOVE SUB:1 COP ;
+    ## Ananyňam güjügi barmy?
+
+REMOVE COP ;
+    ## Ikisem bagtly öýe gidýärler, häzir bir zatlar iýmek we suw içmek wagty!    

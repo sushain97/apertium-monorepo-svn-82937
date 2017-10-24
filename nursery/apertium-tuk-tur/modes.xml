@@ -1,0 +1,259 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<modes>
+  <mode name="tuk-tur" install="yes">
+    <pipeline>
+      <program name="hfst-proc -w">
+        <file name="tuk-tur.automorf.hfst"/>
+      </program>
+      <program name="cg-proc -w -n -1">
+        <file name="tuk-tur.rlx.bin"/>
+      </program>
+      <program name="apertium-pretransfer"/>
+      <program name="lt-proc -b">
+        <file name="tuk-tur.autobil.bin"/>
+      </program>
+      <program name="lrx-proc">
+        <file name="tuk-tur.lrx.bin"/>
+      </program>
+      <program name="apertium-transfer -b">
+        <file name="apertium-tuk-tur.tuk-tur.t1x"/>
+        <file name="tuk-tur.t1x.bin"/>
+      </program>
+      <program name="hfst-proc $1">
+        <file name="tuk-tur.autogen.hfst"/>
+      </program>
+    </pipeline>
+  </mode>
+
+  <mode name="tuk-tur-debug" install="no">
+    <pipeline>
+      <program name="hfst-proc -w">
+        <file name="tuk-tur.automorf.hfst"/>
+      </program>
+      <program name="cg-proc -w -n -1">
+        <file name="tuk-tur.rlx.bin"/>
+      </program>
+      <program name="apertium-pretransfer"/>
+      <program name="lt-proc -b">
+        <file name="tuk-tur.autobil.bin"/>
+      </program>
+      <program name="lrx-proc">
+        <file name="tuk-tur.lrx.bin"/>
+      </program>
+      <program name="apertium-transfer -b">
+        <file name="apertium-tuk-tur.tuk-tur.t1x"/>
+        <file name="tuk-tur.t1x.bin"/>
+      </program>
+      <program name="hfst-proc -d">
+        <file name="tuk-tur.autogen.hfst"/>
+      </program>
+    </pipeline>
+  </mode>
+ 
+  
+  <mode name="tuk-tur-morph" install="no">
+    <pipeline>
+      <program name="hfst-proc -w">
+        <file name="tuk-tur.automorf.hfst"/>
+      </program>
+    </pipeline>
+  </mode>
+
+  <mode name="tuk-tur-tagger" install="no">
+    <pipeline>
+      <program name="hfst-proc -w">
+        <file name="tuk-tur.automorf.hfst"/>
+      </program>
+      <program name="cg-proc -w -n -1">
+        <file name="tuk-tur.rlx.bin"/>
+      </program>
+      <program name="apertium-pretransfer"/>
+    </pipeline>
+  </mode>
+
+  <mode name="tuk-tur-biltrans" install="no">
+    <pipeline>
+      <program name="hfst-proc -w">
+        <file name="tuk-tur.automorf.hfst"/>
+      </program>
+      <program name="cg-proc -w -n -1">
+        <file name="tuk-tur.rlx.bin"/>
+      </program>
+      <program name="apertium-pretransfer"/>
+      <program name="lt-proc -b">
+        <file name="tuk-tur.autobil.bin"/>
+      </program>
+    </pipeline>
+  </mode>
+
+  <mode name="tuk-tur-lex" install="no">
+    <pipeline>
+      <program name="hfst-proc -w">
+        <file name="tuk-tur.automorf.hfst"/>
+      </program>
+      <program name="cg-proc -w -n -1">
+        <file name="tuk-tur.rlx.bin"/>
+      </program>
+      <program name="apertium-pretransfer"/>
+      <program name="lt-proc -b">
+        <file name="tuk-tur.autobil.bin"/>
+      </program>
+      <program name="lrx-proc -t">
+        <file name="tuk-tur.lrx.bin"/>
+      </program>
+    </pipeline>
+  </mode>
+
+
+  <mode name="tuk-tur-transfer" install="no">
+    <pipeline>
+      <program name="hfst-proc -w">
+        <file name="tuk-tur.automorf.hfst"/>
+      </program>
+      <program name="cg-proc -w -n -1">
+        <file name="tuk-tur.rlx.bin"/>
+      </program>
+      <program name="apertium-pretransfer"/>
+      <program name="lt-proc -b">
+        <file name="tuk-tur.autobil.bin"/>
+      </program>
+      <program name="lrx-proc">
+        <file name="tuk-tur.lrx.bin"/>
+      </program>
+      <program name="apertium-transfer -b">
+        <file name="apertium-tuk-tur.tuk-tur.t1x"/>
+        <file name="tuk-tur.t1x.bin"/>
+      </program>
+    </pipeline>
+  </mode>
+
+
+  <mode name="tur-tuk" install="yes">
+    <pipeline>
+      <program name="hfst-proc -w">
+        <file name="tur-tuk.automorf.hfst"/>
+      </program>
+      <program name="cg-proc -w -n -1">
+        <file name="tur-tuk.rlx.bin"/>
+      </program>
+      <program name="apertium-pretransfer"/>
+      <program name="lt-proc -b">
+        <file name="tur-tuk.autobil.bin"/>
+      </program>
+      <program name="lrx-proc">
+        <file name="tur-tuk.lrx.bin"/>
+      </program>
+      <program name="apertium-transfer -b">
+        <file name="apertium-tuk-tur.tur-tuk.t1x"/>
+        <file name="tur-tuk.t1x.bin"/>
+      </program>
+      <program name="hfst-proc $1">
+        <file name="tur-tuk.autogen.hfst"/>
+      </program>
+    </pipeline>
+  </mode>
+
+  <mode name="tur-tuk-debug" install="no">
+    <pipeline>
+      <program name="hfst-proc -w">
+        <file name="tur-tuk.automorf.hfst"/>
+      </program>
+      <program name="cg-proc -w -n -1">
+        <file name="tur-tuk.rlx.bin"/>
+      </program>
+      <program name="apertium-pretransfer"/>
+      <program name="lt-proc -b">
+        <file name="tur-tuk.autobil.bin"/>
+      </program>
+      <program name="lrx-proc">
+        <file name="tur-tuk.lrx.bin"/>
+      </program>
+      <program name="apertium-transfer -b">
+        <file name="apertium-tuk-tur.tur-tuk.t1x"/>
+        <file name="tur-tuk.t1x.bin"/>
+      </program>
+      <program name="hfst-proc -d">
+        <file name="tur-tuk.autogen.hfst"/>
+      </program>
+    </pipeline>
+  </mode>
+  
+  <mode name="tur-tuk-morph" install="no">
+    <pipeline>
+      <program name="hfst-proc -w">
+        <file name="tur-tuk.automorf.hfst"/>
+      </program>
+    </pipeline>
+  </mode>
+
+  <mode name="tur-tuk-tagger" install="no">
+    <pipeline>
+      <program name="hfst-proc -w">
+        <file name="tur-tuk.automorf.hfst"/>
+      </program>
+      <program name="cg-proc -w -n -1">
+        <file name="tur-tuk.rlx.bin"/>
+      </program>
+      <program name="apertium-pretransfer"/>
+    </pipeline>
+  </mode>
+
+  <mode name="tur-tuk-biltrans" install="no">
+    <pipeline>
+      <program name="hfst-proc -w">
+        <file name="tur-tuk.automorf.hfst"/>
+      </program>
+      <program name="cg-proc -w -n -1">
+        <file name="tur-tuk.rlx.bin"/>
+      </program>
+      <program name="apertium-pretransfer"/>
+      <program name="lt-proc -b">
+        <file name="tur-tuk.autobil.bin"/>
+      </program>
+    </pipeline>
+  </mode>
+
+  <mode name="tur-tuk-lex" install="no">
+    <pipeline>
+      <program name="hfst-proc -w">
+        <file name="tur-tuk.automorf.hfst"/>
+      </program>
+      <program name="cg-proc -w -n -1">
+        <file name="tur-tuk.rlx.bin"/>
+      </program>
+      <program name="apertium-pretransfer"/>
+      <program name="lt-proc -b">
+        <file name="tur-tuk.autobil.bin"/>
+      </program>
+      <program name="lrx-proc">
+        <file name="tur-tuk.lrx.bin"/>
+      </program>
+    </pipeline>
+  </mode>
+
+  <mode name="tur-tuk-transfer" install="no">
+    <pipeline>
+      <program name="hfst-proc -w">
+        <file name="tur-tuk.automorf.hfst"/>
+      </program>
+      <program name="cg-proc -w -n -1">
+        <file name="tur-tuk.rlx.bin"/>
+      </program>
+      <program name="apertium-pretransfer"/>
+      <program name="lt-proc -b">
+        <file name="tur-tuk.autobil.bin"/>
+      </program>
+      <program name="lrx-proc">
+        <file name="tur-tuk.lrx.bin"/>
+      </program>
+      <program name="apertium-transfer -b">
+        <file name="apertium-tuk-tur.tur-tuk.t1x"/>
+        <file name="tur-tuk.t1x.bin"/>
+      </program>
+    </pipeline>
+  </mode>
+
+
+</modes>
+
+

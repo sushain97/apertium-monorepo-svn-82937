@@ -1,0 +1,188 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!--
+
+t1x local chunking NP, VP
+t2x localcoordination NP+NP, etc.
+t3x empty, but for adpositional phrases + Rel clauses
+t4x Constituent mvm, SVO -> SOV
+t5x Cleanup
+
+
+This is the fifth pass. Responsibilities of this file include:
+
+* tbw.
+
+The file contains no macros and two rules:
+
+Macros:
+
+ No macros.
+
+Rules:
+
+    <rule comment="CHUNK:">
+    <rule comment="CHUNK:">
+
+Not much to write home about...
+
+DEF-CAT NAMING SCHEME:
+                       lemma-pos.tag.tag_SYNTAG
+
+where the SYNTAG part may have an l or r before or after to signify the arrow
+(where l corresponds to ← and r to →);
+alternatively the SYNTAG part is something like "mod", "attr" or "head".
+And then there are some categories like "month", with all the months.
+
+
+-->
+
+
+<!-- -*- nxml -*- -->
+<postchunk>
+  <section-def-cats>
+    <def-cat n="ii">
+      <cat-item name="ii"/>
+    </def-cat>
+    <def-cat n="nom2">
+      <cat-item name="genmod_nom"/>
+    </def-cat>
+
+    <def-cat n="nom1">
+      <cat-item name="nom"/>
+      <cat-item name="prop"/>
+    </def-cat>
+  </section-def-cats>
+
+  <section-def-attrs>
+    <def-attr n="a_nom">
+      <attr-item tags="n"/>
+      <attr-item tags="np"/>
+    </def-attr>
+    <def-attr n="nbr">
+      <attr-item tags="sg"/>
+      <attr-item tags="pl"/>
+      <attr-item tags="NN"/>
+    </def-attr>
+    <def-attr n="a_tense">
+      <attr-item tags="pret"/>
+      <attr-item tags="pres"/>
+      <attr-item tags="XD"/>
+    </def-attr>
+  </section-def-attrs>
+
+  <section-def-vars>
+    <def-var n="paraula"/>
+  </section-def-vars>
+
+
+  <section-rules>
+
+    <rule comment="CHUNK:">
+      <pattern>
+        <pattern-item n="ii"/>
+      </pattern>
+      <action>
+      <choose>
+        <when>
+          <test>
+                <equal>
+                  <clip pos="1" part="a_tense"/>
+                  <lit-tag v="XD"/>
+                </equal>
+          </test>
+          <let>
+            <clip pos="1" part="a_tense"/>
+            <lit-tag v="pres"/>
+          </let>
+        </when>
+      </choose>
+        <out>
+          <lu>
+            <clip pos="1" part="whole"/>
+          </lu>
+        </out>
+      </action>
+    </rule>
+
+    <rule comment="CHUNK:">
+      <pattern>
+        <pattern-item n="nom1"/>
+      </pattern>
+      <action>
+      <choose>
+        <when>
+          <test>
+            <and>
+              <not>
+                <equal>
+                  <clip pos="1" part="nbr"/>
+                  <lit-tag v="sg"/>
+                </equal>
+              </not>
+              <not>
+                <equal>
+                  <clip pos="1" part="nbr"/>
+                  <lit-tag v="pl"/>
+                </equal>
+              </not>
+             </and>
+          </test>
+          <let>
+            <clip pos="1" part="nbr"/>
+            <lit v=""/>
+          </let>
+        </when>
+      </choose>
+        <out>
+          <lu>
+            <clip pos="1" part="whole"/>
+          </lu>
+        </out>
+      </action>
+    </rule>
+
+    <rule comment="CHUNK:">
+      <pattern>
+        <pattern-item n="nom2"/>
+      </pattern>
+      <action>
+      <choose>
+        <when>
+          <test>
+            <and>
+              <not>
+                <equal>
+                  <clip pos="2" part="nbr"/>
+                  <lit-tag v="sg"/>
+                </equal>
+              </not>
+              <not>
+                <equal>
+                  <clip pos="2" part="nbr"/>
+                  <lit-tag v="pl"/>
+                </equal>
+              </not>
+             </and>
+          </test>
+          <let>
+            <clip pos="2" part="nbr"/>
+            <lit v=""/>
+          </let>
+        </when>
+      </choose>
+        <out>
+          <lu>
+            <clip pos="1" part="whole"/>
+          </lu>
+          <b pos="1"/>
+          <lu>
+            <clip pos="2" part="whole"/>
+          </lu>
+        </out>
+      </action>
+    </rule>
+
+
+  </section-rules>
+</postchunk>

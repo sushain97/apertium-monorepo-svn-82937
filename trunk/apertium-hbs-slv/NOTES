@@ -1,0 +1,115 @@
+Notes on transfer rules:
+
+## Shorthand
+
+da == cnjsub_or_adv
+glagoljati == verb
+ga == enclitic pronoun in accusative/genitive
+mu == enclitic pronoun in dative
+
+## Implemented
+
+je treba <-> treba
+treba je <-> treba
+treba ni -> ne treba
+ni treba -> ne treba
+je bilo treba -> trebalo je
+ni bilo treba -> nije trebalo
+bi bilo treba -> trebalo bi
+ne bi bilo treba -> ne bi trebalo
+bo treba -> trebat će
+treba bo -> trebat će
+ne bo treba -> neće trebati
+glagoljati je bilo treba -> trebalo je glagoljati
+glagoljati bi bilo treba -> trebalo bi glagoljati
+glagoljati ne bi bilo treba -> ne bi trebalo glagoljati
+glagoljati ni bilo treba -> nije trebalo glagoljati
+glagoljati bo treba -> trebat će glagoljati
+glagoljati ne bo treba -> neće trebati glagoljati
+
+cnjsub_or_adv je bilo treba -> cnjsub_or_adv je trebalo
+cnjsub_or_adv bo treba -> cnjsub_or_adv će trebati
+cnjsub_or_adv bi bilo treba -> cnjsub_or_adv bi trebalo
+
+clitic je treba -> treba clitic
+clitic ni treba -> ne treba clitic
+clitic je bilo treba -> trebalo clitic je
+clitic ni bilo treba -> nije clitic trebalo
+clitic bi bilo treba -> trebalo bi clitic
+clitic ne bi bilo treba -> ne bi clitic trebalo
+clitic bo treba -> trebat će clitic
+clitic ne bo treba -> neće clitic trebati
+
+treba ni -> ne treba
+treba bo -> trebat će
+treba ne bo -> neće trebati
+treba je bilo -> trebalo je
+treba ni bilo -> nije trebalo
+treba bi bilo -> trebalo bi
+treba ne bi bilo -> ne bi trebalo
+
+treba clitic je -> treba clitic
+treba clitic ni -> ne treba clitic
+treba clitic je bilo -> trebalo clitic je
+treba clitic ni bilo-> nije clitic trebalo
+treba clitic bi bilo -> trebalo bi clitic
+treba clitic ne bi bilo -> ne bi clitic trebalo
+
+Novododane nezabilježene:
+
+bo -> će biti
+gledal bom -> gledat ću
+mi bi lahko napravili -> mi bismo mogli napraviti
+mi bi lahko dobro napravili -> mi bismo mogli dobro napraviti
+.* lahko bi .*
+.* lahko bi .*
+se je -> se
+da se je -> da se
+
+se bo -> će se
+se ne bo -> neće se
+da se ne bo -> da se neće
+da se bo treba -> da će se trebati
+da se ne bo treba -> da se neće trebati
+
+treba bi clitic bilo-> trebalo bi clitic
+clitic ne bi bilo treba -> ne bi clitic trebalo
+clitic bo treba -> trebat će clitic
+clitic ne bo treba -> neće clitic trebati
+
+cnjsub_or_adv clitic ne bi bilo treba -> cnjsub_or_adv clitic ne bi trebalo
+cnjsub_or_adv clitic bo treba -> cnjsub_or_adv će clitic trebati
+cnjsub_or_adv clitic ne bo treba -> cnjsub_or_adv clitic neće trebati
+
+
+ni clitic treba -> ne treba clitic
+da ni clitic treba -> da clitic ne treba
+ni clitic_dative treba glagoljati -> ne treba clitic_dative da glagoljaju
+da ni clitic_dative treba glagoljati -> da clitic_dative ne treba da glagoljaju
+da clitic je treba -> da clitic treba
+da clitic ni treba -> da clitic ne treba
+se clitic treba -> treba clitic se
+ni se clitic treba -> ne treba clitic se
+da se clitic treba -> da clitic se treba
+da ni se clitic treba -> da clitic se ne treba
+se clitic -> clitic se
+prn_acc prn_dat -> prn_dat prn_acc
+se_enc prn_acc prn_dat -> prn_dat prn_acc se_enc
+se glagol_fin -> glagol_fin se
+cnjsub_or_adv se glagol -> cnjsub_or_adv se glagol
+se je bilo treba -> trebalo se
+cnjsub_or_adv se je bilo treba -> cnjsub_or_adv se trebalo
+   
+## Unimplemented
+
+nphead se glagol -> nphead se glagol
+
+## TODOs: 
+
+- Investigate all phrases that begin with cnjsub_or_adv, the words exhibit
+similar behaviour some other word types (adverbs, pronouns, ... ?) 
+- Implement the rules both directions
+- the last implemented rules need also future, perfect and conditional
+- see which rules with need different word order formulations
+
+- update chunk names, some of them are copy pasted

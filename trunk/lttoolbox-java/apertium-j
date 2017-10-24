@@ -1,0 +1,33 @@
+#!/bin/sh
+
+# NOTE: This script simply finds the JAR file and invokes it, first argumant being the name of this shell script.
+# Therefore all programs are served by the same script
+
+# Heap space memory for JVM
+defaultMinMem=64
+defaultMaxMem=800
+library=`dirname $0`/../share/apertium/lttoolbox.jar
+
+if [ ! -e $library ]
+then
+	library=`dirname $0`/dist/lttoolbox.jar
+	if [ ! -e $library ]
+	then
+		library=`dirname $0`/lttoolbox.jar
+		if [ ! -e $library ]
+		then
+			if [ -e dist/lttoolbox.jar ]
+			then
+				library=dist/lttoolbox.jar
+			elif [ -e lttoolbox.jar ]
+			then
+				library=lttoolbox.jar
+			fi
+		fi
+	fi
+fi
+
+# echo java -Dlttoolbox.jar=${library} -Dfile.encoding=UTF-8 -Xms${defaultMinMem}m -Xmx${defaultMaxMem}m -jar ${library} $0 $*
+# use -client to avoid server optimizations which take much more resources and optimize in the wrong places anyway
+java -Dlttoolbox.jar=${library} -client -Dfile.encoding=UTF-8 -Xms${defaultMinMem}m -Xmx${defaultMaxMem}m -jar ${library} $0 $*
+

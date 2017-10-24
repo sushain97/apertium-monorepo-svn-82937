@@ -1,0 +1,401 @@
+# text = Ni, Breizhiz a galon, karomp hon gwir vro!
+# text[fra] = Nous Bretons de coeur, nous aimons notre vrai pays!
+# labels = to_check song
+"<Ni>"
+	"prpers" prn subj p1 mf pl @nsubj #1->7
+"<,>"
+	"," cm @punct #2->3
+"<Breizhiz>"
+	"Breizhad" n m pl @appos #3->1
+"<a galon>"
+	"a" pr @case #4->5
+		"kalon" n f sg @nmod #5->3
+"<,>"
+	"," cm @punct #6->3
+"<karomp>"
+	"karout" vblex imp p1 pl @root #7->0
+"<hon>"
+	"hon" det pos mf sp @det #8->10
+"<gwir>"
+	"gwir" adj mf sp @amod #9->10
+"<vro>"
+	"bro" n f sg @obj #10->7
+"<!>"
+	"!" sent @punct #11->7
+
+# text = Brudet eo an Arvor dre ar bed tro-do.
+# text[fra] = L'Arvor est renommée à travers le monde.
+# labels = to_check song
+"<Brudet>"
+	"brudañ" vblex pp @root #1->0
+"<eo>"
+	"bezañ" vblex pri p3 sg @aux:pass #2->1
+"<an Arvor>"
+	"An Arvor" np top sg @nsubj #3->1
+"<dre>"
+	"dre" pr @case #4->6
+"<ar>"
+	"an" det def sp @det #5->6
+"<bed>"
+	"bed" n m sg @obl #6->1
+"<tro-dro>"
+	"tro-dro" adv @advmod #7->1
+"<.>"
+	"." sent @punct #8->1
+
+# text = Dispont kreiz ar brezel, hon tadoù ken mad, a skuilhas eviti o gwad.
+# text[fra] = Sans peur au coeur de la guerre, nos ancêtres si bons versèrent leur sang pour elle.
+# labels = to_check song
+"<Dispont>"
+	"dispont" adj mf sp @amod #1->7
+"<'kreiz>"
+	"e-kreiz" pr @case #2->4
+"<ar>"
+	"an" det def sp @det #3->4
+"<brezel>"
+	"brezel" n m sg @nmod #4->1
+"<,>"
+	"," cm @punct #5->7
+"<hon>"
+	"hon" det pos mf sp @det #6->7
+"<tadoù>"
+	"tad" n m pl @nsubj:appos #7->12
+"<ken>"
+	"ken" preadv @advmod #8->9
+"<mat>"
+	"mat" adj mf sp @amod #9->7
+"<,>"
+	"," cm @punct #10->12
+"<a>"
+	"a" vpart @aux #11->12
+"<skuilhas>"
+	"skuilhañ" vblex past p3 sg @root #12->0
+"<eviti>"
+	"evit" pr @case #13->14
+		"indirect" prn obj p3 f sg @obl #14->12
+"<o>"
+	"o" det pos mf sp @det #15->16
+"<gwad>"
+	"gwad" n m sg @obj #16->12
+"<.>"
+	"." sent @punct #17->12
+
+# text = O Breizh, ma Bro, me 'gar ma Bro.
+# text[fra] = O Bretagne, mon pays, que j'aime mon pays
+# labels = to_check song
+"<O>"
+	"o" ij @case #1->2
+"<Breizh>"
+	"Breizh" np top sg @discourse #2->9
+"<,>"
+	"," cm @punct #3->5
+"<ma>"
+	"ma" det pos mf sp @det #4->5
+"<bro>"
+	"bro" n f sg @appos #5->2
+"<,>"
+	"," cm @punct #6->5
+"<me>"
+	"prpers" prn subj p1 mf sg @nsubj #7->9
+"<'>"
+	"a" vpart @aux #8->9
+"<gar>"
+	"karout" vblex pri p3 sg @root #9->0
+"<ma>"
+	"ma" det pos mf sp @det #10->11
+"<bro>"
+	"bro" n f sg @obj #11->9
+"<.>"
+	"." sent @punct #12->9
+
+# text = Tra ma vo mor 'vel mur 'n he zro.
+# text[fra] = Tant que la mer sera comme un mur autour d'elle.
+# labels = to_check song
+"<Tra ma>"
+	"tra ma" cnjadv @mark #1->5
+"<vo>"
+	"bezañ" vblex fti p3 sg @cop #2->5
+"<mor>"
+	"mor" n m sg @nsubj #3->5
+"<'vel>"
+	"evel" pr @case #4->5
+"<mur>"
+	"mur" n f sg @root #5->0
+"<'n>"
+	"un" det ind sp @det #6->5
+"<he>"
+	"he" det pos f sp @det #7->8
+"<zro>"
+	"tro" n f sg @nmod:gen #8->5
+"<,>"
+	"," cm @punct #9->12
+"<ra>"
+	"ra" vpart opt @aux #10->12
+"<vezo>"
+	"bezañ" vblex fti p3 sg @cop #11->12
+"<digabestr>"
+	"digabestr" adj mf sp @parataxis #12->5
+"<ma>"
+	"ma" det pos mf sp @det #13->14
+"<bro>"
+	"bro" n f sg @nsubj #14->12
+"<!>"
+	"!" sent @punct #15->5
+
+# text = Breizh, douar ar sent kozh, douar ar Varzhed, n'eus bro all a garan kement 'barzh ar bed, pep menez, pep traonienn, d'am c'halon zo kaer, enne kousk meur a Vreizhad taer !
+# text[fra] = Bretagne, terre des vieux Saints, terre des Bardes, Il n'est d'autre pays au monde que j'aime autant; Chaque montagne, chaque vallée est chère dans mon coeur. En eux dorment plus d'un Breton héroïque!
+# labels = to_check song
+"<Breizh>"
+	"Breizh" np top sg @dislocated
+"<,>"
+	"," cm @punct
+"<douar>"
+	"douar" n m sg @appos
+"<ar>"
+	"an" det def sp @det
+"<sent>"
+	"sant" n m pl @nmod:gen
+"<kozh>"
+	"kozh" adj mf sp @amod
+"<,>"
+	"," cm @punct
+"<douar>"
+	"douar" n m sg @appos
+"<ar>"
+	"an" det def sp @det
+"<varzhed>"
+	"barzh" n m pl @nmod:gen
+"<,>"
+	"," cm @punct
+"<n'eus>"
+	"ne" adv @advmod
+		"bezañ" vblex pri impers sp @cop
+"<bro>"
+	"bro" n f sg
+"<all>"
+	"all" adj ind mf sp @amod
+"<a>"
+	"a" vpart @aux
+"<garan>"
+	"karout" vblex pri p1 sg
+"<kement>"
+	"kement" det ind mf sg
+"<'barzh>"
+	"e-barzh" pr @case
+"<ar>"
+	"an" det def sp @det
+"<bed>"
+	"bed" n m sg
+"<,>"
+	"," cm
+"<pep>"
+	"pep" det ind mf sg @det
+"<menez>"
+	"menez" n m sg
+"<,>"
+	"," cm @punct
+"<pep>"
+	"pep" det ind mf sg @det
+"<traoñienn>"
+	"traoñienn" n f sg
+"<d'am>"
+	"da" pr @case
+		"ma" det pos mf sp
+"<c'halon>"
+	"kalon" n f sg
+"<zo>"
+	"bezañ" vblex pri p3 sg
+"<ker>"
+	"ken" adv
+	"ker" adj mf sp
+;	"ger" n m sg
+"<,>"
+	"," cm @punct
+"<eno>"
+	"eno" adv
+"<'>"
+	"e" vpart obj
+;	"’" apos
+;	"a" vpart
+;	"o" vpart ger
+"<kousk>"
+	"kousket" vblex pri p3 sg
+"<meur a>"
+	"meur a" det ind mf pl
+"<Vreizhad>"
+	"Breizhad" n m sg
+"<taer>"
+	"taer" adj mf sp
+;	"daer" n m sg
+"<!>"
+	"!" sent
+
+# text = Ar Vretoned 'zo tud kalet ha kreñv.
+# text[fra] = Les Bretons sont des gens durs et forts;
+# labels = to_check song
+"<Ar>"
+	"an" det def sp @det #1->2
+"<Vretoned>"
+	"Breton" n m pl @nsubj #2->4
+"<'zo>"
+	"bezañ" vblex pri p3 sg @cop #3->4
+"<tud>"
+	"den" n m pl @root #4->0
+"<kalet>"
+	"kalet" adj mf sp @amod #5->4
+"<ha>"
+	"ha" cnjcoo @cc #6->7
+"<kreñv>"
+	"kreñv" adj mf sp @conj #7->5
+"<.>"
+	"." sent @punct #8->4
+
+# text = N'eus pobl ken kaloneg a zindan an neñv.
+# text[fra] =  Aucun peuple sous les cieux n'est aussi ardent.
+# labels = to_check song
+"<N'eus>"
+	"ne" adv @advmod #1->5
+		"bezañ" vblex pri impers sp @cop #2->5
+"<pobl>"
+	"pobl" n f sg @nsubj #3->5
+"<ken>"
+	"ken" preadv @advmod #4->5
+"<kalonek>"
+	"kalonek" adj mf sp @root #5->0
+"<a-zindan>"
+	"a-zindan" pr @case #6->8
+"<an>"
+	"an" det def sp @det #7->8
+"<neñv>"
+	"neñv" n m sg @obl #8->5
+"<.>"
+	"." sent @punct #9->5
+
+# text = Gwerz trist, son dudius a ziwan eno.
+# text[fra] = Complainte triste ou chant plaisant s'éclosent en eux.
+# labels = to_check song
+"<Gwerz>"
+	"gwerz" n f sg @nsubj #1->7
+"<trist>"
+	"trist" adj mf sp @amod #2->1
+"<,>"
+	"," cm @punct #3->4
+"<son>"
+	"son" n f sg @conj #4->1
+"<dudius>"
+	"dudius" adj mf sp @amod #5->4
+"<a>"
+	"a" vpart @aux #6->7
+"<ziwan>"
+	"diwanañ" vblex pri p3 sg @root #7->0
+"<enno>"
+	"e" pr @case  #8->9
+		"indirect" prn obj p3 mf pl @obl #9->7
+"<.>"
+	"." sent @punct #10->7
+
+# text = O! pegen kaer ez out, ma Bro!
+# text[fra] = O! Combien tu es belle, ma patrie!
+# labels = to_check song
+"<O>"
+	"o" ij @root #1->0
+"<!>"
+	"!" sent @punct #2->1
+"<pegen>"
+	"pegen" preadv @advmod #3->4
+"<kaer>"
+	"kaer" adj mf sp @parataxis #4->1
+"<ez>"
+	"e" vpart obj @aux #5->4
+"<out>"
+	"bezañ" vblex pri p2 sg @cop #6->4
+"<,>"
+	"," cm @punct #7->4
+"<ma>"
+	"ma" det pos mf sp @det #8->9
+"<bro>"
+	"bro" n f sg @dislocated #9->4
+"<!>"
+	"!" sent @punct #10->4
+
+# text = Mard eo bet trec'het Breizh er brezelioù braz, he yezh a zo bepred ken beo ha bizkoazh, he c'halon birvidik a lamm c'hoazh 'n he c'hreiz.
+# text[fra] = Si autrefois Bretagne, tu as fléchi durant les guerres, ta langue est restée vivante à jamais, son coeur ardent tressaille encore pour elle.
+# labels = to_check song
+"<Mard>"
+	"ma" cnjsub @mark #1->4
+"<eo>"
+	"bezañ" vblex pri p3 sg @aux #2->4
+"<bet>"
+	"bezañ" vblex pp @aux:pass #3->4
+"<trec'het>"
+	"trec’hiñ" vblex pp @root #4->0
+"<Breizh>"
+	"Breizh" np top sg @nsubj #5->4
+"<er>"
+	"e" pr @case #6->8
+		"an" det def sp @det #7->8
+"<brezelioù>"
+	"brezel" n m pl @obl #8->4
+"<bras>"
+	"bras" adj mf sp @amod #9->8
+"<,>"
+	"," cm @punct #10->17
+"<he>"
+	"he" det pos f sp @det #11->12
+"<yezh>"
+	"yezh" n f sg @nsubj #12->17
+"<a>"
+	"a" vpart @aux #13->17
+"<zo>"
+	"bezañ" vblex pri p3 sg @cop #14->17
+"<bepred>"
+	"bepred" adv @advmod #15->17
+"<ken>"
+	"ken" preadv @advmod #16->17
+"<bev>"
+	"bev" adj mf sp @parataxis #17->4
+"<ha>"
+	"ha" cnjcoo @cc #18->19
+"<biskoazh>"
+	"biskoazh" adv @conj #19->17
+"<,>"
+	"," cm @punct #20->25
+"<he>"
+	"he" det pos f sp @det #21->22
+"<c'halon>"
+	"kalon" n f sg @nsubj #22->25
+"<virvidik>"
+	"birvidik" adj mf sp @amod #23->22
+"<a>"
+	"a" vpart @aux #24->25
+"<lamm>"
+	"lammat" vblex pri p3 sg @parataxis #25->4
+"<c'hoazh>"
+	"c’hoazh" adv @advmod #26->25
+"<'n>"
+	"un" det ind sp @det #27->29
+"<he>"
+	"he" det pos f sp @det #28->29
+"<c'hreiz>"
+	"kreiz" n m sg @obj #29->25
+"<.>"
+	"." sent @punct #30->4
+
+# text = Dihunet out bremañ, ma Breizh !
+# text[fra] = Tu es réveillée maintenant ma Bretagne!
+# labels = to_check song
+"<Dihunet>"
+	"dihuniñ" vblex pp @root #1->0
+"<out>"
+	"bezañ" vblex pri p2 sg @aux:pass #2->1
+"<bremañ>"
+	"bremañ" adv @advmod #3->1
+"<,>"
+	"," cm @punct #4->6
+"<ma>"
+	"ma" det pos mf sp @det #5->6
+"<Breizh>"
+	"Breizh" np top sg @dislocated #6->1
+"<!>"
+	"!" sent @punct #7->1
+

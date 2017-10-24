@@ -1,0 +1,1419 @@
+<cross-model>
+
+
+
+
+<cross-action id="mf-mf LR" a="cristipiticul">
+        <description>mf problem</description>
+        <pattern>
+            <e r="LR">
+                <p>
+                    <l>$lemmaA<v n="cat"/><s n="mf"/></l>
+                    <r>$lemmaB<v n="cat"/><t/></r>
+                </p>
+            </e>
+            <e>
+                <p>
+                    <l>$lemmaB<v n="cat"/><t/></l>
+                    <r>$lemmaC<v n="cat"/><s n="mf"/></r>
+                </p>
+            </e>
+        </pattern>
+        <action-set>
+            <action>
+                <e r="LR">
+                    <p>
+                        <l>$lemmaA<v n="cat"/><s n="mf"/></l>
+                        <r>$lemmaC<v n="cat"/><s n="mf"/></r>
+                    </p>
+                </e>
+            </action>
+        </action-set>
+</cross-action>
+<cross-action id="mf-m LR" a="cristipiticul">
+        <description>mf problem</description>
+        <pattern>
+            <e r="LR">
+                <p>
+                    <l>$lemmaA<v n="cat"/><s n="mf"/></l>
+                    <r>$lemmaB<v n="cat"/><t/></r>
+                </p>
+            </e>
+            <e>
+                <p>
+                    <l>$lemmaB<v n="cat"/><t/></l>
+                    <r>$lemmaC<v n="cat"/><s n="m"/></r>
+                </p>
+            </e>
+        </pattern>
+        <action-set>
+            <action>
+                <e r="LR">
+                    <p>
+                        <l>$lemmaA<v n="cat"/><s n="mf"/></l>
+                        <r>$lemmaC<v n="cat"/><s n="m"/></r>
+                    </p>
+                </e>
+            </action>
+        </action-set>
+</cross-action>
+<cross-action id="mf-f LR" a="cristipiticul">
+        <description>mf problem</description>
+        <pattern>
+            <e r="LR">
+                <p>
+                    <l>$lemmaA<v n="cat"/><s n="mf"/></l>
+                    <r>$lemmaB<v n="cat"/><t/></r>
+                </p>
+            </e>
+            <e>
+                <p>
+                    <l>$lemmaB<v n="cat"/><t/></l>
+                    <r>$lemmaC<v n="cat"/><s n="f"/></r>
+                </p>
+            </e>
+        </pattern>
+        <action-set>
+            <action>
+                <e r="LR">
+                    <p>
+                        <l>$lemmaA<v n="cat"/><s n="mf"/></l>
+                        <r>$lemmaC<v n="cat"/><s n="f"/></r>
+                    </p>
+                </e>
+            </action>
+        </action-set>
+</cross-action>
+<cross-action id="m-mf LR" a="cristipiticul">
+        <description>mf problem</description>
+        <pattern>
+            <e r="LR">
+                <p>
+                    <l>$lemmaA<v n="cat"/><s n="m"/></l>
+                    <r>$lemmaB<v n="cat"/><t/></r>
+                </p>
+            </e>
+            <e>
+                <p>
+                    <l>$lemmaB<v n="cat"/><t/></l>
+                    <r>$lemmaC<v n="cat"/><s n="mf"/></r>
+                </p>
+            </e>
+        </pattern>
+        <action-set>
+            <action>
+                <e r="LR">
+                    <p>
+                        <l>$lemmaA<v n="cat"/><s n="m"/></l>
+                        <r>$lemmaC<v n="cat"/><s n="mf"/></r>
+                    </p>
+                </e>
+            </action>
+        </action-set>
+</cross-action>
+<cross-action id="f-mf LR" a="cristipiticul">
+        <description>mf problem</description>
+        <pattern>
+            <e r="LR">
+                <p>
+                    <l>$lemmaA<v n="cat"/><s n="f"/></l>
+                    <r>$lemmaB<v n="cat"/><t/></r>
+                </p>
+            </e>
+            <e>
+                <p>
+                    <l>$lemmaB<v n="cat"/><t/></l>
+                    <r>$lemmaC<v n="cat"/><s n="mf"/></r>
+                </p>
+            </e>
+        </pattern>
+        <action-set>
+            <action>
+                <e r="LR">
+                    <p>
+                        <l>$lemmaA<v n="cat"/><s n="f"/></l>
+                        <r>$lemmaC<v n="cat"/><s n="mf"/></r>
+                    </p>
+                </e>
+            </action>
+        </action-set>
+</cross-action>
+<cross-action id="mf-* LR" a="cristipiticul">
+        <description>mf problem</description>
+        <pattern>
+            <e r="LR">
+                <p>
+                    <l>$lemmaA<v n="cat"/><s n="mf"/></l>
+                    <r>$lemmaB<v n="cat"/><t/></r>
+                </p>
+            </e>
+            <e>
+                <p>
+                    <l>$lemmaB<v n="cat"/><t/></l>
+                    <r>$lemmaC<v n="cat"/><s n="*"/></r>
+                </p>
+            </e>
+        </pattern>
+        <action-set>
+            <action>
+                <e r="LR">
+                    <p>
+                        <l>$lemmaA<v n="cat"/><s n="mf"/></l>
+                        <r>$lemmaC<v n="cat"/></r>
+                    </p>
+                </e>
+            </action>
+        </action-set>
+</cross-action>
+<cross-action id="*-mf LR" a="cristipiticul">
+        <description>mf problem</description>
+        <pattern>
+            <e r="LR">
+                <p>
+                    <l>$lemmaA<v n="cat"/><s n="*"/></l>
+                    <r>$lemmaB<v n="cat"/><t/></r>
+                </p>
+            </e>
+            <e>
+                <p>
+                    <l>$lemmaB<v n="cat"/><t/></l>
+                    <r>$lemmaC<v n="cat"/><s n="mf"/></r>
+                </p>
+            </e>
+        </pattern>
+        <action-set>
+            <action>
+                <e r="LR">
+                    <p>
+                        <l>$lemmaA<v n="cat"/></l>
+                        <r>$lemmaC<v n="cat"/><s n="mf"/></r>
+                    </p>
+                </e>
+            </action>
+        </action-set>
+</cross-action>
+<cross-action id="defaultmm LR" a="cristipiticul">
+	<description>default for male-male</description>
+	<pattern>
+		<e r="LR">
+			<p>
+				<l>$lemmaA<v n="cat"/><s n="m"/></l>
+				<r>$lemmaB<v n="cat"/><t/></r>
+			</p>   
+
+		</e>
+		<e>
+			<p>
+				<l>$lemmaB<v n="cat"/><t/></l>
+				<r>$lemmaC<v n="cat"/><s n="m"/></r>
+			</p>
+		</e>
+	</pattern>
+	<action-set>
+		<action>	
+			<e r="LR">
+				<p>
+					<l>$lemmaA<v n="cat"/><s n="m"/></l>
+					<r>$lemmaC<v n="cat"/><s n="m"/></r>
+				</p>
+			</e>
+		</action>
+	</action-set>
+</cross-action>
+<cross-action id="defaultmf LR" a="cristipiticul">
+	<description>default for male-female</description>
+	<pattern>
+		<e r="LR">
+			<p>
+				<l>$lemmaA<v n="cat"/><s n="m"/></l>
+				<r>$lemmaB<v n="cat"/><t/></r>
+			</p>   
+
+		</e>
+		<e>
+			<p>
+				<l>$lemmaB<v n="cat"/><t/></l>
+				<r>$lemmaC<v n="cat"/><s n="f"/></r>
+			</p>
+		</e>
+	</pattern>
+	<action-set>
+		<action>
+			<e r="LR">
+				<p>
+					<l>$lemmaA<v n="cat"/><s n="m"/></l>
+					<r>$lemmaC<v n="cat"/><s n="f"/></r>
+				</p>
+			</e>
+		</action>
+	</action-set>
+</cross-action>
+<cross-action id="defaultff LR" a="cristipiticul">
+	<description>default for female-female</description>
+	<pattern>
+		<e r="LR">
+			<p>
+				<l>$lemmaA<v n="cat"/><s n="f"/></l>
+				<r>$lemmaB<v n="cat"/><t/></r>
+			</p>   
+
+		</e>
+		<e>
+			<p>
+				<l>$lemmaB<v n="cat"/><t/></l>
+				<r>$lemmaC<v n="cat"/><s n="f"/></r>
+			</p>
+		</e>
+	</pattern>
+	<action-set>
+		<action>
+			<e r="LR">
+				<p>
+					<l>$lemmaA<v n="cat"/><s n="f"/></l>
+					<r>$lemmaC<v n="cat"/><s n="f"/></r>
+				</p>
+			</e>
+		</action>
+	</action-set>
+</cross-action>
+<cross-action id="defaultfm LR" a="cristipiticul">
+	<description>default for female-male</description>
+	<pattern>
+		<e r="LR">
+			<p>
+				<l>$lemmaA<v n="cat"/><s n="f"/></l>
+				<r>$lemmaB<v n="cat"/><t/></r>
+			</p>   
+
+		</e>
+		<e>
+			<p>
+				<l>$lemmaB<v n="cat"/><t/></l>
+				<r>$lemmaC<v n="cat"/><s n="m"/></r>
+			</p>
+		</e>
+	</pattern>
+	<action-set>
+		<action>
+			<e r="LR">
+				<p>
+					<l>$lemmaA<v n="cat"/><s n="f"/></l>
+					<r>$lemmaC<v n="cat"/><s n="m"/></r>
+				</p>
+			</e>
+		</action>
+	</action-set>
+</cross-action>
+<cross-action id="default*m LR" a="cristipiticul">
+	<description>default for *-male</description>
+	<pattern>
+		<e r="LR">
+			<p>
+				<l>$lemmaA<v n="cat"/><s n="*"/></l>
+				<r>$lemmaB<v n="cat"/><t/></r>
+			</p>   
+
+		</e>
+		<e>
+			<p>
+				<l>$lemmaB<v n="cat"/><t/></l>
+				<r>$lemmaC<v n="cat"/><s n="m"/></r>
+			</p>
+		</e>
+	</pattern>
+	<action-set>
+		<action>
+			<e r="LR">
+				<p>
+					<l>$lemmaA<v n="cat"/><s n="m"/></l>
+					<r>$lemmaC<v n="cat"/><s n="m"/></r>
+				</p>
+			</e>
+		</action>
+	</action-set>
+</cross-action>
+<cross-action id="default*f LR" a="cristipiticul">
+	<description>default for *-female</description>
+	<pattern>
+		<e r="LR">
+			<p>
+				<l>$lemmaA<v n="cat"/><s n="*"/></l>
+				<r>$lemmaB<v n="cat"/><t/></r>
+			</p>   
+
+		</e>
+		<e>
+			<p>
+				<l>$lemmaB<v n="cat"/><t/></l>
+				<r>$lemmaC<v n="cat"/><s n="f"/></r>
+			</p>
+		</e>
+	</pattern>
+	<action-set>
+		<action>
+			<e r="LR">
+				<p>
+					<l>$lemmaA<v n="cat"/><s n="f"/></l>
+					<r>$lemmaC<v n="cat"/><s n="f"/></r>
+				</p>
+			</e>
+		</action>
+	</action-set>
+</cross-action>
+<cross-action id="defaultf* LR" a="cristipiticul">
+	<description>default for female-*</description>
+	<pattern>
+		<e r="LR">
+			<p>
+				<l>$lemmaA<v n="cat"/><s n="f"/></l>
+				<r>$lemmaB<v n="cat"/><t/></r>
+			</p>   
+
+		</e>
+		<e>
+			<p>
+				<l>$lemmaB<v n="cat"/><t/></l>
+				<r>$lemmaC<v n="cat"/><s n="*"/></r>
+			</p>
+		</e>
+	</pattern>
+	<action-set>
+		<action>
+			<e r="LR">
+				<p>
+					<l>$lemmaA<v n="cat"/><s n="f"/></l>
+					<r>$lemmaC<v n="cat"/><s n="f"/></r>
+				</p>
+			</e>
+		</action>
+	</action-set>
+</cross-action>
+<cross-action id="defaultm* LR" a="cristipiticul">
+	<description>default for *-male</description>
+	<pattern>
+		<e r="LR">
+			<p>
+				<l>$lemmaA<v n="cat"/><s n="m"/></l>
+				<r>$lemmaB<v n="cat"/><t/></r>
+			</p>   
+
+		</e>
+		<e>
+			<p>
+				<l>$lemmaB<v n="cat"/><t/></l>
+				<r>$lemmaC<v n="cat"/><s n="*"/></r>
+			</p>
+		</e>
+	</pattern>
+	<action-set>
+		<action>
+			<e r="LR">
+				<p>
+					<l>$lemmaA<v n="cat"/><s n="m"/></l>
+					<r>$lemmaC<v n="cat"/><s n="m"/></r>
+				</p>
+			</e>
+		</action>
+	</action-set>
+</cross-action>
+<cross-action id="default** LR" a="cristipiticul">
+	<description>default for *-*</description>
+	<pattern>
+		<e r="LR">
+			<p>
+				<l>$lemmaA<v n="cat"/><s n="*"/></l>
+				<r>$lemmaB<v n="cat"/><t/></r>
+			</p>   
+
+		</e>
+		<e>
+			<p>
+				<l>$lemmaB<v n="cat"/><t/></l>
+				<r>$lemmaC<v n="cat"/><s n="*"/></r>
+			</p>
+		</e>
+	</pattern>
+	<action-set>
+		<action>
+			<e r="LR">
+				<p>
+					<l>$lemmaA<v n="cat"/></l>
+					<r>$lemmaC<v n="cat"/></r>
+				</p>
+			</e>
+		</action>
+	</action-set>
+</cross-action>
+<cross-action id="default LR" a="cristipiticul">
+	<description>default</description>
+	<pattern>
+		<e r="LR">
+			<p>
+				<l>$lemmaA<v n="cat"/></l>
+				<r>$lemmaB<v n="cat"/><t/></r>
+			</p>   
+
+		</e>
+		<e>
+			<p>
+				<l>$lemmaB<v n="cat"/><t/></l>
+				<r>$lemmaC<v n="cat"/></r>
+			</p>
+		</e>
+	</pattern>
+	<action-set>
+		<action>
+			<e r="LR">
+				<p>
+					<l>$lemmaA<v n="cat"/></l>
+					<r>$lemmaC<v n="cat"/></r>
+				</p>
+			</e>
+		</action>
+	</action-set>
+</cross-action>
+
+
+<cross-action id="mf-mf RL" a="cristipiticul">
+        <description>mf problem</description>
+        <pattern>
+            <e r="RL">
+                <p>
+                    <l>$lemmaA<v n="cat"/><s n="mf"/></l>
+                    <r>$lemmaB<v n="cat"/><t/></r>
+                </p>
+            </e>
+            <e>
+                <p>
+                    <l>$lemmaB<v n="cat"/><t/></l>
+                    <r>$lemmaC<v n="cat"/><s n="mf"/></r>
+                </p>
+            </e>
+        </pattern>
+        <action-set>
+            <action>
+                <e r="RL">
+                    <p>
+                        <l>$lemmaA<v n="cat"/><s n="mf"/></l>
+                        <r>$lemmaC<v n="cat"/><s n="mf"/></r>
+                    </p>
+                </e>
+            </action>
+        </action-set>
+</cross-action>
+<cross-action id="mf-m RL" a="cristipiticul">
+        <description>mf problem</description>
+        <pattern>
+            <e r="RL">
+                <p>
+                    <l>$lemmaA<v n="cat"/><s n="mf"/></l>
+                    <r>$lemmaB<v n="cat"/><t/></r>
+                </p>
+            </e>
+            <e>
+                <p>
+                    <l>$lemmaB<v n="cat"/><t/></l>
+                    <r>$lemmaC<v n="cat"/><s n="m"/></r>
+                </p>
+            </e>
+        </pattern>
+        <action-set>
+            <action>
+                <e r="RL">
+                    <p>
+                        <l>$lemmaA<v n="cat"/><s n="mf"/></l>
+                        <r>$lemmaC<v n="cat"/><s n="m"/></r>
+                    </p>
+                </e>
+            </action>
+        </action-set>
+</cross-action>
+<cross-action id="mf-f RL" a="cristipiticul">
+        <description>mf problem</description>
+        <pattern>
+            <e r="RL">
+                <p>
+                    <l>$lemmaA<v n="cat"/><s n="mf"/></l>
+                    <r>$lemmaB<v n="cat"/><t/></r>
+                </p>
+            </e>
+            <e>
+                <p>
+                    <l>$lemmaB<v n="cat"/><t/></l>
+                    <r>$lemmaC<v n="cat"/><s n="f"/></r>
+                </p>
+            </e>
+        </pattern>
+        <action-set>
+            <action>
+                <e r="RL">
+                    <p>
+                        <l>$lemmaA<v n="cat"/><s n="mf"/></l>
+                        <r>$lemmaC<v n="cat"/><s n="f"/></r>
+                    </p>
+                </e>
+            </action>
+        </action-set>
+</cross-action>
+<cross-action id="m-mf RL" a="cristipiticul">
+        <description>mf problem</description>
+        <pattern>
+            <e r="RL">
+                <p>
+                    <l>$lemmaA<v n="cat"/><s n="m"/></l>
+                    <r>$lemmaB<v n="cat"/><t/></r>
+                </p>
+            </e>
+            <e>
+                <p>
+                    <l>$lemmaB<v n="cat"/><t/></l>
+                    <r>$lemmaC<v n="cat"/><s n="mf"/></r>
+                </p>
+            </e>
+        </pattern>
+        <action-set>
+            <action>
+                <e r="RL">
+                    <p>
+                        <l>$lemmaA<v n="cat"/><s n="m"/></l>
+                        <r>$lemmaC<v n="cat"/><s n="mf"/></r>
+                    </p>
+                </e>
+            </action>
+        </action-set>
+</cross-action>
+<cross-action id="f-mf RL" a="cristipiticul">
+        <description>mf problem</description>
+        <pattern>
+            <e r="RL">
+                <p>
+                    <l>$lemmaA<v n="cat"/><s n="f"/></l>
+                    <r>$lemmaB<v n="cat"/><t/></r>
+                </p>
+            </e>
+            <e>
+                <p>
+                    <l>$lemmaB<v n="cat"/><t/></l>
+                    <r>$lemmaC<v n="cat"/><s n="mf"/></r>
+                </p>
+            </e>
+        </pattern>
+        <action-set>
+            <action>
+                <e r="RL">
+                    <p>
+                        <l>$lemmaA<v n="cat"/><s n="f"/></l>
+                        <r>$lemmaC<v n="cat"/><s n="mf"/></r>
+                    </p>
+                </e>
+            </action>
+        </action-set>
+</cross-action>
+<cross-action id="mf-* RL" a="cristipiticul">
+        <description>mf problem</description>
+        <pattern>
+            <e r="RL">
+                <p>
+                    <l>$lemmaA<v n="cat"/><s n="mf"/></l>
+                    <r>$lemmaB<v n="cat"/><t/></r>
+                </p>
+            </e>
+            <e>
+                <p>
+                    <l>$lemmaB<v n="cat"/><t/></l>
+                    <r>$lemmaC<v n="cat"/><s n="*"/></r>
+                </p>
+            </e>
+        </pattern>
+        <action-set>
+            <action>
+                <e r="RL">
+                    <p>
+                        <l>$lemmaA<v n="cat"/><s n="mf"/></l>
+                        <r>$lemmaC<v n="cat"/></r>
+                    </p>
+                </e>
+            </action>
+        </action-set>
+</cross-action>
+<cross-action id="*-mf RL" a="cristipiticul">
+        <description>mf problem</description>
+        <pattern>
+            <e r="RL">
+                <p>
+                    <l>$lemmaA<v n="cat"/><s n="*"/></l>
+                    <r>$lemmaB<v n="cat"/><t/></r>
+                </p>
+            </e>
+            <e>
+                <p>
+                    <l>$lemmaB<v n="cat"/><t/></l>
+                    <r>$lemmaC<v n="cat"/><s n="mf"/></r>
+                </p>
+            </e>
+        </pattern>
+        <action-set>
+            <action>
+                <e r="RL">
+                    <p>
+                        <l>$lemmaA<v n="cat"/></l>
+                        <r>$lemmaC<v n="cat"/><s n="mf"/></r>
+                    </p>
+                </e>
+            </action>
+        </action-set>
+</cross-action>
+<cross-action id="defaultmm RL" a="cristipiticul">
+	<description>default for male-male</description>
+	<pattern>
+		<e r="RL">
+			<p>
+				<l>$lemmaA<v n="cat"/><s n="m"/></l>
+				<r>$lemmaB<v n="cat"/><t/></r>
+			</p>   
+
+		</e>
+		<e>
+			<p>
+				<l>$lemmaB<v n="cat"/><t/></l>
+				<r>$lemmaC<v n="cat"/><s n="m"/></r>
+			</p>
+		</e>
+	</pattern>
+	<action-set>
+		<action>	
+			<e r="RL">
+				<p>
+					<l>$lemmaA<v n="cat"/><s n="m"/></l>
+					<r>$lemmaC<v n="cat"/><s n="m"/></r>
+				</p>
+			</e>
+		</action>
+	</action-set>
+</cross-action>
+<cross-action id="defaultmf RL" a="cristipiticul">
+	<description>default for male-female</description>
+	<pattern>
+		<e r="RL">
+			<p>
+				<l>$lemmaA<v n="cat"/><s n="m"/></l>
+				<r>$lemmaB<v n="cat"/><t/></r>
+			</p>   
+
+		</e>
+		<e>
+			<p>
+				<l>$lemmaB<v n="cat"/><t/></l>
+				<r>$lemmaC<v n="cat"/><s n="f"/></r>
+			</p>
+		</e>
+	</pattern>
+	<action-set>
+		<action>
+			<e r="RL">
+				<p>
+					<l>$lemmaA<v n="cat"/><s n="m"/></l>
+					<r>$lemmaC<v n="cat"/><s n="f"/></r>
+				</p>
+			</e>
+		</action>
+	</action-set>
+</cross-action>
+<cross-action id="defaultff RL" a="cristipiticul">
+	<description>default for female-female</description>
+	<pattern>
+		<e r="RL">
+			<p>
+				<l>$lemmaA<v n="cat"/><s n="f"/></l>
+				<r>$lemmaB<v n="cat"/><t/></r>
+			</p>   
+
+		</e>
+		<e>
+			<p>
+				<l>$lemmaB<v n="cat"/><t/></l>
+				<r>$lemmaC<v n="cat"/><s n="f"/></r>
+			</p>
+		</e>
+	</pattern>
+	<action-set>
+		<action>
+			<e r="RL">
+				<p>
+					<l>$lemmaA<v n="cat"/><s n="f"/></l>
+					<r>$lemmaC<v n="cat"/><s n="f"/></r>
+				</p>
+			</e>
+		</action>
+	</action-set>
+</cross-action>
+<cross-action id="defaultfm RL" a="cristipiticul">
+	<description>default for female-male</description>
+	<pattern>
+		<e r="RL">
+			<p>
+				<l>$lemmaA<v n="cat"/><s n="f"/></l>
+				<r>$lemmaB<v n="cat"/><t/></r>
+			</p>   
+
+		</e>
+		<e>
+			<p>
+				<l>$lemmaB<v n="cat"/><t/></l>
+				<r>$lemmaC<v n="cat"/><s n="m"/></r>
+			</p>
+		</e>
+	</pattern>
+	<action-set>
+		<action>
+			<e r="RL">
+				<p>
+					<l>$lemmaA<v n="cat"/><s n="f"/></l>
+					<r>$lemmaC<v n="cat"/><s n="m"/></r>
+				</p>
+			</e>
+		</action>
+	</action-set>
+</cross-action>
+<cross-action id="default*m RL" a="cristipiticul">
+	<description>default for *-male</description>
+	<pattern>
+		<e r="RL">
+			<p>
+				<l>$lemmaA<v n="cat"/><s n="*"/></l>
+				<r>$lemmaB<v n="cat"/><t/></r>
+			</p>   
+
+		</e>
+		<e>
+			<p>
+				<l>$lemmaB<v n="cat"/><t/></l>
+				<r>$lemmaC<v n="cat"/><s n="m"/></r>
+			</p>
+		</e>
+	</pattern>
+	<action-set>
+		<action>
+			<e r="RL">
+				<p>
+					<l>$lemmaA<v n="cat"/><s n="m"/></l>
+					<r>$lemmaC<v n="cat"/><s n="m"/></r>
+				</p>
+			</e>
+		</action>
+	</action-set>
+</cross-action>
+<cross-action id="default*f RL" a="cristipiticul">
+	<description>default for *-female</description>
+	<pattern>
+		<e r="RL">
+			<p>
+				<l>$lemmaA<v n="cat"/><s n="*"/></l>
+				<r>$lemmaB<v n="cat"/><t/></r>
+			</p>   
+
+		</e>
+		<e>
+			<p>
+				<l>$lemmaB<v n="cat"/><t/></l>
+				<r>$lemmaC<v n="cat"/><s n="f"/></r>
+			</p>
+		</e>
+	</pattern>
+	<action-set>
+		<action>
+			<e r="RL">
+				<p>
+					<l>$lemmaA<v n="cat"/><s n="f"/></l>
+					<r>$lemmaC<v n="cat"/><s n="f"/></r>
+				</p>
+			</e>
+		</action>
+	</action-set>
+</cross-action>
+<cross-action id="defaultf* RL" a="cristipiticul">
+	<description>default for female-*</description>
+	<pattern>
+		<e r="RL">
+			<p>
+				<l>$lemmaA<v n="cat"/><s n="f"/></l>
+				<r>$lemmaB<v n="cat"/><t/></r>
+			</p>   
+
+		</e>
+		<e>
+			<p>
+				<l>$lemmaB<v n="cat"/><t/></l>
+				<r>$lemmaC<v n="cat"/><s n="*"/></r>
+			</p>
+		</e>
+	</pattern>
+	<action-set>
+		<action>
+			<e r="RL">
+				<p>
+					<l>$lemmaA<v n="cat"/><s n="f"/></l>
+					<r>$lemmaC<v n="cat"/><s n="f"/></r>
+				</p>
+			</e>
+		</action>
+	</action-set>
+</cross-action>
+<cross-action id="defaultm* RL" a="cristipiticul">
+	<description>default for *-male</description>
+	<pattern>
+		<e r="RL">
+			<p>
+				<l>$lemmaA<v n="cat"/><s n="m"/></l>
+				<r>$lemmaB<v n="cat"/><t/></r>
+			</p>   
+
+		</e>
+		<e>
+			<p>
+				<l>$lemmaB<v n="cat"/><t/></l>
+				<r>$lemmaC<v n="cat"/><s n="*"/></r>
+			</p>
+		</e>
+	</pattern>
+	<action-set>
+		<action>
+			<e r="RL">
+				<p>
+					<l>$lemmaA<v n="cat"/><s n="m"/></l>
+					<r>$lemmaC<v n="cat"/><s n="m"/></r>
+				</p>
+			</e>
+		</action>
+	</action-set>
+</cross-action>
+<cross-action id="default** RL" a="cristipiticul">
+	<description>default for *-*</description>
+	<pattern>
+		<e r="RL">
+			<p>
+				<l>$lemmaA<v n="cat"/><s n="*"/></l>
+				<r>$lemmaB<v n="cat"/><t/></r>
+			</p>   
+
+		</e>
+		<e>
+			<p>
+				<l>$lemmaB<v n="cat"/><t/></l>
+				<r>$lemmaC<v n="cat"/><s n="*"/></r>
+			</p>
+		</e>
+	</pattern>
+	<action-set>
+		<action>
+			<e r="RL">
+				<p>
+					<l>$lemmaA<v n="cat"/></l>
+					<r>$lemmaC<v n="cat"/></r>
+				</p>
+			</e>
+		</action>
+	</action-set>
+</cross-action>
+<cross-action id="default RL" a="cristipiticul">
+	<description>default</description>
+	<pattern>
+		<e r="RL">
+			<p>
+				<l>$lemmaA<v n="cat"/></l>
+				<r>$lemmaB<v n="cat"/><t/></r>
+			</p>   
+
+		</e>
+		<e>
+			<p>
+				<l>$lemmaB<v n="cat"/><t/></l>
+				<r>$lemmaC<v n="cat"/></r>
+			</p>
+		</e>
+	</pattern>
+	<action-set>
+		<action>
+			<e r="RL">
+				<p>
+					<l>$lemmaA<v n="cat"/></l>
+					<r>$lemmaC<v n="cat"/></r>
+				</p>
+			</e>
+		</action>
+	</action-set>
+</cross-action>
+
+
+
+
+<cross-action id="mf-mf" a="cristipiticul">
+        <description>mf problem</description>
+        <pattern>
+            <e>
+                <p>
+                    <l>$lemmaA<v n="cat"/><s n="mf"/></l>
+                    <r>$lemmaB<v n="cat"/><t/></r>
+                </p>
+            </e>
+            <e>
+                <p>
+                    <l>$lemmaB<v n="cat"/><t/></l>
+                    <r>$lemmaC<v n="cat"/><s n="mf"/></r>
+                </p>
+            </e>
+        </pattern>
+        <action-set>
+            <action>
+                <e>
+                    <p>
+                        <l>$lemmaA<v n="cat"/><s n="mf"/></l>
+                        <r>$lemmaC<v n="cat"/><s n="mf"/></r>
+                    </p>
+                </e>
+            </action>
+        </action-set>
+</cross-action>
+<cross-action id="mf-m" a="cristipiticul">
+        <description>mf problem</description>
+        <pattern>
+            <e>
+                <p>
+                    <l>$lemmaA<v n="cat"/><s n="mf"/></l>
+                    <r>$lemmaB<v n="cat"/><t/></r>
+                </p>
+            </e>
+            <e>
+                <p>
+                    <l>$lemmaB<v n="cat"/><t/></l>
+                    <r>$lemmaC<v n="cat"/><s n="m"/></r>
+                </p>
+            </e>
+        </pattern>
+        <action-set>
+            <action>
+                <e>
+                    <p>
+                        <l>$lemmaA<v n="cat"/><s n="mf"/></l>
+                        <r>$lemmaC<v n="cat"/><s n="m"/></r>
+                    </p>
+                </e>
+            </action>
+        </action-set>
+</cross-action>
+<cross-action id="mf-f" a="cristipiticul">
+        <description>mf problem</description>
+        <pattern>
+            <e>
+                <p>
+                    <l>$lemmaA<v n="cat"/><s n="mf"/></l>
+                    <r>$lemmaB<v n="cat"/><t/></r>
+                </p>
+            </e>
+            <e>
+                <p>
+                    <l>$lemmaB<v n="cat"/><t/></l>
+                    <r>$lemmaC<v n="cat"/><s n="f"/></r>
+                </p>
+            </e>
+        </pattern>
+        <action-set>
+            <action>
+                <e>
+                    <p>
+                        <l>$lemmaA<v n="cat"/><s n="mf"/></l>
+                        <r>$lemmaC<v n="cat"/><s n="f"/></r>
+                    </p>
+                </e>
+            </action>
+        </action-set>
+</cross-action>
+<cross-action id="m-mf" a="cristipiticul">
+        <description>mf problem</description>
+        <pattern>
+            <e>
+                <p>
+                    <l>$lemmaA<v n="cat"/><s n="m"/></l>
+                    <r>$lemmaB<v n="cat"/><t/></r>
+                </p>
+            </e>
+            <e>
+                <p>
+                    <l>$lemmaB<v n="cat"/><t/></l>
+                    <r>$lemmaC<v n="cat"/><s n="mf"/></r>
+                </p>
+            </e>
+        </pattern>
+        <action-set>
+            <action>
+                <e>
+                    <p>
+                        <l>$lemmaA<v n="cat"/><s n="m"/></l>
+                        <r>$lemmaC<v n="cat"/><s n="mf"/></r>
+                    </p>
+                </e>
+            </action>
+        </action-set>
+</cross-action>
+<cross-action id="f-mf" a="cristipiticul">
+        <description>mf problem</description>
+        <pattern>
+            <e>
+                <p>
+                    <l>$lemmaA<v n="cat"/><s n="f"/></l>
+                    <r>$lemmaB<v n="cat"/><t/></r>
+                </p>
+            </e>
+            <e>
+                <p>
+                    <l>$lemmaB<v n="cat"/><t/></l>
+                    <r>$lemmaC<v n="cat"/><s n="mf"/></r>
+                </p>
+            </e>
+        </pattern>
+        <action-set>
+            <action>
+                <e>
+                    <p>
+                        <l>$lemmaA<v n="cat"/><s n="f"/></l>
+                        <r>$lemmaC<v n="cat"/><s n="mf"/></r>
+                    </p>
+                </e>
+            </action>
+        </action-set>
+</cross-action>
+<cross-action id="mf-*" a="cristipiticul">
+        <description>mf problem</description>
+        <pattern>
+            <e>
+                <p>
+                    <l>$lemmaA<v n="cat"/><s n="mf"/></l>
+                    <r>$lemmaB<v n="cat"/><t/></r>
+                </p>
+            </e>
+            <e>
+                <p>
+                    <l>$lemmaB<v n="cat"/><t/></l>
+                    <r>$lemmaC<v n="cat"/><s n="*"/></r>
+                </p>
+            </e>
+        </pattern>
+        <action-set>
+            <action>
+                <e>
+                    <p>
+                        <l>$lemmaA<v n="cat"/><s n="mf"/></l>
+                        <r>$lemmaC<v n="cat"/></r>
+                    </p>
+                </e>
+            </action>
+        </action-set>
+</cross-action>
+<cross-action id="*-mf" a="cristipiticul">
+        <description>mf problem</description>
+        <pattern>
+            <e>
+                <p>
+                    <l>$lemmaA<v n="cat"/><s n="*"/></l>
+                    <r>$lemmaB<v n="cat"/><t/></r>
+                </p>
+            </e>
+            <e>
+                <p>
+                    <l>$lemmaB<v n="cat"/><t/></l>
+                    <r>$lemmaC<v n="cat"/><s n="mf"/></r>
+                </p>
+            </e>
+        </pattern>
+        <action-set>
+            <action>
+                <e>
+                    <p>
+                        <l>$lemmaA<v n="cat"/></l>
+                        <r>$lemmaC<v n="cat"/><s n="mf"/></r>
+                    </p>
+                </e>
+            </action>
+        </action-set>
+</cross-action>
+<cross-action id="defaultmm" a="cristipiticul">
+	<description>default for male-male</description>
+	<pattern>
+		<e>
+			<p>
+				<l>$lemmaA<v n="cat"/><s n="m"/></l>
+				<r>$lemmaB<v n="cat"/><t/></r>
+			</p>   
+
+		</e>
+		<e>
+			<p>
+				<l>$lemmaB<v n="cat"/><t/></l>
+				<r>$lemmaC<v n="cat"/><s n="m"/></r>
+			</p>
+		</e>
+	</pattern>
+	<action-set>
+		<action>
+			<e>
+				<p>
+					<l>$lemmaA<v n="cat"/><s n="m"/></l>
+					<r>$lemmaC<v n="cat"/><s n="m"/></r>
+				</p>
+			</e>
+		</action>
+	</action-set>
+</cross-action>
+<cross-action id="defaultmf" a="cristipiticul">
+	<description>default for male-female</description>
+	<pattern>
+		<e>
+			<p>
+				<l>$lemmaA<v n="cat"/><s n="m"/></l>
+				<r>$lemmaB<v n="cat"/><t/></r>
+			</p>   
+
+		</e>
+		<e>
+			<p>
+				<l>$lemmaB<v n="cat"/><t/></l>
+				<r>$lemmaC<v n="cat"/><s n="f"/></r>
+			</p>
+		</e>
+	</pattern>
+	<action-set>
+		<action>
+			<e>
+				<p>
+					<l>$lemmaA<v n="cat"/><s n="m"/></l>
+					<r>$lemmaC<v n="cat"/><s n="f"/></r>
+				</p>
+			</e>
+		</action>
+	</action-set>
+</cross-action>
+<cross-action id="defaultff" a="cristipiticul">
+	<description>default for female-female</description>
+	<pattern>
+		<e>
+			<p>
+				<l>$lemmaA<v n="cat"/><s n="f"/></l>
+				<r>$lemmaB<v n="cat"/><t/></r>
+			</p>   
+
+		</e>
+		<e>
+			<p>
+				<l>$lemmaB<v n="cat"/><t/></l>
+				<r>$lemmaC<v n="cat"/><s n="f"/></r>
+			</p>
+		</e>
+	</pattern>
+	<action-set>
+		<action>
+			<e>
+				<p>
+					<l>$lemmaA<v n="cat"/><s n="f"/></l>
+					<r>$lemmaC<v n="cat"/><s n="f"/></r>
+				</p>
+			</e>
+		</action>
+	</action-set>
+</cross-action>
+<cross-action id="defaultfm" a="cristipiticul">
+	<description>default for female-male</description>
+	<pattern>
+		<e>
+			<p>
+				<l>$lemmaA<v n="cat"/><s n="f"/></l>
+				<r>$lemmaB<v n="cat"/><t/></r>
+			</p>   
+
+		</e>
+		<e>
+			<p>
+				<l>$lemmaB<v n="cat"/><t/></l>
+				<r>$lemmaC<v n="cat"/><s n="m"/></r>
+			</p>
+		</e>
+	</pattern>
+	<action-set>
+		<action>
+			<e>
+				<p>
+					<l>$lemmaA<v n="cat"/><s n="f"/></l>
+					<r>$lemmaC<v n="cat"/><s n="m"/></r>
+				</p>
+			</e>
+		</action>
+	</action-set>
+</cross-action>
+<cross-action id="default*m" a="cristipiticul">
+	<description>default for *-male</description>
+	<pattern>
+		<e>
+			<p>
+				<l>$lemmaA<v n="cat"/><s n="*"/></l>
+				<r>$lemmaB<v n="cat"/><t/></r>
+			</p>   
+
+		</e>
+		<e>
+			<p>
+				<l>$lemmaB<v n="cat"/><t/></l>
+				<r>$lemmaC<v n="cat"/><s n="m"/></r>
+			</p>
+		</e>
+	</pattern>
+	<action-set>
+		<action>
+			<e>
+				<p>
+					<l>$lemmaA<v n="cat"/><s n="m"/></l>
+					<r>$lemmaC<v n="cat"/><s n="m"/></r>
+				</p>
+			</e>
+		</action>
+	</action-set>
+</cross-action>
+<cross-action id="default*f" a="cristipiticul">
+	<description>default for *-female</description>
+	<pattern>
+		<e>
+			<p>
+				<l>$lemmaA<v n="cat"/><s n="*"/></l>
+				<r>$lemmaB<v n="cat"/><t/></r>
+			</p>   
+
+		</e>
+		<e>
+			<p>
+				<l>$lemmaB<v n="cat"/><t/></l>
+				<r>$lemmaC<v n="cat"/><s n="f"/></r>
+			</p>
+		</e>
+	</pattern>
+	<action-set>
+		<action>
+			<e>
+				<p>
+					<l>$lemmaA<v n="cat"/><s n="f"/></l>
+					<r>$lemmaC<v n="cat"/><s n="f"/></r>
+				</p>
+			</e>
+		</action>
+	</action-set>
+</cross-action>
+<cross-action id="defaultf*" a="cristipiticul">
+	<description>default for female-*</description>
+	<pattern>
+		<e>
+			<p>
+				<l>$lemmaA<v n="cat"/><s n="f"/></l>
+				<r>$lemmaB<v n="cat"/><t/></r>
+			</p>   
+
+		</e>
+		<e>
+			<p>
+				<l>$lemmaB<v n="cat"/><t/></l>
+				<r>$lemmaC<v n="cat"/><s n="*"/></r>
+			</p>
+		</e>
+	</pattern>
+	<action-set>
+		<action>
+			<e>
+				<p>
+					<l>$lemmaA<v n="cat"/><s n="f"/></l>
+					<r>$lemmaC<v n="cat"/><s n="f"/></r>
+				</p>
+			</e>
+		</action>
+	</action-set>
+</cross-action>
+<cross-action id="defaultm*" a="cristipiticul">
+	<description>default for *-male</description>
+	<pattern>
+		<e>
+			<p>
+				<l>$lemmaA<v n="cat"/><s n="m"/></l>
+				<r>$lemmaB<v n="cat"/><t/></r>
+			</p>   
+
+		</e>
+		<e>
+			<p>
+				<l>$lemmaB<v n="cat"/><t/></l>
+				<r>$lemmaC<v n="cat"/><s n="*"/></r>
+			</p>
+		</e>
+	</pattern>
+	<action-set>
+		<action>
+			<e>
+				<p>
+					<l>$lemmaA<v n="cat"/><s n="m"/></l>
+					<r>$lemmaC<v n="cat"/><s n="m"/></r>
+				</p>
+			</e>
+		</action>
+	</action-set>
+</cross-action>
+<cross-action id="default**" a="cristipiticul">
+	<description>default for *-*</description>
+	<pattern>
+		<e>
+			<p>
+				<l>$lemmaA<v n="cat"/><s n="*"/></l>
+				<r>$lemmaB<v n="cat"/><t/></r>
+			</p>   
+
+		</e>
+		<e>
+			<p>
+				<l>$lemmaB<v n="cat"/><t/></l>
+				<r>$lemmaC<v n="cat"/><s n="*"/></r>
+			</p>
+		</e>
+	</pattern>
+	<action-set>
+		<action>
+			<e>
+				<p>
+					<l>$lemmaA<v n="cat"/></l>
+					<r>$lemmaC<v n="cat"/></r>
+				</p>
+			</e>
+		</action>
+	</action-set>
+</cross-action>
+<cross-action id="default" a="cristipiticul">
+	<description>default</description>
+	<pattern>
+		<e>
+			<p>
+				<l>$lemmaA<v n="cat"/></l>
+				<r>$lemmaB<v n="cat"/><t/></r>
+			</p>   
+
+		</e>
+		<e>
+			<p>
+				<l>$lemmaB<v n="cat"/><t/></l>
+				<r>$lemmaC<v n="cat"/></r>
+			</p>
+		</e>
+	</pattern>
+	<action-set>
+		<action>
+			<e>
+				<p>
+					<l>$lemmaA<v n="cat"/></l>
+					<r>$lemmaC<v n="cat"/></r>
+				</p>
+			</e>
+		</action>
+	</action-set>
+</cross-action>
+</cross-model>

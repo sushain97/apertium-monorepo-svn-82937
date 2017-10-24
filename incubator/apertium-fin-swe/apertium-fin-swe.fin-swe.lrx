@@ -1,0 +1,15 @@
+<rules>
+  <rule>
+    <match lemma="kuulua" tags="vblex.*"><select lemma="möö" tags="vblex.*"/></match>
+    <match lemma="ääni" tags="n.*"><select lemma="ljus" tags="n.*"/></match>
+  </rule>
+  <rule>
+    <match lemma="kuulua" tags="vblex.*"><select lemma="höra" tags="vblex.*"/></match>
+    <or>
+      <match tags="n.*.par"/>
+      <match tags="n.*.nom"/>
+      <match tags="n.*.gen"/>
+    </or>
+  </rule>
+</rules>
+<!-- vim: set ft=xml: -->

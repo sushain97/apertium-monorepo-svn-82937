@@ -1,0 +1,206 @@
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+
+Multichar_Symbols 
+
+%<n%>                 ! Noun
+%<v%>                 ! Verb
+%<post%>              ! Postposition
+%<num%>               ! Numeral
+%<prn%>               ! Pronoun
+%<adj%>               ! Adjective
+%<adv%>               ! Adverb
+
+%<ord%>               ! Ordinal
+
+%<advl%>
+
+%<sent%>              ! End of sentence marker
+%<cm%>                ! Comma
+
+%<iv%>
+%<tv%>
+%<td%>
+%<neg%>
+%<ger1%>
+%<ger2%>
+%<ger3%>
+
+%>                    ! Morpheme boundary
+%+                    ! Word boundary
+%                     ! Space
+
+%{H%}
+%{A%}
+
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+
+LEXICON Root
+
+Nouns ; 
+Numerals ;
+Adverbs ; 
+Adjectives ;
+Verbs ;
+Pronouns ;
+Postpositions ;
+Punctuation ; 
+
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+
+LEXICON CASES-COMMON
+
+# ;                     ! Nominative
+%+ᠪᡝ%<post%>:%>% ᠪᡝ # ; ! Accusative
+
+LEXICON CASES-SEPARATE
+
+CASES-COMMON ;
+%+ᡳ%<post%>:%>% ᠨᡳ # ;    ! Genitive
+%+ᡩᡝ%<post%>:%>% ᡩᡝ # ; ! Locative
+
+LEXICON CASES-ATTACHED
+
+CASES-COMMON ;
+%+ᡳ%<post%>:%>ᠨᡳ # ;    ! Genitive
+%+ᡩᡝ%<post%>:%>ᡩᡝ # ; ! Locative
+
+LEXICON N1 
+
+%<n%>: CASES-SEPARATE ; 
+
+LEXICON N2
+
+%<n%>: CASES-ATTACHED ;
+
+
+LEXICON V-NEG
+
+%<neg%>:%>ᡣᡡ # ;
+# ;
+
+LEXICON V-INFL
+
+%<ger1%>:%>ᡫᡞ # ;
+%<ger2%>:%>%{H%}%{A%} V-NEG ;
+%<ger3%>:%>ᠮᡝ # ;
+%<ger4%>:%>ᡵᡝ # ;
+
+LEXICON CAUS
+
+%<caus%>:ᠪᡠ V-INFL ;
+V-INFL ;
+
+LEXICON V-IV
+
+%<v%>%<iv%>: CAUS ;
+
+LEXICON V-TV
+
+%<v%>%<tv%>: V-INFL ;
+
+LEXICON V-TD
+
+%<v%>%<td%>: CAUS ;
+
+LEXICON NUM 
+
+%<num%>: # ; 
+%<num%>%<ord%>:%>ᠴᡞ # ;
+
+LEXICON A1 
+
+%<adj%>: # ;
+
+LEXICON A2
+
+%<adj%>: # ;
+%<adj%>%<advl%>: # ;
+
+LEXICON ADV1 
+
+%<adv%>: # ; 
+
+LEXICON POST
+
+%<post%>: # ;
+
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+
+LEXICON Postpositions
+
+ᠮᠠᡢᡤᡞ:ᠮᠠᡢᡤᡞ POST ; ! "after"
+
+
+LEXICON Pronouns
+
+ᠪᡞ%<prn%>%<pers%>%<nom%>:ᠪᡞ # ; ! "I"
+ᠪᡞ%<prn%>%<pers%>%<gen%>:ᠮᡞᠨᡞ  # ; ! "my"
+ᠪᡝ%<prn%>%<pers%>%<nom%>:ᠪᡝ # ; ! "we"
+ᠪᡝ%<prn%>%<pers%>%<nom%>%+ᡳ%<post%>:ᠮᡝᠨᡞ # ; ! "us"
+ᠰᡞ%<prn%>%<pers%>%<nom%>:ᠰᡞ # ; ! "you" (sg)
+ᠰᡞ%<prn%>%<pers%>%<nom%>%+ᡳ%<post%>:ᠰᡞᠨᡞ # ; ! "you" (sg)
+
+ᡨᡝᡵᡝ%<prn%>%<dem%>:ᡨᡝᡵᡝ CASES-ATTACHED ; ! "that"
+ᡝᡵᡝ%<prn%>%<dem%>:ᡝᡵᡝ CASES-ATTACHED ; ! "this"
+ᡞ%<prn%>%<pers%>%<gen%>:ᡞᠨᡠ # ; ! "his/her"
+
+LEXICON Numerals
+
+ᡝᠮᡠ:ᡝᠮᡠ NUM ; ! "one"
+ᠨᠠᡩᠠ:ᠨᠠᡩᠠ NUM ; ! "seven"
+ᡠᠶᡠᠨ:ᡠᠶᡠᠨ NUM ; ! "nine"
+
+LEXICON Nouns 
+
+ᠮᠣᡵᡞᠨ:ᠮᠣᡵᡞᠨ N1 ; ! "horse"
+ᠰᡝᡪᡝᠨ:ᠰᡝᡪᡝᠨ N1 ; ! "cart"
+ᠴᠣᠣᡥᠠ:ᠴᠣᠣᡥᠠ N2 ; ! "army, soldier"
+ᡥᠠᡫᠠᠨ:ᡥᠠᡫᠠᠨ N1 ; ! "?"
+ᡬᡞᠰᠣᠨ:ᡬᡞᠰᡠᠨ N1 ; ! "?"
+ᡨᠣᡣᠰᠣ:ᡨᠣᡣᠰᠣ N1 ; ! "?"
+ᡞᠨᡝᡢᡤᡞ:ᡞᠨᡝᡢᡤᡞ N1 ; ! "day"
+ᡨᡠᠸᠠᡞ% ᠰᡝᡪᡝᠨ:ᡨᡠᠸᠠᡞ% ᠰᡝᡪᡝᠨ N1 ; ! "train"
+ᠰᡠᡣᡩᡠᡪᡝᠨ:ᠰᡠᡣᡩᡠᡪᡝᠨ N1 ; ! "car"
+ᡪᡠᡢᡣᡝᠨ:ᡪᡠᡢᡣᡝᠨ N1 ; ! "clock, bell"
+ᠠᠪᡣᠠ:ᠠᠪᡣᠠ N1 ; ! "heaven"
+ᠠᠮᠠ:ᠠᠮᠠ N1 ; ! "father"
+ᡤᡠᡵᡠᠨ:ᡤᡠᡵᡠᠨ N1 ; ! "people"
+ᡠᡵᠰᡝ:ᡠᡵᠰᡝ N2 ; ! "people"
+
+LEXICON Adjectives
+
+ᡧᠣᠯᠣ:ᡧᠣᠯᠣ A1 ; ! "free"
+ᡝᡵᡩᡝ:ᡝᡵᡩᡝ A1 ; ! "early"
+ᡪᠠᡞ:ᡪᠠᡞ A1 ; ! "next"
+
+LEXICON Adverbs 
+
+ᠰᡞᡩᡝᠨ:ᠰᡞᡩᡝᠨ ADV1 ; ! "for a while"
+ᡝᡩᡝ:ᡝᡩᡝ ADV1 ; ! "here"
+ᠠᠮᠪᡠᠯᠠ:ᠠᠮᠪᡠᠯᠠ ADV1 ; ! "seriously, greatly"
+
+LEXICON Verbs
+
+ᠪᠠ᠇ᡞ:ᠪᠠ᠇ᡞ V-IV ; ! "be"
+ᡠᡵᡝᠪᡠ:ᡠᡵᡝᠪᡠ V-IV ; ! "drill" 
+ᡞᠰᡞᠨᠠ:ᡞᠰᡞᠨᠠ V-IV ; ! "arrive"
+ᡪᡞ:ᡪᡞ V-IV ; ! "come"
+ᡪᡞᠯᡞᡩᠠ:ᡪᡞᠯᡞᡩᠠ V-IV ; ! "get angry"
+ᡩᡠᠯᡝ:ᡩᡠᠯᡝ V-IV ; ! "strike"
+ᠪᡠ:ᠪᡠ V-TV ; ! "give"
+ᠠᡵᠠ:ᠠᡵᠠ V-TV ; ! "make"
+
+ᡨᡠᠴᡞ:ᡥᠠᡫᠠᠨ V-TD ; ! ?
+ᠠᠯᠠ:ᠠᠯᠠ V-TD ; ! ?
+ᡝᡫᡠᡪᡝ:ᡝᡫᡠᡪᡝ V-TD ; ! ?
+ᠪᡠᠴᡝ:ᠪᡠᠴᡝ V-TD ; ! ?
+ᡫᠣᠨᡪᡞ:ᡫᠣᠨᡪᡞ V-TD ; ! ?
+ᠰᡞᡨᠠ:ᠰᡞᡨᠠ V-TD ; ! ?
+ᡠᡩᠠ:ᡠᡩᠠ V-TD ; ! ?
+ᡫᡠᠨᠴᡝ:ᡫᡠᠨᠴᡝ V-TD ; ! ?
+ᡫᡝᡣᠰᡞ:ᡫᡝᡣᠰᡞ V-TD ; ! ?
+
+LEXICON Punctuation
+
+᠈%<cm%>:᠈ # ; ! ","
+᠉%<sent%>:᠉ # ; ! "."

@@ -1,0 +1,706 @@
+Multichar_Symbols  +V +Inf +Cont +Prog +Comp +Imp
+				   +Obj1 +Obj2 +Obj3 
+                   +Act1 +Act2 +Act3 +Act4 
+				   +Loc +Ben +Ins +Rea 
+				   +Dir +Recip ! unused at the moment
+                   %>
+
+                   @R.ALPH.a@ @P.ALPH.a@
+                   @R.ALPH.b@ @P.ALPH.b@
+                   @R.ALPH.c@ @P.ALPH.c@
+                   @R.ALPH.d@ @P.ALPH.d@
+                   @R.ALPH.e@ @P.ALPH.e@
+                   @R.ALPH.f@ @P.ALPH.f@
+                   @R.ALPH.g@ @P.ALPH.g@
+                   @R.ALPH.h@ @P.ALPH.h@
+                   @R.ALPH.i@ @P.ALPH.i@
+                   @R.ALPH.j@ @P.ALPH.j@
+                   @R.ALPH.k@ @P.ALPH.k@
+                   @R.ALPH.l@ @P.ALPH.l@
+                   @R.ALPH.m@ @P.ALPH.m@
+                   @R.ALPH.n@ @P.ALPH.n@
+                   @R.ALPH.o@ @P.ALPH.o@
+                   @R.ALPH.p@ @P.ALPH.p@
+                   @R.ALPH.q@ @P.ALPH.q@
+                   @R.ALPH.r@ @P.ALPH.r@
+                   @R.ALPH.s@ @P.ALPH.s@
+                   @R.ALPH.t@ @P.ALPH.t@
+                   @R.ALPH.u@ @P.ALPH.u@
+                   @R.ALPH.v@ @P.ALPH.v@
+                   @R.ALPH.w@ @P.ALPH.w@
+                   @R.ALPH.x@ @P.ALPH.x@
+                   @R.ALPH.y@ @P.ALPH.y@
+                   @R.ALPH.z@ @P.ALPH.z@
+ 
+                   @P.PREF.i@ @R.PREF.i@
+                   @P.PREF.mag@ @R.PREF.mag@
+                   @P.PREF.ma@ @R.PREF.ma@
+                   @P.PREF.mang@ @R.PREF.mang@
+                   @P.PREF.ipaN@ @R.PREF.ipaN@
+                   @P.PREF.ika@ @R.PREF.ika@
+                   @P.PREF.CV@ @R.PREF.CV@
+                   @P.PREF.nag@ @R.PREF.nag@
+                   @P.PREF.na@ @R.PREF.na@
+                   @P.PREF.nang@ @R.PREF.nang@
+                   @P.PREF.ipinaN@ @R.PREF.ipinaN@
+                   @P.PREF.ikina@ @R.PREF.ikina@
+                   @P.PREF.pang@ @R.PREF.pang@
+                   @P.PREF.pag@ @R.PREF.pag@
+
+                   @P.INFX.in@ @R.INFX.in@
+				   @P.INFX.um@ @R.INFX.um@
+
+				   @P.CV.PREF@ @R.CV.PREF@
+				   @P.CV.INFX@ @R.CV.INFX@
+
+                   @D.PREF@ @D.INFX@ @D.CV@
+
+LEXICON Root
+Prefixes ;
+
+LEXICON Prefixes
+@P.PREF.i@:i%>			CVCheck ;
+@P.PREF.mag@:mag%>		CVCheck ;
+@P.PREF.ma@:ma%>			CVCheck ;
+@P.PREF.mang@:mang%>	CVCheck ;
+@P.PREF.ipaN@:ipaN%>		CVCheck ;
+@P.PREF.ika@:ika%>		CVCheck ;
+
+@P.PREF.nag@:nag%>		CVCheck ;
+@P.PREF.na@:na%>			CVCheck ;
+@P.PREF.nang@:nang%>		CVCheck ;
+@P.PREF.ipinaN@:ipinaN%> 	CVCheck ;
+@P.PREF.ikina@:ikina%>	CVCheck ;
+
+@P.PREF.pag@:pag%>		CVCheck ;
+@P.PREF.pang@:pang%>		CVCheck ;
+						CVCheck ;
+
+LEXICON CVCheck
+@P.CV.PREF@:RE+					Alph;
+@P.CV.INFX@@P.INFX.um@:SumE+	Alph;
+@P.CV.INFX@@P.INFX.in@:SinE+	Alph;
+								Alph;
+
+LEXICON Alph
+@P.ALPH.a@a	Infixes ;
+@P.ALPH.b@b	Infixes ;
+@P.ALPH.c@c	Infixes ;
+@P.ALPH.d@d	Infixes ;
+@P.ALPH.e@e	Infixes ;
+@P.ALPH.f@f	Infixes ;
+@P.ALPH.g@g	Infixes ;
+@P.ALPH.h@h	Infixes ;
+@P.ALPH.i@i	Infixes ;
+@P.ALPH.j@j	Infixes ;
+@P.ALPH.k@k	Infixes ;
+@P.ALPH.l@l	Infixes ;
+@P.ALPH.m@m	Infixes ;
+@P.ALPH.n@n	Infixes ;
+@P.ALPH.o@o	Infixes ;
+@P.ALPH.p@p	Infixes ;
+@P.ALPH.q@q	Infixes ;
+@P.ALPH.r@r	Infixes ;
+@P.ALPH.s@s	Infixes ;
+@P.ALPH.t@t	Infixes ;
+@P.ALPH.u@u	Infixes ;
+@P.ALPH.v@v	Infixes ;
+@P.ALPH.w@w	Infixes ;
+@P.ALPH.x@x	Infixes ;
+@P.ALPH.y@y	Infixes ;
+@P.ALPH.z@z	Infixes ;
+
+LEXICON Infixes
+@D.CV@@P.INFX.um@:um	PartStems ;
+@D.CV@@P.INFX.in@:in	PartStems ;
+						PartStems ;
+
+LEXICON PartStems 
+@R.ALPH.b@ili	RegSuffixes ;
+@R.ALPH.l@inis	RegSuffixes ;
+@R.ALPH.p@ili	RegSuffixes ;
+@R.ALPH.t@ahi	RegSuffixes ;
+@R.ALPH.k@uha	RegSuffixes ;
+@R.ALPH.l@iban	RegSuffixes ;
+@R.ALPH.a@buso	RegSuffixes ;
+@R.ALPH.t@anggap	RegSuffixes ;
+@R.ALPH.a@kusa	RegSuffixes ;
+@R.ALPH.k@uha	RegSuffixes ;
+@R.ALPH.a@rte	RegSuffixes ;
+@R.ALPH.d@agdag	RegSuffixes ;
+@R.ALPH.s@ulong	RegSuffixes ;
+@R.ALPH.g@alit	RegSuffixes ;
+@R.ALPH.g@alit	RegSuffixes ;
+@R.ALPH.g@alit	RegSuffixes ;
+@R.ALPH.i@nis	RegSuffixes ;
+@R.ALPH.s@agot	RegSuffixes ;
+@R.ALPH.l@apit	RegSuffixes ;
+@R.ALPH.d@ating	RegSuffixes ;
+@R.ALPH.h@ingí'	RegSuffixes ;
+@R.ALPH.t@anong	RegSuffixes ;
+@R.ALPH.a@kala	RegSuffixes ;
+@R.ALPH.l@usob	RegSuffixes ;
+@R.ALPH.k@amit	RegSuffixes ;
+@R.ALPH.d@alo	RegSuffixes ;
+@R.ALPH.p@ansin	RegSuffixes ;
+@R.ALPH.a@kit	RegSuffixes ;
+@R.ALPH.l@ayó'	RegSuffixes ;
+@R.ALPH.l@ayó'	RegSuffixes ;
+@R.ALPH.s@amá'	RegSuffixes ;
+@R.ALPH.b@awal	RegSuffixes ;
+@R.ALPH.t@ahol	RegSuffixes ;
+@R.ALPH.u@mpisa	RegSuffixes ;
+@R.ALPH.n@iwala	RegSuffixes ;
+@R.ALPH.l@aki	RegSuffixes ;
+@R.ALPH.a@nak	RegSuffixes ;
+@R.ALPH.k@agat	RegSuffixes ;
+@R.ALPH.l@aga	RegSuffixes ;
+@R.ALPH.h@iram	RegSuffixes ;
+@R.ALPH.u@tang	RegSuffixes ;
+@R.ALPH.y@abang	RegSuffixes ;
+@R.ALPH.s@irá'	RegSuffixes ;
+@R.ALPH.b@asag	RegSuffixes ;
+@R.ALPH.p@unit	RegSuffixes ;
+@R.ALPH.b@alí'	RegSuffixes ;
+@R.ALPH.s@irá'	RegSuffixes ;
+@R.ALPH.w@asak	RegSuffixes ;
+@R.ALPH.h@inga	RegSuffixes ;
+@R.ALPH.d@ala	RegSuffixes ;
+@R.ALPH.h@atid	RegSuffixes ;
+@R.ALPH.s@áma	RegSuffixes ;
+@R.ALPH.b@alik	RegSuffixes ;
+@R.ALPH.u@wí'	RegSuffixes ;
+@R.ALPH.l@abas	RegSuffixes ;
+@R.ALPH.b@uhay	RegSuffixes ;
+@R.ALPH.a@kyat	RegSuffixes ;
+@R.ALPH.s@ipilyo	RegSuffixes ;
+@R.ALPH.s@uklay	RegSuffixes ;
+@R.ALPH.t@ayó'	RegSuffixes ;
+@R.ALPH.s@unog	RegSuffixes ;
+@R.ALPH.d@ighay	RegSuffixes ;
+@R.ALPH.t@awag	RegSuffixes ;
+@R.ALPH.t@awag	RegSuffixes ;
+@R.ALPH.d@ala	RegSuffixes ;
+@R.ALPH.s@unong	RegSuffixes ;
+@R.ALPH.p@asan	RegSuffixes ;
+@R.ALPH.b@itbit	RegSuffixes ;
+@R.ALPH.k@ipkip	RegSuffixes ;
+@R.ALPH.s@aló	RegSuffixes ;
+@R.ALPH.h@uli	RegSuffixes ;
+@R.ALPH.a@bot	RegSuffixes ;
+@R.ALPH.p@alit	RegSuffixes ;
+@R.ALPH.b@ihis	RegSuffixes ;
+@R.ALPH.d@aya'	RegSuffixes ;
+@R.ALPH.p@ili'	RegSuffixes ;
+@R.ALPH.p@alakpak	RegSuffixes ;
+@R.ALPH.l@inis	RegSuffixes ;
+@R.ALPH.l@inis	RegSuffixes ;
+@R.ALPH.a@kyat	RegSuffixes ;
+@R.ALPH.s@ará	RegSuffixes ;
+@R.ALPH.i@pon	RegSuffixes ;
+@R.ALPH.p@unta	RegSuffixes ;
+@R.ALPH.b@alik	RegSuffixes ;
+@R.ALPH.g@aling	RegSuffixes ;
+@R.ALPH.l@íto	RegSuffixes ;
+@R.ALPH.p@atuloy	RegSuffixes ;
+@R.ALPH.u@sap	RegSuffixes ;
+@R.ALPH.l@utó'	RegSuffixes ;
+@R.ALPH.k@opya	RegSuffixes ;
+@R.ALPH.b@ilang	RegSuffixes ;
+@R.ALPH.l@igaw	RegSuffixes ;
+@R.ALPH.t@akip	RegSuffixes ;
+@R.ALPH.t@akip	RegSuffixes ;
+@R.ALPH.g@awá'	RegSuffixes ;
+@R.ALPH.t@awid	RegSuffixes ;
+@R.ALPH.i@yak	RegSuffixes ;
+@R.ALPH.g@amot	RegSuffixes ;
+@R.ALPH.n@aggamot	RegSuffixes ;
+@R.ALPH.p@útol	RegSuffixes ;
+@R.ALPH.h@iwa'	RegSuffixes ;
+@R.ALPH.t@atad	RegSuffixes ;
+@R.ALPH.g@ayat	RegSuffixes ;
+@R.ALPH.g@upit	RegSuffixes ;
+@R.ALPH.s@ibak	RegSuffixes ;
+@R.ALPH.p@únit	RegSuffixes ;
+@R.ALPH.p@ugot	RegSuffixes ;
+@R.ALPH.t@anggal	RegSuffixes ;
+@R.ALPH.s@irá'	RegSuffixes ;
+@R.ALPH.s@ayaw	RegSuffixes ;
+@R.ALPH.n@agsasayaw	RegSuffixes ;
+@R.ALPH.l@inlang	RegSuffixes ;
+@R.ALPH.d@alá	RegSuffixes ;
+@R.ALPH.a@lís	RegSuffixes ;
+@R.ALPH.s@irá'	RegSuffixes ;
+@R.ALPH.s@irá'	RegSuffixes ;
+@R.ALPH.u@nlad	RegSuffixes ;
+@R.ALPH.p@atay	RegSuffixes ;
+@R.ALPH.h@atí'	RegSuffixes ;
+@R.ALPH.h@ílo	RegSuffixes ;
+@R.ALPH.g@áwa'	RegSuffixes ;
+@R.ALPH.g@uhit	RegSuffixes ;
+@R.ALPH.b@ihis	RegSuffixes ;
+@R.ALPH.h@ubad	RegSuffixes ;
+@R.ALPH.i@nom	RegSuffixes ;
+@R.ALPH.m@aneho	RegSuffixes ;
+@R.ALPH.h@ulog	RegSuffixes ;
+@R.ALPH.b@agsak	RegSuffixes ;
+@R.ALPH.b@ába'	RegSuffixes ;
+@R.ALPH.h@atíd	RegSuffixes ;
+@R.ALPH.k@ain	RegSuffixes ;
+@R.ALPH.t@áas	RegSuffixes ;
+@R.ALPH.t@anan	RegSuffixes ;
+@R.ALPH.y@akap	RegSuffixes ;
+@R.ALPH.s@ayá	RegSuffixes ;
+@R.ALPH.p@asok	RegSuffixes ;
+@R.ALPH.s@uót	RegSuffixes ;
+@R.ALPH.l@ibang	RegSuffixes ;
+@R.ALPH.b@urá	RegSuffixes ;
+@R.ALPH.s@urí'	RegSuffixes ;
+@R.ALPH.t@ingín	RegSuffixes ;
+@R.ALPH.s@ulit	RegSuffixes ;
+@R.ALPH.l@ábas	RegSuffixes ;
+@R.ALPH.h@árap	RegSuffixes ;
+@R.ALPH.h@ulog	RegSuffixes ;
+@R.ALPH.s@aká	RegSuffixes ;
+@R.ALPH.k@ain	RegSuffixes ;
+@R.ALPH.d@amdám	RegSuffixes ;
+@R.ALPH.d@ama	RegSuffixes ;
+@R.ALPH.g@áling	RegSuffixes ;
+@R.ALPH.l@aban	RegSuffixes ;
+@R.ALPH.p@unó'	RegSuffixes ;
+@R.ALPH.h@anap	RegSuffixes ;
+@R.ALPH.i@sdá'	RegSuffixes ;
+@R.ALPH.l@ípad	RegSuffixes ;
+@R.ALPH.s@únod	RegSuffixes ;
+@R.ALPH.l@imot	RegSuffixes ;
+@R.ALPH.l@imot	RegSuffixes ;
+@R.ALPH.t@ákot	RegSuffixes ;
+@R.ALPH.b@úsog	RegSuffixes ;
+@R.ALPH.p@úno'	RegSuffixes ;
+@R.ALPH.s@ugal	RegSuffixes ;
+@R.ALPH.k@uhá'	RegSuffixes ;
+@R.ALPH.r@egalo	RegSuffixes ;
+@R.ALPH.b@igay	RegSuffixes ;
+@R.ALPH.s@ukó'	RegSuffixes ;
+@R.ALPH.p@untá	RegSuffixes ;
+@R.ALPH.l@ayas	RegSuffixes ;
+@R.ALPH.b@abá'	RegSuffixes ;
+@R.ALPH.t@uloy	RegSuffixes ;
+@R.ALPH.l@abas	RegSuffixes ;
+@R.ALPH.a@kyat	RegSuffixes ;
+@R.ALPH.p@aalam	RegSuffixes ;
+@R.ALPH.t@ápos	RegSuffixes ;
+@R.ALPH.b@igay	RegSuffixes ;
+@R.ALPH.b@ati'	RegSuffixes ;
+@R.ALPH.l@aki	RegSuffixes ;
+@R.ALPH.b@antay	RegSuffixes ;
+@R.ALPH.g@upit	RegSuffixes ;
+@R.ALPH.k@amay	RegSuffixes ;
+@R.ALPH.k@amay	RegSuffixes ;
+@R.ALPH.s@ampay	RegSuffixes ;
+@R.ALPH.s@ayá	RegSuffixes ;
+@R.ALPH.s@ayá	RegSuffixes ;
+@R.ALPH.s@uklam	RegSuffixes ;
+@R.ALPH.g@áling	RegSuffixes ;
+@R.ALPH.d@ínig	RegSuffixes ;
+@R.ALPH.k@inig	RegSuffixes ;
+@R.ALPH.i@nit	RegSuffixes ;
+@R.ALPH.k@umusta	RegSuffixes ;
+@R.ALPH.t@ulong	RegSuffixes ;
+@R.ALPH.t@ago'	RegSuffixes ;
+@R.ALPH.t@ago'	RegSuffixes ;
+@R.ALPH.l@akad	RegSuffixes ;
+@R.ALPH.s@untok	RegSuffixes ;
+@R.ALPH.p@ukpok	RegSuffixes ;
+@R.ALPH.t@ira	RegSuffixes ;
+@R.ALPH.h@awak	RegSuffixes ;
+@R.ALPH.y@akap	RegSuffixes ;
+@R.ALPH.d@ali'	RegSuffixes ;
+@R.ALPH.s@ákit	RegSuffixes ;
+@R.ALPH.s@ákit	RegSuffixes ;
+@R.ALPH.s@ákit	RegSuffixes ;
+@R.ALPH.b@uti	RegSuffixes ;
+@R.ALPH.s@uot	RegSuffixes ;
+@R.ALPH.l@agay	RegSuffixes ;
+@R.ALPH.k@ilala	RegSuffixes ;
+@R.ALPH.k@ita	RegSuffixes ;
+@R.ALPH.i@mbento	RegSuffixes ;
+@R.ALPH.i@mbita	RegSuffixes ;
+@R.ALPH.s@ali	RegSuffixes ;
+@R.ALPH.s@ali	RegSuffixes ;
+@R.ALPH.s@ama	RegSuffixes ;
+@R.ALPH.l@oko	RegSuffixes ;
+@R.ALPH.t@alon	RegSuffixes ;
+@R.ALPH.t@ago'	RegSuffixes ;
+@R.ALPH.t@abí	RegSuffixes ;
+@R.ALPH.p@átay	RegSuffixes ;
+@R.ALPH.k@atay	RegSuffixes ;
+@R.ALPH.h@álik	RegSuffixes ;
+@R.ALPH.k@átok	RegSuffixes ;
+@R.ALPH.g@ibá'	RegSuffixes ;
+@R.ALPH.k@ilala	RegSuffixes ;
+@R.ALPH.t@awa	RegSuffixes ;
+@R.ALPH.l@abá	RegSuffixes ;
+@R.ALPH.l@ágay	RegSuffixes ;
+@R.ALPH.s@inungaling	RegSuffixes ;
+@R.ALPH.h@iga'	RegSuffixes ;
+@R.ALPH.i@law	RegSuffixes ;
+@R.ALPH.k@inig	RegSuffixes ;
+@R.ALPH.u@tang	RegSuffixes ;
+@R.ALPH.t@ingin	RegSuffixes ;
+@R.ALPH.w@alá'	RegSuffixes ;
+@R.ALPH.i@big	RegSuffixes ;
+@R.ALPH.m@ahal	RegSuffixes ;
+@R.ALPH.g@áwa'	RegSuffixes ;
+@R.ALPH.p@alengke	RegSuffixes ;
+@R.ALPH.k@asal	RegSuffixes ;
+@R.ALPH.t@imbang	RegSuffixes ;
+@R.ALPH.s@ukat	RegSuffixes ;
+@R.ALPH.k@íta	RegSuffixes ;
+@R.ALPH.l@ipat	RegSuffixes ;
+@R.ALPH.l@ipat	RegSuffixes ;
+@R.ALPH.u@sog	RegSuffixes ;
+@R.ALPH.u@sog	RegSuffixes ;
+@R.ALPH.s@iesta	RegSuffixes ;
+@R.ALPH.n@agpahinga	RegSuffixes ;
+@R.ALPH.k@ailangan	RegSuffixes ;
+@R.ALPH.h@indí'	RegSuffixes ;
+@R.ALPH.t@ángo'	RegSuffixes ;
+@R.ALPH.i@ngay	RegSuffixes ;
+@R.ALPH.i@ngay	RegSuffixes ;
+@R.ALPH.s@únod	RegSuffixes ;
+@R.ALPH.m@ásid	RegSuffixes ;
+@R.ALPH.o@kupá	RegSuffixes ;
+@R.ALPH.y@ari'	RegSuffixes ;
+@R.ALPH.b@úkas	RegSuffixes ;
+@R.ALPH.b@úkas	RegSuffixes ;
+@R.ALPH.u@tos	RegSuffixes ;
+@R.ALPH.o@rder	RegSuffixes ;
+@R.ALPH.p@inta	RegSuffixes ;
+@R.ALPH.p@inta	RegSuffixes ;
+@R.ALPH.g@arahe	RegSuffixes ;
+@R.ALPH.p@arada	RegSuffixes ;
+@R.ALPH.p@asa	RegSuffixes ;
+@R.ALPH.d@aan	RegSuffixes ;
+@R.ALPH.p@asa	RegSuffixes ;
+@R.ALPH.s@anlá'	RegSuffixes ;
+@R.ALPH.b@ayad	RegSuffixes ;
+@R.ALPH.s@ilip	RegSuffixes ;
+@R.ALPH.p@ili'	RegSuffixes ;
+@R.ALPH.d@ampot	RegSuffixes ;
+@R.ALPH.s@undó'	RegSuffixes ;
+@R.ALPH.l@agay	RegSuffixes ;
+@R.ALPH.t@anim	RegSuffixes ;
+@R.ALPH.l@aró'	RegSuffixes ;
+@R.ALPH.t@ugtog	RegSuffixes ;
+@R.ALPH.p@angako'	RegSuffixes ;
+@R.ALPH.t@uro'	RegSuffixes ;
+@R.ALPH.b@uhos	RegSuffixes ;
+@R.ALPH.s@imangot	RegSuffixes ;
+@R.ALPH.d@asal	RegSuffixes ;
+@R.ALPH.h@andá'	RegSuffixes ;
+@R.ALPH.h@andá'	RegSuffixes ;
+@R.ALPH.p@lantsa	RegSuffixes ;
+@R.ALPH.g@anda	RegSuffixes ;
+@R.ALPH.g@anda	RegSuffixes ;
+@R.ALPH.p@igil	RegSuffixes ;
+@R.ALPH.p@romote	RegSuffixes ;
+@R.ALPH.t@aguyod	RegSuffixes ;
+@R.ALPH.h@ila	RegSuffixes ;
+@R.ALPH.t@ulak	RegSuffixes ;
+@R.ALPH.l@agay	RegSuffixes ;
+@R.ALPH.p@asok	RegSuffixes ;
+@R.ALPH.s@ubo'	RegSuffixes ;
+@R.ALPH.b@ukas	RegSuffixes ;
+@R.ALPH.s@uot	RegSuffixes ;
+@R.ALPH.a@lis	RegSuffixes ;
+@R.ALPH.b@ába'	RegSuffixes ;
+@R.ALPH.t@anong	RegSuffixes ;
+@R.ALPH.b@ilis	RegSuffixes ;
+@R.ALPH.t@ahimik	RegSuffixes ;
+@R.ALPH.a@yaw	RegSuffixes ;
+@R.ALPH.a@rúga'	RegSuffixes ;
+@R.ALPH.a@laga	RegSuffixes ;
+@R.ALPH.l@aki	RegSuffixes ;
+@R.ALPH.t@aas	RegSuffixes ;
+@R.ALPH.a@bot	RegSuffixes ;
+@R.ALPH.d@atingrating	RegSuffixes ;
+@R.ALPH.b@asa	RegSuffixes ;
+@R.ALPH.t@anggap	RegSuffixes ;
+@R.ALPH.a@yaw	RegSuffixes ;
+@R.ALPH.t@anggi	RegSuffixes ;
+@R.ALPH.a@lala	RegSuffixes ;
+@R.ALPH.h@ubad	RegSuffixes ;
+@R.ALPH.a@lis	RegSuffixes ;
+@R.ALPH.a@lis	RegSuffixes ;
+@R.ALPH.u@pa	RegSuffixes ;
+@R.ALPH.a@rkila	RegSuffixes ;
+@R.ALPH.r@enta	RegSuffixes ;
+@R.ALPH.u@lit	RegSuffixes ;
+@R.ALPH.u@lit	RegSuffixes ;
+@R.ALPH.u@lat	RegSuffixes ;
+@R.ALPH.b@alita	RegSuffixes ;
+@R.ALPH.s@umbong	RegSuffixes ;
+@R.ALPH.s@auli'	RegSuffixes ;
+@R.ALPH.p@alit	RegSuffixes ;
+@R.ALPH.u@lit	RegSuffixes ;
+@R.ALPH.s@akay	RegSuffixes ;
+@R.ALPH.t@áyo'	RegSuffixes ;
+@R.ALPH.b@angon	RegSuffixes ;
+@R.ALPH.n@akaw	RegSuffixes ;
+@R.ALPH.g@ulong	RegSuffixes ;
+@R.ALPH.k@usot	RegSuffixes ;
+@R.ALPH.h@agod	RegSuffixes ;
+@R.ALPH.m@asahe	RegSuffixes ;
+@R.ALPH.t@akbo	RegSuffixes ;
+@R.ALPH.l@ungkot	RegSuffixes ;
+@R.ALPH.s@abi	RegSuffixes ;
+@R.ALPH.t@akot	RegSuffixes ;
+@R.ALPH.k@ita	RegSuffixes ;
+@R.ALPH.b@enta	RegSuffixes ;
+@R.ALPH.t@ahi'	RegSuffixes ;
+@R.ALPH.s@igaw	RegSuffixes ;
+@R.ALPH.s@igaw	RegSuffixes ;
+@R.ALPH.p@irma	RegSuffixes ;
+@R.ALPH.s@enyas	RegSuffixes ;
+@R.ALPH.a@wit	RegSuffixes ;
+@R.ALPH.l@ubog	RegSuffixes ;
+@R.ALPH.u@po'	RegSuffixes ;
+@R.ALPH.t@ulog	RegSuffixes ;
+@R.ALPH.h@iwa'	RegSuffixes ;
+@R.ALPH.n@giti	RegSuffixes ;
+@R.ALPH.a@yos	RegSuffixes ;
+@R.ALPH.t@áyo'	RegSuffixes ;
+@R.ALPH.h@into'	RegSuffixes ;
+@R.ALPH.h@abla	RegSuffixes ;
+@R.ALPH.d@usa	RegSuffixes ;
+@R.ALPH.l@unok	RegSuffixes ;
+@R.ALPH.w@alis	RegSuffixes ;
+@R.ALPH.k@uha'	RegSuffixes ;
+@R.ALPH.i@ngat	RegSuffixes ;
+@R.ALPH.a@laga'	RegSuffixes ;
+@R.ALPH.i@ngat	RegSuffixes ;
+@R.ALPH.s@alita'	RegSuffixes ;
+@R.ALPH.t@uro'	RegSuffixes ;
+@R.ALPH.b@iro'	RegSuffixes ;
+@R.ALPH.s@abi	RegSuffixes ;
+@R.ALPH.s@uri'	RegSuffixes ;
+@R.ALPH.s@ubok	RegSuffixes ;
+@R.ALPH.h@igpit	RegSuffixes ;
+@R.ALPH.i@sip	RegSuffixes ;
+@R.ALPH.t@apon	RegSuffixes ;
+@R.ALPH.l@akbay	RegSuffixes ;
+@R.ALPH.b@akasyon	RegSuffixes ;
+@R.ALPH.p@asyal	RegSuffixes ;
+@R.ALPH.l@ipad	RegSuffixes ;
+@R.ALPH.b@ukas	RegSuffixes ;
+@R.ALPH.s@ara	RegSuffixes ;
+@R.ALPH.m@akinilya	RegSuffixes ;
+@R.ALPH.i@ntindi	RegSuffixes ;
+@R.ALPH.g@amit	RegSuffixes ;
+@R.ALPH.w@ala'	RegSuffixes ;
+@R.ALPH.s@uway	RegSuffixes ;
+@R.ALPH.l@abag	RegSuffixes ;
+@R.ALPH.d@alaw	RegSuffixes ;
+@R.ALPH.b@oto	RegSuffixes ;
+@R.ALPH.h@intay	RegSuffixes ;
+@R.ALPH.l@akad	RegSuffixes ;
+@R.ALPH.b@abala'	RegSuffixes ;
+@R.ALPH.h@ugas	RegSuffixes ;
+@R.ALPH.n@ood	RegSuffixes ;
+@R.ALPH.b@antay	RegSuffixes ;
+@R.ALPH.d@ilig	RegSuffixes ;
+@R.ALPH.k@asal	RegSuffixes ;
+@R.ALPH.b@ulong	RegSuffixes ;
+@R.ALPH.s@ipol	RegSuffixes ;
+@R.ALPH.w@agi'	RegSuffixes ;
+@R.ALPH.p@unas	RegSuffixes ;
+@R.ALPH.k@uha	RegSuffixes ;
+@R.ALPH.a@lis	RegSuffixes ;
+@R.ALPH.t@aka	RegSuffixes ;
+@R.ALPH.m@angha'	RegSuffixes ;
+@R.ALPH.t@rabaho	RegSuffixes ;
+@R.ALPH.a@lala	RegSuffixes ;
+@R.ALPH.s@amba	RegSuffixes ;
+@R.ALPH.b@alot	RegSuffixes ;
+@R.ALPH.s@ulat	RegSuffixes ;
+@R.ALPH.s@ulat	RegSuffixes ;
+@R.ALPH.h@ikab	RegSuffixes ;
+@R.ALPH.o@o	RegSuffixes ;
+
+LEXICON RegSuffixes
+
+! Pure infinitive
+@D.PREF@@D.CV@@D.INFX@+V+Inf:				#;
+
+!-------------!
+! Infinitives !
+!-------------!
+! Obj trigger I
+@D.PREF@@D.CV@@D.INFX@+V+Inf+Obj1:%>in	#; 
+
+! Obj Trigger II
+@R.PREF.i@@D.CV@@D.INFX@+V+Inf+Obj2:		#;
+
+! Obj Trigger III
+@D.PREF@@D.CV@@D.INFX@+V+Inf+Obj3:%>an	#; 
+
+! Actor Trigger I
+@D.PREF@@D.CV@@R.INFX.um@+V+Inf+Act1:		#;
+
+! Actor Trigger II 
+@R.PREF.mag@@D.CV@@D.INFX@+V+Inf+Act2:		#;
+
+! Actor Trigger III
+@R.PREF.ma@@D.CV@@D.INFX@+V+Inf+Act3:		#;
+
+! Actor Trigger IV
+@R.PREF.mang@@D.CV@@D.INFX@+V+Inf+Act4:		#;
+
+! Locative Trigger
+@D.PREF@@D.CV@@D.INFX@+V+Inf+Loc:%>an		#;
+
+! Benefactive Trigger
+@R.PREF.i@@D.CV@@D.INFX@+V+Inf+Ben:			#;
+
+! Instrument Trigger
+@R.PREF.ipaN@@D.CV@@D.INFX@+V+Inf+Ins:			#;
+
+! Reason Trigger
+@R.PREF.ika@@D.CV@@D.INFX@+V+Inf+Rea:			#;
+
+!---------------!
+! Contemplative !
+!---------------!
+! Obj trigger I
+@D.PREF@@R.CV.PREF@@D.INFX@+V+Cont+Obj1:%>in	#;  
+
+! Obj Trigger II
+@R.PREF.i@@R.CV.PREF@+V+Cont+Obj2:		#;
+
+! Obj Trigger III
+@R.CV.PREF@@D.PREF@@D.INFX@+V+Cont+Obj3:%>an	#; 
+
+! Actor Trigger I
+@R.CV.PREF@@D.PREF@@D.INFX@+V+Cont+Act1:		#;
+
+! Actor Trigger II 
+@R.PREF.mag@@R.CV.PREF@@D.INFX@+V+Cont+Act2:		#;
+
+! Actor Trigger III
+@R.PREF.ma@@R.CV.PREF@@D.INFX@+V+Cont+Act3:		#;
+
+! Actor Trigger IV
+@R.PREF.mang@@R.CV.PREF@@D.INFX@+V+Cont+Act4:		#;
+
+! Locative Trigger
+@D.PREF@@R.CV.PREF@@D.INFX@+V+Cont+Loc:%>an		#;
+
+! Benefactive Trigger
+@R.PREF.i@@R.CV.PREF@@D.INFX@+V+Cont+Ben:			#;
+
+! Instrument Trigger
+! TODO
+@R.PREF.ipaN@@R.CV.PREF@@D.INFX@+V+Cont+Ins:			#;
+
+!TODO
+! Reason Trigger
+@R.PREF.ika@@R.CV.PREF@@D.INFX@+V+Cont+Rea:			#;
+
+!-------------!
+! Progressive !
+!-------------!
+! Obj trigger I
+@D.PREF@@R.CV.INFX@@R.INFX.in@+V+Prog+Obj1:		#;  
+
+! Obj Trigger II
+@R.PREF.i@@R.CV.INFX@@R.INFX.in@+V+Prog+Obj2:		#;
+
+! Obj Trigger III
+@D.PREF@@R.CV.INFX@@R.INFX.in@+V+Prog+Obj3:%>an	#; 
+
+! Actor Trigger I
+@D.PREF@@R.CV.INFX@@R.INFX.um@+V+Prog+Act1:		#;
+
+! Actor Trigger II 
+@R.PREF.nag@@R.CV.PREF@@D.INFX@+V+Prog+Act2:		#;
+
+! Actor Trigger III
+@R.PREF.na@@R.CV.PREF@@D.INFX@+V+Prog+Act3:		#;
+
+! Actor Trigger IV
+@R.PREF.nang@@R.CV.PREF@@D.INFX@+V+Prog+Act4:		#;
+
+! Locative Trigger
+@D.PREF@@R.CV.INFX@@R.INFX.in@+V+Prog+Loc:%>an		#;
+
+! Benefactive Trigger
+@R.PREF.i@@R.CV.INFX@@R.INFX.in@+V+Prog+Ben:			#;
+
+! Instrument Trigger
+@R.PREF.ipinaN@@R.CV.PREF@@D.INFX@+V+Prog+Ins:			#;
+
+! Reason Trigger
+@R.PREF.ikina@@R.CV.PREF@@D.INFX@+V+Prog+Rea:			#;
+
+
+!-------------!
+! Completed   !
+!-------------!
+! Obj trigger I
+@D.PREF@@D.CV@@R.INFX.in@+V+Comp+Obj1:		#;  
+
+! Obj Trigger II
+@R.PREF.i@@D.CV@@R.INFX.in@+V+Comp+Obj2:		#;
+
+! Obj Trigger III
+@D.PREF@@D.CV@@R.INFX.in@+V+Comp+Obj3:%>an	#; 
+
+! Actor Trigger I
+@D.PREF@@D.CV@@R.INFX.um@+V+Comp+Act1:		#;
+
+! Actor Trigger II 
+@R.PREF.nag@@D.CV@@D.INFX@+V+Comp+Act2:		#;
+
+! Actor Trigger III
+@R.PREF.na@@D.CV@@D.INFX@+V+Comp+Act3:		#;
+
+! Actor Trigger IV
+@R.PREF.nang@@D.CV@@D.INFX@+V+Comp+Act4:		#;
+
+! Locative Trigger
+@D.PREF@@D.CV@@R.INFX.in@+V+Comp+Loc:%>an		#;
+
+! Benefactive Trigger
+@R.PREF.i@@D.CV@@R.INFX.in@+V+Comp+Ben:			#;
+
+! Instrument Trigger
+@R.PREF.ipinaN@@D.CV@@D.INFX@+V+Comp+Ins:			#;
+
+! Reason Trigger
+@R.PREF.ikina@@D.CV@@D.INFX@+V+Comp+Rea:			#;
+
+!-------------!
+! Imperative  !
+!-------------!
+
+! Obj trigger I
+@D.PREF@@D.CV@@D.INFX@+V+Imp+Obj1:		#;
+@D.PREF@@D.CV@@D.INFX@+V+Imp+Obj1:%>a		#;
+
+! Obj Trigger II
+@D.PREF@@D.CV@@D.INFX@+V+Imp+Obj2:%>an	#; 
+
+! Obj Trigger III
+@D.PREF@@D.CV@@D.INFX@+V+Imp+Obj3:%>i		#;
+
+! Actor Trigger I
+@D.PREF@@D.CV@@D.INFX@+V+Imp+Act1:		#;
+
+! Actor Trigger II 
+@R.PREF.pag@@D.CV@@D.INFX@+V+Imp+Act2:		#;
+
+! Actor Trigger IV
+@R.PREF.pang@@D.CV@@D.INFX@+V+Imp+Act4:		#;
+
+END

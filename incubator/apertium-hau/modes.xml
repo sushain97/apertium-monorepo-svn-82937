@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<modes>
+
+  <mode name="hau-twol">
+    <pipeline>
+      <program name="hfst-strings2fst -S"/>
+      <program name="hfst-compose-intersect">
+        <file name=".deps/hau.twol.hfst"/>
+      </program>
+      <program name="hfst-fst2strings"/>
+    </pipeline>
+  </mode>
+
+  <mode name="hau-morph">
+    <pipeline>
+      <program name="lt-proc -w">
+        <file name="hau.automorf.bin"/>
+      </program>
+    </pipeline>
+  </mode>
+
+  <mode name="hau-lexc">
+    <pipeline>
+      <program name="hfst-lookup">
+        <file name=".deps/hau.LR.lexc.hfst"/>
+      </program>
+    </pipeline>
+  </mode>
+
+  <mode name="hau-gener">
+    <pipeline>
+      <program name="lt-proc -g">
+        <file name="hau.autogen.bin"/>
+      </program>
+    </pipeline>
+  </mode>
+
+  <mode name="hau-tagger">
+    <pipeline>
+      <program name="lt-proc -w">
+        <file name="hau.automorf.bin"/>
+      </program>
+      <program name="cg-proc -w">
+        <file name="hau.rlx.bin"/>
+      </program>
+    </pipeline>
+  </mode>
+
+  <mode name="hau-disam">
+    <pipeline>
+      <program name="lt-proc -w">
+        <file name="hau.automorf.bin"/>
+      </program>
+      <program name="cg-conv -a"/>
+      <program name="vislcg3 --trace --grammar">
+        <file name="hau.rlx.bin"/>
+      </program>
+    </pipeline>
+  </mode>
+
+</modes>
+

@@ -1,0 +1,23 @@
+Config:
+  hfst:
+      App: hfst-lookup
+      Gen: ../wal.autogen.hfst
+      Morph: ../wal.automorf.hfst
+
+Tests:
+
+ "[twol] geminates reduce before -iss":
+    shamm<v><tv><cau><p1><sing><neg><imfr> : shamissikke
+
+ "[twol] exceptional stems where geminate does not reduce before -iss":
+    azall<v><iv><cau><p1><sing><neg><imfr> : azallissikke
+    harumm<v><tv><cau><p1><sing><neg><imfr> : harummissikke
+
+ "[twol] cc > sh before -iss":
+    kacc<v><tv><cau><p1><sing><neg><imfr> : kashissikke
+
+ "[twol] loss of final consonant before -iss":
+    ak<v><iv><cau><p1><sing><neg><imfr> : aissikke
+
+ "[twol] mono-cononantal verbs double i in -iss":
+    g<v><iv><cau><p1><sing><neg><imfr> : giissikke

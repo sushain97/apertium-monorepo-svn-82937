@@ -1,0 +1,71 @@
+<dictionary>
+  <alphabet>ΑΒΓΔΕΖΗΘΙΚΛΜΝΞΟΠΡΣΤΥΦΧΨΩαβγδεζηθικλμνξοπρστυφχψωςάέήίόύώΐΰϋϊΆΈΉΊΌΎΏΫΪ</alphabet>
+  <sdefs>
+    <sdef n="n"       c="Noun"/>
+    <sdef n="np"      c="Proper name"/>
+    <sdef n="pr"      c="Preposition"/>
+    <sdef n="adj"     c="Adjective"/>
+    <sdef n="vbser"   c="Verb 'to be'"/>
+    <sdef n="cnjcoo"  c="Coordinating conjunction"/>
+
+    <sdef n="top"     c="Toponym"/>
+    <sdef n="ind"     c="Indefinite"/>
+    <sdef n="def"     c="Definite"/>
+    <sdef n="nom"     c="Nominative"/>
+
+    <sdef n="m"       c="Masculine"/>
+    <sdef n="f"       c="Feminine"/>
+    <sdef n="nt"      c="Neuter"/>
+
+    <sdef n="sup"     c="Superlative"/>
+
+    <sdef n="p3"      c="Third person"/>
+
+    <sdef n="pri"     c="Present indicative"/>
+
+    <sdef n="sg"      c="Singular"/>
+  </sdefs>
+  <pardefs>
+    <pardef n="και__cnjcoo">
+      <e><p><l></l><r><s n="cnjcoo"/></r></p></e>
+    </pardef>
+    <pardef n="από__pr">
+      <e><p><l></l><r><s n="pr"/></r></p></e>
+    </pardef>
+    <pardef n="πόλ/η__n">
+      <e><p><l>η</l><r>η<s n="n"/><s n="f"/><s n="sg"/><s n="nom"/></r></p></e>
+    </pardef>
+    <pardef n="χ/ώρα__n">
+      <e><p><l>ώρα</l><r>ώρα<s n="n"/><s n="f"/><s n="sg"/><s n="nom"/></r></p></e>
+    </pardef>
+    <pardef n="πρωτεύουσ/α__n">
+      <e><p><l>α</l><r>α<s n="n"/><s n="f"/><s n="sg"/><s n="nom"/></r></p></e>
+    </pardef>
+    <pardef n="Σαράγεβο__np">
+      <e><p><l></l><r><s n="np"/><s n="top"/></r></p></e>
+    </pardef>
+    <pardef n="μ/εγάλος__adj">
+      <e><p><l>έγιστος</l><r>εγάλος<s n="adj"/><s n="sup"/></r></p></e>
+    </pardef>
+    <pardef n="/είμαι__vbser">
+      <e><p><l>είναι</l><r>είμαι<s n="vbser"/><s n="pri"/><s n="p3"/><s n="sg"/></r></p></e>
+    </pardef>
+  </pardefs>
+  <section id="main" type="standard">
+    <e lm="και"><i>και</i><par n="και__cnjcoo"/></e>
+
+    <e lm="σε"><i>σε</i><par n="από__pr"/></e>
+    <e lm="πάνω"><i>πάνω</i><par n="από__pr"/></e>
+
+    <e lm="πόλη"><i>πόλ</i><par n="πόλ/η__n"/></e>
+    <e lm="χώρα"><i>χ</i><par n="χ/ώρα__n"/></e>
+    <e lm="πρωτεύουσα"><i>πρωτεύουσ</i><par n="πρωτεύουσ/α__n"/></e>
+
+    <e lm="Σαράγεβο"><i>Σαράγεβο</i><par n="Σαράγεβο__np"/></e>
+    <e lm="Βοσνίας και Ερζεγοβίνης"><i>Βοσνίας<b/>και<b/>Ερζεγοβίνης</i><par n="Σαράγεβο__np"/></e>
+
+    <e lm="μεγάλος"><i>μ</i><par n="μ/εγάλος__adj"/></e>
+
+    <e lm="είμαι"><i></i><par n="/είμαι__vbser"/></e>
+  </section>
+</dictionary>

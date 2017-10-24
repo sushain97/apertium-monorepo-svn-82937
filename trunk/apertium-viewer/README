@@ -1,0 +1,37 @@
+apertium-viewer
+
+QUICKSTART
+
+$ java -jar apertium-viewer.jar
+
+Find all the information in:
+http://wiki.apertium.org/wiki/Apertium-viewer
+
+Download from SVN
+
+$ svn co https://svn.code.sf.net/p/apertium/svn/trunk/apertium-viewer
+
+Software prerequisites
+
+To run the software you will need to install Java Runtime Environment (JRE7).
+To compile the software from you will need Java Development Kit 7 (JDK7)
+Recommended is to use Netbeans, downloadable from http://netbeans.org.
+
+COMPILING
+
+$ cd apertium-viewer
+$ ant
+$ ant run
+
+INSTALLING
+
+ant jar
+sudo rm -rf /usr/local/apertium-viewer*
+sudo cp -r apertium-viewer.jar /usr/local/
+sudo echo "java -jar /usr/local/apertium-viewer.jar" > /usr/local/bin/apertium-viewer
+sudo chmod a+x /usr/local/bin/apertium-viewer
+
+Installing is optional. The program can also be execute using only the .jar file:
+java -jar apertium-viewer.jar
+or just make a shortcut to apertium-viewer.jar on your desktop.
+

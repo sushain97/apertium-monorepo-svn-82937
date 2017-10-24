@@ -1,0 +1,47 @@
+<rules>
+  <rule> <match lemma="ete"><select lemma="spise"/></match> </rule>
+  <rule weight="2.0">
+    <or>
+      <match lemma="gris"/>
+      <match lemma="ku"/>
+      <match lemma="hund"/>
+    </or>
+    <match lemma="ete"><select lemma="æde"/></match>
+  </rule>
+
+  <rule> <match lemma="kval"><select lemma="hval"/></match> </rule>
+  <rule weight="2.0">
+    <match lemma="val" tags="n.*.gen"/>
+    <match lemma="kval" tags="n.*.pl.*"><select lemma="kval"/></match>
+  </rule>
+
+  <rule> <match lemma="omsetje"><select lemma="oversætte"/></match> </rule>
+  <rule weight="2.0">
+    <match lemma="omsetje"><select lemma="omsætte"/></match>
+    <match lemma="for"/>
+  </rule>
+  <rule weight="2.0">
+    <match lemma="omsetje"><select lemma="omsætte"/></match>
+    <match tags="*"/>
+    <match lemma="for"/>
+  </rule>
+  <rule weight="2.0">
+    <match lemma="omsetje"><select lemma="omsætte"/></match>
+    <match tags="*"/>
+    <match tags="*"/>
+    <match lemma="for"/>
+  </rule>
+
+  <!-- TODO: -->
+  <rule>
+    <match lemma="han"><select lemma="han"/></match>
+  </rule>
+  <rule>
+    <match lemma="ho"><select lemma="hun"/></match>
+  </rule>
+  <rule>
+    <match lemma="høyre"/>
+    <match lemma="heime"/>
+    <match lemma="innom"><select lemma="ind under"/></match>
+  </rule>
+</rules>

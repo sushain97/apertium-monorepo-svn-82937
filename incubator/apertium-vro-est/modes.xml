@@ -1,0 +1,497 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<modes>
+  <!-- vro → est -->
+
+  <mode name="vro-est" install="yes">
+    <pipeline>
+      <program name="hfst-proc -e -w">
+        <file name="vro-est.automorf.hfst"/>
+      </program>
+      <program name="cg-proc">
+        <file name="vro-est.mor.rlx.bin"/>
+      </program>
+      <program name="cg-proc -w -1 -n">
+        <file name="vro-est.syn.rlx.bin"/>
+      </program>
+      <program name="apertium-pretransfer"/>
+      <program name="lt-proc -b">
+        <file name="vro-est.autobil.bin"/>
+      </program>
+     <program name="lrx-proc -m">
+        <file name="vro-est.autolex.bin"/>
+	</program>
+      <program name="apertium-transfer -b">
+        <file name="apertium-vro-est.vro-est.t1x"/>
+        <file name="vro-est.t1x.bin"/>
+      </program>
+      <program name="apertium-interchunk">
+        <file name="apertium-vro-est.vro-est.t2x"/>
+        <file name="vro-est.t2x.bin"/>
+      </program>
+      <program name="apertium-postchunk">
+        <file name="apertium-vro-est.vro-est.t3x"/>
+        <file name="vro-est.t3x.bin"/>
+      </program>
+      <program name="hfst-proc -N 1 $1">
+        <file name="vro-est.autogen.hfst"/>
+      </program>
+    </pipeline>
+  </mode>
+
+  <mode name="vro-est-debug" install="no">
+    <pipeline>
+      <program name="hfst-proc -e -w">
+        <file name="vro-est.automorf.hfst"/>
+      </program>
+      <program name="cg-proc">
+        <file name="vro-est.mor.rlx.bin"/>
+      </program>
+      <program name="cg-proc -w -1 -n">
+        <file name="vro-est.syn.rlx.bin"/>
+      </program>
+      <program name="apertium-pretransfer"/>
+      <program name="lt-proc -b">
+        <file name="vro-est.autobil.bin"/>
+      </program>
+     <program name="lrx-proc -m">
+        <file name="vro-est.autolex.bin"/>
+	</program>
+      <program name="apertium-transfer -b">
+        <file name="apertium-vro-est.vro-est.t1x"/>
+        <file name="vro-est.t1x.bin"/>
+      </program>
+      <program name="apertium-interchunk">
+        <file name="apertium-vro-est.vro-est.t2x"/>
+        <file name="vro-est.t2x.bin"/>
+      </program>
+      <program name="apertium-postchunk">
+        <file name="apertium-vro-est.vro-est.t3x"/>
+        <file name="vro-est.t3x.bin"/>
+      </program>
+      <program name="hfst-proc -N 1 -d">
+        <file name="vro-est.autogen.hfst"/>
+      </program>
+    </pipeline>
+  </mode>
+
+
+  <mode name="vro-est-morph" install="no">
+    <pipeline>
+      <program name="hfst-proc -e -w">
+        <file name="vro-est.automorf.hfst"/>
+      </program>
+    </pipeline>
+  </mode>
+
+  <mode name="vro-est-disam" install="no">
+    <pipeline>
+      <program name="hfst-proc -e -w">
+        <file name="vro-est.automorf.hfst"/>
+      </program>
+      <program name="cg-conv -a"/>
+      <program name="vislcg3 --trace --grammar">
+        <file name="vro-est.mor.rlx.bin"/>
+      </program>
+      <program name="vislcg3 --trace --grammar">
+        <file name="vro-est.syn.rlx.bin"/>
+      </program>
+    </pipeline>
+  </mode>
+
+
+  <mode name="vro-est-tagger" install="no">
+    <pipeline>
+      <program name="hfst-proc -e -w">
+        <file name="vro-est.automorf.hfst"/>
+      </program>
+      <program name="cg-proc">
+        <file name="vro-est.mor.rlx.bin"/>
+      </program>
+      <program name="cg-proc -w -1 -n">
+        <file name="vro-est.syn.rlx.bin"/>
+      </program>
+      <program name="apertium-pretransfer"/>
+    </pipeline>
+  </mode>
+
+  <mode name="vro-est-biltrans" install="no">
+    <pipeline>
+      <program name="hfst-proc -e -w">
+        <file name="vro-est.automorf.hfst"/>
+      </program>
+      <program name="cg-proc">
+        <file name="vro-est.mor.rlx.bin"/>
+      </program>
+      <program name="cg-proc -w -1 -n">
+        <file name="vro-est.syn.rlx.bin"/>
+      </program>
+      <program name="apertium-pretransfer"/>
+      <program name="lt-proc -b">
+        <file name="vro-est.autobil.bin"/>
+      </program>
+    </pipeline>
+  </mode>
+
+  <mode name="vro-est-lextor" install="no">
+    <pipeline>
+      <program name="hfst-proc -e -w">
+        <file name="vro-est.automorf.hfst"/>
+      </program>
+      <program name="cg-proc">
+        <file name="vro-est.mor.rlx.bin"/>
+      </program>
+      <program name="cg-proc -w -1 -n">
+        <file name="vro-est.syn.rlx.bin"/>
+      </program>
+      <program name="apertium-pretransfer"/>
+      <program name="lt-proc -b">
+        <file name="vro-est.autobil.bin"/>
+      </program>
+      <program name="lrx-proc -t -m">
+        <file name="vro-est.autolex.bin"/>
+      </program>
+    </pipeline>
+  </mode>
+
+
+  <mode name="vro-est-chunker" install="no">
+    <pipeline>
+      <program name="hfst-proc -e -w">
+        <file name="vro-est.automorf.hfst"/>
+      </program>
+      <program name="cg-proc">
+        <file name="vro-est.mor.rlx.bin"/>
+      </program>
+      <program name="cg-proc -w -1 -n">
+        <file name="vro-est.syn.rlx.bin"/>
+      </program>
+      <program name="apertium-pretransfer"/>
+      <program name="lt-proc -b">
+        <file name="vro-est.autobil.bin"/>
+      </program>
+      <program name="lrx-proc -m">
+        <file name="vro-est.autolex.bin"/>
+      </program>
+      <program name="apertium-transfer -t -b">
+        <file name="apertium-vro-est.vro-est.t1x"/>
+        <file name="vro-est.t1x.bin"/>
+      </program>
+    </pipeline>
+  </mode>
+
+  <mode name="vro-est-interchunk" install="no">
+    <pipeline>
+      <program name="hfst-proc -e -w">
+        <file name="vro-est.automorf.hfst"/>
+      </program>
+      <program name="cg-proc">
+        <file name="vro-est.mor.rlx.bin"/>
+      </program>
+      <program name="cg-proc -w -1 -n">
+        <file name="vro-est.syn.rlx.bin"/>
+      </program>
+      <program name="apertium-pretransfer"/>
+      <program name="lt-proc -b">
+        <file name="vro-est.autobil.bin"/>
+      </program>
+      <program name="lrx-proc -m">
+        <file name="vro-est.autolex.bin"/>
+      </program>
+      <program name="apertium-transfer -b">
+        <file name="apertium-vro-est.vro-est.t1x"/>
+        <file name="vro-est.t1x.bin"/>
+      </program>
+      <program name="apertium-interchunk">
+        <file name="apertium-vro-est.vro-est.t2x"/>
+        <file name="vro-est.t2x.bin"/>
+      </program>
+    </pipeline>
+  </mode>
+
+  <mode name="vro-est-postchunk" install="no">
+    <pipeline>
+      <program name="hfst-proc -e -w">
+        <file name="vro-est.automorf.hfst"/>
+      </program>
+      <program name="cg-proc">
+        <file name="vro-est.mor.rlx.bin"/>
+      </program>
+      <program name="cg-proc -w -1 -n">
+        <file name="vro-est.syn.rlx.bin"/>
+      </program>
+      <program name="apertium-pretransfer"/>
+      <program name="lt-proc -b">
+        <file name="vro-est.autobil.bin"/>
+      </program>
+      <program name="lrx-proc -m">
+        <file name="vro-est.autolex.bin"/>
+      </program>
+      <program name="apertium-transfer -b">
+        <file name="apertium-vro-est.vro-est.t1x"/>
+        <file name="vro-est.t1x.bin"/>
+      </program>
+      <program name="apertium-interchunk">
+        <file name="apertium-vro-est.vro-est.t2x"/>
+        <file name="vro-est.t2x.bin"/>
+      </program>
+      <program name="apertium-postchunk">
+        <file name="apertium-vro-est.vro-est.t3x"/>
+        <file name="vro-est.t3x.bin"/>
+      </program>
+    </pipeline>
+  </mode>
+
+  <mode name="vro-est-postchunk2" install="no">
+    <pipeline>
+      <program name="hfst-proc -e -w">
+        <file name="vro-est.automorf.hfst"/>
+      </program>
+      <program name="cg-proc">
+        <file name="vro-est.mor.rlx.bin"/>
+      </program>
+      <program name="cg-proc -w -1 -n">
+        <file name="vro-est.syn.rlx.bin"/>
+      </program>
+      <program name="apertium-pretransfer"/>
+      <program name="lt-proc -b">
+        <file name="vro-est.autobil.bin"/>
+      </program>
+      <program name="lrx-proc -m">
+        <file name="vro-est.autolex.bin"/>
+      </program>
+      <program name="apertium-transfer -b">
+        <file name="apertium-vro-est.vro-est.t1x"/>
+        <file name="vro-est.t1x.bin"/>
+      </program>
+      <program name="apertium-interchunk">
+        <file name="apertium-vro-est.vro-est.t2x"/>
+        <file name="vro-est.t2x.bin"/>
+      </program>
+      <program name="apertium-postchunk">
+        <file name="apertium-vro-est.vro-est.t3x"/>
+        <file name="vro-est.t3x.bin"/>
+      </program>
+    </pipeline>
+  </mode>
+
+  <!-- est → vro -->
+
+  <mode name="est-vro" install="yes">
+    <pipeline>
+      <program name="hfst-proc -e -w">
+        <file name="est-vro.automorf.hfst"/>
+      </program>
+      <program name="cg-proc -1 -w -n">
+        <file name="est-vro.mor.rlx.bin"/>
+      </program>
+      <program name="apertium-pretransfer"/>
+      <program name="lt-proc -b">
+        <file name="est-vro.autobil.bin"/>
+      </program>
+     <program name="lrx-proc -m">
+        <file name="est-vro.autolex.bin"/>
+	</program>
+      <program name="apertium-transfer -b">
+        <file name="apertium-vro-est.est-vro.t1x"/>
+        <file name="est-vro.t1x.bin"/>
+      </program>
+      <program name="apertium-interchunk">
+        <file name="apertium-vro-est.est-vro.t2x"/>
+        <file name="est-vro.t2x.bin"/>
+      </program>
+      <program name="apertium-postchunk">
+        <file name="apertium-vro-est.est-vro.t3x"/>
+        <file name="est-vro.t3x.bin"/>
+      </program>
+      <program name="hfst-proc -N 1 $1">
+        <file name="est-vro.autogen.hfst"/>
+      </program>
+    </pipeline>
+  </mode>
+
+  <mode name="est-vro-debug" install="no">
+    <pipeline>
+      <program name="hfst-proc -e -w">
+        <file name="est-vro.automorf.hfst"/>
+      </program>
+      <program name="cg-proc -1 -w -n">
+        <file name="est-vro.mor.rlx.bin"/>
+      </program>
+      <program name="apertium-pretransfer"/>
+      <program name="lt-proc -b">
+        <file name="est-vro.autobil.bin"/>
+      </program>
+     <program name="lrx-proc -m">
+        <file name="est-vro.autolex.bin"/>
+	</program>
+     <program name="apertium-transfer -b">
+        <file name="apertium-vro-est.est-vro.t1x"/>
+        <file name="est-vro.t1x.bin"/>
+      </program>
+      <program name="apertium-interchunk">
+        <file name="apertium-vro-est.est-vro.t2x"/>
+        <file name="est-vro.t2x.bin"/>
+      </program>
+      <program name="apertium-postchunk">
+        <file name="apertium-vro-est.est-vro.t3x"/>
+        <file name="est-vro.t3x.bin"/>
+      </program>
+      <program name="hfst-proc -N 1 -d">
+        <file name="est-vro.autogen.hfst"/>
+      </program>
+    </pipeline>
+  </mode>
+
+  <mode name="est-vro-morph" install="no">
+    <pipeline>
+      <program name="hfst-proc -e -w">
+        <file name="est-vro.automorf.hfst"/>
+      </program>
+    </pipeline>
+  </mode>
+
+  <mode name="est-vro-disam" install="no">
+    <pipeline>
+      <program name="hfst-proc -e -w">
+        <file name="est-vro.automorf.hfst"/>
+      </program>
+      <program name="cg-conv -a"/>
+      <program name="vislcg3 --trace --grammar">
+        <file name="est-vro.mor.rlx.bin"/>
+      </program>
+    </pipeline>
+  </mode>
+
+
+  <mode name="est-vro-tagger" install="no">
+    <pipeline>
+      <program name="hfst-proc -e -w">
+        <file name="est-vro.automorf.hfst"/>
+      </program>
+      <program name="cg-proc -1 -w -n">
+        <file name="est-vro.mor.rlx.bin"/>
+      </program>
+      <program name="apertium-pretransfer"/>
+    </pipeline>
+  </mode>
+
+  <mode name="est-vro-biltrans" install="no">
+    <pipeline>
+      <program name="hfst-proc -e -w">
+        <file name="est-vro.automorf.hfst"/>
+      </program>
+      <program name="cg-proc -1 -w -n">
+        <file name="est-vro.mor.rlx.bin"/>
+      </program>
+      <program name="apertium-pretransfer"/>
+      <program name="lt-proc -b">
+        <file name="est-vro.autobil.bin"/>
+      </program>
+     <program name="lrx-proc -m">
+        <file name="est-vro.autolex.bin"/>
+	</program>
+    </pipeline>
+  </mode>
+
+  <mode name="est-vro-lextor" install="no">
+    <pipeline>
+      <program name="hfst-proc -e -w">
+        <file name="est-vro.automorf.hfst"/>
+      </program>
+      <program name="cg-proc -1 -w -n">
+        <file name="est-vro.mor.rlx.bin"/>
+      </program>
+      <program name="apertium-pretransfer"/>
+      <program name="lt-proc -b">
+        <file name="est-vro.autobil.bin"/>
+      </program>
+      <program name="lrx-proc -t -m">
+        <file name="est-vro.autolex.bin"/>
+      </program>
+    </pipeline>
+  </mode>
+
+  <mode name="est-vro-chunker" install="no">
+    <pipeline>
+      <program name="hfst-proc -e -w">
+        <file name="est-vro.automorf.hfst"/>
+      </program>
+      <program name="cg-proc -1 -w -n">
+        <file name="est-vro.mor.rlx.bin"/>
+      </program>
+      <program name="apertium-pretransfer"/>
+      <program name="lt-proc -b">
+        <file name="est-vro.autobil.bin"/>
+      </program>
+      <program name="lrx-proc -m">
+        <file name="est-vro.autolex.bin"/>
+      </program>
+      <program name="apertium-transfer -b">
+        <file name="apertium-vro-est.est-vro.t1x"/>
+        <file name="est-vro.t1x.bin"/>
+      </program>
+    </pipeline>
+  </mode>
+
+  <mode name="est-vro-interchunk" install="no">
+    <pipeline>
+      <program name="hfst-proc -e -w">
+        <file name="est-vro.automorf.hfst"/>
+      </program>
+      <program name="cg-proc -1 -w -n">
+        <file name="est-vro.mor.rlx.bin"/>
+      </program>
+      <program name="apertium-pretransfer"/>
+      <program name="lt-proc -b">
+        <file name="est-vro.autobil.bin"/>
+      </program>
+      <program name="lrx-proc -m">
+        <file name="est-vro.autolex.bin"/>
+      </program>
+      <program name="apertium-transfer -b">
+        <file name="apertium-vro-est.est-vro.t1x"/>
+        <file name="est-vro.t1x.bin"/>
+      </program>
+      <program name="apertium-interchunk">
+        <file name="apertium-vro-est.est-vro.t2x"/>
+        <file name="est-vro.t2x.bin"/>
+      </program>
+    </pipeline>
+  </mode>
+
+  <mode name="est-vro-postchunk" install="no">
+    <pipeline>
+      <program name="hfst-proc -e -w">
+        <file name="est-vro.automorf.hfst"/>
+      </program>
+      <program name="cg-proc -1 -w -n">
+        <file name="est-vro.mor.rlx.bin"/>
+      </program>
+      <program name="apertium-pretransfer"/>
+      <program name="lt-proc -b">
+        <file name="est-vro.autobil.bin"/>
+      </program>
+      <program name="lrx-proc -m">
+        <file name="est-vro.autolex.bin"/>
+      </program>
+      <program name="apertium-transfer -b">
+        <file name="apertium-vro-est.est-vro.t1x"/>
+        <file name="est-vro.t1x.bin"/>
+      </program>
+      <program name="apertium-interchunk">
+        <file name="apertium-vro-est.est-vro.t2x"/>
+        <file name="est-vro.t2x.bin"/>
+      </program>
+      <program name="apertium-postchunk">
+        <file name="apertium-vro-est.est-vro.t3x"/>
+        <file name="est-vro.t3x.bin"/>
+      </program>
+    </pipeline>
+  </mode>
+
+
+
+
+</modes>
+
+

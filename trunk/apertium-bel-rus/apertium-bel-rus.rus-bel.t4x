@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<transfer>
+  <section-def-cats>
+    <def-cat n="default">
+      <cat-item tags="*"/>
+    </def-cat>
+  </section-def-cats>
+
+  <section-def-vars>
+    <def-var n="alarm" v="~"/>
+  </section-def-vars>
+
+  <section-rules>
+
+    <rule comment="REGLA: DEFAULT">
+      <pattern>
+        <pattern-item n="default"/>
+      </pattern>
+      <action>
+        <out>
+          <var n="alarm"/>
+          <lu><clip pos="1" side="tl" part="whole"/></lu>
+        </out>
+      </action>
+    </rule>
+
+  </section-rules>
+</transfer>

@@ -1,0 +1,23 @@
+# POS-es as of 2010-01-25.
+# ./irishonary.pl irishionary.com.ga-en.complex.html | cut -d ' ' -f2 | sort | uniq -c | sort -nr 
+# For quick check, you can throw away those with low count, but be aware that there are THREE
+# which occur only once:
+# ... | grep -Ev " [1-2] "
+
+nm	# noun masculine :575
+nf	# noun feminine : 272
+adj	# adjective : 230
+vb	# verb : 136
+nm1	# noun masculine (category 1?) : 64
+n	# noun? neuter? : 63
+nf2	# noun feminine (category 2?) : 44
+nm4	# noun masculine (category 4) : 39
+nf3	# noun feminine (category 3?) : 17
+prep	# preposition : 16
+nf4	# noun feminine (category 4?) : 16
+adv	# adverb : 15
+nm3	# noun masculine (category 3?) : 14
+pron	# pronoun : 9
+adjf	# adjective female : 1 # this is an adjective, and as noun FEMALE
+n2	# noun? neuter? (category 2?) : 1 # this is éiric 'revenge' which is in fact FEMININE
+nn	# noun neuter? : 1 # this is acutally the only instance for púca 'ghost', which in fact is masculine => this is a type _n pro m_

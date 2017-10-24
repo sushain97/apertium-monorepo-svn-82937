@@ -1,0 +1,63 @@
+DELIMITERS = "<.>" "<..>" "<!>" "<?>" "<...>" "<¶>" ;
+SOFT-DELIMITERS = "<,>" ;
+
+SETS
+
+LIST A = a ; 
+LIST ACTPRCSHORT = actprcshort ;
+LIST ADV = adv ; 
+LIST MWN = der_mwn ;
+LIST BOS = (>>>) ;
+LIST DIAL = dial dial_nw dial_w dial_se ; 
+LIST CC = cc ; 
+LIST CONNEG = conneg ; 
+LIST GEN = gen ; 
+LIST IV = iv ; 
+LIST INDEF = indef ;
+LIST INDEF-SPAT-DER-NOUN = (ine indef der_mwn) ;
+LIST PRON-INTERR = (pron interr) ;
+LIST N = n ; 
+LIST NOM = nom ; 
+LIST NON-VERBAL-PREDICATION-MORPH = (a der_pr ind prt2) (a der_pr ind prs scsg1) (a der_pr ind prs scsg2) (a der_pr ind prs scpl1) (a der_pr ind prs scpl2) ;
+LIST NUM = (num card) ; 
+LIST PO = po ; 
+LIST POSTP-COMP = (prop sg nom indef) (sg nom indef) (sg gen def) (pl gen def) ; #this might need dial (pl nom def)
+LIST PRED = der_pred der_pr ; 
+LIST PRON-PERS = (pron pers);
+LIST PROP = prop ;
+LIST PROP-MAL = (prop mal) ;
+LIST PXSG1 = (pxsg1);
+LIST SG = sg ;
+LIST TV = tv ;  
+LIST V = v ; 
+LIST V-AUX-NEG = (v aux neg) ; 
+LIST V-FIN = cond conj des imprt ind opt   ; 
+LIST SENT = clb ; 
+LIST BARRIER = clb cc cs ;
+LIST QUESTION = ("?") ;
+LIST NEG-WORD = (pcle neg) ; 
+
+
+SECTION
+
+REMOVE ACTPRCSHORT IF (NOT 1 N) ;
+REMOVE CONNEG IF (NOT -1 V-AUX-NEG);
+REMOVE PRED IF (1C PO) ;
+REMOVE PRED IF (1* V-FIN OR SENT) (-1* V-FIN OR SENT) ;
+REMOVE MWN IF (1 N) ;
+REMOVE V-FIN IF (0C PRON-PERS + NOM) ;
+REMOVE PXSG1 IF (0 PROP-MAL) ;
+REMOVE PRON-PERS + NOM IF (-1C PRON-PERS + NOM) ;
+
+REMOVE INDEF-SPAT-DER-NOUN ; 
+
+REMOVE V-FIN IF (-1 V-AUX-NEG) ;
+REMOVE DIAL ;
+
+SELECT PRON-INTERR IF (1* QUESTION) ;
+SELECT V-FIN IF (NOT 1* V-FIN) (NOT -1* V-FIN)  (NOT -1 BOS) (NOT 0 ("<[А-ЯЁ][а-яё].*>"r)) ;
+SELECT PROP IF (NOT -1 BOS) (0 ("<[А-ЯЁ].*>"r));
+SELECT NOM IF (-1 NUM) (0 GEN OR NOM) ;
+SELECT ("кизэ") IF (1 ("маней")) (2 ("чи")) ;
+SELECT NON-VERBAL-PREDICATION-MORPH ;
+SELECT NEG-WORD IF (1 V-FIN);

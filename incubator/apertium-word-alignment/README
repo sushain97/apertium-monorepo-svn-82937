@@ -1,0 +1,64 @@
+
+This package allows you to obtain the word alignments from each stage of the Apertium pipeline.
+
+1 . Supported Language Pairs
+
+It has been tested with the following language pairs:
+	- Spanish -> English
+	- Spanish -> Portuguese
+
+It should work with any language pair which follows the standard Apertium pipeline, which contains 
+the following modules:
+	- lt-proc
+	- apertium-tagger
+	- apertium-pretransfer
+	- apertium-transfer
+	- apertium-interchunk (optional)
+	- apertium-postchunk (optional)
+	- lt-proc
+	- lt-proc -p
+The modules used by a language pair can be checked in the file 
+"$APERTIUM_INSTALLATION_PREFIX/share/apertium/modes/$SOURCE_LANGUAGE-$TARGET_LANGUAGE.mode".
+
+
+2 . Installation
+
+First, you need to apply the patch "apertiumAlignmentsPatch.diff" to Apertium SVN revision 24177, compile
+and install it. Install also all the language pairs you need following the standard procedure.
+
+Then, run the bash script "installLangPair.sh" once for each language pair you plan to get alignments from. It
+will pre-generate some data from the dictionaries which is needed to compute the alignments. You should provide
+6 parameters:
+
+	1. Source language code (for instance, 'es' for Spanish, 'en' for English, etc.)
+	2. Target language code
+	3. Language pair name as it appears in Apertium language pair package. For instance, if you plan to
+	translate from Spanish to English, you should use "en-es" because the Apertium language package is
+	called "apertium-en-es". If you plan to translate from English to Spanish, you should swap the 
+	first two parameters, but keep the value of this one, as the package "apertium-en-es" allows you
+	to translate in both directions.
+	4. Apertium installation prefix. If you installed it in the default location, the value of this parameter
+	should be "/usr/local"
+	5. Directory where the Apertium linguistic data for the chosen language pair can be found. If you want to
+	translate from Spanish to English, the value of this parameter is the full path of the "apertium-en-es" directory
+	you checked out from SVN or downloaded and unpacked from the Apertium website. For instance "/home/myuser/apertium-packages/apertium-en-es".
+	6. Directory where the pregenerated data for the chosen language pair will be installed.
+	For instance, "/home/myuser/apertium-packages/apertium-alignments-es-en"
+
+3. Running
+	To obtain the word alignments from the sentences you plan to translate, you should call Apertium
+	using the wrapper "translateAndGetAlignments.py". This script has three compulsory arguments:
+	-s SOURCE_LANGUAGE_CODE
+	-t TARGET_LANGUAGE_CODE
+	-i PREGENERATED_DATA_DIR (the value of the 6th parameter of the installation script)
+
+	It reads the sentences to translate from the standard input. Note that you should provide
+	a sentence per line, and it MUST BE TOKENIZED. You can use the Moses tokenizer.
+	For each input sentence, it writes to the standard output two fields separated by 
+	the string "|||". The first field contains the actual translation, while the second one
+	contains the word alignments.
+
+
+
+
+

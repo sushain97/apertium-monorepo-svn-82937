@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<modes>
+  <mode name="ita-morph" install="yes">
+    <pipeline>
+      <program name="lt-proc -w">
+        <file name="ita.automorf.bin"/>
+      </program>
+    </pipeline>
+  </mode>
+
+  <mode name="ita-disam" install="yes">
+    <pipeline>
+      <program name="lt-proc -w">
+        <file name="ita.automorf.bin"/>
+      </program>
+      <program name="cg-conv -a -l"/>
+      <program name="vislcg3 --trace --grammar">
+        <file name="ita.rlx.bin"/>
+      </program>
+    </pipeline>
+  </mode>
+
+  <mode name="ita-disam-trace">
+    <pipeline>
+      <program name="lt-proc -w">
+        <file name="ita.automorf.bin"/>
+      </program>
+      <program name="cg-proc -w -t">
+        <file name="ita.rlx.bin"/>
+      </program>
+    </pipeline>
+  </mode>
+
+  <mode name="ita-tagger" install="yes">
+    <pipeline>
+      <program name="lt-proc -w">
+        <file name="ita.automorf.bin"/>
+      </program>
+      <program name="cg-proc">
+        <file name="ita.rlx.bin"/>
+      </program>
+      <program name="apertium-tagger -g $2">
+        <file name="ita.prob"/>
+      </program>
+    </pipeline>
+  </mode>
+
+  <mode name="ita-gener" install="yes">
+    <pipeline>
+      <program name="lt-proc -g">
+        <file name="ita.autogen.bin"/>
+      </program>
+    </pipeline>
+  </mode>
+
+</modes>

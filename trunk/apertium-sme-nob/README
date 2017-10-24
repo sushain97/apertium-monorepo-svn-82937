@@ -1,0 +1,143 @@
+Northern Sámi and Norwegian Bokmål
+
+                            apertium-sme-nob
+===============================================================================
+
+This is an Apertium language pair for translating between Northern
+Sámi and Norwegian Bokmål. What you can use this language package for:
+
+* Translating from Northern Sámi to Norwegian Bokmål
+* Morphological analysis of Northern Sámi
+* Part-of-speech tagging of Northern Sámi
+
+For information on the latter two points, see subheading "For more
+information" below. For analysis and POS-tagging of Bokmål, see
+http://wiki.apertium.org/wiki/apertium-nno-nob
+
+Requirements
+===============================================================================
+
+You will need the following software installed:
+
+* lttoolbox (>= 3.1.2)
+* apertium (>= 3.1.1)
+* vislcg3 (>= 0.9.7.8188)
+* foma (last tested with SVN revision 49)
+* hfst3 (last tested with SVN revision 2174, configured with
+  ./configure --enable-lexc --enable-proc --with-foma)
+
+If this does not make any sense, we recommend you look at: wiki.apertium.org
+
+Compiling
+===============================================================================
+
+Given the requirements being installed, you should be able to just run:
+
+$ ./configure 
+$ make
+# make install
+
+You can use ./autogen.sh instead of ./configure if you're compiling
+from SVN. If you're using a --prefix to ./configure or ./autogen.sh,
+make sure it's the same one you used to install apertium itself.
+
+Testing
+===============================================================================
+
+If you are in the source directory after running make, the following
+commands should work:
+
+$ echo "Mus lea oahpahus gaskkal guovtti ja njealji" | apertium -d . sme-nob
+Jeg har undervisning mellom to og fire 
+
+The following commands run tests which are on the Apertium wiki page:
+
+$ sh regression-tests.sh 
+
+$ sh pending-tests.sh 
+
+Files and data
+===============================================================================
+
+* apertium-sme-nob.sme.lexc            - Monolingual dictionary for Sámi
+* apertium-sme-nob.sme.twol            - twolc rules for Sámi dictionary
+* apertium-sme-nob.sme-nob.rlx         - Constraint Grammar disambiguator for Sámi
+* sme-nob.prob                         - Tagger model for Sámi
+* apertium-sme-nob.sme-nob.lex         - Constraint Grammar WSD rules for Sámi
+* apertium-sme-nob.sme-nob.dix         - Bilingual dictionary 
+* apertium-sme-nob.sme-nob.t1x         - Chunking rules for translating into Bokmål
+* apertium-sme-nob.sme-nob.t2x         - Interchunk1 rules for translating into Bokmål
+* apertium-sme-nob.sme-nob.t3x         - Interchunk2 rules for translating into Bokmål
+* apertium-sme-nob.sme-nob.t4x         - Postchunk rules for translating into Bokmål
+* apertium-sme-nob.nob.dix             - Monolingual dictionary for Bokmål
+* modes.xml                            - Translation modes
+
+For more information
+===============================================================================
+
+* http://wiki.apertium.org/wiki/Installation
+* http://wiki.apertium.org/wiki/apertium-sme-nob
+* http://wiki.apertium.org/wiki/Using_an_lttoolbox_dictionary
+* http://wiki.apertium.org/wiki/HFST
+* http://wiki.apertium.org/wiki/Constraint_Grammar
+
+Citing
+===============================================================================
+
+Academic users of this package are requested to cite the following article:
+
+@inproceedings{trosterud2012evaluating,
+  address = {Gothenburg, Sweden},
+  author = {Trosterud, Trond and Unhammer, Kevin Brubeck},
+  booktitle = {Proceedings of the Third International Workshop on Free/Open-Source Rule-Based Machine Translation (FreeRBMT 2012)},
+  editor = {España-Bonet, Cristina and Ranta, Aarne},
+  month = {June},
+  number = {2013:03},
+  pages = {13--26},
+  publisher = {Chalmers University of Technology},
+  title = {{Evaluating North Sámi to Norwegian assimilation RBMT}},
+  url = {http://www.molto-project.eu/sites/default/files/FreeRBMT-2012.pdf#19},
+  year = 2012
+}
+
+The nob resources used were adapted from the apertium-nno-nob package;
+to cite that, please use:
+
+@inproceedings{unhammer2009rfr,
+  address = {Alicante},
+  author = {Unhammer, Kevin Brubeck and Trosterud, Trond},
+  booktitle = {{Proceedings of the First International Workshop on Free/Open-Source Rule-Based Machine Translation}},
+  editor = {Pérez-Ortiz, Juan Antonio and Sánchez-Martínez, Felipe and Tyers, Francis M.},
+  pages = {35--42},
+  publisher = {Universidad de Alicante. Departamento de Lenguajes y Sistemas Informáticos},
+  title = {{Reuse of Free Resources in Machine Translation between Nynorsk and Bokm{\aa}l}},
+  url = {http://hdl.handle.net/10045/12025},
+  year = 2009
+}
+
+To cite Apertium, please use the following:
+
+@article{apertium,year={2011},
+issn={0922-6567},
+journal={Machine Translation},
+volume={25},
+number={2},
+doi={10.1007/s10590-011-9090-0},
+title={Apertium: a free/open-source platform for rule-based machine translation},
+url={http://dx.doi.org/10.1007/s10590-011-9090-0},publisher={Springer Netherlands},
+keywords={Free/open-source machine translation; Rule-based machine translation; 
+Apertium; Shallow transfer; Finite-state transducers},
+author={Forcada, Mikel~L. and Ginestí-Rosell, Mireia and Nordfalk, Jacob and O’Regan, Jim and Ortiz-Rojas, Sergio and Pérez-Ortiz, Juan~Antonio and Sánchez-Martínez, Felipe and Ramírez-Sánchez, Gema and Tyers, Francis~M.},
+pages={127-144},
+language={English}
+}
+
+Help and support
+===============================================================================
+
+If you need help using this language pair or data, you can contact:
+
+* Mailing list: apertium-stuff@lists.sourceforge.net
+* IRC: #apertium on irc.freenode.net
+
+See also the file AUTHORS included in this distribution.

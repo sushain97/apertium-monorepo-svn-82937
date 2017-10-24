@@ -1,0 +1,29 @@
+apertium-as-bn
+==============
+This is a prototype of the Assamese-Bengali language pair in Apertium.
+
+Requirements
+============
+Install all the following dependencies:
+
+* lttoolbox (http://wiki.apertium.org/wiki/Lttoolbox)
+* apertium (http://wiki.apertium.org/wiki/Installation)
+
+Installation
+============
+Run configure to generate a Makefile file:
+
+$ ./configure
+
+and then run make inside this directory.
+
+$ make
+
+
+List of files
+=============
+* apertium-as-bn.as.dix   	- Monolingual dictionary for Assamese
+* as-bn.prob                  	- Tagger model for Assamese
+* apertium-as-bn.bn.dix   	- Monolingual dictionary for Bengali
+* apertium-as-bn.as-bn.t1x    	- Transfer rules for Assamese-to-Bengali translation
+* apertium-as-bn.as-bn.dix    	- Bilingual dictionary

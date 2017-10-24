@@ -1,0 +1,47 @@
+#!/bin/bash
+
+# Compiles the language modules and the pair,
+# runs all of the currently set up faster tests, i.e.:
+# 1) tat>rus regression tests (without fetching them from the wiki)
+# 2) similar to the regression tests on the wiki tests for single words
+# in testvoc/lite
+# 3) tat>rus corpus test (=corp.test), and,
+# if the 'origina' and 'nova' translations differ, outputs info
+# about the [*@#] errors and the WER of both, so that you can see whether they increased or
+# decreased after the changes you've made.
+#
+# If you want to update regression tests from the wiki, run
+# './wiki-tests.sh Regression tat rus update' first. Their local copy is
+# stored in dev/.
+#
+# TODO: make the output of this test boolean: either all tests pass or they do not.
+
+cd ../../languages/apertium-tat
+make &&
+cd ../apertium-rus
+make &&
+cd ../../nursery/apertium-tat-rus
+make &&
+
+if ./wiki-tests.sh Regression tat rus && ./qa testvoc reg
+then
+    echo ""
+    echo "ALL TESTS PASS."
+    echo ""
+fi
+
+./qa corp
+
+if ! diff corpus/tat-rus-origina.txt corpus/tat-rus-nova.txt > /dev/null; then
+	echo '[*@#] errors tat-rus before:'
+	grep -o '[*@#]' corpus/tat-rus-origina.txt | wc -l
+	echo '[*@#] errors tat-rus after:'
+	grep -o '[*@#]' corpus/tat-rus-nova.txt | wc -l
+
+	echo 'WER tat-rus before:'
+	perl ../../trunk/apertium-eval-translator/apertium-eval-translator.pl -test corpus/tat-rus-origina.txt -ref corpus/tat-rus-posted.txt > /tmp/tat-rus-wer-origina.txt
+	grep '(WER)' /tmp/tat-rus-wer-origina.txt
+	echo 'WER tat-rus after:'
+	perl ../../trunk/apertium-eval-translator/apertium-eval-translator.pl -test corpus/tat-rus-nova.txt -ref corpus/tat-rus-posted.txt > /tmp/tat-rus-wer-nova.txt
+	grep '(WER)' /tmp/tat-rus-wer-nova.txt
+fi

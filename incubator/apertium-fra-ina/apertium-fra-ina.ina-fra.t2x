@@ -1,0 +1,463 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<interchunk>
+  <section-def-cats>
+    <def-cat n="SN">
+      <cat-item tags="SN"/>
+      <cat-item tags="SN.*"/>
+    </def-cat>
+    <def-cat n="SV">
+      <cat-item tags="SV"/>
+      <cat-item tags="SV.*"/>
+    </def-cat>
+    <def-cat n="SA">
+      <cat-item tags="SA"/>
+      <cat-item tags="SA.*"/>
+    </def-cat>
+    <def-cat n="CNJ">
+      <cat-item tags="CNJ"/>
+      <cat-item tags="CNJ.*"/>
+    </def-cat>
+  </section-def-cats>
+
+  <section-def-attrs>
+    <def-attr n="a_nbr">
+      <attr-item tags="sg"/>
+    </def-attr>
+
+    <def-attr n="number">
+      <attr-item tags="sg"/>
+      <attr-item tags="pl"/>
+    </def-attr>
+    <def-attr n="gender">
+      <attr-item tags="m"/>
+      <attr-item tags="f"/>
+    </def-attr>
+    <def-attr n="person">
+      <attr-item tags="p1"/>
+      <attr-item tags="p2"/>
+        <attr-item tags="p3"/>
+    </def-attr>
+    <def-attr n="decl-kind">
+      <attr-item tags="difficile_adj"/>
+    </def-attr>
+  </section-def-attrs>
+
+
+  <section-def-vars>
+    <def-var n="adj_gender"/>
+    <def-var n="adj_number"/>
+    <def-var n="noun_number"/>
+    <def-var n="noun_gender"/>
+  </section-def-vars>
+    <section-def-lists>
+        <def-list n="gros_adjs">
+            <list-item v="gros"/>
+            <list-item v="bas"/>
+            <list-item v="gras"/>
+        </def-list>
+        <def-list n="difficile_adjs">
+            <list-item v="difficile"/>
+            <list-item v="libre"/>
+        </def-list>
+        <def-list n="temps_noms">
+            <list-item v="temps"/>
+        </def-list>
+    </section-def-lists>
+  <section-def-macros>
+    <def-macro n="adj_agreement" npar="2">
+<!-- par. 1: noun; par. 2: adj-->
+          <choose>
+            <when>
+                <test>
+                    <and>
+                   <in>
+                      <clip pos="2" part="lem"/>
+                      <list n="gros_adjs"/>
+                    </in>
+                   <equal>
+                      <clip pos="1"  part="gender"/>
+                      <lit-tag v="m"/>
+                    </equal>
+                        </and>
+                </test>
+                <let>
+                    <var n="adj_number"/>
+                    <clip pos="2"  part="number"/>
+
+                </let>
+              </when>
+              <otherwise>
+                <let>
+                    <var n="adj_number"/>
+                    <clip pos="1" part="number"/>
+                </let>
+              </otherwise>
+        </choose>
+          <choose>
+            <when>
+                <test>
+                    
+                   <equal>
+                      <clip pos="2" part="decl-kind"/>
+                      <lit-tag v="difficile_adj"/>
+                    </equal>
+                    
+                </test>
+                <let>
+                    <var n="adj_gender"/>
+                    <lit-tag v="mf"/>
+                </let>
+              </when>
+              <otherwise>
+                <let>
+                    <var n="adj_gender"/>
+                    <clip pos="1" part="gender"/>
+                </let>
+              </otherwise>
+        </choose>
+
+    </def-macro>
+  </section-def-macros>
+
+  <section-rules>
+
+    <rule comment="REGLA: SN SV">
+      <pattern>
+        <pattern-item n="SN"/>
+        <pattern-item n="SV"/>
+      </pattern>
+      <action>
+        <out>
+          <chunk>
+            <clip pos="1" part="whole"/>
+          </chunk>
+            <b/>
+          <chunk>
+            <clip pos="2" part="lem"/>
+            <clip pos="2" part="tags"/>
+            <clip pos="1" part="person"/>
+            <clip pos="1" part="number"/>
+            <clip pos="2" part="chcontent"/>
+          </chunk>
+        </out>
+      </action>
+    </rule>
+    <rule comment="REGLA: SN SV SA">
+      <pattern>
+        <pattern-item n="SN"/>
+        <pattern-item n="SV"/>
+        <pattern-item n="SA"/>
+      </pattern>
+      <action>
+          <call-macro n="adj_agreement">
+            <with-param pos="1"/>
+            <with-param pos="3"/>
+          </call-macro>
+        <out>
+          <chunk>
+            <clip pos="1" part="whole"/>
+          </chunk>
+            <b/>
+          <chunk>
+            <clip pos="2" part="lem"/>
+            <clip pos="2" part="tags"/>
+            <clip pos="1" part="person"/>
+            <clip pos="1" part="number"/>
+            <clip pos="2" part="chcontent"/>
+          </chunk>
+            <b/>
+          <chunk>
+<!--
+            <clip pos="3" part="lem"/>
+            <clip pos="3" part="tags"/>
+           
+            <var n="adj_number"/>
+            <clip pos="2" part="chcontent"/>
+-->
+            <clip pos="3" part="lem"/>
+              <lit-tag v="adj"/>
+            <var n="adj_gender"/>
+                        <var n="adj_number"/>
+
+            <clip pos="3" part="chcontent"/>
+          </chunk>
+        </out>
+      </action>
+    </rule>
+      
+
+    <rule comment="REGLA: SN">
+      <pattern>
+        <pattern-item n="SN"/>
+      </pattern>
+      <action>
+        <out>
+          <chunk>
+            <clip pos="1" part="lem"/>
+            <clip pos="1" part="tags"/>
+            <clip pos="1" part="chcontent"/>
+          </chunk>
+        </out>
+      </action>
+    </rule>
+   <rule comment="REGLA: SN SV conj SN SV">
+      <pattern>
+        <pattern-item n="SN"/>
+        <pattern-item n="SV"/>
+        <pattern-item n="CNJ"/>
+        <pattern-item n="SN"/>
+        <pattern-item n="SV"/>
+      </pattern>
+      <action>
+
+        <out>
+          <chunk>
+            <clip pos="1" part="whole"/>
+          </chunk>
+            <b/>
+          <chunk>
+            <clip pos="2" part="lem"/>
+            <clip pos="2" part="tags"/>
+            <clip pos="1" part="person"/>
+            <clip pos="1" part="number"/>
+            <clip pos="2" part="chcontent"/>
+          </chunk>
+          <chunk>
+            <clip pos="3" part="whole"/>
+          </chunk>
+            <b/>
+          <chunk>
+            <clip pos="4" part="lem"/>
+            <clip pos="4" part="tags"/>
+            <clip pos="3" part="person"/>
+            <clip pos="3" part="number"/>
+            <clip pos="4" part="chcontent"/>
+          </chunk>
+        </out>
+
+      </action>
+    </rule>
+      
+   <rule comment="REGLA: SN SV conj SV">
+      <pattern>
+        <pattern-item n="SN"/>
+        <pattern-item n="SV"/>
+        <pattern-item n="CNJ"/>
+        <pattern-item n="SV"/>
+      </pattern>
+      <action>
+
+        <out>
+          <chunk>
+            <clip pos="1" part="whole"/>
+          </chunk>
+            <b/>
+          <chunk>
+            <clip pos="2" part="lem"/>
+            <clip pos="2" part="tags"/>
+            <clip pos="1" part="person"/>
+            <clip pos="1" part="number"/>
+            <clip pos="2" part="chcontent"/>
+          </chunk>
+            <b/>
+          <chunk>
+            <clip pos="3" part="whole"/>
+          </chunk>
+            <b/>
+          <chunk>
+            <clip pos="4" part="lem"/>
+            <clip pos="4" part="tags"/>
+            <clip pos="1" part="person"/>
+            <clip pos="1" part="number"/>
+            <clip pos="4" part="chcontent"/>
+          </chunk>
+        </out>
+
+      </action>
+    </rule>
+      
+   <rule comment="REGLA: SN SV SN conj SV SN">
+      <pattern>
+        <pattern-item n="SN"/>
+        <pattern-item n="SV"/>
+        <pattern-item n="SN"/>
+        <pattern-item n="CNJ"/>
+        <pattern-item n="SV"/>
+        <pattern-item n="SN"/>
+      </pattern>
+      <action>
+
+        <out>
+          <chunk>
+            <clip pos="1" part="whole"/>
+          </chunk>
+            <b/>
+          <chunk>
+            <clip pos="2" part="lem"/>
+            <clip pos="2" part="tags"/>
+            <clip pos="1" part="person"/>
+            <clip pos="1" part="number"/>
+            <clip pos="2" part="chcontent"/>
+          </chunk>
+            <b/>
+          <chunk>
+            <clip pos="3" part="whole"/>
+          </chunk>
+            <b/>
+          <chunk>
+            <clip pos="4" part="whole"/>
+          </chunk>
+            <b/>
+          <chunk>
+            <clip pos="5" part="lem"/>
+            <clip pos="5" part="tags"/>
+            <clip pos="1" part="person"/>
+            <clip pos="1" part="number"/>
+            <clip pos="5" part="chcontent"/>
+          </chunk>
+            <b/>
+          <chunk>
+            <clip pos="6" part="whole"/>
+          </chunk>
+        </out>
+
+      </action>
+    </rule>
+      
+   <rule comment="REGLA: SN SV SN conj SV ">
+      <pattern>
+        <pattern-item n="SN"/>
+        <pattern-item n="SV"/>
+        <pattern-item n="SN"/>
+        <pattern-item n="CNJ"/>
+        <pattern-item n="SV"/>
+      </pattern>
+      <action>
+
+        <out>
+          <chunk>
+            <clip pos="1" part="whole"/>
+          </chunk>
+            <b/>
+          <chunk>
+            <clip pos="2" part="lem"/>
+            <clip pos="2" part="tags"/>
+            <clip pos="1" part="person"/>
+            <clip pos="1" part="number"/>
+            <clip pos="2" part="chcontent"/>
+          </chunk>
+            <b/>
+          <chunk>
+            <clip pos="3" part="whole"/>
+          </chunk>
+            <b/>
+          <chunk>
+            <clip pos="4" part="whole"/>
+          </chunk>
+            <b/>
+          <chunk>
+            <clip pos="5" part="lem"/>
+            <clip pos="5" part="tags"/>
+            <clip pos="1" part="person"/>
+            <clip pos="1" part="number"/>
+            <clip pos="5" part="chcontent"/>
+          </chunk>
+        </out>
+      </action>
+    </rule>
+      
+   <rule comment="REGLA: SN SV conj SV SN">
+      <pattern>
+        <pattern-item n="SN"/>
+        <pattern-item n="SV"/>
+        <pattern-item n="CNJ"/>
+        <pattern-item n="SV"/>
+        <pattern-item n="SN"/>
+      </pattern>
+      <action>
+
+        <out>
+          <chunk>
+            <clip pos="1" part="whole"/>
+          </chunk>
+            <b/>
+          <chunk>
+            <clip pos="2" part="lem"/>
+            <clip pos="2" part="tags"/>
+            <clip pos="1" part="person"/>
+            <clip pos="1" part="number"/>
+            <clip pos="2" part="chcontent"/>
+          </chunk>
+            <b/>
+          <chunk>
+            <clip pos="3" part="whole"/>
+          </chunk>
+            <b/>
+          <chunk>
+            <clip pos="4" part="lem"/>
+            <clip pos="4" part="tags"/>
+            <clip pos="1" part="person"/>
+            <clip pos="1" part="number"/>
+            <clip pos="4" part="chcontent"/>
+          </chunk>
+            <b/>
+                      <chunk>
+            <clip pos="5" part="whole"/>
+          </chunk>
+        </out>
+
+      </action>
+    </rule>
+
+   <rule comment="REGLA: SN SV SN conj SN">
+      <pattern>
+        <pattern-item n="SN"/>
+        <pattern-item n="SV"/>
+        <pattern-item n="SN"/>
+        <pattern-item n="CNJ"/>
+        <pattern-item n="SN"/>
+      </pattern>
+      <action>
+
+        <out>
+          <chunk>
+            <clip pos="1" part="whole"/>
+          </chunk>
+            <b/>
+          <chunk>
+            <clip pos="2" part="lem"/>
+            <clip pos="2" part="tags"/>
+            <clip pos="1" part="person"/>
+            <clip pos="1" part="number"/>
+            <clip pos="2" part="chcontent"/>
+          </chunk>
+            <b/>
+          <chunk>
+            <clip pos="3" part="whole"/>
+          </chunk>
+            <b/>
+          <chunk>
+            <clip pos="4" part="whole"/>
+          </chunk>
+            <b/>
+          <chunk>
+            <clip pos="5" part="whole"/>
+          </chunk>
+        </out>
+
+      </action>
+    </rule>
+      
+
+  </section-rules>
+</interchunk>
+
+<!--
+Resources:
+    http://wiki.apertium.org/wiki/Chunking:_A_full_example
+    http://wiki.apertium.org/wiki/Chunking
+    http://wiki.apertium.org/wiki/Apertium_New_Language_Pair_HOWTO#Transfer_rules
+    http://wiki.apertium.org/wiki/A_long_introduction_to_transfer_rules
+    http://wiki.apertium.org/wiki/Transfer#Adding_structural_transfer_.28grammar.29_rules
+-->
+

@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<modes>
+
+  <mode name="crh-twol" install="yes">
+    <pipeline>
+      <program name="hfst-strings2fst -S"/>
+      <program name="hfst-compose-intersect">
+        <file name=".deps/crh.twol.hfst"/>
+      </program>
+      <program name="hfst-fst2strings"/>
+    </pipeline>
+  </mode>
+
+  <mode name="crh-morph" install="yes">
+    <pipeline>
+      <program name="lt-proc -w">
+        <file name="crh.automorf.bin"/>
+      </program>
+    </pipeline>
+  </mode>
+
+  <mode name="crh-lexc" install="yes">
+    <pipeline>
+      <program name="hfst-lookup">
+        <file name=".deps/crh.LR.lexc.hfst"/>
+      </program>
+    </pipeline>
+  </mode>
+
+  <mode name="crh-gener" install="yes">
+    <pipeline>
+      <program name="lt-proc -g">
+        <file name="crh.autogen.bin"/>
+      </program>
+    </pipeline>
+  </mode>
+
+  <mode name="crh-tagger" install="yes">
+    <pipeline>
+      <program name="lt-proc -w">
+        <file name="crh.automorf.bin"/>
+      </program>
+      <program name="cg-proc">
+        <file name="crh.rlx.bin"/>
+      </program>
+    </pipeline>
+  </mode>
+
+  <mode name="crh-disam" install="yes">
+    <pipeline>
+      <program name="lt-proc -w">
+        <file name="crh.automorf.bin"/>
+      </program>
+      <program name="cg-conv -a -l"/>
+      <program name="vislcg3 --trace --grammar">
+        <file name="crh.rlx.bin"/>
+      </program>
+    </pipeline>
+  </mode>
+
+  <mode name="kir-disam" install="yes">
+    <pipeline>
+      <program name="hfst-proc -w">
+        <file name="kir.automorf.hfst"/>
+      </program>
+      <program name="cg-proc -w">
+        <file name="kir.rlx.bin"/>
+      </program>
+    </pipeline>
+  </mode>
+
+    <mode name="crh-spell" install="yes">
+        <pipeline>
+            <program name="hfst-ospell -S -n 10">
+                <file name="crh.zhfst"/>
+            </program>
+        </pipeline>
+    </mode>
+
+    <mode name="crh-tokenise" install="yes">
+        <pipeline>
+            <program name="hfst-proc">
+                <file name=".deps/acceptor.default.hfst"/>
+            </program>
+        </pipeline>
+    </mode>
+
+</modes>
+

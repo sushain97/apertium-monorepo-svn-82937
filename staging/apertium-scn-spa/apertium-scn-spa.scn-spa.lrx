@@ -1,0 +1,58 @@
+<rules>
+
+  <rule weight="0.5">
+    <match lemma="vuautri" tags="prn.*"><select lemma="vosotros" tags="prn.*"/></match>
+  </rule>
+    
+  <rule weight="0.5">
+    <match lemma="cristianu" tags="n.*"><select lemma="persona" tags="n.*"/></match>
+  </rule>
+
+  <rule weight="0.4">
+    <match lemma="cristianu" tags="n.*"><select lemma="humano" tags="n.*"/></match>
+  </rule>
+
+  <rule weight="0.4">
+    <match lemma="dirittu" tags="n.*"/>
+    <match/><match/><match/>
+    <match lemma="cristianu" tags="n.*"><select lemma="humano" tags="n.*"/></match>
+  </rule>
+
+<rule weight="0.5">
+	<match lemma="sapiri"/>
+	<match lemma="sèntiri" tags="vblex.*"><select lemma="sentir" tags="vblex.*"/></match>
+</rule>
+
+	<rule weight="0.5">
+	  <match lemma="sèntiri" tags="vblex.*"><select lemma="sentir" tags="vblex.*"/></match>
+	  <match/><match/>
+          <or><match lemma="ntisu"/><match lemma="prubbremi"/></or>
+	</rule>
+
+	<rule weight="0.5">
+	  <match lemma="sèntiri" tags="vblex.*">
+	    <select lemma="oír" tags="vblex.*"/>
+	  </match>
+	  <match/><match/>
+          <or>
+	    <match lemma="forti"/>
+	    <match lemma="vuci"/>
+          </or>
+	</rule>
+
+	
+	<rule weight="0.5">
+	  <match lemma="forza" tags="n.*">
+	    <select lemma="campo" tags="n.*"/>
+	  </match>
+	    <match lemma="elettrumagneticu"/>
+	</rule>
+
+</rules>
+<!-- 
+Resources: 
+    http://wiki.apertium.org/wiki/How_to_get_started_with_lexical_selection_rules
+    http://wiki.apertium.org/wiki/Constraint-based_lexical_selection
+    http://wiki.apertium.org/wiki/Lexical_selection
+    http://wiki.apertium.org/wiki/Learning_rules_from_parallel_and_non-parallel_corpora
+-->

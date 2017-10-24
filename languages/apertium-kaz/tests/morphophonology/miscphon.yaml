@@ -1,0 +1,54 @@
+Config:
+  hfst:
+    App: hfst-lookup
+    Gen: ../../kaz.autogen.hfst
+    Morph: ../../kaz.automorf.hfst
+
+
+Tests:
+  "Russian words ending in ь":
+    автомобиль<n><nom> : автомобиль
+    автомобиль<n><pl><nom> : автомобильдер
+    автомобиль<n><gen> : автомобильдің
+    автомобиль<n><px3sp><acc> : автомобилін
+    руль<n><nom> : руль
+    руль<n><pl><nom> : рульдер
+    руль<n><gen> : рульдің
+    руль<n><px3sp><acc> : рулін
+
+  "Russian words ending in сс":
+    процесс<n><nom> : процесс
+    процесс<n><pl><nom> : процестер
+    процесс<n><gen> : процестің
+    процесс<n><px3sp><nom> : процесі
+
+  "Russian words ending in ст":
+    журналист<n><nom> : журналист
+    журналист<n><pl><nom> : журналистер
+    журналист<n><gen> : журналистің
+    журналист<n><dat> : журналистке
+    журналист<n><px3sp><nom> : журналисті
+
+  "Russian words ending in зд":
+    съезд<n><nom> : съезд
+    съезд<n><pl><nom> : съездер
+    съезд<n><gen> : съездің
+    съезд<n><dat> : съезге
+    съезд<n><px3sp><nom> : съезді
+
+  "Some Russian words affected by the original versions of these rules":
+    бассейн<n><px3sp><nom> : бассейні
+    бассейн<n><gen> : бассейннің
+    премьер-министр<n><px3sp><nom> : премьер-министрі
+    премьер-министр<n><gen> : премьер-министрдің
+
+  "Russian words ending in к":
+    банк<n><nom> : банк
+    банк<n><dat> : банкке
+    банк<n><px3sp><nom> : банкі
+    банк<n><abl> : банктен
+
+  "Russian words with к as last cons, but ending in back vow":
+    отставка<n><nom> : отставка
+    отставка<n><dat> : отставкаға
+    отставка<n><gen> : отставканың

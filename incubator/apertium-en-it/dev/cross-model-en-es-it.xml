@@ -1,0 +1,3811 @@
+<!--
+<!DOCTYPE cross-model SYSTEM "crossmodel.dtd">
+-->
+<cross-model>
+    <cross-action id="default" a="ebenimeli">
+        <description>Default pattern</description>
+        <pattern>
+            <e>
+                <p>
+                    <l>$lemmaA<v n="cat"/><t n="tailA"/></l>
+                    <r>$lemmaB<v n="cat"/><t/></r>
+                </p>
+            </e>
+            <e>
+                <p>
+                    <l>$lemmaB<v n="cat"/><t/></l>
+                    <r>$lemmaC<v n="cat"/><t n="tailC"/></r>
+                </p>
+            </e>
+        </pattern>
+        <action-set>
+            <action>
+                <e>
+                    <p>
+                        <l>$lemmaA<v n="cat"/><t n="tailA"/></l>
+                        <r>$lemmaC<v n="cat"/><t n="tailC"/></r>
+                    </p>
+                </e>
+            </action>
+        </action-set>
+    </cross-action>
+<cross-action id="ND-0">
+	<pattern>
+    <e>
+      <p>
+        <l>$lemmaA<s n="n"/></l> 
+        <r>$lemmaB<s n="n"/><s n="m"/></r> 
+      </p>
+    </e>
+
+    <e>
+      <p>
+        <l>$lemmaB<s n="n"/></l> 
+        <r>$lemmaC<s n="n"/></r> 
+      </p>
+    </e>
+
+		</pattern>
+        <action-set>
+            <action>
+                <e>
+                    <p>
+                        <l>$lemmaA<s n="n"/></l>
+                        <r>$lemmaC<s n="n"/><s n="m"/></r>
+                    </p>
+                </e>
+            </action>
+        </action-set>
+
+</cross-action>
+<!-- 3271 entries like this -->
+
+<cross-action id="ND-1">
+	<pattern>
+    <e>
+      <p>
+        <l>$lemmaA<s n="n"/></l> 
+        <r>$lemmaB<s n="n"/><s n="f"/></r> 
+      </p>
+    </e>
+
+    <e>
+      <p>
+        <l>$lemmaB<s n="n"/></l> 
+        <r>$lemmaC<s n="n"/></r> 
+      </p>
+    </e>
+
+	</pattern>
+        <action-set>
+            <action>
+                <e>
+                    <p>
+                        <l>$lemmaA<s n="n"/></l>
+                        <r>$lemmaC<s n="n"/><s n="f"/></r>
+                    </p>
+                </e>
+            </action>
+        </action-set>
+
+</cross-action>
+<!-- 3261 entries like this -->
+
+<cross-action id="ND-2">
+	<pattern>
+    <e>
+      <p>
+        <l>$lemmaA<s n="vblex"/></l> 
+        <r>$lemmaB<s n="vblex"/></r> 
+      </p>
+    </e>
+
+    <e>
+      <p>
+        <l>$lemmaB<s n="vblex"/></l> 
+        <r>$lemmaC<s n="vblex"/></r> 
+      </p>
+    </e>
+
+	</pattern>
+        <action-set>
+            <action>
+                <e>
+                    <p>
+                        <l>$lemmaA<s n="vblex"/></l>
+                        <r>$lemmaC<s n="vblex"/></r>
+                    </p>
+                </e>
+            </action>
+        </action-set>
+
+</cross-action>
+<!-- 1847 entries like this -->
+
+<cross-action id="ND-3">
+	<pattern>
+    <e>
+      <p>
+        <l>$lemmaA<s n="adv"/></l> 
+        <r>$lemmaB<s n="adv"/></r> 
+      </p>
+    </e>
+
+    <e>
+      <p>
+        <l>$lemmaB<s n="adv"/></l> 
+        <r>$lemmaC<s n="adv"/></r> 
+      </p>
+    </e>
+
+	</pattern>
+        <action-set>
+            <action>
+                <e>
+                    <p>
+                        <l>$lemmaA<s n="adv"/></l>
+                        <r>$lemmaC<s n="adv"/></r>
+                    </p>
+                </e>
+            </action>
+        </action-set>
+
+</cross-action>
+<!-- 1627 entries like this -->
+<cross-action id="ND-4">
+	<pattern>
+    <e>
+      <p>
+        <l>$lemmaA<s n="adj"/></l> 
+        <r>$lemmaB<s n="adj"/><s n="mf"/></r> 
+      </p>
+    </e>
+
+    <e>
+      <p>
+        <l>$lemmaB<s n="adj"/></l> 
+        <r>$lemmaC<s n="adj"/></r> 
+      </p>
+    </e>
+
+	</pattern>
+<action-set>
+  <action>
+    <e>
+      <p>
+        <l>$lemmaA<s n="adj"/></l> 
+        <r>$lemmaC<s n="adj"/><s n="mf"/></r> 
+      </p>
+    </e>
+  </action>
+</action-set>
+
+</cross-action>
+<!-- 965 entries like this -->
+
+<cross-action id="adj-simple">
+	<pattern>
+    <e>
+      <p>
+        <l>$lemmaA<s n="adj"/></l> 
+        <r>$lemmaB<s n="adj"/></r> 
+      </p>
+    </e>
+
+    <e>
+      <p>
+        <l>$lemmaB<s n="adj"/></l> 
+        <r>$lemmaC<s n="adj"/></r> 
+      </p>
+    </e>
+
+	</pattern>
+<action-set>
+<action>
+    <e>
+      <p>
+        <l>$lemmaA<s n="adj"/></l> 
+        <r>$lemmaC<s n="adj"/></r> 
+      </p>
+    </e>
+</action>
+</action-set>
+</cross-action>
+<!-- 865 entries like this -->
+
+<cross-action id="ND-6">
+	<pattern>
+    <e r="RL">
+      <p>
+        <l>$lemmaA<s n="n"/></l> 
+        <r>$lemmaB<s n="n"/></r> 
+      </p>
+    </e>
+
+    <e>
+      <p>
+        <l>$lemmaB<s n="n"/></l> 
+        <r>$lemmaC<s n="n"/></r> 
+      </p>
+    </e>
+
+	</pattern>
+<action-set>
+<action>
+    <e r="RL">
+      <p>
+        <l>$lemmaA<s n="n"/></l> 
+        <r>$lemmaC<s n="n"/></r> 
+      </p>
+    </e>
+</action>
+</action-set>
+
+</cross-action>
+<!-- 429 entries like this -->
+
+<cross-action id="ND-7">
+	<pattern>
+    <e>
+        <i>$lemmaB<s n="np"/><s n="ant"/></i> 
+    </e>
+
+    <e>
+      <p>
+        <l>$lemmaB<s n="np"/></l> 
+        <r>$lemmaC<s n="np"/></r> 
+      </p>
+    </e>
+
+	</pattern>
+<action-set>
+<action>
+    <e>
+      <p>
+        <l>$lemmaB<s n="np"/><s n="ant"/></l> 
+        <r>$lemmaC<s n="np"/><s n="ant"/></r> 
+      </p>
+    </e>
+
+</action>
+</action-set>
+
+</cross-action>
+<!-- 427 entries like this -->
+
+<cross-action id="ND-8">
+	<pattern>
+    <e r="LR">
+      <p>
+        <l>$lemmaA<s n="n"/></l> 
+        <r>$lemmaB<s n="n"/><s n="GD"/></r> 
+      </p>
+    </e>
+
+    <e>
+      <p>
+        <l>$lemmaB<s n="n"/></l> 
+        <r>$lemmaC<s n="n"/></r> 
+      </p>
+    </e>
+
+	</pattern>
+<action-set>
+<action>
+    <e r="LR">
+      <p>
+        <l>$lemmaA<s n="n"/></l> 
+        <r>$lemmaC<s n="n"/><s n="GD"/></r> 
+      </p>
+    </e>
+</action>
+</action-set>
+
+</cross-action>
+<!-- 415 entries like this -->
+
+<cross-action id="ND-9">
+	<pattern>
+    <e>
+      <p>
+        <l>$lemmaA<s n="n"/></l> 
+        <r>$lemmaB<s n="n"/><s n="f"/></r> 
+      </p>
+    </e>
+
+    <e>
+      <p>
+        <l>$lemmaB<s n="n"/><s n="f"/></l> 
+        <r>$lemmaC<s n="n"/><s n="m"/></r> 
+      </p>
+    </e>
+
+	</pattern>
+<action-set>
+<action>
+    <e>
+      <p>
+        <l>$lemmaA<s n="n"/></l> 
+        <r>$lemmaC<s n="n"/><s n="m"/></r> 
+      </p>
+    </e>
+</action>
+</action-set>
+
+</cross-action>
+<!-- 357 entries like this -->
+
+<cross-action id="ND-10">
+	<pattern>
+    <e>
+      <p>
+        <l>$lemmaA<s n="n"/></l> 
+        <r>$lemmaB<s n="n"/><s n="m"/></r> 
+      </p>
+    </e>
+
+    <e>
+      <p>
+        <l>$lemmaB<s n="n"/><s n="m"/></l> 
+        <r>$lemmaC<s n="n"/><s n="f"/></r> 
+      </p>
+    </e>
+
+	</pattern>
+<action-set>
+<action>
+    <e>
+      <p>
+        <l>$lemmaA<s n="n"/></l> 
+        <r>$lemmaC<s n="n"/><s n="f"/></r> 
+      </p>
+    </e>
+</action>
+</action-set>
+
+</cross-action>
+<!-- 299 entries like this -->
+
+<cross-action id="ND-11">
+	<pattern>
+    <e>
+      <p>
+        <l>$lemmaA<s n="np"/><s n="loc"/></l> 
+        <r>$lemmaB<s n="np"/><s n="loc"/><s n="f"/></r> 
+      </p>
+    </e>
+
+    <e>
+      <p>
+        <l>$lemmaB<s n="np"/></l> 
+        <r>$lemmaC<s n="np"/></r> 
+      </p>
+    </e>
+
+	</pattern>
+<action-set>
+<action>
+    <e>
+      <p>
+        <l>$lemmaA<s n="np"/><s n="loc"/></l> 
+        <r>$lemmaC<s n="np"/><s n="loc"/><s n="f"/></r> 
+      </p>
+    </e>
+</action>
+</action-set>
+
+</cross-action>
+<!-- 209 entries like this -->
+<cross-action id="ND-12">
+	<pattern>
+    <e r="LR">
+      <p>
+        <l>$lemmaA<s n="n"/></l> 
+        <r>$lemmaB<s n="n"/><s n="f"/></r> 
+      </p>
+    </e>
+
+    <e r="RL">
+      <p>
+        <l>$lemmaB<s n="n"/><s n="f"/><s n="ND"/></l> 
+        <r>$lemmaC<s n="n"/><s n="f"/><s n="sp"/></r> 
+      </p>
+    </e>
+
+	</pattern>
+<action-set>
+<action>
+    <e>
+      <p>
+        <l>$lemmaA<s n="n"/><s n="ND"/></l> 
+        <r>$lemmaC<s n="n"/><s n="f"/><s n="sp"/></r> 
+      </p>
+    </e>
+</action>
+</action-set>
+
+</cross-action>
+<!-- 207 entries like this -->
+<cross-action id="ND-13">
+	<pattern>
+    <e r="LR">
+      <p>
+        <l>$lemmaA<s n="n"/></l> 
+        <r>$lemmaB<s n="n"/><s n="f"/></r> 
+      </p>
+    </e>
+
+    <e r="LR">
+      <p>
+        <l>$lemmaB<s n="n"/><s n="f"/><s n="sg"/></l> 
+        <r>$lemmaC<s n="n"/><s n="f"/><s n="sp"/></r> 
+      </p>
+    </e>
+
+	</pattern>
+<action-set>
+<action>
+    <e r="LR">
+      <p>
+        <l>$lemmaA<s n="n"/><s n="sg"/></l> 
+        <r>$lemmaC<s n="n"/><s n="f"/><s n="sp"/></r> 
+      </p>
+    </e>
+</action>
+</action-set>
+
+</cross-action>
+<!-- 205 entries like this -->
+<cross-action id="ND-14">
+	<pattern>
+    <e r="LR">
+      <p>
+        <l>$lemmaA<s n="n"/></l> 
+        <r>$lemmaB<s n="n"/><s n="f"/></r> 
+      </p>
+    </e>
+
+    <e r="LR">
+      <p>
+        <l>$lemmaB<s n="n"/><s n="f"/><s n="pl"/></l> 
+        <r>$lemmaC<s n="n"/><s n="f"/><s n="sp"/></r> 
+      </p>
+    </e>
+
+	</pattern>
+<action-set>
+<action>
+    <e r="LR">
+      <p>
+        <l>$lemmaA<s n="n"/><s n="pl"/></l> 
+        <r>$lemmaC<s n="n"/><s n="f"/><s n="sp"/></r> 
+      </p>
+    </e>
+</action>
+</action-set>
+</cross-action>
+<!-- 205 entries like this -->
+<cross-action id="ND-15">
+	<pattern>
+    <e r="RL">
+      <p>
+        <l>$lemmaA<s n="pr"/></l> 
+        <r>$lemmaB<s n="pr"/></r> 
+      </p>
+    </e>
+
+    <e>
+      <p>
+        <l>$lemmaB<s n="pr"/></l> 
+        <r>$lemmaC<s n="pr"/></r> 
+      </p>
+    </e>
+
+	</pattern>
+<action-set>
+<action>
+    <e r="RL">
+      <p>
+        <l>$lemmaA<s n="pr"/></l> 
+        <r>$lemmaC<s n="pr"/></r> 
+      </p>
+    </e>
+</action>
+</action-set>
+
+</cross-action>
+<!-- 197 entries like this -->
+<cross-action id="ND-16">
+	<pattern>
+    <e>
+      <p>
+        <l>$lemmaA<s n="n"/></l> 
+        <r>$lemmaB<s n="n"/><s n="mf"/></r> 
+      </p>
+    </e>
+
+    <e>
+      <p>
+        <l>$lemmaB<s n="n"/></l> 
+        <r>$lemmaC<s n="n"/></r> 
+      </p>
+    </e>
+
+	</pattern>
+<action-set>
+<action>
+    <e>
+      <p>
+        <l>$lemmaA<s n="n"/></l> 
+        <r>$lemmaC<s n="n"/><s n="mf"/></r> 
+      </p>
+    </e>
+</action>
+</action-set>
+</cross-action>
+<!-- 189 entries like this -->
+<cross-action id="ND-17">
+	<pattern>
+    <e r="RL">
+      <p>
+        <l>$lemmaA<s n="adj"/><s n="sint"/></l> 
+        <r>$lemmaB<s n="adj"/></r> 
+      </p>
+    </e>
+
+    <e>
+      <p>
+        <l>$lemmaB<s n="adj"/></l> 
+        <r>$lemmaC<s n="adj"/></r> 
+      </p>
+    </e>
+
+	</pattern>
+<action-set>
+<action>
+    <e r="RL">
+      <p>
+        <l>$lemmaA<s n="adj"/><s n="sint"/></l> 
+        <r>$lemmaC<s n="adj"/></r> 
+      </p>
+    </e>
+</action>
+</action-set>
+</cross-action>
+<!-- 173 entries like this -->
+<cross-action id="ND-18">
+	<pattern>
+    <e>
+      <p>
+        <l>$lemmaA<s n="np"/><s n="loc"/></l> 
+        <r>$lemmaB<s n="np"/><s n="loc"/><s n="m"/></r> 
+      </p>
+    </e>
+
+    <e>
+      <p>
+        <l>$lemmaB<s n="np"/></l> 
+        <r>$lemmaC<s n="np"/></r> 
+      </p>
+    </e>
+
+	</pattern>
+<action-set>
+<action>
+    <e>
+      <p>
+        <l>$lemmaA<s n="np"/><s n="loc"/></l> 
+        <r>$lemmaC<s n="np"/><s n="loc"/><s n="m"/></r> 
+      </p>
+    </e>
+</action>
+</action-set>
+</cross-action>
+<!-- 145 entries like this -->
+<cross-action id="ND-19">
+	<pattern>
+    <e>
+      <p>
+        <l>$lemmaA<s n="np"/></l> 
+        <r>$lemmaB<s n="np"/></r> 
+      </p>
+    </e>
+
+    <e>
+      <p>
+        <l>$lemmaB<s n="np"/></l> 
+        <r>$lemmaC<s n="np"/></r> 
+      </p>
+    </e>
+
+	</pattern>
+<action-set>
+<action>
+    <e>
+      <p>
+        <l>$lemmaA<s n="np"/></l> 
+        <r>$lemmaC<s n="np"/></r> 
+      </p>
+    </e>
+</action>
+</action-set>
+
+</cross-action>
+<!-- 101 entries like this -->
+<cross-action id="ND-20">
+	<pattern>
+    <e>
+      <p>
+        <l>$lemmaA<s n="n"/></l> 
+        <r>$lemmaB<s n="n"/><s n="m"/></r> 
+      </p>
+    </e>
+
+    <e r="RL">
+      <p>
+        <l>$lemmaB<s n="n"/><s n="m"/><s n="ND"/></l> 
+        <r>$lemmaC<s n="n"/><s n="m"/><s n="sp"/></r> 
+      </p>
+    </e>
+
+	</pattern>
+<action-set>
+<action>
+    <e r="RL">
+      <p>
+        <l>$lemmaA<s n="n"/><s n="ND"/></l> 
+        <r>$lemmaC<s n="n"/><s n="m"/><s n="sp"/></r> 
+      </p>
+    </e>
+</action>
+</action-set>
+
+</cross-action>
+<!-- 87 entries like this -->
+
+<cross-action id="ND-21">
+	<pattern>
+    <e>
+      <p>
+        <l>$lemmaA<s n="n"/></l> 
+        <r>$lemmaB<s n="n"/><s n="m"/></r> 
+      </p>
+    </e>
+
+    <e r="LR">
+      <p>
+        <l>$lemmaB<s n="n"/><s n="m"/><s n="sg"/></l> 
+        <r>$lemmaC<s n="n"/><s n="m"/><s n="sp"/></r> 
+      </p>
+    </e>
+
+	</pattern>
+<action-set>
+<action>
+    <e r="LR">
+      <p>
+        <l>$lemmaA<s n="n"/><s n="sg"/></l> 
+        <r>$lemmaC<s n="n"/><s n="m"/><s n="sp"/></r> 
+      </p>
+    </e>
+</action>
+</action-set>
+
+</cross-action>
+<!-- 85 entries like this -->
+
+<cross-action id="ND-22">
+	<pattern>
+    <e>
+      <p>
+        <l>$lemmaA<s n="n"/></l> 
+        <r>$lemmaB<s n="n"/><s n="mf"/></r> 
+      </p>
+    </e>
+
+    <e r="RL">
+      <p>
+        <l>$lemmaB<s n="n"/><s n="mf"/></l> 
+        <r>$lemmaC<s n="n"/><s n="m"/></r> 
+      </p>
+    </e>
+
+	</pattern>
+<action-set>
+<action>
+    <e>
+      <p>
+        <l>$lemmaA<s n="n"/></l> 
+        <r>$lemmaC<s n="n"/><s n="m"/></r> 
+      </p>
+    </e>
+</action>
+</action-set>
+
+</cross-action>
+<!-- 79 entries like this -->
+
+<cross-action id="ND-23">
+	<pattern>
+    <e>
+      <p>
+        <l>$lemmaA<s n="n"/></l> 
+        <r>$lemmaB<s n="n"/><s n="m"/></r> 
+      </p>
+    </e>
+
+    <e r="LR">
+      <p>
+        <l>$lemmaB<s n="n"/><s n="m"/><s n="pl"/></l> 
+        <r>$lemmaC<s n="n"/><s n="m"/><s n="sp"/></r> 
+      </p>
+    </e>
+
+	</pattern>
+<action-set>
+<action>
+    <e r="LR">
+      <p>
+        <l>$lemmaA<s n="n"/><s n="pl"/></l> 
+        <r>$lemmaC<s n="n"/><s n="m"/><s n="sp"/></r> 
+      </p>
+    </e>
+</action>
+</action-set>
+
+</cross-action>
+<!-- 61 entries like this -->
+
+<cross-action id="ND-24">
+	<pattern>
+    <e>
+      <p>
+        <l>$lemmaA<s n="adj"/><s n="sint"/></l> 
+        <r>$lemmaB<s n="adj"/><s n="mf"/></r> 
+      </p>
+    </e>
+
+    <e>
+      <p>
+        <l>$lemmaB<s n="adj"/></l> 
+        <r>$lemmaC<s n="adj"/></r> 
+      </p>
+    </e>
+
+	</pattern>
+<action-set>
+<action>
+    <e>
+      <p>
+        <l>$lemmaA<s n="adj"/><s n="sint"/></l> 
+        <r>$lemmaC<s n="adj"/><s n="mf"/></r> 
+      </p>
+    </e>
+</action>
+</action-set>
+
+</cross-action>
+<!-- 39 entries like this -->
+
+<cross-action id="ND-25">
+	<pattern>
+    <e r="RL">
+      <p>
+        <l>$lemmaA<s n="n"/></l> 
+        <r>$lemmaB<s n="n"/></r> 
+      </p>
+    </e>
+
+    <e r="LR">
+      <p>
+        <l>$lemmaB<s n="n"/><s n="f"/></l> 
+        <r>$lemmaC<s n="n"/><s n="m"/></r> 
+      </p>
+    </e>
+
+	</pattern>
+<action-set>
+<action>
+    <e r="RL">
+      <p>
+        <l>$lemmaA<s n="n"/></l> 
+        <r>$lemmaC<s n="n"/><s n="m"/></r> 
+      </p>
+    </e>
+</action>
+</action-set>
+
+</cross-action>
+<!-- 37 entries like this -->
+
+<cross-action id="ND-26">
+	<pattern>
+    <e r="RL">
+      <p>
+        <l>$lemmaA<s n="n"/></l> 
+        <r>$lemmaB<s n="n"/></r> 
+      </p>
+    </e>
+
+    <e r="LR">
+      <p>
+        <l>$lemmaB<s n="n"/><s n="m"/></l> 
+        <r>$lemmaC<s n="n"/><s n="m"/></r> 
+      </p>
+    </e>
+
+	</pattern>
+<action-set>
+<action>
+    <e r="RL">
+      <p>
+        <l>$lemmaA<s n="n"/></l> 
+        <r>$lemmaC<s n="n"/><s n="m"/></r> 
+      </p>
+    </e>
+</action>
+</action-set>
+
+</cross-action>
+<!-- 35 entries like this -->
+
+<cross-action id="ND-27">
+	<pattern>
+    <e r="RL">
+      <p>
+        <l>$lemmaA<s n="n"/></l> 
+        <r>$lemmaB<s n="n"/></r> 
+      </p>
+    </e>
+
+    <e r="RL">
+      <p>
+        <l>$lemmaB<s n="n"/><s n="GD"/></l> 
+        <r>$lemmaC<s n="n"/><s n="m"/></r> 
+      </p>
+    </e>
+
+	</pattern>
+<action-set>
+<action>
+    <e r="RL">
+      <p>
+        <l>$lemmaA<s n="n"/></l> 
+        <r>$lemmaC<s n="n"/><s n="m"/></r> 
+      </p>
+    </e>
+</action>
+</action-set>
+
+</cross-action>
+<!-- 35 entries like this -->
+<cross-action id="ND-46">
+	<pattern>
+    <e>
+      <p>
+        <l>$lemmaA<s n="adj"/></l> 
+        <r>$lemmaB<s n="adj"/></r> 
+      </p>
+    </e>
+
+    <e r="LR">
+      <p>
+        <l>$lemmaB<s n="adj"/><s n="m"/></l> 
+        <r>$lemmaC<s n="adj"/><s n="mf"/></r> 
+      </p>
+    </e>
+
+	</pattern>
+<action-set>
+<action>
+    <e>
+      <p>
+        <l>$lemmaA<s n="adj"/></l> 
+        <r>$lemmaC<s n="adj"/><s n="mf"/></r> 
+      </p>
+    </e>
+</action>
+</action-set>
+
+</cross-action>
+<!-- 23 entries like this -->
+
+<cross-action id="ND-47">
+	<pattern>
+    <e>
+      <p>
+        <l>$lemmaA<s n="adj"/></l> 
+        <r>$lemmaB<s n="adj"/></r> 
+      </p>
+    </e>
+
+    <e r="LR">
+      <p>
+        <l>$lemmaA<s n="adj"/><s n="f"/></l> 
+        <r>$lemmaC<s n="adj"/><s n="mf"/></r> 
+      </p>
+    </e>
+
+	</pattern>
+<action-set>
+<action>
+    <e>
+      <p>
+        <l>$lemmaA<s n="adj"/></l> 
+        <r>$lemmaC<s n="adj"/><s n="mf"/></r> 
+      </p>
+    </e>
+</action>
+</action-set>
+
+</cross-action>
+<!-- 23 entries like this -->
+
+<cross-action id="ND-48">
+	<pattern>
+    <e r="RL">
+      <p>
+        <l>$lemmaA<s n="n"/><s n="ND"/></l> 
+        <r>$lemmaB<s n="n"/><s n="m"/></r> 
+      </p>
+    </e>
+
+    <e>
+      <p>
+        <l>$lemmaB<s n="n"/></l> 
+        <r>$lemmaC<s n="n"/></r> 
+      </p>
+    </e>
+
+	</pattern>
+<action-set>
+<action>
+    <e r="RL">
+      <p>
+        <l>$lemmaA<s n="n"/><s n="ND"/></l> 
+        <r>$lemmaC<s n="n"/><s n="m"/></r> 
+      </p>
+    </e>
+</action>
+</action-set>
+
+</cross-action>
+<!-- 21 entries like this -->
+
+<cross-action id="ND-49">
+	<pattern>
+    <e>
+      <p>
+        <l>$lemmaA<s n="n"/></l> 
+        <r>$lemmaB<s n="n"/><s n="f"/></r> 
+      </p>
+    </e>
+
+    <e>
+      <p>
+        <l>$lemmaB<s n="n"/><s n="f"/></l> 
+        <r>$lemmaC<s n="n"/><s n="f"/></r> 
+      </p>
+    </e>
+
+	</pattern>
+<action-set>
+<action>
+    <e>
+      <p>
+        <l>$lemmaA<s n="n"/></l> 
+        <r>$lemmaC<s n="n"/><s n="f"/></r> 
+      </p>
+    </e>
+</action>
+</action-set>
+
+</cross-action>
+<!-- 21 entries like this -->
+<cross-action id="ND-50">
+	<pattern>
+    <e>
+      <p>
+        <l>$lemmaA<s n="adj"/></l> 
+        <r>$lemmaB<s n="adj"/></r> 
+      </p>
+    </e>
+
+    <e r="RL">
+      <p>
+        <l>$lemmaB<s n="adj"/><s n="GD"/></l> 
+        <r>$lemmaC<s n="adj"/><s n="mf"/></r> 
+      </p>
+    </e>
+
+	</pattern>
+<action-set>
+<action>
+    <e>
+      <p>
+        <l>$lemmaA<s n="adj"/></l> 
+        <r>$lemmaC<s n="adj"/><s n="mf"/></r> 
+      </p>
+    </e>
+</action>
+</action-set>
+
+</cross-action>
+<!-- 21 entries like this -->
+<cross-action id="ND-51">
+	<pattern>
+    <e>
+      <p>
+        <l>$lemmaA<s n="adj"/></l> 
+        <r>$lemmaB<s n="adj"/><s n="mf"/></r> 
+      </p>
+    </e>
+
+    <e r="RL">
+      <p>
+        <l>$lemmaB<s n="adj"/><s n="mf"/></l> 
+        <r>$lemmaC<s n="adj"/><s n="m"/></r> 
+      </p>
+    </e>
+
+	</pattern>
+<action-set>
+<action>
+    <e>
+      <p>
+        <l>$lemmaA<s n="adj"/></l> 
+        <r>$lemmaC<s n="adj"/></r> 
+      </p>
+    </e>
+</action>
+</action-set>
+
+</cross-action>
+<!-- 19 entries like this -->
+<cross-action id="ND-29">
+	<pattern>
+    <e r="LR">
+      <p>
+        <l>$lemmaA<s n="n"/></l> 
+        <r>$lemmaB<s n="n"/><s n="GD"/></r> 
+      </p>
+    </e>
+
+    <e r="LR">
+      <p>
+        <l>$lemmaB<s n="n"/><s n="f"/></l> 
+        <r>$lemmaC<s n="n"/><s n="m"/></r> 
+      </p>
+    </e>
+
+	</pattern>
+<action-set>
+<action>
+    <e r="LR">
+      <p>
+        <l>$lemmaA<s n="n"/></l> 
+        <r>$lemmaC<s n="n"/><s n="GD"/></r> 
+      </p>
+    </e>
+</action>
+</action-set>
+
+</cross-action>
+<!-- 33 entries like this -->
+<cross-action id="ND-30">
+	<pattern>
+    <e>
+      <p>
+        <l>$lemmaA<s n="n"/></l> 
+        <r>$lemmaB<s n="n"/><s n="mf"/></r> 
+      </p>
+    </e>
+
+    <e r="RL">
+      <p>
+        <l>$lemmaB<s n="n"/><s n="mf"/></l> 
+        <r>$lemmaC<s n="n"/><s n="f"/></r> 
+      </p>
+    </e>
+
+	</pattern>
+<action-set>
+<action>
+    <e>
+      <p>
+        <l>$lemmaA<s n="n"/></l> 
+        <r>$lemmaC<s n="n"/><s n="f"/></r> 
+      </p>
+    </e>
+</action>
+</action-set>
+
+</cross-action>
+<!-- 33 entries like this -->
+
+<cross-action id="ND-31">
+	<pattern>
+    <e r="LR">
+      <p>
+        <l>$lemmaA<s n="n"/></l> 
+        <r>$lemmaB<s n="n"/><s n="GD"/></r> 
+      </p>
+    </e>
+
+    <e r="LR">
+      <p>
+        <l>$lemmaB<s n="n"/><s n="m"/></l> 
+        <r>$lemmaC<s n="n"/><s n="m"/></r> 
+      </p>
+    </e>
+
+	</pattern>
+<action-set>
+<action>
+    <e r="LR">
+      <p>
+        <l>$lemmaA<s n="n"/></l> 
+        <r>$lemmaC<s n="n"/><s n="GD"/></r> 
+      </p>
+    </e>
+</action>
+</action-set>
+
+</cross-action>
+<!-- 31 entries like this -->
+
+<cross-action id="ND-32">
+	<pattern>
+    <e r="LR">
+      <p>
+        <l>$lemmaA<s n="n"/></l> 
+        <r>$lemmaB<s n="n"/><s n="GD"/></r> 
+      </p>
+    </e>
+
+    <e r="RL">
+      <p>
+        <l>$lemmaB<s n="n"/><s n="GD"/></l> 
+        <r>$lemmaB<s n="n"/><s n="m"/></r> 
+      </p>
+    </e>
+
+	</pattern>
+<action-set>
+</action-set>
+
+</cross-action>
+<!-- 31 entries like this -->
+
+<cross-action id="ND-33">
+	<pattern>
+    <e r="RL">
+      <p>
+        <l>$lemmaA<s n="n"/><s n="pl"/></l> 
+        <r>$lemmaB<s n="n"/><s n="m"/><s n="pl"/></r> 
+      </p>
+    </e>
+
+    <e>
+      <p>
+        <l>$lemmaB<s n="n"/></l> 
+        <r>$lemmaC<s n="n"/></r> 
+      </p>
+    </e>
+
+	</pattern>
+<action-set>
+<action>
+    <e r="RL">
+      <p>
+        <l>$lemmaA<s n="n"/><s n="pl"/></l> 
+        <r>$lemmaC<s n="n"/><s n="m"/><s n="pl"/></r> 
+      </p>
+    </e>
+</action>
+</action-set>
+
+</cross-action>
+<!-- 31 entries like this -->
+<cross-action id="ND-28">
+	<pattern>
+    <e r="RL">
+      <p>
+        <l>$lemmaA<s n="n"/><s n="pl"/></l> 
+        <r>$lemmaB<s n="n"/><s n="f"/><s n="pl"/></r> 
+      </p>
+    </e>
+
+    <e>
+      <p>
+        <l>$lemmaB<s n="n"/></l> 
+        <r>$lemmaC<s n="n"/></r> 
+      </p>
+    </e>
+
+	</pattern>
+<action-set>
+<action>
+    <e r="RL">
+      <p>
+        <l>$lemmaA<s n="n"/><s n="pl"/></l> 
+        <r>$lemmaC<s n="n"/><s n="f"/><s n="pl"/></r> 
+      </p>
+    </e>
+</action>
+</action-set>
+
+</cross-action>
+<!-- 33 entries like this -->
+<cross-action id="ND-35">
+	<pattern>
+    <e r="RL">
+      <p>
+        <l>$lemmaA<s n="n"/><s n="pl"/></l> 
+        <r>$lemmaB<s n="n"/><s n="f"/><s n="sg"/></r> 
+      </p>
+    </e>
+
+    <e>
+      <p>
+        <l>$lemmaB<s n="n"/></l> 
+        <r>$lemmaC<s n="n"/></r> 
+      </p>
+    </e>
+
+	</pattern>
+<action-set>
+<action>
+    <e r="RL">
+      <p>
+        <l>$lemmaA<s n="n"/><s n="pl"/></l> 
+        <r>$lemmaC<s n="n"/><s n="f"/><s n="sg"/></r> 
+      </p>
+    </e>
+</action>
+</action-set>
+
+</cross-action>
+<!-- 27 entries like this -->
+<cross-action id="ND-41">
+	<pattern>
+    <e r="LR">
+      <p>
+        <l>$lemmaA<s n="n"/></l> 
+        <r>$lemmaB<s n="n"/><s n="GD"/></r> 
+      </p>
+    </e>
+
+    <e r="LR">
+      <p>
+        <l>$lemmaB<s n="n"/><s n="m"/></l> 
+        <r>$lemmaC<s n="n"/><s n="mf"/></r> 
+      </p>
+    </e>
+
+	</pattern>
+<action-set>
+<action>
+    <e>
+      <p>
+        <l>$lemmaA<s n="n"/></l> 
+        <r>$lemmaC<s n="n"/><s n="mf"/></r> 
+      </p>
+    </e>
+</action>
+</action-set>
+
+</cross-action>
+<!-- 25 entries like this -->
+<cross-action id="ND-40">
+	<pattern>
+    <e>
+      <p>
+        <l>$lemmaA<s n="num"/></l> 
+        <r>$lemmaB<s n="num"/><s n="mf"/></r> 
+      </p>
+    </e>
+
+    <e>
+      <p>
+        <l>$lemmaB<s n="num"/></l> 
+        <r>$lemmaC<s n="num"/></r> 
+      </p>
+    </e>
+
+	</pattern>
+<action-set>
+<action>
+    <e>
+      <p>
+        <l>$lemmaA<s n="num"/></l> 
+        <r>$lemmaC<s n="num"/><s n="mf"/></r> 
+      </p>
+    </e>
+</action>
+</action-set>
+
+</cross-action>
+<!-- 27 entries like this -->
+<!-- ??
+<cross-action id="ND-43">
+	<pattern>
+    <e r="LR">
+      <p>
+        <l>garbage<s n="n"/><s n="sg"/></l> 
+        <r>basura<s n="n"/><s n="f"/><s n="sg"/></r> 
+      </p>
+    </e>
+
+    <e r="RL">
+      <p>
+        <l>basura<s n="n"/></l> 
+        <r>rifiuti<s n="n"/></r> 
+      </p>
+    </e>
+
+	</pattern>
+<action-set>
+</action-set>
+
+</cross-action>
+-->
+<!-- 25 entries like this -->
+<cross-action id="ND-44">
+	<pattern>
+    <e>
+      <p>
+        <l>$lemmaA<s n="n"/></l> 
+        <r>$lemmaB<s n="n"/><s n="m"/></r> 
+      </p>
+    </e>
+
+    <e>
+      <p>
+        <l>$lemmaB<s n="n"/><s n="m"/><s n="pl"/></l> 
+        <r>$lemmaC<s n="n"/><s n="m"/><s n="pl"/></r> 
+      </p>
+    </e>
+
+	</pattern>
+<action-set>
+<action>
+    <e>
+      <p>
+        <l>$lemmaA<s n="n"/></l> 
+        <r>$lemmaC<s n="n"/><s n="m"/></r> 
+      </p>
+    </e>
+</action>
+</action-set>
+
+</cross-action>
+<!-- 23 entries like this -->
+<cross-action id="ND-39">
+	<pattern>
+    <e>
+      <p>
+        <l>$lemmaA<s n="vblex"/><s n="sep"/></l> 
+        <r>$lemmaB<s n="vblex"/></r> 
+      </p>
+    </e>
+
+    <e>
+      <p>
+        <l>$lemmaB<s n="vblex"/></l> 
+        <r>$lemmaC<s n="vblex"/></r> 
+      </p>
+    </e>
+
+	</pattern>
+<action-set>
+<action>
+    <e>
+      <p>
+        <l>$lemmaA<s n="vblex"/><s n="sep"/></l> 
+        <r>$lemmaC<s n="vblex"/></r> 
+      </p>
+    </e>
+</action>
+</action-set>
+
+</cross-action>
+<!-- 27 entries like this -->
+
+<!-- This is a bit dodgy -->
+<cross-action id="ND-36">
+	<pattern>
+    <e>
+      <p>
+        <l>$lemmaA<s n="n"/></l> 
+        <r>$lemmaB<s n="n"/><s n="mf"/></r> 
+      </p>
+    </e>
+
+    <e r="LR">
+      <p>
+        <l>$lemmaB<s n="n"/><s n="mf"/></l> 
+        <r>$lemmaC<s n="n"/><s n="GD"/></r> 
+      </p>
+    </e>
+
+	</pattern>
+<action-set>
+<action>
+    <e>
+      <p>
+        <l>$lemmaA<s n="n"/></l> 
+        <r>$lemmaC<s n="n"/><s n="m"/></r> 
+      </p>
+    </e>
+</action>
+</action-set>
+
+</cross-action>
+<!-- 27 entries like this -->
+<cross-action id="ND-34">
+	<pattern>
+    <e r="LR">
+      <p>
+        <l>$lemmaA<s n="cnjadv"/></l> 
+        <r>$lemmaB<s n="cnjadv"/></r> 
+      </p>
+    </e>
+
+    <e>
+      <p>
+        <l>$lemmaB<s n="cnjadv"/></l> 
+        <r>$lemmaC<s n="cnjadv"/></r> 
+      </p>
+    </e>
+
+	</pattern>
+<action-set>
+<action>
+    <e r="LR">
+      <p>
+        <l>$lemmaA<s n="cnjadv"/></l> 
+        <r>$lemmaC<s n="cnjadv"/></r> 
+      </p>
+    </e>
+</action>
+</action-set>
+</cross-action>
+<!-- 29 entries like this -->
+<cross-action id="ND-52">
+	<pattern>
+    <e>
+      <p>
+        <l>$lemmaA<s n="n"/></l> 
+        <r>$lemmaB<s n="n"/><s n="m"/></r> 
+      </p>
+    </e>
+
+    <e r="LR">
+      <p>
+        <l>$lemmaB<s n="n"/><s n="m"/></l> 
+        <r>$lemmaC<s n="n"/><s n="mf"/></r> 
+      </p>
+    </e>
+
+	</pattern>
+<action-set>
+<action>
+    <e>
+      <p>
+        <l>$lemmaA<s n="n"/></l> 
+        <r>$lemmaC<s n="n"/><s n="mf"/></r> 
+      </p>
+    </e>
+</action>
+</action-set>
+
+</cross-action>
+<!-- 17 entries like this -->
+<cross-action id="ND-57">
+	<pattern>
+    <e>
+      <p>
+        <l>$lemmaA<s n="n"/></l> 
+        <r>$lemmaB<s n="n"/><s n="m"/></r> 
+      </p>
+    </e>
+
+    <e>
+      <p>
+        <l>$lemmaB<s n="n"/><s n="m"/></l> 
+        <r>$lemmaC<s n="n"/><s n="m"/></r> 
+      </p>
+    </e>
+
+	</pattern>
+<action-set>
+<action>
+    <e>
+      <p>
+        <l>$lemmaA<s n="n"/></l> 
+        <r>$lemmaC<s n="n"/><s n="m"/></r> 
+      </p>
+    </e>
+</action>
+</action-set>
+
+</cross-action>
+<!-- 15 entries like this -->
+
+<cross-action id="ND-58">
+	<pattern>
+    <e>
+      <p>
+        <l>$lemmaA<s n="n"/></l> 
+        <r>$lemmaB<s n="n"/><s n="f"/></r> 
+      </p>
+    </e>
+
+    <e>
+      <p>
+        <l>$lemmaB<s n="n"/><s n="f"/></l> 
+        <r>$lemmaC<s n="n"/><s n="mf"/></r> 
+      </p>
+    </e>
+
+	</pattern>
+<action-set>
+<action>
+    <e>
+      <p>
+        <l>$lemmaA<s n="n"/></l> 
+        <r>$lemmaC<s n="n"/><s n="mf"/></r> 
+      </p>
+    </e>
+</action>
+</action-set>
+
+</cross-action>
+<!-- 15 entries like this -->
+
+<cross-action id="ND-59">
+	<pattern>
+    <e r="LR">
+      <p>
+        <l>$lemmaA<s n="n"/></l> 
+        <r>$lemmaB<s n="n"/><s n="GD"/></r> 
+      </p>
+    </e>
+
+    <e r="LR">
+      <p>
+        <l>$lemmaB<s n="n"/><s n="f"/></l> 
+        <r>$lemmaC<s n="n"/><s n="mf"/></r> 
+      </p>
+    </e>
+
+	</pattern>
+<action-set>
+<action>
+    <e>
+      <p>
+        <l>$lemmaA<s n="n"/></l> 
+        <r>$lemmaC<s n="n"/><s n="mf"/></r> 
+      </p>
+    </e>
+</action>
+</action-set>
+
+</cross-action>
+<!-- 15 entries like this -->
+
+<cross-action id="ND-60">
+	<pattern>
+    <e r="LR">
+      <p>
+        <l>$lemmaA<s n="n"/></l> 
+        <r>$lemmaB<s n="n"/><s n="GD"/></r> 
+      </p>
+    </e>
+
+    <e r="RL">
+      <p>
+        <l>$lemmaB<s n="n"/><s n="GD"/></l> 
+        <r>$lemmaC<s n="n"/><s n="mf"/></r> 
+      </p>
+    </e>
+
+	</pattern>
+<action-set>
+<action>
+    <e>
+      <p>
+        <l>$lemmaA<s n="n"/></l> 
+        <r>$lemmaC<s n="n"/><s n="mf"/></r> 
+      </p>
+    </e>
+</action>
+</action-set>
+
+</cross-action>
+<!-- 15 entries like this -->
+
+<cross-action id="ND-61">
+	<pattern>
+    <e r="RL">
+      <p>
+        <l>$lemmaA<s n="n"/></l> 
+        <r>$lemmaB<s n="n"/></r> 
+      </p>
+    </e>
+
+    <e r="LR">
+      <p>
+        <l>$lemmaB<s n="n"/><s n="f"/></l> 
+        <r>$lemmaC<s n="n"/><s n="mf"/></r> 
+      </p>
+    </e>
+
+	</pattern>
+<action-set>
+<action>
+    <e>
+      <p>
+        <l>$lemmaA<s n="n"/></l> 
+        <r>$lemmaC<s n="n"/><s n="mf"/></r> 
+      </p>
+    </e>
+</action>
+</action-set>
+
+</cross-action>
+<!-- 15 entries like this -->
+
+<cross-action id="ND-62">
+	<pattern>
+    <e r="RL">
+      <p>
+        <l>$lemmaA<s n="n"/></l> 
+        <r>$lemmaB<s n="n"/></r> 
+      </p>
+    </e>
+
+    <e r="RL">
+      <p>
+        <l>$lemmaB<s n="n"/><s n="GD"/></l> 
+        <r>$lemmaC<s n="n"/><s n="mf"/></r> 
+      </p>
+    </e>
+
+	</pattern>
+<action-set>
+<action> 
+    <e>
+      <p>
+        <l>$lemmaB<s n="n"/></l> 
+        <r>$lemmaC<s n="n"/><s n="mf"/></r> 
+      </p>
+    </e>
+</action>
+</action-set>
+
+</cross-action>
+<!-- 15 entries like this -->
+
+<cross-action id="ND-63">
+	<pattern>
+    <e r="LR">
+      <p>
+        <l>$lemmaA<s n="n"/></l> 
+        <r>$lemmaB<s n="n"/><s n="m"/><s n="ND"/></r> 
+      </p>
+    </e>
+
+    <e>
+      <p>
+        <l>$lemmaB<s n="n"/></l> 
+        <r>$lemmaC<s n="n"/></r> 
+      </p>
+    </e>
+
+	</pattern>
+<action-set>
+<action>
+    <e r="LR">
+      <p>
+        <l>$lemmaA<s n="n"/></l> 
+        <r>$lemmaC<s n="n"/><s n="m"/><s n="ND"/></r> 
+      </p>
+    </e>
+</action>
+</action-set>
+
+</cross-action>
+<!-- 15 entries like this -->
+
+<cross-action id="ND-64">
+	<pattern>
+    <e r="RL">
+      <p>
+        <l>$lemmaA<s n="n"/><s n="ND"/></l> 
+        <r>$lemmaB<s n="n"/><s n="m"/><s n="pl"/></r> 
+      </p>
+    </e>
+
+    <e>
+      <p>
+        <l>$lemmaB<s n="n"/></l> 
+        <r>$lemmaC<s n="n"/></r> 
+      </p>
+    </e>
+
+	</pattern>
+<action-set>
+<action>
+    <e r="RL">
+      <p>
+        <l>$lemmaA<s n="n"/><s n="ND"/></l> 
+        <r>$lemmaC<s n="n"/><s n="m"/><s n="pl"/></r> 
+      </p>
+    </e>
+</action>
+</action-set>
+
+</cross-action>
+<!-- 15 entries like this -->
+
+<cross-action id="ND-65">
+	<pattern>
+    <e r="RL">
+      <p>
+        <l>$lemmaA<s n="n"/><s n="ND"/></l> 
+        <r>$lemmaB<s n="n"/><s n="m"/><s n="sg"/></r> 
+      </p>
+    </e>
+
+    <e>
+      <p>
+        <l>$lemmaB<s n="n"/></l> 
+        <r>$lemmaC<s n="n"/></r> 
+      </p>
+    </e>
+
+	</pattern>
+<action-set>
+<action>
+    <e r="RL">
+      <p>
+        <l>$lemmaA<s n="n"/><s n="ND"/></l> 
+        <r>$lemmaC<s n="n"/><s n="m"/><s n="sg"/></r> 
+      </p>
+    </e>
+</action>
+</action-set>
+
+</cross-action>
+<!-- 15 entries like this -->
+
+<cross-action id="ND-66">
+	<pattern>
+    <e>
+      <p>
+        <l>$lemmaA<s n="np"/><s n="cog"/><s n="sg"/></l> 
+        <r>$lemmaB<s n="np"/><s n="cog"/><s n="mf"/><s n="sp"/></r> 
+      </p>
+    </e>
+
+    <e>
+      <p>
+        <l>$lemmaB<s n="np"/></l> 
+        <r>$lemmaC<s n="np"/></r> 
+      </p>
+    </e>
+
+	</pattern>
+<action-set>
+<action>
+    <e>
+      <p>
+        <l>$lemmaA<s n="np"/><s n="cog"/><s n="sg"/></l> 
+        <r>$lemmaB<s n="np"/><s n="cog"/><s n="mf"/><s n="sp"/></r> 
+      </p>
+    </e>
+</action>
+</action-set>
+
+</cross-action>
+<!-- 13 entries like this -->
+
+<cross-action id="ND-67">
+	<pattern>
+    <e r="LR">
+      <p>
+        <l>$lemmaA<s n="np"/><s n="cog"/><s n="pl"/></l> 
+        <r>$lemmaB<s n="np"/><s n="cog"/><s n="mf"/><s n="sp"/></r> 
+      </p>
+    </e>
+
+    <e>
+      <p>
+        <l>$lemmaB<s n="np"/></l> 
+        <r>$lemmaC<s n="np"/></r> 
+      </p>
+    </e>
+
+	</pattern>
+<action-set>
+<action>
+    <e r="LR">
+      <p>
+        <l>$lemmaA<s n="np"/><s n="cog"/><s n="pl"/></l> 
+        <r>$lemmaC<s n="np"/><s n="cog"/><s n="mf"/><s n="sp"/></r> 
+      </p>
+    </e>
+</action>
+</action-set>
+
+</cross-action>
+<!-- 13 entries like this -->
+
+<cross-action id="ND-68">
+	<pattern>
+    <e r="RL">
+      <p>
+        <l>$lemmaA<s n="n"/><s n="ND"/></l> 
+        <r>$lemmaB<s n="n"/><s n="f"/><s n="sp"/></r> 
+      </p>
+    </e>
+
+    <e>
+      <p>
+        <l>$lemmaB<s n="n"/></l> 
+        <r>$lemmaC<s n="n"/></r> 
+      </p>
+    </e>
+
+	</pattern>
+<action-set>
+<action>
+    <e r="RL">
+      <p>
+        <l>$lemmaA<s n="n"/><s n="ND"/></l> 
+        <r>$lemmaC<s n="n"/><s n="f"/><s n="sp"/></r> 
+      </p>
+    </e>
+</action>
+</action-set>
+</cross-action>
+<!-- 13 entries like this -->
+
+<cross-action id="ND-75">
+	<pattern>
+    <e r="RL">
+      <p>
+        <l>$lemmaA<s n="n"/><s n="ND"/></l> 
+        <r>$lemmaB<s n="n"/><s n="m"/><s n="sp"/></r> 
+      </p>
+    </e>
+
+    <e>
+      <p>
+        <l>$lemmaB<s n="n"/></l> 
+        <r>$lemmaC<s n="n"/></r> 
+      </p>
+    </e>
+
+	</pattern>
+<action-set>
+<action>
+    <e r="RL">
+      <p>
+        <l>$lemmaA<s n="n"/><s n="ND"/></l> 
+        <r>$lemmaC<s n="n"/><s n="m"/><s n="sp"/></r> 
+      </p>
+    </e>
+</action>
+</action-set>
+
+</cross-action>
+<!-- 11 entries like this -->
+
+<cross-action id="ND-74">
+	<pattern>
+    <e r="LR">
+      <p>
+        <l>$lemmaA<s n="prn"/><s n="pos"/><s n="mf"/><s n="sp"/></l> 
+        <r>$lemmaB<s n="prn"/><s n="pos"/><s n="GD"/><s n="ND"/></r> 
+      </p>
+    </e>
+
+    <e>
+      <p>
+        <l>$lemmaB<s n="prn"/></l> 
+        <r>$lemmaC<s n="prn"/></r> 
+      </p>
+    </e>
+
+	</pattern>
+<action-set>
+<action>
+    <e r="LR">
+      <p>
+        <l>$lemmaA<s n="prn"/><s n="pos"/><s n="mf"/><s n="sp"/></l> 
+        <r>$lemmaC<s n="prn"/><s n="pos"/><s n="GD"/><s n="ND"/></r> 
+      </p>
+    </e>
+</action>
+</action-set>
+
+</cross-action>
+<!-- 13 entries like this -->
+<cross-action id="ND-37">
+	<pattern>
+    <e r="LR">
+      <p>
+        <l>$lemmaA<s n="det"/><s n="pos"/><s n="sp"/></l> 
+        <r>$lemmaB<s n="det"/><s n="pos"/><s n="mf"/><s n="ND"/></r> 
+      </p>
+    </e>
+
+    <e r="RL">
+      <p>
+        <l>$lemmaB<s n="det"/><s n="pos"/><s n="mf"/></l> 
+        <r>$lemmaC<s n="det"/><s n="pos"/><s n="m"/></r> 
+      </p>
+    </e>
+
+	</pattern>
+<action-set>
+<action>
+    <e r="LR">
+      <p>
+        <l>$lemmaA<s n="det"/><s n="pos"/><s n="sp"/></l> 
+        <r>$lemmaC<s n="det"/><s n="pos"/><s n="m"/><s n="ND"/></r> 
+      </p>
+    </e>
+</action>
+</action-set>
+
+</cross-action>
+<!-- 27 entries like this -->
+
+<cross-action id="ND-38">
+	<pattern>
+    <e r="LR">
+      <p>
+        <l>$lemmaA<s n="det"/><s n="pos"/><s n="sp"/></l> 
+        <r>$lemmaB<s n="det"/><s n="pos"/><s n="mf"/><s n="ND"/></r> 
+      </p>
+    </e>
+
+    <e r="RL">
+      <p>
+        <l>$lemmaB<s n="det"/><s n="pos"/><s n="mf"/></l> 
+        <r>$lemmaC<s n="det"/><s n="pos"/><s n="f"/></r> 
+      </p>
+    </e>
+
+	</pattern>
+<action-set>
+<action>
+    <e r="LR">
+      <p>
+        <l>$lemmaA<s n="det"/><s n="pos"/><s n="sp"/></l> 
+        <r>$lemmaC<s n="det"/><s n="pos"/><s n="f"/><s n="ND"/></r> 
+      </p>
+    </e>
+</action>
+</action-set>
+
+</cross-action>
+<!-- 27 entries like this -->
+<cross-action id="ND-42">
+	<pattern>
+    <e r="RL">
+      <p>
+        <l>$lemmaA<s n="n"/></l> 
+        <r>$lemmaB<s n="n"/></r> 
+      </p>
+    </e>
+
+    <e r="LR">
+      <p>
+        <l>$lemmaB<s n="n"/><s n="m"/></l> 
+        <r>$lemmaC<s n="n"/><s n="mf"/></r> 
+      </p>
+    </e>
+
+	</pattern>
+<action-set>
+<action>
+    <e>
+      <p>
+        <l>$lemmaA<s n="n"/></l> 
+        <r>$lemmaB<s n="n"/><s n="mf"/></r> 
+      </p>
+    </e>
+</action>
+</action-set>
+
+</cross-action>
+<!-- 25 entries like this -->
+<cross-action id="ND-53">
+	<pattern>
+    <e>
+      <p>
+        <l>$lemmaA<s n="n"/><s n="sg"/></l> 
+        <r>$lemmaB<s n="n"/><s n="m"/><s n="pl"/></r> 
+      </p>
+    </e>
+
+    <e>
+      <p>
+        <l>$lemmaB<s n="n"/></l> 
+        <r>$lemmaC<s n="n"/></r> 
+      </p>
+    </e>
+
+	</pattern>
+<action-set>
+<action>
+    <e>
+      <p>
+        <l>$lemmaA<s n="n"/><s n="sg"/></l> 
+        <r>$lemmaC<s n="n"/><s n="m"/><s n="pl"/></r> 
+      </p>
+    </e>
+</action>
+</action-set>
+
+</cross-action>
+<!-- 17 entries like this -->
+<cross-action id="ND-56">
+	<pattern>
+    <e r="LR">
+      <p>
+        <l>$lemmaA<s n="prn"/></l> 
+        <r>$lemmaB<s n="prn"/></r> 
+      </p>
+    </e>
+
+    <e>
+      <p>
+        <l>$lemmaB<s n="prn"/></l> 
+        <r>$lemmaC<s n="prn"/></r> 
+      </p>
+    </e>
+
+	</pattern>
+<action-set>
+<action>
+    <e r="LR">
+      <p>
+        <l>$lemmaA<s n="prn"/></l> 
+        <r>$lemmaC<s n="prn"/></r> 
+      </p>
+    </e>
+</action>
+</action-set>
+</cross-action>
+<!-- 17 entries like this -->
+
+
+<cross-action id="ND-69">
+	<pattern>
+    <e r="RL">
+      <p>
+        <l>$lemmaA<s n="det"/></l> 
+        <r>$lemmaB<s n="det"/></r> 
+      </p>
+    </e>
+
+    <e r="RL">
+      <p>
+        <l>$lemmaB<s n="det"/><s n="pos"/><s n="mf"/></l> 
+        <r>$lemmaC<s n="det"/><s n="pos"/><s n="m"/></r> 
+      </p>
+    </e>
+
+	</pattern>
+<action-set>
+<action>
+    <e r="RL">
+      <p>
+        <l>$lemmaA<s n="det"/></l> 
+        <r>$lemmaC<s n="det"/></r> 
+      </p>
+    </e>
+</action>
+</action-set>
+</cross-action>
+<!-- 13 entries like this -->
+<cross-action id="ND-55">
+	<pattern>
+    <e>
+      <p>
+        <l>$lemmaA<s n="prn"/><s n="tn"/><s n="m"/><s n="sg"/></l> 
+        <r>$lemmaB<s n="prn"/><s n="tn"/><s n="mf"/><s n="sg"/></r> 
+      </p>
+    </e>
+
+    <e r="RL">
+      <p>
+        <l>$lemmaB<s n="prn"/><s n="tn"/><s n="mf"/><s n="ND"/></l> 
+        <r>$lemmaC<s n="prn"/><s n="tn"/><s n="mf"/><s n="sp"/></r> 
+      </p>
+    </e>
+
+	</pattern>
+<action-set>
+<action>
+    <e>
+      <p>
+        <l>$lemmaA<s n="prn"/><s n="tn"/><s n="m"/><s n="sg"/></l> 
+        <r>$lemmaC<s n="prn"/><s n="tn"/><s n="mf"/><s n="sp"/></r> 
+      </p>
+    </e>
+</action>
+</action-set>
+
+</cross-action>
+<!-- 17 entries like this -->
+<cross-action id="ND-71">
+	<pattern>
+    <e>
+      <p>
+        <l>$lemmaA<s n="adj"/></l> 
+        <r>$lemmaB<s n="adj"/><s n="mf"/></r> 
+      </p>
+    </e>
+
+    <e r="LR">
+      <p>
+        <l>$lemmaB<s n="adj"/><s n="mf"/></l> 
+        <r>$lemmaC<s n="adj"/><s n="GD"/></r> 
+      </p>
+    </e>
+
+	</pattern>
+<action-set>
+<action>
+    <e>
+      <p>
+        <l>$lemmaA<s n="adj"/></l> 
+        <r>$lemmaC<s n="adj"/></r> 
+      </p>
+    </e>
+</action>
+</action-set>
+</cross-action>
+<!-- 13 entries like this -->
+<cross-action id="ND-72">
+	<pattern>
+    <e>
+      <p>
+        <l>$lemmaA<s n="adj"/></l> 
+        <r>$lemmaB<s n="adj"/><s n="mf"/></r> 
+      </p>
+    </e>
+
+    <e r="RL">
+      <p>
+        <l>$lemmaB<s n="adj"/><s n="mf"/></l> 
+        <r>$lemmaC<s n="adj"/><s n="f"/></r> 
+      </p>
+    </e>
+
+	</pattern>
+<action-set>
+<action>
+    <e>
+      <p>
+        <l>$lemmaA<s n="adj"/></l> 
+        <r>$lemmaC<s n="adj"/></r> 
+      </p>
+    </e>
+</action>
+</action-set>
+</cross-action>
+<!-- 13 entries like this -->
+<cross-action id="ND-73">
+	<pattern>
+    <e>
+      <p>
+        <l>$lemmaA<s n="cnjcoo"/></l> 
+        <r>$lemmaB<s n="cnjcoo"/></r> 
+      </p>
+    </e>
+
+    <e>
+      <p>
+        <l>$lemmaB<s n="cnjcoo"/></l> 
+        <r>$lemmaC<s n="cnjcoo"/></r> 
+      </p>
+    </e>
+
+	</pattern>
+<action-set>
+<action>
+    <e>
+      <p>
+        <l>$lemmaA<s n="cnjcoo"/></l> 
+        <r>$lemmaC<s n="cnjcoo"/></r> 
+      </p>
+    </e>
+</action>
+</action-set>
+
+</cross-action>
+<!-- 13 entries like this -->
+<cross-action id="ND-77">
+	<pattern>
+    <e>
+      <p>
+        <l>$lemmaA<s n="det"/><s n="ind"/></l> 
+        <r>$lemmaB<s n="det"/><s n="ind"/><s n="mf"/></r> 
+      </p>
+    </e>
+
+    <e>
+      <p>
+        <l>$lemmaB<s n="det"/><s n="ind"/></l> 
+        <r>$lemmaC<s n="det"/><s n="ind"/></r> 
+      </p>
+    </e>
+
+	</pattern>
+<action-set>
+<action>
+    <e>
+      <p>
+        <l>$lemmaA<s n="det"/><s n="ind"/></l> 
+        <r>$lemmaC<s n="det"/><s n="ind"/><s n="mf"/></r> 
+      </p>
+    </e>
+</action>
+</action-set>
+</cross-action>
+<!-- 11 entries like this -->
+<cross-action id="ND-78">
+	<pattern>
+    <e>
+      <p>
+        <l>$lemmaA<s n="adj"/></l> 
+        <r>$lemmaB<s n="adj"/></r> 
+      </p>
+    </e>
+
+    <e>
+      <p>
+        <l>$lemmaB<s n="adj"/><s n="pos"/></l> 
+        <r>$lemmaC<s n="adj"/><s n="pos"/></r> 
+      </p>
+    </e>
+
+	</pattern>
+<action-set>
+<action>
+    <e>
+      <p>
+        <l>$lemmaA<s n="adj"/></l> 
+        <r>$lemmaC<s n="adj"/></r> 
+      </p>
+    </e>
+</action>
+</action-set>
+</cross-action>
+<!-- 11 entries like this -->
+<cross-action id="ND-79">
+	<pattern>
+    <e r="LR">
+      <p>
+        <l>$lemmaA<s n="preadv"/></l> 
+        <r>$lemmaB<s n="preadv"/></r> 
+      </p>
+    </e>
+
+    <e>
+      <p>
+        <l>$lemmaB<s n="preadv"/></l> 
+        <r>$lemmaC<s n="preadv"/></r> 
+      </p>
+    </e>
+
+	</pattern>
+<action-set>
+<action>
+    <e r="LR">
+      <p>
+        <l>$lemmaA<s n="preadv"/></l> 
+        <r>$lemmaC<s n="preadv"/></r> 
+      </p>
+    </e>
+</action>
+</action-set>
+</cross-action>
+<!-- 11 entries like this -->
+<cross-action id="ND-80">
+	<pattern>
+    <e>
+      <p>
+        <l>$lemmaA<s n="n"/></l> 
+        <r>$lemmaB<s n="n"/><s n="m"/></r> 
+      </p>
+    </e>
+
+    <e r="LR">
+      <p>
+        <l>$lemmaB<s n="n"/><s n="mf"/></l> 
+        <r>$lemmaC<s n="n"/><s n="m"/></r> 
+      </p>
+    </e>
+
+	</pattern>
+<action-set>
+<action>
+    <e>
+      <p>
+        <l>$lemmaA<s n="n"/></l> 
+        <r>$lemmaC<s n="n"/><s n="m"/></r> 
+      </p>
+    </e>
+</action>
+</action-set>
+
+</cross-action>
+<!-- 9 entries like this -->
+<cross-action id="ND-81">
+	<pattern>
+    <e>
+      <p>
+        <l>$lemmaA<s n="n"/><s n="pl"/></l> 
+        <r>$lemmaB<s n="n"/><s n="m"/><s n="sg"/></r> 
+      </p>
+    </e>
+
+    <e>
+      <p>
+        <l>$lemmaB<s n="n"/></l> 
+        <r>$lemmaC<s n="n"/></r> 
+      </p>
+    </e>
+
+	</pattern>
+<action-set>
+<action>
+    <e>
+      <p>
+        <l>$lemmaA<s n="n"/><s n="pl"/></l> 
+        <r>$lemmaC<s n="n"/><s n="m"/><s n="sg"/></r> 
+      </p>
+    </e>
+</action>
+</action-set>
+</cross-action>
+<!-- 9 entries like this -->
+<cross-action id="ND-82">
+	<pattern>
+    <e r="LR">
+      <p>
+        <l>$lemmaA<s n="det"/><s n="pos"/><s n="sp"/></l> 
+        <r>$lemmaB<s n="det"/><s n="pos"/><s n="mf"/><s n="ND"/></r> 
+      </p>
+    </e>
+
+    <e r="LR">
+      <p>
+        <l>$lemmaB<s n="det"/><s n="pos"/><s n="mf"/></l> 
+        <r>$lemmaC<s n="det"/><s n="pos"/><s n="GD"/></r> 
+      </p>
+    </e>
+
+	</pattern>
+<action-set>
+<action>
+    <e r="LR">
+      <p>
+        <l>$lemmaA<s n="det"/><s n="pos"/><s n="sp"/></l> 
+        <r>$lemmaC<s n="det"/><s n="pos"/><s n="GD"/><s n="ND"/></r> 
+      </p>
+    </e>
+</action>
+</action-set>
+</cross-action>
+<!-- 9 entries like this -->
+<cross-action id="ND-87">
+	<pattern>
+    <e>
+      <p>
+        <l>$lemmaA<s n="np"/><s n="al"/></l> 
+        <r>$lemmaB<s n="np"/><s n="al"/><s n="m"/></r> 
+      </p>
+    </e>
+
+    <e>
+      <p>
+        <l>$lemmaB<s n="np"/></l> 
+        <r>$lemmaC<s n="np"/></r> 
+      </p>
+    </e>
+
+	</pattern>
+<action-set>
+<action>
+    <e>
+      <p>
+        <l>$lemmaA<s n="np"/><s n="al"/></l> 
+        <r>$lemmaC<s n="np"/><s n="al"/><s n="m"/></r> 
+      </p>
+    </e>
+</action>
+</action-set>
+</cross-action>
+<!-- 7 entries like this -->
+<cross-action id="ND-98">
+	<pattern>
+    <e>
+      <p>
+        <l>$lemmaA<s n="rel"/></l> 
+        <r>$lemmaB<s n="rel"/></r> 
+      </p>
+    </e>
+
+    <e>
+      <p>
+        <l>$lemmaB<s n="rel"/></l> 
+        <r>$lemmaC<s n="rel"/></r> 
+      </p>
+    </e>
+
+	</pattern>
+<action-set>
+<action>
+    <e>
+      <p>
+        <l>$lemmaA<s n="rel"/></l> 
+        <r>$lemmaC<s n="rel"/></r> 
+      </p>
+    </e>
+</action>
+</action-set>
+
+</cross-action>
+<!-- 7 entries like this -->
+<cross-action id="ND-100">
+	<pattern>
+    <e>
+      <p>
+        <l>$lemmaA<s n="n"/></l> 
+        <r>$lemmaB<s n="n"/><s n="mf"/></r> 
+      </p>
+    </e>
+
+    <e>
+      <p>
+        <l>$lemmaB<s n="n"/><s n="mf"/></l> 
+        <r>$lemmaC<s n="n"/><s n="mf"/></r> 
+      </p>
+    </e>
+
+	</pattern>
+<action-set>
+<action>
+    <e>
+      <p>
+        <l>$lemmaA<s n="n"/></l> 
+        <r>$lemmaC<s n="n"/><s n="mf"/></r> 
+      </p>
+    </e>
+</action>
+</action-set>
+</cross-action>
+<!-- 5 entries like this -->
+<cross-action id="ND-102">
+	<pattern>
+    <e r="RL">
+      <p>
+        <l>$lemmaA<s n="det"/></l> 
+        <r>$lemmaB<s n="det"/></r> 
+      </p>
+    </e>
+
+    <e r="LR">
+      <p>
+        <l>$lemmaB<s n="det"/><s n="pos"/><s n="mf"/></l> 
+        <r>$lemmaC<s n="det"/><s n="pos"/><s n="GD"/></r> 
+      </p>
+    </e>
+
+	</pattern>
+<action-set>
+<action>
+    <e r="LR">
+      <p>
+        <l>$lemmaA<s n="det"/><s n="pos"/><s n="mf"/></l> 
+        <r>$lemmaC<s n="det"/><s n="pos"/><s n="GD"/></r> 
+      </p>
+    </e>
+</action>
+</action-set>
+</cross-action>
+<!-- 5 entries like this -->
+<cross-action id="ND-103">
+	<pattern>
+    <e r="RL">
+      <p>
+        <l>$lemmaA<s n="det"/></l> 
+        <r>$lemmaB<s n="det"/></r> 
+      </p>
+    </e>
+
+    <e>
+      <p>
+        <l>$lemmaB<s n="det"/><s n="dem"/></l> 
+        <r>$lemmaC<s n="det"/><s n="dem"/></r> 
+      </p>
+    </e>
+
+	</pattern>
+<action-set>
+<action>
+    <e r="RL">
+      <p>
+        <l>$lemmaA<s n="det"/></l> 
+        <r>$lemmaC<s n="det"/></r> 
+      </p>
+    </e>
+</action>
+</action-set>
+</cross-action>
+<!-- 5 entries like this -->
+<cross-action id="ND-104">
+	<pattern>
+    <e r="LR">
+      <p>
+        <l>$lemmaA<s n="adj"/><s n="sint"/></l> 
+        <r>$lemmaB<s n="adj"/><s n="mf"/></r> 
+      </p>
+    </e>
+
+    <e r="LR">
+      <p>
+        <l>$lemmaB<s n="adj"/><s n="mf"/></l> 
+        <r>$lemmaC<s n="adj"/><s n="GD"/></r> 
+      </p>
+    </e>
+
+	</pattern>
+<action-set>
+<action>
+    <e r="LR">
+      <p>
+        <l>$lemmaA<s n="adj"/><s n="sint"/></l> 
+        <r>$lemmaC<s n="adj"/></r> 
+      </p>
+    </e>
+</action>
+</action-set>
+
+</cross-action>
+<!-- 5 entries like this -->
+
+<cross-action id="ND-105">
+	<pattern>
+    <e r="LR">
+      <p>
+        <l>$lemmaA<s n="adj"/><s n="sint"/></l> 
+        <r>$lemmaB<s n="adj"/><s n="mf"/></r> 
+      </p>
+    </e>
+
+    <e r="RL">
+      <p>
+        <l>$lemmaB<s n="adj"/><s n="mf"/></l> 
+        <r>$lemmaC<s n="adj"/><s n="m"/></r> 
+      </p>
+    </e>
+
+	</pattern>
+<action-set>
+<action>
+    <e r="LR">
+      <p>
+        <l>$lemmaA<s n="adj"/><s n="sint"/></l> 
+        <r>$lemmaC<s n="adj"/></r> 
+      </p>
+    </e>
+</action>
+</action-set>
+
+</cross-action>
+<!-- 5 entries like this -->
+
+<cross-action id="ND-106">
+	<pattern>
+    <e r="LR">
+      <p>
+        <l>$lemmaA<s n="adj"/><s n="sint"/></l> 
+        <r>$lemmaB<s n="adj"/><s n="mf"/></r> 
+      </p>
+    </e>
+
+    <e r="RL">
+      <p>
+        <l>$lemmaB<s n="adj"/><s n="mf"/></l> 
+        <r>$lemmaC<s n="adj"/><s n="f"/></r> 
+      </p>
+    </e>
+
+	</pattern>
+<action-set>
+<action>
+    <e r="LR">
+      <p>
+        <l>$lemmaA<s n="adj"/><s n="sint"/></l> 
+        <r>$lemmaC<s n="adj"/></r> 
+      </p>
+    </e>
+</action>
+</action-set>
+</cross-action>
+<!-- 5 entries like this -->
+<cross-action id="ND-101">
+	<pattern>
+    <e>
+      <p>
+        <l>$lemmaA<s n="n"/></l> 
+        <r>$lemmaB<s n="n"/><s n="f"/></r> 
+      </p>
+    </e>
+
+    <e r="RL">
+      <p>
+        <l>$lemmaB<s n="n"/><s n="f"/><s n="pl"/></l> 
+        <r>$lemmaC<s n="n"/><s n="f"/><s n="pl"/></r> 
+      </p>
+    </e>
+
+	</pattern>
+<action-set>
+<action>
+    <e>
+      <p>
+        <l>$lemmaA<s n="n"/></l> 
+        <r>$lemmaC<s n="n"/><s n="f"/></r> 
+      </p>
+    </e>
+</action>
+</action-set>
+</cross-action>
+<!-- 5 entries like this -->
+<cross-action id="ND2-0">
+	<pattern>
+    <e r="LR">
+      <p>
+        <l>$lemmaA<s n="pr"/></l> 
+        <r>$lemmaB<s n="pr"/></r> 
+      </p>
+    </e>
+
+    <e>
+      <p>
+        <l>$lemmaB<s n="pr"/></l> 
+        <r>$lemmaC<s n="pr"/></r> 
+      </p>
+    </e>
+
+	</pattern>
+<action-set>
+<action>
+    <e r="LR">
+      <p>
+        <l>$lemmaA<s n="pr"/></l> 
+        <r>$lemmaC<s n="pr"/></r> 
+      </p>
+    </e>
+</action>
+</action-set>
+</cross-action>
+<!-- 175 entries like this -->
+<cross-action id="ND2-1">
+	<pattern>
+    <e>
+      <p>
+        <l>$lemmaA<s n="n"/></l> 
+        <r>$lemmaB<s n="n"/><s n="f"/></r> 
+      </p>
+    </e>
+
+    <e r="RL">
+      <p>
+        <l>$lemmaB<s n="n"/><s n="f"/><s n="ND"/></l> 
+        <r>$lemmaC<s n="n"/><s n="f"/><s n="sp"/></r> 
+      </p>
+    </e>
+
+	</pattern>
+<action-set>
+<action>
+    <e r="RL">
+      <p>
+        <l>$lemmaA<s n="n"/><s n="ND"/></l> 
+        <r>$lemmaC<s n="n"/><s n="f"/><s n="sp"/></r> 
+      </p>
+    </e>
+</action>
+</action-set>
+</cross-action>
+<!-- 167 entries like this -->
+<cross-action id="ND2-2">
+	<pattern>
+    <e>
+      <p>
+        <l>$lemmaA<s n="n"/></l> 
+        <r>$lemmaB<s n="n"/><s n="f"/></r> 
+      </p>
+    </e>
+
+    <e r="LR">
+      <p>
+        <l>$lemmaB<s n="n"/><s n="f"/><s n="sg"/></l> 
+        <r>$lemmaC<s n="n"/><s n="f"/><s n="sp"/></r> 
+      </p>
+    </e>
+
+	</pattern>
+<action-set>
+<action>
+    <e r="LR">
+      <p>
+        <l>$lemmaA<s n="n"/><s n="sg"/></l> 
+        <r>$lemmaC<s n="n"/><s n="f"/><s n="sp"/></r> 
+      </p>
+    </e>
+</action>
+</action-set>
+</cross-action>
+<!-- 165 entries like this -->
+
+<cross-action id="ND2-3">
+	<pattern>
+    <e>
+      <p>
+        <l>$lemmaA<s n="n"/></l> 
+        <r>$lemmaB<s n="n"/><s n="f"/></r> 
+      </p>
+    </e>
+
+    <e r="LR">
+      <p>
+        <l>$lemmaB<s n="n"/><s n="f"/><s n="pl"/></l> 
+        <r>$lemmaC<s n="n"/><s n="f"/><s n="sp"/></r> 
+      </p>
+    </e>
+
+	</pattern>
+<action-set>
+<action>
+    <e r="LR">
+      <p>
+        <l>$lemmaA<s n="n"/><s n="pl"/></l> 
+        <r>$lemmaC<s n="n"/><s n="f"/><s n="sp"/></r> 
+      </p>
+    </e>
+</action>
+</action-set>
+</cross-action>
+<!-- 165 entries like this -->
+<cross-action id="ND2-4">
+	<pattern>
+    <e>
+      <p>
+        <l>$lemmaA<s n="adj"/><s n="sint"/></l> 
+        <r>$lemmaB<s n="adj"/></r> 
+      </p>
+    </e>
+
+    <e>
+      <p>
+        <l>$lemmaB<s n="adj"/></l> 
+        <r>$lemmaC<s n="adj"/></r> 
+      </p>
+    </e>
+
+	</pattern>
+<action-set>
+<action>
+    <e>
+      <p>
+        <l>$lemmaA<s n="adj"/><s n="sint"/></l> 
+        <r>$lemmaC<s n="adj"/></r> 
+      </p>
+    </e>
+</action>
+</action-set>
+</cross-action>
+<!-- 155 entries like this -->
+<cross-action id="ND2-5">
+	<pattern>
+    <e>
+      <p>
+        <l>$lemmaA<s n="n"/></l> 
+        <r>$lemmaB<s n="n"/><s n="mf"/></r> 
+      </p>
+    </e>
+
+    <e r="LR">
+      <p>
+        <l>$lemmaB<s n="n"/><s n="mf"/></l> 
+        <r>$lemmaC<s n="n"/><s n="m"/></r> 
+      </p>
+    </e>
+
+	</pattern>
+<action-set>
+<action>
+    <e>
+      <p>
+        <l>$lemmaA<s n="n"/></l> 
+        <r>$lemmaC<s n="n"/><s n="mf"/></r> 
+      </p>
+    </e>
+</action>
+</action-set>
+</cross-action>
+<!-- 49 entries like this -->
+<cross-action id="ND2-6">
+	<pattern>
+    <e r="LR">
+      <p>
+        <l>$lemmaA<s n="n"/></l> 
+        <r>$lemmaB<s n="n"/><s n="GD"/></r> 
+      </p>
+    </e>
+
+    <e r="RL">
+      <p>
+        <l>$lemmaB<s n="n"/><s n="GD"/></l> 
+        <r>$lemmaC<s n="n"/><s n="m"/></r> 
+      </p>
+    </e>
+
+	</pattern>
+<action-set>
+    <e r="RL">
+      <p>
+        <l>$lemmaA<s n="n"/><s n="GD"/></l> 
+        <r>$lemmaC<s n="n"/></r> 
+      </p>
+    </e>
+</action-set>
+</cross-action>
+<!-- 35 entries like this -->
+<cross-action id="ND2-10">
+	<pattern>
+    <e>
+      <p>
+        <l>$lemmaA<s n="adj"/></l> 
+        <r>$lemmaB<s n="adj"/></r> 
+      </p>
+    </e>
+
+    <e r="LR">
+      <p>
+        <l>$lemmaB<s n="adj"/><s n="f"/></l> 
+        <r>$lemmaC<s n="adj"/><s n="mf"/></r> 
+      </p>
+    </e>
+
+	</pattern>
+<action-set>
+<action>
+    <e>
+      <p>
+        <l>$lemmaA<s n="adj"/></l> 
+        <r>$lemmaC<s n="adj"/><s n="mf"/></r> 
+      </p>
+    </e>
+</action>
+</action-set>
+</cross-action>
+<!-- 23 entries like this -->
+<cross-action id="ND2-17">
+	<pattern>
+    <e r="RL">
+      <p>
+        <l>$lemmaA<s n="det"/></l> 
+        <r>$lemmaB<s n="det"/></r> 
+      </p>
+    </e>
+
+    <e r="RL">
+      <p>
+        <l>$lemmaB<s n="det"/><s n="pos"/><s n="mf"/></l> 
+        <r>$lemmaC<s n="det"/><s n="pos"/><s n="f"/></r> 
+      </p>
+    </e>
+
+	</pattern>
+<action-set>
+<action>
+    <e r="RL">
+      <p>
+        <l>$lemmaA<s n="det"/><s n="pos"/><s n="mf"/></l> 
+        <r>$lemmaC<s n="det"/><s n="pos"/><s n="f"/></r> 
+      </p>
+    </e>
+</action>
+</action-set>
+
+</cross-action>
+<!-- 13 entries like this -->
+<cross-action id="ND3-0">
+	<pattern>
+    <e>
+      <p>
+        <l>$lemmaA<s n="pr"/></l> 
+        <r>$lemmaB<s n="pr"/></r> 
+      </p>
+    </e>
+
+    <e>
+      <p>
+        <l>$lemmaB<s n="pr"/></l> 
+        <r>$lemmaC<s n="pr"/></r> 
+      </p>
+    </e>
+
+	</pattern>
+<action-set>
+<action>
+    <e>
+      <p>
+        <l>$lemmaA<s n="pr"/></l> 
+        <r>$lemmaC<s n="pr"/></r> 
+      </p>
+    </e>
+</action>
+</action-set>
+</cross-action>
+<!-- 83 entries like this -->
+
+<cross-action id="ND3-1">
+	<pattern>
+    <e>
+      <p>
+        <l>$lemmaA<s n="n"/></l> 
+        <r>$lemmaB<s n="n"/><s n="mf"/></r> 
+      </p>
+    </e>
+
+    <e>
+      <p>
+        <l>$lemmaB<s n="n"/><s n="mf"/></l> 
+        <r>$lemmaC<s n="n"/><s n="m"/></r> 
+      </p>
+    </e>
+
+	</pattern>
+<action-set>
+<action>
+    <e>
+      <p>
+        <l>$lemmaA<s n="n"/></l> 
+        <r>$lemmaC<s n="n"/><s n="m"/></r> 
+      </p>
+    </e>
+</action>
+</action-set>
+</cross-action>
+<!-- 45 entries like this -->
+<cross-action id="ND3-3">
+	<pattern>
+    <e>
+      <p>
+        <l>$lemmaA<s n="n"/><s n="pl"/></l> 
+        <r>$lemmaB<s n="n"/><s n="f"/><s n="sg"/></r> 
+      </p>
+    </e>
+
+    <e>
+      <p>
+        <l>$lemmaB<s n="n"/></l> 
+        <r>$lemmaC<s n="n"/></r> 
+      </p>
+    </e>
+
+	</pattern>
+<action-set>
+<action>
+    <e>
+      <p>
+        <l>$lemmaA<s n="n"/><s n="pl"/></l> 
+        <r>$lemmaC<s n="n"/><s n="f"/><s n="sg"/></r> 
+      </p>
+    </e>
+</action>
+</action-set>
+</cross-action>
+<!-- 23 entries like this -->
+<cross-action id="ND3-5">
+	<pattern>
+    <e r="LR">
+      <p>
+        <l>$lemmaA<s n="n"/><s n="pl"/></l> 
+        <r>$lemmaB<s n="n"/><s n="m"/><s n="pl"/></r> 
+      </p>
+    </e>
+
+    <e>
+      <p>
+        <l>$lemmaB<s n="n"/></l> 
+        <r>$lemmaC<s n="n"/></r> 
+      </p>
+    </e>
+
+	</pattern>
+<action-set>
+<action>
+    <e r="LR">
+      <p>
+        <l>$lemmaA<s n="n"/><s n="pl"/></l> 
+        <r>$lemmaC<s n="n"/><s n="m"/><s n="pl"/></r> 
+      </p>
+    </e>
+</action>
+</action-set>
+</cross-action>
+<!-- 21 entries like this -->
+<cross-action id="ND4-8">
+	<pattern>
+    <e r="LR">
+      <p>
+        <l>$lemmaA<s n="n"/></l> 
+        <r>$lemmaB<s n="n"/><s n="m"/></r> 
+      </p>
+    </e>
+
+    <e r="RL">
+      <p>
+        <l>$lemmaB<s n="n"/><s n="m"/><s n="ND"/></l> 
+        <r>$lemmaC<s n="n"/><s n="f"/><s n="sp"/></r> 
+      </p>
+    </e>
+
+	</pattern>
+<action-set>
+<action>
+    <e r="LR">
+      <p>
+        <l>$lemmaA<s n="n"/><s n="sg"/></l> 
+        <r>$lemmaC<s n="n"/><s n="f"/><s n="sp"/></r> 
+      </p>
+    </e>
+    <e r="LR">
+      <p>
+        <l>$lemmaA<s n="n"/><s n="pl"/></l> 
+        <r>$lemmaC<s n="n"/><s n="f"/><s n="sp"/></r> 
+      </p>
+    </e>
+    <e r="RL">
+      <p>
+        <l>$lemmaA<s n="n"/><s n="ND"/></l> 
+        <r>$lemmaC<s n="n"/><s n="f"/><s n="sp"/></r> 
+      </p>
+    </e>
+</action>
+</action-set>
+</cross-action>
+<!-- 9 entries like this -->
+<cross-action id="NDNoLR4-8">
+	<pattern>
+    <e>
+      <p>
+        <l>$lemmaA<s n="n"/></l> 
+        <r>$lemmaB<s n="n"/><s n="m"/></r> 
+      </p>
+    </e>
+
+    <e r="RL">
+      <p>
+        <l>$lemmaB<s n="n"/><s n="m"/><s n="ND"/></l> 
+        <r>$lemmaC<s n="n"/><s n="f"/><s n="sp"/></r> 
+      </p>
+    </e>
+
+	</pattern>
+<action-set>
+<action>
+    <e r="LR">
+      <p>
+        <l>$lemmaA<s n="n"/><s n="sg"/></l> 
+        <r>$lemmaC<s n="n"/><s n="f"/><s n="sp"/></r> 
+      </p>
+    </e>
+    <e r="LR">
+      <p>
+        <l>$lemmaA<s n="n"/><s n="pl"/></l> 
+        <r>$lemmaC<s n="n"/><s n="f"/><s n="sp"/></r> 
+      </p>
+    </e>
+    <e r="RL">
+      <p>
+        <l>$lemmaA<s n="n"/><s n="ND"/></l> 
+        <r>$lemmaC<s n="n"/><s n="f"/><s n="sp"/></r> 
+      </p>
+    </e>
+</action>
+</action-set>
+</cross-action>
+<cross-action id="ND4-8">
+	<pattern>
+    <e>
+      <p>
+        <l>$lemmaA<s n="n"/></l> 
+        <r>$lemmaB<s n="n"/><s n="m"/></r> 
+      </p>
+    </e>
+
+    <e>
+      <p>
+        <l>$lemmaB<s n="n"/><s n="m"/></l> 
+        <r>$lemmaC<s n="n"/><s n="mf"/></r> 
+      </p>
+    </e>
+
+	</pattern>
+<action-set>
+<action>
+    <e>
+      <p>
+        <l>$lemmaA<s n="n"/></l> 
+        <r>$lemmaC<s n="n"/><s n="mf"/></r> 
+      </p>
+    </e>
+</action>
+</action-set>
+</cross-action>
+<!-- 9 entries like this -->
+<cross-action id="ND4-9">
+	<pattern>
+    <e r="LR">
+      <p>
+        <l>$lemmaA<s n="n"/></l> 
+        <r>$lemmaB<s n="n"/><s n="GD"/></r> 
+      </p>
+    </e>
+
+    <e>
+      <p>
+        <l>$lemmaB<s n="n"/><s n="m"/></l> 
+        <r>$lemmaC<s n="n"/><s n="mf"/></r> 
+      </p>
+    </e>
+
+	</pattern>
+<action-set>
+<action>
+    <e>
+      <p>
+        <l>$lemmaA<s n="n"/></l> 
+        <r>$lemmaC<s n="n"/><s n="mf"/></r> 
+      </p>
+    </e>
+</action>
+</action-set>
+</cross-action>
+<!-- 9 entries like this -->
+<cross-action id="ND4-10">
+	<pattern>
+    <e r="RL">
+      <p>
+        <l>$lemmaA<s n="n"/></l> 
+        <r>$lemmaB<s n="n"/></r> 
+      </p>
+    </e>
+
+    <e>
+      <p>
+        <l>$lemmaB<s n="n"/><s n="m"/></l> 
+        <r>$lemmaC<s n="n"/><s n="mf"/></r> 
+      </p>
+    </e>
+
+	</pattern>
+<action-set>
+<action>
+    <e>
+      <p>
+        <l>$lemmaA<s n="n"/></l> 
+        <r>$lemmaC<s n="n"/><s n="mf"/></r> 
+      </p>
+    </e>
+</action>
+</action-set>
+</cross-action>
+<!-- 9 entries like this -->
+<cross-action id="ND5-8">
+	<pattern>
+    <e r="RL">
+      <p>
+        <l>$lemmaA<s n="prn"/><s n="tn"/><s n="mf"/></l> 
+        <r>$lemmaB<s n="prn"/><s n="tn"/><s n="m"/></r> 
+      </p>
+    </e>
+
+    <e>
+      <p>
+        <l>$lemmaB<s n="prn"/><s n="tn"/><s n="m"/></l> 
+        <r>$lemmaC<s n="prn"/><s n="tn"/><s n="m"/></r> 
+      </p>
+    </e>
+
+	</pattern>
+<action-set>
+<action>
+    <e r="LR">
+      <p>
+        <l>$lemmaA<s n="prn"/><s n="tn"/><s n="mf"/></l> 
+        <r>$lemmaC<s n="prn"/><s n="tn"/><s n="GD"/></r> 
+      </p>
+    </e>
+    <e r="RL">
+      <p>
+        <l>$lemmaA<s n="prn"/><s n="tn"/><s n="mf"/></l> 
+        <r>$lemmaC<s n="prn"/><s n="tn"/><s n="m"/></r> 
+      </p>
+    </e>
+    <e r="RL">
+      <p>
+        <l>$lemmaA<s n="prn"/><s n="tn"/><s n="mf"/></l> 
+        <r>$lemmaC<s n="prn"/><s n="tn"/><s n="f"/></r> 
+      </p>
+    </e>
+</action>
+</action-set>
+</cross-action>
+<!-- 9 entries like this -->
+<cross-action id="ND5-8-2">
+	<pattern>
+    <e r="RL">
+      <p>
+        <l>$lemmaA<s n="prn"/><s n="tn"/><s n="mf"/></l> 
+        <r>$lemmaB<s n="prn"/><s n="tn"/><s n="m"/></r> 
+      </p>
+    </e>
+
+    <e>
+      <p>
+        <l>$lemmaB<s n="prn"/><s n="tn"/><s n="f"/></l> 
+        <r>$lemmaC<s n="prn"/><s n="tn"/><s n="f"/></r> 
+      </p>
+    </e>
+
+	</pattern>
+<action-set>
+<action>
+    <e r="LR">
+      <p>
+        <l>$lemmaA<s n="prn"/><s n="tn"/><s n="mf"/></l> 
+        <r>$lemmaC<s n="prn"/><s n="tn"/><s n="GD"/></r> 
+      </p>
+    </e>
+    <e r="RL">
+      <p>
+        <l>$lemmaA<s n="prn"/><s n="tn"/><s n="mf"/></l> 
+        <r>$lemmaC<s n="prn"/><s n="tn"/><s n="m"/></r> 
+      </p>
+    </e>
+    <e r="RL">
+      <p>
+        <l>$lemmaA<s n="prn"/><s n="tn"/><s n="mf"/></l> 
+        <r>$lemmaC<s n="prn"/><s n="tn"/><s n="f"/></r> 
+      </p>
+    </e>
+</action>
+</action-set>
+</cross-action>
+<cross-action id="ND5-8-3">
+	<pattern>
+    <e r="RL">
+      <p>
+        <l>$lemmaA<s n="prn"/><s n="tn"/><s n="mf"/></l> 
+        <r>$lemmaB<s n="prn"/><s n="tn"/><s n="f"/></r> 
+      </p>
+    </e>
+
+    <e>
+      <p>
+        <l>$lemmaB<s n="prn"/><s n="tn"/><s n="m"/></l> 
+        <r>$lemmaC<s n="prn"/><s n="tn"/><s n="m"/></r> 
+      </p>
+    </e>
+
+	</pattern>
+<action-set>
+<action>
+    <e r="LR">
+      <p>
+        <l>$lemmaA<s n="prn"/><s n="tn"/><s n="mf"/></l> 
+        <r>$lemmaC<s n="prn"/><s n="tn"/><s n="GD"/></r> 
+      </p>
+    </e>
+    <e r="RL">
+      <p>
+        <l>$lemmaA<s n="prn"/><s n="tn"/><s n="mf"/></l> 
+        <r>$lemmaC<s n="prn"/><s n="tn"/><s n="m"/></r> 
+      </p>
+    </e>
+    <e r="RL">
+      <p>
+        <l>$lemmaA<s n="prn"/><s n="tn"/><s n="mf"/></l> 
+        <r>$lemmaC<s n="prn"/><s n="tn"/><s n="f"/></r> 
+      </p>
+    </e>
+</action>
+</action-set>
+</cross-action>
+<cross-action id="ND5-8-4">
+	<pattern>
+    <e r="RL">
+      <p>
+        <l>$lemmaA<s n="prn"/><s n="tn"/><s n="mf"/></l> 
+        <r>$lemmaB<s n="prn"/><s n="tn"/><s n="f"/></r> 
+      </p>
+    </e>
+
+    <e>
+      <p>
+        <l>$lemmaB<s n="prn"/><s n="tn"/><s n="f"/></l> 
+        <r>$lemmaC<s n="prn"/><s n="tn"/><s n="f"/></r> 
+      </p>
+    </e>
+
+	</pattern>
+<action-set>
+<action>
+    <e r="LR">
+      <p>
+        <l>$lemmaA<s n="prn"/><s n="tn"/><s n="mf"/></l> 
+        <r>$lemmaC<s n="prn"/><s n="tn"/><s n="GD"/></r> 
+      </p>
+    </e>
+    <e r="RL">
+      <p>
+        <l>$lemmaA<s n="prn"/><s n="tn"/><s n="mf"/></l> 
+        <r>$lemmaC<s n="prn"/><s n="tn"/><s n="m"/></r> 
+      </p>
+    </e>
+    <e r="RL">
+      <p>
+        <l>$lemmaA<s n="prn"/><s n="tn"/><s n="mf"/></l> 
+        <r>$lemmaC<s n="prn"/><s n="tn"/><s n="f"/></r> 
+      </p>
+    </e>
+</action>
+</action-set>
+</cross-action>
+<cross-action id="ND6-8">
+	<pattern>
+    <e r="LR">
+      <p>
+        <l>$lemmaA<s n="n"/></l> 
+        <r>$lemmaB<s n="n"/><s n="m"/></r> 
+      </p>
+    </e>
+
+    <e r="LR">
+      <p>
+        <l>$lemmaB<s n="n"/><s n="m"/><s n="sg"/></l> 
+        <r>$lemmaC<s n="n"/><s n="f"/><s n="sp"/></r> 
+      </p>
+    </e>
+
+	</pattern>
+<action-set>
+<action>
+    <e r="RL">
+      <p>
+        <l>$lemmaA<s n="n"/><s n="ND"/></l> 
+        <r>$lemmaC<s n="n"/><s n="f"/><s n="sp"/></r> 
+      </p>
+    </e>
+    <e r="LR">
+      <p>
+        <l>$lemmaA<s n="n"/><s n="sg"/></l> 
+        <r>$lemmaC<s n="n"/><s n="f"/><s n="sp"/></r> 
+      </p>
+    </e>
+    <e r="LR">
+      <p>
+        <l>$lemmaA<s n="n"/><s n="pl"/></l> 
+        <r>$lemmaC<s n="n"/><s n="f"/><s n="sp"/></r> 
+      </p>
+    </e>
+</action>
+</action-set>
+
+</cross-action>
+<!-- 7 entries like this -->
+
+<cross-action id="ND6-9">
+	<pattern>
+    <e r="LR">
+      <p>
+        <l>$lemmaA<s n="n"/></l> 
+        <r>$lemmaB<s n="n"/><s n="m"/></r> 
+      </p>
+    </e>
+
+    <e r="LR">
+      <p>
+        <l>$lemmaB<s n="n"/><s n="m"/><s n="pl"/></l> 
+        <r>$lemmaC<s n="n"/><s n="f"/><s n="sp"/></r> 
+      </p>
+    </e>
+
+	</pattern>
+<action-set>
+<action>
+    <e r="RL">
+      <p>
+        <l>$lemmaA<s n="n"/><s n="ND"/></l> 
+        <r>$lemmaC<s n="n"/><s n="f"/><s n="sp"/></r> 
+      </p>
+    </e>
+    <e r="LR">
+      <p>
+        <l>$lemmaA<s n="n"/><s n="sg"/></l> 
+        <r>$lemmaC<s n="n"/><s n="f"/><s n="sp"/></r> 
+      </p>
+    </e>
+    <e r="LR">
+      <p>
+        <l>$lemmaA<s n="n"/><s n="pl"/></l> 
+        <r>$lemmaC<s n="n"/><s n="f"/><s n="sp"/></r> 
+      </p>
+    </e>
+</action>
+</action-set>
+</cross-action>
+<!-- 7 entries like this -->
+<cross-action id="ND6NoLR-8">
+	<pattern>
+    <e>
+      <p>
+        <l>$lemmaA<s n="n"/></l> 
+        <r>$lemmaB<s n="n"/><s n="m"/></r> 
+      </p>
+    </e>
+
+    <e r="LR">
+      <p>
+        <l>$lemmaB<s n="n"/><s n="m"/><s n="sg"/></l> 
+        <r>$lemmaC<s n="n"/><s n="f"/><s n="sp"/></r> 
+      </p>
+    </e>
+
+	</pattern>
+<action-set>
+<action>
+    <e r="RL">
+      <p>
+        <l>$lemmaA<s n="n"/><s n="ND"/></l> 
+        <r>$lemmaC<s n="n"/><s n="f"/><s n="sp"/></r> 
+      </p>
+    </e>
+    <e r="LR">
+      <p>
+        <l>$lemmaA<s n="n"/><s n="sg"/></l> 
+        <r>$lemmaC<s n="n"/><s n="f"/><s n="sp"/></r> 
+      </p>
+    </e>
+    <e r="LR">
+      <p>
+        <l>$lemmaA<s n="n"/><s n="pl"/></l> 
+        <r>$lemmaC<s n="n"/><s n="f"/><s n="sp"/></r> 
+      </p>
+    </e>
+</action>
+</action-set>
+
+</cross-action>
+<cross-action id="ND6NoLR-9">
+	<pattern>
+    <e>
+      <p>
+        <l>$lemmaA<s n="n"/></l> 
+        <r>$lemmaB<s n="n"/><s n="m"/></r> 
+      </p>
+    </e>
+
+    <e r="LR">
+      <p>
+        <l>$lemmaB<s n="n"/><s n="m"/><s n="pl"/></l> 
+        <r>$lemmaC<s n="n"/><s n="f"/><s n="sp"/></r> 
+      </p>
+    </e>
+
+	</pattern>
+<action-set>
+<action>
+    <e r="RL">
+      <p>
+        <l>$lemmaA<s n="n"/><s n="ND"/></l> 
+        <r>$lemmaC<s n="n"/><s n="f"/><s n="sp"/></r> 
+      </p>
+    </e>
+    <e r="LR">
+      <p>
+        <l>$lemmaA<s n="n"/><s n="sg"/></l> 
+        <r>$lemmaC<s n="n"/><s n="f"/><s n="sp"/></r> 
+      </p>
+    </e>
+    <e r="LR">
+      <p>
+        <l>$lemmaA<s n="n"/><s n="pl"/></l> 
+        <r>$lemmaC<s n="n"/><s n="f"/><s n="sp"/></r> 
+      </p>
+    </e>
+</action>
+</action-set>
+</cross-action>
+
+<cross-action id="NDall-80">
+	<pattern>
+    <e r="RL">
+      <p>
+        <l>$lemmaA<s n="prn"/><s n="tn"/><s n="mf"/><s n="sp"/></l> 
+        <r>$lemmaB<s n="prn"/><s n="tn"/><s n="m"/><s n="pl"/></r> 
+      </p>
+    </e>
+
+    <e>
+      <p>
+        <l>$lemmaB<s n="prn"/></l> 
+        <r>$lemmaC<s n="prn"/></r> 
+      </p>
+    </e>
+
+	</pattern>
+<action-set>
+<action>
+    <e r="RL">
+      <p>
+        <l>$lemmaA<s n="prn"/><s n="tn"/><s n="mf"/><s n="sp"/></l> 
+        <r>$lemmaC<s n="prn"/><s n="tn"/><s n="m"/><s n="pl"/></r> 
+      </p>
+    </e>
+    <e r="RL">
+      <p>
+        <l>$lemmaA<s n="prn"/><s n="tn"/><s n="mf"/><s n="sp"/></l> 
+        <r>$lemmaC<s n="prn"/><s n="tn"/><s n="f"/><s n="sg"/></r> 
+      </p>
+    </e>
+    <e r="RL">
+      <p>
+        <l>$lemmaA<s n="prn"/><s n="tn"/><s n="mf"/><s n="sp"/></l> 
+        <r>$lemmaC<s n="prn"/><s n="tn"/><s n="f"/><s n="pl"/></r> 
+      </p>
+    </e>
+    <e r="LR">
+      <p>
+        <l>$lemmaA<s n="prn"/><s n="tn"/><s n="mf"/><s n="sp"/></l> 
+        <r>$lemmaC<s n="prn"/><s n="tn"/><s n="m"/><s n="ND"/></r> 
+      </p>
+    </e>
+</action>
+</action-set>
+
+</cross-action>
+<!-- 3 entries like this -->
+
+<cross-action id="NDall-81">
+	<pattern>
+    <e r="RL">
+      <p>
+        <l>$lemmaA<s n="prn"/><s n="tn"/><s n="mf"/><s n="sp"/></l> 
+        <r>$lemmaB<s n="prn"/><s n="tn"/><s n="f"/><s n="sg"/></r> 
+      </p>
+    </e>
+
+    <e>
+      <p>
+        <l>$lemmaB<s n="prn"/></l> 
+        <r>$lemmaC<s n="prn"/></r> 
+      </p>
+    </e>
+
+	</pattern>
+<action-set>
+<action>
+    <e r="RL">
+      <p>
+        <l>$lemmaA<s n="prn"/><s n="tn"/><s n="mf"/><s n="sp"/></l> 
+        <r>$lemmaC<s n="prn"/><s n="tn"/><s n="m"/><s n="pl"/></r> 
+      </p>
+    </e>
+    <e r="RL">
+      <p>
+        <l>$lemmaA<s n="prn"/><s n="tn"/><s n="mf"/><s n="sp"/></l> 
+        <r>$lemmaC<s n="prn"/><s n="tn"/><s n="f"/><s n="sg"/></r> 
+      </p>
+    </e>
+    <e r="RL">
+      <p>
+        <l>$lemmaA<s n="prn"/><s n="tn"/><s n="mf"/><s n="sp"/></l> 
+        <r>$lemmaC<s n="prn"/><s n="tn"/><s n="f"/><s n="pl"/></r> 
+      </p>
+    </e>
+    <e r="LR">
+      <p>
+        <l>$lemmaA<s n="prn"/><s n="tn"/><s n="mf"/><s n="sp"/></l> 
+        <r>$lemmaC<s n="prn"/><s n="tn"/><s n="m"/><s n="ND"/></r> 
+      </p>
+    </e>
+</action>
+</action-set>
+
+</cross-action>
+<!-- 3 entries like this -->
+
+<cross-action id="NDall-82">
+	<pattern>
+    <e r="RL">
+      <p>
+        <l>$lemmaA<s n="prn"/><s n="tn"/><s n="mf"/><s n="sp"/></l> 
+        <r>$lemmaB<s n="prn"/><s n="tn"/><s n="f"/><s n="pl"/></r> 
+      </p>
+    </e>
+
+    <e>
+      <p>
+        <l>$lemmaB<s n="prn"/></l> 
+        <r>$lemmaC<s n="prn"/></r> 
+      </p>
+    </e>
+
+	</pattern>
+<action-set>
+<action>
+    <e r="RL">
+      <p>
+        <l>$lemmaA<s n="prn"/><s n="tn"/><s n="mf"/><s n="sp"/></l> 
+        <r>$lemmaC<s n="prn"/><s n="tn"/><s n="m"/><s n="pl"/></r> 
+      </p>
+    </e>
+    <e r="RL">
+      <p>
+        <l>$lemmaA<s n="prn"/><s n="tn"/><s n="mf"/><s n="sp"/></l> 
+        <r>$lemmaC<s n="prn"/><s n="tn"/><s n="f"/><s n="sg"/></r> 
+      </p>
+    </e>
+    <e r="RL">
+      <p>
+        <l>$lemmaA<s n="prn"/><s n="tn"/><s n="mf"/><s n="sp"/></l> 
+        <r>$lemmaC<s n="prn"/><s n="tn"/><s n="f"/><s n="pl"/></r> 
+      </p>
+    </e>
+    <e r="LR">
+      <p>
+        <l>$lemmaA<s n="prn"/><s n="tn"/><s n="mf"/><s n="sp"/></l> 
+        <r>$lemmaC<s n="prn"/><s n="tn"/><s n="m"/><s n="ND"/></r> 
+      </p>
+    </e>
+</action>
+</action-set>
+
+</cross-action>
+<!-- 3 entries like this -->
+<cross-action id="NDall-248">
+	<pattern>
+    <e r="LR">
+      <p>
+        <l>$lemmaA<s n="prn"/><s n="tn"/><s n="mf"/><s n="sp"/></l> 
+        <r>$lemmaB<s n="prn"/><s n="tn"/><s n="m"/><s n="ND"/></r> 
+      </p>
+    </e>
+
+    <e>
+      <p>
+        <l>$lemmaB<s n="prn"/></l> 
+        <r>$lemmaC<s n="prn"/></r> 
+      </p>
+    </e>
+
+	</pattern>
+<action-set>
+<action>
+    <e r="RL">
+      <p>
+        <l>$lemmaA<s n="prn"/><s n="tn"/><s n="mf"/><s n="sp"/></l> 
+        <r>$lemmaC<s n="prn"/><s n="tn"/><s n="m"/><s n="pl"/></r> 
+      </p>
+    </e>
+    <e r="RL">
+      <p>
+        <l>$lemmaA<s n="prn"/><s n="tn"/><s n="mf"/><s n="sp"/></l> 
+        <r>$lemmaC<s n="prn"/><s n="tn"/><s n="f"/><s n="sg"/></r> 
+      </p>
+    </e>
+    <e r="RL">
+      <p>
+        <l>$lemmaA<s n="prn"/><s n="tn"/><s n="mf"/><s n="sp"/></l> 
+        <r>$lemmaC<s n="prn"/><s n="tn"/><s n="f"/><s n="pl"/></r> 
+      </p>
+    </e>
+    <e r="LR">
+      <p>
+        <l>$lemmaA<s n="prn"/><s n="tn"/><s n="mf"/><s n="sp"/></l> 
+        <r>$lemmaC<s n="prn"/><s n="tn"/><s n="m"/><s n="ND"/></r> 
+      </p>
+    </e>
+</action>
+</action-set>
+
+</cross-action>
+<!-- 1 entries like this -->
+<cross-action id="NDall-249">
+	<pattern>
+    <e>
+      <p>
+        <l>$lemmaA<s n="prn"/><s n="tn"/><s n="m"/><s n="sg"/></l> 
+        <r>$lemmaB<s n="prn"/><s n="tn"/><s n="m"/><s n="sg"/></r> 
+      </p>
+    </e>
+
+    <e>
+      <p>
+        <l>$lemmaB<s n="prn"/></l> 
+        <r>$lemmaC<s n="prn"/></r> 
+      </p>
+    </e>
+
+	</pattern>
+<action-set>
+<action>
+    <e>
+      <p>
+        <l>$lemmaA<s n="prn"/><s n="tn"/><s n="m"/><s n="sg"/></l> 
+        <r>$lemmaC<s n="prn"/><s n="tn"/><s n="m"/><s n="sg"/></r> 
+      </p>
+    </e>
+</action>
+</action-set>
+
+</cross-action>
+<!-- 1 entries like this -->
+
+
+<!-- These can be considered 'lexicalised' crossings -->
+<!-- It may be a little excessive to have them, but it can prevent errors in future crossings -->
+
+<cross-action id="ND-390">
+	<pattern>
+    <e>
+      <p>
+        <l>'<s n="apos"/></l> 
+        <r>'<s n="apos"/></r> 
+      </p>
+    </e>
+
+    <e>
+      <p>
+        <l>'<s n="apos"/></l> 
+        <r>'<s n="apos"/></r> 
+      </p>
+    </e>
+
+	</pattern>
+<action-set>
+<action>
+    <e>
+      <p>
+        <l>'<s n="apos"/></l> 
+        <r>'<s n="apos"/></r> 
+      </p>
+    </e>
+</action>
+</action-set>
+
+</cross-action>
+<!-- 1 entries like this -->
+
+</cross-model>
+

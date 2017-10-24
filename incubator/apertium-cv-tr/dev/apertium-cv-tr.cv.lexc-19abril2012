@@ -1,0 +1,1899 @@
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+!!  М О Р Ф О Л О Г И Ч Е С К И Й · Т Р А Н С Д У К Т О Р · Д Л Я · Ч У В А Ш С К О Г О · Я З Ы К А  !!
+!!            M O R P H O L O G I C A L · T R A N S D U C E R · F O R · C H U V A S H                !!
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+
+! See "WARNING"
+
+Multichar_Symbols
+
+%<n%>              ! Существительное · Noun
+%<v%>              ! Глагол
+%<num%>            ! Число · Numeral
+%<pred%>           ! · Predicative
+%<adj%>            ! Прилагательное
+%<adv%>            ! Наречие
+%<prn%>            ! Местомение
+%<det%>            !
+%<cop%>            !
+%<part%>           !
+
+%<subst%>          ! Субстативные
+%<attr%>           ! 
+
+%<np%>             ! 
+%<ant%>            ! 
+%<cog%>            ! 
+%<top%>            ! 
+
+%<nom%>            ! Инемительный / Основной · Nominative
+%<gen%>            ! Родительный / Притяжательный · Genitive
+%<dat%>            ! Дательный · Dative
+%<loc%>            ! Местный · Locative
+%<abl%>            ! Исходный · Ablative
+%<ins%>            ! Творительный · Instrumental
+%<abe%>           ! Лишительный · Privative
+%<term%>           ! · Terminative
+%<fin%>            ! Прпичинно-целевой · Final / Purposive
+%<all%>            ! Аллатив · Allative / Directive
+
+
+%<pers%>           !
+%<ind%>            !
+%<dem%>            !
+%<itg%>            !
+%<ref%>            !
+%<qst%>            !
+
+%<comp%>           !
+
+%<ord%>            ! Порядковые
+%<dist%>           ! Дистрибутивные
+%<coll%>           ! Собирательные
+
+%<m%>              ! Мужской род
+%<f%>              ! Женский род
+
+%<p1%>             ! 
+%<p2%>             ! 
+%<p3%>             ! 
+
+%<iv%>             ! 
+%<tv%>             ! 
+
+%<inf%>            ! Инфинитив
+%<ifi%>            ! 
+%<pres%>           ! Настоящее время
+%<evid%>           ! Прошедщее очевидное время
+%<past%>           ! Прошедщее неочевидное время
+%<pih%>            ! Прошедщее многократное время
+%<fut%>            ! Будущее время
+%<cond%>           ! Сослагательное наклонение
+%<imp%>            ! Повлелительное наклонение
+%<opt%>            !
+
+%<cnjcoo%>         ! Союз
+
+%<p1%>             !
+%<p2%>             !
+%<p3%>             !
+
+%<px1sg%>          ! Possessive, first person singular
+%<px2sg%>          ! Possessive, second person singular
+%<px3sp%>          ! Possessive, third person
+%<px1pl%>          ! Possessive, first person plural
+%<px2pl%>          ! Possessive, second person plural
+
+%<sg%>             !
+%<pl%>             ! Множенственное число · Plural
+
+%<sent%>           ! Sentence marker
+%<guio%>           ! Hyphen
+%<cm%>             ! Comma
+%<apos%>           ! Apostrophe
+%<rquot%>          ! Quote marker (right hand side) 
+%<lquot%>          ! Quote marker (left hand side) 
+%<rpar%>           ! Parenthetical marker (right hand side) 
+%<lpar%>           ! Parenthetical marker (left hand side) 
+
+
+
+%{Ӑ%}              ! Archiphoneme 'Ӑ' ('ӑ' or 'ӗ')
+%{А%}              ! Archiphoneme 'А' ('a' or 'e')
+%{У%}              ! Archiphoneme 'У' ('ӳ' or 'у')
+!%{Е%}             ! Archiphoneme 'Е' ('и' or 'е')
+%{ч%}              ! Either 'ч' or nothing
+%{ӗ%}              ! Archiphoneme 'ӗ' for px3sp (conditionates the previous consonant)
+%{й%}              ! Final й of the stem, which can be changed to я, ю or е 
+%{ь%}              ! 3p sg suffix: вула·т·ь - пӗл·ӗт·
+%{Р%}              ! р%{А%}/т%{А%}/ч%{А%}, р%{А%}н/т%{А%}н/ч%{А%}н
+%{Т%}              ! т%{А%}, т%{А%}н
+%{М%}              ! сем/сен
+%{н%}              ! н that appears in dative after vowels and after <px3sg> before some cases
+%{н2%}             ! н that appears after <px2sg> before some cases
+
+%{w%}              ! Holds a place for в in у/ӳ > ӑв/ӗв
+%{dup%}            ! indicates that the previous consonant must be duplicated
+
+%>                 ! · Morpheme boundary
+% 
+
+
+LEXICON Root
+!Regexp ; 
+
+Particles ; ! :(
+Punctuation ;
+Pronouns ;
+Determiners ;
+Numerals ;
+Proper_Names ;
+Conjunctions ;
+Adjectives ;
+Adverbs ;
+Nouns ;
+Verbs ;
+
+LEXICON K 
+
+%+и%<qst%>:%-и # ;
+# ;
+
+LEXICON COP
+
+# ;
+%+ӗ%<cop%>%<ifi%>:%>%{ч%}чӗ K;
+K ;
+
+LEXICON CASE-NOM
+
+%<nom%>: COP ;
+
+LEXICON CASE-GEN_DAT
+
+%<gen%>:%>%{Ӑ%}н COP ;
+%<dat%>:%>%{А%} COP ;
+
+LEXICON CASE-GEN_DAT-А_Е
+
+%<gen%>:%>н COP ;
+%<dat%>:%>н%{А%} COP ;
+
+LEXICON CASE-GEN_DAT-О
+
+%<gen%>:%>н COP ;
+%<dat%>:%>на COP ;
+
+LEXICON CASE-GEN_DAT-И
+
+%<gen%>:%>н # ;
+%<gen%>:%>йӗн # ; 	! Dir/LR
+%<dat%>:%>е # ;
+
+LEXICON CASE-GEN_DAT-FRONT
+
+%<gen%>:%>ӗн # ;
+%<dat%>:%>е # ;
+
+LEXICON CASE-GEN_DAT-BACK
+
+%<gen%>:%>ӑн # ;
+%<dat%>:%>а # ;
+
+LEXICON CASE-GEN_DAT-PX2SG
+
+%<gen%>:%{У%}%>н # ;
+%<dat%>:%{Ӑ%}в%>%{А%} # ;
+
+LEXICON CASE-GEN_DAT-PX2SG-FRONT
+
+%<gen%>:ӳ%>н # ;
+%<dat%>:ӗв%>е # ;
+
+LEXICON CASE-GEN_DAT-PX2SG-BACK
+
+%<gen%>:у%>н # ;
+%<dat%>:ӑв%>а # ;
+
+LEXICON CASE-GEN_DAT-PX2SG-Я
+
+%<gen%>:ю%>н # ;
+%<dat%>:%{Ӑ%}в%>%{А%} # ;		! ?????
+
+LEXICON CASE-GEN_DAT-PX3SP
+
+%<gen%>:%{ӗ%}%>н # ;
+%<dat%>:%>не # ;
+
+LEXICON CASE-GEN_DAT-PX3SP-И
+
+%<gen%>:%>н # ;
+%<gen%>:%>йӗн # ; 	! Dir/LR
+%<dat%>:%>не # ;	! не / е ??
+
+LEXICON CASE-LOC_ABL
+
+%<loc%>:%>%{Р%}%{А%} # ;
+%<abl%>:%>%{Р%}%{А%}н # ;
+
+LEXICON CASE-LOC_ABL-BACK
+
+%<loc%>:%>ра # ;
+%<abl%>:%>ран # ;
+
+! LEXICON CASE-LOC_ABL-Л_Ль_Н
+! 
+! %<loc%>:%>р%{А%} # ;
+! %<abl%>:%>р%{А%}н # ;
+! %<abl%>:%>т%{А%}н # ;	! Dir/LR
+
+LEXICON CASE-LOC_ABL-PX3SP
+
+%<loc%>:%>нч%{А%} # ;
+%<abl%>:%>нч%{А%}н # ;
+
+LEXICON CASE-INS_PRIV_TERM
+%<ins%>:%>п%{А%} # ;
+%<abe%>:%>с%{Ӑ%}р # ;
+%<term%>:%>ш%{Ӑ%}н # ;
+%<all%>:%>%{А%}лл%{А%} # ;	! WARNING: Doesn't work yet: the first %{А%} falls in words as каҫма or чӗлхе
+
+LEXICON CASE-INS_PRIV_TERM-BACK
+%<ins%>:%>па # ;
+%<abe%>:%>сӑр # ;
+%<term%>:%>шӑн # ;
+%<all%>:%>алла # ;
+
+
+!LEXICON CASE-OBL	! oblique cases
+!
+!CASE-GEN_DAT ;
+!CASE-LOC_ABL ;
+!CASE-INS_PRIV_TERM ;
+
+LEXICON CASE-OBL-BACK
+
+CASE-GEN_DAT-BACK ;
+CASE-LOC_ABL-BACK ;
+CASE-INS_PRIV_TERM-BACK ;
+
+LEXICON CASE
+
+%<nom%>: COP ;
+%<gen%>:%{w%}%>%{Ӑ%}н COP ;
+%<dat%>:%{w%}%>%{н%}%{А%} COP ;
+%<loc%>:%>%{Р%}%{А%} COP ;
+%<abl%>:%>%{Р%}%{А%}н COP ;
+%<abl%>:%>%{Т%}%{А%}н COP ;
+%<ins%>:%>п%{А%} COP ;
+%<abe%>:%>с%{Ӑ%}р COP ;
+%<term%>:%>ш%{Ӑ%}н COP ;
+%<all%>:%{w%}%>алла COP ;
+
+
+! LEXICON CASE-Ь	! cases for Chuvash nouns with final ь
+! 
+! %<n%>:ь CASE-NOM ;
+! %<n%>: CASE-GEN_DAT-FRONT ;
+! !!! NO LOC/ABL???
+! %<n%>:ь CASE-INS_PRIV_TERM ;
+! %<n%>%<pl%>:ь%>се CASE-PL ;
+! 
+!LEXICON CASE-У	! cases for Chuvash nouns with final у
+!
+!:у CASE-NOM ;
+!:ӑв CASE-GEN_DAT ;
+!:у CASE-LOC_ABL ;
+!:у CASE-INS_PRIV_TERM ;
+!
+!LEXICON CASE-Ӳ	! cases for Chuvash nouns with final ӳ
+!
+!:ӳ CASE-NOM ;
+!:ӗв CASE-GEN_DAT ;
+!:ӳ CASE-LOC_ABL ;
+!:ӳ CASE-INS_PRIV_TERM ;
+
+LEXICON CASE-Ӑ_Ӗ-OBL	! oblique cases for Chuvash nouns with final ӑ
+
+CASE-GEN_DAT ;
+:%{Ӑ%} CASE-LOC_ABL ;
+:%{Ӑ%} CASE-INS_PRIV_TERM ;
+
+LEXICON CASE-Ӑ-OBL	! oblique cases for Chuvash nouns with final ӑ
+
+CASE-GEN_DAT-BACK ;
+:ӑ CASE-LOC_ABL ;
+:ӑ CASE-INS_PRIV_TERM ;
+
+LEXICON CASE-Ӑ-OBL-NP-RUS	! oblique cases for Chuvash loans from Russian with final ӑ
+
+%<gen%>:%>ӑн # ;
+%<dat%>:%>ӑна # ;
+:ӑ CASE-LOC_ABL ;
+:ӑ CASE-INS_PRIV_TERM ;
+
+
+LEXICON CASE-Ӗ-OBL	! oblique cases for Chuvash nouns with final ӗ
+
+CASE-GEN_DAT-FRONT ;
+:ӗ CASE-LOC_ABL ;
+:ӗ CASE-INS_PRIV_TERM ;
+
+LEXICON CASE-VCӐ	! cases for Chuvash nouns with final ӑ
+
+:ӑ CASE-NOM ;
+:%{dup%} CASE-GEN_DAT-BACK ;
+:ӑ CASE-LOC_ABL ;
+:ӑ CASE-INS_PRIV_TERM ;
+
+LEXICON CASE-VCӖ	! cases for Chuvash nouns with final ӗ
+
+:ӗ CASE-NOM ;
+:%{dup%} CASE-GEN_DAT-FRONT ;
+:ӗ CASE-LOC_ABL ;
+:ӗ CASE-INS_PRIV_TERM ;
+
+LEXICON CASE-PX2SG	! cases for Chuvash nouns with px2sg suffix
+
+:%{У%} CASE-NOM ;
+CASE-GEN_DAT-PX2SG ;
+:%{У%} CASE-LOC_ABL ;
+:%{У%} CASE-INS_PRIV_TERM ;
+
+LEXICON CASE-PX2SG-FRONT	! cases for Chuvash nouns with px2sg suffix forcing front vowels
+
+:ӳ CASE-NOM ;
+CASE-GEN_DAT-PX2SG-FRONT ;
+:ӳ CASE-LOC_ABL ;
+:ӳ CASE-INS_PRIV_TERM ;
+
+LEXICON CASE-PX2SG-BACK		! cases for Chuvash nouns with px2sg suffix forcing back vowels
+
+:у CASE-NOM ;
+CASE-GEN_DAT-PX2SG-BACK ;
+:у CASE-LOC_ABL ;
+:у CASE-INS_PRIV_TERM ;
+
+LEXICON CASE-PX2SG-Я	! cases for Chuvash nouns with px2sg suffix
+
+:ю CASE-NOM ;
+CASE-GEN_DAT-PX2SG-Я ;
+:ю CASE-LOC_ABL ;
+:ю CASE-INS_PRIV_TERM ;
+
+LEXICON CASE-PX3SP	! cases for Chuvash nouns with px3sp suffix ӗ
+
+:%{ӗ%} CASE-NOM ;
+CASE-GEN_DAT-PX3SP ;
+:%{ӗ%} CASE-LOC_ABL-PX3SP ;
+:%{ӗ%} CASE-INS_PRIV_TERM ;
+
+LEXICON CASE-PX3SP-И	! cases for Chuvash nouns with px3sp suffix и
+
+:и CASE-NOM ;
+:и CASE-GEN_DAT-PX3SP-И ;		! double genitive form, as genitive in -и ?
+:и CASE-LOC_ABL-PX3SP ;
+:и CASE-INS_PRIV_TERM ;
+
+LEXICON CASE-PL		! case endings after plural suffix
+ 
+%<nom%>:м%> # ;
+%<gen%>:%>н # ;
+%<dat%>:н%>е # ;
+%<loc%>:н%>че # ;
+%<abl%>:н%>чен # ;
+%<ins%>:м%>пе # ;
+%<abe%>:м%>сӗр # ;
+%<term%>:м%>шӗн # ;
+
+LEXICON POS-PL		! Posession plural
+
+%<px1sg%>%<pl%>:%>%{Ӑ%}м%>се CASE-PL ;
+%<px2sg%>%<pl%>:%>%{У%}%>се CASE-PL ;
+%<px3sp%>%<pl%>:%>%{ӗ%}%>се CASE-PL ;
+%<px1pl%>%<pl%>:%>%{Ӑ%}м%>%{Ӑ%}р%>се CASE-PL ;
+%<px2pl%>%<pl%>:%>%{Ӑ%}р%>се CASE-PL ;
+
+!LEXICON POS-PL-FRONT		! Posession plural
+!
+!%<px1sg%>%<pl%>:%>ӗм%>се CASE-PL ;
+!%<px2sg%>%<pl%>:%>ӳ%>се CASE-PL ;
+!%<px3sp%>%<pl%>:%>%{ӗ%}%>се CASE-PL ;
+!%<px1pl%>%<pl%>:%>ӗм%>ӗр%>се CASE-PL ;
+!%<px2pl%>%<pl%>:%>ӗр%>се CASE-PL ;
+
+LEXICON POS-PL-BACK		! Posession plural
+
+%<px1sg%>%<pl%>:%>ӑм%>се CASE-PL ;
+%<px2sg%>%<pl%>:%>у%>се CASE-PL ;
+%<px3sp%>%<pl%>:%>%{ӗ%}%>се CASE-PL ;
+%<px1pl%>%<pl%>:%>ӑм%>ӑр%>се CASE-PL ;
+%<px2pl%>%<pl%>:%>ӑр%>се CASE-PL ;
+
+LEXICON POS-PL-DUP		! Posession plural
+
+%<px1sg%>%<pl%>:%{dup%}%>%{Ӑ%}м%>се CASE-PL ;
+%<px2sg%>%<pl%>:%{dup%}%>%{У%}%>се CASE-PL ;
+%<px3sp%>%<pl%>:%{dup%}%>и%>се CASE-PL ;
+%<px1pl%>%<pl%>:%{dup%}%>%{Ӑ%}м%>%{Ӑ%}р%>се CASE-PL ;
+%<px2pl%>%<pl%>:%{dup%}%>%{Ӑ%}р%>се CASE-PL ;
+
+LEXICON POS-PL-И		! Posession plural
+
+%<px1sg%>%<pl%>:%>й%{Ӑ%}м%>се CASE-PL ;
+%<px2sg%>%<pl%>:%>й%{У%}%>се CASE-PL ;
+%<px3sp%>%<pl%>:%>йӗ%>се CASE-PL ;
+%<px1pl%>%<pl%>:%>й%{Ӑ%}м%>%{Ӑ%}р%>се CASE-PL ;
+%<px2pl%>%<pl%>:%>й%{Ӑ%}р%>се CASE-PL ;
+
+LEXICON POS-PL-А		! Posession plural
+
+%<px1sg%>%<pl%>:а%>м%>се CASE-PL ;
+%<px2sg%>%<pl%>:%>у%>се CASE-PL ;
+%<px3sp%>%<pl%>:%>и%>се CASE-PL ;
+%<px1pl%>%<pl%>:а%>м%>%{Ӑ%}р%>се CASE-PL ;
+%<px2pl%>%<pl%>:а%>р%>се CASE-PL ;
+
+LEXICON POS-PL-О		! Posession plural
+
+%<px1sg%>%<pl%>:о%>м%>се CASE-PL ;
+%<px2sg%>%<pl%>:%>у%>се CASE-PL ;
+%<px3sp%>%<pl%>:%>и%>се CASE-PL ;
+%<px1pl%>%<pl%>:о%>м%>%{Ӑ%}р%>се CASE-PL ;
+%<px2pl%>%<pl%>:о%>р%>се CASE-PL ;
+
+LEXICON POS-PL-ЬЯ		! Posession plural
+
+%<px1sg%>%<pl%>:ья%>м%>се CASE-PL ;
+%<px2sg%>%<pl%>:ь%>ю%>се CASE-PL ;
+%<px3sp%>%<pl%>:%>йи%>се CASE-PL ;
+%<px1pl%>%<pl%>:ья%>м%>%{Ӑ%}р%>се CASE-PL ;
+%<px2pl%>%<pl%>:ья%>р%>се CASE-PL ;
+
+LEXICON POS-PL-Е		! Posession plural
+
+%<px1sg%>%<pl%>:е%>м%>се CASE-PL ;
+%<px2sg%>%<pl%>:%>ӳ%>се CASE-PL ;
+%<px3sp%>%<pl%>:%>и%>се CASE-PL ;
+%<px1pl%>%<pl%>:е%>м%>%{Ӑ%}р%>се CASE-PL ;
+%<px2pl%>%<pl%>:е%>р%>се CASE-PL ;
+
+LEXICON POS-PL-АТТЕ		! Posession plural
+
+%<px1sg%>%<pl%>:тте%>м%>се CASE-PL ;
+%<px2sg%>%<pl%>:ҫ%>ӳ%>се CASE-PL ;
+%<px3sp%>%<pl%>:шш%>ӗ%>се CASE-PL ;
+%<px1pl%>%<pl%>:тте%>м%>%{Ӑ%}р%>се CASE-PL ;
+%<px2pl%>%<pl%>:тте%>р%>се CASE-PL ;
+
+LEXICON POS-PL-АННЕ		! Posession plural
+
+%<px1sg%>%<pl%>:нне%>м%>се CASE-PL ;
+%<px2sg%>%<pl%>:нн%>ӳ%>се CASE-PL ;
+%<px3sp%>%<pl%>:м%>ӑшӗ%>се CASE-PL ;
+%<px1pl%>%<pl%>:нне%>м%>%{Ӑ%}р%>се CASE-PL ;
+%<px2pl%>%<pl%>:нне%>р%>се CASE-PL ;
+
+LEXICON POS-PL-ПИЧЧЕ		! Posession plural
+
+%<px1sg%>%<pl%>:нне%>м%>се CASE-PL ;
+%<px2sg%>%<pl%>:нн%>ӳ%>се CASE-PL ;
+%<px3sp%>%<pl%>:м%>ӑшӗ%>се CASE-PL ;
+%<px1pl%>%<pl%>:нне%>м%>%{Ӑ%}р%>се CASE-PL ;
+%<px2pl%>%<pl%>:нне%>р%>се CASE-PL ;
+
+LEXICON POS-PL-МУЧИ		! Posession plural
+
+%<px1sg%>%<pl%>:нне%>м%>се CASE-PL ;
+%<px2sg%>%<pl%>:нн%>ӳ%>се CASE-PL ;
+%<px3sp%>%<pl%>:м%>ӑшӗ%>се CASE-PL ;
+%<px1pl%>%<pl%>:нне%>м%>%{Ӑ%}р%>се CASE-PL ;
+%<px2pl%>%<pl%>:нне%>р%>се CASE-PL ;
+
+LEXICON POS-PL-КИНЕМЕЙ		! Posession plural
+
+%<px1sg%>%<pl%>:нне%>м%>се CASE-PL ;
+%<px2sg%>%<pl%>:нн%>ӳ%>се CASE-PL ;
+%<px3sp%>%<pl%>:м%>ӑшӗ%>се CASE-PL ;
+%<px1pl%>%<pl%>:нне%>м%>%{Ӑ%}р%>се CASE-PL ;
+%<px2pl%>%<pl%>:нне%>р%>се CASE-PL ;
+
+LEXICON POS-PL-КУКАҪИ		! Posession plural
+
+%<px1sg%>%<pl%>:нне%>м%>се CASE-PL ;
+%<px2sg%>%<pl%>:нн%>ӳ%>се CASE-PL ;
+%<px3sp%>%<pl%>:м%>ӑшӗ%>се CASE-PL ;
+%<px1pl%>%<pl%>:нне%>м%>%{Ӑ%}р%>се CASE-PL ;
+%<px2pl%>%<pl%>:нне%>р%>се CASE-PL ;
+
+!LEXICON POS-PL-CC		! Posession plural
+!
+!%<px1sg%>%<pl%>:%>%{Ӑ%}м%>се CASE-PL ;
+!%<px2sg%>%<pl%>:%>%{У%}%>се CASE-PL ;
+!%<px3sp%>%<pl%>:%{dup%}%>и%>се CASE-PL ;
+!%<px1pl%>%<pl%>:%>%{Ӑ%}м%>%{Ӑ%}р%>се CASE-PL ;
+!%<px2pl%>%<pl%>:%>%{Ӑ%}р%>се CASE-PL ;
+
+LEXICON POS-INFL ! After possession
+
+%<pl%>:%>се%{М%} CASE ;
+CASE ;
+
+LEXICON POS-NUM             	! Posession for numerals
+
+%<px1pl%>:%>с%{Ӑ%}м%{Ӑ%}р CASE ;
+%<px2pl%>:%>с%{Ӑ%}р CASE ;
+%<px3sp%>:%>ш%{А%}р CASE ;
+
+LEXICON POS		! Posession
+
+%<px1sg%>:%>%{Ӑ%}м POS-INFL ;
+%<px2sg%>:%>%{У%}%{н2%} POS-INFL ;
+%<px3sp%>:%>%{ӗ%}%{н%} POS-INFL ;
+%<px1pl%>:%>%{Ӑ%}м%>%{Ӑ%}р POS-INFL ;
+%<px2pl%>:%>%{Ӑ%}р POS-INFL ;
+
+LEXICON POS-И		! Posession for Chuvash nouns with final и
+
+%<px1sg%>:%>й%{Ӑ%}м CASE ;
+%<px2sg%>:%>й CASE-PX2SG ;
+%<px3sp%>:%>й CASE-PX3SP ;
+%<px1pl%>:%>й%{Ӑ%}м%>%{Ӑ%}р CASE ;
+%<px2pl%>:%>й%{Ӑ%}р CASE ;
+POS-PL-И ;
+
+LEXICON POS-А		! Posession for Chuvash nouns with final а
+
+%<px1sg%>:а%>м CASE ;
+%<px2sg%>:%> CASE-PX2SG ;
+%<px3sp%>:%> CASE-PX3SP-И ;
+%<px1pl%>:а%>м%>%{Ӑ%}р CASE ;
+%<px2pl%>:а%>р CASE ;
+POS-PL-А ;
+
+LEXICON POS-О		! Posession for Chuvash nouns with final о
+
+%<px1sg%>:о%>м CASE ;
+%<px2sg%>:%> CASE-PX2SG-BACK ;
+%<px3sp%>:%> CASE-PX3SP-И ;
+%<px1pl%>:о%>м%>%{Ӑ%}р CASE ;
+%<px2pl%>:о%>р CASE ;
+POS-PL-О ;
+
+LEXICON POS-ЬЯ		! Posession for Chuvash nouns with final ья
+
+%<px1sg%>:ья%>м CASE ;
+%<px2sg%>:ь%> CASE-PX2SG-Я ;
+%<px3sp%>:%>й CASE-PX3SP-И ;
+%<px1pl%>:ья%>м%>%{Ӑ%}р CASE ;
+%<px2pl%>:%>йӑр CASE ;
+POS-PL-ЬЯ ;
+
+LEXICON POS-Ӑ_Ӗ
+
+%<px1sg%>:%>%{Ӑ%}м CASE ;
+%<px2sg%>:%> CASE-PX2SG ;
+%<px3sp%>:%> CASE-PX3SP ;
+%<px1pl%>:%>%{Ӑ%}м%>%{Ӑ%}р CASE ;
+%<px2pl%>:%>%{Ӑ%}р CASE ;
+POS-PL ;
+
+!LEXICON POS-FRONT	! Posession for Chuvash nouns forcing front vowels
+!
+!%<px1sg%>:%>ӗм CASE ;
+!%<px2sg%>:%> CASE-PX2SG-FRONT ;
+!%<px3sp%>:%> CASE-PX3SP ;
+!%<px1pl%>:%>ӗм%>ӗр CASE ;
+!%<px2pl%>:%>ӗр CASE ;
+!POS-PL-FRONT ;
+
+LEXICON POS-BACK	! Posession for Chuvash nouns forcing back vowels
+
+%<px1sg%>:%>ӑм CASE ;
+%<px2sg%>:%> CASE-PX2SG-BACK ;
+%<px3sp%>:%> CASE-PX3SP ;
+%<px1pl%>:%>ӑм%>ӑр CASE ;
+%<px2pl%>:%>ӑр CASE ;
+POS-PL-BACK ;
+
+LEXICON POS-Е		! Posession for Chuvash nouns with final е
+
+%<px1sg%>:е%>м CASE ;
+%<px2sg%>:%> CASE-PX2SG-FRONT ;
+%<px3sp%>:%> CASE-PX3SP-И ;
+%<px1pl%>:е%>м%>ӗр CASE ;
+%<px2pl%>:е%>р CASE ;
+POS-PL-Е ;
+
+LEXICON POS-АТТЕ
+
+%<px1sg%>:тте%>м CASE ;
+%<px2sg%>:ҫ%> CASE-PX2SG-FRONT ;
+%<px3sp%>:шш%> CASE-PX3SP ;
+%<px1pl%>:тте%>м%>ӗр CASE ;
+%<px2pl%>:тте%>р CASE ;
+POS-PL-АТТЕ ;
+
+LEXICON POS-АННЕ
+
+%<px1sg%>:нне%>м CASE ;
+%<px2sg%>:нн%> CASE-PX2SG-FRONT ;
+%<px3sp%>:м%>ӑш CASE-PX3SP ;
+%<px1pl%>:нне%>м%>ӗр CASE ;
+%<px2pl%>:нне%>р CASE ;
+POS-PL-АННЕ ;
+
+LEXICON POS-ПИЧЧЕ
+
+%<px1sg%>:нне%>м CASE ;
+%<px2sg%>:нн%> CASE-PX2SG-FRONT ;
+%<px3sp%>:м%>ӑш CASE-PX3SP ;
+%<px1pl%>:нне%>м%>ӗр CASE ;
+%<px2pl%>:нне%>р CASE ;
+POS-PL-ПИЧЧЕ ;
+
+LEXICON POS-МУЧИ
+
+%<px1sg%>:нне%>м CASE ;
+%<px2sg%>:нн%> CASE-PX2SG-FRONT ;
+%<px3sp%>:м%>ӑш CASE-PX3SP ;
+%<px1pl%>:нне%>м%>ӗр CASE ;
+%<px2pl%>:нне%>р CASE ;
+POS-PL-МУЧИ ;
+
+LEXICON POS-КИНЕМЕЙ
+
+%<px1sg%>:нне%>м CASE ;
+%<px2sg%>:нн%> CASE-PX2SG-FRONT ;
+%<px3sp%>:м%>ӑш CASE-PX3SP ;
+%<px1pl%>:нне%>м%>ӗр CASE ;
+%<px2pl%>:нне%>р CASE ;
+POS-PL-КИНЕМЕЙ ;
+
+LEXICON POS-КУКАҪИ
+
+%<px1sg%>:нне%>м CASE ;
+%<px2sg%>:нн%> CASE-PX2SG-FRONT ;
+%<px3sp%>:м%>ӑш CASE-PX3SP ;
+%<px1pl%>:нне%>м%>ӗр CASE ;
+%<px2pl%>:нне%>р CASE ;
+POS-PL-КУКАҪИ ;
+
+LEXICON POS-VCӐ	! Posession for Chuvash nouns with final Vowel + Cons + ӑ
+
+%<px1sg%>:%{dup%}%>ӑм CASE ;
+%<px2sg%>:%{dup%}%> CASE-PX2SG-BACK ;
+%<px3sp%>:%{dup%}%> CASE-PX3SP-И ;
+%<px1pl%>:%{dup%}%>ӑм%>ӑр CASE ;
+%<px2pl%>:%{dup%}%>ӑр CASE ;
+POS-PL-DUP ;
+
+LEXICON POS-VCӖ	! Posession for Chuvash nouns with final Vowel + Cons + ӗ
+
+%<px1sg%>:%{dup%}%>ӗм CASE ;
+%<px2sg%>:%{dup%}%> CASE-PX2SG-FRONT ;
+%<px3sp%>:%{dup%}%> CASE-PX3SP-И ;
+%<px1pl%>:%{dup%}%>ӗм%>ӗр CASE ;
+%<px2pl%>:%{dup%}%>ӗр CASE ;
+POS-PL-DUP ;
+
+!LEXICON POS-CC		! Posession for Chuvash nous with final (double) consonant
+!
+!%<px1sg%>:%>%{Ӑ%}м CASE ;
+!%<px2sg%>:%> CASE-PX2SG ;
+!%<px3sp%>:%{dup%}%> CASE-PX3SP-И ;
+!%<px1pl%>:%>%{Ӑ%}м%>%{Ӑ%}р CASE ;
+!%<px2pl%>:%>%{Ӑ%}р CASE ;
+!POS-PL-CC ;
+
+LEXICON N-INFL 		! Chuvash nouns, standard paradigm
+
+CASE ;
+!%<n%>%<pl%>:%>се CASE-PL ;
+%<pl%>:%>се%{М%} CASE ;
+POS ;
+
+LEXICON N-INFL-DUP
+
+:%{dup%}%{Ӑ%} N ;
+
+LEXICON N
+
+%<n%>: N-INFL ; 
+
+LEXICON N-INFL-Й 	! Chuvash nouns with final й
+
+%<n%>:%{й%} N-INFL ;
+
+LEXICON NP-Top
+
+%<np%>%<top%>: CASE ;
+
+LEXICON NP-Ant-F
+
+%<np%>%<ant%>%<f%>: CASE ;
+
+LEXICON NP-Ant-M
+
+%<np%>%<ant%>%<m%>: CASE ;
+
+LEXICON NP-Cog-F
+
+%<np%>%<cog%>%<f%>: CASE ;
+
+LEXICON NP-Cog-M
+
+%<np%>%<cog%>%<m%>: CASE ;
+
+LEXICON NP-Ant-F-И	! Chuvash nouns with final и
+
+%<np%>%<ant%>%<f%>: CASE-NOM ;
+%<np%>%<ant%>%<f%>: CASE-GEN_DAT-И ;
+%<np%>%<ant%>%<f%>: CASE-LOC_ABL ;
+%<np%>%<ant%>%<f%>: CASE-INS_PRIV_TERM ;
+
+LEXICON N-INFL-RUS-NONOM 	! Russian nouns, standard paradigm without nominative
+
+%<n%>: CASE-OBL-BACK ;
+%<n%>%<pl%>:%>се CASE-PL ;
+%<n%>: POS-BACK ;
+
+LEXICON N-INFL-RUS 	! Russian nouns, standard paradigm
+
+%<n%>: CASE-NOM ;
+N-INFL-RUS-NONOM ;
+
+LEXICON N-INFL-RUS_A-UNSTR 	! Russian nouns with final unstressed а
+
+%<n%>:а CASE-NOM ;
+%<n%>: CASE-Ӑ-OBL ;
+%<n%>%<pl%>:ӑ%>се CASE-PL ;
+%<n%>: POS-BACK ;
+
+LEXICON N-INFL-RUS_Е-UNSTR 	! Russian nouns with final unstressed е
+
+%<n%>:е CASE-NOM ;
+%<n%>: CASE-Ӗ-OBL ;
+%<n%>%<pl%>:ӗ%>се CASE-PL ;
+%<n%>: POS-BACK ;
+
+LEXICON NP-Ant-M-RUS 		! Russian proper nouns (masculine)
+
+%<np%>%<ant%>%<m%>: CASE-NOM ;
+%<np%>%<ant%>%<m%>: CASE-OBL-BACK ;
+
+LEXICON NP-Ant-F-RUS 		! Russian proper nouns (feminine)
+
+%<np%>%<ant%>%<f%>: CASE-NOM ;
+%<np%>%<ant%>%<f%>: CASE-OBL-BACK ;
+
+LEXICON NP-Ant-M-RUS_Я-UNSTR 	! Russian proper nouns with final unstressed я (masculine)
+
+%<np%>%<ant%>%<m%>:я CASE-NOM ;
+%<np%>%<ant%>%<m%>: CASE-Ӑ-OBL-NP-RUS ;
+
+LEXICON NP-Ant-F-RUS_Я-UNSTR 	! Russian proper nouns with final unstressed я (feminine)
+
+%<np%>%<ant%>%<f%>:я CASE-NOM ;
+%<np%>%<ant%>%<f%>: CASE-Ӑ-OBL-NP-RUS ;
+
+LEXICON NP-Ant-M-RUS_A-UNSTR 	! Russian proper nouns with final unstressed а (masculine)
+
+%<np%>%<ant%>%<m%>:а CASE-NOM ;
+%<np%>%<ant%>%<m%>: CASE-Ӑ-OBL ;
+
+LEXICON NP-Ant-F-RUS_A-UNSTR 	! Russian proper nouns with final unstressed а (feminine)
+
+%<np%>%<ant%>%<f%>:а CASE-NOM ;
+%<np%>%<ant%>%<f%>: CASE-Ӑ-OBL ;
+
+! LEXICON N-INFL-Л_Н 	! Chuvash nouns with final л or н
+! 
+! %<n%>: CASE-NOM ;
+! %<n%>: CASE-GEN_DAT ;
+! %<n%>: CASE-LOC_ABL-Л_Ль_Н ;
+! %<n%>: CASE-INS_PRIV_TERM ;
+! %<n%>%<pl%>:%>се CASE-PL ;
+! %<n%>: POS ;
+
+LEXICON N-INFL-CC	! Chuvash nouns with final variable double consonant 
+
+%<n%>:%{dup%} N-INFL ;
+
+LEXICON N-INFL-RUS-CC 	! Russian nouns with final variable double consonant
+
+%<n%>:%{dup%} CASE-NOM ;
+%<n%>: CASE-OBL-BACK ;
+%<n%>%<pl%>:%>се CASE-PL ;
+%<n%>: POS-BACK ;
+
+! LEXICON N-INFL-Ь_NO_ЛЬ	! Chuvash nouns with final ь, but not ль
+! 
+! CASE-Ь ;
+! %<n%>:ь CASE-LOC_ABL ;
+! %<n%>: POS-FRONT ;
+! 
+! LEXICON N-INFL-ЛЬ	! Chuvash nouns with final ль
+! 
+! CASE-Ь ;
+! %<n%>:ь CASE-LOC_ABL-Л_Ль_Н ;
+! %<n%>: POS-FRONT ;
+
+LEXICON N-INFL-RUS-СТЬ	! Russian nouns with final ть, дь
+
+%<n%>:сть CASE-NOM ;
+%<n%>:ҫ CASE-GEN_DAT-BACK ;
+%<n%>:ҫ CASE-LOC_ABL-BACK ;
+%<n%>:ҫ CASE-INS_PRIV_TERM-BACK ;
+%<n%>%<pl%>:ҫ%>се CASE-PL ;
+%<n%>:ҫ POS-BACK ;
+
+! LEXICON N-INFL-А	! Chuvash nouns with final а
+! 
+! %<n%>:а CASE-NOM ;
+! %<n%>:а CASE-GEN_DAT-А_Е ;
+! %<n%>:а CASE-LOC_ABL ;
+! %<n%>:а CASE-INS_PRIV_TERM ;
+! %<n%>%<pl%>:а%>се CASE-PL ;
+! %<n%>: POS-А;
+
+LEXICON N-INFL-Ӑ	! Chuvash nouns with final ӑ
+
+%<n%>:ӑ CASE-NOM ;
+%<n%>:ӑ CASE-GEN_DAT-А_Е ;
+%<n%>:ӑ CASE-LOC_ABL ;
+%<n%>:ӑ CASE-INS_PRIV_TERM ;
+%<n%>%<pl%>:ӑ%>се CASE-PL ;
+%<n%>: POS-А;
+
+LEXICON CASE-Е	! Chuvash nouns with final е
+
+CASE-NOM ;
+CASE-GEN_DAT-А_Е ;
+CASE-LOC_ABL ;
+CASE-INS_PRIV_TERM ;
+%<pl%>:%>се CASE-PL ;
+
+LEXICON N-INFL-Е	! Chuvash nouns with final е
+
+%<n%>:е CASE-Е ;
+%<n%>: POS-Е;
+
+LEXICON N-INFL-АТТЕ
+
+%<n%>:тте CASE-Е ;
+%<n%>: POS-АТТЕ;
+
+LEXICON N-INFL-АННЕ
+
+%<n%>:нне CASE-Е ;
+%<n%>: POS-АННЕ;
+
+LEXICON N-INFL-ПИЧЧЕ
+
+%<n%>:нне CASE-Е ;
+%<n%>: POS-ПИЧЧЕ;
+
+LEXICON N-INFL-МУЧИ
+
+%<n%>:нне CASE-Е ;
+%<n%>: POS-МУЧИ;
+
+LEXICON N-INFL-КИНЕМЕЙ
+
+%<n%>:нне CASE-Е ;
+%<n%>: POS-КИНЕМЕЙ;
+
+LEXICON N-INFL-КУКАҪИ
+
+%<n%>:нне CASE-Е ;
+%<n%>: POS-КУКАҪИ;
+
+LEXICON N-INFL-RUS-О	! Russian nouns with final о and possessives
+
+%<n%>:о CASE-NOM ;
+%<n%>:о CASE-GEN_DAT-О ;
+%<n%>:о CASE-LOC_ABL-BACK ;
+%<n%>:о CASE-INS_PRIV_TERM-BACK ;
+%<n%>%<pl%>:о%>се CASE-PL ;
+%<n%>: POS-О;
+
+LEXICON N-INFL-ЬЯ	! Chuvash nouns with final ья
+
+%<n%>:ья CASE-NOM ;
+%<n%>:ья CASE-GEN_DAT-А_Е ;
+%<n%>:ья CASE-LOC_ABL ;
+%<n%>:ья CASE-INS_PRIV_TERM ;
+%<n%>%<pl%>:ья%>се CASE-PL ;
+%<n%>: POS-ЬЯ;
+
+LEXICON N-INFL-И	! Chuvash nouns with final и
+
+%<n%>: CASE-NOM ;
+%<n%>: CASE-GEN_DAT-И ;
+%<n%>: CASE-LOC_ABL ;
+%<n%>: CASE-INS_PRIV_TERM ;
+%<n%>%<pl%>:%>се CASE-PL ;
+%<n%>: POS-И ;
+
+!LEXICON N-INFL-Ӳ	! Chuvash nouns with final ӳ
+!
+!%<n%>: CASE-Ӳ ;
+!%<n%>%<pl%>:ӳ%>се CASE-PL ;
+!%<n%>:ӗв POS ;
+!
+!LEXICON N-INFL-У	! Chuvash nouns with final у
+!
+!%<n%>: CASE-У ;
+!%<n%>%<pl%>:у%>се CASE-PL ;
+!%<n%>:ӑв POS ;
+
+LEXICON N-INFL-Ӑ_Ӗ-NONOM	! Chuvash nouns with final ӑ or ӗ (without nominative)
+
+%<n%>: CASE-Ӑ_Ӗ-OBL ;
+%<n%>%<pl%>:%{Ӑ%}%>се CASE-PL ;
+%<n%>: POS-Ӑ_Ӗ ;
+
+LEXICON N-INFL-Ӑ_Ӗ	! Chuvash nouns with final ӑ or ӗ
+
+%<n%>:%{Ӑ%} CASE-NOM ;
+N-INFL-Ӑ_Ӗ-NONOM ;
+
+LEXICON N-INFL-VCӐ	! Chuvash nouns with final Vowel + Cons + ӑ
+
+%<n%>: CASE-VCӐ ;
+%<n%>%<pl%>:ӑ%>се CASE-PL ;
+%<n%>: POS-VCӐ;
+
+LEXICON N-INFL-VCӖ	! Chuvash nouns with final Vowel + Cons + ӗ
+
+%<n%>: CASE-VCӖ ;
+%<n%>%<pl%>:ӗ%>се CASE-PL ;
+%<n%>: POS-VCӖ ;
+
+
+LEXICON DIGITLEX
+
+%<num%>: # ; 
+
+LEXICON PRON-PERS
+
+эпӗ%<prn%>%<pers%>%<p1%>%<sg%>%<nom%>:эпӗ # ;
+эпӗ%<prn%>%<pers%>%<p1%>%<sg%>%<gen%>:ман # ;
+эпӗ%<prn%>%<pers%>%<p1%>%<sg%>%<gen%>:манӑн # ;		! Dir/LR
+эпӗ%<prn%>%<pers%>%<p1%>%<sg%>%<dat%>:мана # ;
+эпӗ%<prn%>%<pers%>%<p1%>%<sg%>%<loc%>:манра # ;
+эпӗ%<prn%>%<pers%>%<p1%>%<sg%>%<abl%>:манран # ;
+эпӗ%<prn%>%<pers%>%<p1%>%<sg%>%<ins%>:манпа # ;
+эпӗ%<prn%>%<pers%>%<p3%>%<pl%>%<abe%>:мансӑр #;
+эпӗ%<prn%>%<pers%>%<p3%>%<pl%>%<term%>:маншӑн #;
+
+эсӗ%<prn%>%<pers%>%<p2%>%<sg%>%<nom%>:эсӗ # ;
+эсӗ%<prn%>%<pers%>%<p2%>%<sg%>%<gen%>:сан # ;
+эсӗ%<prn%>%<pers%>%<p2%>%<sg%>%<gen%>:санӑн # ;		! Dir/LR
+эсӗ%<prn%>%<pers%>%<p2%>%<sg%>%<dat%>:сана # ;
+эсӗ%<prn%>%<pers%>%<p2%>%<sg%>%<loc%>:санра # ;
+эсӗ%<prn%>%<pers%>%<p2%>%<sg%>%<abl%>:санран # ;
+эсӗ%<prn%>%<pers%>%<p2%>%<sg%>%<ins%>:санпа # ;
+эсӗ%<prn%>%<pers%>%<p3%>%<pl%>%<abe%>:сансӑр #;
+эсӗ%<prn%>%<pers%>%<p3%>%<pl%>%<term%>:саншӑн #;
+
+вӑл%<prn%>%<pers%>%<p3%>%<sg%>%<nom%>:вӑл # ;
+вӑл%<prn%>%<pers%>%<p3%>%<sg%>%<gen%>:ун # ;
+вӑл%<prn%>%<pers%>%<p3%>%<sg%>%<gen%>:унӑн # ;		! Dir/LR
+вӑл%<prn%>%<pers%>%<p3%>%<sg%>%<dat%>:ӑна # ;
+вӑл%<prn%>%<pers%>%<p3%>%<sg%>%<loc%>:унра # ;
+вӑл%<prn%>%<pers%>%<p3%>%<sg%>%<abl%>:унран # ;
+вӑл%<prn%>%<pers%>%<p3%>%<sg%>%<ins%>:унпа # ;
+вӑл%<prn%>%<pers%>%<p3%>%<pl%>%<abe%>:унсӑр #;
+вӑл%<prn%>%<pers%>%<p3%>%<pl%>%<term%>:уншӑн #;
+
+эпир%<prn%>%<pers%>%<p1%>%<pl%>%<nom%>:эпир #;
+эпир%<prn%>%<pers%>%<p1%>%<pl%>%<nom%>:эпӗр #;		! Dir/LR
+эпир%<prn%>%<pers%>%<p1%>%<pl%>%<gen%>:пирӗн #;
+эпир%<prn%>%<pers%>%<p1%>%<pl%>%<dat%>:пире #;
+эпир%<prn%>%<pers%>%<p1%>%<pl%>%<loc%>:пирӗнте #;
+эпир%<prn%>%<pers%>%<p1%>%<pl%>%<loc%>:пирте #;		! Dir/LR
+эпир%<prn%>%<pers%>%<p1%>%<pl%>%<abl%>:пирӗнтен #;
+эпир%<prn%>%<pers%>%<p1%>%<pl%>%<abl%>:пиртен #;	! Dir/LR
+эпир%<prn%>%<pers%>%<p1%>%<pl%>%<ins%>:пирӗнпе #;
+эпир%<prn%>%<pers%>%<p3%>%<pl%>%<abe%>:пирӗнсӗр #;
+эпир%<prn%>%<pers%>%<p3%>%<pl%>%<term%>:пирӗншӗн #;
+
+эсир%<prn%>%<pers%>%<p2%>%<pl%>%<nom%>:эсир #;
+эсир%<prn%>%<pers%>%<p2%>%<pl%>%<nom%>:эсӗр #;		! Dir/LR
+эсир%<prn%>%<pers%>%<p2%>%<pl%>%<gen%>:сирӗн #;
+эсир%<prn%>%<pers%>%<p2%>%<pl%>%<dat%>:сире #;
+эсир%<prn%>%<pers%>%<p2%>%<pl%>%<loc%>:сирӗнте #;
+эсир%<prn%>%<pers%>%<p2%>%<pl%>%<loc%>:сирте #;		! Dir/LR
+эсир%<prn%>%<pers%>%<p2%>%<pl%>%<abl%>:сирӗнтен #;
+эсир%<prn%>%<pers%>%<p2%>%<pl%>%<abl%>:сиртен #;	! Dir/LR
+эсир%<prn%>%<pers%>%<p2%>%<pl%>%<ins%>:сирӗнпе #;
+эсир%<prn%>%<pers%>%<p3%>%<pl%>%<abe%>:сирӗнсӗр #;
+эсир%<prn%>%<pers%>%<p3%>%<pl%>%<term%>:сирӗншӗн #;
+
+вӗсем%<prn%>%<pers%>%<p3%>%<pl%>%<nom%>:вӗсем #;
+вӗсем%<prn%>%<pers%>%<p3%>%<pl%>%<gen%>:вӗсен #;
+вӗсем%<prn%>%<pers%>%<p3%>%<pl%>%<gen%>:вӗсенӗн #;	! Dir/LR
+вӗсем%<prn%>%<pers%>%<p3%>%<pl%>%<dat%>:вӗсене #;
+вӗсем%<prn%>%<pers%>%<p3%>%<pl%>%<loc%>:вӗсенче #;
+вӗсем%<prn%>%<pers%>%<p3%>%<pl%>%<abl%>:вӗсенчен #;
+вӗсем%<prn%>%<pers%>%<p3%>%<pl%>%<ins%>:вӗсемпе #;
+вӗсем%<prn%>%<pers%>%<p3%>%<pl%>%<abe%>:вӗсемсӗр #;
+вӗсем%<prn%>%<pers%>%<p3%>%<pl%>%<term%>:вӗсемшӗн #;
+
+LEXICON PRON-ITG
+
+%<prn%>%<itg%>: CASE ; 
+
+LEXICON PRON-DEM
+
+%<prn%>%<dem%>: CASE ; 
+%<prn%>%<dem%>%<pl%>:%>се CASE-PL ; 
+
+LEXICON PRON-REFL
+
+%<prn%>%<ref%>%<nom%>: # ;
+%<prn%>%<ref%>%<gen%>:%>ӗн # ;
+%<prn%>%<ref%>%<dat%>:%>не # ;
+%<prn%>%<ref%>%<loc%>:%>ӗнче # ;
+%<prn%>%<ref%>%<abl%>:%>ӗнчен # ;
+%<prn%>%<ref%>%<ins%>:%>пе # ;
+%<prn%>%<ref%>%<abe%>:%>с%{Ӑ%}р # ;
+%<prn%>%<ref%>%<term%>:%>ш%{Ӑ%}н # ;
+%<prn%>%<ref%>%<pl%>:%>се CASE-PL ; 
+
+
+LEXICON CC 
+
+%<cnjcoo%>: # ;
+
+LEXICON DETIND
+
+%<det%>%<ind%>: # ;
+
+LEXICON DETDEM
+
+%<det%>%<dem%>: # ;
+
+
+LEXICON NUM-OPR
+
+%<num%>: # ;
+
+LEXICON NUM-SUB
+
+%<num%>%<subst%>: POS ;
+%<num%>%<ord%>:%>м{Ӑ%}ш  # ;
+%<num%>%<ord%>:%>се%{М%} CASE ; 
+%<num%>%<coll%>:%>{Ӑ%}н # ;
+
+LEXICON NUM-DIST
+%<num%>%<dist%>:%>ш{Ӑ%}р # ;
+%<num%>%<dist%>%<coll%>:%>ш{Ӑ%}р{Ӑ%}н # ;
+
+
+LEXICON PREDLEX
+
+%<pred%>: COP ; 
+
+LEXICON PREDLEX-NEG
+
+%<pred%>%<neg%>: COP ; 
+
+LEXICON ADV-ITG
+
+%<adv%>%<itg%>: # ;
+
+LEXICON ADV
+
+%<adv%>: # ;
+
+LEXICON ADJ-АВАН	
+
+%<adj%>: COP ;
+%<adj%>%<comp%>:%>т%{А%}р%{А%}х COP ; ! Dir/LR
+%<adj%>%<comp%>:%>р%{А%}х COP ;
+%<adj%>%<subst%>: N-INFL ; 
+
+LEXICON ADJ-ЙЫВӐР
+
+%<adj%>: COP ;
+%<adj%>%<comp%>:%>т%{А%}р%{А%}х COP ;
+%<adj%>%<subst%>: N-INFL ; 
+
+LEXICON ADJ-ХИТРЕ
+
+%<adj%>: COP ;
+%<adj%>%<comp%>:%>р%{А%}х COP ;
+%<adj%>%<subst%>: N-INFL ;
+
+LEXICON V-PERS-PRES
+
+%<p1%>%<sg%>:т%>%{Ӑ%}п K ;
+%<p2%>%<sg%>:т%>%{Ӑ%}н K ;
+%<p3%>%<sg%>:т%>%{ь%} K ;
+%<p1%>%<pl%>:т%>п%{Ӑ%}р K ;
+%<p2%>%<pl%>:т%>%{Ӑ%}р K ;
+%<p3%>%<pl%>:ҫҫ%>ӗ K ;
+
+LEXICON V-PERS-PRES-NEG
+
+%<p1%>%<sg%>:с%>т%>%{Ӑ%}п K ;
+%<p2%>%<sg%>:с%>т%>%{Ӑ%}н K ;
+%<p3%>%<sg%>:с%>т%>%{ь%} K ;
+%<p1%>%<pl%>:с%>т%>п%{Ӑ%}р K ;
+%<p2%>%<pl%>:с%>т%>%{Ӑ%}р K ;
+%<p3%>%<pl%>:%>ҫҫ%>ӗ K ;
+
+LEXICON V-PERS-EVID
+
+%<p1%>%<sg%>:%>%{Ӑ%}м K ;
+%<p2%>%<sg%>:%>%{Ӑ%}н K ;
+%<p3%>%<sg%>:%>ӗ K ;
+%<p1%>%<pl%>:%>%{Ӑ%}м%{Ӑ%}р K ;
+%<p2%>%<pl%>:%>%{Ӑ%}р K ;
+%<p3%>%<pl%>:%>ӗҫ K ;
+
+LEXICON V-PERS-Т-EVID
+
+%<p1%>%<sg%>:т%>%{Ӑ%}м K ;
+%<p2%>%<sg%>:т%>%{Ӑ%}н K ;
+%<p3%>%<sg%>:ч%>ӗ K ;
+%<p1%>%<pl%>:т%>%{Ӑ%}м%{Ӑ%}р K ;
+%<p2%>%<pl%>:т%>%{Ӑ%}р K ;
+%<p3%>%<pl%>:ч%>%ӗҫ K ;
+
+LEXICON V-PERS-PIH
+
+%<p1%>%<sg%>:т%>%{Ӑ%}м K ;
+%<p2%>%<sg%>:т%>%{Ӑ%}н K ;
+%<p3%>%<sg%>:ч%>ӗ K ;
+%<p1%>%<pl%>:т%>%{Ӑ%}м%{Ӑ%}р K ;
+%<p2%>%<pl%>:т%>%{Ӑ%}р K ;
+%<p3%>%<pl%>:ч%>ӗҫ K ;
+
+LEXICON V-PERS-PIH-NEG
+
+%<p1%>%<sg%>:%>%{Ӑ%}м K ;
+%<p2%>%<sg%>:%>%{Ӑ%}н K ;
+%<p3%>%<sg%>:ч%>ӗ K ;
+%<p1%>%<pl%>:%>%{Ӑ%}м%{Ӑ%}р K ;
+%<p2%>%<pl%>:%>%{Ӑ%}р K ;
+%<p3%>%<pl%>:ч%>ӗҫ K ;
+
+LEXICON V-PERS-FUT
+
+%<p1%>%<sg%>:%>%{Ӑ%}п K ;
+%<p2%>%<sg%>:%>%{Ӑ%}н K ;
+%<p3%>%<sg%>:%>ӗ K ;
+%<p1%>%<pl%>:%>%{Ӑ%}п%{Ӑ%}р K ;
+%<p2%>%<pl%>:%>%{Ӑ%}р K ;
+%<p3%>%<pl%>:%>ӗҫ K ;
+
+LEXICON V-PERS-COND
+
+%<p1%>%<sg%>:%{Ӑ%}тт%>%{Ӑ%}м K ;
+%<p2%>%<sg%>:%{Ӑ%}тт%>%{Ӑ%}н K ;
+%<p3%>%<sg%>:ӗчч%>ӗ K ;
+%<p1%>%<pl%>:%{Ӑ%}тт%>%{Ӑ%}м%{Ӑ%}р K ;
+%<p2%>%<pl%>:%{Ӑ%}тт%>%{Ӑ%}р K ;
+%<p3%>%<pl%>:ӗчч%>ӗҫ K ;
+
+LEXICON V-PERS-OPT
+
+%<p1%>%<sg%>:%{Ӑ%}п%>ин K ;
+%<p2%>%<sg%>:%{Ӑ%}с%>%{Ӑ%}н K ;
+%<p3%>%<sg%>:%>ин K ;
+%<p1%>%<pl%>:%{Ӑ%}п%>%{Ӑ%}рин K ;
+%<p2%>%<pl%>:%{Ӑ%}с%>%{Ӑ%}р K ;
+%<p3%>%<pl%>:%{Ӑ%}ҫ%>ин K ;
+
+LEXICON V-PERS-IMP
+
+%<p1%>%<sg%>:%>%{А%}м PART-IMP ;
+%<p2%>%<sg%>:%> PART-IMP ;
+%<p3%>%<sg%>:%>т%{Ӑ%}р PART-IMP ;
+%<p1%>%<pl%>:%>%{А%}р PART-IMP ;
+%<p2%>%<pl%>:%>%{Ӑ%}р PART-IMP ;
+%<p3%>%<pl%>:%>чч%{Ӑ%}р PART-IMP ;
+
+LEXICON V-PERS-IMP-А
+
+%<p1%>%<sg%>:%>%{А%}м PART-IMP ;
+%<p2%>%<sg%>:%{А%}%> PART-IMP ;
+%<p3%>%<sg%>:%{А%}%>т%{Ӑ%}р PART-IMP ;
+%<p1%>%<pl%>:%>%{А%}р PART-IMP ;
+%<p2%>%<pl%>:%>%{Ӑ%}р PART-IMP ;
+%<p3%>%<pl%>:%{А%}%>чч%{Ӑ%}р PART-IMP ;
+
+LEXICON PART-IMP			! Partícules per reforҫar o afluixar l'ordre
+
+:%> # ;
+%+ха%<adv%>:%>%-ха # ;				! Dir/LR
+!:%>с%{А%}м # ;				! Dir/LR
+
+! чӗ/ччӗ		
+
+LEXICON VINFL-COMMON
+
+%<inf%>:%>м%{А%} K ;
+%<inf%>:%>м%{А%}шк%{Ӑ%}н K ;		  ! Dir/LR
+%<past%>:%>н%{Ӑ%} K ;
+%<neg%>%<past%>:%>м%{А%}%>н K ;
+
+%<pres%>:%>%{А%} V-PERS-PRES ;
+%<neg%>%<pres%>:%>м%{А%} V-PERS-PRES-NEG ;
+%<evid%>:%>р V-PERS-EVID ;
+%<neg%>%<evid%>:%>м%{А%}%>р V-PERS-EVID ;
+%<pih%>:%>%{А%}т V-PERS-PIH ;
+%<neg%>%<pih%>:%>м%{А%}с%>т V-PERS-PIH-NEG ;
+%<fut%>:%> V-PERS-FUT ;
+%<neg%>%<fut%>:%>м%> V-PERS-FUT ;
+%<cond%>:%> V-PERS-COND ;
+%<neg%>%<cond%>:%>м%> V-PERS-COND ;
+%<opt%>:%> V-PERS-OPT ;
+%<neg%>%<opt%>:%>м%> V-PERS-OPT ;
+%<imp%>: V-PERS-IMP ;
+
+LEXICON V_Л_Н_Р_INFL-COMMON
+
+%<inf%>:%>м%{А%} # ;
+%<inf%>:%>м%{А%}шк%{Ӑ%}н # ;		  ! Dir/LR
+%<past%>:%>н%{Ӑ%} # ;
+%<neg%>%<past%>:%>м%{А%}%>н # ;
+
+%<pres%>:%>%{А%} V-PERS-PRES ;
+%<neg%>%<pres%>:%>м%{А%} V-PERS-PRES-NEG ;
+%<evid%>:%> V-PERS-Т-EVID ;
+%<neg%>%<evid%>:%>м%{А%}%>р V-PERS-EVID ;
+%<pih%>:%>%{А%}т V-PERS-PIH ;
+%<neg%>%<pih%>:%>м%{А%}с%>т V-PERS-PIH-NEG ;
+%<fut%>:%> V-PERS-FUT ;
+%<neg%>%<fut%>:%>м%> V-PERS-FUT ;
+%<cond%>:%> V-PERS-COND ;
+%<neg%>%<cond%>:%>м%> V-PERS-COND ;
+%<opt%>:%> V-PERS-OPT ;
+%<neg%>%<opt%>:%>м%> V-PERS-OPT ;
+%<imp%>: V-PERS-IMP ;
+
+LEXICON VIV_ТӐР_INFL-COMMON
+
+%<inf%>:р%>м%{А%} # ;
+%<inf%>:%>м%{А%}шк%{Ӑ%}н # ;		  ! Dir/LR
+%<past%>:%>н%{Ӑ%} # ;
+%<neg%>%<past%>:%>м%{А%}%>н # ;
+
+%<pres%>:р%>%{А%} V-PERS-PRES ;
+%<neg%>%<pres%>:%>м%{А%} V-PERS-PRES-NEG ;	! the -р falls
+%<evid%>:р%> V-PERS-Т-EVID ;
+%<neg%>%<evid%>:р%>м%{А%}%>р V-PERS-EVID ;
+%<pih%>:р%>%{А%}т V-PERS-PIH ;
+%<neg%>%<pih%>:р%>м%{А%}с%>т V-PERS-PIH-NEG ;
+%<fut%>:р%> V-PERS-FUT ;
+%<neg%>%<fut%>:р%>м%> V-PERS-FUT ;
+%<cond%>:р%> V-PERS-COND ;
+%<neg%>%<cond%>:р%>м%> V-PERS-COND ;
+%<opt%>:р%> V-PERS-OPT ;
+%<neg%>%<opt%>:р%>м%> V-PERS-OPT ;
+%<imp%>:р V-PERS-IMP ;
+
+LEXICON V_A_INFL-COMMON
+
+%<inf%>:а%>м%{А%} # ;
+%<inf%>:а%>м%{А%}шк%{Ӑ%}н # ;		  ! Dir/LR
+%<past%>:а%>н%{Ӑ%} # ;
+%<neg%>%<past%>:а%>м%{А%}%>н # ;
+
+%<pres%>:%>%{А%} V-PERS-PRES ;
+%<neg%>%<pres%>:а%>м%{А%} V-PERS-PRES-NEG ;
+%<evid%>:а%>р V-PERS-EVID ;
+%<neg%>%<evid%>:а%>м%{А%}%>р V-PERS-EVID ;
+%<pih%>:%>%{А%}т V-PERS-PIH ;
+%<neg%>%<pih%>:а%>м%{А%}с%>т V-PERS-PIH-NEG ;
+%<fut%>:%> V-PERS-FUT ;
+%<neg%>%<fut%>:а%>м%> V-PERS-FUT ;
+%<cond%>:%> V-PERS-COND ;
+%<neg%>%<cond%>:а%>м%> V-PERS-COND ;
+%<opt%>:%> V-PERS-OPT ;
+%<neg%>%<opt%>:а%>м%> V-PERS-OPT ;
+%<imp%>: V-PERS-IMP-А ;
+
+LEXICON V_E_INFL-COMMON
+
+%<inf%>:е%>м%{А%} # ;
+%<inf%>:е%>м%{А%}шк%{Ӑ%}н # ;		  ! Dir/LR
+%<past%>:е%>н%{Ӑ%} # ;
+%<neg%>%<past%>:е%>м%{А%}%>н # ;
+
+%<pres%>:%>%{А%} V-PERS-PRES ;
+%<neg%>%<pres%>:е%>м%{А%} V-PERS-PRES-NEG ;
+%<evid%>:е%>р V-PERS-EVID ;
+%<neg%>%<evid%>:е%>м%{А%}%>р V-PERS-EVID ;
+%<pih%>:%>%{А%}т V-PERS-PIH ;
+%<neg%>%<pih%>:е%>м%{А%}с%>т V-PERS-PIH-NEG ;
+%<fut%>:%> V-PERS-FUT ;
+%<neg%>%<fut%>:е%>м%> V-PERS-FUT ;
+%<cond%>:%> V-PERS-COND ;
+%<neg%>%<cond%>:е%>м%> V-PERS-COND ;
+%<opt%>:%> V-PERS-OPT ;
+%<neg%>%<opt%>:е%>м%> V-PERS-OPT ;
+%<imp%>:е V-PERS-IMP ;
+
+LEXICON VTV_CONS_INFL
+
+%<v%>%<tv%>: VINFL-COMMON ;
+
+LEXICON VIV_CONS_INFL
+
+%<v%>%<iv%>: VINFL-COMMON ;
+
+LEXICON VTV_Л_Н_Р_INFL
+
+%<v%>%<tv%>: V_Л_Н_Р_INFL-COMMON ;
+
+LEXICON VIV_Л_Н_Р_INFL
+
+%<v%>%<iv%>: V_Л_Н_Р_INFL-COMMON ;
+
+LEXICON VTV_ПАР_INFL
+
+%<v%>%<tv%>: VIV_ТӐР_INFL-COMMON ;
+
+LEXICON VIV_ТӐР_INFL
+
+%<v%>%<iv%>: VIV_ТӐР_INFL-COMMON;
+
+LEXICON VTV_A_INFL
+
+%<v%>%<tv%>: V_A_INFL-COMMON ;
+
+LEXICON VIV_A_INFL
+
+%<v%>%<iv%>: V_A_INFL-COMMON ;
+
+LEXICON VTV_E_INFL
+
+%<v%>%<tv%>: V_E_INFL-COMMON ;
+
+LEXICON VIV_E_INFL
+
+%<v%>%<iv%>: V_E_INFL-COMMON ;
+
+
+LEXICON PART 
+
+%<part%>: # ;
+
+
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+!!
+!! 
+!!
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+
+LEXICON Particles
+
+ҫук:ҫук PART ; 
+
+LEXICON Conjunctions
+
+тата CC ; 
+анчах CC ;  ! FIXME: Check
+та:та CC ; 
+та:те CC ; 		! Dir/LR
+
+LEXICON Pronouns 
+
+ку:ку PRON-DEM ;
+леш:леш PRON-DEM ;
+ҫак:ҫак PRON-DEM ;
+ҫакӑ:ҫак PRON-DEM ;	! Dir/LR
+ҫав:ҫав PRON-DEM ;
+ҫавӑ:ҫав PRON-DEM ;	! Dir/LR
+хӑй:хӑй PRON-REFL ;
+кам:кам PRON-ITG ;
+мӗн:мӗн PRON-ITG ;
+
+PRON-PERS ;
+
+LEXICON Determiners
+
+! пӗр DETIND ; ! "un"
+нихӑш DETIND ; ! ""
+леш DETDEM ; !
+ку DETDEM ; !
+ҫак PRON-DEM ; !
+
+LEXICON Numerals
+
+пӗрре:пӗр NUM-OPR ;
+иккӗ:икӗ NUM-OPR ;
+виҫҫӗ:виҫӗ NUM-OPR ;
+тӑваттӑ:тӑватӑ NUM-OPR ;
+пиллӗк:пилӗк NUM-OPR ;
+улттӑ:ултӑ NUM-OPR ;
+ҫиччӗ:ҫичӗ NUM-OPR ;
+саккӑр:сакӑр NUM-OPR ;
+тӑххӑр:тӑхӑр NUM-OPR ;
+вуннӑ:вунӑ NUM-OPR ;
+
+пӗрре NUM-SUB ;
+иккӗ NUM-SUB ;
+виҫҫӗ NUM-SUB ;
+тӑваттӑ NUM-SUB ;
+пиллӗк NUM-SUB ;
+улттӑ NUM-SUB ;
+ҫиччӗ NUM-SUB ;
+саккӑр NUM-SUB ;
+тӑххӑр NUM-SUB ;
+вуннӑ NUM-SUB ;
+ҫирӗм  NUM-SUB ;
+вӑтӑр  NUM-SUB ;
+хӗрӗх  NUM-SUB ;
+аллӑ  NUM-SUB ;
+утмӑл  NUM-SUB ;
+ҫитмӗл  NUM-SUB ;
+сакӑрвуннӑ  NUM-SUB ;
+тӑхӑрвуннӑ  NUM-SUB ;
+ҫӗр  NUM-SUB ;
+пин  NUM-SUB ;
+миллион  NUM-SUB ;
+миллиард  NUM-SUB ; 
+
+пӗрре:пӗр NUM-DIST ;
+иккӗ:ик NUM-DIST ;
+виҫҫӗ:виҫ NUM-DIST ;
+тӑваттӑ:тӑват NUM-DIST ;
+пиллӗк:пилӗк NUM-DIST ;
+улттӑ:улт NUM-DIST ;
+ҫиччӗ:ҫич NUM-DIST ;
+саккӑр:сакӑр NUM-DIST ;
+тӑххӑр:тӑхӑр NUM-DIST ;
+вуннӑ:вун NUM-DIST ;
+
+иккӗ:ик POS-NUM ;
+виҫҫӗ:виҫ POS-NUM ;
+тӑваттӑ:тӑват POS-NUM ;
+пиллӗк:пилӗк POS-NUM ;
+улттӑ:улт POS-NUM ;
+ҫиччӗ:ҫич POS-NUM ;
+
+
+LEXICON Nouns
+
+ял  N ; ! 'poble' 
+ӗҫ  N ; ! 'treball' 
+уй  N ; ! 'camp' 
+ир  N ; ! 'matí' 
+ту  N ; ! 'muntanya' 
+шу  N ; ! '' 
+пӳ  N ; ! 'creixement'
+шыв  N ; ! 'aigua' 
+ҫын N-INFL-CC ; ! 'home' 
+йӗп N-INFL-CC ; ! 'agulla' 
+пус  N ; ! 'cèntim' 
+ача N ; 
+арçын% ача N ; ! 
+пахча  N ; ! 'jardí' 
+упа N ; ! 'ós'
+усӑ:ус  N-INFL-VCӐ ; ! 'servei, interès' 
+ӳхӗ  N ; ! 'mussol' 
+енӗ:ен  N-INFL-VCӖ ; ! 'vaca' 
+чыс  N ; ! 'honor' 
+пыл  N ; ! 'mel' 
+тӗн  N ; ! 'religió' 
+кин  N ; ! 'núvia' 
+урам  N ; ! 'carrer' 
+хула  N ; ! 'ciutat'
+шӑши  N-INFL-И ; ! 'ratolí' 
+ҫыру  N ; ! 'carta' 
+хӑю  N ; !
+!пӗлӳ:пӗл  N ; ! 'fet' 
+пӗлӳ  N ; ! 'fet' 
+йытӑ  N ; ! 'gos' 
+! сӑвӑ:сӑв  N-INFL-VCӐ ;
+сӑвӑ:сӑв N-INFL-DUP ;
+пулӑ:пул  N-INFL-VCӐ ; ! 'peix'			???
+вӑрӑ:вӑр  N-INFL-VCӐ ; !
+вӑйӑ:вӑй  N-INFL-VCӐ ; !
+ҫӑкӑ:ҫӑк  N-INFL-VCӐ ; ! 'conte' 
+чикӗ:чик  N-INFL-VCӖ ; ! 'frontera' 
+кӳлӗ:кӳл  N-INFL-VCӖ ; ! 'llac' 
+ҫӗпӗ:ҫӗп  N-INFL-VCӖ ;
+чӗпӗ:чӗп  N-INFL-VCӖ ;
+тулӑ:тул  N-INFL-VCӐ ;
+пуртӑ:пурт  N-INFL-VCӐ ; ! 'destral'		! DUP
+ҫурт  N ; ! 'casa' 
+ыхра  N ; ! 'all' 
+атте:а  N-INFL-АТТЕ ; ! 'pare'
+анне:а  N-INFL-АННЕ ; ! 'mare'
+!пичче:пичч  N-INFL-ПИЧЧЕ ; ! 'germà gran'		PENDENT
+!мучи:муч  N-INFL-МУЧИ ; ! 'старший брат отца или муж старшей сестры матери'		PENDENT
+!кинемей:кинеме  N-INFL-КИНЕМЕЙ ; ! 'жена старшего брата отца или матери'		PENDENT
+!кукаҫи:кука  N-INFL-КУКАҪИ ; ! 'дедушка с материнской стороны'		PENDENT
+шкул  N ; ! 'escola' 
+чечек  N ; ! 'flor' 
+вӑкӑр  N ; ! 'bou' 
+!ҫӑкӑр  N ; ! 'pa' 
+тӗкӗр  N ; ! 'espill' 
+чӗрӗп  N ; ! 'eriҫó' 
+хӗвел  N ; ! 'sol' 
+автан  N ; ! 'gall' 
+сӗтел  N ; ! 'taula' 
+пукан  N ; ! 'cadira' 
+супӑнь  N ;	! 'sabó'
+йывӑҫ  N ; ! 'arbre, fusta' 
+кукӑль  N ; ! 'pastís' 
+каҫма N ; ! 'pas, passadís' 
+кӗсъе:кӗсъ  N-INFL-Е ; ! 'butxaca' 		! REVISAR possessius
+варри  N-INFL-И ; ! 'centre' 
+тухъя:тух  N-INFL-ЬЯ ; ! 'barret típic de dona'
+кӗнеке:кӗнек  N-INFL-Е ; ! 'llibre' 
+паллӑ:палл  N-INFL-Ӑ_Ӗ ; ! 'senyal'
+юлташ  N ; ! 'amic' 
+мулкач  N ; ! 'conill' 
+медресе:медрес  N-INFL-Е ; ! 'madrassa' 
+тимӗрҫӗ:тимӗрҫ  N-INFL-Ӑ_Ӗ ; ! 'ferrer' 
+атте-анне:атте-а  N-INFL-АННЕ ; ! 'pares'
+сӗтел-пукан  N ; ! 'moble' 
+хурҫӑ:хурҫ  N-INFL-Ӑ_Ӗ ;
+чей:че N-INFL-Й ;
+сарай:сара N-INFL-Й ;
+турккӑ  N ; ! 'turc' 
+вӗрентекен  N ; ! 'mestre' 		!!! WARNING: вӗрентекенӗм > вӗрентекнӗм
+
+проспект  N-INFL-RUS ; ! 'avinguda'
+власть:вла  N-INFL-RUS-СТЬ ; ! 'poder' 
+склад  N-INFL-RUS ; ! 'magatzem'
+сад N-INFL-RUS ; ! 'jardí'
+тетрадь  N ; ! 'llibreta' 
+металл:метал  N-INFL-RUS-CC ; ! 'metall' 
+класс:клас  N-INFL-RUS-CC ; ! 'classe'
+информаци  N-INFL-И ; ! 'informació' 
+!кино  N ; ! 'cinema' 
+министерство:министерств  N-INFL-RUS-О ; ! 'ministeri' 
+контролёр N-INFL-RUS ;
+вальс N-INFL-RUS ;
+июль N ;
+июнь N ;
+!май N ;
+меню N-INFL-RUS ;
+дело:дел N-INFL-RUS-О ;
+литература:литератур N-INFL-RUS_A-UNSTR ;
+стена N ;
+шоссе:шосс N-INFL-Е ;
+!герой N ;
+!музей N ;
+!платье p. 82
+!няня p. 82
+!аллея p. 82
+
+хӗр N ; ! 'xica'
+кушак N ; ! ?
+вӑхӑт N ; 
+пӳрт N ; 
+ҫанталӑк N ;
+куҫ N ;
+чӳрече N ;
+хурав N ;
+чухне N ;
+чӗре N ;
+пуҫне N ;
+каллех N ;
+сас N ;
+алӑ:ал  N-INFL-Ӑ ; ! ''
+ал N ;
+кил N ;
+паян N ; ! ""
+анчӑк N ; ! ""
+авиаци N ; ! ""
+йӗри%-тавра N ; 
+ылтӑн N ; ! ""
+шав N ; ! ""
+ҫурӑм N ; ! ""
+япала N ; ! ""
+ҫӗр N ; ! ""
+кун N ; ! ""
+выльӑх N ; ! ""
+акка N ; ! ""
+ывӑл N ; ! "son"
+чӑваш N ; ! "txuvaix"
+ҫул N ; ! "any"
+!чӗлхе:чӗлх N-INFL-Е ; ! "llengua"
+чӗлхе N ; ! "llengua"
+бригадир N ; ! ""
+завод N ; ! ""
+автобус N ; ! ""
+урок N ; ! ""
+студент N ; ! ""
+
+алӑ N ; ! ""
+ама N ; ! ""
+арҫын N ; ! ""
+аристократ N ; ! ""
+бюрократ N ; ! ""
+виле N ; ! ""
+географ N ; ! ""
+географи N ; ! ""
+ӗшенчӗк N ; ! ""
+йӗпӗлти N ; ! ""
+йӗрке N ; ! ""
+картлашка N ; ! ""
+конституци N ; ! ""
+мӗскӗн N ; ! ""
+мӑшкӑл N ; ! ""
+металл N ; ! ""
+мӗшӗлти N ; ! ""
+пӗлӳсӗрлӗх N ; ! ""
+пӑлхавҫӑ N ; ! ""
+пӑр N ; ! ""
+пӑрлӑ N ; ! ""
+пенсионер N ; ! ""
+пӗрлӗхлӗ N ; ! ""
+ҫитменлӗх N ; ! ""
+сулӑ N ; ! ""
+сыпӑ N ; ! ""
+сыпӑк N ; ! ""
+тӑлӑх N ; ! ""
+тӑнӑҫлӑх N ; ! ""
+танлӑх N ; ! ""
+тӗрӗс N ; ! ""
+тирпейсӗр N ; ! ""
+тумла N ; ! ""
+тӳрем N ; ! ""
+тӳремҫи N ; ! ""
+хирургилле N ; ! ""
+хусах N ; ! ""
+хушӑ N ; ! ""
+чӗркуҫҫи N ; ! ""
+чиновник N ; ! ""
+чунсӑр N ; ! ""
+чухӑн N ; ! ""
+шӑрӑх N ; ! ""
+шӑтӑк N ; ! ""
+шӑллӑ N ; ! ""
+шанчӑклӑ N ; ! ""
+ыйткалакан N ; ! ""
+
+ум N ; ! ""
+ул N ; ! ""
+самант N ; ! ""
+сасӑ N ; ! ""
+кайӑк N ; ! ""
+пуҫ:пуҫ N ; ! ""
+сивӗ:сивӗ N ; ! ""
+ҫавра:ҫавра N ; ! ""
+хыҫ:хыҫ N ; ! ""
+ыйту:ыйту N ; ! "" 
+аппа:аппа N ; ! ""
+тул:тул N ; ! ""
+сĕтел:сĕтел N ; ! ""
+
+LEXICON Proper_Names
+
+Шупашкар  NP-Top ;
+
+Ҫутӑли  NP-Ant-F-И ;
+Ана NP-Ant-F ;
+Алпарух  NP-Ant-M ;
+Петӗр NP-Ant-M ;
+Ахмет NP-Ant-M-RUS ;
+Фран NP-Ant-M-RUS ;
+Борис NP-Ant-M-RUS ;
+Джеймс NP-Ant-M-RUS ;
+Владимир NP-Ant-M-RUS ;
+Эктор NP-Ant-M-RUS ;
+Эдуард NP-Ant-M-RUS ;
+Николай NP-Ant-M-RUS ;
+Алексей NP-Ant-M-RUS ;
+Михаил NP-Ant-M-RUS ;
+Леонид NP-Ant-M-RUS ;
+Пётр NP-Ant-M-RUS ;
+Пётр:Петр NP-Ant-M-RUS ; ! Dir/LR
+Саша:Саш  NP-Ant-M-RUS_A-UNSTR ;
+Мэри:Мэри  NP-Ant-F-RUS ;
+Саша:Саш  NP-Ant-F-RUS_A-UNSTR ;
+Маша:Маш  NP-Ant-F-RUS_A-UNSTR ;
+Марина:Марин NP-Ant-F-RUS_A-UNSTR ;
+Анна:Анн  NP-Ant-F-RUS_A-UNSTR ;
+Оксана:Оксан  NP-Ant-F-RUS_A-UNSTR ;
+Лариса:Ларис  NP-Ant-F-RUS_A-UNSTR ;
+Наташа:Наташ NP-Ant-F-RUS_A-UNSTR ;
+Ольга:Ольг NP-Ant-F-RUS_A-UNSTR ;
+Ваня:Ван NP-Ant-M-RUS_Я-UNSTR ;
+Коля:Кол NP-Ant-M-RUS_Я-UNSTR ;
+Женя:Жен NP-Ant-M-RUS_Я-UNSTR ;
+Петя:Пет NP-Ant-M-RUS_Я-UNSTR ;
+!Ксения p. 82
+!Мария
+
+Яковлев NP-Cog-M ; 
+Афанасьев NP-Cog-M ; 
+Яковлева NP-Cog-F ; 
+Афанасьева NP-Cog-F ; 
+
+LEXICON Adjectives
+
+пысӑк ADJ-ХИТРЕ ;  ! ""
+шӑрӑх ADJ-ХИТРЕ ;  ! ""
+хитре ADJ-ХИТРЕ ;  ! ""
+аван ADJ-АВАН ;  ! ""
+лайӑх ADJ-ХИТРЕ ; ! "хороший"
+пӗчӗк ADJ-ХИТРЕ ; ! "маленький"
+хавас ADJ-ХИТРЕ ; ! "радостный"
+сивӗ ADJ-ХИТРЕ ; ! "холодный"
+аслӑ ADJ-ХИТРЕ ; ! ""
+ҫӗрӗк ADJ-ХИТРЕ ; ! ""
+
+
+пуян ADJ-АВАН ;
+кӗҫӗн ADJ-АВАН ;
+пӗчӗк ADJ-ХИТРЕ ;
+лайӑх ADJ-ХИТРЕ ;
+кайӑк ADJ-ХИТРЕ ;
+
+шӗнӗ ADJ-ХИТРЕ ;
+ӑшӑ ADJ-ХИТРЕ ;
+хавас ADJ-ХИТРЕ ;
+!ӗҫ ADJ-ХИТРЕ ; ! "рабочий, трудовой"
+чылай ADJ-ХИТРЕ ;
+!чӑваш ADJ-ХИТРЕ ; ! "чувашский"
+!ҫын ADJ-ХИТРЕ ; ! "человеческий"
+урлӑ ADJ-ХИТРЕ ; ! "поперечный" 
+тӗп ADJ-ХИТРЕ ; ! "главный, основной"
+кӗрет ADJ-ХИТРЕ ; ! "открытый, гласный"
+тӗрлӗ ADJ-ХИТРЕ ; ! "разный, различный, всякий"
+
+йывӑр ADJ-ЙЫВӐР ; !
+питӗ ADJ-ХИТРЕ ; ! ""
+
+LEXICON Adverbs
+
+и%<qst%>:и # ;
+
+ӑҫта ADV-ITG ; ! ""
+мӗскер ADV-ITG ; ! ""
+мӗнле ADV-ITG ; ! ""
+мӗншӗн ADV-ITG ; ! ""
+
+ан ADV ; ! ""
+паян ADV ; ! ""
+тен ADV ; ! ""
+питӗ ADV ; ! ""
+ӑшӑ ADV ; ! ""
+пӗрле ADV ; ! ""
+халӗ ADV ; ! ""
+анчах ADV ; ! "сейчас"
+ӗнер ADV ; ! "вчера"
+хуллен ADV ; ! ""
+паллах ADV ; ! ""
+кӑна ADV ; ! ""
+вара ADV ; ! ""
+хыҫҫӑн ADV ; ! ""
+ҫитӗ ADV ; ! ""
+хуш ADV ; ! ""
+итту ADV ;  ! ""
+хӑвӑрт ADV ;  ! ""
+ялан ADV ; !  ""
+кайран ADV ; ! ""
+каллех:каллех ADV ; ! ""
+хӑвӑрттăн:хӑвӑрттăн ADV ; ! ""
+майӑпен:майӑпен ADV ; ! ""
+
+LEXICON Verbs
+
+пур PREDLEX ;
+мар PREDLEX-NEG ;
+ҫук PREDLEX-NEG ;
+
+вӑран VIV_Л_Н_Р_INFL ;	! to wake up
+вӗрен VIV_CONS_INFL ;	! to learn
+вула:вул VTV_A_INFL ; 	! to read
+ҫи VTV_CONS_INFL ;	! to eat
+ҫу VTV_CONS_INFL ;	! to drink
+ҫывӑр VIV_CONS_INFL ;	! to sleep
+ҫыр VTV_CONS_INFL ;	! to write
+ҫӳре:ҫӳр VIV_E_INFL ; 	! to walk
+ӗҫле:ӗҫл VIV_E_INFL ; 	! to work
+итле:итл VIV_E_INFL ; 	! to listen
+кай VIV_CONS_INFL ;	! to leave
+кала:кал VTV_A_INFL ; 	! to say
+кил VIV_Л_Н_Р_INFL ;	! to come
+кул VIV_Л_Н_Р_INFL ;	! to laugh, смеяться
+кур VTV_Л_Н_Р_INFL ;	! to see
+лар VIV_Л_Н_Р_INFL ;	! to sit
+пӑx VTV_CONS_INFL ;	! to look
+пӗл VTV_Л_Н_Р_INFL ;	! to know
+пӗтер VTV_Л_Н_Р_INFL ;	! to end
+пурӑн VIV_CONS_INFL ;	! to live
+пуҫла:пуҫл VTV_A_INFL ; ! to begin
+пыр VIV_Л_Н_Р_INFL ;	! to go
+ташла:ташл VTV_A_INFL ; ! to dance
+чар VTV_CONS_INFL ;	! to stop
+шутла:шутл VTV_A_INFL ; ! to think
+!выля:выль VIV_A_INFL ; ! to play
+
+! small group of verbs with falling final -р
+пар:па VTV_ПАР_INFL ;	! to give
+тӑр:тӑ VIV_ТӐР_INFL ;	! to stand, стоять
+кӗр:кӗ VIV_ТӐР_INFL ;	! to enter, заходить
+йӗр:йӗ VIV_ТӐР_INFL ;	! to weep
+кӳр:кӳ VTV_ПАР_INFL ;	! to bring
+пер:пе VTV_ПАР_INFL ;	! to throw, shoot
+пыр:пы VIV_ТӐР_INFL ;	! to go
+хур:ху VTV_ПАР_INFL ;	! to place, put
+шӑр:шӑ VIV_ТӐР_INFL ;	! to urinate
+яр:я VTV_ПАР_INFL ;	! to send, leave, let, release
+
+!!! Fran
+пул VIV_Л_Н_Р_INFL ;	! to be(?)
+те VTV_E_INFL ; 	! to ?
+кур:ку VTV_ПАР_INFL ;  ! ? 
+сӑна:сӑн VTV_A_INFL ;   ! ? 
+хуравла:хуравл VTV_A_INFL ;   ! ?
+хупла:хупл VTV_A_INFL ;   ! ?
+пӑх VTV_CONS_INFL ;	! ?
+ыйт VTV_CONS_INFL ;	! ?
+чуп VIV_CONS_INFL ;	! ?
+анкар VTV_CONS_INFL ;	! ?
+витӗр VTV_CONS_INFL ;	! ?
+курӑн VIV_CONS_INFL ;	! ?
+сӗн VTV_CONS_INFL ; ! ?
+ил VTV_CONS_INFL ; ! ? make ?
+упра:упр VTV_A_INFL ;   ! ? 
+йӳҫ VIV_CONS_INFL ; ! ?
+сав VTV_CONS_INFL ; ! ?
+туп VTV_CONS_INFL ; 
+тейер VTV_CONS_INFL ; 
+кай VIV_CONS_INFL ; 
+туй VTV_CONS_INFL ; 
+кур VTV_CONS_INFL ; 
+тар VIV_CONS_INFL ; 
+пул VIV_CONS_INFL ; 
+пӗл VTV_CONS_INFL ; 
+пӑх VTV_CONS_INFL ; 
+юрат VTV_CONS_INFL ; 
+ӑнтӑл VIV_CONS_INFL ; 
+тух VIV_CONS_INFL ; 
+
+лек VIV_CONS_INFL ;	! ?
+
+!      5 #выля<v><iv>
+!      3 #те<v><tv>
+!      2 #су<v><tv>
+!      2 #пупле<v><iv>
+!      1 #уя<v><iv>
+!      1 #тӑнла<v><tv>
+!      1 #ҫи<v><tv>
+!      1 #пӑх<v><tv>
+!      1 #ме<v><tv>
+!      1 #ӑсла<v><tv>
+
+
+LEXICON Punctuation
+
+.%<sent%>:. # ;
+..%<sent%>:.. # ;
+...%<sent%>:... # ;
+%;%<sent%>:%; # ;
+%:%<sent%>:%: # ;
+%!%<sent%>:%! # ;
+%-%<guio%>:%- # ;
+%—%<guio%>:%— # ;
+,%<cm%>:, # ;
+%?%<sent%>:%? # ; 
+%'%<apos%>:%' # ;
+%"%<sent%>:%" # ;
+%«%<lquot%>:%« # ;
+%»%<rquot%>:%» # ;
+%”%<rquot%>:%” # ;
+%“%<lquot%>:%“ # ;
+%(%<lpar%>:%( # ;
+%]%<rpar%>:%] # ;
+%[%<lpar%>:%[ # ;
+%)%<rpar%>:%) # ;
+\%<sent%>:\ # ;
+/%<sent%>:/ # ;
+
+<(%0 | 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9)+>  DIGITLEX ; ! Use/Circ   ! Dir/LR

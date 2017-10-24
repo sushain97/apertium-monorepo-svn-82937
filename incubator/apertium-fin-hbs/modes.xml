@@ -1,0 +1,419 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<modes>
+  <!-- fin → hbs --> 
+
+  <mode name="fin-hbs" install="yes">
+    <pipeline>
+      <program name="hfst-proc -e -w">
+        <file name="fin-hbs.automorf.hfst"/>
+      </program>
+      <program name="cg-proc -1 -n -w">
+        <file name="fin-hbs.rlx.bin"/>
+      </program>
+      <program name="apertium-pretransfer"/>
+      <program name="lt-proc -b">
+        <file name="fin-hbs.autobil.bin"/>
+      </program>
+      <program name="lrx-proc -m">
+        <file name="fin-hbs.autolex.bin"/>
+      </program>
+      <program name="apertium-transfer -b">
+        <file name="apertium-fin-hbs.fin-hbs.t1x"/>
+        <file name="fin-hbs.t1x.bin"/>
+      </program>
+      <program name="apertium-interchunk">
+        <file name="apertium-fin-hbs.fin-hbs.t2x"/>
+        <file name="fin-hbs.t2x.bin"/>
+      </program>
+      <program name="apertium-postchunk">
+        <file name="apertium-fin-hbs.fin-hbs.t3x"/>
+        <file name="fin-hbs.t3x.bin"/>
+      </program>
+      <program name="lt-proc $1">
+        <file name="fin-hbs.autogen.bin"/>
+      </program>
+    </pipeline>
+  </mode>
+
+  <mode name="fin-hbs-debug" install="no">
+    <pipeline>
+      <program name="hfst-proc -e -w">
+        <file name="fin-hbs.automorf.hfst"/>
+      </program>
+      <program name="cg-proc -1 -n -w">
+        <file name="fin-hbs.rlx.bin"/>
+      </program>
+      <program name="apertium-pretransfer"/>
+      <program name="lt-proc -b">
+        <file name="fin-hbs.autobil.bin"/>
+      </program>
+      <program name="lrx-proc -m -t">
+        <file name="fin-hbs.autolex.bin"/>
+      </program>
+      <program name="apertium-transfer -b">
+        <file name="apertium-fin-hbs.fin-hbs.t1x"/>
+        <file name="fin-hbs.t1x.bin"/>
+      </program>
+      <program name="apertium-interchunk">
+        <file name="apertium-fin-hbs.fin-hbs.t2x"/>
+        <file name="fin-hbs.t2x.bin"/>
+      </program>
+      <program name="apertium-postchunk">
+        <file name="apertium-fin-hbs.fin-hbs.t3x"/>
+        <file name="fin-hbs.t3x.bin"/>
+      </program>
+      <program name="lt-proc -d">
+        <file name="fin-hbs.autogen.bin"/>
+      </program>
+    </pipeline>
+  </mode>
+ 
+  
+  <mode name="fin-hbs-morph" install="no">
+    <pipeline>
+      <program name="hfst-proc -e -w">
+        <file name="fin-hbs.automorf.hfst"/>
+      </program>
+    </pipeline>
+  </mode>
+
+  <mode name="fin-hbs-disam" install="no">
+    <pipeline>
+      <program name="hfst-proc -e -w">
+        <file name="fin-hbs.automorf.hfst"/>
+      </program>
+      <program name="cg-conv -a"/>
+      <program name="vislcg3 --trace --grammar">
+        <file name="fin-hbs.rlx.bin"/>
+      </program>
+    </pipeline>
+  </mode>
+
+
+  <mode name="fin-hbs-tagger" install="no">
+    <pipeline>
+      <program name="hfst-proc -e -w">
+        <file name="fin-hbs.automorf.hfst"/>
+      </program>
+      <program name="cg-proc -1 -n -w">
+        <file name="fin-hbs.rlx.bin"/>
+      </program>
+      <program name="apertium-pretransfer"/>
+    </pipeline>
+  </mode>
+
+  <mode name="fin-hbs-biltrans" install="no">
+    <pipeline>
+      <program name="hfst-proc -e -w">
+        <file name="fin-hbs.automorf.hfst"/>
+      </program>
+      <program name="cg-proc -1 -n -w">
+        <file name="fin-hbs.rlx.bin"/>
+      </program>
+      <program name="apertium-pretransfer"/>
+      <program name="lt-proc -b">
+        <file name="fin-hbs.autobil.bin"/>
+      </program>
+    </pipeline>
+  </mode>
+
+  <mode name="fin-hbs-lextor" install="no">
+    <pipeline>
+      <program name="hfst-proc -e -w">
+        <file name="fin-hbs.automorf.hfst"/>
+      </program>
+      <program name="cg-proc -1 -n -w">
+        <file name="fin-hbs.rlx.bin"/>
+      </program>
+      <program name="apertium-pretransfer"/>
+      <program name="lt-proc -b">
+        <file name="fin-hbs.autobil.bin"/>
+      </program>
+      <program name="lrx-proc -m -t">
+        <file name="fin-hbs.autolex.bin"/>
+      </program>
+    </pipeline>
+  </mode>
+
+
+  <mode name="fin-hbs-transfer" install="no">
+    <pipeline>
+      <program name="hfst-proc -e -w">
+        <file name="fin-hbs.automorf.hfst"/>
+      </program>
+      <program name="cg-proc -1 -n -w">
+        <file name="fin-hbs.rlx.bin"/>
+      </program>
+      <program name="apertium-pretransfer"/>
+      <program name="lt-proc -b">
+        <file name="fin-hbs.autobil.bin"/>
+      </program>
+      <program name="lrx-proc -m">
+        <file name="fin-hbs.autolex.bin"/>
+      </program>
+      <program name="apertium-transfer -t -b">
+        <file name="apertium-fin-hbs.fin-hbs.t1x"/>
+        <file name="fin-hbs.t1x.bin"/>
+      </program>
+    </pipeline>
+  </mode>
+
+  <mode name="fin-hbs-interchunk" install="no">
+    <pipeline>
+      <program name="hfst-proc -e -w">
+        <file name="fin-hbs.automorf.hfst"/>
+      </program>
+      <program name="cg-proc -1 -n -w">
+        <file name="fin-hbs.rlx.bin"/>
+      </program>
+      <program name="apertium-pretransfer"/>
+      <program name="lt-proc -b">
+        <file name="fin-hbs.autobil.bin"/>
+      </program>
+      <program name="lrx-proc -m">
+        <file name="fin-hbs.autolex.bin"/>
+      </program>
+      <program name="apertium-transfer -b">
+        <file name="apertium-fin-hbs.fin-hbs.t1x"/>
+        <file name="fin-hbs.t1x.bin"/>
+      </program>
+      <program name="apertium-interchunk">
+        <file name="apertium-fin-hbs.fin-hbs.t2x"/>
+        <file name="fin-hbs.t2x.bin"/>
+      </program>
+    </pipeline>
+  </mode>
+
+  <mode name="fin-hbs-postchunk" install="no">
+    <pipeline>
+      <program name="hfst-proc -e -w">
+        <file name="fin-hbs.automorf.hfst"/>
+      </program>
+      <program name="cg-proc -1 -n -w">
+        <file name="fin-hbs.rlx.bin"/>
+      </program>
+      <program name="apertium-pretransfer"/>
+      <program name="lt-proc -b">
+        <file name="fin-hbs.autobil.bin"/>
+      </program>
+      <program name="lrx-proc -m">
+        <file name="fin-hbs.autolex.bin"/>
+      </program>
+      <program name="apertium-transfer -b">
+        <file name="apertium-fin-hbs.fin-hbs.t1x"/>
+        <file name="fin-hbs.t1x.bin"/>
+      </program>
+      <program name="apertium-interchunk">
+        <file name="apertium-fin-hbs.fin-hbs.t2x"/>
+        <file name="fin-hbs.t2x.bin"/>
+      </program>
+      <program name="apertium-postchunk">
+        <file name="apertium-fin-hbs.fin-hbs.t3x"/>
+        <file name="fin-hbs.t3x.bin"/>
+      </program>
+    </pipeline>
+  </mode>
+
+  <!-- hbs → fin -->
+
+  <mode name="hbs-fin" install="yes">
+    <pipeline>
+      <program name="lt-proc -e -w">
+        <file name="hbs-fin.automorf.bin"/>
+      </program>
+      <program name="cg-proc -1 -n -w">
+        <file name="hbs-fin.rlx.bin"/>
+      </program>
+      <program name="apertium-pretransfer"/>
+      <program name="lt-proc -b">
+        <file name="hbs-fin.autobil.bin"/>
+      </program>
+      <program name="apertium-transfer -b">
+        <file name="apertium-fin-hbs.hbs-fin.t1x"/>
+        <file name="hbs-fin.t1x.bin"/>
+      </program>
+      <program name="apertium-interchunk">
+        <file name="apertium-fin-hbs.hbs-fin.t2x"/>
+        <file name="hbs-fin.t2x.bin"/>
+      </program>
+      <program name="apertium-postchunk">
+        <file name="apertium-fin-hbs.hbs-fin.t3x"/>
+        <file name="hbs-fin.t3x.bin"/>
+      </program>
+      <program name="hfst-proc $1">
+        <file name="hbs-fin.autogen.hfst"/>
+      </program>
+    </pipeline>
+  </mode>
+
+  <mode name="hbs-fin-debug" install="no">
+    <pipeline>
+      <program name="lt-proc -e -w">
+        <file name="hbs-fin.automorf.bin"/>
+      </program>
+      <program name="cg-proc -1 -n -w">
+        <file name="hbs-fin.rlx.bin"/>
+      </program>
+      <program name="apertium-pretransfer"/>
+      <program name="lt-proc -b">
+        <file name="hbs-fin.autobil.bin"/>
+      </program>
+      <program name="apertium-transfer -b">
+        <file name="apertium-fin-hbs.hbs-fin.t1x"/>
+        <file name="hbs-fin.t1x.bin"/>
+      </program>
+      <program name="apertium-interchunk">
+        <file name="apertium-fin-hbs.hbs-fin.t2x"/>
+        <file name="hbs-fin.t2x.bin"/>
+      </program>
+      <program name="apertium-postchunk">
+        <file name="apertium-fin-hbs.hbs-fin.t3x"/>
+        <file name="hbs-fin.t3x.bin"/>
+      </program>
+      <program name="hfst-proc -d">
+        <file name="hbs-fin.autogen.hfst"/>
+      </program>
+    </pipeline>
+  </mode>
+  
+  <mode name="hbs-fin-morph" install="no">
+    <pipeline>
+      <program name="lt-proc -e -w">
+        <file name="hbs-fin.automorf.bin"/>
+      </program>
+    </pipeline>
+  </mode>
+
+  <mode name="hbs-fin-disam" install="no">
+    <pipeline>
+      <program name="lt-proc -e -w">
+        <file name="hbs-fin.automorf.bin"/>
+      </program>
+      <program name="cg-conv -a"/>
+      <program name="vislcg3 --trace --grammar">
+        <file name="hbs-fin.rlx.bin"/>
+      </program>
+    </pipeline>
+  </mode>
+
+
+  <mode name="hbs-fin-tagger" install="no">
+    <pipeline>
+      <program name="lt-proc -e -w">
+        <file name="hbs-fin.automorf.bin"/>
+      </program>
+      <program name="cg-proc -1 -n -w">
+        <file name="hbs-fin.rlx.bin"/>
+      </program>
+      <program name="apertium-pretransfer"/>
+    </pipeline>
+  </mode>
+
+  <mode name="hbs-fin-biltrans" install="no">
+    <pipeline>
+      <program name="lt-proc -e -w">
+        <file name="hbs-fin.automorf.bin"/>
+      </program>
+      <program name="cg-proc -1 -n -w">
+        <file name="hbs-fin.rlx.bin"/>
+      </program>
+      <program name="apertium-pretransfer"/>
+      <program name="lt-proc -b">
+        <file name="hbs-fin.autobil.bin"/>
+      </program>
+    </pipeline>
+  </mode>
+
+  <mode name="hbs-fin-lextor" install="no">
+    <pipeline>
+      <program name="lt-proc -e -w">
+        <file name="hbs-fin.automorf.bin"/>
+      </program>
+      <program name="cg-proc -1 -n -w">
+        <file name="hbs-fin.rlx.bin"/>
+      </program>
+      <program name="apertium-pretransfer"/>
+      <program name="lt-proc -b">
+        <file name="hbs-fin.autobil.bin"/>
+      </program>
+      <program name="lrx-proc -m">
+        <file name="hbs-fin.autolex.bin"/>
+      </program>
+    </pipeline>
+  </mode>
+
+  <mode name="hbs-fin-transfer" install="no">
+    <pipeline>
+      <program name="lt-proc -e -w">
+        <file name="hbs-fin.automorf.bin"/>
+      </program>
+      <program name="cg-proc -1 -n -w">
+        <file name="hbs-fin.rlx.bin"/>
+      </program>
+      <program name="apertium-pretransfer"/>
+      <program name="lt-proc -b">
+        <file name="hbs-fin.autobil.bin"/>
+      </program>
+      <program name="apertium-transfer -b">
+        <file name="apertium-fin-hbs.hbs-fin.t1x"/>
+        <file name="hbs-fin.t1x.bin"/>
+      </program>
+    </pipeline>
+  </mode>
+
+  <mode name="hbs-fin-interchunk" install="no">
+    <pipeline>
+      <program name="lt-proc -e -w">
+        <file name="hbs-fin.automorf.bin"/>
+      </program>
+      <program name="cg-proc -1 -n -w">
+        <file name="hbs-fin.rlx.bin"/>
+      </program>
+      <program name="apertium-pretransfer"/>
+      <program name="lt-proc -b">
+        <file name="hbs-fin.autobil.bin"/>
+      </program>
+      <program name="apertium-transfer -b">
+        <file name="apertium-fin-hbs.hbs-fin.t1x"/>
+        <file name="hbs-fin.t1x.bin"/>
+      </program>
+      <program name="apertium-interchunk">
+        <file name="apertium-fin-hbs.hbs-fin.t2x"/>
+        <file name="hbs-fin.t2x.bin"/>
+      </program>
+    </pipeline>
+  </mode>
+
+  <mode name="hbs-fin-postchunk" install="no">
+    <pipeline>
+      <program name="lt-proc -e -w">
+        <file name="hbs-fin.automorf.bin"/>
+      </program>
+      <program name="cg-proc -1 -n -w">
+        <file name="hbs-fin.rlx.bin"/>
+      </program>
+      <program name="apertium-pretransfer"/>
+      <program name="lt-proc -b">
+        <file name="hbs-fin.autobil.bin"/>
+      </program>
+      <program name="apertium-transfer -b">
+        <file name="apertium-fin-hbs.hbs-fin.t1x"/>
+        <file name="hbs-fin.t1x.bin"/>
+      </program>
+      <program name="apertium-interchunk">
+        <file name="apertium-fin-hbs.hbs-fin.t2x"/>
+        <file name="hbs-fin.t2x.bin"/>
+      </program>
+      <program name="apertium-postchunk">
+        <file name="apertium-fin-hbs.hbs-fin.t3x"/>
+        <file name="hbs-fin.t3x.bin"/>
+      </program>
+    </pipeline>
+  </mode>
+
+
+
+
+</modes>
+
+

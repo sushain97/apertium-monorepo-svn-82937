@@ -1,0 +1,210 @@
+
+Alphabet
+
+ а б в г ғ д е ё ж з и й і к л м н ң о ӧ п р с т у ӱ ф х ц ч ӌ ш щ ъ ы ь э ю я
+ А Б В Г Ғ Д Е Ё Ж З И Й І К Л М Н Ң О Ӧ П Р С Т У Ӱ Ф Х Ц Ч Ӌ Ш Щ Ъ Ы Ь Э Ю Я
+
+ %{L%}:л ! %{L%}:т %{L%}:н
+ %{D%}:д ! %{D%}:т
+ %{N%}:н ! %{N%}:т
+ %{S%}:с ! %{S%}:з
+ %{G%}:г ! %{G%}:х %{G%}:ғ %{G%}:0 
+ %{J%}:ӌ ! %{J%}:ч
+
+ %{A%}:а ! %{A%}:е
+ %{I%}:ы ! %{I%}:и %{I%}:і
+
+ %{s%}:0 %{s%}:з 
+ %{n%}:0 %{n%}:н 
+ %{y%}:0 %{y%}:ы %{y%}:и 
+
+ %{☭%}:0
+ %>:0 
+
+ ;
+
+Sets
+
+Vow = а э и о у 
+      я е ы ё ю 
+          і ӧ ӱ ;
+
+RealCns = б г ғ д ж з к л м н ң п р с т ф х ц ч ӌ ш щ й
+          Б Г Ғ Д Ж З К Л М Н Ң П Р С Т Ф Х Ц Ч Ӌ Ш Щ й ; 
+
+Cns = б г ғ д ж з к л м н ң п р с т ф х ц ч ӌ ш щ й
+      Б Г Ғ Д Ж З К Л М Н Ң П Р С Т Ф Х Ц Ч Ӌ Ш Щ й
+      %{L%} %{D%} %{N%} %{S%} %{J%} %{s%} %{n%} ; 
+
+VoicelessCns = к т п с х ч ш ; 
+
+VoicelessCnsRus = б в д ж г ;
+
+VcdDorsalCns = г ғ ң
+               Г Ғ Ң ;
+
+VcdCns = р л м н ң г ғ
+         Р Л М Н Ң Г Ғ ;
+
+Nasal = м н ң
+        М Н Ң ;
+
+BackVow = а о ы у я ё ю
+          А О Ы У Я Ё Ю ;
+
+FrontVow = і ӱ е э ӧ
+           І Ӱ Е Э Ӧ ;
+
+RealVow = і и ӱ е э ӧ а о ы у 
+          І И Ӱ Е Э Ӧ А О Ы У ;
+
+
+Rules 
+
+!!! FIXME !!! 
+
+!"Deletion of {s} before consonant"
+!%{s%}:0 <=> :RealCns %>: _ ;
+
+!"Insertion of {s} before vowel"
+!%{s%}:з <=> :Vow %>: _ ;
+
+"Deletion of {n} in possessive"
+%{n%}:0 <=> _ .#. ; 
+
+!@ а т >:0 {L}:т {A}:а р >:0 {s}:0 {I}:ы {n}:0 
+
+
+!!!== Lenition ==!!!
+
+"Intervocalic voicing at a morpheme boundary"
+Cx:Cy <=> :Vow/:0 _ %>: :Vow/:0 ;
+      where Cx in ( п т с ш )
+            Cy in ( б д з ж )
+      matched ;
+
+
+!!!== Morphological stuff ==!!!
+
+"Insertion of {n} before vowel"
+%{n%}:н <=> _ %>: [ :Vow | %{D%}: | %{N%}: | %{S%}: ] ;
+
+!@ х ы р и >:0 {s}:0 {I}:ы {n}:н >:0 {D}:д {A}:а
+
+!@ г и м н а з и я {☭}:0 >:0 {s}:з {I}:ы {n}:н >:0 {S}:з {A}:а р
+
+"Deletion of accusative {N} after {n}"
+%{N%}:0 <=> %{n%}: %>: _ %{I%}: .#. ;
+!@ а т >:0 {L}:т {A}:а р >:0 {s}:0 {I}:ы {n}:0 >:0 {N}:0 {I}:ы
+
+"Deletion of dative {G} after possessive"
+%{G%}:0 <=> %{I%}: %{n%}: %>: _ %{A%}: .#. ;
+        except 
+              [ :Vow - :ӧ ]/:0 _ ; 
+
+!!!== Progressive assimilation ==!!!
+
+"Assimilation after voiceless consonants"
+Cx:Cy <=> :VoicelessCns/[:0 | ь ] _ ;
+          [ :VoicelessCnsRus %{☭%}:0 ]/[ :0 - %{☭%}: ] _ ;
+      except
+          %{n%}: %>: _ %{I%}: .#. ;
+      where Cx in ( %{D%} %{J%} %{L%} %{N%} %{B%} )
+            Cy in (   т     ч     т     т     п   )
+      matched ;
+
+!@ К а т а н о в {☭}:0 >:0 {N}:т {I}:ы ң
+
+!@ о б л а с т ь {☭}:0 >:0 {D}:т {A}:а
+
+!@ А л т а й >:0 {D}:д {A}:а
+
+"Voicing of {S}"
+%{S%}:з <=> [ :VcdCns | :Vow | й ]/:0 _ ;
+
+!@ г и м н а з и я {☭}:0 >:0 {s}:з {I}:ы {n}:н >:0 {S}:з {A}:а р
+
+"Front devoicing of {G}"
+%{G%}:к <=> [ :FrontVow :RealCns* :VoicelessCns ]/:0 _ ;
+            [ :FrontVow :RealCns* :VoicelessCnsRus %{☭%}:0 ]/[ :0 - %{☭%}: ] _ ;
+ 
+
+"Back devoicing of {G}"
+%{G%}:х <=> [ :BackVow :RealCns* :VoicelessCns ]/:0 _ ;
+            [ :BackVow :RealCns* :VoicelessCnsRus %{☭%}:0 ]/[ :0 - %{☭%}: ] _ ;
+
+"Back voicing of {G}"
+%{G%}:ғ <=> [ :BackVow :RealCns* [ :VcdCns - :VcdDorsalCns ] ]/:0 _ ;
+            [ :Vow :BackVow ]/:0 _ ;
+            %>: :Cns :BackVow _ :BackVow  ; ! -DAGI = -дағы
+        except
+            %{I%}: %{n%}: %>: _ %{A%}: .#. ; ! avoid confliect with px*.sg.dat
+            [ :Vow - :ӧ ]/:0 _ ; 
+
+
+!!!== Deletion ==!!!
+
+"Deletion of {G}"
+%{G%}:0 <=> :VcdDorsalCns/[ :0 - %{☭%}: ] _ ;  ! after voiced dorsal consonants
+        except 
+            %{I%}: %{n%}: %>: _ %{A%}: .#. ; ! avoid confliect with px*.sg.dat
+                          %>: %{D%}: %{A%}: _ %{I%}:  ; ! avoid conflict with loc.attr
+
+"Deletion of {G} after short vowels except ӧ"
+%{G%}:0 <=> [ :Vow - :ӧ ]/:0 _ ;
+        except 
+            [ :Vow :Vow ]/:0 _ ;
+            %{I%}: %{n%}: %>: _ %{A%}: .#. ; ! avoid confliect with px*.sg.dat
+                          %>: %{D%}: %{A%}: _ %{I%}:  ; ! avoid conflict with loc.attr
+
+!@ а м н и с т и я {☭}:0 >:0 {G}:0 {A}:а
+
+!FIXME: this currently breaks stuff, but I don't see another straightforward way to do this
+!"Short vowel to а/е before {G}{A}"
+!Vx:Vy <=> _ %>: %{G%}:0 %{A%}: ;
+!      except 
+!          [ :Vow :Vow ]/:0 _ ;
+!          :ӧ/:0 _ ;
+!      where Vx in ( і ӱ и е э ӧ а о ы у я ё ю )
+!            Vy in ( е е е е е е а а а а а а а )
+!      matched ;
+"Short vowel except ӧ to а/е before {G}{A}"
+Vx:Vy <=> _ [ %>: %{G%}:0 %{A%}: ]/:0 ;
+      except 
+          :Vow/:0 _ ;
+      where Vx in ( і ӱ и о ы у ю ) ! Check и
+            Vy in ( е е а а а а я )
+      matched ;
+
+"Delete {S} when too many ‹с›s" ! FIXME: probably other stuff too, like стс?
+%{S%}:0 <=> [ :с :с ]/:0 _ ;
+
+!!!== Vowel harmony ==!!!
+
+"Vowel harmony for {A}"
+%{A%}:Vy <=> :Vx [ :RealCns* :RealCns ]/[:0* | ь ] _ ;
+             Vx: [ %>: %{G%}:0 ]/:0* _ ; ! for dative case where {G} deletes
+         where Vx in ( і ӱ и е э ӧ а о ы у я ё ю ) ! Check и	
+               Vy in ( е е е е е е а а а а а а а )
+         matched ;
+
+"Vowel harmony for {I}"
+%{I%}:Vy <=> :Vx [ :RealCns* :RealCns ]/:0* _ ;
+             :Vx Cns:*/:0* _ ; 
+         where Vx in ( і ӱ и е э ӧ а о ы у я ё ю ) ! Check и
+               Vy in ( і і ы і і і ы ы ы ы ы ы ы )
+         matched ;
+
+!@ х ы р и >:0 {s}:0 {I}:ы {n}:н >:0 {D}:д {A}:а
+
+!!!== Consonant harmony ==!!!
+
+"{D} nasal harmony"
+%{D%}:н <=> :Nasal/:0 _ [ :Vow :Nasal ]/:0 ;
+
+
+!@ а т >:0 {L}:т {A}:а р >:0 {s}:0 {I}:ы {n}:0 >:0 {N}:н {I}:ы ң
+
+!@ а т >:0 {L}:т {A}:а р >:0 {s}:0 {I}:ы {n}:0 >:0 {G}:0 {A}:а
+
+

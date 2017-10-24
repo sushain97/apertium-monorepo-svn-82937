@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<transfer>
+  <section-def-cats>
+    
+    <def-cat n="nom">
+      <cat-item tags="n"/>
+    </def-cat>
+   
+  </section-def-cats>
+  
+  <section-def-attrs>
+ 
+    <def-attr n="class">
+      <attr-item tags="I"/>
+      <attr-item tags="II"/>
+      <attr-item tags="III"/>
+      <attr-item tags="IV"/>
+      <attr-item tags="V"/>
+      <attr-item tags="VI"/>
+      <attr-item tags="VII"/>
+      <attr-item tags="VIII"/>
+      <attr-item tags="IX-X"/>
+      <attr-item tags="GD"/>
+    </def-attr>
+ 
+    <def-attr n="cas">
+      <attr-item tags="nom"/>
+      <attr-item tags="acc"/>
+      <attr-item tags="dat"/>
+      <attr-item tags="ins"/>
+    </def-attr>
+    
+    <def-attr n="nbr">
+      <attr-item tags="sg"/>
+      <attr-item tags="pl"/>
+      <attr-item tags="ND"/>
+    </def-attr>
+       
+    <def-attr n="a_nom">
+      <attr-item tags="n"/>
+      <attr-item tags="n.acr"/>
+      <attr-item tags="n.unc"/>
+      <attr-item tags="np.top"/>
+      <attr-item tags="np.al"/>
+      <attr-item tags="np.org"/>
+      <attr-item tags="np.ant"/>
+    </def-attr>
+    
+    <def-attr n="pers">
+      <attr-item tags="p1"/>
+      <attr-item tags="p2"/>
+      <attr-item tags="p3"/>
+    </def-attr>
+    
+  </section-def-attrs>
+ 
+  <section-def-vars>
+    <def-var n="number"/>
+  </section-def-vars>  
+
+  <section-rules>
+    
+    <rule comment="regla: nom">
+      <pattern>
+        <pattern-item n="nom"/>
+      </pattern>
+      <action>
+        <out>
+          <lu>
+            <clip pos="1" side="tl" part="lemh"/>
+            <clip pos="1" side="tl" part="a_nom"/>
+            <clip pos="1" side="tl" part="class"/>
+            <clip pos="1" side="tl" part="nbr"/>
+            <clip pos="1" side="tl" part="lemq"/>
+          </lu>
+        </out>
+      </action>
+    </rule>
+    
+  </section-rules>
+</transfer>

@@ -1,0 +1,332 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<modes>
+  <mode name="khk-kaz" install="yes">
+    <pipeline>
+      <program name="lt-proc -w">
+        <file name="khk-kaz.automorf.bin"/>
+      </program>
+      <program name="cg-proc  -n -w -1">
+        <file name="khk-kaz.rlx.bin"/>
+      </program>
+      <program name="apertium-pretransfer"/>
+      <program name="lt-proc -b">
+        <file name="khk-kaz.autobil.bin"/>
+      </program>
+      <program name="lrx-proc">
+        <file name="khk-kaz.lrx.bin"/>
+      </program>
+      <program name="apertium-transfer -b">
+        <file name="apertium-khk-kaz.khk-kaz.t1x"/>
+        <file name="khk-kaz.t1x.bin"/>
+      </program>
+      <program name="apertium-transfer -n">
+        <file name="apertium-khk-kaz.khk-kaz.t2x"/>
+        <file name="khk-kaz.t2x.bin"/>
+      </program>
+      <program name="lt-proc $1">
+        <file name="khk-kaz.autogen.bin"/>
+      </program>
+      <program name="lt-proc -p">
+        <file name="khk-kaz.autopgen.bin"/>
+      </program>
+    </pipeline>
+  </mode>
+
+  <mode name="khk-kaz-debug" install="no">
+    <pipeline>
+      <program name="lt-proc -w">
+        <file name="khk-kaz.automorf.bin"/>
+      </program>
+      <program name="cg-proc  -n -w -1">
+        <file name="khk-kaz.rlx.bin"/>
+      </program>
+      <program name="apertium-pretransfer"/>
+      <program name="lt-proc -b">
+        <file name="khk-kaz.autobil.bin"/>
+      </program>
+      <program name="apertium-transfer -b">
+        <file name="apertium-khk-kaz.khk-kaz.t1x"/>
+        <file name="khk-kaz.t1x.bin"/>
+      </program>
+      <program name="apertium-transfer -n">
+        <file name="apertium-khk-kaz.khk-kaz.t2x"/>
+        <file name="khk-kaz.t2x.bin"/>
+      </program>
+      <program name="lt-proc -d">
+        <file name="khk-kaz.autogen.bin"/>
+      </program>
+      <program name="lt-proc -p">
+        <file name="khk-kaz.autopgen.bin"/>
+      </program>
+    </pipeline>
+  </mode>
+ 
+  
+  <mode name="khk-kaz-morph" install="no">
+    <pipeline>
+      <program name="lt-proc -w">
+        <file name="khk-kaz.automorf.bin"/>
+      </program>
+    </pipeline>
+  </mode>
+
+  <mode name="khk-kaz-tagger" install="no">
+    <pipeline>
+      <program name="lt-proc -w">
+        <file name="khk-kaz.automorf.bin"/>
+      </program>
+      <program name="cg-proc  -n -w -1">
+        <file name="khk-kaz.rlx.bin"/>
+      </program>
+      <program name="apertium-pretransfer"/>
+    </pipeline>
+  </mode>
+
+  <mode name="khk-kaz-biltrans" install="no">
+    <pipeline>
+      <program name="lt-proc -w">
+        <file name="khk-kaz.automorf.bin"/>
+      </program>
+      <program name="cg-proc  -n -w -1">
+        <file name="khk-kaz.rlx.bin"/>
+      </program>
+      <program name="apertium-pretransfer"/>
+      <program name="lt-proc -b">
+        <file name="khk-kaz.autobil.bin"/>
+      </program>
+    </pipeline>
+  </mode>
+
+  <mode name="khk-kaz-lex" install="no">
+    <pipeline>
+      <program name="lt-proc -w">
+        <file name="khk-kaz.automorf.bin"/>
+      </program>
+      <program name="cg-proc  -n -w -1">
+        <file name="khk-kaz.rlx.bin"/>
+      </program>
+      <program name="apertium-pretransfer"/>
+      <program name="lt-proc -b">
+        <file name="khk-kaz.autobil.bin"/>
+      </program>
+      <program name="lrx-proc -t">
+        <file name="khk-kaz.lrx.bin"/>
+      </program>
+    </pipeline>
+  </mode>
+
+
+  <mode name="khk-kaz-transfer" install="no">
+    <pipeline>
+      <program name="lt-proc -w">
+        <file name="khk-kaz.automorf.bin"/>
+      </program>
+      <program name="cg-proc -n -w -1">
+        <file name="khk-kaz.rlx.bin"/>
+      </program>
+      <program name="apertium-pretransfer"/>
+      <program name="lt-proc -b">
+        <file name="khk-kaz.autobil.bin"/>
+      </program>
+      <program name="lrx-proc">
+        <file name="khk-kaz.lrx.bin"/>
+      </program>
+      <program name="apertium-transfer -b">
+        <file name="apertium-khk-kaz.khk-kaz.t1x"/>
+        <file name="khk-kaz.t1x.bin"/>
+      </program>
+    </pipeline>
+  </mode>
+
+  <mode name="khk-kaz-transfer2" install="no">
+    <pipeline>
+      <program name="lt-proc -w">
+        <file name="khk-kaz.automorf.bin"/>
+      </program>
+      <program name="cg-proc -n -w -1">
+        <file name="khk-kaz.rlx.bin"/>
+      </program>
+      <program name="apertium-pretransfer"/>
+      <program name="lt-proc -b">
+        <file name="khk-kaz.autobil.bin"/>
+      </program>
+      <program name="lrx-proc">
+        <file name="khk-kaz.lrx.bin"/>
+      </program>
+      <program name="apertium-transfer -b">
+        <file name="apertium-khk-kaz.khk-kaz.t1x"/>
+        <file name="khk-kaz.t1x.bin"/>
+      </program>
+      <program name="apertium-transfer -n">
+        <file name="apertium-khk-kaz.khk-kaz.t2x"/>
+        <file name="khk-kaz.t2x.bin"/>
+      </program>
+    </pipeline>
+  </mode>
+
+  
+  <mode name="kaz-khk" install="yes">
+    <pipeline>
+      <program name="lt-proc -w">
+        <file name="kaz-khk.automorf.bin"/>
+      </program>
+      <program name="cg-proc  -n -w -1">
+        <file name="kaz-khk.rlx.bin"/>
+      </program>
+      <program name="apertium-pretransfer"/>
+      <program name="lt-proc -b">
+        <file name="kaz-khk.autobil.bin"/>
+      </program>
+      <program name="lrx-proc">
+        <file name="kaz-khk.lrx.bin"/>
+      </program>
+      <program name="apertium-transfer -b">
+        <file name="apertium-khk-kaz.kaz-khk.t1x"/>
+        <file name="kaz-khk.t1x.bin"/>
+      </program>
+      <program name="apertium-transfer -n">
+        <file name="apertium-khk-kaz.kaz-khk.t2x"/>
+        <file name="kaz-khk.t2x.bin"/>
+      </program>
+      <program name="lt-proc $1">
+        <file name="kaz-khk.autogen.bin"/>
+      </program>
+      <program name="lt-proc -p">
+        <file name="kaz-khk.autopgen.bin"/>
+      </program>
+    </pipeline>
+  </mode>
+
+  <mode name="kaz-khk-debug" install="no">
+    <pipeline>
+      <program name="lt-proc -w">
+        <file name="kaz-khk.automorf.bin"/>
+      </program>
+      <program name="cg-proc  -n -w -1">
+        <file name="kaz-khk.rlx.bin"/>
+      </program>
+      <program name="apertium-pretransfer"/>
+      <program name="lt-proc -b">
+        <file name="kaz-khk.autobil.bin"/>
+      </program>
+      <program name="apertium-transfer -b">
+        <file name="apertium-khk-kaz.kaz-khk.t1x"/>
+        <file name="kaz-khk.t1x.bin"/>
+      </program>
+      <program name="apertium-transfer -n">
+        <file name="apertium-khk-kaz.kaz-khk.t2x"/>
+        <file name="kaz-khk.t2x.bin"/>
+      </program>
+      <program name="lt-proc -d">
+        <file name="kaz-khk.autogen.bin"/>
+      </program>
+    </pipeline>
+  </mode>
+ 
+  
+  <mode name="kaz-khk-morph" install="no">
+    <pipeline>
+      <program name="lt-proc -w">
+        <file name="kaz-khk.automorf.bin"/>
+      </program>
+    </pipeline>
+  </mode>
+
+  <mode name="kaz-khk-tagger" install="no">
+    <pipeline>
+      <program name="lt-proc -w">
+        <file name="kaz-khk.automorf.bin"/>
+      </program>
+      <program name="cg-proc  -n -w -1">
+        <file name="kaz-khk.rlx.bin"/>
+      </program>
+      <program name="apertium-pretransfer"/>
+    </pipeline>
+  </mode>
+
+  <mode name="kaz-khk-biltrans" install="no">
+    <pipeline>
+      <program name="lt-proc -w">
+        <file name="kaz-khk.automorf.bin"/>
+      </program>
+      <program name="cg-proc  -n -w -1">
+        <file name="kaz-khk.rlx.bin"/>
+      </program>
+      <program name="apertium-pretransfer"/>
+      <program name="lt-proc -b">
+        <file name="kaz-khk.autobil.bin"/>
+      </program>
+    </pipeline>
+  </mode>
+
+  <mode name="kaz-khk-lex" install="no">
+    <pipeline>
+      <program name="lt-proc -w">
+        <file name="kaz-khk.automorf.bin"/>
+      </program>
+      <program name="cg-proc  -n -w -1">
+        <file name="kaz-khk.rlx.bin"/>
+      </program>
+      <program name="apertium-pretransfer"/>
+      <program name="lt-proc -b">
+        <file name="kaz-khk.autobil.bin"/>
+      </program>
+      <program name="lrx-proc -t">
+        <file name="kaz-khk.lrx.bin"/>
+      </program>
+    </pipeline>
+  </mode>
+
+
+  <mode name="kaz-khk-transfer" install="no">
+    <pipeline>
+      <program name="lt-proc -w">
+        <file name="kaz-khk.automorf.bin"/>
+      </program>
+      <program name="cg-proc -n -w -1">
+        <file name="kaz-khk.rlx.bin"/>
+      </program>
+      <program name="apertium-pretransfer"/>
+      <program name="lt-proc -b">
+        <file name="kaz-khk.autobil.bin"/>
+      </program>
+      <program name="lrx-proc">
+        <file name="kaz-khk.lrx.bin"/>
+      </program>
+      <program name="apertium-transfer -b">
+        <file name="apertium-khk-kaz.kaz-khk.t1x"/>
+        <file name="kaz-khk.t1x.bin"/>
+      </program>
+    </pipeline>
+  </mode>
+
+  <mode name="kaz-khk-transfer2" install="no">
+    <pipeline>
+      <program name="lt-proc -w">
+        <file name="kaz-khk.automorf.bin"/>
+      </program>
+      <program name="cg-proc -n -w -1">
+        <file name="kaz-khk.rlx.bin"/>
+      </program>
+      <program name="apertium-pretransfer"/>
+      <program name="lt-proc -b">
+        <file name="kaz-khk.autobil.bin"/>
+      </program>
+      <program name="lrx-proc">
+        <file name="kaz-khk.lrx.bin"/>
+      </program>
+      <program name="apertium-transfer -b">
+        <file name="apertium-khk-kaz.kaz-khk.t1x"/>
+        <file name="kaz-khk.t1x.bin"/>
+      </program>
+      <program name="apertium-transfer -n">
+        <file name="apertium-khk-kaz.kaz-khk.t2x"/>
+        <file name="kaz-khk.t2x.bin"/>
+      </program>
+    </pipeline>
+  </mode>
+
+
+</modes>
+
+

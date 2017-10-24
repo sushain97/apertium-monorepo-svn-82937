@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rules>
+
+  <rule>
+    <match lemma="ride" tags="vblex.*">
+      <select lemma="fahren" tags="vblex.*"/>
+    </match>
+	<or>
+      <match lemma="a"/>
+      <match lemma="my"/>
+      <match lemma="the"/>
+	</or>
+    <match lemma="bike"/>
+  </rule>
+
+  <rule>
+    <match lemma="answer" tags="vblex.*">
+      <select lemma="beantworten" tags="vblex.*"/>
+    </match>
+	<or>
+      <match lemma="a"/>
+      <match lemma="the"/>
+	</or>
+    <match lemma="question"/>
+  </rule>
+
+  <rule>
+    <match lemma="cross" tags="vblex.*">
+      <select lemma="überqueren" tags="vblex.*"/>
+    </match>
+    <match lemma="the"/>
+	<or>
+	  <match lemma="street"/>
+      <match lemma="road"/>
+	</or>
+  </rule>
+
+  <rule>
+    <match lemma="light" tags="vblex.*">
+      <select lemma="anzünden" tags="vblex.*"/>
+    </match>
+	<or>
+      <match lemma="a"/>
+      <match lemma="the"/>
+	</or>
+    <match lemma="candle"/>
+  </rule>
+
+  <rule>
+    <match lemma="first"/>
+    <match lemma="floor" tags="n.*">
+      <select lemma="Stockwerk" tags="n.*"/>
+    </match>
+  </rule>
+
+  <rule>
+    <match lemma="daddy"/>
+    <match lemma="and"/>
+    <match lemma="mummy" tags="n.*">
+      <select lemma="Mutti" tags="n.*"/>
+    </match>
+  </rule>
+
+  <rule>
+    <match lemma="Daddy"/>
+    <match lemma="and"/>
+    <match lemma="Mummy" tags="n.*">
+      <select lemma="Mutti" tags="n.*"/>
+    </match>
+  </rule>
+
+  <rule>
+    <match lemma="cowboy"/>
+    <match lemma="and"/>
+    <match lemma="Indian" tags="n.*">
+      <select lemma="Indianer" tags="n.*"/>
+    </match>
+  </rule>
+
+</rules>

@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- -*- nxml -*- -->
+
+<!-- Tests are run by './qa t4x' command.
+     INPUT is the output of t3x,
+     OUTPUT is the expected output of this transfer module.
+
+     Also make sure to run './qa' (with no arguments)
+     before committing to svn. -->
+
+<postchunk>
+
+  <section-def-cats>
+    <def-cat n="vbser-pres">
+      <cat-item name="cop-pres"/>
+    </def-cat>
+  </section-def-cats>
+
+  <section-def-attrs>
+    <def-attr n="attrstub">
+      <attr-item tags="attrstub"/>
+    </def-attr>
+  </section-def-attrs>
+
+  <section-def-vars>
+    <def-var n="varstub"/>
+  </section-def-vars>
+
+  <section-rules>
+
+<!--
+INPUT:  ^cop-pres<VBSER>{^быть<vbser><pres><p3><sg>$}$
+OUTPUT: ""
+-->
+    <rule comment="Deletes copula in present tense which
+                   is normally ommitted in Russian.">
+      <pattern>
+        <pattern-item n="vbser-pres"/>
+      </pattern>
+      <action>
+        <out>
+          <lu>
+            <lit v=""/>
+          </lu>
+        </out>
+      </action>
+    </rule>
+
+  </section-rules>
+
+</postchunk>

@@ -1,0 +1,47 @@
+Config:
+  hfst:
+    App: hfst-lookup
+    Gen: ../nog.autogen.hfst
+    Morph: ../nog.automorf.hfst
+
+Tests:
+  "[twol] stems ending in к, contexts where voicing doesn't occur":
+    суьек<n><nom> : суьек
+    терек<n><nom> : терек
+    суьек<n><acc> : суьекти
+    терек<n><acc> : теректи
+    суьек<n><abl> : суьектен
+    терек<n><abl> : теректен
+
+  "[twol] stems ending in к, contexts where voicing does occur":
+    суьек<n><px3sp><nom> : суьеги
+    терек<n><px3sp><nom> : тереги
+    суьек<n><px1sg><nom> : суьегим
+    терек<n><px1sg><nom> : терегим
+
+  "[twol] stems ending in п, contexts where voicing doesn't occur":
+    китап<n><nom> : китап
+    эсап<n><nom> : эсап
+    китап<n><acc> : китапти
+    эсап<n><acc> : эсапты
+    китап<n><abl> : китаптен
+    эсап<n><abl> : эсаптан
+
+  "[twol] stems ending in п, contexts where voicing does occur":
+    китап<n><px3sp><nom> : китаби
+    эсап<n><px3sp><nom> : эсабы
+    китап<n><px1sg><acc> : китабимди
+    эсап<n><px1sg><acc> : эсабымды
+
+  "[twol] stems ending in Cк, no voicing ever":
+    халк<n><nom> : халк
+    халк<n><acc> : халкты
+    халк<n><px3sp><nom> : халкы
+    халк<n><px1pl><nom> : халкымыз
+
+  "[twol] irregular stem ending in к, no voicing ever":
+    ак<n><nom> : ак
+    ак<n><acc> : акты
+    ак<n><px3sp><nom> : акы
+    ак<n><px1pl><nom> : акымыз
+ 

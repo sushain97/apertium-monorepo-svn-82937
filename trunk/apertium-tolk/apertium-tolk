@@ -1,0 +1,488 @@
+#!/usr/bin/env python3
+
+from __future__ import print_function
+import os
+import sys
+from queue import Queue # A queue type to communicate between threads
+import threading # A simple thread launcher
+from configparser import ConfigParser
+# The ConfigParser is used to store preferences of the program
+
+# So we know what language the user prefers so we can automatically select it
+# for them, if possible.
+import locale
+
+# GTK related imports
+from gi.repository import GObject
+from gi.repository import Gtk
+import gi
+
+# If we want to use guess-language to guess our language:
+# https://bitbucket.org/ericye16/guess_language/overview
+try:
+    import guess_language as glang
+    using_guess_language = True
+except:
+    using_guess_language = False
+    print(  """If you want language-guessing, please install guess_lang
+            from here:
+            https://bitbucket.org/ericye16/guess_language/overview""",
+                file=sys.stderr)
+
+#If you want to test out the program without using Dbus, set usingDbus to False
+usingDbus = True
+try:
+    import dbus # Used to connect to the Apertium D-Bus service
+except:
+    usingDbus = False
+
+import tolk
+apertium_dir = tolk.prefix
+lang_names = tolk.lang_names
+
+_ = tolk._
+
+def split_pair_into_from_and_to(modes):
+    """Return a list of from-languages and a dictionary of to-languages.
+    The dictionary maps from-languages to all of their to-languages.
+
+    We also want to store it in a Gtk ListStore to make things easier for ourselves.
+    """
+    to = {}
+    fro = Gtk.ListStore(str, str, str)
+    froList = [] #Let's keep a running list of the from-languages we've used
+                    #so we don't reuse them.
+    langCount = 0 #this is so we know which language is in the fro box so we
+                    #don't have to search for the language when we update
+                    #the glang button.
+    for mode in sorted(modes):
+        if mode.count("-") > 1:
+            continue #some modes like val-en-ca or en-ca-multi should be ignored
+        locSplit = mode.find("-")
+
+        #Find the from language
+        froLang = mode[:locSplit]
+        if froLang in lang_names:
+            froLangFriendlyName = _(tolk.lang_names[froLang])
+        else:
+            froLangFriendlyName = froLang
+        if froLang not in froList: #check if we've already added it
+            fro.append([froLang, froLangFriendlyName, "#FFFFFF"]) #default color is white
+            froList.append(froLang)
+            langCount += 1
+
+        #Find the to language
+        toLang = mode[locSplit + 1:]
+        if toLang in lang_names:
+            toLangFriendlyName = _(lang_names[toLang])
+        else:
+            toLangFriendlyName = toLang
+
+        #Add the to language to our dictionary of list models
+        if froLang in to:
+            to[froLang].append([toLang, toLangFriendlyName])
+        else:
+            to[froLang] = Gtk.ListStore(str, str)
+            to[froLang].append([toLang, toLangFriendlyName])
+            to[froLang].set_sort_column_id(1, Gtk.SortType.ASCENDING)
+    return fro, to, froList
+
+def color_from_distance(distance):
+    '''Generate a hex color string based on distance.
+    Distance is expected to be given in the range [0, 1].
+
+    0 is very close and should be green (#00FF00).
+    1 is very far and should be red (#FF0000).
+    '''
+    amount_green = 1 - distance
+    amount_red = distance
+    g = int(255 * amount_green)
+    r = int(255 * amount_red)
+    g = hex(g)[2:].zfill(2).upper()
+    r = hex(r)[2:].zfill(2).upper()
+    return '#' + str(r) + str(g) + '00'
+
+class MainWindow:
+    def get_modes(self):
+        """Get the translation-pairs (modes) available on the system without dbus.
+        """
+        modes = []
+        mode_directory = os.path.join(apertium_dir, "share", "apertium", "modes")
+
+        for dirent in os.listdir(mode_directory):
+            fname, ext = os.path.fname, ext = os.path.splitext(dirent)
+            if ext == ".mode":
+                modes.append(fname)
+
+        return modes
+        
+    
+    def setup_combo(self, combo):
+        """Set the combo box up to display simple a list of text and
+        add everything in 'modes' to the list.
+        """
+        cell = Gtk.CellRendererText()
+        combo.pack_start(cell, True)
+        combo.add_attribute(cell, "background", 2)
+        combo.set_model(self.fro)
+        combo.set_wrap_width(int(len(self.fro) / 6) + 1)
+
+        combo.set_active(0) # Set the combobox to the first entry
+
+        return combo
+
+
+    def options(self):
+        if self.chkMarkUnknown.get_active():
+            return {"mark_unknown": "true"}
+        else:
+            return {"mark_unknown": "false"}
+
+
+    def load_config(self):
+        """Read the configuration data. First read default data from 'defaults.cfg'
+        and then user config data from '~/.apertium-tolk.cfg'. Tell the
+        glade object to update stored widget properties based on the config data.
+        """
+        self.glade.load_gtk_state_default(self.config)
+        self.config.read([os.path.expanduser('~/.apertium-tolk.cfg')])
+        self.glade.load_gtk_state(self.config)
+
+    def save_config(self):
+        """Store the configuration data to the user file '~/.apertium-tolk.cfg'.
+        Before storing, tell the glade object to dump the widget state to the configuration
+        object self.config.
+        """
+        self.glade.dump_gtk_state(self.config)
+        f = open(os.path.expanduser('~/.apertium-tolk.cfg'), 'w')
+        self.config.write(f)
+        f.close()
+    
+    def __init__(self, path):
+        global usingDbus
+        self.config = ConfigParser() # An object which loads/stores preferences
+        try:
+            self.bus = dbus.SessionBus()
+            # Create a proxy object to the D-Bus object org.apertium.info/ using the interface org.apertium.Info
+            self.info = dbus.Interface(self.bus.get_object("org.apertium.info", "/"), "org.apertium.Info")
+        except:
+            usingDbus = False
+        self.input_queue = Queue()  # Thread communication queue
+        self.glade = tolk.GladeXML() # Instantiate our custom Glade class which extends the Gtk.glade.GladeXML class
+        self.glade.add_from_file(path)
+        self.glade.connect_signals(self);   # Try to connect the signals defined in the glade file to methods defined in self
+
+        # Get handles objects of interest in the glade file
+        self.buffer         = self.glade.get_object("txtInput").get_buffer()
+        self.output_buffer  = self.glade.get_object("txtOutput").get_buffer()
+        self.wndMain        = self.glade.get_object("wndMain")
+        self.dlgAbout       = self.glade.get_object("dlgAbout")
+        self.chkMarkUnknown = self.glade.get_object("chkMarkUnknown")
+
+        #Let's cache the languages at the beginning of the program
+        if usingDbus:
+            try:
+                modes = self.info.modes()
+            except:
+                usingDbus = False
+        else:
+            modes = self.get_modes()
+
+        self.fro, self.to, self.froList = split_pair_into_from_and_to(modes)
+        self.froSet = set(self.froList)
+        
+        self.comboPair      = self.setup_combo(
+                                self.glade.get_object("comboPair"))
+
+        self.buffer.connect("changed", self.on_buffer_changed)
+
+        # Start the thread which will handle
+        thread = threading.Thread(target=self.translator_loop)
+        thread.start()
+
+        # Start the thread which will handle the guess languages, if there is one
+        if using_guess_language:
+            self.guess_lang_queue = Queue()
+            guess_thread = threading.Thread(target=self.guess_language_loop)
+            guess_thread.start()
+        else:
+            self.guess_lang_queue = dummy_queue()
+        
+        self.load_config()
+
+        # If we're using guess_language, let's set up the UI for that.
+        if using_guess_language:
+
+            guess_language_button = self.glade.get_object("guess_lang_button")
+
+            guess_language_button.connect("clicked", self.on_btnChangeLangToGuessed_clicked)
+            self.has_lang_to_change_to = False
+            guess_language_button.set_label('') #let's start with an empty string
+            
+        self.wndMain.show_all()
+
+
+    def guess_language_loop(self):
+        """This runs as a thread which calls on guess_language things.
+
+
+        It's a different thread from the translation thread because both
+        guess_language and apertium are very expensive and should be made
+        asynchronously.
+
+        We only start this thread if the global variable using_guess_language
+        is true."""
+
+        while True:
+            _input = self.guess_lang_queue.get()
+            while not self.guess_lang_queue.empty():
+                _input = self.guess_lang_queue.get()
+            if _input is None:
+                break
+
+            #get the probability for each of the languages we have
+            scores_and_langs = glang.check_with_models_scores(
+                _input.split(), self.froList)
+            if scores_and_langs == 'UNKNOWN':
+                continue
+            langs_with_scores = [x[0] for x in scores_and_langs
+                                 if type(x[0]) == int]
+            if len(langs_with_scores) < 1:
+                continue
+            #get the range of our distances
+            s_max = max(langs_with_scores)
+            s_min_all = min(x for x in scores_and_langs if type(x[0]) == int)
+            s_min = s_min_all[0]
+            s_range = s_max - s_min
+
+            if s_range == 0:
+                s_range = 1
+
+            #for each score, give the language in the combobox the appropriate color
+            for score in range(len(scores_and_langs)):
+                color = scores_and_langs[score][0]
+                if color == 'UNKNOWN':
+                    #make things grey if guess_lang doesn't support the language
+                    normalized_color = '#7f7f7f'
+                else:
+                    normalized_color = color_from_distance(
+                        (color - s_min) / s_range)
+                self.fro[score][2] = normalized_color
+
+            #get the name and index number of our closest language for the button
+            closest_lang = s_min_all[1]
+            guessed_lang_index = self.froList.index(closest_lang)
+            friendly_closest_lang = _(lang_names[closest_lang])
+            f = lambda : self.change_guess_lang_button(True,
+                                guessed_lang_index, friendly_closest_lang)
+            GObject.idle_add(f)
+         
+    def change_guess_lang_button(self, has_lang, lang_index, lang_name):
+        button = self.glade.get_object("guess_lang_button")
+        assert (button is not None) #because of https://bugzilla.gnome.org/show_bug.cgi?id=591085
+        
+        if has_lang:
+            detected_str = _("Closest detected: ") + lang_name
+            button.set_label(detected_str)
+            self.guessed_lang_index = lang_index #this is to be used by
+                    #on_btnChangeLangToGuessed_clicked so it knows
+                    #what language to change to when the user
+                    #clicks the button
+            self.has_lang_to_change_to = True
+        else:
+            self.has_lang_to_change_to = False
+            button.set_label('')
+            
+        
+    def translator_loop(self):
+        """This runs as a thread which invokes Apertium D-Bus methods.
+        If Apertium-Dbus is not on the system, call apertium ourself.
+
+        We run this in a thread, since it takes a perceptible amount
+        of time to execute an Apertium call.
+
+        Only one Apertium call at most is ever active. We ensure this by
+        running only one thread. This thread receives updates via a queue.
+
+        While it is busy waiting for an Apertium call to return, its
+        update queue might receive requests (this happens when the user is
+        typing while Apertium is running). We're only ever interested in the
+        latest item added to the queue, so we discard everything up to that
+        point.
+        """
+        global usingDbus
+        while True:
+            options, _input = self.input_queue.get() # Block waiting for something to translate
+            while not self.input_queue.empty():          # We're only interested in the latest item in the queue...
+                options, _input = self.input_queue.get() # ...so we discard items until we have the latest item
+            if (options, _input) == (None, None): #We send (None, None) to the queue to tell it to stop the thread
+                break
+            result = ''
+            
+            def update_text():
+                """Take the output from the translation and update the output buffer"""
+                self.output_buffer.set_text(result)
+                return False
+            if usingDbus:
+                try:
+                    result = self.translator.translate(options, _input) # Invoke the Apertium D-Bus translation service
+                except Exception as e:
+                    usingDbus = False
+                    print(e, file=sys.stderr) # We should probably do exit(1) here
+                    result = str(e) #this doesn't work yet...why doesn't this work?
+            else: # we will have to call apertium ourselves
+                from subprocess import Popen, PIPE
+
+                if options['mark_unknown'] == 'true': #careful: this is actually a string
+                    m_unknown = True
+                else:
+                    m_unknown = False
+                
+                #this is the command we will send:
+                cmd = "apertium " + self.lang_pair
+                if not m_unknown:
+                    cmd += ' -u' #this is tricky: -u indicates _not_ to mark
+
+                #calling on apertium
+                p = Popen(cmd, shell=True,stdin=PIPE, stdout=PIPE, stderr=PIPE,
+                    close_fds=True)
+                (child_in, child_out, child_err) = (p.stdin, p.stdout, p.stderr)
+                child_in.write(bytes(_input, 'UTF-8'))
+                child_in.close() # You MUST close the child's stdin to get output from some programs
+
+                result = child_out.read().decode('UTF-8')
+                child_out.close()
+                err = child_err.read().decode('UTF-8')
+                child_err.close()
+
+                #If there's an error, display it:
+                if err:
+                    result = err
+                
+            GObject.idle_add(update_text) # Post the function into the GTK main loop
+                
+
+    def on_buffer_changed(self, w):
+        text = w.get_text(w.get_start_iter(), w.get_end_iter(), False)
+        nex = [self.options(), text]
+        self.input_queue.put(nex)
+        self.guess_lang_queue.put(text)
+
+    ###########################################################
+    # Implementations of GTK signals defined in the Glade file
+
+    def on_btnQuit_clicked(self, widget):
+        self.input_queue.put([None, None]) #tell our translation thread to close
+        self.guess_lang_queue.put(None)
+        self.save_config()
+        Gtk.main_quit()
+        
+    def on_wndMain_destroy(self, widget):
+        self.input_queue.put([None, None]) #tell our translation thread to end
+        self.guess_lang_queue.put(None)
+        Gtk.main_quit()
+
+    def on_wndMain_delete_event(self, widget, event):
+        self.save_config()
+        return False
+
+    def on_btnAbout_clicked(self, widget):
+        self.dlgAbout.show()
+
+    def on_dlgAbout_response(self, widget, response):
+        self.dlgAbout.hide()
+
+    def on_btnChangeLangToGuessed_clicked(self, widget):
+        if self.has_lang_to_change_to:
+            combobox = self.glade.get_object("comboPair")
+            combobox.set_active(self.guessed_lang_index)
+            #do something here
+        else:
+            pass #make it a dummy button if there's nothing to change to
+        
+    def update_translation_object(self, pair_name):
+        """Given a language pair name like ab-cd, change - to _ so that
+        one gets ab_cd. We must do this, because a D-Bus object name cannot
+        contain dashes.
+
+        Now, create a proxy object to the Apertium D-Bus translator object for
+        the language pair and assign the object to self.translator."""
+        global usingDbus
+        if usingDbus:
+            self.lang_pair = pair_name
+            dbus_pair_name = "/" + "_".join(pair_name.split("-"))
+            try:
+                self.translator = dbus.Interface(self.bus.get_object("org.apertium.mode", dbus_pair_name), "org.apertium.Mode")
+            except:
+                usingDbus = False
+        else:
+            self.lang_pair = pair_name
+
+    def on_comboPair_changed(self, widget):
+        froLang = widget.get_active_iter()
+        self.froLangCode = widget.get_model().get_value(froLang, 0)
+        self.update_comboTo(self.froLangCode)
+        self.buffer.emit("changed")
+
+    def update_comboTo(self, froLang):
+        toBox = self.glade.get_object("comboTo")
+        model = self.to[froLang]
+        toBox.set_model(model)
+        toBox.set_wrap_width(int(len(self.to[froLang]) / 6) + 1)
+
+        #Let's find what the system locale is for the user and set the 'to'
+        #language to that if possible.
+
+        # output is something like 'en_US'
+        preferred_language_user = locale.getlocale()[0]
+        location_of_underscore = preferred_language_user.find('_')
+        if location_of_underscore > 0:
+            #cut it off to just 'en'
+            preferred_language_user = preferred_language_user[:location_of_underscore]
+        preferred_language_in_box = 0
+        for lang in range(len(model)):
+            if model[lang][0] == preferred_language_user:
+                preferred_language_in_box = lang
+        
+        toBox.set_active(preferred_language_in_box)
+        
+    def on_comboTo_changed(self, widget):
+        toLangIter = widget.get_active_iter()
+        if toLangIter is None:
+            return
+        
+        self.toLangCode = widget.get_model().get_value(toLangIter, 0)
+        toLang = self.toLangCode
+        froLang = self.froLangCode
+        if toLang is None or froLang is None:
+            return #Don't do anything if either language list hasn't been
+                    #populated yet
+        pair_name = froLang + "-" + toLang        
+        self.update_translation_object(pair_name)
+        self.buffer.emit("changed")
+    
+    def on_chkMarkUnknown_toggled(self, widget):
+        self.buffer.emit("changed")
+
+#Let's make a dummy queue object so we don't have as many ifs in our code
+class dummy_queue(object):
+
+    def put(self, that):
+        pass
+
+
+if __name__ == "__main__":
+    if len(sys.argv) > 1:
+        print('apertium-tolk 0.2')
+        print('Copyright (C) 2006 Wynand Winterbach')
+        print('Copyright (C) 2012 Eric Ye')
+        print('This is free software.  You may redistribute copies of it under the terms of')
+        print('the GNU General Public License <http://www.gnu.org/licenses/gpl.html>.')
+        print('There is NO WARRANTY, to the extent permitted by law.')
+
+        sys.exit(0)
+    
+    GObject.threads_init()
+    wnd = MainWindow(tolk.datadir + "/apertium-tolk/glade/" + "tolk.ui")
+    Gtk.main();
+

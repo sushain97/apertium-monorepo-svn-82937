@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<modes>
+
+  <mode name="ota-twol">
+    <pipeline>
+      <program name="hfst-strings2fst -S"/>
+      <program name="hfst-compose-intersect">
+        <file name=".deps/ota.twol.hfst"/>
+      </program>
+      <program name="hfst-fst2strings"/>
+    </pipeline>
+  </mode>
+
+  <mode name="ota-morph">
+    <pipeline>
+      <program name="lt-proc -w">
+        <file name="ota.automorf.bin"/>
+      </program>
+    </pipeline>
+  </mode>
+
+  <mode name="ota-lexc">
+    <pipeline>
+      <program name="hfst-lookup">
+        <file name=".deps/ota.LR.lexc.hfst"/>
+      </program>
+    </pipeline>
+  </mode>
+
+  <mode name="ota-gener">
+    <pipeline>
+      <program name="lt-proc -g">
+        <file name="ota.autogen.bin"/>
+      </program>
+    </pipeline>
+  </mode>
+
+  <mode name="ota-tagger">
+    <pipeline>
+      <program name="lt-proc -w">
+        <file name="ota.automorf.bin"/>
+      </program>
+      <program name="cg-proc -w">
+        <file name="ota.rlx.bin"/>
+      </program>
+    </pipeline>
+  </mode>
+
+  <mode name="ota-disam">
+    <pipeline>
+      <program name="lt-proc -w">
+        <file name="ota.automorf.bin"/>
+      </program>
+      <program name="cg-conv -a"/>
+      <program name="vislcg3 --trace --grammar">
+        <file name="ota.rlx.bin"/>
+      </program>
+    </pipeline>
+  </mode>
+
+</modes>
+

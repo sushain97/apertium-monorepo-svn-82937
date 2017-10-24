@@ -1,0 +1,154 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- -*- nxml -*- -->
+<interchunk>
+  <section-def-cats>
+
+    <def-cat n="PRN-gen">
+      <cat-item tags="PRN.*.gen.*"/>
+    </def-cat>
+    <def-cat n="PRN">
+      <cat-item tags="PRN.*"/>
+    </def-cat>
+    <def-cat n="SV">
+      <cat-item tags="SV"/>
+      <cat-item tags="SV.*"/>
+    </def-cat>
+    <def-cat n="SVNEG-p3">
+      <cat-item tags="SVNEG.p3.*"/>
+    </def-cat>
+    <def-cat n="SVNEG-p12">
+      <cat-item tags="SVNEG.p1.*"/>
+      <cat-item tags="SVNEG.p2.*"/>
+    </def-cat>
+    <def-cat n="SN">
+      <cat-item tags="SN"/>
+      <cat-item tags="SN.*"/>
+    </def-cat>
+    <def-cat n="QST">
+      <cat-item tags="QST"/>
+    </def-cat>
+  </section-def-cats>
+
+  <section-def-attrs>
+    <def-attr n="a_nbr">
+      <attr-item tags="sg"/>
+      <attr-item tags="pl"/>
+      <attr-item tags="sp"/>
+      <attr-item tags="ND"/>
+    </def-attr>
+    <def-attr n="a_person">
+      <attr-item tags="p1"/>
+      <attr-item tags="p2"/>
+      <attr-item tags="p3"/>
+    </def-attr>
+    <def-attr n="a_cas">
+      <attr-item tags="nom"/>
+      <attr-item tags="gen"/>
+      <attr-item tags="par"/>
+      <attr-item tags="ill"/>
+      <attr-item tags="ine"/>
+      <attr-item tags="ela"/>
+      <attr-item tags="all"/>
+      <attr-item tags="ade"/>
+      <attr-item tags="abl"/>
+      <attr-item tags="tra"/>
+      <attr-item tags="trm"/>
+      <attr-item tags="ess"/>
+      <attr-item tags="abe"/>
+      <attr-item tags="com"/>
+    </def-attr>
+  </section-def-attrs>
+
+  <section-def-vars>
+    <def-var n="paraula"/>
+  </section-def-vars>
+
+  <section-rules>
+
+    <rule comment="pxPRN is a result of poss suff conversion; but there is the same PRN already, so delete the pxPRN"> 
+      <pattern>
+        <pattern-item n="PRN"/>
+        <pattern-item n="PRN"/>
+      </pattern>
+      <action>
+      <choose>
+        <when>  
+          <test><or>
+            <and>
+              <equal><clip pos="2" part="lem"/><lit v="px"/></equal>  
+              <equal><clip pos="1" part="tags"/><clip pos="2" part="tags"/></equal>
+            </and>
+            <and>
+              <equal><clip pos="1" part="chcontent"/><clip pos="2" part="chcontent"/></equal>  
+              <equal><clip pos="1" part="tags"/><clip pos="2" part="tags"/></equal>
+            </and>
+          </or></test> 
+          <out>
+            <chunk>
+              <clip pos="1" part="whole"/>
+            </chunk>
+          </out>
+        </when>
+        <otherwise>
+          <out>
+            <chunk>
+              <clip pos="1" part="whole"/>
+            </chunk>
+            <b />
+            <chunk>
+              <clip pos="2" part="whole"/>
+            </chunk>
+          </out>
+        </otherwise>
+      </choose>
+      </action>
+    </rule>
+
+    <rule comment="enkö/etkö/emmekö/ettekö was transformed to QST PRN SVNEG, 
+                   but perhaps there was a PRN already (etkö sinä), so delete the latter"> 
+      <pattern>
+        <pattern-item n="PRN"/>
+        <pattern-item n="SVNEG-p12"/>
+        <pattern-item n="PRN"/>
+      </pattern>
+      <action>
+      <choose>
+        <when>  
+          <test><and>
+            <equal><clip pos="1" part="lem"/><clip pos="3" part="lem"/></equal>  
+            <equal><clip pos="1" part="tags"/><clip pos="3" part="tags"/></equal>
+          </and></test> 
+          <out>
+            <chunk>
+              <clip pos="1" part="whole"/>
+            </chunk>
+            <b />
+            <chunk>
+              <clip pos="2" part="whole"/>
+            </chunk>
+          </out>
+        </when>
+        <otherwise>
+          <out>
+            <chunk>
+              <clip pos="1" part="whole"/>
+            </chunk>
+            <b />
+            <chunk>
+              <clip pos="2" part="whole"/>
+            </chunk>
+            <b />
+            <chunk>
+              <clip pos="3" part="whole"/>
+            </chunk>
+          </out>
+        </otherwise>
+      </choose>
+      </action>
+    </rule>
+
+
+
+  </section-rules>
+</interchunk>
+

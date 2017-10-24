@@ -1,0 +1,290 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<transfer>
+  <section-def-cats>
+    
+    <def-cat n="prc-vol">
+      <cat-item tags="v.*.prc_vol.*"/>
+    </def-cat>
+
+    <def-cat n="prc">
+      <cat-item tags="v.*.prc_perf"/>
+      <cat-item tags="v.*.prc_impf"/>
+    </def-cat>
+
+    <def-cat n="vaux-kel">
+      <cat-item lemma="кел" tags="vaux.*"/>
+    </def-cat>
+
+    <def-cat n="vaux-žat">
+      <cat-item lemma="жат" tags="vaux.*"/>
+    </def-cat>
+
+    <def-cat n="žoq">
+      <cat-item lemma="жоқ" tags="adj.*"/>
+    </def-cat>
+
+    <def-cat n="cop">
+      <cat-item tags="cop.*"/>
+    </def-cat>
+
+    <def-cat n="vaux">
+      <cat-item tags="vaux.*"/>
+    </def-cat>
+
+    <def-cat n="comp">
+      <cat-item tags="adj.comp"/>
+      <cat-item tags="adj.comp.*"/>
+    </def-cat>
+
+    <def-cat n="default">
+      <cat-item tags="*.*"/>
+    </def-cat>
+   
+  </section-def-cats>
+  
+  <section-def-attrs>
+    
+    <def-attr n="case">
+      <attr-item tags="nom"/>
+      <attr-item tags="acc"/>
+      <attr-item tags="dat"/>
+      <attr-item tags="ins"/>
+      <attr-item tags="gen"/>
+      <attr-item tags="loc"/>
+      <attr-item tags="abl"/>
+    </def-attr>
+       
+    <def-attr n="poss">
+      <attr-item tags="px1sg"/>
+      <attr-item tags="px2sg"/>
+      <attr-item tags="px3sp"/>
+      <attr-item tags="px1pl"/>
+      <attr-item tags="px2pl"/>
+    </def-attr>
+
+    <def-attr n="nbr">
+      <attr-item tags="sg"/>
+      <attr-item tags="pl"/>
+      <attr-item tags="ND"/>
+    </def-attr>
+       
+    <def-attr n="a_pers">
+      <attr-item tags="p1"/>
+      <attr-item tags="p2"/>
+      <attr-item tags="p2.frm"/>
+      <attr-item tags="p3"/>
+    </def-attr>
+
+    <def-attr n="a_fin">
+      <attr-item tags="pres"/>
+      <attr-item tags="aor"/>
+    </def-attr>
+
+    <def-attr n="a_comp">
+      <attr-item tags="comp"/>
+    </def-attr>
+
+    <def-attr n="a_prc">
+      <attr-item tags="prc_perf"/>
+      <attr-item tags="prc_impf"/>
+    </def-attr>
+
+    <def-attr n="a_screeve">
+      <attr-item tags="prc_perf"/>
+      <attr-item tags="prc_impf"/>
+      <attr-item tags="gpr_past"/>
+      <attr-item tags="prc_vol"/>
+      <attr-item tags="ger1.nom"/>
+      <attr-item tags="ger1.dat"/>
+    </def-attr>
+
+
+    <def-attr n="a_persnbr">
+      <attr-item tags="p1.sg"/>
+      <attr-item tags="p2.sg"/>
+      <attr-item tags="p3.sg"/>
+      <attr-item tags="p3.pl"/>
+      <attr-item tags="p1.pl"/>
+      <attr-item tags="p2.pl"/>
+      <attr-item tags="p3.pl"/>
+    </def-attr>
+
+    <def-attr n="a_nom">
+      <attr-item tags="n"/>
+    </def-attr>
+    
+  </section-def-attrs>
+ 
+  <section-def-vars>
+    <def-var n="number"/>
+  </section-def-vars>  
+
+  <section-rules>
+    
+    <rule comment="comp"> 
+      <pattern>
+        <pattern-item n="comp"/>
+      </pattern>
+      <action>
+        <let><clip pos="1" side="tl" part="a_comp"/><lit v=""/></let>
+        <modify-case><clip pos="1" side="tl" part="lem"/><lit v="aa"/></modify-case>
+        <out>
+          <lu>
+            <get-case-from pos="1"><lit v="дагъы да"/></get-case-from>
+            <lit-tag v="adv"/>
+          </lu>
+          <b/>
+          <lu>
+            <clip pos="1" side="tl" part="whole"/>
+          </lu>
+        </out>
+      </action>
+    </rule>
+
+    <rule comment="prc-vol vaux-kel"> 
+      <pattern>
+        <pattern-item n="prc-vol"/>
+        <pattern-item n="vaux-kel"/>
+      </pattern>
+      <action>
+        <let><clip pos="1" side="tl" part="a_screeve"/><lit-tag v="ger1.dat"/></let>
+        <let><clip pos="1" side="tl" part="a_persnbr"/><lit v=""/></let>
+        <out>
+          <lu>
+            <clip pos="1" side="tl" part="whole"/>
+          </lu>
+          <b pos="1"/>
+          <lu>
+            <clip pos="2" side="tl" part="whole"/>
+          </lu>
+        </out>
+      </action>
+    </rule>
+
+    <rule comment="prc-vol vaux-kel žoq cop"> 
+      <pattern>
+        <pattern-item n="prc-vol"/>
+        <pattern-item n="vaux-kel"/>
+        <pattern-item n="žoq"/>
+        <pattern-item n="cop"/>
+      </pattern>
+      <action>
+        <let><clip pos="1" side="tl" part="a_screeve"/><lit-tag v="ger1.dat"/></let>
+        <let><clip pos="2" side="tl" part="a_screeve"/><lit v=""/></let>
+        <let><clip pos="1" side="tl" part="a_persnbr"/><lit v=""/></let>
+        <out>
+          <lu>
+            <clip pos="1" side="tl" part="whole"/>
+          </lu>
+          <b pos="1"/>
+          <lu>
+            <clip pos="2" side="tl" part="whole"/>
+            <lit-tag v="neg.aor"/>
+            <clip pos="1" side="sl" part="a_persnbr"/>
+          </lu>
+        </out>
+      </action>
+    </rule>
+
+
+
+    <rule comment="vaux-žat"> 
+      <pattern>
+        <pattern-item n="vaux-žat"/>
+      </pattern>
+      <action>
+        <let><clip pos="1" side="tl" part="a_fin"/><lit-tag v="aor"/></let>
+        <out>
+          <lu>
+            <lit v="ят"/><lit-tag v="v.iv"/>
+            <clip pos="1" side="tl" part="whole"/>
+          </lu>
+        </out>
+      </action>
+    </rule>
+
+    <rule comment=""> 
+      <pattern>
+        <pattern-item n="default"/>
+      </pattern>
+      <action>
+        <choose>
+          <when>
+            <test><equal><clip pos="1" side="sl" part="a_pers"/><lit-tag v="p2.frm"/></equal></test>
+            <let><clip pos="1" side="tl" part="a_pers"/><lit-tag v="p2"/></let>
+          </when>
+        </choose>
+ 
+        <choose>
+          <when>
+            <test><equal><clip pos="1" side="sl" part="case"/><lit-tag v="ins"/></equal></test>
+            <let><clip pos="1" side="tl" part="case"/><concat><lit-tag v="nom"/><lit v="$ ^булан"/><lit-tag v="post"/><lit v="$"/></concat></let>
+          </when>
+        </choose>
+        <out>
+          <lu>
+            <clip pos="1" side="tl" part="whole"/>
+          </lu>
+        </out>
+      </action>
+    </rule>
+
+ 
+
+<!-- -->
+    <rule comment="prc vaux-žat"> 
+      <pattern>
+        <pattern-item n="prc"/>
+        <pattern-item n="vaux"/>
+      </pattern>
+      <action>
+      <let><clip pos="2" side="tl" part="a_fin"/><lit-tag v="aor"/></let>
+      <choose>
+        <when>
+          <test><and> 
+                  <or><equal><clip pos="1" side="sl" part="a_prc"/><lit-tag v="prc_perf"/></equal>
+                      <equal><clip pos="1" side="sl" part="a_prc"/><lit-tag v="prc_impf"/></equal></or>
+                  <equal caseless="yes"><clip pos="2" side="sl" part="lem"/><lit v="жат"/></equal></and>
+          </test>
+          <let><clip pos="1" side="tl" part="a_prc"/><concat><clip pos="2" side="tl" part="tags"/></concat></let>
+          <out>
+            <lu>
+              <clip pos="1" side="tl" part="whole"/>
+            </lu>
+          </out>
+        </when> 
+        <when>
+          <test><and> 
+                  <or><equal><clip pos="1" side="sl" part="a_prc"/><lit-tag v="prc_perf"/></equal>
+                      <equal><clip pos="1" side="sl" part="a_prc"/><lit-tag v="prc_impf"/></equal></or>
+                  <equal caseless="yes"><clip pos="2" side="sl" part="lem"/><lit v="ал"/></equal>
+                </and>
+          </test>
+          <let><clip pos="1" side="tl" part="a_screeve"/><lit-tag v="ger1.nom"/></let>
+          <out>
+            <lu>
+              <clip pos="1" side="tl" part="whole"/>
+            </lu>
+            <b pos="1"/>
+            <lu>
+              <clip pos="2" side="tl" part="whole"/>
+            </lu>
+          </out>
+        </when> 
+        <otherwise> 
+          <out>
+            <lu>
+              <clip pos="1" side="tl" part="whole"/>
+            </lu>
+            <b pos="1"/>
+            <lu>
+              <clip pos="2" side="tl" part="whole"/>
+            </lu>
+          </out>
+        </otherwise> 
+      </choose>
+      </action>
+    </rule>
+  </section-rules>
+</transfer>

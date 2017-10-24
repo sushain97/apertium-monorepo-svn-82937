@@ -1,0 +1,14 @@
+Config:
+  hfst:
+      App: hfst-lookup
+      Gen: ../kjh.autogen.hfst
+      Morph: ../kjh.automorf.hfst
+
+Tests:
+
+ "Noun ат ":
+    ат<n><px1sg><nom> : адым
+    ат<n><px2sg><nom> : адың
+    ат<n><px3sp><nom> : ады
+    ат<n><px1pl><nom> : адыбыс
+    ат<n><px2pl><nom> : адыңар

@@ -1,0 +1,116 @@
+<dictionary>
+  <alphabet/>
+  <sdefs>
+    <sdef n="n"       c="Noun"/>
+    <sdef n="post"    c="Postposition"/>
+    <sdef n="pr"      c="Preposition"/>
+    <sdef n="num"     c="Numeral"/>
+    <sdef n="det"     c="Determiner"/>
+    <sdef n="prn"     c="Pronoun"/>
+    <sdef n="adj"     c="Adjective"/>
+    <sdef n="adv"     c="Adverb"/>
+    <sdef n="v"       c="Verb"/>
+    <sdef n="vblex"   c="Verb"/>
+    <sdef n="vbser"   c="Verb 'to be'"/>
+
+    <sdef n="pers"    c="Personal"/>
+    <sdef n="ord"     c="Ordinal"/>
+    <sdef n="pos"     c="Possessive"/>
+
+    <sdef n="gen"     c="Genitive"/>
+
+    <sdef n="sp"      c="Singular / plural"/>
+
+    <sdef n="sint"    c="Synthetic"/>
+
+    <sdef n="iv"      c="Intransitive"/>
+    <sdef n="tv"      c="Transitive"/>
+    <sdef n="td"      c=""/>
+
+    <sdef n="sent"    c="End of sentence marker"/>
+    <sdef n="cm"      c="Comma"/>
+  </sdefs>
+  <section id="main" type="standard">
+    <!-- SECTION: Postpositions -->
+
+    <e><p><l>ᡳ<s n="post"/></l><r>of<s n="pr"/></r></p></e>
+    <e><p><l>ᡩᡝ<s n="post"/></l><r>to<s n="pr"/></r></p></e>
+    <e><p><l>ᡩᡝ<s n="post"/></l><r>in<s n="pr"/></r></p></e>
+    <e><p><l>ᠮᠠᡢᡤᡞ<s n="post"/></l><r>after<s n="pr"/></r></p></e>
+    <e r="LR"><p><l>ᠪᡝ<s n="post"/></l><r></r></p></e>
+ 
+    <!-- SECTION: Pronouns -->
+
+    <e><p><l>ᡨᡝᡵᡝ<s n="prn"/></l><r>that<s n="prn"/></r></p></e>
+    <e><p><l>ᡝᡵᡝ<s n="prn"/></l><r>this<s n="prn"/></r></p></e>
+
+    <e><p><l>ᡞ<s n="prn"/><s n="pers"/></l><r>he<s n="prn"/></r></p></e>
+    <e><p><l>ᡞ<s n="prn"/><s n="pers"/><s n="gen"/></l><r>his<s n="det"/><s n="pos"/><s n="sp"/></r></p></e>
+    <e><p><l>ᠪᡞ<s n="prn"/><s n="pers"/></l><r>I<s n="prn"/></r></p></e>
+    <e><p><l>ᠪᡞ<s n="prn"/><s n="pers"/><s n="gen"/></l><r>my<s n="det"/><s n="pos"/><s n="sp"/></r></p></e>
+    <e><p><l>ᠪᡝ<s n="prn"/><s n="pers"/></l><r>we<s n="prn"/></r></p></e>
+    <e><p><l>ᠰᡞ<s n="prn"/><s n="pers"/></l><r>you<s n="prn"/></r></p></e>
+
+    <!-- SECTION: Numeral -->
+
+    <e><p><l>ᡝᠮᡠ<s n="num"/></l><r>one<s n="num"/></r></p></e>
+    <e><p><l>ᠨᠠᡩᠠ<s n="num"/></l><r>seven<s n="num"/></r></p></e>
+    <e><p><l>ᡠᠶᡠᠨ<s n="num"/></l><r>nine<s n="num"/></r></p></e>
+
+    <e><p><l>ᠨᠠᡩᠠ<s n="num"/><s n="ord"/></l><r>seventh<s n="adj"/><s n="ord"/></r></p></e>
+
+    <!-- SECTION: Nouns -->
+
+    <e><p><l>ᠮᠣᡵᡞᠨ<s n="n"/></l><r>horse<s n="n"/></r></p></e>
+    <e><p><l>ᠰᡝᡪᡝᠨ<s n="n"/></l><r>cart<s n="n"/></r></p></e>
+    <e><p><l>ᠴᠣᠣᡥᠠ<s n="n"/></l><r>army<s n="n"/></r></p></e>
+    <e><p><l>ᠴᠣᠣᡥᠠ<s n="n"/></l><r>soldier<s n="n"/></r></p></e>
+    <e><p><l>ᡞᠨᡝᡢᡤᡞ<s n="n"/></l><r>day<s n="n"/></r></p></e>
+    <e><p><l>ᡥᠠᡫᠠᠨ<s n="n"/></l><r>official<s n="n"/></r></p></e>
+    <e><p><l>ᡪᡠᡢᡣᡝᠨ<s n="n"/></l><r>bell<s n="n"/></r></p></e>
+    <e><p><l>ᡪᡠᡢᡣᡝᠨ<s n="n"/></l><r>clock<s n="n"/></r></p></e>
+    <e><p><l>ᠰᡠᡣᡩᡠᡪᡝᠨ<s n="n"/></l><r>car<s n="n"/></r></p></e>
+    <e><p><l>ᡨᠣᡣᠰᠣ<s n="n"/></l><r>village<s n="n"/></r></p></e>
+    <e><p><l>ᡨᡠᠸᠠᡞ<b/>ᠰᡝᡪᡝᠨ<s n="n"/></l><r>train<s n="n"/></r></p></e>
+    <e><p><l>ᠠᠪᡣᠠ<s n="n"/></l><r>heaven<s n="n"/></r></p></e>
+    <e><p><l>ᠠᠮᠠ<s n="n"/></l><r>father<s n="n"/></r></p></e>
+    <e><p><l>ᡤᡠᡵᡠᠨ<s n="n"/></l><r>people<s n="n"/></r></p></e>
+    <e><p><l>ᡠᡵᠰᡝ<s n="n"/></l><r>people<s n="n"/></r></p></e>
+
+    <!-- SECTION: Adjectives -->
+
+    <e><p><l>ᡧᠣᠯᠣ<s n="adj"/></l><r>free<s n="adj"/><s n="sint"/></r></p></e>
+    <e><p><l>ᡪᠠᡞ<s n="adj"/></l><r>next<s n="adj"/></r></p></e>
+    <e><p><l>ᡝᡵᡩᡝ<s n="adj"/></l><r>early<s n="adj"/><s n="sint"/></r></p></e>
+
+    <!-- SECTION: Adverbs -->
+
+    <e><p><l>ᠰᡞᡩᡝᠨ<s n="adv"/></l><r>for<b/>a<b/>while<s n="adv"/></r></p></e>
+    <e><p><l>ᡝᡩᡝ<s n="adv"/></l><r>here<s n="adv"/></r></p></e>
+    <e><p><l>ᠠᠮᠪᡠᠯᠠ<s n="adv"/></l><r>seriously<s n="adv"/></r></p></e>
+    <e><p><l>ᠠᠮᠪᡠᠯᠠ<s n="adv"/></l><r>greatly<s n="adv"/></r></p></e>
+    <e><p><l>ᠠᠮᠪᡠᠯᠠ<s n="adv"/></l><r>really<s n="adv"/></r></p></e>
+
+    <!-- SECTION: Verbs -->
+ 
+    <e><p><l>ᠪᠠ᠇ᡞ<s n="v"/><s n="iv"/></l><r>be<s n="vbser"/></r></p></e>
+    <e><p><l>ᡠᡵᡝᠪᡠ<s n="v"/><s n="iv"/></l><r>drill<s n="vblex"/></r></p></e>
+    <e><p><l>ᡞᠰᡞᠨᠠ<s n="v"/><s n="iv"/></l><r>arrive<s n="vblex"/></r></p></e>
+    <e><p><l>ᡪᡞᠯᡞᡩᠠ<s n="v"/><s n="iv"/></l><r>get<g><b/>angry</g><s n="vblex"/></r></p></e>
+    <e><p><l>ᡩᡠᠯᡝ<s n="v"/><s n="iv"/></l><r>strike<s n="vblex"/></r></p></e>
+    <e><p><l>ᡪᡞ<s n="v"/><s n="iv"/></l><r>come<s n="vblex"/></r></p></e>
+    <e><p><l>ᡠᡩᠠ<s n="v"/><s n="td"/></l><r>buy<s n="vblex"/></r></p></e>
+    <e><p><l>ᠠᠯᠠ<s n="v"/><s n="td"/></l><r>@@<s n="vblex"/></r></p></e>
+    <e><p><l>ᠰᡞᡨᠠ<s n="v"/><s n="td"/></l><r>@@<s n="vblex"/></r></p></e>
+    <e><p><l>ᠪᡠ<s n="v"/><s n="tv"/></l><r>give<s n="vblex"/></r></p></e>
+    <e><p><l>ᠠᡵᠠ<s n="v"/><s n="tv"/></l><r>make<s n="vblex"/></r></p></e>
+
+
+    <!-- SECTION: Punctuation -->
+
+    <e><p><l>᠉<s n="sent"/></l><r>.<s n="sent"/></r></p></e>
+    <e><p><l>᠈<s n="cm"/></l><r>,<s n="cm"/></r></p></e>
+    
+  </section>
+  
+</dictionary>

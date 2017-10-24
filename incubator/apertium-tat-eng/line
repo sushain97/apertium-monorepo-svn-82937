@@ -1,0 +1,13 @@
+#!/bin/bash
+
+TEXT="texts/marriageRecord.csv"
+TRANSLATION_PIPE="apertium -u -d . tat-eng"
+
+if [ "$2" == "s" ]; then
+    sed -n "$1p" $TEXT
+elif [ "$2" == "t" ]; then
+    sed -n "$1p" $TEXT | $TRANSLATION_PIPE
+else
+    sed -n "$1p" $TEXT
+    sed -n "$1p" $TEXT | $TRANSLATION_PIPE
+fi

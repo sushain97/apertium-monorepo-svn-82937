@@ -1,0 +1,128 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<interchunk>
+
+  <section-def-cats>
+    <def-cat n="PR">
+      <cat-item tags="PR"/>
+    </def-cat>
+    <def-cat n="SN">
+      <cat-item tags="SN"/>
+    </def-cat>
+    <def-cat n="SN_ABL">
+      <cat-item tags="SN.*.*.*.abl"/>
+    </def-cat>
+    <def-cat n="SN_LOC">
+      <cat-item tags="SN.*.*.*.loc"/>
+    </def-cat>
+    <def-cat n="V">
+      <cat-item tags="V"/>
+      <cat-item tags="V.*"/>
+    </def-cat>
+  </section-def-cats>
+
+  <section-def-attrs>
+    <def-attr n="nbr">
+      <attr-item tags="sg"/>
+      <attr-item tags="pl"/>
+      <attr-item tags="sp"/>
+      <attr-item tags="ND"/>
+    </def-attr>
+    <def-attr n="case">
+      <attr-item tags="abs"/>
+      <attr-item tags="abl"/>
+      <attr-item tags="gen"/>
+      <attr-item tags="loc"/>
+      <attr-item tags="acc"/>
+    </def-attr>
+  </section-def-attrs>
+
+  <section-def-vars>
+    <def-var n="nombre"/>
+    <def-var n="genere"/>
+  </section-def-vars>
+
+  <section-rules>
+
+    <rule comment="REGLA: SN">
+      <pattern>
+        <pattern-item n="SN"/>
+      </pattern>
+      <action>
+        <out>
+          <chunk>
+            <clip pos="1" part="lem"/>
+            <clip pos="1" part="tags"/>
+            <clip pos="1" part="chcontent"/>
+          </chunk>
+        </out>
+      </action>
+    </rule>
+
+    <rule comment="REGLA: SN_ABL">
+      <pattern>
+        <pattern-item n="SN_ABL"/>
+      </pattern>
+      <action>
+        <let>
+          <clip pos="1" part="case"/>
+          <lit-tag v="gen"/>
+        </let>
+        <out>
+          <chunk>
+            <get-case-from pos="1">
+            <lit v="с"/> <!-- с, от, из -->
+            </get-case-from>
+            <lit-tag v="PREP"/>
+            <lit v="{^"/>
+            <get-case-from pos="1">
+            <lit v="с"/>
+            </get-case-from>
+            <lit-tag v="pr"/>
+            <lit v="$}"/> 
+          </chunk>
+          <b/>
+          <chunk>
+            <clip pos="1" part="lem"/>
+            <clip pos="1" part="tags"/>
+            <clip pos="1" part="chcontent"/>
+          </chunk>
+        </out>
+      </action>
+    </rule>
+
+    <rule comment="REGLA: SN_LOC">
+      <pattern>
+        <pattern-item n="SN_LOC"/>
+      </pattern>
+      <action>
+        <let>
+          <clip pos="1" part="case"/>
+          <lit-tag v="acc"/>
+        </let>
+        <out>
+          <chunk>
+            <get-case-from pos="1">
+            <lit v="в"/>
+            </get-case-from>
+            <lit-tag v="PREP"/>
+            <lit v="{^"/>
+            <get-case-from pos="1">
+            <lit v="в"/>
+            </get-case-from>
+            <lit-tag v="pr"/>
+            <lit v="$}"/> 
+          </chunk>
+          <b/>
+          <chunk>
+            <clip pos="1" part="lem"/>
+            <clip pos="1" part="tags"/>
+            <clip pos="1" part="chcontent"/>
+          </chunk>
+        </out>
+      </action>
+    </rule>
+
+
+
+  </section-rules>
+</interchunk>

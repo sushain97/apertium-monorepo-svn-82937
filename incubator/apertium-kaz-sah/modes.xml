@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<modes>
+
+  <!-- kaz → sah -->
+
+  <mode name="kaz-sah" install="yes" gendebug="yes">
+    <pipeline>
+      <program name="lt-proc -w">
+        <file name="kaz-sah.automorf.bin"/>
+      </program>
+
+
+      <program name="cg-proc -w">
+        <file name="kaz-sah.rlx.bin"/>
+      </program>
+      <program name="apertium-tagger -u 2 -g $2">
+        <file name="kaz-sah.prob"/>
+      </program>
+      <program name="apertium-pretransfer"/>
+      <program name="lt-proc -b">
+        <file name="kaz-sah.autobil.bin"/>
+      </program>
+      <program name="lrx-proc">
+        <file name="kaz-sah.autolex.bin"/>
+      </program>
+      <program name="apertium-transfer -b">
+        <file name="apertium-kaz-sah.kaz-sah.t1x"/>
+        <file name="kaz-sah.t1x.bin"/>
+      </program>
+      <program name="apertium-interchunk">
+        <file name="apertium-kaz-sah.kaz-sah.t2x"/>
+        <file name="kaz-sah.t2x.bin"/>
+      </program>
+      <program name="apertium-postchunk">
+        <file name="apertium-kaz-sah.kaz-sah.t3x"/>
+        <file name="kaz-sah.t3x.bin"/>
+      </program>
+      <program name="apertium-transfer -n">
+        <file name="apertium-kaz-sah.kaz-sah.t4x"/>
+        <file name="kaz-sah.t4x.bin"/>
+      </program>
+      <program name="lt-proc $1">
+        <file name="kaz-sah.autogen.bin"/>
+      </program>
+
+      <program name="lt-proc -p">
+        <file name="kaz-sah.autopgen.bin"/>
+      </program>
+    </pipeline>
+  </mode>
+
+  <!-- sah → kaz -->
+
+  <mode name="sah-kaz" install="yes" gendebug="yes">
+    <pipeline>
+      <program name="lt-proc -w">
+        <file name="sah-kaz.automorf.bin"/>
+      </program>
+
+
+      <program name="cg-proc -w">
+        <file name="sah-kaz.rlx.bin"/>
+      </program>
+      <program name="apertium-tagger -u 2 -g $2">
+        <file name="sah-kaz.prob"/>
+      </program>
+      <program name="apertium-pretransfer"/>
+      <program name="lt-proc -b">
+        <file name="sah-kaz.autobil.bin"/>
+      </program>
+      <program name="lrx-proc">
+        <file name="sah-kaz.autolex.bin"/>
+      </program>
+      <program name="apertium-transfer -b">
+        <file name="apertium-kaz-sah.sah-kaz.t1x"/>
+        <file name="sah-kaz.t1x.bin"/>
+      </program>
+      <program name="apertium-interchunk">
+        <file name="apertium-kaz-sah.sah-kaz.t2x"/>
+        <file name="sah-kaz.t2x.bin"/>
+      </program>
+      <program name="apertium-postchunk">
+        <file name="apertium-kaz-sah.sah-kaz.t3x"/>
+        <file name="sah-kaz.t3x.bin"/>
+      </program>
+
+      <program name="lt-proc $1">
+        <file name="sah-kaz.autogen.bin"/>
+      </program>
+
+      <program name="lt-proc -p">
+        <file name="sah-kaz.autopgen.bin"/>
+      </program>
+    </pipeline>
+  </mode>
+</modes>
+

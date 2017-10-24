@@ -1,0 +1,23 @@
+<assembly>
+    <id>assembled</id>
+    <formats>
+        <format>zip</format>
+    </formats>
+
+  <dependencySets>
+    <dependencySet>
+    </dependencySet>
+  </dependencySets>
+  <fileSets>
+      <fileSet>
+          <directory>src/main/assembly-files</directory>
+          <outputDirectory>/</outputDirectory>
+          <fileMode>0755</fileMode>
+      </fileSet>
+      <fileSet>
+          <directory>${java.io.tmpdir}/sigar/hyperic-sigar-1.6.3/sigar-bin/lib</directory>
+          <outputDirectory>/</outputDirectory>
+      </fileSet>
+  </fileSets>
+    
+</assembly>

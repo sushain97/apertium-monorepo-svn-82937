@@ -1,0 +1,33 @@
+<rules>
+  <!-- 
+    Chooses "ciento" as the translation for "cent" when it is of followed by a <num>. 
+  -->
+
+<rule weight="1.0">
+    <match lemma="cent">
+		<select lemma="ciento"/>
+	</match>	
+    <match tags="num.*"/>
+</rule>
+  
+<rule weight="1.0">
+    <match lemma="cent">
+		<select lemma="cient"/>
+	</match>	
+	<or>
+    <match lemma="mil"/>
+	<match lemma="millón"/>
+	</or>
+</rule>
+
+  
+</rules>
+
+<!-- 
+Resources: 
+    http://wiki.apertium.org/wiki/How_to_get_started_with_lexical_selection_rules
+    http://wiki.apertium.org/wiki/Constraint-based_lexical_selection
+    http://wiki.apertium.org/wiki/Lexical_selection
+    http://wiki.apertium.org/wiki/Learning_rules_from_parallel_and_non-parallel_corpora
+-->
+

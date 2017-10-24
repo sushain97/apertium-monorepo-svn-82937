@@ -1,0 +1,531 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<modes>
+
+  <!-- eng → srn -->
+
+  <mode name="eng-srn" install="yes">
+    <pipeline>
+      <program name="lt-proc -w">
+        <file name="eng-srn.automorf.bin"/>
+      </program>
+
+
+      <program name="cg-proc -w">
+        <file name="eng-srn.rlx.bin"/>
+      </program>
+      <program name="apertium-tagger -g $2">
+        <file name="eng-srn.prob"/>
+      </program>
+      <program name="apertium-pretransfer"/>
+      <program name="lt-proc -b">
+        <file name="eng-srn.autobil.bin"/>
+      </program>
+      <program name="lrx-proc">
+        <file name="eng-srn.autolex.bin"/>
+      </program>
+      <program name="apertium-transfer -b">
+        <file name="apertium-eng-srn.eng-srn.t1x"/>
+        <file name="eng-srn.t1x.bin"/>
+      </program>
+      <program name="apertium-interchunk">
+        <file name="apertium-eng-srn.eng-srn.t2x"/>
+        <file name="eng-srn.t2x.bin"/>
+      </program>
+      <program name="apertium-postchunk">
+        <file name="apertium-eng-srn.eng-srn.t3x"/>
+        <file name="eng-srn.t3x.bin"/>
+      </program>
+      <program name="lt-proc $1">
+        <file name="eng-srn.autogen.bin"/>
+      </program>
+
+      <program name="lt-proc -p">
+        <file name="eng-srn.autopgen.bin"/>
+      </program>
+    </pipeline>
+  </mode>
+
+  <mode name="eng-srn-dgen" install="no">
+    <pipeline>
+      <program name="lt-proc -w">
+        <file name="eng-srn.automorf.bin"/>
+      </program>
+
+
+      <program name="cg-proc -w">
+        <file name="eng-srn.rlx.bin"/>
+      </program>
+      <program name="apertium-tagger -g $2">
+        <file name="eng-srn.prob"/>
+      </program>
+      <program name="apertium-pretransfer"/>
+      <program name="lt-proc -b">
+        <file name="eng-srn.autobil.bin"/>
+      </program>
+      <program name="apertium-transfer -b">
+        <file name="apertium-eng-srn.eng-srn.t1x"/>
+        <file name="eng-srn.t1x.bin"/>
+      </program>
+      <program name="apertium-interchunk">
+        <file name="apertium-eng-srn.eng-srn.t2x"/>
+        <file name="eng-srn.t2x.bin"/>
+      </program>
+      <program name="apertium-postchunk">
+        <file name="apertium-eng-srn.eng-srn.t3x"/>
+        <file name="eng-srn.t3x.bin"/>
+      </program>
+      <program name="lt-proc -d">
+        <file name="eng-srn.autogen.bin"/>
+      </program>
+    </pipeline>
+  </mode>
+
+  <mode name="eng-srn-morph" install="no">
+    <pipeline>
+      <program name="lt-proc -w">
+        <file name="eng-srn.automorf.bin"/>
+      </program>
+    </pipeline>
+  </mode>
+
+  <mode name="eng-srn-disam" install="no">
+    <pipeline>
+      <program name="lt-proc -w">
+        <file name="eng-srn.automorf.bin"/>
+      </program>
+      <program name="cg-conv -a"/>
+      <program name="vislcg3 --trace --grammar">
+        <file name="eng-srn.rlx.bin"/>
+      </program>
+    </pipeline>
+  </mode>
+
+  <mode name="eng-srn-tagger" install="no">
+    <pipeline>
+      <program name="lt-proc -w">
+        <file name="eng-srn.automorf.bin"/>
+      </program>
+
+
+      <program name="cg-proc -w">
+        <file name="eng-srn.rlx.bin"/>
+      </program>
+      <program name="apertium-tagger -g $2">
+        <file name="eng-srn.prob"/>
+      </program>
+    </pipeline>
+  </mode>
+
+  <mode name="eng-srn-pretransfer" install="no">
+    <pipeline>
+      <program name="lt-proc -w">
+        <file name="eng-srn.automorf.bin"/>
+      </program>
+
+
+      <program name="cg-proc -w">
+        <file name="eng-srn.rlx.bin"/>
+      </program>
+      <program name="apertium-tagger -g $2">
+        <file name="eng-srn.prob"/>
+      </program>
+      <program name="apertium-pretransfer"/>
+    </pipeline>
+  </mode>
+
+  <mode name="eng-srn-biltrans" install="no">
+    <pipeline>
+      <program name="lt-proc -w">
+        <file name="eng-srn.automorf.bin"/>
+      </program>
+
+
+      <program name="cg-proc -w">
+        <file name="eng-srn.rlx.bin"/>
+      </program>
+      <program name="apertium-tagger -g $2">
+        <file name="eng-srn.prob"/>
+      </program>
+      <program name="apertium-pretransfer"/>
+      <program name="lt-proc -b">
+        <file name="eng-srn.autobil.bin"/>
+      </program>
+    </pipeline>
+  </mode>
+
+  <mode name="eng-srn-lex" install="no">
+    <pipeline>
+      <program name="lt-proc -w">
+        <file name="eng-srn.automorf.bin"/>
+      </program>
+
+
+      <program name="cg-proc -w">
+        <file name="eng-srn.rlx.bin"/>
+      </program>
+      <program name="apertium-tagger -g $2">
+        <file name="eng-srn.prob"/>
+      </program>
+      <program name="apertium-pretransfer"/>
+      <program name="lt-proc -b">
+        <file name="eng-srn.autobil.bin"/>
+      </program>
+      <program name="lrx-proc -t">
+        <file name="eng-srn.autolex.bin"/>
+      </program>
+    </pipeline>
+  </mode>
+
+  <mode name="eng-srn-transfer" install="no">
+    <pipeline>
+      <program name="lt-proc -w">
+        <file name="eng-srn.automorf.bin"/>
+      </program>
+
+
+      <program name="cg-proc -w">
+        <file name="eng-srn.rlx.bin"/>
+      </program>
+      <program name="apertium-tagger -g $2">
+        <file name="eng-srn.prob"/>
+      </program>
+      <program name="apertium-pretransfer"/>
+      <program name="lt-proc -b">
+        <file name="eng-srn.autobil.bin"/>
+      </program>
+      <program name="lrx-proc">
+        <file name="eng-srn.autolex.bin"/>
+      </program>
+      <program name="apertium-transfer -b -t">
+        <file name="apertium-eng-srn.eng-srn.t1x"/>
+        <file name="eng-srn.t1x.bin"/>
+      </program>
+    </pipeline>
+  </mode>
+
+  <mode name="eng-srn-interchunk" install="no">
+    <pipeline>
+      <program name="lt-proc -w">
+        <file name="eng-srn.automorf.bin"/>
+      </program>
+
+
+      <program name="cg-proc -w">
+        <file name="eng-srn.rlx.bin"/>
+      </program>
+      <program name="apertium-tagger -g $2">
+        <file name="eng-srn.prob"/>
+      </program>
+      <program name="apertium-pretransfer"/>
+      <program name="lt-proc -b">
+        <file name="eng-srn.autobil.bin"/>
+      </program>
+      <program name="lrx-proc">
+        <file name="eng-srn.autolex.bin"/>
+      </program>
+      <program name="apertium-transfer -b">
+        <file name="apertium-eng-srn.eng-srn.t1x"/>
+        <file name="eng-srn.t1x.bin"/>
+      </program>
+      <program name="apertium-interchunk -t">
+        <file name="apertium-eng-srn.eng-srn.t2x"/>
+        <file name="eng-srn.t2x.bin"/>
+      </program>
+    </pipeline>
+  </mode>
+
+  <mode name="eng-srn-postchunk" install="no">
+    <pipeline>
+      <program name="lt-proc -w">
+        <file name="eng-srn.automorf.bin"/>
+      </program>
+
+
+      <program name="cg-proc -w">
+        <file name="eng-srn.rlx.bin"/>
+      </program>
+      <program name="apertium-tagger -g $2">
+        <file name="eng-srn.prob"/>
+      </program>
+      <program name="apertium-pretransfer"/>
+      <program name="lt-proc -b">
+        <file name="eng-srn.autobil.bin"/>
+      </program>
+      <program name="lrx-proc">
+        <file name="eng-srn.autolex.bin"/>
+      </program>
+      <program name="apertium-transfer -b">
+        <file name="apertium-eng-srn.eng-srn.t1x"/>
+        <file name="eng-srn.t1x.bin"/>
+      </program>
+      <program name="apertium-interchunk">
+        <file name="apertium-eng-srn.eng-srn.t2x"/>
+        <file name="eng-srn.t2x.bin"/>
+      </program>
+      <program name="apertium-postchunk">
+        <file name="apertium-eng-srn.eng-srn.t3x"/>
+        <file name="eng-srn.t3x.bin"/>
+      </program>
+    </pipeline>
+  </mode>
+
+  <!-- srn → eng -->
+
+  <mode name="srn-eng" install="yes">
+    <pipeline>
+      <program name="lt-proc -w">
+        <file name="srn-eng.automorf.bin"/>
+      </program>
+
+
+      <program name="cg-proc -w">
+        <file name="srn-eng.rlx.bin"/>
+      </program>
+      <program name="apertium-tagger -g $2">
+        <file name="srn-eng.prob"/>
+      </program>
+      <program name="apertium-pretransfer"/>
+      <program name="lt-proc -b">
+        <file name="srn-eng.autobil.bin"/>
+      </program>
+      <program name="lrx-proc">
+        <file name="srn-eng.autolex.bin"/>
+      </program>
+      <program name="apertium-transfer -b">
+        <file name="apertium-eng-srn.srn-eng.t1x"/>
+        <file name="srn-eng.t1x.bin"/>
+      </program>
+      <program name="apertium-interchunk">
+        <file name="apertium-eng-srn.srn-eng.t2x"/>
+        <file name="srn-eng.t2x.bin"/>
+      </program>
+      <program name="apertium-postchunk">
+        <file name="apertium-eng-srn.srn-eng.t3x"/>
+        <file name="srn-eng.t3x.bin"/>
+      </program>
+      <program name="lt-proc $1">
+        <file name="srn-eng.autogen.bin"/>
+      </program>
+
+      <program name="lt-proc -p">
+        <file name="srn-eng.autopgen.bin"/>
+      </program>
+    </pipeline>
+  </mode>
+
+  <mode name="srn-eng-dgen" install="no">
+    <pipeline>
+      <program name="lt-proc -w">
+        <file name="srn-eng.automorf.bin"/>
+      </program>
+
+
+      <program name="cg-proc -w">
+        <file name="srn-eng.rlx.bin"/>
+      </program>
+      <program name="apertium-tagger -g $2">
+        <file name="srn-eng.prob"/>
+      </program>
+      <program name="apertium-pretransfer"/>
+      <program name="lt-proc -b">
+        <file name="srn-eng.autobil.bin"/>
+      </program>
+      <program name="apertium-transfer -b">
+        <file name="apertium-eng-srn.srn-eng.t1x"/>
+        <file name="srn-eng.t1x.bin"/>
+      </program>
+      <program name="apertium-interchunk">
+        <file name="apertium-eng-srn.srn-eng.t2x"/>
+        <file name="srn-eng.t2x.bin"/>
+      </program>
+      <program name="apertium-postchunk">
+        <file name="apertium-eng-srn.srn-eng.t3x"/>
+        <file name="srn-eng.t3x.bin"/>
+      </program>
+      <program name="lt-proc -d">
+        <file name="srn-eng.autogen.bin"/>
+      </program>
+    </pipeline>
+  </mode>
+
+  <mode name="srn-eng-morph" install="no">
+    <pipeline>
+      <program name="lt-proc -w">
+        <file name="srn-eng.automorf.bin"/>
+      </program>
+    </pipeline>
+  </mode>
+
+  <mode name="srn-eng-disam" install="no">
+    <pipeline>
+      <program name="lt-proc -w">
+        <file name="srn-eng.automorf.bin"/>
+      </program>
+      <program name="cg-conv -a"/>
+      <program name="vislcg3 --trace --grammar">
+        <file name="srn-eng.rlx.bin"/>
+      </program>
+    </pipeline>
+  </mode>
+
+  <mode name="srn-eng-tagger" install="no">
+    <pipeline>
+      <program name="lt-proc -w">
+        <file name="srn-eng.automorf.bin"/>
+      </program>
+
+
+      <program name="cg-proc -w">
+        <file name="srn-eng.rlx.bin"/>
+      </program>
+      <program name="apertium-tagger -g $2">
+        <file name="srn-eng.prob"/>
+      </program>
+    </pipeline>
+  </mode>
+
+  <mode name="srn-eng-pretransfer" install="no">
+    <pipeline>
+      <program name="lt-proc -w">
+        <file name="srn-eng.automorf.bin"/>
+      </program>
+
+
+      <program name="cg-proc -w">
+        <file name="srn-eng.rlx.bin"/>
+      </program>
+      <program name="apertium-tagger -g $2">
+        <file name="srn-eng.prob"/>
+      </program>
+      <program name="apertium-pretransfer"/>
+    </pipeline>
+  </mode>
+
+  <mode name="srn-eng-biltrans" install="no">
+    <pipeline>
+      <program name="lt-proc -w">
+        <file name="srn-eng.automorf.bin"/>
+      </program>
+
+
+      <program name="cg-proc -w">
+        <file name="srn-eng.rlx.bin"/>
+      </program>
+      <program name="apertium-tagger -g $2">
+        <file name="srn-eng.prob"/>
+      </program>
+      <program name="apertium-pretransfer"/>
+      <program name="lt-proc -b">
+        <file name="srn-eng.autobil.bin"/>
+      </program>
+    </pipeline>
+  </mode>
+
+  <mode name="srn-eng-lex" install="no">
+    <pipeline>
+      <program name="lt-proc -w">
+        <file name="srn-eng.automorf.bin"/>
+      </program>
+
+
+      <program name="cg-proc -w">
+        <file name="srn-eng.rlx.bin"/>
+      </program>
+      <program name="apertium-tagger -g $2">
+        <file name="srn-eng.prob"/>
+      </program>
+      <program name="apertium-pretransfer"/>
+      <program name="lt-proc -b">
+        <file name="srn-eng.autobil.bin"/>
+      </program>
+      <program name="lrx-proc">
+        <file name="srn-eng.autolex.bin"/>
+      </program>
+    </pipeline>
+  </mode>
+
+  <mode name="srn-eng-transfer" install="no">
+    <pipeline>
+      <program name="lt-proc -w">
+        <file name="srn-eng.automorf.bin"/>
+      </program>
+
+
+      <program name="cg-proc -w">
+        <file name="srn-eng.rlx.bin"/>
+      </program>
+      <program name="apertium-tagger -g $2">
+        <file name="srn-eng.prob"/>
+      </program>
+      <program name="apertium-pretransfer"/>
+      <program name="lt-proc -b">
+        <file name="srn-eng.autobil.bin"/>
+      </program>
+      <program name="apertium-transfer -b -t">
+        <file name="apertium-eng-srn.srn-eng.t1x"/>
+        <file name="srn-eng.t1x.bin"/>
+      </program>
+    </pipeline>
+  </mode>
+
+  <mode name="srn-eng-interchunk" install="no">
+    <pipeline>
+      <program name="lt-proc -w">
+        <file name="srn-eng.automorf.bin"/>
+      </program>
+
+
+      <program name="cg-proc -w">
+        <file name="srn-eng.rlx.bin"/>
+      </program>
+      <program name="apertium-tagger -g $2">
+        <file name="srn-eng.prob"/>
+      </program>
+      <program name="apertium-pretransfer"/>
+      <program name="lt-proc -b">
+        <file name="srn-eng.autobil.bin"/>
+      </program>
+      <program name="apertium-transfer -b">
+        <file name="apertium-eng-srn.srn-eng.t1x"/>
+        <file name="srn-eng.t1x.bin"/>
+      </program>
+      <program name="apertium-interchunk -t">
+        <file name="apertium-eng-srn.srn-eng.t2x"/>
+        <file name="srn-eng.t2x.bin"/>
+      </program>
+    </pipeline>
+  </mode>
+
+  <mode name="srn-eng-postchunk" install="no">
+    <pipeline>
+      <program name="lt-proc -w">
+        <file name="srn-eng.automorf.bin"/>
+      </program>
+
+
+      <program name="cg-proc -w">
+        <file name="srn-eng.rlx.bin"/>
+      </program>
+      <program name="apertium-tagger -g $2">
+        <file name="srn-eng.prob"/>
+      </program>
+      <program name="apertium-pretransfer"/>
+      <program name="lt-proc -b">
+        <file name="srn-eng.autobil.bin"/>
+      </program>
+      <program name="apertium-transfer -b">
+        <file name="apertium-eng-srn.srn-eng.t1x"/>
+        <file name="srn-eng.t1x.bin"/>
+      </program>
+      <program name="apertium-interchunk">
+        <file name="apertium-eng-srn.srn-eng.t2x"/>
+        <file name="srn-eng.t2x.bin"/>
+      </program>
+      <program name="apertium-postchunk">
+        <file name="apertium-eng-srn.srn-eng.t3x"/>
+        <file name="srn-eng.t3x.bin"/>
+      </program>
+    </pipeline>
+  </mode>
+</modes>
+

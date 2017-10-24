@@ -1,0 +1,189 @@
+==Rules==
+
+* не треба да се прекршува -> should not be breached (FP: done)
+* нема да надмине - will not exceed (FP: done)
+* се очекува целосно да функционира - expects to function comprehensively (FP: this is tricky)
+
+===Pronoun insertion===
+
+* Ако не  секој ден, ќе   го правиме     тоа најмалку три   пати  неделно.
+  If  not every day, will it do.PRES.PL1 it  at most  three times weekly .
+
+Insert pronouns for first and second person where we haven't seen 
+a pronominal subject.
+
+===Conjunctions===
+ 
+The use of 'i' (and) is different between Macedonian and English:
+
+* Смртната  казна   ќе   биде укината  , дури и   во воено време.
+  The death penalty will be   abolished, even and in war   time.
+ `The death penalty will be abolished, even in war time.'
+
+FP: added: дури и, кога и, и тие (they, also)
+
+The majority of these should probably be added as adverbs. 
+
+===Noun phrases===
+
+* 27 килограми хероин 
+  numeral + quantity + noun -> numeral + quantity + OF + noun
+
+FP: added a rule, need to fill the list
+
+===Valency===
+
+Infinitive clauses:
+
+* успеал да ја добие -> succeeded in obtaining 		FP: done like the one bellow
+* размислува да се повлече по -> considers withdrawing from 	FP: done
+*    -> 'have the job of coordinating' [- have job to coordinate]
+
+===Clitic pronouns===
+
+Do something with clitic pronouns, other than throwing
+them away. Macedonian has compulsary clitic doubling, so
+sometimes we get the object twice.
+
+* Тој ми     ја       покажа но  јас веќе    ја      бев видел.
+  He  me.DAT her.ACC  showed but I   already her.ACC had seen .
+ `He showed her to me but I had already seen her.'
+
+FP: Done most of it. Tagger sucks.
+
+===Other===
+
+Експрес објави дека приходите се намали скоро за 50 отсто во споредба со пред една година.
+- Express reports that the revenues reduces recently by 50 percent in comparison with before one year.
++ Express reports that revenues reduced recently by 50 percent in comparison with one year ago.
+
+барајќи од секоја од нив  одделно
+asking     each   of them separately
+
+==Lexical rules==
+
+;одделно
+
+Default adverb meaning: 'separately'
+
+ околу  30  отсто  поддршка одделно.
+ around 30%        support  each.
+
+ Со   9,3       поени одделно
+ With scores of 9.3   each
+
+ повеќе од   7.500 евра  одделно.
+ more   than 7,500 euros each.
+
+pr NUM (NOM)+ oddelno 
+
+===Proper names===
+
+* ЕУ 			- The EU		
+
+===Numerals===
+
+27-миот is because 27=дваесет и седум, it finishes on an "м"
+10-тиот: 10=десет
+12-ти пациент денес: 12th patient today
+60-тата година од неговиот живот: 60th year in his life
+
+* 240 г. п.н.е.		- 240 BCE
+* 467 г. пред н.е.	- 467 BCE
+* 27-миот		- the 27th
+* 10-тиот		- the 10th
+* 17-ти			- the 17th
+* 60-тата		- the 60th
+* 22-та			- the 22nd
+* 21-ви			- the 21st
+* 2-ри			- the 2nd
+* 50-тина		- around 50 (FP: not this one)
+* 1990-тите		- 1990s
+* 48-ма			- 48th
+* 10-ти			- /typo for -ti/
+
+FP: Done
+FP: was generally ok
+
+==Multiwords==
+
+веќе неколку недели 	- for a few weeks FP: done, added weeks, days, years
+во другите вести	- in the other news
+во исто време 		- at the same time 
+во согласност со	- in line with / in accordance with / following
+во близина на		- near / in the vicinity of
+за време на 		- during
+за неколку недели 	- within weeks
+за разлика од 		- in contrast to
+и покрај тоа што	- although / in spite of the fact / despite that / besides the fact that
+како пример 		- as an example
+како резултат на тоа 	- as a result
+крајно време		- high time
+на пример 		- for example
+на чело на		- 
+на крајот од		- at the end of
+најголем дел од 	- the majority of / the bulk of
+но истите 		- but
+од страна на		- by
+оддалеченост од		- away from
+близок до		- close to
+општо земено 		- in general / broadly speaking
+освен тоа 		- furthermore / moreover
+освен тоа што 		- besides
+повеќето од		- most of
+поголем дел од 		- most of
+пред неколку недели 	- weeks ago FP: will write a rule for it (few weeks/days/minutes/hours/years...other nouns ago)
+при што голем дел од 	- with many of / with much of
+што е можно повеќе 	- as many as possible
+само доколку		- only if
+следната година		- next year
+
+FP: Done up to here
+
+лоша страна 		- downside
+посвојувачи на деца 	- child trafficking
+членови на парламент	- members of parliament
+трговија со дрога	- drug trade
+трговија со луѓе	- people smuggling
+Советот за безбедност   - security council
+гласа за недоверба	- vote of no confidence
+надворешни работи	- foreign affairs
+групата за контрола	- watchdog group (?)
+
+сам од себе 		- by oneself|himself|ourselves|...
+во саботата		- on Saturday
+
+
+организирана _од_	- organised _by_
+
+===Toponyms===
+
+* Република Српска FP: this one can not be used as an adjective
+* Монте Карло
+* Хелсинки
+* Лисабон
+* Нов Зеланд
+
+FP: Done
+
+==General stuff==
+
+* Look into -o adverbs, e.g. adjectives used adverbially 'particularly' < 'particular' etc.
+
+FP: very tricky.
+
+** повторно
+** формално
+** директно
+** особено
+** повторно
+** сериозно
+** постојано
+** неделно - weekly
+** одделно - separately / each
+
+FP:
+change 'се одржи' to 'се одржа' and from imperf to perf
+неколку - several, неколкуте - the several
+change all 'податоци' to 'подато/к'
+deal wih онака

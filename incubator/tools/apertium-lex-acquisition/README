@@ -1,0 +1,26 @@
+These are some proof of concept programs. They are here to show
+it is possible to acquire lexical information using the techniques
+outline in my application, and to give some idea of how they might interact
+with existing apertium resources.
+
+At the moment, they are some quick hacks thrown together before easter, where I
+probably won't have Internet access. The portuguese dictionary is not fully correct either. Nonetheless, i managed to find the most acceptable paradigm for the
+verb "excomungar" in portuguese, for exemple. 
+
+The code is in Ruby, wich helped me quicky prototype it, but in case of GSoC acceptance programming language will be decided with the mentor (eg., ensuring it is an adequate language for the apertium project and the tools in question).
+
+inflection.rb
+
+Given a word lemma, it will search for possible inflections using YahooSearch api. 
+
+ruby inflection.rb apertium-en-pt.pt.dix output.txt
+
+It will ask for the lemma, and put counts in output.txt. Hopefully, one can simply look up the paradigm with the greatest count.
+
+
+prefix.rb
+
+Simple prefix based constraints. Currently I hardcoded portuguese gender, with
+yahoo search. Off course using a corpus would allow much more complex constraints, say, involving POS. But it works.
+
+Test with, say, padre, laje, mãe, pai, arroz, feijão, irmã, etc (or trivial ones ending with "a" or "o")

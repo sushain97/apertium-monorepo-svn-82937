@@ -1,0 +1,531 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<modes>
+
+  <!-- deu → swe -->
+
+  <mode name="deu-swe" install="yes">
+    <pipeline>
+      <program name="lt-proc -w">
+        <file name="deu-swe.automorf.bin"/>
+      </program>
+
+
+      <program name="cg-proc -w">
+        <file name="deu-swe.rlx.bin"/>
+      </program>
+      <program name="apertium-tagger -g $2">
+        <file name="deu-swe.prob"/>
+      </program>
+      <program name="apertium-pretransfer"/>
+      <program name="lt-proc -b">
+        <file name="deu-swe.autobil.bin"/>
+      </program>
+      <program name="lrx-proc">
+        <file name="deu-swe.autolex.bin"/>
+      </program>
+      <program name="apertium-transfer -b">
+        <file name="apertium-deu-swe.deu-swe.t1x"/>
+        <file name="deu-swe.t1x.bin"/>
+      </program>
+      <program name="apertium-interchunk">
+        <file name="apertium-deu-swe.deu-swe.t2x"/>
+        <file name="deu-swe.t2x.bin"/>
+      </program>
+      <program name="apertium-postchunk">
+        <file name="apertium-deu-swe.deu-swe.t3x"/>
+        <file name="deu-swe.t3x.bin"/>
+      </program>
+      <program name="lt-proc $1">
+        <file name="deu-swe.autogen.bin"/>
+      </program>
+
+      <program name="lt-proc -p">
+        <file name="deu-swe.autopgen.bin"/>
+      </program>
+    </pipeline>
+  </mode>
+
+  <mode name="deu-swe-dgen" install="no">
+    <pipeline>
+      <program name="lt-proc -w">
+        <file name="deu-swe.automorf.bin"/>
+      </program>
+
+
+      <program name="cg-proc -w">
+        <file name="deu-swe.rlx.bin"/>
+      </program>
+      <program name="apertium-tagger -g $2">
+        <file name="deu-swe.prob"/>
+      </program>
+      <program name="apertium-pretransfer"/>
+      <program name="lt-proc -b">
+        <file name="deu-swe.autobil.bin"/>
+      </program>
+      <program name="apertium-transfer -b">
+        <file name="apertium-deu-swe.deu-swe.t1x"/>
+        <file name="deu-swe.t1x.bin"/>
+      </program>
+      <program name="apertium-interchunk">
+        <file name="apertium-deu-swe.deu-swe.t2x"/>
+        <file name="deu-swe.t2x.bin"/>
+      </program>
+      <program name="apertium-postchunk">
+        <file name="apertium-deu-swe.deu-swe.t3x"/>
+        <file name="deu-swe.t3x.bin"/>
+      </program>
+      <program name="lt-proc -d">
+        <file name="deu-swe.autogen.bin"/>
+      </program>
+    </pipeline>
+  </mode>
+
+  <mode name="deu-swe-morph" install="no">
+    <pipeline>
+      <program name="lt-proc -w">
+        <file name="deu-swe.automorf.bin"/>
+      </program>
+    </pipeline>
+  </mode>
+
+  <mode name="deu-swe-disam" install="no">
+    <pipeline>
+      <program name="lt-proc -w">
+        <file name="deu-swe.automorf.bin"/>
+      </program>
+      <program name="cg-conv -a"/>
+      <program name="vislcg3 --trace --grammar">
+        <file name="deu-swe.rlx.bin"/>
+      </program>
+    </pipeline>
+  </mode>
+
+  <mode name="deu-swe-tagger" install="no">
+    <pipeline>
+      <program name="lt-proc -w">
+        <file name="deu-swe.automorf.bin"/>
+      </program>
+
+
+      <program name="cg-proc -w">
+        <file name="deu-swe.rlx.bin"/>
+      </program>
+      <program name="apertium-tagger -g $2">
+        <file name="deu-swe.prob"/>
+      </program>
+    </pipeline>
+  </mode>
+
+  <mode name="deu-swe-pretransfer" install="no">
+    <pipeline>
+      <program name="lt-proc -w">
+        <file name="deu-swe.automorf.bin"/>
+      </program>
+
+
+      <program name="cg-proc -w">
+        <file name="deu-swe.rlx.bin"/>
+      </program>
+      <program name="apertium-tagger -g $2">
+        <file name="deu-swe.prob"/>
+      </program>
+      <program name="apertium-pretransfer"/>
+    </pipeline>
+  </mode>
+
+  <mode name="deu-swe-biltrans" install="no">
+    <pipeline>
+      <program name="lt-proc -w">
+        <file name="deu-swe.automorf.bin"/>
+      </program>
+
+
+      <program name="cg-proc -w">
+        <file name="deu-swe.rlx.bin"/>
+      </program>
+      <program name="apertium-tagger -g $2">
+        <file name="deu-swe.prob"/>
+      </program>
+      <program name="apertium-pretransfer"/>
+      <program name="lt-proc -b">
+        <file name="deu-swe.autobil.bin"/>
+      </program>
+    </pipeline>
+  </mode>
+
+  <mode name="deu-swe-lex" install="no">
+    <pipeline>
+      <program name="lt-proc -w">
+        <file name="deu-swe.automorf.bin"/>
+      </program>
+
+
+      <program name="cg-proc -w">
+        <file name="deu-swe.rlx.bin"/>
+      </program>
+      <program name="apertium-tagger -g $2">
+        <file name="deu-swe.prob"/>
+      </program>
+      <program name="apertium-pretransfer"/>
+      <program name="lt-proc -b">
+        <file name="deu-swe.autobil.bin"/>
+      </program>
+      <program name="lrx-proc -t">
+        <file name="deu-swe.autolex.bin"/>
+      </program>
+    </pipeline>
+  </mode>
+
+  <mode name="deu-swe-transfer" install="no">
+    <pipeline>
+      <program name="lt-proc -w">
+        <file name="deu-swe.automorf.bin"/>
+      </program>
+
+
+      <program name="cg-proc -w">
+        <file name="deu-swe.rlx.bin"/>
+      </program>
+      <program name="apertium-tagger -g $2">
+        <file name="deu-swe.prob"/>
+      </program>
+      <program name="apertium-pretransfer"/>
+      <program name="lt-proc -b">
+        <file name="deu-swe.autobil.bin"/>
+      </program>
+      <program name="lrx-proc">
+        <file name="deu-swe.autolex.bin"/>
+      </program>
+      <program name="apertium-transfer -b -t">
+        <file name="apertium-deu-swe.deu-swe.t1x"/>
+        <file name="deu-swe.t1x.bin"/>
+      </program>
+    </pipeline>
+  </mode>
+
+  <mode name="deu-swe-interchunk" install="no">
+    <pipeline>
+      <program name="lt-proc -w">
+        <file name="deu-swe.automorf.bin"/>
+      </program>
+
+
+      <program name="cg-proc -w">
+        <file name="deu-swe.rlx.bin"/>
+      </program>
+      <program name="apertium-tagger -g $2">
+        <file name="deu-swe.prob"/>
+      </program>
+      <program name="apertium-pretransfer"/>
+      <program name="lt-proc -b">
+        <file name="deu-swe.autobil.bin"/>
+      </program>
+      <program name="lrx-proc">
+        <file name="deu-swe.autolex.bin"/>
+      </program>
+      <program name="apertium-transfer -b">
+        <file name="apertium-deu-swe.deu-swe.t1x"/>
+        <file name="deu-swe.t1x.bin"/>
+      </program>
+      <program name="apertium-interchunk -t">
+        <file name="apertium-deu-swe.deu-swe.t2x"/>
+        <file name="deu-swe.t2x.bin"/>
+      </program>
+    </pipeline>
+  </mode>
+
+  <mode name="deu-swe-postchunk" install="no">
+    <pipeline>
+      <program name="lt-proc -w">
+        <file name="deu-swe.automorf.bin"/>
+      </program>
+
+
+      <program name="cg-proc -w">
+        <file name="deu-swe.rlx.bin"/>
+      </program>
+      <program name="apertium-tagger -g $2">
+        <file name="deu-swe.prob"/>
+      </program>
+      <program name="apertium-pretransfer"/>
+      <program name="lt-proc -b">
+        <file name="deu-swe.autobil.bin"/>
+      </program>
+      <program name="lrx-proc">
+        <file name="deu-swe.autolex.bin"/>
+      </program>
+      <program name="apertium-transfer -b">
+        <file name="apertium-deu-swe.deu-swe.t1x"/>
+        <file name="deu-swe.t1x.bin"/>
+      </program>
+      <program name="apertium-interchunk">
+        <file name="apertium-deu-swe.deu-swe.t2x"/>
+        <file name="deu-swe.t2x.bin"/>
+      </program>
+      <program name="apertium-postchunk">
+        <file name="apertium-deu-swe.deu-swe.t3x"/>
+        <file name="deu-swe.t3x.bin"/>
+      </program>
+    </pipeline>
+  </mode>
+
+  <!-- swe → deu -->
+
+  <mode name="swe-deu" install="yes">
+    <pipeline>
+      <program name="lt-proc -w">
+        <file name="swe-deu.automorf.bin"/>
+      </program>
+
+
+      <program name="cg-proc -w">
+        <file name="swe-deu.rlx.bin"/>
+      </program>
+      <program name="apertium-tagger -g $2">
+        <file name="swe-deu.prob"/>
+      </program>
+      <program name="apertium-pretransfer"/>
+      <program name="lt-proc -b">
+        <file name="swe-deu.autobil.bin"/>
+      </program>
+      <program name="lrx-proc">
+        <file name="swe-deu.autolex.bin"/>
+      </program>
+      <program name="apertium-transfer -b">
+        <file name="apertium-deu-swe.swe-deu.t1x"/>
+        <file name="swe-deu.t1x.bin"/>
+      </program>
+      <program name="apertium-interchunk">
+        <file name="apertium-deu-swe.swe-deu.t2x"/>
+        <file name="swe-deu.t2x.bin"/>
+      </program>
+      <program name="apertium-postchunk">
+        <file name="apertium-deu-swe.swe-deu.t3x"/>
+        <file name="swe-deu.t3x.bin"/>
+      </program>
+      <program name="lt-proc $1">
+        <file name="swe-deu.autogen.bin"/>
+      </program>
+
+      <program name="lt-proc -p">
+        <file name="swe-deu.autopgen.bin"/>
+      </program>
+    </pipeline>
+  </mode>
+
+  <mode name="swe-deu-dgen" install="no">
+    <pipeline>
+      <program name="lt-proc -w">
+        <file name="swe-deu.automorf.bin"/>
+      </program>
+
+
+      <program name="cg-proc -w">
+        <file name="swe-deu.rlx.bin"/>
+      </program>
+      <program name="apertium-tagger -g $2">
+        <file name="swe-deu.prob"/>
+      </program>
+      <program name="apertium-pretransfer"/>
+      <program name="lt-proc -b">
+        <file name="swe-deu.autobil.bin"/>
+      </program>
+      <program name="apertium-transfer -b">
+        <file name="apertium-deu-swe.swe-deu.t1x"/>
+        <file name="swe-deu.t1x.bin"/>
+      </program>
+      <program name="apertium-interchunk">
+        <file name="apertium-deu-swe.swe-deu.t2x"/>
+        <file name="swe-deu.t2x.bin"/>
+      </program>
+      <program name="apertium-postchunk">
+        <file name="apertium-deu-swe.swe-deu.t3x"/>
+        <file name="swe-deu.t3x.bin"/>
+      </program>
+      <program name="lt-proc -d">
+        <file name="swe-deu.autogen.bin"/>
+      </program>
+    </pipeline>
+  </mode>
+
+  <mode name="swe-deu-morph" install="no">
+    <pipeline>
+      <program name="lt-proc -w">
+        <file name="swe-deu.automorf.bin"/>
+      </program>
+    </pipeline>
+  </mode>
+
+  <mode name="swe-deu-disam" install="no">
+    <pipeline>
+      <program name="lt-proc -w">
+        <file name="swe-deu.automorf.bin"/>
+      </program>
+      <program name="cg-conv -a"/>
+      <program name="vislcg3 --trace --grammar">
+        <file name="swe-deu.rlx.bin"/>
+      </program>
+    </pipeline>
+  </mode>
+
+  <mode name="swe-deu-tagger" install="no">
+    <pipeline>
+      <program name="lt-proc -w">
+        <file name="swe-deu.automorf.bin"/>
+      </program>
+
+
+      <program name="cg-proc -w">
+        <file name="swe-deu.rlx.bin"/>
+      </program>
+      <program name="apertium-tagger -g $2">
+        <file name="swe-deu.prob"/>
+      </program>
+    </pipeline>
+  </mode>
+
+  <mode name="swe-deu-pretransfer" install="no">
+    <pipeline>
+      <program name="lt-proc -w">
+        <file name="swe-deu.automorf.bin"/>
+      </program>
+
+
+      <program name="cg-proc -w">
+        <file name="swe-deu.rlx.bin"/>
+      </program>
+      <program name="apertium-tagger -g $2">
+        <file name="swe-deu.prob"/>
+      </program>
+      <program name="apertium-pretransfer"/>
+    </pipeline>
+  </mode>
+
+  <mode name="swe-deu-biltrans" install="no">
+    <pipeline>
+      <program name="lt-proc -w">
+        <file name="swe-deu.automorf.bin"/>
+      </program>
+
+
+      <program name="cg-proc -w">
+        <file name="swe-deu.rlx.bin"/>
+      </program>
+      <program name="apertium-tagger -g $2">
+        <file name="swe-deu.prob"/>
+      </program>
+      <program name="apertium-pretransfer"/>
+      <program name="lt-proc -b">
+        <file name="swe-deu.autobil.bin"/>
+      </program>
+    </pipeline>
+  </mode>
+
+  <mode name="swe-deu-lex" install="no">
+    <pipeline>
+      <program name="lt-proc -w">
+        <file name="swe-deu.automorf.bin"/>
+      </program>
+
+
+      <program name="cg-proc -w">
+        <file name="swe-deu.rlx.bin"/>
+      </program>
+      <program name="apertium-tagger -g $2">
+        <file name="swe-deu.prob"/>
+      </program>
+      <program name="apertium-pretransfer"/>
+      <program name="lt-proc -b">
+        <file name="swe-deu.autobil.bin"/>
+      </program>
+      <program name="lrx-proc">
+        <file name="swe-deu.autolex.bin"/>
+      </program>
+    </pipeline>
+  </mode>
+
+  <mode name="swe-deu-transfer" install="no">
+    <pipeline>
+      <program name="lt-proc -w">
+        <file name="swe-deu.automorf.bin"/>
+      </program>
+
+
+      <program name="cg-proc -w">
+        <file name="swe-deu.rlx.bin"/>
+      </program>
+      <program name="apertium-tagger -g $2">
+        <file name="swe-deu.prob"/>
+      </program>
+      <program name="apertium-pretransfer"/>
+      <program name="lt-proc -b">
+        <file name="swe-deu.autobil.bin"/>
+      </program>
+      <program name="apertium-transfer -b -t">
+        <file name="apertium-deu-swe.swe-deu.t1x"/>
+        <file name="swe-deu.t1x.bin"/>
+      </program>
+    </pipeline>
+  </mode>
+
+  <mode name="swe-deu-interchunk" install="no">
+    <pipeline>
+      <program name="lt-proc -w">
+        <file name="swe-deu.automorf.bin"/>
+      </program>
+
+
+      <program name="cg-proc -w">
+        <file name="swe-deu.rlx.bin"/>
+      </program>
+      <program name="apertium-tagger -g $2">
+        <file name="swe-deu.prob"/>
+      </program>
+      <program name="apertium-pretransfer"/>
+      <program name="lt-proc -b">
+        <file name="swe-deu.autobil.bin"/>
+      </program>
+      <program name="apertium-transfer -b">
+        <file name="apertium-deu-swe.swe-deu.t1x"/>
+        <file name="swe-deu.t1x.bin"/>
+      </program>
+      <program name="apertium-interchunk -t">
+        <file name="apertium-deu-swe.swe-deu.t2x"/>
+        <file name="swe-deu.t2x.bin"/>
+      </program>
+    </pipeline>
+  </mode>
+
+  <mode name="swe-deu-postchunk" install="no">
+    <pipeline>
+      <program name="lt-proc -w">
+        <file name="swe-deu.automorf.bin"/>
+      </program>
+
+
+      <program name="cg-proc -w">
+        <file name="swe-deu.rlx.bin"/>
+      </program>
+      <program name="apertium-tagger -g $2">
+        <file name="swe-deu.prob"/>
+      </program>
+      <program name="apertium-pretransfer"/>
+      <program name="lt-proc -b">
+        <file name="swe-deu.autobil.bin"/>
+      </program>
+      <program name="apertium-transfer -b">
+        <file name="apertium-deu-swe.swe-deu.t1x"/>
+        <file name="swe-deu.t1x.bin"/>
+      </program>
+      <program name="apertium-interchunk">
+        <file name="apertium-deu-swe.swe-deu.t2x"/>
+        <file name="swe-deu.t2x.bin"/>
+      </program>
+      <program name="apertium-postchunk">
+        <file name="apertium-deu-swe.swe-deu.t3x"/>
+        <file name="swe-deu.t3x.bin"/>
+      </program>
+    </pipeline>
+  </mode>
+</modes>
+

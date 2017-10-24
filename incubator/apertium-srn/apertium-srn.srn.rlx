@@ -1,0 +1,91 @@
+# Firstly, we need to define what tags should be considered sentence delimiters. For this example, only full stop is set as delimiter.
+DELIMITERS = "<.>" ;
+
+
+SETS
+
+LIST BOS = (>>>) ;
+LIST EOS = (<<<) ;
+LIST NaPR = ("na" pr) ;
+LIST NaVBSer = ("na" vbser) ;
+LIST VBMod = vbmod ;
+LIST V = vblex ;
+LIST VERB = (vblex) (vbser) (vbmod) ;
+LIST PRPERS = prn ;
+
+# We can define sets for common tag clusters
+LIST Case = (n s) (n p) ; # A set that matches either a Noun Singular or a Noun Plural
+
+SECTION
+# If it is the beginning of the sentence, NAPr.
+REMOVE NaVBSer IF (-1 BOS) ;
+REMOVE ("musu" n) ;
+REMOVE ("aksi" n) ;
+REMOVE ("dan" n) ;
+SELECT ("o" vbmod) IF (1 (vblex));
+SELECT ("bari" vblex) ;
+SELECT ("wakawaka" vblex) ;
+SELECT ("prpers" det) if (1 (n)) ;
+SELECT ("ala" det) if (1 (n)) ;
+SELECT ("prpers" prn obj) if (-1 ("nanga"));
+SELECT ("taki" vblex) ;
+SELECT ("doro" vblex) IF (1 ("na"));
+SELECT ("leki" cnjsub) IF (1 ("a")) ;
+SELECT ("leki" cnjsub) IF (1 ("fa")) ;
+SELECT ("fa" adv) IF (-1 ("leki")) ;
+SELECT ("fa" cnjsub) IF (1 (det)) ;
+SELECT ("fa" cnjsub) IF (1 (n)) ;   
+SELECT ("tranga" adj) if (-1 (adv)) ;
+SELECT ("bari" vblex) if (-1 ("prpers")) ;
+SELECT ("bigin" vblex) if (-1 ("prpers")) (1 (vblex)) ;
+SELECT ("prpers" prn subj) if (1 (aux));
+SELECT ("prpers" prn obj) if (-1 (pr));
+SELECT ("tapu" pr) if (1 (n)) ;
+SELECT ("tapu" pr) if (1 (det)) ;
+SELECT ("ondro" pr) if (-1 ("leti")) ;
+SELECT ("bigin" vblex) if (-1 (n)) ;
+SELECT ("opo" adv) if (-1 VERB) ;
+SELECT ("na" pr) IF (-1 (vblex)) ;
+SELECT (vbser) ;
+SELECT V IF (-1 VBMod) ;
+SELECT ("wan" det) IF (1 (n)) ;
+SELECT (adj) IF (1 (n)) ;
+SELECT ("no" adv) IF (1 VERB) ;
+SELECT ("no" adv) IF (1 (aux)) ;
+SELECT ("prpers" prn subj ) if (1 VERB);
+SELECT ("prpers" prn subj ) if (1 (aux));
+SELECT ("prpers" prn subj ) if (1 (vbmod past));
+SELECT ("prpers" prn subj ) if (1 (vbmod));
+SELECT ("prpers" prn subj ) if (1 ("no"));
+SELECT (adv) IF (-1 V) ;
+SELECT (adv) IF (1 V) ;
+SELECT ("moro" adv) IF (1 (adj)) ;
+SELECT (adj) IF (-1 ("moro" adv)) ;
+SELECT VERB if (-1 (adv)) ;
+SELECT VERB if (1 (adv)) ;
+SELECT ("prpers" prn) if (1 (adv)) ;
+SELECT ("a" det) if (1 (n));
+SELECT VBMod IF (1 V) ;
+SELECT (num) IF (1 ("fu" pr)) ;
+SELECT ("prpers" prn) if (1 VERB) ;
+SELECT ("dan" cnjcoo) ;
+SELECT ("taki" vblex) ;
+SELECT V if (-1 (aux)) ;    
+SELECT ("na" pr) if (-1 V) ;
+SELECT ("psa" pr) if (-1 V) ;
+SELECT ("prpers" prn ) if (1 (aux));
+SELECT ("prpers" prn ) if (1 VERB);
+SELECT ("te" cnjcoo);
+SELECT ("ma" cnjcoo);
+SELECT ("no" ij);
+SELECT ("saka" vblex) ;
+SELECT ("prpers" prn obj) ;
+
+
+# Resources:
+# http://visl.sdu.dk/cg3.html
+# http://groups.google.com/group/constraint-grammar
+# http://kevindonnelly.org.uk/2010/05/constraint-grammar-tutorial/
+# http://wiki.apertium.org/wiki/Constraint_Grammar
+# http://wiki.apertium.org/wiki/Apertium_and_Constraint_Grammar
+

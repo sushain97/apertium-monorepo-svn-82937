@@ -1,0 +1,569 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<modes>
+
+  <!-- kaz → tyv -->
+
+  <mode name="kaz-tyv" install="yes">
+    <pipeline>
+      <program name="lt-proc -w">
+        <file name="kaz-tyv.automorf.bin"/>
+      </program>
+      <program name="cg-proc -w -1 -n">
+        <file name="kaz-tyv.rlx.bin"/>
+      </program>
+      <program name="apertium-pretransfer"/>
+      <program name="lt-proc -b">
+        <file name="kaz-tyv.autobil.bin"/>
+      </program>
+      <program name="lrx-proc">
+        <file name="kaz-tyv.autolex.bin"/>
+      </program>
+      <program name="apertium-transfer -b">
+        <file name="apertium-kaz-tyv.kaz-tyv.t1x"/>
+        <file name="kaz-tyv.t1x.bin"/>
+      </program>
+      <program name="apertium-interchunk">
+        <file name="apertium-kaz-tyv.kaz-tyv.t2x"/>
+        <file name="kaz-tyv.t2x.bin"/>
+      </program>
+      <program name="apertium-postchunk">
+        <file name="apertium-kaz-tyv.kaz-tyv.t3x"/>
+        <file name="kaz-tyv.t3x.bin"/>
+      </program>
+      <program name="apertium-transfer -n">
+        <file name="apertium-kaz-tyv.kaz-tyv.t4x"/>
+        <file name="kaz-tyv.t4x.bin"/>
+      </program>
+      <program name="lt-proc $1">
+        <file name="kaz-tyv.autogen.bin"/>
+      </program>
+
+      <program name="lt-proc -p">
+        <file name="kaz-tyv.autopgen.bin"/>
+      </program>
+    </pipeline>
+  </mode>
+
+  <mode name="kaz-tyv-debug" install="no">
+    <pipeline>
+      <program name="lt-proc -w">
+        <file name="kaz-tyv.automorf.bin"/>
+      </program>
+      <program name="cg-proc -w -1 -n">
+        <file name="kaz-tyv.rlx.bin"/>
+      </program>
+      <program name="apertium-pretransfer"/>
+      <program name="lt-proc -b">
+        <file name="kaz-tyv.autobil.bin"/>
+      </program>
+      <program name="apertium-transfer -b">
+        <file name="apertium-kaz-tyv.kaz-tyv.t1x"/>
+        <file name="kaz-tyv.t1x.bin"/>
+      </program>
+      <program name="apertium-interchunk">
+        <file name="apertium-kaz-tyv.kaz-tyv.t2x"/>
+        <file name="kaz-tyv.t2x.bin"/>
+      </program>
+      <program name="apertium-postchunk">
+        <file name="apertium-kaz-tyv.kaz-tyv.t3x"/>
+        <file name="kaz-tyv.t3x.bin"/>
+      </program>
+      <program name="apertium-transfer -n">
+        <file name="apertium-kaz-tyv.kaz-tyv.t4x"/>
+        <file name="kaz-tyv.t4x.bin"/>
+      </program>
+      <program name="lt-proc -d">
+        <file name="kaz-tyv.autogen.bin"/>
+      </program>
+    </pipeline>
+  </mode>
+
+  <mode name="kaz-tyv-morph" install="no">
+    <pipeline>
+      <program name="lt-proc -w">
+        <file name="kaz-tyv.automorf.bin"/>
+      </program>
+    </pipeline>
+  </mode>
+
+  <mode name="kaz-tyv-disam" install="no">
+    <pipeline>
+      <program name="lt-proc -w">
+        <file name="kaz-tyv.automorf.bin"/>
+      </program>
+      <program name="cg-conv -a"/>
+      <program name="vislcg3 --trace --grammar">
+        <file name="kaz-tyv.rlx.bin"/>
+      </program>
+    </pipeline>
+  </mode>
+
+  <mode name="kaz-tyv-tagger" install="no">
+    <pipeline>
+      <program name="lt-proc -w">
+        <file name="kaz-tyv.automorf.bin"/>
+      </program>
+
+
+      <program name="cg-proc -w">
+        <file name="kaz-tyv.rlx.bin"/>
+      </program>
+      <program name="apertium-tagger -g $2">
+        <file name="kaz-tyv.prob"/>
+      </program>
+    </pipeline>
+  </mode>
+
+  <mode name="kaz-tyv-pretransfer" install="no">
+    <pipeline>
+      <program name="lt-proc -w">
+        <file name="kaz-tyv.automorf.bin"/>
+      </program>
+
+
+      <program name="cg-proc -w">
+        <file name="kaz-tyv.rlx.bin"/>
+      </program>
+      <program name="apertium-tagger -g $2">
+        <file name="kaz-tyv.prob"/>
+      </program>
+      <program name="apertium-pretransfer"/>
+    </pipeline>
+  </mode>
+
+  <mode name="kaz-tyv-biltrans" install="no">
+    <pipeline>
+      <program name="lt-proc -w">
+        <file name="kaz-tyv.automorf.bin"/>
+      </program>
+
+
+      <program name="cg-proc -w">
+        <file name="kaz-tyv.rlx.bin"/>
+      </program>
+      <program name="apertium-tagger -g $2">
+        <file name="kaz-tyv.prob"/>
+      </program>
+      <program name="apertium-pretransfer"/>
+      <program name="lt-proc -b">
+        <file name="kaz-tyv.autobil.bin"/>
+      </program>
+    </pipeline>
+  </mode>
+
+  <mode name="kaz-tyv-lex" install="no">
+    <pipeline>
+      <program name="lt-proc -w">
+        <file name="kaz-tyv.automorf.bin"/>
+      </program>
+
+
+      <program name="cg-proc -w">
+        <file name="kaz-tyv.rlx.bin"/>
+      </program>
+      <program name="apertium-tagger -g $2">
+        <file name="kaz-tyv.prob"/>
+      </program>
+      <program name="apertium-pretransfer"/>
+      <program name="lt-proc -b">
+        <file name="kaz-tyv.autobil.bin"/>
+      </program>
+      <program name="lrx-proc -t">
+        <file name="kaz-tyv.autolex.bin"/>
+      </program>
+    </pipeline>
+  </mode>
+
+  <mode name="kaz-tyv-transfer" install="no">
+    <pipeline>
+      <program name="lt-proc -w">
+        <file name="kaz-tyv.automorf.bin"/>
+      </program>
+
+
+      <program name="cg-proc -w">
+        <file name="kaz-tyv.rlx.bin"/>
+      </program>
+      <program name="apertium-tagger -g $2">
+        <file name="kaz-tyv.prob"/>
+      </program>
+      <program name="apertium-pretransfer"/>
+      <program name="lt-proc -b">
+        <file name="kaz-tyv.autobil.bin"/>
+      </program>
+      <program name="lrx-proc">
+        <file name="kaz-tyv.autolex.bin"/>
+      </program>
+      <program name="apertium-transfer -b -t">
+        <file name="apertium-kaz-tyv.kaz-tyv.t1x"/>
+        <file name="kaz-tyv.t1x.bin"/>
+      </program>
+    </pipeline>
+  </mode>
+
+  <mode name="kaz-tyv-interchunk" install="no">
+    <pipeline>
+      <program name="lt-proc -w">
+        <file name="kaz-tyv.automorf.bin"/>
+      </program>
+
+
+      <program name="cg-proc -w">
+        <file name="kaz-tyv.rlx.bin"/>
+      </program>
+      <program name="apertium-tagger -g $2">
+        <file name="kaz-tyv.prob"/>
+      </program>
+      <program name="apertium-pretransfer"/>
+      <program name="lt-proc -b">
+        <file name="kaz-tyv.autobil.bin"/>
+      </program>
+      <program name="lrx-proc">
+        <file name="kaz-tyv.autolex.bin"/>
+      </program>
+      <program name="apertium-transfer -b">
+        <file name="apertium-kaz-tyv.kaz-tyv.t1x"/>
+        <file name="kaz-tyv.t1x.bin"/>
+      </program>
+      <program name="apertium-interchunk -t">
+        <file name="apertium-kaz-tyv.kaz-tyv.t2x"/>
+        <file name="kaz-tyv.t2x.bin"/>
+      </program>
+    </pipeline>
+  </mode>
+
+  <mode name="kaz-tyv-postchunk" install="no">
+    <pipeline>
+      <program name="lt-proc -w">
+        <file name="kaz-tyv.automorf.bin"/>
+      </program>
+
+
+      <program name="cg-proc -w">
+        <file name="kaz-tyv.rlx.bin"/>
+      </program>
+      <program name="apertium-tagger -g $2">
+        <file name="kaz-tyv.prob"/>
+      </program>
+      <program name="apertium-pretransfer"/>
+      <program name="lt-proc -b">
+        <file name="kaz-tyv.autobil.bin"/>
+      </program>
+      <program name="lrx-proc">
+        <file name="kaz-tyv.autolex.bin"/>
+      </program>
+      <program name="apertium-transfer -b">
+        <file name="apertium-kaz-tyv.kaz-tyv.t1x"/>
+        <file name="kaz-tyv.t1x.bin"/>
+      </program>
+      <program name="apertium-interchunk">
+        <file name="apertium-kaz-tyv.kaz-tyv.t2x"/>
+        <file name="kaz-tyv.t2x.bin"/>
+      </program>
+      <program name="apertium-postchunk">
+        <file name="apertium-kaz-tyv.kaz-tyv.t3x"/>
+        <file name="kaz-tyv.t3x.bin"/>
+      </program>
+    </pipeline>
+  </mode>
+
+  <mode name="kaz-tyv-postchunk2" install="no">
+    <pipeline>
+      <program name="lt-proc -w">
+        <file name="kaz-tyv.automorf.bin"/>
+      </program>
+
+
+      <program name="cg-proc -w">
+        <file name="kaz-tyv.rlx.bin"/>
+      </program>
+      <program name="apertium-tagger -g $2">
+        <file name="kaz-tyv.prob"/>
+      </program>
+      <program name="apertium-pretransfer"/>
+      <program name="lt-proc -b">
+        <file name="kaz-tyv.autobil.bin"/>
+      </program>
+      <program name="lrx-proc">
+        <file name="kaz-tyv.autolex.bin"/>
+      </program>
+      <program name="apertium-transfer -b">
+        <file name="apertium-kaz-tyv.kaz-tyv.t1x"/>
+        <file name="kaz-tyv.t1x.bin"/>
+      </program>
+      <program name="apertium-interchunk">
+        <file name="apertium-kaz-tyv.kaz-tyv.t2x"/>
+        <file name="kaz-tyv.t2x.bin"/>
+      </program>
+      <program name="apertium-postchunk">
+        <file name="apertium-kaz-tyv.kaz-tyv.t3x"/>
+        <file name="kaz-tyv.t3x.bin"/>
+      </program>
+      <program name="apertium-transfer -n">
+        <file name="apertium-kaz-tyv.kaz-tyv.t4x"/>
+        <file name="kaz-tyv.t4x.bin"/>
+      </program>
+    </pipeline>
+  </mode>
+
+
+  <!-- tyv → kaz -->
+
+  <mode name="tyv-kaz" install="yes">
+    <pipeline>
+      <program name="lt-proc -w">
+        <file name="tyv-kaz.automorf.bin"/>
+      </program>
+
+
+      <program name="cg-proc -w">
+        <file name="tyv-kaz.rlx.bin"/>
+      </program>
+      <program name="apertium-tagger -g $2">
+        <file name="tyv-kaz.prob"/>
+      </program>
+      <program name="apertium-pretransfer"/>
+      <program name="lt-proc -b">
+        <file name="tyv-kaz.autobil.bin"/>
+      </program>
+      <program name="lrx-proc">
+        <file name="tyv-kaz.autolex.bin"/>
+      </program>
+      <program name="apertium-transfer -b">
+        <file name="apertium-kaz-tyv.tyv-kaz.t1x"/>
+        <file name="tyv-kaz.t1x.bin"/>
+      </program>
+      <program name="apertium-interchunk">
+        <file name="apertium-kaz-tyv.tyv-kaz.t2x"/>
+        <file name="tyv-kaz.t2x.bin"/>
+      </program>
+      <program name="apertium-postchunk">
+        <file name="apertium-kaz-tyv.tyv-kaz.t3x"/>
+        <file name="tyv-kaz.t3x.bin"/>
+      </program>
+      <program name="lt-proc $1">
+        <file name="tyv-kaz.autogen.bin"/>
+      </program>
+
+      <program name="lt-proc -p">
+        <file name="tyv-kaz.autopgen.bin"/>
+      </program>
+    </pipeline>
+  </mode>
+
+  <mode name="tyv-kaz-debug" install="no">
+    <pipeline>
+      <program name="lt-proc -w">
+        <file name="tyv-kaz.automorf.bin"/>
+      </program>
+
+
+      <program name="cg-proc -w">
+        <file name="tyv-kaz.rlx.bin"/>
+      </program>
+      <program name="apertium-tagger -g $2">
+        <file name="tyv-kaz.prob"/>
+      </program>
+      <program name="apertium-pretransfer"/>
+      <program name="lt-proc -b">
+        <file name="tyv-kaz.autobil.bin"/>
+      </program>
+      <program name="apertium-transfer -b">
+        <file name="apertium-kaz-tyv.tyv-kaz.t1x"/>
+        <file name="tyv-kaz.t1x.bin"/>
+      </program>
+      <program name="apertium-interchunk">
+        <file name="apertium-kaz-tyv.tyv-kaz.t2x"/>
+        <file name="tyv-kaz.t2x.bin"/>
+      </program>
+      <program name="apertium-postchunk">
+        <file name="apertium-kaz-tyv.tyv-kaz.t3x"/>
+        <file name="tyv-kaz.t3x.bin"/>
+      </program>
+      <program name="lt-proc -d">
+        <file name="tyv-kaz.autogen.bin"/>
+      </program>
+    </pipeline>
+  </mode>
+
+  <mode name="tyv-kaz-morph" install="no">
+    <pipeline>
+      <program name="lt-proc -w">
+        <file name="tyv-kaz.automorf.bin"/>
+      </program>
+    </pipeline>
+  </mode>
+
+  <mode name="tyv-kaz-disam" install="no">
+    <pipeline>
+      <program name="lt-proc -w">
+        <file name="tyv-kaz.automorf.bin"/>
+      </program>
+      <program name="cg-conv -a"/>
+      <program name="vislcg3 --trace --grammar">
+        <file name="tyv-kaz.rlx.bin"/>
+      </program>
+    </pipeline>
+  </mode>
+
+  <mode name="tyv-kaz-tagger" install="no">
+    <pipeline>
+      <program name="lt-proc -w">
+        <file name="tyv-kaz.automorf.bin"/>
+      </program>
+
+
+      <program name="cg-proc -w">
+        <file name="tyv-kaz.rlx.bin"/>
+      </program>
+      <program name="apertium-tagger -g $2">
+        <file name="tyv-kaz.prob"/>
+      </program>
+    </pipeline>
+  </mode>
+
+  <mode name="tyv-kaz-pretransfer" install="no">
+    <pipeline>
+      <program name="lt-proc -w">
+        <file name="tyv-kaz.automorf.bin"/>
+      </program>
+
+
+      <program name="cg-proc -w">
+        <file name="tyv-kaz.rlx.bin"/>
+      </program>
+      <program name="apertium-tagger -g $2">
+        <file name="tyv-kaz.prob"/>
+      </program>
+      <program name="apertium-pretransfer"/>
+    </pipeline>
+  </mode>
+
+  <mode name="tyv-kaz-biltrans" install="no">
+    <pipeline>
+      <program name="lt-proc -w">
+        <file name="tyv-kaz.automorf.bin"/>
+      </program>
+
+
+      <program name="cg-proc -w">
+        <file name="tyv-kaz.rlx.bin"/>
+      </program>
+      <program name="apertium-tagger -g $2">
+        <file name="tyv-kaz.prob"/>
+      </program>
+      <program name="apertium-pretransfer"/>
+      <program name="lt-proc -b">
+        <file name="tyv-kaz.autobil.bin"/>
+      </program>
+    </pipeline>
+  </mode>
+
+  <mode name="tyv-kaz-lex" install="no">
+    <pipeline>
+      <program name="lt-proc -w">
+        <file name="tyv-kaz.automorf.bin"/>
+      </program>
+
+
+      <program name="cg-proc -w">
+        <file name="tyv-kaz.rlx.bin"/>
+      </program>
+      <program name="apertium-tagger -g $2">
+        <file name="tyv-kaz.prob"/>
+      </program>
+      <program name="apertium-pretransfer"/>
+      <program name="lt-proc -b">
+        <file name="tyv-kaz.autobil.bin"/>
+      </program>
+      <program name="lrx-proc">
+        <file name="tyv-kaz.autolex.bin"/>
+      </program>
+    </pipeline>
+  </mode>
+
+  <mode name="tyv-kaz-transfer" install="no">
+    <pipeline>
+      <program name="lt-proc -w">
+        <file name="tyv-kaz.automorf.bin"/>
+      </program>
+
+
+      <program name="cg-proc -w">
+        <file name="tyv-kaz.rlx.bin"/>
+      </program>
+      <program name="apertium-tagger -g $2">
+        <file name="tyv-kaz.prob"/>
+      </program>
+      <program name="apertium-pretransfer"/>
+      <program name="lt-proc -b">
+        <file name="tyv-kaz.autobil.bin"/>
+      </program>
+      <program name="apertium-transfer -b -t">
+        <file name="apertium-kaz-tyv.tyv-kaz.t1x"/>
+        <file name="tyv-kaz.t1x.bin"/>
+      </program>
+    </pipeline>
+  </mode>
+
+  <mode name="tyv-kaz-interchunk" install="no">
+    <pipeline>
+      <program name="lt-proc -w">
+        <file name="tyv-kaz.automorf.bin"/>
+      </program>
+
+
+      <program name="cg-proc -w">
+        <file name="tyv-kaz.rlx.bin"/>
+      </program>
+      <program name="apertium-tagger -g $2">
+        <file name="tyv-kaz.prob"/>
+      </program>
+      <program name="apertium-pretransfer"/>
+      <program name="lt-proc -b">
+        <file name="tyv-kaz.autobil.bin"/>
+      </program>
+      <program name="apertium-transfer -b">
+        <file name="apertium-kaz-tyv.tyv-kaz.t1x"/>
+        <file name="tyv-kaz.t1x.bin"/>
+      </program>
+      <program name="apertium-interchunk -t">
+        <file name="apertium-kaz-tyv.tyv-kaz.t2x"/>
+        <file name="tyv-kaz.t2x.bin"/>
+      </program>
+    </pipeline>
+  </mode>
+
+  <mode name="tyv-kaz-postchunk" install="no">
+    <pipeline>
+      <program name="lt-proc -w">
+        <file name="tyv-kaz.automorf.bin"/>
+      </program>
+
+
+      <program name="cg-proc -w">
+        <file name="tyv-kaz.rlx.bin"/>
+      </program>
+      <program name="apertium-tagger -g $2">
+        <file name="tyv-kaz.prob"/>
+      </program>
+      <program name="apertium-pretransfer"/>
+      <program name="lt-proc -b">
+        <file name="tyv-kaz.autobil.bin"/>
+      </program>
+      <program name="apertium-transfer -b">
+        <file name="apertium-kaz-tyv.tyv-kaz.t1x"/>
+        <file name="tyv-kaz.t1x.bin"/>
+      </program>
+      <program name="apertium-interchunk">
+        <file name="apertium-kaz-tyv.tyv-kaz.t2x"/>
+        <file name="tyv-kaz.t2x.bin"/>
+      </program>
+      <program name="apertium-postchunk">
+        <file name="apertium-kaz-tyv.tyv-kaz.t3x"/>
+        <file name="tyv-kaz.t3x.bin"/>
+      </program>
+    </pipeline>
+  </mode>
+</modes>
+

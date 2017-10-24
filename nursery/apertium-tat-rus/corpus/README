@@ -1,0 +1,28 @@
+* corpus.tat.txt
+	Tatar translation of the 'Mary and James' story.
+
+* corpus.rus.txt
+	Russian translation of the story (does not completely match up with the Tatar
+	translation, as it was translated independently).
+
+* tat-rus-origina.txt
+	Translation of corpus.tat.txt with the second to last revision of apertium-tat-rus.
+
+* tat-rus-nova.txt
+	Translation of corpus.tat.txt with the last revision of apertium-tat-rus.
+
+* tar-rus-posted.txt
+	Postedited Russian translation of the corpus.tat.txt
+------
+
+Basic workflow is like the following (IS talking to himself):
+	1) mv corpus/tat-rus-nova.txt corpus/tat-rus-origina.txt
+	2) run diff on tat-rus-origina.txt and tat-rus-posted.txt,
+	3) see what is to fix/to improve,
+	4) fix them and compile,
+	5) run ./qa tat-rus-corp to see whether you really fixed them, if so
+	6) commit,
+	
+	repeat the cycle
+
+'qa tat-rus-corp' in apertium-tat-rus/ gives a coloured diff of "origina" and "nova" translations.

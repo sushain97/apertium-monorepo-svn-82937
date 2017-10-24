@@ -1,0 +1,389 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<modes>
+
+  <mode name="hbs-morph">
+    <pipeline>
+      <program name="lt-proc -w">
+        <file name="hbs.automorf.bin"/>
+      </program>
+    </pipeline>
+  </mode>
+
+  <mode name="hbs_BS-gener">
+    <pipeline>
+      <program name="lt-proc $1">
+        <file name="hbs_BS.autogen.bin"/>
+      </program>
+    </pipeline>
+  </mode>
+
+  <mode name="hbs_HR-gener">
+    <pipeline>
+      <program name="lt-proc $1">
+        <file name="hbs_HR.autogen.bin"/>
+      </program>
+    </pipeline>
+  </mode>
+
+  <mode name="hbs_SR-gener">
+    <pipeline>
+      <program name="lt-proc $1">
+        <file name="hbs_SR.autogen.bin"/>
+      </program>
+    </pipeline>
+  </mode>
+
+
+
+  <mode name="hbs-disam">
+    <pipeline>
+      <program name="lt-proc -w">
+        <file name="hbs.automorf.bin"/>
+      </program>
+      <program name="cg-conv -a -l" />
+      <program name="vislcg3 --trace -g">
+        <file name="apertium-hbs.hbs.rlx"/>
+      </program>
+    </pipeline>
+  </mode>
+
+ <mode name="hbs_HR-hbs_SR-transfer" install="no">
+    <pipeline>
+      <program name="lt-proc">
+        <file name="hbs.automorf.bin"/>
+      </program>
+<!--      <program name="cg-proc -w -1 -n">
+        <file name="hbs.rlx.bin"/>
+      </program>
+-->
+      <program name="apertium-tagger -g $2">
+          <file name="hbs.prob"/>
+      </program> 
+      <program name="apertium-pretransfer"/>
+      <program name="lt-proc -b">
+        <file name="hbs_HR-hbs_SR.autobil.bin"/>
+      </program>
+      <program name="apertium-transfer -b">
+        <file name="apertium-hbs.hbs_HR-hbs_SR.t1x"/>
+        <file name="hbs_HR-hbs_SR.t1x.bin"/>
+      </program>
+    </pipeline>
+  </mode>
+
+
+ <mode name="hbs_HR-hbs_SR" install="yes">
+    <pipeline>
+      <program name="lt-proc">
+        <file name="hbs.automorf.bin"/>
+      </program>
+<!--      <program name="cg-proc -w -1 -n">
+        <file name="hbs.rlx.bin"/>
+      </program>
+-->
+      <program name="apertium-tagger -g $2">
+          <file name="hbs.prob"/>
+      </program>       
+      <program name="apertium-pretransfer"/>
+      <program name="lt-proc -b">
+        <file name="hbs_HR-hbs_SR.autobil.bin"/>
+      </program>
+      <program name="apertium-transfer -b">
+        <file name="apertium-hbs.hbs_HR-hbs_SR.t1x"/>
+        <file name="hbs_HR-hbs_SR.t1x.bin"/>
+      </program>
+      <program name="lt-proc $1">
+        <file name="hbs_SR.autogen.bin"/>
+      </program>
+      <program name="lt-proc -p">
+        <file name="hbs_SR.autopgen.bin"/>
+      </program>
+    </pipeline>
+  </mode>
+
+
+
+ <mode name="hbs_HR-hbs_SR-generador" install="no">
+    <pipeline>
+      <program name="lt-proc">
+        <file name="hbs.automorf.bin"/>
+      </program>
+<!--      <program name="cg-proc -w -1 -n">
+        <file name="hbs.rlx.bin"/>
+      </program>
+-->
+      <program name="apertium-tagger -g $2">
+          <file name="hbs.prob"/>
+      </program>       
+      <program name="apertium-pretransfer"/>
+      <program name="lt-proc -b">
+        <file name="hbs_HR-hbs_SR.autobil.bin"/>
+      </program>
+      <program name="apertium-transfer -b">
+        <file name="apertium-hbs.hbs_HR-hbs_SR.t1x"/>
+        <file name="hbs_HR-hbs_SR.t1x.bin"/>
+      </program>
+      <program name="lt-proc $1">
+        <file name="hbs_SR.autogen.bin"/>
+      </program>
+      <program name="lt-proc -p">
+        <file name="hbs_SR.autopgen.bin"/>
+      </program>
+    </pipeline>
+  </mode>
+
+
+
+ <mode name="hbs_HR-hbs_SRcyr" install="yes">
+    <pipeline>
+      <program name="lt-proc">
+        <file name="hbs.automorf.bin"/>
+      </program>
+<!--      <program name="cg-proc -w -1 -n">
+        <file name="hbs.rlx.bin"/>
+      </program>
+-->
+      <program name="apertium-tagger -g $2">
+          <file name="hbs.prob"/>
+      </program> 
+      <program name="apertium-pretransfer"/>
+      <program name="lt-proc -b">
+        <file name="hbs_HR-hbs_SR.autobil.bin"/>
+      </program>
+      <program name="apertium-transfer -b">
+        <file name="apertium-hbs.hbs_HR-hbs_SR.t1x"/>
+        <file name="hbs_HR-hbs_SR.t1x.bin"/>
+      </program>
+      <program name="lt-proc $1">
+        <file name="hbs_SR.autogen.bin"/>
+      </program>
+      <program name="lt-proc -p">
+        <file name="hbs_SR.autopgen.bin"/>
+      </program>
+      <program name="lt-proc -t">
+        <file name="lat-cyr.autogen.bin"/>
+      </program>
+      
+    </pipeline>
+  </mode>
+
+ <mode name="hbs_HR-hbs_SRcyr-generador" install="no">
+    <pipeline>
+      <program name="lt-proc">
+        <file name="hbs.automorf.bin"/>
+      </program>
+<!--      <program name="cg-proc -w -1 -n">
+        <file name="hbs.rlx.bin"/>
+      </program>
+-->
+      <program name="apertium-tagger -g $2">
+          <file name="hbs.prob"/>
+      </program> 
+      <program name="apertium-pretransfer"/>
+      <program name="lt-proc -b">
+        <file name="hbs_HR-hbs_SR.autobil.bin"/>
+      </program>
+      <program name="apertium-transfer -b">
+        <file name="apertium-hbs.hbs_HR-hbs_SR.t1x"/>
+        <file name="hbs_HR-hbs_SR.t1x.bin"/>
+      </program>
+      <program name="lt-proc $1">
+        <file name="hbs_SR.autogen.bin"/>
+      </program>
+      <program name="lt-proc -p">
+        <file name="hbs_SR.autopgen.bin"/>
+      </program>
+      <program name="lt-proc -t">
+        <file name="lat-cyr.autogen.bin"/>
+      </program>
+      
+    </pipeline>
+  </mode>
+
+
+ <mode name="hbs_SR-hbs_HR-transfertrace" install="no">
+    <pipeline>
+      <program name="lt-proc">
+        <file name="hbs.automorf.bin"/>
+      </program>
+<!--      <program name="cg-proc">
+        <file name="hbs.rlx.bin"/>
+      </program>
+-->
+      <program name="apertium-tagger -g $2">
+          <file name="hbs.prob"/>
+      </program> 
+      <program name="apertium-pretransfer"/>
+      <program name="lt-proc -b">
+        <file name="hbs_SR-hbs_HR.autobil.bin"/>
+      </program>
+      <program name="apertium-transfer -t -b">
+        <file name="apertium-hbs.hbs_SR-hbs_HR.t1x"/>
+        <file name="hbs_SR-hbs_HR.t1x.bin"/>
+      </program>
+    </pipeline>
+  </mode>
+
+
+ <mode name="hbs_SR-hbs_HR-tagger" install="no">
+    <pipeline>
+      <program name="lt-proc">
+        <file name="hbs.automorf.bin"/>
+      </program>
+<!--      <program name="cg-proc">
+        <file name="hbs.rlx.bin"/>
+      </program>
+-->
+      <program name="apertium-tagger -g $2">
+          <file name="hbs.prob"/>
+      </program> 
+    </pipeline>
+  </mode>
+
+
+
+ <mode name="hbs_SR-hbs_HR" install="yes">
+    <pipeline>
+      <program name="lt-proc">
+        <file name="hbs.automorf.bin"/>
+      </program>
+     <!-- <program name="cg-proc">
+        <file name="hbs.rlx.bin"/>
+      </program> -->
+      <program name="apertium-tagger -g $2">
+          <file name="hbs.prob"/>
+      </program> 
+     <program name="apertium-pretransfer"/>
+      <program name="lt-proc -b">
+        <file name="hbs_SR-hbs_HR.autobil.bin"/>
+      </program>
+      <program name="apertium-transfer -b">
+        <file name="apertium-hbs.hbs_SR-hbs_HR.t1x"/>
+        <file name="hbs_SR-hbs_HR.t1x.bin"/>
+      </program>
+      <program name="lt-proc $1">
+        <file name="hbs_HR.autogen.bin"/>
+      </program>
+      <program name="lt-proc -p">
+        <file name="hbs_HR.autopgen.bin"/>
+      </program>
+    </pipeline>
+  </mode>
+
+
+ <mode name="hbs_SR-hbs_HR-generador" install="no">
+    <pipeline>
+      <program name="lt-proc">
+        <file name="hbs.automorf.bin"/>
+      </program>
+     <!-- <program name="cg-proc">
+        <file name="hbs.rlx.bin"/>
+      </program> -->
+      <program name="apertium-tagger -g $2">
+          <file name="hbs.prob"/>
+      </program> 
+     <program name="apertium-pretransfer"/>
+      <program name="lt-proc -b">
+        <file name="hbs_SR-hbs_HR.autobil.bin"/>
+      </program>
+      <program name="apertium-transfer -b">
+        <file name="apertium-hbs.hbs_SR-hbs_HR.t1x"/>
+        <file name="hbs_SR-hbs_HR.t1x.bin"/>
+      </program>
+      <program name="lt-proc $1">
+        <file name="hbs_HR.autogen.bin"/>
+      </program>
+    </pipeline>
+  </mode>
+
+
+
+ <mode name="hbs_SR-hbs_HR-transfer" install="no">
+    <pipeline>
+      <program name="lt-proc">
+        <file name="hbs.automorf.bin"/>
+      </program>
+<!--      <program name="cg-proc">
+        <file name="hbs.rlx.bin"/>
+      </program>
+-->
+      <program name="apertium-tagger -g $2">
+          <file name="hbs.prob"/>
+      </program> 
+      <program name="apertium-pretransfer"/>
+
+      <program name="lt-proc -b">
+        <file name="hbs_SR-hbs_HR.autobil.bin"/>
+      </program>
+      <program name="apertium-transfer -b">
+        <file name="apertium-hbs.hbs_SR-hbs_HR.t1x"/>
+        <file name="hbs_SR-hbs_HR.t1x.bin"/>
+      </program>      
+    </pipeline>
+  </mode>
+
+
+
+<mode name="hbs_SRcyr-hbs_HR" install="yes">
+    <pipeline>
+      <program name="lt-proc -t">
+        <file name="cyr-lat.automorf.bin"/>
+      </program>
+      <program name="lt-proc">
+        <file name="hbs.automorf.bin"/>
+      </program>
+<!--      <program name="cg-proc -w -1 -n">
+        <file name="hbs.rlx.bin"/>
+      </program>
+-->
+      <program name="apertium-tagger -g $2">
+          <file name="hbs.prob"/>
+      </program> 
+      <program name="apertium-pretransfer"/>
+      <program name="lt-proc -b">
+        <file name="hbs_SR-hbs_HR.autobil.bin"/>
+      </program>
+      <program name="apertium-transfer -b">
+        <file name="apertium-hbs.hbs_SR-hbs_HR.t1x"/>
+        <file name="hbs_SR-hbs_HR.t1x.bin"/>
+      </program>
+      <program name="lt-proc $1">
+        <file name="hbs_HR.autogen.bin"/>
+      </program>
+      <program name="lt-proc -p">
+        <file name="hbs_HR.autopgen.bin"/>
+      </program>
+    </pipeline>
+  </mode>
+
+
+<mode name="hbs_SRcyr-hbs_HR-generador" install="no">
+    <pipeline>
+      <program name="lt-proc -t">
+        <file name="cyr-lat.automorf.bin"/>
+      </program>
+      <program name="lt-proc">
+        <file name="hbs.automorf.bin"/>
+      </program>
+<!--      <program name="cg-proc -w -1 -n">
+        <file name="hbs.rlx.bin"/>
+      </program>
+-->
+      <program name="apertium-tagger -g $2">
+          <file name="hbs.prob"/>
+      </program> 
+      <program name="apertium-pretransfer"/>
+      <program name="lt-proc -b">
+        <file name="hbs_SR-hbs_HR.autobil.bin"/>
+      </program>
+      <program name="apertium-transfer -b">
+        <file name="apertium-hbs.hbs_SR-hbs_HR.t1x"/>
+        <file name="hbs_SR-hbs_HR.t1x.bin"/>
+      </program>
+      <program name="lt-proc $1">
+        <file name="hbs_HR.autogen.bin"/>
+      </program>
+    </pipeline>
+  </mode>
+
+
+</modes>

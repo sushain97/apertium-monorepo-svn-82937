@@ -1,0 +1,134 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- -*- nxml -*- -->
+<postchunk>
+  <section-def-cats>
+    <def-cat n="nom">
+      <cat-item name="nom"/>
+    </def-cat>
+    <def-cat n="adj">
+      <cat-item name="adj"/>
+    </def-cat>
+    <def-cat n="prn">
+      <cat-item name="prn"/>
+    </def-cat>
+    <def-cat n="det_nom">
+      <cat-item name="det_nom"/>
+      <cat-item name="det_nom.*"/>
+    </def-cat>
+  </section-def-cats>
+
+  <section-def-attrs>
+    <def-attr n="a_adj">
+      <attr-item tags="adj"/>
+    </def-attr>
+    <def-attr n="a_nom">
+      <attr-item tags="n"/>
+      <attr-item tags="n.acr"/>
+      <attr-item tags="n.unc"/>
+      <attr-item tags="np.top"/>
+      <attr-item tags="np.al"/>
+      <attr-item tags="np.org"/>
+      <attr-item tags="np.ant"/>
+    </def-attr>
+    <def-attr n="gen">
+      <attr-item tags="m"/>
+      <attr-item tags="f"/>
+      <attr-item tags="mf"/>
+      <attr-item tags="nt"/>
+      <attr-item tags="GD"/>
+    </def-attr>
+    <def-attr n="nbr">
+      <attr-item tags="sg"/>
+      <attr-item tags="pl"/>
+      <attr-item tags="ND"/>
+    </def-attr>
+    <def-attr n="defnes">
+      <attr-item tags="ind"/>
+      <attr-item tags="def"/>
+    </def-attr>
+    <def-attr n="pers">
+      <attr-item tags="p1"/>
+      <attr-item tags="p2"/>
+      <attr-item tags="p3"/>
+    </def-attr>
+  </section-def-attrs>
+
+  <section-def-vars>
+    <def-var n="c_defnes"/>
+  </section-def-vars>
+
+  <section-def-macros>
+    <def-macro n="clean_nom" npar="1">
+      <choose>
+        <when>
+          <test>
+            <equal>
+              <clip pos="1" part="gen"/> 
+              <lit-tag v="GD"/>
+            </equal>
+          </test>
+          <let>
+            <clip pos="1" part="gen"/>
+            <lit-tag v="m"/>
+          </let>
+        </when>
+      </choose>
+    </def-macro>
+    <def-macro n="clean_adj" npar="1">
+      <choose>
+        <when>
+          <test>
+            <or>
+              <equal>
+                <clip pos="1" part="gen"/> 
+                <lit-tag v="GD"/>
+              </equal>
+              <equal>
+                <clip pos="1" part="gen"/> 
+                <lit-tag v="nt"/>
+              </equal>
+            </or>
+          </test>
+          <let>
+            <clip pos="1" part="gen"/>
+            <lit-tag v="m"/>
+          </let>
+        </when>
+      </choose>
+    </def-macro>
+  </section-def-macros>
+
+  <section-rules>
+    <rule comment="CHUNK: NOM">
+      <pattern>
+        <pattern-item n="nom"/>
+      </pattern>
+      <action>
+        <call-macro n="clean_nom">
+          <with-param pos="1"/>
+        </call-macro>
+        <out>
+          <lu>
+            <clip pos="1" part="whole"/>
+          </lu>
+        </out>
+      </action>
+    </rule>
+    <rule comment="CHUNK: ADJ">
+      <pattern>
+        <pattern-item n="adj"/>
+      </pattern>
+      <action>
+        <call-macro n="clean_adj">
+          <with-param pos="1"/>
+        </call-macro>
+        <out>
+          <lu>
+            <clip pos="1" part="whole"/>
+          </lu>
+        </out>
+      </action>
+    </rule>
+
+  </section-rules>
+</postchunk>

@@ -1,0 +1,13 @@
+Config:
+  hfst:
+    App: hfst-lookup
+    Gen: ../nog.autogen.hfst
+    Morph: ../nog.automorf.hfst
+
+Tests:
+  "[twol] np-cog with front vowels":
+    Медведев<np><cog><m><gen> : Медведевтинъ
+
+  "[twol] np-cog with back vowels":
+    Магомедов<np><cog><m><gen> : Магомедовтынъ
+

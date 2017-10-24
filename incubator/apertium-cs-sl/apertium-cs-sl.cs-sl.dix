@@ -1,0 +1,684 @@
+<dictionary>
+  <alphabet/>
+  <sdefs>
+    <sdef n="n"        c="Common noun"/>
+    <sdef n="np"       c="Proper names"/>
+    <sdef n="num"      c="Numeral"/>
+    <sdef n="adv"      c="Adverb"/>
+    <sdef n="prn"      c="Pronoun"/>
+    <sdef n="pr"       c="Preposition"/>
+    <sdef n="ij"       c="Interjection"/>
+    <sdef n="adj"      c="Adjective"/>
+    <sdef n="abbr"     c="Abbreviation"/>
+    <sdef n="vblex"    c="Verb"/>
+    <sdef n="vbser"    c="Verb 'to be'"/>
+    <sdef n="cnjcoo"   c="Co-ordinating conjunction"/>
+    <sdef n="cnjsub"   c="Sub-ordinating conjunction"/>
+
+    <sdef n="m"        c="Masculine"/>
+    <sdef n="f"        c="Feminine"/>
+    <sdef n="nt"       c="Neuter"/>
+
+    <sdef n="pers"     c="Personal"/>
+    <sdef n="itg"      c="Interrogative"/>
+    <sdef n="dem"      c="Demonstrative"/>
+    <sdef n="pos"      c="Possessive"/>
+
+    <sdef n="ord"      c="Ordinal"/>
+
+    <sdef n="p1"       c="First person"/>
+    <sdef n="p2"       c="Second person"/>
+    <sdef n="p3"       c="Third person"/>
+
+    <sdef n="top"      c="Toponym"/>
+    <sdef n="ant"      c="Anthroponym"/>
+
+    <sdef n="sent"     c="Sentence marker"/>
+    <sdef n="cm"       c="Comma"/>
+    <sdef n="lpar"     c="Left parenthesis"/>
+    <sdef n="rpar"     c="Right parenthesis"/>
+  </sdefs>
+  <pardefs>
+    <pardef n="n_n">
+      <e><p><l/><r/></p></e>
+    </pardef>
+    <pardef n="np_np">
+      <e><p><l/><r/></p></e>
+    </pardef>
+    <pardef n="adj_adj">
+      <e><p><l/><r/></p></e>
+    </pardef>
+  </pardefs>
+  <section id="main" type="standard">
+ 
+    <!-- Conjunctions -->
+
+    <e><p><l>i<s n="cnjcoo"/></l><r>in<s n="cnjcoo"/></r></p></e>
+    <e><p><l>a<s n="cnjcoo"/></l><r>in<s n="cnjcoo"/></r></p></e>
+
+    <e><p><l>ale<s n="cnjcoo"/></l><r>ampak<s n="cnjcoo"/></r></p></e>
+    <e><p><l>či<s n="cnjcoo"/></l><r>ali<s n="cnjcoo"/></r></p></e>
+    <e><p><l>ani<s n="cnjcoo"/></l><r>niti<s n="cnjcoo"/></r></p></e>
+    <e><p><l>ovšem<s n="cnjcoo"/></l><r>vendar<s n="cnjcoo"/></r></p></e>
+    <e><p><l>nicméně<s n="cnjcoo"/></l><r>vendar<s n="cnjcoo"/></r></p></e>
+    <e><p><l>neboli<s n="cnjcoo"/></l><r>ali<s n="cnjcoo"/></r></p></e>
+    <e><p><l>nýbrž<s n="cnjcoo"/></l><r>temveč<s n="cnjcoo"/></r></p></e>
+
+    <!-- Prepositions -->
+
+    <e><p><l>bez<s n="pr"/></l><r>brez<s n="pr"/></r></p></e>
+    <e><p><l>do<s n="pr"/></l><r>do<s n="pr"/></r></p></e>
+    <e><p><l>k<s n="pr"/></l><r>k<s n="pr"/></r></p></e>
+    <e><p><l>kolem<s n="pr"/></l><r>okoli<s n="pr"/></r></p></e>
+    <e><p><l>kvůli<s n="pr"/></l><r>zaradi<s n="pr"/></r></p></e>
+    <e><p><l>mezi<s n="pr"/></l><r>med<s n="pr"/></r></p></e>
+    <e><p><l>místo<s n="pr"/></l><r>namesto<s n="pr"/></r></p></e>
+    <e><p><l>na<s n="pr"/></l><r>na<s n="pr"/></r></p></e>
+    <e><p><l>nad<s n="pr"/></l><r>nad<s n="pr"/></r></p></e>
+    <e><p><l>o<s n="pr"/></l><r>o<s n="pr"/></r></p></e>
+    <e><p><l>od<s n="pr"/></l><r>od<s n="pr"/></r></p></e>
+    <e><p><l>okolo<s n="pr"/></l><r>okoli<s n="pr"/></r></p></e>
+    <e><p><l>po<s n="pr"/></l><r>po<s n="pr"/></r></p></e>
+    <e><p><l>poblíž<s n="pr"/></l><r>blizu<s n="pr"/></r></p></e>
+    <e><p><l>pod<s n="pr"/></l><r>pod<s n="pr"/></r></p></e>
+    <e><p><l>proti<s n="pr"/></l><r>proti<s n="pr"/></r></p></e>
+    <e><p><l>před<s n="pr"/></l><r>pred<s n="pr"/></r></p></e>
+    <e><p><l>přes<s n="pr"/></l><r>čez<s n="pr"/></r></p></e>
+    <e><p><l>při<s n="pr"/></l><r>pri<s n="pr"/></r></p></e>
+    <e><p><l>s<s n="pr"/></l><r>z<s n="pr"/></r></p></e>
+    <e><p><l>u<s n="pr"/></l><r>z<s n="pr"/></r></p></e>
+    <e><p><l>v<s n="pr"/></l><r>v<s n="pr"/></r></p></e>
+    <e><p><l>z<s n="pr"/></l><r>z<s n="pr"/></r></p></e>
+    <e><p><l>za<s n="pr"/></l><r>za<s n="pr"/></r></p></e>
+
+    <!-- Pronouns -->
+
+    <e><p><l>já<s n="prn"/><s n="p1"/></l><r>prpers<s n="prn"/><s n="pers"/><s n="p1"/></r></p></e>
+    <e><p><l>ty<s n="prn"/><s n="p2"/></l><r>prpers<s n="prn"/><s n="pers"/><s n="p2"/></r></p></e>
+    <e><p><l>on<s n="prn"/><s n="p3"/></l><r>prpers<s n="prn"/><s n="pers"/><s n="p3"/></r></p></e>
+
+    <e><p><l>můj<s n="prn"/><s n="pos"/></l><r>moj<s n="prn"/><s n="pos"/></r></p></e>
+    <e><p><l>tvůj<s n="prn"/><s n="pos"/></l><r>tvoj<s n="prn"/><s n="pos"/></r></p></e>
+    <e><p><l>naše<s n="prn"/><s n="pos"/></l><r>naš<s n="prn"/><s n="pos"/></r></p></e>
+    <e><p><l>vaše<s n="prn"/><s n="pos"/></l><r>vaš<s n="prn"/><s n="pos"/></r></p></e>
+
+    <e><p><l>ten<s n="prn"/><s n="dem"/></l><r>ta<s n="prn"/><s n="dem"/></r></p></e>
+
+    <e><p><l>kdo<s n="prn"/><s n="itg"/></l><r>kdo<s n="prn"/><s n="itg"/></r></p></e>
+    <e><p><l>co<s n="prn"/><s n="itg"/></l><r>kaj<s n="prn"/><s n="itg"/></r></p></e>
+    <e><p><l>kde<s n="prn"/><s n="itg"/></l><r>kje<s n="prn"/><s n="itg"/></r></p></e>
+    <e><p><l>jak<s n="prn"/><s n="itg"/></l><r>kako<s n="prn"/><s n="itg"/></r></p></e>
+    <e><p><l>který<s n="prn"/><s n="itg"/></l><r>kateri<s n="prn"/><s n="itg"/></r></p></e>
+    <e><p><l>některý<s n="prn"/><s n="itg"/></l><r>nekateri<s n="prn"/><s n="itg"/></r></p></e>
+    <e r="LR"><p><l>jenž<s n="prn"/><s n="itg"/></l><r>kateri<s n="prn"/><s n="itg"/></r></p></e>
+
+                               <!-- To be subcategorised -->
+    <e><p><l>se<s n="prn"/></l><r>se<s n="prn"/></r></p></e>
+    <e><p><l>všechen<s n="prn"/></l><r>ves<s n="prn"/></r></p></e>
+    <e><p><l>žádný<s n="prn"/></l><r>noben<s n="prn"/></r></p></e>
+    <e><p><l>takový<s n="prn"/></l><r>tak<s n="prn"/></r></p></e>
+    <e><p><l>nějaký<s n="prn"/></l><r>nekak<s n="prn"/></r></p></e>
+    <e><p><l>tentýž<s n="prn"/></l><r>isti<s n="prn"/></r></p></e>
+    <e><p><l>někdo<s n="prn"/></l><r>nekdo<s n="prn"/></r></p></e>
+    <e><p><l>nikdo<s n="prn"/></l><r>nihče<s n="prn"/></r></p></e>
+    <e><p><l>kterýkoliv<s n="prn"/></l><r>katerikoli<s n="prn"/></r></p></e>
+    <e><p><l>cokoliv<s n="prn"/></l><r>kakršenkoli<s n="prn"/></r></p></e>
+    <e><p><l>kdokoliv<s n="prn"/></l><r>kdokoli<s n="prn"/></r></p></e>
+
+
+    <!-- Determiners -->
+
+    <!-- Numerals -->
+
+    <e><p><l>I<s n="num"/></l><r>I<s n="num"/></r></p></e>
+    <e><p><l>II<s n="num"/></l><r>II<s n="num"/></r></p></e>
+    <e><p><l>III<s n="num"/></l><r>III<s n="num"/></r></p></e>
+
+    <e><p><l>jeden<s n="num"/></l><r>en<s n="num"/></r></p></e>
+    <e><p><l>dva<s n="num"/></l><r>dve<s n="num"/></r></p></e>
+    <e><p><l>tři<s n="num"/></l><r>trije<s n="num"/></r></p></e>
+    <e><p><l>čtyři<s n="num"/></l><r>štiri<s n="num"/></r></p></e>
+    <e><p><l>pět<s n="num"/></l><r>pet<s n="num"/></r></p></e>
+
+    <e><p><l>první<s n="num"/><s n="ord"/></l><r>prvi<s n="num"/><s n="ord"/></r></p></e>
+
+    <!-- Nouns -->
+
+    <e><p><l>auto<s n="n"/><s n="nt"/></l><r>avto<s n="n"/><s n="m"/></r></p><par n="n_n"/></e>
+    <e><p><l>rok<s n="n"/><s n="m"/></l><r>leto<s n="n"/><s n="nt"/></r></p><par n="n_n"/></e>
+    <e><p><l>srdce<s n="n"/><s n="nt"/></l><r>srce<s n="n"/><s n="nt"/></r></p><par n="n_n"/></e>
+    <e><p><l>chlapec<s n="n"/><s n="m"/></l><r>fant<s n="n"/><s n="m"/></r></p><par n="n_n"/></e>
+    <e><p><l>král<s n="n"/><s n="m"/></l><r>kralj<s n="n"/><s n="m"/></r></p><par n="n_n"/></e>
+    <e><p><l>herec<s n="n"/><s n="m"/></l><r>igralec<s n="n"/><s n="m"/></r></p><par n="n_n"/></e>
+    <e><p><l>čaj<s n="n"/><s n="m"/></l><r>čaj<s n="n"/><s n="m"/></r></p><par n="n_n"/></e>
+    <e><p><l>počátek<s n="n"/><s n="m"/></l><r>začetek<s n="n"/><s n="m"/></r></p><par n="n_n"/></e>
+    <e><p><l>muž<s n="n"/><s n="m"/></l><r>mož<s n="n"/><s n="m"/></r></p><par n="n_n"/></e>
+    <e><p><l>Bůh<s n="n"/><s n="m"/></l><r>Bog<s n="n"/><s n="m"/></r></p><par n="n_n"/></e>
+    <e><p><l>nebe<s n="n"/><s n="nt"/></l><r>nebo<s n="n"/><s n="nt"/></r></p><par n="n_n"/></e>
+    <e><p><l>jablko<s n="n"/><s n="nt"/></l><r>jabolko<s n="n"/><s n="nt"/></r></p><par n="n_n"/></e>
+    <e><p><l>mléko<s n="n"/><s n="nt"/></l><r>mleko<s n="n"/><s n="nt"/></r></p><par n="n_n"/></e>
+    <e><p><l>země<s n="n"/><s n="f"/></l><r>zemlja<s n="n"/><s n="f"/></r></p><par n="n_n"/></e>
+    <e><p><l>dívka<s n="n"/><s n="f"/></l><r>dekle<s n="n"/><s n="nt"/></r></p><par n="n_n"/></e>
+    <e><p><l>kočka<s n="n"/><s n="f"/></l><r>mačka<s n="n"/><s n="f"/></r></p><par n="n_n"/></e>
+    <e><p><l>březen<s n="n"/><s n="m"/></l><r>marec<s n="n"/><s n="m"/></r></p><par n="n_n"/></e>
+    <e><p><l>otec<s n="n"/><s n="m"/></l><r>oče<s n="n"/><s n="m"/></r></p><par n="n_n"/></e>
+    <e><p><l>kniha<s n="n"/><s n="f"/></l><r>knjiga<s n="n"/><s n="f"/></r></p><par n="n_n"/></e>
+    <e><p><l>dohoda<s n="n"/><s n="f"/></l><r>sporazum<s n="n"/><s n="m"/></r></p><par n="n_n"/></e>
+    <e><p><l>vláda<s n="n"/><s n="f"/></l><r>vlada<s n="n"/><s n="f"/></r></p><par n="n_n"/></e>
+    <e><p><l>energie<s n="n"/><s n="f"/></l><r>energija<s n="n"/><s n="f"/></r></p><par n="n_n"/></e>
+    <e><p><l>séri<s n="n"/><s n="f"/></l><r>serija<s n="n"/><s n="f"/></r></p><par n="n_n"/></e>
+    <e><p><l>institut<s n="n"/><s n="m"/></l><r>institut<s n="n"/><s n="m"/></r></p><par n="n_n"/></e>
+    <e><p><l>reaktor<s n="n"/><s n="m"/></l><r>reaktor<s n="n"/><s n="m"/></r></p><par n="n_n"/></e>
+    <e><p><l>kilogram<s n="n"/><s n="m"/></l><r>kilogram<s n="n"/><s n="m"/></r></p><par n="n_n"/></e>
+    <e><p><l>program<s n="n"/><s n="m"/></l><r>program<s n="n"/><s n="m"/></r></p><par n="n_n"/></e>
+    <e><p><l>materiál<s n="n"/><s n="m"/></l><r>material<s n="n"/><s n="m"/></r></p><par n="n_n"/></e>
+    <e><p><l>podnik<s n="n"/><s n="m"/></l><r>podjetje<s n="n"/><s n="nt"/></r></p><par n="n_n"/></e>
+    <e><p><l>společenství<s n="n"/><s n="nt"/></l><r>skupnost<s n="n"/><s n="f"/></r></p><par n="n_n"/></e>
+    <e><p><l>soulad<s n="n"/><s n="m"/></l><r>sklad<s n="n"/><s n="m"/></r></p><par n="n_n"/></e>
+    <e><p><l>článek<s n="n"/><s n="m"/></l><r>člen<s n="n"/><s n="m"/></r></p><par n="n_n"/></e>
+    <e><p><l>území<s n="n"/><s n="nt"/></l><r>ozemlje<s n="n"/><s n="nt"/></r></p><par n="n_n"/></e>
+    <e><p><l>okolnost<s n="n"/><s n="f"/></l><r>okoliščina<s n="n"/><s n="f"/></r></p><par n="n_n"/></e>
+    <e><p><l>oko<s n="n"/><s n="f"/></l><r>oko<s n="n"/><s n="nt"/></r></p><par n="n_n"/></e>
+    <e><p><l>republika<s n="n"/><s n="f"/></l><r>republika<s n="n"/><s n="f"/></r></p><par n="n_n"/></e>
+    <e><p><l>komise<s n="n"/><s n="f"/></l><r>komisija<s n="n"/><s n="f"/></r></p><par n="n_n"/></e>
+    <e><p><l>instituce<s n="n"/><s n="f"/></l><r>institucija<s n="n"/><s n="f"/></r></p><par n="n_n"/></e>
+    <e><p><l>koncentrace<s n="n"/><s n="f"/></l><r>koncentracija<s n="n"/><s n="f"/></r></p><par n="n_n"/></e>
+    <e><p><l>politika<s n="n"/><s n="f"/></l><r>politika<s n="n"/><s n="f"/></r></p><par n="n_n"/></e>
+    <e><p><l>kůra<s n="n"/><s n="f"/></l><r>skorja<s n="n"/><s n="f"/></r></p><par n="n_n"/></e>
+    <e><p><l>agentura<s n="n"/><s n="f"/></l><r>agencija<s n="n"/><s n="f"/></r></p><par n="n_n"/></e>
+    <e><p><l>období<s n="n"/><s n="nt"/></l><r>obdobje<s n="n"/><s n="nt"/></r></p><par n="n_n"/></e>
+    <e><p><l>město<s n="n"/><s n="nt"/></l><r>mesto<s n="n"/><s n="nt"/></r></p><par n="n_n"/></e>
+    <e><p><l>důstojnost<s n="n"/><s n="f"/></l><r>dostojanstvo<s n="n"/><s n="nt"/></r></p><par n="n_n"/></e>
+    <e><p><l>právo<s n="n"/><s n="nt"/></l><r>pravica<s n="n"/><s n="f"/></r></p><par n="n_n"/></e>
+    <e><p><l>člověk<s n="n"/><s n="m"/></l><r>človek<s n="n"/><s n="m"/></r></p><par n="n_n"/></e>
+    <e><p><l>jazyk<s n="n"/><s n="m"/></l><r>jezik<s n="n"/><s n="m"/></r></p><par n="n_n"/></e>
+    <e><p><l>protokol<s n="n"/><s n="m"/></l><r>protokol<s n="n"/><s n="m"/></r></p><par n="n_n"/></e>
+    <e><p><l>úřad<s n="n"/><s n="m"/></l><r>urad<s n="n"/><s n="m"/></r></p><par n="n_n"/></e>
+    <e><p><l>dcera<s n="n"/><s n="f"/></l><r>hči<s n="n"/><s n="f"/></r></p><par n="n_n"/></e>
+    <e><p><l>vous<s n="n"/><s n="m"/></l><r>brada<s n="n"/><s n="f"/></r></p><par n="n_n"/></e>
+    <e><p><l>verze<s n="n"/><s n="f"/></l><r>različica<s n="n"/><s n="f"/></r></p><par n="n_n"/></e>
+    <e><p><l>činnost<s n="n"/><s n="f"/></l><r>aktivnost<s n="n"/><s n="f"/></r></p><par n="n_n"/></e>
+    <e><p><l>aktivita<s n="n"/><s n="f"/></l><r>aktivnost<s n="n"/><s n="f"/></r></p><par n="n_n"/></e>
+
+    <e><p><l>akt<s n="n"/><s n="m"/></l><r>akt<s n="n"/><s n="m"/></r></p><par n="n_n"/></e>
+    <e><p><l>album<s n="n"/><s n="nt"/></l><r>album<s n="n"/><s n="m"/></r></p><par n="n_n"/></e>
+    <e><p><l>alfa<s n="n"/><s n="f"/></l><r>alfa<s n="n"/><s n="f"/></r></p><par n="n_n"/></e>
+    <e><p><l>alkohol<s n="n"/><s n="m"/></l><r>alkohol<s n="n"/><s n="m"/></r></p><par n="n_n"/></e>
+    <e><p><l>alt<s n="n"/><s n="m"/></l><r>alt<s n="n"/><s n="m"/></r></p><par n="n_n"/></e>
+    <e><p><l>astmatik<s n="n"/><s n="m"/></l><r>astmatik<s n="n"/><s n="m"/></r></p><par n="n_n"/></e>
+    <e><p><l>atol<s n="n"/><s n="m"/></l><r>atol<s n="n"/><s n="m"/></r></p><par n="n_n"/></e>
+    <e><p><l>atom<s n="n"/><s n="m"/></l><r>atom<s n="n"/><s n="m"/></r></p><par n="n_n"/></e>
+    <e><p><l>balet<s n="n"/><s n="m"/></l><r>balet<s n="n"/><s n="m"/></r></p><par n="n_n"/></e>
+    <e><p><l>banka<s n="n"/><s n="f"/></l><r>banka<s n="n"/><s n="f"/></r></p><par n="n_n"/></e>
+    <e><p><l>bar<s n="n"/><s n="m"/></l><r>bar<s n="n"/><s n="m"/></r></p><par n="n_n"/></e>
+    <e><p><l>bazar<s n="n"/><s n="m"/></l><r>bazar<s n="n"/><s n="m"/></r></p><par n="n_n"/></e>
+    <e><p><l>beton<s n="n"/><s n="m"/></l><r>beton<s n="n"/><s n="m"/></r></p><par n="n_n"/></e>
+    <e><p><l>bojkot<s n="n"/><s n="m"/></l><r>bojkot<s n="n"/><s n="m"/></r></p><par n="n_n"/></e>
+    <e><p><l>bok<s n="n"/><s n="m"/></l><r>bok<s n="n"/><s n="m"/></r></p><par n="n_n"/></e>
+    <e><p><l>bomba<s n="n"/><s n="f"/></l><r>bomba<s n="n"/><s n="f"/></r></p><par n="n_n"/></e>
+    <e><p><l>bon<s n="n"/><s n="m"/></l><r>bon<s n="n"/><s n="m"/></r></p><par n="n_n"/></e>
+    <e><p><l>borba<s n="n"/><s n="f"/></l><r>borba<s n="n"/><s n="f"/></r></p><par n="n_n"/></e>
+    <e><p><l>bor<s n="n"/><s n="m"/></l><r>bor<s n="n"/><s n="m"/></r></p><par n="n_n"/></e>
+    <e><p><l>čaj<s n="n"/><s n="m"/></l><r>čaj<s n="n"/><s n="m"/></r></p><par n="n_n"/></e>
+    <e><p><l>capa<s n="n"/><s n="f"/></l><r>capa<s n="n"/><s n="f"/></r></p><par n="n_n"/></e>
+    <e><p><l>cena<s n="n"/><s n="f"/></l><r>cena<s n="n"/><s n="f"/></r></p><par n="n_n"/></e>
+    <e><p><l>cent<s n="n"/><s n="m"/></l><r>cent<s n="n"/><s n="m"/></r></p><par n="n_n"/></e>
+    <e><p><l>cigareta<s n="n"/><s n="f"/></l><r>cigareta<s n="n"/><s n="f"/></r></p><par n="n_n"/></e>
+    <e><p><l>cirkus<s n="n"/><s n="m"/></l><r>cirkus<s n="n"/><s n="m"/></r></p><par n="n_n"/></e>
+    <e><p><l>cisterna<s n="n"/><s n="f"/></l><r>cisterna<s n="n"/><s n="f"/></r></p><par n="n_n"/></e>
+    <e><p><l>dar<s n="n"/><s n="m"/></l><r>dar<s n="n"/><s n="m"/></r></p><par n="n_n"/></e>
+    <e><p><l>detektiv<s n="n"/><s n="m"/></l><r>detektiv<s n="n"/><s n="m"/></r></p><par n="n_n"/></e>
+    <e><p><l>dialog<s n="n"/><s n="m"/></l><r>dialog<s n="n"/><s n="m"/></r></p><par n="n_n"/></e>
+    <e><p><l>diamant<s n="n"/><s n="m"/></l><r>diamant<s n="n"/><s n="m"/></r></p><par n="n_n"/></e>
+    <e><p><l>diapozitiv<s n="n"/><s n="m"/></l><r>diapozitiv<s n="n"/><s n="m"/></r></p><par n="n_n"/></e>
+    <e><p><l>diktatura<s n="n"/><s n="f"/></l><r>diktatura<s n="n"/><s n="f"/></r></p><par n="n_n"/></e>
+    <e><p><l>diplomat<s n="n"/><s n="m"/></l><r>diplomat<s n="n"/><s n="m"/></r></p><par n="n_n"/></e>
+    <e><p><l>direktiva<s n="n"/><s n="f"/></l><r>direktiva<s n="n"/><s n="f"/></r></p><par n="n_n"/></e>
+    <e><p><l>disciplina<s n="n"/><s n="f"/></l><r>disciplina<s n="n"/><s n="f"/></r></p><par n="n_n"/></e>
+    <e><p><l>doba<s n="n"/><s n="f"/></l><r>doba<s n="n"/><s n="f"/>ě</r></p><par n="n_n"/></e>
+    <e><p><l>dokument<s n="n"/><s n="m"/></l><r>dokument<s n="n"/><s n="m"/></r></p><par n="n_n"/></e>
+    <e><p><l>don<s n="n"/><s n="m"/></l><r>don<s n="n"/><s n="m"/></r></p><par n="n_n"/></e>
+    <e><p><l>dopis<s n="n"/><s n="m"/></l><r>dopis<s n="n"/><s n="m"/></r></p><par n="n_n"/></e>
+    <e><p><l>družba<s n="n"/><s n="f"/></l><r>družba<s n="n"/><s n="f"/></r></p><par n="n_n"/></e>
+    <e><p><l>družina<s n="n"/><s n="f"/></l><r>družina<s n="n"/><s n="f"/></r></p><par n="n_n"/></e>
+    <e><p><l>država<s n="n"/><s n="f"/></l><r>država<s n="n"/><s n="f"/></r></p><par n="n_n"/></e>
+    <e><p><l>efekt<s n="n"/><s n="m"/></l><r>efekt<s n="n"/><s n="m"/>ů</r></p><par n="n_n"/></e>
+    <e><p><l>elektronik<s n="n"/><s n="m"/></l><r>elektronik<s n="n"/><s n="m"/></r></p><par n="n_n"/></e>
+    <e><p><l>elita<s n="n"/><s n="f"/></l><r>elita<s n="n"/><s n="f"/></r></p><par n="n_n"/></e>
+    <e><p><l>etna<s n="n"/><s n="f"/></l><r>etna<s n="n"/><s n="f"/></r></p><par n="n_n"/></e>
+    <e><p><l>faraon<s n="n"/><s n="m"/></l><r>faraon<s n="n"/><s n="m"/></r></p><par n="n_n"/></e>
+    <e><p><l>festival<s n="n"/><s n="m"/></l><r>festival<s n="n"/><s n="m"/></r></p><par n="n_n"/></e>
+    <e><p><l>figura<s n="n"/><s n="f"/></l><r>figura<s n="n"/><s n="f"/></r></p><par n="n_n"/></e>
+    <e><p><l>film<s n="n"/><s n="m"/></l><r>film<s n="n"/><s n="m"/></r></p><par n="n_n"/></e>
+    <e><p><l>forma<s n="n"/><s n="f"/></l><r>forma<s n="n"/><s n="f"/>ě</r></p><par n="n_n"/></e>
+    <e><p><l>fosfor<s n="n"/><s n="m"/></l><r>fosfor<s n="n"/><s n="m"/></r></p><par n="n_n"/></e>
+    <e><p><l>frank<s n="n"/><s n="m"/></l><r>frank<s n="n"/><s n="m"/></r></p><par n="n_n"/></e>
+    <e><p><l>gen<s n="n"/><s n="m"/></l><r>gen<s n="n"/><s n="m"/></r></p><par n="n_n"/></e>
+    <e><p><l>gin<s n="n"/><s n="m"/></l><r>gin<s n="n"/><s n="m"/></r></p><par n="n_n"/></e>
+    <e><p><l>gotika<s n="n"/><s n="f"/></l><r>gotika<s n="n"/><s n="f"/></r></p><par n="n_n"/></e>
+    <e><p><l>grafit<s n="n"/><s n="m"/></l><r>grafit<s n="n"/><s n="m"/></r></p><par n="n_n"/></e>
+    <e><p><l>gram<s n="n"/><s n="m"/></l><r>gram<s n="n"/><s n="m"/></r></p><par n="n_n"/></e>
+    <e><p><l>groš<s n="n"/><s n="m"/></l><r>groš<s n="n"/><s n="m"/></r></p><par n="n_n"/></e>
+    <e><p><l>herbicid<s n="n"/><s n="m"/></l><r>herbicid<s n="n"/><s n="m"/></r></p><par n="n_n"/></e>
+    <e><p><l>heroin<s n="n"/><s n="m"/></l><r>heroin<s n="n"/><s n="m"/></r></p><par n="n_n"/></e>
+    <e><p><l>hormon<s n="n"/><s n="m"/></l><r>hormon<s n="n"/><s n="m"/></r></p><par n="n_n"/></e>
+    <e><p><l>idol<s n="n"/><s n="m"/></l><r>idol<s n="n"/><s n="m"/></r></p><par n="n_n"/></e>
+    <e><p><l>infrastruktura<s n="n"/><s n="f"/></l><r>infrastruktura<s n="n"/><s n="f"/></r></p><par n="n_n"/></e>
+    <e><p><l>inženýr<s n="n"/><s n="m"/></l><r>inženir<s n="n"/><s n="m"/></r></p><par n="n_n"/></e>
+    <e><p><l>ion<s n="n"/><s n="m"/></l><r>ion<s n="n"/><s n="m"/></r></p><par n="n_n"/></e>
+    <e><p><l>jasnost<s n="n"/><s n="f"/></l><r>jasnost<s n="n"/><s n="f"/></r></p><par n="n_n"/></e>
+    <e><p><l>jezero<s n="n"/><s n="nt"/></l><r>jezero<s n="n"/><s n="nt"/></r></p><par n="n_n"/></e>
+    <e><p><l>jez<s n="n"/><s n="m"/></l><r>jez<s n="n"/><s n="m"/></r></p><par n="n_n"/></e>
+    <e><p><l>jod<s n="n"/><s n="m"/></l><r>jod<s n="n"/><s n="m"/></r></p><par n="n_n"/></e>
+    <e><p><l>jogurt<s n="n"/><s n="m"/></l><r>jogurt<s n="n"/><s n="m"/></r></p><par n="n_n"/></e>
+    <e><p><l>kamera<s n="n"/><s n="f"/></l><r>kamera<s n="n"/><s n="f"/></r></p><par n="n_n"/></e>
+    <e><p><l>kant<s n="n"/><s n="m"/></l><r>kant<s n="n"/><s n="m"/></r></p><par n="n_n"/></e>
+    <e><p><l>karikatura<s n="n"/><s n="f"/></l><r>karikatura<s n="n"/><s n="f"/></r></p><par n="n_n"/></e>
+    <e><p><l>kilogram<s n="n"/><s n="m"/></l><r>kilogram<s n="n"/><s n="m"/></r></p><par n="n_n"/></e>
+    <e><p><l>klub<s n="n"/><s n="m"/></l><r>klub<s n="n"/><s n="m"/></r></p><par n="n_n"/></e>
+    <e><p><l>komisař<s n="n"/><s n="m"/></l><r>komisar<s n="n"/><s n="m"/></r></p><par n="n_n"/></e>
+    <e><p><l>koncert<s n="n"/><s n="m"/></l><r>koncert<s n="n"/><s n="m"/></r></p><par n="n_n"/></e>
+    <e><p><l>konec<s n="n"/><s n="m"/></l><r>konec<s n="n"/><s n="m"/></r></p><par n="n_n"/></e>
+    <e><p><l>konflikt<s n="n"/><s n="m"/></l><r>konflikt<s n="n"/><s n="m"/></r></p><par n="n_n"/></e>
+    <e><p><l>kongres<s n="n"/><s n="m"/></l><r>kongres<s n="n"/><s n="m"/></r></p><par n="n_n"/></e>
+    <e><p><l>krajina<s n="n"/><s n="f"/></l><r>krajina<s n="n"/><s n="f"/></r></p><par n="n_n"/></e>
+    <e><p><l>kultura<s n="n"/><s n="f"/></l><r>kultura<s n="n"/><s n="f"/></r></p><par n="n_n"/></e>
+    <e><p><l>lata<s n="n"/><s n="f"/></l><r>lata<s n="n"/><s n="f"/></r></p><par n="n_n"/></e>
+    <e><p><l>legenda<s n="n"/><s n="f"/></l><r>legenda<s n="n"/><s n="f"/></r></p><par n="n_n"/></e>
+    <e><p><l>les<s n="n"/><s n="m"/></l><r>les<s n="n"/><s n="m"/></r></p><par n="n_n"/></e>
+    <e><p><l>liga<s n="n"/><s n="f"/></l><r>liga<s n="n"/><s n="f"/></r></p><par n="n_n"/></e>
+    <e><p><l>lista<s n="n"/><s n="f"/></l><r>lista<s n="n"/><s n="f"/></r></p><par n="n_n"/></e>
+    <e><p><l>listina<s n="n"/><s n="f"/></l><r>listina<s n="n"/><s n="f"/></r></p><par n="n_n"/></e>
+    <e><p><l>list<s n="n"/><s n="m"/></l><r>list<s n="n"/><s n="m"/></r></p><par n="n_n"/></e>
+    <e><p><l>literatura<s n="n"/><s n="f"/></l><r>literatura<s n="n"/><s n="f"/></r></p><par n="n_n"/></e>
+    <e><p><l>lom<s n="n"/><s n="m"/></l><r>lom<s n="n"/><s n="m"/></r></p><par n="n_n"/></e>
+    <e><p><l>lord<s n="n"/><s n="m"/></l><r>lord<s n="n"/><s n="m"/></r></p><par n="n_n"/></e>
+    <e><p><l>los<s n="n"/><s n="m"/></l><r>los<s n="n"/><s n="m"/></r></p><par n="n_n"/></e>
+    <e><p><l>luna<s n="n"/><s n="f"/></l><r>luna<s n="n"/><s n="f"/></r></p><par n="n_n"/></e>
+    <e><p><l>magnet<s n="n"/><s n="m"/></l><r>magnet<s n="n"/><s n="m"/></r></p><par n="n_n"/></e>
+    <e><p><l>major<s n="n"/><s n="m"/></l><r>major<s n="n"/><s n="m"/></r></p><par n="n_n"/></e>
+    <e><p><l>malta<s n="n"/><s n="f"/></l><r>malta<s n="n"/><s n="f"/></r></p><par n="n_n"/></e>
+    <e><p><l>mama<s n="n"/><s n="f"/></l><r>mama<s n="n"/><s n="f"/></r></p><par n="n_n"/></e>
+    <e><p><l>mana<s n="n"/><s n="f"/></l><r>mana<s n="n"/><s n="f"/></r></p><par n="n_n"/></e>
+    <e><p><l>mast<s n="n"/><s n="f"/></l><r>mast<s n="n"/><s n="f"/></r></p><par n="n_n"/></e>
+    <e><p><l>metoda<s n="n"/><s n="f"/></l><r>metoda<s n="n"/><s n="f"/></r></p><par n="n_n"/></e>
+    <e><p><l>mig<s n="n"/><s n="m"/></l><r>mig<s n="n"/><s n="m"/></r></p><par n="n_n"/></e>
+    <e><p><l>mikrofon<s n="n"/><s n="m"/></l><r>mikrofon<s n="n"/><s n="m"/></r></p><par n="n_n"/></e>
+    <e><p><l>minomet<s n="n"/><s n="m"/></l><r>minomet<s n="n"/><s n="m"/></r></p><par n="n_n"/></e>
+    <e><p><l>minuta<s n="n"/><s n="f"/></l><r>minuta<s n="n"/><s n="f"/></r></p><par n="n_n"/></e>
+    <e><p><l>model<s n="n"/><s n="m"/></l><r>model<s n="n"/><s n="m"/></r></p><par n="n_n"/></e>
+    <e><p><l>monopol<s n="n"/><s n="m"/></l><r>monopol<s n="n"/><s n="m"/></r></p><par n="n_n"/></e>
+    <e><p><l>mora<s n="n"/><s n="f"/></l><r>mora<s n="n"/><s n="f"/></r></p><par n="n_n"/></e>
+    <e><p><l>most<s n="n"/><s n="m"/></l><r>most<s n="n"/><s n="m"/></r></p><par n="n_n"/></e>
+    <e><p><l>mošt<s n="n"/><s n="m"/></l><r>mošt<s n="n"/><s n="m"/></r></p><par n="n_n"/></e>
+    <e><p><l>motor<s n="n"/><s n="m"/></l><r>motor<s n="n"/><s n="m"/></r></p><par n="n_n"/></e>
+    <e><p><l>možnost<s n="n"/><s n="f"/></l><r>možnost<s n="n"/><s n="f"/></r></p><par n="n_n"/></e>
+    <e><p><l>nomenklatura<s n="n"/><s n="f"/></l><r>nomenklatura<s n="n"/><s n="f"/></r></p><par n="n_n"/></e>
+    <e><p><l>norma<s n="n"/><s n="f"/></l><r>norma<s n="n"/><s n="f"/></r></p><par n="n_n"/></e>
+    <e><p><l>nos<s n="n"/><s n="m"/></l><r>nos<s n="n"/><s n="m"/></r></p><par n="n_n"/></e>
+    <e><p><l>nota<s n="n"/><s n="f"/></l><r>nota<s n="n"/><s n="f"/></r></p><par n="n_n"/></e>
+    <e><p><l>objem<s n="n"/><s n="m"/></l><r>objem<s n="n"/><s n="m"/></r></p><par n="n_n"/></e>
+    <e><p><l>oblak<s n="n"/><s n="m"/></l><r>oblak<s n="n"/><s n="m"/></r></p><par n="n_n"/></e>
+    <e><p><l>oblast<s n="n"/><s n="f"/></l><r>oblast<s n="n"/><s n="f"/></r></p><par n="n_n"/></e>
+    <e><p><l>okno<s n="n"/><s n="nt"/></l><r>okno<s n="n"/><s n="nt"/></r></p><par n="n_n"/></e>
+    <e><p><l>oko<s n="n"/><s n="nt"/></l><r>oko<s n="n"/><s n="nt"/></r></p><par n="n_n"/></e>
+    <e><p><l>okov<s n="n"/><s n="m"/></l><r>okov<s n="n"/><s n="m"/></r></p><par n="n_n"/></e>
+    <e><p><l>oliva<s n="n"/><s n="f"/></l><r>oliva<s n="n"/><s n="f"/></r></p><par n="n_n"/></e>
+    <e><p><l>opat<s n="n"/><s n="m"/></l><r>opat<s n="n"/><s n="m"/></r></p><par n="n_n"/></e>
+    <e><p><l>oves<s n="n"/><s n="m"/></l><r>oves<s n="n"/><s n="m"/></r></p><par n="n_n"/></e>
+    <e><p><l>pacient<s n="n"/><s n="m"/></l><r>pacient<s n="n"/><s n="m"/></r></p><par n="n_n"/></e>
+    <e><p><l>pakt<s n="n"/><s n="m"/></l><r>pakt<s n="n"/><s n="m"/></r></p><par n="n_n"/></e>
+    <e><p><l>palec<s n="n"/><s n="m"/></l><r>palec<s n="n"/><s n="m"/></r></p><par n="n_n"/></e>
+    <e><p><l>paleta<s n="n"/><s n="f"/></l><r>paleta<s n="n"/><s n="f"/></r></p><par n="n_n"/></e>
+    <e><p><l>palma<s n="n"/><s n="f"/></l><r>palma<s n="n"/><s n="f"/></r></p><par n="n_n"/></e>
+    <e><p><l>paluba<s n="n"/><s n="f"/></l><r>paluba<s n="n"/><s n="f"/></r></p><par n="n_n"/></e>
+    <e><p><l>parazit<s n="n"/><s n="m"/></l><r>parazit<s n="n"/><s n="m"/></r></p><par n="n_n"/></e>
+    <e><p><l>park<s n="n"/><s n="m"/></l><r>park<s n="n"/><s n="m"/></r></p><par n="n_n"/></e>
+    <e><p><l>parlament<s n="n"/><s n="m"/></l><r>parlament<s n="n"/><s n="m"/></r></p><par n="n_n"/></e>
+    <e><p><l>partner<s n="n"/><s n="m"/></l><r>partner<s n="n"/><s n="m"/></r></p><par n="n_n"/></e>
+    <e><p><l>patent<s n="n"/><s n="m"/></l><r>patent<s n="n"/><s n="m"/></r></p><par n="n_n"/></e>
+    <e><p><l>patriot<s n="n"/><s n="m"/></l><r>patriot<s n="n"/><s n="m"/></r></p><par n="n_n"/></e>
+    <e><p><l>pes<s n="n"/><s n="m"/></l><r>pes<s n="n"/><s n="m"/></r></p><par n="n_n"/></e>
+    <e><p><l>pivo<s n="n"/><s n="nt"/></l><r>pivo<s n="n"/><s n="nt"/></r></p><par n="n_n"/></e>
+    <e><p><l>plamen<s n="n"/><s n="m"/></l><r>plamen<s n="n"/><s n="m"/></r></p><par n="n_n"/></e>
+    <e><p><l>plato<s n="n"/><s n="nt"/></l><r>plato<s n="n"/><s n="m"/></r></p><par n="n_n"/></e>
+    <e><p><l>plazma<s n="n"/><s n="f"/></l><r>plazma<s n="n"/><s n="f"/></r></p><par n="n_n"/></e>
+    <e><p><l>plaz<s n="n"/><s n="m"/></l><r>plaz<s n="n"/><s n="m"/></r></p><par n="n_n"/></e>
+    <e><p><l>plot<s n="n"/><s n="m"/></l><r>plot<s n="n"/><s n="m"/></r></p><par n="n_n"/></e>
+    <e><p><l>podpis<s n="n"/><s n="m"/></l><r>podpis<s n="n"/><s n="m"/></r></p><par n="n_n"/></e>
+    <e><p><l>poleno<s n="n"/><s n="nt"/></l><r>poleno<s n="n"/><s n="nt"/></r></p><par n="n_n"/></e>
+    <e><p><l>politika<s n="n"/><s n="f"/></l><r>politika<s n="n"/><s n="f"/></r></p><par n="n_n"/></e>
+    <e><p><l>politik<s n="n"/><s n="m"/></l><r>politik<s n="n"/><s n="m"/></r></p><par n="n_n"/></e>
+    <e><p><l>porod<s n="n"/><s n="m"/></l><r>porod<s n="n"/><s n="m"/></r></p><par n="n_n"/></e>
+    <e><p><l>post<s n="n"/><s n="m"/></l><r>post<s n="n"/><s n="m"/></r></p><par n="n_n"/></e>
+    <e><p><l>pravo<s n="n"/><s n="nt"/></l><r>pravo<s n="n"/><s n="nt"/></r></p><par n="n_n"/></e>
+    <e><p><l>procedura<s n="n"/><s n="f"/></l><r>procedura<s n="n"/><s n="f"/></r></p><par n="n_n"/></e>
+    <e><p><l>proces<s n="n"/><s n="m"/></l><r>proces<s n="n"/><s n="m"/></r></p><par n="n_n"/></e>
+    <e><p><l>program<s n="n"/><s n="m"/></l><r>program<s n="n"/><s n="m"/></r></p><par n="n_n"/></e>
+    <e><p><l>projekt<s n="n"/><s n="m"/></l><r>projekt<s n="n"/><s n="m"/></r></p><par n="n_n"/></e>
+    <e><p><l>prospekt<s n="n"/><s n="m"/></l><r>prospekt<s n="n"/><s n="m"/></r></p><par n="n_n"/></e>
+    <e><p><l>prostor<s n="n"/><s n="m"/></l><r>prostor<s n="n"/><s n="m"/></r></p><par n="n_n"/></e>
+    <e><p><l>protokol<s n="n"/><s n="m"/></l><r>protokol<s n="n"/><s n="m"/></r></p><par n="n_n"/></e>
+    <e><p><l>referendum<s n="n"/><s n="nt"/></l><r>referendum<s n="n"/><s n="m"/></r></p><par n="n_n"/></e>
+    <e><p><l>reforma<s n="n"/><s n="f"/></l><r>reforma<s n="n"/><s n="f"/></r></p><par n="n_n"/></e>
+    <e><p><l>republika<s n="n"/><s n="f"/></l><r>republika<s n="n"/><s n="f"/></r></p><par n="n_n"/></e>
+    <e><p><l>režim<s n="n"/><s n="m"/></l><r>režim<s n="n"/><s n="m"/></r></p><par n="n_n"/></e>
+    <e><p><l>rival<s n="n"/><s n="m"/></l><r>rival<s n="n"/><s n="m"/></r></p><par n="n_n"/></e>
+    <e><p><l>salon<s n="n"/><s n="m"/></l><r>salon<s n="n"/><s n="m"/></r></p><par n="n_n"/></e>
+    <e><p><l>samota<s n="n"/><s n="f"/></l><r>samota<s n="n"/><s n="f"/></r></p><par n="n_n"/></e>
+    <e><p><l>sektor<s n="n"/><s n="m"/></l><r>sektor<s n="n"/><s n="m"/></r></p><par n="n_n"/></e>
+    <e><p><l>sekunda<s n="n"/><s n="f"/></l><r>sekunda<s n="n"/><s n="f"/></r></p><par n="n_n"/></e>
+    <e><p><l>sen<s n="n"/><s n="m"/></l><r>sen<s n="n"/><s n="m"/></r></p><par n="n_n"/></e>
+    <e><p><l>sever<s n="n"/><s n="m"/></l><r>sever<s n="n"/><s n="m"/></r></p><par n="n_n"/></e>
+    <e><p><l>seznam<s n="n"/><s n="m"/></l><r>seznam<s n="n"/><s n="m"/></r></p><par n="n_n"/></e>
+    <e><p><l>sir<s n="n"/><s n="m"/></l><r>ser<s n="n"/><s n="m"/></r></p><par n="n_n"/></e>
+    <e><p><l>skupina<s n="n"/><s n="f"/></l><r>skupina<s n="n"/><s n="f"/></r></p><par n="n_n"/></e>
+    <e><p><l>slepota<s n="n"/><s n="f"/></l><r>slepota<s n="n"/><s n="f"/></r></p><par n="n_n"/></e>
+    <e><p><l>slina<s n="n"/><s n="f"/></l><r>slina<s n="n"/><s n="f"/></r></p><par n="n_n"/></e>
+    <e><p><l>služba<s n="n"/><s n="f"/></l><r>služba<s n="n"/><s n="f"/></r></p><par n="n_n"/></e>
+    <e><p><l>sobota<s n="n"/><s n="f"/></l><r>sobota<s n="n"/><s n="f"/></r></p><par n="n_n"/></e>
+    <e><p><l>spor<s n="n"/><s n="m"/></l><r>spor<s n="n"/><s n="m"/></r></p><par n="n_n"/></e>
+    <e><p><l>stadion<s n="n"/><s n="m"/></l><r>stadion<s n="n"/><s n="m"/></r></p><par n="n_n"/></e>
+    <e><p><l>standard<s n="n"/><s n="m"/></l><r>standard<s n="n"/><s n="m"/></r></p><par n="n_n"/></e>
+    <e><p><l>stan<s n="n"/><s n="m"/></l><r>stan<s n="n"/><s n="m"/></r></p><par n="n_n"/></e>
+    <e><p><l>stroj<s n="n"/><s n="m"/></l><r>stroj<s n="n"/><s n="m"/></r></p><par n="n_n"/></e>
+    <e><p><l>strop<s n="n"/><s n="m"/></l><r>strop<s n="n"/><s n="m"/></r></p><par n="n_n"/></e>
+    <e><p><l>struktura<s n="n"/><s n="f"/></l><r>struktura<s n="n"/><s n="f"/></r></p><par n="n_n"/></e>
+    <e><p><l>subjekt<s n="n"/><s n="m"/></l><r>subjekt<s n="n"/><s n="m"/></r></p><par n="n_n"/></e>
+    <e><p><l>šum<s n="n"/><s n="m"/></l><r>šum<s n="n"/><s n="m"/></r></p><par n="n_n"/></e>
+    <e><p><l>surovina<s n="n"/><s n="f"/></l><r>surovina<s n="n"/><s n="f"/></r></p><par n="n_n"/></e>
+    <e><p><l>tabu<s n="n"/><s n="nt"/></l><r>tabu<s n="n"/><s n="m"/></r></p><par n="n_n"/></e>
+    <e><p><l>tanker<s n="n"/><s n="m"/></l><r>tanker<s n="n"/><s n="m"/></r></p><par n="n_n"/></e>
+    <e><p><l>technologi<s n="n"/><s n="f"/></l><r>tehnologija<s n="n"/><s n="f"/></r></p><par n="n_n"/></e>
+    <e><p><l>telefon<s n="n"/><s n="m"/></l><r>telefon<s n="n"/><s n="m"/></r></p><par n="n_n"/></e>
+    <e><p><l>tenis<s n="n"/><s n="m"/></l><r>tenis<s n="n"/><s n="m"/></r></p><par n="n_n"/></e>
+    <e><p><l>teror<s n="n"/><s n="m"/></l><r>teror<s n="n"/><s n="m"/></r></p><par n="n_n"/></e>
+    <e><p><l>testosteron<s n="n"/><s n="m"/></l><r>testosteron<s n="n"/><s n="m"/></r></p><par n="n_n"/></e>
+    <e><p><l>teta<s n="n"/><s n="f"/></l><r>teta<s n="n"/><s n="f"/></r></p><par n="n_n"/></e>
+    <e><p><l>tkanina<s n="n"/><s n="f"/></l><r>tkanina<s n="n"/><s n="f"/></r></p><par n="n_n"/></e>
+    <e><p><l>tolar<s n="n"/><s n="m"/></l><r>tolar<s n="n"/><s n="m"/></r></p><par n="n_n"/></e>
+    <e><p><l>trakt<s n="n"/><s n="m"/></l><r>trakt<s n="n"/><s n="m"/></r></p><par n="n_n"/></e>
+    <e><p><l>transparent<s n="n"/><s n="m"/></l><r>transparent<s n="n"/><s n="m"/></r></p><par n="n_n"/></e>
+    <e><p><l>trata<s n="n"/><s n="f"/></l><r>trata<s n="n"/><s n="f"/></r></p><par n="n_n"/></e>
+    <e><p><l>turbina<s n="n"/><s n="f"/></l><r>turbina<s n="n"/><s n="f"/></r></p><par n="n_n"/></e>
+    <e><p><l>tur<s n="n"/><s n="m"/></l><r>tur<s n="n"/><s n="m"/></r></p><par n="n_n"/></e>
+    <e><p><l>úkol<s n="n"/><s n="m"/></l><r>úkol<s n="n"/><s n="m"/></r></p><par n="n_n"/></e>
+    <e><p><l>um<s n="n"/><s n="m"/></l><r>um<s n="n"/><s n="m"/></r></p><par n="n_n"/></e>
+    <e><p><l>uniforma<s n="n"/><s n="f"/></l><r>uniforma<s n="n"/><s n="f"/></r></p><par n="n_n"/></e>
+    <e><p><l>uran<s n="n"/><s n="m"/></l><r>uran<s n="n"/><s n="m"/></r></p><par n="n_n"/></e>
+    <e><p><l>úrok<s n="n"/><s n="m"/></l><r>úrok<s n="n"/><s n="m"/></r></p><par n="n_n"/></e>
+    <e><p><l>útok<s n="n"/><s n="m"/></l><r>útok<s n="n"/><s n="m"/></r></p><par n="n_n"/></e>
+    <e><p><l>úvod<s n="n"/><s n="m"/></l><r>úvod<s n="n"/><s n="m"/></r></p><par n="n_n"/></e>
+    <e><p><l>varianta<s n="n"/><s n="f"/></l><r>varianta<s n="n"/><s n="f"/></r></p><par n="n_n"/></e>
+    <e><p><l>ventil<s n="n"/><s n="m"/></l><r>ventil<s n="n"/><s n="m"/></r></p><par n="n_n"/></e>
+    <e><p><l>vid<s n="n"/><s n="m"/></l><r>vid<s n="n"/><s n="m"/></r></p><par n="n_n"/></e>
+    <e><p><l>virus<s n="n"/><s n="m"/></l><r>virus<s n="n"/><s n="m"/></r></p><par n="n_n"/></e>
+    <e><p><l>vitamin<s n="n"/><s n="m"/></l><r>vitamin<s n="n"/><s n="m"/></r></p><par n="n_n"/></e>
+    <e><p><l>vnuk<s n="n"/><s n="m"/></l><r>vnuk<s n="n"/><s n="m"/></r></p><par n="n_n"/></e>
+    <e><p><l>voda<s n="n"/><s n="f"/></l><r>voda<s n="n"/><s n="f"/></r></p><par n="n_n"/></e>
+    <e><p><l>železo<s n="n"/><s n="nt"/></l><r>železo<s n="n"/><s n="nt"/></r></p><par n="n_n"/></e>
+    <e><p><l>zlato<s n="n"/><s n="nt"/></l><r>zlato<s n="n"/><s n="nt"/></r></p><par n="n_n"/></e>
+    <e><p><l>zlo<s n="n"/><s n="nt"/></l><r>zlo<s n="n"/><s n="nt"/></r></p><par n="n_n"/></e>
+
+
+
+    <!-- Adjectives -->
+
+    <e><p><l>červený<s n="adj"/></l><r>rdeč<s n="adj"/></r></p><par n="adj_adj"/></e>
+    <e><p><l>atomový<s n="adj"/></l><r>atomski<s n="adj"/></r></p><par n="adj_adj"/></e>
+    <e><p><l>evropský<s n="adj"/></l><r>evropski<s n="adj"/></r></p><par n="adj_adj"/></e>
+    <e><p><l>mírový<s n="adj"/></l><r>miroljuben<s n="adj"/></r></p><par n="adj_adj"/></e>
+    <e><p><l>švýcarský<s n="adj"/></l><r>švicarski<s n="adj"/></r></p><par n="adj_adj"/></e>
+    <e><p><l>zákonný<s n="adj"/></l><r>zakonski<s n="adj"/></r></p><par n="adj_adj"/></e>
+    <e><p><l>technický<s n="adj"/></l><r>tehničen<s n="adj"/></r></p><par n="adj_adj"/></e>
+    <e><p><l>německý<s n="adj"/></l><r>nemški<s n="adj"/></r></p><par n="adj_adj"/></e>
+    <e><p><l>jaderný<s n="adj"/></l><r>jedrski<s n="adj"/></r></p><par n="adj_adj"/></e>
+    <e><p><l>zapečetěný<s n="adj"/></l><r>zapečaten<s n="adj"/></r></p><par n="adj_adj"/></e>
+    <e><p><l>efektivní<s n="adj"/></l><r>efektivni<s n="adj"/></r></p><par n="adj_adj"/></e>
+    <e><p><l>francouzský<s n="adj"/></l><r>francoski<s n="adj"/></r></p><par n="adj_adj"/></e>
+    <e><p><l>italský<s n="adj"/></l><r>italijanski<s n="adj"/></r></p><par n="adj_adj"/></e>
+    <e><p><l>fyzický<s n="adj"/></l><r>fizičen<s n="adj"/></r></p><par n="adj_adj"/></e>
+    <e><p><l>kapitálový<s n="adj"/></l><r>kapitalski<s n="adj"/></r></p><par n="adj_adj"/></e>
+    <e><p><l>svobodný<s n="adj"/></l><r>svoboden<s n="adj"/></r></p><par n="adj_adj"/></e>
+    <e><p><l>rovný<s n="adj"/></l><r>enako<s n="adj"/></r></p><par n="adj_adj"/></e>
+    <e><p><l>hospodářský<s n="adj"/></l><r>ekonomski<s n="adj"/></r></p><par n="adj_adj"/></e>
+    <e><p><l>celkový<s n="adj"/></l><r>celoten<s n="adj"/></r></p><par n="adj_adj"/></e>
+    <e><p><l>zemský<s n="adj"/></l><r>zemeljski<s n="adj"/></r></p><par n="adj_adj"/></e>
+    <e><p><l>dánský<s n="adj"/></l><r>danski<s n="adj"/></r></p><par n="adj_adj"/></e>
+    <e><p><l>modrý<s n="adj"/></l><r>moder<s n="adj"/></r></p><par n="adj_adj"/></e>
+    <e><p><l>nový<s n="adj"/></l><r>nov<s n="adj"/></r></p><par n="adj_adj"/></e>
+    <e><p><l>malý<s n="adj"/></l><r>mali<s n="adj"/></r></p><par n="adj_adj"/></e>
+    <e><p><l>velký<s n="adj"/></l><r>velik<s n="adj"/></r></p><par n="adj_adj"/></e>
+    <e><p><l>dlouhý<s n="adj"/></l><r>dolg<s n="adj"/></r></p><par n="adj_adj"/></e>
+    <e><p><l>široký<s n="adj"/></l><r>širok<s n="adj"/></r></p><par n="adj_adj"/></e>
+    <e><p><l>těžký<s n="adj"/></l><r>težek<s n="adj"/></r></p><par n="adj_adj"/></e>
+    <e><p><l>krátký<s n="adj"/></l><r>kratek<s n="adj"/></r></p><par n="adj_adj"/></e>
+    <e><p><l>úzký<s n="adj"/></l><r>ozek<s n="adj"/></r></p><par n="adj_adj"/></e>
+    <e><p><l>tenký<s n="adj"/></l><r>tanek<s n="adj"/></r></p><par n="adj_adj"/></e>
+    <e><p><l>český<s n="adj"/></l><r>češki<s n="adj"/></r></p><par n="adj_adj"/></e>
+    <e><p><l>destilovaný<s n="adj"/></l><r>destiliran<s n="adj"/></r></p><par n="adj_adj"/></e>
+    <e><p><l>mezinárodní<s n="adj"/></l><r>mednaroden<s n="adj"/></r></p><par n="adj_adj"/></e>
+    <e><p><l>mírový<s n="adj"/></l><r>miroven<s n="adj"/></r></p><par n="adj_adj"/></e>
+    <e><p><l>policejní<s n="adj"/></l><r>policijski<s n="adj"/></r></p><par n="adj_adj"/></e>
+    <e><p><l>tematický<s n="adj"/></l><r>tematski<s n="adj"/></r></p><par n="adj_adj"/></e>
+
+    <e><p><l>africký<s n="adj"/></l><r>afriški<s n="adj"/></r></p><par n="adj_adj"/></e>
+    <e><p><l>aktivní<s n="adj"/></l><r>aktiven<s n="adj"/></r></p><par n="adj_adj"/></e>
+    <e><p><l>alpský<s n="adj"/></l><r>alpski<s n="adj"/></r></p><par n="adj_adj"/></e>
+    <e><p><l>amazonský<s n="adj"/></l><r>amazonski<s n="adj"/></r></p><par n="adj_adj"/></e>
+    <e><p><l>arabský<s n="adj"/></l><r>arabski<s n="adj"/></r></p><par n="adj_adj"/></e>
+    <e><p><l>argentinský<s n="adj"/></l><r>argentinski<s n="adj"/></r></p><par n="adj_adj"/></e>
+    <e><p><l>atlantský<s n="adj"/></l><r>atlantski<s n="adj"/></r></p><par n="adj_adj"/></e>
+    <e><p><l>automatický<s n="adj"/></l><r>avtomatičen<s n="adj"/></r></p><par n="adj_adj"/></e>
+    <e><p><l>bankovní<s n="adj"/></l><r>bančen<s n="adj"/></r></p><par n="adj_adj"/></e>
+    <e><p><l>barbarský<s n="adj"/></l><r>barbarski<s n="adj"/></r></p><par n="adj_adj"/></e>
+    <e><p><l>bělavý<s n="adj"/></l><r>belkast<s n="adj"/></r></p><par n="adj_adj"/></e>
+    <e><p><l>bílo<s n="adj"/></l><r>bel<s n="adj"/></r></p><par n="adj_adj"/></e>
+    <e><p><l>bílý<s n="adj"/></l><r>bel<s n="adj"/></r></p><par n="adj_adj"/></e>
+    <e><p><l>biologický<s n="adj"/></l><r>biološki<s n="adj"/></r></p><par n="adj_adj"/></e>
+    <e><p><l>brazilský<s n="adj"/></l><r>brazilski<s n="adj"/></r></p><par n="adj_adj"/></e>
+    <e><p><l>bruselský<s n="adj"/></l><r>bruseljski<s n="adj"/></r></p><par n="adj_adj"/></e>
+    <e><p><l>brutální<s n="adj"/></l><r>brutalen<s n="adj"/></r></p><par n="adj_adj"/></e>
+    <e><p><l>česko<s n="adj"/></l><r>češki<s n="adj"/></r></p><par n="adj_adj"/></e>
+    <e><p><l>čistý<s n="adj"/></l><r>čist<s n="adj"/></r></p><par n="adj_adj"/></e>
+    <e><p><l>civilní<s n="adj"/></l><r>civilen<s n="adj"/></r></p><par n="adj_adj"/></e>
+    <e><p><l>definitivní<s n="adj"/></l><r>definitiven<s n="adj"/></r></p><par n="adj_adj"/></e>
+    <e><p><l>destilovaný<s n="adj"/></l><r>destiliran<s n="adj"/></r></p><par n="adj_adj"/></e>
+    <e><p><l>dočasný<s n="adj"/></l><r>začasen<s n="adj"/></r></p><par n="adj_adj"/></e>
+    <e><p><l>dominantní<s n="adj"/></l><r>dominanten<s n="adj"/></r></p><par n="adj_adj"/></e>
+    <e><p><l>egejský<s n="adj"/></l><r>egejski<s n="adj"/></r></p><par n="adj_adj"/></e>
+    <e><p><l>ekologický<s n="adj"/></l><r>ekološki<s n="adj"/></r></p><par n="adj_adj"/></e>
+    <e><p><l>elegantní<s n="adj"/></l><r>eleganten<s n="adj"/></r></p><par n="adj_adj"/></e>
+    <e><p><l>elitní<s n="adj"/></l><r>eliten<s n="adj"/></r></p><par n="adj_adj"/></e>
+    <e><p><l>evropský<s n="adj"/></l><r>evropski<s n="adj"/></r></p><par n="adj_adj"/></e>
+    <e><p><l>filosofický<s n="adj"/></l><r>filozofski<s n="adj"/></r></p><par n="adj_adj"/></e>
+    <e><p><l>finanční<s n="adj"/></l><r>finančen<s n="adj"/></r></p><par n="adj_adj"/></e>
+    <e><p><l>germánský<s n="adj"/></l><r>germanski<s n="adj"/></r></p><par n="adj_adj"/></e>
+    <e><p><l>horský<s n="adj"/></l><r>gorski<s n="adj"/></r></p><par n="adj_adj"/></e>
+    <e><p><l>hospodářský<s n="adj"/></l><r>gospodarski<s n="adj"/></r></p><par n="adj_adj"/></e>
+    <e><p><l>hovězí<s n="adj"/></l><r>goveji<s n="adj"/></r></p><par n="adj_adj"/></e>
+    <e><p><l>inteligentní<s n="adj"/></l><r>inteligenten<s n="adj"/></r></p><par n="adj_adj"/></e>
+    <e><p><l>intimní<s n="adj"/></l><r>intimen<s n="adj"/></r></p><par n="adj_adj"/></e>
+    <e><p><l>irský<s n="adj"/></l><r>irski<s n="adj"/></r></p><par n="adj_adj"/></e>
+    <e><p><l>islandský<s n="adj"/></l><r>islandski<s n="adj"/></r></p><par n="adj_adj"/></e>
+    <e><p><l>italský<s n="adj"/></l><r>italijanski<s n="adj"/></r></p><par n="adj_adj"/></e>
+    <e><p><l>izraelský<s n="adj"/></l><r>izraelski<s n="adj"/></r></p><par n="adj_adj"/></e>
+    <e><p><l>jaderský<s n="adj"/></l><r>jadranski<s n="adj"/></r></p><par n="adj_adj"/></e>
+    <e><p><l>japonský<s n="adj"/></l><r>japonski<s n="adj"/></r></p><par n="adj_adj"/></e>
+    <e><p><l>jasný<s n="adj"/></l><r>jasen<s n="adj"/></r></p><par n="adj_adj"/></e>
+    <e><p><l>kanadský<s n="adj"/></l><r>kanadski<s n="adj"/></r></p><par n="adj_adj"/></e>
+    <e><p><l>keltský<s n="adj"/></l><r>keltski<s n="adj"/></r></p><par n="adj_adj"/></e>
+    <e><p><l>kokosový<s n="adj"/></l><r>kokosov<s n="adj"/></r></p><par n="adj_adj"/></e>
+    <e><p><l>kontaktní<s n="adj"/></l><r>kontakten<s n="adj"/></r></p><par n="adj_adj"/></e>
+    <e><p><l>konzervativní<s n="adj"/></l><r>konservativen<s n="adj"/></r></p><par n="adj_adj"/></e>
+    <e><p><l>korejský<s n="adj"/></l><r>korejski<s n="adj"/></r></p><par n="adj_adj"/></e>
+    <e><p><l>kradený<s n="adj"/></l><r>ukraden<s n="adj"/></r></p><par n="adj_adj"/></e>
+    <e><p><l>krutý<s n="adj"/></l><r>krut<s n="adj"/></r></p><par n="adj_adj"/></e>
+    <e><p><l>kulturní<s n="adj"/></l><r>kulturen<s n="adj"/></r></p><par n="adj_adj"/></e>
+    <e><p><l>latinský<s n="adj"/></l><r>latinski<s n="adj"/></r></p><par n="adj_adj"/></e>
+    <e><p><l>letošní<s n="adj"/></l><r>letošnji<s n="adj"/></r></p><par n="adj_adj"/></e>
+    <e><p><l>levý<s n="adj"/></l><r>levi<s n="adj"/></r></p><par n="adj_adj"/></e>
+    <e><p><l>liberální<s n="adj"/></l><r>liberalen<s n="adj"/></r></p><par n="adj_adj"/></e>
+    <e><p><l>madridský<s n="adj"/></l><r>madridski<s n="adj"/></r></p><par n="adj_adj"/></e>
+    <e><p><l>malý<s n="adj"/></l><r>mali<s n="adj"/></r></p><par n="adj_adj"/></e>
+    <e><p><l>matematický<s n="adj"/></l><r>matematičen<s n="adj"/></r></p><par n="adj_adj"/></e>
+    <e><p><l>mechanický<s n="adj"/></l><r>mehanski<s n="adj"/></r></p><par n="adj_adj"/></e>
+    <e><p><l>mezinárodní<s n="adj"/></l><r>mednaroden<s n="adj"/></r></p><par n="adj_adj"/></e>
+    <e><p><l>milánský<s n="adj"/></l><r>milanski<s n="adj"/></r></p><par n="adj_adj"/></e>
+    <e><p><l>miniaturní<s n="adj"/></l><r>miniaturen<s n="adj"/></r></p><par n="adj_adj"/></e>
+    <e><p><l>mírový<s n="adj"/></l><r>miroven<s n="adj"/></r></p><par n="adj_adj"/></e>
+    <e><p><l>mladý<s n="adj"/></l><r>mlad<s n="adj"/></r></p><par n="adj_adj"/></e>
+    <e><p><l>mletý<s n="adj"/></l><r>mlet<s n="adj"/></r></p><par n="adj_adj"/></e>
+    <e><p><l>mobilní<s n="adj"/></l><r>mobilen<s n="adj"/></r></p><par n="adj_adj"/></e>
+    <e><p><l>moderní<s n="adj"/></l><r>moderen<s n="adj"/></r></p><par n="adj_adj"/></e>
+    <e><p><l>modrý<s n="adj"/></l><r>moder<s n="adj"/></r></p><par n="adj_adj"/></e>
+    <e><p><l>moskevský<s n="adj"/></l><r>moskovski<s n="adj"/></r></p><par n="adj_adj"/></e>
+    <e><p><l>nabitý<s n="adj"/></l><r>nabit<s n="adj"/></r></p><par n="adj_adj"/></e>
+    <e><p><l>nadřízení<s n="adj"/></l><r>nadrejen<s n="adj"/></r></p><par n="adj_adj"/></e>
+    <e><p><l>národní<s n="adj"/></l><r>naroden<s n="adj"/></r></p><par n="adj_adj"/></e>
+    <e><p><l>nizozemský<s n="adj"/></l><r>nizozemski<s n="adj"/></r></p><par n="adj_adj"/></e>
+    <e><p><l>nobelův<s n="adj"/></l><r>nobelov<s n="adj"/></r></p><par n="adj_adj"/></e>
+    <e><p><l>noční<s n="adj"/></l><r>nočen<s n="adj"/></r></p><par n="adj_adj"/></e>
+    <e><p><l>norský<s n="adj"/></l><r>norveški<s n="adj"/></r></p><par n="adj_adj"/></e>
+    <e><p><l>novorozený<s n="adj"/></l><r>novorojen<s n="adj"/></r></p><par n="adj_adj"/></e>
+    <e><p><l>nový<s n="adj"/></l><r>nov<s n="adj"/></r></p><par n="adj_adj"/></e>
+    <e><p><l>objektivní<s n="adj"/></l><r>objektiven<s n="adj"/></r></p><par n="adj_adj"/></e>
+    <e><p><l>oční<s n="adj"/></l><r>očesen<s n="adj"/></r></p><par n="adj_adj"/></e>
+    <e><p><l>olympijský<s n="adj"/></l><r>olimpijski<s n="adj"/></r></p><par n="adj_adj"/></e>
+    <e><p><l>operní<s n="adj"/></l><r>operen<s n="adj"/></r></p><par n="adj_adj"/></e>
+    <e><p><l>ortodoxní<s n="adj"/></l><r>ortodoksen<s n="adj"/></r></p><par n="adj_adj"/></e>
+    <e><p><l>osudný<s n="adj"/></l><r>usoden<s n="adj"/></r></p><par n="adj_adj"/></e>
+    <e><p><l>ozimý<s n="adj"/></l><r>zimski<s n="adj"/></r></p><par n="adj_adj"/></e>
+    <e><p><l>pacifický<s n="adj"/></l><r>pacifiški<s n="adj"/></r></p><par n="adj_adj"/></e>
+    <e><p><l>parní<s n="adj"/></l><r>paren<s n="adj"/></r></p><par n="adj_adj"/></e>
+    <e><p><l>patogenní<s n="adj"/></l><r>patogen<s n="adj"/></r></p><par n="adj_adj"/></e>
+    <e><p><l>peruánský<s n="adj"/></l><r>perujski<s n="adj"/></r></p><par n="adj_adj"/></e>
+    <e><p><l>pitný<s n="adj"/></l><r>piten<s n="adj"/></r></p><par n="adj_adj"/></e>
+    <e><p><l>plný<s n="adj"/></l><r>poln<s n="adj"/></r></p><par n="adj_adj"/></e>
+    <e><p><l>plodný<s n="adj"/></l><r>ploden<s n="adj"/></r></p><par n="adj_adj"/></e>
+    <e><p><l>policejní<s n="adj"/></l><r>policijski<s n="adj"/></r></p><par n="adj_adj"/></e>
+    <e><p><l>polský<s n="adj"/></l><r>poljski<s n="adj"/></r></p><par n="adj_adj"/></e>
+    <e><p><l>portugalský<s n="adj"/></l><r>portugalski<s n="adj"/></r></p><par n="adj_adj"/></e>
+    <e><p><l>pražený<s n="adj"/></l><r>pražen<s n="adj"/></r></p><par n="adj_adj"/></e>
+    <e><p><l>primitivní<s n="adj"/></l><r>primitiven<s n="adj"/></r></p><par n="adj_adj"/></e>
+    <e><p><l>protestantský<s n="adj"/></l><r>protestantski<s n="adj"/></r></p><par n="adj_adj"/></e>
+    <e><p><l>psychologický<s n="adj"/></l><r>psihološki<s n="adj"/></r></p><par n="adj_adj"/></e>
+    <e><p><l>pyrenejský<s n="adj"/></l><r>pirenejski<s n="adj"/></r></p><par n="adj_adj"/></e>
+    <e><p><l>radioaktivní<s n="adj"/></l><r>radioaktiven<s n="adj"/></r></p><par n="adj_adj"/></e>
+    <e><p><l>rasový<s n="adj"/></l><r>rasen<s n="adj"/></r></p><par n="adj_adj"/></e>
+    <e><p><l>řecký<s n="adj"/></l><r>grški<s n="adj"/></r></p><par n="adj_adj"/></e>
+    <e><p><l>regionální<s n="adj"/></l><r>regionalen<s n="adj"/></r></p><par n="adj_adj"/></e>
+    <e><p><l>římský<s n="adj"/></l><r>rimski<s n="adj"/></r></p><par n="adj_adj"/></e>
+    <e><p><l>romský<s n="adj"/></l><r>romski<s n="adj"/></r></p><par n="adj_adj"/></e>
+    <e><p><l>ruský<s n="adj"/></l><r>ruski<s n="adj"/></r></p><par n="adj_adj"/></e>
+    <e><p><l>samostatný<s n="adj"/></l><r>samostojen<s n="adj"/></r></p><par n="adj_adj"/></e>
+    <e><p><l>saský<s n="adj"/></l><r>saški<s n="adj"/></r></p><par n="adj_adj"/></e>
+    <e><p><l>šedivý<s n="adj"/></l><r>siv<s n="adj"/></r></p><par n="adj_adj"/></e>
+    <e><p><l>senilní<s n="adj"/></l><r>senilen<s n="adj"/></r></p><par n="adj_adj"/></e>
+    <e><p><l>severní<s n="adj"/></l><r>severen<s n="adj"/></r></p><par n="adj_adj"/></e>
+    <e><p><l>širš<s n="adj"/></l><r>širok<s n="adj"/></r></p><par n="adj_adj"/></e>
+    <e><p><l>slaný<s n="adj"/></l><r>slan<s n="adj"/></r></p><par n="adj_adj"/></e>
+    <e><p><l>sloní<s n="adj"/></l><r>slonov<s n="adj"/></r></p><par n="adj_adj"/></e>
+    <e><p><l>slovenský<s n="adj"/></l><r>slovenski<s n="adj"/></r></p><par n="adj_adj"/></e>
+    <e><p><l>slovinský<s n="adj"/></l><r>slovenski<s n="adj"/></r></p><par n="adj_adj"/></e>
+    <e><p><l>smetanový<s n="adj"/></l><r>smetanov<s n="adj"/></r></p><par n="adj_adj"/></e>
+    <e><p><l>sociální<s n="adj"/></l><r>socialen<s n="adj"/></r></p><par n="adj_adj"/></e>
+    <e><p><l>sodný<s n="adj"/></l><r>soden<s n="adj"/></r></p><par n="adj_adj"/></e>
+    <e><p><l>solidní<s n="adj"/></l><r>soliden<s n="adj"/></r></p><par n="adj_adj"/></e>
+    <e><p><l>srbský<s n="adj"/></l><r>srbski<s n="adj"/></r></p><par n="adj_adj"/></e>
+    <e><p><l>stabilní<s n="adj"/></l><r>stabilen<s n="adj"/></r></p><par n="adj_adj"/></e>
+    <e><p><l>starý<s n="adj"/></l><r>star<s n="adj"/></r></p><par n="adj_adj"/></e>
+    <e><p><l>strategický<s n="adj"/></l><r>strateški<s n="adj"/></r></p><par n="adj_adj"/></e>
+    <e><p><l>střelecký<s n="adj"/></l><r>strelski<s n="adj"/></r></p><par n="adj_adj"/></e>
+    <e><p><l>stříbrný<s n="adj"/></l><r>srebrn<s n="adj"/></r></p><par n="adj_adj"/></e>
+    <e><p><l>sudý<s n="adj"/></l><r>sod<s n="adj"/></r></p><par n="adj_adj"/></e>
+    <e><p><l>surový<s n="adj"/></l><r>surov<s n="adj"/></r></p><par n="adj_adj"/></e>
+    <e><p><l>švýcarský<s n="adj"/></l><r>švicarski<s n="adj"/></r></p><par n="adj_adj"/></e>
+    <e><p><l>technický<s n="adj"/></l><r>tehničen<s n="adj"/></r></p><par n="adj_adj"/></e>
+    <e><p><l>tematický<s n="adj"/></l><r>tematski<s n="adj"/></r></p><par n="adj_adj"/></e>
+    <e><p><l>teologický<s n="adj"/></l><r>teološki<s n="adj"/></r></p><par n="adj_adj"/></e>
+    <e><p><l>teoretický<s n="adj"/></l><r>teoretičen<s n="adj"/></r></p><par n="adj_adj"/></e>
+    <e><p><l>tesařský<s n="adj"/></l><r>tesarski<s n="adj"/></r></p><par n="adj_adj"/></e>
+    <e><p><l>tiskový<s n="adj"/></l><r>tiskoven<s n="adj"/></r></p><par n="adj_adj"/></e>
+    <e><p><l>toaletní<s n="adj"/></l><r>toaleten<s n="adj"/></r></p><par n="adj_adj"/></e>
+    <e><p><l>trojdílný<s n="adj"/></l><r>trodelen<s n="adj"/></r></p><par n="adj_adj"/></e>
+    <e><p><l>ukradený<s n="adj"/></l><r>ukraden<s n="adj"/></r></p><par n="adj_adj"/></e>
+    <e><p><l>ultra<s n="adj"/></l><r>ultra<s n="adj"/></r></p><par n="adj_adj"/></e>
+    <e><p><l>upravený<s n="adj"/></l><r>upraven<s n="adj"/></r></p><par n="adj_adj"/></e>
+    <e><p><l>úřadní<s n="adj"/></l><r>uraden<s n="adj"/></r></p><par n="adj_adj"/></e>
+    <e><p><l>večerní<s n="adj"/></l><r>večeren<s n="adj"/></r></p><par n="adj_adj"/></e>
+    <e><p><l>větrný<s n="adj"/></l><r>vetroven<s n="adj"/></r></p><par n="adj_adj"/></e>
+    <e><p><l>vlivný<s n="adj"/></l><r>vpliven<s n="adj"/></r></p><par n="adj_adj"/></e>
+    <e><p><l>vojenský<s n="adj"/></l><r>vojaški<s n="adj"/></r></p><par n="adj_adj"/></e>
+    <e><p><l>volený<s n="adj"/></l><r>voljen<s n="adj"/></r></p><par n="adj_adj"/></e>
+    <e><p><l>vysoký<s n="adj"/></l><r>visok<s n="adj"/></r></p><par n="adj_adj"/></e>
+    <e><p><l>žabí<s n="adj"/></l><r>žabji<s n="adj"/></r></p><par n="adj_adj"/></e>
+    <e><p><l>zasloužený<s n="adj"/></l><r>zaslužen<s n="adj"/></r></p><par n="adj_adj"/></e>
+    <e><p><l>zelený<s n="adj"/></l><r>zelen<s n="adj"/></r></p><par n="adj_adj"/></e>
+    <e><p><l>ženevský<s n="adj"/></l><r>ženevski<s n="adj"/></r></p><par n="adj_adj"/></e>
+    <e><p><l>ženský<s n="adj"/></l><r>ženski<s n="adj"/></r></p><par n="adj_adj"/></e>
+    <e><p><l>židovský<s n="adj"/></l><r>židovski<s n="adj"/></r></p><par n="adj_adj"/></e>
+    <e><p><l>živý<s n="adj"/></l><r>živ<s n="adj"/></r></p><par n="adj_adj"/></e>
+    <e><p><l>zúžený<s n="adj"/></l><r>zožen<s n="adj"/></r></p><par n="adj_adj"/></e>
+
+
+
+    <!-- Adverbs -->
+
+    <!-- Verbs -->
+
+    <e><p><l>být<s n="vbser"/></l><r>biti<s n="vbser"/></r></p></e>
+
+    <e><p><l>mít<s n="vblex"/></l><r>imeti<s n="vblex"/></r></p></e>
+    <e><p><l>chtít<s n="vblex"/></l><r>hoteti<s n="vblex"/></r></p></e>
+
+    <e><p><l>číst<s n="vblex"/></l><r>brati<s n="vblex"/></r></p></e>
+    <e><p><l>podepsat<s n="vblex"/></l><r>podpisati<s n="vblex"/></r></p></e>
+    <e><p><l>připravit<s n="vblex"/></l><r>pripraviti<s n="vblex"/></r></p></e>
+    <e><p><l>rodit<s n="vblex"/></l><r>roditi<s n="vblex"/></r></p></e>
+    <e><p><l>stvořit<s n="vblex"/></l><r>ustvariti<s n="vblex"/></r></p></e>
+    <e><p><l>nakreslit<s n="vblex"/></l><r>narisati<s n="vblex"/></r></p></e>
+    <e><p><l>umřít<s n="vblex"/></l><r>umreti<s n="vblex"/></r></p></e>
+    <e><p><l>vědět<s n="vblex"/></l><r>vedeti<s n="vblex"/></r></p></e>
+    <e><p><l>začít<s n="vblex"/></l><r>začeti<s n="vblex"/></r></p></e>
+    <e><p><l>diskutovat<s n="vblex"/></l><r>razpravljati<s n="vblex"/></r></p></e>
+
+    <!-- Adverbs -->
+
+    <e><p><l>kde<s n="adv"/><s n="itg"/></l><r>kje<s n="adv"/><s n="itg"/></r></p></e>
+    <e><p><l>jak<s n="adv"/><s n="itg"/></l><r>kako<s n="adv"/><s n="itg"/></r></p></e>
+
+    <e><p><l>ne<s n="adv"/></l><r>ne<s n="adv"/></r></p></e>
+
+    <e><p><l>včera<s n="adv"/></l><r>včeraj<s n="adv"/></r></p></e>
+    <e><p><l>jednou<s n="adv"/></l><r>je<b/>enkrat<s n="adv"/></r></p></e>
+    <e><p><l>již<s n="adv"/></l><r>že<s n="adv"/></r></p></e>
+    <e><p><l>nyní<s n="adv"/></l><r>zdaj<s n="adv"/></r></p></e>
+    <e><p><l>hodně<s n="adv"/></l><r>več<s n="adv"/></r></p></e>
+
+    <!-- Proper names -->
+
+    <e><p><l>Petr<s n="np"/><s n="ant"/><s n="m"/></l><r>Peter<s n="np"/><s n="ant"/><s n="m"/></r></p><par n="np_np"/></e>
+
+    <e><p><l>Kanada<s n="np"/><s n="top"/><s n="f"/></l><r>Kanada<s n="np"/><s n="top"/><s n="f"/></r></p><par n="np_np"/></e>
+
+    <!-- Interjections -->
+
+    <e><p><l>díky<s n="ij"/></l><r>hvala<s n="ij"/></r></p></e>
+
+    <!-- Abbreviations -->
+    <e><p><l>např<s n="abbr"/></l><r>npr<s n="abbr"/></r></p></e>
+    <e><p><l>cm<s n="abbr"/></l><r>cm<s n="abbr"/></r></p></e>
+    <e><p><l>km<s n="abbr"/></l><r>km<s n="abbr"/></r></p></e>
+    <e><p><l>kg<s n="abbr"/></l><r>kg<s n="abbr"/></r></p></e>
+
+    <!-- Punctuation -->
+
+    <e><re>[.\?;:!·]</re><p><l><s n="sent"/></l><r><s n="sent"/></r></p></e>
+    <e><re>,</re><p><l><s n="cm"/></l><r><s n="cm"/></r></p></e>
+    <e><p><l>)<s n="rpar"/></l><r>)<s n="rpar"/></r></p></e>
+    <e><p><l>(<s n="lpar"/></l><r>(<s n="lpar"/></r></p></e>
+    <e><re>[0-9]+([.,][0-9]+)?</re><p><l><s n="num"/></l><r><s n="num"/></r></p></e>
+
+  </section>
+</dictionary>

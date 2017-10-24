@@ -1,0 +1,47 @@
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+!! The spellrelax.twol file is to implement things that should be analysed
+!! but not generated and that are not strictly orthographic errors, but 
+!! more like alternative valid ways of spelling the same thing
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+Alphabet
+
+    A Ä Â B C Ç D E Ê F G H I İ J K L M N O Ö P R S Ş Ș T Ţ Ț U Ü V Y Z
+    a ä â b c ç d e ê f g h ı i i̇ j k l m n o ö p r s ş ș t ţ ț u ü v y z
+
+   %':%' 
+   %`:%` %':%` 
+   %ʻ:%ʻ %':%ʻ 
+   %’:%’ %':%’  
+   %‘:%‘ %':%‘ 
+   %ʼ:%ʼ %':%ʼ 
+
+   ê:e ! Put this here although maybe it shouldn't be
+
+   у:у y:у ! U+0443 CYRILLIC SMALL LETTER U (у)
+   о:о o:о ! U+043E CYRILLIC SMALL LETTER O (о)
+
+   ş:ș
+   ţ:ț
+
+   Ş:Ș
+   Ţ:Ț
+
+   Ğ:Ğ
+   ğ:ğ
+
+   G:Ğ
+   g:ğ
+
+   і:і i:і
+   і:і і:i
+
+   I:ı
+   ı:I
+!   İ:i
+!   i:İ
+ ; 
+
+Rules
+
+"Unify apostrophe styles"
+a => _ ;

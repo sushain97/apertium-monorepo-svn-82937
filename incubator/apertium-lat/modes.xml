@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<modes>
+
+  <mode name="lat-morph" install="yes">
+    <pipeline>
+      <program name="lt-proc -w">
+        <file name="lat.automorf.bin"/>
+      </program>
+    </pipeline>
+  </mode>
+
+  <mode name="lat-gener" install="yes">
+    <pipeline>
+      <program name="lt-proc -g">
+        <file name="lat.autogen.bin"/>
+      </program>
+    </pipeline>
+  </mode>
+
+  <mode name="lat-tagger" install="yes">
+    <pipeline>
+      <program name="lt-proc -w">
+        <file name="lat.automorf.bin"/>
+      </program>
+      <program name="cg-proc -w">
+        <file name="lat.rlx.bin"/>
+      </program>
+    </pipeline>
+  </mode>
+
+  <mode name="lat-disam" install="yes">
+    <pipeline>
+      <program name="lt-proc -w">
+        <file name="lat.automorf.bin"/>
+      </program>
+      <program name="cg-conv -a -l" />
+      <program name="vislcg3 --trace -g">
+        <file name="apertium-lat.lat.rlx"/>
+      </program>
+    </pipeline>
+  </mode>
+
+</modes>
+

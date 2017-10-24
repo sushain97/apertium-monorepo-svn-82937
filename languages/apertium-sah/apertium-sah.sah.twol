@@ -1,0 +1,307 @@
+Alphabet
+
+   А Б В Г Д Е Ё Ж З И Й К Л М Н О Ө П Р С Т У Ү Ф Х Ц Ч Ш Щ Ъ Ы Ь Э Ю Я Һ Ҥ Ҕ
+   а б в г д е ё ж з и й к л м н о ө п р с т у ү ф х ц ч ш щ ъ ы ь э ю я һ ҥ ҕ
+
+   !%{E%}:а %{E%}:э %{E%}:ө %{E%}:о
+
+   !%{A%}:а %{A%}:э %{A%}:ө %{A%}:о
+   %{A%}:а
+   !%{I%}:и %{I%}:у %{I%}:ү %{I%}:ы
+   %{I%}:ы
+
+   %{L%}:л ! %{L%}:т %{L%}:д %{L%}:н
+   %{T%}:т ! %{T%}:д %{T%}:л %{T%}:н
+
+   %{B%}:б ! %{B%}:п %{B%}:м
+
+   %{G%}:г ! %{G%}:к %{G%}:ҕ %{G%}:х %{G%}:ҥ
+
+   %{i%}:0 ! %{i%}:и %{i%}:у %{i%}:ү %{i%}:ы
+
+   %{y%}:0 ! %{y%}:и %{y%}:у %{y%}:ү %{y%}:ы
+
+   %{n%}:0 ! %{n%}:н
+
+   %{t%}:0 ! %{t%}:т
+
+   %{a%}:0
+
+   %{р%}:р
+
+   %{☭%}:0
+   %{ъ%}:0
+
+   %>:0 ; 
+
+
+Sets
+
+Vow = Я Ю Ё А О Ы У Э Е И Ө Ү
+      я ю ё а о ы у э е и ө ү ;
+
+RealVow = А О Ы У Э И Ө Ү
+          а о ы у э и ө ү ;
+
+LowVow = Я Ё А О Э Е Ө
+         я ё а о э е ө ;
+
+HighVow = Ю Ы У И Ү
+          ю ы у и ү ;
+
+Nasal = М Н Ҥ
+        м н ҥ ;
+
+HighSonCns = Й Р
+             й р ;
+
+VoicelessCns = П Д Т К Х С З Ж В
+               п д т к х с з ж в ;
+
+Obs = Б В Г Д Ж З К П Р С Т Ф Х Ц Ч Ш Щ Һ Ҕ
+      б в г д ж з к п р с т ф х ц ч ш щ һ ҕ ;
+
+Cons = Б В Г Д Ж З Й К Л М Н П Р С Т Ф Х Ц Ч Ш Щ Һ Ҥ Ҕ
+       б в г д ж з й к л м н п р с т ф х ц ч ш щ һ ҥ ҕ ;
+
+
+Rules
+
+!"Vowel deletion"
+!%{A%}:0 <=> _ %>: %{I%}: ; 
+
+
+!!!== regressive assimilation ==!!!
+
+"т assimilation"
+т:Cy <=> _ %>: Cx: ;
+     except
+         [ :н | :с | :к ] _ %>:/[ :0 - %>: ] ;
+     where Cx in ( %{B%} %{G%} ) ! %{L%} ) 
+           Cy in (   п     к   ) !  т ) 
+     matched ;  
+
+"{р} → л before л"
+%{р%}:л <=> _ [ :л | [ %{L%}: - :Obs ] ]/:0 ;
+
+
+! FIXME: These two rules should probably be generalised
+"н→ҥ assimilation"
+н:ҥ <=> _ :ҥ/:0 ; 
+
+"н→м assimilation"
+н:м <=> _ %>: %{B%}: ; 
+
+!!!== progressive assimilation ==!!!
+
+"Assimilation after nasals"
+Cx:Cy <=> :Nasal [ :0 - т: ]* _ ;
+      where Cx in ( %{L%} %{T%} %{G%} %{B%} )
+            Cy in (   н     н     ҥ     м   )
+      matched ;
+
+"Assimilation after high-sonority obstruents"
+Cx:Cy <=> :HighSonCns/:0 _ ;
+      where Cx in ( %{L%} %{T%} )
+            Cy in (   д     д   )
+      matched ;
+
+"Assimilation after voiceless consonants"
+Cx:Cy <=> :VoicelessCns/:0 _ ;
+      where Cx in ( %{L%} %{B%} )
+            Cy in (   т     п   )
+      matched ;
+
+"{T} → л"
+%{T%}:л <=> :л/:0 _ ; 
+
+"{G} after х"
+%{G%}:х <=> :х/:0 _ ;
+
+"{G} after voiceless consonants besides х"
+%{G%}:к <=> [ :VoicelessCns - :х]/:0 _ ;
+
+
+!!!== deletion ==!!!
+
+"{р} deletes before obstruents or something"
+%{р%}:0 <=> _ :Obs/:0 ;
+
+
+!!!== epenthesis ==!!!
+
+"т after a vowel"
+%{t%}:т <=> :Vow/:0 _ ;
+
+"н after a vowel"
+%{n%}:н <=> :Vow/:0 _ ;
+            !@ и д е я >:0 {n}:н {I}:ы
+
+
+!!!== lenition ==!!!
+
+"intervocalic lenition"
+Cx:Cy <=> :Vow/:0* _ [ %>: :Vow]/[ :0 - %>: ]* ;
+             !@ и с:һ {y}:и т
+          ! :Vow/:0* _ :0* %>: :0* :Vow ;
+          !    !е к:__ т:0 {☭}:0 >:0 {t}:0 {A}:а
+          :Vow _ %{y%}:Vow ; 
+      where Cx in ( х с к п )
+            Cy in ( ҕ һ г б )
+      matched ;
+
+
+"{G} after low vowel"
+%{G%}:ҕ <=> :LowVow/:0 _ ;
+            !@ Е в р о п а >:0 {G}:ҕ {A}:а
+
+
+!!!== Vowel Harmony ==!!!
+
+"vowel harmony for {i}"
+%{i%}:Vy <=> :Vx [ :Cons* :Cons ]/:0* _ ;
+         except 
+             _ %>: %{A%}: ; ! because {i}:0 >:0 {A}: 
+                !@ э:э {T}:т {i}:0 >:0 {A}:э
+         where Vx in ( а о ы у э е и ө ү я )
+               Vy in ( ы у ы у и и и ү ү ы )
+         matched ;
+
+
+
+"vowel harmony for {y}"
+%{y%}:Vy <=> :Vx [ :Cons* :Cons ]/:0* _ ;
+         except 
+             _ [ :Cons :Vow ]/:0* ;
+             !@ ис{y}т
+         where Vx in ( а о ы у э е и ө ү я )
+               Vy in ( ы у ы у и и и ү ү ы )
+         matched ;
+
+
+"vowel harmony for {I}"
+%{I%}:Vy <=> :Vx [ :Cons* :Cons ]/[ :0 - %{☭%}: ]* _ ;
+             %{I%}:Vx _ ;
+         except
+         !    ! [ %{ъ%}: | %{☭%}: ]  %>: [ :Cons* ]/:0* _ ;
+         !    %{☭%}: [ :Cons* :Cons ]/:0* _ ;
+         where Vx in ( а о ы у э е и ө ү я )
+               Vy in ( ы у ы у и и и ү ү ы )
+         matched ;
+
+
+!!FIXME! ф а к у л ь т е т {☭}:0 >:0 {n}: {I}:
+
+!@ б у о л >:0 {I}:у {A}:а х >:0 т {A}:а {A}:а х
+
+"vowel harmony for {A} except after уо and үө"
+%{A%}:Vy <=> :Vx [ :Cons* :Cons ]/[ :0 - %{☭%}: ]* _ ;
+             ! :Cons :Vx _ ;  ! FIXME: When does this happen?
+             %{A%}:Vx _ ;
+         except
+             :ү :ө [ :Cons* :Cons]/:0* _ ;
+             :у :о [ :Cons* :Cons]/:0* _ ;
+             ! :Vow :Vow %>: _ ; 
+             !    ! for verb stems ending in long vowel or diphthong
+             !%{ъ%}: %>: [ :Cons* ]/:0* _ ; 
+             %{☭%}: [ :Cons* :Cons ]/:0* _ ;
+         where Vx in ( а о ы у э е и ө ү я )
+               Vy in ( а о а а э э э ө э а )
+         matched ;
+
+"{A} as part of {I}{A}"
+%{A%}:Vy <=> %{I%}:Vx _ ;
+         except
+             :RealVow :RealVow %>: %{I%}:Vx _ ;
+         where Vx in ( и ү ы у )
+               Vy in ( э ө а о )
+         matched ;
+
+"{A} deletes after long vowels and diphthongs and triggers other stuff (and as part of {I}{A})"
+%{A%}:0 <=> :RealVow :RealVow %>: (%{I%}:) _ ;
+
+"{I} deletes after long vowels and diphthongs and triggers other stuff"
+%{I%}:0 <=> :RealVow :RealVow %>: _ ;
+
+"first element of diphthongs and long vowels immediately before ({I}){A}"
+Vx:Vy <=> _ :RealVow %>: (%{I%}:) %{A%}: ;
+      where Vx in ( а о э ө )
+            Vy in ( ы у и ү )
+      matched ;
+
+!"first element of diphthongs and long vowels immediately before {I}{A}"
+!Vx:Vy <=> _ :RealVow %>: %{I%}: %{A%}: ;
+!      where Vx in ( э а о ө )
+!            Vy in ( и ы у ү )
+!      matched ;
+
+"second element of diphthongs and long vowels immediately before {A}"
+Vx:Vy <=> :RealVow _ %>: %{A%}: ;
+      where Vx in ( а о э ө )
+            Vy in ( ы у и ү )
+      matched ;
+
+"vowel harmony for {a} except after уо and үө"
+%{a%}:Vy <=> :Vx [ :Cons* :Cons ]/:0* _ ;
+         except
+             :ү :ө [ :Cons* :Cons]/:0* _ ;
+             :у :о [ :Cons* :Cons]/:0* _ ;
+         where Vx in ( а о ы у э е и ө ү я )
+               Vy in ( а о а а э э э ө э а )
+         matched ;
+
+"vowel harmony for {a} after үө"
+%{a%}:э <=> :ү :ө [ :Cons* :Cons ]/:0* _ ;
+
+!FIXME 
+"vowel harmony for {I} after back harmony marker"
+%{I%}:ы <=> :Vow [ :Cons* :Cons ]/:0* _ ;
+            ! [ %{ъ%}: | %{☭%}: ] %>: [ :Cons* ]/:0* _ ;            
+        except
+            :Vow [ :Cons* :Cons ]/[ :0 - %{☭%}: ]* _ ;
+
+
+
+!!!== Defaults that shouldn't be necessary ==!!!
+
+"{G} after high vowel"
+%{G%}:г <=> :HighVow/:0 _ ;
+            :HighSonCns/:0 _ ;
+            :л/:0 _ ;  
+
+!@ с ы л >:0 {G}:г {A}:а
+
+"vowel harmony for {A} after уо etc."
+! shouldn't need a rule because it's the default а, but doesn't seem to work without one
+%{A%}:а <=> :у :о [ :Cons* :Cons ]/:0* _ ;
+            ! %{ъ%}: %>: [ :Cons* ]/:0* _ ;            
+            :Vow [ :Cons* :Cons %{☭%}: ]/[ :0 - %{☭%}: ]* _ ;
+            :Vow [ :Cons* %{☭%}: :Cons ]/[ :0 - %{☭%}: ]* _ ;
+            :Vow [ %{☭%}: :Cons* :Cons ]/[ :0 - %{☭%}: ]* _ ;
+            ! :Cons/[ :0 - %{☭%}: ] %{☭%}: _ ;
+            ! %{☭%}: :Cons/[ :0 - %{☭%}: ] _ ;
+            ! :Vow %{☭%}: [ :Cons* :Cons ]/[ :0 - %{☭%}: ]* _ ;
+               !компьютер{ъ}>{L}{A}р
+               !@ Д ь о к у у с к а й >:0 {T}:д {A}:а {A}:а ҕ {I}:ы
+            ! :Vow [ :Cons* :Cons ]/[ :0 - %{☭%}: ]* %{☭%}: _ ;
+            ! :Vow [ :Cons* %{☭%}: :Cons ]/[ :0 - %{☭%}: ]* _ ;
+        except
+            :ү :ө [ :Cons* :Cons ]/:0* _ ;
+               ! protects against үө forms with %{☭%} (haha!)
+
+
+"vowel harmony for {A} after үө"
+%{A%}:э <=> :ү :ө [ :Cons* :Cons ]/:0* _ ;
+!         except
+!             %{ъ%}: %>: [ :Cons* :Cons ]/:0* _ ; 
+
+"vowel harmony for {a} after уо"
+! shouldn't need a rule because it's the default а, but doesn't seem to work without one
+%{a%}:а <=> :у :о [ :Cons* :Cons ]/:0* _ ;
+
+!"Epenthesis in some stems"
+!%{y%}:0 <=> _ [ :Cons :Vow ]/[ :0 | %>: ] ;
+!   !@ ис{y}т>{A}{р}
+
+"Delete т after н or с when not at the end of a word"
+т:0 <=> [ :н | :с | :к ] _ %>:/[ :0 - %>: ] ;

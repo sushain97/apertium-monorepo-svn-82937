@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<modes>
+
+  <mode name="zlm-morph" install="yes">
+    <pipeline>
+      <program name="lt-proc -w">
+        <file name="zlm.automorf.bin"/>
+      </program>
+    </pipeline>
+  </mode>
+
+  <mode name="zlm-gener" install="yes">
+    <pipeline>
+      <program name="lt-proc -g">
+        <file name="zlm.autogen.bin"/>
+      </program>
+    </pipeline>
+  </mode>
+
+  <mode name="zlm-tagger" install="yes">
+    <pipeline>
+      <program name="lt-proc -w">
+        <file name="zlm.automorf.bin"/>
+      </program>
+      <program name="cg-proc -w">
+        <file name="zlm.rlx.bin"/>
+      </program>
+    </pipeline>
+  </mode>
+
+  <mode name="zlm-disam" install="yes">
+    <pipeline>
+      <program name="lt-proc -w">
+        <file name="zlm.automorf.bin"/>
+      </program>
+      <program name="cg-conv -a -l" />
+      <program name="vislcg3 --trace -g">
+        <file name="apertium-zlm.zlm.rlx"/>
+      </program>
+    </pipeline>
+  </mode>
+
+</modes>
+

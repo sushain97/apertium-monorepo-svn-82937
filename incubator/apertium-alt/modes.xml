@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<modes>
+
+  <mode name="alt-twol" install="yes">
+    <pipeline>
+      <program name="hfst-strings2fst -S"/>
+      <program name="hfst-compose-intersect">
+        <file name=".deps/alt.twol.hfst"/>
+      </program>
+      <program name="hfst-fst2strings"/>
+    </pipeline>
+  </mode>
+
+  <mode name="alt-morph" install="yes">
+    <pipeline>
+      <program name="lt-proc -w">
+        <file name="alt.automorf.bin"/>
+      </program>
+    </pipeline>
+  </mode>
+
+  <mode name="alt-lexc" install="yes">
+    <pipeline>
+      <program name="hfst-lookup">
+        <file name=".deps/alt.LR.lexc.hfst"/>
+      </program>
+    </pipeline>
+  </mode>
+
+  <mode name="alt-gener" install="yes">
+    <pipeline>
+      <program name="lt-proc -g">
+        <file name="alt.autogen.bin"/>
+      </program>
+    </pipeline>
+  </mode>
+
+  <mode name="alt-tagger" install="yes">
+    <pipeline>
+      <program name="lt-proc -w">
+        <file name="alt.automorf.bin"/>
+      </program>
+      <program name="cg-proc -w">
+        <file name="alt.rlx.bin"/>
+      </program>
+    </pipeline>
+  </mode>
+
+  <mode name="alt-disam" install="yes">
+    <pipeline>
+      <program name="lt-proc -w">
+        <file name="alt.automorf.bin"/>
+      </program>
+      <program name="cg-conv -a"/>
+      <program name="vislcg3 --trace --grammar">
+        <file name="alt.rlx.bin"/>
+      </program>
+    </pipeline>
+  </mode>
+
+</modes>
+

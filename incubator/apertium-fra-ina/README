@@ -1,0 +1,100 @@
+French and Interlingua
+
+                            apertium-fra-ina
+===============================================================================
+
+This is an Apertium language pair for translating between French and
+Interlingua. What you can use this language package for:
+
+* Translating between French and Interlingua
+* Morphological analysis of French and Interlingua
+* Part-of-speech tagging of French and Interlingua
+
+For information on the latter two points, see subheading "For more
+information" below
+
+Requirements
+===============================================================================
+
+You will need the following software installed:
+
+* lttoolbox (>= 3.3.0)
+* apertium (>= 3.3.0)
+* vislcg3 (>= 0.9.9.10297)
+* apertium-fra (in languages/apertium-fra)
+* apertium-ina (in incubator/apertium-ina)
+
+The monolingual dictionaries should be compiled as follows: 
+$  cd ../apertium-fra
+$  ./autogen.sh
+$  make
+$  cd ../apertium-ina
+$  ./autogen.sh
+$  make
+
+If this does not make any sense, we recommend you look at: www.apertium.org
+
+Compiling
+===============================================================================
+
+Given the requirements being installed, you should be able to just run:
+
+$ ./configure
+$ make
+# make install
+
+You can use ./autogen.sh instead of ./configure if you're compiling from
+SVN as follows:
+
+$ ./autogen.sh --with-lang1=../apertium-fra --with-lang2=../apertium-ina
+$ make
+
+Testing
+===============================================================================
+
+If you are in the source directory after running make, the following
+commands should work:
+
+$  echo "Je mange et je lis." | apertium -d . fra-ina
+Io mangia e io lege.
+
+$  echo "Le canes parla." | apertium -d . ina-fra
+Les chiens parlent@
+
+
+
+After installing somewhere in $PATH, you should be able to do e.g.
+
+$  echo "Je mange et je lis." | apertium fra-ina
+Io mangia e io lege.
+
+Files and data
+===============================================================================
+
+* apertium-fra-ina.fra-ina.dix  - Bilingual dictionary
+* apertium-fra-ina.fra-ina.t1x  - Chunking rules for translating into French
+* apertium-fra-ina.ina-fra.t1x  - Chunking rules for translating into Interlingua
+* apertium-fra-ina.fra-ina.t2x  - Interchunk rules for translating into French
+* apertium-fra-ina.ina-fra.t2x  - Interchunk rules for translating into Interlingua
+* apertium-fra-ina.fra-ina.t3x  - Postchunk rules for translating into French
+* apertium-fra-ina.ina-fra.t3x  - Postchunk rules for translating into Interlingua
+* apertium-fra-ina.fra-ina.lrx  - Lexical selection rules for translating into French
+* apertium-fra-ina.ina-fra.lrx  - Lexical selection rules for translating into Interlingua
+* modes.xml                     - Translation modes
+
+For more information
+===============================================================================
+
+* http://wiki.apertium.org/wiki/Installation
+* http://wiki.apertium.org/wiki/apertium-fra-ina
+* http://wiki.apertium.org/wiki/Using_an_lttoolbox_dictionary
+
+Help and support
+===============================================================================
+
+If you need help using this language pair or data, you can contact:
+
+* Mailing list: apertium-stuff@lists.sourceforge.net
+* IRC: #apertium on irc.freenode.net
+
+See also the file AUTHORS included in this distribution.

@@ -1,0 +1,372 @@
+Multichar_Symbols
+%<n%>	! Noun
+%<pn%>	! Pronoun
+%<v%>	! Verb
+%<adj%>	! Adjectiv
+%<adv%>	! Adverb
+
+
+%<nom%>	! Nominative
+%<gen%>	! Genitive
+%<dat%>	! Dative
+%<aku%>! Accusative
+%<ins%>! Instrumental
+%<lok%>	! Locative
+%<vok%>	! Vocative
+
+%<sg%>	! Singular
+%<pl%>	! Plural
+%<f%>	! Feminin
+%<m%>	! Masculin
+%<d1%>	! Declination 1
+%<d2%>	! Declination 2
+%<d3%>	! Declination 3
+%<d4%>	! Declination 4
+%<d5%>	! Declination 5
+%<d6%>	! Declination 6
+
+%<k1%>	! Conjugation 1
+%<k2%>	! Conjugation 2
+%<k3%>	! Conjugation 3
+
+%<gr1%>	! Group 1
+%<gr2%>	! Group 2
+%<gr3%>	! Group 3
+%<gr4%>	! Group 4
+%<gr5%>	! Group 5
+
+%<v1%>	! Type 1
+%<v2%>	! Type 2
+%<v3%>	! Type 3
+%<v4%>	! Type 4
+%<v5%>	! Type 5
+
+%<inf%>! Infinitive
+%<tag%>! Present
+%<pag%>! Past
+%<nak%>! Future
+
+%<p1%>! Person 1
+%<p2%>! Person 2
+%<p3%>! Person 3
+
+%<atgr%>! Atgriezenisks
+%<natg%>! Neatgriezenisks
+%<neg%>! noliegums
+
+%^DS ! vedu vest
+
+LEXICON Root
+NounStems ;
+VerbStems ;
+%<neg%>:ne VerbStems ;
+PrepStems ;
+AdjStems ;
+%<neg%>:ne AdjStems ;
+AdvStems ;
+%<neg%>:ne AdvStems ;
+
+
+! both for nouns and adjectives
+LEXICON m-d1-common
+%<m%>%<d1%>%<sg%>%<gen%>:a #;
+%<m%>%<d1%>%<sg%>%<dat%>:am #;
+%<m%>%<d1%>%<sg%>%<aku%>:u #;
+%<m%>%<d1%>%<sg%>%<ins%>:u #;
+%<m%>%<d1%>%<sg%>%<lok%>:ā #;
+%<m%>%<d1%>%<sg%>%<vok%>: #;
+%<m%>%<d1%>%<pl%>%<nom%>:i #;
+%<m%>%<d1%>%<pl%>%<gen%>:u #;
+%<m%>%<d1%>%<pl%>%<dat%>:iem #;
+%<m%>%<d1%>%<pl%>%<aku%>:u #;
+%<m%>%<d1%>%<pl%>%<ins%>:iem #;
+%<m%>%<d1%>%<pl%>%<lok%>:os #;
+%<m%>%<d1%>%<pl%>%<vok%>:i #;
+! galotne -s
+LEXICON m-d1
+%<m%>%<d1%>%<sg%>%<nom%>:s #;
+m-d1-common ; 
+! galotne -š
+LEXICON m-d1-sh
+%<m%>%<d1%>%<sg%>%<nom%>:š #;
+m-d1-common ; 
+
+LEXICON N-m-d1
+%<n%>: m-d1 ;
+LEXICON N-m-d1-sh
+%<n%>: m-d1-sh ;
+
+LEXICON ADJ-m-d1
+%<adj%>: m-d1 ;
+LEXICON ADJ-m-d1-sh
+%<adj%>: m-d1-sh ;
+
+
+LEXICON N-m-d2-common
+%<n%>%<m%>%<d2%>%<sg%>%<nom%>:is #;
+%<n%>%<m%>%<d2%>%<sg%>%<gen%>:%'a #;
+%<n%>%<m%>%<d2%>%<sg%>%<dat%>:im #;
+%<n%>%<m%>%<d2%>%<sg%>%<aku%>:i #;
+%<n%>%<m%>%<d2%>%<sg%>%<ins%>:i #;
+%<n%>%<m%>%<d2%>%<sg%>%<lok%>:ī #;
+%<n%>%<m%>%<d2%>%<sg%>%<vok%>:i #;
+
+%<n%>%<m%>%<d2%>%<pl%>%<nom%>:%'i #;
+%<n%>%<m%>%<d2%>%<pl%>%<gen%>:%'u #;
+%<n%>%<m%>%<d2%>%<pl%>%<dat%>:%'iem #;
+%<n%>%<m%>%<d2%>%<pl%>%<aku%>:%'us #;
+%<n%>%<m%>%<d2%>%<pl%>%<ins%>:%'iem #;
+%<n%>%<m%>%<d2%>%<pl%>%<lok%>:%'os #;
+%<n%>%<m%>%<d2%>%<pl%>%<vok%>:%'i #;
+
+LEXICON N-m-d2
+%<n%>%<m%>%<d2%>%<sg%>%<nom%>:is #;
+N-m-d2-common ; 
+
+LEXICON N-m-d2-s
+%<n%>%<m%>%<d2%>%<sg%>%<nom%>:s #;
+N-m-d2-common ; 
+
+
+LEXICON N-m-d3
+%<n%>%<m%>%<d3%>%<sg%>%<nom%>:us #;
+%<n%>%<m%>%<d3%>%<sg%>%<gen%>:us #;
+%<n%>%<m%>%<d3%>%<sg%>%<dat%>:um #;
+%<n%>%<m%>%<d3%>%<sg%>%<aku%>:u #;
+%<n%>%<m%>%<d3%>%<sg%>%<ins%>:u #;
+%<n%>%<m%>%<d3%>%<sg%>%<lok%>:ū #;
+%<n%>%<m%>%<d3%>%<sg%>%<vok%>:u #;
+
+%<n%>%<m%>%<d3%>%<pl%>%<nom%>:i #;
+%<n%>%<m%>%<d3%>%<pl%>%<gen%>:u #;
+%<n%>%<m%>%<d3%>%<pl%>%<dat%>:%'iem #;
+%<n%>%<m%>%<d3%>%<pl%>%<aku%>:%'us #;
+%<n%>%<m%>%<d3%>%<pl%>%<ins%>:%'iem #;
+%<n%>%<m%>%<d3%>%<pl%>%<lok%>:%'os #;
+%<n%>%<m%>%<d3%>%<pl%>%<vok%>:%'i #;
+
+
+! gan lietvārdiem, gan īpašības vārdiem
+LEXICON f-d4
+%<f%>%<d4%>%<sg%>%<nom%>:a #;
+%<f%>%<d4%>%<sg%>%<gen%>:as #;
+%<f%>%<d4%>%<sg%>%<dat%>:ai #;
+%<f%>%<d4%>%<sg%>%<aku%>:u #;
+%<f%>%<d4%>%<sg%>%<ins%>:u #;
+%<f%>%<d4%>%<sg%>%<lok%>:ā #;
+%<f%>%<d4%>%<sg%>%<vok%>:a #;
+
+%<f%>%<d4%>%<pl%>%<nom%>:as #;
+%<f%>%<d4%>%<pl%>%<gen%>:u #;
+%<f%>%<d4%>%<pl%>%<dat%>:ām #;
+%<f%>%<d4%>%<pl%>%<aku%>:as #;
+%<f%>%<d4%>%<pl%>%<ins%>:ām #;
+%<f%>%<d4%>%<pl%>%<lok%>:ās #;
+%<f%>%<d4%>%<pl%>%<vok%>:as #;
+
+LEXICON N-f-d4
+%<n%>: f-d4 ;
+
+LEXICON ADJ-f-d4
+%<adj%>: f-d4 ;
+
+LEXICON N-f-d5
+%<n%>%<f%>%<d5%>%<sg%>%<nom%>:e #;
+%<n%>%<f%>%<d5%>%<sg%>%<gen%>:es #;
+%<n%>%<f%>%<d5%>%<sg%>%<dat%>:ei #;
+%<n%>%<f%>%<d5%>%<sg%>%<aku%>:i #;
+%<n%>%<f%>%<d5%>%<sg%>%<ins%>:i #;
+%<n%>%<f%>%<d5%>%<sg%>%<lok%>:ē #;
+%<n%>%<f%>%<d5%>%<sg%>%<vok%>:e #;
+
+%<n%>%<f%>%<d5%>%<pl%>%<nom%>:es #;
+%<n%>%<f%>%<d5%>%<pl%>%<gen%>:%'u #;
+%<n%>%<f%>%<d5%>%<pl%>%<dat%>:ēm #;
+%<n%>%<f%>%<d5%>%<pl%>%<aku%>:es #;
+%<n%>%<f%>%<d5%>%<pl%>%<ins%>:ēm #;
+%<n%>%<f%>%<d5%>%<pl%>%<lok%>:ēs #;
+%<n%>%<f%>%<d5%>%<pl%>%<vok%>:es #;
+
+
+LEXICON N-f-d6
+%<n%>%<f%>%<d6%>%<sg%>%<nom%>:s #;
+%<n%>%<f%>%<d6%>%<sg%>%<gen%>:s #;
+%<n%>%<f%>%<d6%>%<sg%>%<dat%>:ij #;
+%<n%>%<f%>%<d6%>%<sg%>%<aku%>:i #;
+%<n%>%<f%>%<d6%>%<sg%>%<ins%>:i #;
+%<n%>%<f%>%<d6%>%<sg%>%<lok%>:ī #;
+%<n%>%<f%>%<d6%>%<sg%>%<vok%>:s #;
+
+%<n%>%<f%>%<d6%>%<pl%>%<nom%>:is #;
+%<n%>%<f%>%<d6%>%<pl%>%<gen%>:%'u #;
+%<n%>%<f%>%<d6%>%<pl%>%<dat%>:īm #;
+%<n%>%<f%>%<d6%>%<pl%>%<aku%>:is #;
+%<n%>%<f%>%<d6%>%<pl%>%<ins%>:īm #;
+%<n%>%<f%>%<d6%>%<pl%>%<lok%>:īs #;
+%<n%>%<f%>%<d6%>%<pl%>%<vok%>:is #;
+
+! vietniekvārdi
+LEXICON PN-m
+N-m-d1-sh ; 
+
+LEXICON PN-f
+N-f-d4 ; 
+
+
+! darbības vārdu locījumu galotnes
+! 1. konjugācijas neatgriezeniskie
+! tagadne
+LEXICON v_tagsuffixes
+%<sg%>%<p1%>%<ntgr%>:u #;
+%<sg%>%<p2%>%<ntgr%>:%' #;
+%<sg%>%<p3%>%<ntgr%>: #;
+%<pl%>%<p1%>%<ntgr%>:am #;
+%<pl%>%<p2%>%<ntgr%>:at #;
+%<pl%>%<p3%>%<ntgr%>: #;
+%<sg%>%<p1%>%<atgr%>:jos #;
+%<sg%>%<p2%>%<atgr%>:ies #;
+%<sg%>%<p3%>%<atgr%>:jas #;
+%<pl%>%<p1%>%<atgr%>:jamies #;
+%<pl%>%<p2%>%<atgr%>:jatie #;
+%<pl%>%<p3%>%<atgr%>:jas #;
+! pagātne
+LEXICON v_pagsuffixes
+%<sg%>%<p1%>%<ntgr%>:u #;
+%<sg%>%<p2%>%<ntgr%>:i #;
+%<sg%>%<p3%>%<ntgr%>:a #;
+%<pl%>%<p1%>%<ntgr%>:ām #;
+%<pl%>%<p2%>%<ntgr%>:āt #;
+%<pl%>%<p3%>%<ntgr%>:a #;
+%<sg%>%<p1%>%<atgr%>:os #;
+%<sg%>%<p2%>%<atgr%>:ies #;
+%<sg%>%<p3%>%<atgr%>:ās #;
+%<pl%>%<p1%>%<atgr%>:āmies #;
+%<pl%>%<p2%>%<atgr%>:āties #;
+%<pl%>%<p3%>%<atgr%>:ās #;
+! nākotne
+LEXICON v_naksuffixes
+%<sg%>%<p1%>%<ntgr%>:šu #;
+%<sg%>%<p2%>%<ntgr%>:si #;
+%<sg%>%<p3%>%<ntgr%>:s #;
+%<pl%>%<p1%>%<ntgr%>:sim #;
+%<pl%>%<p2%>%<ntgr%>:siet #;
+%<pl%>%<p3%>%<ntgr%>:s #;
+%<sg%>%<p1%>%<atgr%>:šos #;
+%<sg%>%<p2%>%<atgr%>:sies #;
+%<sg%>%<p3%>%<atgr%>:sies #;
+%<pl%>%<p1%>%<atgr%>:simies #;
+%<pl%>%<p2%>%<atgr%>:sieties #;
+%<pl%>%<p3%>%<atgr%>:sies #;
+
+
+! Prievārdi
+LEXICON PR
+%<pr%>: # ;
+
+
+LEXICON NounStems
+ģimene:ģimen	N-f-d5;	! "family"
+zaldāts:zaldāt	N-m-d1;	! "soldier"
+viņš:viņ	PN-m;
+viņa:viņ	PN-f;
+Marija:Marij	N-f-d4;
+Jānis:Jān	N-m-d2;
+suns:sun	N-m-d2-s;
+krabis:krab	N-m-d2;
+mēnesis:mēnes	N-m-d2;
+dārzs:dārz	N-m-d1;
+laiks:laik	N-m-d1;
+māja:māj	N-f-d4;
+priekša:priekš	N-f-d4;
+
+
+LEXICON inf
+%<inf%>%<ntgr%>:t # ;
+%<inf%>%<atgr%>:ties # ;
+
+LEXICON tag
+%<tag%>: v_tagsuffixes ;
+
+LEXICON nak
+%<nak%>: v_naksuffixes ;
+
+LEXICON pag
+%<pag%>: v_pagsuffixes ;
+
+LEXICON tagnak
+tag ;
+nak ;
+
+LEXICON infnak
+inf ;
+nak ;
+
+LEXICON augt_ :aug inf; :aug tagnak; :aug pag;
+LEXICON nākt_ :nāk inf; :nāk tagnak; :nāc pag;
+LEXICON nest_ :nes inf; :nes tag; :nesī nak; :nes pag;
+LEXICON vest_ :ves inf; :ved tag; :vedī nak; :ved pag;
+LEXICON ēst_ :ēs inf; :ēd tagnak; :ēd pag;
+LEXICON mīt_ :mī infnak; :min tag; :min pag;
+LEXICON vīt_ :vī infnak; :vij tag; :vij pag;
+LEXICON rīt_ :rī infnak; :rij tag; :rij pag;
+LEXICON liet_ :lie infnak; :lej tag; :lēj pag;
+LEXICON riet_ :rie infnak; :rej tag; :rēj pag;
+LEXICON smiet_ :smie infnak; :smej tag; :smēj pag;
+LEXICON braukt_ :brauk infnak; :brauc tag; :brauc pag;
+
+
+LEXICON VerbStems
+
+augt%<v%>%<k1%>%<g1%>%<v1%>: augt_; ! grow up
+nākt%<v%>%<k1%>%<g1%>%<v2%>: nākt_; ! come
+nest%<v%>%<k1%>%<g1%>%<v3%>: nest_; ! porter
+vest%<v%>%<k1%>%<g1%>%<v3%>: vest_; ! вести
+ēst%<v%>%<k1%>%<g1%>%<v3%>: ēst_; ! eat
+mīt%<v%>%<k1%>%<g1%>%<v4%>: mīt_; ! exchange/pedal
+vīt%<v%>%<k1%>%<g1%>%<v5%>: vīt_; ! плести
+rīt%<v%>%<k1%>%<g1%>%<v5%>: rīt_; ! глотать
+liet%<v%>%<k1%>%<g1%>%<v6%>: liet_; ! лить
+riet%<v%>%<k1%>%<g1%>%<v6%>: riet_; ! лаять
+smiet%<v%>%<k1%>%<g1%>%<v6%>: smiet_; ! смеять
+braukt%<v%>%<k1%>%<g4%>%<v1%>: braukt_; ! уехать, съездить
+
+
+LEXICON ADJ-mf
+:a ADJ-f-d4 ;
+:s ADJ-m-d1 ;
+:š ADJ-m-d1-sh ;
+
+LEXICON AdjStems
+jauks:jauk ADJ-mf;
+silts:silt ADJ-mf ;
+vājš:vāj ADJ-mf ;
+auksts:aukst ADJ-mf ;
+
+LEXICON ADV
+%<adv%>: # ;
+
+! prefixes "vis" should be added by "flag diacritics" from book
+LEXICON ADV-COMP
+%<adv%>: # ;
+%<adv%>%<comp%>: # ;
+%<adv%>%<sup%>:āk # ;
+
+LEXICON ADV-COMP-i
+:i ADV-COMP ; 
+
+LEXICON ADV-COMP-u
+:u ADV-COMP ;
+
+LEXICON AdvStems
+ļoti ADV ;
+stipri:stipr ADV-COMP-i ;
+šodien ADV ;
+vakar ADV ;
+daudz:vair ADV-COMP ;
+daudz ADV ;
+tālu:tāl ADV-COMP-u ;
+
+
+LEXICON PrepStems
+uz:uz PR ;
+

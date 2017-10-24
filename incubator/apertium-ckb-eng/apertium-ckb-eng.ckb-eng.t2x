@@ -1,0 +1,324 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<interchunk>
+  <section-def-cats>
+
+    <def-cat n="PERS">
+      <cat-item lemma="prn" tags="SN.p1.*"/>
+      <cat-item lemma="prn" tags="SN.p2.*"/>
+      <cat-item lemma="prn" tags="SN.p3.*"/>
+    </def-cat>
+    <def-cat n="HAVER">
+      <cat-item lemma="have" tags="SV.*"/>
+      <cat-item lemma="have" tags="SV"/>
+    </def-cat>
+    <def-cat n="KARDAN">
+      <cat-item lemma="kardan" tags="SV.*"/>
+    </def-cat>
+    <def-cat n="BEH">
+      <cat-item lemma="بە" tags="PREP"/>
+    </def-cat>
+    <def-cat n="FEELING">
+      <cat-item lemma="feeling" tags="SN.*"/>
+    </def-cat>
+    <def-cat n="COP">
+      <cat-item tags="SV.COP.*"/>
+    </def-cat>
+    <def-cat n="SENT">
+      <cat-item tags="SENT"/>
+    </def-cat>
+    <def-cat n="QST">
+      <cat-item lemma="qst" tags="SENT"/>
+    </def-cat>
+    <def-cat n="SA">
+      <cat-item tags="SA"/>
+      <cat-item tags="SA.*"/>
+    </def-cat>
+    <def-cat n="SN">
+      <cat-item tags="SN"/>
+      <cat-item tags="SN.*"/>
+    </def-cat>
+    <def-cat n="SN-A">
+      <cat-item tags="SN"/>
+      <cat-item tags="SN.*"/>
+      <cat-item tags="SA"/>
+      <cat-item tags="SA.*"/>
+    </def-cat>
+  </section-def-cats>
+
+  <section-def-attrs>
+    <def-attr n="a_prs">
+      <attr-item tags="p1"/>
+      <attr-item tags="p2"/>
+      <attr-item tags="p3"/>
+    </def-attr>
+    <def-attr n="a_tns">
+      <attr-item tags="inf"/>
+      <attr-item tags="imp"/>
+      <attr-item tags="pri"/>
+      <attr-item tags="pres"/>
+      <attr-item tags="prs"/>
+    </def-attr>
+    <def-attr n="a_nbr">
+      <attr-item tags="sg"/>
+      <attr-item tags="pl"/>
+    </def-attr>
+    <def-attr n="a_temps">
+      <attr-item tags="inf"/>
+      <attr-item tags="imp"/>
+    </def-attr>
+  </section-def-attrs>
+
+  <section-def-vars>
+    <def-var n="number"/>
+    <def-var n="gender"/>
+    <def-var n="subj_pron"/>
+    <def-var n="verb_morf"/>
+  </section-def-vars>
+
+  <section-def-macros>
+    <def-macro n="f_agree2" npar="1">
+      <let><clip pos="2" part="a_nbr"/><clip pos="1" part="a_nbr"/></let>
+      <let><clip pos="2" part="a_prs"/><clip pos="1" part="a_prs"/></let>
+    </def-macro>
+    <def-macro n="f_verb_morf1" npar="1">
+       <let><var n="verb_morf"/><lit-tag v="vblex.pres"/></let>
+       <choose>
+        <when><test><and><equal><clip pos="1" part="a_prs"/><lit-tag v="p3"/></equal>
+                              <equal><clip pos="1" part="a_nbr"/><lit-tag v="sg"/></equal></and></test>
+              <let><var n="verb_morf"/><concat><var n="verb_morf"/><lit-tag v="p3.sg"/></concat></let>
+        </when>
+      </choose>
+    </def-macro>
+  <def-macro n="f_generate_subject1" npar="1">  
+      <let><var n="gender"/><lit-tag v="GD"/></let>
+      <choose>
+        <when><test><not><and><equal><clip pos="1" part="a_prs"/><lit-tag v="p3"/></equal>
+                              <equal><clip pos="1" part="a_nbr"/><lit-tag v="sg"/></equal></and></not></test>
+              <let><var n="gender"/><lit-tag v="mf"/></let>
+        </when>
+      </choose>
+      <choose>
+        <when>
+          <test><not><or><equal><clip pos="1" part="a_tns"/><lit-tag v="imp"/></equal>
+                         <equal><clip pos="1" part="a_tns"/><lit-tag v="inf"/></equal></or></not>
+                </test>
+                <let><var n="subj_pron"/><concat>
+ <lit v="^"/> 
+                        <get-case-from pos="1">
+                          <lit v="subj"/>
+                        </get-case-from>
+                        <lit-tag v="prn.subj"/><clip pos="1" part="a_prs"/><var n="gender"/><clip pos="1" part="a_nbr"/>
+                        <lit v="{^"/>
+                        <get-case-from pos="1">
+                          <lit v="prpers"/>
+                        </get-case-from>
+                        <lit-tag v="prn.subj.3.4.5"/>
+                        <lit v="$}"/>
+ <lit v="$"/>
+                  </concat></let>
+                  <choose>
+                  <when>
+                    <test>
+                      <equal>
+                        <case-of pos="1" part="lem"/>
+                        <lit v="Aa"/>
+                      </equal>
+                    </test>
+                    <modify-case>
+                      <clip pos="1" part="lem"/>
+                      <lit v="aa"/>
+                    </modify-case>
+                  </when>
+                </choose>
+              </when>
+            </choose>
+    </def-macro>
+
+  </section-def-macros>
+
+  <section-rules>
+
+    <rule comment="REGLA: FEELING BEH SN-A KARDAN">
+      <pattern>
+        <pattern-item n="FEELING"/>
+        <pattern-item n="BEH"/>
+        <pattern-item n="SN-A"/>
+        <pattern-item n="KARDAN"/>
+      </pattern>
+      <action>
+        <call-macro n="f_generate_subject1">
+          <with-param pos="4"/>
+        </call-macro>
+        <call-macro n="f_verb_morf1">
+          <with-param pos="4"/>
+        </call-macro>
+        <out>
+          <var n="subj_pron"/>
+          <b pos="1"/>
+          <chunk>
+            <clip pos="4" part="lem"/>
+            <clip pos="4" part="tags"/>
+            <lit v="{^feel"/>
+            <var n="verb_morf"/>
+            <lit v="$}"/>
+          </chunk>
+          <b pos="2"/>
+          <chunk>
+            <clip pos="3" part="lem"/>
+            <clip pos="3" part="tags"/>
+            <clip pos="3" part="chcontent"/>
+          </chunk>
+        </out>
+      </action>
+    </rule>
+
+
+    <rule comment="REGLA: SN HAVER">
+      <pattern>
+        <pattern-item n="SN"/>
+        <pattern-item n="HAVER"/>
+      </pattern>
+      <action>
+        <out>
+          <chunk>
+            <clip pos="2" part="lem"/>
+            <clip pos="2" part="tags"/>
+            <clip pos="2" part="chcontent"/>
+          </chunk>
+          <b pos="1"/>
+          <chunk>
+            <clip pos="1" part="lem"/>
+            <clip pos="1" part="tags"/>
+            <clip pos="1" part="chcontent"/>
+          </chunk>
+        </out>
+      </action>
+    </rule>
+
+
+    <rule comment="REGLA: SN SA COP QST">
+      <pattern>
+        <pattern-item n="SN"/>
+        <pattern-item n="SA"/>
+        <pattern-item n="COP"/>
+        <pattern-item n="QST"/>
+      </pattern>
+      <action>
+        <out>
+          <chunk>
+            <clip pos="3" part="lem"/>
+            <clip pos="3" part="tags"/>
+            <clip pos="3" part="chcontent"/>
+          </chunk>
+          <b pos="1"/>
+          <chunk>
+            <clip pos="1" part="lem"/>
+            <clip pos="1" part="tags"/>
+            <clip pos="1" part="chcontent"/>
+          </chunk>
+          <b pos="2"/>
+          <chunk>
+            <clip pos="2" part="lem"/>
+            <clip pos="2" part="tags"/>
+            <clip pos="2" part="chcontent"/>
+          </chunk>
+          <b pos="3"/>
+          <chunk>
+            <clip pos="4" part="lem"/>
+            <clip pos="4" part="tags"/>
+            <clip pos="4" part="chcontent"/>
+          </chunk>
+        </out>
+      </action>
+    </rule>
+
+
+
+    <rule comment="REGLA: SN PERS COP QST">
+      <pattern>
+        <pattern-item n="SN"/>
+        <pattern-item n="PERS"/>
+        <pattern-item n="COP"/>
+        <pattern-item n="QST"/>
+      </pattern>
+      <action>
+        <call-macro n="f_agree2">
+          <with-param pos="2"/>
+          <with-param pos="3"/>
+        </call-macro>
+        <out>
+          <chunk>
+            <clip pos="3" part="lem"/>
+            <clip pos="3" part="tags"/>
+            <clip pos="3" part="chcontent"/>
+          </chunk>
+          <b pos="1"/>
+          <chunk>
+            <clip pos="2" part="lem"/>
+            <clip pos="2" part="tags"/>
+            <clip pos="2" part="chcontent"/>
+          </chunk>
+          <b pos="2"/>
+          <chunk>
+            <clip pos="1" part="lem"/>
+            <clip pos="1" part="tags"/>
+            <clip pos="1" part="chcontent"/>
+          </chunk>
+          <b pos="3"/>
+          <chunk>
+            <clip pos="4" part="lem"/>
+            <clip pos="4" part="tags"/>
+            <clip pos="4" part="chcontent"/>
+          </chunk>
+        </out>
+      </action>
+    </rule>
+
+    <rule comment="REGLA: SA COP SENT">
+      <pattern>
+        <pattern-item n="SA"/>
+        <pattern-item n="COP"/>
+        <pattern-item n="SENT"/>
+      </pattern>
+      <action>
+        <call-macro n="f_generate_subject1">
+          <with-param pos="2"/>
+        </call-macro>
+        <out>
+          <var n="subj_pron"/>
+          <b pos="1"/>
+          <chunk>
+            <clip pos="2" part="lem"/>
+            <clip pos="2" part="tags"/>
+            <clip pos="2" part="chcontent"/>
+          </chunk>
+          <b/>
+          <chunk>
+            <clip pos="1" part="lem"/>
+            <clip pos="1" part="tags"/>
+            <clip pos="1" part="chcontent"/>
+          </chunk>
+          <b pos="2"/>
+          <chunk>
+            <clip pos="3" part="lem"/>
+            <clip pos="3" part="tags"/>
+            <clip pos="3" part="chcontent"/>
+          </chunk>
+        </out>
+      </action>
+    </rule>
+
+ 
+
+  </section-rules>
+</interchunk>
+
+<!--
+Resources:
+    http://wiki.apertium.org/wiki/Chunking:_A_full_example
+    http://wiki.apertium.org/wiki/Chunking
+    http://wiki.apertium.org/wiki/Apertium_New_Language_Pair_HOWTO#Transfer_rules
+    http://wiki.apertium.org/wiki/A_long_introduction_to_transfer_rules
+    http://wiki.apertium.org/wiki/Transfer#Adding_structural_transfer_.28grammar.29_rules
+-->
+

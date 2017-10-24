@@ -1,0 +1,404 @@
+# Firstly, we need to define what tags should be considered sentence delimiters. For this example, only full stop is set as delimiter.
+DELIMITERS = "<.>" "<!>" "<?>" ;
+SOFT-DELIMITERS = "<,>" ;
+
+SUBREADINGS = LTR ;
+
+LIST Det = det ; 
+LIST N = n ;
+LIST A = adj ;
+LIST Pron = prn ;
+LIST Adv = adv ; 
+LIST CC = cnjcoo ;
+LIST Rel = rel ; 
+LIST CS = cnjsub ;
+LIST Prop = np ;
+LIST Vblex = (vblex) ;
+LIST Vbmod = (vbmod) ;
+LIST Vbhaver = (vbhaver) ;
+LIST Vbser = (vbser);
+LIST Num = num ;
+LIST Pr = pr ; 
+
+LIST A/pos = (adj pos) ;
+
+LIST Adv/itg = (adv itg) ;
+
+LIST Prn/si = (prn pro ref p3); 
+LIST Prn/ni = (prn pro p1 pl); 
+LIST Pron/nt = (prn nt); 
+LIST Pron/itg = (prn itg); 
+LIST ProRef = (prn pro ref) ;
+LIST Pron/p1/sg = (prn pro p1 mf sg) ;
+LIST Pron/p2/sg = (prn pro p2 mf sg) ;
+LIST Pron/p3/sg = (prn pro p2 mf sg) ;
+LIST Pron/p1/pl = (prn pro p1 mf pl) ;
+LIST Pron/p2/pl = (prn pro p2 mf pl) ;
+LIST Pron/p3/pl = (prn pro p2 mf pl) ;
+
+
+LIST AdjPos = (adj pos);
+
+
+SET PronPers = Pron/p1/sg OR Pron/p2/sg OR Pron/p3/sg OR Pron/p1/pl OR Pron/p2/pl OR Pron/p3/pl ;
+
+LIST Rel/aa = (rel aa);
+LIST Rel/an = (rel an);
+
+
+LIST Prep/di = "<di>"i "<de>"i ;
+LIST Prep/a = "<a>"i "<davanti a>"i ;
+LIST Prep/pi = "<pi>"i ;
+LIST Prep/cu = "<cu>"i ;
+LIST Prep/nta = "<nta>"i "<nti>"i ;
+LIST Prep/tra = "<tra>"i ;
+
+LIST Ind = ind ; 
+LIST Def = def ;
+
+LIST CC/e = "<e>" ;
+LIST CC/o = "<o>" ;
+LIST CS/ca = "<ca>" ;
+
+LIST Inf = inf ;
+
+LIST Det/unu = (det ind m sg);
+LIST Det/una = (det ind f sg);
+LIST DetIndMscPl = (det ind m pl);
+LIST DetIndFemPl = (det ind f pl);
+LIST DetDefMscPl = (det def m pl);
+LIST DetDefFemPl = (det def f pl);
+LIST DetDefMsc = (det def m);
+LIST DetDefFem = (det def f);
+
+LIST DetInd = (det ind);
+LIST DetDef = (det def);
+LIST DetPos = (det pos) ;
+
+
+LIST DetDemMscPl = (det dem m pl);
+LIST DetDemFemPl = (det dem f pl);
+
+LIST nuddu = "<nuddu>" ;
+
+LIST Vèniri = "<vèniri>" ;
+LIST Vblex/pariri = "<pariri>" ;
+
+
+
+LIST Chi = "<chi>" ;
+LIST Cristianu = "cristianu" ;
+
+LIST Sg3 = (p3 sg) ;
+
+LIST Cog = cog ;
+LIST Top = top ;
+LIST Al = al ;
+LIST Ant = ant ; 
+
+LIST Sg = sg ;
+LIST Pl = pl ; 
+LIST Sp = sp ;
+
+# Adjectives
+LIST Adj/pl = (adj pl) ;
+LIST Adj/mf/sp = (adj mf sp) ;
+
+
+
+# Nouns
+LIST N/MscPl = (n m pl) ; 
+LIST N/MscSg = (n m sg) ; 
+LIST N/FemPl = (n f pl) ; 
+LIST N/FemSg = (n f sg) ; 
+LIST N/mf = (n mf) ; 
+LIST N/f/sp = (n f sp) ; 
+LIST N/m/sp = (n m sp) ; 
+LIST N/m = (n m) ; 
+LIST N/f = (n f) ;
+LIST N/pl = (n pl) ;
+
+
+LIST Pii = pii ; 
+LIST Ifi = ifi ; 
+LIST Pri = pri ;
+LIST Fti = fti ;
+LIST Prs = prs ;
+LIST Fts = fts ;
+LIST Pis = pis ;
+LIST Gerund = ger ; 
+LIST Imper = imp ;
+LIST PrfPrc = pp ;
+LIST Infinitiv = inf ;
+
+
+LIST PrfPrc/m = (pp m) ;
+LIST PrfPrc/f = (pp f) ;
+
+LIST Verb/pri/p3 = (vblex pri p3) ; 
+LIST Verb/imp/p2 = (vblex imp p2) ; 
+
+
+
+LIST Pii/p1 = (pii p1) ; 
+LIST Pii/p2 = (pii p2) ; 
+LIST Pii/p3 = (pii p3) ;
+
+LIST Pis/p1 = (pis p1) ; 
+LIST Pis/p2 = (pis p3) ;
+LIST Pis/p3 = (pis p3) ;
+
+LIST P1 = p1; 
+LIST P2 = p2;
+LIST P3 = p3; 
+
+LIST P1/pl = (p1 pl); 
+LIST P2/pl = (p2 pl);
+LIST P3/pl = (p3 pl); 
+
+LIST P1/sg = (p1 sg); 
+LIST P2/sg = (p2 sg);
+LIST P3/sg = (p3 sg); 
+
+LIST Msc = m ;
+LIST Fem = f ; 
+LIST MscFem = mf ;
+
+LIST Excl = "!" ;
+LIST Intrg = "?" ;
+LIST Cm = cm ;
+
+LIST unknown = ("\\*.*"r) ; 
+
+SET NotMsc = Fem | MscFem ;
+SET NotFem = Msc | MscFem ;
+
+SET NotSg = Pl | Sp ;
+SET NotPl = Sg | Sp ;
+
+SET Genero = NotMsc | NotFem ;
+SET Numero = NotSg | NotPl ;
+
+SET Fin = Ifi | Pri ; 
+
+SET Verb = Vblex OR Vbmod OR Vbhaver OR Vbser ;
+
+SET NonFiniteForm = Ifi OR Pis OR Pri OR Fti OR Fts OR Prs OR Imper OR Pii;
+
+SET FiniteForm = Inf OR PrfPrc or Gerund;
+
+
+SECTION
+
+
+SELECT AdjPos IF (-1 N) (0 AdjPos OR DetPos);
+
+SELECT DetPos IF (0 AdjPos OR DetPos) (1 N) ;
+
+
+
+SELECT CS IF (-1 Vblex/pariri OR N) (0 Pr LINK 0/* Det OR CS/ca) ;
+
+SELECT Vblex IF (0 Vblex/pariri OR N) (1 CS/ca OR Pr LINK 0/* Det) ;
+
+SELECT DetDef IF (0 DetDef OR Verb + $$Pri) (1 N + $$Pl) ;
+
+REMOVE SUB:1 Det IF (0 Prep/di OR Prep/a OR Prep/pi OR Prep/cu OR Prep/nta) ;
+ # "di" y "a" etc. deberían quedar como preposiciones simples por defecto.
+ # necesitamos esta regla porque a veces se escribe siciliano sin tildes, 
+ # y allí "a" y "â" son ambiguos
+
+SELECT CC IF (0 CC OR Vbser OR Pr LINK 0/* Det) ;
+
+SELECT A + $$Genero IF (-1C N + $$Genero) ;
+
+SELECT Vbhaver IF (1C PrfPrc) ;
+
+SELECT Sg3 IF (-1 ProRef) ;
+ # Nun si sapi quannu ci fu l’affirmazzioni di lu Cristianèsimu a Catania.
+
+SELECT Fin IF (-1C Prop) (0 Fin OR N) ;
+
+SELECT Sg3 IF (-1C Prop) ;
+
+REMOVE Imper IF (NOT 1* Excl) (NOT 1 Cm) ;
+
+SELECT Adv IF (-1C Pron) (0 Adv OR Det) (1 Fin) ;
+
+REMOVE Ind IF (0 Ind OR Pr) (1 Def) ;
+
+SELECT N IF (-1 Det OR Pr) (0 Cristianu) ;
+
+SELECT Pr IF (0 Pr OR Pr LINK 0/* Det) (1 Inf) ;
+ # Pi fari lu jurnalista prufissiuntista ...
+
+SELECT Pr IF (0 Pr OR Pr LINK 0/* Det) (1 Det) ;
+ # Nta lu Òrdini prufissiunali
+ 
+
+SELECT Det IF (-1C Vbser) (0 Det) (0 Pr LINK 0/* Det) ;
+ # UBS è na banca
+ 
+
+
+SUBSTITUTE ("tra" pr S1) ("tra" pr S1) Prep/tra (1* DetDefMscPl OR DetDefFemPl BARRIER N + $$Pl);
+
+
+
+# Construcción "nu/na di li ..."
+SELECT Det/unu IF (0 Det/unu OR Num) (1 Prep/di) ;
+
+SELECT DetIndMscPl IF (-2 Det/unu) (-1 Prep/di) (0 DetIndFemPl OR DetIndMscPl);
+
+SELECT DetIndFemPl IF (-2 Det/una) (-1 Prep/di) (0 DetIndFemPl OR DetIndMscPl);
+
+SELECT N/MscPl IF (-3 Det/unu) (-2 Prep/di) (-1 Det) (0 N/MscPl OR N/FemPl) ;
+ # Fibbonacci fu unu di li matimàtici granni.
+
+SELECT N/FemPl IF (-3 Det/una) (-2 Prep/di) (-1 Det) (0 N/MscPl OR N/FemPl) ;
+ # Chiara Strazzulla è na di li littirati siciliani.
+
+
+SELECT DetIndMscPl IF (0 DetIndMscPl OR DetIndFemPl) (1 N/mf + $$Pl) ;
+
+SELECT DetDemMscPl IF (0 DetDemMscPl OR DetDemFemPl) (1 N/m/sp) ;
+
+SELECT DetDemFemPl IF (0 DetDemMscPl OR DetDemFemPl) (1 N/f/sp) ;
+
+SELECT DetDefMscPl IF (0 DetDefMscPl OR DetDefFemPl) (1 N/m/sp) ;
+
+SELECT DetDefFemPl IF (0 DetDefMscPl OR DetDefFemPl) (1 N/f/sp) ;
+
+SELECT DetDefMscPl IF (0 DetDefMscPl OR DetDefFemPl) (1 N/m/sp) ;
+
+SELECT DetDefFemPl IF (0 DetDefMscPl OR DetDefFemPl) (1 A OR DetPos) (2 N/f + $$Pl OR N/f/sp) ;
+
+SELECT DetDefMscPl IF (0 DetDefMscPl OR DetDefFemPl) (1 A OR DetPos) (2 N/m + $$Pl OR N/m/sp) ;
+
+SELECT N IF (-1 DetDef) (0 N or Vblex);
+
+SELECT Pron IF (0 nuddu) (1 Verb) ;
+
+SELECT P3 IF (NOT -1C Pron + $$P1) (0 Pii/p1 OR Pii/p3) ;
+
+SELECT P1 IF (-1C Pron + $$P1) (0 Pii/p1 OR Pii/p3) ;
+
+SELECT P3 IF (NOT -1C Pron + $$P1 OR Pron + $$P2) (0 Pis/p1 OR Pis/p2 OR Pis/p3 ) ;
+
+SELECT P3 IF (NOT -1C Pron + $$P2) (0 Pri + $$P2 OR Pri + $$P3) ;
+
+SELECT P2 IF (-1C Pron + $$P2) (0 Pis/p1 OR Pis/p2 OR Pis/p3 ) ;
+
+SELECT P1 IF (-1C Pron + $$P1) (0 Pis/p1 OR Pis/p2 OR Pis/p3 ) ;
+
+SELECT N IF (-1 Det OR Pr LINK 0/* Det OR Pr) (0 N + $$Msc OR Verb + $$P1) ;
+#Munnu/munnari
+
+SELECT N IF (-1 Det OR Pr LINK 0/* Det OR Pr) (0 N + $$Fem OR Verb + $$P3) ;
+#Acqua/acquari, porta/purtari
+
+SELECT N IF (-1 Det OR Pr LINK 0/* Det OR Pr) (0 Verb + $$PrfPrc OR N) ;
+#significatu/significari
+
+SELECT Vblex IF (0 Vbhaver or Vblex) (1 Det) (2 N) ;
+
+SELECT Vblex IF (0 Vbhaver or Vblex) (1 N) ;
+
+SELECT Pr IF (0 Pr or Det + $$Ind) (1 Prop) ;
+
+SELECT Pron IF (0 Prn/si or Vbser + $$P2) (1 Vblex + $$NonFiniteForm) ;
+
+SELECT Msc IF (0 Adj/pl + $$Msc OR Adj/pl + $$Fem) (1 N/pl + $$Msc) ;
+
+SELECT Fem IF (0 Adj/pl + $$Msc OR Adj/pl + $$Fem) (1 N/pl + $$Fem) ;
+
+SELECT N IF (0 Adj/pl + $$Msc OR Adj/pl + $$Fem) (1 N/pl + $$Fem) ;
+
+SELECT Prn/ni IF (0 Prn/ni OR Pr LINK 0/* Det) (1 Verb + $$P1/pl) ;
+# n' accupamu cu ...(= "nos ocupamos con ...")
+
+SELECT PrfPrc IF (-1 Vèniri) (0 PrfPrc/m OR PrfPrc/f OR NonFiniteForm) ;
+
+SELECT PrfPrc IF (-1 Verb) (0 PrfPrc OR A) ;
+
+SELECT DetPos IF (-1 DetDef) (0 A/pos OR DetPos) ;
+# sunnu li so libbra
+
+SELECT DetInd + $$Pl IF (0 DetInd + $$Pl) (0 DetInd + $$Sg) (1 N + $$Pl);
+SELECT DetInd + $$Sg IF (0 DetInd + $$Pl) (0 DetInd + $$Sg) (1 N + $$Sg);
+# qualunqui libbra voi...
+
+
+
+
+# ==================================
+# PRONOMBRES
+# ==================================
+
+
+SELECT Pron/itg IF (0 Rel) (0 Pron/itg) (1* Rel) (1* Pron/itg) (2* Intrg);
+
+
+# SELECT Pron/itg IF (0 Rel) (0 Pron/itg) (NOT 2 Pron/itg) (2* Intrg);
+
+SELECT Rel IF (-1* Pron/itg) (0 Rel) (0 Pron/itg) (1* Intrg);
+
+SELECT Adv/itg IF (0 Adv/itg OR Adv) (1* Intrg);
+
+
+
+
+
+REMOVE Pron/itg (NOT 1* Intrg);
+
+SELECT CC IF (0 CC/e OR CC/o) ;
+
+
+
+# SELECT Pron/itg IF (0 Rel) (0 Pron/itg) (1* Intrg);
+
+# SELECT Rel IF (0 Rel) (0 Pr) (1 Fin);
+
+# Chequar! --->
+# SELECT Pron/itg + $$Sg IF (0 Rel) (0 Pron/itg + $$Sg) (0 Pron/itg + $$Pl) (1 Verb + $$Sg) (2* Intrg);
+# SELECT Pron/itg + $$Pl IF (0 Rel) (0 Pron/itg + $$Sg) (0 Pron/itg + $$Pl) (1 Verb + $$Pl) (2* Intrg);
+# SELECT Pron/itg + $$Sg IF (0 Rel) (0 Pron/itg + $$Sg) (0 Pron/itg + $$Pl) (1 Pron OR N) (2 Verb + $$Sg) (3* Intrg);
+# SELECT Pron/itg + $$Pl IF (0 Rel) (0 Pron/itg + $$Sg) (0 Pron/itg + $$Pl) (1 Pron OR N) (2 Verb + $$Pl) (3* Intrg);
+
+
+# ==================================
+# SELECT Rel/aa IF (0 Rel/aa OR Pr) (1 Verb);
+# SELECT Rel/aa IF (0 Rel/aa OR Pr) (1 Pron/p1/sg) (2 Verb + $$P1/sg);
+# SELECT Rel/aa IF (0 Rel/aa OR Pr) (1 Pron/p2/sg) (2 Verb + $$P2/sg);
+# SELECT Rel/aa IF (0 Rel/aa OR Pr) (1 Pron/p3/sg) (2 Verb + $$P3/sg);
+# SELECT Rel/aa IF (0 Rel/aa OR Pr) (1 Pron/p1/pl) (2 Verb + $$P1/pl);
+# SELECT Rel/aa IF (0 Rel/aa OR Pr) (1 Pron/p2/pl) (2 Verb + $$P2/pl);
+# SELECT Rel/aa IF (0 Rel/aa OR Pr) (1 Pron/p3/pl) (2 Verb + $$P3/pl);
+# 
+# SELECT Pr IF (0 Rel/aa OR Pr) (1 Pron/nt OR A OR N OR Det);
+# # cu disìa troppu finisci cu nenti
+# 
+# 
+# # SELECT CS IF (0C CS OR Pr LINK 0/* Det) (1 Verb) ;
+#  # UBS è na banca ca havi la sedi principali nta Svìzzira.
+#  
+# SELECT CC IF (0 CC/e OR CC/o) ;
+# # 
+# # SELECT CS IF (0 CS/ca) ;
+# # 
+# # SELECT CS IF (1 Verb) ;
+# 
+# # SELECT Rel IF (0 Chi) (1 Fin) ;
+
+
+AFTER-SECTIONS
+
+REMOVE SUB:1 Det (NOT 0 Imper) ;
+
+# Resources:
+# http://visl.sdu.dk/cg3.html
+# http://groups.google.com/group/constraint-grammar
+# http://kevindonnelly.org.uk/2010/05/constraint-grammar-tutorial/
+# http://wiki.apertium.org/wiki/Constraint_Grammar
+# http://wiki.apertium.org/wiki/Apertium_and_Constraint_Grammar
+

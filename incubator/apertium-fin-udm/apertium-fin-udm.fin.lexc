@@ -1,0 +1,83 @@
+
+Multichar_Symbols
+
+%<n%>   ! Имя существительное · Noun
+
+LEXICON Root
+
+Nouns ; 
+
+LEXICON K
+# ;
+
+LEXICON PX
+K ;
+
+
+LEXICON PXTRA
+:i #;
+:e PX :
+
+LEXICON SGCASE
+
+%<nom%>: PX ; ! Именительный 
+%<gen%>:%>n PX ; ! Родительный
+%<acc%>:%>n PX ; ! Винительный
+%<par%>:%>t%{A%} PX ; ! 
+%<ill%>:%>%{V%}n PX ; ! 
+
+LEXICON PLCASE
+
+%<nom%>:t PX ; ! Именительный 
+%<gen%>:%>jen PX ; ! Родительный
+%<acc%>:%>t PX ; ! Винительный
+%<par%>:%>it%{A%} PX ; ! 
+%<ill%>:%>ihiin PX ; ! 
+%<com%>:%>ine PX ; ! 
+
+LEXICON COMMONCASE
+%<ine%>:%>ss%{A%} PX ; ! 
+%<ela%>:%>st%{A%} PX ; ! 
+%<all%>:%>lle PX ; ! 
+%<ade%>:%>ll%{A%} PX ; ! 
+%<abl%>:%>lt%{A%} PX ; ! 
+%<ess%>:%>n%{A%} PX ; ! 
+%<tra%>:%>ks% PXTRA ; ! 
+%<abe%>:%>tt%{A%} PX ; ! 
+
+LEXICON N1
+
+%<n%>%<sg%>: SGCASE ;
+%<n%>%<pl%>: PLCASE ;
+%<n%>%<sg%>: COMMONCASE ;
+%<n%>%<pl%>:%>i COMMONCASE ;
+
+
+
+LEXICON Nouns
+
+koira N1 ; ! ""
+puutarha N1 ; ! ""
+sää N1 ; ! ""
+ulko N1 ; ! ""
+talo N1 ; ! ""
+poika N1 ; ! ""
+tyttö N1 ; ! ""
+lapsi N1 ; ! ""
+kissa N1 ; ! ""
+äiti N1 ; ! ""
+ikkuna N1 ; ! ""
+puu N1 ; ! ""
+silmä N1 ; ! ""
+käsi N1 ; ! ""
+leikki N1 ; ! ""
+kysymys N1 ; ! ""
+vastaus N1 ; ! ""
+pöytä N1 ; ! ""
+tuoli N1 ; ! ""
+ääni N1 ; ! ""
+lintu N1 ; ! ""
+eläin N1 ; ! ""
+pää N1 ; ! ""
+vesi N1 ; ! ""
+

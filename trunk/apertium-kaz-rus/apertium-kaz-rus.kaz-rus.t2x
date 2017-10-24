@@ -1,0 +1,527 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- -*- nxml -*- -->
+
+<!-- Recklessly copied by Mikel for kaz-rus @Almaty 20141127 -->
+
+<!-- Tests are run by './qa.sh t2x' command.
+     INPUT is the output of t1x,
+     OUTPUT is the expected output of this transfer module.
+
+     Also make sure to run './qa.sh' (with no arguments)
+     before committing to svn. -->
+
+<interchunk>
+
+  <section-def-cats>
+
+    <def-cat n="anything">
+      <cat-item tags="*"/>
+    </def-cat>
+
+    <def-cat n="SN">
+      <cat-item tags="SN"/>
+      <cat-item tags="SN.*"/>
+    </def-cat>
+
+<def-cat n="AdvP">
+      <cat-item tags="AdvP"/>
+      <cat-item tags="AdvP.*"/>
+    </def-cat>
+
+<def-cat n="SN-ADVP">
+      <cat-item tags="SN.LOC"/>
+      <cat-item tags="SN.ABL"/>
+      <cat-item tags="SN.DAT"/>
+      <cat-item tags="SN.INS"/>
+    </def-cat>
+
+    <def-cat n="SN-nom">
+      <cat-item tags="SN.nom"/>
+    </def-cat>
+    <def-cat n="SN-gen-ADVL">
+      <cat-item tags="SN.gen.@ADVL→"/>
+    </def-cat>
+
+    <def-cat n="PP">
+      <cat-item tags="PP"/>
+    </def-cat>
+
+    <def-cat n="SV">
+      <cat-item tags="SV"/>
+      <!--<cat-item tags="SV.*"/>-->
+      <cat-item tags="SV.tv"/>
+      <cat-item tags="SV.iv"/>
+    </def-cat>
+    <def-cat n="SV-ger_past-acc">
+      <cat-item tags="SV.ger_past.acc"/>
+    </def-cat>
+
+    <def-cat n="VBSER-pres">
+      <cat-item lemma="cop-pres" tags="VBSER"/>
+    </def-cat>
+    <def-cat n="VBSER-bar">
+      <cat-item lemma="bar" tags="VBSER"/>
+      <cat-item lemma="bar" tags="VBSER.neg"/>
+    </def-cat>
+
+    <def-cat n="SENT">
+      <cat-item tags="SENT"/>
+    </def-cat>
+
+ <def-cat n="SV-vaux">
+      <cat-item tags="SV-vaux"/>
+      <cat-item tags="SV-vaux.*"/>
+    </def-cat>
+
+  </section-def-cats>
+
+  <section-def-attrs>
+
+    <def-attr n="a_case">
+      <attr-item tags="nom"/>
+      <attr-item tags="gen"/>
+      <attr-item tags="dat"/>
+      <attr-item tags="acc"/>
+      <attr-item tags="abl"/>
+      <attr-item tags="loc"/>
+      <attr-item tags="sim"/>
+      <attr-item tags="ins"/>
+      <attr-item tags="prp"/>
+      <attr-item tags="CD"/>
+      <attr-item tags="2"/>
+    </def-attr>
+    <def-attr n="a_pers">
+      <attr-item tags="p1"/>
+      <attr-item tags="p2"/>
+      <attr-item tags="p3"/>
+    </def-attr>
+ <def-attr n="a_nbr">
+      <attr-item tags="sg"/>
+      <attr-item tags="pl"/>
+      <attr-item tags="sp"/>
+      <attr-item tags="ND"/>
+    </def-attr>
+    <def-attr n="a_trans">
+      <attr-item tags="tv"/>
+      <attr-item tags="iv"/>
+    </def-attr>
+<def-attr n="a_gen">
+      <attr-item tags="m"/>
+      <attr-item tags="f"/>
+      <attr-item tags="nt"/>
+      <attr-item tags="mf"/>
+      <attr-item tags="mfn"/>
+      <attr-item tags="GN"/>
+    </def-attr>
+<def-attr n="a_pass">
+       <attr-item tags="pass"/>
+    </def-attr>
+  
+    <def-attr n="a_neg">
+      <attr-item tags="neg"/>
+    </def-attr>
+<def-attr n="a_possessive"> <!-- check if complete -->
+      <attr-item tags="PXD"/> <!-- to be determined -->
+      <attr-item tags="px3sp"/>
+      <attr-item tags="px1sg"/>
+      <attr-item tags="px2sg"/>
+      <attr-item tags="px1pl"/>
+      <attr-item tags="px2pl"/>
+    </def-attr>
+    
+<def-attr n="a_tense"> <!-- CAREFUL: the list is not complete -->
+      <attr-item tags="aor"/>
+      <attr-item tags="ifi"/>
+      <attr-item tags="prc_perf"/>
+      <attr-item tags="past"/> 
+      <attr-item tags="ger_past"/>           
+      <attr-item tags="pres"/>
+      <attr-item tags="gna_cond"/>
+      <attr-item tags="ger_impf"/>
+      <attr-item tags="fut"/>
+      <attr-item tags="ger"/>
+      <attr-item tags="TD"/>  <!-- For the future? -->
+    </def-attr>
+    
+<def-attr n="a_sn_type">
+      <attr-item tags="SN.LOC"/>
+      <attr-item tags="SN.ABL"/>
+      <attr-item tags="SN.DAT"/>
+      <attr-item tags="SN.INS"/>
+    </def-attr>
+ 
+  </section-def-attrs>
+
+  <section-def-vars>
+    <def-var n="varstub"/>
+<def-var n="number"/>
+ <def-var n="IF"/>
+  
+    <def-var n="PREP"/>
+  </section-def-vars>
+
+
+ <section-def-macros>
+
+    <def-macro n="reset-case1" npar="1">
+          <let><var n="PREP"/><lit v=""/></let>
+    </def-macro>
+
+
+    
+<def-macro n="reset-cond1" npar="1">
+          <let><var n="IF"/><lit v=""/></let>
+    </def-macro>
+
+    <def-macro n="set-prep1" npar="1"> 
+          <let><var n="PREP"/><lit v=""/></let>
+          <choose> 
+            <when>
+               <test> 
+                  <equal><clip pos="1" part="a_sn_type"/><lit-tag v="SN.DAT"/></equal>
+               </test>
+               <let><var n="PREP"/>
+                 <concat>
+                  <get-case-from pos="1">
+                    <lit v="^prep"/>
+                  </get-case-from>
+                  <lit-tag  v="pr"/>
+                  <lit v="{"/>
+                  <lit v="^to"/>
+                  <lit-tag  v="pr"/>
+                  <lit v="$}$ "/>
+                </concat>
+               </let>
+            </when> 
+
+            <when>
+               <test> 
+                  <equal><clip pos="1" part="a_sn_type"/><lit-tag v="SN.LOC"/></equal>
+               </test>
+               <let><var n="PREP"/>
+                 <concat>
+                  <get-case-from pos="1">
+                    <lit v="^prep"/>
+                  </get-case-from>
+                  <lit-tag  v="pr"/>
+                  <lit v="{"/>
+                  <lit v="^in"/>
+                  <lit-tag  v="pr"/>
+                  <lit v="$}$ "/>
+                </concat>
+               </let>
+            </when> 
+            <when>
+               <test> 
+                  <equal><clip pos="1" part="a_sn_type"/><lit-tag v="SN.INS"/></equal>
+               </test>
+               <let><var n="PREP"/>
+                 <concat>
+                  <get-case-from pos="1">
+                    <lit v="^prep"/>
+                  </get-case-from>
+                  <lit-tag  v="pr"/>
+                  <lit v="{"/>
+                  <lit v="^with"/>
+                  <lit-tag  v="pr"/>
+                  <lit v="$}$ "/>
+                </concat>
+               </let>
+            </when> 
+            <when>
+               <test> 
+                  <equal><clip pos="1" part="a_sn_type"/><lit-tag v="SN.ABL"/></equal>
+               </test>
+               <let><var n="PREP"/>
+                 <concat>
+                  <get-case-from pos="1">
+                    <lit v="^prep"/>
+                  </get-case-from>
+                  <lit-tag  v="pr"/>
+                  <lit v="{"/>
+                  <lit v="^from"/>
+                  <lit-tag  v="pr"/>
+                  <lit v="$}$ "/>
+                </concat>
+               </let>
+            </when> 
+
+          </choose>
+    </def-macro>
+ </section-def-macros>
+  <section-rules>
+    
+
+    <rule comment="REGLA: * VBSER -> *">
+      <!--
+      INPUT:  ^n_n<SN>{^книга<n><f><nn><sg><nom>$ ^ученик<n><m><aa><sg><gen>$}$ ^cop-pres<VBSER>{^быть<vbser><pres><p3><sg>$}$
+      OUTPUT: ^n_n<SN>{^книга<n><f><nn><sg><nom>$ ^ученик<n><m><aa><sg><gen>$}$
+      -->
+      <pattern>
+        <pattern-item n="anything"/>
+        <pattern-item n="VBSER-pres"/>
+      </pattern>
+      <action>
+        <out>
+          <chunk>
+            <clip pos="1" part="whole"/>
+          </chunk>
+        </out>
+      </action>
+    </rule>
+
+    <rule comment="REGLA: SN (SN SV) SV -> SN C SV">
+      <!--
+      INPUT:  ^n<SN><nom>{^Я<prn><pers><p1><mf><sg><2>$}$ ^n<SN><nom>{^ты<prn><pers><p2><mf><sg><2>$}$ ^v<SV><ger_past><acc>{^кричать<vblex><impf><past><m><sg>$}$ ^v<SV><tv>{^слышать<vblex><impf><past><m><sg>$}$
+      OUTPUT: ^n<SN><nom>{^Я<prn><pers><p1><mf><sg><2>$}$ ^sn_sv<SN><nom><C><OBJ>{^ты<prn><pers><p2><mf><sg><2>$ ^кричать<vblex><impf><past><m><sg>$}$ ^v<SV><tv>{^слышать<vblex><impf><past><m><sg>$}$
+      -->
+      <pattern>
+        <pattern-item n="SN-nom"/>
+        <pattern-item n="SV-ger_past-acc"/>
+      </pattern>
+      <action>
+	<out>
+          <chunk>
+            <lit v="sn_sv"/>
+	    <clip pos="1" part="tags"/>
+	    <lit-tag v="C"/>
+	    <lit-tag v="OBJ"/>
+            <lit v="{"/>
+            <clip pos="1" part="content"/>
+            <b/>
+            <clip pos="2" part="content"/>
+            <lit v="}"/>
+          </chunk>
+	</out>
+      </action>
+    </rule> 
+
+    <rule comment="REGLA: SN SN SV -> SN SV SN">
+      <!--
+      INPUT:  ^n<SN><nom>{^Я<prn><pers><p1><mf><sg><nom>$}$ ^n<SN><nom>{^книга<n><f><nn><sg><nom>$}$ ^v<SV><tv>{^читать<vblex><impf><pres><p1><sg>$}$
+      OUTPUT: ^n<SN><nom>{^Я<prn><pers><p1><mf><sg><nom>$}$ ^v<SV><tv>{^читать<vblex><impf><pres><p1><sg>$}$ ^n<SN><acc>{^книга<n><f><nn><sg><nom>$}$
+      -->
+      <pattern>
+        <pattern-item n="SN"/>
+        <pattern-item n="SN"/>
+        <pattern-item n="SV"/>
+      </pattern>
+      <action>
+	<choose>
+	  <when>
+	    <test>
+	      <and>
+		<equal><clip pos="2" part="a_case"/><lit-tag v="nom"/></equal>
+		<equal><clip pos="3" part="a_trans"/><lit-tag v="tv"/></equal>
+	      </and>
+	    </test>
+	    <let><clip pos="2" part="a_case"/><lit-tag v="acc"/></let>
+	  </when>
+	</choose>
+        <out>
+          <chunk>
+	    <clip pos="1" part="whole"/>
+          </chunk>
+	  <b/>
+          <chunk>
+            <clip pos="3" part="whole"/>
+          </chunk>
+	  <b/>
+          <chunk>
+            <clip pos="2" part="whole"/>
+          </chunk>
+        </out>
+      </action>
+    </rule>      
+
+<rule comment="RULE: SN AdvP SV">  <!--Men baqwada oinadym -->
+      <pattern>
+        <pattern-item n="SN"/>
+ <pattern-item n="SN-ADVP"/>
+        <pattern-item n="SV"/>
+      </pattern>
+      <action>
+       <choose>
+<when>
+<test>
+
+<and>
+             <equal>  <clip pos="1" part="a_pers"/><lit-tag v="p3"/></equal>
+            <equal>   <clip pos="1" part="a_nbr"/><lit-tag v="pl"/></equal>
+</and>
+    
+   </test>
+<let>     <clip pos="2" part="a_pers"/><lit v=""/> </let>
+  <let>         <clip pos="2" part="a_nbr"/><lit v=""/></let>
+</when>
+</choose>
+ <call-macro n="set-prep1">
+          <with-param pos="2"/>
+        </call-macro>
+        <out>
+                 <chunk>
+           <clip pos="1" part="lem"/>
+            <clip pos="1" part="tags"/>
+            <clip pos="1" part="chcontent"/>
+          </chunk>
+          <b pos="1"/>
+          <b pos="2"/>
+          <chunk>
+           <clip pos="3" part="lem"/>
+            <clip pos="3" part="tags"/>
+            <clip pos="3" part="chcontent"/>
+          </chunk>
+         <b/>
+        <var n="PREP"/>
+          <chunk>
+            <clip pos="2" part="lem"/>
+            <clip pos="2" part="tags"/>
+            <clip pos="2" part="chcontent"/>
+          </chunk>
+        </out>
+        <call-macro n="reset-case1">
+          <with-param pos="1"/>
+        </call-macro>
+      </action>
+    </rule>
+
+
+
+
+
+<rule comment="REGLA: SN SV -> SN SV">
+      <!--
+      INPUT:  ^n<SN><nom>{^Они<prn><pers><p3><mfn><pl><2>$}$ ^v<SV><tv>{^поесть<vblex><perf><past><m><sg>$}$^dot<SENT>{^.<sent>$}$
+
+      OUTPUT: ^n<SN><nom>{^Они<prn><pers><p3><mfn><pl><2>$}$ ^v<SV><tv>{^поесть<vblex><perf><past><mfn><pl>$}$^dot<SENT>{^.<sent>$}$
+
+      -->
+      <pattern>
+        <pattern-item n="SN"/>
+        <pattern-item n="SV"/>
+      </pattern>
+      <action>
+	
+	   
+	
+       <choose>
+<when>
+<test>
+
+            <equal>   <clip pos="1" part="a_nbr"/><lit-tag v="pl"/></equal>
+    
+   </test>
+  <let>         <clip pos="2" part="a_nbr"/><lit-tag v="pl"/></let>
+  <let>         <clip pos="2" part="a_gen"/><lit v=""/></let>
+</when>
+</choose>
+        <out>
+          <chunk>
+            <clip pos="1" part="lem"/>
+            <clip pos="1" part="tags"/>
+            <clip pos="1" part="chcontent"/>
+          </chunk>
+	 
+	  <b/>
+         <chunk>
+            <clip pos="2" part="lem"/>
+            <lit-tag v="SV"/>
+            <clip pos="1" part="a_nbr"/>  <!--agree number -->
+            <clip pos="1" part="a_pers"/> <!-- agree person -->
+            <clip pos="2" part="a_tense"/>
+            <clip pos="2" part="a_gen"/>
+            <clip pos="2" part="a_possessive"/> 
+            <clip pos="2" part="a_pass"/>
+            <clip pos="2" part="a_neg"/>
+            <clip pos="2" part="chcontent"/>
+          </chunk>
+        </out>
+        <call-macro n="reset-case1">
+          <with-param pos="1"/>
+        </call-macro>
+      </action>
+    </rule>      
+
+
+    <rule comment="REGLA: SN SN PP SV -> SN SN SV PP">
+      <!--
+      INPUT:  ^n<SN><nom>{^Я<prn><pers><p1><mf><sg><2>$}$ ^n<SN><acc>{^книга<n><f><nn><sg><2>$}$ ^pr_n<PP>{^в<pr>$ ^Казань<np><top><f><sg><prp>$}$ ^v<SV><tv>{^читать<vblex><impf><past><m><sg>$}$
+      OUTPUT: ^n<SN><nom>{^Я<prn><pers><p1><mf><sg><2>$}$ ^n<SN><acc>{^книга<n><f><nn><sg><2>$}$ ^v<SV><tv>{^читать<vblex><impf><past><m><sg>$}$ ^pr_n<PP>{^в<pr>$ ^Казань<np><top><f><sg><prp>$}$
+      -->
+      <pattern>
+        <pattern-item n="SN"/>
+        <pattern-item n="SN"/>
+        <pattern-item n="PP"/>
+        <pattern-item n="SV"/>
+      </pattern>
+      <action>
+        <out>
+          <chunk>
+	    <clip pos="1" part="whole"/>
+          </chunk>
+	  <b/>
+          <chunk>
+            <clip pos="2" part="whole"/>
+          </chunk>
+	  <b/>
+          <chunk>
+            <clip pos="4" part="whole"/>
+          </chunk>
+	  <b/>
+          <chunk>
+            <clip pos="3" part="whole"/>
+          </chunk>
+        </out>
+      </action>
+    </rule>      
+
+    <rule comment="REGLA: SN SN VBSER -> PREP SN VBSER SN">
+      <!--
+      INPUT:  ^n<SN><gen><@ADVL→>{^Гульнара<np><ant><f><sg><2>$}$ ^n<SN><nom>{^собака<n><f><aa><sg><2>$}$ ^bar<VBSER><neg>{^быть<vbser><neg><pres><p3><sg>$}$ ^cop-pres<VBSER>{^быть<vbser><pres><p3><sg>$}$
+      OUTPUT: ^pr<PREP>{^У<pr>$}$ ^n<SN><gen><@ADVL→>{^Гульнара<np><ant><f><sg><2>$}$ ^bar<VBSER><neg>{^быть<vbser><neg><pres><p3><sg>$}$ ^n<SN><gen>{^собака<n><f><aa><sg><2>$}$
+      -->
+      <pattern>
+        <pattern-item n="SN-gen-ADVL"/>
+        <pattern-item n="SN"/>
+        <pattern-item n="VBSER-bar"/>
+        <pattern-item n="VBSER-pres"/>
+      </pattern>
+      <action>
+	<choose>
+	  <when>
+	    <test><equal><clip pos="3" part="a_neg"/><lit-tag v="neg"/></equal></test>
+	    <let><clip pos="2" part="a_case"/><lit-tag v="gen"/></let>
+	  </when>
+	</choose>
+        <out>
+          <chunk>
+	    <get-case-from pos="1">
+              <lit v="pr"/>
+	    </get-case-from>
+	    <lit-tag v="PREP"/>
+            <lit v="{"/>
+	    <lit v="^"/>
+            <lit v="У"/>
+	    <lit-tag v="pr"/>
+	    <lit v="$"/>
+            <lit v="}"/>
+          </chunk>
+	  <b/>
+          <chunk>
+	    <clip pos="1" part="whole"/>
+          </chunk>
+	  <b/>
+          <chunk>
+            <clip pos="3" part="whole"/>
+          </chunk>
+	  <b/>
+          <chunk>
+            <clip pos="2" part="whole"/>
+          </chunk>
+	</out>
+      </action>
+    </rule>      
+
+  </section-rules>
+  
+</interchunk>

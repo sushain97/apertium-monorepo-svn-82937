@@ -1,0 +1,531 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<modes>
+
+  <!-- deu → dan -->
+
+  <mode name="deu-dan" install="yes">
+    <pipeline>
+      <program name="lt-proc -w">
+        <file name="deu-dan.automorf.bin"/>
+      </program>
+
+
+      <program name="cg-proc -w">
+        <file name="deu-dan.rlx.bin"/>
+      </program>
+      <program name="apertium-tagger -g $2">
+        <file name="deu-dan.prob"/>
+      </program>
+      <program name="apertium-pretransfer"/>
+      <program name="lt-proc -b">
+        <file name="deu-dan.autobil.bin"/>
+      </program>
+      <program name="lrx-proc">
+        <file name="deu-dan.autolex.bin"/>
+      </program>
+      <program name="apertium-transfer -b">
+        <file name="apertium-deu-dan.deu-dan.t1x"/>
+        <file name="deu-dan.t1x.bin"/>
+      </program>
+      <program name="apertium-interchunk">
+        <file name="apertium-deu-dan.deu-dan.t2x"/>
+        <file name="deu-dan.t2x.bin"/>
+      </program>
+      <program name="apertium-postchunk">
+        <file name="apertium-deu-dan.deu-dan.t3x"/>
+        <file name="deu-dan.t3x.bin"/>
+      </program>
+      <program name="lt-proc $1">
+        <file name="deu-dan.autogen.bin"/>
+      </program>
+
+      <program name="lt-proc -p">
+        <file name="deu-dan.autopgen.bin"/>
+      </program>
+    </pipeline>
+  </mode>
+
+  <mode name="deu-dan-dgen" install="no">
+    <pipeline>
+      <program name="lt-proc -w">
+        <file name="deu-dan.automorf.bin"/>
+      </program>
+
+
+      <program name="cg-proc -w">
+        <file name="deu-dan.rlx.bin"/>
+      </program>
+      <program name="apertium-tagger -g $2">
+        <file name="deu-dan.prob"/>
+      </program>
+      <program name="apertium-pretransfer"/>
+      <program name="lt-proc -b">
+        <file name="deu-dan.autobil.bin"/>
+      </program>
+      <program name="apertium-transfer -b">
+        <file name="apertium-deu-dan.deu-dan.t1x"/>
+        <file name="deu-dan.t1x.bin"/>
+      </program>
+      <program name="apertium-interchunk">
+        <file name="apertium-deu-dan.deu-dan.t2x"/>
+        <file name="deu-dan.t2x.bin"/>
+      </program>
+      <program name="apertium-postchunk">
+        <file name="apertium-deu-dan.deu-dan.t3x"/>
+        <file name="deu-dan.t3x.bin"/>
+      </program>
+      <program name="lt-proc -d">
+        <file name="deu-dan.autogen.bin"/>
+      </program>
+    </pipeline>
+  </mode>
+
+  <mode name="deu-dan-morph" install="no">
+    <pipeline>
+      <program name="lt-proc -w">
+        <file name="deu-dan.automorf.bin"/>
+      </program>
+    </pipeline>
+  </mode>
+
+  <mode name="deu-dan-disam" install="no">
+    <pipeline>
+      <program name="lt-proc -w">
+        <file name="deu-dan.automorf.bin"/>
+      </program>
+      <program name="cg-conv -a"/>
+      <program name="vislcg3 --trace --grammar">
+        <file name="deu-dan.rlx.bin"/>
+      </program>
+    </pipeline>
+  </mode>
+
+  <mode name="deu-dan-tagger" install="no">
+    <pipeline>
+      <program name="lt-proc -w">
+        <file name="deu-dan.automorf.bin"/>
+      </program>
+
+
+      <program name="cg-proc -w">
+        <file name="deu-dan.rlx.bin"/>
+      </program>
+      <program name="apertium-tagger -g $2">
+        <file name="deu-dan.prob"/>
+      </program>
+    </pipeline>
+  </mode>
+
+  <mode name="deu-dan-pretransfer" install="no">
+    <pipeline>
+      <program name="lt-proc -w">
+        <file name="deu-dan.automorf.bin"/>
+      </program>
+
+
+      <program name="cg-proc -w">
+        <file name="deu-dan.rlx.bin"/>
+      </program>
+      <program name="apertium-tagger -g $2">
+        <file name="deu-dan.prob"/>
+      </program>
+      <program name="apertium-pretransfer"/>
+    </pipeline>
+  </mode>
+
+  <mode name="deu-dan-biltrans" install="no">
+    <pipeline>
+      <program name="lt-proc -w">
+        <file name="deu-dan.automorf.bin"/>
+      </program>
+
+
+      <program name="cg-proc -w">
+        <file name="deu-dan.rlx.bin"/>
+      </program>
+      <program name="apertium-tagger -g $2">
+        <file name="deu-dan.prob"/>
+      </program>
+      <program name="apertium-pretransfer"/>
+      <program name="lt-proc -b">
+        <file name="deu-dan.autobil.bin"/>
+      </program>
+    </pipeline>
+  </mode>
+
+  <mode name="deu-dan-lex" install="no">
+    <pipeline>
+      <program name="lt-proc -w">
+        <file name="deu-dan.automorf.bin"/>
+      </program>
+
+
+      <program name="cg-proc -w">
+        <file name="deu-dan.rlx.bin"/>
+      </program>
+      <program name="apertium-tagger -g $2">
+        <file name="deu-dan.prob"/>
+      </program>
+      <program name="apertium-pretransfer"/>
+      <program name="lt-proc -b">
+        <file name="deu-dan.autobil.bin"/>
+      </program>
+      <program name="lrx-proc -t">
+        <file name="deu-dan.autolex.bin"/>
+      </program>
+    </pipeline>
+  </mode>
+
+  <mode name="deu-dan-transfer" install="no">
+    <pipeline>
+      <program name="lt-proc -w">
+        <file name="deu-dan.automorf.bin"/>
+      </program>
+
+
+      <program name="cg-proc -w">
+        <file name="deu-dan.rlx.bin"/>
+      </program>
+      <program name="apertium-tagger -g $2">
+        <file name="deu-dan.prob"/>
+      </program>
+      <program name="apertium-pretransfer"/>
+      <program name="lt-proc -b">
+        <file name="deu-dan.autobil.bin"/>
+      </program>
+      <program name="lrx-proc">
+        <file name="deu-dan.autolex.bin"/>
+      </program>
+      <program name="apertium-transfer -b -t">
+        <file name="apertium-deu-dan.deu-dan.t1x"/>
+        <file name="deu-dan.t1x.bin"/>
+      </program>
+    </pipeline>
+  </mode>
+
+  <mode name="deu-dan-interchunk" install="no">
+    <pipeline>
+      <program name="lt-proc -w">
+        <file name="deu-dan.automorf.bin"/>
+      </program>
+
+
+      <program name="cg-proc -w">
+        <file name="deu-dan.rlx.bin"/>
+      </program>
+      <program name="apertium-tagger -g $2">
+        <file name="deu-dan.prob"/>
+      </program>
+      <program name="apertium-pretransfer"/>
+      <program name="lt-proc -b">
+        <file name="deu-dan.autobil.bin"/>
+      </program>
+      <program name="lrx-proc">
+        <file name="deu-dan.autolex.bin"/>
+      </program>
+      <program name="apertium-transfer -b">
+        <file name="apertium-deu-dan.deu-dan.t1x"/>
+        <file name="deu-dan.t1x.bin"/>
+      </program>
+      <program name="apertium-interchunk -t">
+        <file name="apertium-deu-dan.deu-dan.t2x"/>
+        <file name="deu-dan.t2x.bin"/>
+      </program>
+    </pipeline>
+  </mode>
+
+  <mode name="deu-dan-postchunk" install="no">
+    <pipeline>
+      <program name="lt-proc -w">
+        <file name="deu-dan.automorf.bin"/>
+      </program>
+
+
+      <program name="cg-proc -w">
+        <file name="deu-dan.rlx.bin"/>
+      </program>
+      <program name="apertium-tagger -g $2">
+        <file name="deu-dan.prob"/>
+      </program>
+      <program name="apertium-pretransfer"/>
+      <program name="lt-proc -b">
+        <file name="deu-dan.autobil.bin"/>
+      </program>
+      <program name="lrx-proc">
+        <file name="deu-dan.autolex.bin"/>
+      </program>
+      <program name="apertium-transfer -b">
+        <file name="apertium-deu-dan.deu-dan.t1x"/>
+        <file name="deu-dan.t1x.bin"/>
+      </program>
+      <program name="apertium-interchunk">
+        <file name="apertium-deu-dan.deu-dan.t2x"/>
+        <file name="deu-dan.t2x.bin"/>
+      </program>
+      <program name="apertium-postchunk">
+        <file name="apertium-deu-dan.deu-dan.t3x"/>
+        <file name="deu-dan.t3x.bin"/>
+      </program>
+    </pipeline>
+  </mode>
+
+  <!-- dan → deu -->
+
+  <mode name="dan-deu" install="yes">
+    <pipeline>
+      <program name="lt-proc -w">
+        <file name="dan-deu.automorf.bin"/>
+      </program>
+
+
+      <program name="cg-proc -w">
+        <file name="dan-deu.rlx.bin"/>
+      </program>
+      <program name="apertium-tagger -g $2">
+        <file name="dan-deu.prob"/>
+      </program>
+      <program name="apertium-pretransfer"/>
+      <program name="lt-proc -b">
+        <file name="dan-deu.autobil.bin"/>
+      </program>
+      <program name="lrx-proc">
+        <file name="dan-deu.autolex.bin"/>
+      </program>
+      <program name="apertium-transfer -b">
+        <file name="apertium-deu-dan.dan-deu.t1x"/>
+        <file name="dan-deu.t1x.bin"/>
+      </program>
+      <program name="apertium-interchunk">
+        <file name="apertium-deu-dan.dan-deu.t2x"/>
+        <file name="dan-deu.t2x.bin"/>
+      </program>
+      <program name="apertium-postchunk">
+        <file name="apertium-deu-dan.dan-deu.t3x"/>
+        <file name="dan-deu.t3x.bin"/>
+      </program>
+      <program name="lt-proc $1">
+        <file name="dan-deu.autogen.bin"/>
+      </program>
+
+      <program name="lt-proc -p">
+        <file name="dan-deu.autopgen.bin"/>
+      </program>
+    </pipeline>
+  </mode>
+
+  <mode name="dan-deu-dgen" install="no">
+    <pipeline>
+      <program name="lt-proc -w">
+        <file name="dan-deu.automorf.bin"/>
+      </program>
+
+
+      <program name="cg-proc -w">
+        <file name="dan-deu.rlx.bin"/>
+      </program>
+      <program name="apertium-tagger -g $2">
+        <file name="dan-deu.prob"/>
+      </program>
+      <program name="apertium-pretransfer"/>
+      <program name="lt-proc -b">
+        <file name="dan-deu.autobil.bin"/>
+      </program>
+      <program name="apertium-transfer -b">
+        <file name="apertium-deu-dan.dan-deu.t1x"/>
+        <file name="dan-deu.t1x.bin"/>
+      </program>
+      <program name="apertium-interchunk">
+        <file name="apertium-deu-dan.dan-deu.t2x"/>
+        <file name="dan-deu.t2x.bin"/>
+      </program>
+      <program name="apertium-postchunk">
+        <file name="apertium-deu-dan.dan-deu.t3x"/>
+        <file name="dan-deu.t3x.bin"/>
+      </program>
+      <program name="lt-proc -d">
+        <file name="dan-deu.autogen.bin"/>
+      </program>
+    </pipeline>
+  </mode>
+
+  <mode name="dan-deu-morph" install="no">
+    <pipeline>
+      <program name="lt-proc -w">
+        <file name="dan-deu.automorf.bin"/>
+      </program>
+    </pipeline>
+  </mode>
+
+  <mode name="dan-deu-disam" install="no">
+    <pipeline>
+      <program name="lt-proc -w">
+        <file name="dan-deu.automorf.bin"/>
+      </program>
+      <program name="cg-conv -a"/>
+      <program name="vislcg3 --trace --grammar">
+        <file name="dan-deu.rlx.bin"/>
+      </program>
+    </pipeline>
+  </mode>
+
+  <mode name="dan-deu-tagger" install="no">
+    <pipeline>
+      <program name="lt-proc -w">
+        <file name="dan-deu.automorf.bin"/>
+      </program>
+
+
+      <program name="cg-proc -w">
+        <file name="dan-deu.rlx.bin"/>
+      </program>
+      <program name="apertium-tagger -g $2">
+        <file name="dan-deu.prob"/>
+      </program>
+    </pipeline>
+  </mode>
+
+  <mode name="dan-deu-pretransfer" install="no">
+    <pipeline>
+      <program name="lt-proc -w">
+        <file name="dan-deu.automorf.bin"/>
+      </program>
+
+
+      <program name="cg-proc -w">
+        <file name="dan-deu.rlx.bin"/>
+      </program>
+      <program name="apertium-tagger -g $2">
+        <file name="dan-deu.prob"/>
+      </program>
+      <program name="apertium-pretransfer"/>
+    </pipeline>
+  </mode>
+
+  <mode name="dan-deu-biltrans" install="no">
+    <pipeline>
+      <program name="lt-proc -w">
+        <file name="dan-deu.automorf.bin"/>
+      </program>
+
+
+      <program name="cg-proc -w">
+        <file name="dan-deu.rlx.bin"/>
+      </program>
+      <program name="apertium-tagger -g $2">
+        <file name="dan-deu.prob"/>
+      </program>
+      <program name="apertium-pretransfer"/>
+      <program name="lt-proc -b">
+        <file name="dan-deu.autobil.bin"/>
+      </program>
+    </pipeline>
+  </mode>
+
+  <mode name="dan-deu-lex" install="no">
+    <pipeline>
+      <program name="lt-proc -w">
+        <file name="dan-deu.automorf.bin"/>
+      </program>
+
+
+      <program name="cg-proc -w">
+        <file name="dan-deu.rlx.bin"/>
+      </program>
+      <program name="apertium-tagger -g $2">
+        <file name="dan-deu.prob"/>
+      </program>
+      <program name="apertium-pretransfer"/>
+      <program name="lt-proc -b">
+        <file name="dan-deu.autobil.bin"/>
+      </program>
+      <program name="lrx-proc">
+        <file name="dan-deu.autolex.bin"/>
+      </program>
+    </pipeline>
+  </mode>
+
+  <mode name="dan-deu-transfer" install="no">
+    <pipeline>
+      <program name="lt-proc -w">
+        <file name="dan-deu.automorf.bin"/>
+      </program>
+
+
+      <program name="cg-proc -w">
+        <file name="dan-deu.rlx.bin"/>
+      </program>
+      <program name="apertium-tagger -g $2">
+        <file name="dan-deu.prob"/>
+      </program>
+      <program name="apertium-pretransfer"/>
+      <program name="lt-proc -b">
+        <file name="dan-deu.autobil.bin"/>
+      </program>
+      <program name="apertium-transfer -b -t">
+        <file name="apertium-deu-dan.dan-deu.t1x"/>
+        <file name="dan-deu.t1x.bin"/>
+      </program>
+    </pipeline>
+  </mode>
+
+  <mode name="dan-deu-interchunk" install="no">
+    <pipeline>
+      <program name="lt-proc -w">
+        <file name="dan-deu.automorf.bin"/>
+      </program>
+
+
+      <program name="cg-proc -w">
+        <file name="dan-deu.rlx.bin"/>
+      </program>
+      <program name="apertium-tagger -g $2">
+        <file name="dan-deu.prob"/>
+      </program>
+      <program name="apertium-pretransfer"/>
+      <program name="lt-proc -b">
+        <file name="dan-deu.autobil.bin"/>
+      </program>
+      <program name="apertium-transfer -b">
+        <file name="apertium-deu-dan.dan-deu.t1x"/>
+        <file name="dan-deu.t1x.bin"/>
+      </program>
+      <program name="apertium-interchunk -t">
+        <file name="apertium-deu-dan.dan-deu.t2x"/>
+        <file name="dan-deu.t2x.bin"/>
+      </program>
+    </pipeline>
+  </mode>
+
+  <mode name="dan-deu-postchunk" install="no">
+    <pipeline>
+      <program name="lt-proc -w">
+        <file name="dan-deu.automorf.bin"/>
+      </program>
+
+
+      <program name="cg-proc -w">
+        <file name="dan-deu.rlx.bin"/>
+      </program>
+      <program name="apertium-tagger -g $2">
+        <file name="dan-deu.prob"/>
+      </program>
+      <program name="apertium-pretransfer"/>
+      <program name="lt-proc -b">
+        <file name="dan-deu.autobil.bin"/>
+      </program>
+      <program name="apertium-transfer -b">
+        <file name="apertium-deu-dan.dan-deu.t1x"/>
+        <file name="dan-deu.t1x.bin"/>
+      </program>
+      <program name="apertium-interchunk">
+        <file name="apertium-deu-dan.dan-deu.t2x"/>
+        <file name="dan-deu.t2x.bin"/>
+      </program>
+      <program name="apertium-postchunk">
+        <file name="apertium-deu-dan.dan-deu.t3x"/>
+        <file name="dan-deu.t3x.bin"/>
+      </program>
+    </pipeline>
+  </mode>
+</modes>
+

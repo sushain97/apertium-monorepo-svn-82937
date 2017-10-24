@@ -1,0 +1,37 @@
+Alphabet
+
+ a ā b c č d e ē f g ģ h i ī j k ķ l ļ m n ņ o ō p r ŗ s š t u ū v z ž
+ A Ā B C Č D E Ē F G Ģ H I Ī J K Ķ L Ļ M N Ņ O Ō P R Ŗ S Š T U Ū V Z Ž
+ DZ dz 
+ %^DS:0
+ %':0 %>:0 ;
+
+
+Sets
+
+bezDiakr = A C E G I K L N O R S U Z
+	   a c e g i k l n o r s u z;
+arDiakr	 = Ā Č Ē Ģ Ī Ķ Ļ Ņ Ō Ŗ Š Ū Ž
+	   ā č ē ģ ī ķ ļ ņ ō ŗ š ū ž;
+
+
+Rules
+
+"Līdzskaņu mija lietvārdos: apostrofa aizvietošana"
+Cx:Cy <=> _ %': ;
+	where Cx in ( c l n s z d t k g  )
+	      Cy in ( č ļ ņ š ž ž š c dz )
+	matched;
+
+"Palatalisation"
+%':j <=>  Cx _ ;
+    where Cx in ( b p v f ) ;
+
+
+
+
+!"d to s in 1rd Conjugation, 1rd Group, 3d Type"
+!d:s <=> _ %^DS: t ; 
+
+! "k to c in 1rd Conjugation, 1rd Group, 2d Type"
+! k:c <=> _ %^KC: t ; 

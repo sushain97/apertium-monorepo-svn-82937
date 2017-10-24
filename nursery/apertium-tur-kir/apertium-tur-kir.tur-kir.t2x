@@ -1,0 +1,163 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<transfer>
+  <section-def-cats>
+     
+    <def-cat n="fin">
+      <cat-item lemma="каала" tags="v.tv.prog.*"/>
+      <cat-item lemma="каала" tags="v.tv.past.*"/>
+      <cat-item lemma="каала" tags="v.tv.aor.*"/>
+      <cat-item lemma="каала" tags="v.tv.ifi.*"/>
+      <cat-item lemma="каала" tags="v.tv.fut.*"/>
+      <cat-item lemma="каала" tags="v.tv.*.prog.*"/>
+      <cat-item lemma="каала" tags="v.tv.*.past.*"/>
+      <cat-item lemma="каала" tags="v.tv.*.aor.*"/>
+      <cat-item lemma="каала" tags="v.tv.*.ifi.*"/>
+      <cat-item lemma="каала" tags="v.tv.*.fut.*"/>
+      <cat-item lemma="каала" tags="v.tv.*.*.prog.*"/>
+      <cat-item lemma="каала" tags="v.tv.*.*.past.*"/>
+      <cat-item lemma="каала" tags="v.tv.*.*.aor.*"/>
+      <cat-item lemma="каала" tags="v.tv.*.*.ifi.*"/>
+      <cat-item lemma="каала" tags="v.tv.*.*.fut.*"/>
+    </def-cat>
+
+    <def-cat n="prc">
+      <cat-item tags="v.*.prc"/>
+    </def-cat>
+    
+    <def-cat n="sent">
+      <cat-item tags="sent"/>
+    </def-cat>
+   
+  </section-def-cats>
+  
+  <section-def-attrs>
+    
+    <def-attr n="a_fin">
+      <attr-item tags="prog"/>
+      <attr-item tags="ifi"/>
+      <attr-item tags="fut"/>
+      <attr-item tags="aor"/>
+      <attr-item tags="past"/>
+    </def-attr>
+
+     <def-attr n="a_case">
+      <attr-item tags="nom"/>
+      <attr-item tags="acc"/>
+      <attr-item tags="dat"/>
+      <attr-item tags="gen"/>
+      <attr-item tags="loc"/>
+      <attr-item tags="abl"/>
+    </def-attr>
+       
+    <def-attr n="a_poss">
+      <attr-item tags="px1sg"/>
+      <attr-item tags="px2sg"/>
+      <attr-item tags="px3sp"/>
+      <attr-item tags="px1pl"/>
+      <attr-item tags="px2pl"/>
+    </def-attr>
+
+    <def-attr n="a_pers">
+      <attr-item tags="p1"/>
+      <attr-item tags="p2"/>
+      <attr-item tags="p3"/>
+      <attr-item tags="PD"/>
+    </def-attr>
+
+    <def-attr n="a_trans">
+      <attr-item tags="tv"/>
+      <attr-item tags="iv"/>
+      <attr-item tags="TD"/>
+    </def-attr>
+
+    <def-attr n="a_neg">
+      <attr-item tags="neg"/>
+    </def-attr>
+
+    <def-attr n="a_verb">
+      <attr-item tags="vaux"/>
+      <attr-item tags="v"/>
+    </def-attr>
+
+    <def-attr n="a_prc">
+      <attr-item tags="prc"/>
+      <attr-item tags="prc_vol"/>
+      <attr-item tags="prc_aor"/>
+    </def-attr>
+
+    <def-attr n="a_nbr">
+      <attr-item tags="sg"/>
+      <attr-item tags="pl"/>
+      <attr-item tags="ND"/>
+    </def-attr>
+       
+    <def-attr n="a_nom">
+      <attr-item tags="n"/>
+      <attr-item tags="adj.subst"/>
+    </def-attr>
+    
+  </section-def-attrs>
+ 
+  <section-def-vars>
+    <def-var n="number"/>
+    <def-var n="negatiu"/>
+  </section-def-vars>  
+
+  <section-rules>
+    
+    <rule comment="prc fin"> 
+      <pattern>
+        <pattern-item n="prc"/>
+        <pattern-item n="fin"/>
+      </pattern>
+      <action>
+        <choose>
+          <when><test><or><equal><clip pos="1" side="tl" part="a_neg"/><lit-tag v="neg"/></equal>
+                          <equal><clip pos="2" side="tl" part="a_neg"/><lit-tag v="neg"/></equal></or></test>
+                <let><var n="negatiu"/><lit-tag v="neg"/></let>
+          </when>
+          <otherwise>
+                <let><var n="negatiu"/><lit v=""/></let>
+          </otherwise>
+        </choose>
+        <let><clip pos="1" side="tl" part="a_prc"/><lit-tag v="prc_vol"/></let>
+        <let><clip pos="2" side="tl" part="whole"/>
+             <concat>
+               <get-case-from pos="2"><lit v="кел"/></get-case-from>
+               <lit-tag v="vaux"/>
+               <var n="negatiu"/>
+               <clip pos="2" side="tl" part="a_fin"/>
+               <lit-tag v="p3.sg"/>
+             </concat>
+        </let>
+        <let><clip pos="1" side="tl" part="a_neg"/><lit v=""/></let>
+        <out>
+          <lu>
+            <clip pos="1" side="tl" part="whole"/>
+            <clip pos="2" side="sl" part="a_pers"/>
+            <clip pos="2" side="sl" part="a_nbr"/>
+          </lu>
+          <b pos="1"/>
+          <lu>
+            <clip pos="2" side="tl" part="whole"/>
+          </lu>
+        </out>
+      </action>
+    </rule>
+ 
+    <rule comment="sent"> 
+      <pattern>
+        <pattern-item n="sent"/>
+      </pattern>
+      <action>
+        <out>
+          <lu>
+            <clip pos="1" side="tl" part="whole"/>
+          </lu>
+        </out>
+      </action>
+    </rule>
+    
+  </section-rules>
+</transfer>

@@ -1,0 +1,109 @@
+2 Ja Jumala päätti seitsemäntenä päivänä työnsä, jonka hän oli tehnyt,  ja lepäsi seitsemäntenä päivänä kaikesta työstänsä, jonka hän oli  tehnyt.
+2 Ja Ipmil mearridii #čihččet beaivin bargguset, gean son lei dahkan,  ja vuoiŋŋastii #čihččet beaivin buot barggusteaset, gean son lei  dahkan.
+
+	in bible.no : čihččet beaivvi, not with ess. -- .t2x?
+
+	need to change case of '7th day'/seitsemäntenä päivänä from ess to nom.
+
+3 Ja Ipmil #bures+sivdnidit čihččeda beaivvi ja basuhii dan, #danin son #dat  beaivin vuoiŋŋastii buot #sivdnidan+dahku, gean son lei dahkan.
+
+
+4 Dát lea muitalus almmi ja eatnama riegádeamis, go dat #sivdnidit.  #Dat  áigái go Hearrá Ipmil dagai eatnama ja almmi,
+
+
+5 ei ollut vielä yhtään kedon pensasta maan päällä, eikä vielä kasvanut  mitään ruohoa kedolla, koska Herra Jumala ei vielä ollut antanut sataa  maan päälle eikä ollut ihmistä maata viljelemässä,
+5 ii leamaš vel ollenge gietti miestaga eatnama alde, ii vel šaddan  mange suoinni giettis, #danin Hearrá Ipmil ii vel leamaš addán čuođi  eatnama ala ii leamaš olbmo eatnama šaddadit,
+
+bibel.no 5 ii lean vel ii oktage meahci miestta eatnama alde, iige lean mihkkege rásiid šaddan, dasgo Hearrá Ipmil ii lean diktán arvit eatnama ala, iige olmmoš lean bargamin dan.
+
+	+ Fixed CG for yhtään kedon pensasta
+
+6 muhto mierká čuožžilii eatnamis ja njuoskadii @koko eatnama @pinna.
+
+	how to select between pinna and pinta in CG? both nouns
+
+7 Dalle Hearrá Ipmil dagai eatnama muolddas olbmo ja bosui su  *sieramiinsa eallima vuoiŋŋa, ja nu olbmos bođii @elävä siellu.
+
+	sieramiinsa?
+
+8 Ja Hearrá Ipmil čohkkáhii paradiása #Eden, #nuorta, ja ásahii dohko  olbmo, gean son lei dahkan.
+
+	Two problems with Eeden (see QUESTIONS: Eden), but the important one here is that N+Prop isn't being returned although it's in the lex file with Prop.
+
+
+9 Ja Hearrá Ipmil šaddadii eatnamis #juohkelágán muoraid, #hearvás oaidnit ja  buriid borrat, ja eallit muora sisa/siskkil #paradiás, nu maid buori ja  bahá dieđu muora.
+
+	still problems with juohkelágán
+	
+	$ echo "juohkelágán" | automorf
+	juohkelágán	juohke<Der1><Der_lágán><A><Attr>
+	juohkelágán	juohke<Der1><Der_lágán><A><Sg><Nom>
+	juohkelágán	juohke<Der1><Der_lágán><A><Sg><Acc>
+	
+	FMT: Can this be lexicalised  ?
+	
+
+10 Ja #Eden manai johka, gii njuoskadii paradiása, ja dat juohkašuvai  #dat njealji/njealje/njealje- suorgái.
+
+11 @Ensimmäinen namma lea *Piison; dat #golgit @koko *Havilan eatnama, geas lea  @kulta;
+
+	CG is returning different analysis than that which shows up in the tagger.
+	
+	$ echo "se kiertää koko Havilan maan, jossa on kultaa" | fin-sme-tagger
+	... 
+	 ^jossa/joka<Pron><Rel><Sg><Ine><CLB>$ 
+	^on/olla<V><Act><Ind><Prs><Sg3><@+FAUXV>$ 
+	^kultaa/kullata<V><Act><Imprt><Sg2>/kullata<V><Act><Ind><Prs><Sg3>/kullata<V><Ind><Prs><ConNeg>/kulta<A><Pos><Sg><Par><@←OBJ>/kulta<N><Sg><Par><@←OBJ>$^./.<Punct><CLB>$
+
+
+	"<se>"
+		"se" Pron Dem Sg Nom 
+	"<kiertää>"
+		"kiertää" V Act Ind Prs Sg3 @+FMAINV 
+		"kiertää" V Act Inf1 Sg Lat @-FMAINV 
+	"<koko>"
+		"koko" Pron Sg Nom @→N 
+		"koko" N Sg Nom 
+	"<Havilan>"
+		"Havilan" ? 
+	"<maan>"
+		"maa" N Sg Gen @←OBJ 
+	"<,>"
+		"," Punct CLB 
+	"<jossa>"
+		"joka" Pron Rel Sg Ine CLB 
+	"<on>"
+		"olla" V Act Ind Prs Sg3 @+FMAINV 
+	"<kultaa>"
+		"kulta" N Sg Par @←OBJ 
+		"kulta" A Pos Sg Par @←OBJ 
+
+
+
+12 ja dan eatnama @kulta lea buori. #Dat lea maid *bedellion@-pihka ja  *onyks@-kivetä.
+
+13 Nuppi/Nuppe eanu namma lea *Giihon; dat #golgit @koko #Mánnu eatnama.
+
+14 Goalmmáda eanu namma lea *Hiddekel; dat viehká *Assurin @editse.  Ja  njealját eatnu lea Eufrat.
+
+15 Ja Hearrá Ipmil válddii olbmo ja bijai su #Eden paradiásii  šaddadit ja várjalit dan.
+
+16 Ja Hearrá Ipmil gohčui olbmo daddjat/dadjat: @"Bora @vapaa buot muitte  paradiása @puistaa,
+
+17 muhte buori ja bahá dieđu muoras ale bora, #dat #dat beaivin, geanin  don #dat borat, berre du jápmimis jápmima@".
+
+18 Ja Hearrá Ipmil daddjai/dajai: @"Ii leat olbmo buorre leat/leahket oktan, mun  dagan sutnje veahki, gii lea sutnje vuogas@".
+
+19 Ja Hearrá Ipmil dagai eatnamis buot vuovddi eallit ja buot almmi  lottit ja @toi dat olbmo ovdii oaidnit, mot son dat namahivččii; ja  #nugo olmmoš namahii juohke ealli sivdnádusa, nu lei dan namma @oleva.
+
+20 Ja olmmoš attii namat buot eallu ealliide/elliide ja almmi lottiide  ja buot vuovddi ealliide/elliide. Muhte Áttámii ii gávdnon veahki, gii  livččii/livčče/livččui sutnje heiven.
+
+21 Nu Hearrá Ipmil @vaivuttaa olbmo lossadii nahkárii, ja go son  ođii, válddii son #okta su #erttetdákti ja devddii dan báikki bierggus.
+
+22 Ja Hearrá Ipmil ráhkadii eami #dat #erttetdákti, gean son lei  váldán dievddus, ja buvttii su dievddu lusa.
+
+23 Ja dievdu daddjai/dajai: @"Dát lea @nyt dákti mu dávttiinan ja biergu mu  deahkkán; son #gohčodit divdui, #dat son lea dievddus  váldán@".
+
+24 *Sentähden dievdu luhpos áhčisteaset ja eatnisteaset ja servos  eapmáseaset, ja sii bohtet ovtta birgui.
+
+25 Ja sii ledje #goappašat, dievdu ja su eamiset, @ala eai  heahpanan @toinen.

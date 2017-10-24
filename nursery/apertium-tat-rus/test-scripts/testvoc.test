@@ -1,0 +1,96 @@
+#!/bin/bash
+
+# This script is tied to test cases in apertium-tat-rus/testvoc/lite
+# (regression.txt and pending.txt). Lines from that files look like this:
+#
+# мәктәптә:^мәктәп<n><loc>$:^в<pr>$ ^школа<n><f><nn><sg><prp>$:в школе
+#
+# The purpose of this script is to make sure that if we pass field 2 of that
+# lines (i.e. Tatar lexical units) through the bilingual and transfer modules
+# of the system, they will produce a result which is equal to field 3 (i.e.
+# Russian lexical forms) and if we further pass their output through the
+# GENERATOR and POSTGENERATOR, the latter two will yield an output which is
+# equal to field 4 (i.e. Russian surface forms).
+
+# Supposed to be invoked by "./qa testvoc reg" or "./qa testvoc pen"
+
+if [ "$1" = "reg" ]; then
+    TESTS="testvoc/lite/regression.txt"
+elif [ "$1" = "pen" ]; then
+    TESTS="testvoc/lite/pending.txt"
+fi
+
+PRETRANSFER="apertium-pretransfer"
+LEXTRANSFER="lt-proc -b tat-rus.autobil.bin"
+LEXSELECTION="lrx-proc -m tat-rus.lrx.bin"
+TRANSFER_1="apertium-transfer -b apertium-tat-rus.tat-rus.t1x tat-rus.t1x.bin"
+TRANSFER_2="apertium-interchunk apertium-tat-rus.tat-rus.t2x tat-rus.t2x.bin"
+TRANSFER_3="apertium-interchunk apertium-tat-rus.tat-rus.t3x tat-rus.t3x.bin"
+TRANSFER_4="apertium-postchunk apertium-tat-rus.tat-rus.t4x tat-rus.t4x.bin"
+GENERATOR="lt-proc -g tat-rus.autogen.bin"
+POSTGENERATOR="lt-proc -p tat-rus.autopgen.bin"
+
+TOTAL=0
+CORRECT=0
+
+# return "line number of INPUT:field2:field3:field4" from TESTS
+currentLine=0
+function extract_tests {
+    while IFS=':' read SourceSurf SourceLex TargetLex TargetSurf
+    do
+	currentLine=`expr $currentLine + 1`
+	if expr "$SourceLex:$TargetLex:$TargetSurf" : '^.*$:^.*$:[[:alpha:]]\+' >/dev/null
+	then
+	    echo "$currentLine:$SourceLex:$TargetLex:$TargetSurf"
+	fi
+    done < $TESTS
+}
+
+extract_tests > /tmp/testCases.txt
+
+# run testCases trough the translator
+while IFS=':' read lineNbr input expectedOutOfTransfer expectedOutOfGenerator
+do
+    TOTAL=`expr $TOTAL + 1`
+    transfersOut=$(echo $input | $PRETRANSFER | $LEXTRANSFER | $LEXSELECTION | $TRANSFER_1 | $TRANSFER_2 | $TRANSFER_3 | $TRANSFER_4)
+    generatorsOut=$(echo $transfersOut | $GENERATOR | $POSTGENERATOR)
+    if [ "$transfersOut" = "$expectedOutOfTransfer" ] &&
+       [ "$generatorsOut" = "$expectedOutOfGenerator" ]
+    then
+        CORRECT=`expr $CORRECT + 1`
+        echo "$lineNbr PASS: $input ->"
+        echo "         $transfersOut"
+        echo "         $generatorsOut"
+        echo ""
+    elif [ "$transfersOut" = "$expectedOutOfTransfer" ]
+    then
+        echo "$lineNbr FAIL: $input ->"
+        echo "        $transfersOut"
+        echo "-($expectedOutOfGenerator)"
+        echo "+($generatorsOut)"
+        echo ""
+    elif [ "$generatorsOut" = "$expectedOutOfGenerator" ]
+    then
+        echo "$lineNbr FAIL: $input ->"
+        echo "-($expectedOutOfTransfer)"
+        echo "+($transfersOut)"
+        echo "        $generatorsOut"
+        echo ""
+    else
+        echo "$lineNbr FAIL: $input ->"
+        echo "-($expectedOutOfTransfer)"
+        echo "+($transfersOut)"
+        echo "-($expectedOutOfGenerator)"
+        echo "+($generatorsOut)"
+        echo ""
+    fi
+done < /tmp/testCases.txt
+
+echo "$CORRECT / $TOTAL"
+
+if [ "$CORRECT" = "$TOTAL" ] && [ ! "$TOTAL" = "0" ]
+then
+    exit 0
+else
+    exit 1
+fi

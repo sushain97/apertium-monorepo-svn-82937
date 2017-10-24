@@ -1,0 +1,16 @@
+Config:
+  hfst:
+    App: hfst-lookup
+    Gen: ../nog.autogen.hfst
+    Morph: ../nog.automorf.hfst
+
+Tests:
+  "[twol] forms where й just deletes":
+    суьй<v><tv><aor><p1><sg> : суьемен
+
+  "[twol] forms where й deletes and triggers я":
+    кой<v><tv><aor><p1><sg> : кояман
+
+  "[twol] forms where й doesn't delete":
+    суьй<v><tv><ifi><p1><sg> : суьйдим
+    кой<v><tv><ifi><p1><sg> : койдым

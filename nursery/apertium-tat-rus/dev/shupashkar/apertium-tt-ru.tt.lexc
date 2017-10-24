@@ -1,0 +1,466 @@
+
+Multichar_Symbols
+
+%<n%>   ! Имя существительное · Noun
+%<sg%>  ! Единственное число
+%<pl%>  ! Множественное число
+%<nom%> ! Основной падеж
+%<gen%> ! Притяжательный падеж
+%<dir%> ! Направительный падеж
+%<acc%> ! Винительный падеж
+%<ish%> ! исходный падеж
+%<mest%> ! Местно-временной падеж
+%<pxsg1%> ! Притяжательность ед.ч. 1 лицо
+%<pxsg2%> ! Притяжательность ед.ч. 2 лицо
+%<pxsg3%> ! Притяжательность ед.ч. 3 лицо
+%<pxpl1%> ! Притяжательность мн.ч. 1 лицо
+%<pxpl2%> ! Притяжательность мн.ч. 2 лицо
+%<pxpl3%> ! приятжательность мн.ч. 3 лицо
+%{А%} ! Гласный 'а' или 'ә'
+%{Е%} ! Гласный 'ы' или 'е'
+%{Г%} ! Согласный 'г' или 'к'
+%{Д%} ! Согласный 'д' или 'т'
+%{Н%} ! Согласный 'н' или 'т'
+%<adj%> ! Имя прилагательное
+%<conjoo%> ! Союз
+%<adv%> ! Наречие
+%<prn_pers%> ! Личные местоимения
+%<vvod%> ! Вводное слово
+%<comma%> ! Запятая
+%<prn_ques%> ! Вопросительные местоимения
+%<poslelog%> ! Послелоги
+%<num%> ! Имя числительное
+%<prn_dir%> ! Указательные местоимения
+%<ant%>
+%<np%>
+%<m%>
+%<f%>
+
+
+! Tense, aspect, mood
+%<imp%>            ! Imperative
+%<cond%>           ! Conditional  ! Шарт  ! Условное  ! -с{A}
+%<caus%>           ! Causative
+%<pass%>           ! Passive
+%<coop%>           ! Cooperative
+%<neg%>            ! Negative
+%<pres%>           ! -{A}
+%<past%>           ! -{G}{A}н 
+%<fut%>            ! -{I}р
+%<ifi%>            ! -{D}{I} 
+%<ger1%>           ! -м{A}{K}
+%<ger2%>           ! -{I}п
+%<ger3%>           ! -{G}{A}ч
+%<ger4%>           ! -{G}{A}нч{I}
+%<ger5%>           ! -{G}{A}н
+%<ger6%>           ! -{I}р / -{A}р
+%<ger7%>           ! -{A}ч{A}к
+%<ger8%>           ! -{E}с
+%<prn_otnos%>      ! 
+
+! Transitivity ! Переходность
+%<tv%>             ! Transitive
+%<iv%>             ! Intransitive
+
+! Зат ! Лицо
+%<p1%>             !
+%<p2%>             !
+%<p3%>             !
+
+%<vaux%>           ! Auxilary verb
+
+LEXICON Root
+
+Nouns ; 
+Adjectives ;
+Conjunctions ;
+Adverbs ;
+Pronouns_Pers ;
+Verbs ;
+Vvodnoe_slovo ;
+Punct ;
+Pronouns_Quest ;
+Poslelogi ;
+Numbers ;
+Pronouns_Dir ;
+
+LEXICON CLIT
+# ; ! For clitics, if they exist.
+
+LEXICON POSS
+# ; !! NB! This is not defined.
+
+LEXICON V-PERS-S1 
+
+%<p1%>%<sg%>:%>м CLIT ;
+%<p2%>%<sg%>:%>с%{I%}ң CLIT ;
+%<p3%>%<sg%>:%> CLIT ;
+%<p1%>%<pl%>:%>б%{I%}з CLIT ;
+%<p2%>%<pl%>:%>г%{I%}з CLIT ;
+%<p3%>%<pl%>:%>%{L%}%{A%}р CLIT ;
+
+LEXICON V-PERS-S2
+!! кыска төрләнеш
+%<p1%>%<sg%>:%>м CLIT ;
+%<p2%>%<sg%>:%>ң CLIT ;
+%<p3%>%<sg%>:%> CLIT ;
+%<p1%>%<pl%>:%>к CLIT ;
+%<p2%>%<pl%>:%>г%{I%}з CLIT ;
+%<p3%>%<pl%>:%>%{L%}%{A%}р CLIT ;
+
+LEXICON V-PERS-S3-NO1SG
+
+%<p2%>%<sg%>:%>с%{I%}ң CLIT ;
+%<p3%>%<sg%>:%> CLIT ;
+%<p1%>%<pl%>:%>б%{I%}з CLIT ;
+%<p2%>%<pl%>:%>с%{I%}г%{I%}з CLIT ;
+%<p3%>%<pl%>:%>%{L%}%{A%}р CLIT ;
+
+LEXICON V-PERS-S3
+
+%<p1%>%<sg%>:%>м%{I%}н CLIT ;
+
+V-PERS-S3-NO1SG ; 
+
+LEXICON V-PERS-S4 ! Volition endings
+
+%<p1%>%<sg%>:%>м%{I%}н CLIT ;
+%<p2%>%<sg%>:%>с%{I%}ң CLIT ;
+%<p3%>%<sg%>:%> CLIT ;
+%<p1%>%<pl%>:%>б%{I%}з CLIT ;
+%<p2%>%<pl%>:%>с%{I%}г%{I%}з CLIT ;
+%<p3%>%<pl%>:%>%{L%}%{A%}р CLIT ;
+
+LEXICON V-FUT-IR
+
+%<fut%>:%>%{I%}р V-PERS-S3 ; 
+%<neg%>%<fut%>:%>м%{A%}с V-PERS-S3-NO1SG ; 
+%<neg%>%<fut%>%<p1%>%<sg%>:%>м%{A%}%>м CLIT ; 
+%<neg%>%<fut%>%<p1%>%<sg%>:%>м%{A%}с%>м%{I%}н CLIT ; ! Dir/LR 
+%<ger6%>:%>%{I%}р POSS ;
+%<neg%>%<ger6%>:%>м%{A%}%>%{I%}р POSS ;
+
+LEXICON V-FUT-AR
+
+%<fut%>:%>%{A%}р V-PERS-S3 ; 
+%<neg%>%<fut%>:%>м%{A%}с V-PERS-S3 ; 
+%<neg%>%<fut%>%<p1%>%<sg%>:%>м%{A%}%>м CLIT ; 
+%<neg%>%<fut%>%<p1%>%<sg%>:%>м%{A%}с%>м%{I%}н CLIT ; ! Dir/LR 
+%<ger6%>:%>%{A%}р POSS ;
+%<neg%>%<ger6%>:%>м%{A%}%>%{A%}р POSS ;
+
+LEXICON V-FINITE-FORMS
+
+%<pres%>:%>%{E%} V-PERS-S1 ; 
+%<ifi%>:%>%{D%}%{I%} V-PERS-S2 ; 
+%<past%>:%>%{G%}%{A%}н V-PERS-S3 ; 
+
+LEXICON V-COMMON-LEX
+
+V-FINITE-FORMS ; 
+
+%<ger1%>:%>м%{A%}%{K%} POSS ; 
+%<ger2%>:%>%{I%}п POSS ; 
+%<ger3%>:%>%{G%}%{A%}ч POSS ; 
+%<ger4%>:%>%{G%}%{A%}нч%{I%} POSS ; 
+%<ger5%>:%>%{G%}%{A%}н POSS ;
+%<ger7%>:%>%{A%}ч%{A%}к POSS ;
+%<ger8%>:%>%{E%}с V-PERS-S4 ;
+%<cond%>:%>с%{A%} V-PERS-S2 ;
+
+%<imp%>%<p2%>%<sg%>: CLIT ;
+%<imp%>%<p2%>%<pl%>:%{I%}г%{I%}з CLIT ;
+
+LEXICON V-NEG
+
+%<neg%>:%>м%{A%} V-COMMON-LEX ; 
+
+V-COMMON-LEX ; 
+
+LEXICON V-DER
+
+%<caus%>:%>%{I%}т V-NEG ;
+%<coop%>:%>%{I%}ш V-NEG ;
+
+V-NEG ;
+
+LEXICON V-IV-IR-LEX
+
+%<v%>%<iv%>: V-COMMON-LEX ; 
+%<v%>%<iv%>: V-FUT-IR; 
+%<v%>%<iv%>: V-DER; 
+
+LEXICON V-TV-IR-LEX
+
+%<v%>%<tv%>: V-COMMON-LEX ; 
+%<v%>%<tv%>: V-FUT-IR; 
+%<v%>%<tv%>: V-DER; 
+%<v%>%<tv%>%<pass%>:%>%{I%}%{l%} V-COMMON-LEX ; 
+%<v%>%<tv%>%<pass%>:%>%{I%}%{l%} V-FUT-IR ; 
+
+LEXICON V-IV-AR-LEX
+
+%<v%>%<iv%>: V-COMMON-LEX ; 
+%<v%>%<iv%>: V-FUT-AR ;
+%<v%>%<iv%>: V-DER; 
+
+LEXICON V-TV-AR-LEX
+
+%<v%>%<tv%>: V-COMMON-LEX ; 
+%<v%>%<tv%>: V-FUT-AR ;
+%<v%>%<tv%>: V-DER; 
+%<v%>%<tv%>%<pass%>:%>%{I%}%{l%} V-COMMON-LEX ; 
+%<v%>%<tv%>%<pass%>:%>%{I%}%{l%} V-FUT-AR ; 
+
+LEXICON VAUX
+
+%<vaux%>: V-PERS-S2 ;
+
+
+LEXICON PRN_PERS
+
+%<prn_pers%>: # ;
+
+LEXICON CHISL
+
+%<num%>: PX ;
+
+LEXICON Pron-Otnositelnyj
+
+%<prn_otnos%>: PX ;
+
+LEXICON CASE
+
+%<nom%>: # ;
+%<gen%>:%>н%{Е%}ң # ;
+%<dir%>:%>%{Г%}%{А%} # ;
+%<acc%>:%>н # ;
+%<ish%>:%>%{Н%}%{А%}н # ;
+%<mest%>:%>%{Д%}%{А%} # ;
+
+LEXICON PX
+CASE ;
+%<pxsg1%>:%>%{Е%}м CASE;
+%<pxsg2%>:%>%{Е%}ң CASE;
+%<pxsg3%>:%>%{Е%} CASE;
+%<pxpl1%>:%>%{Е%}б%{Е%}з CASE;
+%<pxpl2%>:%>%{Е%}г%{Е%}з CASE;
+%<pxpl3%>:%>л%{А%}р%{Е%} CASE;
+
+LEXICON NUM
+
+%<sg%>: PX ;
+%<pl%>:%>л%{А%}р PX ;
+
+LEXICON ADV
+%<adv%>: # ;
+
+LEXICON CONJOO
+
+%<conjoo%>: # ;
+
+LEXICON N1
+
+%<n%>: NUM ;
+
+LEXICON PRON_D
+
+%<prn_dir%>: CASE ;
+
+LEXICON A1
+
+%<adj%>: NUM ;
+
+LEXICON POSL
+
+%<poslelog%>: 
+
+
+
+LEXICON VV
+
+!%<vvod%>:%>%<comma%> ; ! Probably not intended.
+%<vvod%>: # ; ! Perhaps this was intended?
+
+LEXICON Punct
+,%<comma%>:, # ;
+
+LEXICON PRON_Q
+%<prn_ques%>: # ;
+
+LEXICON Pronouns_Quest
+кайда PRON_Q ;
+ни өчен PRON_Q ;
+ни PRON_Q ;
+кая PRON_Q ;
+
+LEXICON NP-Ant-M-Muzh-kak-Zhen-Mjak
+
+%<np%>%<ant%>%<m%>: CASE ;
+
+LEXICON NP-Ant-F
+
+%<np%>%<ant%>%<f%>: CASE ;
+
+LEXICON Nouns
+
+эт N1 ; ! ""
+Һава N1 ; ! ""
+бакча N1 ; ! ""
+малай N1 ; ! ""
+әни N1 ; ! ""
+сеңел N1 ; ! ""
+бала N1 ; ! ""
+өй N1 ; ! ""
+песи N1 ; ! ""
+тәрәзә N1 ; ! ""
+агач N1 ; ! ""
+күз N1 ; ! ""
+кул N1 ; ! ""
+уен N1 ; ! ""
+җавап N1 ; ! ""
+сорау N1 ; ! ""
+кеше N1 ; ! ""
+Өстәл N1 ; ! ""
+утыргыч N1 ; ! ""
+тавыш N1 ; ! ""
+кош N1 ; ! ""
+хайван N1 ; ! ""
+баш N1 ; ! ""
+су N1 ; ! ""
+кызыкай N1 ; ! ""
+тыш N1 ; ! ""
+игътибар N1 ; ! ""
+нәрсә N1 ; ! "вещь"
+урын N1 ; ! ""
+яшь N1 ; ! ""
+вакыт N1 ; ! ""
+
+
+LEXICON Adjectives
+
+әйбәт A1 ; ! ""
+бәләкәй A1 ; ! ""
+шат A1 ; ! ""
+зур A1 ; ! ""
+иске A1 ; ! ""
+
+LEXICON Conjunctions
+һәм CONJOO ;
+тик CONJOO ;
+әмма CONJOO ;
+вә CONJOO ; ! ""
+ә CONJOO ; ! ""
+да CONJOO ; ! ""
+
+
+LEXICON Adverbs
+кичә ADV ;
+бик ADV ;
+суык ADV ;
+бүген ADV ;
+җылы ADV ;
+гына ADV ;
+һәрвакыт ADV ;
+бергә ADV ;
+соңрак ADV ;
+яхшы ADV ;
+якынрак ADV ;
+анда ADV ;
+әлегә ADV ;
+карап ADV ;
+тиз ADV ;
+шуннан ADV ;
+тагын ADV ;
+хәзер ADV ;
+
+
+LEXICON Pronouns_Pers
+
+мин%<prn_pers%>%<nom%>:мин # ;
+мин%<prn_pers%>%<gen%>:минем # ;
+мин%<prn_pers%>%<dir%>:миңа # ;
+мин%<prn_pers%>%<acc%>:мине # ;
+мин%<prn_pers%>%<ish%>:миннән # ;
+мин%<prn_pers%>%<mest%>:миндә # ;
+
+ул%<prn_pers%>%<nom%>:ул # ;
+ул%<prn_pers%>%<gen%>:аның # ;
+ул%<prn_pers%>%<dir%>:аңа # ;
+ул%<prn_pers%>%<acc%>:аны # ;
+ул%<prn_pers%>%<ish%>:аннан # ;
+ул%<prn_pers%>%<mest%>:анда # ;
+
+син%<prn_pers%>%<nom%>:син # ;
+син%<prn_pers%>%<gen%>:синең # ;
+син%<prn_pers%>%<dir%>:сиңа # ;
+син%<prn_pers%>%<ish%>:синнән # ;
+син%<prn_pers%>%<acc%>:сине # ;
+син%<prn_pers%>%<mest%>:синдә # ;
+
+алар%<prn_pers%>%<nom%>:алар # ;
+алар%<prn_pers%>%<gen%>:аларнең # ;
+алар%<prn_pers%>%<dir%>:аларгә # ;
+алар%<prn_pers%>%<ish%>:алардән # ;
+алар%<prn_pers%>%<acc%>:аларне # ;
+алар%<prn_pers%>%<mest%>:алардә # ;
+
+нәрсә Pron-Otnositelnyj ; ! "вещь"
+
+LEXICON Verbs
+
+бар:бар V-TV-IR-LEX ; ! ""
+кил:кил V-TV-IR-LEX ; ! ""
+утыр:утыр V-TV-IR-LEX ; ! ""
+йокла:йокла V-IV-IR-LEX ; ! ""
+күзәт:күзәт V-TV-IR-LEX ; ! ""
+уйна:уйна V-TV-AR-LEX ; ! ""
+йөгер:йөгер V-IV-IR-LEX ; ! ""
+яшерен:яшерен V-IV-IR-LEX ; ! ""
+эшлә:эшлә V-TV-IR-LEX ; ! ""
+кара:кара V-TV-IR-LEX ; ! ""
+эзлә:эзлә V-TV-AR-LEX ; ! ""
+сора:сора V-TV-AR-LEX ; ! ""
+җавап% бир:җавап% бир V-TV-IR-LEX ; ! ""
+әйт:әйт V-TV-IR-LEX ; ! ""
+йөр:йөр V-IV-IR-LEX ; ! ""
+табарга
+тырыш:тырыш V-TV-IR-LEX ; ! ""
+ишет:ишет V-TV-IR-LEX ; ! ""
+ашарга
+алырга
+күрен:күрен V-IV-IR-LEX ; ! ""
+сөйләш:сөйләш V-IV-IR-LEX ; ! ""
+күр: V-TV-IR-LEX ; ! ""
+ал:ал V-TV-IR-LEX ; ! ""
+ярат:ярат V-TV-IR-LEX ; ! ""
+эч:эч V-TV-IR-LEX ; ! ""
+
+LEXICON Vvodnoe_slovo
+юк VV ; ! ""
+әлбәттә VV ; ! ""
+ди VV ; ! ""
+
+LEXICON Poslelogi
+алдындагы POSL ; ! ""
+артыннан POSL ; ! ""
+белән POSL ; ! ""
+астында POSL ; ! ""
+сәбәпле POSL ; ! ""
+
+LEXICON Numbers
+алты CHISL ; ! ""
+бер CHISL ; ! ""
+биш CHISL ; ! ""
+ике CHISL ; ! ""
+берәр CHISL ; ! ""
+
+LEXICON Pronouns_Dir
+шул PRON_D ; ! ""
+бу PRON_D ; ! ""
+
+LEXICON Imena
+
+Гөлнара NP-Ant-F ; ! ""
+Әхмәт NP-Ant-M-Muzh-kak-Zhen-Mjak ; ! ""
+

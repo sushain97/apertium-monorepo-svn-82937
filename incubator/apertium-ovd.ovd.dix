@@ -1,0 +1,751 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+    Copyright (C) 2014-2016, Apertium contributors (see AUTHORS file)
+
+    This file is part of apertium-ovd.
+
+    apertium-ovd is free software: you can redistribute it and/or modify
+    it under the terms of the GNU General Public License as published by
+    the Free Software Foundation, either version 2 of the License, or
+    (at your option) any later version.
+
+    apertium-ovd is distributed in the hope that it will be useful,
+    but WITHOUT ANY WARRANTY; without even the implied warranty of
+    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+    GNU General Public License for more details.
+
+    You should have received a copy of the GNU General Public License
+    along with apertium-ovd.  If not, see <http://www.gnu.org/licenses/>.
+-->
+<dictionary>
+	<alphabet>AaĄąBbCcDdĐðEeĘęFfGgHhIiĮįJjKkLlMmNnOoPpQqRrSsTtUuŲųVvWwXxYyY̨y̨ZzÅåĄ̊ą̊ÄäÖö</alphabet>
+	<sdefs>
+		<sdef n="n" 	c="Noun"/>
+		<sdef n="np" 	c="Proper noun"/>
+		<sdef n="top"   c="Toponym"/>
+                <sdef n="attr"  c="Attributive (certain proper nouns)"/>
+		<sdef n="prn" 	c="Pronoun"/>
+		<sdef n="ref" 	c="Reflexive pronoun"/>
+		<sdef n="res" 	c="Reciprocal pronoun"/>
+		<sdef n="det" 	c="Determiner"/>
+		<sdef n="pos" 	c="Possessive"/>
+		<sdef n="p1" 	c="1st person"/>
+		<sdef n="p2" 	c="2nd person"/>
+		<sdef n="p3" 	c="3rd person"/>
+		<sdef n="nt" 	c="Neuter"/>
+		<sdef n="mf" 	c="Masculine / feminine, also utrum in nouns"/>
+		<sdef n="f" 	c="Feminine"/>
+		<sdef n="m" 	c="Masculine"/>
+		<sdef n="un" 	c="No gender"/>
+		<sdef n="sp" 	c="Singular / plural"/>
+		<sdef n="sg" 	c="Singular"/>
+		<sdef n="du" 	c="Dual (generation only)"/>
+		<sdef n="pl" 	c="Plural"/>
+		<sdef n="ind" 	c="Indefinite"/>
+		<sdef n="def" 	c="Definite"/>
+		<sdef n="nom" 	c="Nominative"/>
+		<sdef n="acc" 	c="Accusative"/>
+		<sdef n="gen" 	c="Genitive"/>
+		<sdef n="dat" 	c="Dative"/>
+		<sdef n="dem" 	c="Demonstrative"/>
+		<sdef n="itg" 	c="Question word / interrogative"/>
+ 		<sdef n="qnt" 	c="Quantifier"/>
+                <sdef n="neg" 	c="Negative"/>
+		<sdef n="emph" 	c="Emphatic"/>
+		<sdef n="vblex" 	c="Verb"/>
+		<sdef n="pass" 	c="-st form"/>
+		<sdef n="pstv" 	c="-st verb"/>
+		<sdef n="inf" 	c="Infinitive"/>
+		<sdef n="pres" 	c="Present"/>
+		<sdef n="imp" 	c="Imperative"/>
+		<sdef n="pret" 	c="Preterite"/>
+		<sdef n="pp" 	c="Perfect participle (vblex/adj)"/>
+		<sdef n="pprs" 	c="Present participle (adjectival)"/>
+		<sdef n="pr" 	c="Preposition"/>
+		<sdef n="adv" 	c="Adverb"/>
+                <sdef n="ij" 	c="Interjection"/>
+		<sdef n="adj" 	c="Adjective"/>
+		<sdef n="sint" 	c="Synthetic (of adjectives)"/>
+		<sdef n="part" 	c="Participle (infinitive)"/>
+		<sdef n="sep" 	c="Seperable verb/particle"/>
+		<sdef n="cnjsub" 	c="Subordinating conjunction"/>
+		<sdef n="cnjcoo" 	c="Co-ordinating conjunction"/>
+		<sdef n="cnjadv" 	c="Adverbial conjunction"/>
+		<sdef n="pst" 	c="Positive"/>
+		<sdef n="comp" 	c="Comparative"/>
+		<sdef n="sup" 	c="Superlative"/>
+		<sdef n="num" 	c="Numeral"/>
+		<sdef n="ord" 	c="Ordinal"/>
+		<sdef n="acr" 	c="Acronym"/>
+                <sdef n="unc"   c="Uncountable"/>
+		<sdef n="sent" 	c="Sentence end"/>
+		<sdef n="cm" 	c="Comma"/>
+		<sdef n="apos" 	c="Apostrophe"/>
+		<sdef n="clb" 	c="Possible clause boundary"/>
+		<sdef n="overskrift" 	c="Headline"/>
+		<sdef n="lpar" 	c="Left parenthesis"/>
+		<sdef n="rpar" 	c="Right parenthesis"/>
+
+		<sdef n="compound-only-L" 	c="May only be the left-side of a compound"/>
+		<sdef n="compound-only-R" 	c="requires https://github.com/unhammer/lttoolbox/tree/compound-only-R"/>
+		<sdef n="compound-R" 	c="May be the right-side of a compound, or a full word"/>
+		<sdef n="cmp" 	c="Generation only: added by transfer to say we have a compound"/>
+		<sdef n="cmp-split" 	c="Left part of a split compound"/>
+	</sdefs>
+	<pardefs>
+<pardef n="numeros">
+  <!-- separate out the number 1 as singular (fortunately "1.00" is usually plural!) -->
+  <e>       <re>1</re><p><l></l><r><s n="det"/><s n="qnt"/><s n="sg"/></r></p></e>
+  <e>       <re>[02-9]</re><p><l></l><r><s n="det"/><s n="qnt"/><s n="pl"/></r></p></e>
+  <e>       <re>[0-9][0-9]+([.,][0-9]+)?</re><p><l></l><r><s n="det"/><s n="qnt"/><s n="pl"/></r></p></e>
+  <e>       <re>[0-9][.,][0-9]+</re><p><l></l><r><s n="det"/><s n="qnt"/><s n="pl"/></r></p></e>
+
+  <e>       <re>[½¹²³¼¾]</re><p><l></l><r><s n="det"/><s n="qnt"/><s n="pl"/></r></p></e>
+</pardef>
+
+<pardef n="separa">
+  <e>       <p><l>..</l><r>..<s n="sent"/><s n="clb"/></r></p></e>
+  <e>       <p><l>...</l><r>...<s n="sent"/><s n="clb"/></r></p></e>
+  <e>       <re>[.\?;:!…¿¶]</re><p><l></l><r><s n="sent"/><s n="clb"/></r></p></e>
+</pardef>
+
+<pardef n="coma">
+  <e>       <re>,</re><p><l></l><r><s n="cm"/><s n="clb"/></r></p></e>
+  <e>       <re>,</re><p><l></l><r><s n="cm"/></r></p></e>
+</pardef>
+
+<pardef n="aposchar">
+  <e>       <i>'</i></e>
+</pardef>
+
+<pardef n="cometa">
+  <e>       <par n="aposchar"/><p><l></l><r><s n="apos"/></r></p></e>
+</pardef>
+
+<pardef n="paresq">
+  <e>       <re>[\(\[]</re><p><l></l><r><s n="lpar"/></r></p></e>
+</pardef>
+
+<pardef n="pardret">
+  <e>       <re>[\)\]]</re><p><l></l><r><s n="rpar"/></r></p></e>
+</pardef>
+
+
+<!-- Uninflected parts: -->
+<pardef n="mes__cnjsub">
+  <e>       <p><l></l>      <r><s n="cnjsub"/></r></p></e>
+</pardef>
+<pardef n="um__pr">
+  <e>       <p><l></l>      <r><s n="pr"/></r></p></e>
+</pardef>
+<pardef n="so__adv">
+  <e>       <p><l></l>      <r><s n="adv"/></r></p></e>
+</pardef>
+
+<pardef n="ja__ij">
+  <e>       <p><l></l>      <r><s n="ij"/></r></p></e>
+</pardef>
+
+
+<!-- Verbs: -->
+<pardef n="/wårå__vblex">
+  <e>       <p><l>wårå</l>   <r>wårå<s n="vblex"/><s n="inf"/></r></p></e>
+
+  <e>       <p><l>ir</l>     <r>wårå<s n="vblex"/><s n="pres"/><s n="p1"/><s n="sg"/></r></p></e>
+  <e>       <p><l>irum</l>   <r>wårå<s n="vblex"/><s n="pres"/><s n="p1"/><s n="pl"/></r></p></e>
+  <e>       <p><l>irið</l>   <r>wårå<s n="vblex"/><s n="pres"/><s n="p2"/><s n="pl"/></r></p></e>
+  <e r="LR"><p><l>irir</l>   <r>wårå<s n="vblex"/><s n="pres"/><s n="p2"/><s n="pl"/></r></p></e>
+  <e>       <p><l>irå</l>    <r>wårå<s n="vblex"/><s n="pres"/><s n="p3"/><s n="pl"/></r></p></e>
+
+  <e>       <p><l>war</l>    <r>wårå<s n="vblex"/><s n="pret"/><s n="p1"/><s n="sg"/></r></p></e>
+  <e>       <p><l>warum</l>  <r>wårå<s n="vblex"/><s n="pret"/><s n="p1"/><s n="pl"/></r></p></e>
+  <e>       <p><l>warið</l>  <r>wårå<s n="vblex"/><s n="pret"/><s n="p2"/><s n="pl"/></r></p></e>
+  <e>       <p><l>waru</l>   <r>wårå<s n="vblex"/><s n="pret"/><s n="p3"/><s n="pl"/></r></p></e>
+
+  <e>       <p><l>wari</l>   <r>wårå<s n="vblex"/><s n="imp"/><s n="p2"/><s n="sg"/></r></p></e>
+  <e>       <p><l>warið</l>  <r>wårå<s n="vblex"/><s n="imp"/><s n="p2"/><s n="pl"/></r></p></e>
+
+  <e>       <p><l>wärend</l> <r>wårå<s n="vblex"/><s n="pprs"/></r></p></e>
+  <e>       <p><l>werid</l>  <r>wårå<s n="vblex"/><s n="pp"/></r></p></e>
+</pardef>
+<pardef n="/åvå__vblex">
+  <e>       <p><l>åvå</l>   <r>åvå<s n="vblex"/><s n="inf"/></r></p></e>
+
+  <e>       <p><l>ar</l>    <r>åvå<s n="vblex"/><s n="pres"/><s n="p1"/><s n="sg"/></r></p></e>
+  <e>       <p><l>ar</l>    <r>åvå<s n="vblex"/><s n="pres"/><s n="p2"/><s n="sg"/></r></p></e>
+  <e>       <p><l>ar</l>    <r>åvå<s n="vblex"/><s n="pres"/><s n="p3"/><s n="sg"/></r></p></e>
+  <e r="LR"><p><l>har</l>    <r>åvå<s n="vblex"/><s n="pres"/><s n="p1"/><s n="sg"/></r></p></e>
+  <e r="LR"><p><l>har</l>    <r>åvå<s n="vblex"/><s n="pres"/><s n="p2"/><s n="sg"/></r></p></e>
+  <e r="LR"><p><l>har</l>    <r>åvå<s n="vblex"/><s n="pres"/><s n="p3"/><s n="sg"/></r></p></e>
+
+  <e>       <p><l>amm</l>   <r>åvå<s n="vblex"/><s n="pres"/><s n="p1"/><s n="pl"/></r></p></e>
+  <e>       <p><l>avið</l>  <r>åvå<s n="vblex"/><s n="pres"/><s n="p2"/><s n="pl"/></r></p></e>
+  <e>       <p><l>åvå</l>   <r>åvå<s n="vblex"/><s n="pres"/><s n="p3"/><s n="pl"/></r></p></e>
+
+  <e>       <p><l>adde</l>  <r>åvå<s n="vblex"/><s n="pret"/><s n="p1"/><s n="sg"/></r></p></e>
+  <e>       <p><l>adde</l>  <r>åvå<s n="vblex"/><s n="pret"/><s n="p2"/><s n="sg"/></r></p></e>
+  <e>       <p><l>adde</l>  <r>åvå<s n="vblex"/><s n="pret"/><s n="p3"/><s n="sg"/></r></p></e>
+  <e>       <p><l>addum</l> <r>åvå<s n="vblex"/><s n="pret"/><s n="p1"/><s n="pl"/></r></p></e>
+  <e>       <p><l>addið</l> <r>åvå<s n="vblex"/><s n="pret"/><s n="p2"/><s n="pl"/></r></p></e>
+  <e>       <p><l>adde</l>  <r>åvå<s n="vblex"/><s n="pret"/><s n="p3"/><s n="pl"/></r></p></e>
+
+  <e>       <p><l>avi</l>   <r>åvå<s n="vblex"/><s n="imp"/><s n="p2"/><s n="sg"/></r></p></e>
+  <e>       <p><l>avið</l>  <r>åvå<s n="vblex"/><s n="imp"/><s n="p2"/><s n="pl"/></r></p></e>
+
+  <e>       <p><l>avend</l> <r>åvå<s n="vblex"/><s n="pprs"/></r></p></e>
+  <e>       <p><l>apt</l>   <r>åvå<s n="vblex"/><s n="pp"/></r></p></e>
+</pardef>
+<pardef n="dalsk/a__vblex">
+  <e>       <p><l>a</l>   <r>a<s n="vblex"/><s n="inf"/></r></p></e>
+
+  <e>       <p><l>er</l>    <r>a<s n="vblex"/><s n="pres"/><s n="p1"/><s n="sg"/></r></p></e>
+  <e>       <p><l>um</l>   <r>a<s n="vblex"/><s n="pres"/><s n="p1"/><s n="pl"/></r></p></e>
+  <e>       <p><l>ið</l>  <r>a<s n="vblex"/><s n="pres"/><s n="p2"/><s n="pl"/></r></p></e>
+  <e>       <p><l>a</l>   <r>a<s n="vblex"/><s n="pres"/><s n="p3"/><s n="pl"/></r></p></e>
+
+  <e>       <p><l>eð</l>  <r>a<s n="vblex"/><s n="pret"/><s n="p1"/><s n="sg"/></r></p></e>
+  <e>       <p><l>eðum</l> <r>a<s n="vblex"/><s n="pret"/><s n="p1"/><s n="pl"/></r></p></e>
+  <e>       <p><l>eðið</l> <r>a<s n="vblex"/><s n="pret"/><s n="p2"/><s n="pl"/></r></p></e>
+  <e>       <p><l>eð</l>  <r>a<s n="vblex"/><s n="pret"/><s n="p3"/><s n="pl"/></r></p></e>
+
+  <e>       <p><l>e</l>   <r>a<s n="vblex"/><s n="imp"/><s n="p2"/><s n="sg"/></r></p></e>
+  <e>       <p><l>ið</l>  <r>a<s n="vblex"/><s n="imp"/><s n="p2"/><s n="pl"/></r></p></e>
+
+  <e>       <p><l>end</l> <r>a<s n="vblex"/><s n="pprs"/></r></p></e>
+  <e>       <p><l>að</l>   <r>a<s n="vblex"/><s n="pp"/></r></p></e>
+</pardef>
+<pardef n="spil/å__vblex">
+  <e>       <p><l>å</l>   <r>å<s n="vblex"/><s n="inf"/></r></p></e>
+
+  <e>       <p><l>är</l>    <r>å<s n="vblex"/><s n="pres"/><s n="p1"/><s n="sg"/></r></p></e>
+  <e>       <p><l>um</l>   <r>å<s n="vblex"/><s n="pres"/><s n="p1"/><s n="pl"/></r></p></e>
+  <e>       <p><l>ið</l>  <r>å<s n="vblex"/><s n="pres"/><s n="p2"/><s n="pl"/></r></p></e>
+  <e>       <p><l>å</l>   <r>å<s n="vblex"/><s n="pres"/><s n="p3"/><s n="pl"/></r></p></e>
+
+  <e>       <p><l>äð</l>  <r>å<s n="vblex"/><s n="pret"/><s n="p1"/><s n="sg"/></r></p></e>
+  <e>       <p><l>åðum</l> <r>å<s n="vblex"/><s n="pret"/><s n="p1"/><s n="pl"/></r></p></e>
+  <e>       <p><l>äðið</l> <r>å<s n="vblex"/><s n="pret"/><s n="p2"/><s n="pl"/></r></p></e>
+  <e>       <p><l>äð</l>  <r>å<s n="vblex"/><s n="pret"/><s n="p3"/><s n="pl"/></r></p></e>
+
+  <e>       <p><l>e</l>   <r>å<s n="vblex"/><s n="imp"/><s n="p2"/><s n="sg"/></r></p></e>
+  <e>       <p><l>ið</l>  <r>å<s n="vblex"/><s n="imp"/><s n="p2"/><s n="pl"/></r></p></e>
+
+  <e>       <p><l>end</l> <r>å<s n="vblex"/><s n="pprs"/></r></p></e>
+  <e>       <p><l>äð</l>   <r>å<s n="vblex"/><s n="pp"/></r></p></e>
+</pardef>
+<pardef n="kw/eðå__vblex">
+  <e>       <p><l>eðå</l>   <r>eðå<s n="vblex"/><s n="inf"/></r></p></e>
+
+  <e>       <p><l>eð</l>    <r>eðå<s n="vblex"/><s n="pres"/><s n="p1"/><s n="sg"/></r></p></e>
+  <e>       <p><l>eðum</l>   <r>eðå<s n="vblex"/><s n="pres"/><s n="p1"/><s n="pl"/></r></p></e>
+  <e>       <p><l>eðið</l>  <r>eðå<s n="vblex"/><s n="pres"/><s n="p2"/><s n="pl"/></r></p></e>
+  <e>       <p><l>eðå</l>   <r>eðå<s n="vblex"/><s n="pres"/><s n="p3"/><s n="pl"/></r></p></e>
+
+  <e>       <p><l>að</l>  <r>eðå<s n="vblex"/><s n="pret"/><s n="p1"/><s n="sg"/></r></p></e>
+  <e>       <p><l>aðum</l> <r>eðå<s n="vblex"/><s n="pret"/><s n="p1"/><s n="pl"/></r></p></e>
+  <e>       <p><l>aðið</l> <r>eðå<s n="vblex"/><s n="pret"/><s n="p2"/><s n="pl"/></r></p></e>
+  <e>       <p><l>aðu</l>  <r>eðå<s n="vblex"/><s n="pret"/><s n="p3"/><s n="pl"/></r></p></e>
+
+  <e>       <p><l>eð</l>   <r>eðå<s n="vblex"/><s n="imp"/><s n="p2"/><s n="sg"/></r></p></e>
+  <e>       <p><l>eðið</l>  <r>eðå<s n="vblex"/><s n="imp"/><s n="p2"/><s n="pl"/></r></p></e>
+
+  <e>       <p><l>eðend</l> <r>eðå<s n="vblex"/><s n="pprs"/></r></p></e>
+  <e>       <p><l>eðið</l>   <r>eðå<s n="vblex"/><s n="pp"/></r></p></e>
+</pardef>
+
+<!-- TODO verbs (anything assigned to these is probably wrong): -->
+<pardef n="b/åkå__vblex">
+  <e>       <p><l>åkå</l>      <r>åkå<s n="vblex"/><s n="inf"/></r></p></e>
+  <e>       <p><l>äkär</l>      <r>åkå<s n="vblex"/><s n="pres"/><s n="p1"/><s n="sg"/></r></p></e>
+</pardef>
+<pardef n="f/ą̊__vblex">
+  <e>       <p><l>ą̊</l>      <r>ą̊<s n="vblex"/><s n="inf"/></r></p></e>
+  <e>       <p><l>ą̊r</l>      <r>ą̊<s n="vblex"/><s n="pres"/></r></p></e>
+  <e r="LR"><p><l>inggum</l>      <r>ą̊<s n="vblex"/><s n="pret"/><s n="p1"/><s n="pl"/></r></p></e>
+  <e>       <p><l>ikkum</l>      <r>ą̊<s n="vblex"/><s n="pret"/><s n="p1"/><s n="pl"/></r></p></e>
+</pardef>
+<pardef n="wil__vblex">
+  <e>       <p><l>um</l>      <r><s n="vblex"/><s n="pres"/><s n="p1"/><s n="pl"/></r></p></e>
+</pardef>
+<pardef n="kuog/å__vblex">
+  <e>       <p><l>å</l>      <r>å<s n="vblex"/><s n="inf"/></r></p></e>
+  <e>       <p><l>er</l>     <r>å<s n="vblex"/><s n="pres"/></r></p></e> <!-- p1.sg ? -->
+  <e>       <p><l>ið</l>     <r>å<s n="vblex"/><s n="pp"/></r></p></e>
+</pardef>
+<pardef n="akudir/a__vblex">
+  <e>       <p><l>a</l>      <r>a<s n="vblex"/><s n="inf"/></r></p></e>
+  <e>       <p><l>er</l>     <r>a<s n="vblex"/><s n="pres"/></r></p></e> <!-- p1.sg ? -->
+  <e>       <p><l>t</l>     <r>a<s n="vblex"/><s n="pret"/></r></p></e> <!-- p1.sg ? -->
+</pardef>
+
+
+<!-- Nouns:
+
+m/f/nt
+sg/pl
+nom/acc/dat/gen (gen is not productive, just -es suffix to dat)
+ind/def
+
+weak vs strong
+long vs short (root vowel)
+
+acc/dat may be verb-governed
+
+«attributive adj's often form a compound with the noun they determine,
+e.g. sturkull/stur+kulla» – note the apocope is compound-only-R
+
+-->
+<pardef n="est__n" c="strong, long">
+  <e>       <p><l></l>      <r><s n="n"/><s n="m"/><s n="sg"/><s n="nom"/><s n="ind"/></r></p></e>
+  <e>       <p><l>n</l>      <r><s n="n"/><s n="m"/><s n="sg"/><s n="nom"/><s n="def"/></r></p></e>
+
+  <e>       <p><l></l>      <r><s n="n"/><s n="m"/><s n="sg"/><s n="acc"/><s n="ind"/></r></p></e>
+  <e>       <p><l>n</l>      <r><s n="n"/><s n="m"/><s n="sg"/><s n="acc"/><s n="def"/></r></p></e>
+
+  <e>       <p><l>e</l>      <r><s n="n"/><s n="m"/><s n="sg"/><s n="dat"/><s n="ind"/></r></p></e>
+  <e>       <p><l>em</l>      <r><s n="n"/><s n="m"/><s n="sg"/><s n="dat"/><s n="def"/></r></p></e>
+
+  <e>       <p><l>es</l>      <r><s n="n"/><s n="m"/><s n="sg"/><s n="gen"/><s n="ind"/></r></p></e>
+  <e>       <p><l>emes</l>      <r><s n="n"/><s n="m"/><s n="sg"/><s n="gen"/><s n="def"/></r></p></e>
+
+  <e>       <p><l>er</l>      <r><s n="n"/><s n="m"/><s n="pl"/><s n="nom"/><s n="ind"/></r></p></e>
+  <e>       <p><l>är</l>      <r><s n="n"/><s n="m"/><s n="pl"/><s n="nom"/><s n="def"/></r></p></e>
+
+  <e>       <p><l>a</l>      <r><s n="n"/><s n="m"/><s n="pl"/><s n="acc"/><s n="ind"/></r></p></e>
+  <e>       <p><l>ą</l>      <r><s n="n"/><s n="m"/><s n="pl"/><s n="acc"/><s n="def"/></r></p></e>
+
+  <e>       <p><l>um</l>      <r><s n="n"/><s n="m"/><s n="pl"/><s n="dat"/><s n="ind"/></r></p></e>
+  <e>       <p><l>um</l>      <r><s n="n"/><s n="m"/><s n="pl"/><s n="dat"/><s n="def"/></r></p></e>
+
+  <!-- no pl.gen.ind -->
+  <e>       <p><l>umes</l>      <r><s n="n"/><s n="m"/><s n="pl"/><s n="gen"/><s n="def"/></r></p></e>
+</pardef>
+
+<pardef n="kull/a__n" c="weak, long">
+  <e r="LR"><p><l></l>      <r>a<s n="n"/><s n="f"/><s n="sg"/><s n="nom"/><s n="ind"/><s n="compound-only-R"/></r></p></e>
+  <e>       <p><l>a</l>      <r>a<s n="n"/><s n="f"/><s n="sg"/><s n="nom"/><s n="ind"/></r></p></e>
+  <e>       <p><l>ą</l>      <r>a<s n="n"/><s n="f"/><s n="sg"/><s n="nom"/><s n="def"/></r></p></e>
+
+  <e>       <p><l>u</l>      <r>a<s n="n"/><s n="f"/><s n="sg"/><s n="acc"/><s n="ind"/></r></p></e>
+  <e>       <p><l>ų</l>      <r>a<s n="n"/><s n="f"/><s n="sg"/><s n="acc"/><s n="def"/></r></p></e>
+
+  <e>       <p><l>u</l>      <r>a<s n="n"/><s n="f"/><s n="sg"/><s n="dat"/><s n="ind"/></r></p></e>
+  <e>       <p><l>un</l>      <r>a<s n="n"/><s n="f"/><s n="sg"/><s n="dat"/><s n="def"/></r></p></e>
+
+  <e>       <p><l>es</l>      <r>a<s n="n"/><s n="f"/><s n="sg"/><s n="gen"/><s n="ind"/></r></p></e>
+  <e>       <p><l>enes</l>      <r>a<s n="n"/><s n="f"/><s n="sg"/><s n="gen"/><s n="def"/></r></p></e>
+
+  <e>       <p><l>ur</l>      <r>a<s n="n"/><s n="f"/><s n="pl"/><s n="nom"/><s n="ind"/></r></p></e>
+  <e>       <p><l>ur</l>      <r>a<s n="n"/><s n="f"/><s n="pl"/><s n="nom"/><s n="def"/></r></p></e>
+
+  <e>       <p><l>ur</l>      <r>a<s n="n"/><s n="f"/><s n="pl"/><s n="acc"/><s n="ind"/></r></p></e>
+  <e>       <p><l>ur</l>      <r>a<s n="n"/><s n="f"/><s n="pl"/><s n="acc"/><s n="def"/></r></p></e>
+
+  <e>       <p><l>um</l>      <r>a<s n="n"/><s n="f"/><s n="pl"/><s n="dat"/><s n="ind"/></r></p></e>
+  <e>       <p><l>um</l>      <r>a<s n="n"/><s n="f"/><s n="pl"/><s n="dat"/><s n="def"/></r></p></e>
+
+  <!-- no pl.gen.ind -->
+  <e>       <p><l>umes</l>      <r>a<s n="n"/><s n="f"/><s n="pl"/><s n="gen"/><s n="def"/></r></p></e>
+</pardef>
+
+<pardef n="net__n" c="strong, short root vowel; dat only vowel balance in plural">
+  <e>       <p><l></l>      <r><s n="n"/><s n="nt"/><s n="sg"/><s n="nom"/><s n="ind"/></r></p></e>
+  <e>       <p><l>eð</l>      <r><s n="n"/><s n="nt"/><s n="sg"/><s n="nom"/><s n="def"/></r></p></e>
+
+  <e>       <p><l></l>      <r><s n="n"/><s n="nt"/><s n="sg"/><s n="acc"/><s n="ind"/></r></p></e>
+  <e>       <p><l>eð</l>      <r><s n="n"/><s n="nt"/><s n="sg"/><s n="acc"/><s n="def"/></r></p></e>
+
+  <e>       <p><l>i</l>      <r><s n="n"/><s n="nt"/><s n="sg"/><s n="dat"/><s n="ind"/></r></p></e>
+  <e>       <p><l>į</l>      <r><s n="n"/><s n="nt"/><s n="sg"/><s n="dat"/><s n="def"/></r></p></e>
+
+  <!-- no gen? -->
+
+  <e>       <p><l></l>      <r><s n="n"/><s n="nt"/><s n="pl"/><s n="nom"/><s n="ind"/></r></p></e>
+  <e>       <p><l>ę</l>      <r><s n="n"/><s n="nt"/><s n="pl"/><s n="nom"/><s n="def"/></r></p></e>
+
+  <e>       <p><l>e</l>      <r><s n="n"/><s n="nt"/><s n="pl"/><s n="acc"/><s n="ind"/></r></p></e>
+  <e>       <p><l>ę</l>      <r><s n="n"/><s n="nt"/><s n="pl"/><s n="acc"/><s n="def"/></r></p></e>
+
+  <e>       <p><l>um</l>      <r><s n="n"/><s n="nt"/><s n="pl"/><s n="dat"/><s n="ind"/></r></p></e>
+  <e>       <p><l>um</l>      <r><s n="n"/><s n="nt"/><s n="pl"/><s n="dat"/><s n="def"/></r></p></e>
+</pardef>
+
+<!-- TODO nouns (anything assigned to these is probably wrong): -->
+
+<pardef n="tunggel__n">
+  <e>       <p><l></l>      <r><s n="n"/><s n="nt"/><s n="sg"/><s n="nom"/><s n="ind"/></r></p></e>
+</pardef>
+
+<pardef n="ra/kke__n">
+  <e>       <p><l>kke</l>      <r>kke<s n="n"/><s n="m"/><s n="sg"/><s n="nom"/><s n="ind"/></r></p></e>
+  <e>       <p><l>ttjin</l>      <r>kke<s n="n"/><s n="m"/><s n="sg"/><s n="nom"/><s n="def"/></r></p></e>
+</pardef>
+<pardef n="buo/k__n">
+  <e>       <p><l>k</l>      <r>k<s n="n"/><s n="f"/><s n="sg"/><s n="nom"/><s n="ind"/></r></p></e>
+  <e>       <p><l>tję</l>      <r>k<s n="n"/><s n="f"/><s n="sg"/><s n="nom"/><s n="def"/></r></p></e> <!--or acc?-->
+</pardef>
+
+<pardef n="gą̊s__n">
+  <e>       <p><l></l>      <r><s n="n"/><s n="f"/><s n="sg"/><s n="nom"/><s n="ind"/></r></p></e>
+</pardef>
+<pardef n="by__n">
+  <e>       <p><l></l>      <r><s n="n"/><s n="m"/><s n="sg"/><s n="nom"/><s n="ind"/></r></p></e>
+  <e>       <p><l>nn</l>      <r><s n="n"/><s n="m"/><s n="sg"/><s n="nom"/><s n="def"/></r></p></e>
+</pardef>
+
+
+<pardef n="war/g__n" c="wargen ietter Grobien
+                        ig såg wardjin
+                        ig djäv wardjem tjyöt
+                        wardjemes bien ir åv">
+  <e>       <p><l>g</l>      <r>g<s n="n"/><s n="m"/><s n="sg"/><s n="nom"/><s n="ind"/></r></p></e>
+  <e>       <p><l>gen</l>      <r>g<s n="n"/><s n="m"/><s n="sg"/><s n="nom"/><s n="def"/></r></p></e>
+
+  <!-- <e>       <p><l>dje</l>      <r>g<s n="n"/><s n="m"/><s n="sg"/><s n="acc"/><s n="ind"/></r></p></e> -->
+  <e>       <p><l>djin</l>      <r>g<s n="n"/><s n="m"/><s n="sg"/><s n="acc"/><s n="def"/></r></p></e>
+
+  <e>       <p><l>dje</l>      <r>g<s n="n"/><s n="m"/><s n="sg"/><s n="dat"/><s n="ind"/></r></p></e>
+  <e>       <p><l>djem</l>      <r>g<s n="n"/><s n="m"/><s n="sg"/><s n="dat"/><s n="def"/></r></p></e>
+
+  <e>       <p><l>djes</l>      <r>g<s n="n"/><s n="m"/><s n="sg"/><s n="gen"/><s n="ind"/></r></p></e>
+  <e>       <p><l>djemes</l>      <r>g<s n="n"/><s n="m"/><s n="sg"/><s n="gen"/><s n="def"/></r></p></e>
+</pardef>
+<pardef n="kall__n">
+  <e>       <p><l></l>   <r><s n="n"/><s n="m"/><s n="sg"/><s n="nom"/><s n="ind"/></r></p></e>
+  <e>       <p><l>n</l>  <r><s n="n"/><s n="m"/><s n="sg"/><s n="nom"/><s n="def"/></r></p></e>
+  <e>       <p><l>es</l> <r><s n="n"/><s n="m"/><s n="sg"/><s n="gen"/><s n="ind"/></r></p></e> <!--not used?-->
+  <e>       <p><l>emes</l> <r><s n="n"/><s n="m"/><s n="sg"/><s n="gen"/><s n="def"/></r></p></e>
+  <e>       <p><l></l>  <r><s n="n"/><s n="m"/><s n="sg"/><s n="dat"/><s n="ind"/></r></p></e>
+  <e r="LR"><p><l>e</l>  <r><s n="n"/><s n="m"/><s n="sg"/><s n="dat"/><s n="ind"/></r></p></e>
+  <e>       <p><l>em</l> <r><s n="n"/><s n="m"/><s n="sg"/><s n="dat"/><s n="def"/></r></p></e>
+  <e>       <p><l></l>   <r><s n="n"/><s n="m"/><s n="sg"/><s n="acc"/><s n="ind"/></r></p></e>
+  <e>       <p><l>n</l>  <r><s n="n"/><s n="m"/><s n="sg"/><s n="acc"/><s n="def"/></r></p></e>
+
+  <e>       <p><l>er</l>   <r><s n="n"/><s n="m"/><s n="pl"/><s n="nom"/><s n="ind"/></r></p></e>
+  <e>       <p><l>er</l>  <r><s n="n"/><s n="m"/><s n="pl"/><s n="nom"/><s n="def"/></r></p></e>
+  <e r="LR"><p><l>är</l>  <r><s n="n"/><s n="m"/><s n="pl"/><s n="nom"/><s n="def"/></r></p></e>
+  <e>       <p><l>umes</l> <r><s n="n"/><s n="m"/><s n="pl"/><s n="gen"/><s n="ind"/></r></p></e> <!--not used?-->
+  <e>       <p><l>umes</l> <r><s n="n"/><s n="m"/><s n="pl"/><s n="gen"/><s n="def"/></r></p></e>
+  <e>       <p><l>um</l>  <r><s n="n"/><s n="m"/><s n="pl"/><s n="dat"/><s n="ind"/></r></p></e>
+  <e>       <p><l>um</l> <r><s n="n"/><s n="m"/><s n="pl"/><s n="dat"/><s n="def"/></r></p></e>
+  <e>       <p><l>er</l>   <r><s n="n"/><s n="m"/><s n="pl"/><s n="acc"/><s n="ind"/></r></p></e>
+  <e>       <p><l>er</l>  <r><s n="n"/><s n="m"/><s n="pl"/><s n="acc"/><s n="def"/></r></p></e>
+  <e r="LR"><p><l>a</l>   <r><s n="n"/><s n="m"/><s n="pl"/><s n="acc"/><s n="ind"/></r></p></e>
+  <e r="LR"><p><l>ą</l>  <r><s n="n"/><s n="m"/><s n="pl"/><s n="acc"/><s n="def"/></r></p></e>
+</pardef>
+<pardef n="morgun__n">
+  <e>       <p><l></l>      <r><s n="n"/><s n="m"/><s n="sg"/><s n="nom"/><s n="ind"/></r></p></e>
+  <e>       <p><l>in</l>      <r><s n="n"/><s n="m"/><s n="sg"/><s n="nom"/><s n="def"/></r></p></e>
+  <e>       <p><l>er</l>      <r><s n="n"/><s n="m"/><s n="pl"/><s n="nom"/><s n="ind"/></r></p></e>
+
+  <e>       <p><l>um</l>      <r><s n="n"/><s n="m"/><s n="pl"/><s n="dat"/><s n="ind"/></r></p></e>
+</pardef>
+<pardef n="er/i__n" c="final short i due to short root syllable er">
+  <e>       <p><l>i</l>      <r>i<s n="n"/><s n="m"/><s n="sg"/><s n="nom"/><s n="ind"/></r></p></e>
+  <e>       <p><l>å</l>      <r>i<s n="n"/><s n="m"/><s n="sg"/><s n="nom"/><s n="def"/></r></p></e>
+
+  <e>       <p><l>i</l>      <r>i<s n="n"/><s n="m"/><s n="sg"/><s n="dat"/><s n="ind"/></r></p></e>
+  <e>       <p><l>um</l>      <r>i<s n="n"/><s n="m"/><s n="pl"/><s n="dat"/><s n="ind"/></r></p></e>
+</pardef>
+<pardef n="brind/e__n" c="final long e due to long root syllable brind">
+  <e>       <p><l>e</l>      <r>e<s n="n"/><s n="m"/><s n="sg"/><s n="nom"/><s n="ind"/></r></p></e>
+  <e>       <p><l>a</l>      <r>e<s n="n"/><s n="m"/><s n="sg"/><s n="nom"/><s n="def"/></r></p></e>
+
+  <e>       <p><l>e</l>      <r>e<s n="n"/><s n="m"/><s n="sg"/><s n="dat"/><s n="ind"/></r></p></e>
+  <e>       <p><l>um</l>      <r>e<s n="n"/><s n="m"/><s n="pl"/><s n="dat"/><s n="ind"/></r></p></e>
+</pardef>
+
+<pardef n="si/u__n">
+  <e>       <p><l>u</l>      <r>u<s n="n"/><s n="m"/><s n="sg"/><s n="nom"/><s n="ind"/></r></p></e>
+  <e>       <p><l>un</l>      <r>u<s n="n"/><s n="m"/><s n="sg"/><s n="nom"/><s n="def"/></r></p></e>
+  <e>       <p><l>er</l>      <r>u<s n="n"/><s n="m"/><s n="pl"/><s n="nom"/><s n="ind"/></r></p></e>
+
+  <e>       <p><l>um</l>      <r>u<s n="n"/><s n="m"/><s n="pl"/><s n="dat"/><s n="ind"/></r></p></e>
+</pardef>
+<pardef n="aus__n" c="long root vowel">
+  <e>       <p><l></l>      <r><s n="n"/><s n="nt"/><s n="sg"/><s n="nom"/><s n="ind"/></r></p></e>
+  <e>       <p><l>eð</l>      <r><s n="n"/><s n="nt"/><s n="sg"/><s n="nom"/><s n="def"/></r></p></e>
+
+  <e>       <p><l>e</l>      <r><s n="n"/><s n="nt"/><s n="pl"/><s n="dat"/><s n="ind"/></r></p></e>
+  <e>       <p><l>um</l>      <r><s n="n"/><s n="nt"/><s n="pl"/><s n="dat"/><s n="ind"/></r></p></e>
+</pardef>
+<pardef n="tjy/r__n">
+  <e>       <p><l>r</l>      <r>r<s n="n"/><s n="f"/><s n="sg"/><s n="nom"/><s n="ind"/></r></p></e>
+
+  <e>       <p><l>mm</l>      <r>r<s n="n"/><s n="f"/><s n="pl"/><s n="dat"/><s n="def"/></r></p></e>
+</pardef>
+
+
+<pardef n="luv__n" c="does this inflect?">
+  <e>       <p><l></l>      <r><s n="n"/><s n="nt"/><s n="sg"/><s n="nom"/><s n="ind"/></r></p></e>
+</pardef>
+
+<!-- Adjectives:
+ind/def
+
+agree with noun in gender/number/case
+
+advs often based on adj.sg.nt.ind (like nor)
+-->
+<!-- TODO adjectives (anything assigned to these is probably wrong): -->
+<pardef n="wait__adj">
+  <e>       <p><l></l>      <r><s n="adj"/><s n="sint"/><s n="pst"/><s n="mf"/><s n="sg"/><s n="nom"/><s n="ind"/></r></p></e>
+  <e>       <p><l>t</l>     <r><s n="adj"/><s n="sint"/><s n="pst"/><s n="nt"/><s n="sg"/><s n="nom"/><s n="ind"/></r></p></e>
+  <e>       <p><l>n</l>     <r><s n="adj"/><s n="sint"/><s n="pst"/><s n="mf"/><s n="sg"/><s n="nom"/><s n="def"/></r></p></e>
+  <e>       <p><l>er</l>     <r><s n="adj"/><s n="sint"/><s n="pst"/><s n="mf"/><s n="pl"/><s n="nom"/><s n="ind"/></r></p></e>
+</pardef>
+<pardef n="strai/ð__adj">
+  <e>       <p><l></l>      <r><s n="adj"/><s n="sint"/><s n="pst"/><s n="mf"/><s n="sg"/><s n="nom"/><s n="ind"/></r></p></e>
+  <e>       <p><l>tt</l>     <r><s n="adj"/><s n="sint"/><s n="pst"/><s n="nt"/><s n="sg"/><s n="nom"/><s n="ind"/></r></p></e>
+  <e>       <p><l>ðer</l>     <r><s n="adj"/><s n="sint"/><s n="comp"/><s n="un"/><s n="sp"/><s n="nom"/></r></p></e>
+  <e r="LR"><p><l>ðera</l>     <r><s n="adj"/><s n="sint"/><s n="comp"/><s n="un"/><s n="sp"/><s n="nom"/></r></p></e>
+  <e>       <p><l>ðest</l>     <r><s n="adj"/><s n="sint"/><s n="sup"/><s n="un"/><s n="sp"/><s n="nom"/><s n="ind"/></r></p></e>
+</pardef>
+
+<!-- Numbers
+
+gender/case
+
+-->
+<!-- TODO numbers (anything assigned to these is probably wrong): -->
+<pardef n="t/wer__num">
+  <e>       <p><l>wer</l>          <r>wer<s n="det"/><s n="qnt"/><s n="m"/><s n="pl"/><s n="nom"/></r></p></e>
+  <e>       <p><l>ųo</l>          <r>wer<s n="det"/><s n="qnt"/><s n="m"/><s n="pl"/><s n="acc"/></r></p></e>
+
+  <e>       <p><l>war</l>          <r>wer<s n="det"/><s n="qnt"/><s n="f"/><s n="pl"/><s n="nom"/></r></p></e>
+
+  <e>       <p><l>au</l>          <r>wer<s n="det"/><s n="qnt"/><s n="nt"/><s n="pl"/><s n="nom"/></r></p></e>
+</pardef>
+	</pardefs>
+
+        <section id="main" type="standard">
+<!-- acc/dat the same among prpers -->
+<e><p><l>ig</l>         <r>prpers<s n="prn"/><s n="p1"/><s n="mf"/><s n="sg"/><s n="nom"/></r></p></e>
+<e><p><l>mig</l>        <r>prpers<s n="prn"/><s n="p1"/><s n="mf"/><s n="sg"/><s n="acc"/></r></p></e>
+
+<e><p><l>du</l>         <r>prpers<s n="prn"/><s n="p2"/><s n="mf"/><s n="sg"/><s n="nom"/></r></p></e>
+<e><p><l>dig</l>        <r>prpers<s n="prn"/><s n="p2"/><s n="mf"/><s n="sg"/><s n="acc"/></r></p></e>
+
+<e><p><l>an</l>         <r>prpers<s n="prn"/><s n="p3"/><s n="m"/><s n="sg"/><s n="nom"/></r></p></e>
+<e r="LR"><p><l>ąnn</l> <r>prpers<s n="prn"/><s n="p3"/><s n="m"/><s n="sg"/><s n="nom"/></r></p></e>
+<e><p><l>å</l>          <r>prpers<s n="prn"/><s n="p3"/><s n="f"/><s n="sg"/><s n="nom"/></r></p></e>
+<e><p><l>eð</l>         <r>prpers<s n="prn"/><s n="p3"/><s n="nt"/><s n="sg"/><s n="nom"/></r></p></e>
+<e c="common typo" r="LR"><p><l>ed</l>         <r>prpers<s n="prn"/><s n="p3"/><s n="nt"/><s n="sg"/><s n="nom"/></r></p></e>
+
+<!-- TODO: make ᶖ and į equivalent -->
+<e><p><l>wᶖð</l>        <r>prpers<s n="prn"/><s n="p1"/><s n="mf"/><s n="pl"/><s n="nom"/></r></p></e>
+<e><p><l>wįð</l>        <r>prpers<s n="prn"/><s n="p1"/><s n="mf"/><s n="pl"/><s n="nom"/></r></p></e>
+<e><p><l>įð</l>         <r>prpers<s n="prn"/><s n="p2"/><s n="mf"/><s n="pl"/><s n="nom"/></r></p></e>
+<e><p><l>dier</l>       <r>prpers<s n="prn"/><s n="p3"/><s n="mf"/><s n="pl"/><s n="nom"/></r></p></e>
+
+<e><p><l>ollum</l>      <r>ollum<s n="prn"/><s n="pl"/><s n="dat"/></r></p></e>
+
+
+<e><p><l>menn</l>       <r>ig<s n="det"/><s n="pos"/><s n="m"/><s n="sg"/></r></p></e>
+<e><p><l>dąi</l>       <r>du<s n="det"/><s n="pos"/><s n="f"/><s n="sg"/></r></p></e>
+
+<e><p><l>ię</l>       <r>ię<s n="det"/><s n="qnt"/><s n="f"/><s n="sg"/></r></p></e>
+
+<e lm="ukin" c="kven"><i>ukin</i> <p><l></l>         <r><s n="prn"/><s n="itg"/></r></p></e>
+
+<e c="dette her"> <p><l>ittad-jär</l><r>ittad-jär<s n="det"/><s n="dem"/><s n="nt"/><s n="sg"/></r></p> </e>
+<e c="dette"> <p><l>ittad</l><r>ittad<s n="det"/><s n="dem"/><s n="nt"/><s n="sg"/></r></p> </e>
+
+
+<e lm="twer"> <i>t</i> <par n="t/wer__num"/></e>
+
+
+<e lm="ja">                       <i>ja</i> <par n="ja__ij"/></e>
+<e lm="nei">                       <i>nei</i> <par n="ja__ij"/></e>
+
+<e lm="nor" c="når">                       <i>nor</i> <par n="so__adv"/></e>
+<e lm="bara" c="berre">                       <i>bara</i> <par n="so__adv"/></e>
+<e lm="kanstji" c="kanskje">                       <i>kanstji</i> <par n="so__adv"/></e>
+<e lm="so">                                <i>so</i> <par n="so__adv"/></e>
+<e lm="auti" c="ute">                      <i>auti</i> <par n="so__adv"/></e>
+<e lm="iend" c="einaste">                  <i>iend</i> <par n="so__adv"/></e>
+<e lm="launggsamt">                        <i>launggsamt</i> <par n="so__adv"/></e>
+<e lm="undą̊">                              <i>undą̊</i> <par n="so__adv"/></e>
+<e lm="upå">                              <i>upå</i> <par n="so__adv"/></e>
+<e lm="undą̊ för undą̊" c="litt etter litt"> <i>undą̊<b/>för<b/>undą̊</i> <par n="so__adv"/></e>
+<e lm="laindj i seð" c="i lange tider">    <i>laindj<b/>i<b/>seð</i> <par n="so__adv"/></e>
+<e lm="it" c="ikkje">                      <i>it</i> <par n="so__adv"/></e>
+<e lm="itte" c="ikkje">                    <i>itte</i> <par n="so__adv"/></e>
+<e lm="slaikan">                           <i>slaikan</i> <par n="so__adv"/></e>
+<e lm="nu" c="LR of nų?">                  <i>nu</i> <par n="so__adv"/></e>
+<e lm="nų">                                <i>nų</i> <par n="so__adv"/></e>
+<e lm="dą̊">                                <i>dą̊</i> <par n="so__adv"/></e>
+<e lm="et lands">                          <i>et<b/>lands</i> <par n="so__adv"/></e>
+<e lm="et friðs">                          <i>et<b/>friðs</i> <par n="so__adv"/></e>
+<e lm="jär" c="her">                       <i>jär</i> <par n="so__adv"/></e>
+<e lm="kringgt" c="ofte">                  <i>kringgt</i> <par n="so__adv"/></e>
+
+
+
+<e lm="um">  <i>um</i> <par n="um__pr"/></e>
+<e lm="et">  <i>et</i> <par n="um__pr"/></e>
+<e lm="för"> <i>för</i> <par n="um__pr"/></e>
+<e lm="að"> <i>að</i> <par n="um__pr"/></e>
+<e lm="auti"> <i>auti</i> <par n="um__pr"/></e>
+<e lm="yvyr"> <i>yvyr</i> <par n="um__pr"/></e>
+<e lm="dar"> <i>dar</i> <par n="um__pr"/></e>
+<e lm="wįster"> <i>wįster</i> <par n="um__pr"/></e>
+
+
+
+<e lm="mes"> <i>mes</i> <par n="mes__cnjsub"/></e>
+
+
+<!-- Verbs: -->
+<e lm="wil"> <i>wil</i> <par n="wil__vblex"/></e>
+<e lm="wårå"> <i></i> <par n="/wårå__vblex"/></e>
+<e lm="åvå"> <i></i> <par n="/åvå__vblex"/></e>
+
+<e lm="fą̊"> <i>f</i> <par n="f/ą̊__vblex"/></e>
+
+<e lm="fårå"> <i>får</i> <par n="kuog/å__vblex"/></e>
+<e lm="kåytå"> <i>kåyt</i> <par n="kuog/å__vblex"/></e> <!-- or -a? -->
+
+<e lm="dalska" c="snakka elvdalsk"> <i>dalsk</i> <par n="dalsk/a__vblex"/></e>
+<e lm="swenska" c="snakka svensk"> <i>swensk</i> <par n="dalsk/a__vblex"/></e>
+<e lm="spilå"> <i>spil</i> <par n="spil/å__vblex"/></e>
+<e lm="kweðå" c="synga"> <i>kw</i> <par n="kw/eðå__vblex"/></e>
+
+<e lm="båkå"> <i>b</i> <par n="b/åkå__vblex"/></e>
+
+<e lm="kuogå"> <i>kuog</i> <par n="kuog/å__vblex"/></e>
+<e lm="tyttjå"> <i>tyttj</i> <par n="kuog/å__vblex"/></e>
+<e lm="föstå"> <i>föst</i> <par n="kuog/å__vblex"/></e>
+<e lm="stiälå"> <i>stiäl</i> <par n="kuog/å__vblex"/></e>
+<e lm="djävå"> <i>djäv</i> <par n="kuog/å__vblex"/></e>
+<e lm="witå"> <i>wit</i> <par n="kuog/å__vblex"/></e>
+<e lm="leså"> <i>les</i> <par n="kuog/å__vblex"/></e>
+
+<e lm="akudira"> <i>akudir</i> <par n="akudir/a__vblex"/></e>
+<e lm="węsa" c="pusta"> <i>węs</i> <par n="akudir/a__vblex"/></e>
+<e lm="ära"> <i>är</i> <par n="akudir/a__vblex"/></e>
+<e lm="byddja"> <i>byddj</i> <par n="akudir/a__vblex"/></e>
+<e lm="söma"> <i>söm</i> <par n="akudir/a__vblex"/></e>
+<e lm="biuoða" c="by"> <i>biuoð</i> <par n="akudir/a__vblex"/></e>
+<e lm="myöta"> <i>myöt</i> <par n="akudir/a__vblex"/></e>
+
+
+<!--
+    kennde: kjende
+    kam: kom/komma<vblex><pret>
+-->
+
+
+
+<e lm="morgun"> <i>morgun</i> <par n="morgun__n"/></e>
+<e lm="kapp"> <i>kapp</i> <par n="morgun__n"/></e>
+<e lm="dal"> <i>dal</i> <par n="morgun__n"/></e>
+<e lm="kamb"> <i>kamb</i> <par n="morgun__n"/></e>
+<e lm="stien"> <i>stien</i> <par n="morgun__n"/></e>
+
+<e lm="nytjyl"> <i>nytjyl</i> <par n="morgun__n"/></e>
+<e lm="kripp" c="unge"> <i>kripp</i> <par n="morgun__n"/></e>
+<e lm="wind"> <i>wind</i> <par n="morgun__n"/></e>
+<e lm="miða" c="søppel"> <i>miða</i> <par n="morgun__n"/></e>
+
+<e lm="by"> <i>by</i> <par n="by__n"/></e>
+
+<e lm="kall"> <i>kall</i> <par n="kall__n"/></e>
+<e lm="övkall"> <i>övkall</i> <par n="kall__n"/></e>
+
+<e lm="smið"> <i>smið</i> <par n="morgun__n"/></e>
+<e lm="fistj" c="fisk"> <i>fistj</i> <par n="morgun__n"/></e>
+<e lm="röv" c="rev"> <i>röv</i> <par n="morgun__n"/></e>
+<e lm="diel" c="del"> <i>diel</i> <par n="morgun__n"/></e>
+
+<e lm="rakke" c="hund"> <i>ra</i> <par n="ra/kke__n"/></e>
+<e lm="buok"> <i>buo</i> <par n="buo/k__n"/></e>
+
+<e lm="siu"> <i>si</i> <par n="si/u__n"/></e>
+<e lm="eri" c="hare"> <i>er</i> <par n="er/i__n"/></e>
+<e lm="brinde" c="elg"> <i>brind</i> <par n="brind/e__n"/></e>
+
+<e lm="kulla" c="jente"> <i>kull</i> <par n="kull/a__n"/></e>
+<e lm="fera" c="ferje"> <i>fer</i> <par n="kull/a__n"/></e>
+<e lm="wika" c="veke"> <i>wik</i> <par n="kull/a__n"/></e>
+<e lm="öve"> <i>öv</i> <par n="brind/e__n"/></e>
+
+<e lm="gą̊s"> <i>gą̊s</i> <par n="gą̊s__n"/></e>
+<e lm="maws"> <i>maws</i> <par n="gą̊s__n"/></e>
+
+
+<e lm="tjyr"> <i>tjy</i> <par n="tjy/r__n"/></e>
+
+<e lm="aus" c="hus"> <i>aus</i> <par n="aus__n"/></e>
+<e lm="iett" c="jern"> <i>iett</i> <par n="aus__n"/></e>
+<e lm="ienn" c="jern"> <i>ienn</i> <par n="aus__n"/></e>
+<e lm="bien" c="bein"> <i>bien</i> <par n="aus__n"/></e>
+
+<e lm="mål"> <i>mål</i> <par n="aus__n"/></e>
+<e lm="får" c="sau"> <i>får</i> <par n="aus__n"/></e>
+<e lm="wattn"> <i>wattn</i> <par n="aus__n"/></e>
+<e lm="buord"> <i>buord</i> <par n="aus__n"/></e>
+<e lm="oga" c="auga"> <i>oga</i> <par n="aus__n"/></e>
+
+<e lm="net"> <i>net</i> <par n="net__n"/></e>
+<e lm="åm"> <i>åm</i> <par n="net__n"/></e>
+
+<e lm="luv" c="lov/løyve"> <i>luv</i> <par n="luv__n"/></e>
+
+<e lm="est"> <i>est</i> <par n="est__n"/></e>
+<e lm="ais" c="is"> <i>ais</i> <par n="est__n"/></e>
+
+<e lm="tunggel" c="måne"> <i>tunggel</i> <par n="tunggel__n"/></e>
+
+
+
+
+<e lm="kold"> <i>kold</i> <par n="wait__adj"/></e>
+<e lm="stur"> <i>stur</i> <par n="wait__adj"/></e>
+<e lm="wait"> <i>wait</i> <par n="wait__adj"/></e>
+<e lm="gåmål"> <i>gåmål</i> <par n="wait__adj"/></e>
+<e lm="liuot"> <i>liuot</i> <par n="wait__adj"/></e>
+<e lm="gåmål" c="19"> <i>gåmål</i> <par n="wait__adj"/></e>
+<e lm="diuop"> <i>diuop</i> <par n="wait__adj"/></e>
+<e lm="liuos"> <i>liuos</i> <par n="wait__adj"/></e>
+<e lm="fesiktug"> <i>fesiktug</i> <par n="wait__adj"/></e>
+<e lm="blå"> <i>blå</i> <par n="wait__adj"/></e>
+<e lm="ungrug"> <i>ungrug</i> <par n="wait__adj"/></e>
+<e lm="straið"> <i>strai</i> <par n="strai/ð__adj"/></e>
+
+
+<!--
+Ulið witå ig ir faingin få wårå jär å Skansem og sai åv liteð för ið
+um övkallmåleð. Merkwärdut naug ar eð itte weð kringt noger ar tålåð
+yvyr dyö jär, fast eð ärer Övdalim og övkallum til mier eld ollt
+eller.
+
+Ig dalsker nu að ið ollum – för irum å Skansem, mitt i Övdalim; og min
+rett edd eð ulað dalskas olltiett ien slaikan dag. Men ulum fel ugs um
+autåterfuotjeð og. Fåið itt tyttj war að, fast ig byter um språkum!
+
+Ulum jåpas að, so itt tappum dyö!
+-->
+
+<!-- riksspråkets långa i och u i en mängd ord här (och likartat i
+     det övriga Ovansiljan) motsvaras av ai resp. au: ais, baita;
+     aut, auv osv. På samma sätt heter ’hysa’ åjsa och ’myr’ måjre:
+     riksspråkets långa y motsvaras här av åj. -->
+
+<!-- http://web.archive.org/web/20110606053832/http://www.nordiska.uu.se/arkiv/konferenser/alvdalska/Sapir.pdf -->
+
+<!-- http://framtida.no/articles/ei-framtid-for-elvdalsk-->
+
+        </section>
+
+
+        <section id="final" type="inconditional">
+<e>                      <par n="numeros"/></e>
+<e>                      <par n="separa"/></e>
+<e>                      <par n="coma"/></e>
+<e>                      <par n="cometa"/></e>
+<e>                      <par n="paresq"/></e>
+<e>                      <par n="pardret"/></e>
+        </section>
+
+</dictionary>

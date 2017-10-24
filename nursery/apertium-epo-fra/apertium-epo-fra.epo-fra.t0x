@@ -1,0 +1,587 @@
+<?xml version="1.0" encoding="UTF-8"?>
+ <transfer>
+  <section-def-cats>
+    <def-cat n="det">
+      <cat-item tags="det.*"/>
+    </def-cat>
+
+    <def-cat n="nom">
+      <cat-item tags="n.*"/>
+    </def-cat>
+
+    <def-cat n="adj">
+      <cat-item tags="adj.*"/>
+    </def-cat>
+
+    <def-cat n="verbe">
+      <cat-item tags="vbser.*"/>
+      <cat-item tags="vblex.*"/>
+      <cat-item tags="vbmod.*"/>
+      <cat-item tags="vbtr.*"/>
+      <cat-item tags="vbntr.*"/>
+      <cat-item tags="vbtr_ntr.*"/>
+    </def-cat>
+
+    <def-cat n="num">
+      <cat-item tags="num.*"/>
+    </def-cat>
+
+    <def-cat n="adv_comp">
+      <cat-item lemma="pli" tags="adv"/>
+      <cat-item lemma="malpli" tags="adv"/>
+    </def-cat>
+
+    <def-cat n="autre-mot">
+      <cat-item tags="np.*"/>
+      <cat-item tags="pr"/>
+      <cat-item tags="pr.*"/>
+      <cat-item tags="prn.*"/>
+      <cat-item tags="adv"/>
+      <cat-item tags="cnjadv"/>
+      <cat-item tags="cnjcoo"/>
+      <cat-item tags="cnjsub"/>
+    </def-cat>
+
+    <def-cat n="ponctuation">
+      <cat-item tags="cm"/>
+      <cat-item tags="sent"/>
+    </def-cat>
+
+    <def-cat n="inconnu">
+      <cat-item tags=""/>
+    </def-cat>
+  </section-def-cats>
+
+
+  <section-def-attrs>
+    <def-attr n="aucun">
+      <attr-item tags="aucun"/>
+    </def-attr>
+  </section-def-attrs>
+
+
+  <section-def-vars>
+    <def-var n="aucune"/>
+  </section-def-vars>
+
+
+  <section-rules>
+
+    <!--  règles sur des groupes de mots -->
+
+    <rule>
+      <pattern>
+        <pattern-item n="nom"/>
+      </pattern>
+      <action>
+        <out>
+          <lu>
+            <lit v="un"/>
+            <lit-tag v="det.ind.sp"/>
+          </lu>
+          <b />
+          <lu>
+            <clip pos="1" side="sl" part="whole"/>
+          </lu>
+        </out>
+      </action>
+    </rule>
+
+    <rule>
+      <pattern>
+        <pattern-item n="det"/>
+        <pattern-item n="nom"/>
+      </pattern>
+      <action>
+        <out>
+          <lu>
+            <clip pos="1" side="sl" part="whole"/>
+          </lu>
+          <b />
+          <lu>
+            <clip pos="2" side="sl" part="whole"/>
+          </lu>
+        </out>
+      </action>
+    </rule>
+
+    <rule>
+      <pattern>
+        <pattern-item n="adj"/>
+        <pattern-item n="nom"/>
+      </pattern>
+      <action>
+        <out>
+          <lu>
+            <lit v="un"/>
+            <lit-tag v="det.ind.sp"/>
+          </lu>
+          <b />
+          <lu>
+            <clip pos="2" side="sl" part="whole"/>
+          </lu>
+          <b />
+          <lu>
+            <clip pos="1" side="sl" part="whole"/>
+          </lu>
+        </out>
+      </action>
+    </rule>
+
+    <rule>
+      <pattern>
+        <pattern-item n="det"/>
+        <pattern-item n="adj"/>
+        <pattern-item n="nom"/>
+      </pattern>
+      <action>
+        <out>
+          <lu>
+            <clip pos="1" side="sl" part="whole"/>
+          </lu>
+          <b />
+          <lu>
+            <clip pos="3" side="sl" part="whole"/>
+          </lu>
+          <b />
+          <lu>
+            <clip pos="2" side="sl" part="whole"/>
+          </lu>
+        </out>
+      </action>
+    </rule>
+
+    <rule>
+      <pattern>
+        <pattern-item n="adj"/>
+        <pattern-item n="adj"/>
+        <pattern-item n="nom"/>
+      </pattern>
+      <action>
+        <out>
+          <lu>
+            <lit v="un"/>
+            <lit-tag v="det.ind.sp"/>
+          </lu>
+          <b />
+          <lu>
+            <clip pos="3" side="sl" part="whole"/>
+          </lu>
+          <b />
+          <lu>
+            <clip pos="1" side="sl" part="whole"/>
+          </lu>
+          <b />
+          <lu>
+            <clip pos="2" side="sl" part="whole"/>
+          </lu>
+        </out>
+      </action>
+    </rule>
+
+    <rule>
+      <pattern>
+        <pattern-item n="det"/>
+        <pattern-item n="adj"/>
+        <pattern-item n="adj"/>
+        <pattern-item n="nom"/>
+      </pattern>
+      <action>
+        <out>
+          <lu>
+            <clip pos="1" side="sl" part="whole"/>
+          </lu>
+          <b />
+          <lu>
+            <clip pos="4" side="sl" part="whole"/>
+          </lu>
+          <b />
+          <lu>
+            <clip pos="2" side="sl" part="whole"/>
+          </lu>
+          <b />
+          <lu>
+            <clip pos="3" side="sl" part="whole"/>
+          </lu>
+        </out>
+      </action>
+    </rule>
+
+    <rule>
+      <pattern>
+        <pattern-item n="adv_comp"/>
+        <pattern-item n="nom"/>
+      </pattern>
+      <action>
+        <out>
+          <lu>
+            <lit v="un"/>
+            <lit-tag v="det.ind.sp"/>
+          </lu>
+          <b />
+          <lu>
+            <clip pos="1" side="sl" part="whole"/>
+          </lu>
+          <b />
+          <lu>
+            <clip pos="2" side="sl" part="whole"/>
+          </lu>
+        </out>
+      </action>
+    </rule>
+
+    <rule>
+      <pattern>
+        <pattern-item n="det"/>
+        <pattern-item n="adv_comp"/>
+        <pattern-item n="nom"/>
+      </pattern>
+      <action>
+        <out>
+          <lu>
+            <clip pos="1" side="sl" part="whole"/>
+          </lu>
+          <b />
+          <lu>
+            <clip pos="2" side="sl" part="whole"/>
+          </lu>
+          <b />
+          <lu>
+            <clip pos="3" side="sl" part="whole"/>
+          </lu>
+        </out>
+      </action>
+    </rule>
+
+    <rule>
+      <pattern>
+        <pattern-item n="adv_comp"/>
+        <pattern-item n="adj"/>
+        <pattern-item n="nom"/>
+      </pattern>
+      <action>
+        <out>
+          <lu>
+            <lit v="un"/>
+            <lit-tag v="det.ind.sp"/>
+          </lu>
+          <b />
+          <lu>
+            <clip pos="1" side="sl" part="whole"/>
+          </lu>
+          <b />
+          <lu>
+            <clip pos="3" side="sl" part="whole"/>
+          </lu>
+          <b />
+          <lu>
+            <clip pos="2" side="sl" part="whole"/>
+          </lu>
+        </out>
+      </action>
+    </rule>
+
+    <rule>
+      <pattern>
+        <pattern-item n="det"/>
+        <pattern-item n="adv_comp"/>
+        <pattern-item n="adj"/>
+        <pattern-item n="nom"/>
+      </pattern>
+      <action>
+        <out>
+          <lu>
+            <clip pos="1" side="sl" part="whole"/>
+          </lu>
+          <b />
+          <lu>
+            <clip pos="2" side="sl" part="whole"/>
+          </lu>
+          <b />
+          <lu>
+            <clip pos="4" side="sl" part="whole"/>
+          </lu>
+          <b />
+          <lu>
+            <clip pos="3" side="sl" part="whole"/>
+          </lu>
+        </out>
+      </action>
+    </rule>
+
+    <rule>
+      <pattern>
+        <pattern-item n="adv_comp"/>
+        <pattern-item n="adj"/>
+        <pattern-item n="adj"/>
+        <pattern-item n="nom"/>
+      </pattern>
+      <action>
+        <out>
+          <lu>
+            <lit v="un"/>
+            <lit-tag v="det.ind.sp"/>
+          </lu>
+          <b />
+          <lu>
+            <clip pos="1" side="sl" part="whole"/>
+          </lu>
+          <b />
+          <lu>
+            <clip pos="4" side="sl" part="whole"/>
+          </lu>
+          <b />
+          <lu>
+            <clip pos="2" side="sl" part="whole"/>
+          </lu>
+          <b />
+          <lu>
+            <clip pos="3" side="sl" part="whole"/>
+          </lu>
+        </out>
+      </action>
+    </rule>
+
+    <rule>
+      <pattern>
+        <pattern-item n="det"/>
+        <pattern-item n="adv_comp"/>
+        <pattern-item n="adj"/>
+        <pattern-item n="adj"/>
+        <pattern-item n="nom"/>
+      </pattern>
+      <action>
+        <out>
+          <lu>
+            <clip pos="1" side="sl" part="whole"/>
+          </lu>
+          <b />
+          <lu>
+            <clip pos="2" side="sl" part="whole"/>
+          </lu>
+          <b />
+          <lu>
+            <clip pos="5" side="sl" part="whole"/>
+          </lu>
+          <b />
+          <lu>
+            <clip pos="3" side="sl" part="whole"/>
+          </lu>
+          <b />
+          <lu>
+            <clip pos="4" side="sl" part="whole"/>
+          </lu>
+        </out>
+      </action>
+    </rule>
+
+    <rule>
+      <pattern>
+        <pattern-item n="num"/>
+        <pattern-item n="nom"/>
+      </pattern>
+      <action>
+        <out>
+          <lu>
+            <clip pos="1" side="sl" part="whole"/>
+          </lu>
+          <b />
+          <lu>
+            <clip pos="2" side="sl" part="whole"/>
+          </lu>
+        </out>
+      </action>
+    </rule>
+
+    <rule>
+      <pattern>
+        <pattern-item n="num"/>
+        <pattern-item n="adj"/>
+        <pattern-item n="nom"/>
+      </pattern>
+      <action>
+        <out>
+          <lu>
+            <clip pos="1" side="sl" part="whole"/>
+          </lu>
+          <b />
+          <lu>
+            <clip pos="3" side="sl" part="whole"/>
+          </lu>
+          <b />
+          <lu>
+            <clip pos="2" side="sl" part="whole"/>
+          </lu>
+        </out>
+      </action>
+    </rule>
+
+    <rule>
+      <pattern>
+        <pattern-item n="num"/>
+        <pattern-item n="adj"/>
+        <pattern-item n="adj"/>
+        <pattern-item n="nom"/>
+      </pattern>
+      <action>
+        <out>
+          <lu>
+            <clip pos="1" side="sl" part="whole"/>
+          </lu>
+          <b />
+          <lu>
+            <clip pos="4" side="sl" part="whole"/>
+          </lu>
+          <b />
+          <lu>
+            <clip pos="2" side="sl" part="whole"/>
+          </lu>
+          <b />
+          <lu>
+            <clip pos="3" side="sl" part="whole"/>
+          </lu>
+        </out>
+      </action>
+    </rule>
+
+    <!-- cas dégradé, le mot inconnu est supposé être un adjectif -->
+    <rule>
+      <pattern>
+        <pattern-item n="det"/>
+        <pattern-item n="inconnu"/>
+        <pattern-item n="nom"/>
+      </pattern>
+      <action>
+        <out>
+          <lu>
+            <clip pos="1" side="sl" part="whole"/>
+          </lu>
+          <b />
+          <lu>
+            <clip pos="3" side="sl" part="whole"/>
+          </lu>
+          <b />
+          <lu>
+            <clip pos="2" side="sl" part="whole"/>
+          </lu>
+        </out>
+      </action>
+    </rule>
+
+    <!-- cas dégradé, le mot inconnu est supposé être un nom -->
+    <rule>
+      <pattern>
+        <pattern-item n="det"/>
+        <pattern-item n="adj"/>
+        <pattern-item n="inconnu"/>
+      </pattern>
+      <action>
+        <out>
+          <lu>
+            <clip pos="1" side="sl" part="whole"/>
+          </lu>
+          <b />
+          <lu>
+            <clip pos="3" side="sl" part="whole"/>
+          </lu>
+          <b />
+          <lu>
+            <clip pos="2" side="sl" part="whole"/>
+          </lu>
+        </out>
+      </action>
+    </rule>
+
+    <!--  règles pour reproduire à l'identique les mots isolés -->
+    <rule>
+      <pattern>
+        <pattern-item n="det"/>
+      </pattern>
+      <action>
+        <out>
+          <lu>
+            <clip pos="1" side="sl" part="whole"/>
+          </lu>
+        </out>
+      </action>
+    </rule>
+
+    <rule>
+      <pattern>
+        <pattern-item n="adj"/>
+      </pattern>
+      <action>
+        <out>
+          <lu>
+            <clip pos="1" side="sl" part="whole"/>
+          </lu>
+        </out>
+      </action>
+    </rule>
+
+    <rule>
+      <pattern>
+        <pattern-item n="verbe"/>
+      </pattern>
+      <action>
+        <out>
+          <lu>
+            <clip pos="1" side="sl" part="whole"/>
+          </lu>
+        </out>
+      </action>
+    </rule>
+
+    <rule>
+      <pattern>
+        <pattern-item n="num"/>
+      </pattern>
+      <action>
+        <out>
+          <lu>
+            <clip pos="1" side="sl" part="whole"/>
+          </lu>
+        </out>
+      </action>
+    </rule>
+
+    <rule>
+      <pattern>
+        <pattern-item n="autre-mot"/>
+      </pattern>
+      <action>
+        <out>
+          <lu>
+            <clip pos="1" side="sl" part="whole"/>
+          </lu>
+        </out>
+      </action>
+    </rule>
+
+    <rule>
+      <pattern>
+        <pattern-item n="ponctuation"/>
+      </pattern>
+      <action>
+        <out>
+          <lu>
+            <clip pos="1" side="sl" part="whole"/>
+          </lu>
+        </out>
+      </action>
+    </rule>
+
+    <rule>
+      <pattern>
+        <pattern-item n="inconnu"/>
+      </pattern>
+      <action>
+        <out>
+          <lu>
+            <clip pos="1" side="sl" part="whole"/>
+          </lu>
+        </out>
+      </action>
+    </rule>
+  </section-rules>
+ </transfer>

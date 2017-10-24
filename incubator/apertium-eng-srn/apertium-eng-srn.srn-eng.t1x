@@ -1,0 +1,901 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<transfer default="chunk">
+  <section-def-cats>
+    <def-cat n="nom">
+      <cat-item tags="n.*"/>
+      <cat-item tags="n"/>
+      <cat-item tags="np.*"/>
+    </def-cat>
+    <def-cat n="det">
+      <cat-item tags="det.*"/>
+      <cat-item tags="det"/>
+    </def-cat>
+    <def-cat n="no">
+      <cat-item lemma="no" tags="adv"/>
+    </def-cat>
+    <def-cat n="prpers">
+      <cat-item lemma="prpers" tags="prn.*"/>
+    </def-cat>
+    <def-cat n="e">
+      <cat-item lemma="e" tags="aux"/>
+    </def-cat>
+    <def-cat n="fu">
+      <cat-item lemma="fu" tags="pr"/>
+    </def-cat>
+    <def-cat n="bo">
+      <cat-item lemma="bo" tags="vbmod"/>
+    </def-cat>
+    <def-cat n="pos">
+      <cat-item tags="det.pos.*"/>
+    </def-cat>
+    <def-cat n="verb">
+      <cat-item tags="vblex.*"/>
+      <cat-item tags="vblex"/>
+      <cat-item tags="vblex"/>
+      <cat-item tags="vbser"/>
+      <cat-item tags="vbhaver"/>
+    </def-cat>
+    <def-cat n="aux">
+      <cat-item tags="aux"/>
+    </def-cat>
+    <def-cat n="prn">
+      <cat-item tags="prn.*"/>
+    </def-cat>
+    <def-cat n="adv">
+      <cat-item tags="adv"/>
+    </def-cat>
+    <def-cat n="vbmod">
+      <cat-item tags="vbmod"/>
+    </def-cat>
+    <def-cat n="vbser">
+      <cat-item tags="vbser"/>
+    </def-cat>
+    <def-cat n="sent">
+      <cat-item tags="sent"/>
+    </def-cat>
+  </section-def-cats>
+
+  <section-def-attrs>
+    <def-attr n="case">
+      <attr-item tags="subj"/>
+      <attr-item tags="obj"/>
+    </def-attr>
+    <def-attr n="gender">
+      <attr-item tags="m"/>
+      <attr-item tags="mf"/>
+      <attr-item tags="f"/>
+
+    </def-attr>
+    <def-attr n="word_type">
+      <attr-item tags="n"/>
+      <attr-item tags="np"/>
+      <attr-item tags="ant"/>
+      <attr-item tags="det"/>
+      <attr-item tags="vblex"/>
+      <attr-item tags="vbser"/>
+      <attr-item tags="vbmod"/>
+      <attr-item tags="adv"/>
+      <attr-item tags="prn"/>
+
+    </def-attr>
+    <def-attr n="def">
+      <attr-item tags="def"/>
+      <attr-item tags="ind"/>
+      <attr-item tags="qnt"/>
+
+    </def-attr>
+    <def-attr n="number">
+      <attr-item tags="sg"/>
+      <attr-item tags="pl"/>
+      <attr-item tags="sp"/>
+    </def-attr>
+    <def-attr n="person">
+      <attr-item tags="p1"/>
+      <attr-item tags="p2"/>
+      <attr-item tags="p3"/>
+    </def-attr>
+  </section-def-attrs>
+
+  <section-def-vars>
+    <def-var n="verb_tense"/>
+  </section-def-vars>
+
+  <section-def-macros>
+    <def-macro n="verb_tensing" npar="1">
+          <choose>
+            <when>
+                <test>
+                   <equal>
+                      <clip pos="1"  part="lem" side="sl"/>
+                      <lit v="ben"/>
+                    </equal>
+                </test>
+                <let>
+                    <var n="verb_tense"/>
+                    <lit-tag v="past"/>
+                </let>
+              </when>
+            <when>
+                <test>
+                   <equal>
+                      <clip pos="1"  part="lem" side="sl"/>
+                      <lit v="o"/>
+                    </equal>
+                </test>
+                <let>
+                    <var n="verb_tense"/>
+                    <lit-tag v="fut"/>
+                </let>
+              </when>
+              <otherwise>
+                  <let>
+                    <var n="verb_tense"/>
+                    <lit-tag v="pres"/>
+                </let>
+              </otherwise>
+        </choose>
+    </def-macro>
+  </section-def-macros>
+
+  <section-rules>
+    <rule comment="REGLA: SENT">
+      <pattern>
+        <pattern-item n="sent"/>
+      </pattern>
+      <action>
+        <out>
+          <chunk name="sent" case="caseFirstWord">
+            <tags>
+              <tag><lit-tag v="SENT"/></tag>
+            </tags>
+            <lu>
+              <clip pos="1" side="tl" part="whole"/>
+            </lu>
+          </chunk>
+        </out>
+      </action>
+    </rule>
+
+      
+
+    <rule comment="RULE: chunk verbs">
+          <pattern>
+        <pattern-item n="no"/>
+        <pattern-item n="aux"/>
+        <pattern-item n="vbser"/>
+      </pattern>
+      <action>  
+          <call-macro n="verb_tensing">
+            <with-param pos="2"/>
+          </call-macro>
+        <out>
+        <chunk name="no.aux.verb">
+       <tags>
+         <tag><lit-tag v="SV"/></tag>
+           <tag><var n="verb_tense"/></tag>
+       </tags>
+          <lu>
+              <lit v="be"/>
+            <lit-tag v="vbser"/>
+
+           <var n="verb_tense"/>
+                <lit-tag v="3"/>
+            <lit-tag v="4"/>
+          </lu>
+            <b pos="1"/>
+          <lu>
+            <lit v="not"/>
+            <lit-tag v="adv"/>
+          </lu>
+            </chunk>
+        </out>
+      </action>
+    </rule>
+      
+
+
+    <rule comment="RULE: chunk verbs">
+          <pattern>
+        <pattern-item n="no"/>
+        <pattern-item n="aux"/>
+        <pattern-item n="verb"/>
+      </pattern>
+      <action>  
+          <call-macro n="verb_tensing">
+            <with-param pos="2"/>
+          </call-macro>
+        <out>
+        <chunk name="no.aux.verb">
+       <tags>
+         <tag><lit-tag v="SV"/></tag>
+           <tag><var n="verb_tense"/></tag>
+       </tags>
+          <lu>
+              <lit v="do"/>
+            <lit-tag v="vbdo"/>
+
+           <var n="verb_tense"/>
+                <lit-tag v="3"/>
+            <lit-tag v="4"/>
+          </lu>
+            <b pos="1"/>
+          <lu>
+            <lit v="not"/>
+            <lit-tag v="adv"/>
+          </lu>
+            <b pos="1"/>
+
+          <lu>
+            <clip pos="3" side="tl" part="lem"/>
+          <clip pos="3" side="tl" part="word_type"/>
+            <clip pos="3" side="tl" part="word_type_2"/>
+           <lit-tag v="inf"/>
+          </lu>
+            </chunk>
+        </out>
+      </action>
+    </rule>
+      
+    <rule comment="RULE: chunk nouns">
+          <pattern>
+        <pattern-item n="det"/>
+        <pattern-item n="nom"/>
+        <pattern-item n="fu"/>
+        <pattern-item n="prn"/>
+      </pattern>
+      <action>  
+        <out>
+        <chunk name="n">
+       <tags>
+         <tag><lit-tag v="SN"/></tag> 
+           <tag><lit-tag v="p3"/></tag>
+           <tag><clip pos="1" side="sl" part="number"/></tag>
+       </tags>
+          <lu>
+            <lit v="prpers"/>
+            <lit-tag v="det"/>
+            <lit-tag v="pos"/>
+            <clip pos="4" side="sl" part="person"/>
+            <clip pos="4" side="tl" part="gender"/>
+            <clip pos="4" side="tl" part="number"/>
+          </lu>
+            <b pos="1"/>
+          <lu>
+            <clip pos="2" side="tl" part="lem"/>
+            <clip pos="2" side="tl" part="word_type"/>
+           <clip pos="1" side="sl" part="number"/>
+          </lu>
+            </chunk>
+        </out>
+      </action>
+    </rule>
+      
+    <rule comment="RULE: chunk nouns">
+          <pattern>
+        <pattern-item n="nom"/>
+        <pattern-item n="fu"/>
+        <pattern-item n="prn"/>
+      </pattern>
+      <action>  
+        <out>
+        <chunk name="n">
+       <tags>
+         <tag><lit-tag v="SN"/></tag> 
+           <tag><lit-tag v="p3"/></tag>
+           <tag><lit-tag v="sg"/></tag>
+       </tags>
+          <lu>
+            <lit v="prpers"/>
+            <lit-tag v="det"/>
+            <lit-tag v="pos"/>
+            <clip pos="3" side="sl" part="person"/>
+            <clip pos="3" side="tl" part="gender"/>
+            <clip pos="3" side="tl" part="number"/>
+          </lu>
+            <b pos="1"/>
+          <lu>
+            <clip pos="1" side="tl" part="lem"/>
+            <clip pos="1" side="tl" part="word_type"/>
+           <lit-tag v="sg"/>
+          </lu>
+            </chunk>
+        </out>
+      </action>
+    </rule>
+
+    <rule comment="RULE: chunk nouns">
+          <pattern>
+        <pattern-item n="pos"/>
+              <pattern-item n="nom"/>
+      </pattern>
+      <action>  
+        <out>
+        <chunk name="n">
+       <tags>
+         <tag><lit-tag v="SN"/></tag>
+           <tag><lit-tag v="p3"/></tag>
+
+           <tag><clip pos="1" side="sl" part="number"/></tag>
+       </tags>
+          <lu>
+            <clip pos="1" side="tl" part="lem"/>
+            <clip pos="1" side="tl" part="word_type"/>
+            <lit-tag v="pos"/>
+            <clip pos="1" side="tl" part="person"/>
+            <clip pos="1" side="tl" part="gender"/>
+
+            <clip pos="1" side="tl" part="number"/>
+
+          </lu>
+            <b pos="1"/>
+            
+          <lu>
+            <clip pos="2" side="tl" part="lem"/>
+            <clip pos="2" side="tl" part="word_type"/>
+            <clip pos="1" side="sl" part="number"/>
+          </lu>
+            </chunk>
+        </out>
+      </action>
+    </rule>
+      
+
+    <rule comment="RULE: chunk nouns">
+          <pattern>
+        <pattern-item n="det"/>
+              <pattern-item n="nom"/>
+      </pattern>
+      <action>  
+        <out>
+        <chunk name="n">
+       <tags>
+         <tag><lit-tag v="SN"/></tag>
+           <tag><lit-tag v="p3"/></tag>
+
+           <tag><clip pos="1" side="sl" part="number"/></tag>
+       </tags>
+          <lu>
+            <clip pos="1" side="tl" part="lem"/>
+            <clip pos="1" side="tl" part="word_type"/>
+            <clip pos="1" side="tl" part="def"/>
+
+           <clip pos="1" side="tl" part="number"/>
+          </lu>
+            <b pos="1"/>
+            
+          <lu>
+            <clip pos="2" side="tl" part="lem"/>
+            <clip pos="2" side="tl" part="word_type"/>
+            <clip pos="1" side="sl" part="number"/>
+          </lu>
+            </chunk>
+        </out>
+      </action>
+    </rule>
+      
+<!--
+    <rule comment="RULE: chunk nouns">
+          <pattern>
+        <pattern-item n="det"/>
+              <pattern-item n="nom"/>
+              <pattern-item n="verb"/>
+      </pattern>
+      <action>  
+        <out>
+        <chunk name="n">
+       <tags>
+         <tag><lit-tag v="SN"/></tag>
+       </tags>
+          <lu>
+            <clip pos="1" side="tl" part="lem"/>
+            <clip pos="1" side="tl" part="word_type"/>
+            <clip pos="1" side="tl" part="def"/>
+           <lit-tag v="sp"/>
+          </lu>
+            <b />
+            
+          <lu>
+            <clip pos="2" side="tl" part="lem"/>
+            <clip pos="2" side="tl" part="word_type"/>
+            <clip pos="1" side="sl" part="number"/>
+          </lu>
+            <b pos="1"/>
+            
+          <lu>
+            <clip pos="3" side="tl" part="lem"/>
+            <clip pos="3" side="tl" part="word_type"/>
+            <lit-tag v="pres"/>
+            <lit-tag v="p3"/>
+              <clip pos="1" side="sl" part="number"/>
+          </lu>
+            </chunk>
+        </out>
+      </action>
+    </rule>
+-->
+      
+
+
+
+    <rule comment="RULE: chunk verbs">
+          <pattern>
+        <pattern-item n="aux"/>
+        <pattern-item n="verb"/>
+        <pattern-item n="verb"/>
+      </pattern>
+      <action>  
+          <call-macro n="verb_tensing">
+            <with-param pos="1"/>
+          </call-macro>
+        <out>
+        <chunk name="aux.verb.verb">
+       <tags>
+         <tag><lit-tag v="SV"/></tag>
+           <tag><var n="verb_tense"/></tag>
+       </tags>
+          <lu>
+            <clip pos="2" side="tl" part="lem"/>
+            <clip pos="2" side="tl" part="word_type"/>
+            <clip pos="2" side="tl" part="word_type_2"/>
+           <var n="verb_tense"/>
+                <lit-tag v="3"/>
+            <lit-tag v="4"/>
+          </lu>
+            <b pos="1"/>
+          <lu>
+            <clip pos="3" side="tl" part="lem"/>
+            <clip pos="3" side="tl" part="word_type"/>
+            <clip pos="3" side="tl" part="word_type_2"/>
+           <lit-tag v="subs"/>
+          </lu>
+            </chunk>
+        </out>
+      </action>
+    </rule>
+      
+    <rule comment="RULE: chunk verbs">
+          <pattern>
+        <pattern-item n="aux"/>
+        <pattern-item n="vbmod"/>
+        <pattern-item n="verb"/>
+      </pattern>
+      <action>  
+          <call-macro n="verb_tensing">
+            <with-param pos="1"/>
+          </call-macro>
+        <out>
+        <chunk name="aux.vbmod.verb">
+       <tags>
+         <tag><lit-tag v="SV"/></tag>
+           <tag><var n="verb_tense"/></tag>
+       </tags>
+          <lu>
+            <clip pos="2" side="tl" part="lem"/>
+            <clip pos="2" side="tl" part="word_type"/>
+            <clip pos="2" side="tl" part="word_type_2"/>
+           <var n="verb_tense"/>
+          </lu>
+            <b pos="1"/>
+          <lu>
+            <clip pos="3" side="tl" part="lem"/>
+            <clip pos="3" side="tl" part="word_type"/>
+            <clip pos="3" side="tl" part="word_type_2"/>
+           <lit-tag v="inf"/>
+          </lu>
+            </chunk>
+        </out>
+      </action>
+    </rule>
+      
+    <rule comment="RULE: chunk verbs">
+          <pattern>
+        <pattern-item n="no"/>
+        <pattern-item n="vbmod"/>
+        <pattern-item n="verb"/>
+      </pattern>
+      <action>  
+        <out>
+        <chunk name="aux.vbmod.verb">
+       <tags>
+         <tag><lit-tag v="SV"/></tag>
+           <tag><lit-tag v="pres"/></tag>
+       </tags>
+          <lu>
+            <clip pos="2" side="tl" part="lem"/>
+            <clip pos="2" side="tl" part="word_type"/>
+            <clip pos="2" side="tl" part="word_type_2"/>
+           <lit-tag v="pres"/>
+          </lu>
+            <b pos="1"/>
+            <lu>
+            <clip pos="1" side="tl" part="lem"/>
+            <clip pos="1" side="tl" part="word_type"/>
+            </lu>
+            <b pos="1"/>
+          <lu>
+            <clip pos="3" side="tl" part="lem"/>
+            <clip pos="3" side="tl" part="word_type"/>
+            <clip pos="3" side="tl" part="word_type_2"/>
+           <lit-tag v="inf"/>
+          </lu>
+            </chunk>
+        </out>
+      </action>
+    </rule>
+
+
+
+      
+      
+    <rule comment="RULE: chunk verbs">
+          <pattern>
+        <pattern-item n="no"/>
+        <pattern-item n="verb"/>
+      </pattern>
+      <action>  
+        <out>
+        <chunk name="no.verb">
+       <tags>
+         <tag><lit-tag v="SV"/></tag>
+           <tag><lit-tag v="pres"/></tag>
+       </tags>
+          <lu>
+            <lit v="do"/>
+            <lit-tag v="vbdo"/>
+            <clip pos="2" side="tl" part="word_type_2"/>
+            <lit-tag v="pres"/>
+                <lit-tag v="3"/>
+            <lit-tag v="4"/>
+          </lu>
+            <b pos="1"/>
+          <lu>
+            <lit v="not"/>
+            <lit-tag v="adv"/>
+          </lu>
+            <b pos="1"/>
+          <lu>
+            <clip pos="2" side="tl" part="lem"/>
+            <clip pos="2" side="tl" part="word_type"/>
+            <clip pos="2" side="tl" part="word_type_2"/>
+            <lit-tag v="inf"/>
+          </lu>
+            </chunk>
+        </out>
+      </action>
+    </rule>
+      
+    <rule comment="RULE: chunk verbs">
+          <pattern>
+        <pattern-item n="e"/>
+        <pattern-item n="verb"/>
+      </pattern>
+      <action>  
+        <out>
+        <chunk name="aux.verb">
+       <tags>
+         <tag><lit-tag v="SV"/></tag>
+           <tag><lit-tag v="pres"/></tag>
+       </tags>
+          <lu>
+              <lit v="be"/>
+              <lit-tag v="vbser"/>
+              <lit-tag v="pres"/>
+              <lit-tag v="3"/>
+              <lit-tag v="4"/>
+            </lu>
+            <b pos="1"/>
+            <lu>
+            <clip pos="2" side="tl" part="lem"/>
+            <clip pos="2" side="tl" part="word_type"/>
+           <lit-tag v="subs"/>
+          </lu>
+            </chunk>
+        </out>
+      </action>
+    </rule>
+      
+      
+      
+
+    <rule comment="RULE: chunk verbs">
+          <pattern>
+        <pattern-item n="aux"/>
+        <pattern-item n="verb"/>
+      </pattern>
+      <action>  
+          <call-macro n="verb_tensing">
+            <with-param pos="1"/>
+          </call-macro>
+        <out>
+        <chunk name="aux.verb">
+       <tags>
+         <tag><lit-tag v="SV"/></tag>
+           <tag><var n="verb_tense"/></tag>
+       </tags>
+          <lu>
+            <clip pos="2" side="tl" part="lem"/>
+            <clip pos="2" side="tl" part="word_type"/>
+            <clip pos="2" side="tl" part="word_type_2"/>
+           <var n="verb_tense"/>
+                <lit-tag v="3"/>
+            <lit-tag v="4"/>
+          </lu>
+            </chunk>
+        </out>
+      </action>
+    </rule>
+      
+    <rule comment="RULE: chunk verbs">
+          <pattern>
+        <pattern-item n="fu"/>
+        <pattern-item n="verb"/>
+      </pattern>
+      <action>  
+        <out>
+        <chunk name="vbmod.verb">
+       <tags>
+         <tag><lit-tag v="SV"/></tag>
+           <tag><lit-tag v="pres"/></tag>
+       </tags>
+          <lu>
+            <lit v="to"/>
+            <lit-tag v="pr"/>
+          </lu>
+            <b pos="1"/>
+          <lu>
+            <clip pos="2" side="tl" part="lem"/>
+            <clip pos="2" side="tl" part="word_type"/>
+           <lit-tag v="inf"/>
+          </lu>
+            </chunk>
+        </out>
+      </action>
+    </rule>
+
+
+    <rule comment="RULE: chunk verbs">
+          <pattern>
+        <pattern-item n="bo"/>
+        <pattern-item n="verb"/>
+      </pattern>
+      <action>  
+        <out>
+        <chunk name="vbmod.verb">
+       <tags>
+         <tag><lit-tag v="SV"/></tag>
+           <tag><lit-tag v="pres"/></tag>
+       </tags>
+          <lu>
+            <clip pos="1" side="tl" part="lem"/>
+            <clip pos="1" side="tl" part="word_type"/>
+            <clip pos="1" side="tl" part="word_type_2"/>
+           <lit-tag v="past"/>
+          </lu>
+            <b pos="1"/>
+          <lu>
+            <clip pos="2" side="tl" part="lem"/>
+            <clip pos="2" side="tl" part="word_type"/>
+            <clip pos="2" side="tl" part="word_type_2"/>
+           <lit-tag v="inf"/>
+          </lu>
+            </chunk>
+        </out>
+      </action>
+    </rule>
+
+    <rule comment="RULE: chunk verbs">
+          <pattern>
+        <pattern-item n="vbmod"/>
+        <pattern-item n="verb"/>
+      </pattern>
+      <action>  
+        <out>
+        <chunk name="vbmod.verb">
+       <tags>
+         <tag><lit-tag v="SV"/></tag>
+           <tag><lit-tag v="pres"/></tag>
+       </tags>
+          <lu>
+            <clip pos="1" side="tl" part="lem"/>
+            <clip pos="1" side="tl" part="word_type"/>
+            <clip pos="1" side="tl" part="word_type_2"/>
+           <lit-tag v="pres"/>
+                <lit-tag v="3"/>
+            <lit-tag v="4"/>
+          </lu>
+            <b pos="1"/>
+          <lu>
+            <clip pos="2" side="tl" part="lem"/>
+            <clip pos="2" side="tl" part="word_type"/>
+            <clip pos="2" side="tl" part="word_type_2"/>
+           <lit-tag v="inf"/>
+          </lu>
+            </chunk>
+        </out>
+      </action>
+    </rule>
+      
+    <rule comment="RULE: chunk verbs">
+          <pattern>
+        <pattern-item n="verb"/>
+        <pattern-item n="verb"/>
+      </pattern>
+      <action>
+        <out>
+        <chunk name="verb.verb">
+       <tags>
+         <tag><lit-tag v="SV"/></tag>
+           <tag><lit-tag v="pres"/></tag>
+       </tags>
+          <lu>
+            <clip pos="1" side="tl" part="lem"/>
+            <clip pos="1" side="tl" part="word_type"/>
+            <clip pos="1" side="tl" part="word_type_2"/>
+           <lit-tag v="pres"/>
+                <lit-tag v="3"/>
+            <lit-tag v="4"/>
+          </lu>
+            <b pos="1"/>
+          <lu>
+            <clip pos="2" side="tl" part="lem"/>
+            <clip pos="2" side="tl" part="word_type"/>
+            <clip pos="2" side="tl" part="word_type_2"/>
+           <lit-tag v="subs"/>
+          </lu>
+            </chunk>
+        </out>
+      </action>
+    </rule>
+      
+
+            
+      
+
+    <rule comment="RULE: chunk nouns">
+          <pattern>
+        <pattern-item n="nom"/>
+      </pattern>
+      <action>  
+        <out>
+        <chunk name="n">
+       <tags>
+         <tag><lit-tag v="SN"/></tag> 
+
+           <tag><lit-tag v="p3"/></tag>
+           <tag><lit-tag v="sg"/></tag>
+       </tags>
+          <lu>
+            <clip pos="1" side="tl" part="lem"/>
+            <clip pos="1" side="tl" part="word_type"/>
+            <clip pos="1" side="tl" part="word_type_2"/>
+           <lit-tag v="sg"/>
+
+          </lu>
+            </chunk>
+        </out>
+      </action>
+    </rule>
+      
+    <rule comment="RULE: chunk nouns">
+          <pattern>
+        <pattern-item n="prpers"/>
+      </pattern>
+      <action>  
+        <out>
+        <chunk name="n">
+       <tags>
+          <tag><lit-tag v="SN"/></tag> 
+           <tag><clip pos="1" side="tl" part="person"/></tag>
+           <tag><clip pos="1" side="tl" part="number"/></tag>
+       </tags>
+          <lu>
+            <clip pos="1" side="tl" part="lem"/>
+            <clip pos="1" side="tl" part="word_type"/>
+            <clip pos="1" side="tl" part="case"/>
+            <clip pos="1" side="tl" part="person"/>
+            <clip pos="1" side="tl" part="gender"/>
+            <clip pos="1" side="tl" part="number"/>
+          </lu>
+            </chunk>
+        </out>
+      </action>
+    </rule>
+
+    <rule comment="RULE: chunk nouns">
+          <pattern>
+        <pattern-item n="prn"/>
+      </pattern>
+      <action>  
+          <choose>
+          <when>
+            <test>
+                <equal>
+                    <clip pos="1" side="tl" part="number"/>
+                    <lit-tag v="sg"/>
+                </equal>
+              </test>
+<out>
+        <chunk name="n">
+       <tags>
+         <tag><lit-tag v="SN"/></tag> 
+           <tag><lit-tag v="p3"/></tag>
+           <tag><clip pos="1" side="tl" part="number"/></tag>
+       </tags>
+          <lu>
+            <clip pos="1" side="tl" part="whole"/>
+          </lu>
+            </chunk>
+        </out>
+          </when>
+          <otherwise>
+          <out>
+        <chunk name="n">
+       <tags>
+         <tag><lit-tag v="SN"/></tag> 
+       </tags>
+          <lu>
+            <clip pos="1" side="tl" part="whole"/>
+          </lu>
+            </chunk>
+        </out>
+          </otherwise>
+</choose>
+      </action>
+    </rule>
+      
+
+    <rule comment="RULE: chunk verbs">
+          <pattern>
+        <pattern-item n="verb"/>
+      </pattern>
+      <action>  
+        <out>
+        <chunk name="n">
+       <tags>
+         <tag><lit-tag v="SV"/></tag>
+           <tag><lit-tag v="pres"/></tag>
+            </tags>
+          <lu>
+            <clip pos="1" side="tl" part="lem"/>
+            <clip pos="1" side="tl" part="word_type"/>
+            <clip pos="1" side="tl" part="word_type_2"/>
+           <lit-tag v="pres"/>
+                <lit-tag v="3"/>
+            <lit-tag v="4"/>
+              
+          </lu>
+            </chunk>
+        </out>
+      </action>
+    </rule>
+      
+    <rule comment="RULE: chunk adverbs">
+          <pattern>
+        <pattern-item n="adv"/>
+      </pattern>
+      <action>  
+        <out>
+        <chunk name="adv">
+       <tags><tag><lit-tag v="SAdv"/></tag></tags>
+          <lu>
+            <clip pos="1" side="tl" part="lem"/>
+            <clip pos="1" side="tl" part="word_type"/>
+        
+          </lu>
+            </chunk>
+        </out>
+      </action>
+      </rule>
+      
+  </section-rules>
+</transfer>
+
+<!--
+Resources:
+    http://wiki.apertium.org/wiki/Chunking:_A_full_example
+    http://wiki.apertium.org/wiki/Chunking
+    http://wiki.apertium.org/wiki/Apertium_New_Language_Pair_HOWTO#Transfer_rules
+    http://wiki.apertium.org/wiki/A_long_introduction_to_transfer_rules
+    http://wiki.apertium.org/wiki/Transfer#Adding_structural_transfer_.28grammar.29_rules
+-->
+

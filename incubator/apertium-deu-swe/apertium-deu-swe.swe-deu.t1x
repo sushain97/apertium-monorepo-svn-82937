@@ -1,0 +1,643 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<transfer default="chunk">
+
+	<section-def-cats>
+		<def-cat n="nom">
+			<cat-item tags="n.*"/>
+			<cat-item tags="np.*"/>
+		</def-cat>
+		<def-cat n="det">
+			<cat-item tags="det.*"/>
+		</def-cat>
+		<def-cat n="verb">
+			<cat-item tags="vblex.*"/>
+			<cat-item tags="vbmod.*"/>
+			<cat-item tags="vbser.*"/>
+			<cat-item tags="vbhaver.*"/>
+			<cat-item tags="vbdo.*"/>
+			<cat-item tags="vaux.*"/>
+		</def-cat>
+		<def-cat n="verbm"> <!-- modal verb -->
+			<cat-item tags="vbmod.*"/>
+			<cat-item tags="vaux.*"/>
+		</def-cat>
+
+		<def-cat n="adj">
+			<cat-item tags="adj"/>
+			<cat-item tags="adj.*"/>
+		</def-cat>
+		<def-cat n="num">
+			<cat-item tags="num"/>
+			<cat-item tags="num.*"/>
+		</def-cat>
+		<def-cat n="adv">
+			<cat-item tags="adv"/>
+			<cat-item tags="adv.*"/>
+			<cat-item tags="preadv"/>
+			<cat-item tags="preadv.*"/>
+		</def-cat>
+		<def-cat n="prn">
+			<cat-item tags="prn.dem.*"/>
+			<cat-item tags="prn.ind.*"/>
+		</def-cat>
+		<def-cat n="prpers">
+			<cat-item lemma="prpers" tags="prn.*"/>
+		</def-cat>
+		<def-cat n="rel">
+			<cat-item tags="rel.*"/>
+		</def-cat>
+		<def-cat n="prep"> <!-- preposition -->
+			<cat-item tags="pr"/>
+			<cat-item tags="pr.*"/>
+			<cat-item tags="pprep.*"/>
+		</def-cat>
+		<def-cat n="conj">
+			<cat-item tags="cnjcoo"/>
+			<cat-item tags="cnjcoo.*"/>
+			<cat-item tags="cnjsub"/>
+			<cat-item tags="cnjsub.*"/>
+		</def-cat>
+		<def-cat n="ij">
+			<cat-item tags="ij"/>
+		</def-cat>
+		<def-cat n="hyphen">
+			<cat-item tags="guio"/>
+		</def-cat>
+		<def-cat n="coma">
+			<cat-item tags="cm"/>
+		</def-cat>
+
+		<def-cat n="sent">
+			<cat-item tags="sent"/>
+		</def-cat>
+	</section-def-cats>
+
+	<section-def-attrs>
+		<def-attr n="a_nom">
+			<attr-item tags="n"/>
+			<attr-item tags="np"/>
+		</def-attr>
+		<def-attr n="a_det">
+			<attr-item tags="det"/>
+		</def-attr>
+		<def-attr n="a_verb">
+			<attr-item tags="vblex"/>
+			<attr-item tags="vbser"/>
+			<attr-item tags="vbhaver"/>
+			<attr-item tags="vbdo"/>
+			<attr-item tags="vbmod"/>
+			<attr-item tags="vaux"/>
+		</def-attr>
+
+		<def-attr n="a_gen">      <!-- Gender -->
+			<attr-item tags="m"/>
+			<attr-item tags="f"/>
+			<attr-item tags="nt"/>
+			<attr-item tags="mf"/>
+			<attr-item tags="mfn"/>
+		</def-attr>
+		<def-attr n="a_nbr">      <!-- Number -->
+			<attr-item tags="sg"/>
+			<attr-item tags="pl"/>
+			<attr-item tags="sp"/>
+		</def-attr>
+		<def-attr n="a_cas">      <!-- Case -->
+			<attr-item tags="nom"/>
+			<attr-item tags="gen"/>
+			<attr-item tags="dat"/>
+			<attr-item tags="acc"/>
+		</def-attr>
+		<def-attr n="a_pers">      <!-- Person -->
+			<attr-item tags="p1"/>
+			<attr-item tags="p2"/>
+			<attr-item tags="p3"/>
+		</def-attr>
+
+		<def-attr n="a_temps">      <!-- verb tense -->
+			<attr-item tags="pp"/>
+			<attr-item tags="ger"/>
+			<attr-item tags="pii"/>
+			<attr-item tags="pis"/>
+			<attr-item tags="pri"/>
+			<attr-item tags="past"/>
+			<attr-item tags="inf"/>
+			<attr-item tags="pres"/>
+			<attr-item tags="pprs"/>
+			<attr-item tags="subs"/>
+			<attr-item tags="imp"/>
+		</def-attr>
+
+		<def-attr n="a_adj">
+			<attr-item tags="adj"/>
+			<attr-item tags="adj.comp"/>
+			<attr-item tags="adj.sup"/>
+			<attr-item tags="adj.sint"/>
+			<attr-item tags="adj.sint.comp"/>
+			<attr-item tags="adj.sint.sup"/>
+		</def-attr>
+		<def-attr n="a_num">
+			<attr-item tags="num"/>
+		</def-attr>
+		<def-attr n="a_prn">
+			<attr-item tags="prn"/>
+		</def-attr>
+		<def-attr n="a_tipus_prn">
+			<attr-item tags="prn.subj"/>
+			<attr-item tags="prn.obj"/>
+			<attr-item tags="prn.tn"/>
+			<attr-item tags="prn.iobj"/>
+			<attr-item tags="prn.dobj"/>
+		</def-attr>
+		<def-attr n="a_rel">
+			<attr-item tags="rel"/>
+		</def-attr>
+		<def-attr n="a_pr">
+			<attr-item tags="pr"/>
+		</def-attr>
+		<def-attr n="a_cnj">
+			<attr-item tags="cnjcoo"/>
+			<attr-item tags="cnjsub"/>
+			<attr-item tags="cnjadv"/>
+		</def-attr>
+		<def-attr n="a_ij">
+			<attr-item tags="ij"/>
+		</def-attr>
+		<def-attr n="a_coma">
+			<attr-item tags="cm"/>
+		</def-attr>
+
+	</section-def-attrs>
+
+	<section-def-vars>
+		<def-var n="v_number"/>
+		<def-var n="caseFirstWord" v="Aa"/>
+		<def-var n="caseOtherWord" v="aa"/>
+		<def-var n="EOS" v="true"/>
+	</section-def-vars>
+
+	<section-def-macros>
+
+		<!-- set caseFirstWord to "aa" -->
+		<def-macro n="firstWord" npar="1">
+			<let><var n="caseFirstWord"/><lit v="aa"/></let>
+			<choose>
+				<when>
+					<test>
+						<equal>
+							<var n="EOS"/>
+							<lit v="true"/>
+						</equal>
+					</test>
+				</when>
+			</choose>
+			<let>
+				<var n="EOS"/>
+				<lit v="false"/>
+			</let>
+		</def-macro>
+
+		<def-macro n="test" npar="1">
+			<let>
+				<var n="v_number"/>
+				<lit v=""/>
+			</let>
+		</def-macro>
+
+	</section-def-macros>
+
+	<section-rules>
+		<rule comment="REGLA: SENT">
+			<pattern>
+				<pattern-item n="sent"/>
+			</pattern>
+			<action>
+				<out>
+					<chunk name="sent" case="caseFirstWord">
+						<tags>
+							<tag><lit-tag v="SENT"/></tag>
+						</tags>
+						<lu>
+							<clip pos="1" side="tl" part="whole"/>
+						</lu>
+					</chunk>
+				</out>
+			</action>
+		</rule>
+
+		<rule comment="RULE: conjugate verbs">
+			<pattern>
+				<pattern-item n="nom"/>
+				<pattern-item n="verb"/>
+			</pattern>
+
+			<action>	
+				<out>
+					<chunk name="nom_verb">
+						<tags>
+							<tag><lit-tag v="SN"/></tag>
+						</tags>
+						<lu>
+							<clip pos="1" side="tl" part="lem"/>
+							<clip pos="1" side="tl" part="a_nom"/>
+							<clip pos="1" side="tl" part="a_pers"/>
+							<clip pos="1" side="tl" part="a_gen"/>
+							<clip pos="1" side="tl" part="a_nbr"/>
+						</lu>
+						<b pos="1"/>
+						<lu>
+							<clip pos="2" side="tl" part="lem"/>
+							<clip pos="2" side="tl" part="a_verb"/>
+							<clip pos="2" side="tl" part="a_temps"/>
+							<lit-tag v="p3"/>
+							<clip pos="1" side="tl" part="a_nbr"/>
+						</lu>
+					</chunk>
+				</out>
+			</action>
+		</rule>
+
+
+		<rule comment="REGLA: DET NOM">
+			<pattern>
+				<pattern-item n="det"/>
+				<pattern-item n="nom"/>
+			</pattern>
+			<action>
+				<out>
+					<chunk name="det_nom">
+						<tags>
+							<tag><lit-tag v="SN"/></tag>
+							<tag><clip pos="2" side="tl" part="a_gen"/></tag>
+							<tag><clip pos="2" side="tl" part="a_nbr"/></tag>
+						</tags>
+						<lu>
+							<clip pos="1" side="tl" part="lem"/>
+							<clip pos="1" side="tl" part="a_det"/>
+							<clip pos="2" side="tl" part="a_gen"/>
+							<clip pos="2" side="tl" part="a_nbr"/>
+							<clip pos="2" side="tl" part="a_cas"/>
+						</lu>
+						<b pos="1"/>
+						<lu>
+							<clip pos="2" side="tl" part="lem"/>
+							<clip pos="2" side="tl" part="a_nom"/>
+							<clip pos="2" side="tl" part="a_gen"/>
+							<clip pos="2" side="tl" part="a_nbr"/>
+							<clip pos="2" side="tl" part="a_cas"/>
+						</lu>
+					</chunk>
+				</out>
+			</action>
+		</rule>
+
+
+		<!-- ============================================================
+				 basic set of rules, one for each PoS
+				 ============================================================ -->
+
+		<rule comment="RULE: NOM">
+			<pattern>
+				<pattern-item n="nom"/>
+			</pattern>
+			<action>
+				<out>
+					<chunk name="nom" case="caseFirstWord">
+						<tags>
+							<tag><lit-tag v="SN"/></tag>
+							<tag><clip pos="1" side="tl" part="a_gen"/></tag>
+							<tag><clip pos="1" side="tl" part="a_nbr"/></tag>
+						</tags>
+						<lu>
+							<clip pos="1" side="tl" part="lemh"/>
+							<clip pos="1" side="tl" part="a_nom"/>
+							<clip pos="1" side="tl" part="a_gen"/>
+							<clip pos="1" side="tl" part="a_nbr"/>
+							<clip pos="1" side="tl" part="a_cas"/>
+							<clip pos="1" side="tl" part="lemq"/>
+						</lu>
+					</chunk>
+				</out>
+				<call-macro n="firstWord">
+					<with-param pos="1"/>
+				</call-macro>
+			</action>
+		</rule>
+
+		<rule comment="RULE: PRN">
+			<pattern>
+				<pattern-item n="prn"/>
+			</pattern>
+			<action>
+				<out>
+					<chunk name="prn" case="caseFirstWord">
+						<tags>
+							<tag><lit-tag v="PRN"/></tag>
+						</tags>
+						<lu>
+							<clip pos="1" side="tl" part="lem"/>
+							<clip pos="1" side="tl" part="a_prn"/>
+							<clip pos="1" side="tl" part="a_gen"/>
+							<clip pos="1" side="tl" part="a_nbr"/>
+							<clip pos="1" side="tl" part="a_cas"/>
+						</lu>
+					</chunk>
+				</out>
+				<call-macro n="firstWord">
+					<with-param pos="1"/>
+				</call-macro>
+			</action>
+		</rule>
+
+		<rule comment="RULE: REL">
+			<pattern>
+				<pattern-item n="rel"/>
+			</pattern>
+			<action>
+				<out>
+					<chunk name="rel">
+						<tags>
+							<tag><lit-tag v="REL"/></tag>
+							<tag><lit-tag v="PRN"/></tag>
+						</tags>
+						<lu>
+							<clip pos="1" side="tl" part="lem"/>
+							<clip pos="1" side="tl" part="a_rel"/>
+							<clip pos="1" side="tl" part="a_gen"/>
+							<clip pos="1" side="tl" part="a_nbr"/>
+						</lu>
+					</chunk>
+				</out>
+				<call-macro n="firstWord">
+					<with-param pos="1"/>
+				</call-macro>
+			</action>
+		</rule>
+
+		<rule comment="RULE: PRPERS">
+			<pattern>
+				<pattern-item n="prpers"/>
+			</pattern>
+			<action>
+
+				<choose>
+					<when>  <!-- "prn.det" without <obj> tag -->
+						<test>
+							<equal>
+								<clip pos="1" side="tl" part="a_prpos"/>
+								<lit-tag v="prn.det"/>
+							</equal>
+						</test>
+						<out>
+							<chunk name="prpers" case="caseFirstWord">
+								<tags>
+									<tag><lit-tag v="PRN"/></tag>
+									<tag><clip pos="1" side="tl" part="a_pers"/></tag>
+									<tag><clip pos="1" side="tl" part="a_gen"/></tag>
+									<tag><clip pos="1" side="tl" part="a_nbr"/></tag>
+								</tags>
+								<lu>
+									<clip pos="1" side="tl" part="lem"/>
+									<clip pos="1" side="tl" part="a_prpos"/>
+									<clip pos="1" side="tl" part="a_pers"/>
+									<clip pos="1" side="tl" part="a_gen"/>
+									<clip pos="1" side="tl" part="a_nbr"/>
+									<clip pos="1" side="tl" part="a_cas"/>
+								</lu>
+							</chunk>
+						</out>
+					</when>
+
+					<otherwise>  <!-- "prn" with <obj> tag -->
+						<out>
+							<chunk name="prpers" case="caseFirstWord">
+								<tags>
+									<tag><lit-tag v="PRN"/></tag>
+									<tag><clip pos="1" side="tl" part="a_pers"/></tag>
+									<tag><clip pos="1" side="tl" part="a_gen"/></tag>
+									<tag><clip pos="1" side="tl" part="a_nbr"/></tag>
+								</tags>
+								<lu>
+									<clip pos="1" side="tl" part="lem"/>
+									<clip pos="1" side="tl" part="a_tipus_prn"/>
+									<clip pos="1" side="tl" part="a_pers"/>
+									<clip pos="1" side="tl" part="a_gen"/>
+									<clip pos="1" side="tl" part="a_nbr"/>
+									<clip pos="1" side="tl" part="a_cas"/>
+								</lu>
+							</chunk>
+						</out>
+					</otherwise>
+				</choose>
+				<call-macro n="firstWord">
+					<with-param pos="1"/>
+				</call-macro>
+			</action>
+		</rule>
+
+		<rule comment="RULE: ADJ">
+			<pattern>
+				<pattern-item n="adj"/>
+			</pattern>
+			<action>
+				<out>
+					<chunk name="adj" case="caseFirstWord">
+						<tags>
+							<tag><lit-tag v="ADJ"/></tag>
+						</tags>
+						<lu>
+							<clip pos="1" side="tl" part="lem"/>
+							<clip pos="1" side="tl" part="a_adj"/>
+						</lu>
+					</chunk>
+				</out>
+				<call-macro n="firstWord">
+					<with-param pos="1"/>
+				</call-macro>
+			</action>
+		</rule>
+
+		<rule comment="RULE: NUM">
+			<pattern>
+				<pattern-item n="num"/>
+			</pattern>
+			<action>
+				<out>
+					<chunk name="num" case="caseFirstWord">
+						<tags>
+							<tag><lit-tag v="NUM"/></tag>
+						</tags>
+						<lu>
+							<clip pos="1" side="tl" part="whole"/>
+						</lu>
+					</chunk>
+				</out>
+				<call-macro n="firstWord">
+					<with-param pos="1"/>
+				</call-macro>
+			</action>
+		</rule>
+
+		<rule comment="RULE: PR">
+			<pattern>
+				<pattern-item n="prep"/>
+			</pattern>
+			<action>
+				<out>
+					<chunk name="pr" case="caseFirstWord">
+						<tags>
+							<tag><lit-tag v="PR"/></tag>
+						</tags>
+						<lu>
+							<clip pos="1" side="tl" part="whole"/>
+						</lu>
+					</chunk>
+				</out>
+				<call-macro n="firstWord">
+					<with-param pos="1"/>
+				</call-macro>
+			</action>
+		</rule>
+
+		<rule comment="RULE: DET">
+			<pattern>
+				<pattern-item n="det"/>
+			</pattern>
+			<action>
+				<out>
+					<chunk name="det" case="caseFirstWord">
+						<tags>
+							<tag><lit-tag v="DET"/></tag>
+						</tags>
+						<lu>
+							<clip pos="1" side="tl" part="whole"/>
+						</lu>
+					</chunk>
+				</out>
+				<call-macro n="firstWord">
+					<with-param pos="1"/>
+				</call-macro>
+			</action>
+		</rule>
+
+		<rule comment="RULE: VERB">
+			<pattern>
+				<pattern-item n="verb"/>  <!-- any verb -->
+			</pattern>
+			<action>
+				<out>
+					<chunk name="verb">
+						<tags>
+							<tag><lit-tag v="SV"/></tag>
+							<tag><clip pos="1" side="tl" part="a_temps"/></tag>
+							<tag><clip pos="1" side="tl" part="a_pers"/></tag>
+							<tag><clip pos="1" side="tl" part="a_nbr"/></tag>
+						</tags>
+						<lu>
+							<clip pos="1" side="tl" part="lemh"/>
+							<clip pos="1" side="tl" part="a_verb"/>
+							<clip pos="1" side="tl" part="a_temps"/>
+							<clip pos="1" side="tl" part="a_pers"/>
+							<clip pos="1" side="tl" part="a_nbr" link-to="3"/>
+							<clip pos="1" side="tl" part="lemq"/>
+						</lu>
+					</chunk>
+				</out>
+				<call-macro n="firstWord">
+					<with-param pos="1"/>
+				</call-macro>
+			</action>
+		</rule>
+
+		<rule comment="RULE: ADV">
+			<pattern>
+				<pattern-item n="adv"/>
+			</pattern>
+			<action>
+				<out>
+					<chunk name="adv" case="caseOtherWord">
+						<tags>
+							<tag><lit-tag v="ADV"/></tag>
+						</tags>
+						<lu>
+							<clip pos="1" side="tl" part="whole"/>
+						</lu>
+					</chunk>
+				</out>
+				<call-macro n="firstWord">
+					<with-param pos="1"/>
+				</call-macro>
+			</action>
+		</rule>
+
+		<rule comment="RULE: CONJ">
+			<pattern>
+				<pattern-item n="conj"/>
+			</pattern>
+			<action>
+				<out>
+					<chunk name="conj" case="caseFirstWord">
+						<tags>
+							<tag><lit-tag v="CNJ"/></tag>
+						</tags>
+						<lu>
+							<clip pos="1" side="tl" part="whole"/>
+						</lu>
+					</chunk>
+				</out>
+				<call-macro n="firstWord">
+					<with-param pos="1"/>
+				</call-macro>
+			</action>
+		</rule>
+
+		<rule comment="RULE: IJ">
+			<pattern>
+				<pattern-item n="ij"/>
+			</pattern>
+			<action>
+				<out>
+					<chunk name="ij" case="caseFirstWord">
+						<tags>
+							<tag><lit-tag v="IJ"/></tag>
+						</tags>
+						<lu>
+							<clip pos="1" side="tl" part="whole"/>
+						</lu>
+					</chunk>
+				</out>
+				<call-macro n="firstWord">
+					<with-param pos="1"/>
+				</call-macro>
+			</action>
+		</rule>
+
+		<!-- coma -->
+		<rule comment="RULE: COMA">
+			<pattern>
+				<pattern-item n="coma"/>
+			</pattern>
+			<action>
+				<out>
+					<chunk name="coma">
+						<tags>
+							<tag><lit-tag v="CM"/></tag>
+						</tags>
+						<lu>
+							<clip pos="1" side="tl" part="whole"/>
+						</lu>
+					</chunk>
+				</out>
+			</action>
+		</rule>
+
+	</section-rules>
+</transfer>
+
+<!--
+Resources:
+    http://wiki.apertium.org/wiki/Chunking:_A_full_example
+    http://wiki.apertium.org/wiki/Chunking
+    http://wiki.apertium.org/wiki/Apertium_New_Language_Pair_HOWTO#Transfer_rules
+    http://wiki.apertium.org/wiki/A_long_introduction_to_transfer_rules
+    http://wiki.apertium.org/wiki/Transfer#Adding_structural_transfer_.28grammar.29_rules
+-->

@@ -1,0 +1,55 @@
+
+Alphabet 
+
+ ᠠ ᠪ ᠨ ᡣ ᡬ ᡭ ᠸ ᡫ ᠶ ᡪ ᠯ ᠮ ᡠ ᡡ ᠣ ᡝ ᡞ ᡟ ᡠ ᡡ ᡢ ᡣ ᡤ ᡥ ᡦ ᡧ ᡨ ᡩ ᡪ ᡫ ᡬ ᡭ ᡮ ᡯ ᡰ ᠴ ᡱ ᡲ ᡳ ᡴ ᡵ ᡶ ᡷ
+ 
+ a:ᠠ
+ b:ᠪ
+ c:ᠴ
+ d:ᡩ
+ e:ᡝ
+ f:ᡫ
+ g:ᡤ
+ h:ᡥ
+ i:ᡞ
+ j:ᡪ
+ k:ᡣ
+ l:ᠯ
+ m:ᠮ
+ n:ᠨ
+! ng:ᡢ  ! probably undefined behaviour?  let's do this with some rules
+ o:ᠣ
+ p:ᡦ
+ r:ᡵ
+ s:ᠰ
+ š:ᡧ
+ t:ᡨ
+ u:ᡠ
+ û:ᡡ
+ w:ᠸ
+ x:ᡭ
+ y:ᠶ
+
+
+ ;
+
+
+Sets 
+
+BackVow = a o û ;
+
+
+Rules 
+
+"uvularise the velars" 
+Vx:Vy <=> _ BackVow: ;
+      where
+          Vx in ( ᡤ ᡥ ᡣ )
+          Vy in ( ᡬ ᡭ ᡣ )
+      matched ;
+
+"n of ng sequence"
+n:ᡢ <=> _ g: ;
+
+"g of ng sequence"
+g:0 <=> n:ᡢ _ ;

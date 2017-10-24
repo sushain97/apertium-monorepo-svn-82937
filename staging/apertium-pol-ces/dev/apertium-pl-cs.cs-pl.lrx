@@ -1,0 +1,99 @@
+﻿<rules>
+ <rule>
+  <match lemma="mezi">
+   <select lemma="w" />
+  </match>
+  <match lemma="čtyřma" />
+  <match lemma="očima" />
+ </rule>
+ <rule>
+  <match lemma="předseda" />
+  <match lemma="vlády">
+   <select lemma="premier" />
+  </match>
+ </rule>
+ <rule>
+  <match lemma="přikrývka" />
+  <match lemma="hlavy">
+   <select lemma="oczy" />
+  </match>
+ </rule>
+ <rule>
+  <match lemma="mělký">
+   <select lemma="płaski" />
+  </match>
+  <match lemma="talíř" />
+ </rule>
+ <rule>
+  <match lemma="telecí" />
+  <match lemma="ledvina">
+   <select lemma="pieczeń" />
+  </match>
+ </rule>
+ <rule>
+  <match lemma="státní" />
+  <match lemma="příslušník">
+   <select lemma="obywatel" />
+  </match>
+ </rule>
+ <rule>
+  <match lemma="přes">
+   <select lemma="pomimo" />
+  </match>
+  <match lemma="zákaz" />
+ </rule>
+ <rule>
+  <match lemma="učinit">
+   <select lemma="podjąć" />
+  </match>
+  <match lemma="rozhodnutí" />
+ </rule>
+ <rule>
+  <match lemma="udělit">
+   <select lemma="udzielić" />
+  </match>
+  <match lemma="slovo" />
+ </rule>
+ <rule>
+  <match lemma="udělit" />
+  <match lemma="slovo">
+   <select lemma="głosu" />
+  </match>
+ </rule>
+ <rule>
+  <or>  
+  <match lemma="národní" />
+  <match lemma="závodní" />
+  </or>
+  <match lemma="wýbor">
+   <select lemma="rada" />
+  </match>
+ </rule>
+ <rule>
+  <match lemma="živelná" />
+  <match lemma="pohroma">
+   <select lemma="klęska" />
+  </match>
+ </rule>
+ <rule>
+  <or>
+  <match lemma="brzdová" />
+  <match lemma="chladicí" />
+  </or>
+  <match lemma="kapalina">
+   <select lemma="ciecz" />
+  </match>
+ </rule>
+ <rule>
+  <match lemma="vzít">
+   <select lemma="odebrać" />
+  </match>
+  <match lemma="telefon" />
+ </rule>
+ <rule>
+  <match lemma="vzít">
+   <select lemma="pobrać" />
+  </match>
+  <match lemma="se" />
+ </rule>
+</rules>

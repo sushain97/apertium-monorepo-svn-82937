@@ -1,0 +1,26 @@
+This is a small utility for extracting unknowns from a pair of tagged streams. 
+It's based on that idea that, if each sentence has a single unknown word, 
+then those words are likely to be translations of each other. It's _stupid_ 
+because it does nothing if there is more than one unknown. 
+
+Despite being stupid, it's surprisingly useful (though that depends entirely
+on the quality of the translations). An earlier version (in perl, about 1/5
+of the size, but extremely brittle) was mentioned briefly in this paper:
+
+  Shallow-transfer rule-based machine translation for Czech to Polish
+  Ruth, Joanna; O'Regan, Jimmy; International Workshop on 
+  Free/Open-Source Rule-Based Machine Translation 
+  (2nd : 2011 : Barcelona)
+
+Usage: 
+$ cat en.txt | apertium -d [path-to]/apertium-en-es/ en-es-tagger > en.tagged
+$ cat es.txt | apertium -d [path-to]/apertium-en-es/ es-en-tagger > es.tagged
+$ stupid-unknown-extractor en.tagged es.tagged
+
+Sample output:
+buckler	adarga	old<adj><sint> *buckler ,<cm> :: *adarga antiguo<adj><f><sg>
+homespun	velludo	good<adj><sint><sup> *homespun .<sent> :: de<pr> *velludo para<pr>
+gaunt	recia	*gaunt -<guio> :: complexión<n><f><sg> *recia ,<cm>
+
+Compile:
+g++ stupid_unknown_extractor.cc -o stupid-unknown-extractor

@@ -1,0 +1,411 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<modes>
+  <!-- kpv → mhr --> 
+
+  <mode name="kpv-mhr" install="yes">
+    <pipeline>
+      <program name="hfst-proc -w">
+        <file name="kpv-mhr.automorf.hfst"/>
+      </program>
+      <program name="cg-proc -w">
+        <file name="kpv-mhr.rlx.bin"/>
+      </program>
+      <program name="apertium-tagger -g $2">
+        <file name="kpv-mhr.prob"/>
+      </program>
+      <program name="apertium-pretransfer"/>
+      <program name="lt-proc -b">
+        <file name="kpv-mhr.autobil.bin"/>
+      </program>
+      <program name="apertium-transfer -b">
+        <file name="apertium-kpv-mhr.kpv-mhr.t1x"/>
+        <file name="kpv-mhr.t1x.bin"/>
+      </program>
+      <program name="apertium-interchunk">
+        <file name="apertium-kpv-mhr.kpv-mhr.t2x"/>
+        <file name="kpv-mhr.t2x.bin"/>
+      </program>
+      <program name="apertium-postchunk">
+        <file name="apertium-kpv-mhr.kpv-mhr.t3x"/>
+        <file name="kpv-mhr.t3x.bin"/>
+      </program>
+      <program name="hfst-proc $1">
+        <file name="kpv-mhr.autogen.hfst"/>
+      </program>
+    </pipeline>
+  </mode>
+
+  <mode name="kpv-mhr-debug" install="no">
+    <pipeline>
+      <program name="hfst-proc -w">
+        <file name="kpv-mhr.automorf.hfst"/>
+      </program>
+      <program name="cg-proc -w">
+        <file name="kpv-mhr.rlx.bin"/>
+      </program>
+      <program name="apertium-tagger -g $2">
+        <file name="kpv-mhr.prob"/>
+      </program>
+      <program name="apertium-pretransfer"/>
+      <program name="lt-proc -b">
+        <file name="kpv-mhr.autobil.bin"/>
+      </program>
+      <program name="apertium-transfer -b">
+        <file name="apertium-kpv-mhr.kpv-mhr.t1x"/>
+        <file name="kpv-mhr.t1x.bin"/>
+      </program>
+      <program name="apertium-interchunk">
+        <file name="apertium-kpv-mhr.kpv-mhr.t2x"/>
+        <file name="kpv-mhr.t2x.bin"/>
+      </program>
+      <program name="apertium-postchunk">
+        <file name="apertium-kpv-mhr.kpv-mhr.t3x"/>
+        <file name="kpv-mhr.t3x.bin"/>
+      </program>
+      <program name="hfst-proc -d">
+        <file name="kpv-mhr.autogen.hfst"/>
+      </program>
+    </pipeline>
+  </mode>
+ 
+  
+  <mode name="kpv-mhr-morph" install="no">
+    <pipeline>
+      <program name="hfst-proc -w">
+        <file name="kpv-mhr.automorf.hfst"/>
+      </program>
+    </pipeline>
+  </mode>
+
+  <mode name="kpv-mhr-tagger" install="no">
+    <pipeline>
+      <program name="hfst-proc -w">
+        <file name="kpv-mhr.automorf.hfst"/>
+      </program>
+      <program name="cg-proc -w">
+        <file name="kpv-mhr.rlx.bin"/>
+      </program>
+      <program name="apertium-tagger -g $2">
+        <file name="kpv-mhr.prob"/>
+      </program>
+      <program name="apertium-pretransfer"/>
+    </pipeline>
+  </mode>
+
+  <mode name="kpv-mhr-biltrans" install="no">
+    <pipeline>
+      <program name="hfst-proc -w">
+        <file name="kpv-mhr.automorf.hfst"/>
+      </program>
+      <program name="cg-proc -w">
+        <file name="kpv-mhr.rlx.bin"/>
+      </program>
+      <program name="apertium-tagger -g $2">
+        <file name="kpv-mhr.prob"/>
+      </program>
+      <program name="apertium-pretransfer"/>
+      <program name="lt-proc -b">
+        <file name="kpv-mhr.autobil.bin"/>
+      </program>
+    </pipeline>
+  </mode>
+
+  <mode name="kpv-mhr-lex" install="no">
+    <pipeline>
+      <program name="hfst-proc -w">
+        <file name="kpv-mhr.automorf.hfst"/>
+      </program>
+      <program name="cg-proc -w">
+        <file name="kpv-mhr.rlx.bin"/>
+      </program>
+      <program name="apertium-tagger -g $2">
+        <file name="kpv-mhr.prob"/>
+      </program>
+      <program name="apertium-pretransfer"/>
+      <program name="lt-proc -b">
+        <file name="kpv-mhr.autobil.bin"/>
+      </program>
+      <program name="apertium-lrx-proc -t">
+        <file name="kpv-mhr.lrx.bin"/>
+      </program>
+    </pipeline>
+  </mode>
+
+
+  <mode name="kpv-mhr-transfer" install="no">
+    <pipeline>
+      <program name="hfst-proc -w">
+        <file name="kpv-mhr.automorf.hfst"/>
+      </program>
+      <program name="cg-proc -w">
+        <file name="kpv-mhr.rlx.bin"/>
+      </program>
+      <program name="apertium-tagger -g $2">
+        <file name="kpv-mhr.prob"/>
+      </program>
+      <program name="apertium-pretransfer"/>
+      <program name="lt-proc -b">
+        <file name="kpv-mhr.autobil.bin"/>
+      </program>
+      <program name="apertium-lrx-proc">
+        <file name="kpv-mhr.lrx.bin"/>
+      </program>
+      <program name="apertium-transfer -b">
+        <file name="apertium-kpv-mhr.kpv-mhr.t1x"/>
+        <file name="kpv-mhr.t1x.bin"/>
+      </program>
+    </pipeline>
+  </mode>
+
+  <mode name="kpv-mhr-interchunk" install="no">
+    <pipeline>
+      <program name="hfst-proc -w">
+        <file name="kpv-mhr.automorf.hfst"/>
+      </program>
+      <program name="cg-proc -w">
+        <file name="kpv-mhr.rlx.bin"/>
+      </program>
+      <program name="apertium-tagger -g $2">
+        <file name="kpv-mhr.prob"/>
+      </program>
+      <program name="apertium-pretransfer"/>
+      <program name="lt-proc -b">
+        <file name="kpv-mhr.autobil.bin"/>
+      </program>
+      <program name="apertium-lrx-proc">
+        <file name="kpv-mhr.lrx.bin"/>
+      </program>
+      <program name="apertium-transfer -b">
+        <file name="apertium-kpv-mhr.kpv-mhr.t1x"/>
+        <file name="kpv-mhr.t1x.bin"/>
+      </program>
+      <program name="apertium-interchunk">
+        <file name="apertium-kpv-mhr.kpv-mhr.t2x"/>
+        <file name="kpv-mhr.t2x.bin"/>
+      </program>
+    </pipeline>
+  </mode>
+
+  <mode name="kpv-mhr-postchunk" install="no">
+    <pipeline>
+      <program name="hfst-proc -w">
+        <file name="kpv-mhr.automorf.hfst"/>
+      </program>
+      <program name="cg-proc -w">
+        <file name="kpv-mhr.rlx.bin"/>
+      </program>
+      <program name="apertium-tagger -g $2">
+        <file name="kpv-mhr.prob"/>
+      </program>
+      <program name="apertium-pretransfer"/>
+      <program name="lt-proc -b">
+        <file name="kpv-mhr.autobil.bin"/>
+      </program>
+      <program name="apertium-lrx-proc">
+        <file name="kpv-mhr.lrx.bin"/>
+      </program>
+      <program name="apertium-transfer -b">
+        <file name="apertium-kpv-mhr.kpv-mhr.t1x"/>
+        <file name="kpv-mhr.t1x.bin"/>
+      </program>
+      <program name="apertium-interchunk">
+        <file name="apertium-kpv-mhr.kpv-mhr.t2x"/>
+        <file name="kpv-mhr.t2x.bin"/>
+      </program>
+      <program name="apertium-postchunk">
+        <file name="apertium-kpv-mhr.kpv-mhr.t3x"/>
+        <file name="kpv-mhr.t3x.bin"/>
+      </program>
+    </pipeline>
+  </mode>
+
+  <!-- mhr → kpv -->
+
+  <mode name="mhr-kpv" install="yes">
+    <pipeline>
+      <program name="hfst-proc">
+        <file name="mhr-kpv.automorf.hfst"/>
+      </program>
+      <program name="apertium-tagger -g $2">
+        <file name="mhr-kpv.prob"/>
+      </program>
+      <program name="apertium-pretransfer"/>
+      <program name="lt-proc -b">
+        <file name="mhr-kpv.autobil.bin"/>
+      </program>
+      <program name="apertium-transfer -b">
+        <file name="apertium-kpv-mhr.mhr-kpv.t1x"/>
+        <file name="mhr-kpv.t1x.bin"/>
+      </program>
+      <program name="apertium-interchunk">
+        <file name="apertium-kpv-mhr.mhr-kpv.t2x"/>
+        <file name="mhr-kpv.t2x.bin"/>
+      </program>
+      <program name="apertium-postchunk">
+        <file name="apertium-kpv-mhr.mhr-kpv.t3x"/>
+        <file name="mhr-kpv.t3x.bin"/>
+      </program>
+      <program name="hfst-proc $1">
+        <file name="mhr-kpv.autogen.hfst"/>
+      </program>
+    </pipeline>
+  </mode>
+
+  <mode name="mhr-kpv-debug" install="no">
+    <pipeline>
+      <program name="hfst-proc">
+        <file name="mhr-kpv.automorf.hfst"/>
+      </program>
+      <program name="apertium-tagger -g $2">
+        <file name="mhr-kpv.prob"/>
+      </program>
+      <program name="apertium-pretransfer"/>
+      <program name="lt-proc -b">
+        <file name="mhr-kpv.autobil.bin"/>
+      </program>
+      <program name="apertium-transfer -b">
+        <file name="apertium-kpv-mhr.mhr-kpv.t1x"/>
+        <file name="mhr-kpv.t1x.bin"/>
+      </program>
+      <program name="apertium-interchunk">
+        <file name="apertium-kpv-mhr.mhr-kpv.t2x"/>
+        <file name="mhr-kpv.t2x.bin"/>
+      </program>
+      <program name="apertium-postchunk">
+        <file name="apertium-kpv-mhr.mhr-kpv.t3x"/>
+        <file name="mhr-kpv.t3x.bin"/>
+      </program>
+      <program name="hfst-proc -d">
+        <file name="mhr-kpv.autogen.hfst"/>
+      </program>
+    </pipeline>
+  </mode>
+  
+  <mode name="mhr-kpv-morph" install="no">
+    <pipeline>
+      <program name="hfst-proc -w">
+        <file name="mhr-kpv.automorf.hfst"/>
+      </program>
+    </pipeline>
+  </mode>
+
+  <mode name="mhr-kpv-tagger" install="no">
+    <pipeline>
+      <program name="hfst-proc">
+        <file name="mhr-kpv.automorf.hfst"/>
+      </program>
+      <program name="apertium-tagger -g $2">
+        <file name="mhr-kpv.prob"/>
+      </program>
+      <program name="apertium-pretransfer"/>
+    </pipeline>
+  </mode>
+
+  <mode name="mhr-kpv-biltrans" install="no">
+    <pipeline>
+      <program name="hfst-proc">
+        <file name="mhr-kpv.automorf.hfst"/>
+      </program>
+      <program name="apertium-tagger -g $2">
+        <file name="mhr-kpv.prob"/>
+      </program>
+      <program name="apertium-pretransfer"/>
+      <program name="lt-proc -b">
+        <file name="mhr-kpv.autobil.bin"/>
+      </program>
+    </pipeline>
+  </mode>
+
+  <mode name="mhr-kpv-lex" install="no">
+    <pipeline>
+      <program name="hfst-proc">
+        <file name="mhr-kpv.automorf.hfst"/>
+      </program>
+      <program name="apertium-tagger -g $2">
+        <file name="mhr-kpv.prob"/>
+      </program>
+      <program name="apertium-pretransfer"/>
+      <program name="lt-proc -b">
+        <file name="mhr-kpv.autobil.bin"/>
+      </program>
+      <program name="apertium-lrx-proc">
+        <file name="mhr-kpv.lrx.bin"/>
+      </program>
+    </pipeline>
+  </mode>
+
+  <mode name="mhr-kpv-transfer" install="no">
+    <pipeline>
+      <program name="hfst-proc">
+        <file name="mhr-kpv.automorf.hfst"/>
+      </program>
+      <program name="apertium-tagger -g $2">
+        <file name="mhr-kpv.prob"/>
+      </program>
+      <program name="apertium-pretransfer"/>
+      <program name="lt-proc -b">
+        <file name="mhr-kpv.autobil.bin"/>
+      </program>
+      <program name="apertium-transfer -b">
+        <file name="apertium-kpv-mhr.mhr-kpv.t1x"/>
+        <file name="mhr-kpv.t1x.bin"/>
+      </program>
+    </pipeline>
+  </mode>
+
+  <mode name="mhr-kpv-interchunk" install="no">
+    <pipeline>
+      <program name="hfst-proc">
+        <file name="mhr-kpv.automorf.hfst"/>
+      </program>
+      <program name="apertium-tagger -g $2">
+        <file name="mhr-kpv.prob"/>
+      </program>
+      <program name="apertium-pretransfer"/>
+      <program name="lt-proc -b">
+        <file name="mhr-kpv.autobil.bin"/>
+      </program>
+      <program name="apertium-transfer -b">
+        <file name="apertium-kpv-mhr.mhr-kpv.t1x"/>
+        <file name="mhr-kpv.t1x.bin"/>
+      </program>
+      <program name="apertium-interchunk">
+        <file name="apertium-kpv-mhr.mhr-kpv.t2x"/>
+        <file name="mhr-kpv.t2x.bin"/>
+      </program>
+    </pipeline>
+  </mode>
+
+  <mode name="mhr-kpv-postchunk" install="no">
+    <pipeline>
+      <program name="hfst-proc">
+        <file name="mhr-kpv.automorf.hfst"/>
+      </program>
+      <program name="apertium-tagger -g $2">
+        <file name="mhr-kpv.prob"/>
+      </program>
+      <program name="apertium-pretransfer"/>
+      <program name="lt-proc -b">
+        <file name="mhr-kpv.autobil.bin"/>
+      </program>
+      <program name="apertium-transfer -b">
+        <file name="apertium-kpv-mhr.mhr-kpv.t1x"/>
+        <file name="mhr-kpv.t1x.bin"/>
+      </program>
+      <program name="apertium-interchunk">
+        <file name="apertium-kpv-mhr.mhr-kpv.t2x"/>
+        <file name="mhr-kpv.t2x.bin"/>
+      </program>
+      <program name="apertium-postchunk">
+        <file name="apertium-kpv-mhr.mhr-kpv.t3x"/>
+        <file name="mhr-kpv.t3x.bin"/>
+      </program>
+    </pipeline>
+  </mode>
+
+
+
+
+</modes>
+
+

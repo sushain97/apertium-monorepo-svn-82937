@@ -1,0 +1,65 @@
+spectre  beknazar, you should take a look at the coverage stuff too
+1:12:02 AM	spectre  http://wiki.apertium.org/wiki/Kazakh_and_Karakalpak/Work_plan_%28GSOC_2014%29#Karakalpak_transducer
+1:12:12 AM	spectre  so the aim for the karakalpak transducer is to have 80% coverage by the midterm
+1:12:25 AM	spectre  are you able to calculate the coverage on your computer ?
+1:14:31 AM	beknazar  how can i do that?
+1:14:56 AM	spectre  first download the dump of the karakalpak wiki
+1:15:16 AM	spectre  http://dumps.wikimedia.org/kaawiki/20140607/kaawiki-20140607-pages-articles.xml.bz2
+1:15:19 AM	spectre  then type:
+1:15:58 AM	spectre  wget https://svn.code.sf.net/p/apertium/svn/trunk/apertium-tools/WikiExtractor.py
+1:15:59 AM	spectre  then:
+1:16:20 AM	spectre  python3 WikiExtractor.py --infn kaawiki-20140607-pages-articles.xml.bz2
+1:16:34 AM	spectre  then you should have a file called "wiki.txt" or something like that
+1:17:16 AM	spectre  with that file you can do:
+1:17:47 AM	spectre  cat wiki.txt | apertium -d /path/to/apertium-kaa kaa-morph | sed 's/$\W*\^/$\n^/g' | wc -l                         <-- total number of words
+1:17:53 AM	firespeaker  beknazar: jaqsı bar onda, ko'riskenshe
+1:17:54 AM	spectre  cat wiki.txt | apertium -d /path/to/apertium-kaa kaa-morph | sed 's/$\W*\^/$\n^/g' | grep -v '\*' | wc -l                         <-- total number of known words
+1:17:55 AM	spectre
+1:18:09 AM	spectre  then calculate total known words / total number of words
+1:18:10 AM	spectre
+1:18:14 AM	spectre  then you get the coverage
+1:18:33 AM	firespeaker  beknazar: I suggest writing a script to do it :)
+1:19:13 AM	beknazar  :) ok, firespeaker
+1:20:06 AM	spectre  you can make al ist like this
+1:20:06 AM	spectre  http://pad.spline.de/kS3pAxsIhx
+spectre  beknazar, so the idea is to take some words from the frequency list --- the highest frequency ones
+1:25:15 AM	spectre  and categorise them
+1:25:26 AM	spectre  in one step you just go through the list and add the category to all of them
+
+
+---------------
+
+spectie  btw
+11:27:21 AM	spectie  aida has some texts from wikipedia in her eng-kaz folder
+11:27:27 AM	spectie  you could try translating them with kaz-kaa
+11:27:28 AM	spectie  for wikipedia
+11:27:29 AM	spectie  e.g.
+11:27:32 AM	spectie  http://kaa.wikipedia.org/wiki/Qazaqstan
+11:27:53 AM	spectie  https://svn.code.sf.net/p/apertium/svn/incubator/apertium-eng-kaz/texts/kazakhstan1.kaz.txt
+
+
+-------------
+
+spectie  beknazar, one thing that is missing is numerals
+5:52:22 PM	spectie  the numeral lexicon in kazakh is quite complicated
+5:52:28 PM	spectie  but i think you can manage to do it with copy/past
+
+-------------Firespeaker -----------
+
+
+bizler
+bizin'
+baratırg'an & kiyatırg'an
+kelmekte
+onnan, bunnan, sonnan...
+tariyxta
+retlestiriwshi - ive added as noun. OK? or derive from
+ta'repleme
+VII
+neshinshi
+bilimlirek
+etpes
+
+----------
+
+<selimcan> tell beknazar уақытың болғанда apertium-kaz-kaa/corpus/README файлын оқы. Ол тесттың пайдалы болуы мүмкін

@@ -1,0 +1,153 @@
+<dictionary>
+  <alphabet>IаАаьАьбБвВгГгIГIдДеЕёЁжЖзЗиИйЙкКкIКIкхКхкъКълЛмМнНоОпПпIПIрРсСтТтIТIуУфФхХхIХIхьХьцЦцIЦIчЧчIЧIшШщЩъЪыЫьЬэЭюЮяЯяьЯь</alphabet>
+  <sdefs>
+    <sdef n="n"     c="Noun"/>
+    <sdef n="post"  c="Postposition"/>
+    <sdef n="prn"   c="Pronoun"/>
+
+    <!-- Number -->
+    <sdef n="sg"    c="Singular"/>
+    <sdef n="pl"    c="Plural"/>
+
+    <!-- Person -->
+    <sdef n="p1"    c="First person (inclusive)"/>
+    <sdef n="p1x"   c="First person (exclusive)"/>
+    <sdef n="p2"    c="Second person"/>
+    <sdef n="p3"    c="Third person"/>
+
+    <!-- Noun classes -->
+    <sdef n="hum"   c="Human male / female"/>
+    <sdef n="v:b"   c="Human male (e.g. father)"/>
+    <sdef n="j:d"   c="Human female (e.g. mother)"/>
+    <sdef n="d:d"   c="? (e.g. child)"/>
+    <sdef n="b:d"   c="? (e.g. bull)"/>
+    <sdef n="b:b"   c="? (e.g. apple)"/>
+    <sdef n="j:j"   c="Unmarked"/>
+
+    <!-- Cases -->
+    <sdef n="nom"   c="Nominative"/>
+    <sdef n="gen"   c="Genitive"/>
+    <sdef n="dat"   c="Dative"/>
+    <sdef n="erg"   c="Ergative"/>
+    <sdef n="ins"   c="Instrumental"/>
+    <sdef n="loc"   c="Locative"/>
+    <sdef n="comp"  c="Comparative"/>
+    <sdef n="all"   c="Allative"/>
+
+    <sdef n="loc2"  c="Locative (II)"/>
+    <sdef n="abl"   c="Ablative"/>
+    <sdef n="abl2"  c="Ablative (II)"/>
+    <sdef n="tra"   c="Translative"/>
+
+  </sdefs>
+
+  <pardefs>
+
+    <!-- SECTION: Adpositions -->
+
+    <pardef n="дехьа__post">
+      <e>       <p><l></l><r><s n="post"/></r></p></e>
+    </pardef>
+
+    <!-- SECTION: Pronouns -->
+
+    <pardef n="/со__prn">
+      <e>       <p><l>сога</l><r>со<s n="prn"/><s n="p1"/><s n="hum"/><s n="sg"/><s n="all"/></r></p></e>
+      <e>       <p><l>со</l><r>со<s n="prn"/><s n="p1"/><s n="hum"/><s n="sg"/><s n="nom"/></r></p></e>
+      <e>       <p><l>си</l><r>со<s n="prn"/><s n="p1"/><s n="hum"/><s n="sg"/><s n="gen"/></r></p></e>
+      <e>       <p><l>сона</l><r>со<s n="prn"/><s n="p1"/><s n="hum"/><s n="sg"/><s n="dat"/></r></p></e>
+      <e>       <p><l>согi</l><r>со<s n="prn"/><s n="p1"/><s n="hum"/><s n="sg"/><s n="loc"/></r></p></e>
+      <e>       <p><l>соца</l><r>со<s n="prn"/><s n="p1"/><s n="hum"/><s n="sg"/><s n="ins"/></r></p></e>
+      <e>       <p><l>аз</l><r>со<s n="prn"/><s n="p1"/><s n="hum"/><s n="sg"/><s n="erg"/></r></p></e>
+      <e>       <p><l>сол</l><r>со<s n="prn"/><s n="p1"/><s n="hum"/><s n="sg"/><s n="comp"/></r></p></e>
+    </pardef>
+
+    <!-- SECTION: Nouns -->
+
+    <pardef n="д/а__n_v:b" c="Paradigm underspecified">
+      <e>       <p><l>а</l><r>а<s n="n"/><s n="v:b"/><s n="sg"/><s n="nom"/></r></p></e>
+      <e>       <p><l>аь</l><r>а<s n="n"/><s n="v:b"/><s n="sg"/><s n="gen"/></r></p></e>
+      <e>       <p><l>аьна</l><r>а<s n="n"/><s n="v:b"/><s n="sg"/><s n="dat"/></r></p></e>
+      <e>       <p><l>аьз</l><r>а<s n="n"/><s n="v:b"/><s n="sg"/><s n="erg"/></r></p></e>
+      <e>       <p><l>аьца</l><r>а<s n="n"/><s n="v:b"/><s n="sg"/><s n="ins"/></r></p></e>
+      <e>       <p><l>аьгI</l><r>а<s n="n"/><s n="v:b"/><s n="sg"/><s n="loc"/></r></p></e>
+      <e>       <p><l>аьл</l><r>а<s n="n"/><s n="v:b"/><s n="sg"/><s n="comp"/></r></p></e>
+      <e>       <p><l>ага</l><r>а<s n="n"/><s n="v:b"/><s n="sg"/><s n="all"/></r></p></e>
+
+      <e>       <p><l>ай</l><r>а<s n="n"/><s n="v:b"/><s n="pl"/><s n="nom"/></r></p></e>
+      <e>       <p><l>ай</l><r>а<s n="n"/><s n="v:b"/><s n="pl"/><s n="gen"/></r></p></e>
+      <e>       <p><l>аьжта</l><r>а<s n="n"/><s n="v:b"/><s n="pl"/><s n="dat"/></r></p></e>
+      <e>       <p><l>аьж</l><r>а<s n="n"/><s n="v:b"/><s n="pl"/><s n="erg"/></r></p></e>
+
+      <e c="?"><p><l>аьайгI</l><r>а<s n="n"/><s n="v:b"/><s n="pl"/><s n="loc"/></r></p></e>
+    </pardef>
+
+    <pardef n="н/ана__n_j:d" c="Paradigm underspecified">
+      <e>       <p><l>аьнага</l><r>ана<s n="n"/><s n="j:d"/><s n="sg"/><s n="all"/></r></p></e>
+      <e>       <p><l>ана</l><r>ана<s n="n"/><s n="j:d"/><s n="sg"/><s n="nom"/></r></p></e>
+      <e>       <p><l>аьна</l><r>ана<s n="n"/><s n="j:d"/><s n="sg"/><s n="gen"/></r></p></e>
+      <e>       <p><l>анна</l><r>ана<s n="n"/><s n="j:d"/><s n="sg"/><s n="dat"/></r></p></e>
+      <e c="?"> <p><l>аьнагI</l><r>ана<s n="n"/><s n="j:d"/><s n="sg"/><s n="loc"/></r></p></e>
+      <e>       <p><l>аьнаца</l><r>ана<s n="n"/><s n="j:d"/><s n="sg"/><s n="ins"/></r></p></e>
+      <e>       <p><l>аназ</l><r>ана<s n="n"/><s n="j:d"/><s n="sg"/><s n="erg"/></r></p></e>
+      <e>       <p><l>аьнал</l><r>ана<s n="n"/><s n="j:d"/><s n="sg"/><s n="comp"/></r></p></e>
+
+      <e>       <p><l>оаной</l><r>ана<s n="n"/><s n="j:d"/><s n="pl"/><s n="nom"/></r></p></e>
+      <e>       <p><l>оанож</l><r>ана<s n="n"/><s n="j:d"/><s n="pl"/><s n="nom"/></r></p></e>
+      <e>       <p><l>аной</l><r>ана<s n="n"/><s n="j:d"/><s n="pl"/><s n="nom"/></r></p></e>
+
+      <e>       <p><l>оаножта</l><r>ана<s n="n"/><s n="j:d"/><s n="pl"/><s n="dat"/></r></p></e>
+      <e>       <p><l>оанож</l><r>ана<s n="n"/><s n="j:d"/><s n="pl"/><s n="erg"/></r></p></e>
+    </pardef>
+
+    <pardef n="бер__n_d:d" c="Paradigm underspecified">
+      <e>       <p><l></l><r><s n="n"/><s n="d:d"/><s n="sg"/><s n="nom"/></r></p></e>
+      <e>       <p><l>а</l><r><s n="n"/><s n="d:d"/><s n="sg"/><s n="dat"/></r></p></e>
+      <e>       <p><l>о</l><r><s n="n"/><s n="d:d"/><s n="sg"/><s n="erg"/></r></p></e>
+
+      <e>       <p><l>аж</l><r><s n="n"/><s n="d:d"/><s n="pl"/><s n="nom"/></r></p></e>
+      <e>       <p><l>ий</l><r><s n="n"/><s n="d:d"/><s n="pl"/><s n="gen"/></r></p></e>
+      <e>       <p><l>ажта</l><r><s n="n"/><s n="d:d"/><s n="pl"/><s n="dat"/></r></p></e>
+    </pardef>
+
+    <pardef n="/уст__n_b:d">
+      <e>       <p><l>истарга</l><r>уст<s n="n"/><s n="b:d"/><s n="sg"/><s n="all"/></r></p></e>
+      <e>       <p><l>уст</l><r>уст<s n="n"/><s n="b:d"/><s n="sg"/><s n="nom"/></r></p></e>
+      <e>       <p><l>истара</l><r>уст<s n="n"/><s n="b:d"/><s n="sg"/><s n="gen"/></r></p></e>
+      <e>       <p><l>истара</l><r>уст<s n="n"/><s n="b:d"/><s n="sg"/><s n="dat"/></r></p></e>
+      <e>       <p><l>истарах</l><r>уст<s n="n"/><s n="b:d"/><s n="sg"/><s n="loc"/></r></p></e>
+      <e>       <p><l>истарца</l><r>уст<s n="n"/><s n="b:d"/><s n="sg"/><s n="ins"/></r></p></e>
+      <e>       <p><l>истаро</l><r>уст<s n="n"/><s n="b:d"/><s n="sg"/><s n="erg"/></r></p></e>
+      <e>       <p><l>истарал</l><r>уст<s n="n"/><s n="b:d"/><s n="sg"/><s n="comp"/></r></p></e>
+      <e>       <p><l>шерч</l><r>уст<s n="n"/><s n="b:d"/><s n="pl"/><s n="nom"/></r></p></e>
+      <e>       <p><l>шерч</l><r>уст<s n="n"/><s n="b:d"/><s n="pl"/><s n="gen"/></r></p></e>
+      <e>       <p><l>шерчажта</l><r>уст<s n="n"/><s n="b:d"/><s n="pl"/><s n="dat"/></r></p></e>
+    </pardef>
+
+
+  </pardefs>
+
+  <section id="main" type="standard">
+    <!-- SECTION: Conjunctions -->
+
+    <!-- SECTION: Adpositions -->
+
+    <e lm="чу"><i>чу</i><par n="дехьа__post"/></e>
+    <e lm="чухь"><i>чухь</i><par n="дехьа__post"/></e>
+    <e lm="тIа"><i>тIа</i><par n="дехьа__post"/></e>
+    <e lm="тIара"><i>тIара</i><par n="дехьа__post"/></e>
+    <e lm="дехьа"><i>дехьа</i><par n="дехьа__post"/></e>
+
+    <!-- SECTION: Pronouns -->
+
+    <e lm="со"><i></i><par n="/со__prn"/></e>
+
+    <!-- SECTION: Nouns -->  
+
+    <e lm="да"><i>д</i><par n="д/а__n_v:b"/></e>
+    <e lm="нана"><i>н</i><par n="н/ана__n_j:d"/></e>
+    <e lm="бер"><i>бер</i><par n="бер__n_d:d"/></e>
+    <e lm="уст"><i></i><par n="/уст__n_b:d"/></e>
+
+  </section>
+</dictionary>

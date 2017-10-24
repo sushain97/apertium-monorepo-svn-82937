@@ -1,0 +1,147 @@
+
+Multichar_Symbols
+
+%<n%>
+%<v%>
+%<det%>
+%<adj%>
+%<vbcop%>
+%<adj%>
+
+%<sg%>
+%<pl%>
+
+%<subst%>
+%<attr%>
+
+%<nom%>
+%<gen%>
+
+%<tv%> 
+%<iv%>
+
+%<past%>
+%<pres%>
+
+%{യ%}
+%{അ%}
+%{A%}
+%+              ! Clitic/compound boundary    !
+%>              ! Morpheme boundary           !
+%»              ! Clitic boundary
+%               ! Space symbol                !
+
+LEXICON Root
+
+Determiners ;
+Nouns ; 
+Verbs ; 
+VBCOP ;
+Adjectives ;
+
+LEXICON K
+
+%+:%»%{യ%} Root ; 
+# ; 
+
+LEXICON A !sandhi for adjective
+%+:%»%{അ%} Root ; 
+# ; 
+
+LEXICON N-MRIGAM 
+
+%<n%>%<sg%>%<nom%>:ം K ; ! "ṁ"
+%<n%>%<sg%>%<v%>: K ; ! "ṁ"
+%<n%>%<pl%>%<nom%>:%>ങ്ങള്‍ K ; ! "ṅṅaḷ‍"
+%<n%>%<attr%>: A ; ! ""
+
+!LEXICON N-KKALAM
+
+!%<n%>%<sg%>%<nom%>:%>ം K ; ! "ṁ"
+!%<n%>%<pl%>%<nom%>:%>ങ്ങള്‍ K ; ! "ṅṅaḷ‍"
+!%<n%>%<attr%>:K ; ! ""
+
+LEXICON N-THALA
+
+%<n%>%<sg%>%<nom%>: K ; ! "ṁ"
+%<n%>%<pl%>%<nom%>:%>കള്‍ K ; ! "ṅṅaḷ‍"
+%<n%>%<attr%>: A ; ! ""
+
+
+LEXICON VBCOP-UNTU 
+
+%<vbcop%>%<pres%>:ണ്ട് K ; ! "ṇṭ"
+
+!LEXICON V-TV-LABHIKKUKA
+
+!%<v%>%<tv%>: K ; 
+
+
+LEXICON V-PAST-I
+
+%<past%>:%>ി K ; ! ""
+
+LEXICON V-PAST-II
+
+%<past%>:%>ണ്ടു K ; ! ""
+
+LEXICON V-IV-VIRALUKA
+
+%<v%>%<iv%>: V-PAST-II ; 
+
+LEXICON V-IV-VEIKUKA
+
+%<v%>%<iv%>: V-PAST-I ; 
+
+
+LEXICON DET-XXX
+
+%<det%>: K ; 
+
+LEXICON VBCOP-AAK
+
+%<vbcop%>%<fut%>:കും #;
+
+LEXICON VBCOP-UNTU
+
+%<vbcop%>%<pres%>:ണ്ട് #;
+
+LEXICON A1 
+
+%<adj%>: A ;
+
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+
+LEXICON VBCOP
+
+ആക്:ആ VBCOP-AAK;  ! "FIXME" !debug
+ഉണ്ട്:ഉ VBCOP-UNTU ; ! "uṇṭ" ! "have"
+
+LEXICON Determiners
+
+എല്ലാം:എല്ലാം DET-XXX ; ! "ellāṁ" ! "all"
+
+LEXICON Nouns 
+
+മഴക്കാലം:മഴക്കാല N-MRIGAM ; ! "mēghaṁ" ! "cloud"
+മ്രിഗം:മ്രിഗ N-MRIGAM ; ! "mrigaṁ" ! "animal"
+ഓണം:ഓണ N-MRIGAM ; ! "oaanam" ! "oanam"
+മേഘം:മേഘ N-MRIGAM ; ! "mēghaṁ" ! "cloud"
+!മഴക്കാലം:മഴക്കാല N-THALA ; ! "maḻakkālaṁ" ! "rainy season"
+തല:തല N-THALA ; ! "tala" ! "head"
+വഴി:വഴി N-THALA ; ! "vaḻi" ! "path"
+കൈ:കൈ N-THALA ; ! "vaḻi" ! "hand"
+
+LEXICON Verbs 
+
+ഉണ്ട്:ഉ VBCOP-UNTU ; ! "uṇṭ" ! "have"
+
+ഇരുളുക:ഇരു V-IV-VIRALUKA ; ! "iruḷuka" ! "darken"
+കൂടുക:കൂട V-IV-VEIKUKA ; ! "kūṭuka" ! "be together"
+LEXICON Adjectives 
+
+തിരു:തിരു A1 ; ! "tiru" ! "~important"
+
+
+! മേഘങ്ങളെല്ലാം‌
+! മേഘങ്ങളെല്ലാം

@@ -1,0 +1,2507 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!--
+This is the fourth pass. Responsibilities of this file include:
+
+* Inserting articles
+  * See rule: pre_nom
+  * See macro: maybe_out_det2
+* Cleanup
+  * Making sure tags are consistent with nob.dix (esp. adjectives, personal pronouns)
+  * See macro: clean_adj
+  * See macro: clean_det (also used for numerals)
+* Does not output spaces occuring after a 'cmp'
+  * See rule: det_cmp_nom
+
+TODO: prpers entries in nob.dix, to avoid the clean_prn mess.
+
+-->
+
+<!-- -*- nxml -*- -->
+<postchunk>
+  <section-def-cats>
+    <def-cat n="lquot_unknown_rquot">
+<cat-item name="lquot_unknown_rquot"/>
+    </def-cat>
+    <def-cat n="unknown">
+<cat-item name="unknown"/>
+    </def-cat>
+    <def-cat n="therest">
+<cat-item name="default"/>
+<cat-item name="pr"/>
+<cat-item name="adv"/>
+<cat-item name="caseprep"/>
+<cat-item name="conj"/>
+    </def-cat>
+    <def-cat n="sent">
+<cat-item name="sent"/>
+<cat-item name="comma"/>
+    </def-cat>
+    <!-- <def-cats: Non-trivial -->
+    <def-cat n="verb">
+<cat-item name="verb"/>
+<cat-item name="vcop"/>
+    </def-cat>
+    <def-cat n="prn">
+<cat-item name="prn"/>
+    </def-cat>
+    <def-cat n="det_caseprep_prn">
+<cat-item name="det_caseprep_prn"/>
+    </def-cat>
+    <def-cat n="nom_caseprep_pre_nom">
+<cat-item name="nom_caseprep_pre_nom"/>
+    </def-cat>
+    <def-cat n="nom_caseprep_nom">
+<cat-item name="nom_caseprep_nom"/>
+    </def-cat>
+    <def-cat n="prn_caseprep_nom">
+<cat-item name="prn_caseprep_nom"/>
+    </def-cat>
+    <def-cat n="det">
+<cat-item name="det"/>
+    </def-cat>
+    <!-- <def-cats: Trivial, SN, _nom (treat cmp. prop and verb like nom for these rules)
+                    verb can only end a chunk, det/adj/cmp can never end a chunk,
+                    we never see det_prop, adj_prop, cmp_prop (prop is never sent to t1x out_nom) -->
+    <def-cat n="nom">
+<cat-item name="nom"/>
+    </def-cat>
+    <def-cat n="pre_nom">
+<cat-item name="pre_nom"/>
+    </def-cat>
+    <def-cat n="pre_pre_nom">
+<cat-item name="pre_pre_nom"/>
+    </def-cat>
+    <def-cat n="pre_pre_pre_nom">
+<cat-item name="pre_pre_pre_nom"/>
+    </def-cat>
+    <def-cat n="pre_pre_pre_pre_nom">
+<cat-item name="pre_pre_pre_pre_nom"/>
+    </def-cat>
+
+    <!-- <def-cats: Trivial, conjunctions
+                    For every single nom, alternatively allow a det or prn.
+                    There are no 'pre_det' or 'pre_prn' etc. -->
+<def-cat n="nom_conj_nom">                   
+     <cat-item name="det_conj_det"/>
+     <cat-item name="det_conj_nom"/>
+     <cat-item name="det_conj_prn"/>
+     <cat-item name="nom_conj_det"/>
+     <cat-item name="nom_conj_nom"/>        
+     <cat-item name="nom_conj_prn"/>
+     <cat-item name="prn_conj_det"/>
+     <cat-item name="prn_conj_nom"/>
+     <cat-item name="prn_conj_prn"/>
+</def-cat>
+
+<def-cat n="nom_conj_pre_nom">                    <cat-item name="nom_conj_pre_nom"/>        <cat-item name="det_conj_pre_nom"/>        <cat-item name="prn_conj_pre_nom"/></def-cat>
+<def-cat n="nom_conj_pre_pre_nom">                <cat-item name="nom_conj_pre_pre_nom"/>    <cat-item name="det_conj_pre_pre_nom"/>    <cat-item name="prn_conj_pre_pre_nom"/></def-cat>
+<def-cat n="nom_conj_pre_pre_pre_nom">            <cat-item name="nom_conj_pre_pre_pre_nom"/><cat-item name="det_conj_pre_pre_pre_nom"/><cat-item name="prn_conj_pre_pre_pre_nom"/></def-cat>
+<def-cat n="pre_nom_conj_nom">                    <cat-item name="pre_nom_conj_nom"/>        <cat-item name="pre_nom_conj_det"/>        <cat-item name="pre_nom_conj_prn"/></def-cat>
+<def-cat n="pre_pre_conj_pre_nom">                <cat-item name="pre_pre_conj_pre_nom"/></def-cat>
+<def-cat n="pre_conj_pre_nom">                    <cat-item name="pre_conj_pre_nom"/></def-cat>
+<def-cat n="pre_nom_conj_pre_nom">                <cat-item name="pre_nom_conj_pre_nom"/></def-cat>
+<def-cat n="pre_nom_conj_pre_pre_nom">            <cat-item name="pre_nom_conj_pre_pre_nom"/></def-cat>
+<def-cat n="pre_nom_conj_pre_pre_pre_nom">        <cat-item name="pre_nom_conj_pre_pre_pre_nom"/></def-cat>
+<def-cat n="pre_pre_nom_conj_nom">                <cat-item name="pre_pre_nom_conj_nom"/>    <cat-item name="pre_pre_nom_conj_det"/><cat-item name="pre_pre_nom_conj_prn"/></def-cat>
+<def-cat n="pre_pre_nom_conj_pre_nom">            <cat-item name="pre_pre_nom_conj_pre_nom"/></def-cat>
+<def-cat n="pre_pre_nom_conj_pre_pre_nom">        <cat-item name="pre_pre_nom_conj_pre_pre_nom"/></def-cat>
+<def-cat n="pre_pre_nom_conj_pre_pre_pre_nom">    <cat-item name="pre_pre_nom_conj_pre_pre_pre_nom"/></def-cat>
+<def-cat n="pre_pre_pre_nom_conj_nom">            <cat-item name="pre_pre_pre_nom_conj_nom"/><cat-item name="pre_pre_pre_nom_conj_det"/><cat-item name="pre_pre_pre_nom_conj_prn"/></def-cat>
+<def-cat n="pre_pre_pre_nom_conj_pre_nom">        <cat-item name="pre_pre_pre_nom_conj_pre_nom"/></def-cat>
+<def-cat n="pre_pre_pre_nom_conj_pre_pre_nom">    <cat-item name="pre_pre_pre_nom_conj_pre_pre_nom"/></def-cat>
+<def-cat n="pre_pre_pre_nom_conj_pre_pre_pre_nom"><cat-item name="pre_pre_pre_nom_conj_pre_pre_pre_nom"/></def-cat>
+    <!-- <def-cats: Trivial, SN, _nom_app (like _nom rules, just include the final _app) -->
+    <def-cat n="nom_app">
+<cat-item name="prn_app"/>
+<cat-item name="nom_app"/>
+    </def-cat>
+    <def-cat n="pre_nom_app">
+<cat-item name="pre_nom_app"/>
+    </def-cat>
+    <def-cat n="pre_pre_nom_app">
+<cat-item name="pre_pre_nom_app"/>
+    </def-cat>
+    <def-cat n="pre_pre_pre_nom_app">
+<cat-item name="pre_pre_pre_nom_app"/>
+    </def-cat>
+    <!-- <def-cats: SA -->
+    <def-cat n="adj">
+<cat-item name="adj"/>
+    </def-cat>
+    <def-cat n="pre_adj">
+<cat-item name="pre_adj"/>
+    </def-cat>
+    <!-- <def-cats: SA CC SA -->
+    <def-cat n="adj_conj_adj">
+<cat-item name="adj_conj_adj"/>
+    </def-cat>
+    <def-cat n="pre_adj_conj_adj">
+<cat-item name="pre_adj_conj_adj"/>
+    </def-cat>
+    <def-cat n="adj_conj_pre_adj">
+<cat-item name="adj_conj_pre_adj"/>
+    </def-cat>
+    <def-cat n="pre_adj_conj_pre_adj">
+<cat-item name="pre_adj_conj_pre_adj"/>
+    </def-cat>
+  </section-def-cats>
+
+  <section-def-attrs>
+    <def-attr n="a_sintagma">
+      <attr-item tags="SN"/>
+      <attr-item tags="SV"/>
+      <attr-item tags="SA"/>
+      <attr-item tags="ADV"/>
+    </def-attr>
+    <def-attr n="a_det">
+      <attr-item tags="det"/>
+      <attr-item tags="det.emph"/>
+      <attr-item tags="det.dem"/>
+      <attr-item tags="det.itg"/>
+      <attr-item tags="det.qnt"/>
+      <attr-item tags="det.pos"/>
+    </def-attr>
+    <def-attr n="a_prn">
+      <attr-item tags="prn"/>
+      <attr-item tags="prn.rel"/>
+      <attr-item tags="prn.res"/>
+      <attr-item tags="prn.ind"/>
+      <attr-item tags="prn.dem"/>
+      <attr-item tags="prn.pers"/>
+      <attr-item tags="prn.itg"/>
+      <attr-item tags="prn.ref"/>
+    </def-attr>
+    <def-attr n="a_adj">
+      <attr-item tags="adj"/>
+      <attr-item tags="adj.pp"/>
+      <attr-item tags="adj.pprs"/>
+      <attr-item tags="adj.sint"/>
+      <attr-item tags="adj.sint.pp"/>
+      <attr-item tags="adj.sint.pprs"/>
+    </def-attr>
+    <def-attr n="a_actio">
+      <attr-item tags="actio.ess"/>
+      <attr-item tags="actio.loc"/>
+      <attr-item tags="actio.nom"/>
+    </def-attr>
+     <def-attr n="a_abess">
+      <attr-item tags="vabess"/>
+    </def-attr>
+   <def-attr n="a_adv">
+      <attr-item tags="adv"/>
+    </def-attr>
+    <def-attr n="a_nom">
+      <attr-item tags="n"/>
+      <attr-item tags="n.acr"/>
+      <attr-item tags="np"/>
+      <attr-item tags="np.top"/>
+      <attr-item tags="np.attr"/>
+    </def-attr>
+    <def-attr n="a_rel">
+      <attr-item tags="ref"/>
+      <attr-item tags="res" c="Reciprocal"/>
+    </def-attr>
+    <def-attr n="grau">
+      <attr-item tags="pst"/>
+      <attr-item tags="comp"/>
+      <attr-item tags="sup"/>
+      <attr-item tags="ord.pst"/>
+      <attr-item tags="ord.comp"/>
+      <attr-item tags="ord.sup"/>
+    </def-attr>
+    <def-attr n="grau-pure">
+      <attr-item tags="pst"/>
+      <attr-item tags="comp"/>
+      <attr-item tags="sup"/>
+    </def-attr>
+    <def-attr n="pers">
+      <attr-item tags="p1"/>
+      <attr-item tags="p2"/>
+      <attr-item tags="p3"/>
+    </def-attr>
+    <def-attr n="case">
+      <attr-item tags="nom"/>
+      <attr-item tags="acc"/>
+      <attr-item tags="gen"/>
+      <attr-item tags="com"/>
+      <attr-item tags="ess"/>
+      <attr-item tags="ill"/>
+      <attr-item tags="loc"/>
+      <attr-item tags="ine"/>
+      <attr-item tags="ela"/>
+    </def-attr>
+    <def-attr n="a_count">
+      <attr-item tags="coll"/>
+      <attr-item tags="unc"/>
+    </def-attr>
+    <def-attr n="gen">
+      <attr-item tags="m"/>
+      <attr-item tags="f"/>
+      <attr-item tags="mf"/>
+      <attr-item tags="nt"/>
+      <attr-item tags="un"/>
+      <attr-item tags="GD"/>
+      <attr-item tags="GD_pers"/>
+    </def-attr>
+    <def-attr n="nbr">
+      <attr-item tags="sg"/>
+      <attr-item tags="du"/>
+      <attr-item tags="pl"/>
+      <attr-item tags="ND"/>
+      <attr-item tags="sp"/>
+    </def-attr>
+    <def-attr n="art">
+      <attr-item tags="def"/>
+      <attr-item tags="ind"/>
+      <attr-item tags="DD"/>
+    </def-attr>
+    <def-attr n="a_verb">
+      <attr-item tags="V"/>
+      <attr-item tags="vblex"/>
+    </def-attr>
+    <def-attr n="a_pstv">
+      <attr-item tags="pstv"/>
+    </def-attr>
+    <def-attr n="vfintemps">
+      <attr-item tags="pres"/>
+      <attr-item tags="pret"/>
+    </def-attr>
+    <def-attr n="temps">
+      <attr-item tags="pres"/>
+      <attr-item tags="pret"/>
+      <attr-item tags="inf"/>
+      <attr-item tags="imp"/>
+      <attr-item tags="pp"/>
+      <attr-item tags="pprs"/>
+      <attr-item tags="TD"/>
+    </def-attr>
+    <def-attr n="modality">
+      <attr-item tags="ind"/>
+      <attr-item tags="cond"/>
+      <attr-item tags="pot"/>
+    </def-attr>
+    <def-attr n="voice">
+      <attr-item tags="pasv"/>
+    </def-attr>
+    <def-attr n="syn_label">
+      <attr-item tags="@→A"/>
+      <attr-item tags="@A←"/>
+      <attr-item tags="@←ADVL"/>
+      <attr-item tags="@←ADVL-ela"/>
+      <attr-item tags="@←ADVL-ine"/>
+      <attr-item tags="@→ADVL"/>
+      <attr-item tags="@ADVL"/>
+      <attr-item tags="@ADVL←"/>
+      <attr-item tags="@ADVL→"/>
+      <attr-item tags="@ADVL-ela→"/>
+      <attr-item tags="@ADVL-ine→"/>
+      <attr-item tags="@ADVL→CS"/>
+      <attr-item tags="@ADVL←OBJ"/>
+      <attr-item tags="@ADVL→SUBJ"/>
+      <attr-item tags="@APP"/>
+      <attr-item tags="@APP-ADVL←"/>
+      <attr-item tags="@APP-N←"/>
+      <attr-item tags="@APP-Num←"/>
+      <attr-item tags="@APP-Pron←"/>
+      <attr-item tags="@APP→Pron"/>
+      <attr-item tags="@→CC"/>
+      <attr-item tags="@CNP"/>
+      <attr-item tags="@COMP-CS←"/>
+      <attr-item tags="@CVP"/>
+      <attr-item tags="@-F←ADVL"/>
+      <attr-item tags="@-F←ADVL-ine"/>
+      <attr-item tags="@-F←ADVL-ela"/>
+      <attr-item tags="@-FADVL"/>
+      <attr-item tags="@-FADVL→"/>
+      <attr-item tags="@-FADVL-ine→"/>
+      <attr-item tags="@-FADVL-ela→"/>
+      <attr-item tags="@-FAUXV"/>
+      <attr-item tags="@\+FAUXV"/>
+      <attr-item tags="@+FAUXV"/>
+      <attr-item tags="@-FMAINV"/>
+      <attr-item tags="@\+FMAINV"/>
+      <attr-item tags="@+FMAINV"/>
+      <attr-item tags="@-F←OBJ"/>
+      <attr-item tags="@-FOBJ"/>
+      <attr-item tags="@-FOBJ→"/>
+      <attr-item tags="@-F←OPRED"/>
+      <attr-item tags="@-FOPRED→"/>
+      <attr-item tags="@-F←SPRED"/>
+      <attr-item tags="@-FSPRED→"/>
+      <attr-item tags="@-FSUBJ→"/>
+      <attr-item tags="@HNOUN"/>
+      <attr-item tags="@INTERJ"/>
+      <attr-item tags="@→N"/>
+      <attr-item tags="@N←"/>
+      <attr-item tags="@N"/>
+      <attr-item tags="@→Num;"/>
+      <attr-item tags="@→Num"/>
+      <attr-item tags="@Num←"/>
+      <attr-item tags="@←OBJ"/>
+      <attr-item tags="@OBJ"/>
+      <attr-item tags="@OBJ→"/>
+      <attr-item tags="@OBJ→SPRED"/>
+      <attr-item tags="@-OPRED→"/>
+      <attr-item tags="@←OPRED"/>
+      <attr-item tags="@OPRED"/>
+      <attr-item tags="@OPRED→"/>
+      <attr-item tags="@→P"/>
+      <attr-item tags="@P←"/>
+      <attr-item tags="@PCLE"/>
+      <attr-item tags="@←PPRED"/>
+      <attr-item tags="@PPRED"/>
+      <attr-item tags="@→Pron"/>
+      <attr-item tags="@Pron←"/>
+      <attr-item tags="@-SPRED→"/>
+      <attr-item tags="@←SPRED"/>
+      <attr-item tags="@SPRED"/>
+      <attr-item tags="@SPRED→"/>
+      <attr-item tags="@SPRED←OBJ"/>
+      <attr-item tags="@←SUBJ"/>
+      <attr-item tags="@SUBJ"/>
+      <attr-item tags="@SUBJ→"/>
+      <attr-item tags="@SUBJ←ADVL"/>
+      <attr-item tags="@SUBJ←OBJ"/>
+      <attr-item tags="@VOC"/>
+      <attr-item tags="@X"/>
+    </def-attr>
+    <def-attr n="a_neverdet">
+      <attr-item tags="neverdet"/>
+    </def-attr>
+    <def-attr n="a_maydetind">
+      <attr-item tags="maydetind"/>
+    </def-attr>
+  </section-def-attrs>
+
+  <section-def-vars>
+    <def-var n="prev-verb-was-bli"/>
+    <def-var n="gender"/>
+    <def-var n="defnes"/>
+    <def-var n="moremost-defnes"/>
+    <def-var n="adj-gender"/>
+    <def-var n="adj-number"/>
+    <def-var n="former-chunk"/>
+    <def-var n="verb_temp"/>
+  </section-def-vars>
+
+  <section-def-lists>
+    <def-list n="inf-mark"
+              c="Verbs with these functions need an infinitive marker (rather heuristic...test!)">
+      <list-item v="&lt;@←SUBJ&gt;"/>
+      <list-item v="&lt;@←SPRED&gt;"/>
+      <list-item v="&lt;@SUBJ→&gt;"/>
+      <list-item v="&lt;@←OBJ&gt;"/>
+<!--      <list-item v="&lt;@←ADVL&gt;"/> -->
+      <list-item v="&lt;@←ADVL-ela&gt;"/>
+      <list-item v="&lt;@←ADVL-ine&gt;"/>
+      <list-item v="&lt;@COMP-CS←&gt;"/>
+      <list-item v="&lt;@N←&gt;"/>
+      <list-item v="&lt;@A←&gt;"/>
+      <list-item v="&lt;@ADVL→&gt;"/> <!-- vabess -->
+    </def-list>
+    <def-list n="lemh-no-determiner"
+              c="No determiner at all, whether first or last in chunk">
+      <list-item v="mor"/>
+      <list-item v="ansvar"/>
+      <list-item v="far"/>
+      <list-item v="bestemor"/>
+      <list-item v="bestefar"/>
+      <list-item v="velkommen"/>
+      <list-item v="januar"/>
+      <list-item v="februar"/>
+      <list-item v="mars"/>
+      <list-item v="april"/>
+      <list-item v="mai"/>
+      <list-item v="juni"/>
+      <list-item v="juli"/>
+      <list-item v="august"/>
+      <list-item v="september"/>
+      <list-item v="oktober"/>
+      <list-item v="november"/>
+      <list-item v="desember"/>
+      <list-item v="julaften"/>
+      <list-item v="jul"/>
+      <list-item v="midnatt"/>
+      <list-item v="takk"/>
+      <list-item v="TV"/>
+      <list-item v="tv"/>
+      <list-item v="hast"/>
+      <list-item v="verden"/>
+      <list-item v="hjelp"/>
+      <list-item v="gårsdagens"/>
+      <list-item v="fjorårets"/>
+      <list-item v="dagens"/>
+      <list-item v="nåtidens"/>
+      <list-item v="ydmykhet"/>
+      <list-item v="verden"/>
+      <list-item v="duodji"/>
+      <list-item v="trygghet"/>
+      <list-item v="hørsel"/>
+      <list-item v="merverdiavgift"/>
+      <list-item v="moms"/>
+      <list-item v="jakt"/>
+      <list-item v="kultur"/>
+      <list-item v="fiske"/>
+      <list-item v="fiskeri"/>
+      <list-item v="reindrift"/>
+      <list-item v="downs syndrom"/>
+      <list-item v="asyl"/>
+    </def-list>
+    <def-list n="initial-lemh-no-determiner"
+              c="Noun phrases *starting with* these lemmas should not have a determiner at all">
+      <list-item v="fjorårets"/>
+    </def-list>
+    <def-list n="initial-lemh-no-def-determiner"
+              c="Noun phrases *starting with* these lemmas should not have a def determiner">
+      <list-item v="hel"/>
+    </def-list>
+    <def-list n="syn-no-determiner"
+              c="Noun phrases with these syntactic functions should not have a determiner (neither ind nor def)">
+      <list-item v="&lt;@←PPRED&gt;"/>
+      <list-item v="&lt;@HNOUN&gt;"/>
+    </def-list>
+    <def-list n="no-moremost"
+              c="Adj's that are neither analytic nor work with more/most">
+      <list-item v="forrige"/>
+    </def-list>
+    <def-list n="adj-genders" c="possible nob adj genders">
+      <list-item v="&lt;m&gt;"/>
+      <list-item v="&lt;mf&gt;"/>
+      <list-item v="&lt;f&gt;"/>
+      <list-item v="&lt;nt&gt;"/>
+      <list-item v="&lt;un&gt;"/>
+    </def-list>
+    <def-list n="det-genders" c="possible nob determiner genders">
+      <list-item v="&lt;m&gt;"/>
+      <list-item v="&lt;f&gt;"/>
+      <list-item v="&lt;nt&gt;"/>
+    </def-list>
+    <def-list n="prn.p3.sg-genders" c="possible nob pronoun genders">
+      <list-item v="&lt;m&gt;"/>
+      <list-item v="&lt;mf&gt;"/>
+      <list-item v="&lt;f&gt;"/>
+      <list-item v="&lt;nt&gt;"/>
+    </def-list>
+    <def-list n="det.sp.def"
+              c="These determiners only ever have sp as number, def as defnes.">
+      <list-item v="hva"/>
+      <list-item v="hvem"/>
+      <list-item v="samme"/>
+      <list-item v="neste"/>
+      <list-item v="forrige"/>
+    </def-list>
+    <def-list n="det.pl"
+              c="These determiners only ever have pl as number">
+      <list-item v="mange"/>
+      <list-item v="så mange"/>
+      <list-item v="hvor mange"/>
+      <list-item v="begge"/>
+      <list-item v="samtlige"/>
+      <list-item v="de fleste"/>
+    </def-list>
+    <def-list n="det.sg"
+              c="These determiners only ever have sg as number">
+      <list-item v="en"/>
+      <list-item v="én"/>
+    </def-list>
+    <def-list n="selv.det.emph">  
+      <list-item v="selv"/>
+    </def-list>
+    <def-list n="det.emph"
+              c="These determiners have odd tags, should they be postchunked?">
+      <list-item v="egen"/>
+      <list-item v="selv"/>
+    </def-list>
+    <def-list n="adj.pseudo-det"
+              c="Adjectives like 'certain' never take have determiners 'den/de' in front of them.">
+      <list-item v="viss"/>
+    </def-list>
+  </section-def-lists>
+
+  <section-def-macros>
+    <def-macro n="clean_prn" npar="2"
+               c="arg.1: chunk, arg.2: pronoun
+                  -----
+                  Put non-GD chunk gender on pronoun.
+                  Ensure reflexive has right tags (these are a bit odd)">
+      <choose><when>
+        <test><and>
+          <equal><clip pos="2" part="nbr"/><lit-tag v="ND"/></equal>
+          <not><equal><clip pos="1" part="nbr"/><lit v=""/></equal></not>
+        </and></test>
+        <let><clip pos="2" part="nbr"/><clip pos="1" part="nbr"/></let>
+      </when></choose>
+      <choose><when>
+        <test><equal><clip pos="2" part="nbr"/><lit-tag v="ND"/></equal></test>
+        <let><clip pos="2" part="nbr"/><lit-tag v="sg"/></let>
+      </when></choose>
+
+      <choose><when c="use chunk case if possible">
+        <test><not><equal><clip pos="1" part="case"/><lit v=""/></equal></not></test>
+        <let><clip pos="2" part="case"/><clip pos="1" part="case"/></let>
+      </when></choose>
+
+      <choose>
+        <when c="nob prn.res cases are only ever gen or ∅">
+          <test><equal><clip pos="2" part="a_prn"/><lit-tag v="prn.res"/></equal></test>
+          <choose><when>
+            <test><and>
+              <equal><clip pos="2" part="a_prn"/><lit-tag v="prn.res"/></equal>
+              <not><or>
+                <equal><clip pos="2" part="case"/><lit-tag v="gen"/></equal>
+                <equal><clip pos="2" part="case"/><lit v=""/></equal>
+              </or></not>
+            </and></test>
+            <let><clip pos="2" part="case"/><lit v=""/></let>
+          </when></choose>
+        </when>
+        <otherwise c="other nob prn cases are only ever nom or acc">
+          <choose><when>
+            <test><not><or>
+              <equal><clip pos="2" part="case"/><lit-tag v="nom"/></equal>
+              <equal><clip pos="2" part="case"/><lit-tag v="acc"/></equal>
+            </or></not></test>
+            <let><clip pos="2" part="case"/><lit-tag v="acc"/></let>
+          </when></choose>
+        </otherwise>
+      </choose>
+
+      <choose><when c="try chunk gender">
+        <test><and>
+          <not><equal><clip pos="2" part="a_prn"/><lit-tag v="prn.ref"/></equal></not>
+          <not><equal><clip pos="2" part="lemh"/><lit-tag v="hen"/></equal></not>
+          <not><equal><clip pos="2" part="lemh"/><lit-tag v="den"/></equal></not>
+          <equal><clip pos="2" part="nbr"/><lit-tag v="sg"/></equal>
+          <equal><clip pos="2" part="pers"/><lit-tag v="p3"/></equal>
+          <in><clip pos="1" part="gen"/><list n="prn.p3.sg-genders"/></in>
+        </and></test>
+        <choose><when>
+          <test><not><and>
+            <equal><clip pos="2" part="gen"/><lit-tag v="GD_pers"/></equal>
+            <equal><clip pos="1" part="gen"/><lit-tag v="nt"/></equal>
+          </and></not></test>
+          <let><clip pos="2" part="gen"/><clip pos="1" part="gen"/></let>
+        </when></choose>
+        <choose><when>
+          <test><and>
+            <equal><clip pos="2" part="a_prn"/><lit-tag v="prn.pers"/></equal>
+            <equal><clip pos="2" part="nbr"/><lit-tag v="sg"/></equal>
+            <not><equal><clip pos="2" part="lemh"/><lit v="den"/></equal></not>
+<!--            <not><equal><clip pos="2" part="gen"/><lit-tag v="f"/></equal></not>  -->
+          </and></test>
+          <let><clip pos="2" part="lemh"/><get-case-from pos="1"><lit v="prpers"/></get-case-from></let>
+        </when></choose>
+      </when></choose>
+      <choose>
+        <when c="Chunk gender still GD: generate h_n if possible">
+          <test><or>
+            <equal><clip pos="2" part="gen"/><lit-tag v="GD"/></equal>
+            <equal><clip pos="2" part="gen"/><lit-tag v="GD_pers"/></equal>
+          </or></test>
+          <choose>
+          <when c="h_n">
+            <test><or>
+              <equal caseless="yes"><clip pos="2" part="lemh"/><lit v="han"/></equal>
+              <equal caseless="yes"><clip pos="2" part="lemh"/><lit v="hun"/></equal>
+            </or></test>
+            <let><clip pos="2" part="lemh"/><get-case-from pos="2"><lit v="h_n"/></get-case-from></let>
+          </when>
+          <when c="geat guhtiige juhkkojuvvui = hver">
+            <test><or>
+              <equal><clip pos="2" part="gen"/><lit-tag v="GD"/></equal>
+              <equal><clip pos="1" part="gen"/><lit-tag v="f"/></equal>
+            </or></test>
+            <let><clip pos="2" part="gen"/><clip pos="1" part="gen"/></let>
+          </when>
+          <otherwise c="fallback if we can't generate GD_pers (e.g. not pers.p3.sg)">
+            <let><clip pos="2" part="gen"/><lit-tag v="mf"/></let>
+          </otherwise>
+          </choose>
+        </when>
+      </choose>
+      <choose><when c="p3.sg.mf should be m">
+        <test><and>
+          <not><equal><clip pos="2" part="a_prn"/><lit-tag v="prn.ref"/></equal></not>
+          <not><equal caseless="yes"><clip pos="2" part="lemh"/><lit v="hen"/></equal></not>
+          <not><equal caseless="yes"><clip pos="2" part="lemh"/><lit v="h_n"/></equal></not>
+          <not><equal caseless="yes"><clip pos="2" part="lemh"/><lit v="den"/></equal></not>
+          <equal><clip pos="2" part="pers"/><lit-tag v="p3"/></equal>
+          <equal><clip pos="2" part="nbr"/><lit-tag v="sg"/></equal>
+          <equal><clip pos="2" part="gen"/><lit-tag v="mf"/></equal>
+        </and></test>
+        <let><clip pos="2" part="gen"/><lit-tag v="GD_pers"/></let> <!-- Lene channged this from m -->
+      </when></choose>
+
+      <choose><when c="sp and plurals are un">
+        <test><or>
+          <equal><clip pos="2" part="nbr"/><lit-tag v="pl"/></equal>
+          <equal><clip pos="2" part="nbr"/><lit-tag v="sp"/></equal>
+        </or></test>
+        <let><clip pos="2" part="gen"/><lit-tag v="un"/></let>
+      </when></choose>
+    </def-macro>
+
+    <def-macro n="clean_det2" npar="2"
+               c="arg.1: chunk, arg.2: determiner (including numerals)
+                  -----
+                  - if DD, try chunk defnes, default ind
+                  - if ND, try chunk number, default sg
+                  - if GD sg, try chunk gender, default m
+                  - remove gender from plurals / definites
+                  - remove defnes from plurals
+                  - remove case/pers (added in t1x since we don't know until interchunk
+                    if it'll be a determiner or pronoun)">
+      <choose><when c="try chunk defnes">
+        <test><and>
+          <equal><clip pos="2" part="art"/><lit-tag v="DD"/></equal>
+          <not><equal><clip pos="1" part="art"/><lit v=""/></equal></not>
+        </and></test>
+        <let><clip pos="2" part="art"/><clip pos="1" part="art"/></let>
+      </when></choose>
+      <choose><when c="default defnes">
+        <test><equal><clip pos="2" part="art"/><lit-tag v="DD"/></equal></test>
+        <let><clip pos="2" part="art"/><lit-tag v="ind"/></let>
+        <let><clip pos="1" part="art"/><lit-tag v="ind"/></let>
+      </when></choose>
+
+      <choose><when c="try chunk number">
+        <test><and>
+          <equal><clip pos="2" part="nbr"/><lit-tag v="ND"/></equal>
+          <not><equal><clip pos="1" part="nbr"/><lit v=""/></equal></not>
+        </and></test>
+        <let><clip pos="2" part="nbr"/><clip pos="1" part="nbr"/></let>
+      </when></choose>
+      <choose><when c="default number">
+        <test><equal><clip pos="2" part="nbr"/><lit-tag v="ND"/></equal></test>
+        <let><clip pos="2" part="nbr"/><lit-tag v="sg"/></let>
+        <let><clip pos="1" part="nbr"/><lit-tag v="sg"/></let>
+      </when></choose>
+      <choose>
+        <when c="some determiners are plural-only">
+          <test><in caseless="yes"><clip pos="2" part="lemh"/><list n="det.pl"/></in></test>
+          <let><clip pos="2" part="nbr"/><lit-tag v="pl"/></let>
+        </when>
+        <when c="some determiners are singular-only">
+          <test><in caseless="yes"><clip pos="2" part="lemh"/><list n="det.sg"/></in></test>
+          <choose>
+            <when>
+              <test><equal><clip pos="2" part="gen"/><lit v=""/></equal></test>
+              <let><clip pos="2" part="nbr"/><lit-tag v="m.sg"/></let>
+            </when>
+            <otherwise>
+              <let><clip pos="2" part="nbr"/><lit-tag v="sg"/></let>
+            </otherwise>
+          </choose>
+        </when>
+      </choose>
+      <choose>
+      <when c="don't allow sp tag if not in det.sp.def list; sg.m sounds most natural">
+        <test><and>
+          <not><or>
+          <in caseless="yes"><clip pos="2" part="lemh"/><list n="det.sp.def"/></in>
+          <in caseless="yes"><clip pos="2" part="lemh"/><list n="selv.det.emph"/></in> <!-- Lene -->
+          </or></not>
+          <equal><clip pos="2" part="nbr"/><lit-tag v="sp"/></equal>
+        </and></test>
+        <let><clip pos="2" part="nbr"/><lit-tag v="sg"/></let>
+        <let><clip pos="2" part="gen"/><lit-tag v="m"/></let>
+      </when></choose>
+
+      <choose><when c="only gender on singular or sp determiners">
+        <test><and>
+          <or>
+            <equal><clip pos="2" part="nbr"/><lit-tag v="sg"/></equal>
+            <equal><clip pos="2" part="nbr"/><lit-tag v="sp"/></equal>
+            <in caseless="yes"><clip pos="2" part="lemh"/><list n="det.sp.def"/></in>
+          </or>
+          <or>
+            <equal><clip pos="2" part="gen"/><lit-tag v="GD"/></equal>
+            <equal><clip pos="2" part="gen"/><lit-tag v="GD_pers"/></equal>
+          </or>
+        </and></test>
+        <choose><when c="try chunk gender">
+          <test><in><clip pos="1" part="gen"/><list n="det-genders"/></in></test>
+          <let><clip pos="2" part="gen"/><clip pos="1" part="gen"/></let>
+        </when></choose>
+        <choose>
+          <when c="default gender when m or f">
+            <test><equal><clip pos="2" part="gen"/><lit-tag v="GD_pers"/></equal></test>
+            <let><clip pos="2" part="gen"/><lit-tag v="m"/></let>
+            <let><clip pos="1" part="gen"/><lit-tag v="m"/></let>
+          </when>
+          <when c="default gender when nt allowed">
+            <test><equal><clip pos="2" part="gen"/><lit-tag v="GD"/></equal></test>
+            <let><clip pos="2" part="gen"/><lit-tag v="nt"/></let>
+            <let><clip pos="1" part="gen"/><lit-tag v="nt"/></let>
+          </when>
+        </choose>
+      </when></choose>
+
+      <choose><when c="only det.pos has mf (TODO: even .pos mostly mf-less in nob.dix now)">
+        <test><and>
+          <not><equal><clip pos="2" part="a_det"/><lit-tag v="det.pos"/></equal></not>
+          <equal><clip pos="2" part="gen"/><lit-tag v="mf"/></equal>
+        </and></test>
+        <let><clip pos="2" part="gen"/><lit-tag v="m"/></let>
+      </when></choose>
+
+      <choose>
+        <when c="'samme' etc. have a bit special tags in nob.dix">
+          <test><in caseless="yes"><clip pos="2" part="lemh"/><list n="det.sp.def"/></in></test>
+          <let><clip pos="2" part="nbr"/><lit-tag v="sp"/></let>
+          <let><clip pos="2" part="art"/><lit-tag v="def"/></let>
+          <choose><when c="just in case it was set to plural, no number">
+            <test><equal><clip pos="2" part="gen"/><lit v=""/></equal></test>
+            <let><clip pos="2" part="a_det"/><lit-tag v="det.dem.m"/></let>
+          </when></choose>
+        </when>
+        <otherwise>
+          <choose><when c="un gender on plural or definite determiners">
+            <test><or>
+              <equal><clip pos="2" part="nbr"/><lit-tag v="pl"/></equal>
+              <equal><clip pos="2" part="art"/><lit-tag v="def"/></equal>
+            </or></test>
+            <let><clip pos="2" part="gen"/><lit-tag v="un"/></let>
+          </when></choose>
+          <choose><when c="no defnes on plural determiners">
+            <test><equal><clip pos="2" part="nbr"/><lit-tag v="pl"/></equal></test>
+            <let><clip pos="2" part="art"/><lit v=""/></let>
+          </when></choose>
+        </otherwise>
+      </choose>
+
+      <let><clip pos="2" part="case"/><lit v=""/></let>
+      <let><clip pos="2" part="pers"/><lit v=""/></let>
+    </def-macro>
+
+    <def-macro n="clean_det3" npar="3"
+               c="arg.1: chunk, arg.2: determiner (including numerals), arg.3: determined word
+                  -----
+                  - if ND, try number of determined object
+                  - if GD sg, try gender of determined object
+                  - call clean_det2">
+      <choose><when c="try object number">
+        <test><and>
+          <equal><clip pos="2" part="nbr"/><lit-tag v="ND"/></equal>
+          <not><equal><clip pos="3" part="nbr"/><lit v=""/></equal></not>
+        </and></test>
+        <let><clip pos="2" part="nbr"/><clip pos="3" part="nbr"/></let>
+      </when></choose>
+
+      <choose><when c="only gender on singular determiners">
+        <test><and>
+          <equal><clip pos="2" part="nbr"/><lit-tag v="sg"/></equal>
+          <or>
+            <equal><clip pos="2" part="gen"/><lit-tag v="GD"/></equal>
+            <equal><clip pos="2" part="gen"/><lit-tag v="GD_pers"/></equal>
+          </or>
+        </and></test>
+        <choose><when c="try object gender">
+          <test><in><clip pos="3" part="gen"/><list n="det-genders"/></in></test>
+          <let><clip pos="2" part="gen"/><clip pos="3" part="gen"/></let>
+        </when></choose>
+      </when></choose>
+
+      <call-macro n="clean_det2"><with-param pos="1"/><with-param pos="2"/></call-macro>
+    </def-macro>
+
+
+    <def-macro n="prepend_moremost" npar="2"
+               c="arg.1: chunk, arg.2: adj, after having run through clean_adj
+                  -----
+                  Prepend 'more'/'most' if adj is non-synthetic and comp/sup;
+                  also change the main adj tags back to mf.pst.sg.ind.
+                  By this point, the tags should be completely 'cleaned',
+                  so we shouldn't have to worry about inconsistencies.
+                  ">
+      <choose><when>
+        <test><and>
+          <not><equal><clip pos="2" part="a_adj"/><lit-tag v="adj.sint"/></equal></not>
+          <or>
+            <equal><clip pos="2" part="grau-pure"/><lit-tag v="comp"/></equal>
+            <equal><clip pos="2" part="grau-pure"/><lit-tag v="sup"/></equal>
+          </or>
+        </and></test>
+
+        <choose>
+          <when>
+            <test><not><equal><clip pos="2" part="grau-pure"/><lit-tag v="comp"/></equal></not></test>
+            <let><var n="moremost-defnes"/><lit-tag v="ind"/></let>
+          </when>
+          <otherwise>
+            <let><var n="moremost-defnes"/><lit v=""/></let>
+          </otherwise>
+        </choose>
+
+        <choose>
+          <when>
+            <test><equal><clip pos="1" part="gen"/><lit-tag v="mf"/></equal></test>
+            <let><var n="gender"/><clip pos="1" part="gen"/></let>
+          </when>
+          <otherwise>
+            <let><var n="gender"/><lit-tag v="nt"/></let>
+          </otherwise>
+        </choose>
+
+        <choose>
+          <when>
+            <test><in><clip pos="2" part="lemh"/><list n="no-moremost"/></in></test>
+            <let>
+              <clip pos="2" part="tags"/>
+              <concat>
+                <clip pos="2" part="a_adj"/>
+                <lit-tag v="pst"/>
+                <var n="gender"/>
+                <lit-tag v="sg.ind"/>
+              </concat>
+            </let>
+          </when>
+          <otherwise>
+            <let>
+              <clip pos="2" part="whole"/>
+              <concat>
+                <lit v="mye"/>
+                <lit-tag v="adj.sint"/>
+                <clip pos="2" part="grau-pure"/>
+                <lit-tag v="un.sp"/>
+                <var n="moremost-defnes"/>
+                <lit v="$ ^"/>
+                <clip pos="2" part="lemh"/>
+                <clip pos="2" part="a_adj"/>
+                <lit-tag v="pst"/>
+                <var n="gender"/>
+                <lit-tag v="sg.ind"/>
+                <clip pos="2" part="lemq"/>
+              </concat>
+            </let>
+          </otherwise>
+        </choose>
+
+      </when></choose>
+    </def-macro>
+
+    <def-macro n="clean_adj" npar="2"
+               c="arg.1: chunk, arg.2: adj
+                  -----
+                  - Try to apply chunk nbr/gender if ND/GD, else set to sg/nt.
+                  - Change m or f to mf.
+                  - If empty number tag and pst/pp, set to sg.
+                    - Can we fix this in bidix?
+                  - Remove defness unless superlatives or pst/pp.sg
+                  - Remove gender unless pst/pp.sg.ind
+                  - Make all adj.ord plural
+                  ">
+      <!-- clean grau -->
+      <choose><when>
+        <test><and>
+          <equal><clip pos="2" part="grau"/><lit v=""/></equal>
+          <not><equal><clip pos="2" part="a_adj"/><lit-tag v="adj.pprs"/></equal></not>
+          <not><equal><clip pos="2" part="a_adj"/><lit-tag v="adj.pp"/></equal></not>
+        </and></test>
+        <let><clip pos="2" part="a_adj"/><concat><clip pos="2" part="a_adj"/><lit-tag v="pst"/></concat></let>
+      </when></choose>
+
+      <!-- clean nbr -->
+      <choose><when>
+        <test><and>
+          <equal><clip pos="2" part="nbr"/><lit-tag v="ND"/></equal>
+          <not><equal><clip pos="1" part="nbr"/><lit v=""/></equal></not>
+          <not><equal><clip pos="1" part="nbr"/><lit-tag v="du"/></equal></not>
+        </and></test>
+        <let><clip pos="2" part="nbr"/><clip pos="1" part="nbr"/></let>
+      </when></choose>
+      <choose><when>
+        <test><equal><clip pos="2" part="nbr"/><lit-tag v="ND"/></equal></test>
+        <let><clip pos="2" part="nbr"/><lit-tag v="sg"/></let>
+      </when></choose>
+      <choose>
+        <when>
+          <test><equal><clip pos="2" part="temps"/><lit-tag v="pprs"/></equal></test>
+          <let><clip pos="2" part="nbr"/><lit v=""/></let>
+        </when>
+        <otherwise>
+          <choose><when>
+            <test><equal><clip pos="2" part="nbr"/><lit v=""/></equal></test>
+            <choose>
+              <when>
+                <test><or>
+                  <equal><clip pos="2" part="temps"/><lit-tag v="pp"/></equal>
+                  <equal><clip pos="2" part="grau"/><lit-tag v="pst"/></equal>
+                </or></test>
+                <let><clip pos="2" part="gen"/><concat><clip pos="2" part="gen"/><lit-tag v="sg"/></concat></let>
+              </when>
+              <when>
+                <test><begins-with><clip pos="2" part="grau"/><lit-tag v="ord"/></begins-with></test>
+                <let><clip pos="2" part="gen"/><concat><clip pos="2" part="gen"/><lit-tag v="pl"/></concat></let>
+              </when>
+            </choose>
+          </when></choose>
+        </otherwise>
+      </choose>
+      <!-- sp handled after gen -->
+
+      <!-- clean art -->
+      <choose><when c="These don't have defnes specified">
+        <test><or>
+          <equal><clip pos="2" part="grau"/><lit-tag v="comp"/></equal>
+          <equal><clip pos="2" part="temps"/><lit-tag v="pprs"/></equal>
+          <and>
+            <equal><clip pos="2" part="temps"/><lit-tag v="pp"/></equal>
+            <equal><clip pos="2" part="nbr"/><lit-tag v="pl"/></equal>
+          </and>
+        </or></test>
+        <let><clip pos="2" part="art"/><lit v=""/></let>
+      </when></choose>
+
+      <!-- clean gen -->
+      <choose>
+        <when c="Only pp/pst.sg.ind has gender">
+          <test><and>
+            <or>
+              <equal><clip pos="2" part="temps"/><lit-tag v="pp"/></equal>
+              <equal><clip pos="2" part="grau-pure"/><lit-tag v="pst"/></equal>
+            </or>
+            <equal><clip pos="2" part="nbr"/><lit-tag v="sg"/></equal>
+            <equal><clip pos="2" part="art"/><lit-tag v="ind"/></equal>
+          </and></test>
+
+          <!-- Try to use chunk gender, and ensure any GD gets set to nt,
+               and GD_pers to mf, fallback to nt -->
+          <choose><when>
+            <test><in><clip pos="1" part="gen"/><list n="adj-genders"/></in></test>
+            <let><clip pos="2" part="gen"/><clip pos="1" part="gen"/></let>
+          </when></choose>
+          <choose>
+            <when>
+              <test><equal><clip pos="2" part="gen"/><lit-tag v="GD"/></equal></test>
+              <let><clip pos="2" part="gen"/><lit-tag v="nt"/></let>
+            </when>
+            <when>
+              <test><equal><clip pos="2" part="gen"/><lit-tag v="GD_pers"/></equal></test>
+              <let><clip pos="2" part="gen"/><lit-tag v="mf"/></let>
+            </when>
+            <when>
+              <test><equal><clip pos="2" part="gen"/><lit v=""/></equal></test>
+              <let><clip pos="2" part="grau"/><concat><clip pos="2" part="grau"/><lit-tag v="nt"/></concat></let>
+            </when>
+          </choose>
+          <choose><when>
+            <test><or>
+              <equal><clip pos="2" part="gen"/><lit-tag v="m"/></equal>
+              <equal><clip pos="2" part="gen"/><lit-tag v="f"/></equal>
+            </or></test>
+            <let><clip pos="2" part="gen"/><lit-tag v="mf"/></let>
+          </when></choose>
+        </when>
+          <when c="oahppan oahpaheaddjit">
+            <test><and>
+              <equal><clip pos="2" part="temps"/><lit-tag v="pp"/></equal>
+              <equal><clip pos="0" part="art"/><lit-tag v="def"/></equal>
+            </and></test>
+            <let><clip pos="2" part="gen"/><lit v=""/></let>
+          </when>
+
+        <otherwise c="pprs no gender, everything else just gets un">
+          <choose>
+            <when>
+              <test><equal><clip pos="2" part="temps"/><lit-tag v="pprs"/></equal></test>
+              <let><clip pos="2" part="gen"/><lit v=""/></let>
+            </when>
+            <otherwise>
+              <let><clip pos="2" part="gen"/><lit-tag v="un"/></let>
+            </otherwise>
+          </choose>
+        </otherwise>
+      </choose>
+      <choose><when c="If _chunk_ was GD, use adj gender">
+        <test><or>
+          <equal><clip pos="1" part="gen"/><lit-tag v="GD"/></equal>
+          <equal><clip pos="1" part="gen"/><lit-tag v="GD_pers"/></equal>
+        </or></test>
+        <let><clip pos="1" part="gen"/><clip pos="2" part="gen"/></let>
+      </when></choose>
+
+      <!-- clean nbr sp (depends on gen) -->
+      <choose>
+        <when>
+          <test><or>
+            <ends-with><clip pos="2" part="grau"/><lit-tag v="comp"/></ends-with>
+            <ends-with><clip pos="2" part="grau"/><lit-tag v="sup"/></ends-with>
+            <and>
+              <ends-with><clip pos="2" part="grau"/><lit-tag v="pst"/></ends-with>
+              <equal><clip pos="2" part="art"/><lit-tag v="def"/></equal>
+              <equal><clip pos="2" part="gen"/><lit-tag v="un"/></equal>
+            </and>
+          </or></test>
+          <let><clip pos="2" part="nbr"/><lit-tag v="sp"/></let>
+        </when>
+        <when c="pst.un doesn't do ind, so go back to pst.mf.ind for that">
+          <test>
+            <and>
+              <equal><clip pos="2" part="art"/><lit-tag v="ind"/></equal>
+              <equal><clip pos="2" part="gen"/><lit-tag v="un"/></equal>
+              <not><equal><clip pos="2" part="nbr"/><lit-tag v="pl"/></equal></not>
+              <ends-with><clip pos="2" part="grau"/><lit-tag v="pst"/></ends-with>
+            </and>
+          </test>
+          <let><clip pos="2" part="nbr"/><lit-tag v="sg"/></let>
+          <let><clip pos="2" part="gen"/><lit-tag v="mf"/></let>
+        </when>
+      </choose>
+
+      <!-- handle non-sint -->
+      <call-macro n="prepend_moremost"><with-param pos="1"/><with-param pos="2"/></call-macro>
+    </def-macro>
+
+    <def-macro n="clean_pre-nominal" npar="3"
+               c="arg.1: chunk, arg.2: det/adj/ngen, arg.3: the word after arg.2">
+      <choose>
+        <when>
+          <test><not><equal><clip pos="2" part="a_det"/><lit v=""/></equal></not></test>
+          <call-macro n="clean_det3"><with-param pos="1"/><with-param pos="2"/><with-param pos="3"/></call-macro>
+        </when>
+        <when>
+          <test><not><equal><clip pos="2" part="a_adj"/><lit v=""/></equal></not></test>
+          <call-macro n="clean_adj"><with-param pos="1"/><with-param pos="2"/></call-macro>
+        </when>
+        <when>
+          <test><or>
+            <and>
+              <not><equal><clip pos="2" part="a_nom"/><lit v=""/></equal></not>
+              <equal><clip pos="2" part="nbr"/><lit-tag v="sp"/></equal>
+            </and>
+            <equal><clip pos="2" part="lemh"/><lit v="ene sin"/></equal>
+          </or></test>
+          <let><clip pos="2" part="art"/><lit v=""/></let>
+        </when>
+        <when>
+          <test><equal><clip pos="2" part="a_nom"/><lit-tag v="n.acr"/></equal></test>
+          <let><clip pos="2" part="nbr"/><lit v=""/></let>
+          <let><clip pos="2" part="case"/><lit v=""/></let>
+          <let><clip pos="2" part="art"/><lit v=""/></let>
+          <let><clip pos="2" part="gen"/><lit v=""/></let>
+        </when>
+      </choose>
+      <choose c="Workaround for http://bugs.apertium.org/cgi-bin/bugzilla/show_bug.cgi?id=133">
+        <when>
+          <test><equal><clip pos="2" part="case"/><lit-tag v="Gen"/></equal></test>
+          <let><clip pos="2" part="case"/><lit-tag v="gen"/></let>
+        </when>
+        <when c="not Samisks or samisks">
+        <test><and>
+        <or>
+         <equal><clip pos="2" part="lemh"/><lit v="Samisk"/></equal>
+         <equal><clip pos="2" part="lemh"/><lit v="samisk"/></equal>
+        </or>
+          <equal><clip pos="2" part="case"/><lit-tag v="gen"/></equal>
+          <equal><clip pos="3" part="nbr"/><lit-tag v="sg"/></equal>
+        </and></test>
+          <let><clip pos="2" part="case"/><lit v=""/></let>
+        </when>
+        <when c="not Samisks or samisks">
+        <test><and>
+        <or>
+         <equal><clip pos="2" part="lemh"/><lit v="Samisk"/></equal>
+         <equal><clip pos="2" part="lemh"/><lit v="samisk"/></equal>
+        </or>
+          <equal><clip pos="2" part="case"/><lit-tag v="gen"/></equal>
+          <equal><clip pos="3" part="nbr"/><lit-tag v="pl"/></equal>
+        </and></test>
+          <let><clip pos="2" part="lemh"/><lit v="samiske"/></let>
+          <let><clip pos="2" part="case"/><lit v=""/></let>
+        </when>
+      </choose>
+      <choose c="Workaround for http://bugs.apertium.org/cgi-bin/bugzilla/show_bug.cgi?id=133
+                 (if tl is 'np.Attr' and 'a_nom' contains 'np.attr', it still outputs 'np.Attr' even though attr!=Attr)">
+        <when>
+          <test><equal><clip pos="2" part="a_nom"/><lit-tag v="np.Attr"/></equal></test>
+          <let><clip pos="2" part="a_nom"/><lit-tag v="np"/></let>
+        </when>
+      </choose>
+    </def-macro>
+
+    <def-macro n="clean_nominal" npar="2"
+               c="arg.1: chunk, arg.2: n,np,verb,prn,det (possible prepositional object)
+                  -----
+                  Remove object genitive if chunk doesn't have genitive
+                  Remove defnes if noun is proper.
+                  Note: also used for verbs (see out_nom in t1x)">
+      <choose>
+        <when c="determiner (possibly turning back into a pronoun)">
+          <test><not><equal><clip pos="2" part="a_det"/><lit v=""/></equal></not></test>
+          <choose>
+            <when>
+              <test><and>
+                <equal><clip pos="2" part="a_det"/><lit-tag v="det.pos"/></equal>
+                <not><equal><clip pos="1" part="case"/><lit-tag v="gen"/></equal></not>
+              </and></test>
+              <call-macro n="clean_prn"><with-param pos="1"/><with-param pos="2"/></call-macro>
+            </when>
+            <otherwise>
+              <call-macro n="clean_det2"><with-param pos="1"/><with-param pos="2"/></call-macro>
+            </otherwise>
+          </choose>
+        </when>
+
+        <when c="pronoun">
+          <test><not><equal><clip pos="2" part="a_prn"/><lit v=""/></equal></not></test>
+          <call-macro n="clean_prn"><with-param pos="1"/><with-param pos="2"/></call-macro>
+        </when>
+
+        <otherwise c="n,np,verb">
+          <choose c="Workaround for http://bugs.apertium.org/cgi-bin/bugzilla/show_bug.cgi?id=133">
+            <when>
+              <test><equal><clip pos="2" part="case"/><lit-tag v="Gen"/></equal></test>
+              <let><clip pos="1" part="case"/><lit-tag v="gen"/></let>
+              <let><clip pos="2" part="case"/><lit-tag v="gen"/></let>
+            </when>
+          </choose>
+          <choose>
+            <when>
+              <test>
+              <and>
+                <equal><clip pos="2" part="case"/><lit-tag v="gen"/></equal>
+                <or>
+                <not><equal><clip pos="1" part="case"/><lit-tag v="gen"/></equal></not>
+                 <equal><clip pos="2" part="lemh"/><lit v="samisk"/></equal>
+                </or>
+              </and>
+              </test>
+              <let><clip pos="2" part="case"/><lit v=""/></let>
+            </when>
+          </choose>
+          <choose>
+            <when>
+              <test><or>
+                <begins-with><clip pos="2" part="a_nom"/><lit-tag v="np"/></begins-with>
+                <equal><clip pos="2" part="a_nom"/><lit-tag v="n.acr"/></equal>
+              </or></test>
+              <let><clip pos="2" part="art"/><lit v=""/></let>
+              <choose c="Workaround for http://bugs.apertium.org/cgi-bin/bugzilla/show_bug.cgi?id=133
+                         (if tl is 'np.Attr' and 'a_nom' contains 'np.attr', it still outputs 'np.Attr' even though attr!=Attr)">
+                <when>
+                  <test><equal><clip pos="2" part="a_nom"/><lit-tag v="np.Attr"/></equal></test>
+                  <let><clip pos="2" part="a_nom"/><lit-tag v="np"/></let>
+                </when>
+              </choose>
+            </when>
+          </choose>
+          <choose>
+            <when>
+              <test><equal><clip pos="2" part="a_nom"/><lit-tag v="n.acr"/></equal></test>
+              <let><clip pos="2" part="case"/><lit v=""/></let>
+            </when>
+          </choose>
+          <choose>
+            <when>
+              <test><equal><clip pos="2" part="nbr"/><lit-tag v="sp"/></equal></test>
+              <let><clip pos="2" part="art"/><lit v=""/></let>
+            </when>
+          </choose>
+          <choose>
+            <when c="60-jahkásaš">
+              <test><and><equal><clip pos="1" part="nbr"/><lit-tag v="sg"/></equal>
+              <equal><clip pos="2" part="nbr"/><lit-tag v="ND"/></equal>
+              </and></test>
+              <let><clip pos="2" part="nbr"/><lit-tag v="sg"/></let>
+            </when>
+          </choose>
+        </otherwise>
+      </choose>
+    </def-macro>
+
+    <def-macro n="clean_post-conj" npar="3"
+               c="arg.1: chunk, arg.2: word after conj, arg.3: second word after conj (but not the last of the chunk)
+                  -----
+                  Set indef for noun after adj after conj; this is because 'maybe_out_det'
+                  only looks at the first half of the conjuction, and it sounds better with
+                  'biler og gamle menns måter' than 'biler og gamle mennenes båter'.
+
+                  Should be called whenever we have a at least two pre's after conj, e.g.
+                  conj_pre_pre_nom or conj_pre_pre_pre_nom">
+      <choose><when>
+        <test><and>
+          <not><equal><clip pos="2" part="a_adj"/><lit v=""/></equal></not>
+          <not><equal><clip pos="3" part="a_nom"/><lit v=""/></equal></not>
+        </and></test>
+        <let><clip pos="3" part="art"/><lit-tag v="ind"/></let>
+      </when></choose>
+    </def-macro>
+
+    <!-- Output macros: -->
+    <def-macro n="maybe_out_det2" npar="2"
+               c="arg.1: chunk, arg.2: first word in nominal chunk
+                  -----
+                  For eg. 'det_nom' or 'adj_nom', to make sure we say 'den andre/lyse hunden' (not 'andre/lyse hunden')
+                  og: det var lite (*en) kylling i salaten. (ADV + bar NP)
+                  If pre-nominal is indefinite and nominal definite, we do not output a determiner,
+                  since it's most likely a compound (eg. ovttaskasolbmui => enslig.adj.ind mennesket.n.def).
+                  Ignores chunks where pre-nominal is np or genitive.
+                  No determiner if it already has some determiner other than 'annen',
+                  or has a genitive before it">
+      <choose>
+        <when c="determiner at all?">
+          <test><and>
+            <not><in><clip pos="1" part="syn_label"/><list n="syn-no-determiner"/></in></not>
+            <not><and>
+              <equal><clip pos="1" part="art"/><lit-tag v="def"/></equal>
+              <in caseless="yes"><clip pos="2" part="lemh"/><list n="initial-lemh-no-def-determiner"/></in>
+            </and></not>
+            <not><ends-with><clip pos="2" part="lemh"/><lit v="og en halv"/></ends-with></not>
+            <not><begins-with><clip pos="2" part="a_nom"/><lit-tag v="n.acr"/></begins-with></not>
+            <not><begins-with><clip pos="2" part="a_nom"/><lit-tag v="np"/></begins-with></not>
+            <not><begins-with><clip pos="2" part="a_adv"/><lit-tag v="adv"/></begins-with></not>
+            <equal><clip pos="1" part="a_neverdet"/><lit v=""/></equal>
+            <not><and>
+              <equal><clip pos="1" part="lemh"/><lit v="nom"/></equal>
+              <not><equal><clip pos="2" part="a_adj"/><lit v=""/></equal></not>
+            </and></not>
+            <not><equal><clip pos="2" part="case"/><lit-tag v="gen"/></equal></not>
+            <not><in caseless="yes"><clip pos="2" part="lemh"/><list n="lemh-no-determiner"/></in></not>
+            <not><in caseless="yes"><clip pos="2" part="lemh"/><list n="initial-lemh-no-determiner"/></in></not>
+            <equal><clip pos="2" part="a_prn"/><lit v=""/></equal>
+            <or>
+              <equal><clip pos="2" part="a_det"/><lit v=""/></equal>
+              <equal caseless="yes"><clip pos="2" part="lemh"/><lit v="annen"/></equal>
+              <in caseless="yes"><clip pos="2" part="lemh"/><list n="det.sp.def"/></in>
+            </or>
+          </and></test>
+          <choose c="set gender">
+            <when>
+              <test><or>
+                <equal><clip pos="1" part="gen"/><lit-tag v="m"/></equal>
+                <equal><clip pos="1" part="gen"/><lit-tag v="f"/></equal>
+                <equal><clip pos="1" part="gen"/><lit-tag v="nt"/></equal>
+              </or></test>
+              <let><var n="gender"/><clip pos="1" part="gen"/></let>
+            </when>
+            <otherwise>
+              <let><var n="gender"/><lit-tag v="m"/></let>
+            </otherwise>
+          </choose>
+          <choose>
+            <when c="den">
+              <test><and>
+                <not><begins-with><clip pos="2" part="a_nom"/><lit-tag v="n"/></begins-with></not>
+                <or>
+                  <equal><clip pos="2" part="art"/><lit-tag v="def"/></equal>
+                  <and>
+                    <equal><clip pos="1" part="art"/><lit-tag v="def"/></equal>
+                    <not><equal><clip pos="2" part="art"/><lit-tag v="ind"/></equal></not>
+                  </and>
+                </or>
+                <not><in><clip pos="2" part="lem"/><list n="adj.pseudo-det"/></in></not>
+              </and></test>
+              <choose>
+                <when>
+                  <test><equal><clip pos="1" part="nbr"/><lit-tag v="sg"/></equal></test>
+                  <out>
+                    <lu>
+                      <get-case-from pos="1"><lit v="den"/></get-case-from>
+                      <lit-tag v="det.dem"/>
+                      <var n="gender"/>
+                      <clip pos="1" part="nbr"/>
+                    </lu>
+                    <b/>
+                  </out>
+                </when>
+                <otherwise>
+                  <out>
+                    <lu>
+                      <get-case-from pos="1"><lit v="den"/></get-case-from>
+                      <lit-tag v="det.dem.un.pl"/>
+                    </lu>
+                    <b/>
+                  </out>
+                </otherwise>
+              </choose>
+              <choose><when>
+                <test><not><equal><clip pos="2" part="a_nom"/><lit-tag v="n.acr"/></equal></not></test>
+                <modify-case><clip pos="2" part="lemh"/><lit v="aa"/></modify-case>
+              </when></choose>
+            </when>
+            <when c="en">
+              <test><and>
+                <equal><clip pos="1" part="nbr"/><lit-tag v="sg"/></equal>
+                <equal><clip pos="1" part="art"/><lit-tag v="ind"/></equal>
+                <equal><clip pos="1" part="a_maydetind"/><lit-tag v="maydetind"/></equal>
+                <not><equal><clip pos="1" part="case"/><lit-tag v="ess"/></equal></not>
+                <not><equal><clip pos="1" part="a_count"/><lit-tag v="unc"/></equal></not>
+                <not><equal><clip pos="2" part="grau"/><lit-tag v="sup"/></equal></not>
+                <not><equal><var n="former-chunk"/><lit-tag v="SN"/></equal></not>
+                <not><equal><var n="former-chunk"/><lit-tag v="unknown"/></equal></not>
+                <!-- Never at the beginning of sentences (do we want that?): -->
+                <!-- <not><equal><var n="former-chunk"/><lit-tag v="sent"/></equal></not> -->
+              </and></test>
+              <out>
+                <lu>
+                  <get-case-from pos="1"><lit v="en"/></get-case-from>
+                  <lit-tag v="det.qnt"/>
+                  <var n="gender"/>
+                  <clip pos="1" part="nbr"/>
+                </lu>
+                <b/>
+              </out>
+              <choose><when>
+                <test><not><equal><clip pos="2" part="a_nom"/><lit-tag v="n.acr"/></equal></not></test>
+                <modify-case><clip pos="2" part="lemh"/><lit v="aa"/></modify-case>
+              </when></choose>
+            </when>
+            <!-- otherwise: no determiner -->
+          </choose>
+        </when>
+        <!-- otherwise: no determiner -->
+      </choose>
+    </def-macro>
+
+    <def-macro n="maybe_out_det3" npar="3"
+               c="arg.1: chunk, arg.2: determiner or other pre-nominal, arg.3: head-nominal of chunk
+                  -----
+                  Don't add determiner if chunk ends in np">
+      <choose>
+        <when c="not 'en Kong.n Håkon.np', but 'det frie.adj Norge.np'">
+          <test>
+              <not>
+               <or><begins-with><clip pos="3" part="a_nom"/><lit-tag v="np"/></begins-with>
+               <in caseless="yes"><clip pos="3" part="lemh"/><list n="lemh-no-determiner"/></in></or>
+             </not>
+          </test>
+          <call-macro n="maybe_out_det2"><with-param pos="1"/><with-param pos="2"/></call-macro>
+        </when>
+        <!-- otherwise: no determiner -->
+      </choose>
+    </def-macro>
+  </section-def-macros>
+
+
+
+  <section-rules>
+    <!-- <rules: Non-trivial  asfd -->
+    <rule comment="CHUNK: prn">
+    <pattern><pattern-item n="prn"/></pattern>
+      <action>
+        <call-macro n="clean_prn"><with-param pos="0"/><with-param pos="1"/></call-macro>
+        <!-- <call-macro n="clean_nominal">    <with-param pos="0"/><with-param pos="1"/></call-macro> -->
+        <out>
+          <lu><clip pos="1" part="whole"/></lu>
+        </out>
+      </action>
+    </rule>
+    
+    <rule comment="CHUNK: det_caseprep_prn">
+      <pattern><pattern-item n="det_caseprep_prn"/></pattern>
+      <action>
+        <call-macro n="clean_prn"><with-param pos="0"/><with-param pos="1"/></call-macro>
+        <call-macro n="clean_prn"><with-param pos="2"/><with-param pos="3"/></call-macro>
+        <!-- <call-macro n="clean_nominal">    <with-param pos="0"/><with-param pos="1"/></call-macro> -->
+        <out>
+          <lu><clip pos="1" part="whole"/></lu>
+          <b pos="1"/>
+          <lu><clip pos="2" part="whole"/></lu>
+          <b pos="2"/>
+          <lu><clip pos="3" part="whole"/></lu>
+        </out>
+      </action>
+    </rule>
+
+    <rule comment="CHUNK: nom_caseprep_pre_nom">
+      <pattern><pattern-item n="nom_caseprep_pre_nom"/></pattern>
+      <action>
+        <call-macro n="clean_nominal">    <with-param pos="0"/><with-param pos="1"/></call-macro>
+        <call-macro n="clean_nominal">    <with-param pos="0"/><with-param pos="4"/></call-macro>
+        <call-macro n="clean_pre-nominal"><with-param pos="0"/><with-param pos="3"/><with-param pos="4"/></call-macro>
+        <out>
+          <lu><clip pos="1" part="whole"/></lu>
+          <b pos="1"/>
+          <lu><clip pos="2" part="whole"/></lu>
+          <b pos="2"/>
+          <lu><clip pos="3" part="whole"/></lu>
+          <b pos="3"/>
+          <lu><clip pos="4" part="whole"/></lu>
+        </out>
+        <let><var n="former-chunk"/><lit-tag v="SN"/></let>
+      </action>
+    </rule>
+
+    <rule comment="CHUNK: nom_caseprep_nom">
+      <pattern><pattern-item n="nom_caseprep_nom"/></pattern>
+      <action>
+        <call-macro n="clean_nominal">    <with-param pos="0"/><with-param pos="1"/></call-macro>
+        <call-macro n="clean_nominal">    <with-param pos="0"/><with-param pos="3"/></call-macro>
+        <out>
+          <lu><clip pos="1" part="whole"/></lu>
+          <b pos="1"/>
+          <lu><clip pos="2" part="whole"/></lu>
+          <b pos="2"/>
+          <lu><clip pos="3" part="whole"/></lu>
+        </out>
+        <let><var n="former-chunk"/><lit-tag v="SN"/></let>
+      </action>
+    </rule>
+
+
+    <rule comment="CHUNK: prn_caseprep_nom">
+      <pattern><pattern-item n="prn_caseprep_nom"/></pattern>
+      <action>
+        <call-macro n="clean_prn"><with-param pos="0"/><with-param pos="1"/></call-macro>
+        <call-macro n="clean_nominal"><with-param pos="0"/><with-param pos="3"/></call-macro>
+        <out>
+          <lu><clip pos="1" part="whole"/></lu>
+          <b pos="1"/>
+          <lu><clip pos="2" part="whole"/></lu>
+          <b pos="2"/>
+          <lu><clip pos="3" part="whole"/></lu>
+        </out>
+      </action>
+    </rule>
+    
+    <rule comment="CHUNK: det
+                   Might have begun life as a pronoun.
+                   (Might turn back into one if t2x removed genitive from chunk.)">
+    <pattern><pattern-item n="det"/></pattern>
+      <action>
+        <call-macro n="clean_nominal"><with-param pos="0"/><with-param pos="1"/></call-macro>
+        <out>
+          <lu><clip pos="1" part="whole"/></lu>
+        </out>
+      </action>
+    </rule>
+
+    <rule comment="CHUNK: verb">
+      <pattern><pattern-item n="verb"/></pattern>
+      <action>
+      <choose><when><test>
+      <not><equal><clip pos="0" part="vfintemps"/><lit v=""/></equal></not></test>
+      <let><var n="verb_temp"/><clip pos="1" part="vfintemps"/></let></when> </choose>
+      <choose><when c="mus livččii ruhta">
+      <test><not><equal><clip pos="0" part="modality"/><lit-tag v="cond"/></equal></not></test>
+        <let><clip pos="1" part="temps"/><clip pos="0" part="temps"/></let>
+      </when> </choose>
+        <choose>
+        <when>
+          <test><and> 
+          <equal><clip pos="1" part="temps"/><lit-tag v="TD"/></equal>
+          <equal><clip pos="0" part="a_actio"/><lit-tag v="actio.ess"/></equal>
+       </and></test>
+          <let><clip pos="1" part="temps"/><lit-tag v="pres"/></let>
+        </when>
+        <when>
+          <test><and> 
+          <equal><clip pos="1" part="temps"/><lit-tag v="TD"/></equal>
+       <not><equal><clip pos="0" part="a_actio"/><lit-tag v="actio.ess"/></equal></not>
+       </and></test>
+          <let><clip pos="1" part="temps"/><lit-tag v="inf"/></let>
+        </when>
+        </choose>
+        <choose><when>
+          <test><equal><clip pos="1" part="temps"/><lit v=""/></equal></test>
+          <choose>
+            <when>
+              <test><equal><clip pos="1" part="voice"/><lit v=""/></equal></test>
+              <let><clip pos="1" part="tags"/><concat><clip pos="1" part="tags"/><lit-tag v="inf"/></concat></let>
+            </when>
+            <otherwise>
+              <let><clip pos="1" part="voice"/><concat><lit-tag v="inf"/><clip pos="1" part="voice"/></concat></let>
+            </otherwise>
+          </choose>
+        </when></choose>
+        <choose>
+          <when>
+            <test><and>
+              <equal><clip pos="1" part="lemh"/><lit v="være"/></equal>
+              <equal><clip pos="1" part="temps"/><lit-tag v="inf"/></equal>
+              <equal><clip pos="0" part="syn_label"/><lit-tag v="@←ADVL"/></equal>
+            </and></test>
+            <let><clip pos="1" part="temps"/><var n="verb_temp"/></let>
+          </when>
+          <when>
+            <test><and>
+          <not><equal><clip pos="1" part="lemh"/><lit v="være"/></equal></not>
+              <equal><clip pos="1" part="temps"/><lit-tag v="inf"/></equal>
+              <equal><clip pos="0" part="a_actio"/><lit v=""/></equal>
+              <equal><clip pos="0" part="a_abess"/><lit v=""/></equal>
+              <equal><clip pos="0" part="syn_label"/><lit-tag v="@←ADVL"/></equal>
+              <or>
+                <equal><var n="former-chunk"/><lit-tag v="SV"/></equal>
+                <equal><var n="former-chunk"/><lit-tag v="SN"/></equal>
+                <equal><var n="former-chunk"/><lit-tag v="ADV"/></equal>
+              </or>
+            </and></test>
+            <out>
+              <lu><lit v="for"/><lit-tag v="pr"/></lu>
+              <b/>
+              <lu><lit v="å"/><lit-tag v="part"/></lu>
+              <b/>
+            </out>
+          </when>
+          <when>
+            <test><and>
+          <not><equal><clip pos="1" part="lemh"/><lit v="være"/></equal></not>
+              <equal><clip pos="1" part="temps"/><lit-tag v="inf"/></equal>
+              <equal><clip pos="0" part="a_actio"/><lit v=""/></equal>
+              <equal><clip pos="0" part="a_abess"/><lit v=""/></equal>
+              <equal><clip pos="0" part="syn_label"/><lit-tag v="@←ADVL"/></equal>
+              <or>
+                <equal><var n="former-chunk"/><lit-tag v="SA"/></equal>
+                <equal><var n="former-chunk"/><lit-tag v="SN"/></equal>
+              </or>
+            </and></test>
+            <out>
+              <lu><lit v="til"/><lit-tag v="pr"/></lu>
+              <b/>
+              <lu><lit v="å"/><lit-tag v="part"/></lu>
+              <b/>
+            </out>
+          </when>
+          <when>
+            <test><and>
+              <equal><clip pos="1" part="temps"/><lit-tag v="inf"/></equal>
+              <not><equal><clip pos="0" part="modality"/><lit-tag v="cond"/></equal></not>
+              <not><equal><clip pos="0" part="modality"/><lit-tag v="cond-ville"/></equal></not>
+              <not><equal><clip pos="0" part="modality"/><lit-tag v="cond-skulle"/></equal></not>
+              <or>
+                <in><clip pos="0" part="syn_label"/><list n="inf-mark"/></in>
+              <equal><clip pos="0" part="a_abess"/><lit-tag v="vabess"/></equal>
+               <equal><var n="prev-verb-was-bli"/><lit v="yes"/></equal>
+                <equal><clip pos="0" part="a_actio"/><lit-tag v="actio.loc"/></equal>
+                <equal><clip pos="0" part="a_actio"/><lit-tag v="actio.ess"/></equal>
+              </or>
+            </and></test>
+            <out>
+              <lu><get-case-from pos="1"><lit v="å"/></get-case-from><lit-tag v="part"/></lu>
+              <b/>
+            </out>
+          </when>
+        </choose>
+        <out>
+          <lu><clip pos="1" part="whole"/></lu>
+        </out>
+        <choose>
+          <when>
+            <test><equal><clip pos="1" part="lemh"/><lit v="bli"/></equal></test>
+            <let><var n="prev-verb-was-bli"/><lit v="yes"/></let>
+          </when>
+          <otherwise>
+            <let><var n="prev-verb-was-bli"/><lit v="no"/></let>
+          </otherwise>
+        </choose>
+        <let><var n="former-chunk"/><lit-tag v="SV"/></let>
+      </action>
+    </rule>
+
+    <!-- <rules: Trivial, SN -->
+    <rule comment="CHUNK: nom">
+    <pattern><pattern-item n="nom"/></pattern>
+      <action>
+        <call-macro n="clean_nominal">    <with-param pos="0"/><with-param pos="1"/></call-macro>
+
+        <call-macro n="maybe_out_det3"><with-param pos="0"/><with-param pos="1"/><with-param pos="1"/></call-macro>
+        <out>
+          <lu><clip pos="1" part="whole"/></lu>
+        </out>
+        <let><var n="former-chunk"/><lit-tag v="SN"/></let>
+      </action>
+    </rule>
+
+    <rule comment="CHUNK: pre_nom">
+    <pattern><pattern-item n="pre_nom"/></pattern>
+      <action>
+        <call-macro n="clean_nominal">    <with-param pos="0"/><with-param pos="2"/></call-macro>
+        <call-macro n="clean_pre-nominal"><with-param pos="0"/><with-param pos="1"/><with-param pos="2"/></call-macro>
+
+        <call-macro n="maybe_out_det3"><with-param pos="0"/><with-param pos="1"/><with-param pos="2"/></call-macro>
+        <out>
+          <lu><clip pos="1" part="whole"/></lu>
+          <b pos="1"/>
+          <lu><clip pos="2" part="whole"/></lu>
+        </out>
+        <let><var n="former-chunk"/><lit-tag v="SN"/></let>
+      </action>
+    </rule>
+    
+    <rule comment="CHUNK: pre_pre_nom">
+    <pattern><pattern-item n="pre_pre_nom"/></pattern>
+      <action>
+        <call-macro n="clean_nominal">    <with-param pos="0"/><with-param pos="3"/></call-macro>
+        <call-macro n="clean_pre-nominal"><with-param pos="0"/><with-param pos="2"/><with-param pos="3"/></call-macro>
+        <call-macro n="clean_pre-nominal"><with-param pos="0"/><with-param pos="1"/><with-param pos="3"/></call-macro>
+
+        <call-macro n="maybe_out_det3"><with-param pos="0"/><with-param pos="1"/><with-param pos="3"/></call-macro>
+        <out>
+          <lu><clip pos="1" part="whole"/></lu>
+          <b pos="1"/>
+          <lu><clip pos="2" part="whole"/></lu>
+          <b pos="2"/>
+          <lu><clip pos="3" part="whole"/></lu>
+        </out>
+        <let><var n="former-chunk"/><lit-tag v="SN"/></let>
+      </action>
+    </rule>
+
+    <rule comment="CHUNK: pre_pre_pre_nom">
+    <pattern><pattern-item n="pre_pre_pre_nom"/></pattern>
+      <action>
+        <call-macro n="clean_nominal">    <with-param pos="0"/><with-param pos="4"/></call-macro>
+        <call-macro n="clean_pre-nominal"><with-param pos="0"/><with-param pos="3"/><with-param pos="4"/></call-macro>
+        <call-macro n="clean_pre-nominal"><with-param pos="0"/><with-param pos="2"/><with-param pos="3"/></call-macro>
+        <call-macro n="clean_pre-nominal"><with-param pos="0"/><with-param pos="1"/><with-param pos="2"/></call-macro>
+        <call-macro n="maybe_out_det3"><with-param pos="0"/><with-param pos="1"/><with-param pos="4"/></call-macro>
+        <out>
+          <lu><clip pos="1" part="whole"/></lu>
+          <b pos="1"/>
+          <lu><clip pos="2" part="whole"/></lu>
+          <b pos="2"/>
+          <lu><clip pos="3" part="whole"/></lu>
+          <b pos="3"/>
+          <lu><clip pos="4" part="whole"/></lu>
+        </out>
+        <let><var n="former-chunk"/><lit-tag v="SN"/></let>
+      </action>
+    </rule>
+
+    <rule comment="CHUNK: pre_pre_pre_pre_nom">
+   <pattern><pattern-item n="pre_pre_pre_pre_nom"/></pattern>
+      <action>
+        <call-macro n="clean_nominal">    <with-param pos="0"/><with-param pos="5"/></call-macro>
+        <call-macro n="clean_pre-nominal"><with-param pos="0"/><with-param pos="4"/><with-param pos="5"/></call-macro>
+        <call-macro n="clean_pre-nominal"><with-param pos="0"/><with-param pos="3"/><with-param pos="4"/></call-macro>
+        <call-macro n="clean_pre-nominal"><with-param pos="0"/><with-param pos="2"/><with-param pos="3"/></call-macro>
+        <call-macro n="clean_pre-nominal"><with-param pos="0"/><with-param pos="1"/><with-param pos="2"/></call-macro>
+
+        <call-macro n="maybe_out_det3"><with-param pos="0"/><with-param pos="1"/><with-param pos="5"/></call-macro>
+        <out>
+          <lu><clip pos="1" part="whole"/></lu>
+          <b pos="1"/>
+          <lu><clip pos="2" part="whole"/></lu>
+          <b pos="2"/>
+          <lu><clip pos="3" part="whole"/></lu>
+          <b pos="3"/>
+          <lu><clip pos="4" part="whole"/></lu>
+          <b pos="4"/>
+          <lu><clip pos="5" part="whole"/></lu>
+        </out>
+        <let><var n="former-chunk"/><lit-tag v="SN"/></let>
+      </action>
+    </rule>
+
+    <!-- <rules: Trivial, SN CC SN -->
+    <rule comment="CHUNK: nom_conj_nom                         0-0">
+    <pattern><pattern-item n="nom_conj_nom"/></pattern>
+      <action>
+        <call-macro n="clean_nominal">    <with-param pos="0"/><with-param pos="3"/></call-macro>
+        <!-- conj -->
+        <call-macro n="clean_nominal">    <with-param pos="0"/><with-param pos="1"/></call-macro>
+
+        <call-macro n="maybe_out_det2"><with-param pos="0"/><with-param pos="1"/></call-macro>
+        <out>
+          <lu><clip pos="1" part="whole"/></lu>
+          <b pos="1"/>
+          <lu><clip pos="2" part="whole"/></lu>
+          <b pos="2"/>
+          <lu><clip pos="3" part="whole"/></lu>
+        </out>
+        <let><var n="former-chunk"/><lit-tag v="SN"/></let>
+      </action>
+    </rule>
+    
+    <rule comment="CHUNK: nom_conj_pre_nom                     0-1">
+      <pattern><pattern-item n="nom_conj_pre_nom"/></pattern>
+      <action>
+        <call-macro n="clean_nominal">    <with-param pos="0"/><with-param pos="4"/></call-macro>
+        <call-macro n="clean_pre-nominal"><with-param pos="0"/><with-param pos="3"/><with-param pos="4"/></call-macro>
+        <!-- conj -->
+        <call-macro n="clean_nominal">    <with-param pos="0"/><with-param pos="1"/></call-macro>
+
+        <call-macro n="maybe_out_det2"><with-param pos="0"/><with-param pos="1"/></call-macro>
+        <out>
+          <lu><clip pos="1" part="whole"/></lu>
+          <b pos="1"/>
+          <lu><clip pos="2" part="whole"/></lu>
+          <b pos="2"/>
+          <lu><clip pos="3" part="whole"/></lu>
+          <b pos="3"/>
+          <lu><clip pos="4" part="whole"/></lu>
+        </out>
+        <let><var n="former-chunk"/><lit-tag v="SN"/></let>
+      </action>
+    </rule>
+
+    <rule comment="CHUNK: nom_conj_pre_pre_nom                 0-2">
+      <pattern><pattern-item n="nom_conj_pre_pre_nom"/></pattern>
+      <action>
+        <call-macro n="clean_nominal">    <with-param pos="0"/><with-param pos="5"/></call-macro>
+        <call-macro n="clean_pre-nominal"><with-param pos="0"/><with-param pos="4"/><with-param pos="5"/></call-macro>
+        <call-macro n="clean_pre-nominal"><with-param pos="0"/><with-param pos="3"/><with-param pos="4"/></call-macro>
+        <!-- 2 is conj -->
+        <call-macro n="clean_nominal">    <with-param pos="0"/><with-param pos="1"/></call-macro>
+
+        <call-macro n="clean_post-conj"><with-param pos="0"/><with-param pos="3"/><with-param pos="4"/></call-macro>
+        <call-macro n="maybe_out_det2"><with-param pos="0"/><with-param pos="1"/></call-macro>
+        <out>
+          <lu><clip pos="1" part="whole"/></lu>
+          <b pos="1"/>
+          <lu><clip pos="2" part="whole"/></lu>
+          <b pos="2"/>
+          <lu><clip pos="3" part="whole"/></lu>
+          <b pos="3"/>
+          <lu><clip pos="4" part="whole"/></lu>
+          <b pos="4"/>
+          <lu><clip pos="5" part="whole"/></lu>
+        </out>
+        <let><var n="former-chunk"/><lit-tag v="SN"/></let>
+      </action>
+    </rule>
+    
+    <rule comment="CHUNK: nom_conj_pre_pre_pre_nom             0-3">
+<pattern><pattern-item n="nom_conj_pre_pre_pre_nom"/></pattern>
+      <action>
+        <call-macro n="clean_nominal">    <with-param pos="0"/><with-param pos="6"/></call-macro>
+        <call-macro n="clean_pre-nominal"><with-param pos="0"/><with-param pos="5"/><with-param pos="6"/></call-macro>
+        <call-macro n="clean_pre-nominal"><with-param pos="0"/><with-param pos="4"/><with-param pos="5"/></call-macro>
+        <call-macro n="clean_pre-nominal"><with-param pos="0"/><with-param pos="3"/><with-param pos="4"/></call-macro>
+        <!-- 2 is conj -->
+        <call-macro n="clean_nominal">    <with-param pos="0"/><with-param pos="1"/></call-macro>
+
+        <call-macro n="clean_post-conj"><with-param pos="0"/><with-param pos="3"/><with-param pos="4"/></call-macro>
+        <call-macro n="clean_post-conj"><with-param pos="0"/><with-param pos="4"/><with-param pos="5"/></call-macro>
+        <call-macro n="maybe_out_det2"><with-param pos="0"/><with-param pos="1"/></call-macro>
+        <out>
+          <lu><clip pos="1" part="whole"/></lu>
+          <b pos="1"/>
+          <lu><clip pos="2" part="whole"/></lu>
+          <b pos="2"/>
+          <lu><clip pos="3" part="whole"/></lu>
+          <b pos="3"/>
+          <lu><clip pos="4" part="whole"/></lu>
+          <b pos="4"/>
+          <lu><clip pos="5" part="whole"/></lu>
+          <b pos="5"/>
+          <lu><clip pos="6" part="whole"/></lu>
+        </out>
+        <let><var n="former-chunk"/><lit-tag v="SN"/></let>
+      </action>
+    </rule>
+    
+    <rule comment="CHUNK: pre_nom_conj_nom                     1-0">
+<pattern><pattern-item n="pre_nom_conj_nom"/></pattern>
+      <action>
+        <call-macro n="clean_nominal">    <with-param pos="0"/><with-param pos="4"/></call-macro>
+        <!-- conj -->
+        <call-macro n="clean_nominal">    <with-param pos="0"/><with-param pos="2"/></call-macro>
+        <call-macro n="clean_pre-nominal"><with-param pos="0"/><with-param pos="1"/><with-param pos="2"/></call-macro>
+
+        <call-macro n="maybe_out_det3"><with-param pos="0"/><with-param pos="1"/><with-param pos="2"/></call-macro>
+        <out>
+          <lu><clip pos="1" part="whole"/></lu>
+          <b pos="1"/>
+          <lu><clip pos="2" part="whole"/></lu>
+          <b pos="2"/>
+          <lu><clip pos="3" part="whole"/></lu>
+          <b pos="3"/>
+          <lu><clip pos="4" part="whole"/></lu>
+        </out>
+        <let><var n="former-chunk"/><lit-tag v="SN"/></let>
+      </action>
+    </rule>
+    
+    <rule comment="CHUNK: pre_pre_conj_pre_nom                 1-1">
+<pattern><pattern-item n="pre_pre_conj_pre_nom"/></pattern>
+      <action>
+        <call-macro n="clean_nominal">    <with-param pos="0"/><with-param pos="5"/></call-macro>
+        <call-macro n="clean_nominal">    <with-param pos="0"/><with-param pos="1"/></call-macro>
+        <call-macro n="clean_pre-nominal"><with-param pos="0"/><with-param pos="4"/><with-param pos="5"/></call-macro>
+        <call-macro n="clean_pre-nominal"><with-param pos="0"/><with-param pos="2"/><with-param pos="5"/></call-macro>
+
+        <call-macro n="maybe_out_det3"><with-param pos="0"/><with-param pos="1"/><with-param pos="5"/></call-macro>
+        <out>
+          <lu><clip pos="1" part="whole"/></lu>
+          <b pos="1"/>
+          <lu><clip pos="2" part="whole"/></lu>
+          <b pos="2"/>
+          <lu><clip pos="3" part="whole"/></lu>
+          <b pos="3"/>
+          <lu><clip pos="4" part="whole"/></lu>
+          <b pos="4"/>
+          <lu><clip pos="5" part="whole"/></lu>
+        </out>
+        <let><var n="former-chunk"/><lit-tag v="SN"/></let>
+      </action>
+    </rule>
+    
+    <rule comment="CHUNK: pre_conj_pre_nom                 1-1">
+<pattern><pattern-item n="pre_conj_pre_nom"/></pattern>
+      <action>
+        <call-macro n="clean_nominal">    <with-param pos="0"/><with-param pos="4"/></call-macro>
+        <call-macro n="clean_pre-nominal"><with-param pos="0"/><with-param pos="3"/><with-param pos="4"/></call-macro>
+        <!-- conj -->
+        <call-macro n="clean_pre-nominal"><with-param pos="0"/><with-param pos="1"/><with-param pos="4"/></call-macro>
+
+        <call-macro n="maybe_out_det3"><with-param pos="0"/><with-param pos="1"/><with-param pos="4"/></call-macro>
+        <out>
+          <lu><clip pos="1" part="whole"/></lu>
+          <b pos="1"/>
+          <lu><clip pos="2" part="whole"/></lu>
+          <b pos="2"/>
+          <lu><clip pos="3" part="whole"/></lu>
+          <b pos="3"/>
+          <lu><clip pos="4" part="whole"/></lu>
+        </out>
+        <let><var n="former-chunk"/><lit-tag v="SN"/></let>
+      </action>
+    </rule>
+    
+    <rule comment="CHUNK: pre_nom_conj_pre_nom                 1-1">
+      <pattern><pattern-item n="pre_nom_conj_pre_nom"/></pattern>
+      <action>
+        <call-macro n="clean_nominal">    <with-param pos="0"/><with-param pos="5"/></call-macro>
+        <call-macro n="clean_pre-nominal"><with-param pos="0"/><with-param pos="4"/><with-param pos="5"/></call-macro>
+        <!-- conj -->
+        <call-macro n="clean_nominal">    <with-param pos="0"/><with-param pos="2"/></call-macro>
+        <call-macro n="clean_pre-nominal"><with-param pos="0"/><with-param pos="1"/><with-param pos="2"/></call-macro>
+
+        <call-macro n="maybe_out_det3"><with-param pos="0"/><with-param pos="1"/><with-param pos="2"/></call-macro>
+        <out>
+          <lu><clip pos="1" part="whole"/></lu>
+          <b pos="1"/>
+          <lu><clip pos="2" part="whole"/></lu>
+          <b pos="2"/>
+          <lu><clip pos="3" part="whole"/></lu>
+          <b pos="3"/>
+          <lu><clip pos="4" part="whole"/></lu>
+          <b pos="4"/>
+          <lu><clip pos="5" part="whole"/></lu>
+        </out>
+        <let><var n="former-chunk"/><lit-tag v="SN"/></let>
+      </action>
+    </rule>
+    
+    <rule comment="CHUNK: pre_nom_conj_pre_pre_nom             1-2">
+      <pattern><pattern-item n="pre_nom_conj_pre_pre_nom"/></pattern>
+      <action>
+        <call-macro n="clean_nominal">    <with-param pos="0"/><with-param pos="6"/></call-macro>
+        <call-macro n="clean_pre-nominal"><with-param pos="0"/><with-param pos="5"/><with-param pos="6"/></call-macro>
+        <call-macro n="clean_pre-nominal"><with-param pos="0"/><with-param pos="4"/><with-param pos="5"/></call-macro>
+        <!-- 3 is conj -->
+        <call-macro n="clean_nominal">    <with-param pos="0"/><with-param pos="2"/></call-macro>
+        <call-macro n="clean_pre-nominal"><with-param pos="0"/><with-param pos="1"/><with-param pos="2"/></call-macro>
+
+        <call-macro n="clean_post-conj"><with-param pos="0"/><with-param pos="4"/><with-param pos="5"/></call-macro>
+        <call-macro n="maybe_out_det3"><with-param pos="0"/><with-param pos="1"/><with-param pos="2"/></call-macro>
+        <out>
+          <lu><clip pos="1" part="whole"/></lu>
+          <b pos="1"/>
+          <lu><clip pos="2" part="whole"/></lu>
+          <b pos="2"/>
+          <lu><clip pos="3" part="whole"/></lu>
+          <b pos="3"/>
+          <lu><clip pos="4" part="whole"/></lu>
+          <b pos="4"/>
+          <lu><clip pos="5" part="whole"/></lu>
+          <b pos="5"/>
+          <lu><clip pos="6" part="whole"/></lu>
+        </out>
+        <let><var n="former-chunk"/><lit-tag v="SN"/></let>
+      </action>
+    </rule>
+    
+    <rule comment="CHUNK: pre_nom_conj_pre_pre_pre_nom         1-3">
+      <pattern><pattern-item n="pre_nom_conj_pre_pre_pre_nom"/></pattern>
+      <action>
+        <call-macro n="clean_nominal">    <with-param pos="0"/><with-param pos="7"/></call-macro>
+        <call-macro n="clean_pre-nominal"><with-param pos="0"/><with-param pos="6"/><with-param pos="7"/></call-macro>
+        <call-macro n="clean_pre-nominal"><with-param pos="0"/><with-param pos="5"/><with-param pos="6"/></call-macro>
+        <call-macro n="clean_pre-nominal"><with-param pos="0"/><with-param pos="4"/><with-param pos="5"/></call-macro>
+        <!-- 3 is conj -->
+        <call-macro n="clean_nominal">    <with-param pos="0"/><with-param pos="2"/></call-macro>
+        <call-macro n="clean_pre-nominal"><with-param pos="0"/><with-param pos="1"/><with-param pos="2"/></call-macro>
+
+        <call-macro n="clean_post-conj"><with-param pos="0"/><with-param pos="4"/><with-param pos="5"/></call-macro>
+        <call-macro n="clean_post-conj"><with-param pos="0"/><with-param pos="5"/><with-param pos="6"/></call-macro>
+        <call-macro n="maybe_out_det3"><with-param pos="0"/><with-param pos="1"/><with-param pos="2"/></call-macro>
+        <out>
+          <lu><clip pos="1" part="whole"/></lu>
+          <b pos="1"/>
+          <lu><clip pos="2" part="whole"/></lu>
+          <b pos="2"/>
+          <lu><clip pos="3" part="whole"/></lu>
+          <b pos="3"/>
+          <lu><clip pos="4" part="whole"/></lu>
+          <b pos="4"/>
+          <lu><clip pos="5" part="whole"/></lu>
+          <b pos="5"/>
+          <lu><clip pos="6" part="whole"/></lu>
+          <b pos="6"/>
+          <lu><clip pos="7" part="whole"/></lu>
+        </out>
+        <let><var n="former-chunk"/><lit-tag v="SN"/></let>
+      </action>
+    </rule>
+
+    <rule comment="CHUNK: pre_pre_nom_conj_nom                 2-0">
+      <pattern><pattern-item n="pre_pre_nom_conj_nom"/></pattern>
+      <action>
+        <call-macro n="clean_nominal">    <with-param pos="0"/><with-param pos="5"/></call-macro>
+        <!-- conj -->
+        <call-macro n="clean_nominal">    <with-param pos="0"/><with-param pos="3"/></call-macro>
+        <call-macro n="clean_pre-nominal"><with-param pos="0"/><with-param pos="2"/><with-param pos="3"/></call-macro>
+        <call-macro n="clean_pre-nominal"><with-param pos="0"/><with-param pos="1"/><with-param pos="2"/></call-macro>
+
+        <call-macro n="maybe_out_det3"><with-param pos="0"/><with-param pos="1"/><with-param pos="3"/></call-macro>
+        <out>
+          <lu><clip pos="1" part="whole"/></lu>
+          <b pos="1"/>
+          <lu><clip pos="2" part="whole"/></lu>
+          <b pos="2"/>
+          <lu><clip pos="3" part="whole"/></lu>
+          <b pos="3"/>
+          <lu><clip pos="4" part="whole"/></lu>
+          <b pos="4"/>
+          <lu><clip pos="5" part="whole"/></lu>
+        </out>
+        <let><var n="former-chunk"/><lit-tag v="SN"/></let>
+      </action>
+    </rule>
+    
+    <rule comment="CHUNK: pre_pre_nom_conj_pre_nom             2-1">
+      <pattern><pattern-item n="pre_pre_nom_conj_pre_nom"/></pattern>
+      <action>
+        <call-macro n="clean_nominal">    <with-param pos="0"/><with-param pos="6"/></call-macro>
+        <call-macro n="clean_pre-nominal"><with-param pos="0"/><with-param pos="5"/><with-param pos="6"/></call-macro>
+        <!-- conj -->
+        <call-macro n="clean_nominal">    <with-param pos="0"/><with-param pos="3"/></call-macro>
+        <call-macro n="clean_pre-nominal"><with-param pos="0"/><with-param pos="2"/><with-param pos="3"/></call-macro>
+        <call-macro n="clean_pre-nominal"><with-param pos="0"/><with-param pos="1"/><with-param pos="2"/></call-macro>
+
+        <call-macro n="maybe_out_det3"><with-param pos="0"/><with-param pos="1"/><with-param pos="3"/></call-macro>
+        <out>
+          <lu><clip pos="1" part="whole"/></lu>
+          <b pos="1"/>
+          <lu><clip pos="2" part="whole"/></lu>
+          <b pos="2"/>
+          <lu><clip pos="3" part="whole"/></lu>
+          <b pos="3"/>
+          <lu><clip pos="4" part="whole"/></lu>
+          <b pos="4"/>
+          <lu><clip pos="5" part="whole"/></lu>
+          <b pos="5"/>
+          <lu><clip pos="6" part="whole"/></lu>
+        </out>
+        <let><var n="former-chunk"/><lit-tag v="SN"/></let>
+      </action>
+    </rule>
+
+    <rule comment="CHUNK: pre_pre_nom_conj_pre_pre_nom         2-2">
+      <pattern><pattern-item n="pre_pre_nom_conj_pre_pre_nom"/></pattern>
+      <action>
+        <call-macro n="clean_nominal">    <with-param pos="0"/><with-param pos="7"/></call-macro>
+        <call-macro n="clean_pre-nominal"><with-param pos="0"/><with-param pos="6"/><with-param pos="7"/></call-macro>
+        <call-macro n="clean_pre-nominal"><with-param pos="0"/><with-param pos="5"/><with-param pos="6"/></call-macro>
+        <!-- 4 is conj -->
+        <call-macro n="clean_nominal">    <with-param pos="0"/><with-param pos="3"/></call-macro>
+        <call-macro n="clean_pre-nominal"><with-param pos="0"/><with-param pos="2"/><with-param pos="3"/></call-macro>
+        <call-macro n="clean_pre-nominal"><with-param pos="0"/><with-param pos="1"/><with-param pos="2"/></call-macro>
+
+        <call-macro n="clean_post-conj"><with-param pos="0"/><with-param pos="5"/><with-param pos="6"/></call-macro>
+        <call-macro n="maybe_out_det3"><with-param pos="0"/><with-param pos="1"/><with-param pos="3"/></call-macro>
+        <out>
+          <lu><clip pos="1" part="whole"/></lu>
+          <b pos="1"/>
+          <lu><clip pos="2" part="whole"/></lu>
+          <b pos="2"/>
+          <lu><clip pos="3" part="whole"/></lu>
+          <b pos="3"/>
+          <lu><clip pos="4" part="whole"/></lu>
+          <b pos="4"/>
+          <lu><clip pos="5" part="whole"/></lu>
+          <b pos="5"/>
+          <lu><clip pos="6" part="whole"/></lu>
+          <b pos="6"/>
+          <lu><clip pos="7" part="whole"/></lu>
+        </out>
+        <let><var n="former-chunk"/><lit-tag v="SN"/></let>
+      </action>
+    </rule>
+
+    <rule comment="CHUNK: pre_pre_nom_conj_pre_pre_pre_nom     2-3">
+      <pattern><pattern-item n="pre_pre_nom_conj_pre_pre_pre_nom"/></pattern>
+      <action>
+        <call-macro n="clean_nominal">    <with-param pos="0"/><with-param pos="8"/></call-macro>
+        <call-macro n="clean_pre-nominal"><with-param pos="0"/><with-param pos="7"/><with-param pos="8"/></call-macro>
+        <call-macro n="clean_pre-nominal"><with-param pos="0"/><with-param pos="6"/><with-param pos="7"/></call-macro>
+        <call-macro n="clean_pre-nominal"><with-param pos="0"/><with-param pos="5"/><with-param pos="6"/></call-macro>
+        <!-- 4 is conj -->
+        <call-macro n="clean_nominal">    <with-param pos="0"/><with-param pos="3"/></call-macro>
+        <call-macro n="clean_pre-nominal"><with-param pos="0"/><with-param pos="2"/><with-param pos="3"/></call-macro>
+        <call-macro n="clean_pre-nominal"><with-param pos="0"/><with-param pos="1"/><with-param pos="2"/></call-macro>
+
+        <call-macro n="clean_post-conj"><with-param pos="0"/><with-param pos="5"/><with-param pos="6"/></call-macro>
+        <call-macro n="clean_post-conj"><with-param pos="0"/><with-param pos="6"/><with-param pos="7"/></call-macro>
+        <call-macro n="maybe_out_det3"><with-param pos="0"/><with-param pos="1"/><with-param pos="3"/></call-macro>
+        <out>
+          <lu><clip pos="1" part="whole"/></lu>
+          <b pos="1"/>
+          <lu><clip pos="2" part="whole"/></lu>
+          <b pos="2"/>
+          <lu><clip pos="3" part="whole"/></lu>
+          <b pos="3"/>
+          <lu><clip pos="4" part="whole"/></lu>
+          <b pos="4"/>
+          <lu><clip pos="5" part="whole"/></lu>
+          <b pos="5"/>
+          <lu><clip pos="6" part="whole"/></lu>
+          <b pos="6"/>
+          <lu><clip pos="7" part="whole"/></lu>
+          <b pos="7"/>
+          <lu><clip pos="8" part="whole"/></lu>
+        </out>
+        <let><var n="former-chunk"/><lit-tag v="SN"/></let>
+      </action>
+    </rule>
+
+    <rule comment="CHUNK: pre_pre_pre_nom_conj_nom             3-0">
+      <pattern><pattern-item n="pre_pre_pre_nom_conj_nom"/></pattern>
+      <action>
+        <call-macro n="clean_nominal">    <with-param pos="0"/><with-param pos="6"/></call-macro>
+        <!-- conj -->
+        <call-macro n="clean_nominal">    <with-param pos="0"/><with-param pos="4"/></call-macro>
+        <call-macro n="clean_pre-nominal"><with-param pos="0"/><with-param pos="3"/><with-param pos="4"/></call-macro>
+        <call-macro n="clean_pre-nominal"><with-param pos="0"/><with-param pos="2"/><with-param pos="3"/></call-macro>
+        <call-macro n="clean_pre-nominal"><with-param pos="0"/><with-param pos="1"/><with-param pos="2"/></call-macro>
+
+        <call-macro n="maybe_out_det3"><with-param pos="0"/><with-param pos="1"/><with-param pos="4"/></call-macro>
+        <out>
+          <lu><clip pos="1" part="whole"/></lu>
+          <b pos="1"/>
+          <lu><clip pos="2" part="whole"/></lu>
+          <b pos="2"/>
+          <lu><clip pos="3" part="whole"/></lu>
+          <b pos="3"/>
+          <lu><clip pos="4" part="whole"/></lu>
+          <b pos="4"/>
+          <lu><clip pos="5" part="whole"/></lu>
+          <b pos="5"/>
+          <lu><clip pos="6" part="whole"/></lu>
+        </out>
+        <let><var n="former-chunk"/><lit-tag v="SN"/></let>
+      </action>
+    </rule>
+
+    <rule comment="CHUNK: pre_pre_pre_nom_conj_pre_nom         3-1">
+      <pattern><pattern-item n="pre_pre_pre_nom_conj_pre_nom"/></pattern>
+      <action>
+        <call-macro n="clean_nominal">    <with-param pos="0"/><with-param pos="7"/></call-macro>
+        <call-macro n="clean_pre-nominal"><with-param pos="0"/><with-param pos="6"/><with-param pos="7"/></call-macro>
+        <!-- conj -->
+        <call-macro n="clean_nominal">    <with-param pos="0"/><with-param pos="4"/></call-macro>
+        <call-macro n="clean_pre-nominal"><with-param pos="0"/><with-param pos="3"/><with-param pos="4"/></call-macro>
+        <call-macro n="clean_pre-nominal"><with-param pos="0"/><with-param pos="2"/><with-param pos="3"/></call-macro>
+        <call-macro n="clean_pre-nominal"><with-param pos="0"/><with-param pos="1"/><with-param pos="2"/></call-macro>
+
+        <call-macro n="maybe_out_det3"><with-param pos="0"/><with-param pos="1"/><with-param pos="4"/></call-macro>
+        <out>
+          <lu><clip pos="1" part="whole"/></lu>
+          <b pos="1"/>
+          <lu><clip pos="2" part="whole"/></lu>
+          <b pos="2"/>
+          <lu><clip pos="3" part="whole"/></lu>
+          <b pos="3"/>
+          <lu><clip pos="4" part="whole"/></lu>
+          <b pos="4"/>
+          <lu><clip pos="5" part="whole"/></lu>
+          <b pos="5"/>
+          <lu><clip pos="6" part="whole"/></lu>
+          <b pos="6"/>
+          <lu><clip pos="7" part="whole"/></lu>
+        </out>
+        <let><var n="former-chunk"/><lit-tag v="SN"/></let>
+      </action>
+    </rule>
+
+    <rule comment="CHUNK: pre_pre_pre_nom_conj_pre_pre_nom     3-2">
+      <pattern><pattern-item n="pre_pre_pre_nom_conj_pre_pre_nom"/></pattern>
+      <action>
+        <call-macro n="clean_nominal">    <with-param pos="0"/><with-param pos="8"/></call-macro>
+        <call-macro n="clean_pre-nominal"><with-param pos="0"/><with-param pos="7"/><with-param pos="8"/></call-macro>
+        <call-macro n="clean_pre-nominal"><with-param pos="0"/><with-param pos="6"/><with-param pos="7"/></call-macro>
+        <!-- 5 is conj -->
+        <call-macro n="clean_nominal">    <with-param pos="0"/><with-param pos="4"/></call-macro>
+        <call-macro n="clean_pre-nominal"><with-param pos="0"/><with-param pos="3"/><with-param pos="4"/></call-macro>
+        <call-macro n="clean_pre-nominal"><with-param pos="0"/><with-param pos="2"/><with-param pos="3"/></call-macro>
+        <call-macro n="clean_pre-nominal"><with-param pos="0"/><with-param pos="1"/><with-param pos="2"/></call-macro>
+
+        <call-macro n="clean_post-conj"><with-param pos="0"/><with-param pos="6"/><with-param pos="7"/></call-macro>
+        <call-macro n="maybe_out_det3"><with-param pos="0"/><with-param pos="1"/><with-param pos="4"/></call-macro>
+        <out>
+          <lu><clip pos="1" part="whole"/></lu>
+          <b pos="1"/>
+          <lu><clip pos="2" part="whole"/></lu>
+          <b pos="2"/>
+          <lu><clip pos="3" part="whole"/></lu>
+          <b pos="3"/>
+          <lu><clip pos="4" part="whole"/></lu>
+          <b pos="4"/>
+          <lu><clip pos="5" part="whole"/></lu>
+          <b pos="5"/>
+          <lu><clip pos="6" part="whole"/></lu>
+          <b pos="6"/>
+          <lu><clip pos="7" part="whole"/></lu>
+          <b pos="7"/>
+          <lu><clip pos="8" part="whole"/></lu>
+        </out>
+        <let><var n="former-chunk"/><lit-tag v="SN"/></let>
+      </action>
+    </rule>
+
+    <rule comment="CHUNK: pre_pre_pre_nom_conj_pre_pre_pre_nom 3-3">
+      <pattern><pattern-item n="pre_pre_pre_nom_conj_pre_pre_pre_nom"/></pattern>
+      <action>
+        <call-macro n="clean_nominal">    <with-param pos="0"/><with-param pos="9"/></call-macro>
+        <call-macro n="clean_pre-nominal"><with-param pos="0"/><with-param pos="8"/><with-param pos="9"/></call-macro>
+        <call-macro n="clean_pre-nominal"><with-param pos="0"/><with-param pos="7"/><with-param pos="8"/></call-macro>
+        <call-macro n="clean_pre-nominal"><with-param pos="0"/><with-param pos="6"/><with-param pos="7"/></call-macro>
+        <!-- 5 is conj -->
+        <call-macro n="clean_nominal">    <with-param pos="0"/><with-param pos="4"/></call-macro>
+        <call-macro n="clean_pre-nominal"><with-param pos="0"/><with-param pos="3"/><with-param pos="4"/></call-macro>
+        <call-macro n="clean_pre-nominal"><with-param pos="0"/><with-param pos="2"/><with-param pos="3"/></call-macro>
+        <call-macro n="clean_pre-nominal"><with-param pos="0"/><with-param pos="1"/><with-param pos="2"/></call-macro>
+
+        <call-macro n="clean_post-conj"><with-param pos="0"/><with-param pos="6"/><with-param pos="7"/></call-macro>
+        <call-macro n="clean_post-conj"><with-param pos="0"/><with-param pos="7"/><with-param pos="8"/></call-macro>
+        <call-macro n="maybe_out_det3"><with-param pos="0"/><with-param pos="1"/><with-param pos="4"/></call-macro>
+        <out>
+          <lu><clip pos="1" part="whole"/></lu>
+          <b pos="1"/>
+          <lu><clip pos="2" part="whole"/></lu>
+          <b pos="2"/>
+          <lu><clip pos="3" part="whole"/></lu>
+          <b pos="3"/>
+          <lu><clip pos="4" part="whole"/></lu>
+          <b pos="4"/>
+          <lu><clip pos="5" part="whole"/></lu>
+          <b pos="5"/>
+          <lu><clip pos="6" part="whole"/></lu>
+          <b pos="6"/>
+          <lu><clip pos="7" part="whole"/></lu>
+          <b pos="7"/>
+          <lu><clip pos="8" part="whole"/></lu>
+          <b pos="8"/>
+          <lu><clip pos="9" part="whole"/></lu>
+        </out>
+        <let><var n="former-chunk"/><lit-tag v="SN"/></let>
+      </action>
+    </rule>
+
+    <!-- <rules: Trivial, SN _app (where app is always three lu's) -->
+    <rule comment="CHUNK: nom_app">
+      <pattern><pattern-item n="nom_app"/></pattern>
+      <action>
+        <call-macro n="clean_nominal">    <with-param pos="0"/><with-param pos="1"/></call-macro>
+
+        <call-macro n="maybe_out_det3"><with-param pos="0"/><with-param pos="1"/><with-param pos="1"/></call-macro>
+        <out>
+          <lu><clip pos="1" part="whole"/></lu>
+          <b pos="1"/>
+          <lu><clip pos="2" part="whole"/></lu>
+          <b pos="2"/>
+          <lu><clip pos="3" part="whole"/></lu>
+          <b pos="3"/>
+          <lu><clip pos="4" part="whole"/></lu>
+        </out>
+        <let><var n="former-chunk"/><lit-tag v="SN"/></let>
+      </action>
+    </rule>
+
+    <rule comment="CHUNK: pre_nom_app">
+      <pattern><pattern-item n="pre_nom_app"/></pattern>
+      <action>
+        <call-macro n="clean_nominal">    <with-param pos="0"/><with-param pos="2"/></call-macro>
+        <call-macro n="clean_pre-nominal"><with-param pos="0"/><with-param pos="1"/><with-param pos="2"/></call-macro>
+
+        <call-macro n="maybe_out_det3"><with-param pos="0"/><with-param pos="1"/><with-param pos="2"/></call-macro>
+        <out>
+          <lu><clip pos="1" part="whole"/></lu>
+          <b pos="1"/>
+          <lu><clip pos="2" part="whole"/></lu>
+          <b pos="2"/>
+          <lu><clip pos="3" part="whole"/></lu>
+          <b pos="3"/>
+          <lu><clip pos="4" part="whole"/></lu>
+          <b pos="4"/>
+          <lu><clip pos="5" part="whole"/></lu>
+        </out>
+        <let><var n="former-chunk"/><lit-tag v="SN"/></let>
+      </action>
+    </rule>
+
+    <rule comment="CHUNK: pre_pre_nom_app">
+      <pattern><pattern-item n="pre_pre_nom_app"/></pattern>
+      <action>
+        <call-macro n="clean_nominal">    <with-param pos="0"/><with-param pos="3"/></call-macro>
+        <call-macro n="clean_pre-nominal"><with-param pos="0"/><with-param pos="2"/><with-param pos="3"/></call-macro>
+        <call-macro n="clean_pre-nominal"><with-param pos="0"/><with-param pos="1"/><with-param pos="2"/></call-macro>
+
+        <call-macro n="maybe_out_det3"><with-param pos="0"/><with-param pos="1"/><with-param pos="3"/></call-macro>
+        <out>
+          <lu><clip pos="1" part="whole"/></lu>
+          <b pos="1"/>
+          <lu><clip pos="2" part="whole"/></lu>
+          <b pos="2"/>
+          <lu><clip pos="3" part="whole"/></lu>
+          <b pos="3"/>
+          <lu><clip pos="4" part="whole"/></lu>
+          <b pos="4"/>
+          <lu><clip pos="5" part="whole"/></lu>
+          <b pos="5"/>
+          <lu><clip pos="6" part="whole"/></lu>
+        </out>
+        <let><var n="former-chunk"/><lit-tag v="SN"/></let>
+      </action>
+    </rule>
+    <rule comment="CHUNK: pre_pre_pre_nom_app">
+<pattern><pattern-item n="pre_pre_pre_nom_app"/></pattern>
+      <action>
+        <call-macro n="clean_nominal">    <with-param pos="0"/><with-param pos="4"/></call-macro>
+        <call-macro n="clean_pre-nominal"><with-param pos="0"/><with-param pos="3"/><with-param pos="4"/></call-macro>
+        <call-macro n="clean_pre-nominal"><with-param pos="0"/><with-param pos="2"/><with-param pos="3"/></call-macro>
+        <call-macro n="clean_pre-nominal"><with-param pos="0"/><with-param pos="1"/><with-param pos="2"/></call-macro>
+
+        <call-macro n="maybe_out_det3"><with-param pos="0"/><with-param pos="1"/><with-param pos="4"/></call-macro>
+        <out>
+          <lu><clip pos="1" part="whole"/></lu>
+          <b pos="1"/>
+          <lu><clip pos="2" part="whole"/></lu>
+          <b pos="2"/>
+          <lu><clip pos="3" part="whole"/></lu>
+          <b pos="3"/>
+          <lu><clip pos="4" part="whole"/></lu>
+          <b pos="4"/>
+          <lu><clip pos="5" part="whole"/></lu>
+          <b pos="5"/>
+          <lu><clip pos="6" part="whole"/></lu>
+          <b pos="6"/>
+          <lu><clip pos="7" part="whole"/></lu>
+        </out>
+        <let><var n="former-chunk"/><lit-tag v="SN"/></let>
+      </action>
+    </rule>
+
+    <!-- <rules: Trivial, SA -->
+    <rule comment="CHUNK: adj">
+<pattern><pattern-item n="adj"/></pattern>
+      <action>
+        <call-macro n="clean_adj"><with-param pos="0"/><with-param pos="1"/></call-macro>
+        <out>
+          <lu><clip pos="1" part="whole"/></lu>
+        </out>
+        <let><var n="former-chunk"/><lit-tag v="SA"/></let>
+      </action>
+    </rule>
+    <rule comment="CHUNK: pre_adj">
+<pattern><pattern-item n="pre_adj"/></pattern>
+      <action>
+        <call-macro n="clean_adj"><with-param pos="0"/><with-param pos="2"/></call-macro>
+        <call-macro n="clean_pre-nominal"><with-param pos="0"/><with-param pos="1"/><with-param pos="2"/></call-macro>
+        <out>
+          <lu><clip pos="1" part="whole"/></lu>
+          <b pos="1"/>
+          <lu><clip pos="2" part="whole"/></lu>
+        </out>
+        <let><var n="former-chunk"/><lit-tag v="SA"/></let>
+      </action>
+    </rule>
+    <!-- <rules: Trivial, SA CC SA -->
+    <rule comment="CHUNK: adj_conj_adj">
+<pattern><pattern-item n="adj_conj_adj"/></pattern>
+      <action>
+        <call-macro n="clean_adj"><with-param pos="0"/><with-param pos="3"/></call-macro>
+        <!-- conj -->
+        <call-macro n="clean_adj"><with-param pos="0"/><with-param pos="1"/></call-macro>
+        <out>
+          <lu><clip pos="1" part="whole"/></lu>
+          <b pos="1"/>
+          <lu><clip pos="2" part="whole"/></lu>
+          <b pos="2"/>
+          <lu><clip pos="3" part="whole"/></lu>
+        </out>
+        <let><var n="former-chunk"/><lit-tag v="SA"/></let>
+      </action>
+    </rule>
+    <rule comment="CHUNK: pre_adj_conj_adj">
+<pattern><pattern-item n="pre_adj_conj_adj"/></pattern>
+      <action>
+        <call-macro n="clean_adj"><with-param pos="0"/><with-param pos="4"/></call-macro>
+        <!-- conj -->
+        <call-macro n="clean_adj"><with-param pos="0"/><with-param pos="2"/></call-macro>
+        <call-macro n="clean_pre-nominal"><with-param pos="0"/><with-param pos="1"/><with-param pos="2"/></call-macro>
+        <out>
+          <lu><clip pos="1" part="whole"/></lu>
+          <b pos="1"/>
+          <lu><clip pos="2" part="whole"/></lu>
+          <b pos="2"/>
+          <lu><clip pos="3" part="whole"/></lu>
+          <b pos="3"/>
+          <lu><clip pos="4" part="whole"/></lu>
+        </out>
+        <let><var n="former-chunk"/><lit-tag v="SA"/></let>
+      </action>
+    </rule>
+    <rule comment="CHUNK: adj_conj_pre_adj">
+<pattern><pattern-item n="adj_conj_pre_adj"/></pattern>
+      <action>
+        <call-macro n="clean_adj"><with-param pos="0"/><with-param pos="4"/></call-macro>
+        <call-macro n="clean_pre-nominal"><with-param pos="0"/><with-param pos="3"/><with-param pos="4"/></call-macro>
+        <!-- conj -->
+        <call-macro n="clean_adj"><with-param pos="0"/><with-param pos="1"/></call-macro>
+        <out>
+          <lu><clip pos="1" part="whole"/></lu>
+          <b pos="1"/>
+          <lu><clip pos="2" part="whole"/></lu>
+          <b pos="2"/>
+          <lu><clip pos="3" part="whole"/></lu>
+          <b pos="3"/>
+          <lu><clip pos="4" part="whole"/></lu>
+        </out>
+        <let><var n="former-chunk"/><lit-tag v="SA"/></let>
+      </action>
+    </rule>
+    <rule comment="CHUNK: pre_adj_conj_pre_adj">
+<pattern><pattern-item n="pre_adj_conj_pre_adj"/></pattern>
+      <action>
+        <call-macro n="clean_adj"><with-param pos="0"/><with-param pos="5"/></call-macro>
+        <call-macro n="clean_pre-nominal"><with-param pos="0"/><with-param pos="4"/><with-param pos="5"/></call-macro>
+        <!-- conj -->
+        <call-macro n="clean_adj"><with-param pos="0"/><with-param pos="2"/></call-macro>
+        <call-macro n="clean_pre-nominal"><with-param pos="0"/><with-param pos="1"/><with-param pos="2"/></call-macro>
+        <out>
+          <lu><clip pos="1" part="whole"/></lu>
+          <b pos="1"/>
+          <lu><clip pos="2" part="whole"/></lu>
+          <b pos="2"/>
+          <lu><clip pos="3" part="whole"/></lu>
+          <b pos="3"/>
+          <lu><clip pos="4" part="whole"/></lu>
+          <b pos="4"/>
+          <lu><clip pos="5" part="whole"/></lu>
+        </out>
+        <let><var n="former-chunk"/><lit-tag v="SA"/></let>
+      </action>
+    </rule>
+
+    <rule comment="CHUNK: unknown">
+<pattern><pattern-item n="unknown"/></pattern>
+      <action>
+        <out>
+          <lu><clip pos="1" part="whole"/></lu>
+        </out>
+        <let><var n="former-chunk"/><lit-tag v="unknown"/></let>
+      </action>
+    </rule>
+    <rule comment="CHUNK: lquot_unknown_rquot">
+<pattern><pattern-item n="lquot_unknown_rquot"/></pattern>
+      <action>
+        <out>
+          <lu><clip pos="1" part="whole"/></lu>
+          <b pos="1"/>
+          <lu><clip pos="2" part="whole"/></lu>
+          <b pos="2"/>
+          <lu><clip pos="3" part="whole"/></lu>
+        </out>
+        <let><var n="former-chunk"/><lit-tag v="unknown"/></let>
+      </action>
+    </rule>
+    <rule comment="CHUNK: sent">
+<pattern><pattern-item n="sent"/></pattern>
+      <action>
+        <out>
+          <lu><clip pos="1" part="whole"/></lu>
+        </out>
+        <let><var n="former-chunk"/><lit-tag v="sent"/></let>
+      </action>
+    </rule>
+    <rule comment="CHUNK: therest
+                   TODO: postchunk really needs a pattern for the whole chunk contents …">
+<pattern><pattern-item n="therest"/></pattern>
+      <action>
+        <choose>
+          <when>
+            <test><equal><lu-count/><lit v="6"/></equal></test>
+            <out>
+              <lu><clip pos="1" part="whole"/></lu>
+              <b pos="1"/>
+              <lu><clip pos="2" part="whole"/></lu>
+              <b pos="2"/>
+              <lu><clip pos="3" part="whole"/></lu>
+              <b pos="3"/>
+              <lu><clip pos="4" part="whole"/></lu>
+              <b pos="4"/>
+              <lu><clip pos="5" part="whole"/></lu>
+              <b pos="5"/>
+              <lu><clip pos="6" part="whole"/></lu>
+            </out>
+          </when>
+          <when>
+            <test><equal><lu-count/><lit v="5"/></equal></test>
+            <out>
+              <lu><clip pos="1" part="whole"/></lu>
+              <b pos="1"/>
+              <lu><clip pos="2" part="whole"/></lu>
+              <b pos="2"/>
+              <lu><clip pos="3" part="whole"/></lu>
+              <b pos="3"/>
+              <lu><clip pos="4" part="whole"/></lu>
+              <b pos="4"/>
+              <lu><clip pos="5" part="whole"/></lu>
+            </out>
+          </when>
+          <when>
+            <test><equal><lu-count/><lit v="4"/></equal></test>
+            <out>
+              <lu><clip pos="1" part="whole"/></lu>
+              <b pos="1"/>
+              <lu><clip pos="2" part="whole"/></lu>
+              <b pos="2"/>
+              <lu><clip pos="3" part="whole"/></lu>
+              <b pos="3"/>
+              <lu><clip pos="4" part="whole"/></lu>
+            </out>
+          </when>
+          <when>
+            <test><equal><lu-count/><lit v="3"/></equal></test>
+            <out>
+              <lu><clip pos="1" part="whole"/></lu>
+              <b pos="1"/>
+              <lu><clip pos="2" part="whole"/></lu>
+              <b pos="2"/>
+              <lu><clip pos="3" part="whole"/></lu>
+            </out>
+          </when>
+          <when>
+            <test><equal><lu-count/><lit v="2"/></equal></test>
+            <out>
+              <lu><clip pos="1" part="whole"/></lu>
+              <b pos="1"/>
+              <lu><clip pos="2" part="whole"/></lu>
+            </out>
+          </when>
+          <when>
+            <test><equal><lu-count/><lit v="1"/></equal></test>
+            <out>
+              <lu><clip pos="1" part="whole"/></lu>
+            </out>
+          </when>
+        </choose>
+        <choose>
+          <when>
+            <test><equal><clip pos="0" part="a_sintagma"/><lit v=""/></equal></test>
+            <let><var n="former-chunk"/><lit-tag v="other"/></let>
+          </when>
+          <otherwise>
+            <let><var n="former-chunk"/><clip pos="0" part="a_sintagma"/></let>
+          </otherwise>
+        </choose>
+      </action>
+    </rule>
+
+  </section-rules>
+</postchunk>

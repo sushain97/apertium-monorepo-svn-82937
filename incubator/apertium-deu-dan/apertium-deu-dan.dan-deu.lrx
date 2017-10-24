@@ -1,0 +1,57 @@
+<rules>
+  <!-- 
+    This rule chooses "energía" as the translation of "power" when it is preceded by "wind". 
+    Add your own rules within <rule> here, using the resources below as a guide 
+  -->
+
+  <rule>
+   <match lemma="modellieren" tags="vblex.*"/>
+    <match lemma="Ton" tags="n.*">
+      <select lemma="ler" tags="n.*"/>
+    </match>
+  </rule>
+  <rule> 
+    <match lemma="spielen"/> 
+    <match/> 
+    <match/> 
+    <match lemma="Flügel"><select lemma="flygel"/></match> 
+  </rule> 
+ <!-- 
+  <rule> 
+    <match lemma="lernen"/> 
+    <match/>  
+    <match lemma="Stoff"><select lemma="material"/></match> 
+  </rule> 
+  <rule> 
+    <match lemma="reiten"/> 
+    <match/> 
+    <match/> 
+    <match lemma="Schimmel"><select lemma="skimmel"/></match> 
+  </rule>      
+--> 
+ <rule> 
+    <match lemma="Krankheit"/> 
+    <match lemma="Krebs"><select lemma="cancer"/></match> 
+  </rule> 
+  <rule> 
+    <match lemma="spielen"/> 
+    <match/> 
+    <match/> 
+    <match lemma="Ball"><select lemma="bold"/></match> 
+  </rule> 
+  <rule> 
+    <match lemma="obere"/> 
+    <match lemma="Decke"><select lemma="tak"/></match> 
+   </rule> 
+
+ 
+</rules>
+
+<!-- 
+Resources: 
+    http://wiki.apertium.org/wiki/How_to_get_started_with_lexical_selection_rules
+    http://wiki.apertium.org/wiki/Constraint-based_lexical_selection
+    http://wiki.apertium.org/wiki/Lexical_selection
+    http://wiki.apertium.org/wiki/Learning_rules_from_parallel_and_non-parallel_corpora
+-->
+

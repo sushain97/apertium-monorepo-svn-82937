@@ -1,0 +1,234 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<transfer>
+  <section-def-cats>
+    <def-cat n="impers">
+      <cat-item tags="v.iv.pass.*"/>
+    </def-cat>
+ 
+    <def-cat n="abil">
+      <cat-item tags="v.*.abil.*"/>
+    </def-cat>
+    
+    <def-cat n="prog">
+      <cat-item tags="v.*.prog.*"/>
+    </def-cat>
+
+    <def-cat n="qst">
+      <cat-item tags="qst"/>
+      <cat-item tags="qst.*"/>
+    </def-cat>
+
+    <def-cat n="cop">
+      <cat-item tags="cop.*"/>
+    </def-cat>
+    
+  </section-def-cats>
+  
+  <section-def-attrs>
+
+    <def-attr n="a_verb">
+      <attr-item tags="v"/>
+      <attr-item tags="vaux"/>
+    </def-attr>
+
+    <def-attr n="a_trans">
+      <attr-item tags="tv"/>
+      <attr-item tags="iv"/>
+    </def-attr>
+
+    <def-attr n="a_deriv">
+      <attr-item tags="coop.caus"/>
+      <attr-item tags="coop"/>
+      <attr-item tags="caus"/>
+      <attr-item tags="pass"/>
+    </def-attr>
+
+    <def-attr n="a_abil">
+      <attr-item tags="abil"/>
+    </def-attr>
+
+    <def-attr n="a_prog">
+      <attr-item tags="prog"/>
+    </def-attr>
+    
+  </section-def-attrs>
+ 
+  <section-def-vars>
+    <def-var n="number"/>
+    <def-var n="negatiu"/>
+    <def-var n="verb-head"/>
+  </section-def-vars>  
+
+  <section-rules>
+
+    <rule comment="impers"> 
+      <pattern>
+        <pattern-item n="impers"/>
+      </pattern>
+      <action>
+        <choose>
+          <when>
+            <test><equal><clip pos="1" side="tl" part="a_deriv"/><lit-tag v="pass"/></equal></test>
+            <let><clip pos="1" side="tl" part="a_deriv"/><lit v=""/></let>
+          </when>
+        </choose>
+        <let><var n="verb-head"/><concat>
+                                   <clip pos="1" side="tl" part="lem"/>
+                                   <clip pos="1" side="tl" part="a_verb"/>
+                                   <clip pos="1" side="tl" part="a_trans"/>
+                                 </concat></let>
+        <let><clip pos="1" side="tl" part="lem"/><lit v=""/></let>
+        <let><clip pos="1" side="tl" part="a_verb"/><lit v=""/></let>
+        <let><clip pos="1" side="tl" part="a_deriv"/><lit v=""/></let>
+        <let><clip pos="1" side="tl" part="a_trans"/><lit v=""/></let>
+        <let><clip pos="1" side="tl" part="a_pers"/><lit-tag v="p3"/></let>
+        <let><clip pos="1" side="tl" part="a_nbr"/><lit-tag v="sg"/></let>
+        <out>
+          <lu>
+            <var n="verb-head"/>
+            <lit-tag v="prc_cond.p3.sg"/>
+          </lu>
+          <b/>
+          <lu>
+            <lit v="бол"/>
+            <lit-tag v="v.iv"/>
+            <clip pos="1" side="tl" part="whole"/>
+          </lu>
+        </out>
+      </action>
+    </rule>
+     
+    <rule comment="abil"> 
+      <pattern>
+        <pattern-item n="abil"/>
+      </pattern>
+      <action>
+        <let><var n="verb-head"/><concat>
+                                   <clip pos="1" side="tl" part="lem"/>
+                                   <clip pos="1" side="tl" part="a_verb"/>
+                                   <clip pos="1" side="tl" part="a_trans"/>
+                                   <clip pos="1" side="tl" part="a_deriv"/>
+                                 </concat></let>
+        <let><clip pos="1" side="tl" part="lem"/><lit v=""/></let>
+        <let><clip pos="1" side="tl" part="a_verb"/><lit v=""/></let>
+        <let><clip pos="1" side="tl" part="a_trans"/><lit v=""/></let>
+        <let><clip pos="1" side="tl" part="a_deriv"/><lit v=""/></let>
+        <let><clip pos="1" side="tl" part="a_abil"/><lit v=""/></let>
+        <out>
+          <lu>
+            <var n="verb-head"/>
+            <lit-tag v="prc_impf"/>
+          </lu>
+          <b/>
+          <lu>
+              <lit v="ал"/>
+              <lit-tag v="v.tv"/>
+              <clip pos="1" side="tl" part="whole"/>
+          </lu>
+        </out>
+      </action>
+    </rule>
+     
+    <rule comment="impers cop"> 
+      <pattern>
+        <pattern-item n="impers"/>
+        <pattern-item n="cop"/>
+      </pattern>
+      <action>
+        <choose>
+          <when>
+            <test><equal><clip pos="1" side="tl" part="a_deriv"/><lit-tag v="pass"/></equal></test>
+            <let><clip pos="1" side="tl" part="a_deriv"/><lit v=""/></let>
+          </when>
+        </choose>
+        <let><var n="verb-head"/><concat>
+                                   <clip pos="1" side="tl" part="lem"/>
+                                   <clip pos="1" side="tl" part="a_verb"/>
+                                   <clip pos="1" side="tl" part="a_trans"/>
+                                   <clip pos="1" side="tl" part="a_deriv"/>
+                                 </concat></let>
+        <let><clip pos="1" side="tl" part="lem"/><lit v=""/></let>
+        <let><clip pos="1" side="tl" part="a_verb"/><lit v=""/></let>
+        <let><clip pos="1" side="tl" part="a_deriv"/><lit v=""/></let>
+        <let><clip pos="1" side="tl" part="a_trans"/><lit v=""/></let>
+        <let><clip pos="1" side="tl" part="a_pers"/><lit-tag v="p3"/></let>
+        <let><clip pos="1" side="tl" part="a_nbr"/><lit-tag v="sg"/></let>
+        <out>
+          <lu>
+            <var n="verb-head"/>
+            <lit-tag v="prc_cond.p3.sg"/> <!-- take from cop? -->
+          </lu>
+          <b/>
+          <lu>
+            <lit v="бол"/>
+            <lit-tag v="v.iv"/>
+            <clip pos="1" side="tl" part="whole"/>
+          </lu>
+          <b/>
+          <lu>
+              <clip pos="2" side="tl" part="whole"/>
+          </lu>
+        </out>
+      </action>
+    </rule>
+ 
+    <rule comment="abil cop"> 
+      <pattern>
+        <pattern-item n="abil"/>
+        <pattern-item n="cop"/>
+      </pattern>
+      <action>
+        <let><var n="verb-head"/><concat>
+                                   <clip pos="1" side="tl" part="lem"/>
+                                   <clip pos="1" side="tl" part="a_verb"/>
+                                   <clip pos="1" side="tl" part="a_trans"/>
+                                   <clip pos="1" side="tl" part="a_deriv"/>
+                                 </concat></let>
+        <let><clip pos="1" side="tl" part="lem"/><lit v=""/></let>
+        <let><clip pos="1" side="tl" part="a_verb"/><lit v=""/></let>
+        <let><clip pos="1" side="tl" part="a_trans"/><lit v=""/></let>
+        <let><clip pos="1" side="tl" part="a_deriv"/><lit v=""/></let>
+        <let><clip pos="1" side="tl" part="a_abil"/><lit v=""/></let>
+        <out>
+          <lu>
+            <var n="verb-head"/>
+            <lit-tag v="prc_impf"/>
+          </lu>
+          <b/>
+          <lu>
+              <lit v="ал"/>
+              <lit-tag v="v.tv"/>
+              <clip pos="1" side="tl" part="whole"/>
+          </lu>
+          <b/>
+          <lu>
+              <clip pos="2" side="tl" part="whole"/>
+          </lu>
+        </out>
+      </action>
+    </rule>
+
+    <rule comment="qst cop"> 
+      <pattern>
+        <pattern-item n="qst"/>
+        <pattern-item n="cop"/>
+      </pattern>
+      <action>
+        <out>
+          <lu>
+              <clip pos="2" side="tl" part="whole"/>
+          </lu>
+          <b pos="1"/>
+          <lu>
+              <clip pos="1" side="tl" part="whole"/>
+          </lu>
+        </out>
+      </action>
+    </rule>
+
+
+
+     
+  </section-rules>
+</transfer>

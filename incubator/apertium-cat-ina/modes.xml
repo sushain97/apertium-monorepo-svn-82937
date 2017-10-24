@@ -1,0 +1,531 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<modes>
+
+  <!-- cat → ina -->
+
+  <mode name="cat-ina" install="yes">
+    <pipeline>
+      <program name="lt-proc -w">
+        <file name="cat-ina.automorf.bin"/>
+      </program>
+
+
+      <program name="cg-proc -w">
+        <file name="cat-ina.rlx.bin"/>
+      </program>
+      <program name="apertium-tagger -g $2">
+        <file name="cat-ina.prob"/>
+      </program>
+      <program name="apertium-pretransfer"/>
+      <program name="lt-proc -b">
+        <file name="cat-ina.autobil.bin"/>
+      </program>
+      <program name="lrx-proc">
+        <file name="cat-ina.autolex.bin"/>
+      </program>
+      <program name="apertium-transfer -b">
+        <file name="apertium-cat-ina.cat-ina.t1x"/>
+        <file name="cat-ina.t1x.bin"/>
+      </program>
+      <program name="apertium-interchunk">
+        <file name="apertium-cat-ina.cat-ina.t2x"/>
+        <file name="cat-ina.t2x.bin"/>
+      </program>
+      <program name="apertium-postchunk">
+        <file name="apertium-cat-ina.cat-ina.t3x"/>
+        <file name="cat-ina.t3x.bin"/>
+      </program>
+      <program name="lt-proc $1">
+        <file name="cat-ina.autogen.bin"/>
+      </program>
+
+      <program name="lt-proc -p">
+        <file name="cat-ina.autopgen.bin"/>
+      </program>
+    </pipeline>
+  </mode>
+
+  <mode name="cat-ina-dgen" install="no">
+    <pipeline>
+      <program name="lt-proc -w">
+        <file name="cat-ina.automorf.bin"/>
+      </program>
+
+
+      <program name="cg-proc -w">
+        <file name="cat-ina.rlx.bin"/>
+      </program>
+      <program name="apertium-tagger -g $2">
+        <file name="cat-ina.prob"/>
+      </program>
+      <program name="apertium-pretransfer"/>
+      <program name="lt-proc -b">
+        <file name="cat-ina.autobil.bin"/>
+      </program>
+      <program name="apertium-transfer -b">
+        <file name="apertium-cat-ina.cat-ina.t1x"/>
+        <file name="cat-ina.t1x.bin"/>
+      </program>
+      <program name="apertium-interchunk">
+        <file name="apertium-cat-ina.cat-ina.t2x"/>
+        <file name="cat-ina.t2x.bin"/>
+      </program>
+      <program name="apertium-postchunk">
+        <file name="apertium-cat-ina.cat-ina.t3x"/>
+        <file name="cat-ina.t3x.bin"/>
+      </program>
+      <program name="lt-proc -d">
+        <file name="cat-ina.autogen.bin"/>
+      </program>
+    </pipeline>
+  </mode>
+
+  <mode name="cat-ina-morph" install="no">
+    <pipeline>
+      <program name="lt-proc -w">
+        <file name="cat-ina.automorf.bin"/>
+      </program>
+    </pipeline>
+  </mode>
+
+  <mode name="cat-ina-disam" install="no">
+    <pipeline>
+      <program name="lt-proc -w">
+        <file name="cat-ina.automorf.bin"/>
+      </program>
+      <program name="cg-conv -a"/>
+      <program name="vislcg3 --trace --grammar">
+        <file name="cat-ina.rlx.bin"/>
+      </program>
+    </pipeline>
+  </mode>
+
+  <mode name="cat-ina-tagger" install="no">
+    <pipeline>
+      <program name="lt-proc -w">
+        <file name="cat-ina.automorf.bin"/>
+      </program>
+
+
+      <program name="cg-proc -w">
+        <file name="cat-ina.rlx.bin"/>
+      </program>
+      <program name="apertium-tagger -g $2">
+        <file name="cat-ina.prob"/>
+      </program>
+    </pipeline>
+  </mode>
+
+  <mode name="cat-ina-pretransfer" install="no">
+    <pipeline>
+      <program name="lt-proc -w">
+        <file name="cat-ina.automorf.bin"/>
+      </program>
+
+
+      <program name="cg-proc -w">
+        <file name="cat-ina.rlx.bin"/>
+      </program>
+      <program name="apertium-tagger -g $2">
+        <file name="cat-ina.prob"/>
+      </program>
+      <program name="apertium-pretransfer"/>
+    </pipeline>
+  </mode>
+
+  <mode name="cat-ina-biltrans" install="no">
+    <pipeline>
+      <program name="lt-proc -w">
+        <file name="cat-ina.automorf.bin"/>
+      </program>
+
+
+      <program name="cg-proc -w">
+        <file name="cat-ina.rlx.bin"/>
+      </program>
+      <program name="apertium-tagger -g $2">
+        <file name="cat-ina.prob"/>
+      </program>
+      <program name="apertium-pretransfer"/>
+      <program name="lt-proc -b">
+        <file name="cat-ina.autobil.bin"/>
+      </program>
+    </pipeline>
+  </mode>
+
+  <mode name="cat-ina-lex" install="no">
+    <pipeline>
+      <program name="lt-proc -w">
+        <file name="cat-ina.automorf.bin"/>
+      </program>
+
+
+      <program name="cg-proc -w">
+        <file name="cat-ina.rlx.bin"/>
+      </program>
+      <program name="apertium-tagger -g $2">
+        <file name="cat-ina.prob"/>
+      </program>
+      <program name="apertium-pretransfer"/>
+      <program name="lt-proc -b">
+        <file name="cat-ina.autobil.bin"/>
+      </program>
+      <program name="lrx-proc -t">
+        <file name="cat-ina.autolex.bin"/>
+      </program>
+    </pipeline>
+  </mode>
+
+  <mode name="cat-ina-transfer" install="no">
+    <pipeline>
+      <program name="lt-proc -w">
+        <file name="cat-ina.automorf.bin"/>
+      </program>
+
+
+      <program name="cg-proc -w">
+        <file name="cat-ina.rlx.bin"/>
+      </program>
+      <program name="apertium-tagger -g $2">
+        <file name="cat-ina.prob"/>
+      </program>
+      <program name="apertium-pretransfer"/>
+      <program name="lt-proc -b">
+        <file name="cat-ina.autobil.bin"/>
+      </program>
+      <program name="lrx-proc">
+        <file name="cat-ina.autolex.bin"/>
+      </program>
+      <program name="apertium-transfer -b -t">
+        <file name="apertium-cat-ina.cat-ina.t1x"/>
+        <file name="cat-ina.t1x.bin"/>
+      </program>
+    </pipeline>
+  </mode>
+
+  <mode name="cat-ina-interchunk" install="no">
+    <pipeline>
+      <program name="lt-proc -w">
+        <file name="cat-ina.automorf.bin"/>
+      </program>
+
+
+      <program name="cg-proc -w">
+        <file name="cat-ina.rlx.bin"/>
+      </program>
+      <program name="apertium-tagger -g $2">
+        <file name="cat-ina.prob"/>
+      </program>
+      <program name="apertium-pretransfer"/>
+      <program name="lt-proc -b">
+        <file name="cat-ina.autobil.bin"/>
+      </program>
+      <program name="lrx-proc">
+        <file name="cat-ina.autolex.bin"/>
+      </program>
+      <program name="apertium-transfer -b">
+        <file name="apertium-cat-ina.cat-ina.t1x"/>
+        <file name="cat-ina.t1x.bin"/>
+      </program>
+      <program name="apertium-interchunk -t">
+        <file name="apertium-cat-ina.cat-ina.t2x"/>
+        <file name="cat-ina.t2x.bin"/>
+      </program>
+    </pipeline>
+  </mode>
+
+  <mode name="cat-ina-postchunk" install="no">
+    <pipeline>
+      <program name="lt-proc -w">
+        <file name="cat-ina.automorf.bin"/>
+      </program>
+
+
+      <program name="cg-proc -w">
+        <file name="cat-ina.rlx.bin"/>
+      </program>
+      <program name="apertium-tagger -g $2">
+        <file name="cat-ina.prob"/>
+      </program>
+      <program name="apertium-pretransfer"/>
+      <program name="lt-proc -b">
+        <file name="cat-ina.autobil.bin"/>
+      </program>
+      <program name="lrx-proc">
+        <file name="cat-ina.autolex.bin"/>
+      </program>
+      <program name="apertium-transfer -b">
+        <file name="apertium-cat-ina.cat-ina.t1x"/>
+        <file name="cat-ina.t1x.bin"/>
+      </program>
+      <program name="apertium-interchunk">
+        <file name="apertium-cat-ina.cat-ina.t2x"/>
+        <file name="cat-ina.t2x.bin"/>
+      </program>
+      <program name="apertium-postchunk">
+        <file name="apertium-cat-ina.cat-ina.t3x"/>
+        <file name="cat-ina.t3x.bin"/>
+      </program>
+    </pipeline>
+  </mode>
+
+  <!-- ina → cat -->
+
+  <mode name="ina-cat" install="yes">
+    <pipeline>
+      <program name="lt-proc -w">
+        <file name="ina-cat.automorf.bin"/>
+      </program>
+
+
+      <program name="cg-proc -w">
+        <file name="ina-cat.rlx.bin"/>
+      </program>
+      <program name="apertium-tagger -g $2">
+        <file name="ina-cat.prob"/>
+      </program>
+      <program name="apertium-pretransfer"/>
+      <program name="lt-proc -b">
+        <file name="ina-cat.autobil.bin"/>
+      </program>
+      <program name="lrx-proc">
+        <file name="ina-cat.autolex.bin"/>
+      </program>
+      <program name="apertium-transfer -b">
+        <file name="apertium-cat-ina.ina-cat.t1x"/>
+        <file name="ina-cat.t1x.bin"/>
+      </program>
+      <program name="apertium-interchunk">
+        <file name="apertium-cat-ina.ina-cat.t2x"/>
+        <file name="ina-cat.t2x.bin"/>
+      </program>
+      <program name="apertium-postchunk">
+        <file name="apertium-cat-ina.ina-cat.t3x"/>
+        <file name="ina-cat.t3x.bin"/>
+      </program>
+      <program name="lt-proc $1">
+        <file name="ina-cat.autogen.bin"/>
+      </program>
+
+      <program name="lt-proc -p">
+        <file name="ina-cat.autopgen.bin"/>
+      </program>
+    </pipeline>
+  </mode>
+
+  <mode name="ina-cat-dgen" install="no">
+    <pipeline>
+      <program name="lt-proc -w">
+        <file name="ina-cat.automorf.bin"/>
+      </program>
+
+
+      <program name="cg-proc -w">
+        <file name="ina-cat.rlx.bin"/>
+      </program>
+      <program name="apertium-tagger -g $2">
+        <file name="ina-cat.prob"/>
+      </program>
+      <program name="apertium-pretransfer"/>
+      <program name="lt-proc -b">
+        <file name="ina-cat.autobil.bin"/>
+      </program>
+      <program name="apertium-transfer -b">
+        <file name="apertium-cat-ina.ina-cat.t1x"/>
+        <file name="ina-cat.t1x.bin"/>
+      </program>
+      <program name="apertium-interchunk">
+        <file name="apertium-cat-ina.ina-cat.t2x"/>
+        <file name="ina-cat.t2x.bin"/>
+      </program>
+      <program name="apertium-postchunk">
+        <file name="apertium-cat-ina.ina-cat.t3x"/>
+        <file name="ina-cat.t3x.bin"/>
+      </program>
+      <program name="lt-proc -d">
+        <file name="ina-cat.autogen.bin"/>
+      </program>
+    </pipeline>
+  </mode>
+
+  <mode name="ina-cat-morph" install="no">
+    <pipeline>
+      <program name="lt-proc -w">
+        <file name="ina-cat.automorf.bin"/>
+      </program>
+    </pipeline>
+  </mode>
+
+  <mode name="ina-cat-disam" install="no">
+    <pipeline>
+      <program name="lt-proc -w">
+        <file name="ina-cat.automorf.bin"/>
+      </program>
+      <program name="cg-conv -a"/>
+      <program name="vislcg3 --trace --grammar">
+        <file name="ina-cat.rlx.bin"/>
+      </program>
+    </pipeline>
+  </mode>
+
+  <mode name="ina-cat-tagger" install="no">
+    <pipeline>
+      <program name="lt-proc -w">
+        <file name="ina-cat.automorf.bin"/>
+      </program>
+
+
+      <program name="cg-proc -w">
+        <file name="ina-cat.rlx.bin"/>
+      </program>
+      <program name="apertium-tagger -g $2">
+        <file name="ina-cat.prob"/>
+      </program>
+    </pipeline>
+  </mode>
+
+  <mode name="ina-cat-pretransfer" install="no">
+    <pipeline>
+      <program name="lt-proc -w">
+        <file name="ina-cat.automorf.bin"/>
+      </program>
+
+
+      <program name="cg-proc -w">
+        <file name="ina-cat.rlx.bin"/>
+      </program>
+      <program name="apertium-tagger -g $2">
+        <file name="ina-cat.prob"/>
+      </program>
+      <program name="apertium-pretransfer"/>
+    </pipeline>
+  </mode>
+
+  <mode name="ina-cat-biltrans" install="no">
+    <pipeline>
+      <program name="lt-proc -w">
+        <file name="ina-cat.automorf.bin"/>
+      </program>
+
+
+      <program name="cg-proc -w">
+        <file name="ina-cat.rlx.bin"/>
+      </program>
+      <program name="apertium-tagger -g $2">
+        <file name="ina-cat.prob"/>
+      </program>
+      <program name="apertium-pretransfer"/>
+      <program name="lt-proc -b">
+        <file name="ina-cat.autobil.bin"/>
+      </program>
+    </pipeline>
+  </mode>
+
+  <mode name="ina-cat-lex" install="no">
+    <pipeline>
+      <program name="lt-proc -w">
+        <file name="ina-cat.automorf.bin"/>
+      </program>
+
+
+      <program name="cg-proc -w">
+        <file name="ina-cat.rlx.bin"/>
+      </program>
+      <program name="apertium-tagger -g $2">
+        <file name="ina-cat.prob"/>
+      </program>
+      <program name="apertium-pretransfer"/>
+      <program name="lt-proc -b">
+        <file name="ina-cat.autobil.bin"/>
+      </program>
+      <program name="lrx-proc">
+        <file name="ina-cat.autolex.bin"/>
+      </program>
+    </pipeline>
+  </mode>
+
+  <mode name="ina-cat-transfer" install="no">
+    <pipeline>
+      <program name="lt-proc -w">
+        <file name="ina-cat.automorf.bin"/>
+      </program>
+
+
+      <program name="cg-proc -w">
+        <file name="ina-cat.rlx.bin"/>
+      </program>
+      <program name="apertium-tagger -g $2">
+        <file name="ina-cat.prob"/>
+      </program>
+      <program name="apertium-pretransfer"/>
+      <program name="lt-proc -b">
+        <file name="ina-cat.autobil.bin"/>
+      </program>
+      <program name="apertium-transfer -b -t">
+        <file name="apertium-cat-ina.ina-cat.t1x"/>
+        <file name="ina-cat.t1x.bin"/>
+      </program>
+    </pipeline>
+  </mode>
+
+  <mode name="ina-cat-interchunk" install="no">
+    <pipeline>
+      <program name="lt-proc -w">
+        <file name="ina-cat.automorf.bin"/>
+      </program>
+
+
+      <program name="cg-proc -w">
+        <file name="ina-cat.rlx.bin"/>
+      </program>
+      <program name="apertium-tagger -g $2">
+        <file name="ina-cat.prob"/>
+      </program>
+      <program name="apertium-pretransfer"/>
+      <program name="lt-proc -b">
+        <file name="ina-cat.autobil.bin"/>
+      </program>
+      <program name="apertium-transfer -b">
+        <file name="apertium-cat-ina.ina-cat.t1x"/>
+        <file name="ina-cat.t1x.bin"/>
+      </program>
+      <program name="apertium-interchunk -t">
+        <file name="apertium-cat-ina.ina-cat.t2x"/>
+        <file name="ina-cat.t2x.bin"/>
+      </program>
+    </pipeline>
+  </mode>
+
+  <mode name="ina-cat-postchunk" install="no">
+    <pipeline>
+      <program name="lt-proc -w">
+        <file name="ina-cat.automorf.bin"/>
+      </program>
+
+
+      <program name="cg-proc -w">
+        <file name="ina-cat.rlx.bin"/>
+      </program>
+      <program name="apertium-tagger -g $2">
+        <file name="ina-cat.prob"/>
+      </program>
+      <program name="apertium-pretransfer"/>
+      <program name="lt-proc -b">
+        <file name="ina-cat.autobil.bin"/>
+      </program>
+      <program name="apertium-transfer -b">
+        <file name="apertium-cat-ina.ina-cat.t1x"/>
+        <file name="ina-cat.t1x.bin"/>
+      </program>
+      <program name="apertium-interchunk">
+        <file name="apertium-cat-ina.ina-cat.t2x"/>
+        <file name="ina-cat.t2x.bin"/>
+      </program>
+      <program name="apertium-postchunk">
+        <file name="apertium-cat-ina.ina-cat.t3x"/>
+        <file name="ina-cat.t3x.bin"/>
+      </program>
+    </pipeline>
+  </mode>
+</modes>
+

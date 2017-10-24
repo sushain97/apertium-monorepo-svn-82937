@@ -1,0 +1,51 @@
+Config: 
+  hfst: 
+    App:  hfst-optimised-lookup
+    Gen:  ../tur.autogen.hfst
+    Morph:  ../tur.automorf.hfst
+
+Tests: 
+
+  "[twol] Prevocalic consonant voicing": 
+    kitap<n><nom> : kitap
+    kitap<n><acc> : kitabı
+    kitap<n><px3sp><nom> : kitabı
+    tat<n><nom> : tat
+    tat<n><acc> : tadı
+    tat<n><px3sp><nom> : tadı
+
+  "[twol] {A} harmony":
+    kitap<n><pl><nom> : kitaplar
+    ev<n><pl><nom> : evler
+    saat<n><pl><nom> : saatler 
+    kitap<n><nom>+i<cop><pres><p3><pl> : kitaplar
+    ev<n><nom>+i<cop><pres><p3><pl> : evler
+    saat<n><nom>+i<cop><pres><p3><pl> : saatler 
+
+  "[twol] {A} harmony in dative": 
+    kitap<n><dat> : kitaba
+    anne<n><dat> : anneye 
+    ev<n><dat> : eve
+    saat<n><dat> : saate
+
+   "POSSESSIVES":
+
+   ev<n><px1sg> : evim
+   ev<n><px2sg> : evin
+   ev<n><px3sg> : evi
+   ev<n><px1pl> : evimiz
+   ev<n><px2pl> : eviniz
+   ev<n><px3pl> : evleri
+
+   "f-f-f-f":
+   
+   festival<n><dat> : festivale
+   festival<n><acc> : festivali
+   
+   "f-f-f-2":
+   petrol<n><dat> : petrole
+   petrol<n><acc> : petrolü   
+ 
+ 
+   
+   

@@ -1,0 +1,308 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<modes>
+  <mode name="ro-it" install="yes">
+    <pipeline>
+      <program name="lt-proc">
+        <file name="ro-it.automorf.bin"/>
+      </program>
+      <program name="apertium-tagger -g $2">
+        <file name="ro-it.prob"/>
+      </program>
+      <program name="apertium-pretransfer"/>
+      <program name="apertium-transfer">
+        <file name="apertium-ro-it.ro-it.t1x"/>
+        <file name="ro-it.t1x.bin"/>
+        <file name="ro-it.autobil.bin"/>
+      </program>
+      <program name="apertium-interchunk">
+        <file name="apertium-ro-it.ro-it.t2x"/>
+        <file name="ro-it.t2x.bin"/>
+      </program>
+      <program name="apertium-postchunk">
+        <file name="apertium-ro-it.ro-it.t3x"/>
+        <file name="ro-it.t3x.bin"/>
+      </program>
+      <program name="lt-proc $1">
+        <file name="ro-it.autogen.bin"/>
+      </program>
+      <program name="lt-proc -p">
+        <file name="ro-it.autopgen.bin"/>
+      </program>
+    </pipeline>
+  </mode>
+
+  <mode name="ro-it-anmor">
+    <pipeline>
+      <program name="lt-proc">
+        <file name="ro-it.automorf.bin"/>
+      </program>
+    </pipeline>
+  </mode>
+
+  <mode name="ro-it-tagger">
+    <pipeline>
+      <program name="lt-proc">
+        <file name="ro-it.automorf.bin"/>
+      </program>
+      <program name="apertium-tagger -g $2">
+        <file name="ro-it.prob"/>
+      </program>
+    </pipeline>
+  </mode>
+
+  <mode name="ro-it-pretransfer">
+    <pipeline>
+      <program name="lt-proc">
+        <file name="ro-it.automorf.bin"/>
+      </program>
+      <program name="apertium-tagger -g $2">
+        <file name="ro-it.prob"/>
+      </program>
+      <program name="apertium-pretransfer"/>
+    </pipeline>
+  </mode>
+
+  <mode name="ro-it-chunker">
+    <pipeline>
+      <program name="lt-proc">
+        <file name="ro-it.automorf.bin"/>
+      </program>
+      <program name="apertium-tagger -g $2">
+        <file name="ro-it.prob"/>
+      </program>
+      <program name="apertium-pretransfer"/>
+      <program name="apertium-transfer">
+        <file name="apertium-ro-it.ro-it.t1x"/>
+        <file name="ro-it.t1x.bin"/>
+        <file name="ro-it.autobil.bin"/>
+      </program>
+    </pipeline>
+  </mode>
+
+  <mode name="ro-it-interchunk">
+    <pipeline>
+      <program name="lt-proc">
+        <file name="ro-it.automorf.bin"/>
+      </program>
+      <program name="apertium-tagger -g $2">
+        <file name="ro-it.prob"/>
+      </program>
+      <program name="apertium-pretransfer"/>
+      <program name="apertium-transfer">
+        <file name="apertium-ro-it.ro-it.t1x"/>
+        <file name="ro-it.t1x.bin"/>
+        <file name="ro-it.autobil.bin"/>
+      </program>
+      <program name="apertium-interchunk">
+        <file name="apertium-ro-it.ro-it.t2x"/>
+        <file name="ro-it.t2x.bin"/>
+      </program>
+    </pipeline>
+  </mode>
+
+  <mode name="ro-it-postchunk">
+    <pipeline>
+      <program name="lt-proc">
+        <file name="ro-it.automorf.bin"/>
+      </program>
+      <program name="apertium-tagger -g $2">
+        <file name="ro-it.prob"/>
+      </program>
+      <program name="apertium-pretransfer"/>
+      <program name="apertium-transfer">
+        <file name="apertium-ro-it.ro-it.t1x"/>
+        <file name="ro-it.t1x.bin"/>
+        <file name="ro-it.autobil.bin"/>
+      </program>
+      <program name="apertium-interchunk">
+        <file name="apertium-ro-it.ro-it.t2x"/>
+        <file name="ro-it.t2x.bin"/>
+      </program>
+      <program name="apertium-postchunk">
+        <file name="apertium-ro-it.ro-it.t3x"/>
+        <file name="ro-it.t3x.bin"/>
+      </program>
+    </pipeline>
+  </mode>
+
+  <mode name="ro-it-generador">
+    <pipeline>
+      <program name="lt-proc">
+        <file name="ro-it.automorf.bin"/>
+      </program>
+      <program name="apertium-tagger -g $2">
+        <file name="ro-it.prob"/>
+      </program>
+      <program name="apertium-pretransfer"/>
+      <program name="apertium-transfer">
+        <file name="apertium-ro-it.ro-it.t1x"/>
+        <file name="ro-it.t1x.bin"/>
+        <file name="ro-it.autobil.bin"/>
+      </program>
+      <program name="apertium-interchunk">
+        <file name="apertium-ro-it.ro-it.t2x"/>
+        <file name="ro-it.t2x.bin"/>
+      </program>
+      <program name="apertium-postchunk">
+        <file name="apertium-ro-it.ro-it.t3x"/>
+        <file name="ro-it.t3x.bin"/>
+      </program>
+      <program name="lt-proc $1">
+        <file name="ro-it.autogen.bin"/>
+      </program>
+    </pipeline>
+  </mode>
+
+  <mode name="it-ro" install="yes">
+    <pipeline>
+      <program name="lt-proc">
+        <file name="it-ro.automorf.bin"/>
+      </program>
+      <program name="apertium-tagger -g $2">
+        <file name="it-ro.prob"/>
+      </program>
+      <program name="apertium-pretransfer"/>
+      <program name="apertium-transfer">
+        <file name="apertium-ro-it.it-ro.t1x"/>
+        <file name="it-ro.t1x.bin"/>
+        <file name="it-ro.autobil.bin"/>
+      </program>
+      <program name="apertium-interchunk">
+        <file name="apertium-ro-it.it-ro.t2x"/>
+        <file name="it-ro.t2x.bin"/>
+      </program>
+      <program name="apertium-postchunk">
+        <file name="apertium-ro-it.it-ro.t3x"/>
+        <file name="it-ro.t3x.bin"/>
+      </program>
+      <program name="lt-proc $1">
+        <file name="it-ro.autogen.bin"/>
+      </program>
+      <program name="lt-proc -p">
+        <file name="it-ro.autopgen.bin"/>
+      </program>
+    </pipeline>
+  </mode>
+
+  <mode name="it-ro-anmor">
+    <pipeline>
+      <program name="lt-proc">
+        <file name="it-ro.automorf.bin"/>
+      </program>
+    </pipeline>
+  </mode>
+
+  <mode name="it-ro-tagger">
+    <pipeline>
+      <program name="lt-proc">
+        <file name="it-ro.automorf.bin"/>
+      </program>
+      <program name="apertium-tagger -g $2">
+        <file name="it-ro.prob"/>
+      </program>
+    </pipeline>
+  </mode>
+
+  <mode name="it-ro-pretransfer">
+    <pipeline>
+      <program name="lt-proc">
+        <file name="it-ro.automorf.bin"/>
+      </program>
+      <program name="apertium-tagger -g $2">
+        <file name="it-ro.prob"/>
+      </program>
+      <program name="apertium-pretransfer"/>
+    </pipeline>
+  </mode>
+
+  <mode name="it-ro-chunker">
+    <pipeline>
+      <program name="lt-proc">
+        <file name="it-ro.automorf.bin"/>
+      </program>
+      <program name="apertium-tagger -g $2">
+        <file name="it-ro.prob"/>
+      </program>
+      <program name="apertium-pretransfer"/>
+      <program name="apertium-transfer">
+        <file name="apertium-ro-it.it-ro.t1x"/>
+        <file name="it-ro.t1x.bin"/>
+        <file name="it-ro.autobil.bin"/>
+      </program>
+    </pipeline>
+  </mode>
+
+  <mode name="it-ro-interchunk">
+    <pipeline>
+      <program name="lt-proc">
+        <file name="it-ro.automorf.bin"/>
+      </program>
+      <program name="apertium-tagger -g $2">
+        <file name="it-ro.prob"/>
+      </program>
+      <program name="apertium-pretransfer"/>
+      <program name="apertium-transfer">
+        <file name="apertium-ro-it.it-ro.t1x"/>
+        <file name="it-ro.t1x.bin"/>
+        <file name="it-ro.autobil.bin"/>
+      </program>
+      <program name="apertium-interchunk">
+        <file name="apertium-ro-it.it-ro.t2x"/>
+        <file name="it-ro.t2x.bin"/>
+      </program>
+    </pipeline>
+  </mode>
+
+  <mode name="it-ro-postchunk">
+    <pipeline>
+      <program name="lt-proc">
+        <file name="it-ro.automorf.bin"/>
+      </program>
+      <program name="apertium-tagger -g $2">
+        <file name="it-ro.prob"/>
+      </program>
+      <program name="apertium-pretransfer"/>
+      <program name="apertium-transfer">
+        <file name="apertium-ro-it.it-ro.t1x"/>
+        <file name="it-ro.t1x.bin"/>
+        <file name="it-ro.autobil.bin"/>
+      </program>
+      <program name="apertium-interchunk">
+        <file name="apertium-ro-it.it-ro.t2x"/>
+        <file name="it-ro.t2x.bin"/>
+      </program>
+      <program name="apertium-postchunk">
+        <file name="apertium-ro-it.it-ro.t3x"/>
+        <file name="it-ro.t3x.bin"/>
+      </program>
+    </pipeline>
+  </mode>
+
+  <mode name="it-ro-generador">
+    <pipeline>
+      <program name="lt-proc">
+        <file name="it-ro.automorf.bin"/>
+      </program>
+      <program name="apertium-tagger -g $2">
+        <file name="it-ro.prob"/>
+      </program>
+      <program name="apertium-pretransfer"/>
+      <program name="apertium-transfer">
+        <file name="apertium-ro-it.it-ro.t1x"/>
+        <file name="it-ro.t1x.bin"/>
+        <file name="it-ro.autobil.bin"/>
+      </program>
+      <program name="apertium-interchunk">
+        <file name="apertium-ro-it.it-ro.t2x"/>
+        <file name="it-ro.t2x.bin"/>
+      </program>
+      <program name="apertium-postchunk">
+        <file name="apertium-ro-it.it-ro.t3x"/>
+        <file name="it-ro.t3x.bin"/>
+      </program>
+      <program name="lt-proc $1">
+        <file name="it-ro.autogen.bin"/>
+      </program>
+    </pipeline>
+  </mode>
+</modes>

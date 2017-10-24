@@ -1,0 +1,217 @@
+Alphabet
+
+ а б в г д е ё ж з и й к л м н ӈ о п р с т у ф х ц ч ш щ ъ ы ь э ю я  !!= * @CODE@
+ А Б В Г Д Е Ё Ж З И Й К Л М Н Ӈ О П Р С Т У Ф Х Ц Ч Ш Щ Ъ Ы Ь Э Ю Я  !!= * @CODE@
+
+!а̄ е̄ ӣ э̄ ӯ о̄
+!А̄ Е̄ Ӣ ¯Э Ӯ О̄
+
+ %{A%}:а %{A%}:э
+ %{O%}:о %{O%}:у
+ %{в%}:в %{в%}:б %{в%}:0
+ %{б%}:б %{б%}:0 %{б%}:в
+ %{I%}:й %{I%}:0
+ %{н%}:н %{н%}:0
+ %{д%}:д %{т%}:т
+ %{к%}:к %{к%}:ч
+ %{i%}:и %{i%}:0
+ %{w%}:б %{w%}:в %{w%}:0
+ %{р%}:р %{р%}:0
+ %{й%}:0
+ %{м%}:м
+ %{п%}:п
+
+ %{ː%}:̄   ! Length marker
+
+
+ %{ъ%}:0  ! Low harmony
+ %{ь%}:0  ! High harmony
+
+ %-
+ %>:0 
+ %⊳:0
+
+ ;
+
+Sets
+
+Vow = а е ё и о у ы э ю я 					
+      А Е Ё И О У Ы Э Ю Я ; 
+
+Cns = б в г д ж з й к л м н ӈ п р с т ф х ц ч ш щ ъ ь
+      Б В Г Д Ж З Й К Л М Н Ӈ П Р С Т Ф Х Ц Ч Ш Щ Ъ Ь ;  
+
+RealCns = б в г д ж з й к л м н ӈ п р с т ф х ц ч ш щ 
+          Б В Г Д Ж З Й К Л М Н Ӈ П Р С Т Ф Х Ц Ч Ш Щ ; 
+
+ArchiVow = %{A%} %{O%} ;
+
+Len = %{ː%} ;
+
+LowVow = а ё о я ;
+
+HighVow = у ы э ю е ; 
+
+NeutVow = и ;
+
+
+Rules 
+
+! н:н и:и {ː}:̄ ч:ч э:э н:н >:0 д:д и:и {A}:э д:д и:и
+
+!огда<n><sg><abl>:огда>ди{A}ди
+!огда<n><sg><obl>:огда>{в}{A}
+!огда<n><pl><loc>:огда>с{A}л>д{O}л{A}
+
+!ниичэн<n><sg><abl>:ни{ː}чэн>ди{A}ди
+!ниичэн<n><sg><obl>:ни{ː}чэн>{в}{A}
+!ниичэн<n><pl><loc>:ни{ː}чэн>с{A}л>д{O}л{A}
+
+!ихон<n><pl><loc>:ихон>с{A}л>д{O}л{A}
+
+! и:и х:х о:о н:н >:0 с:с {A}:а л:л >:0 д:д {O}:о л:л {A}:а
+
+
+!@ б:б а:а {ː}:̄ >:0 р:р {A}:а {н}:0 >:0
+
+"High harmony for {A}"
+%{A%}:э <=> :HighVow (Len:) ([ Cns:0 | :Cns ]+ NeutVow*) [ %>: | %⊳: ] [ :Cns | NeutVow | :0 | Len: | :HighVow | %- ]* \%{й%}: _ ;
+              %{ь%}: ([ Cns:0 | :Cns ]+ NeutVow*) [ %>: | %⊳: ] [ :Cns | NeutVow | :0 | Len: | :HighVow | %- | %{ь%}: ]* \%{й%}: _ ;
+
+!@ д:д е:е п:0 >:0 {м}:м ч:ч {A}:э >:0
+
+"Low harmony for {A}"
+%{A%}:а <=> :LowVow (Len:) ([ Cns:0 | :Cns ]+ NeutVow*) [ %>: | %⊳: ] [ :Cns | NeutVow | :0 | Len: | :LowVow | %- ]* \%{й%}: _ ;
+              %{ъ%}: ([ Cns:0 | :Cns ]+ NeutVow*) [ %>: | %⊳: ] [ :Cns | NeutVow | :0 | Len: | :LowVow | %- | %{ъ%}: ]* \%{й%}: _ ;
+
+!@ б:б а:а л:л д:д и:и >:0 х:х {A}:а {н}:0 >:0 н:н и:и
+
+
+"High harmony for {A} after {й}"
+%{A%}:е <=> :HighVow (Len:) ([ Cns:0 | :Cns ]+ NeutVow*) [ %>: | %⊳: ] [ :Cns | NeutVow | :0 | Len: | :HighVow | %- ]* %{й%}: _ ;
+              %{ь%}: ([ Cns:0 | :Cns ]+ NeutVow*) [ %>: | %⊳: ] [ :Cns | NeutVow | :0 | Len: | :HighVow | %- | %{ь%}: ]* %{й%}: _ ;
+
+"Low harmony for {A} after {й}"
+%{A%}:я <=> :LowVow (Len:) ([ Cns:0 | :Cns ]+ NeutVow*) [ %>: | %⊳: ] [ :Cns | NeutVow | :0 | Len: | :LowVow | %- ]* %{й%}: _ ;
+              %{ъ%}: ([ Cns:0 | :Cns ]+ NeutVow*) [ %>: | %⊳: ] [ :Cns | NeutVow | :0 | Len: | :LowVow | %- | %{ъ%}: ]* %{й%}: _ ;
+         
+            
+!! Note that vowel harmony is sometimes not completely attested in final syllable -{O} 
+
+
+!@ д:д ё:ё б:б о:о >:0 д:д {й}:0 {A}:я >:0 {н}:м >:0 {б}:б и:и
+
+!@ д:д ё:ё б:б о:о >:0 д:д {й}:0 {A}:я >:0 р:р {A}:а {н}:0 >:0 л:л
+
+
+! х:х о:о н:н и:и >:0 -:- д:д {A}:а
+
+! о:о г:г д:д а:а >:0 д:д и:и {A}:а д:д и:и
+
+! о:о г:г д:д а:а >:0 п:п {O}:о >:0 в:в {A}:а 
+
+"High harmony for {O}"
+%{O%}:у <=> :HighVow (Len:) ([ Cns:0 | :Cns ]+ NeutVow*) [ %>: | %⊳: ] [ :Cns | NeutVow | :0 | Len: | :HighVow | %- ]* _ ;
+              %{ь%}: (Len:) ([ Cns:0 | :Cns ]+ NeutVow*) [ %>: | %⊳: ] [ :Cns | NeutVow | :0 | Len: | :HighVow | %- | %{ь%}: ]* _ ;
+
+!@ х:х у:у {ː}:̄ л:л >:0 {п}:п {O}:у >:0 г:г {O}:у >:0 {A}:э >:0 н:н и:и  
+
+"Low harmony for {O}"
+%{O%}:о <=> :LowVow  (Len:) ([ Cns:0 | :Cns ]+ NeutVow*) [ %>: | %⊳: ] [ :Cns | NeutVow | :0 | Len: | :LowVow | %- ]* _ ;
+              %{ъ%}: (Len:) ([ Cns:0 | :Cns ]+ NeutVow*) [ %>: | %⊳: ] [ :Cns | NeutVow | :0 | Len: | :LowVow | %- | %{ъ%}: ]* _ ;
+
+
+!"Vowel harmony for {O} in final syllable"
+!%{O%}:у <=> [ :Cns* :RealCns ]/[ :0 | %- ]* _ .#. ;
+
+"Intervocalic {в}"
+%{в%}:в <=> [ :Vow | :й ] (%{ː%}:) [ %>: | %⊳: ] _ :Vow ; 
+
+"Labialisation of {в}"
+%{в%}:б <=> [ н: | л: ] [ %>: | %⊳: ] _ :Vow ; 
+
+"Assimilation of н to м"
+н:м <=> _ [ %>: | %⊳: ] [ :б | :п ]  ;
+
+"Assimilation of present tense with sg1"
+%{I%}:0 <=> _ [ %>: | %⊳: ] %{б%}: ;
+           и: [ %>: | %⊳: ] _ ;
+        except 
+      .#. б и [ %>: | %⊳: ] _ [ %>: | %⊳: ] \%{б%}: ;
+
+"Only with verb би-"
+%{I%}:и <=> .#. б и [ %>: | %⊳: ] _ [ %>: | %⊳: ] \%{б%}: ;
+
+"н surfaces before б" 
+%{н%}:м <=> _ [ %>: | %⊳: ] %{б%}:  ;
+      except
+          :н [ %>: | %⊳: ] _ ;
+
+"н deletes everywhere there is no б"
+%{н%}:0 <=>      _ [ %>: | %⊳: ] \%{б%}: ; 
+          :н [ %>: | %⊳: ] _ ;
+           _ .#. ;
+
+"{к} is ч after vowel"
+%{к%}:ч <=> :Vow (%{ː%}:) [ %>: | %⊳: ] _ ;
+                        п [ %>: | %⊳: ] _ ; 
+
+!@ д:д е:е п:п >:0 {к}:ч {A}:э 
+
+"Never delete {i} with surface Cns"
+%{i%}:и <=> :Cns _ ; 
+           :и [ %>: | %⊳: ] %{б%}: _ ; 
+           [ :Vow - :и ] [ %>: | %⊳: ] %{I%}: [ %>: | %⊳: ] %{б%}: _ ; 
+
+"{w} deletion"
+%{w%}:0 <=> [ :Vow - [ :о | :у ] ] ([ %{ь%}: | %{ъ%}: ]) [ %>: | %⊳: ] _  ; 
+
+
+"Surface {р} if there is no following syllabic morpheme"
+%{р%}:р <=> _ %{A%}: %{н%}: [ %>: | %⊳: ] (Cns:) .#. ; 
+
+
+!@ д:д ё:ё б:б о:о >:0 {р}:р {A}:а {н}:0 >:0
+
+!@ д:д ё:ё б:б о:о >:0 {р}:0 {A}:а {н}:м >:0 {б}:б и:и
+
+
+!@ б:б а:а {ː}:̄ >:0 р:р {A}:а {н}:0 >:0
+
+!@ б:б а:а {ː}:̄  >:0 р:р {A}:а {н}:м >:0 {б}:б и:и
+
+"{д} devoicing after п"
+%{д%}:т <=> п: [ %>: | %⊳: ] _ ; 
+
+"Stem final -п- voices before д {й}"
+п:б <=> _ [ %>: | %⊳: ] д %{й%}:  ; 
+
+!@ д:д е:е п:б >:0 д:д {й}:0 {A}:е >:0 р:р {A}:э {н}:0
+
+"Labial stem final consonant deletes in subjunctive"
+Cx:0 <=> _ [ %>: | %⊳: ] %{м%}: ч ; 
+      where Cx in ( п л н р ) ; 
+
+"Labial stem final consonant deletes in simultaneous"
+Cx:0 <=> _ [ %>: | %⊳: ] %{м%}: и ; 
+      where Cx in ( п н ) ; 
+
+"Stem final п deletes in conditional"
+п:0 <=> _ [ %>: | %⊳: ] %{п%}: ;
+
+!@ д:д е:е п:0 >:0 {м}:м ч:ч {A}:э >:0
+
+"б in sg1 only surfaces after a consonant"
+%{б%}:б <=> :Cns [ %>: | %⊳: ] _ ; 
+
+"In possessives, the {б} surfaces as в"
+%{б%}:в <=> [ :* - [ %>: | %⊳: ] ]+ Vow: [ %>: | %⊳: ] _  ;
+
+!@ п:п и:и к:к т:т э:э >:0 {б}:в {A}:э р:р и:и 
+
+!@ о:о г:г д:д а:а >:0 {б}:в {A}:а р:р и:и
+
+
+!@ у:у н:м >:0 {п}:п {O}:у >:0 г:г {O}:у >:0 {A}:э >:0 н:н и:и
+
+

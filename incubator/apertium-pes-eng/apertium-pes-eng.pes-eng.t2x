@@ -1,0 +1,708 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<interchunk>
+  <section-def-cats>
+    <def-cat n="SN">
+      <cat-item tags="SN"/>
+      <cat-item tags="SN.*"/>
+    </def-cat>
+     <def-cat n="SNRA">
+      <cat-item tags="SNRA"/>
+      <cat-item tags="SNRA.*"/>
+    </def-cat>
+    <def-cat n="SPOSN">
+      <cat-item tags="SPOSN"/>
+      <cat-item tags="SPOSN.*"/>
+    </def-cat>
+
+	<def-cat n="SP">
+      <cat-item tags="SP"/>
+      <cat-item tags="SP.*"/>
+  </def-cat>
+  
+  <def-cat n="SV">
+      <cat-item tags="SV"/>
+      <cat-item tags="SV.*"/>
+  </def-cat>
+
+  <def-cat n="SVBDO">
+      <cat-item tags="SVBDO"/>
+      <cat-item tags="SVBDO.*"/>
+  </def-cat>
+  <def-cat n="SVBSER">
+      <cat-item tags="SVBSER"/>
+      <cat-item tags="SVBSER.*"/>
+	</def-cat>
+	
+  <def-cat n="SADJ">
+    <cat-item tags="SADJ"/>
+    <cat-item tags="SADJ.*"/>
+  </def-cat>
+  
+  <def-cat n="SADV">
+    <cat-item tags="SADV"/>
+    <cat-item tags="SADV.*"/>
+   </def-cat>
+ <def-cat n="SPRN">
+   <cat-item tags="SPRN"/>
+   <cat-item tags="SPRN.*"/>
+  </def-cat>
+  <def-cat n="SVAUX">
+    <cat-item tags="SVAUX"/>
+    <cat-item tags="SVAUX.*"/>
+  </def-cat>
+    <def-cat n="SDET">
+    <cat-item tags="SDET"/>
+    <cat-item tags="SDET.*"/>
+  </def-cat>
+ <def-cat n="SDETIND">
+    <cat-item tags="SDETIND"/>
+    <cat-item tags="SDETIND.*"/>
+  </def-cat>
+ </section-def-cats>
+
+  <section-def-attrs>
+    <def-attr n="a_nbr">
+      <attr-item tags="sg"/>
+    </def-attr>
+  </section-def-attrs>
+
+  <section-def-vars>
+    <def-var n="number"/>
+  </section-def-vars>
+
+  <section-def-macros>
+    <def-macro n="test1" npar="1">
+      <let>
+        <var n="number"/>
+        <lit v=""/>
+      </let>
+    </def-macro>
+  </section-def-macros>
+
+  <section-rules>
+  <rule comment="1.SNRA SP SV --> SV SNRA SP">
+      <pattern>
+        <pattern-item n="SNRA"/>
+	    <pattern-item n="SP"/>
+		    <pattern-item n="SV"/>
+	    </pattern>
+      <action>
+        <out>
+          <chunk>
+            <clip pos="3" part="lem"/>
+            <clip pos="3" part="tags"/>
+            <clip pos="3" part="chcontent"/>
+          </chunk>
+        <b />
+          <chunk>
+            <clip pos="1" part="lem"/>
+            <clip pos="1" part="tags"/>
+            <clip pos="1" part="chcontent"/>
+          </chunk>
+        <b />
+		  <chunk>
+            <clip pos="2" part="lem"/>
+            <clip pos="2" part="tags"/>
+            <clip pos="2" part="chcontent"/>
+          </chunk>
+		  </out>
+      </action>
+    </rule>
+
+	 <rule comment="2.SVBSER SN SADJ SV--> SVBSER SN SADJ?">
+      <pattern>
+       <pattern-item n="SVBSER"/>
+	     <pattern-item n="SN"/>
+	     <pattern-item n="SADJ"/>
+	     <pattern-item n="SV"/>
+		</pattern>
+      <action>
+        <out>
+         <chunk>
+            <clip pos="1" part="lem"/>
+            <clip pos="1" part="tags"/>
+            <clip pos="1" part="chcontent"/>
+          </chunk>
+        <b />
+		 <chunk>
+            <clip pos="2" part="lem"/>
+            <clip pos="2" part="tags"/>
+            <clip pos="2" part="chcontent"/>
+          </chunk>
+        <b />
+		  <chunk>
+            <clip pos="3" part="lem"/>
+            <clip pos="3" part="tags"/>
+            <clip pos="3" part="chcontent"/>
+          </chunk>
+		  </out>
+      </action>
+    </rule>
+	
+	<rule comment="3.SVBDO SN SADJ SV--> SVBDO SN SV SADJ?">
+      <pattern>
+       <pattern-item n="SVBDO"/>
+	     <pattern-item n="SN"/>
+	     <pattern-item n="SADJ"/>
+	     <pattern-item n="SV"/>
+		</pattern>
+      <action>
+        <out>
+         <chunk>
+            <clip pos="1" part="lem"/>
+            <clip pos="1" part="tags"/>
+            <clip pos="1" part="chcontent"/>
+          </chunk>
+        <b />
+		 <chunk>
+            <clip pos="2" part="lem"/>
+            <clip pos="2" part="tags"/>
+            <clip pos="2" part="chcontent"/>
+          </chunk>
+        <b />
+		   <chunk>
+            <clip pos="4" part="lem"/>
+            <clip pos="4" part="tags"/>
+            <clip pos="4" part="chcontent"/>
+          </chunk>
+        <b />
+		  <chunk>
+            <clip pos="3" part="lem"/>
+            <clip pos="3" part="tags"/>
+            <clip pos="3" part="chcontent"/>
+          </chunk>
+		  </out>
+      </action>
+    </rule>
+	
+  <rule comment="4.SNRA SADV SV --> SV SNRA SADV">
+      <pattern>
+        <pattern-item n="SNRA"/>
+      <pattern-item n="SADV"/>
+        <pattern-item n="SV"/>
+      </pattern>
+      <action>
+        <out>
+          <chunk>
+            <clip pos="3" part="lem"/>
+            <clip pos="3" part="tags"/>
+            <clip pos="3" part="chcontent"/>
+          </chunk>
+        <b />
+          <chunk>
+            <clip pos="1" part="lem"/>
+            <clip pos="1" part="tags"/>
+            <clip pos="1" part="chcontent"/>
+          </chunk>
+        <b />
+      <chunk>
+            <clip pos="2" part="lem"/>
+            <clip pos="2" part="tags"/>
+            <clip pos="2" part="chcontent"/>
+          </chunk>
+      </out>
+      </action>
+    </rule>
+
+   <rule comment="5. SP SNRA SV --> SV SNRA SP ">
+      <pattern>
+        <pattern-item n="SP"/>
+	       <pattern-item n="SNRA"/>
+		    <pattern-item n="SV"/>
+	    </pattern>
+      <action>
+        <out>
+          <chunk>
+            <clip pos="3" part="lem"/>
+            <clip pos="3" part="tags"/>
+            <clip pos="3" part="chcontent"/>
+          </chunk>
+        <b />
+          <chunk>
+            <clip pos="2" part="lem"/>
+            <clip pos="2" part="tags"/>
+            <clip pos="2" part="chcontent"/>
+          </chunk>
+        <b />
+		  <chunk>
+            <clip pos="1" part="lem"/>
+            <clip pos="1" part="tags"/>
+            <clip pos="1" part="chcontent"/>
+          </chunk>
+		  </out>
+      </action>
+    </rule>
+
+   <rule comment="6. SP SN SV --> SV SN SP ">
+      <pattern>
+        <pattern-item n="SP"/>
+         <pattern-item n="SN"/>
+        <pattern-item n="SV"/>
+      </pattern>
+      <action>
+        <out>
+          <chunk>
+            <clip pos="3" part="lem"/>
+            <clip pos="3" part="tags"/>
+            <clip pos="3" part="chcontent"/>
+          </chunk>
+        <b />
+          <chunk>
+            <clip pos="2" part="lem"/>
+            <clip pos="2" part="tags"/>
+            <clip pos="2" part="chcontent"/>
+          </chunk>
+        <b />
+      <chunk>
+            <clip pos="1" part="lem"/>
+            <clip pos="1" part="tags"/>
+            <clip pos="1" part="chcontent"/>
+          </chunk>
+      </out>
+      </action>
+    </rule>
+  
+   <rule comment="7.SADJ SV --> SV SADJ">
+      <pattern>
+        <pattern-item n="SADJ"/>
+        <pattern-item n="SV"/>
+	  </pattern>
+      <action>
+        <out>
+          <chunk>
+            <clip pos="2" part="lem"/>
+            <clip pos="2" part="tags"/>
+            <clip pos="2" part="chcontent"/>
+          </chunk>
+        <b />
+          <chunk>
+            <clip pos="1" part="lem"/>
+            <clip pos="1" part="tags"/>
+            <clip pos="1" part="chcontent"/>
+          </chunk>
+		  </out>
+      </action>
+    </rule>
+  
+   <rule comment="8.SP SADV SV --> SV SP SADV">
+      <pattern>
+        <pattern-item n="SP"/>
+	      <pattern-item n="SADV"/>
+		    <pattern-item n="SV"/>
+	    </pattern>
+      <action>
+        <out>
+          <chunk>
+            <clip pos="3" part="lem"/>
+            <clip pos="3" part="tags"/>
+            <clip pos="3" part="chcontent"/>
+          </chunk>
+        <b />
+          <chunk>
+            <clip pos="1" part="lem"/>
+            <clip pos="1" part="tags"/>
+            <clip pos="1" part="chcontent"/>
+          </chunk>
+        <b />
+		  <chunk>
+            <clip pos="2" part="lem"/>
+            <clip pos="2" part="tags"/>
+            <clip pos="2" part="chcontent"/>
+          </chunk>
+		  </out>
+      </action>
+    </rule>
+   <rule comment="9.SADV SV --> SV SADV">
+      <pattern>
+        <pattern-item n="SADV"/>
+        <pattern-item n="SV"/>
+	  </pattern>
+      <action>
+        <out>
+          <chunk>
+            <clip pos="2" part="lem"/>
+            <clip pos="2" part="tags"/>
+            <clip pos="2" part="chcontent"/>
+          </chunk>
+        <b />
+          <chunk>
+            <clip pos="1" part="lem"/>
+            <clip pos="1" part="tags"/>
+            <clip pos="1" part="chcontent"/>
+          </chunk>
+		  </out>
+      </action>
+    </rule>
+   
+  <rule comment="11.SN SP SV --> SN SV SP">
+      <pattern>
+        <pattern-item n="SN"/>
+	    <pattern-item n="SP"/>
+		    <pattern-item n="SV"/>
+	    </pattern>
+      <action>
+        <out>
+          <chunk>
+            <clip pos="1" part="lem"/>
+            <clip pos="1" part="tags"/>
+            <clip pos="1" part="chcontent"/>
+          </chunk>
+        <b />
+          <chunk>
+            <clip pos="3" part="lem"/>
+            <clip pos="3" part="tags"/>
+            <clip pos="3" part="chcontent"/>
+          </chunk>
+        <b />
+		  <chunk>
+            <clip pos="2" part="lem"/>
+            <clip pos="2" part="tags"/>
+            <clip pos="2" part="chcontent"/>
+          </chunk>
+		  </out>
+      </action>
+    </rule>
+   <rule comment="12.SNRA SPRN SV --> SV SNRA SPRN">
+      <pattern>
+        <pattern-item n="SNRA"/>
+	    <pattern-item n="SPRN"/>
+		    <pattern-item n="SV"/>
+	    </pattern>
+      <action>
+        <out>
+          <chunk>
+            <clip pos="3" part="lem"/>
+            <clip pos="3" part="tags"/>
+            <clip pos="3" part="chcontent"/>
+          </chunk>
+        <b />
+          <chunk>
+            <clip pos="1" part="lem"/>
+            <clip pos="1" part="tags"/>
+            <clip pos="1" part="chcontent"/>
+          </chunk>
+        <b />
+		  <chunk>
+            <clip pos="2" part="lem"/>
+            <clip pos="2" part="tags"/>
+            <clip pos="2" part="chcontent"/>
+          </chunk>
+		  </out>
+      </action>
+    </rule>
+  <rule comment="13.SNRA SN SV --> SV SNRA SN">
+      <pattern>
+        <pattern-item n="SNRA"/>
+	    <pattern-item n="SN"/>
+		    <pattern-item n="SV"/>
+	    </pattern>
+      <action>
+        <out>
+          <chunk>
+            <clip pos="3" part="lem"/>
+            <clip pos="3" part="tags"/>
+            <clip pos="3" part="chcontent"/>
+          </chunk>
+        <b />
+          <chunk>
+            <clip pos="1" part="lem"/>
+            <clip pos="1" part="tags"/>
+            <clip pos="1" part="chcontent"/>
+          </chunk>
+        <b />
+		  <chunk>
+            <clip pos="2" part="lem"/>
+            <clip pos="2" part="tags"/>
+            <clip pos="2" part="chcontent"/>
+          </chunk>
+		  </out>
+      </action>
+    </rule>
+  
+  <rule comment="14.SPRN SP SV --> SV SP SPRN">
+      <pattern>
+        <pattern-item n="SPRN"/>
+	    <pattern-item n="SP"/>
+		    <pattern-item n="SV"/>
+	    </pattern>
+      <action>
+        <out>
+          <chunk>
+            <clip pos="3" part="lem"/>
+            <clip pos="3" part="tags"/>
+            <clip pos="3" part="chcontent"/>
+          </chunk>
+        <b />
+          <chunk>
+            <clip pos="2" part="lem"/>
+            <clip pos="2" part="tags"/>
+            <clip pos="2" part="chcontent"/>
+          </chunk>
+        <b />
+		  <chunk>
+            <clip pos="1" part="lem"/>
+            <clip pos="1" part="tags"/>
+            <clip pos="1" part="chcontent"/>
+          </chunk>
+		  </out>
+      </action>
+    </rule>
+
+  <rule comment="15. SNRA  SV SADV -->  SV SNRA SADV">
+      <pattern>
+        <pattern-item n="SNRA"/>
+        <pattern-item n="SV"/>
+        <pattern-item n="SADV"/>
+      </pattern>
+      <action>
+        <out>
+         <chunk>
+            <clip pos="2" part="lem"/>
+            <clip pos="2" part="tags"/>
+            <clip pos="2" part="chcontent"/>
+          </chunk>
+          <b />
+          <chunk>
+            <clip pos="1" part="lem"/>
+            <clip pos="1" part="tags"/>
+            <clip pos="1" part="chcontent"/>
+          </chunk>
+          <b />
+          <chunk>
+            <clip pos="3" part="lem"/>
+            <clip pos="3" part="tags"/>
+            <clip pos="3" part="chcontent"/>
+          </chunk>
+
+        </out>
+      </action>
+    </rule>
+
+  <rule comment="16. SNRA  SV -->  SV SNRA ">
+      <pattern>
+        <pattern-item n="SNRA"/>
+		<pattern-item n="SV"/>
+      </pattern>
+      <action>
+        <out>
+         <chunk>
+            <clip pos="2" part="lem"/>
+            <clip pos="2" part="tags"/>
+            <clip pos="2" part="chcontent"/>
+          </chunk>
+          <b />
+          <chunk>
+            <clip pos="1" part="lem"/>
+            <clip pos="1" part="tags"/>
+            <clip pos="1" part="chcontent"/>
+          </chunk>
+        </out>
+      </action>
+    </rule>
+
+	<rule comment="17.SN SDETIND SV -->  SN SV SDETIND">
+      <pattern>
+        <pattern-item n="SN"/>
+		<pattern-item n="SDET"/>
+       <pattern-item n="SV"/>
+	  </pattern>
+      <action>
+        <out>
+         <chunk>
+            <clip pos="1" part="lem"/>
+            <clip pos="1" part="tags"/>
+            <clip pos="1" part="chcontent"/>
+          </chunk>
+          <b />
+		 <chunk>
+            <clip pos="3" part="lem"/>
+            <clip pos="3" part="tags"/>
+            <clip pos="3" part="chcontent"/>
+         </chunk>
+          <b />
+          <chunk>
+            <clip pos="2" part="lem"/>
+            <clip pos="2" part="tags"/>
+            <clip pos="2" part="chcontent"/>
+          </chunk>
+		</out>
+      </action>
+    </rule>
+	
+  <rule comment="18. SPOSN  SV -->  SV SPOSN ">
+      <pattern>
+        <pattern-item n="SPOSN"/>
+    <pattern-item n="SV"/>
+      </pattern>
+      <action>
+        <out>
+         <chunk>
+            <clip pos="2" part="lem"/>
+            <clip pos="2" part="tags"/>
+            <clip pos="2" part="chcontent"/>
+          </chunk>
+          <b />
+          <chunk>
+            <clip pos="1" part="lem"/>
+            <clip pos="1" part="tags"/>
+            <clip pos="1" part="chcontent"/>
+          </chunk>
+        </out>
+      </action>
+    </rule>
+  
+  <rule comment="19.SVAUX SP SV --> SN SVAUX SV SP">
+      <pattern>
+        <pattern-item n="SVAUX"/>
+        <pattern-item n="SP"/>
+		<pattern-item n="SV"/>
+	  </pattern>
+      <action>
+        <out>
+          <chunk>
+            <clip pos="1" part="lem"/>
+            <clip pos="1" part="tags"/>
+            <clip pos="1" part="chcontent"/>
+          </chunk>
+		  <b />
+		  <chunk>
+            <clip pos="3" part="lem"/>
+            <clip pos="3" part="tags"/>
+            <clip pos="3" part="chcontent"/>
+          </chunk>
+		  <b />
+		  <chunk>
+            <clip pos="2" part="lem"/>
+            <clip pos="2" part="tags"/>
+            <clip pos="2" part="chcontent"/>
+          </chunk>
+		  </out>
+      </action>
+    </rule>
+ <rule comment="20.SVAUX SNRA SV --> SN SVAUX SV SNRA">
+      <pattern>
+        <pattern-item n="SVAUX"/>
+        <pattern-item n="SNRA"/>
+		<pattern-item n="SV"/>
+	  </pattern>
+      <action>
+        <out>
+          <chunk>
+            <clip pos="1" part="lem"/>
+            <clip pos="1" part="tags"/>
+            <clip pos="1" part="chcontent"/>
+          </chunk>
+		  <b />
+		  <chunk>
+            <clip pos="3" part="lem"/>
+            <clip pos="3" part="tags"/>
+            <clip pos="3" part="chcontent"/>
+          </chunk>
+		  <b />
+		  <chunk>
+            <clip pos="2" part="lem"/>
+            <clip pos="2" part="tags"/>
+            <clip pos="2" part="chcontent"/>
+          </chunk>
+		  </out>
+      </action>
+    </rule>
+	<rule comment="21.SVAUX SV --> SN SVAUX SV">
+      <pattern>
+        <pattern-item n="SVAUX"/>
+        <pattern-item n="SV"/>
+	  </pattern>
+      <action>
+        <out>
+          <chunk>
+            <clip pos="1" part="lem"/>
+            <clip pos="1" part="tags"/>
+            <clip pos="1" part="chcontent"/>
+          </chunk>
+		  <b />
+		  <chunk>
+            <clip pos="2" part="lem"/>
+            <clip pos="2" part="tags"/>
+            <clip pos="2" part="chcontent"/>
+          </chunk>
+		  </out>
+      </action>
+    </rule>
+
+   <rule comment="22.SP SV --> SV SP">
+      <pattern>
+        <pattern-item n="SP"/>
+        <pattern-item n="SV"/>
+	  </pattern>
+      <action>
+        <out>
+          <chunk>
+            <clip pos="2" part="lem"/>
+            <clip pos="2" part="tags"/>
+            <clip pos="2" part="chcontent"/>
+          </chunk>
+        <b />
+          <chunk>
+            <clip pos="1" part="lem"/>
+            <clip pos="1" part="tags"/>
+            <clip pos="1" part="chcontent"/>
+          </chunk>
+		  </out>
+      </action>
+    </rule>
+
+ <rule comment="23.SN --> SDET SN">
+      <pattern>
+        <pattern-item n="SDET"/>
+	   <pattern-item n="SN"/>
+	  </pattern>
+      <action>
+        <out>
+          <chunk>
+            <clip pos="2" part="lem"/>
+            <clip pos="2" part="tags"/>
+            <clip pos="2" part="chcontent"/>
+          </chunk>
+        <b />
+          <chunk>
+            <clip pos="1" part="lem"/>
+            <clip pos="1" part="tags"/>
+            <clip pos="1" part="chcontent"/>
+          </chunk>
+		  </out>
+      </action>
+    </rule>
+  
+  <rule comment="24.REGLA: SN">
+      <pattern>
+        <pattern-item n="SN"/>
+        <pattern-item n="SN"/>
+	  </pattern>
+      <action>
+        <out>
+          <chunk>
+            <clip pos="2" part="lem"/>
+            <clip pos="2" part="tags"/>
+            <clip pos="2" part="chcontent"/>
+          </chunk>
+        <b />
+          <chunk>
+            <clip pos="1" part="lem"/>
+            <clip pos="1" part="tags"/>
+            <clip pos="1" part="chcontent"/>
+          </chunk>
+		  </out>
+      </action>
+    </rule>
+  </section-rules>
+</interchunk>
+
+<!--
+Resources:
+    http://wiki.apertium.org/wiki/Chunking:_A_full_example
+    http://wiki.apertium.org/wiki/Chunking
+    http://wiki.apertium.org/wiki/Apertium_New_Language_Pair_HOWTO#Transfer_rules
+    http://wiki.apertium.org/wiki/A_long_introduction_to_transfer_rules
+    http://wiki.apertium.org/wiki/Transfer#Adding_structural_transfer_.28grammar.29_rules
+-->
+

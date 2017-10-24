@@ -1,0 +1,28 @@
+<rules>
+  <rule>
+    <match lemma="koer" tags="n.*"><select lemma="koira" tags="n.*"/></match>
+  </rule>
+
+  <rule>
+    <match lemma="väga" tags="adv">
+      <select lemma="erittäin"/>
+    </match>
+    <match tags="adj.*"/>
+  </rule>
+
+
+<!-- lohi -->
+  <rule weight="1.0">
+    <match lemma="lõhe"><select lemma="lohi"/></match>
+  </rule>
+  <rule weight="0.5">
+    <match lemma="lõhe"><select lemma="aukko"/></match>
+  </rule>
+  <rule weight="0.6">
+    <match lemma="sügav"/>
+    <match lemma="lõhe"><select lemma="aukko"/></match>
+  </rule>
+
+
+
+</rules>

@@ -1,0 +1,10 @@
+#!/bin/bash
+
+# Runs a corpus a test - compares the output of the last revision with
+# the current one.
+
+# See http://wiki.apertium.org/wiki/Corpus_test
+
+cat corpus/corpus.tat.txt | apertium -d . tat-kaz > corpus/tat-kaz-nova.txt &&
+
+diff -U0 corpus/tat-kaz-origina.txt corpus/tat-kaz-nova.txt | dwdiff -c --diff-input | more

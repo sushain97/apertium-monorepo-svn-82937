@@ -1,0 +1,721 @@
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+!!   M O R P H O L O G I C A L · T R A N S D U C E R · F O R · L A T I N    !!
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+
+
+Multichar_Symbols
+
+!!! general pos !!!
+
+%<n%> 
+%<v%>
+
+!!! nominal cases !!!
+
+%<nom%>            
+%<gen%>            
+%<dat%>            
+%<acc%>            
+%<voc%>            
+%<abl%>       
+
+!!! VERBAL MOODS !!!
+
+%<ind%>
+%<cong%>
+%<imp%>
+%<inf%>
+
+!!! VERBAL TENSES !!!
+
+%<pres%> 
+%<impf%>
+%<fut%>
+%<perf%>
+%<pperf%>
+%<pfut%>
+
+!!! VERBAL TAGS !!!
+
+%<pass%>
+
+!!! Number !!!
+
+%<sg%> 
+%<pl%> 
+
+!!! GEnere !!!
+
+%<m%>
+%<f%>
+%<n%>
+
+!!! adjectives !!!
+
+%<adj%>
+
+
+
+LEXICON Root
+
+Nouns ;
+Adjectives ;
+Verbs ;
+
+LEXICON CASE1
+
+%<n%>%<sg%>%<nom%>:a  # ;
+%<n%>%<sg%>%<gen%>:ae # ;
+%<n%>%<sg%>%<dat%>:a  # ;
+%<n%>%<sg%>%<acc%>:am # ;
+%<n%>%<sg%>%<voc%>:a  # ;
+%<n%>%<sg%>%<abl%>:a  # ;
+%<n%>%<pl%>%<nom%>:ae # ;
+%<n%>%<pl%>%<gen%>:arum # ;
+%<n%>%<pl%>%<dat%>:is  # ;
+%<n%>%<pl%>%<acc%>:as  # ;
+%<n%>%<pl%>%<voc%>:ae  # ;
+%<n%>%<pl%>%<abl%>:is  # ;
+
+
+
+LEXICON CASE1-PL-TANT 
+
+%<n%>%<pl%>%<nom%>:ae # ;
+%<n%>%<pl%>%<gen%>:arum # ;
+%<n%>%<pl%>%<dat%>:is  # ;
+%<n%>%<pl%>%<acc%>:as  # ;
+%<n%>%<pl%>%<voc%>:ae  # ;
+%<n%>%<pl%>%<abl%>:is  # ;
+
+LEXICON CASE1-SG-TANT
+
+%<n%>%<sg%>%<nom%>:a  # ;
+%<n%>%<sg%>%<gen%>:ae # ;
+%<n%>%<sg%>%<dat%>:a  # ;
+%<n%>%<sg%>%<acc%>:am # ;
+%<n%>%<sg%>%<voc%>:a  # ;
+%<n%>%<sg%>%<abl%>:a  # ;
+
+
+!!!!!!! ADJECTIVES !!!!!!
+
+!!!! FIRST CLASS -US -A -UM
+
+LEXICON ADJ-CLASS1
+
+%<adj%>: ADJ-CLASS-1-M ;
+%<adj%>: ADJ-CLASS-1-F ;
+%<adj%>: ADJ-CLASS-1-N ;
+
+!!!! FIRST CLASS M. !!!!
+
+LEXICON ADJ-CLASS-1-M 
+
+%<m%>%<sg%>%<nom%>:us # ;
+%<m%>%<sg%>%<gen%>:i # ;
+%<m%>%<sg%>%<dat%>:o # ;
+%<m%>%<sg%>%<acc%>:um # ;
+%<m%>%<sg%>%<voc%>:e # ;
+%<m%>%<sg%>%<abl%>:o # ;
+%<m%>%<pl%>%<nom%>:i # ;
+%<m%>%<pl%>%<gen%>:orum # ;
+%<m%>%<pl%>%<dat%>:is # ;
+%<m%>%<pl%>%<acc%>:os # ;
+%<m%>%<pl%>%<voc%>:i # ;
+%<m%>%<pl%>%<abl%>:is # ;
+
+
+LEXICON ADJ-CLASS-1-F
+
+%<f%>%<sg%>%<nom%>:a # ;
+%<f%>%<sg%>%<gen%>:ae # ;
+%<f%>%<sg%>%<dat%>:ae # ;
+%<f%>%<sg%>%<acc%>:am # ;
+%<f%>%<sg%>%<voc%>:a # ;
+%<f%>%<sg%>%<abl%>:a # ;
+%<f%>%<pl%>%<nom%>:ae # ;
+%<f%>%<pl%>%<gen%>:arum # ;
+%<f%>%<pl%>%<dat%>:is # ;
+%<f%>%<pl%>%<acc%>:as # ;
+%<f%>%<pl%>%<voc%>:ae # ;
+%<f%>%<pl%>%<abl%>:is # ;
+
+LEXICON ADJ-CLASS-1-N
+
+%<n%>%<sg%>%<nom%>:um # ;
+%<n%>%<sg%>%<gen%>:i # ;
+%<n%>%<sg%>%<dat%>:o # ;
+%<n%>%<sg%>%<acc%>:um # ;
+%<n%>%<sg%>%<voc%>:um # ;
+%<n%>%<sg%>%<abl%>:o # ;
+%<n%>%<pl%>%<nom%>:a # ;
+%<n%>%<pl%>%<gen%>:orum # ;
+%<n%>%<pl%>%<dat%>:is # ;
+%<n%>%<pl%>%<acc%>:a # ;
+%<n%>%<pl%>%<voc%>:a # ;
+%<n%>%<pl%>%<abl%>:is # ;
+
+
+!!!!!!!!!!!!!!!!!!!
+!!! V E R B S !!!!!
+!!!!!!!!!!!!!!!!!!!
+
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+!! FIRST CONJUGATION i.e. laudo/as/avi/atum/are!!!
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+
+LEXICON CONJ1 
+
+%<v%>: INDICATIVE-PRES1 ;
+%<v%>: INDICATIVE-PRES1-PASS ;
+%<v%>: INDICATIVE-IMPF1 ;
+%<v%>: INDICATIVE-IMPF1-PASS ;
+%<v%>: INDICATIVE-FUTR1 ;
+%<v%>: INDICATIVE-FUTR1-PASS ;
+%<v%>: CONGIUNTIVE-PRES1 ;
+%<v%>: CONGIUNTIVE-PRES1-PASS ;
+%<v%>: CONGIUNTIVE-IMPF1 ;
+%<v%>: CONGIUNTIVE-IMPF1-PASS ;
+%<v%>: IMPERATIVE-PRESENT1 ;
+
+
+LEXICON INDICATIVE-PRES1 
+
+%<ind%>%<pres%>%<sg%>%<p1%>:o # ;
+%<ind%>%<pres%>%<sg%>%<p2%>:as # ;
+%<ind%>%<pres%>%<sg%>%<p3%>:at # ;
+%<ind%>%<pres%>%<pl%>%<p1%>:amus # ;
+%<ind%>%<pres%>%<pl%>%<p2%>:atis # ;
+%<ind%>%<pres%>%<pl%>%<p3%>:ant # ;
+
+LEXICON INDICATIVE-PRES1-PASS
+
+%<ind%>%<pres%>%<pass%>%<sg%>%<p1%>:or # ;
+%<ind%>%<pres%>%<pass%>%<sg%>%<p2%>:aris # ;
+%<ind%>%<pres%>%<pass%>%<sg%>%<p3%>:atur # ;
+%<ind%>%<pres%>%<pass%>%<pl%>%<p1%>:amur # ;
+%<ind%>%<pres%>%<pass%>%<pl%>%<p2%>:amini # ;
+%<ind%>%<pres%>%<pass%>%<pl%>%<p3%>:antur # ;
+
+LEXICON INDICATIVE-IMPF1
+
+%<ind%>%<impf%>%<sg%>%<p1%>:abam # ;
+%<ind%>%<impf%>%<sg%>%<p2%>:abas # ;
+%<ind%>%<impf%>%<sg%>%<p3%>:abat # ;
+%<ind%>%<impf%>%<pl%>%<p1%>:abamus # ;
+%<ind%>%<impf%>%<pl%>%<p2%>:abatis # ;
+%<ind%>%<impf%>%<pl%>%<p3%>:abant # ;
+
+LEXICON INDICATIVE-IMPF1-PASS
+
+%<ind%>%<impf%>%<pass%>%<sg%>%<p1%>:abar # ;
+%<ind%>%<impf%>%<pass%>%<sg%>%<p2%>:abaris # ;
+%<ind%>%<impf%>%<pass%>%<sg%>%<p3%>:abatur # ;
+%<ind%>%<impf%>%<pass%>%<pl%>%<p1%>:abamur # ;
+%<ind%>%<impf%>%<pass%>%<pl%>%<p2%>:abamini # ;
+%<ind%>%<impf%>%<pass%>%<pl%>%<p3%>:abantur # ;
+
+LEXICON INDICATIVE-FUTR1
+
+%<ind%>%<fut%>%<sg%>%<p1%>:abo # ;
+%<ind%>%<fut%>%<sg%>%<p2%>:abis # ;
+%<ind%>%<fut%>%<sg%>%<p3%>:abit # ;
+%<ind%>%<fut%>%<pl%>%<p1%>:abimus # ;
+%<ind%>%<fut%>%<pl%>%<p2%>:abitis # ;
+%<ind%>%<fut%>%<pl%>%<p3%>:abunt # ;
+
+LEXICON INDICATIVE-FUTR1-PASS
+
+%<ind%>%<fut%>%<pass%>%<sg%>%<p1%>:abor # ;
+%<ind%>%<fut%>%<pass%>%<sg%>%<p2%>:aberis # ;
+%<ind%>%<fut%>%<pass%>%<sg%>%<p3%>:abitur # ;
+%<ind%>%<fut%>%<pass%>%<pl%>%<p1%>:abimur # ;
+%<ind%>%<fut%>%<pass%>%<pl%>%<p2%>:abimini # ;
+%<ind%>%<fut%>%<pass%>%<pl%>%<p3%>:abuntur # ;
+
+LEXICON CONGIUNTIVE-PRES1 
+
+%<cong%>%<pres%>%<sg%>%<p1%>:em # ;
+%<cong%>%<pres%>%<sg%>%<p2%>:es # ;
+%<cong%>%<pres%>%<sg%>%<p3%>:et # ;
+%<cong%>%<pres%>%<pl%>%<p1%>:emus # ;
+%<cong%>%<pres%>%<pl%>%<p2%>:etis # ;
+%<cong%>%<pres%>%<pl%>%<p3%>:ent # ;
+
+LEXICON CONGIUNTIVE-PRES1-PASS
+
+%<cong%>%<pres%>%<pass%>%<sg%>%<p1%>:er # ;
+%<cong%>%<pres%>%<pass%>%<sg%>%<p2%>:eris # ;
+%<cong%>%<pres%>%<pass%>%<sg%>%<p3%>:etur # ;
+%<cong%>%<pres%>%<pass%>%<pl%>%<p1%>:emur # ;
+%<cong%>%<pres%>%<pass%>%<pl%>%<p2%>:emini # ;
+%<cong%>%<pres%>%<pass%>%<pl%>%<p3%>:entur # ;
+
+LEXICON CONGIUNTIVE-IMPF1 
+
+%<cong%>%<pres%>%<sg%>%<p1%>:arem # ;
+%<cong%>%<pres%>%<sg%>%<p2%>:ares # ;
+%<cong%>%<pres%>%<sg%>%<p3%>:aret # ;
+%<cong%>%<pres%>%<pl%>%<p1%>:aremus # ;
+%<cong%>%<pres%>%<pl%>%<p2%>:aretis # ;
+%<cong%>%<pres%>%<pl%>%<p3%>:arent # ;
+
+LEXICON CONGIUNTIVE-IMPF1-PASS
+
+%<cong%>%<pres%>%<pass%>%<sg%>%<p1%>:arer # ;
+%<cong%>%<pres%>%<pass%>%<sg%>%<p2%>:areris # ;
+%<cong%>%<pres%>%<pass%>%<sg%>%<p3%>:aretur # ;
+%<cong%>%<pres%>%<pass%>%<pl%>%<p1%>:aremur # ;
+%<cong%>%<pres%>%<pass%>%<pl%>%<p2%>:aremini # ;
+%<cong%>%<pres%>%<pass%>%<pl%>%<p3%>:arentur # ;
+
+LEXICON IMPERATIVE-PRESENT1
+
+%<imp%>%<pres%>%<sg%>%<p2%>:a # ;
+%<imp%>%<pres%>%<pl%>%<p2%>:ate # ;
+
+
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+!! REGULAR PERFECT  -i.e. Laudavi, Monui, Lexi, Audivi,!!
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+
+LEXICON REGULAR-PERFECT
+
+%<v%>: INDICATIVE-PERF ;
+%<v%>: INDICATIVE-PPERF ;
+%<v%>: INDICATIVE-PFUT ;
+%<v%>: CONGIUNTIVE-PERF ;
+%<v%>: CONGIUNTIVE-PPERF ;
+%<v%>: INFINITE-PERFECT ;
+
+
+
+LEXICON INDICATIVE-PERF 
+
+%<ind%>%<perf%>%<sg%>%<p1%>:i # ;
+%<ind%>%<perf%>%<sg%>%<p2%>:isti # ;
+%<ind%>%<perf%>%<sg%>%<p3%>:it # ;
+%<ind%>%<perf%>%<pl%>%<p1%>:imus # ;
+%<ind%>%<perf%>%<pl%>%<p2%>:istis # ;
+%<ind%>%<perf%>%<pl%>%<p3%>:erunt # ;
+
+LEXICON INDICATIVE-PPERF
+
+%<ind%>%<pperf%>%<sg%>%<p1%>:eram # ;
+%<ind%>%<pperf%>%<sg%>%<p2%>:eras # ;
+%<ind%>%<pperf%>%<sg%>%<p3%>:erat # ;
+%<ind%>%<pperf%>%<pl%>%<p1%>:eramus # ;
+%<ind%>%<pperf%>%<pl%>%<p2%>:eratis # ;
+%<ind%>%<pperf%>%<pl%>%<p3%>:erant # ;
+
+LEXICON INDICATIVE-PFUT
+
+%<ind%>%<pfut%>%<sg%>%<p1%>:ero # ;
+%<ind%>%<pfut%>%<sg%>%<p2%>:eris # ;
+%<ind%>%<pfut%>%<sg%>%<p3%>:erit # ;
+%<ind%>%<pfut%>%<pl%>%<p1%>:erimus # ;
+%<ind%>%<pfut%>%<pl%>%<p2%>:eritis # ;
+%<ind%>%<pfut%>%<pl%>%<p3%>:erint # ;
+
+LEXICON CONGIUNTIVE-PERF 
+
+%<cong%>%<perf%>%<sg%>%<p1%>:erim # ;
+%<cong%>%<perf%>%<sg%>%<p2%>:eris # ;
+%<cong%>%<perf%>%<sg%>%<p3%>:erit # ;
+%<cong%>%<perf%>%<pl%>%<p1%>:erimus # ;
+%<cong%>%<perf%>%<pl%>%<p2%>:eritis # ;
+%<cong%>%<perf%>%<pl%>%<p3%>:erint # ;
+
+LEXICON CONGIUNTIVE-PPERF
+
+%<cong%>%<pperf%>%<sg%>%<p1%>:issem # ;
+%<cong%>%<pperf%>%<sg%>%<p2%>:isses # ;
+%<cong%>%<pperf%>%<sg%>%<p3%>:isset # ;
+%<cong%>%<pperf%>%<pl%>%<p1%>:issemus # ;
+%<cong%>%<pperf%>%<pl%>%<p2%>:issetis # ;
+%<cong%>%<pperf%>%<pl%>%<p3%>:issent # ;
+
+LEXICON INFINITE-PERFECT
+
+%<inf%>%<perf%>:isse # ;
+
+
+
+
+
+
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+!!! SECOND CONJUGATION i.e. moneo/es/ui/itum/ere !!!!
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+
+LEXICON CONJ2
+
+%<v%>: INDICATIVE-PRES2 ;
+%<v%>: INDICATIVE-PRES2-PASS ;
+%<v%>: INDICATIVE-IMPF2 ;
+%<v%>: INDICATIVE-IMPF2-PASS ;
+%<v%>: INDICATIVE-FUTR2 ;
+%<v%>: INDICATIVE-FUTR2-PASS ;
+%<v%>: CONGIUNTIVE-PRES2 ;
+%<v%>: CONGIUNTIVE-PRES2-PASS ;
+%<v%>: CONGIUNTIVE-IMPF2 ;
+%<v%>: CONGIUNTIVE-IMPF2-PASS ;
+%<v%>: IMPERATIVE-PRESENT2 ;
+
+LEXICON INDICATIVE-PRES2
+
+%<ind%>%<pres%>%<sg%>%<p1%>:eo # ;
+%<ind%>%<pres%>%<sg%>%<p2%>:es # ;
+%<ind%>%<pres%>%<sg%>%<p3%>:et # ;
+%<ind%>%<pres%>%<pl%>%<p1%>:emus # ;
+%<ind%>%<pres%>%<pl%>%<p2%>:etis # ;
+%<ind%>%<pres%>%<pl%>%<p3%>:ent # ;
+
+LEXICON INDICATIVE-PRES2-PASS
+
+%<ind%>%<pres%>%<pass%>%<sg%>%<p1%>:eor # ;
+%<ind%>%<pres%>%<pass%>%<sg%>%<p2%>:eris # ;
+%<ind%>%<pres%>%<pass%>%<sg%>%<p3%>:etur # ;
+%<ind%>%<pres%>%<pass%>%<pl%>%<p1%>:emur # ;
+%<ind%>%<pres%>%<pass%>%<pl%>%<p2%>:emini # ;
+%<ind%>%<pres%>%<pass%>%<pl%>%<p3%>:entur # ;
+
+LEXICON INDICATIVE-IMPF2
+
+%<ind%>%<impf%>%<sg%>%<p1%>:ebam # ;
+%<ind%>%<impf%>%<sg%>%<p2%>:ebas # ;
+%<ind%>%<impf%>%<sg%>%<p3%>:ebat # ;
+%<ind%>%<impf%>%<pl%>%<p1%>:ebamus # ;
+%<ind%>%<impf%>%<pl%>%<p2%>:ebatis # ;
+%<ind%>%<impf%>%<pl%>%<p3%>:ebant # ;
+
+LEXICON INDICATIVE-IMPF2-PASS
+
+%<ind%>%<impf%>%<pass%>%<sg%>%<p1%>:ebar # ;
+%<ind%>%<impf%>%<pass%>%<sg%>%<p2%>:ebaris # ;
+%<ind%>%<impf%>%<pass%>%<sg%>%<p3%>:ebatur # ;
+%<ind%>%<impf%>%<pass%>%<pl%>%<p1%>:ebamur # ;
+%<ind%>%<impf%>%<pass%>%<pl%>%<p2%>:ebamini # ;
+%<ind%>%<impf%>%<pass%>%<pl%>%<p3%>:ebantur # ;
+
+LEXICON INDICATIVE-FUTR2
+
+%<ind%>%<fut%>%<sg%>%<p1%>:ebo # ;
+%<ind%>%<fut%>%<sg%>%<p2%>:ebis # ;
+%<ind%>%<fut%>%<sg%>%<p3%>:ebit # ;
+%<ind%>%<fut%>%<pl%>%<p1%>:ebimus # ;
+%<ind%>%<fut%>%<pl%>%<p2%>:ebitis # ;
+%<ind%>%<fut%>%<pl%>%<p3%>:ebunt # ;
+
+LEXICON INDICATIVE-FUTR2-PASS
+
+%<ind%>%<fut%>%<pass%>%<sg%>%<p1%>:ebor # ;
+%<ind%>%<fut%>%<pass%>%<sg%>%<p2%>:eberis # ;
+%<ind%>%<fut%>%<pass%>%<sg%>%<p3%>:ebitur # ;
+%<ind%>%<fut%>%<pass%>%<pl%>%<p1%>:ebimur # ;
+%<ind%>%<fut%>%<pass%>%<pl%>%<p2%>:ebimini # ;
+%<ind%>%<fut%>%<pass%>%<pl%>%<p3%>:ebuntur # ;
+
+LEXICON CONGIUNTIVE-PRES2 
+
+%<cong%>%<pres%>%<sg%>%<p1%>:eam # ;
+%<cong%>%<pres%>%<sg%>%<p2%>:eas # ;
+%<cong%>%<pres%>%<sg%>%<p3%>:eat # ;
+%<cong%>%<pres%>%<pl%>%<p1%>:eamus # ;
+%<cong%>%<pres%>%<pl%>%<p2%>:eatis # ;
+%<cong%>%<pres%>%<pl%>%<p3%>:eant # ;
+
+LEXICON CONGIUNTIVE-PRES2-PASS
+
+%<cong%>%<pres%>%<pass%>%<sg%>%<p1%>:ear # ;
+%<cong%>%<pres%>%<pass%>%<sg%>%<p2%>:earis # ;
+%<cong%>%<pres%>%<pass%>%<sg%>%<p3%>:eatur # ;
+%<cong%>%<pres%>%<pass%>%<pl%>%<p1%>:eamur # ;
+%<cong%>%<pres%>%<pass%>%<pl%>%<p2%>:eamini # ;
+%<cong%>%<pres%>%<pass%>%<pl%>%<p3%>:eantur # ;
+
+LEXICON CONGIUNTIVE-IMPF2 
+
+%<cong%>%<pres%>%<sg%>%<p1%>:erem # ;
+%<cong%>%<pres%>%<sg%>%<p2%>:eres # ;
+%<cong%>%<pres%>%<sg%>%<p3%>:eret # ;
+%<cong%>%<pres%>%<pl%>%<p1%>:eremus # ;
+%<cong%>%<pres%>%<pl%>%<p2%>:eretis # ;
+%<cong%>%<pres%>%<pl%>%<p3%>:erent # ;
+
+LEXICON CONGIUNTIVE-IMPF2-PASS
+
+%<cong%>%<pres%>%<pass%>%<sg%>%<p1%>:erer # ;
+%<cong%>%<pres%>%<pass%>%<sg%>%<p2%>:ereris # ;
+%<cong%>%<pres%>%<pass%>%<sg%>%<p3%>:eretur # ;
+%<cong%>%<pres%>%<pass%>%<pl%>%<p1%>:eremur # ;
+%<cong%>%<pres%>%<pass%>%<pl%>%<p2%>:eremini # ;
+%<cong%>%<pres%>%<pass%>%<pl%>%<p3%>:erentur # ;
+
+LEXICON IMPERATIVE-PRESENT2
+
+%<imp%>%<pres%>%<sg%>%<p2%>:e # ;
+%<imp%>%<pres%>%<pl%>%<p2%>:ete # ;
+
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+!!! THIRD CONJUGATION i.e. lego/is/lexi/itum/ere !!!!
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+
+
+LEXICON CONJ3
+
+%<v%>: INDICATIVE-PRES3 ;
+%<v%>: INDICATIVE-PRES3-PASS ;
+%<v%>: INDICATIVE-IMPF3 ;
+%<v%>: INDICATIVE-IMPF3-PASS ;
+%<v%>: INDICATIVE-FUTR3 ;
+%<v%>: INDICATIVE-FUTR3-PASS ;
+%<v%>: CONGIUNTIVE-PRES3 ;
+%<v%>: CONGIUNTIVE-PRES3-PASS ;
+%<v%>: CONGIUNTIVE-IMPF3 ;
+%<v%>: CONGIUNTIVE-IMPF3-PASS ;
+%<v%>: IMPERATIVE-PRESENT3 ;
+
+LEXICON INDICATIVE-PRES3
+
+%<ind%>%<pres%>%<sg%>%<p1%>:o # ;
+%<ind%>%<pres%>%<sg%>%<p2%>:is # ;
+%<ind%>%<pres%>%<sg%>%<p3%>:it # ;
+%<ind%>%<pres%>%<pl%>%<p1%>:imus # ;
+%<ind%>%<pres%>%<pl%>%<p2%>:itis # ;
+%<ind%>%<pres%>%<pl%>%<p3%>:unt # ;
+
+LEXICON INDICATIVE-PRES3-PASS
+
+%<ind%>%<pres%>%<pass%>%<sg%>%<p1%>:or # ;
+%<ind%>%<pres%>%<pass%>%<sg%>%<p2%>:eris # ;
+%<ind%>%<pres%>%<pass%>%<sg%>%<p3%>:itur # ;
+%<ind%>%<pres%>%<pass%>%<pl%>%<p1%>:imur # ;
+%<ind%>%<pres%>%<pass%>%<pl%>%<p2%>:imini # ;
+%<ind%>%<pres%>%<pass%>%<pl%>%<p3%>:untur # ;
+
+LEXICON INDICATIVE-IMPF3
+
+%<ind%>%<impf%>%<sg%>%<p1%>:ebam # ;
+%<ind%>%<impf%>%<sg%>%<p2%>:ebas # ;
+%<ind%>%<impf%>%<sg%>%<p3%>:ebat # ;
+%<ind%>%<impf%>%<pl%>%<p1%>:ebamus # ;
+%<ind%>%<impf%>%<pl%>%<p2%>:ebatis # ;
+%<ind%>%<impf%>%<pl%>%<p3%>:ebant # ;
+
+LEXICON INDICATIVE-IMPF3-PASS
+
+%<ind%>%<impf%>%<pass%>%<sg%>%<p1%>:ebar # ;
+%<ind%>%<impf%>%<pass%>%<sg%>%<p2%>:ebaris # ;
+%<ind%>%<impf%>%<pass%>%<sg%>%<p3%>:ebatur # ;
+%<ind%>%<impf%>%<pass%>%<pl%>%<p1%>:ebamur # ;
+%<ind%>%<impf%>%<pass%>%<pl%>%<p2%>:ebamini # ;
+%<ind%>%<impf%>%<pass%>%<pl%>%<p3%>:ebantur # ;
+
+LEXICON INDICATIVE-FUTR3
+
+%<ind%>%<fut%>%<sg%>%<p1%>:am # ;
+%<ind%>%<fut%>%<sg%>%<p2%>:es # ;
+%<ind%>%<fut%>%<sg%>%<p3%>:et # ;
+%<ind%>%<fut%>%<pl%>%<p1%>:emus # ;
+%<ind%>%<fut%>%<pl%>%<p2%>:etis # ;
+%<ind%>%<fut%>%<pl%>%<p3%>:ent # ;
+
+LEXICON INDICATIVE-FUTR3-PASS
+
+%<ind%>%<fut%>%<pass%>%<sg%>%<p1%>:ar # ;
+%<ind%>%<fut%>%<pass%>%<sg%>%<p2%>:eris # ;
+%<ind%>%<fut%>%<pass%>%<sg%>%<p3%>:etur # ;
+%<ind%>%<fut%>%<pass%>%<pl%>%<p1%>:emur # ;
+%<ind%>%<fut%>%<pass%>%<pl%>%<p2%>:emini # ;
+%<ind%>%<fut%>%<pass%>%<pl%>%<p3%>:entur # ;
+
+LEXICON CONGIUNTIVE-PRES3 
+
+%<cong%>%<pres%>%<sg%>%<p1%>:am # ;
+%<cong%>%<pres%>%<sg%>%<p2%>:as # ;
+%<cong%>%<pres%>%<sg%>%<p3%>:at # ;
+%<cong%>%<pres%>%<pl%>%<p1%>:amus # ;
+%<cong%>%<pres%>%<pl%>%<p2%>:atis # ;
+%<cong%>%<pres%>%<pl%>%<p3%>:ant # ;
+
+LEXICON CONGIUNTIVE-PRES3-PASS
+
+%<cong%>%<pres%>%<pass%>%<sg%>%<p1%>:ar # ;
+%<cong%>%<pres%>%<pass%>%<sg%>%<p2%>:aris # ;
+%<cong%>%<pres%>%<pass%>%<sg%>%<p3%>:atur # ;
+%<cong%>%<pres%>%<pass%>%<pl%>%<p1%>:amur # ;
+%<cong%>%<pres%>%<pass%>%<pl%>%<p2%>:amini # ;
+%<cong%>%<pres%>%<pass%>%<pl%>%<p3%>:antur # ;
+
+LEXICON CONGIUNTIVE-IMPF3 
+
+%<cong%>%<pres%>%<sg%>%<p1%>:erem # ;
+%<cong%>%<pres%>%<sg%>%<p2%>:eres # ;
+%<cong%>%<pres%>%<sg%>%<p3%>:eret # ;
+%<cong%>%<pres%>%<pl%>%<p1%>:eremus # ;
+%<cong%>%<pres%>%<pl%>%<p2%>:eretis # ;
+%<cong%>%<pres%>%<pl%>%<p3%>:erent # ;
+
+LEXICON CONGIUNTIVE-IMPF3-PASS
+
+%<cong%>%<pres%>%<pass%>%<sg%>%<p1%>:erer # ;
+%<cong%>%<pres%>%<pass%>%<sg%>%<p2%>:ereris # ;
+%<cong%>%<pres%>%<pass%>%<sg%>%<p3%>:eretur # ;
+%<cong%>%<pres%>%<pass%>%<pl%>%<p1%>:eremur # ;
+%<cong%>%<pres%>%<pass%>%<pl%>%<p2%>:eremini # ;
+%<cong%>%<pres%>%<pass%>%<pl%>%<p3%>:erentur # ;
+
+LEXICON IMPERATIVE-PRESENT3
+
+%<imp%>%<pres%>%<sg%>%<p2%>:e # ;
+%<imp%>%<pres%>%<pl%>%<p2%>:ite # ;
+
+
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+!!! THIRD CONJUGATION i.e. lego/is/lexi/itum/ere !!!!
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+
+LEXICON CONJ4
+
+%<v%>: INDICATIVE-PRES4 ;
+%<v%>: INDICATIVE-PRES4-PASS ;
+%<v%>: INDICATIVE-IMPF4 ;
+%<v%>: INDICATIVE-IMPF4-PASS ;
+%<v%>: INDICATIVE-FUTR4 ;
+%<v%>: INDICATIVE-FUTR4-PASS ;
+%<v%>: CONGIUNTIVE-PRES4 ;
+%<v%>: CONGIUNTIVE-PRES4-PASS ;
+%<v%>: CONGIUNTIVE-IMPF4 ;
+%<v%>: CONGIUNTIVE-IMPF4-PASS ;
+%<v%>: IMPERATIVE-PRESENT4 ;
+
+LEXICON INDICATIVE-PRES4
+
+%<ind%>%<pres%>%<sg%>%<p1%>:io # ;
+%<ind%>%<pres%>%<sg%>%<p2%>:is # ;
+%<ind%>%<pres%>%<sg%>%<p3%>:it # ;
+%<ind%>%<pres%>%<pl%>%<p1%>:imus # ;
+%<ind%>%<pres%>%<pl%>%<p2%>:itis # ;
+%<ind%>%<pres%>%<pl%>%<p3%>:iunt # ;
+
+LEXICON INDICATIVE-PRES4-PASS
+
+%<ind%>%<pres%>%<pass%>%<sg%>%<p1%>:ior # ;
+%<ind%>%<pres%>%<pass%>%<sg%>%<p2%>:iris # ;
+%<ind%>%<pres%>%<pass%>%<sg%>%<p3%>:itur # ;
+%<ind%>%<pres%>%<pass%>%<pl%>%<p1%>:imur # ;
+%<ind%>%<pres%>%<pass%>%<pl%>%<p2%>:imini # ;
+%<ind%>%<pres%>%<pass%>%<pl%>%<p3%>:iuntur # ;
+
+LEXICON INDICATIVE-IMPF4
+
+%<ind%>%<impf%>%<sg%>%<p1%>:iebam # ;
+%<ind%>%<impf%>%<sg%>%<p2%>:iebas # ;
+%<ind%>%<impf%>%<sg%>%<p3%>:iebat # ;
+%<ind%>%<impf%>%<pl%>%<p1%>:iebamus # ;
+%<ind%>%<impf%>%<pl%>%<p2%>:iebatis # ;
+%<ind%>%<impf%>%<pl%>%<p3%>:iebant # ;
+
+LEXICON INDICATIVE-IMPF4-PASS
+
+%<ind%>%<impf%>%<pass%>%<sg%>%<p1%>:iebar # ;
+%<ind%>%<impf%>%<pass%>%<sg%>%<p2%>:iebaris # ;
+%<ind%>%<impf%>%<pass%>%<sg%>%<p3%>:iebatur # ;
+%<ind%>%<impf%>%<pass%>%<pl%>%<p1%>:iebamur # ;
+%<ind%>%<impf%>%<pass%>%<pl%>%<p2%>:iebamini # ;
+%<ind%>%<impf%>%<pass%>%<pl%>%<p3%>:iebantur # ;
+
+LEXICON INDICATIVE-FUTR4
+
+%<ind%>%<fut%>%<sg%>%<p1%>:iam # ;
+%<ind%>%<fut%>%<sg%>%<p2%>:ies # ;
+%<ind%>%<fut%>%<sg%>%<p3%>:iet # ;
+%<ind%>%<fut%>%<pl%>%<p1%>:iemus # ;
+%<ind%>%<fut%>%<pl%>%<p2%>:ietis # ;
+%<ind%>%<fut%>%<pl%>%<p3%>:ient # ;
+
+LEXICON INDICATIVE-FUTR4-PASS
+
+%<ind%>%<fut%>%<pass%>%<sg%>%<p1%>:iar # ;
+%<ind%>%<fut%>%<pass%>%<sg%>%<p2%>:ieris # ;
+%<ind%>%<fut%>%<pass%>%<sg%>%<p3%>:ietur # ;
+%<ind%>%<fut%>%<pass%>%<pl%>%<p1%>:iemur # ;
+%<ind%>%<fut%>%<pass%>%<pl%>%<p2%>:iemini # ;
+%<ind%>%<fut%>%<pass%>%<pl%>%<p3%>:ientur # ;
+
+LEXICON CONGIUNTIVE-PRES4 
+
+%<cong%>%<pres%>%<sg%>%<p1%>:iam # ;
+%<cong%>%<pres%>%<sg%>%<p2%>:ias # ;
+%<cong%>%<pres%>%<sg%>%<p3%>:iat # ;
+%<cong%>%<pres%>%<pl%>%<p1%>:iamus # ;
+%<cong%>%<pres%>%<pl%>%<p2%>:iatis # ;
+%<cong%>%<pres%>%<pl%>%<p3%>:iant # ;
+
+LEXICON CONGIUNTIVE-PRES4-PASS
+
+%<cong%>%<pres%>%<pass%>%<sg%>%<p1%>:iar # ;
+%<cong%>%<pres%>%<pass%>%<sg%>%<p2%>:iaris # ;
+%<cong%>%<pres%>%<pass%>%<sg%>%<p3%>:iatur # ;
+%<cong%>%<pres%>%<pass%>%<pl%>%<p1%>:iamur # ;
+%<cong%>%<pres%>%<pass%>%<pl%>%<p2%>:iamini # ;
+%<cong%>%<pres%>%<pass%>%<pl%>%<p3%>:iantur # ;
+
+LEXICON CONGIUNTIVE-IMPF4 
+
+%<cong%>%<pres%>%<sg%>%<p1%>:irem # ;
+%<cong%>%<pres%>%<sg%>%<p2%>:ires # ;
+%<cong%>%<pres%>%<sg%>%<p3%>:iret # ;
+%<cong%>%<pres%>%<pl%>%<p1%>:iremus # ;
+%<cong%>%<pres%>%<pl%>%<p2%>:iretis # ;
+%<cong%>%<pres%>%<pl%>%<p3%>:irent # ;
+
+LEXICON CONGIUNTIVE-IMPF4-PASS
+
+%<cong%>%<pres%>%<pass%>%<sg%>%<p1%>:irer # ;
+%<cong%>%<pres%>%<pass%>%<sg%>%<p2%>:ireris # ;
+%<cong%>%<pres%>%<pass%>%<sg%>%<p3%>:iretur # ;
+%<cong%>%<pres%>%<pass%>%<pl%>%<p1%>:iremur # ;
+%<cong%>%<pres%>%<pass%>%<pl%>%<p2%>:iremini # ;
+%<cong%>%<pres%>%<pass%>%<pl%>%<p3%>:irentur # ;
+
+LEXICON IMPERATIVE-PRESENT4
+
+%<imp%>%<pres%>%<sg%>%<p2%>:i # ;
+%<imp%>%<pres%>%<pl%>%<p2%>:ite # ;
+
+
+
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+!!! ESSE CONJUGATION i.e. sum/es/fui/esse !!!!!!!!!!!
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+
+
+
+LEXICON Nouns
+
+rosa:ros CASE1 ; ! "rose"
+Athenae:Athen CASE1-PL-TANT ; ! "Athens"
+sapientia:sapienti CASE1-SG-TANT ; ! "knowledge" ?
+eloquentia:eloquenti CASE1-SG-TANT ; ! "eloquence"
+prudentia:prudenti CASE1-SG-TANT ; ! "prudence"
+abundantia:abundanti CASE1-SG-TANT ; ! "abundance"
+scientia:scienti CASE1-SG-TANT ; ! "science"
+
+
+LEXICON Adjectives 
+
+bonus:bon ADJ-CLASS1 ; ! "good"
+
+LEXICON Verbs 
+
+esse:esse NOV ; ! "to be"
+
+laudo:laud CONJ1 ; ! "to praise"
+laudo:laudav REGULAR-PERFECT ;
+moneo:mon CONJ2 ; ! "to warn"
+moneo:monu REGULAR-PERFECT ;
+lego:leg CONJ3 ; 
+audio:aud CONJ4 ;  ! "i hear"

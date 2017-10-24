@@ -1,0 +1,37 @@
+==Installation==
+
+You will first need to install:
+
+* lttoolbox
+* Apertium
+* HFST
+* VISLCG3
+
+Then just run:
+
+$ ./autogen.sh 
+
+or 
+
+$ ./autogen.sh --prefix=/path/to/your/prefix
+
+and 
+
+$ make
+
+You should be able to test the translator with:
+
+$ echo "Ahmet okula gitti." | apertium -d . tur-kir
+Ахмет мектепке кетти.
+
+==Development==
+
+The Constraint Grammar of Turkish, file apertium-tur-kir.tur-kir.rlx
+should be kept up to date with the version in the apertium-tur
+directory. That means that if you make any changes here, you should
+also make them there. And if there are any change made there, they
+should also be made here.
+
+==Further reading==
+
+* http://wiki.apertium.org/wiki/Turkish_and_Kyrgyz

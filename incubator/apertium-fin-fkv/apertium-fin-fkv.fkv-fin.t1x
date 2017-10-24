@@ -1,0 +1,123 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- -*- nxml -*- -->
+<transfer default="chunk">
+	<section-def-cats>
+		<def-cat n="nom">
+			<cat-item tags="n.*"/>
+		</def-cat>
+		<def-cat n="sent">
+			<cat-item tags="sent"/>
+		</def-cat>
+		<def-cat n="necessive-verb">
+			<cat-item tags="vaux.actv.*"/>
+		</def-cat>
+		<def-cat n="pron-pers">
+			<cat-item tags="prn.pers.*.nom"/>
+		</def-cat>
+	</section-def-cats>
+
+	<section-def-attrs>
+		<def-attr n="a_nom">
+			<attr-item tags="n"/>
+		</def-attr>
+		<def-attr n="a_cas">
+			<attr-item tags="nom"/>
+			<attr-item tags="acc"/>
+			<attr-item tags="dat"/>
+			<attr-item tags="gen"/>
+			<attr-item tags="loc"/>
+			<attr-item tags="ins"/>
+			<attr-item tags="abl"/>
+		</def-attr>
+		<def-attr n="a_verb">
+			<attr-item tags="vblex"/>
+			<attr-item tags="vblex.actv"/>
+			<attr-item tags="vblex.pasv"/>
+			<attr-item tags="vaux"/>
+			<attr-item tags="vaux.actv"/>
+			<attr-item tags="vaux.pasv"/>
+		</def-attr>
+		<def-attr n="a_pers">
+			<attr-item tags="p1"/>
+			<attr-item tags="p2"/>
+			<attr-item tags="p3"/>
+		</def-attr>
+		<def-attr n="tense">
+			<attr-item tags="past"/>
+			<attr-item tags="pres"/>
+		</def-attr>
+		<def-attr n="a_nbr">
+			<attr-item tags="sg"/>
+			<attr-item tags="pl"/>
+		</def-attr>
+	</section-def-attrs>
+
+	<section-def-vars>
+		<def-var n="number"/>
+		<def-var n="current_verb"/>
+	</section-def-vars>
+	<section-def-macros>
+		<def-macro n="test" npar="1">
+					<let>
+						<var n="number"/>
+						<lit v=""/>
+					</let>
+		</def-macro>
+	</section-def-macros>
+	<section-rules>
+
+		<rule comment="REGLA: SENT">
+			<pattern>
+				<pattern-item n="sent"/>
+			</pattern>
+			<action>
+				<out>
+					<chunk name="sent" case="caseFirstWord">
+						<tags>
+							<tag><lit-tag v="SENT"/></tag>
+						</tags>
+						<lu>
+							<clip pos="1" side="tl" part="whole"/>
+						</lu>
+					</chunk>
+				</out>
+			</action>
+		</rule>
+
+		<rule comment="REGLA: Necessive">
+			<pattern>
+				<pattern-item n="pron-pers"/>
+				<pattern-item n="necessive-verb"/>
+			</pattern>
+			<action>
+				<out>
+					<chunk name="necessive">
+						<tags>
+							<tag>
+								<lit-tag v="necessive"/>
+							</tag>
+						</tags>
+						<lu>
+							<!-- Change case nom->gen -->
+							<clip pos="1" side="tl" part="lem"/>
+							<lit-tag v="prn.pers"/>
+							<clip pos="1" side="tl" part="a_pers"/>
+							<clip pos="1" side="tl" part="a_nbr"/>
+							<lit-tag v="gen"/>
+						</lu>
+						<b pos="0"/>
+						<lu>
+							<!-- Force number pl->sg and person to p3 -->
+							<clip pos="2" side="tl" part="lem"/>
+							<clip pos="2" side="tl" part="a_verb"/>
+							<clip pos="2" side="tl" part="tense"/>
+							<lit-tag v="p3.sg"/>
+						</lu>
+					</chunk>
+				</out>
+
+			</action>
+		</rule>
+
+  </section-rules>
+</transfer>

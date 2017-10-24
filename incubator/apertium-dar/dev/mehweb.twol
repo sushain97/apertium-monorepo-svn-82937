@@ -1,0 +1,55 @@
+Alphabet
+
+  а б в г д е ё ж з и й к л м н о п р с т у ф х ц ч ш щ ъ ы ь э ю я ӏ
+  А Б В Г Д Е Ё Ж З И Й К Л М Н О П Р С Т У Ф Х Ц Ч Ш Щ Ъ Ы Ь Э Ю Я ӏ
+
+  %{и%}:0 %{и%}:и
+  %{а%}:0 %{а%}:а
+  %{т%}:т 
+  %{б%}:б
+
+  %>:0 ;
+
+Sets
+
+Vow = а е ё и о у ы э ю я ;
+
+VowRight = е ё ю я ;
+
+VowSimple = а и о у э ; 
+
+Cns =  б в г д ж з й к л м н п р с т ф х ц ч ш щ ъ ы ь ӏ
+       Б В Г Д Ж З Й К Л М Н П Р С Т Ф Х Ц Ч Ш Щ Ъ Ы Ь ӏ ;
+
+Rules
+
+! If a stem ends in a vowel, the vowel is dropped. The [a] of the penultimate syllable
+! changes to [u] 16 .
+
+"Final stem vowel deletion with plural in -{т}"
+Vx:0 <=> _ %>: [ %{т%}: | %{б%}: ]  ; 
+     where Vx in VowSimple ; 
+
+!@ д:д у:у б:б у:у р:р а:0 >:0 {т}:т
+
+"Penultimate [a] changes to [u] before plural in -{т}" 
+а:у <=> Cns _ [ Cns Vow: ] %>: %{т%}: ; 
+
+!@ б:б у:у р:р г:г ь:ь а:у л:л а:0 >:0 {т}:т
+
+! 2) One-syllable words form the plural stem by attaching the morpheme -a-.
+
+"Attach morpheme -а- after monosyllabic stem"
+%{а%}:а <=> .#. Cns Vow Cns+ %>: _ ; 
+
+!@ к:к у:у н:н г:г > {а}:а н:н е:е 
+
+"Remove oblique -и- after vowel"
+%{и%}:0 <=> Vow %>: _ ; 
+
+
+!дубура<pl><abs>:дубура>{т}
+!устар<pl><abs>:устар>{т}
+!бургьала<pl><abs>:бургьала>{т}
+!гӏабул<pl><abs>:гӏабул>{т}
+

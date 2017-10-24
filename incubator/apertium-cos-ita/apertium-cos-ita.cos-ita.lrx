@@ -1,0 +1,22 @@
+<rules>
+  <rule>
+    <match lemma="funzione" tags="n.*"><select lemma="carica" tags="n.*"/></match>
+    <match lemma="publicu" tags="adj.*"/>
+  </rule>
+  <rule>
+    <match lemma="funzione" tags="n.*"><select lemma="carica" tags="n.*"/></match>
+    <match lemma="di" tags="pr"/>
+    <match lemma="presidente" tags="n.*"/>
+  </rule>
+  <rule>
+    <match lemma="laziu" tags="n.*"><select lemma="piacere" tags="n.*"/></match>
+  </rule>
+  <rule>
+    <match lemma="piglià" tags="vblex.*"><select lemma="prendere" tags="vblex.*"/></match>
+  </rule>
+  <rule>
+    <match lemma="vultà" tags="vblex.*"><select lemma="tornare" tags="vblex.*"/></match>
+    <match lemma="si" tags="prn.*"/>
+    <match lemma="ne" tags="prn.*"/>
+  </rule>
+</rules>

@@ -1,0 +1,2355 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!--
+
+t1x local chunking NP, VP
+t2x localcoordination NP+NP, etc.
+t3x empty, but for adpositional phrases + Rel clauses
+t4x Constituent mvm, SVO -> SOV
+t5x Cleanup
+
+
+This is the fourth pass. Responsibilities of this file include:
+
+* tbw.
+
+The file contains no macros and some rules:
+
+Macros:
+
+ No macros.
+
+Rules:
+
+ - rule: inessive instead of elative in habitive constructions
+ - rule: inessive instead of elative before inessive adverbs
+ - rule:  coordinated inessive NPs
+ - rule:  double coordinated inessive NPs
+ - rule: SVO becomes SOV
+ - rule: SVO becomes SOV, verbal objects - Mun oahpan lohkat girjjiid.
+ - rule: AVO becomes AOV
+ - rule: SVO becomes SOV in questions
+ - rule: SVO becomes SOV in questions without subject
+ - rule: no SOV with complex coordinated objects
+ - rule: SVA becomes SAV
+
+DEF-CAT NAMING SCHEME:
+                       lemma-pos.tag.tag_SYNTAG
+
+where the SYNTAG part may have an l or r before or after to signify the arrow
+(where l corresponds to ← and r to →);
+alternatively the SYNTAG part is something like "mod", "attr" or "head".
+And then there are some categories like "month", with all the months.
+
+
+-->
+
+
+
+
+<interchunk>
+
+  <section-def-cats>
+    <def-cat n="SENT">
+        <cat-item tags="*.SENT.*"/>
+        <cat-item tags="*.SENT"/>
+    </def-cat>
+
+    <def-cat n="NP">
+      <cat-item tags="NP"/>
+      <cat-item tags="NP.*"/>
+    </def-cat>
+    <def-cat n="ADVL_left"> <!-- not inf -->
+        <cat-item tags="ADV.@←ADVL.*"/>
+        <cat-item tags="ADV.@←ADVL"/>
+        <cat-item tags="NP.@←ADVL.*"/>
+        <cat-item tags="NP.@←ADVL"/>
+        <cat-item tags="*.@←ADVL-ela.*"/>
+        <cat-item tags="*.@←ADVL-ela"/>
+        <cat-item tags="*.@←ADVL-ine.*"/>
+        <cat-item tags="*.@←ADVL-ine"/>
+        <cat-item tags="*.@-F←ADVL-ine"/>
+        <cat-item tags="*.@-F←ADVL-ela"/>
+   </def-cat>
+    <def-cat n="SV_Obj">
+        <cat-item tags="NP.@OBJ→.*"/>
+        <cat-item tags="NP.@OBJ→"/>
+        <cat-item tags="NP.@←OBJ.*"/>
+        <cat-item tags="NP.@←OBJ"/>
+        <cat-item tags="NP.@-F←OBJ"/>
+        <cat-item tags="NP.@-F←OBJ.*"/>
+    </def-cat>
+
+    <def-cat n="NP_Subj">
+        <cat-item tags="NP.@SUBJ→.*"/>
+        <cat-item tags="NP.@←SUBJ.*"/>
+        <cat-item tags="NP.@SUBJ→"/>
+        <cat-item tags="NP.@←SUBJ"/>
+    </def-cat>
+    <def-cat n="MOVE">
+        <cat-item tags="*.MOVE"/>
+        <cat-item tags="MOVE.*"/>
+    </def-cat>
+     <def-cat n="öövre">
+        <cat-item lemma="öövre" tags="ADV.@←ADVL-ine"/>
+        <cat-item lemma="öövre" tags="ADV.@←ADVL-ela"/>
+        <cat-item lemma="öövre" tags="ADV.@←ADVL"/>
+    </def-cat>
+   <def-cat n="NP_Subj_r">
+        <cat-item tags="NP.@SUBJ→.*"/>
+        <cat-item tags="NP.@SUBJ→"/>
+    </def-cat>
+    <def-cat n="NP_Subj_not_prn_r">
+        <cat-item lemma="noun" tags="NP.@SUBJ→.*"/>
+        <cat-item lemma="noun" tags="NP.@SUBJ→"/>
+    </def-cat>
+    <def-cat n="NP_Subj_not_Rel_r">
+        <cat-item lemma="prn" tags="NP.@SUBJ→.pers"/>
+        <cat-item lemma="prn" tags="NP.@SUBJ→.pers.*"/>
+        <cat-item lemma="prn" tags="NP.@SUBJ→.ind"/>
+        <cat-item lemma="prn" tags="NP.@SUBJ→.ind.*"/>
+        <cat-item lemma="noun" tags="NP.@SUBJ→.*"/>
+        <cat-item lemma="noun" tags="NP.@SUBJ→"/>
+<!--        <cat-item lemma="prn" tags="NP.@SUBJ→.dem"/>
+        <cat-item lemma="prn" tags="NP.@SUBJ→.dem.nom"/> -->
+    </def-cat>
+    <def-cat n="left_border">
+        <cat-item tags="NP.@SUBJ→.*"/>
+        <cat-item tags="NP.@←SUBJ.*"/>
+        <cat-item tags="NP.@SUBJ→"/>
+        <cat-item tags="NP.@←SUBJ"/>
+        <cat-item tags="cnjsub.@CVP.*"/>
+        <cat-item tags="cnjsub.@CVP"/>
+        <cat-item tags="ADV.@ADVL-ine→"/>
+        <cat-item tags="*.@ADVL→"/>
+    </def-cat>
+
+    <def-cat n="NP_Obj">
+        <cat-item tags="NP.@OBJ→.*"/>
+        <cat-item tags="NP.@←OBJ.*"/>
+    </def-cat>
+    <def-cat n="NP_Obj_l">
+        <cat-item tags="NP.@←OBJ.*"/>
+        <cat-item tags="NP.@←OBJ"/>
+        <cat-item tags="NP.@-F←OBJ"/>
+        <cat-item tags="NP.@-F←OBJ.*"/>
+    </def-cat>
+    <def-cat n="NP_Subj_l_notext">
+        <cat-item tags="*.@←SUBJ"/>
+    </def-cat>
+    <def-cat n="NP_Subj_l">
+        <cat-item tags="*.@←SUBJ"/>
+        <cat-item tags="*.@←SUBJ.*"/>
+    </def-cat>
+    <def-cat n="NP_Spred_l">
+        <cat-item tags="NP.@←SPRED"/>
+        <cat-item tags="NP.@←SPRED.*"/>
+        <cat-item tags="SA.@←SPRED"/>
+    </def-cat>
+    <def-cat n="NP_Opred_l">
+        <cat-item tags="*.@←OPRED"/>
+        <cat-item tags="*.@←OPRED.*"/>
+    </def-cat>
+
+    <def-cat n="Modifier_Argument_l">
+        <cat-item tags="*.@→N.*"/> <!-- this set only -->
+        <cat-item tags="NP.@←OBJ.*"/> <!-- also in next set -->
+        <cat-item tags="NP.@←OBJ"/>
+        <cat-item tags="NP.@-F←OBJ"/>
+        <cat-item tags="NP.@-F←OBJ.*"/>
+        <cat-item tags="*.@←OPRED"/>
+        <cat-item tags="*.@←OPRED.*"/>
+        <cat-item tags="ADV.@←ADVL.*"/>
+        <cat-item tags="PP.@←ADVL"/>
+        <cat-item tags="NP.@←ADVL"/>
+        <cat-item tags="ADV.@←ADVL"/>
+        <cat-item tags="NP.@←ADVL.*"/>
+        <cat-item tags="*.@←ADVL-ela.*"/>
+        <cat-item tags="*.@←ADVL-ela"/>
+        <cat-item tags="*.@←ADVL-ine.*"/>
+        <cat-item tags="*.@←ADVL-ine"/>
+        <cat-item tags="*.@-F←ADVL-ine"/>
+        <cat-item tags="*.@-F←ADVL-ela"/>
+        <cat-item tags="ADV.@ADVL"/>
+    </def-cat>
+
+
+    <def-cat n="Argument_l">
+        <cat-item tags="NP.@←OBJ.*"/>
+        <cat-item tags="NP.@←OBJ"/>
+        <cat-item tags="NP.@-F←OBJ"/>
+        <cat-item tags="NP.@-F←OBJ.*"/>
+        <cat-item tags="NP.@-F←ADVL"/>
+        <cat-item tags="NP.@-F←ADVL.*"/>
+        <cat-item tags="*.@←OPRED"/>
+        <cat-item tags="*.@←OPRED.*"/>
+        <cat-item tags="NP.@←ADVL.*"/>
+        <cat-item tags="NP.@←ADVL"/>
+        <cat-item tags="ADV.@←ADVL.*"/>
+        <cat-item tags="ADV.@←ADVL"/>
+        <cat-item tags="PP.@←ADVL.*"/>
+        <cat-item tags="PP.@←ADVL"/>
+        <cat-item tags="NP.@←ADVL.*"/>
+        <cat-item tags="*.@←ADVL-ela.*"/>
+        <cat-item tags="*.@←ADVL-ela"/>
+        <cat-item tags="*.@←ADVL-ine.*"/>
+        <cat-item tags="*.@←ADVL-ine"/>
+        <cat-item tags="*.@-F←ADVL-ine"/>
+        <cat-item tags="*.@-F←ADVL-ela"/>
+        <cat-item tags="*.@-F←ADVL-ine.*"/>
+        <cat-item tags="*.@-F←ADVL-ela.*"/>
+    </def-cat>
+
+    <def-cat n="complement">
+        <cat-item tags="*.@Num←"/>
+        <cat-item tags="*.@Num←.*"/>
+        <cat-item tags="NP.@N←.*"/>
+    </def-cat>
+
+    <def-cat n="ref_nom">
+        <cat-item tags="NP.@SUBJ→.ref"/>
+        <cat-item tags="NP.@SUBJ→.ref.*"/>
+    </def-cat>
+
+
+    <def-cat n="modifier">
+        <cat-item tags="*.@→N.*"/>
+    </def-cat>
+
+
+    <def-cat n="NP_Po">
+        <cat-item tags="POST.@←ADVL.*"/>
+        <cat-item tags="POST.@←ADVL"/>
+    </def-cat>
+
+    <def-cat n="NP_Advl">
+        <cat-item tags="ADV.@ADVL→"/>
+        <cat-item tags="ADV.@←ADVL"/>
+        <cat-item tags="ADV.@ADVL"/>
+        <cat-item tags="NP.@ADVL→.*"/>
+        <cat-item tags="NP.@←ADVL.*"/>
+        <cat-item tags="NP.@ADVL-ine→.*"/>
+        <cat-item tags="NP.@←ADVL-ine.*"/>
+        <cat-item tags="NP.@ADVL-ela→.*"/>
+        <cat-item tags="NP.@←ADVL-ela.*"/>
+        <cat-item tags="NP.@ADVL.*"/>
+    </def-cat>
+
+    <def-cat n="NP_Po_compl">
+        <cat-item tags="NP.@→P.*"/>
+    </def-cat>
+
+    <def-cat n="IMainV">
+         <cat-item tags="SV.@-FMAINV"/>
+         <cat-item tags="SV.@-FMAINV.*"/>
+         <cat-item tags="SV.*.@-FMAINV.*"/>
+         <cat-item tags="SV.*.*.@-FMAINV.*"/>
+         <cat-item lemma="inf" tags="SV.@A←"/>
+         <cat-item lemma="inf" tags="SV.@N←"/>
+         <cat-item lemma="inf" tags="SV.@←OBJ"/>
+         <cat-item lemma="inf" tags="SV.@←OBJ.*"/>
+         <cat-item lemma="inf" tags="SV.@←SUBJ.*"/>
+         <cat-item lemma="inf" tags="SV.@←SUBJ"/> 
+    </def-cat>
+
+    <def-cat n="FMainV">
+        <cat-item lemma="vblex" tags="SV.@+FMAINV"/>
+        <cat-item lemma="vblex" tags="SV.@+FMAINV.*"/>
+        <cat-item lemma="vblex" tags="SV.*.@+FMAINV.*"/>
+        <cat-item lemma="vblex" tags="SV.*.*.@+FMAINV.*"/>
+    </def-cat>
+
+    <def-cat n="IFMainV">
+        <cat-item lemma="vblex" tags="SV.@+FMAINV"/>
+        <cat-item lemma="vblex" tags="SV.@+FMAINV.*"/>
+        <cat-item lemma="vblex" tags="SV.*.@+FMAINV.*"/>
+        <cat-item lemma="vblex" tags="SV.*.*.@+FMAINV.*"/>
+        <cat-item lemma="vblex" tags="SV.@-FMAINV"/>
+        <cat-item lemma="vblex" tags="SV.@-FMAINV.*"/>
+        <cat-item lemma="prfprc" tags="SV.@-FMAINV"/>
+        <cat-item lemma="prfprc" tags="SV.@-FMAINV.*"/>
+        <cat-item lemma="vblex" tags="SV.*.@-FMAINV.*"/>
+        <cat-item lemma="conneg" tags="SV.@-FMAINV"/>
+        <cat-item lemma="conneg" tags="SV.@-FMAINV.*"/>
+        <cat-item lemma="inf" tags="SV.@-FMAINV"/>
+        <cat-item lemma="inf" tags="SV.@-FMAINV.*"/>
+        <cat-item lemma="inf" tags="SV.*.@-FMAINV.*"/>
+        <cat-item lemma="inf" tags="SV.@N←.*"/>
+        <cat-item lemma="inf" tags="SV.@N←"/>
+        <cat-item lemma="inf" tags="SV.@A←.*"/>
+        <cat-item lemma="inf" tags="SV.@A←"/>
+         <cat-item lemma="inf" tags="SV.@←OBJ"/>
+         <cat-item lemma="inf" tags="SV.@←OBJ.*"/>
+         <cat-item lemma="inf" tags="SV.@←SUBJ"/>
+         <cat-item lemma="inf" tags="SV.@←SUBJ.*"/>
+         <cat-item lemma="inf" tags="SV.@←ADVL.*"/>
+         <cat-item lemma="inf" tags="SV.@←ADVL"/>
+    </def-cat>
+
+
+    <def-cat n="iiverb">
+        <cat-item lemma="ii" tags="SV.@+FAUXV.*"/>
+        <cat-item lemma="ii" tags="SV.@+FAUXV"/>
+    </def-cat>
+    <def-cat n="conneg-aux">
+        <cat-item lemma="conneg" tags="SV.@-FAUXV"/>
+        <cat-item lemma="conneg" tags="SV.@-FAUXV.*"/>
+    </def-cat>
+
+
+
+    <def-cat n="ii-conneg">
+      <cat-item lemma="ii-conneg" tags="SV.*"/>
+    </def-cat>
+    <def-cat n="prn-pers-subj">
+      <cat-item lemma="prn-pers" tags="NP.@SUBJ→.*"/>
+      <cat-item lemma="prn-pers" tags="NP.@SUBJ→"/>
+    </def-cat>
+
+
+    <def-cat n="FAuxV">
+        <cat-item tags="SV.@+FAUXV"/>
+        <cat-item tags="SV.@+FAUXV.*"/>
+        <cat-item tags="SV.*.@+FAUXV.*"/>
+        <cat-item tags="SV.*.*.@+FAUXV.*"/>
+        <cat-item tags="SV.@+FMAUXV"/>
+        <cat-item tags="SV.@+FMAUXV.*"/>
+        <cat-item tags="SV.*.@+FMAUXV.*"/>
+        <cat-item tags="SV.*.*.@+FMAUXV.*"/>
+    </def-cat>
+    <def-cat n="FIAuxV">
+        <cat-item tags="SV.@-FAUXV"/>
+         <cat-item tags="SV.@-FAUXV"/>
+       <cat-item tags="SV.@-FAUXV.*"/>
+        <cat-item tags="SV.*.@-FAUXV.*"/>
+        <cat-item tags="SV.*.*.@-FAUXV.*"/>
+    </def-cat>
+
+
+    <def-cat n="CC">
+        <cat-item tags="CC.@CNP"/>
+        <cat-item tags="SV.*.Neg.Foc_ge"/>
+        <cat-item tags="SV.*.Neg.Foc_ge.*"/>
+    </def-cat>
+
+    <def-cat n="CNP">
+        <cat-item tags="CC.@CNP"/>
+        <cat-item tags="cnjsub.@CNP"/>
+    </def-cat>
+    <def-cat n="ahte">
+        <cat-item lemma="ahte" tags="cnjsub.@CVP"/>
+    </def-cat>
+    <def-cat n="prn-dem-pers">
+        <cat-item lemma="prn" tags="NP.@SUBJ→.dem"/>
+        <cat-item lemma="prn" tags="NP.@SUBJ→.pers"/>
+        <cat-item lemma="prn" tags="NP.@SUBJ→.dem.*"/>
+        <cat-item lemma="prn" tags="NP.@SUBJ→.pers.*"/>
+    </def-cat>
+
+    <def-cat n="prn-dem">
+        <cat-item lemma="prn" tags="NP.@SUBJ→.dem"/>
+        <cat-item lemma="prn" tags="NP.@SUBJ→.dem.*"/>
+    </def-cat>
+    <def-cat n="Vcop-drop">
+        <cat-item lemma="cop-mainv" tags="SV.*.pres"/>
+        <cat-item lemma="cop-mainv" tags="SV.*.ger"/>
+    </def-cat>
+    <def-cat n="cop-mainv">
+        <cat-item lemma="cop-mainv" tags="SV.*"/>
+        <cat-item lemma="cop-mainv" tags="SV.*"/>
+    </def-cat>
+    <def-cat n="Vcopaux-drop">
+        <cat-item lemma="cop-auxv" tags="SV.*.pres"/>
+    </def-cat>
+
+    <def-cat n="Ine_adverb">
+        <cat-item lemma="gitta" tags="Adv"/>
+        <cat-item lemma="gitta" tags="Adv.*"/>
+    </def-cat>
+
+    <def-cat n="Pcle">
+        <cat-item tags="Pcle.@PCLE"/>
+    </def-cat>
+
+    <def-cat n="Adp">
+        <cat-item tags="Pr.*"/>
+        <cat-item tags="Pr"/>
+        <cat-item tags="Po.*"/>
+        <cat-item tags="Po"/>
+    </def-cat>
+    <def-cat n="ADVL_right">
+        <cat-item tags="ADV.@→ADVL"/>
+    </def-cat>
+    <def-cat n="ADV">
+        <cat-item tags="ADV.@ADVL→"/>
+    </def-cat>
+    <def-cat n="foc-neg-word">
+        <cat-item tags="*.foc_neg-ge"/>
+        <cat-item tags="*.foc_neg-ge.*"/>
+    </def-cat>
+    <def-cat n="foc-pos-word">
+        <cat-item tags="*.foc_pos-ge"/>
+        <cat-item tags="*.foc_pos-ge.*"/>
+    </def-cat>
+
+
+  </section-def-cats>
+
+  <section-def-attrs>
+    <def-attr n="phrase">
+     <attr-item tags="@X"/>
+     <attr-item tags="@HNOUN"/>
+     <attr-item tags="@CNP"/>
+     <attr-item tags="@CVP"/>
+     <attr-item tags="@→N"/>
+     <attr-item tags="@←OBJ"/>
+     <attr-item tags="@OBJ"/>
+     <attr-item tags="@-F←OBJ"/>
+     <attr-item tags="@SUBJ→"/>
+     <attr-item tags="@←SUBJ"/>
+     <attr-item tags="@SPRED→"/>
+     <attr-item tags="@\+FMAINV"/>
+     <attr-item tags="@-FMAINV"/>
+     <attr-item tags="@+FAUXV"/>
+     <attr-item tags="@ADVL"/>
+     <attr-item tags="@←ADVL"/>
+     <attr-item tags="@←ADVL-ine"/>
+     <attr-item tags="@←ADVL-ela"/>
+     <attr-item tags="@ADVL→"/>
+     <attr-item tags="@ADVL-ine→"/>
+     <attr-item tags="@ADVL-ela→"/>
+     <attr-item tags="@HAB"/>
+     <attr-item tags="@Num←"/>
+     <attr-item tags="@→Num"/>
+     <attr-item tags="@INTERJ"/>
+     <attr-item tags="@PCLE"/>
+     <attr-item tags="@OPRED→"/>
+     <attr-item tags="@←OPRED"/>
+     <attr-item tags="@→P"/>
+     <attr-item tags="@P←"/>
+     <attr-item tags="@-FSUBJ→"/>
+     <attr-item tags="@-FOBJ→"/>
+     <attr-item tags="@-F←OBJ"/>
+    </def-attr>
+    <def-attr n="nbr">
+      <attr-item tags="sg"/>
+      <attr-item tags="pl"/>
+      <attr-item tags="sp"/>
+      <attr-item tags="ND"/>
+    </def-attr>
+    <def-attr n="case">
+     <attr-item tags="nom"/>
+     <attr-item tags="acc"/>
+     <attr-item tags="gen"/>
+     <attr-item tags="com"/>
+     <attr-item tags="ess"/>
+     <attr-item tags="ill"/>
+     <attr-item tags="loc"/>
+     <attr-item tags="ine"/>
+     <attr-item tags="ela"/>
+    </def-attr>
+  </section-def-attrs>
+
+  <section-def-vars>
+    <def-var n="nombre"/>
+    <def-var n="genere"/>
+    <def-var n="caseFirstword"/>
+  </section-def-vars>
+
+  <section-def-macros>
+    <def-macro n="switch_cases" npar="2">
+      <let><var n="caseFirstword"/><get-case-from pos="1"><clip pos="1" part="lem"/></get-case-from></let>
+      <let><clip pos="1" part="lem"/><get-case-from pos="2"><clip pos="1" part="lem"/></get-case-from></let>
+      <modify-case><clip pos="2" part="lem"/><var n="caseFirstword"/></modify-case>
+    </def-macro>
+  </section-def-macros>
+
+  <section-rules>
+<!--    <rule> --> <!--genitiv instead of elative in habitive constructions -->
+<!--      <pattern>
+        <pattern-item n="NP"/>
+        <pattern-item n="Vcop-drop"/>
+      </pattern>
+      <action>
+        <choose>
+          <when>
+            <test>
+              <equal>
+                <clip pos="1" part="case"/>
+                <lit-tag v="ela"/>
+              </equal>
+            </test>
+            <let>
+              <clip pos="1" part="case"/>
+              <lit-tag v="gen"/>
+            </let>
+          </when>
+        </choose>
+        <out>
+          <chunk>
+            <clip pos="1" part="lemh"/>
+            <clip pos="1" part="tags"/>
+            <clip pos="1" part="chcontent"/>
+            <clip pos="1" part="lemq"/>
+          </chunk>
+          <b pos="1"/>
+          <chunk>
+            <clip pos="2" part="lemh"/>
+            <clip pos="2" part="tags"/>
+            <clip pos="2" part="chcontent"/>
+            <clip pos="2" part="lemq"/>
+          </chunk>
+        </out>
+      </action>
+    </rule> -->
+
+
+<!--    <rule comment="ref-nom SUBJ" > --> <!-- ref-nom SUBJ becomes  SUBJ ref-nom. -->
+<!--      <pattern>     
+        <pattern-item n="ref_nom"/>
+        <pattern-item n="NP_Subj_r"/>
+      </pattern>
+      <action>
+        <call-macro n="switch_cases"><with-param pos="1"/><with-param pos="2"/></call-macro>
+        <out>
+          <chunk>
+            <clip pos="2" part="whole"/>
+          </chunk>
+          <b pos="1"/>
+         <chunk>
+            <clip pos="1" part="whole"/>
+          </chunk>
+        </out>
+      </action>
+    </rule> -->
+
+
+    <rule comment="Subj FMAINV X X X" > <!-- V X X X becomes X X X V. -->
+      <pattern>     
+        <pattern-item n="IFMainV"/>
+        <pattern-item n="Modifier_Argument_l"/>
+        <pattern-item n="Modifier_Argument_l"/>
+        <pattern-item n="Argument_l"/>
+      </pattern>
+      <action>
+        <call-macro n="switch_cases"><with-param pos="1"/><with-param pos="2"/></call-macro>
+        <out>
+          <chunk>
+            <clip pos="2" part="whole"/>
+          </chunk>
+          <b pos="1"/>
+           <chunk>
+            <clip pos="3" part="whole"/>
+          </chunk>
+          <b pos="2"/>
+         <chunk>
+            <clip pos="4" part="whole"/>
+          </chunk>
+          <b pos="3"/>
+         <chunk>
+            <clip pos="1" part="whole"/>
+          </chunk>
+        </out>
+      </action>
+    </rule>
+
+
+    <rule comment="Subj FMAINV X X" > <!-- V X X becomes X X V. -->
+      <pattern>     
+        <pattern-item n="IFMainV"/>
+        <pattern-item n="Modifier_Argument_l"/>
+        <pattern-item n="Argument_l"/>
+      </pattern>
+      <action>
+        <call-macro n="switch_cases"><with-param pos="1"/><with-param pos="2"/></call-macro>
+        <out>
+          <chunk>
+            <clip pos="2" part="whole"/>
+          </chunk>
+          <b pos="1"/>
+           <chunk>
+            <clip pos="3" part="whole"/>
+          </chunk>
+          <b pos="2"/>
+         <chunk>
+            <clip pos="1" part="whole"/>
+          </chunk>
+        </out>
+      </action>
+    </rule>
+
+    <rule comment="öövre gosk FMAINV " > <!-- V X X becomes X X V. -->
+      <pattern>     
+        <pattern-item n="öövre"/>
+        <pattern-item n="FMainV"/>
+      </pattern>
+      <action>
+        <out>
+          <chunk>
+           <get-case-from pos="1"><lit v="advl"/></get-case-from>
+            <clip pos="1" part="tags"/>
+           <lit v="{"/>
+           <clip pos="1" part="content"/>
+           <b pos="1"/>
+              <lit v="^"/>
+              <lit v="gosk"/>
+              <lit-tag v="pcle"/>
+              <lit v="$"/>
+           <b pos="1"/>
+           <clip pos="2" part="content"/>
+           <lit v="}"/>
+           <clip pos="1" part="lemq"/>
+          </chunk>
+        </out>
+      </action>
+    </rule>
+
+
+
+
+<!--    <rule comment="Subj FMAINV Obj  ADVL" >  V Obj ADVL becomes Obj ADVL V. 		 -->
+<!--      <pattern>     																		 -->
+<!--        <pattern-item n="IFMainV"/>															 -->
+<!--        <pattern-item n="NP_Obj_l"/>														 -->
+<!--        <pattern-item n="ADVL_left"/>														 -->
+<!--      </pattern>																			 -->
+<!--      <action>																				 -->
+<!--        <call-macro n="switch_cases"><with-param pos="1"/><with-param pos="2"/></call-macro> -->
+<!--        <out>																				 -->
+<!--          <chunk>																			 -->
+<!--            <clip pos="2" part="whole"/>													 -->
+<!--          </chunk>																			 -->
+<!--          <b pos="2"/>																		 -->
+<!--           <chunk>																			 -->
+<!--            <clip pos="3" part="whole"/>													 -->
+<!--          </chunk>																			 -->
+<!--          <b pos="2"/>																		 -->
+<!--         <chunk>																			 -->
+<!--            <clip pos="1" part="whole"/>													 -->
+<!--          </chunk>																			 -->
+<!--        </out>																				 -->
+<!--      </action>																				 -->
+<!--    </rule>																					 -->
+<!--																							 -->
+<!--																							 -->
+<!--    <rule comment="FMAINV modifier Obj " >  V Mod Obj ADVL becomes Mod Obj V. 	 -->
+<!--      <pattern>     																		 -->
+<!--        <pattern-item n="FMainV"/>															 -->
+<!--        <pattern-item n="modifier"/>														 -->
+<!--        <pattern-item n="NP_Obj_l"/>														 -->
+<!--      </pattern>																			 -->
+<!--      <action>																				 -->
+<!--        <call-macro n="switch_cases"><with-param pos="1"/><with-param pos="2"/></call-macro> -->
+<!--        <out>																				 -->
+<!--          <chunk>																			 -->
+<!--            <clip pos="2" part="whole"/>													 -->
+<!--          </chunk>																			 -->
+<!--          <b pos="2"/>																		 -->
+<!--           <chunk>																			 -->
+<!--            <clip pos="3" part="whole"/>													 -->
+<!--          </chunk>																			 -->
+<!--          <b pos="2"/>																		 -->
+<!--         <chunk>																			 -->
+<!--            <clip pos="1" part="whole"/>													 -->
+<!--          </chunk>																			 -->
+<!--        </out>																				 -->
+<!--      </action>																				 -->
+<!--    </rule>																					 -->
+<!--																							 -->
+<!--    <rule comment="FMAINV ADVL Obj " > V ADVL Obj becomes ADVL Obj V. afsd 		 -->
+<!--      <pattern>     																		 -->
+<!--        <pattern-item n="IFMainV"/>															 -->
+<!--        <pattern-item n="ADVL_left"/>														 -->
+<!--        <pattern-item n="NP_Obj_l"/>														 -->
+<!--      </pattern>																			 -->
+<!--      <action>																				 -->
+<!--        <call-macro n="switch_cases"><with-param pos="1"/><with-param pos="2"/></call-macro> -->
+<!--        <out>																				 -->
+<!--          <chunk>																			 -->
+<!--            <clip pos="2" part="whole"/>													 -->
+<!--          </chunk>																			 -->
+<!--          <b pos="2"/>																		 -->
+<!--           <chunk>																			 -->
+<!--            <clip pos="3" part="whole"/>													 -->
+<!--          </chunk>																			 -->
+<!--          <b pos="2"/>																		 -->
+<!--         <chunk>																			 -->
+<!--            <clip pos="1" part="whole"/>													 -->
+<!--          </chunk>																			 -->
+<!--        </out>																				 -->
+<!--      </action>																				 -->
+<!--    </rule>																					 -->
+<!--																							 -->
+<!--																							 -->
+<!--																							 -->
+<!--    <rule comment="FMAINV ADVL Obj ADVL " >													 -->
+<!--      <pattern>     																		 -->
+<!--        <pattern-item n="IFMainV"/>															 -->
+<!--        <pattern-item n="ADVL_left"/>														 -->
+<!--        <pattern-item n="NP_Obj_l"/>														 -->
+<!--        <pattern-item n="ADVL_left"/>														 -->
+<!--      </pattern>																			 -->
+<!--      <action>																				 -->
+<!--        <call-macro n="switch_cases"><with-param pos="1"/><with-param pos="2"/></call-macro> -->
+<!--        <out>																				 -->
+<!--          <chunk>																			 -->
+<!--            <clip pos="2" part="whole"/>													 -->
+<!--          </chunk>																			 -->
+<!--          <b pos="2"/>																		 -->
+<!--           <chunk>																			 -->
+<!--            <clip pos="3" part="whole"/>													 -->
+<!--          </chunk>																			 -->
+<!--          <b pos="3"/>																		 -->
+<!--           <chunk>																			 -->
+<!--            <clip pos="4" part="whole"/>													 -->
+<!--          </chunk>																			 -->
+<!--          <b pos="3"/>																		 -->
+<!--         <chunk>																			 -->
+<!--            <clip pos="1" part="whole"/>													 -->
+<!--          </chunk>																			 -->
+<!--        </out>																				 -->
+<!--      </action>																				 -->
+<!--    </rule> 																				 -->
+
+
+ <rule comment="AHTE PRN-DEM ii" > <!-- Ja Ipmil oinnii ahte dat lei buorre. - delete ahte -->
+      <pattern>
+        <pattern-item n="ahte"/>
+        <pattern-item n="prn-dem-pers"/>
+        <pattern-item n="iiverb"/>
+      </pattern>
+      <action>
+        <call-macro n="switch_cases"><with-param pos="1"/><with-param pos="3"/></call-macro>
+        <out>
+          <chunk>
+            <clip pos="3" part="lemh"/>
+            <clip pos="3" part="tags"/>
+            <clip pos="3" part="chcontent"/>
+            <clip pos="3" part="lemq"/>
+          </chunk>
+        </out>
+      </action>
+    </rule>
+
+
+ <rule comment="AHTE PRN-DEM" > <!-- Ja Ipmil oinnii ahte dat lei buorre. - delete ahte -->
+      <pattern>
+        <pattern-item n="ahte"/>
+        <pattern-item n="prn-dem-pers"/>
+      </pattern>
+      <action>
+        <call-macro n="switch_cases"><with-param pos="1"/><with-param pos="2"/></call-macro>
+        <out>
+          <chunk>
+            <clip pos="2" part="lemh"/>
+            <clip pos="2" part="tags"/>
+            <clip pos="2" part="chcontent"/>
+            <clip pos="2" part="lemq"/>
+          </chunk>
+        </out>
+      </action>
+    </rule>
+
+<!--    <rule comment="IFMainV NP_Obj_l" > VO becomes OV -->
+<!--      <pattern>											 -->
+<!--        <pattern-item n="IFMainV"/>						 -->
+<!--        <pattern-item n="NP_Obj_l"/>					 -->
+<!--      </pattern>										 -->
+<!--      <action>											 -->
+<!--        <out>											 -->
+<!--          <chunk>										 -->
+<!--            <clip pos="2" part="lemh"/>					 -->
+<!--            <clip pos="2" part="tags"/>					 -->
+<!--            <clip pos="2" part="chcontent"/>			 -->
+<!--            <clip pos="2" part="lemq"/>					 -->
+<!--          </chunk>										 -->
+<!--          <b pos="1"/>									 -->
+<!--        <chunk>											 -->
+<!--            <clip pos="1" part="lemh"/>					 -->
+<!--            <clip pos="1" part="tags"/>					 -->
+<!--            <clip pos="1" part="chcontent"/>			 -->
+<!--            <clip pos="1" part="lemq"/>					 -->
+<!--          </chunk>										 -->
+<!--        </out>											 -->
+<!--      </action>											 -->
+<!--    </rule>												 -->
+
+    <rule comment="MOVE NP_Obj_l" > <!-- moves over the next NP -->
+      <pattern>
+        <pattern-item n="MOVE"/>
+        <pattern-item n="NP"/>
+      </pattern>
+      <action>
+        <call-macro n="switch_cases"><with-param pos="1"/><with-param pos="2"/></call-macro>
+        <out>
+          <chunk>
+            <clip pos="2" part="lemh"/>
+            <clip pos="2" part="tags"/>
+            <clip pos="2" part="chcontent"/>
+            <clip pos="2" part="lemq"/>
+          </chunk>
+          <b pos="1"/>
+        <chunk>
+            <clip pos="1" part="lemh"/>
+            <clip pos="1" part="tags"/>
+            <clip pos="1" part="chcontent"/>
+            <clip pos="1" part="lemq"/>
+          </chunk>
+        </out>
+      </action>
+    </rule>
+    
+<!--        <rule comment="FAuxV IMainV NP_Obj_l" > AVO becomes AOV -->
+<!--      <pattern>													-->
+<!--        <pattern-item n="FAuxV"/>								-->
+<!--        <pattern-item n="IMainV"/>								-->
+<!--        <pattern-item n="NP_Obj_l"/>							-->
+<!--      </pattern>												-->
+<!--      <action>													-->
+<!--        <out>													-->
+<!--          <chunk>												-->
+<!--            <clip pos="1" part="lemh"/>							-->
+<!--            <clip pos="1" part="tags"/>							-->
+<!--            <clip pos="1" part="chcontent"/>					-->
+<!--            <clip pos="1" part="lemq"/>							-->
+<!--          </chunk>												-->
+<!--          <b pos="1"/>											-->
+<!--          <chunk>												-->
+<!--            <clip pos="3" part="lemh"/>							-->
+<!--            <clip pos="3" part="tags"/>							-->
+<!--            <clip pos="3" part="chcontent"/>					-->
+<!--            <clip pos="3" part="lemq"/>							-->
+<!--          </chunk>												-->
+<!--          <b pos="2"/>											-->
+<!--          <chunk>												-->
+<!--            <clip pos="2" part="lemh"/>							-->
+<!--            <clip pos="2" part="tags"/>							-->
+<!--            <clip pos="2" part="chcontent"/>					-->
+<!--            <clip pos="2" part="lemq"/>							-->
+<!--          </chunk>												-->
+<!--        </out>													-->
+<!--      </action>													-->
+<!--    </rule>														-->
+
+<!--    <rule comment="FAuxV FIAuxV IMainV  NP_Obj_l ADVL_left " -->
+<!--      <pattern>												 -->
+<!--        <pattern-item n="FAuxV"/>							 -->
+<!--        <pattern-item n="FIAuxV"/>							 -->
+<!--        <pattern-item n="IMainV"/>							 -->
+<!--        <pattern-item n="NP_Obj_l"/>						 -->
+<!--        <pattern-item n="ADVL_left"/>						 -->
+<!--      </pattern>											 -->
+<!--      <action>												 -->
+<!--        <out>												 -->
+<!--        <chunk>												 -->
+<!--            <clip pos="1" part="lemh"/>						 -->
+<!--            <clip pos="1" part="tags"/>						 -->
+<!--            <clip pos="1" part="chcontent"/>				 -->
+<!--            <clip pos="1" part="lemq"/>						 -->
+<!--          </chunk>											 -->
+<!--          <b pos="1"/>										 -->
+<!--          <chunk>											 -->
+<!--            <clip pos="2" part="lemh"/>						 -->
+<!--            <clip pos="2" part="tags"/>						 -->
+<!--            <clip pos="2" part="chcontent"/>				 -->
+<!--            <clip pos="2" part="lemq"/>						 -->
+<!--          </chunk>											 -->
+<!--          <b pos="2"/>										 -->
+<!--          <chunk>											 -->
+<!--            <clip pos="4" part="lemh"/>						 -->
+<!--            <clip pos="4" part="tags"/>						 -->
+<!--            <clip pos="4" part="chcontent"/>				 -->
+<!--            <clip pos="4" part="lemq"/>						 -->
+<!--          </chunk>											 -->
+<!--          <b pos="3"/>										 -->
+<!--          <chunk>											 -->
+<!--            <clip pos="5" part="lemh"/>						 -->
+<!--            <clip pos="5" part="tags"/>						 -->
+<!--            <clip pos="5" part="chcontent"/>				 -->
+<!--            <clip pos="5" part="lemq"/>						 -->
+<!--          </chunk>											 -->
+<!--          <b pos="4"/>										 -->
+<!--          <chunk>											 -->
+<!--            <clip pos="3" part="lemh"/>						 -->
+<!--            <clip pos="3" part="tags"/>						 -->
+<!--            <clip pos="3" part="chcontent"/>				 -->
+<!--            <clip pos="3" part="lemq"/>						 -->
+<!--          </chunk>											 -->
+<!--        </out>												 -->
+<!--      </action>												 -->
+<!--    </rule>													 -->
+
+
+<!--    <rule comment="FAuxV FIAuxV IMainV  NP_Obj_l " > -->
+<!--      <pattern>										 -->
+<!--        <pattern-item n="FAuxV"/>					 -->
+<!--        <pattern-item n="FIAuxV"/>					 -->
+<!--        <pattern-item n="IMainV"/>					 -->
+<!--        <pattern-item n="NP_Obj_l"/>				 -->
+<!--      </pattern>									 -->
+<!--      <action>										 -->
+<!--        <out>										 -->
+<!--        <chunk>										 -->
+<!--            <clip pos="1" part="lemh"/>				 -->
+<!--            <clip pos="1" part="tags"/>				 -->
+<!--            <clip pos="1" part="chcontent"/>		 -->
+<!--            <clip pos="1" part="lemq"/>				 -->
+<!--          </chunk>									 -->
+<!--          <b pos="1"/>								 -->
+<!--          <chunk>									 -->
+<!--            <clip pos="2" part="lemh"/>				 -->
+<!--            <clip pos="2" part="tags"/>				 -->
+<!--            <clip pos="2" part="chcontent"/>		 -->
+<!--            <clip pos="2" part="lemq"/>				 -->
+<!--          </chunk>									 -->
+<!--          <b pos="3"/>								 -->
+<!--          <chunk>									 -->
+<!--            <clip pos="4" part="lemh"/>				 -->
+<!--            <clip pos="4" part="tags"/>				 -->
+<!--            <clip pos="4" part="chcontent"/>		 -->
+<!--            <clip pos="4" part="lemq"/>				 -->
+<!--          </chunk>									 -->
+<!--          <b pos="2"/>								 -->
+<!--          <chunk>									 -->
+<!--            <clip pos="3" part="lemh"/>				 -->
+<!--            <clip pos="3" part="tags"/>				 -->
+<!--            <clip pos="3" part="chcontent"/>		 -->
+<!--            <clip pos="3" part="lemq"/>				 -->
+<!--          </chunk>									 -->
+<!--        </out>										 -->
+<!--      </action>										 -->
+<!--    </rule>											 -->
+
+<!--    <rule comment="FAuxV IMainV ADVL_left" > --> <!--AUX V A becomes AUX A V -->
+<!--      <pattern>
+        <pattern-item n="FAuxV"/>
+        <pattern-item n="IMainV"/>
+        <pattern-item n="ADVL_left"/>
+      </pattern>
+      <action>
+        <out>
+        <chunk>
+            <clip pos="1" part="lemh"/>
+            <clip pos="1" part="tags"/>
+            <clip pos="1" part="chcontent"/>
+            <clip pos="1" part="lemq"/>
+          </chunk>
+          <b pos="1"/>
+          <chunk>
+            <clip pos="3" part="lemh"/>
+            <clip pos="3" part="tags"/>
+            <clip pos="3" part="chcontent"/>
+            <clip pos="3" part="lemq"/>
+          </chunk>
+          <b pos="2"/>
+          <chunk>
+            <clip pos="2" part="lemh"/>
+            <clip pos="2" part="tags"/>
+            <clip pos="2" part="chcontent"/>
+            <clip pos="2" part="lemq"/>
+          </chunk>
+        </out>
+      </action>
+    </rule> 
+    <rule comment="FAuxV IMainV ADVL_left NP_Obj_l" > 
+      <pattern>
+        <pattern-item n="FAuxV"/>
+        <pattern-item n="IMainV"/>
+        <pattern-item n="ADVL_left"/>
+        <pattern-item n="NP_Obj_l"/>
+      </pattern>
+      <action>
+        <out>
+        <chunk>
+            <clip pos="1" part="lemh"/>
+            <clip pos="1" part="tags"/>
+            <clip pos="1" part="chcontent"/>
+            <clip pos="1" part="lemq"/>
+          </chunk>
+          <b pos="1"/>
+          <chunk>
+            <clip pos="3" part="lemh"/>
+            <clip pos="3" part="tags"/>
+            <clip pos="3" part="chcontent"/>
+            <clip pos="3" part="lemq"/>
+          </chunk>
+          <b pos="3"/>
+          <chunk>
+            <clip pos="4" part="lemh"/>
+            <clip pos="4" part="tags"/>
+            <clip pos="4" part="chcontent"/>
+            <clip pos="4" part="lemq"/>
+          </chunk>
+          <b pos="2"/>
+          <chunk>
+            <clip pos="2" part="lemh"/>
+            <clip pos="2" part="tags"/>
+            <clip pos="2" part="chcontent"/>
+            <clip pos="2" part="lemq"/>
+          </chunk>
+        </out>
+      </action>
+    </rule> -->
+
+
+
+<!--    <rule comment="FAuxV IMainV ADVL_left" > AUX V A becomes AUX A V -->
+<!--      <pattern>														 -->
+<!--        <pattern-item n="FAuxV"/>									 -->
+<!--        <pattern-item n="IMainV"/>									 -->
+<!--        <pattern-item n="ADVL_left"/>								 -->
+<!--        <pattern-item n="ADVL_left"/>								 -->
+<!--      </pattern>													 -->
+<!--      <action>														 -->
+<!--        <out>														 -->
+<!--        <chunk>														 -->
+<!--            <clip pos="1" part="lemh"/>								 -->
+<!--            <clip pos="1" part="tags"/>								 -->
+<!--            <clip pos="1" part="chcontent"/>						 -->
+<!--            <clip pos="1" part="lemq"/>								 -->
+<!--          </chunk>													 -->
+<!--          <b pos="1"/>												 -->
+<!--          <chunk>													 -->
+<!--            <clip pos="3" part="lemh"/>								 -->
+<!--            <clip pos="3" part="tags"/>								 -->
+<!--            <clip pos="3" part="chcontent"/>						 -->
+<!--            <clip pos="3" part="lemq"/>								 -->
+<!--          </chunk>													 -->
+<!--          <b pos="2"/>												 -->
+<!--          <chunk>													 -->
+<!--            <clip pos="4" part="lemh"/>								 -->
+<!--            <clip pos="4" part="tags"/>								 -->
+<!--            <clip pos="4" part="chcontent"/>						 -->
+<!--            <clip pos="4" part="lemq"/>								 -->
+<!--          </chunk>													 -->
+<!--          <b pos="3"/>												 -->
+<!--          <chunk>													 -->
+<!--            <clip pos="2" part="lemh"/>								 -->
+<!--            <clip pos="2" part="tags"/>								 -->
+<!--            <clip pos="2" part="chcontent"/>						 -->
+<!--            <clip pos="2" part="lemq"/>								 -->
+<!--          </chunk>													 -->
+<!--        </out>														 -->
+<!--      </action>														 -->
+<!--    </rule>															 -->
+
+<!--    <rule comment="FAuxV IMainV ADVL_left ADVL_right ADVL_left" > -->
+<!--	    AUX V ADVL ADVL ADVL becomes AUX ADVL ADVL ADVL V 		  -->
+<!--      <pattern>													  -->
+<!--        <pattern-item n="FAuxV"/>								  -->
+<!--        <pattern-item n="IMainV"/>								  -->
+<!--        <pattern-item n="ADVL_left"/>							  -->
+<!--        <pattern-item n="ADVL_right"/>							  -->
+<!--        <pattern-item n="ADVL_left"/> 							  -->
+<!--      </pattern>												  -->
+<!--      <action>													  -->
+<!--        <out>													  -->
+<!--        <chunk>													  -->
+<!--            <clip pos="1" part="lemh"/>							  -->
+<!--            <clip pos="1" part="tags"/>							  -->
+<!--            <clip pos="1" part="chcontent"/>					  -->
+<!--            <clip pos="1" part="lemq"/>							  -->
+<!--          </chunk>												  -->
+<!--          <b pos="1"/>											  -->
+<!--          <chunk>												  -->
+<!--            <clip pos="3" part="lemh"/>							  -->
+<!--            <clip pos="3" part="tags"/>							  -->
+<!--            <clip pos="3" part="chcontent"/>					  -->
+<!--            <clip pos="3" part="lemq"/>							  -->
+<!--          </chunk>												  -->
+<!--           <b pos="2"/>											  -->
+<!--          <chunk>												  -->
+<!--            <clip pos="4" part="lemh"/>							  -->
+<!--            <clip pos="4" part="tags"/>							  -->
+<!--            <clip pos="4" part="chcontent"/>					  -->
+<!--            <clip pos="4" part="lemq"/>							  -->
+<!--          </chunk>												  -->
+<!--          <b pos="3"/>											  -->
+<!--          <chunk>												  -->
+<!--            <clip pos="5" part="lemh"/>							  -->
+<!--            <clip pos="5" part="tags"/>							  -->
+<!--            <clip pos="5" part="chcontent"/>					  -->
+<!--            <clip pos="5" part="lemq"/>							  -->
+<!--          </chunk>												  -->
+<!--         <b pos="4"/>											  -->
+<!--        <chunk>													  -->
+<!--            <clip pos="2" part="lemh"/>							  -->
+<!--            <clip pos="2" part="tags"/>							  -->
+<!--            <clip pos="2" part="chcontent"/>					  -->
+<!--            <clip pos="2" part="lemq"/>							  -->
+<!--          </chunk>												  -->
+<!--        </out>													  -->
+<!--      </action>													  -->
+<!--    </rule>														  -->
+
+
+ <rule comment="lea NP" > <!--  delete cop -->
+      <pattern>
+        <pattern-item n="Vcop-drop"/>
+        <pattern-item n="NP_Spred_l"/>
+      </pattern>
+      <action>
+        <call-macro n="switch_cases"><with-param pos="1"/><with-param pos="2"/></call-macro>
+        <out>
+          <chunk>
+            <clip pos="2" part="lemh"/>
+            <clip pos="2" part="tags"/>
+            <clip pos="2" part="chcontent"/>
+            <clip pos="2" part="lemq"/>
+          </chunk>
+        </out>
+      </action>
+    </rule>
+
+
+ <rule comment="prn lea mod NP" > <!--  delete cop -->
+      <pattern>
+        <pattern-item n="prn-dem"/>
+        <pattern-item n="Vcop-drop"/> 
+        <pattern-item n="modifier"/>
+        <pattern-item n="NP_Spred_l"/>
+      </pattern>
+      <action>
+        <out>
+          <chunk>
+            <clip pos="1" part="lemh"/>
+            <clip pos="1" part="tags"/>
+            <clip pos="1" part="chcontent"/>
+            <clip pos="1" part="lemq"/>
+          </chunk>
+            <b/>
+          <chunk>
+            <clip pos="3" part="lemh"/>
+            <clip pos="3" part="tags"/>
+            <clip pos="3" part="chcontent"/>
+            <clip pos="3" part="lemq"/>
+          </chunk>
+            <b/>
+          <chunk>
+            <clip pos="4" part="lemh"/>
+            <clip pos="4" part="tags"/>
+            <clip pos="4" part="chcontent"/>
+            <clip pos="4" part="lemq"/>
+          </chunk>
+        </out>
+      </action>
+    </rule>
+
+
+ <rule comment="NP Ine_adverb" > <!--inessive instead of elative before inessive adverbs -->
+      <pattern>
+        <pattern-item n="NP"/>
+        <pattern-item n="Ine_adverb"/>
+      </pattern>
+      <action>
+        <choose>
+          <when>
+            <test>
+              <equal>
+                <clip pos="1" part="case"/>
+                <lit-tag v="ela"/>
+              </equal>
+            </test>
+            <let>
+              <clip pos="1" part="case"/>
+              <lit-tag v="ine"/>
+            </let>
+          </when>
+        </choose>
+        <out>
+          <chunk>
+            <clip pos="1" part="lemh"/>
+            <clip pos="1" part="tags"/>
+            <clip pos="1" part="chcontent"/>
+            <clip pos="1" part="lemq"/>
+          </chunk>
+          <b pos="1"/>
+          <chunk>
+            <clip pos="2" part="lemh"/>
+            <clip pos="2" part="tags"/>
+            <clip pos="2" part="chcontent"/>
+            <clip pos="2" part="lemq"/>
+          </chunk>
+        </out>
+      </action>
+    </rule>
+
+     <rule comment="NP CC NP Ine_adverb" > <!-- coordinated inessive NPs -->
+      <pattern>
+        <pattern-item n="NP"/>
+        <pattern-item n="CC"/>
+        <pattern-item n="NP"/>
+        <pattern-item n="Ine_adverb"/>
+      </pattern>
+      <action>
+      <choose>
+          <when>
+            <test>
+             <and>
+              <equal>
+                <clip pos="1" part="case"/>
+                <lit-tag v="ela"/>
+              </equal>
+              <equal>
+                <clip pos="3" part="case"/>
+                <lit-tag v="ela"/>
+              </equal>
+             </and>
+            </test>
+            <let>
+              <clip pos="1" part="case"/>
+              <lit-tag v="ine"/>
+            </let>
+            <let>
+              <clip pos="3" part="case"/>
+              <lit-tag v="ine"/>
+            </let>
+          </when>
+        </choose>
+        <out>
+          <chunk>
+            <clip pos="1" part="lemh"/>
+            <clip pos="1" part="tags"/>
+            <clip pos="1" part="chcontent"/>
+            <clip pos="1" part="lemq"/>
+          </chunk>
+          <b pos="1"/>
+          <chunk>
+            <clip pos="2" part="lemh"/>
+            <clip pos="2" part="tags"/>
+            <clip pos="2" part="chcontent"/>
+            <clip pos="2" part="lemq"/>
+          </chunk>
+        <b pos="2"/>
+        <chunk>
+            <clip pos="3" part="lemh"/>
+            <clip pos="3" part="tags"/>
+            <clip pos="3" part="chcontent"/>
+            <clip pos="3" part="lemq"/>
+          </chunk>
+          <b pos="3"/>
+        <chunk>
+            <clip pos="4" part="lemh"/>
+            <clip pos="4" part="tags"/>
+            <clip pos="4" part="chcontent"/>
+            <clip pos="4" part="lemq"/>
+          </chunk>
+        </out>
+      </action>
+    </rule>
+
+<rule comment="NP CC NP CC NP Ine_adverb" > <!-- double coordinated inessive NPs -->
+      <pattern>
+        <pattern-item n="NP"/>
+        <pattern-item n="CC"/>
+        <pattern-item n="NP"/>
+        <pattern-item n="CC"/>
+        <pattern-item n="NP"/>
+        <pattern-item n="Ine_adverb"/>
+      </pattern>
+      <action>
+      <choose>
+          <when>
+            <test>
+             <and>
+              <equal>
+                <clip pos="1" part="case"/>
+                <lit-tag v="ela"/>
+              </equal>
+              <equal>
+                <clip pos="3" part="case"/>
+                <lit-tag v="ela"/>
+              </equal>
+              <equal>
+                <clip pos="5" part="case"/>
+                <lit-tag v="ela"/>
+              </equal>
+             </and>
+            </test>
+            <let>
+              <clip pos="1" part="case"/>
+              <lit-tag v="ine"/>
+            </let>
+            <let>
+              <clip pos="3" part="case"/>
+              <lit-tag v="ine"/>
+            </let>
+            <let>
+              <clip pos="5" part="case"/>
+              <lit-tag v="ine"/>
+            </let>
+          </when>
+        </choose>
+        <out>
+          <chunk>
+            <clip pos="1" part="lemh"/>
+            <clip pos="1" part="tags"/>
+            <clip pos="1" part="chcontent"/>
+            <clip pos="1" part="lemq"/>
+          </chunk>
+          <b pos="1"/>
+          <chunk>
+            <clip pos="2" part="lemh"/>
+            <clip pos="2" part="tags"/>
+            <clip pos="2" part="chcontent"/>
+            <clip pos="2" part="lemq"/>
+          </chunk>
+        <b pos="2"/>
+        <chunk>
+            <clip pos="3" part="lemh"/>
+            <clip pos="3" part="tags"/>
+            <clip pos="3" part="chcontent"/>
+            <clip pos="3" part="lemq"/>
+          </chunk>
+          <b pos="3"/>
+        <chunk>
+            <clip pos="4" part="lemh"/>
+            <clip pos="4" part="tags"/>
+            <clip pos="4" part="chcontent"/>
+            <clip pos="4" part="lemq"/>
+          </chunk>
+          <b pos="4"/>
+        <chunk>
+            <clip pos="5" part="lemh"/>
+            <clip pos="5" part="tags"/>
+            <clip pos="5" part="chcontent"/>
+            <clip pos="5" part="lemq"/>
+          </chunk>
+          <b pos="5"/>
+        <chunk>
+            <clip pos="6" part="lemh"/>
+            <clip pos="6" part="tags"/>
+            <clip pos="6" part="chcontent"/>
+            <clip pos="6" part="lemq"/>
+          </chunk>
+        </out>
+      </action>
+    </rule>
+
+<!--    <rule comment="cop-mainv SUBJ" > 
+      <pattern>
+        <pattern-item n="cop-mainv"/>
+        <pattern-item n="NP_Subj_l_notext"/>
+      </pattern>
+      <action>
+        <out>
+        <chunk>
+            <clip pos="2" part="lemh"/>
+            <clip pos="2" part="tags"/>
+            <clip pos="2" part="chcontent"/>
+            <clip pos="2" part="lemq"/>
+          </chunk>
+          <b pos="1"/>
+          <chunk>
+            <clip pos="1" part="lemh"/>
+            <clip pos="1" part="tags"/>
+            <clip pos="1" part="chcontent"/>
+            <clip pos="1" part="lemq"/>
+          </chunk>
+        </out>
+      </action>
+    </rule>  -->
+
+    <rule comment="MAINV SUBJ ADVL" > 
+      <pattern>
+        <pattern-item n="FMainV"/>
+        <pattern-item n="NP_Subj_l"/>
+        <pattern-item n="ADVL_left"/>
+      </pattern>
+      <action>
+        <call-macro n="switch_cases"><with-param pos="1"/><with-param pos="2"/></call-macro>
+        <out>
+        <chunk>
+            <clip pos="2" part="lemh"/>
+            <clip pos="2" part="tags"/>
+            <clip pos="2" part="chcontent"/>
+            <clip pos="2" part="lemq"/>
+          </chunk>
+          <b pos="1"/>
+          <chunk>
+            <clip pos="3" part="lemh"/>
+            <clip pos="3" part="tags"/>
+            <clip pos="3" part="chcontent"/>
+            <clip pos="3" part="lemq"/>
+          </chunk>
+          <b pos="2"/>
+          <chunk>
+            <clip pos="1" part="lemh"/>
+            <clip pos="1" part="tags"/>
+            <clip pos="1" part="chcontent"/>
+            <clip pos="1" part="lemq"/>
+          </chunk>
+        </out>
+      </action>
+    </rule>
+
+    <rule comment="MAINV SUBJ ADVL" > 
+      <pattern>
+        <pattern-item n="FMainV"/>
+        <pattern-item n="NP_Subj_l"/>
+        <pattern-item n="NP_Obj_l"/>
+      </pattern>
+      <action>
+        <call-macro n="switch_cases"><with-param pos="1"/><with-param pos="2"/></call-macro>
+        <out>
+        <chunk>
+            <clip pos="2" part="lemh"/>
+            <clip pos="2" part="tags"/>
+            <clip pos="2" part="chcontent"/>
+            <clip pos="2" part="lemq"/>
+          </chunk>
+          <b pos="1"/>
+          <chunk>
+            <clip pos="3" part="lemh"/>
+            <clip pos="3" part="tags"/>
+            <clip pos="3" part="chcontent"/>
+            <clip pos="3" part="lemq"/>
+          </chunk>
+          <b pos="2"/>
+          <chunk>
+            <clip pos="1" part="lemh"/>
+            <clip pos="1" part="tags"/>
+            <clip pos="1" part="chcontent"/>
+            <clip pos="1" part="lemq"/>
+          </chunk>
+        </out>
+      </action>
+    </rule>
+
+
+    <rule comment="MAINV SUBJ SPRED" > 
+      <pattern>
+        <pattern-item n="FMainV"/>
+        <pattern-item n="NP_Subj_l"/>
+        <pattern-item n="NP_Spred_l"/>
+      </pattern>
+      <action>
+        <call-macro n="switch_cases"><with-param pos="1"/><with-param pos="2"/></call-macro>
+        <out>
+        <chunk>
+            <clip pos="2" part="lemh"/>
+            <clip pos="2" part="tags"/>
+            <clip pos="2" part="chcontent"/>
+            <clip pos="2" part="lemq"/>
+          </chunk>
+          <b pos="1"/>
+        <chunk>
+            <clip pos="3" part="lemh"/>
+            <clip pos="3" part="tags"/>
+            <clip pos="3" part="chcontent"/>
+            <clip pos="3" part="lemq"/>
+          </chunk>
+          <b pos="2"/>
+          <chunk>
+            <clip pos="1" part="lemh"/>
+            <clip pos="1" part="tags"/>
+            <clip pos="1" part="chcontent"/>
+            <clip pos="1" part="lemq"/>
+          </chunk>
+        </out>
+      </action>
+    </rule>
+
+
+    <rule comment="S V SPRED ADVL" > <!--S V SPRED becomes S SPRED V, Dát rehkenastojuvvo oktan guollin. -->
+      <pattern>
+        <pattern-item n="left_border"/>
+        <pattern-item n="IFMainV"/>
+        <pattern-item n="NP_Spred_l"/>
+      </pattern>
+      <action>
+        <out>
+          <chunk>
+            <clip pos="1" part="lemh"/>
+            <clip pos="1" part="tags"/>
+            <clip pos="1" part="chcontent"/>
+            <clip pos="1" part="lemq"/>
+          </chunk>
+          <b pos="1"/>
+          <chunk>
+            <clip pos="3" part="lemh"/>
+            <clip pos="3" part="tags"/>
+            <clip pos="3" part="chcontent"/>
+            <clip pos="3" part="lemq"/>
+          </chunk>
+          <b pos="2"/>
+        <chunk>
+            <clip pos="2" part="lemh"/>
+            <clip pos="2" part="tags"/>
+            <clip pos="2" part="chcontent"/>
+            <clip pos="2" part="lemq"/>
+          </chunk>
+        </out>
+      </action>
+    </rule>
+    <rule comment="left_border IFMainV NP_Spred_l complement" c="Nu šattai stuorit dárbu dasa ahte  : Nimhtie stoerebe daerpiesvoete dïsse sjïdti ahte." > 
+      <pattern>
+        <pattern-item n="left_border"/>
+        <pattern-item n="IFMainV"/>
+        <pattern-item n="NP_Spred_l"/>
+        <pattern-item n="complement"/>
+      </pattern>
+      <action>
+        <out>
+          <chunk>
+            <clip pos="1" part="lemh"/>
+            <clip pos="1" part="tags"/>
+            <clip pos="1" part="chcontent"/>
+            <clip pos="1" part="lemq"/>
+          </chunk>
+          <b pos="1"/>
+          <chunk>
+            <clip pos="3" part="lemh"/>
+            <clip pos="3" part="tags"/>
+            <clip pos="3" part="chcontent"/>
+            <clip pos="3" part="lemq"/>
+          </chunk>
+          <b pos="2"/>
+          <chunk>
+            <clip pos="4" part="lemh"/>
+            <clip pos="4" part="tags"/>
+            <clip pos="4" part="chcontent"/>
+            <clip pos="4" part="lemq"/>
+          </chunk>
+          <b pos="3"/>
+        <chunk>
+            <clip pos="2" part="lemh"/>
+            <clip pos="2" part="tags"/>
+            <clip pos="2" part="chcontent"/>
+            <clip pos="2" part="lemq"/>
+          </chunk>
+        </out>
+      </action>
+    </rule>
+
+    <rule comment="S V SPRED ADVL" > <!--S V SPRED ADVL becomes S SPRED ADVL V -->
+      <pattern>
+        <pattern-item n="left_border"/>
+        <pattern-item n="IFMainV"/>
+        <pattern-item n="NP_Spred_l"/>
+        <pattern-item n="ADVL_left"/>
+      </pattern>
+      <action>
+        <out>
+          <chunk>
+            <clip pos="1" part="lemh"/>
+            <clip pos="1" part="tags"/>
+            <clip pos="1" part="chcontent"/>
+            <clip pos="1" part="lemq"/>
+          </chunk>
+          <b pos="1"/>
+          <chunk>
+            <clip pos="3" part="lemh"/>
+            <clip pos="3" part="tags"/>
+            <clip pos="3" part="chcontent"/>
+            <clip pos="3" part="lemq"/>
+          </chunk>
+          <b pos="2"/>
+        <chunk>
+            <clip pos="4" part="lemh"/>
+            <clip pos="4" part="tags"/>
+            <clip pos="4" part="chcontent"/>
+            <clip pos="4" part="lemq"/>
+          </chunk>
+          <b />
+        <chunk>
+            <clip pos="2" part="lemh"/>
+            <clip pos="2" part="tags"/>
+            <clip pos="2" part="chcontent"/>
+            <clip pos="2" part="lemq"/>
+          </chunk>
+        </out>
+      </action>
+    </rule>
+
+    <rule comment="S V OBJ SPRED " > <!--S V SPRED OBJ becomes S OBJ  SPRED V -->
+      <pattern>
+        <pattern-item n="left_border"/>
+        <pattern-item n="IFMainV"/>
+        <pattern-item n="NP_Obj_l"/>
+        <pattern-item n="NP_Spred_l"/>
+      </pattern>
+      <action>
+        <out>
+          <chunk>
+            <clip pos="1" part="lemh"/>
+            <clip pos="1" part="tags"/>
+            <clip pos="1" part="chcontent"/>
+            <clip pos="1" part="lemq"/>
+          </chunk>
+          <b pos="1"/>
+          <chunk>
+            <clip pos="3" part="lemh"/>
+            <clip pos="3" part="tags"/>
+            <clip pos="3" part="chcontent"/>
+            <clip pos="3" part="lemq"/>
+          </chunk>
+          <b pos="2"/>
+        <chunk>
+            <clip pos="4" part="lemh"/>
+            <clip pos="4" part="tags"/>
+            <clip pos="4" part="chcontent"/>
+            <clip pos="4" part="lemq"/>
+          </chunk>
+          <b />
+        <chunk>
+            <clip pos="2" part="lemh"/>
+            <clip pos="2" part="tags"/>
+            <clip pos="2" part="chcontent"/>
+            <clip pos="2" part="lemq"/>
+          </chunk>
+        </out>
+      </action>
+    </rule>
+
+
+    <rule comment="S V OBJ ADVL " > <!--S V ADVL OBJ becomes S OBJ  ADVL V -->
+      <pattern>
+        <pattern-item n="left_border"/>
+        <pattern-item n="IFMainV"/>
+        <pattern-item n="NP_Obj_l"/>
+        <pattern-item n="ADVL_left"/>
+      </pattern>
+      <action>
+        <out>
+          <chunk>
+            <clip pos="1" part="lemh"/>
+            <clip pos="1" part="tags"/>
+            <clip pos="1" part="chcontent"/>
+            <clip pos="1" part="lemq"/>
+          </chunk>
+          <b pos="1"/>
+          <chunk>
+            <clip pos="3" part="lemh"/>
+            <clip pos="3" part="tags"/>
+            <clip pos="3" part="chcontent"/>
+            <clip pos="3" part="lemq"/>
+          </chunk>
+          <b pos="2"/>
+        <chunk>
+            <clip pos="4" part="lemh"/>
+            <clip pos="4" part="tags"/>
+            <clip pos="4" part="chcontent"/>
+            <clip pos="4" part="lemq"/>
+          </chunk>
+          <b />
+        <chunk>
+            <clip pos="2" part="lemh"/>
+            <clip pos="2" part="tags"/>
+            <clip pos="2" part="chcontent"/>
+            <clip pos="2" part="lemq"/>
+          </chunk>
+        </out>
+      </action>
+    </rule>
+
+    <rule comment="S V OBJ OPRED " > <!--S V OPRED OBJ becomes S OBJ  OPRED V -->
+      <pattern>
+        <pattern-item n="left_border"/>
+        <pattern-item n="IFMainV"/>
+        <pattern-item n="NP_Obj_l"/>
+        <pattern-item n="NP_Opred_l"/>
+      </pattern>
+      <action>
+        <out>
+          <chunk>
+            <clip pos="1" part="lemh"/>
+            <clip pos="1" part="tags"/>
+            <clip pos="1" part="chcontent"/>
+            <clip pos="1" part="lemq"/>
+          </chunk>
+          <b pos="1"/>
+          <chunk>
+            <clip pos="3" part="lemh"/>
+            <clip pos="3" part="tags"/>
+            <clip pos="3" part="chcontent"/>
+            <clip pos="3" part="lemq"/>
+          </chunk>
+          <b pos="2"/>
+        <chunk>
+            <clip pos="4" part="lemh"/>
+            <clip pos="4" part="tags"/>
+            <clip pos="4" part="chcontent"/>
+            <clip pos="4" part="lemq"/>
+          </chunk>
+          <b />
+        <chunk>
+            <clip pos="2" part="lemh"/>
+            <clip pos="2" part="tags"/>
+            <clip pos="2" part="chcontent"/>
+            <clip pos="2" part="lemq"/>
+          </chunk>
+        </out>
+      </action>
+    </rule>
+
+
+<!--    <rule comment="V S SPRED ADVL" > --> <!-- ja de V S SPRED ADVL becomes S SPRED ADVL V -->
+ <!--      <pattern>
+        <pattern-item n="IFMainV"/>
+        <pattern-item n="NP_Subj"/>
+        <pattern-item n="NP_Spred_l"/>
+        <pattern-item n="ADVL_left"/>
+      </pattern>
+      <action>
+        <call-macro n="switch_cases"><with-param pos="1"/><with-param pos="2"/></call-macro>
+        <out>
+          <chunk>
+            <clip pos="2" part="lemh"/>
+            <clip pos="2" part="tags"/>
+            <clip pos="2" part="chcontent"/>
+            <clip pos="2" part="lemq"/>
+          </chunk>
+          <b pos="1"/>
+          <chunk>
+            <clip pos="3" part="lemh"/>
+            <clip pos="3" part="tags"/>
+            <clip pos="3" part="chcontent"/>
+            <clip pos="3" part="lemq"/>
+          </chunk>
+          <b pos="2"/>
+        <chunk>
+            <clip pos="4" part="lemh"/>
+            <clip pos="4" part="tags"/>
+            <clip pos="4" part="chcontent"/>
+            <clip pos="4" part="lemq"/>
+          </chunk>
+          <b />
+        <chunk>
+            <clip pos="1" part="lemh"/>
+            <clip pos="1" part="tags"/>
+            <clip pos="1" part="chcontent"/>
+            <clip pos="1" part="lemq"/>
+          </chunk>
+        </out>
+      </action>
+    </rule> -->
+
+
+    <rule comment="NP_Subj_r lea ADVL" > 
+      <pattern>
+        <pattern-item n="NP_Subj_r"/>
+        <pattern-item n="Vcop-drop"/>
+        <pattern-item n="ADVL_left"/>
+      </pattern>
+      <action>
+        <out>
+          <chunk>
+            <clip pos="1" part="lemh"/>
+            <clip pos="1" part="tags"/>
+            <clip pos="1" part="chcontent"/>
+            <clip pos="1" part="lemq"/>
+          </chunk>
+          <b/>
+        <chunk>
+            <clip pos="3" part="lemh"/>
+            <clip pos="3" part="tags"/>
+            <clip pos="3" part="chcontent"/>
+            <clip pos="3" part="lemq"/>
+          </chunk>
+        </out>
+      </action>
+    </rule>
+
+
+    <rule comment="FAuxV NP_Spred_l" > <!--SVP becomes SPV. Diet orru leamen somá. Doete luste vååjnoe -->
+      <pattern>
+        <pattern-item n="FAuxV"/>
+        <pattern-item n="Vcop-drop"/>
+        <pattern-item n="NP_Spred_l"/>
+      </pattern>
+      <action>
+        <call-macro n="switch_cases"><with-param pos="1"/><with-param pos="3"/></call-macro>
+        <out>
+          <chunk>
+            <clip pos="3" part="lemh"/>
+            <clip pos="3" part="tags"/>
+            <clip pos="3" part="chcontent"/>
+            <clip pos="3" part="lemq"/>
+          </chunk>
+          <b/>
+        <chunk>
+            <clip pos="1" part="lemh"/>
+            <clip pos="1" part="tags"/>
+            <clip pos="1" part="chcontent"/>
+            <clip pos="1" part="lemq"/>
+          </chunk>
+        </out>
+      </action>
+    </rule>
+
+
+    <rule comment="ADV IFMainV NP_Obj_l" > <!--SVO becomes SOV, Daenbiejjien gærjam tjaaleme. -->
+      <pattern>
+        <pattern-item n="ADV"/>
+        <pattern-item n="IFMainV"/>
+        <pattern-item n="NP_Obj_l"/>
+      </pattern>
+      <action>
+        <out>
+          <chunk>
+            <clip pos="1" part="lemh"/>
+            <clip pos="1" part="tags"/>
+            <clip pos="1" part="chcontent"/>
+            <clip pos="1" part="lemq"/>
+          </chunk>
+          <b pos="1"/>
+          <chunk>
+            <clip pos="3" part="lemh"/>
+            <clip pos="3" part="tags"/>
+            <clip pos="3" part="chcontent"/>
+            <clip pos="3" part="lemq"/>
+          </chunk>
+          <b pos="2"/>
+        <chunk>
+            <clip pos="2" part="lemh"/>
+            <clip pos="2" part="tags"/>
+            <clip pos="2" part="chcontent"/>
+            <clip pos="2" part="lemq"/>
+          </chunk>
+        </out>
+      </action>
+    </rule>
+    <rule comment="ADV FMainV NP_Po_compl NP_Po" > <!--SVO becomes SOV, Odne čálán dálu birra.. -->
+      <pattern>
+        <pattern-item n="ADV"/>
+        <pattern-item n="FMainV"/>
+        <pattern-item n="NP_Po_compl"/>
+        <pattern-item n="NP_Po"/>
+      </pattern>
+      <action>
+        <out>
+          <chunk>
+            <clip pos="1" part="lemh"/>
+            <clip pos="1" part="tags"/>
+            <clip pos="1" part="chcontent"/>
+            <clip pos="1" part="lemq"/>
+          </chunk>
+          <b pos="1"/>
+          <chunk>
+            <clip pos="3" part="lemh"/>
+            <clip pos="3" part="tags"/>
+            <clip pos="3" part="chcontent"/>
+            <clip pos="3" part="lemq"/>
+          </chunk>
+          <b pos="3"/>
+          <chunk>
+            <clip pos="4" part="lemh"/>
+            <clip pos="4" part="tags"/>
+            <clip pos="4" part="chcontent"/>
+            <clip pos="4" part="lemq"/>
+          </chunk>
+          <b pos="2"/>
+        <chunk>
+            <clip pos="2" part="lemh"/>
+            <clip pos="2" part="tags"/>
+            <clip pos="2" part="chcontent"/>
+            <clip pos="2" part="lemq"/>
+          </chunk>
+        </out>
+      </action>
+    </rule>
+
+    <rule comment="Subj FMAINV ADVL  ADVL" > <!-- V ADVL ADVL becomes ADVL ADVL V, Son orru doppe miehtá jagi. -->
+      <pattern>     
+        <pattern-item n="left_border"/>
+        <pattern-item n="FMainV"/>
+        <pattern-item n="ADVL_left"/>
+        <pattern-item n="ADVL_left"/>
+      </pattern>
+      <action>
+        <out>
+          <chunk>
+            <clip pos="1" part="whole"/>
+          </chunk>
+          <b pos="1"/>
+          <chunk>
+            <clip pos="3" part="whole"/>
+          </chunk>
+          <b pos="3"/>
+           <chunk>
+            <clip pos="4" part="whole"/>
+          </chunk>
+          <b pos="3"/>
+         <chunk>
+            <clip pos="2" part="whole"/>
+          </chunk>
+        </out>
+      </action>
+    </rule>
+
+
+
+
+<!--    <rule comment="FMAINV ADVL " > V ADVL becomes ADVL V, son ođii beavddi vuolde.			 -->
+<!--      <pattern>																				 -->
+<!--        <pattern-item n="FMainV"/>															 -->
+<!--        <pattern-item n="ADVL_left"/>														 -->
+<!--      </pattern>																			 -->
+<!--      <action>																				 -->
+<!--        <call-macro n="switch_cases"><with-param pos="1"/><with-param pos="2"/></call-macro> -->
+<!--        <out>																				 -->
+<!--          <chunk>																			 -->
+<!--            <clip pos="2" part="whole"/>													 -->
+<!--          </chunk>																			 -->
+<!--          <b pos="1"/>																		 -->
+<!--          <chunk>																			 -->
+<!--            <clip pos="1" part="whole"/>													 -->
+<!--          </chunk>																			 -->
+<!--        </out>																				 -->
+<!--      </action>																				 -->
+<!--    </rule>																					 -->
+
+
+<!--        <rule comment="NP_Subj FMainV SV_Obj" > --> <!--SVO becomes SOV, verbal objects--><!-- Mun oahpan lohkat girjjiid.-->
+<!--      <pattern>
+        <pattern-item n="NP_Subj"/>
+        <pattern-item n="FMainV"/>
+        <pattern-item n="SV_Obj"/>
+      </pattern>
+      <action>
+        <out>
+          <chunk>
+            <clip pos="1" part="lemh"/>
+            <clip pos="1" part="tags"/>
+            <clip pos="1" part="chcontent"/>
+            <clip pos="1" part="lemq"/>
+          </chunk>
+          <b pos="1"/>
+          <chunk>
+            <clip pos="3" part="lemh"/>
+            <clip pos="3" part="tags"/>
+            <clip pos="3" part="chcontent"/>
+            <clip pos="3" part="lemq"/>
+          </chunk>
+          <b pos="2"/>
+        <chunk>
+            <clip pos="2" part="lemh"/>
+            <clip pos="2" part="tags"/>
+            <clip pos="2" part="chcontent"/>
+            <clip pos="2" part="lemq"/>
+          </chunk>
+        </out>
+      </action>
+    </rule> -->
+
+    <rule comment="FAuxV IMainV NP_Obj_l" > 
+          <pattern>
+        <pattern-item n="FAuxV"/>
+        <pattern-item n="IMainV"/>
+        <pattern-item n="NP_Obj_l"/>
+        <pattern-item n="ADVL_left"/>
+      </pattern>
+      <action>
+        <out>
+          <chunk>
+            <clip pos="1" part="lemh"/>
+            <clip pos="1" part="tags"/>
+            <clip pos="1" part="chcontent"/>
+            <clip pos="1" part="lemq"/>
+          </chunk>
+          <b pos="1"/>
+          <chunk>
+            <clip pos="3" part="lemh"/>
+            <clip pos="3" part="tags"/>
+            <clip pos="3" part="chcontent"/>
+            <clip pos="3" part="lemq"/>
+          </chunk>
+          <b pos="2"/>
+          <chunk>
+            <clip pos="4" part="lemh"/>
+            <clip pos="4" part="tags"/>
+            <clip pos="4" part="chcontent"/>
+            <clip pos="4" part="lemq"/>
+          </chunk>
+          <b pos="3"/>
+          <chunk>
+            <clip pos="2" part="lemh"/>
+            <clip pos="2" part="tags"/>
+            <clip pos="2" part="chcontent"/>
+            <clip pos="2" part="lemq"/>
+          </chunk>
+        </out>
+      </action>
+    </rule> 
+
+
+
+    <rule comment="FAuxV Pcle NP_Subj FMainV NP_Obj_l" > <!--SVO becomes SOV in questions-->
+      <pattern>
+        <pattern-item n="FAuxV"/>
+        <pattern-item n="Pcle"/>
+        <pattern-item n="NP_Subj"/>
+        <pattern-item n="FMainV"/>
+        <pattern-item n="NP_Obj_l"/>
+      </pattern>
+      <action>
+        <out>
+          <chunk>
+            <clip pos="1" part="lemh"/>
+            <clip pos="1" part="tags"/>
+            <clip pos="1" part="chcontent"/>
+            <clip pos="1" part="lemq"/>
+          </chunk>
+          <b pos="1"/>
+          <chunk>
+            <clip pos="2" part="lemh"/>
+            <clip pos="2" part="tags"/>
+            <clip pos="2" part="chcontent"/>
+            <clip pos="2" part="lemq"/>
+          </chunk>
+          <b pos="2"/>
+          <chunk>
+            <clip pos="3" part="lemh"/>
+            <clip pos="3" part="tags"/>
+            <clip pos="3" part="chcontent"/>
+            <clip pos="3" part="lemq"/>
+          </chunk>
+          <b pos="3"/>
+          <chunk>
+            <clip pos="5" part="lemh"/>
+            <clip pos="5" part="tags"/>
+            <clip pos="5" part="chcontent"/>
+            <clip pos="5" part="lemq"/>
+          </chunk>
+          <b pos="4"/>
+          <chunk>
+            <clip pos="5" part="lemh"/>
+            <clip pos="5" part="tags"/>
+            <clip pos="5" part="chcontent"/>
+            <clip pos="5" part="lemq"/>
+          </chunk>
+        </out>
+      </action>
+    </rule>
+
+        <rule comment="FAuxV Pcle FMainV NP_Obj_l" > <!--SVO becomes SOV in questions without subject-->
+      <pattern>
+        <pattern-item n="FAuxV"/>
+        <pattern-item n="Pcle"/>
+        <pattern-item n="FMainV"/>
+        <pattern-item n="NP_Obj_l"/>
+      </pattern>
+      <action>
+        <out>
+          <chunk>
+            <clip pos="1" part="lemh"/>
+            <clip pos="1" part="tags"/>
+            <clip pos="1" part="chcontent"/>
+            <clip pos="1" part="lemq"/>
+          </chunk>
+          <b pos="1"/>
+          <chunk>
+            <clip pos="2" part="lemh"/>
+            <clip pos="2" part="tags"/>
+            <clip pos="2" part="chcontent"/>
+            <clip pos="2" part="lemq"/>
+          </chunk>
+          <b pos="2"/>
+          <chunk>
+            <clip pos="4" part="lemh"/>
+            <clip pos="4" part="tags"/>
+            <clip pos="4" part="chcontent"/>
+            <clip pos="4" part="lemq"/>
+          </chunk>
+          <b pos="3"/>
+        <chunk>
+            <clip pos="3" part="lemh"/>
+            <clip pos="3" part="tags"/>
+            <clip pos="3" part="chcontent"/>
+            <clip pos="3" part="lemq"/>
+          </chunk>
+        </out>
+      </action>
+    </rule>
+
+    <rule comment="NP_Subj FMainV NP_Obj_l CC" > <!--no SOV with complex coordinated objects -->
+      <pattern>
+        <pattern-item n="left_border"/>
+        <pattern-item n="FMainV"/>
+        <pattern-item n="NP_Obj_l"/>
+        <pattern-item n="CC"/>
+      </pattern>
+      <action>
+        <out>
+          <chunk>
+            <clip pos="1" part="lemh"/>
+            <clip pos="1" part="tags"/>
+            <clip pos="1" part="chcontent"/>
+            <clip pos="1" part="lemq"/>
+          </chunk>
+          <b pos="1"/>
+          <chunk>
+            <clip pos="2" part="lemh"/>
+            <clip pos="2" part="tags"/>
+            <clip pos="2" part="chcontent"/>
+            <clip pos="2" part="lemq"/>
+          </chunk>
+        <b pos="2"/>
+        <chunk>
+            <clip pos="3" part="lemh"/>
+            <clip pos="3" part="tags"/>
+            <clip pos="3" part="chcontent"/>
+            <clip pos="3" part="lemq"/>
+          </chunk>
+          <b pos="3"/>
+        <chunk>
+            <clip pos="4" part="lemh"/>
+            <clip pos="4" part="tags"/>
+            <clip pos="4" part="chcontent"/>
+            <clip pos="4" part="lemq"/>
+          </chunk>
+        </out>
+      </action>
+    </rule>
+
+<!--    <rule comment="NP_Subj FMainV NP_Advl" > --> <!--SVA becomes SAV -->
+<!--      <pattern>
+        <pattern-item n="left_border"/>
+        <pattern-item n="FMainV"/>
+        <pattern-item n="NP_Advl"/>
+      </pattern>
+      <action>
+        <out>
+          <chunk>
+            <clip pos="1" part="lemh"/>
+            <clip pos="1" part="tags"/>
+            <clip pos="1" part="chcontent"/>
+            <clip pos="1" part="lemq"/>
+          </chunk>
+          <b pos="1"/>
+          <chunk>
+            <clip pos="3" part="lemh"/>
+            <clip pos="3" part="tags"/>
+            <clip pos="3" part="chcontent"/>
+            <clip pos="3" part="lemq"/>
+          </chunk>
+          <b pos="2"/>
+        <chunk>
+            <clip pos="2" part="lemh"/>
+            <clip pos="2" part="tags"/>
+            <clip pos="2" part="chcontent"/>
+            <clip pos="2" part="lemq"/>
+          </chunk>
+        </out>
+      </action>
+    </rule> -->
+
+
+    <!--  <rule comment="prn-pers-subj ii-conneg; mun in - im"> -->
+    <!--   <pattern> -->
+    <!--     <pattern-item n="prn-pers-subj"/> -->
+    <!--     <pattern-item n="ii-conneg"/> -->
+    <!--   </pattern> -->
+    <!--   <action> -->
+    <!--     <out> -->
+    <!--     <chunk> -->
+    <!--         <clip pos="2" part="whole"/> -->
+    <!--       </chunk> -->
+    <!--     </out> -->
+    <!--   </action> -->
+    <!-- </rule> -->
+    
+
+     <rule comment="NP_Subj_r iiverb conneg-aux" >
+      <pattern>
+        <pattern-item n="NP_Subj_not_Rel_r"/>
+        <pattern-item n="iiverb"/>
+        <pattern-item n="conneg-aux"/>
+      </pattern>
+      <action>
+        <call-macro n="switch_cases"><with-param pos="1"/><with-param pos="2"/></call-macro>
+        <out>
+          <chunk>
+            <clip pos="2" part="lemh"/>
+            <clip pos="2" part="tags"/>
+            <clip pos="2" part="chcontent"/>
+            <clip pos="2" part="lemq"/>
+          </chunk>
+          <b pos="1"/>
+          <chunk>
+            <clip pos="3" part="lemh"/>
+            <clip pos="3" part="tags"/>
+            <clip pos="3" part="chcontent"/>
+            <clip pos="3" part="lemq"/>
+          </chunk>
+          <b pos="2"/>
+          <chunk>
+            <clip pos="1" part="lemh"/>
+            <clip pos="1" part="tags"/>
+            <clip pos="1" part="chcontent"/>
+            <clip pos="1" part="lemq"/>
+          </chunk>
+        </out>
+      </action>
+    </rule>
+
+     <rule comment="prn-dem iiverb" > <!-- mun in - im  -->
+      <pattern>
+        <pattern-item n="prn-dem"/>
+        <pattern-item n="iiverb"/>
+      </pattern>
+      <action>
+        <call-macro n="switch_cases"><with-param pos="1"/><with-param pos="2"/></call-macro>
+        <out>
+          <chunk>
+            <clip pos="2" part="lemh"/>
+            <clip pos="2" part="tags"/>
+            <clip pos="2" part="chcontent"/>
+            <clip pos="2" part="lemq"/>
+          </chunk>
+        </out>
+      </action>
+    </rule>
+
+
+
+     <rule comment="NP_Subj_not_Rel_r iiverb" > <!-- mun in - im  -->
+      <pattern>
+        <pattern-item n="NP_Subj_not_Rel_r"/>
+        <pattern-item n="iiverb"/>
+      </pattern>
+      <action>
+        <call-macro n="switch_cases"><with-param pos="1"/><with-param pos="2"/></call-macro>
+        <out>
+          <chunk>
+            <clip pos="2" part="lemh"/>
+            <clip pos="2" part="tags"/>
+            <clip pos="2" part="chcontent"/>
+            <clip pos="2" part="lemq"/>
+          </chunk>
+          <b pos="1"/>
+          <chunk>
+            <clip pos="1" part="lemh"/>
+            <clip pos="1" part="tags"/>
+            <clip pos="1" part="chcontent"/>
+            <clip pos="1" part="lemq"/>
+          </chunk>           
+        </out>
+      </action>
+    </rule>
+
+
+<!--     <rule comment="NP_Subj_r iiverb" > 
+      <pattern>
+        <pattern-item n="NP_Subj_not_prn_r"/>
+        <pattern-item n="iiverb"/>
+      </pattern>
+      <action>
+        <call-macro n="switch_cases"><with-param pos="1"/><with-param pos="2"/></call-macro>
+        <out>
+          <chunk>
+            <clip pos="2" part="lemh"/>
+            <clip pos="2" part="tags"/>
+            <clip pos="2" part="chcontent"/>
+            <clip pos="2" part="lemq"/>
+          </chunk>
+          <b pos="1"/>
+          <chunk>
+            <clip pos="1" part="lemh"/>
+            <clip pos="1" part="tags"/>
+            <clip pos="1" part="chcontent"/>
+            <clip pos="1" part="lemq"/>
+          </chunk> 
+        </out>
+      </action>
+    </rule>
+   <rule comment="IMainV ADVL_left" > VA becomes AV       <pattern>
+        <pattern-item n="IMainV"/>
+        <pattern-item n="ADVL_left"/>
+      </pattern>
+      <action>
+        <call-macro n="switch_cases"><with-param pos="1"/><with-param pos="2"/></call-macro>
+        <out>
+        <chunk>
+            <clip pos="2" part="lemh"/>
+            <clip pos="2" part="tags"/>
+            <clip pos="2" part="chcontent"/>
+            <clip pos="2" part="lemq"/>
+          </chunk>
+          <b pos="1"/>
+          <chunk>
+            <clip pos="1" part="lemh"/>
+            <clip pos="1" part="tags"/>
+            <clip pos="1" part="chcontent"/>
+            <clip pos="1" part="lemq"/>
+          </chunk>
+        </out>
+      </action>
+    </rule> -->
+
+
+    <rule comment="FMAINV X" > <!-- V X becomes X V. -->
+      <pattern>     
+        <pattern-item n="IFMainV"/>
+        <pattern-item n="Argument_l"/>
+      </pattern>
+      <action>
+        <call-macro n="switch_cases"><with-param pos="1"/><with-param pos="2"/></call-macro>
+        <out>
+          <chunk>
+            <clip pos="2" part="whole"/>
+          </chunk>
+          <b pos="1"/>
+           <chunk>
+            <clip pos="1" part="whole"/>
+          </chunk>
+        </out>
+      </action>
+    </rule>
+
+  <rule comment="add extra word gænnah" >  
+      <pattern>
+        <pattern-item n="foc-neg-word"/>
+      </pattern>
+      <action>
+        <out>
+        <chunk>
+            <clip pos="1" part="lemh"/>
+            <clip pos="1" part="tags"/>
+            <clip pos="1" part="chcontent"/>
+            <clip pos="1" part="lemq"/>
+          </chunk>
+          <b />
+          <chunk>
+           <lit v="pcle"/>
+           <lit v="{"/>
+           <lit v="^"/>
+            <lit v="gænnah"/>
+            <lit-tag v="pcle"/>
+           <lit v="$"/>
+           <lit v="}"/>
+          </chunk>
+        </out>
+      </action>
+    </rule>
+
+   <rule comment="add extra word aaj" >  
+      <pattern>
+        <pattern-item n="foc-pos-word"/>
+      </pattern>
+      <action>
+        <out>
+        <chunk>
+            <clip pos="1" part="lemh"/>
+            <clip pos="1" part="tags"/>
+            <clip pos="1" part="chcontent"/>
+            <clip pos="1" part="lemq"/>
+          </chunk>
+          <b />
+          <chunk>
+           <lit v="adv"/>
+           <lit v="{"/>
+           <lit v="^"/>
+            <lit v="aaj"/>
+            <lit-tag v="adv"/>
+           <lit v="$"/>
+           <lit v="}"/>
+          </chunk>
+        </out>
+      </action>
+    </rule>
+
+
+  </section-rules>
+</interchunk>

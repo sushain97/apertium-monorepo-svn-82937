@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<modes>
+
+  <mode name="ltz-morph" install="yes">
+    <pipeline>
+      <program name="lt-proc -w -e">
+        <file name="ltz.automorf.bin"/>
+      </program>
+    </pipeline>
+  </mode>
+
+  <mode name="ltz-gener" install="yes">
+    <pipeline>
+      <program name="lt-proc -g">
+        <file name="ltz.autogen.bin"/>
+      </program>
+    </pipeline>
+  </mode>
+
+  <mode name="ltz-tagger" install="yes">
+    <pipeline>
+      <program name="lt-proc -w -e">
+        <file name="ltz.automorf.bin"/>
+      </program>
+      <program name="cg-proc -w">
+        <file name="ltz.rlx.bin"/>
+      </program>
+    </pipeline>
+  </mode>
+
+  <mode name="ltz-disam" install="yes">
+    <pipeline>
+      <program name="lt-proc -w -e">
+        <file name="ltz.automorf.bin"/>
+      </program>
+      <program name="cg-conv -a -l" />
+      <program name="vislcg3 --trace -g">
+        <file name="apertium-ltz.ltz.rlx"/>
+      </program>
+    </pipeline>
+  </mode>
+
+</modes>
+

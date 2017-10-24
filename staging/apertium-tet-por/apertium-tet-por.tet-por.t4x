@@ -1,0 +1,234 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- -*- nxml -*- -->
+<postchunk>
+  <section-def-cats>
+    <def-cat n="prn">
+      <cat-item name="prn"/>
+    </def-cat>
+    <def-cat n="vmod-inf">
+      <cat-item name="vmod-inf"/>
+    </def-cat>
+    <def-cat n="v">
+      <cat-item name="v"/>
+      <cat-item name="vmod"/>
+    </def-cat>
+    <def-cat n="v-inf/ref">
+      <cat-item name="v-inf"/>
+      <cat-item name="v-ref"/>
+    </def-cat>
+    <def-cat n="sent">
+      <cat-item name="punt"/>
+    </def-cat>
+  </section-def-cats>
+  <section-def-attrs>
+    <def-attr n="a_nbr">
+      <attr-item tags="sg"/>
+      <attr-item tags="pl"/>
+      <attr-item tags="sp"/>
+      <attr-item tags="ND"/>
+    </def-attr>
+    <def-attr n="a_tns">
+      <attr-item tags="pri"/>
+      <attr-item tags="prs"/>
+      <attr-item tags="fti"/>
+      <attr-item tags="pis"/>
+      <attr-item tags="pii"/>
+      <attr-item tags="inf"/>
+      <attr-item tags="MD"/>
+    </def-attr>
+    <def-attr n="a_gen">
+      <attr-item tags="m"/>
+      <attr-item tags="f"/>
+      <attr-item tags="mf"/>
+      <attr-item tags="GD"/>
+    </def-attr>
+
+    <def-attr n="a_prs">
+      <attr-item tags="p1"/>
+      <attr-item tags="p2"/>
+      <attr-item tags="p3"/>
+      <attr-item tags="PD"/>
+    </def-attr>
+
+  </section-def-attrs>
+  <section-def-vars>
+    <def-var n="paraula"/>
+  </section-def-vars>
+  <section-rules>
+
+    <rule comment="CHUNK:">
+      <pattern>
+        <pattern-item n="vmod-inf"/>
+      </pattern>
+      <action>
+        <choose>
+          <when>
+            <test>
+              <and>
+                <not><equal><clip pos="1" part="a_tns"/><lit-tag v="MD"/></equal></not>
+                <equal><clip pos="1" part="a_nbr"/><lit-tag v="ND"/></equal>
+              </and>
+            </test>
+            <let><clip pos="1" part="a_nbr"/><lit-tag v="sg"/></let>
+          </when>
+        </choose>
+        <choose>
+          <when>
+            <test>
+              <and>
+                <not><equal><clip pos="1" part="a_tns"/><lit-tag v="MD"/></equal></not>
+                <equal><clip pos="1" part="a_prs"/><lit-tag v="PD"/></equal>
+              </and>
+            </test>
+            <let><clip pos="1" part="a_prs"/><lit-tag v="p3"/></let>
+          </when>
+        </choose>
+
+        <choose>
+          <when>
+            <test>
+              <and>
+                <equal><clip pos="1" part="a_tns"/><lit-tag v="MD"/></equal>
+                <equal><clip pos="1" part="a_prs"/><lit-tag v="PD"/></equal>
+                <equal><clip pos="1" part="a_nbr"/><lit-tag v="ND"/></equal>
+              </and>
+            </test>
+            <let><clip pos="1" part="a_tns"/><lit-tag v="pri"/></let>
+            <let><clip pos="1" part="a_prs"/><lit-tag v="p3"/></let>
+            <let><clip pos="1" part="a_nbr"/><lit-tag v="sg"/></let>
+          </when>
+        </choose>
+        <out>
+          <lu>
+            <clip pos="1" part="whole"/>
+          </lu>
+          <b pos="1"/>
+          <lu>
+            <clip pos="2" part="whole"/>
+          </lu>
+        </out>
+      </action>
+    </rule>
+
+    <rule comment="CHUNK:">
+      <pattern>
+        <pattern-item n="v-inf/ref"/>
+      </pattern>
+      <action>
+        <choose>
+          <when>
+            <test>
+              <and>
+                <not><equal><clip pos="1" part="a_tns"/><lit-tag v="MD"/></equal></not>
+                <equal><clip pos="1" part="a_nbr"/><lit-tag v="ND"/></equal>
+              </and>
+            </test>
+            <let><clip pos="1" part="a_nbr"/><lit-tag v="sg"/></let>
+          </when>
+        </choose>
+        <choose>
+          <when>
+            <test>
+              <and>
+                <not><equal><clip pos="1" part="a_tns"/><lit-tag v="MD"/></equal></not>
+                <equal><clip pos="1" part="a_prs"/><lit-tag v="PD"/></equal>
+              </and>
+            </test>
+            <let><clip pos="1" part="a_prs"/><lit-tag v="p3"/></let>
+          </when>
+        </choose>
+        <out>
+          <lu>
+            <clip pos="1" part="whole"/>
+          </lu>
+          <b pos="1"/>
+          <lu>
+            <clip pos="2" part="whole"/>
+          </lu>
+        </out>
+      </action>
+    </rule>
+
+    <rule comment="CHUNK:">
+      <pattern>
+        <pattern-item n="v"/>
+      </pattern>
+      <action>
+        <choose>
+          <when>
+            <test>
+              <and>
+                <not><equal><clip pos="1" part="a_tns"/><lit-tag v="MD"/></equal></not>
+                <equal><clip pos="1" part="a_nbr"/><lit-tag v="ND"/></equal>
+              </and>
+            </test>
+            <let><clip pos="1" part="a_nbr"/><lit-tag v="sg"/></let>
+          </when>
+        </choose>
+        <choose>
+          <when>
+            <test>
+              <and>
+                <not><equal><clip pos="1" part="a_tns"/><lit-tag v="MD"/></equal></not>
+                <equal><clip pos="1" part="a_prs"/><lit-tag v="PD"/></equal>
+              </and>
+            </test>
+            <let><clip pos="1" part="a_prs"/><lit-tag v="p3"/></let>
+          </when>
+        </choose>
+        <choose>
+          <when>
+            <test>
+              <and>
+                <equal><clip pos="1" part="a_tns"/><lit-tag v="MD"/></equal>
+                <equal><clip pos="1" part="a_prs"/><lit-tag v="PD"/></equal>
+                <equal><clip pos="1" part="a_nbr"/><lit-tag v="ND"/></equal>
+              </and>
+            </test>
+            <let><clip pos="1" part="a_tns"/><lit-tag v="inf"/></let>
+            <let><clip pos="1" part="a_prs"/><lit v=""/></let>
+            <let><clip pos="1" part="a_nbr"/><lit v=""/></let>
+          </when>
+        </choose>
+
+        <out>
+          <lu>
+            <clip pos="1" part="whole"/>
+          </lu>
+        </out>
+      </action>
+    </rule>
+
+    <rule comment="CHUNK:">
+      <pattern>
+        <pattern-item n="prn"/>
+      </pattern>
+      <action>
+        <choose>
+          <when>
+            <test><equal><clip pos="1" part="a_gen"/><lit-tag v="GD"/></equal></test>
+            <let><clip pos="1" part="a_gen"/><lit-tag v="m"/></let>
+          </when>
+        </choose>
+        <out>
+          <lu>
+            <clip pos="1" part="whole"/>
+          </lu>
+        </out>
+      </action>
+    </rule>
+
+    <rule comment="CHUNK:">
+      <pattern>
+        <pattern-item n="sent"/>
+      </pattern>
+      <action>
+        <out>
+          <lu>
+            <clip pos="1" part="whole"/>
+          </lu>
+        </out>
+      </action>
+    </rule>
+  </section-rules>
+</postchunk>

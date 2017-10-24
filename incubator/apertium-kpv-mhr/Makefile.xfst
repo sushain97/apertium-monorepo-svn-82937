@@ -1,0 +1,38 @@
+mhr: mhr.fst
+
+mhr.fst: apertium-kpv-mhr.mhr.lexc apertium-kpv-mhr.mhr.twol.xbin
+	@echo
+	@echo
+	@echo
+	@echo "*** Building mhr.save ***" ;
+	@echo
+	@echo
+	@echo
+	printf "compile-source apertium-kpv-mhr.mhr.lexc \n\
+	read-rules apertium-kpv-mhr.mhr.twol.xbin \n\
+	compose-result \n\
+	save-result mhr.fst \n\
+	quit \n" > tmp/mhr-save-script
+	@lexc < tmp/mhr-save-script
+	rm -f tmp/mhr-save-script
+
+# The second goal is to build twol-mhr.bin
+# This goal depends on twol-mhr.txt
+
+mhrtwol: apertium-kpv-mhr.mhr.twol.xbin
+apertium-kpv-mhr.mhr.twol.xbin: apertium-kpv-mhr.mhr.twol
+	@echo
+	@echo
+	@echo
+	@echo "*** Building twol-mhr.bin ***" ;
+	@echo
+	@echo
+	@echo
+	@printf "read-grammar apertium-kpv-mhr.mhr.twol \n\
+	compile \n\
+	save-binary apertium-kpv-mhr.mhr.twol.xbin \n\
+	quit \n" > tmp/twol-mhr-script
+	@twolc < tmp/twol-mhr-script
+	@rm -f ../../tmp/twol-mhr-script
+
+

@@ -1,0 +1,379 @@
+<html>
+<head>
+    <title>Concordancer</title>
+    <meta name="author" content="Sushain Cherivirala">
+    <meta charset="utf-8">
+    <link href="http://netdna.bootstrapcdn.com/bootstrap/3.0.2/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+       .left-part { text-align: right; padding-right: 2px !important;}
+       .right-part { padding-left: 0px !important; }
+       .tooltip-inner { text-align:left !important; }
+        .highlight { font-weight: bold; color: darkred; }
+        body { padding-bottom: 100px; }
+    </style>
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+    <script src="http://netdna.bootstrapcdn.com/bootstrap/3.0.2/js/bootstrap.min.js"></script>
+</head>
+<body>
+    <div class="container">
+        <h1>Concordancer Web Interface 
+        <a href="http://wiki.apertium.org/w/index.php?title=Concordancer#Web_Concordancer" target="_blank"></a></h1>
+        <h4>Created by spectie in C and ported to Python by a very intelligent program</h4>
+        <div class="panel-group" id="accordion">
+            <div class="panel panel-default">
+                <div class="panel-heading" title="Click to collapse/open" data-toggle="collapse" data-target="#generalSettingsPanel" href="#">
+                    <h2 class="panel-title">
+                        <a data-toggle="collapse" data-target="#generalSettingsPanel" href="#">Corpus &amp; Analyzer Settings</a>
+                    </h2>
+                </div>
+                <div id="generalSettingsPanel" class="panel-collapse collapse in">
+                    <div class="panel-body">
+                        <div class="row">
+                            <div class="col-md-12">
+                                <form class="form-horizontal" style="padding-top: 2em;" action="none" autocomplete="on">
+                                    <div class="form-group">
+                                        <label for="corpus" class="col-sm-2 control-label">Corpus Path</label>
+                                        <div class="col-sm-10">
+                                            <input class="form-control" type="text" name="corpus" id="corpus" placeholder="Absolute path of corpus to search" />
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="module" class="col-sm-2 control-label">Language Module</label>
+                                        <div class="col-sm-4">
+                                            <input class="form-control" type="text" name="module" id="module" placeholder="Absolute path to language module for analysis" />
+                                        </div>
+                                        <label for="pair" class="col-sm-2 control-label">Language Pair</label>
+                                        <div class="col-sm-4">
+                                            <input class="form-control" type="text" name="pair" id="pair" placeholder="Language pair to use for analysis" />
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="word" class="col-sm-2 control-label">Search Window</label>
+                                        <div class="col-sm-2">
+                                            <input class="form-control" type="number" name="window" id="window" value="10" placeholder="Size of alignment window">
+                                        </div>
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="panel panel-default">
+                <div class="panel-heading" title="Click to collapse/open" data-toggle="collapse" data-target="#filterSettingsPanel" href="#">
+                    <h2 class="panel-title">
+                        <a data-toggle="collapse" data-target="#filterSettingsPanel" href="#">Filter Settings</a>
+                    </h2>
+                </div>
+                <div id="filterSettingsPanel" class="panel-collapse collapse in">
+                    <div class="panel-body">
+                        <div class="row">
+                            <div class="col-md-8">
+                                <h2>Add Filter</h2>
+                                <form class="form-horizontal" style="padding-top: 2em;" action="none" autocomplete="on">
+                                    <div class="form-group">
+                                        <label for="word" class="col-sm-2 control-label">Surface Form</label>
+                                        <div class="col-sm-9">
+                                            <input class="form-control" type="text" name="surfaceFormString" id="Surface" placeholder="String to match analysis surface forms with" />
+                                        </div>
+                                        <div class="col-sm-1">
+                                            <div class="checkbox" id="regexCheckbox">
+                                                <label for="regex">
+                                                <input type="checkbox" id="SurfaceRegex" checked="checked" /> Regex</label>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="word" class="col-sm-2 control-label">Lemma</label>
+                                        <div class="col-sm-9">
+                                            <input class="form-control" type="text" name="lemmaString" id="Lemma" placeholder="String to match analysis lemmas with" />
+                                        </div>
+                                        <div class="col-sm-1">
+                                            <div class="checkbox" id="regexCheckbox">
+                                                <label for="regex">
+                                                <input type="checkbox" id="LemmaRegex" checked="checked" /> Regex</label>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="word" class="col-sm-2 control-label">Tag</label>
+                                        <div class="col-sm-9">
+                                            <input class="form-control" type="text" name="tagString" id="Tag" placeholder="String to match analysis tags with" />
+                                        </div>
+                                        <div class="col-sm-1">
+                                            <div class="checkbox" id="regexCheckbox">
+                                                <label for="regex">
+                                                <input type="checkbox" id="TagRegex" checked="checked" /> Regex</label>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="word" class="col-sm-2 control-label">Raw Text</label>
+                                        <div class="col-sm-9">
+                                            <input class="form-control" type="text" name="rawString" id="Raw" placeholder="String to search corpus text with" />
+                                        </div>
+                                        <div class="col-sm-1">
+                                            <div class="checkbox" id="regexCheckbox">
+                                                <label for="regex">
+                                                <input type="checkbox" id="RawRegex" checked="checked" /> Regex</label>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <button class="btn btn-default btn-primary pull-right" value="addFilter" id="addFilter">Add Filter</button>
+                                    </div>
+                                </form>
+                            </div>
+                            <div class="col-md-3 col-md-offset-1">
+                                <h2>Active Filters 
+                                <button type="button" class="btn btn-danger btn-xs pull-right" id="clearAll">Delete all</button></h2>
+                                <div id="activeFilters"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-12">
+                <h2>Results: 
+                <span style="padding-left: 450px;">
+                    <button id="left" class="btn"><span class="glyphicon glyphicon-arrow-left"></span></button>
+                    <button id="reset" class="btn"><span class="glyphicon glyphicon-refresh"></span></button> 
+                    <button id="right" class="btn"><span class="glyphicon glyphicon-arrow-right"></span></button>
+                </span> 
+                <span id="resultHelp" class="pull-right"></span></h2>
+                <table class="table table-hover table-condensed small" id="output"></table>
+                <img src="/spinner.gif" id="loading" style="display: none; position: absolute; top: 30%; left: 50%;" />
+            </div>
+        </div>
+    </div>
+
+    <script type="text/javascript">
+        var filters = [], searchData;
+        var focus = -1;
+
+        $(document).ready(function() {
+            if(localStorage) {
+                if(localStorage.pair)
+                    $('#pair').val(localStorage.pair);
+                if(localStorage.module)
+                    $('#module').val(localStorage.module);
+                if(localStorage.corpus)
+                    $('#corpus').val(localStorage.corpus);
+                if(localStorage.filters) {
+                    filters = JSON.parse(localStorage.filters);
+                    refreshFilterList();
+                }
+                if(localStorage.window)
+                    $('#window').val(localStorage.window);
+            }
+
+            $('input[type=text],input[type=number]').change(function() {
+             localStorage[$(this).attr('id')] = $(this).val();
+            });
+
+            $('input[type=checkbox]').change(function(){
+             localStorage[$(this).attr("id")] = $(this).prop("checked");
+            });
+
+            $('form').submit(function() {
+                return false;
+            });
+
+            $('#right').click(function() {
+                focus++;
+                reFocus();
+            });
+
+            $('#left').click(function() {
+                if(focus > 0)
+                    focus--;
+                reFocus();
+            });
+
+            $('#reset').click(function() {
+                focus = -1;
+                $('#loading').show();
+                $("#output").css({ opacity: 0.5 });			
+                $('span').tooltip('destroy');
+                $("tr").remove();
+                data = searchData;
+                for(var i = 0; i < data.length; i++) {
+                    var tr = $('<tr style="text-align: center"></tr>');
+                    var td = $('<td></td>');
+                    for(var j = 0; j < data[i][0].length; j++) {
+                        var span = $('<span data-toggle="tooltip" data-placement="auto" data-html="true"></span>');
+                        if($.inArray(j, data[i][1]) != -1)
+                            span.addClass('highlight');	
+
+                        var splitUnit = data[i][0][j][1].split('/');
+                        var title = '<b>' + splitUnit[0] + '</b><br>';
+                        for(var k = 1; k < splitUnit.length; k++)
+                            title += htmlEntities(splitUnit[k]) + '<br>';
+
+                        span.prop('title', title);
+                        span.text(data[i][0][j][0]);
+                        td.append(span);
+                    }
+                    $('#output').append(tr.append(td));
+                }
+                $("#output").css({ opacity: 1 });
+                $('#loading').hide();
+                $('span').tooltip();
+            });
+
+            $('#addFilter').click(function() {
+                var termIds = ['Surface', 'Lemma', 'Tag', 'Raw'], newFilter = {}, add = false;
+                for(var i = 0; i < termIds.length; i++)
+                    if($('#' + termIds[i]).val() != '') {
+                        newFilter[termIds[i]] = {term: $('#' + termIds[i]).val(), regex: $('#' + termIds[i] + 'Regex').is(':checked')};
+                        add |= true;
+                    }
+                if(add) {
+                    filters.push(newFilter);
+                    refreshFilterList();
+                }
+            });
+
+            function reFocus() {
+                $('#loading').show();
+                $("#output").css({ opacity: 0.5 });			
+                $('span').tooltip('destroy');
+                $("tr").remove();
+                data = searchData;
+                for(var i = 0; i < data.length; i++) {
+                    var tr = $('<tr></tr>');
+                    var leftTD = $('<td class="left-part"></td>'), rightTD = $('<td class="right-part"></td>');
+                    var focusToken = data[i][1][focus] < data[i][0].length - 1 ? data[i][1][focus] : data[i][1].slice(-1)[0];
+                    var window = parseInt($('#window').val());
+                    for(var j = (focusToken > window ? focusToken - window : 0); j < focusToken; j++) {
+                        var span = $('<span data-toggle="tooltip" data-placement="auto" data-html="true"></span>');
+                        if($.inArray(j, data[i][1]) != -1)
+                            span.addClass('highlight');
+
+                        var splitUnit = data[i][0][j][1].split('/');
+                        var title = '<b>' + splitUnit[0] + '</b><br>';
+                        for(var k = 1; k < splitUnit.length; k++)
+                            title += htmlEntities(splitUnit[k]) + '<br>';
+
+                        span.prop('title', title);
+                        span.text(data[i][0][j][0]);
+                        leftTD.append(span);
+                    }
+                    for(var j = focusToken; j < (data[i][0].length - focusToken > window ? (focusToken + window) : data[i][0].length); j++) {
+                        var span = $('<span data-toggle="tooltip" data-placement="auto" data-html="true"></span>');
+                        if($.inArray(j, data[i][1]) != -1)
+                            span.addClass('highlight');
+
+                        var splitUnit = data[i][0][j][1].split('/');
+                        var title = '<b>' + splitUnit[0] + '</b><br>';
+                        for(var k = 1; k < splitUnit.length; k++)
+                            title += htmlEntities(splitUnit[k]) + '<br>';
+
+                        span.prop('title', title);
+                        span.text(data[i][0][j][0]);
+                        rightTD.append(span);
+                    }
+                    $('#output').append(tr.append(leftTD).append(rightTD));
+                }
+                $("#output").css({ opacity: 1 });
+                $('#loading').hide();
+                $('span').tooltip();
+            }
+
+            function refreshFilterList() {
+                $('#activeFilters .list-group').remove();
+                for(var i = 0; i < filters.length; i++) {
+                    var filterList = $('<ul class="list-group"></ul>');
+                    for(var filter in filters[i]) {
+                        if(filters[i].hasOwnProperty(filter)) {
+                            var filterListElement = $('<li class="list-group-item"></li>');
+                            filterListElement.append($('<span class="pull-right"><button type="button" class="close">&times;</button></span>'));
+                            filterListElement.append($('<strong></strong>').text(filter));
+                            filterListElement.append($('<span class="text-primary filterTerm" style="padding-left:10px;" contenteditable></span>').text(filters[i][filter].term));
+                            if(filters[i][filter].regex)
+                                filterListElement.append('<small class="text-warning" style="padding-left:10px;">regex</small>');
+                            filterList.append(filterListElement);
+                        }
+                    }
+                    $('#activeFilters').append(filterList);
+                }
+                localStorage.filters = JSON.stringify(filters);
+                search();
+            }
+
+            $('#activeFilters').on('click', '.close', function() {
+                var type = $(this).parent().siblings('strong').text();
+                var index = $(this).parents('ul').index();
+                delete filters[index][type];
+                if(Object.keys(filters[index]).length === 0)
+                    filters.splice(index, 1);
+                refreshFilterList();
+            });	
+            
+            $('#activeFilters').on('input', '.filterTerm', function() {
+                var type = $(this).siblings('strong').text();
+                var index = $(this).parents('ul').index();
+                filters[index][type]['term'] = $(this).text();
+            });
+            
+            $('#activeFilters').on('blur', '.filterTerm', function() {
+                refreshFilterList();
+            });
+
+            $('#clearAll').click(function() {
+                filters = [];
+                refreshFilterList();
+            });	
+
+          function search() {
+             $('#loading').show();
+             $("#output").css({ opacity: 0.5 });
+             $.post("/search", {
+                corpus: $('#corpus').val(),
+                module: $('#module').val(),
+                pair: $('#pair').val(),
+                query: JSON.stringify(filters)
+             },
+             function(data) {
+                $('span').tooltip('destroy');
+                $("tr").remove();
+                data = JSON.parse(data);
+                searchData = data;
+                $('#resultHelp').html(data.length + ' result' + (data.length != 1 ? 's' : ''));
+                for(var i = 0; i < data.length; i++) {
+                    var tr = $('<tr style="text-align: center"></tr>');
+                    var td = $('<td></td>');
+                    for(var j = 0; j < data[i][0].length; j++) {
+                        var span = $('<span data-toggle="tooltip" data-placement="auto" data-html="true"></span>');
+                        if($.inArray(j, data[i][1]) != -1)
+                            span.addClass('highlight');	
+
+                        var splitUnit = data[i][0][j][1].split('/');
+                        var title = '<b>' + splitUnit[0] + '</b><br>';
+                        for(var k = 1; k < splitUnit.length; k++)
+                            title += htmlEntities(splitUnit[k]) + '<br>';
+
+                        span.prop('title', title);
+                        span.text(data[i][0][j][0]);
+                        td.append(span);
+                    }
+                    $('#output').append(tr.append(td));
+                }
+                $("#output").css({ opacity: 1 });
+                $('#loading').hide();
+                $('span').tooltip();
+             }).fail(function(xhr, textStatus, error) {
+                 $('#loading').hide();
+                 $('#resultHelp').html('<h3 style="color: darkred; font-weight: bold;">FAIL: ' + error + '</h3>');
+             });
+            }
+       });
+
+       function htmlEntities(str) {
+          return String(str).replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/"/g, '&quot;');
+       }
+    </script>
+</body>
+</html>

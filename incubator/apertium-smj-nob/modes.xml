@@ -1,0 +1,677 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<modes>
+  <!-- smj-nob full and partial pipelines: -->
+  <mode name="smj-nob" install="yes">
+    <pipeline>
+      <program name="hfst-proc --weight-classes 1 -w -p">
+        <file name="smj-nob.automorf.hfst"/>
+      </program>
+      <program name="cg-proc">
+        <file name="smj-nob.mor.rlx.bin"/>
+      </program>
+      <program name="cg-proc -1 -n -w">
+        <file name="smj-nob.syn.rlx.bin"/>
+      </program>
+      <program name="apertium-pretransfer"/>
+      <program name="lt-proc -b">
+        <file name="smj-nob.autobil.bin"/>
+      </program>
+      <program name="lrx-proc">
+        <file name="smj-nob.autolex.bin"/>
+      </program>
+      <program name="apertium-transfer -b">
+        <file name="apertium-smj-nob.smj-nob.t1x"/>
+        <file name="smj-nob.t1x.bin"/>
+      </program>
+      <program name="apertium-interchunk">
+        <file name="apertium-smj-nob.smj-nob.t2x"/>
+        <file name="smj-nob.t2x.bin"/>
+      </program>
+      <program name="apertium-interchunk">
+        <file name="apertium-smj-nob.smj-nob.t3x"/>
+        <file name="smj-nob.t3x.bin"/>
+      </program>
+      <program name="apertium-postchunk">
+        <file name="apertium-smj-nob.smj-nob.t4x"/>
+        <file name="smj-nob.t4x.bin"/>
+      </program>
+      <program name="lt-proc $1">
+        <file name="smj-nob.autogen.bin"/>
+      </program>
+    </pipeline>
+  </mode>
+
+  <mode name="smj-nob-morph" install="no">
+    <pipeline>
+      <program name="hfst-proc --weight-classes 1 -w -p">
+        <file name="smj-nob.automorf.hfst"/>
+      </program>
+    </pipeline>
+  </mode>
+
+  <mode name="smj-nob-disam" install="no">
+    <pipeline>
+      <program name="hfst-proc --weight-classes 1 -w -p">
+        <file name="smj-nob.automorf.hfst"/>
+      </program>
+      <program name="cg-conv -a"/>
+      <program name="vislcg3 --trace --grammar">
+        <file name="smj-nob.mor.rlx.bin"/>
+      </program>
+    </pipeline>
+  </mode>
+
+  <mode name="smj-nob-syntax" install="no">
+    <pipeline>
+      <program name="hfst-proc --weight-classes 1 -w -p">
+        <file name="smj-nob.automorf.hfst"/>
+      </program>
+      <program name="cg-proc">
+        <file name="smj-nob.mor.rlx.bin"/>
+      </program>
+      <program name="cg-conv -a"/>
+      <program name="vislcg3 --trace --grammar">
+        <file name="smj-nob.syn.rlx.bin"/>
+      </program>
+    </pipeline>
+  </mode>
+
+  <mode name="smj-nob-tagger" install="no">
+    <pipeline>
+      <program name="hfst-proc --weight-classes 1 -w -p">
+        <file name="smj-nob.automorf.hfst"/>
+      </program>
+      <program name="cg-proc">
+        <file name="smj-nob.mor.rlx.bin"/>
+      </program>
+      <program name="cg-proc -1 -n -w">
+        <file name="smj-nob.syn.rlx.bin"/>
+      </program>
+    </pipeline>
+  </mode>
+
+  <mode name="smj-nob-pretransfer" install="no">
+    <pipeline>
+      <program name="hfst-proc --weight-classes 1 -w -p">
+        <file name="smj-nob.automorf.hfst"/>
+      </program>
+      <program name="cg-proc">
+        <file name="smj-nob.mor.rlx.bin"/>
+      </program>
+      <program name="cg-proc -1 -n -w">
+        <file name="smj-nob.syn.rlx.bin"/>
+      </program>
+      <program name="apertium-pretransfer"/>
+    </pipeline>
+  </mode>
+
+  <mode name="smj-nob-biltrans" install="no">
+    <pipeline>
+      <program name="hfst-proc --weight-classes 1 -w -p">
+        <file name="smj-nob.automorf.hfst"/>
+      </program>
+      <program name="cg-proc">
+        <file name="smj-nob.mor.rlx.bin"/>
+      </program>
+      <program name="cg-proc -1 -n -w">
+        <file name="smj-nob.syn.rlx.bin"/>
+      </program>
+      <program name="apertium-pretransfer"/>
+      <program name="lt-proc -b">
+        <file name="smj-nob.autobil.bin"/>
+      </program>
+    </pipeline>
+  </mode>
+
+  <mode name="smj-nob-lex" install="no">
+    <pipeline>
+      <program name="hfst-proc --weight-classes 1 -w -p">
+        <file name="smj-nob.automorf.hfst"/>
+      </program>
+      <program name="cg-proc">
+        <file name="smj-nob.mor.rlx.bin"/>
+      </program>
+      <program name="cg-proc -1 -n -w">
+        <file name="smj-nob.syn.rlx.bin"/>
+      </program>
+      <program name="apertium-pretransfer"/>
+      <program name="lt-proc -b">
+        <file name="smj-nob.autobil.bin"/>
+      </program>
+      <program name="lrx-proc">
+        <file name="smj-nob.autolex.bin"/>
+      </program>
+    </pipeline>
+  </mode>
+
+  <mode name="smj-nob-chunker" install="no">
+    <pipeline>
+      <program name="hfst-proc --weight-classes 1 -w -p">
+        <file name="smj-nob.automorf.hfst"/>
+      </program>
+      <program name="cg-proc">
+        <file name="smj-nob.mor.rlx.bin"/>
+      </program>
+      <program name="cg-proc -1 -n -w">
+        <file name="smj-nob.syn.rlx.bin"/>
+      </program>
+      <program name="apertium-pretransfer"/>
+      <program name="lt-proc -b">
+        <file name="smj-nob.autobil.bin"/>
+      </program>
+      <program name="lrx-proc">
+        <file name="smj-nob.autolex.bin"/>
+      </program>
+      <program name="apertium-pretransfer"/>
+      <program name="apertium-transfer -t -b">
+        <file name="apertium-smj-nob.smj-nob.t1x"/>
+        <file name="smj-nob.t1x.bin"/>
+      </program>
+    </pipeline>
+  </mode>
+
+  <mode name="smj-nob-interchunk1" install="no">
+    <pipeline>
+      <program name="hfst-proc --weight-classes 1 -w -p">
+        <file name="smj-nob.automorf.hfst"/>
+      </program>
+      <program name="cg-proc">
+        <file name="smj-nob.mor.rlx.bin"/>
+      </program>
+      <program name="cg-proc -1 -n -w">
+        <file name="smj-nob.syn.rlx.bin"/>
+      </program>
+      <program name="apertium-pretransfer"/>
+      <program name="lt-proc -b">
+        <file name="smj-nob.autobil.bin"/>
+      </program>
+      <program name="lrx-proc">
+        <file name="smj-nob.autolex.bin"/>
+      </program>
+      <program name="apertium-transfer -b">
+        <file name="apertium-smj-nob.smj-nob.t1x"/>
+        <file name="smj-nob.t1x.bin"/>
+      </program>
+      <program name="apertium-interchunk -t">
+        <file name="apertium-smj-nob.smj-nob.t2x"/>
+        <file name="smj-nob.t2x.bin"/>
+      </program>
+    </pipeline>
+  </mode>
+
+  <mode name="smj-nob-interchunk2" install="no">
+    <pipeline>
+      <program name="hfst-proc --weight-classes 1 -w -p">
+        <file name="smj-nob.automorf.hfst"/>
+      </program>
+      <program name="cg-proc">
+        <file name="smj-nob.mor.rlx.bin"/>
+      </program>
+      <program name="cg-proc -1 -n -w">
+        <file name="smj-nob.syn.rlx.bin"/>
+      </program>
+      <program name="apertium-pretransfer"/>
+      <program name="lt-proc -b">
+        <file name="smj-nob.autobil.bin"/>
+      </program>
+      <program name="lrx-proc">
+        <file name="smj-nob.autolex.bin"/>
+      </program>
+      <program name="apertium-transfer -b">
+        <file name="apertium-smj-nob.smj-nob.t1x"/>
+        <file name="smj-nob.t1x.bin"/>
+      </program>
+      <program name="apertium-interchunk">
+        <file name="apertium-smj-nob.smj-nob.t2x"/>
+        <file name="smj-nob.t2x.bin"/>
+      </program>
+      <program name="apertium-interchunk -t">
+        <file name="apertium-smj-nob.smj-nob.t3x"/>
+        <file name="smj-nob.t3x.bin"/>
+      </program>
+    </pipeline>
+  </mode>
+
+  <mode name="smj-nob-postchunk" install="no">
+    <pipeline>
+      <program name="hfst-proc --weight-classes 1 -w -p">
+        <file name="smj-nob.automorf.hfst"/>
+      </program>
+      <program name="cg-proc">
+        <file name="smj-nob.mor.rlx.bin"/>
+      </program>
+      <program name="cg-proc -1 -n -w">
+        <file name="smj-nob.syn.rlx.bin"/>
+      </program>
+      <program name="apertium-pretransfer"/>
+      <program name="lt-proc -b">
+        <file name="smj-nob.autobil.bin"/>
+      </program>
+      <program name="lrx-proc">
+        <file name="smj-nob.autolex.bin"/>
+      </program>
+      <program name="apertium-transfer -b">
+        <file name="apertium-smj-nob.smj-nob.t1x"/>
+        <file name="smj-nob.t1x.bin"/>
+      </program>
+      <program name="apertium-interchunk">
+        <file name="apertium-smj-nob.smj-nob.t2x"/>
+        <file name="smj-nob.t2x.bin"/>
+      </program>
+      <program name="apertium-interchunk">
+        <file name="apertium-smj-nob.smj-nob.t3x"/>
+        <file name="smj-nob.t3x.bin"/>
+      </program>
+      <program name="apertium-postchunk">
+        <file name="apertium-smj-nob.smj-nob.t4x"/>
+        <file name="smj-nob.t4x.bin"/>
+      </program>
+    </pipeline>
+  </mode>
+
+  <mode name="smj-nob-dgen" install="no">
+    <pipeline>
+      <program name="hfst-proc --weight-classes 1 -w -p">
+        <file name="smj-nob.automorf.hfst"/>
+      </program>
+      <program name="cg-proc">
+        <file name="smj-nob.mor.rlx.bin"/>
+      </program>
+      <program name="cg-proc -1 -n -w">
+        <file name="smj-nob.syn.rlx.bin"/>
+      </program>
+      <program name="apertium-pretransfer"/>
+      <program name="lt-proc -b">
+        <file name="smj-nob.autobil.bin"/>
+      </program>
+      <program name="lrx-proc">
+        <file name="smj-nob.autolex.bin"/>
+      </program>
+      <program name="apertium-transfer -b">
+        <file name="apertium-smj-nob.smj-nob.t1x"/>
+        <file name="smj-nob.t1x.bin"/>
+      </program>
+      <program name="apertium-interchunk">
+        <file name="apertium-smj-nob.smj-nob.t2x"/>
+        <file name="smj-nob.t2x.bin"/>
+      </program>
+      <program name="apertium-interchunk">
+        <file name="apertium-smj-nob.smj-nob.t3x"/>
+        <file name="smj-nob.t3x.bin"/>
+      </program>
+      <program name="apertium-postchunk">
+        <file name="apertium-smj-nob.smj-nob.t4x"/>
+        <file name="smj-nob.t4x.bin"/>
+      </program>
+      <program name="lt-proc -d">
+        <file name="smj-nob.autogen.bin"/>
+      </program>
+    </pipeline>
+  </mode>
+
+
+  <!-- Untrimmed (and with compounding) smj-nob: -->
+  <mode name="usmj-nob" install="no">
+    <pipeline>
+      <program name="hfst-proc --weight-classes 1 -w -p">
+        <file name="smj-nob.automorf-untrimmed.hfst"/>
+      </program>
+      <program name="cg-proc">
+        <file name="smj-nob.mor.rlx.bin"/>
+      </program>
+      <program name="cg-proc -1 -n -w">
+        <file name="smj-nob.syn.rlx.bin"/>
+      </program>
+      <program name="apertium-pretransfer"/>
+      <program name="lt-proc -b">
+        <file name="smj-nob.autobil.bin"/>
+      </program>
+      <program name="lrx-proc">
+        <file name="smj-nob.autolex.bin"/>
+      </program>
+      <program name="apertium-transfer -b">
+        <file name="apertium-smj-nob.smj-nob.t1x"/>
+        <file name="smj-nob.t1x.bin"/>
+      </program>
+      <program name="apertium-interchunk">
+        <file name="apertium-smj-nob.smj-nob.t2x"/>
+        <file name="smj-nob.t2x.bin"/>
+      </program>
+      <program name="apertium-interchunk">
+        <file name="apertium-smj-nob.smj-nob.t3x"/>
+        <file name="smj-nob.t3x.bin"/>
+      </program>
+      <program name="apertium-postchunk">
+        <file name="apertium-smj-nob.smj-nob.t4x"/>
+        <file name="smj-nob.t4x.bin"/>
+      </program>
+      <program name="lt-proc $1">
+        <file name="smj-nob.autogen.bin"/>
+      </program>
+    </pipeline>
+  </mode>
+
+  <mode name="usmj-nob-morph" install="no">
+    <pipeline>
+      <program name="hfst-proc --weight-classes 1 -w -p">
+        <file name="smj-nob.automorf-untrimmed.hfst"/>
+      </program>
+    </pipeline>
+  </mode>
+
+  <mode name="usmj-nob-disam" install="no">
+    <pipeline>
+      <program name="hfst-proc --weight-classes 1 -w -p">
+        <file name="smj-nob.automorf-untrimmed.hfst"/>
+      </program>
+      <program name="cg-conv -a"/>
+      <program name="vislcg3 --trace --grammar">
+        <file name="smj-nob.mor.rlx.bin"/>
+      </program>
+    </pipeline>
+  </mode>
+
+  <mode name="usmj-nob-syntax" install="no">
+    <pipeline>
+      <program name="hfst-proc --weight-classes 1 -w -p">
+        <file name="smj-nob.automorf-untrimmed.hfst"/>
+      </program>
+      <program name="cg-proc">
+        <file name="smj-nob.mor.rlx.bin"/>
+      </program>
+      <program name="cg-conv -a"/>
+      <program name="vislcg3 --trace --grammar">
+        <file name="smj-nob.syn.rlx.bin"/>
+      </program>
+    </pipeline>
+  </mode>
+
+  <mode name="usmj-nob-tagger" install="no">
+    <pipeline>
+      <program name="hfst-proc --weight-classes 1 -w -p">
+        <file name="smj-nob.automorf-untrimmed.hfst"/>
+      </program>
+      <program name="cg-proc">
+        <file name="smj-nob.mor.rlx.bin"/>
+      </program>
+      <program name="cg-proc -1 -n -w">
+        <file name="smj-nob.syn.rlx.bin"/>
+      </program>
+    </pipeline>
+  </mode>
+
+  <mode name="usmj-nob-pretransfer" install="no">
+    <pipeline>
+      <program name="hfst-proc --weight-classes 1 -w -p">
+        <file name="smj-nob.automorf-untrimmed.hfst"/>
+      </program>
+      <program name="cg-proc">
+        <file name="smj-nob.mor.rlx.bin"/>
+      </program>
+      <program name="cg-proc -1 -n -w">
+        <file name="smj-nob.syn.rlx.bin"/>
+      </program>
+      <program name="apertium-pretransfer"/>
+    </pipeline>
+  </mode>
+
+  <mode name="usmj-nob-biltrans" install="no">
+    <pipeline>
+      <program name="hfst-proc --weight-classes 1 -w -p">
+        <file name="smj-nob.automorf-untrimmed.hfst"/>
+      </program>
+      <program name="cg-proc">
+        <file name="smj-nob.mor.rlx.bin"/>
+      </program>
+      <program name="cg-proc -1 -n -w">
+        <file name="smj-nob.syn.rlx.bin"/>
+      </program>
+      <program name="apertium-pretransfer"/>
+      <program name="lt-proc -b">
+        <file name="smj-nob.autobil.bin"/>
+      </program>
+    </pipeline>
+  </mode>
+
+  <mode name="usmj-nob-lex" install="no">
+    <pipeline>
+      <program name="hfst-proc --weight-classes 1 -w -p">
+        <file name="smj-nob.automorf-untrimmed.hfst"/>
+      </program>
+      <program name="cg-proc">
+        <file name="smj-nob.mor.rlx.bin"/>
+      </program>
+      <program name="cg-proc -1 -n -w">
+        <file name="smj-nob.syn.rlx.bin"/>
+      </program>
+      <program name="apertium-pretransfer"/>
+      <program name="lt-proc -b">
+        <file name="smj-nob.autobil.bin"/>
+      </program>
+      <program name="lrx-proc">
+        <file name="smj-nob.autolex.bin"/>
+      </program>
+    </pipeline>
+  </mode>
+
+  <mode name="usmj-nob-chunker" install="no">
+    <pipeline>
+      <program name="hfst-proc --weight-classes 1 -w -p">
+        <file name="smj-nob.automorf-untrimmed.hfst"/>
+      </program>
+      <program name="cg-proc">
+        <file name="smj-nob.mor.rlx.bin"/>
+      </program>
+      <program name="cg-proc -1 -n -w">
+        <file name="smj-nob.syn.rlx.bin"/>
+      </program>
+      <program name="apertium-pretransfer"/>
+      <program name="lt-proc -b">
+        <file name="smj-nob.autobil.bin"/>
+      </program>
+      <program name="lrx-proc">
+        <file name="smj-nob.autolex.bin"/>
+      </program>
+      <program name="apertium-pretransfer"/>
+      <program name="apertium-transfer -t -b">
+        <file name="apertium-smj-nob.smj-nob.t1x"/>
+        <file name="smj-nob.t1x.bin"/>
+      </program>
+    </pipeline>
+  </mode>
+
+  <mode name="usmj-nob-interchunk1" install="no">
+    <pipeline>
+      <program name="hfst-proc --weight-classes 1 -w -p">
+        <file name="smj-nob.automorf-untrimmed.hfst"/>
+      </program>
+      <program name="cg-proc">
+        <file name="smj-nob.mor.rlx.bin"/>
+      </program>
+      <program name="cg-proc -1 -n -w">
+        <file name="smj-nob.syn.rlx.bin"/>
+      </program>
+      <program name="apertium-pretransfer"/>
+      <program name="lt-proc -b">
+        <file name="smj-nob.autobil.bin"/>
+      </program>
+      <program name="lrx-proc">
+        <file name="smj-nob.autolex.bin"/>
+      </program>
+      <program name="apertium-transfer -b">
+        <file name="apertium-smj-nob.smj-nob.t1x"/>
+        <file name="smj-nob.t1x.bin"/>
+      </program>
+      <program name="apertium-interchunk -t">
+        <file name="apertium-smj-nob.smj-nob.t2x"/>
+        <file name="smj-nob.t2x.bin"/>
+      </program>
+    </pipeline>
+  </mode>
+
+  <mode name="usmj-nob-interchunk2" install="no">
+    <pipeline>
+      <program name="hfst-proc --weight-classes 1 -w -p">
+        <file name="smj-nob.automorf-untrimmed.hfst"/>
+      </program>
+      <program name="cg-proc">
+        <file name="smj-nob.mor.rlx.bin"/>
+      </program>
+      <program name="cg-proc -1 -n -w">
+        <file name="smj-nob.syn.rlx.bin"/>
+      </program>
+      <program name="apertium-pretransfer"/>
+      <program name="lt-proc -b">
+        <file name="smj-nob.autobil.bin"/>
+      </program>
+      <program name="lrx-proc">
+        <file name="smj-nob.autolex.bin"/>
+      </program>
+      <program name="apertium-transfer -b">
+        <file name="apertium-smj-nob.smj-nob.t1x"/>
+        <file name="smj-nob.t1x.bin"/>
+      </program>
+      <program name="apertium-interchunk">
+        <file name="apertium-smj-nob.smj-nob.t2x"/>
+        <file name="smj-nob.t2x.bin"/>
+      </program>
+      <program name="apertium-interchunk -t">
+        <file name="apertium-smj-nob.smj-nob.t3x"/>
+        <file name="smj-nob.t3x.bin"/>
+      </program>
+    </pipeline>
+  </mode>
+
+  <mode name="usmj-nob-postchunk" install="no">
+    <pipeline>
+      <program name="hfst-proc --weight-classes 1 -w -p">
+        <file name="smj-nob.automorf-untrimmed.hfst"/>
+      </program>
+      <program name="cg-proc">
+        <file name="smj-nob.mor.rlx.bin"/>
+      </program>
+      <program name="cg-proc -1 -n -w">
+        <file name="smj-nob.syn.rlx.bin"/>
+      </program>
+      <program name="apertium-pretransfer"/>
+      <program name="lt-proc -b">
+        <file name="smj-nob.autobil.bin"/>
+      </program>
+      <program name="lrx-proc">
+        <file name="smj-nob.autolex.bin"/>
+      </program>
+      <program name="apertium-transfer -b">
+        <file name="apertium-smj-nob.smj-nob.t1x"/>
+        <file name="smj-nob.t1x.bin"/>
+      </program>
+      <program name="apertium-interchunk">
+        <file name="apertium-smj-nob.smj-nob.t2x"/>
+        <file name="smj-nob.t2x.bin"/>
+      </program>
+      <program name="apertium-interchunk">
+        <file name="apertium-smj-nob.smj-nob.t3x"/>
+        <file name="smj-nob.t3x.bin"/>
+      </program>
+      <program name="apertium-postchunk">
+        <file name="apertium-smj-nob.smj-nob.t4x"/>
+        <file name="smj-nob.t4x.bin"/>
+      </program>
+    </pipeline>
+  </mode>
+
+  <mode name="usmj-nob-dgen" install="no">
+    <pipeline>
+      <program name="hfst-proc --weight-classes 1 -w -p">
+        <file name="smj-nob.automorf-untrimmed.hfst"/>
+      </program>
+      <program name="cg-proc">
+        <file name="smj-nob.mor.rlx.bin"/>
+      </program>
+      <program name="cg-proc -1 -n -w">
+        <file name="smj-nob.syn.rlx.bin"/>
+      </program>
+      <program name="apertium-pretransfer"/>
+      <program name="lt-proc -b">
+        <file name="smj-nob.autobil.bin"/>
+      </program>
+      <program name="lrx-proc">
+        <file name="smj-nob.autolex.bin"/>
+      </program>
+      <program name="apertium-transfer -b">
+        <file name="apertium-smj-nob.smj-nob.t1x"/>
+        <file name="smj-nob.t1x.bin"/>
+      </program>
+      <program name="apertium-interchunk">
+        <file name="apertium-smj-nob.smj-nob.t2x"/>
+        <file name="smj-nob.t2x.bin"/>
+      </program>
+      <program name="apertium-interchunk">
+        <file name="apertium-smj-nob.smj-nob.t3x"/>
+        <file name="smj-nob.t3x.bin"/>
+      </program>
+      <program name="apertium-postchunk">
+        <file name="apertium-smj-nob.smj-nob.t4x"/>
+        <file name="smj-nob.t4x.bin"/>
+      </program>
+      <program name="lt-proc -d">
+        <file name="smj-nob.autogen.bin"/>
+      </program>
+    </pipeline>
+  </mode>
+
+
+  <!-- Modes not used by regular smj-nob: -->
+  <mode name="smj-nob-val" install="no">
+    <pipeline>
+      <program name="hfst-proc --weight-classes 1 -w -p">
+        <file name="smj-nob.automorf.hfst"/>
+      </program>
+      <program name="cg-proc -1">
+        <file name="smj-nob.mor.rlx.bin"/>
+      </program>
+      <program name="cg-conv -a"/>
+      <program name="vislcg3 --trace --grammar">
+        <file name="smj-nob.val.bin"/>
+      </program>
+    </pipeline>
+  </mode>
+
+  <mode name="smj-nob-postchunk-from-transfer" install="no">
+    <pipeline>
+      <program name="apertium-transfer">
+        <file name="apertium-smj-nob.smj-nob.t1x"/>
+        <file name="smj-nob.t1x.bin"/>
+        <file name="smj-nob.autobil.bin"/>
+      </program>
+      <program name="apertium-interchunk">
+        <file name="apertium-smj-nob.smj-nob.t2x"/>
+        <file name="smj-nob.t2x.bin"/>
+      </program>
+      <program name="apertium-interchunk">
+        <file name="apertium-smj-nob.smj-nob.t3x"/>
+        <file name="smj-nob.t3x.bin"/>
+      </program>
+      <program name="apertium-postchunk">
+        <file name="apertium-smj-nob.smj-nob.t4x"/>
+        <file name="smj-nob.t4x.bin"/>
+      </program>
+    </pipeline>
+  </mode>
+
+  <mode name="nob-smj-pretransfer" install="no">
+    <pipeline>
+      <program name="lt-proc -w -e">
+        <file name="nob-smj.automorf.bin"/>
+      </program>
+      <program name="cg-proc  -w">
+        <file name="nob-smj.rlx.bin"/>
+      </program>
+      <program name="apertium-tagger -g">
+        <file name="nob-smj.prob"/>
+      </program>
+      <program name="apertium-pretransfer"/>
+    </pipeline>
+  </mode>
+
+
+</modes>

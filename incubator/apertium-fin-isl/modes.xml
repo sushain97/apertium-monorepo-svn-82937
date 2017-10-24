@@ -1,0 +1,419 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<modes>
+  <!-- fin → isl --> 
+
+  <mode name="fin-isl" install="yes">
+    <pipeline>
+      <program name="hfst-proc -e -w">
+        <file name="fin-isl.automorf.hfst"/>
+      </program>
+      <program name="cg-proc -1 -n -w">
+        <file name="fin-isl.rlx.bin"/>
+      </program>
+      <program name="apertium-pretransfer"/>
+      <program name="lt-proc -b">
+        <file name="fin-isl.autobil.bin"/>
+      </program>
+      <program name="lrx-proc -m">
+        <file name="fin-isl.autolex.bin"/>
+      </program>
+      <program name="apertium-transfer -b">
+        <file name="apertium-fin-isl.fin-isl.t1x"/>
+        <file name="fin-isl.t1x.bin"/>
+      </program>
+      <program name="apertium-interchunk">
+        <file name="apertium-fin-isl.fin-isl.t2x"/>
+        <file name="fin-isl.t2x.bin"/>
+      </program>
+      <program name="apertium-postchunk">
+        <file name="apertium-fin-isl.fin-isl.t3x"/>
+        <file name="fin-isl.t3x.bin"/>
+      </program>
+      <program name="lt-proc $1">
+        <file name="fin-isl.autogen.bin"/>
+      </program>
+    </pipeline>
+  </mode>
+
+  <mode name="fin-isl-debug" install="no">
+    <pipeline>
+      <program name="hfst-proc -e -w">
+        <file name="fin-isl.automorf.hfst"/>
+      </program>
+      <program name="cg-proc -1 -n -w">
+        <file name="fin-isl.rlx.bin"/>
+      </program>
+      <program name="apertium-pretransfer"/>
+      <program name="lt-proc -b">
+        <file name="fin-isl.autobil.bin"/>
+      </program>
+      <program name="lrx-proc -m -t">
+        <file name="fin-isl.autolex.bin"/>
+      </program>
+      <program name="apertium-transfer -b">
+        <file name="apertium-fin-isl.fin-isl.t1x"/>
+        <file name="fin-isl.t1x.bin"/>
+      </program>
+      <program name="apertium-interchunk">
+        <file name="apertium-fin-isl.fin-isl.t2x"/>
+        <file name="fin-isl.t2x.bin"/>
+      </program>
+      <program name="apertium-postchunk">
+        <file name="apertium-fin-isl.fin-isl.t3x"/>
+        <file name="fin-isl.t3x.bin"/>
+      </program>
+      <program name="lt-proc -d">
+        <file name="fin-isl.autogen.bin"/>
+      </program>
+    </pipeline>
+  </mode>
+ 
+  
+  <mode name="fin-isl-morph" install="no">
+    <pipeline>
+      <program name="hfst-proc -e -w">
+        <file name="fin-isl.automorf.hfst"/>
+      </program>
+    </pipeline>
+  </mode>
+
+  <mode name="fin-isl-disam" install="no">
+    <pipeline>
+      <program name="hfst-proc -e -w">
+        <file name="fin-isl.automorf.hfst"/>
+      </program>
+      <program name="cg-conv -a"/>
+      <program name="vislcg3 --trace --grammar">
+        <file name="fin-isl.rlx.bin"/>
+      </program>
+    </pipeline>
+  </mode>
+
+
+  <mode name="fin-isl-tagger" install="no">
+    <pipeline>
+      <program name="hfst-proc -e -w">
+        <file name="fin-isl.automorf.hfst"/>
+      </program>
+      <program name="cg-proc -1 -n -w">
+        <file name="fin-isl.rlx.bin"/>
+      </program>
+      <program name="apertium-pretransfer"/>
+    </pipeline>
+  </mode>
+
+  <mode name="fin-isl-biltrans" install="no">
+    <pipeline>
+      <program name="hfst-proc -e -w">
+        <file name="fin-isl.automorf.hfst"/>
+      </program>
+      <program name="cg-proc -1 -n -w">
+        <file name="fin-isl.rlx.bin"/>
+      </program>
+      <program name="apertium-pretransfer"/>
+      <program name="lt-proc -b">
+        <file name="fin-isl.autobil.bin"/>
+      </program>
+    </pipeline>
+  </mode>
+
+  <mode name="fin-isl-lextor" install="no">
+    <pipeline>
+      <program name="hfst-proc -e -w">
+        <file name="fin-isl.automorf.hfst"/>
+      </program>
+      <program name="cg-proc -1 -n -w">
+        <file name="fin-isl.rlx.bin"/>
+      </program>
+      <program name="apertium-pretransfer"/>
+      <program name="lt-proc -b">
+        <file name="fin-isl.autobil.bin"/>
+      </program>
+      <program name="lrx-proc -m -t">
+        <file name="fin-isl.autolex.bin"/>
+      </program>
+    </pipeline>
+  </mode>
+
+
+  <mode name="fin-isl-transfer" install="no">
+    <pipeline>
+      <program name="hfst-proc -e -w">
+        <file name="fin-isl.automorf.hfst"/>
+      </program>
+      <program name="cg-proc -1 -n -w">
+        <file name="fin-isl.rlx.bin"/>
+      </program>
+      <program name="apertium-pretransfer"/>
+      <program name="lt-proc -b">
+        <file name="fin-isl.autobil.bin"/>
+      </program>
+      <program name="lrx-proc -m">
+        <file name="fin-isl.autolex.bin"/>
+      </program>
+      <program name="apertium-transfer -t -b">
+        <file name="apertium-fin-isl.fin-isl.t1x"/>
+        <file name="fin-isl.t1x.bin"/>
+      </program>
+    </pipeline>
+  </mode>
+
+  <mode name="fin-isl-interchunk" install="no">
+    <pipeline>
+      <program name="hfst-proc -e -w">
+        <file name="fin-isl.automorf.hfst"/>
+      </program>
+      <program name="cg-proc -1 -n -w">
+        <file name="fin-isl.rlx.bin"/>
+      </program>
+      <program name="apertium-pretransfer"/>
+      <program name="lt-proc -b">
+        <file name="fin-isl.autobil.bin"/>
+      </program>
+      <program name="lrx-proc -m">
+        <file name="fin-isl.autolex.bin"/>
+      </program>
+      <program name="apertium-transfer -b">
+        <file name="apertium-fin-isl.fin-isl.t1x"/>
+        <file name="fin-isl.t1x.bin"/>
+      </program>
+      <program name="apertium-interchunk">
+        <file name="apertium-fin-isl.fin-isl.t2x"/>
+        <file name="fin-isl.t2x.bin"/>
+      </program>
+    </pipeline>
+  </mode>
+
+  <mode name="fin-isl-postchunk" install="no">
+    <pipeline>
+      <program name="hfst-proc -e -w">
+        <file name="fin-isl.automorf.hfst"/>
+      </program>
+      <program name="cg-proc -1 -n -w">
+        <file name="fin-isl.rlx.bin"/>
+      </program>
+      <program name="apertium-pretransfer"/>
+      <program name="lt-proc -b">
+        <file name="fin-isl.autobil.bin"/>
+      </program>
+      <program name="lrx-proc -m">
+        <file name="fin-isl.autolex.bin"/>
+      </program>
+      <program name="apertium-transfer -b">
+        <file name="apertium-fin-isl.fin-isl.t1x"/>
+        <file name="fin-isl.t1x.bin"/>
+      </program>
+      <program name="apertium-interchunk">
+        <file name="apertium-fin-isl.fin-isl.t2x"/>
+        <file name="fin-isl.t2x.bin"/>
+      </program>
+      <program name="apertium-postchunk">
+        <file name="apertium-fin-isl.fin-isl.t3x"/>
+        <file name="fin-isl.t3x.bin"/>
+      </program>
+    </pipeline>
+  </mode>
+
+  <!-- isl → fin -->
+
+  <mode name="isl-fin" install="yes">
+    <pipeline>
+      <program name="lt-proc -e -w">
+        <file name="isl-fin.automorf.bin"/>
+      </program>
+      <program name="cg-proc -1 -n -w">
+        <file name="isl-fin.rlx.bin"/>
+      </program>
+      <program name="apertium-pretransfer"/>
+      <program name="lt-proc -b">
+        <file name="isl-fin.autobil.bin"/>
+      </program>
+      <program name="apertium-transfer -b">
+        <file name="apertium-fin-isl.isl-fin.t1x"/>
+        <file name="isl-fin.t1x.bin"/>
+      </program>
+      <program name="apertium-interchunk">
+        <file name="apertium-fin-isl.isl-fin.t2x"/>
+        <file name="isl-fin.t2x.bin"/>
+      </program>
+      <program name="apertium-postchunk">
+        <file name="apertium-fin-isl.isl-fin.t3x"/>
+        <file name="isl-fin.t3x.bin"/>
+      </program>
+      <program name="hfst-proc $1">
+        <file name="isl-fin.autogen.hfst"/>
+      </program>
+    </pipeline>
+  </mode>
+
+  <mode name="isl-fin-debug" install="no">
+    <pipeline>
+      <program name="lt-proc -e -w">
+        <file name="isl-fin.automorf.bin"/>
+      </program>
+      <program name="cg-proc -1 -n -w">
+        <file name="isl-fin.rlx.bin"/>
+      </program>
+      <program name="apertium-pretransfer"/>
+      <program name="lt-proc -b">
+        <file name="isl-fin.autobil.bin"/>
+      </program>
+      <program name="apertium-transfer -b">
+        <file name="apertium-fin-isl.isl-fin.t1x"/>
+        <file name="isl-fin.t1x.bin"/>
+      </program>
+      <program name="apertium-interchunk">
+        <file name="apertium-fin-isl.isl-fin.t2x"/>
+        <file name="isl-fin.t2x.bin"/>
+      </program>
+      <program name="apertium-postchunk">
+        <file name="apertium-fin-isl.isl-fin.t3x"/>
+        <file name="isl-fin.t3x.bin"/>
+      </program>
+      <program name="hfst-proc -d">
+        <file name="isl-fin.autogen.hfst"/>
+      </program>
+    </pipeline>
+  </mode>
+  
+  <mode name="isl-fin-morph" install="no">
+    <pipeline>
+      <program name="lt-proc -e -w">
+        <file name="isl-fin.automorf.bin"/>
+      </program>
+    </pipeline>
+  </mode>
+
+  <mode name="isl-fin-disam" install="no">
+    <pipeline>
+      <program name="lt-proc -e -w">
+        <file name="isl-fin.automorf.bin"/>
+      </program>
+      <program name="cg-conv -a"/>
+      <program name="vislcg3 --trace --grammar">
+        <file name="isl-fin.rlx.bin"/>
+      </program>
+    </pipeline>
+  </mode>
+
+
+  <mode name="isl-fin-tagger" install="no">
+    <pipeline>
+      <program name="lt-proc -e -w">
+        <file name="isl-fin.automorf.bin"/>
+      </program>
+      <program name="cg-proc -1 -n -w">
+        <file name="isl-fin.rlx.bin"/>
+      </program>
+      <program name="apertium-pretransfer"/>
+    </pipeline>
+  </mode>
+
+  <mode name="isl-fin-biltrans" install="no">
+    <pipeline>
+      <program name="lt-proc -e -w">
+        <file name="isl-fin.automorf.bin"/>
+      </program>
+      <program name="cg-proc -1 -n -w">
+        <file name="isl-fin.rlx.bin"/>
+      </program>
+      <program name="apertium-pretransfer"/>
+      <program name="lt-proc -b">
+        <file name="isl-fin.autobil.bin"/>
+      </program>
+    </pipeline>
+  </mode>
+
+  <mode name="isl-fin-lextor" install="no">
+    <pipeline>
+      <program name="lt-proc -e -w">
+        <file name="isl-fin.automorf.bin"/>
+      </program>
+      <program name="cg-proc -1 -n -w">
+        <file name="isl-fin.rlx.bin"/>
+      </program>
+      <program name="apertium-pretransfer"/>
+      <program name="lt-proc -b">
+        <file name="isl-fin.autobil.bin"/>
+      </program>
+      <program name="lrx-proc -m">
+        <file name="isl-fin.autolex.bin"/>
+      </program>
+    </pipeline>
+  </mode>
+
+  <mode name="isl-fin-transfer" install="no">
+    <pipeline>
+      <program name="lt-proc -e -w">
+        <file name="isl-fin.automorf.bin"/>
+      </program>
+      <program name="cg-proc -1 -n -w">
+        <file name="isl-fin.rlx.bin"/>
+      </program>
+      <program name="apertium-pretransfer"/>
+      <program name="lt-proc -b">
+        <file name="isl-fin.autobil.bin"/>
+      </program>
+      <program name="apertium-transfer -b">
+        <file name="apertium-fin-isl.isl-fin.t1x"/>
+        <file name="isl-fin.t1x.bin"/>
+      </program>
+    </pipeline>
+  </mode>
+
+  <mode name="isl-fin-interchunk" install="no">
+    <pipeline>
+      <program name="lt-proc -e -w">
+        <file name="isl-fin.automorf.bin"/>
+      </program>
+      <program name="cg-proc -1 -n -w">
+        <file name="isl-fin.rlx.bin"/>
+      </program>
+      <program name="apertium-pretransfer"/>
+      <program name="lt-proc -b">
+        <file name="isl-fin.autobil.bin"/>
+      </program>
+      <program name="apertium-transfer -b">
+        <file name="apertium-fin-isl.isl-fin.t1x"/>
+        <file name="isl-fin.t1x.bin"/>
+      </program>
+      <program name="apertium-interchunk">
+        <file name="apertium-fin-isl.isl-fin.t2x"/>
+        <file name="isl-fin.t2x.bin"/>
+      </program>
+    </pipeline>
+  </mode>
+
+  <mode name="isl-fin-postchunk" install="no">
+    <pipeline>
+      <program name="lt-proc -e -w">
+        <file name="isl-fin.automorf.bin"/>
+      </program>
+      <program name="cg-proc -1 -n -w">
+        <file name="isl-fin.rlx.bin"/>
+      </program>
+      <program name="apertium-pretransfer"/>
+      <program name="lt-proc -b">
+        <file name="isl-fin.autobil.bin"/>
+      </program>
+      <program name="apertium-transfer -b">
+        <file name="apertium-fin-isl.isl-fin.t1x"/>
+        <file name="isl-fin.t1x.bin"/>
+      </program>
+      <program name="apertium-interchunk">
+        <file name="apertium-fin-isl.isl-fin.t2x"/>
+        <file name="isl-fin.t2x.bin"/>
+      </program>
+      <program name="apertium-postchunk">
+        <file name="apertium-fin-isl.isl-fin.t3x"/>
+        <file name="isl-fin.t3x.bin"/>
+      </program>
+    </pipeline>
+  </mode>
+
+
+
+
+</modes>
+
+

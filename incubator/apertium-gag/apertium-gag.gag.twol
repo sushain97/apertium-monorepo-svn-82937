@@ -1,0 +1,276 @@
+Alphabet
+
+    A Ä Â B C Ç D E Ê F G H I İ J K L M N O Ö P R S Ş Ș T Ţ Ț U Ü V Y Z
+    a ä â b c ç d e ê f g h ı i j k l m n o ö p r s ş ș t ţ ț u ü v y z
+
+    і
+
+    %{A%}:a %{A%}:ä  %{A%}:ê 
+    %{E%}:ê %{E%}:e 
+    %{I%}:ı %{I%}:i %{I%}:u %{I%}:ü
+
+    %{i%}:ı %{i%}:i %{i%}:u %{i%}:ü %{i%}:0
+    %{y%}:u %{y%}:i %{y%}:ı %{y%}:ü %{y%}:0
+    %{a%}:a %{a%}:e
+   
+
+    %{s%}:s %{s%}:0 
+    %{й%}:y %{й%}:0
+    %{N%}:n %{N%}:0
+
+    %{L%}:l %{L%}:n
+    %{л%}:l %{л%}:n
+    %{T%}:t %{T%}:d
+    %{к%}:k %{к%}:g
+    %{D%}:d %{D%}:t
+
+    %{h%}:h %{h%}:0
+    %{k%}:k
+    %{n%}:n %{n%}:0
+    %{в%}:y %{в%}:0
+    %{и%}:i %{и%}:0
+
+    %{e%}:e  
+    %{u%}:u 
+
+    %{ö%}:0 ! Front rounded
+    %{o%}:0 ! Back rounded
+    %{ь%}:0 ! Front
+    %{ъ%}:0 ! Back
+
+    %{·%}:0 
+    %{☭%}:0 
+    %>:0
+    %-
+    %+ % 
+
+;
+ 
+
+Sets
+
+Cns = B C Ç D  F G H  J K L M N  P R S Ş Ș T Ţ Ț V Y Z
+      b c ç d  f g h  j k l m n  p r s ş ș t ţ ț v y z ;
+
+Vowel = A E Ê Ä İ I O Ö U Ü  
+        a e ê ä i ı o ö u ü і ; ! Final 'i' is Cyrl
+
+HardVow = A Â O I U
+          a â o ı u ;
+
+SoftVow = E Ä İ Ö Ü
+          e ä i ö ü і ; ! Final 'i' is Cyrl
+
+RoundVow = O Ö U Ü
+           o ö u ü ;
+
+FlatVow = A Â E İ I 
+          a â e i ı і ; ! Final 'i' is Cyrl
+ 
+NasalCns = n m 
+           N M ;
+
+CnsVcls   = F S T K Ç Ş H P 
+            f s t k ç ş h p ;
+
+ArchiCns = %{k%} %{в%} %{h%} ; 
+
+Rules 
+
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+!!                      V O W E L · H A R M O N Y 
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+
+"Vowel harmony for archiphoneme {E}"
+%{E%}:Vy <=> :Vx  [ :Cns | %{k%}: | %{h%}: | %-: ]+/:0* _ ; 
+            Vx: %{·%}: %>: _ ; 
+    where Vx in ( a â ä e ê o ö u ü ı i і )
+          Vy in ( ê ê e e ê ê e ê e ê e e )
+    matched ;
+
+"Vowel harmony for archiphoneme {I}"
+%{I%}:Vy <=> :Vx  [ :Cns | %{k%}: | %{h%}: | %-: ]+/:0* _ ; 
+    except
+          :Vx [ %{k%}: | %{h%}: ] %>: %{s%}: _ %{n%}: ; 
+    where Vx in ( a â ä e ê o ö u ü ı i і )
+          Vy in ( ı ı i i ı u ü u ü ı i i )
+    matched ;
+
+!@ 5:5 -:- >:0 c:c {I}:i
+
+"Vowel harmony for archiphoneme {I} with assimilation"
+%{I%}:Vy <=> :Vx [ %{k%}: | %{h%}: ] %>: %{s%}: _ %{n%}: ; 
+    where Vx in ( a â ä e ê o ö u ü ı i і )
+          Vy in ( a a ä e a a i u ü ı i i )
+    matched ;
+
+!@ t:t o:o p:p r:r a:a {k}:0 >:0 {s}:0 {I}:a {n}:n >:0 {й}:0 {A}:a 
+
+"Vowel harmony for archiphoneme {A}"
+%{A%}:Vy <=> :Vx  [ :Cns | %{k%}: | %{h%}: | %-: ]+/:0* _ ; 
+    except 
+        %{a%}: c %{e%}: k %>: %{L%}: _ ;
+    where Vx in ( a ä e ê o ö u ü ı i і )
+          Vy in ( a ä ä a a ä a ä a ä ä )
+    matched ;
+
+!@ y:y a:a p:p >:0 {E}:a r:r >:0 {D}:d {I}:ı >:0 {L}:l {A}:a r:r
+
+!@ o:o l:l >:0 {й}:0 {A}:a c:c >:0 {e}:e k:k >:0 {L}:l {A}:a r:r
+
+"Vowel harmony in the future suffix with plural"
+%{A%}:Vy <=> %{a%}:Vx c %{e%}: k %>: %{L%}: _ ; 
+    where Vx in ( a ä e ê )
+          Vy in ( a ä ä a )
+    matched ;
+ 
+"Vowel harmony for archiphoneme {a}"
+%{a%}:Vy <=> :Vx  [ :Cns | %{k%}: | %{h%}: | %-: ]+/:0* _ ; 
+    where Vx in ( a ä e ê o ö u ü ı i і )
+          Vy in ( a e e a a e a e a e e )
+    matched ;
+
+"Deletion of {i} after surface vowel"
+%{i%}:0 <=> :Cns/:0* :Vowel %>: _ ;
+
+!@ r:r u:u b:b r:r i:i k:k a:a >:0 {i}:0 m:m {I}:ı z:z >:0 {D}:d {A}:a 
+
+"Surfacing of {i} with assimilation"
+%{i%}:a <=> :a %{k%}: %>: _ ; 
+
+!@ t:t o:o p:p r:r a:a {k}:0 >:0 {i}:a m:m {I}:ı z:z >:0 {D}:d {A}:a 
+
+!"Vowel harmony for archiphoneme {i}"
+!%{i%}:Vy <=> :Vx  [ :Cns | %{k%}: | %{h%}: | %-: ]+/:0* _ ; 
+!    where Vx in ( a ä e ê o ö u ü ı i і )
+!          Vy in ( a e e a a e a e a e e )
+!    matched ;
+
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+!!                          E P E N T H E S I S
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+
+
+"{й}  become y when intervocalic"
+%{й%}:y <=> :Vowel ([ :0 - [ %{k%}: | %{h%}: ] ]) %>: _ (:Cns) :Vowel ;
+
+
+
+"{s} become 0 when intervocalic"
+%{s%}:0 <=> [ ArchiCns: | Cns: ] %>: _ :Vowel ;
+
+!@ ç:ç o:o c:c u:u {k}:0 >:0 {s}:0 {I}:u {n}:0 >:0 {N}:n {I}:u n:n
+
+"Epenthetic i in consonant clusters"
+%{и%}:0 <=> _ .#. ; 
+
+!@ s:s p:p e:e k:k t:t a:a k:k l:l {и}:i >:0 {й}:y i:i
+
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+!!                   A S S I M I L A T I O N 
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+
+"{L} changed to n when after a Nasal consonant"
+%{L%}:n <=> :NasalCns  %>: _ ; 
+
+"Consonant elision intervocalic"
+Cx:0 <=> :Vowel _ %>: :Vowel/:0* ;
+      where Cx in ( %{k%} %{h%} ) ;
+
+"Vowel assimilation in dative"
+Vx:a <=> _ [ %{h%}:0 | %{k%}:0 ] %>: %{й%}: %{A%}:  ;
+     where Vx in ( u ı ) ;
+       
+!@ ç:ç o:o c:c u:a {k}:0 >:0 {й}:0 {A}:a
+
+!@ p:p a:a d:d i:i ş:ş a:a {h}:0 >:0 {й}:0 {A}:a
+
+!@ u:u r:r o:o {k}:0 >:0 {й}:0 {A}:o  !!??!!
+
+"{D} changed to t when after a stem-final voiceless consonant" 
+%{D%}:t <=> :CnsVcls/:0* %>: (:0) _ ; 
+
+!@ y:y o:o k:k >:0 {й}:0 {D}:t {I}:u r:r
+ 
+"{T} change to d before vowels "
+%{T%}:d  <=>  _ (:0) %>: (:0) :Vowel  ; 
+ 
+!@ g:g i:i {T}:d >:0 {й}:0 {a}:e c:c {A}:ä >:0 m:m
+
+"Voicing of non-coronal stem-final voiceless consonants"
+Cx:Cy <=> :Vowel/:0* _ %>: :Vowel/:0* ;
+      except
+                     _ %{☭%}: %>: ; 
+                     _ %{·%}: %>: ; 
+      where Cx in ( p t )
+            Cy in ( b d )
+      matched ;
+
+"Nasalisation of nk followed by vowel"
+%{к%}:g <=> n _ %>: :Vowel/:0* ; 
+
+!@ c:c e:e n:n {к}:g >:0 {й}:0 {A}:ä
+
+"Vowel assimilation in the present"
+Vx:Vy <=> _ %{·%}: %>: %{E%}:Vy ;
+      where Vx in ( ä a ) 
+            Vy in ( e ê ) 
+      matched ;
+
+!@ y:y o:o l:l l:l a:ê {·}:0 >:0 {E}:ê r:r >:0 {I}:ı m:m
+
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+!!                   M O R P H O L O G Y 
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+
+"delete {n} before genitive case and -DIr modality "
+%{n%}:0 <=>  _ %>: %{N%}:   ;
+             _ %>: %{й%}: %{D%}: %{I%}: ; 
+
+!@ a:a n:n a:a >:0 {s}:s {I}:ı {n}:0 >:0 {й}:y {D}:d {I}:ı r:r
+
+"{n} become 0 at the end "
+%{n%}:0 <=>  _ .#. ;
+
+"No {N} after consonant"
+%{N%}:0 <=> [ ArchiCns: | Cns: ]/:0* %>: _ ;
+
+!@ a:a y:y >:0 {N}:0 {I}:ı n:n
+
+!@ ş:ş k:k o:o l:l a:a >:0 {N}:n {I}:ı n:n
+
+!@ ç:ç o:o c:c u:u {k}:0 >:0 {N}:0 {I}:u n:n
+
+!@ ç:ç o:o c:c u:u {k}:0 >:0 {s}:0 {I}:u {n}:0 >:0 {N}:n {I}:u n:n
+
+"The final consonant in su-"
+%{в%}:0 <=> _ .#. ; 
+            _ %>: [ %{L%}: | %{D%}: ] ;
+
+!@ s:s u:u {в}:0
+
+!@ s:s u:u {в}:0 >:0 {L}:l {A}:a r:r
+
+!@ s:s u:u {в}:y >:0 {N}:0 {I}:u n:n
+
+!@ s:s u:u {в}:y >:0 {s}:0 {I}:u {n}:n >:0 {N}:0 {I}:u n:n
+
+!@ s:s u:u {в}:y >:0 {s}:0 {I}:u {n}:n >:0 {й}:0 {A}:a
+
+!@ s:s u:u {в}:y >:0 {s}:0 {I}:u {n}:n >:0 {й}:0 {I}:u
+
+!@ s:s u:u {в}:y >:0 {й}:0 {A}:a 
+
+!@ s:s u:u {в}:0 >:0 {D}:d {A}:a 
+
+!@ s:s u:u {в}:y >:0 {й}:0 {I}:u
+
+!@ s:s u:u {в}:y >:0 {й}:0 {L}:l {A}:a 
+
+"{л} to n in passive following l"
+%{л%}:n <=> :l/:0* %{i%}: _ ;
+
+!@ b:b i:i l:l {·}:0 >:0 {i}:i {л}:n >:0 {D}:d {I}:i
+
+
+

@@ -1,0 +1,536 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<modes>
+  <!-- == Russian → Ukrainian == -->
+ 
+  <mode name="spa-pol" install="yes">
+    <pipeline>
+      <program name="lt-proc -w">
+        <file name="spa-pol.automorf.bin"/>
+      </program>
+      <program name="cg-proc -w">
+        <file name="spa-pol.rlx.bin"/>
+      </program>
+      <program name="apertium-tagger -g $2">
+        <file name="spa-pol.prob"/>
+      </program>
+      <program name="apertium-pretransfer"/>
+      <program name="lt-proc -b">
+        <file name="spa-pol.autobil.bin"/>
+      </program>
+      <program name="lrx-proc -m">
+        <file name="spa-pol.autolex.bin"/>
+      </program>
+      <program name="apertium-transfer -b -b">
+        <file name="apertium-spa-pol.spa-pol.t1x"/>
+        <file name="spa-pol.t1x.bin"/>
+      </program>
+      <program name="apertium-interchunk">
+        <file name="apertium-spa-pol.spa-pol.t2x"/>
+        <file name="spa-pol.t2x.bin"/>
+      </program>
+      <program name="apertium-postchunk">
+        <file name="apertium-spa-pol.spa-pol.t3x"/>
+        <file name="spa-pol.t3x.bin"/>
+      </program>
+      <program name="lt-proc $1">
+        <file name="spa-pol.autogen.bin"/>
+      </program>
+      <program name="lt-proc -p">
+        <file name="spa-pol.autopgen.bin"/>
+      </program>
+    </pipeline>
+  </mode>
+
+
+  <mode name="spa-pol-anmor">
+    <pipeline>
+      <program name="lt-proc -w">
+        <file name="spa-pol.automorf.bin"/>
+      </program>
+    </pipeline>
+  </mode>
+
+  <mode name="spa-pol-disam">
+    <pipeline>
+      <program name="lt-proc -w">
+        <file name="spa-pol.automorf.bin"/>
+      </program>
+      <program name="cg-conv -a"/>
+      <program name="vislcg3 --trace --grammar">
+        <file name="spa-pol.rlx.bin"/>
+      </program>
+    </pipeline>
+  </mode>
+
+  <mode name="spa-pol-pretransfer">
+    <pipeline>
+      <program name="lt-proc -w">
+        <file name="spa-pol.automorf.bin"/>
+      </program>
+      <program name="cg-proc -w">
+        <file name="spa-pol.rlx.bin"/>
+      </program>
+      <program name="apertium-tagger -g $2">
+        <file name="spa-pol.prob"/>
+      </program>
+      <program name="apertium-pretransfer"/>
+    </pipeline>
+  </mode>
+
+  <mode name="spa-pol-biltrans">
+    <pipeline>
+      <program name="lt-proc -w">
+        <file name="spa-pol.automorf.bin"/>
+      </program>
+      <program name="cg-proc -w">
+        <file name="spa-pol.rlx.bin"/>
+      </program>
+      <program name="apertium-tagger -g $2">
+        <file name="spa-pol.prob"/>
+      </program>
+      <program name="apertium-pretransfer"/>
+      <program name="lt-proc -b">
+        <file name="spa-pol.autobil.bin"/>
+      </program>
+    </pipeline>
+  </mode>
+  
+
+  <mode name="spa-pol-lextor">
+    <pipeline>
+      <program name="lt-proc -w">
+        <file name="spa-pol.automorf.bin"/>
+      </program>
+      <program name="cg-proc -w">
+        <file name="spa-pol.rlx.bin"/>
+      </program>
+      <program name="apertium-tagger -g $2">
+        <file name="spa-pol.prob"/>
+      </program>
+      <program name="apertium-pretransfer"/>
+      <program name="lt-proc -b">
+        <file name="spa-pol.autobil.bin"/>
+      </program>
+      <program name="lrx-proc -m -t">
+        <file name="spa-pol.autolex.bin"/>
+      </program>
+    </pipeline>
+  </mode>
+
+  <mode name="spa-pol-transfer">
+    <pipeline>
+      <program name="lt-proc -w">
+        <file name="spa-pol.automorf.bin"/>
+      </program>
+      <program name="cg-proc -w">
+        <file name="spa-pol.rlx.bin"/>
+      </program>
+      <program name="apertium-tagger -g $2">
+        <file name="spa-pol.prob"/>
+      </program>
+      <program name="apertium-pretransfer"/>
+      <program name="lt-proc -b">
+        <file name="spa-pol.autobil.bin"/>
+      </program>
+      <program name="lrx-proc -m">
+        <file name="spa-pol.autolex.bin"/>
+      </program>
+      <program name="apertium-transfer -t -b">
+        <file name="apertium-spa-pol.spa-pol.t1x"/>
+        <file name="spa-pol.t1x.bin"/>
+      </program>
+    </pipeline>
+  </mode>
+  
+  <mode name="spa-pol-interchunk">
+    <pipeline>
+      <program name="lt-proc -w">
+        <file name="spa-pol.automorf.bin"/>
+      </program>
+      <program name="cg-proc -w">
+        <file name="spa-pol.rlx.bin"/>
+      </program>
+      <program name="apertium-tagger -g $2">
+        <file name="spa-pol.prob"/>
+      </program>
+      <program name="apertium-pretransfer"/>
+      <program name="lt-proc -b">
+        <file name="spa-pol.autobil.bin"/>
+      </program>
+      <program name="lrx-proc -m">
+        <file name="spa-pol.autolex.bin"/>
+      </program>
+      <program name="apertium-transfer -b">
+        <file name="apertium-spa-pol.spa-pol.t1x"/>
+        <file name="spa-pol.t1x.bin"/>
+      </program>
+      <program name="apertium-interchunk">
+        <file name="apertium-spa-pol.spa-pol.t2x"/>
+        <file name="spa-pol.t2x.bin"/>
+      </program>
+    </pipeline>
+  </mode>
+
+  <mode name="spa-pol-postchunk">
+    <pipeline>
+      <program name="lt-proc -w">
+        <file name="spa-pol.automorf.bin"/>
+      </program>
+      <program name="cg-proc -w">
+        <file name="spa-pol.rlx.bin"/>
+      </program>
+      <program name="apertium-tagger -g $2">
+        <file name="spa-pol.prob"/>
+      </program>
+      <program name="apertium-pretransfer"/>
+      <program name="lt-proc -b">
+        <file name="spa-pol.autobil.bin"/>
+      </program>
+      <program name="lrx-proc -m">
+        <file name="spa-pol.autolex.bin"/>
+      </program>
+      <program name="apertium-transfer -b">
+        <file name="apertium-spa-pol.spa-pol.t1x"/>
+        <file name="spa-pol.t1x.bin"/>
+      </program>
+      <program name="apertium-interchunk">
+        <file name="apertium-spa-pol.spa-pol.t2x"/>
+        <file name="spa-pol.t2x.bin"/>
+      </program>
+      <program name="apertium-postchunk">
+        <file name="apertium-spa-pol.spa-pol.t3x"/>
+        <file name="spa-pol.t3x.bin"/>
+      </program>
+    </pipeline>
+  </mode>
+
+  <mode name="spa-pol-generador">
+    <pipeline>
+      <program name="lt-proc -w">
+        <file name="spa-pol.automorf.bin"/>
+      </program>
+      <program name="cg-proc -w">
+        <file name="spa-pol.rlx.bin"/>
+      </program>
+      <program name="apertium-tagger -g $2">
+        <file name="spa-pol.prob"/>
+      </program>
+      <program name="apertium-pretransfer"/>
+      <program name="lt-proc -b">
+        <file name="spa-pol.autobil.bin"/>
+      </program>
+      <program name="lrx-proc -m">
+        <file name="spa-pol.autolex.bin"/>
+      </program>
+      <program name="apertium-transfer -b">
+        <file name="apertium-spa-pol.spa-pol.t1x"/>
+        <file name="spa-pol.t1x.bin"/>
+      </program>
+      <program name="apertium-interchunk">
+        <file name="apertium-spa-pol.spa-pol.t2x"/>
+        <file name="spa-pol.t2x.bin"/>
+      </program>
+      <program name="apertium-postchunk">
+        <file name="apertium-spa-pol.spa-pol.t3x"/>
+        <file name="spa-pol.t3x.bin"/>
+      </program>
+      <program name="lt-proc $1">
+        <file name="spa-pol.autogen.bin"/>
+      </program>
+    </pipeline>
+  </mode>
+
+  <!-- == Ukrainian → Russian == -->
+  
+  <mode name="pol-spa" install="yes">
+    <pipeline>
+      <program name="lt-proc -w">
+        <file name="pol-spa.automorf.bin"/>
+      </program>
+      <program name="cg-proc -w">
+        <file name="pol-spa.rlx.bin"/>
+      </program>
+      <program name="apertium-tagger -g $2">
+        <file name="pol-spa.prob"/>
+      </program>
+      <program name="apertium-pretransfer"/>
+      <program name="lt-proc -b">
+        <file name="pol-spa.autobil.bin"/>
+      </program>
+      <program name="lrx-proc -m">
+        <file name="pol-spa.autolex.bin"/>
+      </program>
+      <program name="apertium-transfer -b">
+        <file name="apertium-spa-pol.pol-spa.t1x"/>
+        <file name="pol-spa.t1x.bin"/>
+      </program>
+      <program name="apertium-interchunk">
+        <file name="apertium-spa-pol.pol-spa.t2x"/>
+        <file name="pol-spa.t2x.bin"/>
+      </program>
+      <program name="apertium-postchunk">
+        <file name="apertium-spa-pol.pol-spa.t3x"/>
+        <file name="pol-spa.t3x.bin"/>
+      </program>
+      <program name="lt-proc $1">
+        <file name="pol-spa.autogen.bin"/>
+      </program>
+      <program name="lt-proc -p">
+        <file name="pol-spa.autopgen.bin"/>
+      </program>
+    </pipeline>
+  </mode>
+  
+  <mode name="pol-spa-debug">
+    <pipeline>
+      <program name="lt-proc -w">
+        <file name="pol-spa.automorf.bin"/>
+      </program>
+      <program name="cg-proc -w">
+        <file name="pol-spa.rlx.bin"/>
+      </program>
+      <program name="apertium-tagger -g $2">
+        <file name="pol-spa.prob"/>
+      </program>
+      <program name="apertium-pretransfer"/>
+      <program name="lt-proc -b">
+        <file name="pol-spa.autobil.bin"/>
+      </program>
+      <program name="lrx-proc -m">
+        <file name="pol-spa.autolex.bin"/>
+      </program>
+      <program name="apertium-transfer -b">
+        <file name="apertium-spa-pol.pol-spa.t1x"/>
+        <file name="pol-spa.t1x.bin"/>
+      </program>
+      <program name="apertium-interchunk">
+        <file name="apertium-spa-pol.pol-spa.t2x"/>
+        <file name="pol-spa.t2x.bin"/>
+      </program>
+      <program name="apertium-postchunk">
+        <file name="apertium-spa-pol.pol-spa.t3x"/>
+        <file name="pol-spa.t3x.bin"/>
+      </program>
+      <program name="lt-proc -d">
+        <file name="pol-spa.autogen.bin"/>
+      </program>
+    </pipeline>
+  </mode>
+  
+ 
+  <mode name="pol-spa-anmor">
+    <pipeline>
+      <program name="lt-proc -w">
+        <file name="pol-spa.automorf.bin"/>
+      </program>
+    </pipeline>
+  </mode>
+
+  <mode name="pol-spa-disam">
+    <pipeline>
+      <program name="lt-proc -w">
+        <file name="pol-spa.automorf.bin"/>
+      </program>
+      <program name="cg-conv -a"/>
+      <program name="vislcg3 --trace --grammar">
+        <file name="pol-spa.rlx.bin"/>
+      </program>
+    </pipeline>
+  </mode>
+
+
+  <mode name="pol-spa-tagger">
+    <pipeline>
+      <program name="lt-proc -w">
+        <file name="pol-spa.automorf.bin"/>
+      </program>
+      <program name="cg-proc -w">
+        <file name="pol-spa.rlx.bin"/>
+      </program>
+      <program name="apertium-tagger -g $2">
+        <file name="pol-spa.prob"/>
+      </program>
+    </pipeline>
+  </mode>
+
+  <mode name="pol-spa-pretransfer">
+    <pipeline>
+      <program name="lt-proc -w">
+        <file name="pol-spa.automorf.bin"/>
+      </program>
+      <program name="cg-proc -w">
+        <file name="pol-spa.rlx.bin"/>
+      </program>
+      <program name="apertium-tagger -g $2">
+        <file name="pol-spa.prob"/>
+      </program>
+      <program name="apertium-pretransfer"/>
+    </pipeline>
+  </mode>
+
+  <mode name="pol-spa-biltrans">
+    <pipeline>
+      <program name="lt-proc -w">
+        <file name="pol-spa.automorf.bin"/>
+      </program>
+      <program name="cg-proc -w">
+        <file name="pol-spa.rlx.bin"/>
+      </program>
+      <program name="apertium-tagger -g $2">
+        <file name="pol-spa.prob"/>
+      </program>
+      <program name="apertium-pretransfer"/>
+      <program name="lt-proc -b">
+        <file name="pol-spa.autobil.bin"/>
+      </program>
+    </pipeline>
+  </mode>
+
+  <mode name="pol-spa-lextor">
+    <pipeline>
+      <program name="lt-proc -w">
+        <file name="pol-spa.automorf.bin"/>
+      </program>
+      <program name="cg-proc -w">
+        <file name="pol-spa.rlx.bin"/>
+      </program>
+      <program name="apertium-tagger -g $2">
+        <file name="pol-spa.prob"/>
+      </program>
+      <program name="apertium-pretransfer"/>
+      <program name="lt-proc -b">
+        <file name="pol-spa.autobil.bin"/>
+      </program>
+      <program name="lrx-proc -m -t">
+        <file name="pol-spa.autolex.bin"/>
+      </program>
+    </pipeline>
+  </mode>
+ 
+  <mode name="pol-spa-transfer">
+    <pipeline>
+      <program name="lt-proc -w">
+        <file name="pol-spa.automorf.bin"/>
+      </program>
+      <program name="cg-proc -w">
+        <file name="pol-spa.rlx.bin"/>
+      </program>
+      <program name="apertium-tagger -g $2">
+        <file name="pol-spa.prob"/>
+      </program>
+      <program name="apertium-pretransfer"/>
+      <program name="lt-proc -b">
+        <file name="pol-spa.autobil.bin"/>
+      </program>
+      <program name="lrx-proc -m">
+        <file name="pol-spa.autolex.bin"/>
+      </program>
+      <program name="apertium-transfer -t -b">
+        <file name="apertium-spa-pol.pol-spa.t1x"/>
+        <file name="pol-spa.t1x.bin"/>
+      </program>
+    </pipeline>
+  </mode>
+  
+  <mode name="pol-spa-interchunk">
+    <pipeline>
+      <program name="lt-proc -w">
+        <file name="pol-spa.automorf.bin"/>
+      </program>
+      <program name="cg-proc -w">
+        <file name="pol-spa.rlx.bin"/>
+      </program>
+      <program name="apertium-tagger -g $2">
+        <file name="pol-spa.prob"/>
+      </program>
+      <program name="apertium-pretransfer"/>
+      <program name="lt-proc -b">
+        <file name="pol-spa.autobil.bin"/>
+      </program>
+      <program name="lrx-proc -m">
+        <file name="pol-spa.autolex.bin"/>
+      </program>
+      <program name="apertium-transfer -b">
+        <file name="apertium-spa-pol.pol-spa.t1x"/>
+        <file name="pol-spa.t1x.bin"/>
+      </program>
+      <program name="apertium-interchunk">
+        <file name="apertium-spa-pol.pol-spa.t2x"/>
+        <file name="pol-spa.t2x.bin"/>
+      </program>
+    </pipeline>
+  </mode>
+
+  <mode name="pol-spa-postchunk">
+    <pipeline>
+      <program name="lt-proc -w">
+        <file name="pol-spa.automorf.bin"/>
+      </program>
+      <program name="cg-proc -w">
+        <file name="pol-spa.rlx.bin"/>
+      </program>
+      <program name="apertium-tagger -g $2">
+        <file name="pol-spa.prob"/>
+      </program>
+      <program name="apertium-pretransfer"/>
+      <program name="lt-proc -b">
+        <file name="pol-spa.autobil.bin"/>
+      </program>
+      <program name="lrx-proc -m">
+        <file name="pol-spa.autolex.bin"/>
+      </program>
+      <program name="apertium-transfer -b">
+        <file name="apertium-spa-pol.pol-spa.t1x"/>
+        <file name="pol-spa.t1x.bin"/>
+      </program>
+      <program name="apertium-interchunk">
+        <file name="apertium-spa-pol.pol-spa.t2x"/>
+        <file name="pol-spa.t2x.bin"/>
+      </program>
+      <program name="apertium-postchunk">
+        <file name="apertium-spa-pol.pol-spa.t3x"/>
+        <file name="pol-spa.t3x.bin"/>
+      </program>
+    </pipeline>
+  </mode>
+
+  <mode name="pol-spa-generador">
+    <pipeline>
+      <program name="lt-proc -w">
+        <file name="pol-spa.automorf.bin"/>
+      </program>
+      <program name="cg-proc -w">
+        <file name="pol-spa.rlx.bin"/>
+      </program>
+      <program name="apertium-tagger -g $2">
+        <file name="pol-spa.prob"/>
+      </program>
+      <program name="lt-proc -b">
+        <file name="pol-spa.autobil.bin"/>
+      </program>
+      <program name="lrx-proc -m">
+        <file name="pol-spa.autolex.bin"/>
+      </program>
+      <program name="apertium-pretransfer"/>
+      <program name="lt-proc -b">
+        <file name="pol-spa.autobil.bin"/>
+      </program>
+      <program name="apertium-transfer -b">
+        <file name="apertium-spa-pol.pol-spa.t1x"/>
+        <file name="pol-spa.t1x.bin"/>
+      </program>
+      <program name="apertium-interchunk">
+        <file name="apertium-spa-pol.pol-spa.t2x"/>
+        <file name="pol-spa.t2x.bin"/>
+      </program>
+      <program name="apertium-postchunk">
+        <file name="apertium-spa-pol.pol-spa.t3x"/>
+        <file name="pol-spa.t3x.bin"/>
+      </program>
+      <program name="lt-proc $1">
+        <file name="pol-spa.autogen.bin"/>
+      </program>
+    </pipeline>
+  </mode>
+
+</modes>

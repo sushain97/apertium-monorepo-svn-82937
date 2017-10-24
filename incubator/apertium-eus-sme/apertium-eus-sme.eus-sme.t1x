@@ -1,0 +1,586 @@
+<?xml version="1.0" encoding="utf-8"?>
+<transfer default="chunk">
+
+<section-def-cats>
+  <def-cat n="nom">
+     <cat-item tags="N.*"/>
+  </def-cat>
+  
+  <def-cat n="propnom">
+     <cat-item tags="N.Prop.*"/>
+  </def-cat>
+  
+  <def-cat n="verb_nom">
+     <cat-item tags="V.Der_N.*"/>
+  </def-cat>
+  
+  <def-cat n="verb_cont">
+     <cat-item tags="V.Der_N.Cont.*"/>
+  </def-cat>
+  
+  <def-cat n="verb_prc">
+     <cat-item tags="V.Prc.*"/>
+     <cat-item tags="V.Prc"/>
+  </def-cat>
+  
+  <def-cat n="aux">
+     <cat-item tags="V.Aux.*"/>
+  </def-cat>
+  
+    <def-cat n="aux_pres">
+     <cat-item tags="V.Aux.Ind.Prs.*"/>
+  </def-cat>
+  
+  <def-cat n="vblex">
+     <cat-item tags="vblex.*"/>
+  </def-cat>
+  
+  <def-cat n="prn">
+     <cat-item tags="Pron.*"/>
+  </def-cat>
+  <def-cat n="adj">
+     <cat-item tags="A.*"/>
+  </def-cat>
+  <def-cat n="pr">
+     <cat-item tags="pr"/>
+  </def-cat>
+  <def-cat n="det">
+     <cat-item tags="det"/>
+     <cat-item tags="det.*"/>
+  </def-cat>
+  <def-cat n="prefix-adj">
+     <cat-item tags="pref.adj"/>
+     <cat-item tags="pref.adj.*"/>
+  </def-cat>
+  <def-cat n="exp">
+     <cat-item tags="part.exp"/>
+  </def-cat>
+</section-def-cats>
+
+<section-def-attrs>
+  <def-attr n="a_nom">
+     <attr-item tags="N"/>
+     <attr-item tags="N.Prop"/>
+  </def-attr>
+
+  <def-attr n="a_prp">
+     <attr-item tags="pr"/>
+  </def-attr>
+
+  <def-attr n="a_adj">
+     <attr-item tags="adj"/>
+     <attr-item tags="adj.pve"/>
+     <attr-item tags="adj.comp"/>
+     <attr-item tags="adj.sup"/>
+     <attr-item tags="adj.itg"/>
+  </def-attr>
+  
+  <def-attr n="a_verb">
+     <attr-item tags="V"/>
+     <attr-item tags="V.IV"/>
+     <attr-item tags="V.TV"/>
+     <attr-item tags="V.Aux"/>
+  </def-attr>
+  
+  <def-attr n="temps">
+     <attr-item tags="Inf"/>
+     <attr-item tags="Prs"/>
+     <attr-item tags="Prt"/>
+     <attr-item tags="PrfPrc"/>
+     <attr-item tags="Prc"/>
+     <attr-item tags="Fut"/>
+  </def-attr>
+  
+  <def-attr n="mood">
+    <attr-item tags="Ind"/>
+    <attr-item tags="Imprt"/>
+    <attr-item tags="Pot"/>
+    <attr-item tags="Cond"/>
+    <attr-item tags="Neg"/> 
+    <attr-item tags="Neg.Ind"/> 
+  </def-attr>
+
+  <def-attr n="a_vrb">
+     <attr-item tags="vblex"/>
+  </def-attr>
+
+  <def-attr n="a_prn">
+     <attr-item tags="Pron"/>
+     <attr-item tags="Pron.Pers"/>
+     <attr-item tags="Pron.Rel"/>
+     <attr-item tags="Pron.Refl"/>
+     <attr-item tags="Pron.Interr"/>
+     <attr-item tags="Pron.Dem"/>
+     <attr-item tags="Pron.Indef"/>
+     <attr-item tags="Pron.Indef.Attr"/> <!-- muhtun -->
+  </def-attr> 
+
+  <def-attr n="tns">
+     <attr-item tags="pri"/>
+     <attr-item tags="imp"/>
+     <attr-item tags="aor"/>
+     <attr-item tags="fti"/>
+     <attr-item tags="past"/>
+  </def-attr>
+
+  <def-attr n="sem">
+     <attr-item tags="Mal"/>
+     <attr-item tags="Fem"/>
+     <attr-item tags="Plc"/>
+     <attr-item tags="Biz"/>
+  </def-attr>
+
+  <def-attr n="pers">
+     <attr-item tags="Sg1"/>
+     <attr-item tags="Sg2"/>
+     <attr-item tags="Sg3"/>
+     <attr-item tags="Du1"/>
+     <attr-item tags="Du2"/>
+     <attr-item tags="Du3"/>
+     <attr-item tags="Pl1"/>
+     <attr-item tags="Pl2"/>
+     <attr-item tags="Pl3"/>
+     <attr-item tags="NR_NI"/>
+     <attr-item tags="NR_ZU"/>
+     <attr-item tags="NR_HURA"/>
+     <attr-item tags="NR_HI"/>
+     <attr-item tags="NR_GU"/>
+     <attr-item tags="NR_ZUEK"/>
+     <attr-item tags="NR_HAIEK"/>
+  </def-attr>
+
+  <def-attr n="nbr">
+     <attr-item tags="Sg"/>
+     <attr-item tags="Du"/>
+     <attr-item tags="Pl"/>
+     <attr-item tags="Mgg"/>
+  </def-attr>
+
+  <def-attr n="case">
+     <attr-item tags="Abs"/>
+     <attr-item tags="Acc"/>
+     <attr-item tags="All"/>
+     <attr-item tags="Ben"/>
+     <attr-item tags="Ben2"/>
+     <attr-item tags="Com"/>
+     <attr-item tags="Dat"/>
+     <attr-item tags="Ela"/>
+     <attr-item tags="Erg"/>
+     <attr-item tags="Ess"/>
+     <attr-item tags="Gen"/>
+     <attr-item tags="PGen"/>
+     <attr-item tags="LGen"/>
+     <attr-item tags="Ine"/>
+     <attr-item tags="Ill"/>
+     <attr-item tags="Ins"/>
+     <attr-item tags="Loc"/>
+     <attr-item tags="Nom"/>
+     <attr-item tags="Par"/>
+     <attr-item tags="Soc"/>
+     <attr-item tags="prp"/>
+  </def-attr>
+  
+  <def-attr n="der">
+     <attr-item tags="Der_N"/>
+  </def-attr>
+  
+  <def-attr n="a_excase">
+       <attr-item tags="Excase_Abs"/>
+       <attr-item tags="Excase_Ill"/>
+       <attr-item tags="Excase_ala"/>
+  </def-attr>
+  
+  <def-attr n="a_exsyn">
+       <attr-item tags="Exsyn_Obj"/>
+       <attr-item tags="Exsyn_Advl"/>
+  </def-attr>
+  
+  <def-attr n="a_exsem">
+       <attr-item tags="Exsem_Hum"/>
+  </def-attr>
+  
+  <def-attr n="a_cacase">
+       <attr-item tags="Cacase_Erg"/>
+       <attr-item tags="Cacase_Soc"/>
+       <attr-item tags="Cacase_Nom"/>
+       <attr-item tags="Cacase_Ill"/>
+       <attr-item tags="Cacase_ala"/>
+  </def-attr>
+  
+  <def-attr n="a_casyn">
+       <attr-item tags="Casyn_Subj"/>
+       <attr-item tags="Casyn_Advl"/>
+       <attr-item tags="Casyn_Obj"/>
+  </def-attr>
+  
+  <def-attr n="a_casem">
+       <attr-item tags="Casyn_Hum"/>
+  </def-attr>
+  
+  <def-attr n="a_agcase">
+       <attr-item tags="Agcase_Erg"/>
+       <attr-item tags="Agcase_Dat"/>
+       <attr-item tags="Agcase_Nom"/>
+  </def-attr>
+  
+  <def-attr n="a_agsyn">
+       <attr-item tags="Agsyn_Subj"/>
+       <attr-item tags="Agsyn_Iobj"/>
+  </def-attr>
+  
+  <def-attr n="a_agsem">
+       <attr-item tags="Agsem_Hum"/>
+  </def-attr>
+  
+  <def-attr n="a_thcase">
+       <attr-item tags="Thcase_Ins"/>
+       <attr-item tags="Thcase_Abs"/>
+       <attr-item tags="Thcase_Acc"/>
+  </def-attr>
+  
+  <def-attr n="a_thsyn">
+       <attr-item tags="Thsyn_Advl"/>
+       <attr-item tags="Thcase_Sub"/>
+  </def-attr>
+  
+  <def-attr n="a_thsem">
+       <attr-item tags="Thsyn_Hum"/>
+  </def-attr>
+
+</section-def-attrs>
+
+<section-def-vars>
+  <def-var n="number"/>
+  <def-var n="genere"/>
+  <def-var n="Excase"/>
+  <def-var n="Exsyn"/>
+  <def-var n="Exsem"/>
+  <def-var n="Cacase"/>
+  <def-var n="Casyn"/>
+  <def-var n="Casem"/>
+  <def-var n="Agcase"/>
+  <def-var n="Agsyn"/>
+  <def-var n="Agsem"/>
+  <def-var n="Thcase"/>
+  <def-var n="Thsyn"/>
+  <def-var n="Thsem"/>
+</section-def-vars>
+
+<section-def-macros>
+<def-macro n="set_default_case_pattern" npar="1" c="This is the default case transfer pattern.">
+    <choose>
+        <when> <!-- Change +Abs to +Nom -->
+            <test><equal><clip pos="1" side="sl" part="case"/><lit-tag v="Abs"/></equal></test>
+        <let><clip pos="1" side="tl" part="case"/><lit-tag v="Nom"/></let>
+        </when>
+        <when> <!-- Change +Erg to +Nom -->
+            <test><equal><clip pos="1" side="sl" part="case"/><lit-tag v="Erg"/></equal></test>
+        <let><clip pos="1" side="tl" part="case"/><lit-tag v="Nom"/></let>
+        </when>
+        <when> <!-- Change +PGen to +Gen -->
+            <test><equal><clip pos="1" side="sl" part="case"/><lit-tag v="PGen"/></equal></test>
+        <let><clip pos="1" side="tl" part="case"/><lit-tag v="Gen"/></let>
+        </when>
+        <when> <!-- Change +LGen to +Gen -->
+            <test><equal><clip pos="1" side="sl" part="case"/><lit-tag v="LGen"/></equal></test>
+        <let><clip pos="1" side="tl" part="case"/><lit-tag v="Gen"/></let>
+        </when>
+        <when> <!-- Change +Dat to +Ill -->
+            <test><equal><clip pos="1" side="sl" part="case"/><lit-tag v="Dat"/></equal></test>
+        <let><clip pos="1" side="tl" part="case"/><lit-tag v="Ill"/></let>
+        </when>
+        <when> <!-- Change +Ben -entzat to +Ill -->
+            <test><equal><clip pos="1" side="sl" part="case"/><lit-tag v="Ben"/></equal></test>
+        <let><clip pos="1" side="tl" part="case"/><lit-tag v="Ill"/></let>
+        </when>
+        <when> <!-- Change +Ben2 -gatik to +Loc -->
+            <test><equal><clip pos="1" side="sl" part="case"/><lit-tag v="Ben2"/></equal></test>
+        <let><clip pos="1" side="tl" part="case"/><lit-tag v="Loc"/></let>
+        </when>
+      <when> <!-- Change +Ine to +Loc -->
+            <test><equal><clip pos="1" side="sl" part="case"/><lit-tag v="Ine"/></equal></test>
+        <let><clip pos="1" side="tl" part="case"/><lit-tag v="Loc"/></let>
+        </when>
+        <when> <!-- Change +Ela to +Loc -->
+            <test><equal><clip pos="1" side="sl" part="case"/><lit-tag v="Ela"/></equal></test>
+        <let><clip pos="1" side="tl" part="case"/><lit-tag v="Loc"/></let>
+        </when>
+        <when> <!-- Change +All to +Ill -->
+            <test><equal><clip pos="1" side="sl" part="case"/><lit-tag v="All"/></equal></test>
+        <let><clip pos="1" side="tl" part="case"/><lit-tag v="Ill"/></let>
+        </when>
+        <when> <!-- Change +Soc to +Com -->
+            <test><equal><clip pos="1" side="sl" part="case"/><lit-tag v="Soc"/></equal></test>
+        <let><clip pos="1" side="tl" part="case"/><lit-tag v="Com"/></let>
+        </when>
+        <when> <!-- Change +Ins to +Com -->
+            <test><equal><clip pos="1" side="sl" part="case"/><lit-tag v="Ins"/></equal></test>
+        <let><clip pos="1" side="tl" part="case"/><lit-tag v="Com"/></let>
+        </when>
+    </choose>
+</def-macro>
+
+<def-macro n="change_valency_attributes" npar="1" c="This the contents of the word in position 1 which coincide with the attributes specified in the part to the variable.">
+        <let><var n="Excase"/><clip pos="1" side="sl" part="a_excase"/></let>
+        <let><var n="Exsyn"/><clip pos="1" side="sl" part="a_exsyn"/></let>
+        <let><var n="Exsem"/><clip pos="1" side="sl" part="a_exsem"/></let>
+        <let><var n="Thcase"/><clip pos="1" side="sl" part="a_thcase"/></let>
+        <let><var n="Thsyn"/><clip pos="1" side="sl" part="a_thsyn"/></let>
+        <let><var n="Thsem"/><clip pos="1" side="sl" part="a_thsem"/></let>
+        <let><var n="Cacase"/><clip pos="1" side="sl" part="a_cacase"/></let>
+        <let><var n="Casyn"/><clip pos="1" side="sl" part="a_casyn"/></let>
+        <let><var n="Casem"/><clip pos="1" side="sl" part="a_casem"/></let>
+</def-macro>
+
+<def-macro n="set_case_pattern_based_on_valency" npar="1" c="This changes the default case transfer pattern based on verb valency.">
+    <choose>
+        <when> <!-- Set case to +Ill if Cacase is Cacase_Ill-->
+            <test><equal><var n="Cacase"/><lit-tag v="Cacase_Ill"/></equal></test>
+        <let><clip pos="1" side="tl" part="case"/><lit-tag v="Ill"/></let>
+        </when>
+        <when> <!-- Set case to +Acc if Thcase is Thcase_Acc--><!--Mikel Mirenez ahaztu da.-->
+            <test><equal><var n="Thcase"/><lit-tag v="Thcase_Acc"/></equal></test>
+        <let><clip pos="1" side="tl" part="case"/><lit-tag v="Acc"/></let>
+        </when>
+    </choose>
+</def-macro>
+
+
+<!-- Change ergative agreements to person of the verb  in Sámi and if there is no ergative change the absolutive agreements to person -->
+
+<def-macro n="convert_person" npar="1" c="">
+    <choose>
+        <when> <!-- Change NK_NI to Sg1 -->
+            <test><equal><clip pos="1" side="sl" part="pers"/><lit-tag v="NK_NI"/></equal></test>
+        <let><clip pos="1" side="tl" part="pers"/><lit-tag v="Sg2"/></let>
+        </when>
+        <when> <!-- Change NK_ZU to Sg2 -->
+            <test><equal><clip pos="1" side="sl" part="pers"/><lit-tag v="NK_ZU"/></equal></test>
+        <let><clip pos="1" side="tl" part="pers"/><lit-tag v="Sg2"/></let>
+        </when>
+        <when> <!-- Change NK_HI to Sg2 -->
+            <test><equal><clip pos="1" side="sl" part="pers"/><lit-tag v="NK_HI"/></equal></test>
+        <let><clip pos="1" side="tl" part="pers"/><lit-tag v="Sg2"/></let>
+        </when>
+        <when> <!-- Change NK_HU to Sg3 -->
+            <test><equal><clip pos="1" side="sl" part="pers"/><lit-tag v="NK_HU"/></equal></test>
+        <let><clip pos="1" side="tl" part="pers"/><lit-tag v="Sg3"/></let>
+        </when>
+        <when> <!-- Change NK_GU to Pl1 -->
+            <test><equal><clip pos="1" side="sl" part="pers"/><lit-tag v="NK_GU"/></equal></test>
+        <let><clip pos="1" side="tl" part="pers"/><lit-tag v="Pl1"/></let>
+        </when>
+        <when> <!-- Change NK_ZE to Pl2 -->
+            <test><equal><clip pos="1" side="sl" part="pers"/><lit-tag v="NK_ZE"/></equal></test>
+        <let><clip pos="1" side="tl" part="pers"/><lit-tag v="Pl2"/></let>
+        </when>
+        <when> <!-- Change NK_HA to Pl3 -->
+            <test><equal><clip pos="1" side="sl" part="pers"/><lit-tag v="NK_HA"/></equal></test>
+        <let><clip pos="1" side="tl" part="pers"/><lit-tag v="Pl3"/></let>
+        </when>
+    <otherwise>
+        <choose>
+        <when> <!-- Change NR_NI to Sg1 -->
+            <test><equal><clip pos="1" side="sl" part="pers"/><lit-tag v="NR_NI"/></equal></test>
+        <let><clip pos="1" side="tl" part="pers"/><lit-tag v="Sg2"/></let>
+        </when>
+        <when> <!-- Change NR_ZU to Sg2 -->
+            <test><equal><clip pos="1" side="sl" part="pers"/><lit-tag v="NR_ZU"/></equal></test>
+        <let><clip pos="1" side="tl" part="pers"/><lit-tag v="Sg2"/></let>
+        </when>
+        <when> <!-- Change NR_HI to Sg2 -->
+            <test><equal><clip pos="1" side="sl" part="pers"/><lit-tag v="NR_HI"/></equal></test>
+        <let><clip pos="1" side="tl" part="pers"/><lit-tag v="Sg2"/></let>
+        </when>
+        <when> <!-- Change NR_HU to Sg3 -->
+            <test><equal><clip pos="1" side="sl" part="pers"/><lit-tag v="NR_HU"/></equal></test>
+        <let><clip pos="1" side="tl" part="pers"/><lit-tag v="Sg3"/></let>
+        </when>
+        <when> <!-- Change NR_GU to Pl1 -->
+            <test><equal><clip pos="1" side="sl" part="pers"/><lit-tag v="NR_GU"/></equal></test>
+        <let><clip pos="1" side="tl" part="pers"/><lit-tag v="Pl1"/></let>
+        </when>
+        <when> <!-- Change NR_ZE to Pl2 -->
+            <test><equal><clip pos="1" side="sl" part="pers"/><lit-tag v="NR_ZE"/></equal></test>
+        <let><clip pos="1" side="tl" part="pers"/><lit-tag v="Pl2"/></let>
+        </when>
+        <when> <!-- Change NR_HA to Pl3 -->
+            <test><equal><clip pos="1" side="sl" part="pers"/><lit-tag v="NR_HA"/></equal></test>
+        <let><clip pos="1" side="tl" part="pers"/><lit-tag v="Pl3"/></let>
+        </when>
+    </choose>
+</otherwise>
+</choose>
+</def-macro>
+
+</section-def-macros>
+
+<section-rules>
+<!-- Sintagmas nominales -->
+
+<!-- Pronoun is the head -->
+
+  <rule comment="REGLA: PRONOM">
+     <pattern>
+       <pattern-item n="prn"/>
+     </pattern>
+     <action>
+       <call-macro n="set_default_case_pattern">
+         <with-param pos="1"/>
+       </call-macro>
+       <call-macro n="set_case_pattern_based_on_valency">
+         <with-param pos="1"/>
+       </call-macro>
+       <out>
+         <chunk name="pronom" case="caseFirstWord">
+           <tags>
+             <tag><lit-tag v="SN"/></tag>
+             <tag><clip pos="1" side="tl" part="nbr"/></tag>
+             <tag><clip pos="1" side="tl" part="case"/></tag>
+           </tags>
+           <lu>
+             <clip pos="1" side="tl" part="lemh"/>
+             <clip pos="1" side="tl" part="a_prn"/>
+             <clip pos="1" side="tl" part="pers"/>
+             <clip pos="1" side="tl" part="nbr"/>
+             <clip pos="1" side="tl" part="case"/>
+             <clip pos="1" side="tl" part="lemq"/>
+           </lu>
+         </chunk>
+       </out>
+     </action>
+  </rule>
+  
+    <rule comment="REGLA: NOM">
+     <pattern>
+       <pattern-item n="nom"/>
+     </pattern>
+     <action>
+       <call-macro n="set_default_case_pattern">
+         <with-param pos="1"/>
+       </call-macro>
+       <call-macro n="set_case_pattern_based_on_valency">
+         <with-param pos="1"/>
+       </call-macro>
+       <out>
+         <chunk name="nom" case="caseFirstWord">
+           <tags>
+             <tag><lit-tag v="SN"/></tag>
+             <tag><clip pos="1" side="tl" part="nbr"/></tag>
+             <tag><clip pos="1" side="tl" part="case"/></tag>
+           </tags>
+           <lu><lit v=""/><var n="Thcase"/></lu>
+           <lu>
+             <clip pos="1" side="tl" part="lemh"/>
+             <clip pos="1" side="tl" part="a_nom"/>
+             <clip pos="1" side="tl" part="sem"/>
+             <clip pos="1" side="tl" part="nbr"/>
+             <clip pos="1" side="tl" part="case"/>
+             <clip pos="1" side="tl" part="lemq"/>
+           </lu>
+         </chunk>
+       </out>
+     </action>
+  </rule>
+  
+  <rule comment="REGLA: PROPNOM">
+     <pattern>
+       <pattern-item n="propnom"/>
+     </pattern>
+     <action>
+       <call-macro n="set_default_case_pattern">
+         <with-param pos="1"/>
+       </call-macro>
+       <call-macro n="set_case_pattern_based_on_valency">
+         <with-param pos="1"/>
+       </call-macro>
+       <out>
+         <chunk name="nom" case="caseFirstWord">
+           <tags>
+             <tag><lit-tag v="SN"/></tag>
+             <tag><clip pos="1" side="tl" part="case"/></tag>
+           </tags>
+           <lu>
+             <clip pos="1" side="tl" part="lemh"/>
+             <clip pos="1" side="tl" part="a_nom"/>
+             <clip pos="1" side="tl" part="sem"/>
+             <lit-tag v="Sg"/>
+             <clip pos="1" side="tl" part="case"/>
+             <clip pos="1" side="tl" part="lemq"/>
+           </lu>
+         </chunk>
+       </out>
+     </action>
+  </rule>
+  
+  <rule comment="REGLA: ContV Aux"><!--Zergatik haserretzen zara nirekin?-->
+     <pattern>
+       <pattern-item n="verb_cont"/>
+       <pattern-item n="aux"/>
+     </pattern>
+     <action>
+       <call-macro n="convert_person">
+         <with-param pos="2"/>
+       </call-macro>
+       <call-macro n="change_valency_attributes">
+         <with-param pos="1"/>
+       </call-macro>
+       <out>
+         <chunk name="verb" case="caseSecondWord">
+             <tags>
+               <tag><lit-tag v="SV"/></tag>
+             </tags>
+             <lu>
+               <clip pos="1" side="tl" part="lemh"/>
+               <clip pos="1" side="tl" part="a_verb"/>
+               <clip pos="2" side="tl" part="mood"/>
+               <clip pos="2" side="tl" part="temps"/>
+               <clip pos="2" side="tl" part="pers"/>
+               <clip pos="1" side="tl" part="lemq"/>
+           </lu>
+         </chunk>
+       </out>
+     </action>
+  </rule>
+
+  <rule comment="REGLA: Prc Aux_Pres"><!--Mikelek Miren hil du.-->
+     <pattern>
+       <pattern-item n="verb_prc"/>
+       <pattern-item n="aux_pres"/>
+     </pattern>
+     <action>
+       <call-macro n="convert_person">
+         <with-param pos="2"/>
+       </call-macro>
+       <call-macro n="change_valency_attributes">
+         <with-param pos="1"/>
+       </call-macro>
+       <out>
+         <chunk name="verb" case="caseSecondWord">
+             <tags>
+               <tag><lit-tag v="SV"/></tag>
+             </tags>
+             <lu>
+               <clip pos="2" side="tl" part="lemh"/>
+               <clip pos="2" side="tl" part="a_verb"/>
+               <clip pos="2" side="tl" part="mood"/>
+               <clip pos="2" side="tl" part="temps"/>
+               <clip pos="2" side="tl" part="pers"/>
+               <clip pos="2" side="tl" part="lemq"/>
+            </lu>
+           <b pos="1"/>
+            <lu>
+               <clip pos="1" side="tl" part="lemh"/>
+               <clip pos="1" side="tl" part="a_verb"/>
+               <clip pos="1" side="tl" part="mood"/>
+               <lit-tag v="PrfPrc"/>
+               <clip pos="1" side="tl" part="lemq"/>
+           </lu>
+         </chunk>
+       </out>
+     </action>
+  </rule>
+
+</section-rules>
+
+</transfer>

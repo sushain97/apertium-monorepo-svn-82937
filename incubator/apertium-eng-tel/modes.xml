@@ -1,0 +1,411 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<modes>
+  <!-- eng → tel --> 
+
+  <mode name="eng-tel" install="yes">
+    <pipeline>
+      <program name="lt-proc -w">
+        <file name="eng-tel.automorf.bin"/>
+      </program>
+      <program name="cg-proc -w">
+        <file name="eng-tel.rlx.bin"/>
+      </program>
+      <program name="apertium-tagger -g $2">
+        <file name="eng-tel.prob"/>
+      </program>
+      <program name="apertium-pretransfer"/>
+      <program name="lt-proc -b">
+        <file name="eng-tel.autobil.bin"/>
+      </program>
+      <program name="apertium-transfer -b">
+        <file name="apertium-eng-tel.eng-tel.t1x"/>
+        <file name="eng-tel.t1x.bin"/>
+      </program>
+      <program name="apertium-interchunk">
+        <file name="apertium-eng-tel.eng-tel.t2x"/>
+        <file name="eng-tel.t2x.bin"/>
+      </program>
+      <program name="apertium-postchunk">
+        <file name="apertium-eng-tel.eng-tel.t3x"/>
+        <file name="eng-tel.t3x.bin"/>
+      </program>
+      <program name="hfst-proc $1">
+        <file name="eng-tel.autogen.hfst"/>
+      </program>
+    </pipeline>
+  </mode>
+
+  <mode name="eng-tel-debug" install="no">
+    <pipeline>
+      <program name="hfst-proc -w">
+        <file name="eng-tel.automorf.hfst"/>
+      </program>
+      <program name="cg-proc -w">
+        <file name="eng-tel.rlx.bin"/>
+      </program>
+      <program name="apertium-tagger -g $2">
+        <file name="eng-tel.prob"/>
+      </program>
+      <program name="apertium-pretransfer"/>
+      <program name="lt-proc -b">
+        <file name="eng-tel.autobil.bin"/>
+      </program>
+      <program name="apertium-transfer -b">
+        <file name="apertium-eng-tel.eng-tel.t1x"/>
+        <file name="eng-tel.t1x.bin"/>
+      </program>
+      <program name="apertium-interchunk">
+        <file name="apertium-eng-tel.eng-tel.t2x"/>
+        <file name="eng-tel.t2x.bin"/>
+      </program>
+      <program name="apertium-postchunk">
+        <file name="apertium-eng-tel.eng-tel.t3x"/>
+        <file name="eng-tel.t3x.bin"/>
+      </program>
+      <program name="hfst-proc -d">
+        <file name="eng-tel.autogen.hfst"/>
+      </program>
+    </pipeline>
+  </mode>
+ 
+  
+  <mode name="eng-tel-morph" install="no">
+    <pipeline>
+      <program name="hfst-proc -w">
+        <file name="eng-tel.automorf.hfst"/>
+      </program>
+    </pipeline>
+  </mode>
+
+  <mode name="eng-tel-tagger" install="no">
+    <pipeline>
+      <program name="hfst-proc -w">
+        <file name="eng-tel.automorf.hfst"/>
+      </program>
+      <program name="cg-proc -w">
+        <file name="eng-tel.rlx.bin"/>
+      </program>
+      <program name="apertium-tagger -g $2">
+        <file name="eng-tel.prob"/>
+      </program>
+      <program name="apertium-pretransfer"/>
+    </pipeline>
+  </mode>
+
+  <mode name="eng-tel-biltrans" install="no">
+    <pipeline>
+      <program name="hfst-proc -w">
+        <file name="eng-tel.automorf.hfst"/>
+      </program>
+      <program name="cg-proc -w">
+        <file name="eng-tel.rlx.bin"/>
+      </program>
+      <program name="apertium-tagger -g $2">
+        <file name="eng-tel.prob"/>
+      </program>
+      <program name="apertium-pretransfer"/>
+      <program name="lt-proc -b">
+        <file name="eng-tel.autobil.bin"/>
+      </program>
+    </pipeline>
+  </mode>
+
+  <mode name="eng-tel-lex" install="no">
+    <pipeline>
+      <program name="hfst-proc -w">
+        <file name="eng-tel.automorf.hfst"/>
+      </program>
+      <program name="cg-proc -w">
+        <file name="eng-tel.rlx.bin"/>
+      </program>
+      <program name="apertium-tagger -g $2">
+        <file name="eng-tel.prob"/>
+      </program>
+      <program name="apertium-pretransfer"/>
+      <program name="lt-proc -b">
+        <file name="eng-tel.autobil.bin"/>
+      </program>
+      <program name="lrx-proc -t">
+        <file name="eng-tel.lrx.bin"/>
+      </program>
+    </pipeline>
+  </mode>
+
+
+  <mode name="eng-tel-transfer" install="no">
+    <pipeline>
+      <program name="hfst-proc -w">
+        <file name="eng-tel.automorf.hfst"/>
+      </program>
+      <program name="cg-proc -w">
+        <file name="eng-tel.rlx.bin"/>
+      </program>
+      <program name="apertium-tagger -g $2">
+        <file name="eng-tel.prob"/>
+      </program>
+      <program name="apertium-pretransfer"/>
+      <program name="lt-proc -b">
+        <file name="eng-tel.autobil.bin"/>
+      </program>
+      <program name="lrx-proc">
+        <file name="eng-tel.lrx.bin"/>
+      </program>
+      <program name="apertium-transfer -b">
+        <file name="apertium-eng-tel.eng-tel.t1x"/>
+        <file name="eng-tel.t1x.bin"/>
+      </program>
+    </pipeline>
+  </mode>
+
+  <mode name="eng-tel-interchunk" install="no">
+    <pipeline>
+      <program name="hfst-proc -w">
+        <file name="eng-tel.automorf.hfst"/>
+      </program>
+      <program name="cg-proc -w">
+        <file name="eng-tel.rlx.bin"/>
+      </program>
+      <program name="apertium-tagger -g $2">
+        <file name="eng-tel.prob"/>
+      </program>
+      <program name="apertium-pretransfer"/>
+      <program name="lt-proc -b">
+        <file name="eng-tel.autobil.bin"/>
+      </program>
+      <program name="lrx-proc">
+        <file name="eng-tel.lrx.bin"/>
+      </program>
+      <program name="apertium-transfer -b">
+        <file name="apertium-eng-tel.eng-tel.t1x"/>
+        <file name="eng-tel.t1x.bin"/>
+      </program>
+      <program name="apertium-interchunk">
+        <file name="apertium-eng-tel.eng-tel.t2x"/>
+        <file name="eng-tel.t2x.bin"/>
+      </program>
+    </pipeline>
+  </mode>
+
+  <mode name="eng-tel-postchunk" install="no">
+    <pipeline>
+      <program name="hfst-proc -w">
+        <file name="eng-tel.automorf.hfst"/>
+      </program>
+      <program name="cg-proc -w">
+        <file name="eng-tel.rlx.bin"/>
+      </program>
+      <program name="apertium-tagger -g $2">
+        <file name="eng-tel.prob"/>
+      </program>
+      <program name="apertium-pretransfer"/>
+      <program name="lt-proc -b">
+        <file name="eng-tel.autobil.bin"/>
+      </program>
+      <program name="lrx-proc">
+        <file name="eng-tel.lrx.bin"/>
+      </program>
+      <program name="apertium-transfer -b">
+        <file name="apertium-eng-tel.eng-tel.t1x"/>
+        <file name="eng-tel.t1x.bin"/>
+      </program>
+      <program name="apertium-interchunk">
+        <file name="apertium-eng-tel.eng-tel.t2x"/>
+        <file name="eng-tel.t2x.bin"/>
+      </program>
+      <program name="apertium-postchunk">
+        <file name="apertium-eng-tel.eng-tel.t3x"/>
+        <file name="eng-tel.t3x.bin"/>
+      </program>
+    </pipeline>
+  </mode>
+
+  <!-- tel → eng -->
+
+  <mode name="tel-eng" install="yes">
+    <pipeline>
+      <program name="hfst-proc">
+        <file name="tel-eng.automorf.hfst"/>
+      </program>
+      <program name="apertium-tagger -g $2">
+        <file name="tel-eng.prob"/>
+      </program>
+      <program name="apertium-pretransfer"/>
+      <program name="lt-proc -b">
+        <file name="tel-eng.autobil.bin"/>
+      </program>
+      <program name="apertium-transfer -b">
+        <file name="apertium-eng-tel.tel-eng.t1x"/>
+        <file name="tel-eng.t1x.bin"/>
+      </program>
+      <program name="apertium-interchunk">
+        <file name="apertium-eng-tel.tel-eng.t2x"/>
+        <file name="tel-eng.t2x.bin"/>
+      </program>
+      <program name="apertium-postchunk">
+        <file name="apertium-eng-tel.tel-eng.t3x"/>
+        <file name="tel-eng.t3x.bin"/>
+      </program>
+      <program name="hfst-proc $1">
+        <file name="tel-eng.autogen.hfst"/>
+      </program>
+    </pipeline>
+  </mode>
+
+  <mode name="tel-eng-debug" install="no">
+    <pipeline>
+      <program name="hfst-proc">
+        <file name="tel-eng.automorf.hfst"/>
+      </program>
+      <program name="apertium-tagger -g $2">
+        <file name="tel-eng.prob"/>
+      </program>
+      <program name="apertium-pretransfer"/>
+      <program name="lt-proc -b">
+        <file name="tel-eng.autobil.bin"/>
+      </program>
+      <program name="apertium-transfer -b">
+        <file name="apertium-eng-tel.tel-eng.t1x"/>
+        <file name="tel-eng.t1x.bin"/>
+      </program>
+      <program name="apertium-interchunk">
+        <file name="apertium-eng-tel.tel-eng.t2x"/>
+        <file name="tel-eng.t2x.bin"/>
+      </program>
+      <program name="apertium-postchunk">
+        <file name="apertium-eng-tel.tel-eng.t3x"/>
+        <file name="tel-eng.t3x.bin"/>
+      </program>
+      <program name="hfst-proc -d">
+        <file name="tel-eng.autogen.hfst"/>
+      </program>
+    </pipeline>
+  </mode>
+  
+  <mode name="tel-eng-morph" install="no">
+    <pipeline>
+      <program name="hfst-proc -w">
+        <file name="tel-eng.automorf.hfst"/>
+      </program>
+    </pipeline>
+  </mode>
+
+  <mode name="tel-eng-tagger" install="no">
+    <pipeline>
+      <program name="hfst-proc">
+        <file name="tel-eng.automorf.hfst"/>
+      </program>
+      <program name="apertium-tagger -g $2">
+        <file name="tel-eng.prob"/>
+      </program>
+      <program name="apertium-pretransfer"/>
+    </pipeline>
+  </mode>
+
+  <mode name="tel-eng-biltrans" install="no">
+    <pipeline>
+      <program name="hfst-proc">
+        <file name="tel-eng.automorf.hfst"/>
+      </program>
+      <program name="apertium-tagger -g $2">
+        <file name="tel-eng.prob"/>
+      </program>
+      <program name="apertium-pretransfer"/>
+      <program name="lt-proc -b">
+        <file name="tel-eng.autobil.bin"/>
+      </program>
+    </pipeline>
+  </mode>
+
+  <mode name="tel-eng-lex" install="no">
+    <pipeline>
+      <program name="hfst-proc">
+        <file name="tel-eng.automorf.hfst"/>
+      </program>
+      <program name="apertium-tagger -g $2">
+        <file name="tel-eng.prob"/>
+      </program>
+      <program name="apertium-pretransfer"/>
+      <program name="lt-proc -b">
+        <file name="tel-eng.autobil.bin"/>
+      </program>
+      <program name="lrx-proc">
+        <file name="tel-eng.lrx.bin"/>
+      </program>
+    </pipeline>
+  </mode>
+
+  <mode name="tel-eng-transfer" install="no">
+    <pipeline>
+      <program name="hfst-proc">
+        <file name="tel-eng.automorf.hfst"/>
+      </program>
+      <program name="apertium-tagger -g $2">
+        <file name="tel-eng.prob"/>
+      </program>
+      <program name="apertium-pretransfer"/>
+      <program name="lt-proc -b">
+        <file name="tel-eng.autobil.bin"/>
+      </program>
+      <program name="apertium-transfer -b">
+        <file name="apertium-eng-tel.tel-eng.t1x"/>
+        <file name="tel-eng.t1x.bin"/>
+      </program>
+    </pipeline>
+  </mode>
+
+  <mode name="tel-eng-interchunk" install="no">
+    <pipeline>
+      <program name="hfst-proc">
+        <file name="tel-eng.automorf.hfst"/>
+      </program>
+      <program name="apertium-tagger -g $2">
+        <file name="tel-eng.prob"/>
+      </program>
+      <program name="apertium-pretransfer"/>
+      <program name="lt-proc -b">
+        <file name="tel-eng.autobil.bin"/>
+      </program>
+      <program name="apertium-transfer -b">
+        <file name="apertium-eng-tel.tel-eng.t1x"/>
+        <file name="tel-eng.t1x.bin"/>
+      </program>
+      <program name="apertium-interchunk">
+        <file name="apertium-eng-tel.tel-eng.t2x"/>
+        <file name="tel-eng.t2x.bin"/>
+      </program>
+    </pipeline>
+  </mode>
+
+  <mode name="tel-eng-postchunk" install="no">
+    <pipeline>
+      <program name="hfst-proc">
+        <file name="tel-eng.automorf.hfst"/>
+      </program>
+      <program name="apertium-tagger -g $2">
+        <file name="tel-eng.prob"/>
+      </program>
+      <program name="apertium-pretransfer"/>
+      <program name="lt-proc -b">
+        <file name="tel-eng.autobil.bin"/>
+      </program>
+      <program name="apertium-transfer -b">
+        <file name="apertium-eng-tel.tel-eng.t1x"/>
+        <file name="tel-eng.t1x.bin"/>
+      </program>
+      <program name="apertium-interchunk">
+        <file name="apertium-eng-tel.tel-eng.t2x"/>
+        <file name="tel-eng.t2x.bin"/>
+      </program>
+      <program name="apertium-postchunk">
+        <file name="apertium-eng-tel.tel-eng.t3x"/>
+        <file name="tel-eng.t3x.bin"/>
+      </program>
+    </pipeline>
+  </mode>
+
+
+
+
+</modes>
+
+

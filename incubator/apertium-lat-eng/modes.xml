@@ -1,0 +1,493 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<modes>
+
+  <!-- lat → eng -->
+
+  <mode name="lat-eng" install="yes">
+    <pipeline>
+      <program name="lt-proc -w">
+        <file name="lat-eng.automorf.bin"/>
+      </program>
+      <program name="cg-proc -w">
+        <file name="lat-eng.rlx.bin"/>
+      </program>
+      <program name="apertium-tagger -g $2">
+        <file name="lat-eng.prob"/>
+      </program>
+      <program name="apertium-pretransfer"/>
+      <program name="lt-proc -b">
+        <file name="lat-eng.autobil.bin"/>
+      </program>
+      <program name="lrx-proc">
+        <file name="lat-eng.autolex.bin"/>
+      </program>
+      <program name="apertium-transfer -b">
+        <file name="apertium-lat-eng.lat-eng.t1x"/>
+        <file name="lat-eng.t1x.bin"/>
+      </program>
+      <program name="apertium-interchunk">
+        <file name="apertium-lat-eng.lat-eng.t2x"/>
+        <file name="lat-eng.t2x.bin"/>
+      </program>
+      <program name="apertium-postchunk">
+        <file name="apertium-lat-eng.lat-eng.t3x"/>
+        <file name="lat-eng.t3x.bin"/>
+      </program>
+      <program name="lt-proc $1">
+        <file name="lat-eng.autogen.bin"/>
+      </program>
+      <program name="lt-proc -p">
+        <file name="lat-eng.autopgen.bin"/>
+      </program>
+    </pipeline>
+  </mode>
+
+  <mode name="lat-eng-dgen" install="no">
+    <pipeline>
+      <program name="lt-proc -w">
+        <file name="lat-eng.automorf.bin"/>
+      </program>
+      <program name="cg-proc -w">
+        <file name="lat-eng.rlx.bin"/>
+      </program>
+      <program name="apertium-tagger -g $2">
+        <file name="lat-eng.prob"/>
+      </program>
+      <program name="apertium-pretransfer"/>
+      <program name="lt-proc -b">
+        <file name="lat-eng.autobil.bin"/>
+      </program>
+      <program name="apertium-transfer -b">
+        <file name="apertium-lat-eng.lat-eng.t1x"/>
+        <file name="lat-eng.t1x.bin"/>
+      </program>
+      <program name="apertium-interchunk">
+        <file name="apertium-lat-eng.lat-eng.t2x"/>
+        <file name="lat-eng.t2x.bin"/>
+      </program>
+      <program name="apertium-postchunk">
+        <file name="apertium-lat-eng.lat-eng.t3x"/>
+        <file name="lat-eng.t3x.bin"/>
+      </program>
+      <program name="lt-proc -d">
+        <file name="lat-eng.autogen.bin"/>
+      </program>
+    </pipeline>
+  </mode>
+
+  <mode name="lat-eng-morph" install="no">
+    <pipeline>
+      <program name="lt-proc -w">
+        <file name="lat-eng.automorf.bin"/>
+      </program>
+    </pipeline>
+  </mode>
+
+  <mode name="lat-eng-disam" install="no">
+    <pipeline>
+      <program name="lt-proc -w">
+        <file name="lat-eng.automorf.bin"/>
+      </program>
+      <program name="cg-conv -a"/>
+      <program name="vislcg3 --trace --grammar">
+        <file name="lat-eng.rlx.bin"/>
+      </program>
+    </pipeline>
+  </mode>
+
+  <mode name="lat-eng-tagger" install="no">
+    <pipeline>
+      <program name="lt-proc -w">
+        <file name="lat-eng.automorf.bin"/>
+      </program>
+      <program name="cg-proc -w">
+        <file name="lat-eng.rlx.bin"/>
+      </program>
+      <program name="apertium-tagger -g $2">
+        <file name="lat-eng.prob"/>
+      </program>
+    </pipeline>
+  </mode>
+
+  <mode name="lat-eng-pretransfer" install="no">
+    <pipeline>
+      <program name="lt-proc -w">
+        <file name="lat-eng.automorf.bin"/>
+      </program>
+      <program name="cg-proc -w">
+        <file name="lat-eng.rlx.bin"/>
+      </program>
+      <program name="apertium-tagger -g $2">
+        <file name="lat-eng.prob"/>
+      </program>
+      <program name="apertium-pretransfer"/>
+    </pipeline>
+  </mode>
+
+  <mode name="lat-eng-biltrans" install="no">
+    <pipeline>
+      <program name="lt-proc -w">
+        <file name="lat-eng.automorf.bin"/>
+      </program>
+      <program name="cg-proc -w">
+        <file name="lat-eng.rlx.bin"/>
+      </program>
+      <program name="apertium-tagger -g $2">
+        <file name="lat-eng.prob"/>
+      </program>
+      <program name="apertium-pretransfer"/>
+      <program name="lt-proc -b">
+        <file name="lat-eng.autobil.bin"/>
+      </program>
+    </pipeline>
+  </mode>
+
+  <mode name="lat-eng-lex" install="no">
+    <pipeline>
+      <program name="lt-proc -w">
+        <file name="lat-eng.automorf.bin"/>
+      </program>
+      <program name="cg-proc -w">
+        <file name="lat-eng.rlx.bin"/>
+      </program>
+      <program name="apertium-tagger -g $2">
+        <file name="lat-eng.prob"/>
+      </program>
+      <program name="apertium-pretransfer"/>
+      <program name="lt-proc -b">
+        <file name="lat-eng.autobil.bin"/>
+      </program>
+      <program name="lrx-proc -t">
+        <file name="lat-eng.autolex.bin"/>
+      </program>
+    </pipeline>
+  </mode>
+
+  <mode name="lat-eng-transfer" install="no">
+    <pipeline>
+      <program name="lt-proc -w">
+        <file name="lat-eng.automorf.bin"/>
+      </program>
+      <program name="cg-proc -w">
+        <file name="lat-eng.rlx.bin"/>
+      </program>
+      <program name="apertium-tagger -g $2">
+        <file name="lat-eng.prob"/>
+      </program>
+      <program name="apertium-pretransfer"/>
+      <program name="lt-proc -b">
+        <file name="lat-eng.autobil.bin"/>
+      </program>
+      <program name="lrx-proc">
+        <file name="lat-eng.autolex.bin"/>
+      </program>
+      <program name="apertium-transfer -b -t">
+        <file name="apertium-lat-eng.lat-eng.t1x"/>
+        <file name="lat-eng.t1x.bin"/>
+      </program>
+    </pipeline>
+  </mode>
+
+  <mode name="lat-eng-interchunk" install="no">
+    <pipeline>
+      <program name="lt-proc -w">
+        <file name="lat-eng.automorf.bin"/>
+      </program>
+      <program name="cg-proc -w">
+        <file name="lat-eng.rlx.bin"/>
+      </program>
+      <program name="apertium-tagger -g $2">
+        <file name="lat-eng.prob"/>
+      </program>
+      <program name="apertium-pretransfer"/>
+      <program name="lt-proc -b">
+        <file name="lat-eng.autobil.bin"/>
+      </program>
+      <program name="lrx-proc">
+        <file name="lat-eng.autolex.bin"/>
+      </program>
+      <program name="apertium-transfer -b">
+        <file name="apertium-lat-eng.lat-eng.t1x"/>
+        <file name="lat-eng.t1x.bin"/>
+      </program>
+      <program name="apertium-interchunk -t">
+        <file name="apertium-lat-eng.lat-eng.t2x"/>
+        <file name="lat-eng.t2x.bin"/>
+      </program>
+    </pipeline>
+  </mode>
+
+  <mode name="lat-eng-postchunk" install="no">
+    <pipeline>
+      <program name="lt-proc -w">
+        <file name="lat-eng.automorf.bin"/>
+      </program>
+      <program name="cg-proc -w">
+        <file name="lat-eng.rlx.bin"/>
+      </program>
+      <program name="apertium-tagger -g $2">
+        <file name="lat-eng.prob"/>
+      </program>
+      <program name="apertium-pretransfer"/>
+      <program name="lt-proc -b">
+        <file name="lat-eng.autobil.bin"/>
+      </program>
+      <program name="lrx-proc">
+        <file name="lat-eng.autolex.bin"/>
+      </program>
+      <program name="apertium-transfer -b">
+        <file name="apertium-lat-eng.lat-eng.t1x"/>
+        <file name="lat-eng.t1x.bin"/>
+      </program>
+      <program name="apertium-interchunk">
+        <file name="apertium-lat-eng.lat-eng.t2x"/>
+        <file name="lat-eng.t2x.bin"/>
+      </program>
+      <program name="apertium-postchunk">
+        <file name="apertium-lat-eng.lat-eng.t3x"/>
+        <file name="lat-eng.t3x.bin"/>
+      </program>
+    </pipeline>
+  </mode>
+
+  <!-- eng → lat -->
+
+  <mode name="eng-lat" install="yes">
+    <pipeline>
+      <program name="lt-proc -w">
+        <file name="eng-lat.automorf.bin"/>
+      </program>
+      <program name="cg-proc -w">
+        <file name="eng-lat.rlx.bin"/>
+      </program>
+      <program name="apertium-tagger -g $2">
+        <file name="eng-lat.prob"/>
+      </program>
+      <program name="apertium-pretransfer"/>
+      <program name="lt-proc -b">
+        <file name="eng-lat.autobil.bin"/>
+      </program>
+      <program name="lrx-proc">
+        <file name="eng-lat.autolex.bin"/>
+      </program>
+      <program name="apertium-transfer -b">
+        <file name="apertium-lat-eng.eng-lat.t1x"/>
+        <file name="eng-lat.t1x.bin"/>
+      </program>
+      <program name="apertium-interchunk">
+        <file name="apertium-lat-eng.eng-lat.t2x"/>
+        <file name="eng-lat.t2x.bin"/>
+      </program>
+      <program name="apertium-postchunk">
+        <file name="apertium-lat-eng.eng-lat.t3x"/>
+        <file name="eng-lat.t3x.bin"/>
+      </program>
+      <program name="lt-proc $1">
+        <file name="eng-lat.autogen.bin"/>
+      </program>
+      <program name="lt-proc -p">
+        <file name="eng-lat.autopgen.bin"/>
+      </program>
+    </pipeline>
+  </mode>
+
+  <mode name="eng-lat-dgen" install="no">
+    <pipeline>
+      <program name="lt-proc -w">
+        <file name="eng-lat.automorf.bin"/>
+      </program>
+      <program name="cg-proc -w">
+        <file name="eng-lat.rlx.bin"/>
+      </program>
+      <program name="apertium-tagger -g $2">
+        <file name="eng-lat.prob"/>
+      </program>
+      <program name="apertium-pretransfer"/>
+      <program name="lt-proc -b">
+        <file name="eng-lat.autobil.bin"/>
+      </program>
+      <program name="apertium-transfer -b">
+        <file name="apertium-lat-eng.eng-lat.t1x"/>
+        <file name="eng-lat.t1x.bin"/>
+      </program>
+      <program name="apertium-interchunk">
+        <file name="apertium-lat-eng.eng-lat.t2x"/>
+        <file name="eng-lat.t2x.bin"/>
+      </program>
+      <program name="apertium-postchunk">
+        <file name="apertium-lat-eng.eng-lat.t3x"/>
+        <file name="eng-lat.t3x.bin"/>
+      </program>
+      <program name="lt-proc -d">
+        <file name="eng-lat.autogen.bin"/>
+      </program>
+    </pipeline>
+  </mode>
+
+  <mode name="eng-lat-morph" install="no">
+    <pipeline>
+      <program name="lt-proc -w">
+        <file name="eng-lat.automorf.bin"/>
+      </program>
+    </pipeline>
+  </mode>
+
+  <mode name="eng-lat-disam" install="no">
+    <pipeline>
+      <program name="lt-proc -w">
+        <file name="eng-lat.automorf.bin"/>
+      </program>
+      <program name="cg-conv -a"/>
+      <program name="vislcg3 --trace --grammar">
+        <file name="eng-lat.rlx.bin"/>
+      </program>
+    </pipeline>
+  </mode>
+
+  <mode name="eng-lat-tagger" install="no">
+    <pipeline>
+      <program name="lt-proc -w">
+        <file name="eng-lat.automorf.bin"/>
+      </program>
+      <program name="cg-proc -w">
+        <file name="eng-lat.rlx.bin"/>
+      </program>
+      <program name="apertium-tagger -g $2">
+        <file name="eng-lat.prob"/>
+      </program>
+    </pipeline>
+  </mode>
+
+  <mode name="eng-lat-pretransfer" install="no">
+    <pipeline>
+      <program name="lt-proc -w">
+        <file name="eng-lat.automorf.bin"/>
+      </program>
+      <program name="cg-proc -w">
+        <file name="eng-lat.rlx.bin"/>
+      </program>
+      <program name="apertium-tagger -g $2">
+        <file name="eng-lat.prob"/>
+      </program>
+      <program name="apertium-pretransfer"/>
+    </pipeline>
+  </mode>
+
+  <mode name="eng-lat-biltrans" install="no">
+    <pipeline>
+      <program name="lt-proc -w">
+        <file name="eng-lat.automorf.bin"/>
+      </program>
+      <program name="cg-proc -w">
+        <file name="eng-lat.rlx.bin"/>
+      </program>
+      <program name="apertium-tagger -g $2">
+        <file name="eng-lat.prob"/>
+      </program>
+      <program name="apertium-pretransfer"/>
+      <program name="lt-proc -b">
+        <file name="eng-lat.autobil.bin"/>
+      </program>
+    </pipeline>
+  </mode>
+
+  <mode name="eng-lat-lex" install="no">
+    <pipeline>
+      <program name="lt-proc -w">
+        <file name="eng-lat.automorf.bin"/>
+      </program>
+      <program name="cg-proc -w">
+        <file name="eng-lat.rlx.bin"/>
+      </program>
+      <program name="apertium-tagger -g $2">
+        <file name="eng-lat.prob"/>
+      </program>
+      <program name="apertium-pretransfer"/>
+      <program name="lt-proc -b">
+        <file name="eng-lat.autobil.bin"/>
+      </program>
+      <program name="lrx-proc">
+        <file name="eng-lat.autolex.bin"/>
+      </program>
+    </pipeline>
+  </mode>
+
+  <mode name="eng-lat-transfer" install="no">
+    <pipeline>
+      <program name="lt-proc -w">
+        <file name="eng-lat.automorf.bin"/>
+      </program>
+      <program name="cg-proc -w">
+        <file name="eng-lat.rlx.bin"/>
+      </program>
+      <program name="apertium-tagger -g $2">
+        <file name="eng-lat.prob"/>
+      </program>
+      <program name="apertium-pretransfer"/>
+      <program name="lt-proc -b">
+        <file name="eng-lat.autobil.bin"/>
+      </program>
+      <program name="apertium-transfer -b -t">
+        <file name="apertium-lat-eng.eng-lat.t1x"/>
+        <file name="eng-lat.t1x.bin"/>
+      </program>
+    </pipeline>
+  </mode>
+
+  <mode name="eng-lat-interchunk" install="no">
+    <pipeline>
+      <program name="lt-proc -w">
+        <file name="eng-lat.automorf.bin"/>
+      </program>
+      <program name="cg-proc -w">
+        <file name="eng-lat.rlx.bin"/>
+      </program>
+      <program name="apertium-tagger -g $2">
+        <file name="eng-lat.prob"/>
+      </program>
+      <program name="apertium-pretransfer"/>
+      <program name="lt-proc -b">
+        <file name="eng-lat.autobil.bin"/>
+      </program>
+      <program name="apertium-transfer -b">
+        <file name="apertium-lat-eng.eng-lat.t1x"/>
+        <file name="eng-lat.t1x.bin"/>
+      </program>
+      <program name="apertium-interchunk -t">
+        <file name="apertium-lat-eng.eng-lat.t2x"/>
+        <file name="eng-lat.t2x.bin"/>
+      </program>
+    </pipeline>
+  </mode>
+
+  <mode name="eng-lat-postchunk" install="no">
+    <pipeline>
+      <program name="lt-proc -w">
+        <file name="eng-lat.automorf.bin"/>
+      </program>
+      <program name="cg-proc -w">
+        <file name="eng-lat.rlx.bin"/>
+      </program>
+      <program name="apertium-tagger -g $2">
+        <file name="eng-lat.prob"/>
+      </program>
+      <program name="apertium-pretransfer"/>
+      <program name="lt-proc -b">
+        <file name="eng-lat.autobil.bin"/>
+      </program>
+      <program name="apertium-transfer -b">
+        <file name="apertium-lat-eng.eng-lat.t1x"/>
+        <file name="eng-lat.t1x.bin"/>
+      </program>
+      <program name="apertium-interchunk">
+        <file name="apertium-lat-eng.eng-lat.t2x"/>
+        <file name="eng-lat.t2x.bin"/>
+      </program>
+      <program name="apertium-postchunk">
+        <file name="apertium-lat-eng.eng-lat.t3x"/>
+        <file name="eng-lat.t3x.bin"/>
+      </program>
+    </pipeline>
+  </mode>
+</modes>
+

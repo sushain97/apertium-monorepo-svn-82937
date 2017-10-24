@@ -1,0 +1,15 @@
+DELIMITERS = "<.>" "<!>" "<?>" "<...>" "<¶>" ;
+SOFT-DELIMITERS = "<,>" ;
+
+SETS
+
+LIST N = n ; 
+LIST POSS = px1sg ;
+LIST GEN = gen ; 
+
+SECTION
+
+SELECT N ;
+  ## 
+
+SELECT POSS (0 N + GEN) (-1 N) ;

@@ -1,0 +1,216 @@
+%
+% File mtsxiv.tex, a copy of eamt12.tex
+%
+% Contact: mlf@dlsi.ua.es
+
+%%% To ease future customizations, various replaceables have been paramaterized
+%%% as listed in the newcommands section
+
+\documentclass[11pt]{article}
+\usepackage{mtsxiv}
+\usepackage{times}
+\usepackage{latexsym}
+\usepackage{url}
+\setlength\titlebox{6.5cm}    % Expanding the titlebox
+%%% YOUR PACKAGES BELOW THIS LINE %%%
+\usepackage[utf8]{inputenc}
+\usepackage{multirow} 
+\usepackage[small,bf]{caption} 
+
+\newcommand{\confname}{Machine Translation Summit XIV}
+\newcommand{\website}{\protect\url{http://www.mtsummit2013.info/}}
+\newcommand{\contactname}{research track co-chair Mikel L.\ Forcada}
+\newcommand{\contactemail}{mlf@dlsi.ua.es} 
+\newcommand{\conffilename}{mtsxiv}
+\newcommand{\downloadsite}{\protect\url{http://www.mtsummit2013.info/}}
+\newcommand{\paperlength}{$8$ (eight)}
+\newcommand{\shortpaperlength}{$4$ (four)}
+
+\usepackage{multibib}
+\usepackage[comma]{natbib}
+\usepackage{chapterbib}
+
+\usepackage{lingmacros}
+\usepackage{threeparttable}
+
+\newcommand{\todo}[1]{\{\textbf{TODO: #1}\}}
+\newcommand{\note}[1]{\{\textbf{Note: #1}\}}
+
+\usepackage{fancyvrb} 
+\DefineVerbatimEnvironment{outputExample}{Verbatim}{fontsize=\small}
+\DefineVerbatimEnvironment{goldExample}{BVerbatim}{fontsize=\tiny}
+
+\bibdata{mtsxivslsh}
+
+\newcommand{\sentenceexample}[1]{{\small\enumsentence{#1}}}
+
+\title{Shallow-transfer rule-based machine translation for the Western group of South Slavic languages}
+
+\author{Hrvoje Peradin\\
+  University of Zagreb\\
+  Faculty of Science\\
+  Department of Mathematics\\
+  {\tt hperadin@gmail.com}  \And
+  Filip Petkovski \\
+  University of Zagreb\\
+  Faculty of Electrical Engineering\\
+  and Computer Science\\
+  {\tt filip.petkovski@fer.hr}  \And
+  Francis M. Tyers\\
+  Dept. Lleng. i Sist. Inform.\\
+  Universitat d'Alacant\\
+  E-03899 Alacant\\
+  {\tt ftyers@dlsi.ua.es}}
+
+\date{}
+
+\begin{document}
+\maketitle
+\begin{abstract}
+The South Slavic languages, spoken mostly in the Balkans, make up one
+of the three Slavic branches. The South Slavic branch is in turn
+comprised of two subgroups, the Eastern subgroup containing Macedonian
+and Bulgarian, and the western subgroup containing Serbo-Croatian
+and Slovenian. This paper describes the development of a
+bidirectional machine translation system for the western branch of
+South-Slavic languages — Serbo-Croatian and Slovenian. Both
+languages have a free word order, are highly inflected, and share a
+great degree of mutual inteligibility. We give details on resources and
+development methods used, as well as an evaluation, and
+general directions for future work.
+\end{abstract}
+
+%\section{Credits}
+%\todo{Credit where credit is due...}
+
+% INTRODUCTION
+\input{introduction}
+
+% DESIGN 
+\input{design}
+
+% DEVELOPMENT
+\input{development}
+
+\begin{table}
+
+\begin{center}
+\begin{tabular}{|l|rrr|}
+\hline
+\textbf{Dictionary} & \textbf{Paradigms} & \textbf{Entries} & \textbf{Forms} \\
+\hline
+Serbo-Croatian &  1,033 & 13,206 & 233,878 \\
+Slovenian &  1,909 & 13,383 & 147,580 \\
+\hline
+Bilingual &  69 &  16,434 & 70,787 \\
+\hline
+\end{tabular}
+\caption{Statistics on number of lexicon entries for each of the dictionaries in the 
+   system.}
+\end{center}
+
+\end{table}
+
+\begin{table}
+\begin{center}
+\begin{tabular}{|l|rr|}
+\hline
+ \textbf{Type}      & \texttt{hbs}$\rightarrow$\texttt{slv} & \texttt{slv}$\rightarrow$\texttt{hbs}\\
+\hline
+Disambiguation      &     194              &     28 \\
+Lexical selection   &     --            &  42 \\
+Transfer            &                47 &  98 \\
+\hline
+
+\end{tabular}
+ \caption{Statistics on the number of rules in each direction. For the lexical selection rules, 
+   the number indicates that there are 42 rules for each of the three standard varieties currently
+   supported.}
+\end{center}
+\end{table}
+
+% EVALUATION 
+\input{evaluation}
+
+
+% CONCLUSIONS AND FUTURE WORK
+\input{conclusions}
+
+
+\section*{Acknowledgements}
+
+The development of this language pair was funded as a part of the
+Google Summer of Code.\footnote{\url{http://code.google.com/soc/}}
+Many thanks to the language pair co-author Ale\v{s} Horvat and his
+mentor Jernej Vičič, and other Apertium contributors for their
+invaluable help and support.
+
+%\nocite{*}
+%\bibliographystyle{mtsxiv}
+\bibliographystyle{apalike}
+\bibliography{mtsxivslsh}
+
+\end{document}
+
+%% \begin{thebibliography}{}
+
+%% \bibitem[\protect\citename{Aho and Ullman}1972]{Aho:72}
+%% Aho, Alfred~V. and Jeffrey~D. Ullman.
+%% \newblock 1972.
+%% \newblock {\em The Theory of Parsing, Translation and Compiling}, volume~1.
+%% \newblock Prentice-{Hall}, Englewood Cliffs, NJ.
+
+%% \bibitem[\protect\citename{{American Psychological Association}}1983]{APA:83}
+%% {American Psychological Association}.
+%% \newblock 1983.
+%% \newblock {\em Publications Manual}.
+%% \newblock American Psychological Association, Washington, DC.
+
+%% \bibitem[\protect\citename{{Association for Computing Machinery}}1983]{ACM:83}
+%% {Association for Computing Machinery}.
+%% \newblock 1983.
+%% \newblock {\em Computing Reviews}, 24(11):503--512.
+
+%% \bibitem[\protect\citename{Chandra \bgroup et al.\egroup }1981]{Chandra:81}
+%% Chandra, Ashok~K., Dexter~C. Kozen, and Larry~J. Stockmeyer.
+%% \newblock 1981.
+%% \newblock Alternation.
+%% \newblock {\em Journal of the Asso\-ciation for Computing Machinery},
+%%   28(1):114--133.
+
+%% \bibitem[\protect\citename{Gledson and Keane}2008a]{Gledson:08homog}
+%% Gledson, Anne, and John Keane. 
+%% \newblock 2008a. 
+%% \newblock Measuring Topic Homogeneity and its Application to Dictionary-Based Word-Sense Disambiguation. 
+%% \newblock {\em Coling 2008, 22nd International Conference on Computational Linguistics}, Manchester, UK.
+%% \newblock 273--280.
+%% \bibitem[\protect\citename{Gledson and Keane}2008b]{Gledson:08websearch}
+%% Gledson, Anne, and John Keane. 
+%% \newblock 2008b. 
+%% \newblock Using Web-Search Results to Measure Word-group Similarity. \newblock {\em Coling 2008, 22nd International Conference on Computational Linguistics}, Manchester, UK.
+%% \newblock 281--288.
+%% \bibitem[\protect\citename{Gusfield}1997]{Gusfield:97}
+%% Gusfield, Dan.
+%% \newblock 1997.
+%% \newblock {\em Algorithms on Strings, Trees and Sequences}.
+%% \newblock Cambridge University Press, Cambridge, UK.
+
+%% \bibitem[\protect\citename{Tam and Schultz}2006]{Tam:06}
+%% Tam, Yik-Cheung and Tanja Schultz.
+%% \newblock 2006. 
+%% \newblock Unsupervised Language Model Adaptation Using
+%%   \nobreak{Latent} Semantic Marginals.
+%% \newblock {\em Interspeech 2006 -- ICSLP, Ninth International Conference on Spoken Language Processing}, 
+%% Pittsburgh, Pennsylvania, paper 1705-Thu1A2O.2. 
+
+%% \bibitem[\protect\citename{Tam and Schultz}2007]{Tam:07}
+%% Tam, Yik-Cheung and Tanja Schultz.
+%% \newblock 2007.
+%% \newblock Correlated \nobreak{Latent} Semantic Model for
+%%   Unsupervised Language Model Adaptation.
+%% \newblock {\em Proceedings of ICASSP 2007, International Conference on 
+%%   Acoustics, Speech, and Signal Processing}, Honolulu, Hawaii, Vol. IV, 41--44.
+
+%% \end{thebibliography}
+
+

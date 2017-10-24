@@ -1,0 +1,117 @@
+! 15 slides
+
+==Intro==
+
+* Some history:
+** Apertium is a pretty successful platform for making RBMT systems 
+     particularly between closely related languages
+** But so far we don't have any released pairs with Turkic languages,
+     released means that they've got adequate (> 80%) coverage and 
+     pass quality controls
+
+* Objectives: 
+** Create a pedagogical example for translating Turkic
+     languages with Apertium for use in a workshop
+** Show that systems between morphologically complex languages
+     can be successful in Apertium (previous failures: sme-fin, sme-smj, ...)
+
+==System architecture==
+
+===Tools===
+
+* HFST (lexc + twol): Analysis and generation
+* Constraint Grammar: Disambiguation
+* Apertium: Lexical disambiguation and transfer
+
+===Fitting them together===
+
+* Figure 1.
+
+==Development process==
+
+* The development process can be characterised as manual.
+
+===Previous experience===
+
+* Turkish--Azerbaijani*
+* Turkish--Kyrgyz*
+
+[* Funded by Google Summer of Code 2011]
+
+===Team===
+
+* Francis Tyers (morphotactics, morphophonology)
+* Jonathan North Washington (morphophonology, morphotactics)
+* Ilnar Salimzyanov (morphotactics, lexicon)
+* Rustam Batalov (lexicon)
+
+* + Input from the apertium-turkic mailing list (~ 25 subscribers,
+      interested in Turkic--Turkic machine translation)
+
+==Evaluation==
+
+* Coverage 
+* tt/ba over time
+
+* Word Error Rate
+
+==Observations==
+
+* Importance of unified tagsets, and grammatical representations:
+    - If something is the same, tag it the same.
+    - Otherwise you spend a lot of time on useless `transfer'
+      (e.g. ky, ~50 transfer rules, around 4 `real' rules)
+* Building the transducers and bilingual dictionary at the same time is good
+* Much easier to work with new code than adapt existing code
+
+==Future work==
+
+=== Current projects ===
+
+* Chuvash--Turkish  (Oksana Antonova, Hèctor Alòs i Font, Francis Tyers)
+* Tatar--Kazakh*    (Ilnar Salimyzanov, Jonathan North Washington)
+* Tatar--Turkish*   (Ramil Aglyamzanov)
+* Turkmen--Turkish* (Yasin Gülbahçe, Gianluca Grossi, Francis Tyers)
+
+[* Funded by Google Summer of Code 2012]
+
+=== Turkic languages in Apertium ===
+
+* staging = tur-aze*, tur-kir*
+* nursery = tuk-tur, tat-bak, tat-tur
+* incubator = chv-tur, kaz-tat, kaz-kir, chv-tat,
+
+          & atv & aze & bak & chv & kaz & kir & nog & sah & tat & tuk & tur & tuv & uig & uzb 
+\hline
+alt       & --  &     &     &     &     &     &     &     &     &     &     &     &     &
+\hline
+
+[* Pending refactoring]
+
+==Conclusion==
+
+===============================================================================
+===============================================================================
+===============================================================================
+
+
+== Introduction ==
+== Tatar and Bashkir ==
+== Apertium ==
+== Architecture ==
+
+* Multiwords are analysed at the same time as any other lexicon item,
+   in an LRLM manner. (e.g. ... ...)
+
+* Some context insensitive morphological transfer is done in the transfer 
+   lexicon (bilingual dictionary) and other is done in the structural transfer.
+
+== Tools ==
+== Development process ==
+== Speed ==
+== Evaluation ==
+== Weak points ==
+== Observations ==
+== Future work ==
+== Conclusion ==
+

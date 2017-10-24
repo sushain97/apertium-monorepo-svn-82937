@@ -1,0 +1,40 @@
+Config:
+  hfst:
+    App: hfst-lookup
+    Gen: ../../kaz.autogen.hfst
+    Morph: ../../kaz.automorf.hfst
+
+
+Tests:
+  "Back vowel {K}":
+    бар<v><iv><ger_abs><nom> : барушылық
+    бар<v><iv><ger_perf><nom> : барғандық
+
+  "Back vowel {K} stays voiceless":
+    бар<v><iv><ger_abs><abl> : барушылықтан
+    бар<v><iv><ger_abs><dat> : барушылыққа
+    бар<v><iv><ger_perf><abl> : барғандықтан
+    бар<v><iv><ger_perf><dat> : барғандыққа
+
+  "Back vowel {K} voices":
+    бар<v><iv><ger_abs><px1sg><nom> : барушылығым
+    бар<v><iv><ger_abs><px1sg><dat> : барушылығыма
+    бар<v><iv><ger_perf><px1sg><nom> : барғандығым
+    бар<v><iv><ger_perf><px1sg><dat> : барғандығыма
+
+
+  "Front vowel {K}":
+    бер<v><tv><ger_abs><nom> : берушілік
+    бер<v><tv><ger_perf><nom> : бергендік
+
+  "Front vowel {K} stays voiceless":
+    бер<v><tv><ger_abs><abl> : берушіліктен
+    бер<v><tv><ger_abs><dat> : берушілікке
+    бер<v><tv><ger_perf><abl> : бергендіктен
+    бер<v><tv><ger_perf><dat> : бергендікке
+
+  "Front vowel {K} voices":
+    бер<v><tv><ger_abs><px1sg><nom> : берушілігім
+    бер<v><tv><ger_abs><px1sg><dat> : берушілігіме
+    бер<v><tv><ger_perf><px1sg><nom> : бергендігім
+    бер<v><tv><ger_perf><px1sg><dat> : бергендігіме

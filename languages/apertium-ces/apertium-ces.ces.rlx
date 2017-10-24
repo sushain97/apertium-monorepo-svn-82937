@@ -1,0 +1,74 @@
+DELIMITERS = "<.>" "<!>" "<?>" ; 
+SOFT-DELIMITERS = "<,>" ;
+
+LIST BOS = (>>>) ; 
+LIST EOS = (<<<) ;
+
+LIST N = n np ;
+LIST A = adj ;
+
+LIST Nom = nom ; 
+LIST Gen = gen ; 
+LIST Dat = dat ; 
+LIST Acc = acc ; 
+LIST Ins = ins ; 
+LIST Loc = loc ; 
+LIST Voc = voc ; 
+
+LIST Sg = sg ; 
+LIST Pl = pl ; 
+
+LIST Masc = mi ma m ; 
+LIST Fem = f ; 
+LIST Neut = nt ; 
+
+LIST Pers = pers "prpers" ; 
+LIST Rel = rel ;
+LIST Interr = itg ; 
+
+LIST NP-MOD = adj det ; 
+
+LIST ACC-PREP = "na" "v" ;
+LIST LOC-PREP = "na" "v" ; 
+
+LIST CLB = sent ;
+
+SET NGDAILV = Nom | Gen | Dat | Acc | Ins | Loc | Voc ; 
+SET NUMBER = Sg | Pl ; 
+SET GENDER = Masc | Fem | Neut ; 
+
+SET NOT-LOC = NGDAILV - Loc ;
+
+SECTION
+
+REMOVE Voc ; 
+
+SECTION
+
+REMOVE $$NGDAILV IF (0C NP-MOD) (1C N) (NOT 1 N + $$NGDAILV);
+REMOVE $$NUMBER IF (0C NP-MOD) (1C N) (NOT 1 N + $$NUMBER);
+REMOVE $$GENDER IF (0C NP-MOD) (1C N) (NOT 1 N + $$GENDER);
+    ## Ústava EU učiní Evropu demokratičtější a průhlednější .
+
+REMOVE $$NGDAILV IF (0C N) (-1C NP-MOD) (NOT -1 NP-MOD + $$NGDAILV);
+REMOVE $$NUMBER IF (0C N) (-1C NP-MOD) (NOT -1 NP-MOD + $$NUMBER);
+REMOVE $$GENDER IF (0C N) (-1C NP-MOD) (NOT -1 NP-MOD + $$GENDER);
+    ## Ústava EU učiní Evropu demokratičtější a průhlednější .
+
+REMOVE Acc IF (-1C* Acc) (NOT -1C* ACC-PREP);
+    ## Ústava EU učiní Evropu demokratičtější a průhlednější .
+
+REMOVE Loc IF (NOT -1* LOC-PREP BARRIER NOT-LOC); 
+    ## Ústava EU učiní Evropu demokratičtější a průhlednější .
+
+REMOVE Nom IF (-1C* Nom); 
+    ## Ústava EU učiní Evropu demokratičtější a průhlednější .
+
+REMOVE Rel IF (0C Rel OR Interr) (1* ("?") BARRIER CLB) ;
+    ## Kde je Kuba ?
+
+# 'je' is often considered archaic and is ambiguous with pres.p3.sg of 'být'
+# add rules to select it in particular contexts
+REMOVE Pers IF (0 ("<je>"));
+    ## Kde je Kuba ?
+

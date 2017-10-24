@@ -1,0 +1,329 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<modes>
+  <mode name="tat-bak" install="yes">
+    <pipeline>
+      <program name="lt-proc -w">
+        <file name="tat-bak.automorf.bin"/>
+      </program>
+      <program name="cg-proc  -n -w -1">
+        <file name="tat-bak.rlx.bin"/>
+      </program>
+      <program name="apertium-pretransfer"/>
+      <program name="lt-proc -b">
+        <file name="tat-bak.autobil.bin"/>
+      </program>
+      <program name="lrx-proc">
+        <file name="tat-bak.lrx.bin"/>
+      </program>
+      <program name="apertium-transfer -b">
+        <file name="apertium-tat-bak.tat-bak.t1x"/>
+        <file name="tat-bak.t1x.bin"/>
+      </program>
+      <program name="apertium-transfer -n">
+        <file name="apertium-tat-bak.tat-bak.t2x"/>
+        <file name="tat-bak.t2x.bin"/>
+      </program>
+      <program name="lt-proc $1">
+        <file name="tat-bak.autogen.bin"/>
+      </program>
+      <program name="lt-proc -p">
+        <file name="tat-bak.autopgen.bin"/>
+      </program>
+    </pipeline>
+  </mode>
+
+  <mode name="tat-bak-debug" install="no">
+    <pipeline>
+      <program name="lt-proc -w">
+        <file name="tat-bak.automorf.bin"/>
+      </program>
+      <program name="cg-proc  -n -w -1">
+        <file name="tat-bak.rlx.bin"/>
+      </program>
+      <program name="apertium-pretransfer"/>
+      <program name="lt-proc -b">
+        <file name="tat-bak.autobil.bin"/>
+      </program>
+      <program name="apertium-transfer -b">
+        <file name="apertium-tat-bak.tat-bak.t1x"/>
+        <file name="tat-bak.t1x.bin"/>
+      </program>
+      <program name="apertium-transfer -n">
+        <file name="apertium-tat-bak.tat-bak.t2x"/>
+        <file name="tat-bak.t2x.bin"/>
+      </program>
+      <program name="lt-proc -d">
+        <file name="tat-bak.autogen.bin"/>
+      </program>
+    </pipeline>
+  </mode>
+ 
+  
+  <mode name="tat-bak-morph" install="no">
+    <pipeline>
+      <program name="lt-proc -w">
+        <file name="tat-bak.automorf.bin"/>
+      </program>
+    </pipeline>
+  </mode>
+
+  <mode name="tat-bak-tagger" install="no">
+    <pipeline>
+      <program name="lt-proc -w">
+        <file name="tat-bak.automorf.bin"/>
+      </program>
+      <program name="cg-proc  -n -w -1">
+        <file name="tat-bak.rlx.bin"/>
+      </program>
+      <program name="apertium-pretransfer"/>
+    </pipeline>
+  </mode>
+
+  <mode name="tat-bak-biltrans" install="no">
+    <pipeline>
+      <program name="lt-proc -w">
+        <file name="tat-bak.automorf.bin"/>
+      </program>
+      <program name="cg-proc  -n -w -1">
+        <file name="tat-bak.rlx.bin"/>
+      </program>
+      <program name="apertium-pretransfer"/>
+      <program name="lt-proc -b">
+        <file name="tat-bak.autobil.bin"/>
+      </program>
+    </pipeline>
+  </mode>
+
+  <mode name="tat-bak-lex" install="no">
+    <pipeline>
+      <program name="lt-proc -w">
+        <file name="tat-bak.automorf.bin"/>
+      </program>
+      <program name="cg-proc  -n -w -1">
+        <file name="tat-bak.rlx.bin"/>
+      </program>
+      <program name="apertium-pretransfer"/>
+      <program name="lt-proc -b">
+        <file name="tat-bak.autobil.bin"/>
+      </program>
+      <program name="lrx-proc -t">
+        <file name="tat-bak.lrx.bin"/>
+      </program>
+    </pipeline>
+  </mode>
+
+
+  <mode name="tat-bak-transfer" install="no">
+    <pipeline>
+      <program name="lt-proc -w">
+        <file name="tat-bak.automorf.bin"/>
+      </program>
+      <program name="cg-proc -n -w -1">
+        <file name="tat-bak.rlx.bin"/>
+      </program>
+      <program name="apertium-pretransfer"/>
+      <program name="lt-proc -b">
+        <file name="tat-bak.autobil.bin"/>
+      </program>
+      <program name="lrx-proc">
+        <file name="tat-bak.lrx.bin"/>
+      </program>
+      <program name="apertium-transfer -b">
+        <file name="apertium-tat-bak.tat-bak.t1x"/>
+        <file name="tat-bak.t1x.bin"/>
+      </program>
+    </pipeline>
+  </mode>
+
+  <mode name="tat-bak-transfer2" install="no">
+    <pipeline>
+      <program name="lt-proc -w">
+        <file name="tat-bak.automorf.bin"/>
+      </program>
+      <program name="cg-proc -n -w -1">
+        <file name="tat-bak.rlx.bin"/>
+      </program>
+      <program name="apertium-pretransfer"/>
+      <program name="lt-proc -b">
+        <file name="tat-bak.autobil.bin"/>
+      </program>
+      <program name="lrx-proc">
+        <file name="tat-bak.lrx.bin"/>
+      </program>
+      <program name="apertium-transfer -b">
+        <file name="apertium-tat-bak.tat-bak.t1x"/>
+        <file name="tat-bak.t1x.bin"/>
+      </program>
+      <program name="apertium-transfer -n">
+        <file name="apertium-tat-bak.tat-bak.t2x"/>
+        <file name="tat-bak.t2x.bin"/>
+      </program>
+    </pipeline>
+  </mode>
+
+  
+  <mode name="bak-tat" install="yes">
+    <pipeline>
+      <program name="lt-proc -w">
+        <file name="bak-tat.automorf.bin"/>
+      </program>
+      <program name="cg-proc  -n -w -1">
+        <file name="bak-tat.rlx.bin"/>
+      </program>
+      <program name="apertium-pretransfer"/>
+      <program name="lt-proc -b">
+        <file name="bak-tat.autobil.bin"/>
+      </program>
+      <program name="lrx-proc">
+        <file name="bak-tat.lrx.bin"/>
+      </program>
+      <program name="apertium-transfer -b">
+        <file name="apertium-tat-bak.bak-tat.t1x"/>
+        <file name="bak-tat.t1x.bin"/>
+      </program>
+      <program name="apertium-transfer -n">
+        <file name="apertium-tat-bak.bak-tat.t2x"/>
+        <file name="bak-tat.t2x.bin"/>
+      </program>
+      <program name="lt-proc $1">
+        <file name="bak-tat.autogen.bin"/>
+      </program>
+      <program name="lt-proc -p">
+        <file name="bak-tat.autopgen.bin"/>
+      </program>
+    </pipeline>
+  </mode>
+
+  <mode name="bak-tat-debug" install="no">
+    <pipeline>
+      <program name="lt-proc -w">
+        <file name="bak-tat.automorf.bin"/>
+      </program>
+      <program name="cg-proc  -n -w -1">
+        <file name="bak-tat.rlx.bin"/>
+      </program>
+      <program name="apertium-pretransfer"/>
+      <program name="lt-proc -b">
+        <file name="bak-tat.autobil.bin"/>
+      </program>
+      <program name="apertium-transfer -b">
+        <file name="apertium-tat-bak.bak-tat.t1x"/>
+        <file name="bak-tat.t1x.bin"/>
+      </program>
+      <program name="apertium-transfer -n">
+        <file name="apertium-tat-bak.bak-tat.t2x"/>
+        <file name="bak-tat.t2x.bin"/>
+      </program>
+      <program name="lt-proc -d">
+        <file name="bak-tat.autogen.bin"/>
+      </program>
+    </pipeline>
+  </mode>
+ 
+  
+  <mode name="bak-tat-morph" install="no">
+    <pipeline>
+      <program name="lt-proc -w">
+        <file name="bak-tat.automorf.bin"/>
+      </program>
+    </pipeline>
+  </mode>
+
+  <mode name="bak-tat-tagger" install="no">
+    <pipeline>
+      <program name="lt-proc -w">
+        <file name="bak-tat.automorf.bin"/>
+      </program>
+      <program name="cg-proc  -n -w -1">
+        <file name="bak-tat.rlx.bin"/>
+      </program>
+      <program name="apertium-pretransfer"/>
+    </pipeline>
+  </mode>
+
+  <mode name="bak-tat-biltrans" install="no">
+    <pipeline>
+      <program name="lt-proc -w">
+        <file name="bak-tat.automorf.bin"/>
+      </program>
+      <program name="cg-proc  -n -w -1">
+        <file name="bak-tat.rlx.bin"/>
+      </program>
+      <program name="apertium-pretransfer"/>
+      <program name="lt-proc -b">
+        <file name="bak-tat.autobil.bin"/>
+      </program>
+    </pipeline>
+  </mode>
+
+  <mode name="bak-tat-lex" install="no">
+    <pipeline>
+      <program name="lt-proc -w">
+        <file name="bak-tat.automorf.bin"/>
+      </program>
+      <program name="cg-proc  -n -w -1">
+        <file name="bak-tat.rlx.bin"/>
+      </program>
+      <program name="apertium-pretransfer"/>
+      <program name="lt-proc -b">
+        <file name="bak-tat.autobil.bin"/>
+      </program>
+      <program name="lrx-proc -t">
+        <file name="bak-tat.lrx.bin"/>
+      </program>
+    </pipeline>
+  </mode>
+
+
+  <mode name="bak-tat-transfer" install="no">
+    <pipeline>
+      <program name="lt-proc -w">
+        <file name="bak-tat.automorf.bin"/>
+      </program>
+      <program name="cg-proc -n -w -1">
+        <file name="bak-tat.rlx.bin"/>
+      </program>
+      <program name="apertium-pretransfer"/>
+      <program name="lt-proc -b">
+        <file name="bak-tat.autobil.bin"/>
+      </program>
+      <program name="lrx-proc">
+        <file name="bak-tat.lrx.bin"/>
+      </program>
+      <program name="apertium-transfer -b">
+        <file name="apertium-tat-bak.bak-tat.t1x"/>
+        <file name="bak-tat.t1x.bin"/>
+      </program>
+    </pipeline>
+  </mode>
+
+  <mode name="bak-tat-transfer2" install="no">
+    <pipeline>
+      <program name="lt-proc -w">
+        <file name="bak-tat.automorf.bin"/>
+      </program>
+      <program name="cg-proc -n -w -1">
+        <file name="bak-tat.rlx.bin"/>
+      </program>
+      <program name="apertium-pretransfer"/>
+      <program name="lt-proc -b">
+        <file name="bak-tat.autobil.bin"/>
+      </program>
+      <program name="lrx-proc">
+        <file name="bak-tat.lrx.bin"/>
+      </program>
+      <program name="apertium-transfer -b">
+        <file name="apertium-tat-bak.bak-tat.t1x"/>
+        <file name="bak-tat.t1x.bin"/>
+      </program>
+      <program name="apertium-transfer -n">
+        <file name="apertium-tat-bak.bak-tat.t2x"/>
+        <file name="bak-tat.t2x.bin"/>
+      </program>
+    </pipeline>
+  </mode>
+
+
+</modes>
+
+

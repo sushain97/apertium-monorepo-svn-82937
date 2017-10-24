@@ -1,0 +1,8 @@
+#!/bin/bash
+# known_words = `cat wiki.txt | apertium -d ../ kaa-morph | sed 's/$\W*\^/$\n^/g' | grep -v '\*' | wc -l`
+# words = `cat wiki.txt | apertium -d ../ kaa-morph | sed 's/$\W*\^/$\n^/g' |  wc -l`
+let "known_words = `cat $1 | apertium -d ../ kaa-morph | sed 's/$\W*\^/$\n^/g' | grep -v '\*' | wc -l`"
+let "words = `cat $1 | apertium -d ../ kaa-morph | sed 's/$\W*\^/$\n^/g' |  wc -l`"
+# echo "$known_words all: $words"
+echo "Coverage rate is `bc -l <<< $known_words/$words`"
+# rate = `bc -l <<< '100/3'`

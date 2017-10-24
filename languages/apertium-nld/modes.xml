@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<modes>
+
+  <mode name="nld-morph" install="yes">
+    <pipeline>
+      <program name="lt-proc -w -e">
+        <file name="nld.automorf.bin"/>
+      </program>
+    </pipeline>
+  </mode>
+
+  <mode name="nld-gener" install="yes">
+    <pipeline>
+      <program name="lt-proc -g">
+        <file name="nld.autogen.bin"/>
+      </program>
+    </pipeline>
+  </mode>
+
+  <mode name="nld-tagger" install="yes">
+    <pipeline>
+      <program name="lt-proc -w -e">
+        <file name="nld.automorf.bin"/>
+      </program>
+      <program name="cg-proc -w">
+        <file name="nld.rlx.bin"/>
+      </program>
+    </pipeline>
+  </mode>
+
+  <mode name="nld-disam" install="yes">
+    <pipeline>
+      <program name="lt-proc -w -e">
+        <file name="nld.automorf.bin"/>
+      </program>
+      <program name="cg-conv -a -r" />
+      <program name="vislcg3 --trace -g">
+        <file name="apertium-nld.nld.rlx"/>
+      </program>
+    </pipeline>
+  </mode>
+
+
+</modes>

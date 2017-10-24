@@ -1,0 +1,396 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- -*- nxml -*- -->
+<interchunk>
+  <section-def-cats>
+    <def-cat n="SN">
+      <cat-item tags="SN"/>
+      <cat-item tags="SN.*"/>
+    </def-cat>
+    <def-cat n="SV_FIN">
+      <cat-item tags="SV.FIN"/>
+      <cat-item tags="SV.FIN.*"/>
+    </def-cat>
+    <def-cat n="SV_INF">
+      <cat-item tags="SV.INF"/>
+      <cat-item tags="SV.INF.*"/>
+    </def-cat>
+    <def-cat n="SENT">
+      <cat-item tags="SENT"/>
+    </def-cat>
+    <def-cat n="ADV">
+      <cat-item tags="ADV"/>
+    </def-cat>
+    <def-cat n="SA">
+      <cat-item tags="SA.*"/>
+    </def-cat>
+  </section-def-cats>
+  <section-def-attrs>
+    <def-attr n="a_sn_type">
+      <attr-item tags="SN.INS"/>
+      <attr-item tags="SN.ILL"/>
+      <attr-item tags="SN.LOC"/>
+      <attr-item tags="SN.INE"/>
+      <attr-item tags="SN.ABL"/>
+    </def-attr>
+    <def-attr n="a_nbr">
+      <attr-item tags="sg"/>
+      <attr-item tags="pl"/>
+      <attr-item tags="sp"/>
+      <attr-item tags="ND"/>
+    </def-attr>
+    <def-attr n="a_gen">
+      <attr-item tags="f"/>
+      <attr-item tags="nt"/>
+      <attr-item tags="mfn"/>
+      <attr-item tags="m"/>
+      <attr-item tags="GD"/>
+    </def-attr>
+    <def-attr n="a_cas">
+      <attr-item tags="nom"/>
+      <attr-item tags="acc"/>
+      <attr-item tags="dat"/>
+      <attr-item tags="gen"/>
+      <attr-item tags="ins"/>
+      <attr-item tags="loc"/>
+      <attr-item tags="abl"/>
+      <attr-item tags="prp"/>
+    </def-attr>
+
+    <def-attr n="a_pos">
+      <attr-item tags="px1sg"/>
+      <attr-item tags="px2sg"/>
+      <attr-item tags="px3sg"/>
+      <attr-item tags="px1pl"/>
+      <attr-item tags="px2pl"/>
+      <attr-item tags="px3pl"/>
+    </def-attr>
+
+
+  </section-def-attrs>
+  <section-def-vars>
+    <def-var n="number"/>
+    <def-var n="gender" v="&lt;m&gt;"/>
+    <def-var n="PREP"/> <!-- this is our current preposition -->
+    <def-var n="POSS"/> <!-- this is our current possessive -->
+  </section-def-vars>
+  <section-def-macros>
+    <def-macro n="reset_case_poss1" npar="1">
+          <let><var n="POSS"/><lit v=""/></let>
+          <let><var n="PREP"/><lit v=""/></let>
+    </def-macro>
+    <def-macro n="check_and_set_poss1" npar="1"> <!-- npar = number of parameters -->
+          <let><var n="POSS"/><lit v=""/></let>
+          <choose> 
+            <when>
+               <test> 
+                  <and>
+                    <equal><clip pos="1" part="a_pos"/><lit-tag v="px3sg"/></equal>
+                    <equal><var n="gender"/><lit-tag v="m"/></equal>
+                  </and>
+               </test>
+               <let><var n="POSS"/>
+                 <concat>
+                  <lit v="^poss"/>
+                  <lit-tag  v="det.pos"/>
+                  <lit v="{"/>
+                  <lit v="^его"/>
+                  <lit-tag  v="det.pos"/>
+                  <lit v="$}$ "/>
+                </concat>
+               </let>
+            </when> 
+            <when>
+               <test> 
+                  <and>
+                    <equal><clip pos="1" part="a_pos"/><lit-tag v="px3sg"/></equal>
+                    <equal><var n="gender"/><lit-tag v="f"/></equal>
+                  </and>
+               </test>
+               <let><var n="POSS"/>
+                 <concat>
+                  <lit v="^poss"/>
+                  <lit-tag  v="det.pos"/>
+                  <lit v="{"/>
+                  <lit v="^её"/>
+                  <lit-tag  v="det.pos"/>
+                  <lit v="$}$ "/>
+                </concat>
+               </let>
+            </when> 
+
+            <when>
+               <test> 
+                  <and>
+                    <equal><clip pos="1" part="a_pos"/><lit-tag v="px2sg"/></equal>
+                    <equal><clip pos="1" part="a_nbr"/><lit-tag v="pl"/></equal>
+                  </and>
+               </test>
+               <let><var n="POSS"/>
+                 <concat>
+                  <lit v="^poss"/>
+                  <lit-tag  v="det.pos"/>
+                  <lit v="{"/>
+                  <lit v="^твой"/>
+                  <lit-tag  v="det.pos.mfn"/>
+                  <clip pos="1" part="a_nbr"/>
+                  <clip pos="1" part="a_cas"/>
+                  <lit v="$}$ "/>
+                </concat>
+               </let>
+            </when> 
+
+            <when>
+               <test> 
+                    <equal><clip pos="1" part="a_pos"/><lit-tag v="px2sg"/></equal>
+               </test>
+               <let><var n="POSS"/>
+                 <concat>
+                  <lit v="^poss"/>
+                  <lit-tag  v="det.pos"/>
+                  <lit v="{"/>
+                  <lit v="^твой"/>
+                  <lit-tag  v="det.pos"/>
+                  <clip pos="1" part="a_gen"/>
+                  <clip pos="1" part="a_nbr"/>
+                  <clip pos="1" part="a_cas"/>
+                  <lit v="$}$ "/>
+                </concat>
+               </let>
+            </when> 
+
+          </choose>
+    </def-macro>
+    <def-macro n="check_and_set_prep1" npar="1"> <!-- npar = number of parameters -->
+          <let><var n="PREP"/><lit v=""/></let>
+          <choose> 
+            <when>
+               <test> 
+                 <or>
+                  <equal><clip pos="1" part="a_sn_type"/><lit-tag v="SN.LOC"/></equal>
+                  <equal><clip pos="1" part="a_sn_type"/><lit-tag v="SN.ILL"/></equal>
+                 </or>
+               </test>
+               <let><var n="PREP"/>
+                 <concat>
+                  <lit v="^prep"/>
+                  <lit-tag  v="pr"/>
+                  <lit v="{"/>
+                  <lit v="^в"/>
+                  <lit-tag  v="pr"/>
+                  <lit v="$}$ "/>
+                </concat>
+               </let>
+            </when> 
+            <when>
+               <test> 
+                  <equal><clip pos="1" part="a_sn_type"/><lit-tag v="SN.INE"/></equal>
+               </test>
+               <let><var n="PREP"/>
+                 <concat>
+                  <lit v="^prep"/>
+                  <lit-tag  v="pr"/>
+                  <lit v="{"/>
+                  <lit v="^в"/>
+                  <lit-tag  v="pr"/>
+                  <lit v="$}$ "/>
+                </concat>
+               </let>
+            </when> 
+
+
+            <when>
+               <test> 
+                  <equal><clip pos="1" part="a_sn_type"/><lit-tag v="SN.INS"/></equal>
+               </test>
+               <let><var n="PREP"/>
+                 <concat>
+                  <lit v="^prep"/>
+                  <lit-tag  v="pr"/>
+                  <lit v="{"/>
+                  <lit v="^с"/>
+                  <lit-tag  v="pr"/>
+                  <lit v="$}$ "/>
+                </concat>
+               </let>
+            </when> 
+            <when>
+               <test> 
+                  <equal><clip pos="1" part="a_sn_type"/><lit-tag v="SN.ABL"/></equal>
+               </test>
+               <let><var n="PREP"/>
+                 <concat>
+                  <lit v="^prep"/>
+                  <lit-tag  v="pr"/>
+                  <lit v="{"/>
+                  <lit v="^из"/>
+                  <lit-tag  v="pr"/>
+                  <lit v="$}$ "/>
+                </concat>
+               </let>
+            </when> 
+
+          </choose>
+    </def-macro>
+
+    <def-macro n="concord1" npar="2"> <!-- npar = number of parameters -->
+          <choose> 
+            <when>
+               <test> 
+                  <equal><clip pos="2" part="a_gen"/><lit-tag v="GD"/></equal>
+               </test>
+               <let><clip pos="2" part="a_gen"/><clip pos="1" part="a_gen"/></let>
+            </when> 
+          </choose>
+          <choose> 
+            <when>
+               <test> 
+                  <equal><clip pos="2" part="a_nbr"/><lit-tag v="ND"/></equal>
+               </test>
+               <let><clip pos="2" part="a_nbr"/><clip pos="1" part="a_nbr"/></let>
+            </when> 
+          </choose>
+    </def-macro>
+  </section-def-macros>
+  <section-rules>
+
+
+    <rule comment="REGLA: SN">
+      <pattern>
+        <pattern-item n="SN"/>
+      </pattern>
+      <action>
+        <call-macro n="check_and_set_prep1">
+          <with-param pos="1"/>
+        </call-macro>
+        <call-macro n="check_and_set_poss1">
+          <with-param pos="1"/>
+        </call-macro>
+        <out>
+          <var n="PREP"/>
+          <var n="POSS"/>
+          <chunk>
+            <clip pos="1" part="lem"/>
+            <clip pos="1" part="tags"/>
+            <clip pos="1" part="chcontent"/>
+          </chunk>
+        </out>
+        <call-macro n="reset_case_poss1">
+          <with-param pos="1"/>
+        </call-macro>
+      </action>
+    </rule>
+
+    <rule comment="REGLA: SN ADV SA">
+      <pattern>
+        <pattern-item n="SN"/>
+        <pattern-item n="ADV"/>
+        <pattern-item n="SA"/>
+      </pattern>
+      <action>
+        <call-macro n="concord1">
+          <with-param pos="1"/>
+          <with-param pos="3"/>
+        </call-macro>
+        <out>
+          <chunk>
+            <clip pos="1" part="lem"/>
+            <clip pos="1" part="tags"/>
+            <clip pos="1" part="chcontent"/>
+          </chunk>
+          <b pos="1"/>
+          <chunk>
+            <clip pos="2" part="lem"/>
+            <clip pos="2" part="tags"/>
+            <clip pos="2" part="chcontent"/>
+          </chunk>
+          <b pos="2"/>
+          <chunk>
+            <clip pos="3" part="lem"/>
+            <clip pos="3" part="tags"/>
+            <clip pos="3" part="chcontent"/>
+          </chunk>
+        </out>
+      </action>
+    </rule>
+
+
+    <rule comment="REGLA: SV.FIN SN SV.INF">
+      <pattern>
+        <pattern-item n="SV_FIN"/>
+        <pattern-item n="SN"/>
+        <pattern-item n="SV_INF"/>
+      </pattern>
+      <action>
+        <call-macro n="check_and_set_prep1">
+          <with-param pos="2"/>
+        </call-macro>
+        <out>
+          <chunk>
+            <clip pos="1" part="lem"/>
+            <clip pos="1" part="tags"/>
+            <clip pos="1" part="chcontent"/>
+          </chunk>
+          <b pos="1"/>
+          <chunk>
+            <clip pos="3" part="lem"/>
+            <clip pos="3" part="tags"/>
+            <clip pos="3" part="chcontent"/>
+          </chunk>
+          <b pos="2"/>
+          <var n="PREP"/>
+          <chunk>
+            <clip pos="2" part="lem"/>
+            <clip pos="2" part="tags"/>
+            <clip pos="2" part="chcontent"/>
+          </chunk>
+        </out>
+        <call-macro n="reset_case_poss1">
+          <with-param pos="1"/>
+        </call-macro>
+      </action>
+    </rule>
+
+    <rule comment="REGLA: SN ADV ADV SA">
+      <pattern>
+        <pattern-item n="SN"/>
+        <pattern-item n="ADV"/>
+        <pattern-item n="ADV"/>
+        <pattern-item n="SA"/>
+      </pattern>
+      <action>
+        <call-macro n="concord1">
+          <with-param pos="1"/>
+          <with-param pos="4"/>
+        </call-macro>
+        <out>
+          <chunk>
+            <clip pos="1" part="lem"/>
+            <clip pos="1" part="tags"/>
+            <clip pos="1" part="chcontent"/>
+          </chunk>
+          <b pos="1"/>
+          <chunk>
+            <clip pos="2" part="lem"/>
+            <clip pos="2" part="tags"/>
+            <clip pos="2" part="chcontent"/>
+          </chunk>
+          <b pos="2"/>
+          <chunk>
+            <clip pos="3" part="lem"/>
+            <clip pos="3" part="tags"/>
+            <clip pos="3" part="chcontent"/>
+          </chunk>
+          <b pos="3"/>
+          <chunk>
+            <clip pos="4" part="lem"/>
+            <clip pos="4" part="tags"/>
+            <clip pos="4" part="chcontent"/>
+          </chunk>
+        </out>
+      </action>
+    </rule>
+
+
+  </section-rules>
+</interchunk>
+

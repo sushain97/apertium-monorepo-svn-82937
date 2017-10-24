@@ -1,0 +1,66 @@
+# -*- mode: markdown -*-
+
+PROBLEMS in apertium-sme-nob
+============================
+
+Quality
+-------
+
+On a small set of nob texts and their sme translations from
+kongehuset.no, `apertium-eval-translator.pl` on apertium-sme-nob back
+at `-r29118` gave:
+
+    Statistics about input files
+    -------------------------------------------------------
+    Number of words in reference: 3836
+    Number of words in test: 4136
+    Number of unknown words (marked with a star) in test: 358
+    Percentage of unknown words: 8.66 %
+    
+    Results when removing unknown-word marks (stars)
+    -------------------------------------------------------
+    Edit distance: 3067
+    Word error rate (WER): 79.95 %
+    Number of position-independent correct words: 2115
+    Position-independent word error rate (PER): 52.69 %
+    
+    Results when unknown-word marks (stars) are not removed
+    -------------------------------------------------------
+    Edit distance: 3138
+    Word Error Rate (WER): 81.80 %
+    Number of position-independent correct words: 2030
+    Position-independent word error rate (PER): 54.90 %
+    
+    Statistics about the translation of unknown words
+    -------------------------------------------------------
+    Number of unknown words which were free rides: 71
+    Percentage of unknown words that were free rides: 19.83 %
+
+Unsurprisingly, there are very few free-rides for such different
+languages. Note: these texts were most likely originally translated
+from nob to sme, *they are not post-edits*.
+
+An assimilation evaluation is described in `paper/sme-nob.tex`.
+
+The files t/latest-regression.results and t/latest-pending-results
+should give some indication of quality level for constructions that
+have received attention.
+
+
+Testvoc
+-------
+
+The analyser is trimmed to the bidix. The script
+`dev/sme-nob.inconsistency.sh` sends the rhs of the bidix through the
+generator and should have no lines starting with an `#`. We also run
+corpus testvoc's and grep for `[@#]`. As of `-r61904`, the pair seems
+testvoc clean according to these tests.
+
+See also
+[the /release page on the wiki](http://wiki.apertium.org/wiki/Northern_S%C3%A1mi_and_Norwegian/release)
+for some more testvoc issues.
+
+Miscellaneous
+-------------
+
+The Constraint Grammar disambigurator is rather slow :)

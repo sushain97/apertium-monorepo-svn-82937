@@ -1,0 +1,412 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- -*- nxml -*- -->
+<interchunk>
+  <section-def-cats>
+    <def-cat n="SN">
+      <cat-item tags="SN"/>
+      <cat-item tags="SN.*"/>
+    </def-cat>
+    <def-cat n="SV">
+      <cat-item tags="SV.*"/>
+    </def-cat>
+    <def-cat n="SA">
+      <cat-item tags="SA.*"/>
+    </def-cat>
+    <def-cat n="SPOST">
+      <cat-item tags="SPOST.*"/>
+    </def-cat>
+    <def-cat n="POST">
+      <cat-item tags="POST.*"/>
+    </def-cat>
+    <def-cat n="SENT">
+      <cat-item tags="SENT"/>
+    </def-cat>
+  </section-def-cats>
+  <section-def-attrs>
+    <def-attr n="a_nbr">
+      <attr-item tags="sg"/>
+      <attr-item tags="pl"/>
+      <attr-item tags="sp"/>
+      <attr-item tags="ND"/>
+    </def-attr>
+    <def-attr n="case">
+      <attr-item tags="erg"/>
+      <attr-item tags="abs"/>
+      <attr-item tags="dat"/>
+      <attr-item tags="nom"/>
+      <attr-item tags="gen"/>
+      <attr-item tags="par"/>
+      <attr-item tags="acc"/>
+      <attr-item tags="ine"/>
+      <attr-item tags="ela"/>
+      <attr-item tags="ill"/>
+      <attr-item tags="ade"/>
+      <attr-item tags="all"/>
+      <attr-item tags="abl"/>
+      <attr-item tags="ess"/>
+      <attr-item tags="tra"/>
+      <attr-item tags="ins"/>
+      <attr-item tags="com"/>
+      <attr-item tags="abe"/>
+    </def-attr>
+    <def-attr n="verb-type">
+      <attr-item tags="HAB"/>
+      <attr-item tags="COP"/>
+    </def-attr>
+  </section-def-attrs>
+  <section-def-vars>
+    <def-var n="number"/>
+  </section-def-vars>
+
+  <section-def-macros>
+    <def-macro n="propagate-verb-valency3" npar="3">
+      <choose>
+	<when>
+           <test><and><equal><clip pos="1" part="verb-type"/><lit-tag v="HAB"/></equal>
+	              <equal><clip pos="2" part="case"/><lit-tag v="erg"/></equal>
+	         </and>
+	   </test>           
+           <let>
+              <clip pos="2" part="case"/>
+	      <lit-tag v="ade"/>
+	   </let>
+       </when>
+
+       <when>
+           <test><and><equal><clip pos="1" part="verb-type"/><lit-tag v="COP"/></equal>
+	              <equal><clip pos="2" part="case"/><lit-tag v="abs"/></equal>
+	         </and>
+	   </test>           
+           <let>
+              <clip pos="2" part="case"/>
+	      <lit-tag v="nom"/>
+	   </let>
+       </when>
+       <when>
+           <test><and><equal><clip pos="1" part="lem"/><lit v="pitää"/></equal>
+	              <equal><clip pos="2" part="case"/><lit-tag v="dat"/></equal></and>
+	   </test>           
+           <let><clip pos="2" part="case"/><lit-tag v="nom"/></let>
+           <let><clip pos="3" part="case"/><lit-tag v="ela"/></let>
+       </when>
+
+      </choose>
+    </def-macro>
+
+    <def-macro n="propagate-verb-valency2" npar="2">
+      <choose>
+          <when>
+           <test><and><equal><clip pos="1" part="lem"/><lit v="kysyä"/></equal>
+	              <equal><clip pos="2" part="case"/><lit-tag v="dat"/></equal></and>
+	   </test>           
+           <let><clip pos="2" part="case"/><lit-tag v="abl"/></let>
+       </when>
+       <otherwise>
+         <choose>
+           <when>
+             <test><equal><clip pos="2" part="case"/><lit-tag v="dat"/></equal></test>           
+             <let><clip pos="2" part="case"/><lit-tag v="abl"/></let> <!-- CHECK CASE -->
+           </when>
+           <when>
+             <test><equal><clip pos="2" part="case"/><lit-tag v="erg"/></equal></test>           
+             <let><clip pos="2" part="case"/><lit-tag v="nom"/></let> 
+           </when>
+         </choose>
+       </otherwise>
+      </choose>
+
+    </def-macro>
+
+
+  </section-def-macros>
+
+  <section-rules>
+
+    <rule comment="REGLA: SN">
+      <pattern>
+        <pattern-item n="SN"/>
+      </pattern>
+      <action>
+	<choose>
+	  <when>
+           <test>
+	         <or>
+	           <equal><clip pos="1" part="case"/><lit-tag v="erg"/></equal>
+               	   <equal><clip pos="1" part="case"/><lit-tag v="abs"/></equal>
+		 </or>
+	   </test>           
+           <let>
+              <clip pos="1" part="case"/>
+	      <lit-tag v="nom"/>
+	   </let>
+       </when>
+       </choose>
+        <out>
+          <chunk>
+            <clip pos="1" part="lem"/>
+            <clip pos="1" part="tags"/>
+            <clip pos="1" part="chcontent"/>
+          </chunk>
+        </out>
+      </action>
+    </rule>
+
+    <rule comment="REGLA: SN POST">
+      <pattern>
+        <pattern-item n="SN"/>
+        <pattern-item n="POST"/>
+      </pattern>
+      <action>
+        <let><clip pos="1" part="case"/><clip pos="2" part="case"/></let>
+        <out>
+          <chunk>
+            <clip pos="1" part="lem"/>
+            <clip pos="1" part="tags"/>
+            <clip pos="1" part="chcontent"/>
+          </chunk>
+          <b pos="1"/>
+          <chunk>
+            <clip pos="2" part="lem"/>
+            <clip pos="2" part="tags"/>
+            <clip pos="2" part="chcontent"/>
+          </chunk>
+        </out>
+      </action>
+    </rule>
+
+    <rule comment="REGLA: SN POST SPOST">
+      <pattern>
+        <pattern-item n="SN"/>
+        <pattern-item n="POST"/>
+        <pattern-item n="SPOST"/>
+      </pattern>
+      <action>
+        <let><clip pos="1" part="case"/><clip pos="3" part="case"/></let>
+        <out>
+          <chunk>
+            <clip pos="1" part="lem"/>
+            <clip pos="1" part="tags"/>
+            <clip pos="1" part="chcontent"/>
+          </chunk>
+          <b pos="1"/>
+          <chunk>
+            <clip pos="3" part="lem"/>
+            <clip pos="3" part="tags"/>
+            <clip pos="3" part="chcontent"/>
+          </chunk>
+        </out>
+      </action>
+    </rule>
+
+    <rule comment="REGLA: SN SN SV">
+      <pattern>
+        <pattern-item n="SN"/>
+        <pattern-item n="SN"/>
+        <pattern-item n="SV"/>
+      </pattern>
+      <action>
+	<call-macro n="propagate-verb-valency3">
+	  <with-param pos="3"/>
+	  <with-param pos="1"/>
+	  <with-param pos="2"/>
+	</call-macro>
+        <out>
+          <chunk>
+            <clip pos="1" part="lem"/>
+            <clip pos="1" part="tags"/>
+            <clip pos="1" part="chcontent"/>
+          </chunk>
+	  <b/>
+          <chunk>
+            <clip pos="3" part="lem"/>
+            <clip pos="3" part="tags"/>
+            <clip pos="3" part="chcontent"/>
+          </chunk>
+	  <b/>
+          <chunk>
+            <clip pos="2" part="lem"/>
+            <clip pos="2" part="tags"/>
+            <clip pos="2" part="chcontent"/>
+          </chunk>
+        </out>
+      </action>
+    </rule>
+
+    <rule comment="REGLA: SV SN">
+      <pattern>
+        <pattern-item n="SV"/>
+        <pattern-item n="SN"/>
+      </pattern>
+      <action>
+	<call-macro n="propagate-verb-valency2">
+	  <with-param pos="1"/>
+	  <with-param pos="2"/>
+	</call-macro>
+        <out>
+          <chunk>
+            <clip pos="1" part="lem"/>
+            <clip pos="1" part="tags"/>
+            <clip pos="1" part="chcontent"/>
+          </chunk>
+	  <b/>
+          <chunk>
+            <clip pos="2" part="lem"/>
+            <clip pos="2" part="tags"/>
+            <clip pos="2" part="chcontent"/>
+          </chunk>
+        </out>
+      </action>
+    </rule>
+
+
+
+    <rule comment="REGLA: SN SV">
+      <pattern>
+        <pattern-item n="SN"/>
+        <pattern-item n="SV"/>
+      </pattern>
+      <action>
+	<call-macro n="propagate-verb-valency2">
+	  <with-param pos="2"/>
+	  <with-param pos="1"/>
+	</call-macro>
+        <out>
+          <chunk>
+            <clip pos="1" part="lem"/>
+            <clip pos="1" part="tags"/>
+            <clip pos="1" part="chcontent"/>
+          </chunk>
+	  <b/>
+          <chunk>
+            <clip pos="2" part="lem"/>
+            <clip pos="2" part="tags"/>
+            <clip pos="2" part="chcontent"/>
+          </chunk>
+        </out>
+      </action>
+    </rule>
+
+    <rule comment="REGLA: SN SV SN POST">
+      <pattern>
+        <pattern-item n="SN"/>
+        <pattern-item n="SV"/>
+        <pattern-item n="SN"/>
+        <pattern-item n="POST"/>
+      </pattern>
+      <action>
+	<call-macro n="propagate-verb-valency3">
+	  <with-param pos="2"/>
+	  <with-param pos="1"/>
+	  <with-param pos="3"/>
+	</call-macro>
+	<let><clip pos="3" part="case"/><clip pos="4" part="case"/></let>
+        <out>
+          <chunk>
+            <clip pos="1" part="lem"/>
+            <clip pos="1" part="tags"/>
+            <clip pos="1" part="chcontent"/>
+          </chunk>
+	  <b/>
+          <chunk>
+            <clip pos="2" part="lem"/>
+            <clip pos="2" part="tags"/>
+            <clip pos="2" part="chcontent"/>
+          </chunk>
+	  <b/>
+          <chunk>
+            <clip pos="3" part="lem"/>
+            <clip pos="3" part="tags"/>
+            <clip pos="3" part="chcontent"/>
+          </chunk>
+        </out>
+      </action>
+    </rule>
+
+    <rule comment="REGLA: SN SA SV">
+      <pattern>
+        <pattern-item n="SN"/>
+        <pattern-item n="SA"/>
+        <pattern-item n="SV"/>
+      </pattern>
+      <action>
+	<call-macro n="propagate-verb-valency3">
+	  <with-param pos="3"/>
+	  <with-param pos="1"/>
+	  <with-param pos="2"/>
+	</call-macro>
+        <out>
+          <chunk>
+            <clip pos="1" part="lem"/>
+            <clip pos="1" part="tags"/>
+            <clip pos="1" part="chcontent"/>
+          </chunk>
+	  <b/>
+          <chunk>
+            <clip pos="3" part="lem"/>
+            <clip pos="3" part="tags"/>
+            <clip pos="3" part="chcontent"/>
+          </chunk>
+	  <b/>
+          <chunk>
+            <clip pos="2" part="lem"/>
+            <clip pos="2" part="tags"/>
+            <clip pos="2" part="chcontent"/>
+          </chunk>
+        </out>
+      </action>
+    </rule>
+
+    <rule comment="REGLA: SN SV SN POST SN">
+      <pattern>
+        <pattern-item n="SN"/>
+        <pattern-item n="SV"/>
+        <pattern-item n="SN"/>
+        <pattern-item n="POST"/>
+        <pattern-item n="SN"/>
+      </pattern>
+      <action>
+        <let><clip pos="3" part="case"/><clip pos="4" part="case"/></let>
+	<call-macro n="propagate-verb-valency3">
+	  <with-param pos="2"/>
+	  <with-param pos="1"/>
+	  <with-param pos="5"/>
+	</call-macro>
+        <out>
+          <chunk><lit v="XXX"/>
+            <clip pos="1" part="lem"/>
+            <clip pos="1" part="tags"/>
+            <clip pos="1" part="chcontent"/>
+          </chunk>
+	  <b/>
+          <chunk>
+            <clip pos="2" part="lem"/>
+            <clip pos="2" part="tags"/>
+            <clip pos="2" part="chcontent"/>
+          </chunk>
+	  <b/>
+          <chunk>
+            <clip pos="3" part="lem"/>
+            <clip pos="3" part="tags"/>
+            <clip pos="3" part="chcontent"/>
+          </chunk>
+	  <b/>
+          <chunk>
+            <clip pos="4" part="lem"/>
+            <clip pos="4" part="tags"/>
+            <clip pos="4" part="chcontent"/>
+          </chunk>
+	  <b/>
+          <chunk>
+            <clip pos="5" part="lem"/>
+            <clip pos="5" part="tags"/>
+            <clip pos="5" part="chcontent"/>
+          </chunk>
+
+
+        </out>
+      </action>
+    </rule>
+
+  </section-rules>
+</interchunk>
+

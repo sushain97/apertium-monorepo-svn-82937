@@ -1,0 +1,72 @@
+
+Alphabet 
+
+! Define your alphabet, each of the individual symbols, here
+
+അ ആ ഇ ഈ ഉ ഊ ഋ ഌ എ ഏ ഐ ഒ ഓ ഔ ക ഖ ഗ ഘ ങ ച ഛ ജ ഝ ഞ ട ഠ ഡ ഢ ണ ത ഥ ദ ധ ന ഩ പ ഫ ബ ഭ മ യ ര റ ല ള ഴ വ  ശ ഷ സ ഹ  
+‍
+ ാ ി ീ  ു ൂ ൃ ൄ െ േ ൈ ൊ ോ ൌ ് ൎ ം ഃ
+
+ %{y%}:0 %{z%}:0 %{p%}:0 
+
+ %>:0 %»:0
+
+ ‍
+
+ ; 
+
+Sets
+
+! The vowel on the right is -u
+RVowU = ു ; 
+
+! The vowel on the right is -a
+RVowA = ക ഖ ഗ ഘ ങ ച ഛ ജ ഝ ഞ ട ഠ ഡ 
+                   ഢ ണ ത ഥ ദ ധ ന ഩ പ ഫ ബ ഭ മ യ ര 
+                    റ ല ള ഴ വ ശ ഷ സ ഹ   ി െ  ;
+ 
+! The vowel on the right is -m
+RVowM =  ം ; 
+
+Rules 
+
+"Epenthesis in clitics ({y} → y)"
+%{y%}:യ <=> :RVowA  [ %>: | %»: ]  _ ; 
+
+"Epenthesis in clitics ({y} → v)"
+%{y%}:വ <=> :RVowU  [ %>: | %»: ]  _ ; 
+
+"Epenthesis in clitics ({y} → m)"
+%{y%}:മ <=> RVowM:  [ %>: | %»: ]  _ ; 
+
+"Remove anusuvara when followed by a morpheme boundary"
+ം:0 <=> _ [ %>: | %»: ] ;
+
+"Remove ZWNJ when followed by a morpheme boundary"
+‍:0 <=> _  [ %>: | %»: ]  ;
+
+"Remove virama when followed by a morpheme boundary"
+്:0 <=> _ (‍:)  [ %>: | %»: ]  ;
+
+"Epenthesis in clitics ({z} → y)"
+%{z%}:യ <=> :RVowA  [ %>: | %»: ]  _ ; 
+
+"Epenthesis in clitics ({z} → v)"
+%{z%}:വ <=> :RVowU  [ %>: | %»: ]  _ ; 
+
+"Epenthesis in clitics ({z} → v)"
+%{z%}:വ <=> RVowM:  [ %>: | %»: ]  _ ; 
+
+"Remove vowel before ി"
+Vx:0 <=> _  [ %>: | %»: ] :ി ; 
+         _  [ %>: | %»: ] %{p%}: ;
+    where Vx in ( ു   ി  ) ;
+
+"r -> ṟ before i"
+ര:റ <=> _ ്: ‍: [ %>: | %»: ] (:0) :ി ; 
+
+"r -> ṟ before u"
+ര:റ <=> _ ്: ‍: [ %>: | %»: ] (:0) :ു; 
+
+
+! ലഭ>ിക്കാര്‍»{y}ില്ല	

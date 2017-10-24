@@ -1,0 +1,229 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- -*- nxml -*- -->
+<postchunk>
+  <section-def-cats>
+    <def-cat n="aux-v">
+      <cat-item name="aux-v"/>
+    </def-cat>
+    <def-cat n="adv-v">
+      <cat-item name="adv-v"/>
+    </def-cat>
+    <def-cat n="j">
+      <cat-item name="j"/>
+    </def-cat>
+    <def-cat n="v">
+      <cat-item name="v"/>
+    </def-cat>
+    <def-cat n="sent">
+      <cat-item name="punt"/>
+    </def-cat>
+  </section-def-cats>
+  <section-def-attrs>
+
+    <def-attr n="a_anim">
+      <attr-item tags="an"/>
+      <attr-item tags="AD"/>
+    </def-attr>
+
+    <def-attr n="a_case">
+      <attr-item tags="nom"/>
+      <attr-item tags="CD"/>
+    </def-attr>
+
+
+    <def-attr n="a_gen">
+      <attr-item tags="m"/>
+      <attr-item tags="f"/>
+      <attr-item tags="m"/>
+      <attr-item tags="mfn"/>
+      <attr-item tags="GD"/>
+    </def-attr>
+
+
+    <def-attr n="a_pers">
+      <attr-item tags="p1"/>
+      <attr-item tags="p2"/>
+      <attr-item tags="p3"/>
+      <attr-item tags="PD"/>
+    </def-attr>
+
+    <def-attr n="a_nbr">
+      <attr-item tags="sg"/>
+      <attr-item tags="pl"/>
+      <attr-item tags="sp"/>
+      <attr-item tags="ND"/>
+    </def-attr>
+  </section-def-attrs>
+  <section-def-vars>
+    <def-var n="paraula"/>
+  </section-def-vars>
+  <section-rules>
+
+    <rule comment="CHUNK: adv v">
+      <pattern>
+        <pattern-item n="adv-v"/>
+      </pattern>
+      <action>
+        <choose>
+          <when><test><equal> 
+                        <clip pos="2" part="a_nbr"/><lit-tag v="ND"/>
+                      </equal></test>
+                <let><clip pos="2" part="a_nbr"/><lit-tag v="sg"/></let>
+          </when>
+        </choose>
+        <choose>
+          <when><test><equal> 
+                        <clip pos="2" part="a_gen"/><lit-tag v="GD"/>
+                      </equal></test>
+                <let><clip pos="2" part="a_gen"/><lit-tag v="m"/></let>
+          </when>
+        </choose>
+        <choose>
+          <when><test><equal> 
+                        <clip pos="2" part="a_pers"/><lit-tag v="PD"/>
+                      </equal></test>
+                <let><clip pos="2" part="a_pers"/><lit-tag v="p3"/></let>
+          </when>
+        </choose>
+        <out>
+          <lu>
+            <clip pos="1" part="whole"/>
+          </lu>
+          <b pos="1"/>
+          <lu>
+            <clip pos="2" part="whole"/>
+          </lu>
+        </out>
+      </action>
+    </rule>
+
+
+    <rule comment="CHUNK: aux v">
+      <pattern>
+        <pattern-item n="aux-v"/>
+      </pattern>
+      <action>
+        <choose>
+          <when><test><equal> 
+                        <clip pos="1" part="a_nbr"/><lit-tag v="ND"/>
+                      </equal></test>
+                <let><clip pos="1" part="a_nbr"/><lit-tag v="sg"/></let>
+          </when>
+        </choose>
+        <choose>
+          <when><test><equal> 
+                        <clip pos="1" part="a_gen"/><lit-tag v="GD"/>
+                      </equal></test>
+                <let><clip pos="1" part="a_gen"/><lit-tag v="m"/></let>
+          </when>
+        </choose>
+        <choose>
+          <when><test><equal> 
+                        <clip pos="1" part="a_pers"/><lit-tag v="PD"/>
+                      </equal></test>
+                <let><clip pos="1" part="a_pers"/><lit-tag v="p3"/></let>
+          </when>
+        </choose>
+        <out>
+          <lu>
+            <clip pos="1" part="whole"/>
+          </lu>
+          <b pos="1"/>
+          <lu>
+            <clip pos="2" part="whole"/>
+          </lu>
+        </out>
+      </action>
+    </rule>
+
+    <rule comment="CHUNK: v">
+      <pattern>
+        <pattern-item n="v"/>
+      </pattern>
+      <action>
+        <choose>
+          <when><test><equal> 
+                        <clip pos="1" part="a_nbr"/><lit-tag v="ND"/>
+                      </equal></test>
+                <let><clip pos="1" part="a_nbr"/><lit-tag v="sg"/></let>
+          </when>
+        </choose>
+        <choose>
+          <when><test><equal> 
+                        <clip pos="1" part="a_gen"/><lit-tag v="GD"/>
+                      </equal></test>
+                <let><clip pos="1" part="a_gen"/><lit-tag v="m"/></let>
+          </when>
+        </choose>
+        <choose>
+          <when><test><equal> 
+                        <clip pos="1" part="a_pers"/><lit-tag v="PD"/>
+                      </equal></test>
+                <let><clip pos="1" part="a_pers"/><lit-tag v="p3"/></let>
+          </when>
+        </choose>
+        <out>
+          <lu>
+            <clip pos="1" part="whole"/>
+          </lu>
+        </out>
+      </action>
+    </rule>
+
+    <rule comment="CHUNK: j">
+      <pattern>
+        <pattern-item n="j"/>
+      </pattern>
+      <action>
+        <choose>
+          <when><test><equal> 
+                        <clip pos="1" part="a_nbr"/><lit-tag v="ND"/>
+                      </equal></test>
+                <let><clip pos="1" part="a_nbr"/><lit-tag v="sg"/></let>
+          </when>
+        </choose>
+        <choose>
+          <when><test><equal> 
+                        <clip pos="1" part="a_gen"/><lit-tag v="GD"/>
+                      </equal></test>
+                <let><clip pos="1" part="a_gen"/><lit-tag v="m"/></let>
+          </when>
+        </choose>
+        <choose>
+          <when><test><equal> 
+                        <clip pos="1" part="a_anim"/><lit-tag v="AD"/>
+                      </equal></test>
+                <let><clip pos="1" part="a_anim"/><lit-tag v="an"/></let>
+          </when>
+        </choose>
+
+        <choose>
+          <when><test><equal> 
+                        <clip pos="1" part="a_case"/><lit-tag v="CD"/>
+                      </equal></test>
+                <let><clip pos="1" part="a_case"/><lit-tag v="nom"/></let>
+          </when>
+        </choose>
+        <out>
+          <lu>
+            <clip pos="1" part="whole"/>
+          </lu>
+        </out>
+      </action>
+    </rule>
+
+
+    <rule comment="CHUNK: sent">
+      <pattern>
+        <pattern-item n="sent"/>
+      </pattern>
+      <action>
+        <out>
+          <lu>
+            <clip pos="1" part="whole"/>
+          </lu>
+        </out>
+      </action>
+    </rule>
+  </section-rules>
+</postchunk>

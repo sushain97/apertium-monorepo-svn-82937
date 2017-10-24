@@ -1,0 +1,28 @@
+Gaupol extension for getting Machine Translation suggestions from a
+local Apertium installation. 
+
+
+Prerequisites:
+- gaupol
+- apertium
+- a language pair of your choice
+
+
+After installing, click the Apertium menu and Translate. You can then
+select the translation direction, and click OK to translate. The
+translations go into the "translation" column. NOTE: anything that was
+there from before will be overwritten! Fortunately you can just undo
+it :-)
+
+
+
+Ideas:
+- is it possible to find the source language somehow? Then we might be
+  able to filter down the mode list...
+- ability to select certain rows and only translate those
+- or perhaps ability to get "suggestions" instead somehow? Probably
+  can do a lot of fancy UI stuff here...
+- a field for usermodes in preferences, e.g. just a multiline text
+  box where users can paste in paths to specific .mode files, for
+  running non-installed development versions
+

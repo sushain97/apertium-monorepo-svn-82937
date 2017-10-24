@@ -1,0 +1,298 @@
+# Firstly, we need to define what tags should be considered sentence delimiters. For this example, only full stop is set as delimiter.
+DELIMITERS = "<.>" ;
+
+SUBREADINGS = LTR ;
+
+LIST EOS = <<< sent ; 
+LIST BOS = >>> sent ; 
+
+# We can define sets for common tag clusters
+LIST Cop = cop;
+LIST Post = post;
+LIST Px3sp = px3sp;
+LIST Px1Sg = px1sg;
+LIST N = n;
+LIST CA = cnjadv ;
+LIST CS = cnjsub ;
+LIST CC = cnjcoo ; 
+LIST Cog = cog ; 
+LIST Ant = ant ; 
+LIST Abl = abl;
+LIST Aor = aor ;
+LIST A = adj ;
+LIST Sim = sim ; 
+LIST Qst = qst ;
+LIST Nom = nom ;
+LIST Acc = acc ;
+LIST Evid = evid ;
+LIST Gen = gen ;
+LIST Dat = dat ;
+LIST Loc = loc ;
+LIST Ins = ins ;
+LIST Aux = vaux ;
+LIST V = v cop ;
+LIST Num = num;
+LIST Prop = np ;
+LIST Son = "soñ" ;
+LIST Sene = "sene";
+LIST Perc = "fayız";
+LIST Ref = ref ;
+LIST Nec = nec ;
+LIST Loc = loc ;
+LIST Adv = adv;
+LIST Det = det ;
+LIST Prc/perf = prc_perf ;
+LIST Prc/impf = prc_impf ;
+LIST Prc/fut = prc_fut ;
+LIST Prc/past = prc_past ;
+LIST Prc/cond = prc_cond ;
+LIST Gna/perf = gna_perf ;
+LIST Ger/past = ger_past ;
+LIST Ger/fut2 = ger_fut2 ;
+LIST Ger/fut = ger_fut ;
+LIST Gna/when = gna_when ;
+LIST Imper = imp ; 
+
+LIST Gpr/fut = gpr_fut ;
+LIST Gpr/fut2 = gpr_fut2 ;
+LIST Gpr/past = gpr_past ;
+
+LIST Past = past ;
+LIST Fut2 = fut2 ;
+LIST Fut = fut ;
+
+LIST Pers = pers ; 
+
+LIST Pass = pass ; 
+LIST Coop = coop ;
+LIST Caus = caus ;
+
+LIST Attr = attr ;
+LIST Subst = subst ; 
+
+LIST Pl = pl ;
+LIST Sg = sg ;
+
+LIST Sg1 = (p1 sg);
+LIST Sg2 = (p2 sg) ;
+LIST Sg3 = (p3 sg) ;
+LIST Pl1 = (p1 pl);
+LIST Pl2 = (p2 pl) ;
+LIST Pl3 = (p3 pl) ;
+
+LIST Cm = "," ;
+
+LIST Lı = ".*l[ıüiu]"ri ; 
+LIST Sız = ".*s[ıüiu]z"ri ; 
+
+LIST Malı = ".*m[ae]l[iı]"ri ;
+
+LIST Ğan = ".*[ğgkq][ae]n"ri ;
+
+LIST Post/Lı = ("lı" post) ;
+LIST Post/Sız = ("sız" post) ;
+
+LIST Meslek = ".*[çc][ıüiu]"r "alim" ; 
+
+LIST Title = "<[A-Z].*>"r ;
+
+LIST Terek = "Terek" ;
+
+LIST Kerek = "kerek" ;
+
+LIST Eken = "<eken>"i ;
+
+LIST Bil = "bil";
+
+LIST Faqat = "faqat" ; 
+
+LIST Dep = "<dep>"i ;
+
+LIST Qara = "<qara>"i ;
+
+LIST Anda = "<anda>"i ;
+
+LIST Laş = "laş" ;
+
+LIST Err/Orth = err_orth ;
+
+# SET Pers = Sg1 | Sg2 | Sg3 | Pl1 | Pl2 | Pl3 ;
+
+SET Prc = Prc/perf | Prc/impf | Prc/fut | Prc/past | Prc/cond ; 
+
+SET Gpr = Gpr/fut | Gpr/fut2 | Gpr/past ;
+
+SET Gna = Gna/perf | Gna/when ; 
+
+SET Ger  = Ger/past | Ger/fut2 | Ger/fut ;
+
+REMOVE Sim IF (0 Prop);
+
+SET Ant/Cog = Ant | Cog ; 
+
+SET NGADLAI = Nom | Gen | Acc | Dat | Loc | Abl | Ins ;
+
+SET Nonfin = Prc | Gna | Gpr | Ger ;
+
+# SET Fin = Past | Fut | Fut2 ;
+
+SET Fin = V - Nonfin | Aux - Nonfin ;
+
+SET Deriv = Sız | Lı ;
+
+SECTION
+
+#SELECT Prc/impf IF (1 Cop);
+
+REMOVE SUB:1 Laş ; 
+
+REMOVE SUB:1 Post/Lı IF (0 Nec) ;
+
+SELECT N IF (0 Nonfin) ;
+
+SELECT Post/Sız IF (1* Fin);
+
+SELECT Num IF (-1 Num) (0 Cop);
+
+REMOVE SUB:1 Cop IF (1C N) ;
+
+REMOVE SUB:1 Deriv ;
+
+SELECT A IF (0 Dat) (1 Cop);
+
+SELECT A IF (0 Acc) (1 Cop);
+
+SELECT Aor IF (0 Aor OR Prc/impf) (-1 Prc/impf);
+
+SELECT N IF (0C N OR Cop) (1* Fin);
+
+SELECT Prop IF (0C N OR Prop) ;
+
+REMOVE Subst IF (0 Gpr) ;
+
+REMOVE SUB:1 Subst IF (0 Gpr) ;
+
+SELECT Adv IF (0 Adv OR A) (1 Adv) ;
+
+SELECT Prop IF (0 Title) ;
+
+SELECT N IF (0 Post/Lı);
+
+SELECT Prc/impf IF (1C Bil);
+
+SELECT Fin IF (0C Bil) (-1 Prc/impf);
+
+SELECT Post IF (0 Post OR Prc/perf) (-1 Dat) (1* Fin);
+
+SELECT Prc IF (0 Prc OR Fin) (NOT 0 N)(1* Fin BARRIER CC) (1* Fin BARRIER Cm);
+
+SELECT Gna/perf IF (0 Dep) (NOT 1 Aux) ;
+
+SELECT Fin IF (0 Prc/impf OR Fin) (-1* Gna/perf BARRIER Cm);
+
+SELECT Subst IF (0 Num) (1 Perc);
+
+REMOVE SUB:1 Err/Orth ;
+
+REMOVE Err/Orth ;
+
+SELECT Evid IF (-1 Prc) (0 Eken) (1 EOS) ;
+
+REMOVE Ger IF (0 Ger OR Fin) (1 EOS) ;
+
+SECTION
+
+SELECT V IF (0 N OR V) (NOT -1* Fin) (1 BOS) ;
+
+SELECT N IF (0 N OR V) (-1C A);
+
+SELECT Adv IF (0 Anda) (NOT -1 Det) ;
+
+REMOVE Det IF (1C Cop OR Aux) ;
+
+REMOVE Imper IF (0 Kerek) ;
+
+# Remove zero copula if it is third person singular [MT]
+REMOVE SUB:1 Cop IF (0/* Sg3) (NOT 1 EOS) ; 
+
+REMOVE SUB:1 Cop IF (0 Nom) (1 Px3sp);
+
+REMOVE SUB:1 Cop IF (0/* Post/Sız) ;
+
+REMOVE N IF (0 Faqat) (-1 BOS) ; 
+
+REMOVE N IF (0 Faqat) (1 Cm) ;
+
+REMOVE Px1Sg IF (1 Px3sp);
+
+REMOVE SUB:1 Cop IF (0/* Cop + Sg1) (0 Pl) ;
+
+SELECT Cop IF (NOT 0* V);
+
+SELECT Post IF (0 Post OR N) (-1 Abl);
+
+SELECT Prop IF (0 Terek) (0 Title);
+
+SELECT Adv IF (0 Son) (1 Num) (2 Sene + Loc);
+
+REMOVE Adv IF (0 Det) (NOT 1* V);
+
+
+REMOVE Prc/perf IF (0 Gna/perf) (NOT 1* Aux) ;
+
+REMOVE Prc IF (NOT 1 Aux) ;
+
+REMOVE Imper IF (1C Cop) ;
+
+# REMOVE Pers IF (1C Pers) ;
+
+REMOVE Aux (NOT -1 Prc) ;
+
+REMOVE SUB:1 Post/Lı (0/* Lı) ;
+
+REMOVE SUB:1 Post/Sız (0/* Sız) ;
+
+SELECT Attr (0 Meslek) (1 Ant/Cog) ; 
+
+REMOVE Pass IF (0 Pass) (0 V - Pass) (0C V) ;
+
+SELECT Det IF (0 Ref) (1 N) ;
+
+REMOVE SUB:1 Qst IF (0 Px3sp) ;
+
+REMOVE Sim IF (0C N) ; 
+
+REMOVE Sim IF (0C Prop) ; 
+
+REMOVE Sim IF (0 Gna/when) ;
+
+REMOVE Subst IF (0 Subst - Pl) (0 Subst + Nom) ;
+
+REMOVE Attr IF (0 Attr) (NOT 1 N) ;
+
+REMOVE A + Subst + $$NGADLAI IF (0 N + $$NGADLAI) ;
+
+SELECT Aux IF (0C Aux OR Cop) (-1 Prc) ;
+
+REMOVE Prc IF (1C N OR Prop) ; 
+
+REMOVE Gpr IF (1 EOS) ;
+
+SELECT Fin IF (0C V) (1 EOS) ;
+
+SELECT SUB:1 Cop + Sg1 IF (0C N) (0 Px1Sg) (-1* Pers + Sg1) ;
+
+REMOVE Prc IF (1 Cm) ;
+
+
+SECTION
+
+REMOVE Imper IF (0 Qara) ;
+
+# Resources:
+# http://visl.sdu.dk/cg3.html
+# http://groups.google.com/group/constraint-grammar
+# http://kevindonnelly.org.uk/2010/05/constraint-grammar-tutorial/
+# http://wiki.apertium.org/wiki/Constraint_Grammar
+# http://wiki.apertium.org/wiki/Apertium_and_Constraint_Grammar
+

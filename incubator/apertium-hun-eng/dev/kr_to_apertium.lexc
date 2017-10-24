@@ -1,0 +1,119 @@
+!! Converts KR-code to Apertium's morphologic tags, as present in the Apertium
+!! stream format.
+
+LEXICON Root
+< [A|Á|B|C|D|E|É|F|G|H|I|Í|J|K|L|M|N|O|Ó|Ö|Ő|P|Q|R|S|T|U|Ú|Ü|Ű|V|W|X|Y|Z] [? - [%/ | %+]]* %/:0 {NOUN}:{<np>} >			Nominal;
+< [? - [A|Á|B|C|D|E|É|F|G|H|I|Í|J|K|L|M|N|O|Ó|Ö|Ő|P|Q|R|S|T|U|Ú|Ü|Ű|V|W|X|Y|Z]] [? - [%/ | %+]]* %/:0 {NOUN}:{<n>} >		Nominal;
+<[? - [%/ | %+]]+ %/:0>			KRRoot;  ! All the other words
+
+LEXICON KRRoot
+ADJ:%<adj%>	Nominal;
+NUM:%<num%>	Nominal;
+DET:%<predet%>	Nominal;
+VERB:0		Verb;
+ADV:%<adv%>	#;
+POSTP:%<post%>	#;
+CONJ:%<cnjcoo%>	#;  ! cnjadv ??? TODO: handle w/ lemmas
+PREP:%<pr%>	#;  ! wasn't in hun.dix
+PREV:%<prevb%>	WordEnd;  ! NEW!
+UTT-INT:%<ij%>	#;
+ONO:%<onom%>	#;
+
+LEXICON Nominal
+		NominalNumber;
+
+LEXICON NominalNumber
+%<PLUR:0	NominalNumberFam;
+0:%<sg%>	NominalPoss;
+
+LEXICON NominalNumberFam
+%<FAM%>%>:%<plfam%>	NominalPossPl;	! NEW
+%>:%<pl%>		NominalPossPl;
+
+LEXICON NominalPoss
+%<POSS%>:%<px3s 		NominalPossObj;
+%<POSS%<1%>%>:%<px1s		NominalPossObj;
+%<POSS%<2%>%>:%<px2s		NominalPossObj;
+%<POSS%<PLUR%>%>:%<px3p		NominalPossObj;
+%<POSS%<1%>%<PLUR%>%>:%<px1p	NominalPossObj;
+%<POSS%<2%>%<PLUR%>%>:%<px2p	NominalPossObj;
+0				NominalAnp;
+
+! TODO flag diacritics
+LEXICON NominalPossPl
+%<POSS%>:%<px3s 		NominalPossObjPl;
+%<POSS%<1%>%>:%<px1s		NominalPossObjPl;
+%<POSS%<2%>%>:%<px2s		NominalPossObjPl;
+%<POSS%<PLUR%>%>:%<px3p		NominalPossObjPl;
+%<POSS%<1%>%<PLUR%>%>:%<px1p	NominalPossObjPl;
+%<POSS%<2%>%<PLUR%>%>:%<px2p	NominalPossObjPl;
+0				NominalAnp;
+
+LEXICON NominalPossObj
+0:s%>		NominalAnp;
+
+LEXICON NominalPossObjPl
+0:p%>		NominalAnp;
+
+LEXICON NominalAnp
+%<ANP%>:%<pxs%>		NominalCas;
+%<ANP%<PLUR%>%>:%<pxp%>	NominalCas;
+0			NominalCas;
+
+LEXICON NominalCas
+0:%<nom%>		WordEnd;  ! ember
+%<CAS%<ACC%>%>:%<acc%>	#;  ! embert
+%<CAS%<DAT%>%>:%<dat%>	#;  ! embernek
+%<CAS%<INS%>%>:%<ins%>	#;  ! kalapáccsal
+%<CAS%<COM%>%>:%<com%>	#;  ! emberrel
+%<CAS%<CAU%>%>:%<cau%>	#;  ! emberért
+%<CAS%<FIN%>%>:%<fin%>	#;  ! emberért (does FIN exist at all?)
+%<CAS%<TRA%>%>:%<tra%>	#;  ! emberré
+%<CAS%<INE%>%>:%<ine%>	#;  ! emberben
+%<CAS%<SUE%>%>:%<ses%>	#;  ! emberen
+%<CAS%<ADE%>%>:%<ade%>	#;  ! embernél
+%<CAS%<ILL%>%>:%<ill%>	#;  ! emberbe
+%<CAS%<SBL%>%>:%<sub%>	#;  ! emberre
+%<CAS%<ALL%>%>:%<all%>	#;  ! emberhez
+%<CAS%<ELA%>%>:%<ela%>	#;  ! emberből
+%<CAS%<DEL%>%>:%<dela%>	#;  ! emberről
+%<CAS%<ABL%>%>:%<abl%>	#;  ! embertől
+%<CAS%<TER%>%>:%<term%>	#;  ! emberig
+%<CAS%<FOR%>%>:%<ess1%>	#;  ! emberként
+%<CAS%<ESS%>%>:%<ess2%>	#;  ! emberül
+%<CAS%<TEM%>%>:%<tem%>	#;  ! emberül
+
+! vbser is handled in Root & VbSer
+LEXICON Verb
+%<MODAL%>:%<vbmod%>	VerbModes;  ! ???
+0:%<vblex%>		VerbModes;
+
+LEXICON VerbModes
+%<PAST%>:%<past%>	VerbNumber;
+%<COND%>:%<cni%>	VerbNumber;
+%<SUBJUNC-IMP%>:%<pis%>	VerbNumber;
+%<INF%>:%<inf%>		VerbNumber;
+0:%<pres%>		VerbNumber;
+
+LEXICON VerbNumber
+%<PLUR%>:%<pl%>	VerbPerson;
+0:%<sg%>	VerbPerson;
+
+LEXICON VerbPerson
+%<PERS%<1:%<s1p%>	VerbPerson1;
+%<PERS%<2%>%>:%<s2p%>	VerbDef;
+0:%<s3p%>		VerbDef;
+
+LEXICON VerbPerson1
+%<OBJ%<2%>%>%>%>:%<o2p%>	VerbDef;  ! NEW
+%>%>:0				VerbDef;
+
+LEXICON VerbDef
+%<DEF%>:%<def%> #;
+0:%<ind%>	#;
+
+! End of the word, or the first part of a compound word
+LEXICON WordEnd
+%+	Root;
+0	#;
+

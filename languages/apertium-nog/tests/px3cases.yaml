@@ -1,0 +1,30 @@
+Config:
+  hfst:
+    App: hfst-lookup
+    Gen: ../nog.autogen.hfst
+    Morph: ../nog.automorf.hfst
+
+Tests:
+  "[twol] px3.nom":
+    ис<n><px3sp><nom> : иси
+    район<n><px3sp><nom> : районы
+
+  "[twol] px3.acc":
+    ис<n><px3sp><acc> : исин
+    район<n><px3sp><acc> : районын
+
+  "[twol] px3.gen":
+    ис<n><px3sp><gen> : исининъ
+    район<n><px3sp><gen> : районынынъ
+
+  "[twol] px3.dat":
+    ис<n><px3sp><dat> : исине
+    район<n><px3sp><dat> : районына
+
+  "[twol] px3.loc":
+    ис<n><px3sp><loc> : исинде
+    район<n><px3sp><loc> : районында
+
+  "[twol] px3.abl":
+    ис<n><px3sp><abl> : исиннен
+    район<n><px3sp><abl> : районыннан

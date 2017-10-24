@@ -1,0 +1,133 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<modes>
+
+  <!-- fao → nor -->
+
+  <mode name="fao-nob" install="yes" gendebug="yes">
+    <pipeline>
+      <program name="hfst-proc -w">
+        <file name="fao-nob.automorf.hfst"/>
+      </program>
+      <program name="cg-proc -w -n -1">
+        <file name="fao-nor.rlx.bin"/>
+      </program>
+<!--
+      <program name="apertium-tagger -u 2 -g $2">
+        <file name="fao-nor.prob"/>
+      </program>
+-->
+      <program name="apertium-pretransfer"/>
+      <program name="lt-proc -b">
+        <file name="fao-nob.autobil.bin"/>
+      </program>
+      <program name="lrx-proc -m">
+        <file name="fao-nob.autolex.bin"/>
+      </program>
+      <program name="apertium-transfer -b">
+        <file name="apertium-fao-nor.fao-nob.t1x"/>
+        <file name="fao-nob.t1x.bin"/>
+      </program>
+      <program name="apertium-interchunk">
+        <file name="apertium-fao-nor.fao-nob.t2x"/>
+        <file name="fao-nob.t2x.bin"/>
+      </program>
+      <program name="apertium-postchunk">
+        <file name="apertium-fao-nor.fao-nob.t3x"/>
+        <file name="fao-nob.t3x.bin"/>
+      </program>
+      <program name="lt-proc $1">
+        <file name="fao-nob.autogen.bin"/>
+      </program>
+    </pipeline>
+  </mode>
+
+  <mode name="fao-nob-disam-debug" install="no">
+    <pipeline>
+      <program name="hfst-proc -w">
+        <file name="fao-nob.automorf.hfst"/>
+      </program>
+      <program name="cg-conv -a -l"/>
+      <program name="vislcg3 --trace --grammar">
+        <file name="fao-nor.rlx.bin"/>
+      </program>
+    </pipeline>
+  </mode>
+
+
+  <mode name="fao-nno" install="yes" gendebug="yes">
+    <pipeline>
+      <program name="hfst-proc -w">
+        <file name="fao-nno.automorf.hfst"/>
+      </program>
+      <program name="cg-proc -w -n -1">
+        <file name="fao-nor.rlx.bin"/>
+      </program>
+<!--
+      <program name="apertium-tagger -u 2 -g $2">
+        <file name="fao-nor.prob"/>
+      </program>
+-->
+      <program name="apertium-pretransfer"/>
+      <program name="lt-proc -b">
+        <file name="fao-nno.autobil.bin"/>
+      </program>
+      <program name="lrx-proc -m">
+        <file name="fao-nno.autolex.bin"/>
+      </program>
+      <program name="apertium-transfer -b">
+        <file name="apertium-fao-nor.fao-nno.t1x"/>
+        <file name="fao-nno.t1x.bin"/>
+      </program>
+      <program name="apertium-interchunk">
+        <file name="apertium-fao-nor.fao-nno.t2x"/>
+        <file name="fao-nno.t2x.bin"/>
+      </program>
+      <program name="apertium-postchunk">
+        <file name="apertium-fao-nor.fao-nno.t3x"/>
+        <file name="fao-nno.t3x.bin"/>
+      </program>
+      <program name="lt-proc $1">
+        <file name="fao-nno.autogen.bin"/>
+      </program>
+    </pipeline>
+  </mode>
+
+  <!-- nob → fao -->
+
+  <mode name="nob-fao" install="yes" gendebug="yes">
+    <pipeline>
+      <program name="lt-proc -w">
+        <file name="nob-fao.automorf.bin"/>
+      </program>
+      <program name="cg-proc -w">
+        <file name="nob-fao.rlx.bin"/>
+      </program>
+      <program name="apertium-tagger -g $2">
+        <file name="nob-fao.prob"/>
+      </program>
+      <program name="apertium-pretransfer"/>
+      <program name="lt-proc -b">
+        <file name="nor-fao.autobil.bin"/>
+      </program>
+      <program name="lrx-proc -m">
+        <file name="nob-fao.autolex.bin"/>
+      </program>
+      <program name="apertium-transfer -b">
+        <file name="apertium-fao-nob.nob-fao.t1x"/>
+        <file name="nob-fao.t1x.bin"/>
+      </program>
+      <program name="apertium-interchunk">
+        <file name="apertium-fao-nob.nob-fao.t2x"/>
+        <file name="nob-fao.t2x.bin"/>
+      </program>
+      <program name="apertium-postchunk">
+        <file name="apertium-fao-nob.nob-fao.t3x"/>
+        <file name="nob-fao.t3x.bin"/>
+      </program>
+      <program name="lt-proc $1">
+        <file name="nor-fao.autogen.bin"/>
+      </program>
+    </pipeline>
+  </mode>
+</modes>
+

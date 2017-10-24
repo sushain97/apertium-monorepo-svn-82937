@@ -1,0 +1,616 @@
+% File freebmt11.tex
+% 17 September 2010
+% Contact: freerbmt@dlsi.ua.es
+
+\documentclass[11pt]{article}
+\usepackage{freerbmt11}
+\usepackage[utf8x]{inputenc}
+\usepackage{times}
+\usepackage{natbib}
+\usepackage{url}
+\urlstyle{tt}
+\usepackage{latexsym}
+\usepackage[T1]{fontenc}
+\usepackage{multirow}
+\usepackage[small,bf]{caption}
+
+%\bibpunct{(}{)}{;}{A}{,}{,}
+%\bibdata{mybib.bib}
+
+\title{Shallow-transfer rule-based machine translation from Czech to Polish}
+
+\author{Joanna Ruth\\
+  Gdańsk University of Technology \\
+  Gdańsk \\
+  Poland \\
+  \And
+  Jimmy O'Regan \\
+  Eolaistriu Technologies \\
+  Thurles \\
+  Ireland \\  
+  {\tt joregan@gmail.com}}
+
+\date{}
+
+\begin{document}
+
+\maketitle
+
+\begin{abstract}
+This article describes the development of an Open Source shallow-transfer machine translation
+system from Czech to Polish in the Apertium platform. It gives details of the
+methods and resources used in constructing the system. Although the resulting system
+has quite a high error rate, it is still competetive with other systems.
+\end{abstract}
+
+\section{Introduction}
+
+Czech and Polish are both Western Slavic languages. Polish is spoken by
+approximately 50 million, Czech by 12 million.
+``In the 10th century, Czech and Polish were still basically the same language, 
+which then began to diverge from each other, but even until the 14 century, 
+Czechs and Poles understood each other without problems''.\footnote{``V 10. 
+století byly čeština a polština v podstatě stále jeden jazyk, pak se začaly 
+od sebe rozcházet, ale ještě ve 14. století si Češi a Poláci bez problémů rozuměli.''
+Authors' translation.}~\citep{wiki:polstina}
+
+Czech and Polish are typologically similar languages. They are both medium inflected 
+languages with relatively free word order, sharing seven cases and three grammatical 
+genders. In addition, both languages draw a distinction between animate and inimate 
+masculine nouns, while Polish draws a further distinction with masculine animate 
+nouns that refer to people.\footnote{The same distinction is present in Czech, but
+as it serves no role in concordance, we chose not to treat it specially.}
+We chose to 
+%follow the example of the IPI PAN Corpus of Polish~\citep{prze:04ce} in treating these 
+treat these animacy differences
+as separate genders, to simplify concordance operations. 
+Although this greatly reduces the complexity of transfer between 
+the languages, it introduces a number of artificial ambiguities.
+
+Several multilingual corpora are available that feature both
+Czech and Polish, such as JRC Acquis~\citep{Steinberger2006}, 
+OPUS~\citep{Tiedemann2009}, etc.; however, in these corpora
+most, if not all, of the text has been translated from a third language
+(usually English),\footnote{Even if there were direct translations in those 
+corpora, there's no indication in the metadata of the original language.}
+and we considered the potential for ``translation drift'' to be a 
+serious limiting factor in the creation of a statistical system.
+
+Further, as the primary goal of the project was that it be Open Source, 
+we felt more inclined towards
+investigating the rule-based paradigm. We were also interested
+in determining if the successes of previous projects based on
+the Apertium platform for closely-related languages in the Romance
+and Germanic families would apply to a Slavic language 
+pair. %\footnote{Another Slavic project, from Macedonian to Bulgarian,
+%was begun at the same time as this; we did not wait for results from
+%that work, as those languages are both typologically distant from the
+%rest of the Slavic family, and the results would not be directly
+%relevant.}
+
+We have been guided by earlier work on Czech--Polish rule-based machine translation~\citep{Debowski02}, 
+and used issues raised by that work as a guideline in creating an Open Source system. In addition, we 
+have also sought to follow the example of two previous Apertium-based projects, for Swedish to 
+Danish~\citep{tyers2009rfr} and Norwegian Nynorsk and Bokm{\aa}l~\citep{unhammer2009rfr}.
+
+As the project was begun with known time constraints, it was decided early on that we would 
+concentrate on \emph{assimilation} (that is, providing an understanding of the source text). 
+We also chose to focus on the Czech to Polish direction initially, as it is the direction 
+we felt more comfortable with. 
+
+Also, as there has not yet been a translation system based on Apertium between
+medium inflected, free word order languages, to a certain degree we are testing
+the limits of the Apertium platform: part of the high error rate of the resulting
+system (73\%) could be reduced with some extensions to the Apertium platform.
+
+\section{Design}
+The Apertium machine translation platform uses a shallow-transfer model.
+Originally designed for the Romance languages of Spain, later development has
+extended the system to enable the development of translators between more
+divergent language pairs, such as Basque--Spanish~\citep{ginestirosell09}.
+
+Apertium is constructed in a modular, assembly-line fashion. 
+A source language text is first morphologically analysed using finite-state 
+transducers. It is then disambiguated for part of speech by a bigram HMM 
+part-of-speech tagger, which produces a single disambiguated form.
+
+The disambiguated text is subsequently processed by the syntactic transfer
+module, which performs both lexical and structural transfer. Lexical units
+consisting of lemma, part of speech, and morphological information are 
+matched on the basis of fixed-length patterns, upon which operations such
+as insertions, removals, reorderings, substitutions and concordancing are
+performed.
+
+Finally, generation
+is performed by the same module that performs analysis. Figure~\ref{fig:apertium}
+shows the main modules of a given system built upon the platform. A more complete description
+of the platform may be found in \citet{armentano06p}.
+
+Two models of structural transfer are supported by the platform: a single-stage transfer, where only
+one set of transfer rules is used, and a three-stage transfer where rules are also used to 
+group words into \emph{chunks}, on which later operations can be performed. The Czech--Polish
+pair uses three-stage transfer as a means of simplifying the problems of concordance
+and difference in case governed by preposition mentioned in \cite{Debowski02}.
+
+\begin{figure*} {\small \setlength{\tabcolsep}{0.5mm}
+\begin{center}
+\begin{tabular}{cccccccc}
+\\
+\parbox{1.2cm}{SL text} $\rightarrow$ & \framebox{\parbox{1.7cm}{deformatter}} \\ 
+& $\downarrow$ \\
+& \framebox{\parbox{1.3cm}{morph. analyser}}  $\rightarrow$ & \framebox{\parbox{1.1cm}{POS tagger}} $\rightarrow$ & \framebox{\parbox{1.3cm}{structural\ transfer}} $\rightarrow$ & \framebox{\parbox{1.5cm}{morph. generator}}  $\rightarrow$ & \framebox{\parbox{1.3cm}{post\-generator}} & & \\
+& \parbox{1.3cm}{~} & \parbox{1.1cm}{~}  & $\updownarrow$ & & $\downarrow$ & &   \\
+& \parbox{1.3cm}{~} & \parbox{1.1cm}{~}  & \framebox{\parbox{1.3cm}{lexical\ transfer}} & & \framebox{\parbox{1.6cm}{reformatter}} \\
+& & & & &  $\downarrow$ \\
+& & & & &  \parbox{1.2cm}{TL text}\\\\
+\end{tabular}
+\end{center} }
+\caption{The eight modules of the shallow-transfer machine translation system}
+\label{fig:apertium}
+\end{figure*}
+
+\section{Development}
+
+\subsection{Resources}
+
+Czech and Polish are both well-resourced languages: 
+``no other Slavic language has so many resources for
+stochastic natural language processing'' as Czech~\citep{Hajic03}. 
+
+There are several tools available for both languages, many open source, 
+which we were able to use in the creation or validation of resources.
+In particular, the Open Source Proofreading tool, LanguageTool~\citep{Milkowski10},
+includes both morphological analysis and disambiguation for both Polish and
+Czech, though the Czech disambiguator is incomplete.
+
+Aside from external resources, we were able to take advantage of the Open Source nature
+of the Apertium platform, and to draw upon other work being done within the project. In 
+the ``incubator'' module (which houses works in various stages of early development) of 
+Apertium's source repository we were able to use pieces being created for English-Polish 
+and Czech-Slovenian for morphological analysis, and Polish-Slovakian for a set of initial 
+transfer rules.
+
+\begin{figure*}
+\begin{small}
+\begin{verbatim}
+<pardef n="mat/ka__n">
+  <e><p><l>ka</l><r>ka<s n="n"/><s n="f"/><s n="sg"/><s n="nom"/></r></p></e>
+  <e><p><l>ki</l><r>ka<s n="n"/><s n="f"/><s n="sg"/><s n="gen"/></r></p></e>
+  <e><p><l>ce</l><r>ka<s n="n"/><s n="f"/><s n="sg"/><s n="dat"/></r></p></e>
+  <e><p><l>kę</l><r>ka<s n="n"/><s n="f"/><s n="sg"/><s n="acc"/></r></p></e>
+  <e><p><l>ką</l><r>ka<s n="n"/><s n="f"/><s n="sg"/><s n="ins"/></r></p></e>
+  <e><p><l>ce</l><r>ka<s n="n"/><s n="f"/><s n="sg"/><s n="loc"/></r></p></e>
+  <e><p><l>ko</l><r>ka<s n="n"/><s n="f"/><s n="sg"/><s n="voc"/></r></p></e>
+</pardef>
+<pardef n="dro/ga__n">
+  <e><p><l>ga</l><r>ga<s n="n"/><s n="f"/><s n="sg"/><s n="nom"/></r></p></e>
+  <e><p><l>gi</l><r>ga<s n="n"/><s n="f"/><s n="sg"/><s n="gen"/></r></p></e>
+  <e><p><l>dze</l><r>ga<s n="n"/><s n="f"/><s n="sg"/><s n="dat"/></r></p></e>
+  <e><p><l>gę</l><r>ga<s n="n"/><s n="f"/><s n="sg"/><s n="acc"/></r></p></e>
+  <e><p><l>gą</l><r>ga<s n="n"/><s n="f"/><s n="sg"/><s n="ins"/></r></p></e>
+  <e><p><l>dze</l><r>ga<s n="n"/><s n="f"/><s n="sg"/><s n="loc"/></r></p></e>
+  <e><p><l>go</l><r>ga<s n="n"/><s n="f"/><s n="sg"/><s n="voc"/></r></p></e>
+</pardef>
+\end{verbatim}
+\end{small}
+\caption{Paradigms for the singular parts of 
+\emph{matka} and \emph{droga}, written in full form.
+\label{fig:pardefs}\\
+\small{Each \textit{e}ntry contains a \textit{p}air, where the \textbf{l}eft contains
+the suffix to be analysed/generated, and the \textit{r}ight contains the
+suffix of the lemma, along with the set of \textit{s}ymbols to be attached.}}
+\end{figure*}
+\begin{figure*}
+\begin{small}
+\begin{verbatim}
+<pardef n="BASE__matka">
+  <e><p><l>a</l><r><s n="f"/><s n="sg"/><s n="nom"/></r></p></e>
+  <e><p><l>i</l><r><s n="f"/><s n="sg"/><s n="gen"/></r></p></e>
+  <e><p><l>ę</l><r><s n="f"/><s n="sg"/><s n="acc"/></r></p></e>
+  <e><p><l>ą</l><r><s n="f"/><s n="sg"/><s n="ins"/></r></p></e>
+  <e><p><l>o</l><r><s n="f"/><s n="sg"/><s n="voc"/></r></p></e>
+</pardef>
+<pardef n="mat/ka__n">
+  <e><p><l>k</l><r>ka<s n="n"/></r></p><par n="BASE__matka"/></e>
+  <e><p><l>ce</l><r>ka<s n="n"/><s n="f"/><s n="sg"/><s n="dat"/></r></p></e>
+  <e><p><l>ce</l><r>ka<s n="n"/><s n="f"/><s n="sg"/><s n="loc"/></r></p></e>
+</pardef>
+<pardef n="dro/ga__n">
+  <e><p><l>g</l><r>ga<s n="n"/></r></p><par n="BASE__matka"/></e>
+  <e><p><l>dze</l><r>ga<s n="n"/><s n="f"/><s n="sg"/><s n="dat"/></r></p></e>
+  <e><p><l>dze</l><r>ga<s n="n"/><s n="f"/><s n="sg"/><s n="loc"/></r></p></e>
+</pardef>
+\end{verbatim}
+\end{small}
+\caption{Paradigms for the singular parts of \emph{matka} and \emph{droga}, redefined in terms of 
+a ``base paradigm'' containing the common parts of both.
+\label{fig:basepardefs} \\
+\small{The \textbf{par} element contains a reference to another, previously defined, paradigm.}
+}
+\end{figure*}
+
+\subsection{Morphological analysis and generation}
+
+None of the Apertium ``incubator'' materials were at an advanced stage of development; in addition, both 
+Czech and Polish analysis modules had serious problems that needed to be resolved. Compounding this, the 
+number of distinct paradigms for nouns and verbs\footnote{\citet{Jagodzinski08} lists 174 verb 
+paradigms and 146 noun paradigms; \citet{Bielec98} mentions more, and \citet{Futrega09}
+contains yet more, mostly proper nouns.}, along with the number of forms each 
+contained, lead to files that were difficult to edit using standard tools on an average 
+computer, and made fixing inconsistencies impractical.
+
+To overcome this, we abstracted the common parts of the open categories into sub-paradigms 
+and replaced those entries with a reference to the new paradigm. Figures~\ref{fig:pardefs}
+and~\ref{fig:basepardefs} illustrate this solution. Some of the paradigms from the Czech--Slovenian
+translator contained a number of errors and omissions; we used the Czech Free 
+Morphology\footnote{\url{http://ufal.mff.cuni.cz/pdt/Morphology_and_Tagging/Morphology/index.html}}
+tool~\citep{Hacic2004} to validate entries, and to generate missing entries.
+
+To extract entries for the monolingual dictionary, we used a similar process mentioned in \cite{Weiss05}
+on the development of Lametyzator:
+as both Czech and Polish ispell dictionaries were created according to linguistic principles, there 
+was a one-to-one mapping between ispell ``flags'' with suffix, and paradigms in the 
+morphological dictionaries. %Table~\ref{tab:paradigms} shows examples of paradigm mappings.
+
+
+%\begin{table}
+%\begin{center}
+% \caption{Some example mappings between Polish ispell entries and paradigms.\label{tab:paradigms}}
+% \begin{tabular}{ll}
+%    \hline\noalign{\smallskip}
+%    ispell      & Apertium\\
+%    \noalign{\smallskip}\hline\noalign{\smallskip}
+%    miłość$/$MN & miłoś$/$ć\_\_n\\
+%    matka$/$mMN & mat$/$ka\_\_n\\
+%    droga$/$mMN & fla$/$ga\_\_n\\
+%    \hline\noalign{\smallskip}
+% \end{tabular}
+%\end{center}
+%\end{table}
+
+\subsection{Corpus collection}
+\label{sect:corpus}
+
+Although rule-based machine translation is not corpus based, a corpus is a 
+necessary tool in the empirical evaluation of rule hypotheses. We also
+wished to collect a set of test sentences to use as a set of ``regression 
+tests'', to ensure that additions of new rules or changes to existing rules
+do not accidentally introduce new errors.\footnote{The set of test sentences is available on the
+Apertium wiki \url{http://wiki.apertium.org/wiki/Polish_and_Czech/Pending_tests}}
+
+Despite the availability of parallel text, we required \textit{direct} translations,
+and sought our own sources.
+We built an initial set of sentences from the example sentences given on
+the Polish edition of Wiktionary. Though there were few sentences (141), they
+were mostly useful for our purposes.
+
+We also found some material that had been translated from Czech to Polish
+at an online grammar 
+site.\footnote{\url{http://www.finito.zanet.pl/czeski/ath/slawistyka/www.slawistyka.ath.bielsko.pl/czeski/index.html}}
+We also found some public domain material from
+the Polish embassy in Prague, which provided us with a more substantial 
+set of direct translations. The Open Content parts of the collected
+material has been contributed to the Open-Content Text Corpus~\citep{Banski10}, 
+to contribute to the pool of freely available linguistic resources.
+
+\subsection{Disambiguation}
+
+For disambiguation we first chose to train a basic unsupervised bigram
+part-of-speech tagger using the {\tt\small apertium-tagger} tool.
+Although there are disambiguators available for both Polish and
+Czech in LanguageTool, the disambiguators are not integrated with 
+Apertium, and the Czech disambiguator is far from complete.
+
+\subsection{Lexical transfer}
+
+We were able to, with slight modifications, reuse a set of initial
+transfer rules from a nascent Polish--Slovakian system\footnote{Czech 
+and Slovakian are similar enough that word-for-word translation is sufficient~\citep{Hajic00},
+which allowed this reuse.} under
+development for Apertium, though the rules were quite basic
+and many new rules were required.
+
+We used several methods to create a bilingual dictionary. Closed 
+categories (such as pronouns, prepositions, etc.) were added by
+hand, while semi-automatic methods were used to add the open 
+categories:
+
+\begin{itemize}
+\item Cognates -- we initially used the same process described in \cite{tyers2009rfr},
+where a set of common transformations (such as \textit{v} to \textit{w}, \textit{ovat} 
+to \textit{ować}) are used on a source language list to produce a target language
+list of cognates, 
+but initial results were not promising. To increase accuracy in the induced lexicon,
+we limited the search to words which, by their 
+suffixes,\footnote{\emph{-ogia, -afia} in Polish to \emph{-ogie, -afie} in Czech}
+seemed likely Latin or Greek derivatives, to adjectives referring to 
+languages.\footnote{Ending in \emph{-ski} in Polish, with a corresponding \emph{-sku} form,
+ending in \emph{-sky} in Czech with a corresponding \emph{-ský} form.} While the
+yield was low, the accuracy was much higher.
+
+\item Wordlists -- we used a number of Czech-Polish wordlists, to which part-of-speech 
+and gender information was added. We also used a number of Polish--English and Czech--English
+wordlists via triangulation, with restrictions based on part-of-speech to filter the
+resulting lists.
+
+\item Wikipedia -- we used the process described in \cite{tyers2008}, 
+of collecting translations using Wikipedia \textit{interwiki} links, although modified to
+remove the following of interwiki links, which, although it provided ``close'' concepts
+(such as providing \emph{diabetes} as a translation for \emph{diabetic}) lead to too
+many incorrect entries.
+
+\item poterminology -- we used the {\tt\small poterminology} tool, as described in
+\cite{unhammer2009rfr}, with the localisation data from the KDE project.%, to which
+%we added part-of-speech information, as with the wordlists, above.
+
+\item Probabilistic dictionary -- We trained a statistical machine translation system
+using Moses~\citep{Koehn2007} on the JRC Acquis Corpus~\citep{Steinberger2006},
+extracting the most probable translations.%, to which we added part-of-speech information
+%as with the Wordlists, above.
+
+\item ``Stupid'' word alignment -- we passed our parallel text sources though the
+analysers of both systems, taking sentences with one unknown word each, and selected
+them as the probable translation.%, adding information as with the wordlists.
+\end{itemize}
+
+The bilingual dictionaries were manually checked at several stages of the development 
+process, and bad entries were modified or discarded. In addition, we used the intersection
+of multiple wordlists, along with output from Google Translate, to partially automate
+the validation process.
+
+\subsection{Syntactic transfer}
+
+Czech and Polish are syntactically quite similar, though there are some divergences:
+
+\begin{itemize}
+\item Preposition changes -- Some prepositions take different cases in Czech and Polish,
+such as \emph{pro} in Czech (accusative) to \emph{dla} in Polish (genitive). We handled
+these differences as second level transfer operations, to pass the case change to a whole noun
+phrase chunk at a time.
+\item Past and conditional tenses -- Czech uses the present tense of \emph{být} (``to be'') to 
+indicate person in the past and conditional tenses, while in Polish this has become
+lexicalised, so that an enclitic form of the equivalent \emph{być} is considered part
+of the conjugation.
+\item Different modal verbs -- Czech uses the conditional particle \emph{by}, the past tense
+of \emph{mít}, and the infinitive of the verb to express ``ought to'', while Polish uses
+the defect modal verb \emph{powinien} with the infinitive.% (However, the word for word
+%equivalent is used in colloquial Polish, so a rule to handle this was not strictly 
+%necessary for the purposes of assimilation).
+\item Transgressive -- The transgressive is a verb form specific to Czech and
+Slovak, which resembles a nominative-only adjective; the equivalent form in Polish is
+adverbial, so we need only to discard the extra morphological information.
+\end{itemize}
+
+\section{Status}
+
+Table~\ref{table:status} gives details of the current status of the system
+in terms of the number of lemmas in each of the dictionaries and the number 
+of transfer rules. The Polish dictionary contains quite a large amount of
+duplicate entries, which explains much of the disparity between the numbers.
+
+\begin{table}
+\centering
+\begin{tabular}{|l|c|}
+\hline
+                                           & Number entries\\
+\hline
+Monolingual dict. ({\tt pl})               & 13,973 lemmas \\
+Bilingual dict.                            & 12,419 lemmas \\
+Monolingual dict. ({\tt cs})               & 11,378 lemmas \\
+\hline
+Transfer rules ({\tt cs $\rightarrow$ pl}) &  \\
+\hline
+Transfer Level 1                                    & 49 \\
+Transfer Level 2                                    & 20 \\
+Transfer Level 3                                    & 3 \\
+\hline
+\end{tabular}
+    \caption{Status of pair as of SVN revision 27271, 26th November 2010}
+    \label{table:status}
+\end{table}
+
+\section{Evaluation}
+\subsection{Coverage}
+
+The vocabulary coverage of the system is calculated over an available corpus. Here coverage
+is defined as \emph{na\"ive coverage}, that is for any given surface form at least one analysis
+is returned. This may not be complete. Although we have concentrated on the Czech to Polish
+direction, we also provide results for the Polish to Czech direction as an indicator of
+future work. The coverage figures roughly correspond to the first public versions of
+other Apertium systems.
+We used the database dumps of the corresponding Wikipedias.\footnote{Czech: \url{http://cs.wikipedia.org}; Access date: 30th March 2010; Filename: 
+{\small\tt cswiki-20100330-pages-articles.xml.bz2}. Polish: \url{http://pl.wikipedia.org}; Access date: 4th January 2010; Filename: 
+{\small\tt plwiki-20100104-pages-articles.xml.bz2}.} The results are presented in table~\ref{table:coverage}.
+
+\begin{table*}
+\centering
+\begin{tabular}{|l|c|c|c|}
+\hline
+Corpus & Running tokens & Known tokens & Coverage \\
+\hline
+Polish  & 39,293,427 & 27,997,757 & 71.25\%\\
+Czech   & 17,165,777 & 10,925,926 & 63.65\%\\
+\hline
+\end{tabular}
+    \caption{Naïve coverage for both translation directions}
+    \label{table:coverage}
+\end{table*}
+
+\subsection{Quantitative}
+
+The quantitative evaluation involved the post-edition of 46 human translated
+sentences (486 words) from the Polish learner's guide to Czech. The sentences were selected from 
+the portion which had been drawn from news sources. As a secondary source, we 
+used the text of the UN Universal Declaration of
+Human Rights (UDHR), although as the texts are not mutual translations, we can expect
+a greater degree of divergence.
+
+\begin{table*}
+\centering
+\begin{tabular}{|l|c|c|c|c|}
+\hline
+Corpus    & WER & PWER & Free rides & Unknowns\\
+\hline
+News Samples & 71 \% & 60 \%  & 5 \%  & 28 \% \\
+UDHR & 88 \% & 68 \%  & 0 \%  & 22 \% \\
+\hline
+\end{tabular}
+    \caption{Evaluation results for the assimilation task. Free rides are those words which
+       are identical in both the source and target language. Thus although they do not cause
+       a degradation in translation quality, it is relevant to take them into account when
+       evaluating the system. Unknown words are included as an indication of naïve coverage
+       over the test sets.}
+    \label{table:quanteval}
+\end{table*}
+
+Both word error rate (WER) and position-independent error rate (PWER) were 
+calculated by counting the number of insertions, substitutions and deletions
+between the post-editted text and the original translation. The tool used for
+calculating both WER and PWER was the freely available {\tt\small apertium-eval-translator}.\footnote{Available 
+from Apertium SVN, for details see {\small \url{http://www.apertium.org/}}.}
+
+The results of this evaluation are shown in table~\ref{table:quanteval}. 
+
+\subsection{Comparison}
+
+\begin{table}
+\centering
+\begin{tabular}{|l|c|c|}
+\hline
+Corpus    & WER & PWER \\
+\hline
+News Samples & 76 \% & 62 \%  \\
+UDHR & 47 \% & 32 \% \\
+\hline
+\end{tabular}
+    \caption{Evaluation results for Google Translate. Free rides and Unknowns
+    did not apply in this case, so were omitted.}
+    \label{table:googlecompar}
+\end{table}
+
+The only other publicly available Czech to Polish system we are aware of is Google Translate. We did not
+perform a full contrastive analysis, as in \cite{tyers2009rfr}, as we did not
+feel the results would be particularly instructive. For the puposes of a simple
+comparison, we translated the same test sets using Google Translate. The results
+of the comparison are shown in table~\ref{table:googlecompar}.
+
+The disparity in the results is somewhat surprising. It is possible that the UDHR
+was part of the training set used by Google; it is also possible that Google Translate
+simply performs better on material that has been translated from English, either
+directly, through the use of pivot languages~\citep{Kumar07}, or indirectly, through
+the use of corpora such as JRC Acquis~\citep{Steinberger2006} where both Polish and
+Czech had been translated from a third language. 
+
+\begin{table*}
+\centering
+\begin{tabular}{|r|l|}
+\hline
+Czech & Požadavky starší třiceti dnů se mažou.\\
+Dębowski & Żądania starszy trzydziestu dzieni się smarują.\\
+Apertium & Żądania starsze trzydziestu dni się smarują.\\
+Corrected & Żądania starsze niż trzydzieści dni są wymazywane.\\
+\hline
+Czech & Počet dialogových procesů by měl pokrývat pracující uživatele.\\
+Dębowski & Ilość dialogowych procesów miałby pokrywać pracujących użytkowników.\\
+Apertium & Ilość dialogowych procesów powinien pokrywać pracujący użytkownika. \\
+Corrected & Ilość procesów dialogowych powinna pokrywać ilość pracujących użytkowników.\\
+\hline
+\end{tabular}
+    \caption{A comparison of Dębowski and our system.}
+    \label{table:comparison}
+\end{table*}
+
+Although we did not have access to the system mentioned in \cite{Debowski02}, we
+found it instructive to compare the performance of our system with theirs, using
+the two example sentences they provide. The results
+of the comparison are shown in table~\ref{table:comparison}.
+
+In the first sentence, we have almost the same output, with one difference
+that can be attributed to an error in their Polish generator. In the second
+sentence, we have the correct auxiliary verb, though incorrectly inflected, 
+as agreement is being taken from the wrong chunk. We also have doubly
+incorrect output in the last noun chunk (\emph{pracujący użytkownika}) -- firstly,
+agreement has not been performed; secondly, the singular has been generated instead
+of the plural, as the result of tagging errors.
+
+\section{Shortcomings of the system}
+
+Although the high number of unknowns accounts for % a not insignificant amount
+many
+of the errors encountered (words immediately following unknown words are treated
+as having begun the sentence, and are capitalised),
+%most of the errors can be attributed to tagging errors. We do not consider this a problem
+%"bold" statement my ass
+%with {\tt\small apertium-tagger} itself, merely a reflection that the Markov
+%assumption that a word can be disambiguated by considering the preceding words 
+%does not hold sufficiently true for languages with relatively free word order.
+%\cite{Hajic_serial} use a combination of rule-based and statistical methods
+%to achieve high accuracy in Czech tagging; the rule-based component 
+most of the errors can be attributed to tagging errors. 
+Discounting unknowns, and non-errors such as different choices of synonyms,
+58\% of the remaining errors can be attributed directly to mistagging: 24\% 
+were due to selecting incorrect morphological forms, 18\% due to part of speech
+errors, and 16\% were due to incorrect agreements made with a word with an incorrect
+morphological form.
+
+%There are several Open Source part-of-speech taggers available for 
+%Polish\footnote{There are no full Open Source taggers available for Czech.}~\citep{Piasecki:07TQ, Acedanski09}, 
+%though most are tied to a particular tagset, and not immediately suitable for use
+%with Apertium. We are encouraged by initial results in the rule-based 
+%disambiguator used in LanguageTool, which operates in a manner analogous to
+%Apertium's transfer system, using shallow parsing.
+
+Another relatively common source of errors (12\%) were word order differences in noun phrases.
+Adjectives usually preceed the noun in both Czech and Polish, but in certain fixed 
+multiwords in Polish, the adjective follows the noun (normally describing an 
+inherent property). A separate project to add
+multiword processing to Apertium was begun at the same time as this work, but
+did not yield any useful results. 
+
+Chunking errors were not a significant source of errors in the test sets we used,
+though we anticipate that they will be a frequent source of errors. Apertium's
+chunker uses the left-to-right, longest match strategy in pattern matching,
+which can lead to over-matching. To address this, we extended the chunking 
+module, to allow backoff to the previous longest match when an exception
+to the rule currently being processed has been detected, but the change is
+still being tested,\footnote{Available from Apertium's SVN:
+\url{https://apertium.svn.sourceforge.net/svnroot/apertium/branches/apertium/jimregan}
+} and rules to make use of this backoff mechanism have
+yet to be written. 
+
+\cite{Debowski02} mentions the problem of differences with T-V distinction; that is,
+Polish uses the words \emph{pan}, \emph{pani}, \emph{państwo} (sir, madam, ``people'')
+to express polite sentiments, while Czech uses \emph{vy} (you, plural). We made no
+attempt to address this.
+
+\section{Conclusion}
+
+We have presented results from the first free-software translator from Czech to 
+Polish. This is also the first translator between free-word order languages
+developed for the Apertium platform. Although the current results are far from
+impressive, the problem with disambiguation is not an unsolveable one. As
+work has already begun on other, similar language pairs, we
+believe the solution to this problem will become more compelling.
+
+For future work, there are further subcategories of words from which cognates
+could be induced, as well as further sources of statistical data to be
+processed. As we made no attempt to use morphological analysis or stemming
+to maximise the available data, we believe our sources can yield
+further vocabulary.
+
+\section{Acknowledgements}
+
+Development was funded as part of the Google Summer of Code\footnote{\url{http://code.google.com/soc/}} 
+programme. 
+We wish to acknowledge the debt we owe to the authors of \cite{tyers2009rfr}, which 
+we used as a template for the project, and for this article.
+We also wish to acknowledge the contributions of Petr Homola and Francis Tyers, for their
+input and contributions to the development of the project; Jernej Vičič, for providing the
+Czech--Slovenian material; and Marcin Miłkowski, for discussions on the processing of Slavic 
+languages. We also wish to thank the anonymous reviewers for their useful comments.
+
+\bibliographystyle{apalike}
+\bibliography{plcs}
+
+
+\end{document}

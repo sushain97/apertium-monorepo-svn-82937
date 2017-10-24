@@ -1,0 +1,28 @@
+Config:
+  hfst: 
+    App: hfst-optimised-lookup
+    Gen: VERBS-scraps.gen.hfst
+    Morph: VERBS-scraps.hfst
+
+Tests:
+
+  "Present continuous":
+     yap<v><tv><pcont><p1><sg> : yapıyorum
+     de<v><iv><pcont><p1><sg> : diyorum
+
+  "Passive":
+     oyna<v><tv><pass><pcont><p1><sg> : oynanıyorum
+     oyna<v><tv><ref><pcont><p1><sg> : oynanıyorum
+
+  "Aorist present":
+     yap<v><tv><aor><p1><sg> : yaparım
+
+  "Passive aorist conditional": 
+     yap<v><tv><pass><aorcond><p3><sg> : yapılırsa
+
+  "Abilitative Conditional":
+     yap<v><tv><abil><cond><p1><sg>: yapabilsem
+
+  "Causative":
+     oyna<v><tv><caus><aor><p1><sg> : oynatırım
+

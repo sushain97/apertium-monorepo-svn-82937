@@ -1,0 +1,131 @@
+<?xml version="1.0" encoding="UTF-8"?><!-- -*-nxml-*- -->
+<dictionary>
+  <alphabet>·ÀÁÂÄÇÈÉÊËÌÍÎÏÑÒÓÔÖÙÚÛÜàáâäçèéêëìíîïñòóôöùúûüABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz</alphabet>
+  <!-- symbols -->
+  <sdefs>
+    <sdef n="acr"/>
+    <sdef n="predet"/>
+    <sdef n="detnt"/>
+    <sdef n="loc"/>
+    <sdef n="ant"/>
+    <sdef n="al"/>
+    <sdef n="cog"/>
+    <sdef n="atn"/>
+    <sdef n="enc"/>
+    <sdef n="pro"/>
+    <sdef n="tn"/>
+    <sdef n="n"/>
+    <sdef n="np"/>
+    <sdef n="adj"/>
+    <sdef n="f"/>
+    <sdef n="m"/>
+    <sdef n="mf"/>
+    <sdef n="sg"/>
+    <sdef n="pl"/>
+    <sdef n="adv"/>
+    <sdef n="preadv"/>
+    <sdef n="pr"/>
+    <sdef n="prn"/>
+    <sdef n="rel"/>
+    <sdef n="nn"/>
+    <sdef n="an"/>
+    <sdef n="aa"/>
+    <sdef n="ind"/>
+    <sdef n="itg"/>
+    <sdef n="det"/>
+    <sdef n="dem"/>
+    <sdef n="def"/>
+    <sdef n="cnjcoo"/>
+    <sdef n="cnjsub"/>
+    <sdef n="cnjadv"/>
+    <sdef n="nt"/>
+    <sdef n="vbser"/>
+    <sdef n="vbhaver"/>
+    <sdef n="vblex"/>
+    <sdef n="vbmod"/>
+    <sdef n="inf"/>
+    <sdef n="ger"/>
+    <sdef n="pp"/>
+    <sdef n="pri"/>
+    <sdef n="p1"/>
+    <sdef n="p2"/>
+    <sdef n="p3"/>
+    <sdef n="pii"/>
+    <sdef n="ifi"/>
+    <sdef n="fti"/>
+    <sdef n="cni"/>
+    <sdef n="prs"/>
+    <sdef n="pis"/>
+    <sdef n="fts"/>
+    <sdef n="imp"/>
+    <sdef n="pos"/>
+    <sdef n="sp"/>
+    <sdef n="ref"/>
+    <sdef n="sup"/>
+    <sdef n="ord"/>
+    <sdef n="qnt"/>
+    <sdef n="num"/>
+    <sdef n="pron"/>
+    <sdef n="ij"/>
+    <sdef n="sent"/>
+    <sdef n="cm"/>
+    <sdef n="lpar"/>
+    <sdef n="rpar"/>
+    <sdef n="lquest"/>
+    <sdef n="web"/>
+    <sdef n="apos"/>
+    <sdef n="percent"/>
+    <sdef n="time"/>
+    <sdef n="guio"/>
+    <sdef n="past"/>
+    <sdef n="sep"/>
+    <sdef n="sint"/>
+    <sdef n="email"/>
+    <sdef n="obj"/>
+    <sdef n="subj"/>
+    <sdef n="subs"/>
+    <sdef n="pprs"/>
+    <sdef n="url"/>
+    <sdef n="gen"/>
+    <sdef n="comp"/>
+    <sdef n="pres"/>
+    <sdef n="vaux"/>
+    <sdef n="ND"/>
+    <sdef n="GD"/>
+  </sdefs>
+  
+  <pardefs>
+    <pardef n="house__n">
+      <e>
+        <p>
+          <l/>
+          <r><s n="n"/><s n="sg"/></r>
+        </p>
+      </e>
+      <e>
+        <p>
+          <l>s</l>
+          <r><s n="n"/><s n="pl"/></r>
+        </p>
+      </e>
+    </pardef>
+  </pardefs>
+  <section id="main" type="standard">
+    <e lm="house"><i>house</i><par n="house__n"/></e>
+  </section>
+  <section id="regex" type="standard">
+    <e><re>[MCDXLVI]+</re><p><l/><r><s n="num"/><s n="mf"/><s n="sg"/></r></p></e>
+    <e><re>[a-z.]+@[a-z.]+</re><p><l/><r><s n="web"/></r></p></e>
+    <e><re>(http://|https://|ftp://)?[áéíóúàèìòùäëïöüñça-z0-9](([\-_])?[áéíóúàèìòùäëïöüñça-z0-9])*(.[áéíóúàèìòùäëïöüñça-z0-9](([\-_])?[áéíóúàèìòùäëïöüñça-z0-9])*)*(.[a-z][a-z]|.aero|.asia|.biz|.cat|.com|.coop|.edu|.gov|.info|.int|.jobs|.mil|.mobi|.museum|.name|.net|.org|.pro|.tel|.travel)(/([áéíóúàèìòùäëïöüñça-z0-9\-_\?=&amp;\*,]+(.[áéíóúàèìòùäëïöüñça-z0-9\-_\?=&amp;\*,]+)*/)*([áéíóúàèìòùäëïöüñça-z0-9\-_\?=&amp;\*,]+(.[áéíóúàèìòùäëïöüñça-z0-9\-_\?=&amp;\*,]+)*)?)?</re><p><l/><r><s n="web"/></r></p></e>
+  </section>
+  <section id="punct" type="inconditional">
+    <e><re>[.\?;:!]</re><p><l/><r><s n="sent"/></r></p></e>
+    <e><p><l>-</l><r>-<s n="guio"/></r></p></e>
+    <e><p><l>,</l><r>,<s n="cm"/></r></p></e>
+    <e><p><l>'</l><r>'<s n="apos"/></r></p></e>
+    <e><re>[0-9]+([.,][0-9]+)?</re><p><l/><r><s n="num"/></r></p></e>
+    <e><re>[0-9]+([.,][0-9]+)?%</re><p><l/><r><s n="num"/><s n="percent"/></r></p></e>
+    <e><re>[\(\[]</re><p><l/><r><s n="lpar"/></r></p></e>
+    <e><re>[\)\]]</re><p><l/><r><s n="rpar"/></r></p></e>
+  </section>
+</dictionary>

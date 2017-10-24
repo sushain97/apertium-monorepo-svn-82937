@@ -1,0 +1,29 @@
+Config:
+  hfst:
+    App: hfst-lookup
+    Gen: ../nog.autogen.hfst
+    Morph: ../nog.automorf.hfst
+
+Tests:
+  "[twol] nom":
+    куллык<n><nom> : куллык
+    куллык<n><pl><nom> : куллыклар
+    уьстинлик<n><nom> : уьстинлик
+    уьстинлик<n><pl><nom> : уьстинликлер
+
+  "[twol] dat":
+    уьстинлик<n><dat> : уьстинликке
+    куллык<n><dat> : куллыкка
+
+  "[twol] acc":
+    куллык<n><acc> : куллыкты
+
+  "[twol] abl":
+    куллык<n><abl> : куллыктан
+
+  "[twol] px3sp":
+    куллык<n><px3sp><nom> : куллыгы
+
+  "[twol] poss": 
+    уьстинлик<n><px1pl><nom> : уьстинлигимиз
+    куллык<n><px1pl><nom> : куллыгымыз

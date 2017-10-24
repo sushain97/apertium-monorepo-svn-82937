@@ -1,0 +1,481 @@
+
+Multichar_Symbols
+
+%<n%>      ! Имя существительное - Noun
+%<v%>      ! Глагол - verb 
+%<a%>      ! Имя прилагательное
+%<num%>    ! Имя числительное
+%<pron%>   ! Местоимение
+%<part%>   ! Причастие
+%<adv%>    ! Наречие
+%<cc%>     ! Союз
+%<po%>     ! Послелог
+%<pcle%>   ! Частица
+%<interj%> ! Междометие
+%<mod%>    ! Модальное слово
+
+%<sg%>     ! Единственное число
+%<pl%>     ! Множественное число - plural
+
+%<nom%>
+%<gen%>
+%<abl%>
+%<dat%>
+%<acc%>
+%<instr%>
+%<com%>
+%<car%>
+%<cns%>
+%<comp%>
+%<ine%>
+%<ela%>
+%<ill%>
+%<apr%>
+%<egr%>
+%<prl%>
+%<tra%>
+%<ter%>
+%<apr%> 
+%<pxsg1%>
+%<pxsg2%>
+%<pxsg3%>
+%<pxpl1%>
+%<pxpl2%>
+%<pxpl3%>
+%<p1%>
+%<p2%>
+%<p3%>
+%<neg%>
+%<ind%>
+%<prt%>
+%<prs%>
+
+LEXICON Root
+
+Nouns ; 
+verbs ;
+Adverbs ;
+Conjunctions ;
+Adjective ;
+Pronoun ;
+Postposition ;
+Numeral ;
+Partitive ; 
+Particle ;
+Verbnegative ;
+
+LEXICON Part
+%<part%>: KLIT ;
+
+LEXICON Partitive
+ворсысь%>:ворсысь Part ;
+
+LEXICON Mod
+%<mod%>: KLIT ;
+
+LEXICON Mod
+гашкӧ Mod ;
+сідзкӧ Mod ;
+дерт Mod ;
+
+LEXICON Pcle
+%<pcle%>: KLIT ; 
+ 
+LEXICON Particle
+кӧть Pcle ;
+эськӧ Pcle ;
+на Pcle ;
+нин Pcle ;
+
+LEXICON KLIT
+%<clt%>:-ӧ # ;
+# ;
+
+!LEXICON Pron
+!%<pron%>: KLIT ;
+
+LEXICON Pronoun
+сэки%<pron%>:сэки KLIT ;
+найӧ%<pron%>%<nom%>%<pl%>%<p3%>:найӧ KLIT ;
+сійӧ%<pron%>%<nom%>%<sg%>%<p3%>:сійӧ KLIT ;
+тэ%<pron%>%<nom%>%<sg%>%<p2%>:тэ KLIT ;
+тайӧ%<pron%>%<nom%>:тайӧ KLIT ;
+ме%<pron%>%<nom%>%<sg%>%<p1%>:ме KLIT ;
+ті%<pron%>%<nom%>%<pl%>%<p2%>:ті KLIT ;
+ми%<pron%>%<nom%>%<pl%>%<p1%>:ми KLIT ;
+нинӧм%<pron%>:нинӧм KLIT ;
+кӧні%<pron%>:кӧні KLIT ;
+кытчӧ%<pron%>:кытчӧ KLIT ;
+мый%<pron%>:мый KLIT ;
+мыйкӧ%<pron%>:мыйкӧ KLIT ;
+некӧн%<pron%>:некӧн KLIT ;
+
+LEXICON Num
+%<num%>: KLIT ;
+
+LEXICON Numeral
+квайт:квайт Num ;
+
+LEXICON Po
+%<po%>: KLIT ;
+
+LEXICON Postposition
+паныд Po ;
+дор%<po%>:дор CASE ;
+бӧр%<po%>:бӧр CASE ;
+выв%<po%>:выл CASE ;
+ув%<po%>:ул CASE ;
+сай%<po%>:сай CASE ;
+пыр Po ;
+
+LEXICON Adv
+%<adv%>: KLIT ;
+
+LEXICON Adverbs 
+абу Adv ;
+ӧні Adv ;
+талун Adv ;
+зэв Adv ;
+шоныд Adv ;
+пыр Adv ;
+ньӧтчыдысь Adv ;
+ньӧжйӧник Adv ;
+гӧгӧр Adv ;
+бура Adv ;
+тӧрыт Adv ;
+кӧдзыд Adv ;
+ӧтлаын Adv ;
+ӧдйӧ Adv ;
+кад Adv ;
+сэсся Adv ;
+матӧджык Adv ;
+
+LEXICON CC
+%<cc%>: KLIT ;
+
+LEXICON Conjunctions 
+да CC ;
+и CC ;
+а CC ;
+но CC ;
+
+LEXICON K
+KLIT;
+
+LEXICON PredMonLex-Spat
+KLIT;
+
+LEXICON CASE
+
+%<nom%>: K ;
+%<gen%>:лӧн K ;
+%<abl%>:лысь K ;
+%<dat%>:лы K ;
+%<acc%>:ӧс K ;
+%<instr%>:ӧн K ;
+%<com%>:кӧд K ;
+%<car%>:тӧг K ;
+%<cns%>:ла K ;
+%<comp%>:ся K ;
+%<ela%>:ысь K ;
+%<ine%>:ын PredMonLex-Spat ;
+%<ill%>:ӧ K ;
+%<apr%>:лань K ;
+%<egr%>:сянь K ;
+%<prl%>:ӧд K ;
+%<tra%>:ті K ;
+%<ter%>:ӧдз K ;
+%<apr%>%<ine%>:ланьын PredMonLex-Spat ;
+%<apr%>%<ela%>:ланьысь K ;
+%<apr%>%<ill%>:ланьӧ K ;
+%<apr%>%<egr%>:ланьсянь K ;
+%<apr%>%<prl%>:ланьӧд K ;
+%<apr%>%<tra%>:ланьті K ;
+%<apr%>%<ter%>:ланьӧдз K ;
+
+!sg1
+%<pxsg1%>%<nom%>:ӧй K ;
+%<pxsg1%>%<gen%>:ӧйлӧн K ;
+%<pxsg1%>%<abl%>:ӧйлысь K ;
+%<pxsg1%>%<dat%>:ӧйлы K ;
+%<pxsg1%>%<acc%>:ӧс K ;
+%<instr%>%<pxsg1%>:нам K ;
+%<pxsg1%>%<com%>:ӧйкӧд K ;
+%<pxsg1%>%<car%>:ӧйтӧг K ;
+%<pxsg1%>%<cns%>:ӧйла K ;
+%<pxsg1%>%<comp%>:ӧйся K ;
+%<ine%>%<pxsg1%>:ам K ;
+%<ela%>%<pxsg1%>:сьым K ;
+%<ill%>%<pxsg1%>:ам K ;
+%<pxsg1%>%<apr%>:ӧйлань K ;
+%<pxsg1%>%<egr%>:ӧйсянь K ;
+%<prl%>%<pxsg1%>:ӧдым K ;
+%<tra%>%<pxsg1%>:тіым K ;
+%<ter%>%<pxsg1%>:ӧдзым K ;
+%<apr%>%<ine%>%<pxsg1%>:ланям K ;
+%<apr%>%<ela%>%<pxsg1%>:ланьсьым K ;
+%<apr%>%<ill%>%<pxsg1%>:ланям K ;
+%<pxsg1%>%<apr%>%<egr%>:ӧйланьсянь K ;
+%<apr%>%<prl%>%<pxsg1%>:ланьӧдым K ;
+%<apr%>%<tra%>%<pxsg1%>:ланьтіым K ;
+%<apr%>%<ter%>%<pxsg1%>:ланьӧдзым K ;
+
+!sg2
+%<pxsg2%>%<nom%>:ыд K ;
+%<pxsg2%>%<gen%>:ыдлӧн K ;
+%<pxsg2%>%<abl%>:ыдлысь K ;
+%<pxsg2%>%<dat%>:ыдлы K ;
+%<pxsg2%>%<acc%>:тӧ K ;
+%<instr%>%<pxsg2%>:над K ;
+%<pxsg2%>%<com%>:ыдкӧд K ;
+%<car%>%<pxsg2%>:тӧгыд K ;
+%<pxsg2%>%<cns%>:ыдла K ;
+%<comp%>%<pxsg2%>:сяыд K ;
+%<ine%>%<pxsg2%>:ад K ;
+%<ela%>%<pxsg2%>:сьыд K ;
+%<ill%>%<pxsg2%>:ад K ;
+%<apr%>%<pxsg2%>:ланьыд K ;
+%<egr%>%<pxsg2%>:сяньыд K ;
+%<prl%>%<pxsg2%>:ӧдыд K ;
+%<tra%>%<pxsg2%>:тіыд K ;
+%<ter%>%<pxsg2%>:ӧдзыд K ;
+%<apr%>%<ine%>%<pxsg2%>:ланяд K ;
+%<apr%>%<ela%>%<pxsg2%>:ланьсьыд K ;
+%<apr%>%<ill%>%<pxsg2%>:ланяд K ;
+%<apr%>%<egr%>%<pxsg2%>:ланьсяньыд K ;
+%<apr%>%<prl%>%<pxsg2%>:ланьӧдыд K ;
+%<apr%>%<tra%>%<pxsg2%>:ланьтіыд K ;
+%<apr%>%<ter%>%<pxsg2%>:ланьӧдзыд K ;
+
+!sg3
+%<pxsg3%>%<nom%>:ыс K ;
+%<pxsg3%>%<gen%>:ыслӧн K ;
+%<pxsg3%>%<abl%>:ыслысь K ;
+%<pxsg3%>%<dat%>:ыслы K ;
+%<pxsg3%>%<acc%>:сӧ K ;
+%<instr%>%<pxsg3%>:нас K ;
+%<pxsg3%>%<com%>:ыскӧд K ;
+%<car%>%<pxsg3%>:тӧгыс K ;
+%<pxsg3%>%<cns%>:ысла K ;
+%<comp%>%<pxsg3%>:сяыс K ;
+%<ine%>%<pxsg3%>:ас K ;
+%<ela%>%<pxsg3%>:сьыс K ;
+%<ill%>%<pxsg3%>:ас K ;
+%<apr%>%<pxsg3%>:ланьыс K ;
+%<egr%>%<pxsg3%>:сяньыс K ;
+%<prl%>%<pxsg3%>:ӧдыс K ;
+%<tra%>%<pxsg3%>:тіыс K ;
+%<ter%>%<pxsg3%>:ӧдзыс K ;
+%<apr%>%<ine%>%<pxsg3%>:ланяс K ;
+%<apr%>%<ela%>%<pxsg3%>:ланьсьыс K ;
+%<apr%>%<ill%>%<pxsg3%>:ланяс K ;
+%<apr%>%<egr%>%<pxsg3%>:ланьсяньыс K ;
+%<apr%>%<prl%>%<pxsg3%>:ланьӧдыс K ;
+%<apr%>%<tra%>%<pxsg3%>:ланьтіыс K ;
+%<apr%>%<ter%>%<pxsg3%>:ланьӧдзыc K ;
+
+!pl1
+%<pxpl1%>%<nom%>:ным K ;
+%<pxpl1%>%<gen%>:нымлӧн K ;
+%<pxpl1%>%<abl%>:нымлысь K ;
+%<pxpl1%>%<dat%>:нымлы K ;
+%<pxpl1%>%<acc%>:нымӧс K ;
+%<instr%>%<pxpl1%>:наным K ;
+%<pxpl1%>%<com%>:нымкӧд K ;
+%<car%>%<pxpl1%>:тӧгным K ;
+%<pxpl1%>%<cns%>:нымла K ;
+%<comp%>%<pxpl1%>:сяным K ;
+%<ine%>%<pxpl1%>:аным K ;
+%<ela%>%<pxpl1%>:сьыным K ;
+%<ill%>%<pxpl1%>:аным K ;
+%<apr%>%<pxpl1%>:ланьным K ;
+%<egr%>%<pxpl1%>:сяньным K ;
+%<prl%>%<pxpl1%>:ӧдным K ;
+%<tra%>%<pxpl1%>:тіным K ;
+%<ter%>%<pxpl1%>:ӧдзным K ;
+%<apr%>%<ine%>%<pxpl1%>:ланяным K ;
+%<apr%>%<ela%>%<pxpl1%>:ланьсьыным K ;
+%<apr%>%<ill%>%<pxpl1%>:ланяным K ;
+%<apr%>%<egr%>%<pxpl1%>:ланьсяньным K ;
+%<apr%>%<prl%>%<pxpl1%>:ланьӧдным K ;
+%<apr%>%<tra%>%<pxpl1%>:ланьтіным K ;
+%<apr%>%<ter%>%<pxpl1%>:ланьӧдзным K ;
+
+!pl2
+%<pxpl2%>%<nom%>:ныд K ;
+%<pxpl2%>%<gen%>:ныдлӧн K ;
+%<pxpl2%>%<abl%>:ныдлысь K ;
+%<pxpl2%>%<dat%>:ныдлы K ;
+%<pxpl2%>%<acc%>:нытӧ K ;
+%<instr%>%<pxpl2%>:наныд K ;
+%<pxpl2%>%<com%>:ныдкӧд K ;
+%<car%>%<pxpl2%>:тӧгныд K ;
+%<pxpl2%>%<cns%>:ныдла K ;
+%<comp%>%<pxpl2%>:сяныд K ;
+%<ine%>%<pxpl2%>:аныд K ;
+%<ela%>%<pxpl2%>:сьыныд K ;
+%<ill%>%<pxpl2%>:аныд K ;
+%<pxpl2%>%<apr%>:ныдлань K ;
+%<egr%>%<pxpl2%>:сяньныд K ;
+%<prl%>%<pxpl2%>:ӧдныд K ;
+%<tra%>%<pxpl2%>:тіныд K ;
+%<ter%>%<pxpl2%>:ӧдзныд K ;
+%<apr%>%<ine%>%<pxpl2%>:ланяныд K ;
+%<apr%>%<ela%>%<pxpl2%>:ланьсьыныд K ;
+%<apr%>%<ill%>%<pxpl2%>:ланяныд K ;
+%<apr%>%<egr%>%<pxpl2%>:ланьсяньныд K ;
+%<apr%>%<prl%>%<pxpl2%>:ланьӧдныд K ;
+%<apr%>%<tra%>%<pxpl2%>:ланьтіныд K ;
+%<apr%>%<ter%>%<pxpl2%>:ланьӧдзныд K ;
+
+!pl3
+%<pxpl3%>%<nom%>:ныс K ;
+%<pxpl3%>%<gen%>:ныслӧн K ;
+%<pxpl3%>%<abl%>:ныслысь K ;
+%<pxpl3%>%<dat%>:ныслы K ;
+%<pxpl3%>%<acc%>:нысӧ K ;
+%<instr%>%<pxpl3%>:наныс K ;
+%<pxpl3%>%<com%>:ныскӧд K ;
+%<car%>%<pxpl3%>:тӧгныс K ;
+%<pxpl3%>%<cns%>:нысла K ;
+%<comp%>%<pxpl3%>:сяныс K ;
+%<ine%>%<pxpl3%>:аныс K ;
+%<ela%>%<pxpl3%>:сьыныс K ;
+%<ill%>%<pxpl3%>:аныс K ;
+%<pxpl3%>%<apr%>:ныслань K ;
+%<apr%>%<pxpl3%>:ланьныс K ;
+%<egr%>%<pxpl3%>:сяньныс K ;
+%<prl%>%<pxpl3%>:ӧдныс K ;
+%<tra%>%<pxpl3%>:тіныс K ;
+%<ter%>%<pxpl3%>:ӧдзныс K ;
+%<apr%>%<ine%>%<pxpl3%>:ланяныс K ;
+%<apr%>%<ela%>%<pxpl3%>:ланьсьыныс K ;
+%<apr%>%<ill%>%<pxpl3%>:ланяныс K ;
+%<apr%>%<egr%>%<pxpl3%>:ланьсяньныс K ;
+%<apr%>%<prl%>%<pxpl3%>:ланьӧдныс K ;
+%<apr%>%<tra%>%<pxpl3%>:ланьтіныс K ;
+%<apr%>%<ter%>%<pxpl3%>:ланьӧдзныс K ;
+
+LEXICON N1
+
+%<n%>%<sg%>: CASE ; ! Suffix border in CASE
+%<n%>%<pl%>:ъяс CASE ;
+
+LEXICON N2
+
+%<n%>%<sg%>: CASE ;
+%<n%>%<pl%>:ъян CASE ;
+
+LEXICON v-ny
+%<v%>%<inf%>:ны KLIT ;
+
+LEXICON v-yny
+%<v%>%<inf%>:ыны KLIT ;
+
+LEXICON Nouns
+
+ныв:ныл N1 ; ! "девушка (дочка)"
+пон N1 ; ! "собака"
+сад:садй N1 ; ! "сад" 
+поводдя N1 ; ! "погода"
+улича N1 ; ! "улица"
+керка N1 ; ! "дом (здание)"
+зонка N1 ; ! "мальчик"
+нывка N1 ; ! "девочка"
+чой N1 ; ! "сестра"
+арӧс N1 ; ! "год (лет)"
+понпи N2 ; ! "щенок"
+челядь N1 ; ! "дети"
+кань N1 ; ! "кошка"
+горт N1 ; ! "дом"
+ӧшинь N1 ; ! "окно"
+пу N1 ; ! "дерево"
+син:синм N1 ; ! "глаза"
+ки N1 ; ! "руки"
+ворсӧм N1 ; ! "игра"
+юалӧм N1 ; ! "вопрос"
+вочавидзӧм N1 ; ! "ответ"
+йӧз N1 ; ! "люди"
+мам N1 ; ! "мама"
+пызан N1 ; ! "стол"
+улӧс N1 ; ! "стул"
+шы N1 ; ! "звук"
+лэбач N1 ; ! "птица"
+пемӧс N1 ; ! "животное"
+юр N1 ; ! "голова"
+ва N1 ; ! "вода"
+пи N2 ; ! "сын"
+Ваня N1 ; ! "Ваня"
+Маша N1 ; ! "Маша"
+помалӧм N1 ; ! "окончание"
+кад N1 ; ! "время"
+воӧм N1 ; ! "приход, приближение"
+
+LEXICON Verbnegative
+Present Neg
+%<оз%>%<v%>%<neg%>%<ind%>%<prs%>%<sg1%>:ог KLIT ;
+%<оз%>%<v%>%<neg%>%<ind%>%<prs%>%<sg2%>:он KLIT ;
+%<оз%>%<v%>%<neg%>%<ind%>%<prs%>%<sg3%>:оз KLIT ;
+%<оз%>%<v%>%<neg%>%<ind%>%<prs%>%<pl1%>:огӧ KLIT ;
+%<оз%>%<v%>%<neg%>%<ind%>%<prs%>%<pl2%>:онӧ KLIT ;
+%<оз%>%<v%>%<neg%>%<ind%>%<prs%>%<pl1%>:огӧй KLIT ;
+%<оз%>%<v%>%<neg%>%<ind%>%<prs%>%<pl2%>:онӧй KLIT ;
+%<оз%>%<v%>%<neg%>%<ind%>%<prs%>%<pl3%>:оз KLIT ;
+
+Past Neg
+%<оз%>%<v%>%<neg%>%<ind%>%<prt%>%<sg1%>:эг KLIT ;
+%<оз%>%<v%>%<neg%>%<ind%>%<prt%>%<sg2%>:эн KLIT ;
+%<оз%>%<v%>%<neg%>%<ind%>%<prt%>%<sg3%>:эз KLIT ;
+%<оз%>%<v%>%<neg%>%<ind%>%<prt%>%<pl1%>:эг KLIT ;
+%<оз%>%<v%>%<neg%>%<ind%>%<prt%>%<pl2%>:эн KLIT ;
+%<оз%>%<v%>%<neg%>%<ind%>%<prt%>%<pl1%>:эгӧ KLIT ;
+%<оз%>%<v%>%<neg%>%<ind%>%<prt%>%<pl2%>:энӧ KLIT ;
+%<оз%>%<v%>%<neg%>%<ind%>%<prt%>%<pl3%>:эз KLIT ;
+
+LEXICON verbs
+
+аддзыны:аддз v-yny ;
+аддзывны:аддзыл v-ny ;
+вермыны:верм v-yny ;
+видзӧдны:видзӧд v-ny ;
+висьтавны:висьтал v-ny ;
+вичмыны:вичм v-yny ;
+вӧвны:вӧл v-ny ;
+ворсны:ворс v-ny ;
+вочавидзны:вочавидз v-ny ;
+вӧчны:вӧч v-ny ;
+дзебсьыны:дзебсь v-yny ;
+кажитчыны:кажитч v-yny ;
+корсьны:корсь v-ny ;
+кӧсйыны:кӧсй v-yny ;
+котӧртны:котӧрт v-ny ;
+кужны:куж v-ny ;
+кывзыны:кывз v-yny ;
+кывны:кыл v-ny ;
+лыддьыны:лыддь v-yny ;
+мунны:мун v-ny ;
+нюмъявны:нюмъял v-ny ;
+пукавны:пукал v-ny ;
+радейтны:радейт v-ny ;
+серавны:серал v-ny ;
+сёйыштны:сёйышт v-ny ;
+сёрнитны:сёрнит v-ny ;
+тӧдны:тӧд v-ny ;
+тупкыны:тупк v-yny ;
+узьны:узь v-ny ;
+шуны:шу v-ny ;
+юасьны:юась v-ny ;
+юыштны:юышт v-ny ;
+лоны:ло v-ny ;
+
+LEXICON A
+%<a%>: KLIT ;
+
+LEXICON Adjective
+
+бур A ;
+ыджыд A ;
+арӧса A ;
+ичӧтик A ;
+шуда A ;
+ичӧт A ;

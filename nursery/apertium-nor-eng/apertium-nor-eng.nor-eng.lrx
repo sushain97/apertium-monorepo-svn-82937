@@ -1,0 +1,310 @@
+<rules>
+
+<!-- India er verdens sjuende største land. India is the world's seventh largest country. -->
+
+
+
+<rule weight="2.0">
+    <match lemma="i" tags="pr"/>
+    <match lemma="tillegg" tags="n.*">
+      <select lemma="addition" tags="n.*"/>
+    </match> 
+    <or>
+     <match tags="tr"/>
+     <match tags="vblex.*"/>
+    </or>
+</rule>
+
+<rule weight="1.0">
+    <match lemma="tillegg" tags="n.*">
+      <select lemma="supplement" tags="n.*"/>
+    </match> 
+</rule>
+
+
+
+<rule weight="2.0">
+    <match tags="pr"/>
+    <match lemma="dag" tags="n.m.sg.def.gen.*">
+      <select lemma="today" tags="adv.*"/>
+    </match> 
+    <match tags="np.*"/>
+</rule>
+
+<rule weight="1.0">
+    <or>
+      <match lemma="stor" tags="adj.sup.*"/> 
+      <match lemma="farlig" tags="adj.sup.*"/> 
+      <match lemma="velstående" tags="adj.*"/> 
+    </or>
+    <match lemma="land" tags="n.*"><select lemma="country" tags="n.*"/></match>
+</rule>
+
+<rule weight="1.0">
+    <or>
+      <match lemma="ny" tags="adj.*"/> 
+      <match lemma="mye" tags="adj.*"/> 
+    </or>
+    <match lemma="land" tags="n.*.sg.*"><select lemma="land" tags="n.sg.*"/></match>
+</rule>
+    
+<rule weight="2.0">
+    <match lemma="land" tags="n.*"><select lemma="country" tags="n.*"/></match>
+</rule>
+
+
+<!-- Jeg har ikke den fjerneste anelse om hva det neste han vil gjøre er. I don't have the remotest inkling about what he will do next. -->
+
+<rule>
+    <or>
+      <match lemma="liten" tags="adj.*"/>
+      <match lemma="fjern" tags="adj.*"/>
+    </or>
+    <match lemma="anelse" tags="n.*">
+      <select lemma="inkling" tags="n.*"/>
+    </match>
+</rule>
+
+
+
+<!-- Tyskland hadde ikke nok bevis til å arrestere ham. Germany did not have enough evidence to arrest him.  -->
+
+<rule>
+    <or>
+      <match lemma="teknisk" tags="adj.*"/>
+      <match lemma="nok" tags="adv.*"/>
+    </or>
+    <match lemma="bevis" tags="n.*">
+      <select lemma="evidence" tags="n.*"/>
+    </match>
+</rule>
+
+<!-- Hvor finner jeg en lang kjole? Where do I find a long dress? -->
+
+<rule>
+    <or>
+      <match lemma="lang" tags="adj.*"/>
+      <match lemma="vakker" tags="adj.*"/>
+    </or>
+    <match lemma="kjole" tags="n.*">
+      <select lemma="dress" tags="n.*"/>
+    </match>
+</rule>
+
+
+<!-- Vi er i samme/femte klasse. We are in the same grade. -->
+
+<rule weight="2.0">
+    <or>
+    <match lemma="samme" tags="det.*"/> 
+    <match tags="adj.ord.*"/>
+    </or>
+    <match lemma="klasse" tags="n.*">
+      <select lemma="grade" tags="n.*"/>
+    </match>
+</rule>
+
+<rule weight="1.0">
+  <match lemma="klasse" tags="n.*"><select lemma="class" tags="n.*"/></match>
+</rule>
+
+
+
+<!-- Nordmenn sutrer over for lav lønn. Norwegians whine over low pay. -->
+
+<rule>
+    <or>
+      <match lemma="lav" tags="adj.*"/> 
+      <match lemma="dårlig" tags="adj.*"/> 
+    </or>
+    <match lemma="lønn" tags="n.f.*">
+      <select lemma="pay" tags="n.*"/>
+    </match>
+</rule>
+
+<rule>
+    <match lemma="arbeide" tags="vblex.*">
+      <select lemma="work" tags="vblex.*"/>
+    </match>
+</rule>
+
+<rule>
+    <match lemma="love" tags="vblex.*">
+      <select lemma="promise" tags="vblex.*"/>
+    </match>
+</rule>
+
+<rule>
+    <match lemma="språk" tags="n.*">
+      <select lemma="language" tags="n.*"/>
+    </match>
+</rule>
+
+<rule>
+    <match lemma="hjelp" tags="n.*">
+      <select lemma="aid" tags="n.*"/>
+    </match>
+    <match lemma="organisasjon"/> 
+</rule>
+
+
+<rule>
+    <match lemma="før" tags="pr">
+      <select lemma="before" tags="pr"/>
+    </match>
+    <match lemma="og"/> 
+    <match lemma="etter"/> 
+
+</rule>
+
+
+
+<!-- Han var en ung adelsmann med stor tapperhet og talenter av  sjeldneste art. He was a young nobleman of great courage and talent of the rarest species. -->
+
+<rule>
+    <or>
+      <match lemma="ung" tags="adj.*"/>
+      <match lemma="eldre" tags="*"/>
+    </or>
+    <match lemma="adelsmann" tags="n.m.*">
+      <select lemma="nobleman" tags="n.*"/>
+    </match>
+</rule>
+
+<!-- Hun er bekymret for sin mann, den kjente advokaten. She is worried about her husband, the famous lawyer.  -->
+
+<rule>
+    <or>
+      <match lemma="kjent" tags="adj.*"/>
+      <match lemma="lokal" tags="adj.*"/>
+    </or>
+    <match lemma="advokat" tags="n.m.*">
+      <select lemma="lawyer" tags="n.*"/>
+    </match>
+</rule>
+
+<!-- En stor andel norsk villfisk er MSC-sertifisert bit. A large proportion of Norwegian wild fish is MSC-certified bit. -->
+
+<rule>
+    <or>
+      <match lemma="stor" tags="adj.*"/> 
+      <match lemma="liten" tags="adj.*"/> 
+    </or>
+    <match lemma="andel" tags="n.m.*">
+      <select lemma="proportion" tags="n.*"/>
+    </match>
+</rule>
+
+<!-- Vold og trusler - et felles anliggende. Violence and threats - a common case. -->
+
+<rule>
+    <or>    
+      <match lemma="felles" tags="*"/>
+      <match lemma="mange" tags="adj.*"/>
+    </or>
+    <match lemma="anliggende" tags="n.*">
+      <select lemma="case" tags="n.*"/>
+    </match>
+</rule>
+
+<!-- Gratis rubrikk annonse for brukt og ny bil, båt, hybel, hund, smykker! Free classified ads for used and new cars, boats, lodgings, dogs, jewelry! -->
+
+<rule>
+    <or>
+      <match lemma="rubrikk" tags="*"/>
+      <match lemma="kommersielle" tags="*"/>
+    </or>
+    <match lemma="annonse" tags="n.m.*">
+      <select lemma="ad" tags="n.*"/>
+    </match>
+</rule>
+
+<!-- Tregt og kjedelig arbeid. Slow and tedious work.  -->
+
+<rule>
+    <or>
+      <match lemma="kjedelig" tags="adj.*"/> 
+      <match lemma="Tregt" tags="*"/> 
+    </or>
+    <match lemma="arbeid" tags="n.nt.*">
+      <select lemma="work" tags="n.*"/>
+    </match>
+</rule>
+
+<!-- Interessant artikkel om Dr. Ian Lipkin og Dr. Madys forskning og meninger. Interesting article about Dr. Ian Lipkin's and Dr. Mady's research and opinions. -->
+
+<rule>
+    <or>
+      <match lemma="Interessant" tags="adj.*"/> 
+      <match lemma="kjedelig" tags="adj.*"/> 
+    </or>
+    <match lemma="artikkel" tags="n.m.*">
+      <select lemma="article" tags="n.*"/>
+    </match>
+</rule>
+
+<rule>
+    <match lemma="artikkel" tags="n.m.*"><select lemma="paragraph" tags="n.*"/> </match>
+    <match tag="num.*"/>
+</rule>
+
+<!-- Dette er ikke en kommersiell avbrytelse. This is not a commercial interruption. -->
+
+<rule>
+    <or>
+      <match lemma="kommersiell" tags="adj.*"/> 
+      <match lemma="sen" tags="adj.*"/>     
+    </or>
+    <match lemma="avbrytelse" tags="n.m.*">
+      <select lemma="interruption" tags="n.*"/>
+    </match>
+</rule>
+
+<!-- Høy avhengighet av importerte råvarer. High dependence on imported raw materials. -->
+
+<rule>
+    <or>
+      <match lemma="høy" tags="adj.*"/> 
+      <match lemma="kvalmende" tags="*"/>     
+    </or>
+    <match lemma="avhengighet" tags="n.*">
+      <select lemma="dependence" tags="n.*"/>
+    </match>
+</rule>
+
+<!-- Ved sen avreise har gjestene tilgang til dusjer. By late departure, guests have access to showers. -->
+
+<rule>
+    <or>
+      <match lemma="tidlig" tags="adj.*"/> 
+      <match lemma="sen" tags="adj.*"/>     
+    </or>
+    <match lemma="avreise" tags="n.*">
+      <select lemma="departure" tags="n.*"/>
+    </match>
+</rule>
+
+<rule>
+      <match lemma="fortelle" tags="vblex.*"><select lemma="narrate" tags="vblex.*"/></match>
+    <or>    
+      <match lemma="handling" tags="n.*"/>     
+      <match lemma="plot" tags="n.*"/>     
+    </or>
+</rule>
+
+<rule>
+      <match lemma="fortelle" tags="vblex.*"><select lemma="tell" tags="vblex.*"/></match>
+</rule>
+
+<rule>
+      <match lemma="fylke" tags="n.*"><select lemma="county" tags="n.*"/></match>
+</rule>
+
+
+
+<rule><match lemma="mynt" tags="n.*"><select lemma="coin" tags="n.*"/></match></rule>
+<rule weight="2.0"><match lemma="sted" tags="n.*"><select lemma="place" tags="n.*"/></match></rule>
+
+
+
+</rules>

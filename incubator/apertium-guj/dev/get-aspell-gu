@@ -1,0 +1,7 @@
+#!/bin/sh
+
+svn checkout svn://svn.code.sf.net/p/aspell-gu/code/trunk aspell-gu-code
+/usr/bin/prezip-bin -d < aspell-gu-code/gu.cwl >aspell-gu.fullform
+echo '# words from aspell-gu:'
+wc -l aspell-gu.fullform
+

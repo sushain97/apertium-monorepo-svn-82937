@@ -1,0 +1,162 @@
+Alphabet
+
+ A B Ç D E Ä F G H I J Ž K L M N Ň O Ö P R S Ş T U Ü W Y Ý Z
+ a b ç d e ä f g h i j ž k l m n ň o ö p r s ş t u ü w y ý z
+
+ %{A%}:e %{Y%}:y %{U%}:y %{Ä%}:a 
+ %{n%}:0 %{y%}:0 %{l%}:l %{s%}:s %{u%}:0 %{d%}:d %{r%}:r %{ä%}:a
+ %>:0 %{Ø%}:0
+ % 
+ ;
+
+
+Sets
+
+Vow = A E Ä I O Ö U Ü Y
+      a e ä i o ö u ü y ;
+
+BackVow = Y A U O
+          y a u o ;
+
+FrontVow = Ä E I Ü Ö
+           ä e i ü ö ; 
+
+FrontVowUnround = E I Ä
+                  e i ä ;
+
+FrontVowRound = Ü Ö
+                ü ö ; 
+
+BackVowUnround = Y A
+                 y a ; 
+
+BackVowRound = U O
+               u o ; 
+
+Cns = B Ç D F G H J Ž K L M N Ň P R S Ş T W Ý Z
+      b ç d f g h j ž k l m n ň p r s ş t w ý z ; 
+
+
+Rules
+
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+
+"Remove morpheme boundary"
+%>:0 <=> _ ;
+
+"Devoicing"
+Cx:Cy  <=> _ .#. ;
+                   _ %>: [ :Cns ]/[ :0 ] ;
+                except
+                   _ %>: [ :ý %{Ä%}: :r ]/[ :0 ] ;
+                   _ %>: [ :ý %{Ä%}: :n ]/[ :0 ] ;
+                   _ %{Ø%}: ;
+               where Cx in ( d   g   b   j )
+                     Cy in ( t   k   p   ç )
+               matched;
+
+"Unepenthesis in stems"
+%{u%}:0 <=> _ [ :Cns :Vow ]/[ :0 | %>: ] ;
+
+"Harmony of epenthesised vowel"
+%{u%}:Vy <=> [ :LastVowel :Cns* :Cns ]/[:0] _ [ :Cns [ .#. | :Cns ] ]/[ :0 | %>:] ;
+  where  Vy  in  (  y  y  i  i  ü  ü  u  u  )
+  LastVowel  in  (  y  a  i  e  ü  ö  u  o  )
+           matched ;
+
+"Deletion of {S} after a consonant"
+%{s%}:0 <=> [ :Cns ]/[ %>: | :0 ] _ ;
+
+"Passive l / n alternation"
+%{l%}:n <=> [ :Vow | :l ] %>: %{y%}: _ ; 
+
+
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+
+"Naughty 'n'"
+%{n%}:n <=> :Vow %>: _ ; 
+
+"A Vowel Harmony"
+%{A%}:a <=> [ :BackVow :Cns :Cns* ]/[[ :0 - FrontVow:0 ] | %>: ] _  ;
+            BackVow:0 %>: _  ;
+        except 
+            %>: :m _ :g %>: %{A%}:e ;
+
+
+"A lengthens to ä after front vowels and replaces them"
+%{A%}:ä <=> FrontVow:0 %>: _  ;
+            %>: :m _ :g %>: %{A%}:e ; 
+ 
+"{A} replaces final vowels"
+Vx:0 <=> _ %>: %{A%}: .#. ;
+        where Vx in ( a e ä i o ö u ü y A E Ä I O Ö U Ü Y ) 
+        matched ;
+
+"ä Vowel Harmony"
+%{ä%}:e <=> [ :FrontVow :Cns* ]/[ %>: | %  | :0 ] _ ;
+
+"E Vowel Harmony"
+%{Ä%}:ä <=> [ :FrontVow :Cns* ]/[ %>: | %  | :0 ] _ ;
+
+"Y Vowel Harmony"
+%{Y%}:i <=> [ :FrontVow :Cns* ]/[ %>: | %  | :0 ] _ ;
+         except 
+             :Vow %>: %{d%}: _ %{r%}: ;
+
+"U deletion "
+%{U%}:0 <=>  %>: %{s%}: _ %>: %{A%}: m .#. ;
+
+"U Vowel Harmony (i)"
+%{U%}:i <=> [ :FrontVowUnround :Cns* ]/[ %>: | %  | :0 ] _ ;
+         except 
+                %>: %{s%}: _ %>: %{A%}: m .#. ;
+
+"U Vowel Harmony (y)"
+%{U%}:y <=> [ :BackVowUnround  :Cns* ]/[ %>: | %  | :0 ] _ ;
+         except 
+                %>: %{s%}: _ %>: %{A%}: m .#. ;
+
+"U Vowel Harmony (u)"
+%{U%}:y <=> [ :BackVowRound :Cns* ]/[ %>: | %  | :0 ] _ ;
+         except 
+                %>: %{s%}: _ %>: %{A%}: m .#. ;
+
+"U Vowel Harmony (ü)"
+%{U%}:ü <=> [ :FrontVowRound :Cns* ]/[ %>: | %  | :0 ] _ ;
+         except 
+                %>: %{s%}: _ %>: %{A%}: m .#. ;
+
+"y Vowel Harmony (i)"
+%{y%}:i <=> [ :FrontVowUnround :Cns ]/[ %>: | %  | :0 ] _ ;
+         except 
+                e: %>: _ p [ .#. | %>: ] ;
+
+"y Vowel Harmony (y)"
+%{y%}:y <=> [ :BackVowUnround :Cns ]/[ %>: | %  | :0 ] _ ;
+         except 
+                e: %>: _ p [ .#. | %>: ] ;
+
+"y Vowel Harmony (u)"
+%{y%}:u <=> [ :BackVowRound :Cns ]/[ %>: | %  | :0 ] _ ;
+         except 
+                e: %>: _ p [ .#. | %>: ] ;
+
+"y Vowel Harmony (ü)"
+%{y%}:ü <=> [ :FrontVowRound :Cns ]/[ %>: | %  | :0 ] _ ;
+         except 
+                e: %>: _ p [ .#. | %>: ] ;
+
+"U Vowel harmony in -{y}{U}p"
+%{y%}:ä <=> e:0 %>: _ p [ .#. | %>: ] ; 
+
+"Remove e in e>{y}{U}p"
+e:0 <=> _ %>: %{y%}:ä :p [ .#. | %>: ] ; 
+
+"d -> t in vowel stem causative"
+%{d%}:t <=> :Vow %>: _ %{Y%}: %{r%}: ; 
+
+"{r} deletion in vowel stem causative"
+%{r%}:0 <=> :Vow %>: %{d%}: %{Y%}: _ ; 
+
+"{Y} deletion in vowel stem causative"
+%{Y%}:0 <=> :Vow %>: %{d%}: _ %{r%}: ;

@@ -1,0 +1,482 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!--
+
+t1x local chunking NP, VP
+t2x localcoordination NP+NP, etc.
+t3x empty, but for adpositional phrases + Rel clauses
+t4x Constituent mvm, SVO -> SOV
+t5x Cleanup
+
+
+This is the third pass. Responsibilities of this file include:
+
+* tbw.
+
+The file contains many macros and some rules:
+
+Macros:
+
+ No macros.
+ 
+Rules:
+
+* One rule: NP (dummy rule)
+
+DEF-CAT NAMING SCHEME:
+                       lemma-pos.tag.tag_SYNTAG
+
+where the SYNTAG part may have an l or r before or after to signify the arrow
+(where l corresponds to ← and r to →);
+alternatively the SYNTAG part is something like "mod", "attr" or "head".
+And then there are some categories like "month", with all the months.
+
+-->
+
+
+
+<interchunk>
+
+  <section-def-cats>
+    <def-cat n="PR_PO">
+       <cat-item lemma="pr_post" tags="*"/>
+    </def-cat>
+    <def-cat n="P_left">
+        <cat-item tags="NP.@P←.*"/>
+        <cat-item tags="NP.@P←"/>
+        <cat-item tags="NP.@←ADVL.*"/>
+        <cat-item tags="NP.@←ADVL"/>
+    </def-cat>
+    <def-cat n="Vcopaux-drop">
+        <cat-item lemma="cop-auxv" tags="SV.*.pres"/>
+    </def-cat>
+    <def-cat n="WORD">
+      <cat-item tags="NP.*"/>
+      <cat-item tags="SV.*"/>
+      <cat-item tags="ADV.*"/>
+    </def-cat>
+    <def-cat n="prndem-ela">
+      <cat-item lemma="dem" tags="ADV.@-F←ADVL-ela"/>
+      <cat-item lemma="prn" tags="*.dem.ela"/>
+    </def-cat>
+    <def-cat n="ektine">
+      <cat-item lemma="ektine" tags="ADV.*"/>
+    </def-cat>
+    <def-cat n="lassin">
+      <cat-item lemma="lassin" tags="NP.@ADVL"/>
+    </def-cat>
+    <def-cat n="mealtan">
+      <cat-item lemma="mealtan" tags="ADV.*"/>
+    </def-cat>
+    <def-cat n="cop-mainv">
+      <cat-item lemma="cop-mainv" tags="SV.@+FMAINV.*"/>
+    </def-cat>
+    <def-cat n="cop-mainv-inf">
+      <cat-item lemma="cop-mainv" tags="SV.@-FMAINV.inf"/>
+    </def-cat>
+    <def-cat n="NP">
+      <cat-item tags="NP"/>
+      <cat-item tags="NP.*"/>
+    </def-cat>
+    
+    <def-cat n="NPext">
+        <cat-item lemma="noun" tags="NP.@←SUBJ.←ext→"/>
+    </def-cat>
+    <def-cat n="NP_Subj">
+        <cat-item tags="NP.@SUBJ→.*"/>
+        <cat-item tags="NP.@←SUBJ.*"/>
+    </def-cat>
+    <def-cat n="NP_Spred">
+        <cat-item tags="NP.@←SPRED.*"/>
+        <cat-item tags="NP.@←SPRED"/>
+    </def-cat>
+
+    <def-cat n="NP_Subj_l">
+        <cat-item tags="NP.@←SUBJ"/>
+        <cat-item tags="NP.@←SUBJ.pers"/>
+        <cat-item tags="NP.@←SUBJ.pers.*"/>
+    </def-cat>
+
+    
+    <def-cat n="NP_Obj">
+        <cat-item tags="NP.@OBJ→.*"/>
+        <cat-item tags="NP.@←OBJ.*"/>
+    </def-cat>
+    
+    <def-cat n="NP_Advl_l">
+        <cat-item tags="NP.@←ADVL.*"/>
+        <cat-item tags="NP.@←ADVL"/>
+    </def-cat>
+    
+    <def-cat n="NP_Advl">
+        <cat-item tags="NP.@ADVL→.*"/>
+        <cat-item tags="NP.@←ADVL.*"/>
+        <cat-item tags="NP.@ADVL.*"/>
+    </def-cat>
+    
+    <def-cat n="NP_Po">
+        <cat-item tags="NP.@P←.*"/>
+        <cat-item tags="NP.@P←"/>
+    </def-cat>
+    
+    <def-cat n="FMainV">
+        <cat-item lemma="vblex" tags="SV.@+FMAINV"/>
+        <cat-item lemma="vblex" tags="SV.@+FMAINV.*"/>
+        <cat-item lemma="vblex" tags="SV.*.@+FMAINV.*"/>
+        <cat-item lemma="vblex" tags="SV.*.*.@+FMAINV.*"/>
+    </def-cat>
+    
+    <def-cat n="FAuxV">
+        <cat-item tags="SV.@+FMAUXV"/>
+        <cat-item tags="SV.@+FMAUXV.*"/>
+        <cat-item tags="SV.*.@+FMAUXV.*"/>
+        <cat-item tags="SV.*.*.@+FMAUXV.*"/>
+    </def-cat>
+    
+    <def-cat n="CC">
+        <cat-item tags="CC.@CNP"/>
+        <cat-item tags="CC.*"/> <!--should be removed when we fix CG -->
+        <cat-item tags="SV.*.Neg.Foc_ge"/>
+        <cat-item tags="SV.*.Neg.Foc_ge.*"/>
+    </def-cat>
+    
+    <def-cat n="CNP">
+        <cat-item tags="CC.@CNP"/>
+    </def-cat>
+    
+    <def-cat n="Vcop">
+        <cat-item lemma="copula" tags="SV"/>
+        <cat-item lemma="copula" tags="SV.*"/>
+    </def-cat>
+    
+    <def-cat n="Ine_adverb">
+        <cat-item lemma="gitta" tags="Adv"/>
+        <cat-item lemma="gitta" tags="Adv.*"/>
+    </def-cat>
+    
+    <def-cat n="prn-dem">
+      <cat-item lemma="prn" tags="NP.@←ADVL.dem"/>
+      <cat-item lemma="prn" tags="NP.@←ADVL-ine.dem"/>
+      <cat-item lemma="prn" tags="NP.@←ADVL-ela.dem"/>
+      <cat-item lemma="prn" tags="NP.@←ADVL.dem.*"/>
+      <cat-item lemma="prn" tags="NP.@←ADVL-ine.dem.*"/>
+      <cat-item lemma="prn" tags="NP.@←ADVL-ela.dem.*"/>
+    </def-cat>
+    <def-cat n="ahte">
+        <cat-item lemma="ahte" tags="cnjsub.@CVP"/>
+    </def-cat>
+    <def-cat n="Pcle">
+        <cat-item tags="Pcle.@PCLE"/>
+    </def-cat>
+    
+    <def-cat n="Adp">
+        <cat-item tags="PREP.*"/>
+    </def-cat>
+
+  </section-def-cats>
+
+  <section-def-attrs>
+    <def-attr n="phrase">
+     <attr-item tags="@X"/>
+     <attr-item tags="@HNOUN"/>
+     <attr-item tags="@CNP"/>
+     <attr-item tags="@CVP"/>
+     <attr-item tags="@→N"/>
+     <attr-item tags="@←OBJ"/>
+     <attr-item tags="@OBJ"/>
+     <attr-item tags="@-F←OBJ"/>
+     <attr-item tags="@SUBJ→"/>
+     <attr-item tags="@←SUBJ"/>
+     <attr-item tags="@SPRED→"/>
+     <attr-item tags="@\+FMAINV"/>
+     <attr-item tags="@-FMAINV"/>
+     <attr-item tags="@+FAUXV"/>
+     <attr-item tags="@ADVL"/>
+     <attr-item tags="@←ADVL"/>
+     <attr-item tags="@ADVL→"/>
+     <attr-item tags="@HAB"/>
+     <attr-item tags="@Num←"/>
+     <attr-item tags="@→Num"/>
+     <attr-item tags="@INTERJ"/>
+     <attr-item tags="@PCLE"/>
+     <attr-item tags="@OPRED→"/>
+     <attr-item tags="@←OPRED"/>
+     <attr-item tags="@→P"/>
+     <attr-item tags="@P←"/>
+     <attr-item tags="@-FSUBJ→"/>
+     <attr-item tags="@-FOBJ→"/>
+     <attr-item tags="@-F←OBJ"/>
+    </def-attr>
+    <def-attr n="nbr">
+      <attr-item tags="sg"/>
+      <attr-item tags="pl"/>
+      <attr-item tags="sp"/>
+      <attr-item tags="ND"/>
+    </def-attr>
+    <def-attr n="case">
+     <attr-item tags="nom"/>
+     <attr-item tags="acc"/>
+     <attr-item tags="gen"/>
+     <attr-item tags="com"/>
+     <attr-item tags="ess"/>
+     <attr-item tags="ill"/>
+     <attr-item tags="loc"/>
+     <attr-item tags="ine"/>
+     <attr-item tags="ela"/>
+  </def-attr>
+  </section-def-attrs>
+
+  <section-def-vars>
+    <def-var n="nombre"/>
+    <def-var n="genere"/>
+    <def-var n="caseFirstword"/>
+  </section-def-vars>
+  <section-def-macros>
+    <def-macro n="switch_cases" npar="2">
+      <let><var n="caseFirstword"/><get-case-from pos="1"><clip pos="1" part="lem"/></get-case-from></let>
+      <let><clip pos="1" part="lem"/><get-case-from pos="2"><clip pos="1" part="lem"/></get-case-from></let>
+      <modify-case><clip pos="2" part="lem"/><var n="caseFirstword"/></modify-case>
+    </def-macro>
+  </section-def-macros>
+
+  <section-rules>
+   <rule comment="REGLA: prndem-ela prndem-ela">
+     <pattern>
+       <pattern-item n="prndem-ela"/>
+       <pattern-item n="prndem-ela"/>
+     </pattern>
+     <action>
+       <out>
+         <chunk>
+            <clip pos="2" part="lemh"/>
+            <clip pos="2" part="tags"/>
+            <clip pos="2" part="chcontent"/>
+            <clip pos="2" part="lemq"/>
+         </chunk>
+       </out>
+     </action>
+    </rule> 
+   <rule comment="REGLA: NP_Po Adp">
+     <pattern>
+       <pattern-item n="NP_Po"/>
+       <pattern-item n="Adp"/>
+     </pattern>
+     <action>
+        <call-macro n="switch_cases"><with-param pos="1"/><with-param pos="2"/></call-macro>
+       <out>
+         <chunk>
+           <get-case-from pos="1"><lit v="adpp"/></get-case-from>
+           <clip pos="2" part="tags"/>
+           <lit v="{"/>
+           <clip pos="1" part="content"/>
+           <b pos="1"/>
+           <clip pos="2" part="content"/>
+           <lit v="}"/>
+           <clip pos="2" part="lemq"/>
+         </chunk>
+       </out>
+     </action>
+    </rule> 
+
+   <rule comment="REGLA: Adp NP_Advl_l">
+     <pattern>
+       <pattern-item n="Adp"/>
+       <pattern-item n="NP_Advl_l"/>
+     </pattern>
+     <action>
+       <out>
+         <chunk>
+           <get-case-from pos="1"><lit v="adpp"/></get-case-from>
+           <clip pos="1" part="tags"/>
+           <lit v="{"/>
+           <clip pos="1" part="content"/>
+           <b pos="1"/>
+           <clip pos="2" part="content"/>
+           <lit v="}"/>
+           <clip pos="1" part="lemq"/>
+         </chunk>
+       </out>
+     </action>
+    </rule>
+   <rule comment="prn-dem ahte" c="dasa ahte">
+     <pattern>
+       <pattern-item n="prn-dem"/>
+       <pattern-item n="ahte"/>
+     </pattern>
+     <action>
+       <out>
+         <chunk>
+           <get-case-from pos="1"><lit v="dem-ahte"/></get-case-from>
+           <clip pos="2" part="tags"/>
+           <lit v="{"/>
+           <clip pos="1" part="content"/>
+           <b pos="1"/>
+           <clip pos="2" part="content"/>
+           <lit v="}"/>
+           <clip pos="1" part="lemq"/>
+         </chunk>
+       </out>
+     </action>
+    </rule>
+
+   <rule comment="REGLA: NPext lassin">
+     <pattern>
+       <pattern-item n="NPext"/>
+       <pattern-item n="lassin"/>
+     </pattern>
+     <action>
+       <out>
+         <chunk>
+           <get-case-from pos="1"><lit v="advl"/></get-case-from>
+           <clip pos="2" part="tags"/>
+           <lit v="{"/>
+           <clip pos="2" part="content"/>
+           <b pos="1"/>
+           <clip pos="1" part="content"/>
+           <lit v="}"/>
+           <clip pos="2" part="lemq"/>
+         </chunk>
+       </out>
+     </action>
+    </rule>
+   <rule comment="REGLA: ektine NP_Advl_l">
+     <pattern>
+       <pattern-item n="ektine"/>
+       <pattern-item n="NP_Advl_l"/>
+     </pattern>
+     <action>
+       <out>
+         <chunk>
+           <get-case-from pos="1"><lit v="advl"/></get-case-from>
+           <clip pos="2" part="tags"/>
+           <lit v="{"/>
+           <clip pos="2" part="content"/>
+           <b pos="1"/>
+           <clip pos="1" part="content"/>
+           <lit v="}"/>
+           <clip pos="2" part="lemq"/>
+         </chunk>
+       </out>
+     </action>
+    </rule>
+
+ <rule comment="lea aux WORD" > <!--  delete cop -->
+      <pattern>
+        <pattern-item n="Vcopaux-drop"/>
+        <pattern-item n="WORD"/>
+      </pattern>
+      <action>
+        <call-macro n="switch_cases"><with-param pos="1"/><with-param pos="2"/></call-macro>
+        <out>
+          <chunk>
+            <clip pos="2" part="lemh"/>
+            <clip pos="2" part="tags"/>
+            <clip pos="2" part="chcontent"/>
+            <clip pos="2" part="lemq"/>
+          </chunk>
+        </out>
+      </action>
+    </rule>
+
+    <rule comment="MAINV SUBJ" > 
+      <pattern>
+        <pattern-item n="FMainV"/>
+        <pattern-item n="NP_Subj_l"/>
+      </pattern>
+      <action>
+        <call-macro n="switch_cases"><with-param pos="1"/><with-param pos="2"/></call-macro>
+        <out>
+        <chunk>
+            <clip pos="2" part="lemh"/>
+            <clip pos="2" part="tags"/>
+            <clip pos="2" part="chcontent"/>
+            <clip pos="2" part="lemq"/>
+          </chunk>
+          <b pos="1"/>
+          <chunk>
+            <clip pos="1" part="lemh"/>
+            <clip pos="1" part="tags"/>
+            <clip pos="1" part="chcontent"/>
+            <clip pos="1" part="lemq"/>
+          </chunk>
+        </out>
+      </action>
+    </rule>
+    <rule comment="cop-mainv NP_Advl_l NP_Spred" > 
+      <pattern>
+        <pattern-item n="cop-mainv"/>
+        <pattern-item n="NP_Advl_l"/>
+        <pattern-item n="NP_Spred"/>
+      </pattern>
+      <action>
+        <call-macro n="switch_cases"><with-param pos="1"/><with-param pos="2"/></call-macro>
+        <out>
+        <chunk>
+            <clip pos="2" part="lemh"/>
+            <clip pos="2" part="tags"/>
+            <clip pos="2" part="chcontent"/>
+            <clip pos="2" part="lemq"/>
+          </chunk>
+          <b pos="1"/>
+          <chunk>
+            <clip pos="1" part="lemh"/>
+            <clip pos="1" part="tags"/>
+            <clip pos="1" part="chcontent"/>
+            <clip pos="1" part="lemq"/>
+          </chunk>
+          <b pos="2"/>
+          <chunk>
+            <clip pos="3" part="lemh"/>
+            <clip pos="3" part="tags"/>
+            <clip pos="3" part="chcontent"/>
+            <clip pos="3" part="lemq"/>
+          </chunk>
+        </out>
+      </action>
+    </rule>
+
+
+    <rule comment="mealtan årrodh" > 
+      <pattern>
+        <pattern-item n="cop-mainv-inf"/>
+        <pattern-item n="mealtan"/>
+      </pattern>
+      <action>
+        <call-macro n="switch_cases"><with-param pos="1"/><with-param pos="2"/></call-macro>
+        <out>
+        <chunk>
+            <clip pos="2" part="lemh"/>
+            <clip pos="2" part="tags"/>
+            <clip pos="2" part="chcontent"/>
+            <clip pos="2" part="lemq"/>
+          </chunk>
+          <b pos="1"/>
+          <chunk>
+            <clip pos="1" part="lemh"/>
+            <clip pos="1" part="tags"/>
+            <clip pos="1" part="chcontent"/>
+            <clip pos="1" part="lemq"/>
+          </chunk>
+        </out>
+      </action>
+    </rule>
+
+
+<!--    <rule>
+      <pattern>
+        <pattern-item n="NP"/>
+      </pattern>
+      <action>
+        <out>
+          <chunk>
+            <clip pos="1" part="lemh"/>
+            <clip pos="1" part="tags"/>
+            <clip pos="1" part="chcontent"/>
+            <clip pos="1" part="lemq"/>
+          </chunk>
+        </out>
+      </action> 
+    </rule> -->
+
+  </section-rules>
+</interchunk>

@@ -1,0 +1,120 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<modes>
+
+  <!-- as -> bn -->
+  
+  <mode name="asm-ben" install="yes">
+    <pipeline>
+      <program name="lt-proc">
+        <file name="asm-ben.automorf.bin"/>
+      </program>
+      <program name="apertium-tagger -g $2">
+        <file name="asm-ben.prob"/>
+      </program>
+      <program name="apertium-pretransfer"/>
+      <program name="apertium-transfer">
+        <file name="apertium-asm-ben.asm-ben.t1x"/>
+        <file name="asm-ben.t1x.bin"/>
+        <file name="asm-ben.autobil.bin"/>
+      </program>
+      <program name="lt-proc $1">
+        <file name="asm-ben.autogen.bin"/>
+      </program>
+    </pipeline>
+  </mode>
+  
+  <mode name="asm-ben-morph" install="no">
+    <pipeline>
+      <program name="lt-proc">
+        <file name="asm-ben.automorf.bin"/>
+      </program>
+    </pipeline>
+  </mode>
+  
+  <mode name="asm-ben-tagger" install="no">
+    <pipeline>
+      <program name="lt-proc">
+        <file name="asm-ben.automorf.bin"/>
+      </program>
+      <program name="apertium-tagger -g $2">
+        <file name="asm-ben.prob"/>
+      </program>
+    </pipeline>
+  </mode>
+  
+  <mode name="asm-ben-transfer" install="no">
+    <pipeline>
+      <program name="lt-proc">
+        <file name="asm-ben.automorf.bin"/>
+      </program>
+      <program name="apertium-tagger -g $2">
+        <file name="asm-ben.prob"/>
+      </program>
+	  <program name="apertium-pretransfer"/>
+      <program name="apertium-transfer">
+        <file name="apertium-asm-ben.asm-ben.t1x"/>
+        <file name="asm-ben.t1x.bin"/>
+        <file name="asm-ben.autobil.bin"/>
+      </program>
+    </pipeline>
+  </mode>
+  
+  <!-- bn -> as -->
+  
+  <mode name="ben-asm" install="yes">
+    <pipeline>
+      <program name="lt-proc">
+        <file name="ben-asm.automorf.bin"/>
+      </program>
+      <program name="apertium-tagger -g $2">
+        <file name="ben-asm.prob"/>
+      </program>
+      <program name="apertium-pretransfer"/>
+      <program name="apertium-transfer">
+        <file name="apertium-asm-ben.ben-asm.t1x"/>
+        <file name="ben-asm.t1x.bin"/>
+        <file name="ben-asm.autobil.bin"/>
+      </program>
+      <program name="lt-proc $1">
+        <file name="ben-asm.autogen.bin"/>
+      </program>
+    </pipeline>
+  </mode>
+  
+  <mode name="ben-asm-morph" install="no">
+    <pipeline>
+      <program name="lt-proc">
+        <file name="ben-asm.automorf.bin"/>
+      </program>
+    </pipeline>
+  </mode>
+  
+  <mode name="ben-asm-tagger" install="no">
+    <pipeline>
+      <program name="lt-proc">
+        <file name="ben-asm.automorf.bin"/>
+      </program>
+      <program name="apertium-tagger -g $2">
+        <file name="ben-asm.prob"/>
+      </program>
+    </pipeline>
+  </mode>
+  
+  <mode name="ben-asm-transfer" install="no">
+    <pipeline>
+      <program name="lt-proc">
+        <file name="ben-asm.automorf.bin"/>
+      </program>
+      <program name="apertium-tagger -g $2">
+        <file name="ben-asm.prob"/>
+      </program>
+	  <program name="apertium-pretransfer"/>
+      <program name="apertium-transfer">
+        <file name="apertium-asm-ben.ben-asm.t1x"/>
+        <file name="ben-asm.t1x.bin"/>
+        <file name="ben-asm.autobil.bin"/>
+      </program>
+    </pipeline>
+  </mode>
+  
+</modes>

@@ -1,0 +1,534 @@
+<!--
+<!DOCTYPE cross-model SYSTEM "crossmodel.dtd">
+-->
+<cross-model>
+    <cross-action id="default" a="ebenimeli">
+        <description>Default pattern</description>
+        <pattern>
+            <e>
+                <p>
+                    <l>$lemmaA<v n="cat"/><t n="tailA"/></l>
+                    <r>$lemmaB<v n="cat"/><t/></r>
+                </p>
+            </e>
+            <e>
+                <p>
+                    <l>$lemmaB<v n="cat"/><t/></l>
+                    <r>$lemmaC<v n="cat"/><t n="tailC"/></r>
+                </p>
+            </e>
+        </pattern>
+        <action-set>
+            <action>
+                <e>
+                    <p>
+                        <l>$lemmaA<v n="cat"/><t n="tailA"/></l>
+                        <r>$lemmaC<v n="cat"/><t n="tailC"/></r>
+                    </p>
+                </e>
+            </action>
+        </action-set>
+    </cross-action>
+<cross-action id="noun-basic-1">
+	<pattern>
+    <e>
+      <p>
+        <l>$lemmaA<s n="n"/><s n="m"/></l> 
+        <r>$lemmaB<s n="n"/></r> 
+      </p>
+    </e>
+
+    <e>
+      <p>
+        <l>$lemmaB<s n="n"/></l> 
+        <r>$lemmaC<s n="n"/><s n="f"/></r> 
+      </p>
+    </e>
+
+	</pattern>
+<action-set>
+<action>
+    <e>
+      <p>
+        <l>$lemmaA<s n="n"/><s n="m"/></l> 
+        <r>$lemmaC<s n="n"/><s n="f"/></r> 
+      </p>
+    </e>
+</action>
+</action-set>
+
+</cross-action>
+<cross-action id="noun-basic-2">
+	<pattern>
+    <e>
+      <p>
+        <l>$lemmaA<s n="n"/><s n="m"/></l> 
+        <r>$lemmaB<s n="n"/></r> 
+      </p>
+    </e>
+
+    <e>
+      <p>
+        <l>$lemmaB<s n="n"/></l> 
+        <r>$lemmaC<s n="n"/><s n="m"/></r> 
+      </p>
+    </e>
+
+	</pattern>
+<action-set>
+<action>
+    <e>
+      <p>
+        <l>$lemmaA<s n="n"/><s n="m"/></l> 
+        <r>$lemmaC<s n="n"/><s n="m"/></r> 
+      </p>
+    </e>
+</action>
+</action-set>
+</cross-action>
+<cross-action id="noun-basic-3">
+	<pattern>
+    <e>
+      <p>
+        <l>$lemmaA<s n="n"/><s n="f"/></l> 
+        <r>$lemmaB<s n="n"/></r> 
+      </p>
+    </e>
+
+    <e>
+      <p>
+        <l>$lemmaB<s n="n"/></l> 
+        <r>$lemmaC<s n="n"/><s n="f"/></r> 
+      </p>
+    </e>
+
+	</pattern>
+<action-set>
+<action>
+    <e>
+      <p>
+        <l>$lemmaA<s n="n"/><s n="f"/></l> 
+        <r>$lemmaC<s n="n"/><s n="f"/></r> 
+      </p>
+    </e>
+</action>
+</action-set>
+</cross-action>
+<cross-action id="noun-basic-4">
+	<pattern>
+    <e>
+      <p>
+        <l>$lemmaA<s n="n"/><s n="f"/></l> 
+        <r>$lemmaB<s n="n"/></r> 
+      </p>
+    </e>
+
+    <e>
+      <p>
+        <l>$lemmaB<s n="n"/></l> 
+        <r>$lemmaC<s n="n"/><s n="m"/></r> 
+      </p>
+    </e>
+
+	</pattern>
+<action-set>
+<action>
+    <e>
+      <p>
+        <l>$lemmaA<s n="n"/><s n="f"/></l> 
+        <r>$lemmaC<s n="n"/><s n="m"/></r> 
+      </p>
+    </e>
+</action>
+</action-set>
+</cross-action>
+
+<cross-action id="npant-2">
+	<pattern>
+    <e>
+      <p>
+        <l>$lemmaA<s n="np"/><s n="ant"/></l> 
+        <r>$lemmaB<s n="np"/><s n="ant"/></r> 
+      </p>
+    </e>
+
+    <e>
+        <i>$lemmaB<s n="np"/><s n="ant"/></i> 
+    </e>
+
+	</pattern>
+<action-set>
+<action>
+    <e>
+      <p>
+        <l>$lemmaA<s n="np"/><s n="ant"/></l> 
+        <r>$lemmaB<s n="np"/><s n="ant"/></r> 
+      </p>
+    </e>
+</action>
+</action-set>
+</cross-action>
+<cross-action id="toploc-1">
+	<pattern>
+    <e>
+      <p>
+        <l>$lemmaA<s n="np"/><s n="top"/><s n="f"/></l> 
+        <r>$lemmaB<s n="np"/><s n="top"/></r> 
+      </p>
+    </e>
+
+    <e>
+      <p>
+        <l>$lemmaB<s n="np"/><s n="loc"/></l> 
+        <r>$lemmaC<s n="np"/><s n="loc"/><s n="f"/></r> 
+      </p>
+    </e>
+
+	</pattern>
+<action-set>
+<action>
+    <e>
+      <p>
+        <l>$lemmaA<s n="np"/><s n="top"/><s n="f"/></l> 
+        <r>$lemmaC<s n="np"/><s n="top"/><s n="f"/></r> 
+      </p>
+    </e>
+</action>
+</action-set>
+</cross-action>
+<cross-action id="toploc-2">
+	<pattern>
+    <e>
+      <p>
+        <l>$lemmaA<s n="np"/><s n="top"/><s n="m"/></l> 
+        <r>$lemmaB<s n="np"/><s n="top"/></r> 
+      </p>
+    </e>
+
+    <e>
+      <p>
+        <l>$lemmaB<s n="np"/><s n="loc"/></l> 
+        <r>$lemmaC<s n="np"/><s n="loc"/><s n="m"/></r> 
+      </p>
+    </e>
+
+	</pattern>
+<action-set>
+<action>
+    <e>
+      <p>
+        <l>$lemmaA<s n="np"/><s n="top"/><s n="m"/></l> 
+        <r>$lemmaC<s n="np"/><s n="top"/><s n="m"/></r> 
+      </p>
+    </e>
+</action>
+</action-set>
+</cross-action>
+<cross-action id="toploc-3">
+	<pattern>
+    <e>
+      <p>
+        <l>$lemmaA<s n="np"/><s n="top"/><s n="m"/></l> 
+        <r>$lemmaB<s n="np"/><s n="top"/></r> 
+      </p>
+    </e>
+
+    <e>
+      <p>
+        <l>$lemmaB<s n="np"/><s n="loc"/></l> 
+        <r>$lemmaC<s n="np"/><s n="loc"/><s n="f"/></r> 
+      </p>
+    </e>
+
+	</pattern>
+<action-set>
+<action>
+    <e>
+      <p>
+        <l>$lemmaA<s n="np"/><s n="top"/><s n="m"/></l> 
+        <r>$lemmaC<s n="np"/><s n="top"/><s n="f"/></r> 
+      </p>
+    </e>
+</action>
+</action-set>
+</cross-action>
+<cross-action id="toploc-4">
+	<pattern>
+    <e>
+      <p>
+        <l>$lemmaA<s n="np"/><s n="top"/><s n="f"/></l> 
+        <r>$lemmaB<s n="np"/><s n="top"/></r> 
+      </p>
+    </e>
+
+    <e>
+      <p>
+        <l>$lemmaB<s n="np"/><s n="loc"/></l> 
+        <r>$lemmaC<s n="np"/><s n="loc"/><s n="m"/></r> 
+      </p>
+    </e>
+
+	</pattern>
+<action-set>
+<action>
+    <e>
+      <p>
+        <l>$lemmaA<s n="np"/><s n="top"/><s n="f"/></l> 
+        <r>$lemmaC<s n="np"/><s n="top"/><s n="m"/></r> 
+      </p>
+    </e>
+</action>
+</action-set>
+</cross-action>
+<cross-action id="vblex-simple">
+	<pattern>
+    <e>
+      <p>
+        <l>$lemmaA<s n="vblex"/></l> 
+        <r>$lemmaB<s n="vblex"/></r> 
+      </p>
+    </e>
+
+    <e>
+      <p>
+        <l>$lemmaB<s n="vblex"/></l> 
+        <r>$lemmaC<s n="vblex"/></r> 
+      </p>
+    </e>
+
+</pattern>
+<action-set>
+<action>
+    <e>
+      <p>
+        <l>$lemmaA<s n="vblex"/></l> 
+        <r>$lemmaC<s n="vblex"/></r> 
+      </p>
+    </e>
+</action>
+</action-set>
+</cross-action>
+<cross-action id="pr-simple">
+	<pattern>
+    <e>
+      <p>
+        <l>$lemmaA<s n="pr"/></l> 
+        <r>$lemmaB<s n="pr"/></r> 
+      </p>
+    </e>
+
+    <e>
+      <p>
+        <l>$lemmaB<s n="pr"/></l> 
+        <r>$lemmaC<s n="pr"/></r> 
+      </p>
+    </e>
+
+</pattern>
+<action-set>
+<action>
+    <e>
+      <p>
+        <l>$lemmaA<s n="pr"/></l> 
+        <r>$lemmaC<s n="pr"/></r> 
+      </p>
+    </e>
+</action>
+</action-set>
+</cross-action>
+<cross-action id="cnjcoo-simple">
+	<pattern>
+    <e>
+      <p>
+        <l>$lemmaA<s n="cnjcoo"/></l> 
+        <r>$lemmaB<s n="cnjcoo"/></r> 
+      </p>
+    </e>
+
+    <e>
+      <p>
+        <l>$lemmaB<s n="cnjcoo"/></l> 
+        <r>$lemmaC<s n="cnjcoo"/></r> 
+      </p>
+    </e>
+
+</pattern>
+<action-set>
+<action>
+    <e>
+      <p>
+        <l>$lemmaA<s n="cnjcoo"/></l> 
+        <r>$lemmaC<s n="cnjcoo"/></r> 
+      </p>
+    </e>
+</action>
+</action-set>
+</cross-action>
+<cross-action id="cnjsub-simple">
+	<pattern>
+    <e>
+      <p>
+        <l>$lemmaA<s n="cnjsub"/></l> 
+        <r>$lemmaB<s n="cnjsub"/></r> 
+      </p>
+    </e>
+
+    <e>
+      <p>
+        <l>$lemmaB<s n="cnjsub"/></l> 
+        <r>$lemmaC<s n="cnjsub"/></r> 
+      </p>
+    </e>
+
+</pattern>
+<action-set>
+<action>
+    <e>
+      <p>
+        <l>$lemmaA<s n="cnjsub"/></l> 
+        <r>$lemmaC<s n="cnjsub"/></r> 
+      </p>
+    </e>
+</action>
+</action-set>
+</cross-action>
+<cross-action id="cnjadv-simple">
+	<pattern>
+    <e>
+      <p>
+        <l>$lemmaA<s n="cnjadv"/></l> 
+        <r>$lemmaB<s n="cnjadv"/></r> 
+      </p>
+    </e>
+
+    <e>
+      <p>
+        <l>$lemmaB<s n="cnjadv"/></l> 
+        <r>$lemmaC<s n="cnjadv"/></r> 
+      </p>
+    </e>
+
+</pattern>
+<action-set>
+<action>
+    <e>
+      <p>
+        <l>$lemmaA<s n="cnjadv"/></l> 
+        <r>$lemmaC<s n="cnjadv"/></r> 
+      </p>
+    </e>
+</action>
+</action-set>
+</cross-action>
+<cross-action id="adv-simple">
+	<pattern>
+    <e>
+      <p>
+        <l>$lemmaA<s n="adv"/></l> 
+        <r>$lemmaB<s n="adv"/></r> 
+      </p>
+    </e>
+
+    <e>
+      <p>
+        <l>$lemmaB<s n="adv"/></l> 
+        <r>$lemmaC<s n="adv"/></r> 
+      </p>
+    </e>
+
+</pattern>
+<action-set>
+<action>
+    <e>
+      <p>
+        <l>$lemmaA<s n="adv"/></l> 
+        <r>$lemmaC<s n="adv"/></r> 
+      </p>
+    </e>
+</action>
+</action-set>
+</cross-action>
+<cross-action id="adj-rmsint">
+	<pattern>
+    <e>
+      <p>
+        <l>$lemmaA<s n="adj"/></l> 
+        <r>$lemmaB<s n="adj"/><s n="sint"/></r> 
+      </p>
+    </e>
+
+    <e>
+      <p>
+        <l>$lemmaB<s n="adj"/><s n="sint"/></l> 
+        <r>$lemmaC<s n="adj"/></r> 
+      </p>
+    </e>
+
+	</pattern>
+<action-set>
+<action>
+    <e>
+      <p>
+        <l>$lemmaA<s n="adj"/></l> 
+        <r>$lemmaC<s n="adj"/></r> 
+      </p>
+    </e>
+</action>
+</action-set>
+</cross-action>
+<cross-action id="adj-rmsintmf">
+	<pattern>
+    <e>
+      <p>
+        <l>$lemmaA<s n="adj"/></l> 
+        <r>$lemmaB<s n="adj"/><s n="sint"/></r> 
+      </p>
+    </e>
+
+    <e>
+      <p>
+        <l>$lemmaB<s n="adj"/><s n="sint"/></l> 
+        <r>$lemmaC<s n="adj"/><s n="mf"/></r> 
+      </p>
+    </e>
+
+	</pattern>
+<action-set>
+<action>
+    <e>
+      <p>
+        <l>$lemmaA<s n="adj"/></l> 
+        <r>$lemmaC<s n="adj"/><s n="mf"/></r> 
+      </p>
+    </e>
+</action>
+</action-set>
+</cross-action>
+<cross-action id="npant-inv-left">
+	<pattern>
+    <e>
+        <i>$lemmaB<s n="np"/><s n="ant"/></i> 
+    </e>
+
+    <e>
+      <p>
+        <l>$lemmaB<s n="np"/></l> 
+        <r>$lemmaC<s n="np"/></r> 
+      </p>
+    </e>
+
+	</pattern>
+<action-set>
+<action>
+    <e>
+      <p>
+        <l>$lemmaB<s n="np"/><s n="ant"/></l> 
+        <r>$lemmaC<s n="np"/><s n="ant"/></r> 
+      </p>
+    </e>
+
+</action>
+</action-set>
+</cross-action>
+</cross-model>
+

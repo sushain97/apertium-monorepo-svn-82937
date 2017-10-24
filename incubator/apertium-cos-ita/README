@@ -1,0 +1,88 @@
+Corsican and Italian
+
+                            apertium-cos-ita
+===============================================================================
+
+This is an Apertium language pair for translating between Corsican and
+Italian. What you can use this language package for:
+
+* Translating between Corsican and Italian
+* Morphological analysis of Corsican and Italian
+* Part-of-speech tagging of Corsican and Italian
+
+For information on the latter two points, see subheading "For more
+information" below
+
+Requirements
+===============================================================================
+
+You will need the following software installed:
+
+* lttoolbox (>= 3.3.0)
+* apertium (>= 3.3.0)
+* vislcg3 (>= 0.9.9.10297)
+* apertium-cos
+* apertium-ita
+
+If this does not make any sense, we recommend you look at: www.apertium.org
+
+Compiling
+===============================================================================
+
+Given the requirements being installed, you should be able to just run:
+
+$ ./configure
+$ make
+# make install
+
+You can use ./autogen.sh instead of ./configure you're compiling from
+SVN. If you installed any prerequisite language packages using a --prefix
+to ./configure, make sure to give the same --prefix to ./configure here.
+
+Testing
+===============================================================================
+
+If you are in the source directory after running make, the following
+commands should work:
+
+$  echo "TODO test sentence 1" | apertium -d . cos-ita
+TODO test translated sentence 1
+
+$ echo "TODO test sentence 2" | apertium -d . ita-cos
+TODO test translated sentence 2
+
+After installing somewhere in $PATH, you should be able to do e.g.
+
+$  echo "TODO test sentence 1" | apertium cos-ita
+TODO test translated sentence 1
+
+Files and data
+===============================================================================
+
+* apertium-cos-ita.cos-ita.dix  - Bilingual dictionary
+* apertium-cos-ita.cos-ita.t1x  - Chunking rules for translating into Corsican
+* apertium-cos-ita.ita-cos.t1x  - Chunking rules for translating into Italian
+* apertium-cos-ita.cos-ita.t2x  - Interchunk rules for translating into Corsican
+* apertium-cos-ita.ita-cos.t2x  - Interchunk rules for translating into Italian
+* apertium-cos-ita.cos-ita.t3x  - Postchunk rules for translating into Corsican
+* apertium-cos-ita.ita-cos.t3x  - Postchunk rules for translating into Italian
+* apertium-cos-ita.cos-ita.lrx  - Lexical selection rules for translating into Corsican
+* apertium-cos-ita.ita-cos.lrx  - Lexical selection rules for translating into Italian
+* modes.xml                     - Translation modes
+
+For more information
+===============================================================================
+
+* http://wiki.apertium.org/wiki/Installation
+* http://wiki.apertium.org/wiki/apertium-cos-ita
+* http://wiki.apertium.org/wiki/Using_an_lttoolbox_dictionary
+
+Help and support
+===============================================================================
+
+If you need help using this language pair or data, you can contact:
+
+* Mailing list: apertium-stuff@lists.sourceforge.net
+* IRC: #apertium on irc.freenode.net
+
+See also the file AUTHORS included in this distribution.

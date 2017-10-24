@@ -1,0 +1,19 @@
+Config:
+  hfst:
+    App: hfst-lookup
+    Gen: ../nog.autogen.hfst
+    Morph: ../nog.automorf.hfst
+
+Tests:
+  "[twol] verb stems with front vowels":
+    туьз<v><tv><ger><nom> : туьзуьв
+    буьги<v><tv><ger><nom> : буьгуьв
+
+  "[twol] verb stems with back vowels":
+    бол<v><iv><ger><nom> : болув
+    окы<v><tv><ger><nom> : окув
+    ата<v><tv><ger><nom> : атав
+    яша<v><iv><ger><nom> : яшав
+
+  "[twol] some case forms of <ger>":
+    яша<v><iv><ger><dat> : яшавга

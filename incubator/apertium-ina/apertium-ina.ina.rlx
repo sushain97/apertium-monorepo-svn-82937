@@ -1,0 +1,72 @@
+# Firstly, we need to define what tags should be considered sentence delimiters. For this example, only full stop is set as delimiter.
+DELIMITERS = "<.>" ;
+
+SETS
+
+LIST BOS = (>>>) ;
+LIST EOS = (<<<) ;
+
+# We can define sets for common tag clusters
+LIST Case = (n s) (n p) ; # A set that matches either a Noun Singular or a Noun Plural
+LIST Case = (n s) (n p) ; # A set that matches either a Noun Singular or a Noun Plural
+LIST TotePRN = ("tote" prn tn mf sp) ;
+LIST TotePREDET = ("tote" predet mf sp) ;
+LIST EsserN = ("esser" n sg) ;
+LIST V = vblex vbhaver vbser;
+LIST N = n;
+List DET = det;
+List ADJ = adj;
+List PRN = prn;
+List CNJ = cnjcoo;
+
+
+SECTION
+
+# Tote must be a pronoun if verb is to the right.
+REMOVE TotePREDET IF (1 V) ;
+
+# Tote must be a predet if an DET is to the right.
+REMOVE TotePREDET IF (1 DET) ;
+
+# Lemmas that are both N and V must be a N if a DET or ADJ is to the left.
+SELECT N IF (0 N) (0 V) (-1 DET) ;
+SELECT N IF (0 N) (0 V) (-1 ADJ) ;
+
+#Lemmas that are both N and V must be a V if a N or PRN is to the left
+SELECT V IF (0 N) (0 V) (-1 N) ;
+SELECT V IF (0 N) (0 V) (-1 PRN) ;
+
+#Otherwise, select N
+SELECT N IF (0 N) (0 V) ;
+
+#Lemmas that are both ADJ and V must be an ADJ if noun on left or right
+SELECT ADJ IF (0 ADJ) (0 V) (-1 N) ;
+SELECT ADJ IF (0 ADJ) (0 V) (1 N) ;
+
+#Lemmas that are both ADJ and V must be an VB if V to left
+SELECT V IF (0 ADJ) (0 V) (-1 V) ;
+
+#Otherwise, select ADJ
+SELECT ADJ IF (0 ADJ) (0 V);
+
+# Remove imperative
+REMOVE (imp) IF (-1 N) ;
+REMOVE (imp) IF (-1 ADJ) ;
+REMOVE (imp) IF (-1 PRN) ;
+
+# But select the imperative at the beginning of a sentence
+SELECT (imp) IF (-1 BOS) ;
+
+# Choose the indicative by default
+SELECT (pri) ;
+
+# VBHAVER before another verb.
+SELECT (vbhaver) IF (1 V) ;
+
+# Resources:
+# http://visl.sdu.dk/cg3.html
+# http://groups.google.com/group/constraint-grammar
+# http://kevindonnelly.org.uk/2010/05/constraint-grammar-tutorial/
+# http://wiki.apertium.org/wiki/Constraint_Grammar
+# http://wiki.apertium.org/wiki/Apertium_and_Constraint_Grammar
+

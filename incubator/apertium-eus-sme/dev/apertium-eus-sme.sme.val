@@ -1,0 +1,180 @@
+DELIMITERS = "." ;
+
+SECTION
+
+COPY (&Val Agcase_Nom Agsyn_Subj Thcase_Acc Thsyn_Obj) TARGET ("vuoitit" V) - (&Val);
+COPY (&Val Agcase_Nom Agsyn_Subj Thcase_Acc Thsyn_Obj) TARGET ("oažžut" V) - (&Val); #hartu
+# The ambiguity here is more dependend on lexical things
+    ## Mikelek saria lortu du.
+    ## Mikel lea vuoitán balkašumi.
+
+COPY (&Val Cacase_Nom Casyn_Subj Casem_Hum Excase_Ill Excase_ala Exsyn_Advl Exsem_Hum) TARGET ("suhttat" V) - (&Val);
+    ## Zergatik haserretzen zara nirekin?
+    ## Manin don suhtat mu ala/munnje?
+    
+#COPY (&Val V) TARGET ("addit" V) - (&Val);
+    ## Utziko al didazu bat?
+    ## Attátgo munnje ovtta?
+    
+COPY (&Val Agcase_Nom Agsyn_Subj Agsem_Ani) TARGET ("lávlut" V) - (&Val);    
+    ## Nik abesten dut.
+    ## Mun lávllan.
+
+COPY (&Val Agcase_Nom Agsyn_Subj Agsem_Ani Tocase_Acc Tosyn_Obj Tosem_Ina) TARGET ("lávlut" V) - (&Val);    
+    ## Nik abesti bat abesten dut.
+    ## Mun lávllan lávlaga.
+
+COPY (&Val Thcase_Nom Thsyn_Subj Locase_Loc Losyn_Advl) TARGET ("ihttit" V) - (&Val); 
+    ## Giltza poltsikoan agertu da.
+    ## Čoavdda lea ihtán burssas.
+
+COPY (&Val Thcase_Elasub Thsyn_Subj Locase_Loc Losyn_Advl) TARGET ("boahtit ovdan" V) - (&Val); 
+    ## Enpresan kargurik ez duela agertu da epaiketan.
+    ## Dikkis bođii ovdan ahte sus ii leat miige virgi fitnodagas.
+
+COPY (&Val Thcase_Nom Thsyn_Subj Sopacase_Abl Sopasyn_Advl Decase_bokte Desyn_Advl) TARGET ("boahtit" V) - (&Val); 
+#This sense is translated as boahtit
+    ## Mikel sukalde aldetik agertu zen egongelara.
+    ## Mikel bođii stohpui gievkana bokte.
+
+COPY (&Val Thcase_Nom Thsyn_Subj Thsem_Hum Prcase_Nom Prsyn_Advl) TARGET ("ihttit" V) - (&Val); 
+    ## Mikel urduri agertu zen.
+    ## Mikel orui balus.
+
+COPY (&Val Agcase_Nom Agsyn_Subj Tocase_Acc Tosyn_Obj) TARGET ("ihttit" V) - (&Val);     
+    ## Mikelek presa gutxi agertzen du.
+    ## Mikel orui unnan hoahppus.
+
+COPY (&Val Agcase_Nom Agsyn_Subj Tocase_Sub Tosyn_Obj) TARGET ("civkalit" V) - (&Val);   
+    ## Maite duela agertu dio Mikelek.
+    ## Mikel civkalii ahte ráhkista su.
+    
+COPY (&Val Thcase_Abs Thsyn_Subj Sopacase_Abl Sopasyn_Advl Decase_Ala Desyn_Advl) TARGET ("boahtit" V) - (&Val);
+    ## Mikel etxetik eskolara etorri da gaur goizean.
+COPY (&Val Thcase_Abs Thsyn_Subj Thsem_Abs Locase_Abl Losyn_Advl Losem_Ina) TARGET ("boahtit" V) - (&Val);
+    ## Erabaki horretatik etorri da zure haserrea. 
+    ## Tu enfado viene de esa decisión. 
+COPY (&Val Thcase_Abs Thsyn_Subj Thsem_Abs Locase_Dat Losyn_Advl Losem_Ani) TARGET ("boahtit" V) - (&Val);
+    ## Mikeli hitza etorri zitzaion bapatean. 
+    ## De pronto a Mikel le vino la palabra.
+    ## suddenly Mikel came up with the word
+    ## fahkkestaga Mikel huomihii sáni / fahkkestaga Mikelii bođii sátni millii
+COPY (&Val Thcase_Abs Thsyn_Subj Thsem_Ina Locase_Ine Losyn_Advl Losem_Ina) TARGET ("boahtit" V) - (&Val);
+    ## Liburu horretan dator jakin nahi duzun guztia
+    ## Todo lo que quieres saber viene en ese libro.
+    ## Visot maid áiggut diehtit boahtá dán girjjis. 
+COPY (&Val Tocase_Abs Tosyn_Subj Locase_Abs Atsyn_Pred) TARGET ("boahtit" V) - (&Val);
+    ## Mikel mutiko bihurria zetorren. 
+    ## Mikel venía un niño travieso. 
+    
+    ## Boađes dal deikke áhku lusa.
+    ## Go bohten internáhtii, de cissagohten buvssaide, dan in lean dahkan ovdal.
+    ## Ii dáppe lean seammalágan ortnet go duoddaris, gos bohccot bohte ja manne mo dáhtto.
+    ## Dalle buohtá ovtta bieivvi, lie viimma mannamin ruoktot.
+    ## Preassas lea erenoamaš ovddasvástádus das ahte iešguđet lágan oaivilat bohtet ovdan.
+COPY (&Val Agcase_Erg Agsyn_Subj Agsem_Hum Thcase_Abs Thsyn_Obj) TARGET ("gullat" V) - (&Val);
+    ## Mikelek abestia entzun du.
+    ## Mikel gullá lávlága.
+COPY (&Val Agcase_Erg Agsyn_Subj Agsem_Hum) TARGET ("guldalit" V) - (&Val);
+    ## Mikelek entzuten du.
+    ## Mikel gullá. #Er det mulig? - guldalit
+COPY (&Val Agcase_Erg Agsyn_Subj Agsem_Hum Thcase_Sub Thsyn_Obj) TARGET ("gullat" V) - (&Val);
+    ## Mikelek entzun du bihar euria egingo duela.
+    ## Mikel lea gullán ahte ihttin galgá árvit.
+    
+COPY (&Val Thcase_Nom Thsyn_Subj Thsem_Ani) TARGET ("jápmit" V) - (&Val);
+    ## Miren hil da.
+    ## Miren lea jápmán.
+    
+COPY (&Val Thcase_Nom Thsyn_Subj Pacase_Acc Pasyn_Obj Pasem_Ani) TARGET ("goddit" V) - (&Val);
+    ## Mikelek Miren hil du.
+    ## Mikel lea gottán Mirena.
+
+COPY (&Val Thcase_Nom Thsyn_Subj Sopacase_Abl Sopasyn_Advl Decase_Ill Desyn_Advl) TARGET ("vuolgit" V) - (&Val);
+    ## Mikel eskolatik etxera joan da.
+    ## Mikel vulgii skuvllas ruoktot.
+    
+    ## Mikel etxera joan da.
+    ## Mikel manai ruoktot.
+
+COPY (&Val Thcase_Nom Thsyn_Subj Thsem_Ina) TARGET ("nohkkat" V) - (&Val);
+    ## Antzerkia amaitu da.
+    ## Teahter lea nohkan.
+    
+COPY (&Val Agcase_Nom Agsyn_Subj Thcase_Acc Thsyn_Obj Thsem_Ina) TARGET ("geargat" V) - (&Val);
+    ## Mikelek pastela amaitu du.
+    ## Mikel lea geargan gáhkuin.
+    
+COPY (&Val Agcase_Nom Agsyn_Subj Thcase_Soc Thsyn_Advl) TARGET ("geargat" V) - (&Val);
+    ## Mikelek arazoarekin amaitu du.
+    ## Mikel lea geargan váttsivuođaiguin.
+
+COPY (&Val Agcase_Nom Agsyn_Subj Agsem_Hum) TARGET ("oaidnit" V) - (&Val);
+    ## Mikelek Miren ikusi du.
+    ## Mikel lea oaidnán Mirena.
+    
+COPY (&Val Agcase_Nom Agsyn_Subj Agsem_Hum Thcase_Acc Thsyn_Obj) TARGET ("oaidnit" V) - (&Val);
+    ## Mikelek ikusten du.
+    ## Mikel oaidná.
+    
+COPY (&Val Agcase_Nom Agsyn_Subj Agsem_Hum Thcase_Nom Thsyn_Elasub) TARGET ("oaidnit" V) - (&Val);
+    ## Mikelek ikusi du partida hasi dela.
+    ## Mikel lea oaidnán ahte kámpa lea álgan.
+
+COPY (&Val V) TARGET ("addit" V) - (&Val);
+    ## Mikelek muxua eman dio Mireni.
+    ## Mikelek egunak eman ditu lanean.
+
+COPY (&Val V) TARGET ("dei" V) - (&Val);
+    ## Haiek jendea manifestazioara deitu dute.
+    ## Haiek manifestazioa deitu dute.
+    ## Nik etxera deitu dut.
+    ## Nik lagunari telefonoz deitu diot.
+    ## Nik hoteletik etxera deitu dut.
+    ## Haiek tonto deitu dute Mikel.
+    ## Haiek Mikeli tonto deitu diote.
+
+
+COPY (&Val Agcase_Nom Agsyn_Subj Tocase_Sub Tosyn_Obj) TARGET ("hállat" V) - (&Val);
+    ## Ni zurekin mintzatu naiz atzoko partidari buruz.
+    ## Mun lean hállan duinna ievttá čiekčamiid birra.
+
+COPY (&Val Socase_Nom Sosyn_Subj Sosem_Hum Tocase_Ins Tosyn_Advl Recase_Dat Resyn_Iobj Resem_Hum) TARGET ("hállat" V) - (&Val);    
+    ## Ni zuri mintzatu natzaizu atzoko partidari buruz.
+    ## Mun lean hállan duinna ievttá čiekčamiid birra.
+    
+COPY (&Val Thcase_Nom Thsyn_Subj Sopacase_Abl Sopasyn_Advl Locase_Ill Losyn_Advl) TARGET ("sar" V) - (&Val); #bidjat, mannat
+    ## Mikel kaletik tabernara sartu da.
+    
+COPY (&Val Thcase_Nom Thsyn_Subj Locase_Loc Losyn_Advl) TARGET ("sar" V) - (&Val);
+    ## Mikel tabernan sartu da.
+    
+COPY (&Val Agcase_Nom Agsyn_Subj Thcase_Acc Thsyn_Obj Sopacase_Abl Sopasyn_Advl Locase_Ill Losyn_Advl) TARGET ("sar" V) - (&Val);
+    ## Mikelek paperak poltsatik kaxoira sartu ditu.
+    
+COPY (&Val Agcase_Nom Agsyn_Subj Thcase_Acc Thsyn_Obj Locase_Loc Losyn_Advl) TARGET ("sar" V) - (&Val);
+    ## Mikelek paperak kaxoian sartu ditu.
+    ## drawer
+
+
+
+COPY (&Val Agcase_Nom Agsyn_Subj Agsem_Hum Thcase_Acc Thsyn_Obj) TARGET ("vajálduhttit" V) - (&Val);
+    ## Mikel Mirenez ahaztu da.
+    ## Mikel lea vajálduhttán Mirena.
+
+COPY (&Val Agcase_Nom Agsyn_Subj Agsem_Hum Thcase_Acc Thsyn_Obj) TARGET ("vajálduhttit" V) - (&Val);    # This is good to show that the agentcase can differ dative in euskara and nominative in Sámi
+    ## Mikeli ikasitakoa ahaztu zaio.
+    ## Mikel lea vajálduhttán dan maid lea oahppán.
+    
+COPY (&Val Agcase_Nom Agsyn_Subj Agsem_Hum Thcase_Acc Thsyn_Obj) TARGET ("vajálduhttit" V) - (&Val); 
+       ## Mikelek ikasitakoa ahaztu du.
+       ## Mikel lea vajálduhttán dan maid lea oahppán.
+
+COPY (&Val Agcase_Nom Agsyn_Subj Agsem_Hum Thcase_Sub Thsyn_Obj) TARGET ("vajálduhttit" V) - (&Val);     
+    ## Mikelek lanera joan behar zuela ahaztu du.
+    ## Mikel ha olvidado que tenía que ir a trabajar.
+
+
+# use valency to find the correct case in the other language
+# use valency to find the correct lexical equivalent (agertu - orrut/boahtit/ihtet)
+

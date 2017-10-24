@@ -1,0 +1,35 @@
+<rules>
+  <rule> <!--do nothing-->
+    <match lemma="u"><select lemma="y"/></match>
+  </rule>
+  <rule>
+      <!--CONJ FIL + DETERMINER + NOUN -> FIL-NOUN -->
+      <pattern>
+        <pattern-item fil/>
+        <pattern-item n="det"/>
+        <pattern-item n="n"/>
+      </pattern>
+      <action>
+        <choose>
+          <when>
+            <test>
+              <or>
+                <equal>
+                  <!--IN PROGRESS -->
+                </equal>
+              </or>
+            </test>
+            <let>
+            </let>
+          </when>
+        </choose>
+        <out>
+          <lu>
+          </lu>
+          <b/>
+          <lu>
+          </lu>
+        </out>
+      </action>
+    </rule>
+</rules>

@@ -1,0 +1,2090 @@
+Multichar_Symbols
+
++N +Po +Cm +Punct +Adv +A +CLB +CC
++Abs +Dat +Ins +Soc +Erg +Ine +Ben +Ben2 +Par +All +Abl +Ela +GenL +GenP +Term +Ten
++Mal +Fem +Sur +Plc +Org
++Art +Interr
++Fut
++Ord
++Locp
++Ben2
++PGen
++LGen
++Mgg
++XXX
++Prop
++Biz
+
++Comp
++Superl
+
++Der/N	+ko 
+
++Dim
++Pl
++Sg
+
++Pron
++Pers +Dem +Poss +Indef +Interr
+
++Num
+
++V +Root +Prc +Cont
++Aux
++ifl
++ifl/f
++ifl/m
++Ind
++Prs
++Prt
++Cond
++Concl
++Pot
++Caus
++Abs/Sg1
++Abs/Sg2
++Abs/Sg3
++Abs/Pl1
++Abs/Pl2
++Abs/Pl3
++Dat/Sg1
++Dat/Sg2
++Dat/Sg3
++Dat/Pl1
++Dat/Pl2
++Dat/Pl3
++Erg/Sg1
++Erg/Sg2
++Erg/Sg2
++Erg/Sg2
++Erg/Sg3
++Erg/Pl1
++Erg/Pl2
++Erg/Pl3
+
++Sg1
++Sg2
++Sg3
+
++Sub +Temp +Rel
+
+%>
+
+%{t%}
+
++Thcase_Abs +Thcase_Ela +Thcase_Dat +Thcase_Ine +Incase_Soc +Thsyn_Subj +Thsyn_Obj +Thsem_Ani +Thsem_Time
++Agcase_Erg +Agsyn_Subj +Agsem_Ani +Agsem_Hum
+
++Pacase_Abs +Pasyn_Obj +Pasem_Ani
++Locase_Ine +Locase_Ala +Locase_Abl +Locase_Dat +Losyn_Advl
++Prcase_Abs +Prcase_Soc
++Tocase_Abs +Tosyn_Obj
++Pocase_Abs +Posyn_Obj
++Socase_Abl +Socase_Dat +Sosyn_Advl
++Decase_Ala +Desyn_Advl
++Incase_Ins +Incase_Soc +Insyn_Advl
++Besyn_Iobj +Besem_Hum
++Prcase_Abs
++Recase_Dat
+
+LEXICON Root
+
+Adjectives ;
+Adverbs ;
+Nouns ;
+Postposition ;
+Propernouns ;
+Pronouns ;
+Verbs ;
+Numerals ;
+Conjunctions ;
+Punctuation ;
+
+LEXICON CASES
+: # ;
+: SgCases1 ;
+: SgCases2 ;
+: SgCases3 ;
+: PlCases1 ;
+: PlCases2 ;
+
+LEXICON SgCases1 
+
++Sg+Abs: # ; !-ak
++Sg+Erg:%>k # ; !-ek
++Sg+Dat:%>ri # ; !-ei
+
++Sg+PGen:%>ren # ; !-en
++Sg+Ins:%>z # ; !-ez, taz, etaz
++Sg+Soc:%>rekin # ; !-ekin
++Sg+Ben:%>rentzat # ; !-entzat
++Sg+Ben2:%>rengatik # ; !-agatik !-engatik
+
+LEXICON SgCases2
++Sg+Ine:%>n # ; !-ean !-etan
+!twolc rule - larunbata - larunbatean // isn't the lemma 'larunbat' here ? 
++Sg+All:%>ra # ; !-era !-etara
++Sg+Ela:%>tik # ; !-etik !-etatik
+
+LEXICON SgCases3
+
++Sg+LGen:%>ko # ; !-eko !-etako
+
+
+LEXICON PlCases1 
+
++Pl+Abs:%>k # ;
++Pl+Erg:%>ek # ;
++Pl+Dat:%>ei # ;
+
++Pl+PGen:%>en # ; 
++Pl+Ins:%>ez # ; 
++Pl+Soc:%>ekin # ;
++Pl+Ben:%>entzat # ;
++Pl+Ben2:%>engatik # ;
+
+LEXICON PlCases2 
+
++Pl+Ine:%>tan # ;
++Pl+All:%>etara # ;
++Pl+Ela:%>etatik # ;
+
+LEXICON PlCases3 
+
++Pl+LGen:%>etako # ;
+
+
+LEXICON MggCases1 
+
++Abs: # ;
++Erg:%>k # ; !k
++Dat:%>ri # ; !i
+
++PGen:%>ren # ; !en
++Ins:%>z # ; !ez,etaz,taz
++Soc:%>rekin # ; !ekin
++Ben:%>rentzat # ; !entzat
++Ben2:%>rengatik # ; !engatik
+
++Par:%>rik # ;
+
+LEXICON MggCases2
+
++Ine:%>etan # ; !tan
++All:%>etara # ; !tara
++Ela:%>etatik # ; !tatik
+
+
+LEXICON MggCases3
+
++LGen:%>etako # ; !tako
++LGen:%>eko # ;
+
+
+
+LEXICON Propcases 
+
++Abs: # ; 
++Erg:%>ek # ; ! -k
++Dat:%>i # ; ! -ri
+
++Ine:%>n # ; ! -en
++All:%>ra # ; ! -a
++Ela:%>tik # ; !-dik
++LGen:%>ko # ; !-go
++LGen:%>go # ; !-go
+
+
++PGen:%>ren # ; !-en
++Ins:%>ez # ; !-z, taz, etaz
++Soc:%>ekin # ; !-rekin
++Ben:%>entzat # ; !-rentzat
++Ben2:%>engatik # ; !-rengatik
+
+
+LEXICON PronSgCases 
+
++Abs: # ; !-ak
++Erg:%>k # ; !-ek
++Dat:%>ri # ; !-ei
+
++PGen:%>re # ; !-en
++Ins:%>z # ; !-ez, taz, etaz
++Soc:%>rekin # ; !-ekin
++Ben:%>rentzat # ; !-entzat
++Ben2:%>rengatik # ; !-agatik !-engatik
+
+LEXICON PronReg 
+
++Abs:%>a # ; !-ak
++Erg:%>ak # ; !-ek
++Dat:%>ari # ; !-ei
+
++PGen:%>aren # ; !-en
++Ins:%>z # ; !-ez, taz, etaz
++Soc:%>arekin # ; !-ekin
++Ben:%>arentzat # ; !-entzat
++Ben2:%>arengatik # ; !-agatik !-engatik
+
+
+
+
+LEXICON Bizidun !after animate noun phrases
+
++Biz: SgCases1 ;
++Biz: PlCases1 ;
++Biz:%>gan SgCases2 ;
++Biz:%>rengan PlCases2 ;
+
+LEXICON Bizidun2 !after animate noun phrases
+
++Biz: MggCases1 ;
++Biz:%>rengan MggCases2 ;
+
+!LEXICON Loccases
+!
+!+Ela:%>dik # ; !"from"
+!+All:%>a # ; ! ; !"to"
+!+Term:%>aino # ; !"as far as, up to"
+!+Ten:%>antz # ; ! ; !"toward"
+!
+!LEXICON Precases !nouns that can denote a location, they can take another case in addition
+!
+!+Sg+Term:%>raino # ; !Terminal ; !"as far as"
+!+Sg+Gen:%>ko # ;
+!+Sg+XXX:%>koa # ;
+!+Sg+Ten:%>rantz # ; !Tendential ; !"toward"
+
+
+!for propernouns ending in a consonant
+
+!LEXICON Dim
+!+Dim:%>txo Cases ; !tto, no
+
+LEXICON Nreg
+
++N: # ;
++N: NregCases ;
+
+LEXICON NregCases 
+
++Sg+Abs:a # ; !-ak
++Sg+Erg:%>ak # ; !-ek
++Sg+Dat:%>ari # ; !-ei
+
++Sg+PGen:%>aren # ; !-en
++Sg+Ins:%>az # ; !-ez, taz, etaz
++Sg+Soc:%>arekin # ; !-ekin
++Sg+Ben:%>arentzat # ; !-entzat
++Sg+Ben2:%>arengatik # ; !-agatik !-engatik
++Sg+Ine:%>an # ; 
++Sg+All:%>ra # ; !-era !-etara
++Sg+Ela:%>atik # ; !-etik !-etatik
++Sg+LGen:%>ko # ; !-eko !-etako
++Pl+Abs:%>ak # ;
++Pl+Erg:%>ek # ;
++Pl+Dat:%>ei # ;
++Pl+PGen:%>en # ; 
++Pl+Ins:%>ez # ; 
++Pl+Soc:%>ekin # ;
++Pl+Ben:%>entzat # ;
++Pl+Ben2:%>engatik # ;
++Pl+Ine:%>etan # ;
++Pl+All:%>etara # ;
++Pl+Ela:%>etatik # ;
++Pl+LGen:%>etako # ;
++Abs: # ;
++Erg:%>k # ; !k
++Dat:%>ri # ; !i
++PGen:%>ren # ; !en
++Ins:%>z # ; !ez,etaz,taz
++Soc:%>rekin # ; !ekin
++Ben:%>rentzat # ; !entzat
++Ben2:%>rengatik # ; !engatik
++Par:%>rik # ;
++Ine:%>tan # ; !tan
++All:%>tara # ; !tara
++Ela:%>tatik # ; !tatik
++LGen:%>tako # ; !tako
++LGen:%>ko # ;
+
+LEXICON NregN
+
++N: NCases ;
+
+LEXICON NregBizi
+
++N: Bizidun2 ;
++N+Art:%>a Bizidun ;
+!+N: Dim ;
+
+LEXICON Na
+
++N: MggCases1 ;
++N: MggCases2 ;
++N: MggCases3 ;
++N+Art: SgCases1 ;
++N+Art: SgCases2 ;
++N+Art: SgCases3 ;
++N+Art: PlCases1 ;
++N+Art: PlCases2 ;
++N+Art: PlCases3 ;
+!+N: Dim ;
+
+LEXICON NaBizi
+
++N: Bizidun2 ;
++N+Art: Bizidun ;
+!+N: Dim ;
+
+LEXICON NpM
+
++N+Prop+Mal: Propcases ;
+
+LEXICON NpF
+
++N+Prop+Fem: Propcases ;
+
+LEXICON NpS
+
++N+Prop+Sur: Propcases ;
+
+
+LEXICON NpTop
+
++N+Prop+Plc: Propcases ;
+
+LEXICON NpOrg
+
++N+Prop+Org: Propcases ;
+
+LEXICON Areg
+
++A: MggCases1 ;
++A: MggCases2 ;
++A: MggCases3 ;
++A+Art:%>a SgCases1 ;
++A+Art:%>a SgCases2 ;
++A+Art:%>a SgCases3 ;
++A+Art:%>a PlCases1 ;
++A+Art:%>a PlCases2 ;
++A+Art:%>a PlCases3 ;
++Adv+Comp:%>ago # ;
++A+Comp:%>agoa MggCases1 ;
++A+Superl:%>ena MggCases1 ;
+
+
+
+LEXICON An
+
++A: # ;
++A: NCases ;
+
+LEXICON NCases 
+
++Sg+Abs:a # ; !-ak
++Sg+Erg:%>ak # ; !-ek
++Sg+Dat:%>ari # ; !-ei
+
++Sg+PGen:%>aren # ; !-en
++Sg+Ins:%>az # ; !-ez, taz, etaz
++Sg+Soc:%>arekin # ; !-ekin
++Sg+Ben:%>arentzat # ; !-entzat
++Sg+Ben2:%>arengatik # ; !-agatik !-engatik
++Sg+Ine:%>ean # ; 
++Sg+All:%>era # ; !-era !-etara
++Sg+Ela:%>atik # ; !-etik !-etatik
++Sg+LGen:%>eko # ; !-eko !-etako
++Pl+Abs:%>ak # ;
++Pl+Erg:%>ek # ;
++Pl+Dat:%>ei # ;
++Pl+PGen:%>en # ; 
++Pl+Ins:%>ez # ; 
++Pl+Soc:%>ekin # ;
++Pl+Ben:%>entzat # ;
++Pl+Ben2:%>engatik # ;
++Pl+Ine:%>etan # ;
++Pl+All:%>etara # ;
++Pl+Ela:%>etatik # ;
++Pl+LGen:%>etako # ;
++Abs: # ;
++Erg:%>k # ; !k
++Dat:%>ri # ; !i
++PGen:%>eren # ; !en
++Ins:%>ez # ; !ez,etaz,taz
++Soc:%>erekin # ; !ekin
++Ben:%>erentzat # ; !entzat
++Ben2:%>erengatik # ; !engatik
++Par:%>erik # ;
++Ine:%>etan # ; !tan
++All:%>etara # ; !tara
++Ela:%>etatik # ; !tatik
++LGen:%>etako # ; !tako
++LGen:%>eko # ;
+
+LEXICON AGERTU
+
++V+Thcase_Abs+Thcase_Ela+Thsyn_Subj+Locase_Ine+Locase_Ala+Losyn_Advl: Tu ;
++V+Thcase_Abs+Thsyn_Subj+Prcase_Abs+Prcase_Soc: Tu ;
++V+Agcase_Erg+Agsyn_Subj+Tocase_Abs+Tosyn_Obj+Recase_Dat: Tu ;
+
+LEXICON AMAITU
+
++V+Thcase_Abs+Thcase_Ine: Tu ;
++V+Agcase_Erg+Agsyn_Subj+Thcase_Ine+Thsyn_Advl: Tu ;
+
+LEXICON ASMATU
+
++V+Agcase_Erg+Agsyn_Subj+Pocase_Abs+Posyn_Obj: Tu ;
++V+Agcase_Erg+Agsyn_Subj+Thcase_Abs+Thsyn_Obj: Tu ;
+
+LEXICON ATERA
+
++V+Agcase_Erg+Agsyn_Subj+Agsem_Ani+Thcase_Abs+Thsyn_Obj+Socase_Abl+Socase_Dat+Sosyn_Advl+Decase_Ala+Desyn_Advl: Sinmas ;
++V+Thcase_Abs+Thsyn_Obj+Socase_Abl+Socase_Dat+Sosyn_Advl+Decase_Ala+Desyn_Advl: Sinmas ;
++V+Locase_Erg+Locase_Abl+Locase_Dat+Thcase_Abs: Sinmas ;
+
+LEXICON DEITU
+
++V+Agcase_Erg+Agsyn_Subj+Thcase_Abs+Thsyn_Obj+Locase_Ala+Locase_Abl: Tu ;
++V+Agcase_Erg+Agsyn_Subj+Agsem_Hum+Becase_Dat+Besyn_Iobj+Besem_Hum+Locase_Ala+Locase_Abl: Tu ;
++V+Agcase_Erg+Agsyn_Subj+Agsem_Hum+Thcase_Abs+Thcase_Dat+Prcase_Abs: Tu ;
+
+LEXICON EMAN
+
++V+Agcase_Erg+Argsyn_Subj+Thcase_Abs+Recase_Dat: Sinmas ;
++V+Agcase_Erg+Argsyn_Subj+Thcase_Abs+Thsyn_Obj+Thsem_Time: Sinmas ;
++V+Agcase_Erg+Argsyn_Subj+Decase_Ala+Desyn_Advl: Sinmas ;
+
+LEXCION ETORRI
+
++V+Thcase_Abs+Socase_Abl+Decase_Ala: ETORRI2 ;
++V+Thcase_Abs+Locase_Abl+Locase_Dat: ETORRI2 ;
++V+Thcase_Abs+Locase_Ine: ETORRI2 ;
++V+Tocase_Abs+Atcase_Abs: ETORRI2 ;
+
+LEXICON HIL
++V+Thcase_Abs+Thsyn_Subj+Thsem_Ani: Sinmas ;
++V+Agcase_Erg+Agsyn_Subj+Pacase_Abs+Pasyn_Obj+Pasem_Ani: Sinmas ;
+
+LEXICON IRITSI
+
+LEXICON TOPATU
+
+LEXICON Tu
+
++V+Root: # ;
++V: Nominalization ;
++V+Prc:%>tu #;
++V:%>tu Fut;
++V+Abl:%>turik # ;
++V+Sub+Temp:%>tuz # ;
++Adv:%>tuta # ;
++Adv+LGen:%>tutako # ;
+
+LEXICON Du
+
++V+Root: # ;
++V: Nominalization ;
++V+Prc:%>du #;
++V:%>du Fut;
++V+Sub+Temp:%>duz # ;
++Adv:%>duta # ;
+
+LEXICON Sinmas
+
++V+Root: # ;
++V: Nominalization ;
++V+Prc: #;
++V: Fut;
++V+Sub+Temp:%>ez # ;
++N:%>da CASES ;
++A:%>ta # ; !Or Adv ?
+
+LEXICON I
+
++V: Nominalization ;
++V+Root: # ;
++V+Prc:%>i #;
++V:%>i Fut;
++N:%>ida CASES ;
++A:%>ita # ; !Or Adv ?
+
+LEXICON N
+
++V:%> Nominalization ;
++V+Root:%>n # ;
++V+Prc:%>n #;
++V:%>n Fut2 ;
++N:%>nda CASES ;
++A:%>nta # ; !Or Adv ?
+
+LEXICON Nominalization
+
++Der/N:%>tze # ;
++Der/N:%>tze Nominalization2 ;
++Der/N:%>te # ;
++Der/N:%>te Nominalization2 ;
+
+LEXICON Nominalization2
+
++Sub:%>ko # ;
++Art:%>a # ; !! Should this go to the SgCases1 continuation 
++All:%>ra # ;
++Cont:%>n # ;
+
+LEXICON Fut
+
++Fut:%>ko # ;
+
+LEXICON Fut2
+
++Fut:%>go # ;
+
+LEXICON EGON
++V+Prc:egon # ; !Partizip
++V+Der/N:egote # ; ! - nominalisation
++V+Pot:egon # ; ! + Potential form des Auxiliars
++V+Cond:%>ba EGONTENSE ;
++V+Ind: EGONTENSE ; !
+
+LEXICON EGONTENSE
++V+Ind+Prs+Abs/Sg1:%>nago SUBCL ;
++V+Ind+Prs+Abs/Sg2+ifl:%>hago SUBCL ; 
++V+Ind+Prs+Abs/Sg2:%>zaude SUBCL ;
++V+Ind+Prs+Abs/Sg3:%>dago SUBCL ;
++V+Ind+Prs+Abs/Pl1:%>gaude SUBCL ;
++V+Ind+Prs+Abs/Pl2:%>zaudete SUBCL ;
++V+Ind+Prs+Abs/Pl3:%>daude SUBCL ;
+
++V+Ind+Prt+Abs/Sg1:%>nengoen SUBCL ;
++V+Ind+Prt+Abs/Sg2+ifl:%>hengoen SUBCL ; 
++V+Ind+Prt+Abs/Sg2:%>zeunden SUBCL ;
++V+Ind+Prt+Abs/Sg3:%>zegoen SUBCL ;
++V+Ind+Prt+Abs/Pl1:%>geunden SUBCL ;
++V+Ind+Prt+Abs/Pl2:%>zeundeten SUBCL ;
++V+Ind+Prt+Abs/Pl3:%>zeuden SUBCL ;
+
+LEXICON JOAN
++V+Prc:joan # ; !Partizip
++V+Der/N:joate Nominalization2 ; ! - nominalisation
++V+Pot:joan # ; ! + Potential form des Auxiliars
++V+Cond:ba JOANTENSE ;
++V+Ind: JOANTENSE ; !
+
+LEXICON JOANTENSE
++Prs+Abs/Sg1:%>noa SUBCL ;
++Prs+Abs/Sg2+ifl:%>hoa SUBCL ; 
++Prs+Abs/Sg2:%>zoaz SUBCL ;
++Prs+Abs/Sg3:%>doa SUBCL ;
++Prs+Abs/Pl1:%>goaz SUBCL ;
++Prs+Abs/Pl2:%>zoazte SUBCL ;
++Prs+Abs/Pl3:%>doaz SUBCL ;
+
++Prt+Abs/Sg1:%>nindoan SUBCL ;
++Prt+Abs/Sg2+ifl:%>hindoan SUBCL ; 
++Prt+Abs/Sg2:%>zinoazen SUBCL ;
++Prt+Abs/Sg3:%>zihoan SUBCL ;
++Prt+Abs/Pl1:%>gindoazen SUBCL ;
++Prt+Abs/Pl2:%>zindoazten SUBCL ;
++Prt+Abs/Pl3:%>zihoazen SUBCL ;
+
+LEXICON IBILI
++V+Prc:ibili # ; !Partizip
++V+Fut:ibiliko # ;
++V+Der/N:ibiltze Nominalization2 ; ! - nominalisation
++V+Pot:ibil # ; ! + Potential form des Auxiliars
++V+Cond:ba IBILITENSE ;
++V+Ind: IBILITENSE ; !
+
+LEXICON IBILITENSE
++Prs+Abs/Sg1:%>nabil SUBCL ;
++Prs+Abs/Sg2+ifl:%>habil SUBCL ; 
++Prs+Abs/Sg2:%>zabiltza SUBCL ;
++Prs+Abs/Sg3:%>dabil SUBCL ;
++Prs+Abs/Pl1:%>gabiltza SUBCL ;
++Prs+Abs/Pl2:%>zabiltzate SUBCL ;
++Prs+Abs/Pl3:%>dabiltza SUBCL ;
+
++Prt+Abs/Sg1:%>nenbilen SUBCL ;
++Prt+Abs/Sg2+ifl:%>henbilen SUBCL ; 
++Prt+Abs/Sg2:%>zenbiltzan SUBCL ;
++Prt+Abs/Sg3:%>zebilen SUBCL ;
++Prt+Abs/Pl1:%>genbiltzan SUBCL ;
++Prt+Abs/Pl2:%>zenbiltzaten SUBCL ;
++Prt+Abs/Pl3:%>zebiltzan SUBCL ;
+
+LEXICON ETORRI2
++V+Prc:etorri # ; !Partizip
++V+Der/N:etortze Nominalization2 ; ! - nominalisation
++V+Pot:etor # ; ! + Potential form des Auxiliars
++V+Ind: ETORRITENSE ; !
++V+Cond:ba ETORRITENSE ;
++V+Sub+Temp:etorriz # ;
+
+LEXICON ETORRITENSE
++Prs+Abs/Sg1:%>nator SUBCL ;
++Prs+Abs/Sg2+ifl:%>hator SUBCL ; 
++Prs+Abs/Sg2:%>zatoz SUBCL ;
++Prs+Abs/Sg3:%>dator SUBCL ;
++Prs+Abs/Pl1:%>gatoz SUBCL ;
++Prs+Abs/Pl2:%>zatozte SUBCL ;
++Prs+Abs/Pl3:%>datoz SUBCL ;
+
++Prt+Abs/Sg1:%>nentorren SUBCL ;
++Prt+Abs/Sg2+ifl:%>hentorren SUBCL ; 
++Prt+Abs/Sg2:%>zentozen SUBCL ;
++Prt+Abs/Sg3:%>zetorren SUBCL ;
++Prt+Abs/Pl1:%>gentozen SUBCL ;
++Prt+Abs/Pl2:%>zentozten SUBCL ;
++Prt+Abs/Pl3:%>zetozten SUBCL ;
+
+
+LEXICON ERAMAN
++V+Prc:eraman # ; !Partizip
++V+Der/N:eramate Nominalization2 ; ! - nominalisation
++V+Pot:eraman # ; ! + Potential form des Auxiliars
++V+Cond:ba ERAMANTENSE ;
++V+Ind: ERAMANTENSE ; !
+
+LEXICON ERAMANTENSE
++Prs+Abs/Sg3+Erg/Sg1:%>daraman SUBCL ;
++Prs+Abs/Sg3+Erg/Sg2+ifl/f:%>daraman SUBCL ; 
++Prs+Abs/Sg3+Erg/Sg2+ifl/m:%>daramak SUBCL ;
++Prs+Abs/Sg3+Erg/Sg2:%>daramazu SUBCL ;
++Prs+Abs/Sg3+Erg/Sg3:%>drama SUBCL ;
++Prs+Abs/Sg3+Erg/Pl1:%>daramagu SUBCL ;
++Prs+Abs/Sg3+Erg/Pl2:%>daramazue SUBCL ;
++Prs+Abs/Sg3+Erg/Pl3:%>daramate SUBCL ;
+
++Prs+Abs/Pl3+Erg/Sg1:%>daramatzan SUBCL ;
++Prs+Abs/Pl3+Erg/Sg2+ifl/f:%>daramatzan SUBCL ; 
++Prs+Abs/Pl3+Erg/Sg2+ifl/m:%>daramatzak SUBCL ;
++Prs+Abs/Pl3+Erg/Sg2:%>daramatzazu SUBCL ;
++Prs+Abs/Pl3+Erg/Sg3:%>dramatza SUBCL ;
++Prs+Abs/Pl3+Erg/Pl1:%>daramatzagu SUBCL ;
++Prs+Abs/Pl3+Erg/Pl2:%>daramatzazue SUBCL ;
++Prs+Abs/Pl3+Erg/Pl3:%>daramatzate SUBCL ;
+
++Prt+Abs/Sg3+Erg/Sg1:%>neraman SUBCL ;
++Prt+Abs/Sg3+Erg/Sg2+ifl:%>heraman SUBCL ; 
++Prt+Abs/Sg3+Erg/Sg2:%>zeneraman SUBCL ;
++Prt+Abs/Sg3+Erg/Sg3:%>zeraman SUBCL ;
++Prt+Abs/Sg3+Erg/Pl1:%>generaman SUBCL ;
++Prt+Abs/Sg3+Erg/Pl2:%>zeneramaten SUBCL ;
++Prt+Abs/Sg3+Erg/Pl3:%>zeramaten SUBCL ;
+
++Prt+Abs/Pl3+Erg/Sg1:%>neramatzan SUBCL ;
++Prt+Abs/Pl3+Erg/Sg2+ifl:%>heramatzan SUBCL ; 
++Prt+Abs/Pl3+Erg/Sg2:%>zeneramatzan SUBCL ;
++Prt+Abs/Pl3+Erg/Sg3:%>zeramatzan SUBCL ;
++Prt+Abs/Pl3+Erg/Pl1:%>generamatzan SUBCL ;
++Prt+Abs/Pl3+Erg/Pl2:%>zeneramatzaten SUBCL ;
++Prt+Abs/Pl3+Erg/Pl3:%>zeramatzaten SUBCL ;
+
+LEXICON ESAN
++V+Prc:esan # ; !Partizip
++V+Der/N:esate Nominalization2 ; ! - nominalisation
++V+Pot:esan # ; ! + Potential form des Auxiliars
++V+Cond:ba ESANTENSE ;
++V+Ind: ESANTENSE ; !
+
+LEXICON ESANTENSE
++Prs+Erg/Sg1:%>diot SUBCL ;
++Prs+Erg/Sg2+ifl/f:%>dion SUBCL ; 
++Prs+Erg/Sg2+ifl/m:%>diok SUBCL ;
++Prs+Erg/Sg2:%>diozu SUBCL ;
++Prs+Erg/Sg3:%>dio SUBCL ;
++Prs+Erg/Pl1:%>diogu SUBCL ;
++Prs+Erg/Pl2:%>diozue SUBCL ;
++Prs+Erg/Pl3:%>diote SUBCL ;
+
++Prt+Erg/Sg1:%>nioen SUBCL ;
++Prt+Erg/Sg2+ifl:%>hioen SUBCL ; 
++Prt+Erg/Sg2:%>zenioen SUBCL ;
++Prt+Erg/Sg3:%>zioen SUBCL ;
++Prt+Erg/Pl1:%>genioen SUBCL ;
++Prt+Erg/Pl2:%>zenioten SUBCL ;
++Prt+Erg/Pl3:%>zioten SUBCL ;
+
+LEXICON EKARRI
++V+Prc:ekarri # ; !Partizip
++V+Der/N:ekartze Nominalization2 ; ! - nominalisation
++V+Pot:ekar # ; ! + Potential form des Auxiliars
++V+Cond:ba EKARRITENSE ;
++V+Ind: EKARRITENSE ; !
+
+LEXICON EKARRITENSE
++Prs+Erg/Sg1:%>dakart SUBCL ;
++Prs+Erg/Sg2+ifl/f:%>dakarn SUBCL ; 
++Prs+Erg/Sg2+ifl/m:%>dakark SUBCL ;
++Prs+Erg/Sg2:%>dakarzu SUBCL ;
++Prs+Erg/Sg3:%>dakar SUBCL ;
++Prs+Erg/Pl1:%>dakargu SUBCL ;
++Prs+Erg/Pl2:%>dakarzue SUBCL ;
++Prs+Erg/Pl3:%>dakarte SUBCL ;
+
++Prt+Erg/Sg1:%>nekarn SUBCL ;
++Prt+Erg/Sg2+ifl:%>hekarn SUBCL ; 
++Prt+Erg/Sg2:%>zenekarn SUBCL ;
++Prt+Erg/Sg3:%>zekarn SUBCL ;
++Prt+Erg/Pl1:%>genekarn SUBCL ;
++Prt+Erg/Pl2:%>zenekarten SUBCL ;
++Prt+Erg/Pl3:%>zekarten SUBCL ;
+
+LEXICON IRUDITU
++V+Prc:iruditu # ; !Partizip
++V+Der/N:iruditze Nominalization2 ; ! - nominalisation
++V+Pot:irudi # ; ! + Potential form des Auxiliars
++V+Cond:ba IRUDITUTENSE ;
++V+Ind: IRUDITUTENSE ; !
+
+LEXICON IRUDITUTENSE
++Prs+Dat/Sg1:%>dirudit SUBCL ;
++Prs+Dat/Sg2+ifl/f:%>dirudin SUBCL ; 
++Prs+Dat/Sg2+ifl/m:%>dirudik SUBCL ;
++Prs+Dat/Sg2:%>dirudizu SUBCL ;
++Prs+Dat/Sg3:%>dirudi SUBCL ;
++Prs+Dat/Pl1:%>dirudigu SUBCL ;
++Prs+Dat/Pl2:%>dirudizue SUBCL ;
++Prs+Dat/Pl3:%>dirudite SUBCL ;
+
++Prt+Dat/Sg1:%>nirudien SUBCL ;
++Prt+Dat/Sg2+ifl:%>hirudien SUBCL ; 
++Prt+Dat/Sg2:%>zenirudien SUBCL ;
++Prt+Dat/Sg3:%>zirudien SUBCL ;
++Prt+Dat/Pl1:%>genirudien SUBCL ;
++Prt+Dat/Pl2:%>zeniruditen SUBCL ;
++Prt+Dat/Pl3:%>ziruditen SUBCL ;
+
+LEXICON EDUKI
++V+Prc:eduki # ; !Partizip
++V+Der/N:edukitze Nominalization2 ; ! - nominalisation
++V+Pot:eduki # ; ! + Potential form des Auxiliars
++V+Cond:%>ba EDUKITENSE ;
++V+Ind: EDUKITENSE ; !
+
+LEXICON EDUKITENSE
++V+Ind+Prs+Abs/Sg3+Erg/Sg1:daukat SUBCL ;
++V+Ind+Prs+Abs/Sg3+Erg/Sg2:daukazu SUBCL ;
++V+Ind+Prs+Abs/Sg3+Erg/Sg3:dauka SUBCL ;
++V+Ind+Prs+Abs/Sg3+Erg/Pl1:daukagu SUBCL ;
++V+Ind+Prs+Abs/Sg3+Erg/Pl2:daukazue SUBCL ;
++V+Ind+Prs+Abs/Sg3+Erg/Pl3:daukate SUBCL ;
+
++V+Ind+Prs+Abs/Pl3+Erg/Sg1:dauzkat SUBCL ;
++V+Ind+Prs+Abs/Pl3+Erg/Sg2:dauzkazu SUBCL ;
++V+Ind+Prs+Abs/Pl3+Erg/Sg3:dauzka SUBCL ;
++V+Ind+Prs+Abs/Pl3+Erg/Pl1:dauzkagu SUBCL ;
++V+Ind+Prs+Abs/Pl3+Erg/Pl2:dauzkazue SUBCL ;
++V+Ind+Prs+Abs/Pl3+Erg/Pl3:dauzkate SUBCL ;
+ 
++V+Ind+Prt+Abs/Sg3+Erg/Sg1:neukan SUBCL ; 
++V+Ind+Prt+Abs/Sg3+Erg/Sg2:zeneukan SUBCL ;
++V+Ind+Prt+Abs/Sg3+Erg/Sg3:zeukan SUBCL ;
++V+Ind+Prt+Abs/Sg3+Erg/Pl1:geneukan SUBCL ;
++V+Ind+Prt+Abs/Sg3+Erg/Pl2:zeneukaten SUBCL ;
++V+Ind+Prt+Abs/Sg3+Erg/Pl3:zeukaten SUBCL ;
+
++V+Ind+Prt+Abs/Pl3+Erg/Sg1:neuzkan SUBCL ;
++V+Ind+Prt+Abs/Pl3+Erg/Sg2:zeneuzkan SUBCL ;
++V+Ind+Prt+Abs/Pl3+Erg/Sg3:zeuzkan SUBCL ;
++V+Ind+Prt+Abs/Pl3+Erg/Pl1:geneuzkan SUBCL ;
++V+Ind+Prt+Abs/Pl3+Erg/Pl2:zeneuzkaten SUBCL ;
++V+Ind+Prt+Abs/Pl3+Erg/Pl3:zeuzkaten SUBCL ;
+
+LEXICON JAKIN
++V:jakin ARAZI ;
++V+Prc:jakin # ; !Partizip
++V+Der/N:jakitze # ; ! - nominalisation
++V+Pot:jakin # ; ! + Potential form des Auxiliars
++V+Cond:ba JANKINTENSE ;
++V+Ind: JAKINTENSE ; !
+
+LEXICON JAKINTENSE
++Prs+Erg/Sg1:%>dakit SUBCL ;
++Prs+Erg/Sg2+ifl/f:%>dakin SUBCL ; 
++Prs+Erg/Sg2+ifl/m:%>dakik SUBCL ;
++Prs+Erg/Sg2:%>dakizu SUBCL ;
++Prs+Erg/Sg3:%>daki SUBCL ;
++Prs+Erg/Pl1:%>dakigu SUBCL ;
++Prs+Erg/Pl2:%>dakizue SUBCL ;
++Prs+Erg/Pl3:%>dakite SUBCL ;
+
+!prt
++Prt+Erg/Sg1:%>nekien SUBCL ;
++Prt+Erg/Sg2+ifl:%>hekien SUBCL ; 
++Prt+Erg/Sg2:%>zenekien SUBCL ;
++Prt+Erg/Sg3:%>zekien SUBCL ;
++Prt+Erg/Pl1:%>genekien SUBCL ;
++Prt+Erg/Pl2:%>zenekiten SUBCL ;
++Prt+Erg/Pl3:%>zekiten SUBCL ;
+
+
+
+LEXICON AuxIzan
+
++V+Prc:izan # ; !Partizip
++V+Der/N:izate # ; ! - nominalisation
++V+Cont:izaten # ;
++V+Pot:izan # ; ! + Potential form des Auxiliars
++V+Ind+Fut:izango # ;
++V+Aux+Ind: IZANNOR ;
++V+Aux: IZANBA ;
++V+Sub+Temp:izanez # ;
+
+LEXICON IZANBA
++Cond:%>ba IZANNOR ;
+
+LEXICON AuxUkan
++V+Aux: UKANNORNORK ;
++V+Aux: IZANNORNORI ;
++V+Aux: UKANNORNORINORK ;
++V+Aux: UKANBA ;
+
+LEXICON UKANBA
++Cond:%>ba UKANNORNORK ;
++Cond:%>ba IZANNORNORI ;
++Cond:%>ba UKANNORNORINORK ;
+
+LEXICON IZANNOR
+
++Prs+Abs/Sg1:naiz SUBCL ;
++Prs+Abs/Sg2+ifl:haiz SUBCL ; !+Ind+Prs+Abs/hi
++Prs+Abs/Sg2:zara SUBCL ;
++Prs+Abs/Sg3:da SUBCL ;
++Prs+Abs/Pl1:gara SUBCL ;
++Prs+Abs/Pl2:zarete SUBCL ;
++Prs+Abs/Pl3:dira SUBCL ;
+
+!prt - en
++Prt+Abs/Sg1:nintzen SUBCL ;
++Prt+Abs/Sg2+ifl:hintzen SUBCL ;
++Prt+Abs/Sg2:zinen SUBCL ;
++Prt+Abs/Sg3:zen SUBCL ;
++Prt+Abs/Pl1:ginen SUBCL ;
++Prt+Abs/Pl2:zineten SUBCL ;
++Prt+Abs/Pl3:ziren SUBCL ;
+
+!pot
++Pot+Prs+Abs/Sg1:naiteke SUBCL ;
++Pot+Prs+Abs/Sg2+ifl:haiteke SUBCL ; !+Ind+Prs+Abs/hi
++Pot+Prs+Abs/Sg2:zaitezke SUBCL ;
++Pot+Prs+Abs/Sg3:daiteke SUBCL ;
++Pot+Prs+Abs/Pl1:gaitezke SUBCL ;
++Pot+Prs+Abs/Pl2:zaitezkete SUBCL ;
++Pot+Prs+Abs/Pl3:daitezke SUBCL ;
+
+!pot
++Concl+Prs+Abs/Sg1:nintzateke SUBCL ;
++Concl+Prs+Abs/Sg2+ifl:hintzateke SUBCL ; !+Ind+Prs+Abs/hi
++Concl+Prs+Abs/Sg2:zinateke SUBCL ;
++Concl+Prs+Abs/Sg3:litzateke SUBCL ;
++Concl+Prs+Abs/Pl1:ginateke SUBCL ;
++Concl+Prs+Abs/Pl2:zinatekete SUBCL ;
++Concl+Prs+Abs/Pl3:lirateke SUBCL ;
+
+
+LEXICON UKANNORNORK
+
++Ind+Prs+Abs/Sg3+Erg/Sg1:dut SUBCL ;
++Ind+Prs+Abs/Sg3+Erg/Sg2:duzu SUBCL ;
++Ind+Prs+Abs/Sg3+Erg/Sg3:du SUBCL ;
++Ind+Prs+Abs/Sg3+Erg/Pl1:dugu SUBCL ;
++Ind+Prs+Abs/Sg3+Erg/Pl2:duzue SUBCL ;
++Ind+Prs+Abs/Sg3+Erg/Pl3:dute SUBCL ;
+ 
++Ind+Prs+Abs/Pl3+Erg/Sg1:ditut SUBCL ;
++Ind+Prs+Abs/Pl3+Erg/Sg2:dituzu SUBCL ;
++Ind+Prs+Abs/Pl3+Erg/Sg3:ditu SUBCL ;
++Ind+Prs+Abs/Pl3+Erg/Pl1:ditugu SUBCL ;
++Ind+Prs+Abs/Pl3+Erg/Pl2:dituzue SUBCL ;
++Ind+Prs+Abs/Pl3+Erg/Pl3:dituzte SUBCL ;
+
+!prt - en
++Ind+Prt+Abs/Sg3+Erg/Sg1:nuen SUBCL ;
++Ind+Prt+Abs/Sg3+Erg/Sg2:zenuen SUBCL ;
++Ind+Prt+Abs/Sg3+Erg/Sg3:zuen SUBCL ;
++Ind+Prt+Abs/Sg3+Erg/Pl1:genuen SUBCL ;
++Ind+Prt+Abs/Sg3+Erg/Pl2:zenuten SUBCL ;
++Ind+Prt+Abs/Sg3+Erg/Pl3:zuten SUBCL ;
+ 
++Ind+Prt+Abs/Pl3+Erg/Sg1:nituen SUBCL ;
++Ind+Prt+Abs/Pl3+Erg/Sg2:zenituen SUBCL ;
++Ind+Prt+Abs/Pl3+Erg/Sg3:zituen SUBCL ;
++Ind+Prt+Abs/Pl3+Erg/Pl1:genituen SUBCL ;
++Ind+Prt+Abs/Pl3+Erg/Pl2:zenituzten SUBCL ;
++Ind+Prt+Abs/Pl3+Erg/Pl3:zituzten SUBCL ;
+
+!pot
++Pot+Prs+Abs/Sg3+Erg/Sg1:nuke SUBCL ;
++Pot+Prs+Abs/Sg3+Erg/Sg2:zenuke SUBCL ;
++Pot+Prs+Abs/Sg3+Erg/Sg3:luke SUBCL ;
++Pot+Prs+Abs/Sg3+Erg/Pl1:genuke SUBCL ;
++Pot+Prs+Abs/Sg3+Erg/Pl2:zenukete SUBCL ;
++Pot+Prs+Abs/Sg3+Erg/Pl3:lukete SUBCL ;
+ 
++Pot+Prs+Abs/Pl3+Erg/Sg1:nituke SUBCL ;
++Pot+Prs+Abs/Pl3+Erg/Sg2:zenituke SUBCL ;
++Pot+Prs+Abs/Pl3+Erg/Sg3:lituke SUBCL ;
++Pot+Prs+Abs/Pl3+Erg/Pl1:genituke SUBCL ;
++Pot+Prs+Abs/Pl3+Erg/Pl2:zenitukete SUBCL ;
++Pot+Prs+Abs/Pl3+Erg/Pl3:litukete SUBCL ;
+
+
+LEXICON IZANNORNORI
+
++Ind+Prs+Abs/Sg3+Dat/Sg1:zait SUBCL ;
++Ind+Prs+Abs/Sg3+Dat/Sg2+ifl: SUBCL ; !+Ind+Prs+Abs/hi
++Ind+Prs+Abs/Sg3+Dat/Sg2:zaizu SUBCL ;
++Ind+Prs+Abs/Sg3+Dat/Sg3:zaio SUBCL ;
++Ind+Prs+Abs/Sg3+Dat/Pl1:zaigu SUBCL ;
++Ind+Prs+Abs/Sg3+Dat/Pl2:zaizue SUBCL ;
++Ind+Prs+Abs/Sg3+Dat/Pl3:zaie SUBCL ;
+
++Ind+Prs+Abs/Pl3+Dat/Sg1:zaizkit SUBCL ;
++Ind+Prs+Abs/Pl3+Dat/Sg2+ifl: SUBCL ; !+Ind+Prs+Abs/hi
++Ind+Prs+Abs/Pl3+Dat/Sg2:zaizkizu SUBCL ;
++Ind+Prs+Abs/Pl3+Dat/Sg3:zaizkio SUBCL ;
++Ind+Prs+Abs/Pl3+Dat/Pl1:zaizkigu SUBCL ;
++Ind+Prs+Abs/Pl3+Dat/Pl2:zaizkizue SUBCL ;
++Ind+Prs+Abs/Pl3+Dat/Pl3:zaizkie SUBCL ;
+
++Ind+Prt+Abs/Sg3+Dat/Sg1:nintzaidan SUBCL ;
++Ind+Prt+Abs/Sg3+Dat/Sg2+ifl:hintzaik SUBCL ; !+Ind+Prs+Abs/hi
++Ind+Prt+Abs/Sg3+Dat/Sg2:zintzaizun SUBCL ;
++Ind+Prt+Abs/Sg3+Dat/Sg3:zitzaion SUBCL ;
++Ind+Prt+Abs/Sg3+Dat/Pl1:gintzaizkigun SUBCL ;
++Ind+Prt+Abs/Sg3+Dat/Pl2:zintzaizkizueten SUBCL ;
++Ind+Prt+Abs/Sg3+Dat/Pl3:aitzaizkien SUBCL ;
+
+
++Concl+Prs+Abs/Sg3+Dat/Sg1:litzaidake SUBCL ;
++Concl+Prs+Abs/Sg3+Dat/Sg2+ifl:litzaiake SUBCL ; !+Ind+Prs+Abs/hi
++Concl+Prs+Abs/Sg3+Dat/Sg2:litzaizuke SUBCL ;
++Concl+Prs+Abs/Sg3+Dat/Sg3:litzaiake SUBCL ;
++Concl+Prs+Abs/Sg3+Dat/Pl1:litzaiguke SUBCL ;
++Concl+Prs+Abs/Sg3+Dat/Pl2:litzaizueke SUBCL ;
++Concl+Prs+Abs/Sg3+Dat/Pl3:litzaieke SUBCL ;
+ Concl
++Concl+Prs+Abs/Pl3+Dat/Sg1:litzaizkidake SUBCL ;
++Concl+Prs+Abs/Pl3+Dat/Sg2+ifl:lizaizkiake SUBCL ; !+Ind+Prs+Abs/hi
++Concl+Prs+Abs/Pl3+Dat/Sg2:litzaizkizuke SUBCL ;
++Concl+Prs+Abs/Pl3+Dat/Sg3:litzaizkiake SUBCL ;
++Concl+Prs+Abs/Pl3+Dat/Pl1:litzaizkiguke SUBCL ;
++Concl+Prs+Abs/Pl3+Dat/Pl2:litzaizkizueke SUBCL ;
++Concl+Prs+Abs/Pl3+Dat/Pl3:litzaizkieke SUBCL ;
+
+LEXICON UKANNORNORINORK
+
++Ind+Prs+Dat/Sg3+Abs/Sg3+Erg/Sg1:diot SUBCL ;
++Ind+Prs+Dat/Sg3+Abs/Sg3+Erg/Sg2:diozu SUBCL ;
++Ind+Prs+Dat/Sg3+Abs/Sg3+Erg/Sg3:dio SUBCL ;
++Ind+Prs+Dat/Sg3+Abs/Sg3+Erg/Pl1:diogu SUBCL ;
++Ind+Prs+Dat/Sg3+Abs/Sg3+Erg/Pl2:diozue SUBCL ;
++Ind+Prs+Dat/Sg3+Abs/Sg3+Erg/Pl3:diote SUBCL ;
+ 
++Ind+Prs+Dat/Sg3+Abs/Pl3+Erg/Sg1:dizkiot SUBCL ;
++Ind+Prs+Dat/Sg3+Abs/Pl3+Erg/Sg2:dizkiozu SUBCL ;
++Ind+Prs+Dat/Sg3+Abs/Pl3+Erg/Sg3:dizkio SUBCL ;
++Ind+Prs+Dat/Sg3+Abs/Pl3+Erg/Pl1:dizkiogu SUBCL ;
++Ind+Prs+Dat/Sg3+Abs/Pl3+Erg/Pl2:dizkiozue SUBCL ;
++Ind+Prs+Dat/Sg3+Abs/Pl3+Erg/Pl3:dizkiote SUBCL ;
+
++Ind+Prs+Dat/Pl3+Abs/Sg3+Erg/Sg1:diet SUBCL ;
++Ind+Prs+Dat/Pl3+Abs/Sg3+Erg/Sg2:diezu SUBCL ;
++Ind+Prs+Dat/Pl3+Abs/Sg3+Erg/Sg3:die SUBCL ;
++Ind+Prs+Dat/Pl3+Abs/Sg3+Erg/Pl1:diegu SUBCL ;
++Ind+Prs+Dat/Pl3+Abs/Sg3+Erg/Pl2:diezue SUBCL ;
++Ind+Prs+Dat/Pl3+Abs/Sg3+Erg/Pl3:diete SUBCL ;
+             
++Ind+Prs+Dat/Pl3+Abs/Pl3+Erg/Sg1:dizkiet SUBCL ;
++Ind+Prs+Dat/Pl3+Abs/Pl3+Erg/Sg2:dizkiezu SUBCL ;
++Ind+Prs+Dat/Pl3+Abs/Pl3+Erg/Sg3:dizkie SUBCL ;
++Ind+Prs+Dat/Pl3+Abs/Pl3+Erg/Pl1:dizkiegu SUBCL ;
++Ind+Prs+Dat/Pl3+Abs/Pl3+Erg/Pl2:dizkiezue SUBCL ;
++Ind+Prs+Dat/Pl3+Abs/Pl3+Erg/Pl3:dizkiete SUBCL ;
+
+
++Ind+Prt+Dat/Sg3+Abs/Sg3+Erg/Sg1:nion SUBCL ;
++Ind+Prt+Dat/Sg3+Abs/Sg3+Erg/Sg2:zenion SUBCL ;
++Ind+Prt+Dat/Sg3+Abs/Sg3+Erg/Sg3:zion SUBCL ;
++Ind+Prt+Dat/Sg3+Abs/Sg3+Erg/Pl1:genion SUBCL ;
++Ind+Prt+Dat/Sg3+Abs/Sg3+Erg/Pl2:zenioten SUBCL ;
++Ind+Prt+Dat/Sg3+Abs/Sg3+Erg/Pl3:zioten SUBCL ;
+
++Ind+Prt+Dat/Sg3+Abs/Pl3+Erg/Sg1:nien SUBCL ;
++Ind+Prt+Dat/Sg3+Abs/Pl3+Erg/Sg2:zenien SUBCL ;
++Ind+Prt+Dat/Sg3+Abs/Pl3+Erg/Sg3:zien SUBCL ;
++Ind+Prt+Dat/Sg3+Abs/Pl3+Erg/Pl1:genien SUBCL ;
++Ind+Prt+Dat/Sg3+Abs/Pl3+Erg/Pl2:zenieten SUBCL ;
++Ind+Prt+Dat/Sg3+Abs/Pl3+Erg/Pl3:zieten SUBCL ;
+
+LEXICON PAST
+
++Prt:n # ;
+
+LEXICON ARAZI
++Caus:%>arazi # ;
+
+LEXICON SUBCL
+
+!+Sub:la # ;
++Sub:%>elako # ;
++Sub+Temp:%>enean # ;
++Sub+Rel:%>en # ;
++Sub+Rel:%>en RelCases ;
++Sub:%>ela # ;
+ # ; ! testing without the +Main tag
+!+Main: # ; !irgendetwas hat da nicht geklappt, aber vielleicht habe ich es anders geschrieben
+
+LEXICON Nouns
+
+abaniko Nreg ;
+abendu Nreg ; !"December"
+abesti Nreg ; !"song"
+abizen NregN ; !"last# name"
+abokatu NregBizi ; !"advocate"
+abuztu Nreg ; !"August"
+adibide Nreg ; !"example!
+aditz Nreg ; !"verb"
+afalkide NregBizi ;
+agindupe Nreg ; !"power"
+agintari Nreg ; !"authority"
+aho Nreg ; !"mouth"
+aitzin NregN ; !"front"
+aita NaBizi ; !"father"
+albiste Nreg ; !"news"
+aldaketa Na ; !"change"
+alde Nreg ; !"side"
+alderdi Nreg ; !"side"
+aldi Nreg ; !"time"
+aldundi Nreg ; !"Provincial# Government"
+alegia Na ; !"fable"
+ama NaBizi ; !"mother"
+amnistia Na ; !"amnesty"
+antolamendu Nreg ;
+antzerki Nreg ; !"theatre"
+apiril NregN ; !"April"
+arazo Nreg ; !"problem"
+arduradun NregN ;
+argazki Nreg ;
+argibide Nreg ; !"explication"
+demokratikoki Nreg ; !"field"
+arma Na ; !"weapon"
+armada Na ;
+arrain NregBizi ; !"fish"
+arratsalde Nreg ; !"evening"
+arrazakeri Nreg ; !"racisim"
+asilo Nreg ;
+asmo Nreg ; !"intention"
+aste Nreg ; !"week"
+astearte Nreg ; !"Tuesday"
+asteazken NregN ; !"Wednesday"
+astelehen NregN ; !"Monday"
+ate Nreg ; !"door"
+atentatu Nreg ; !"assault"
+aurreikuspen NregN ; !"forecast"
+aura Na ;
+aurrekontu Nreg ; !"budget"
+aztitasun NregN ;
+azaro Nreg ; !"November"
+azken NregN ; !"end"
+azpiatal Nreg ;
+aztertzaile Nreg ;
+
+balio Nreg ; !"value"
+baloi Nreg ;
+barazki Nreg ; !"vegetable"
+barru Nreg ; !"interior"
+baserri Nreg ; !"farm" LOCATION
+batasun NregN ; 
+batzorde Nreg ; !"commitee"
+beldur Nreg ; !"fear"
+bezpera Na ; !"eve"
+bidaiari NregBizi ; !"traveller";
+bihotz Nreg ; !"heart"
+bilera Na ; !"meeting"
+biltzar Nreg ; !"meeting, council" ORGANIZATION
+bizitza Na ; !"life" TIME
+bolada Na ; !"period" TIME
+borroka Nreg ; !"fighting"
+boxeolari NregBizi ; !"boxer"
+bozeramaile Nreg ; !"spokesperson"
+britainiar:britainiarr NregBizi ; !"British"
+buru Nreg ; !"head"
+buruko% min Nreg ; !"headache"
+buruzagi NregBizi ; !"head"
+
+celta NaBizi ;
+dantza Na ; !"dance"
+dardo Nreg ; !"spear"
+deialdi Nreg ; !"official# announcement"
+denbora Na ; !"time"
+diru Nreg ;
+dozenaka Na ; !"dozen"
+
+egia Na ; !"truth"
+egongela Na ; !"room"
+egoera Na ; !"situation"
+egun NregN ; !"day"
+egunkari Na ; !"newspaper" TEXT
+ekain NregN ; !"June"
+emaitza Na ; !"result"
+enbaxadore NregBizi ; !"emabassador" 
+enpresa Na ; !"company"
+entrenamendu Nreg ;
+entrenatzaile NregBizi ;
+epai Nreg ; !"judgement"
+epaiketa Na ; !"court"
+epe Nreg ; !"period"
+erabaki Nreg ; !"decision"
+eraikuntza Na ; !"building"
+erakustaldi Na ; !"exhibition"
+erasoaldi Nreg ; !"attack"
+erdi Nreg ; !"half"
+eremu Nreg ; !"field"
+erlijio Nreg ; !"religion" 
+ermita Na ;
+errepublika Na ;
+erro Nreg ; !"root"
+errusiar:errusiarr NregN ;
+eskola Na ; !"school"
+esku Nreg ; !"hand"
+eskualde Nreg ;
+esperientzia Na ; !"experience"
+estatu Nreg ;
+estatubatuar NregBizi ; !"American"
+etsipen NregN ; !"despair"
+etxe Nreg ; !"house"
+euro Nreg ; 
+euskaldun NregBiziN ; !"Basque# speaker"
+euskalki Nreg ; !"Basque# dialect"
+ezbehar:ezbeharr Nreg ; !"accident"
+ezberdintasun NregN ; !"unequality"
+
+ferry Nreg ; !"ferry"
+festa Na ; !"party"
+futbol NregN ; !"football"
+
+galdera Na ; !"question"
+garai Nreg ;
+garaipen NregN ; !"victory"
+gazta Na ;
+gazte NregBizi ; !"youth"
+gaztelu Nreg ;
+geldiketa Na ;
+giltza Na ; !"key"
+gerrillari NregBizi ; !"gerrilla# fighter"
+giro Nreg ;
+gisa Na ; !"manner"
+gobernu Nreg ; !"government"
+goiz NregN ; !"morning"
+
+haize Nreg ; !"wind"
+haragi Nreg ; !"meat"
+harreman NregN ; !"relationship"
+hartz NregBizi ; !"bear"
+hasiera Na ; !"beginning"
+haste Nreg ; !"beginning"
+haur:haurr NregBizi ; !"child"
+hazkunde Nreg ; !"growth"
+hedabide Nreg ; !"means# of# communication"
+hektometro Nreg ;
+herri Nreg ;
+herritar NregBizi ;
+hilabete Nreg ; !"month"
+historia Na ; !"history"
+hizkuntza Na ; !"language"
+holandar NregBizi ; !"Dutch"
+hotel NregN ; !"hotel"
+hortz Nreg ; !"tooth"
+huts Nreg ; !"error"
+
+ibai Nreg ; !"river"
+ibilbide Nreg ;
+idei Nreg ; !"idea"
+igande Nreg ; !"Sunday"
+ikastaro Nreg ; !"course"
+ikatz Nreg ;
+ikuspuntu Nreg ; !"perspective"
+ilusio Nreg ; !"illusion"
+indar:indarr Nreg ;
+indarkeria Na ; !"violence"
+independentista NregBizi ; !"independentist"
+indigena NregBizi ; !"indigenous"
+inguru Nreg ; !"surrounding"
+intransijentzia Na ;
+irabazle NregBizi ; !"winner"
+irail NregN ; !"September"
+irakasle NregBizi ; !"teacher"
+iritzi Nreg ; !"opinion" 
+irrati Nreg ; !"radio"
+irtenbide Nreg ;
+itsaso Nreg ; !"sea"
+itsasontzi Nreg ; !"boat"
+istripu Nreg ; !"accident"
+itu Nreg ; !"aim"
+iturri Nreg ; !"source"
+itxura Na ; !"appearance"
+itzuli Nreg ; !"turn"
+izen NregN ; !"name"
+
+jarraitzail NregBizi ; !"supporter"
+jarrera Na ; !"position"
+jende NregBizi ; !"people"
+jokalari NregBizi ; !"player"
+joko Nreg ; !"game"
+jolas Nreg ; !"game"
+juridiko Nreg ;
+
+kabinete Nreg ;
+kale Nreg ; !"street"
+kanguru NregBizi ; !"kangoroo"
+kantu Nreg ; !"song"
+kapitain NregBizi ; !"captain"
+kargu Nreg ; !"charge"
+katu NregBizi ; !"cat"
+kaxoi Nreg ; !"drawer"
+kirol NregN ; !"sport"
+kolore Nreg ; !"color"
+kolpe Nreg ;
+kolpeka Na ; !"hit"
+komentario Nreg ;
+kondentsadore Nreg ; !"condenser"
+konfiantza Na ;
+konponbide Nreg ; !"solution"
+kontratu Nreg ; !"contract"
+kontzentrazio Nreg ; !"concentration"
+kopuru Nreg ; !"amount"
+korronte Nreg ; !"current"
+kosta Na ;
+kristau NregBizi ; !"Christian"
+krudeltasun NregN ;
+kuarteta Na ;
+kurtso Nreg ; 
+
+lagun NregBizi ; !"friend"
+lan NregN ; !"work"
+landare Nreg ; !"plant"
+lankide NregBizi ;
+legebiltzar:legebiltzarr Nreg ; !"parliament" ORGANIZATION
+lehendakari NregBizi ; !"president"
+lehergailu Nreg ; !"bomb"
+lerro Nreg ; !"rank"
+liburu Nreg ; !"book"
+
+maiatz Nreg ; !"May"
+maite Na ; !"love"
+manifestazio Nreg ; !"demonstration"
+mantenu Nreg ; !"maintenance"
+markagailu Nreg ; !"scoreboard"
+martxo Nreg ; !"March"
+material NregN ;
+mende Nreg ; !"century"
+mendi Nreg ; !"mountain" PLACE
+metro Nreg ; ! ; !"meter" 
+mezu Nreg ; ! "message"
+militar NregBizi ; !"soldier"
+mito Nreg ;
+moral Nreg ; !"moral"
+mugimendu Nreg ; !"movement"
+museo Nreg ; !"museum" PLACE
+musika Nreg ; !"music"
+musulman NregBizi ; !"Muslim"
+muxu Nreg ; !"kiss"
+
+nagusitasun NregN ;
+neska NaBizi ; !"girl"
+negu Nreg ; !"winter"
+normaltasun NregN ;
+
+obra Na ;
+odol NregN ; !"blood"
+olde Nreg ; !"wish"
+ohi Nreg ; !"custom"
+ontzi Nreg ; !"container"
+oposizio Nreg ;
+ordezkaritza NaBizi ; !"delegation"
+ordezkari NregBizi ; !"delegate"
+ordu Nreg ; !"hour"
+osagai Nreg ; !"component"
+osagarri Nreg ; !"component"
+ospital NregN ;
+ostegun NregN ;
+ostiral NregN ;
+otoitz Nreg ; !"prayer"
+otsail NregN ; !"February"
+
+papera Na ; !"paper"
+parada Na ; !"occasion"
+paramilitar NregBizi ; 
+parlamentu Nreg ; !"parlament"
+partida Na ; !"match"
+partidu Nreg ; !"match"
+pasaporte Nreg ; !"passport"
+pastel NregN ; !"cake"
+pedal NregN ; !"pedal"
+penalti Nreg ;
+pentsamendu Nreg ; !"thinking"
+perla Na ; !"pearl"
+pilotari Nreg ;
+planeta Na ;
+plaza Na ; !"place"
+poltsa Na ; !"bag"
+polizia Na ; !"police"
+pisu Nreg ; !"flat"
+presa Na ; !"hurry"
+presidente NregBizi ; !"president"
+proiektu Nreg ;
+proba Na ;
+protagonista Na ; !"protagonist"
+puntu Nreg ;
+
+salaketa Na ;
+segundo Nreg ; !"second"
+segurtasun NregN ; !"security"
+sindikatu Nreg ; !"trade# union"
+soldadu NregBizi ; !"soldier"
+sukalde Nreg ; !"kitchen"
+taberna Na ; !"bar"
+tentsio Nreg ; 
+txakur NregBizi ; !"dog"
+txanda Na ; !"turn"
+txapela Na ; !"hat"
+txistu Nreg ;
+testu Nreg ; !"text"
+tiro Nreg ; !"shot"
+
+sari Nreg ; !"prize"
+sarrera Na ; !"entrance"
+sektore Nreg ;
+seme NregBizi ; !"son"
+sistema Nreg ; !"system"
+sueten Nreg ; !"ceasefire"?
+suhiltzaile Nreg ;
+
+tanto Nreg ; !"point"
+tarte Nreg ;
+telefono Nreg ; !"telephone"
+talde Nreg ; !"group"
+tresna Na ; !"tool"
+tribunal NregN ; 
+tutu Nreg ; !"tube"
+txalaparta Na ; !"txalaparta"
+txanda Na ; !"turn"
+txapeldun Nreg ; 
+txirrin NregN ; !"bell"
+txirrindulari Nreg ; !"cyclist"
+
+uda Na ; !"summer"
+udalerri Nreg ; !"municipality"
+udaletxe Nreg ; !"Rathaus"
+udazken NregN ; !"autumn"
+udaberri Nreg ; !"spring"
+uharte Nreg ; !"island"
+uhartedi Nreg ; !"archipelago"
+ume NregBizi ; !"child"
+unibertsitate Nreg ; !"university"
+ur Nreg ; !"water"
+urri Nreg ; !"October"
+urtarril NregN ; !"January"
+urte Nreg ; !"year"
+urtegi Nreg ; !"reservoir"
+uste Nreg ; !"intention" 
+uztail NregN ; !"July"
+
+xehetasun NregN ; !"detail"
+
+zakar:zakarr Nreg ; !"garbage"
+zalantza Na ; !"doubt"
+zalaparta Na ;
+zati Nreg ; 
+zenbaki Nreg ; !"number"
+zentral NregN ;
+zentral% nuklear:zentral% nuklearr ; !"nuclear powerplant"
+zentsu Nreg ;
+zerbitzu Nreg ;
+zilar:zilarr Nreg ; !"silver"
+zilegitasun NregN ;
+zurrunbilo Nreg ; !"storm"
+
+
+LEXICON Propernouns
+
+Aitor NpM ; !"Aitor"
+Arkaitz NpM ; !"Arkaitz"
+Danel NpM ; !"Danel"
+Francis NpM ; !"Francis"
+Tristan NpM ; !"Tristan"
+Kepa NpM ; !"Kepa"
+Iñaki NpM ; !"Iñaki"
+Mikel NpM ; !"Mikel"
+Julen NpM ; !"Julen"
+Fermin NpM ; !"Fermin"
+Gorka NpM ; !"Gorka"
+Xabi NpM ; !"Xabi"
+Bittor NpM ; !"Bittor"
+Zohiartze NpM ; !"Zohiartze"
+Iker NpM ; !"Iker"
+Patxi NpM ; !"Patxi"
+Milosevic NpM ; !"Milosevic"
+Ugudov NpM ; !"Ugudov"
+Howard NpM ; !"Howard"
+Luis NpM ; !"Luis"
+Josu NpM ; !"Josu"
+Bill NpM ; !"Bill"
+David NpM ; !"David"
+Justin NpM ; !"Justin"
+Tomas NpM ; !"Tomas"
+Alex NpM ; !"Alex"
+Julen NpM ; !"Julen"
+Sergio NpM ; !"Sergio"
+Jason NpM ; !"Jason"
+Jose NpM ; !"Jose"
+Mari NpM ; !"Mari"
+Juan NpM ;
+Yoshiro NpM ;
+Octaviano NpM ;
+Joseba NpM ;
+
+Itziar NpF ; !"Itziar"
+Garbiñe NpF ; !"Garbiñe"
+Linda NpF ; !"Linda"
+Naiara NpF ; !"Naiara"
+Ainhoa NpF ; !"Ainhoa"
+Edurne NpF ; !"Edurne"
+Nora NpF ; !"Nora"
+Miren NpF ; !"Miren"
+Molly NpF ; !"Molly"
+Veronica NpF ; !"Veronica"
+Lara NpF ; !"Lara"
+Nerea NpF ; !"Nerea"
+Laraitz NpF ; !"Laraitz"
+Maite NpF ; !"Maite"
+Mireia NpF ; !"Mireia"
+Arantxa NpF ; !"Arantxa"
+Olaia NpF ; !"Olaia"
+Marlene NpF ; !"Marlene"
+Raquel NpF ; !"Raquel"
+Julia NpF ; !"Julia"
+Joana NpF ;
+
+Maradona NpS ; !"Maradona"
+Uranga NpS ; !"Uranga"
+Zubia NpS ; !"Zubia"
+Clinton NpS ; !"Clinton"
+Garbajo NpS ; !"Garbajo"
+Millar NpS ; !"Millar"
+Meabe NpS ; !"Meabe"
+Fernandez NpS ; !"Fernandez"
+Moreno NpS ; !"Moreno"
+Garciar NpS ; !"Garciar"
+Guerrero NpS ; !"Guerrero"
+Azurmendi NpS ; !"Azurmendi"
+Aierbe NpS ; !"Aierbe"
+Kresicek NpS ;
+Winstone NpS ;
+Uranga NpS ;
+Gonzalez NpS ;
+Louwe NpS ;
+Mori NpS ;
+Gore NpS ;
+Bush NpS ;
+Devichek NpS ;
+Garzon NpS ;
+Lindroth NpS ;
+Aranberri NpS ;
+Gimelstobi NpS ;
+Arrate NpS ;
+Llorent NpS ;
+Meabe NpS ;
+
+Euskal% Herri NpTop ; !"Basque# Country"
+Arrasate NpTop ;
+Frantzia NpTop ; !"France"
+Galizia NpTop ; !"Galicia"
+Grezia NpTop ; !"Greece"
+Jakarta NpTop ; !"Jakarta"
+Japonia NpTop ; !"Japan"
+Katalunia NpTop ; !"Catalonia"
+Polonia NpTop ; !"Poland"
+Suedia NpTop ; !"Sweden"
+Suitza NpTop ; !"Switzerland"
+Turkia NpTop ; !"Turkey"
+Txekia NpTop ; !"Czech Republic"
+Baiona NpTop ; !"Bayonne"
+Gipuzkoa NpTop ; !"Guipuzcoa"
+Aezkoa NpTop ; !"Aezcoa"
+Baiona NpTop ; !"Bayonne"
+Hendaia NpTop ; !"Hendaye"
+Bidasoa NpTop ; !"Bidasoa" 
+Leioa NpTop ; !"Lejona"
+Donostia NpTop ; !"San Sebastian"
+Nafarroa NpTop ; !"Navarra"
+Errenteria NpTop ; !"Renteria"
+Ordizia NpTop ; !"Villafranca de Oria"
+Getaria NpTop ; !"Guetaria"
+Solingen NpTop ; !"Solingen"
+Zuberoa NpTop ; !"Soule"
+Eibar NpTop ; !"Eibar"
+Miarritz NpTop ; !"Miarritz"
+Kamerun NpTop ; !"Kamerun"
+Indonesia NpTop ; !"Indonesia"
+Espainia NpTop ; !"Spain"
+Serbia NpTop ; !"Serbia"
+Bilbao NpTop ; !"Bilbao"
+Txernobil NpTop ; !"Txernobil"
+Andalusia NpTop ; !"Andalusia"
+Miami NpTop ; !"Miami"
+Washington NpTop ; !"Washington"
+Zimbawe NpTop ;
+Israel NpTop ;
+Europa NpTop ;
+Atlanta NpTop ;
+Kuba NpTop ;
+Florida NpTop ;
+Ebro NpTop ;
+
+Athletice NpOrg ;
+Auzitegi% Gorenak NpOrg ; !"Supreme Court"
+EEBB NpOrg ;
+EHU NpOrg ; !"University of the Basque Country"
+ETA NpOrg ; !"ETA"
+Pentagono NpOrg ; !"Pentagon"
+RIRA NpOrg ; !"Real Irish Republican Army"
+UPV NpOrg ; !"University of the Basque Country"
+Real NpOrg ;
+
+LEXICON Pronouns
+ni+Pron+Pers+Sg1:ni PronSgCases ;
+zu+Pron+Pers+Sg2:zu PronSgCases ;
+hi+Pron+Pers+Sg2+inf:hi PronSgCases ;
+bera+Pron+Pers+Sg3:bera PronSgCases ;
+gu+Pron+Pers+Pl1:guk # ;
+zuek+Pron+Pers+Pl2:zuek # ;
+haiek+Pron+Pers+Pl3:haiek # ;
+
+ni+Pron+Pers+Sg1:ni PronSgCases ;
+zu+Pron+Pers+Sg2:zu PronSgCases ;
+hi+Pron+Pers+Sg2+inf:hi PronSgCases ;
+bera+Pron+Pers+Sg3:bera PronSgCases ;
+gu+Pron+Pers+Pl1:guk # ;
+zuek+Pron+Pers+Pl2:zuek # ;
+haiek+Pron+Pers+Pl3:haiek # ;
+
+hon+Pron+Dem+Abs:hau PronSgCases ;
+hor+Pron+Dem+Abs:hori PronSgCases ;
+har+Pron+Dem+Abs:hura PronSgCases ;
+
+hon+Pron+Dem+Ine:honetan # ;
+hor+Pron+Dem+Ine:hor # ;
+
+zer+Pron+Interr+Sg3:zer PronSgCases ;
+zein+Pron+Interr+Sg3:zein PronSgCases ;
+nor+Pron+Interr+Sg3:nor PronSgCases ;
+
+inor+Pron+Indef:inor PronSgCases ;
+
+edozein+Pron+Indef:edozein PronSgCases ;
+guzti+Pron+Indef:guzti PronReg ;
+bakoitz+Pron+Indef:bakoitz PronReg ;
+beste+Pron+Indef:beste PronReg ;
+ezer+Pron+Indef:ezer # ;
+hainbat+Pron+Indef:hainbat # ;
+elkar+Pron+Indef:elkarri # ; !"each# other"
+dena+Pron+Indef:dena # ; !"everything"
+
+LEXICON ADV 
+
++Adv: # ;
++Adv+LGen:%>ko # ;
++A:%>koa # ;
+
+LEXICON Adverbs
+
+akaso ADV ; !"maybe"
+alderantziz ADV ; !"al reves"
+aldiro ADV ;
+asko ADV ;
+atzo ADV ;
+aurten ADV ; !"this# year"
+
+badaezpada ADV ;
+baino ADV ; !"than"
+batere ADV ;
+behin ADV ;
+berehala ADV ;
+berriro ADV ; !"again"
+beti ADV ; !"always"
+bezain ADV ;
+bezala ADV ;
+bihar ADV ;
+
+demokratikoki ADV ; !"democratically"
+ere ADV ;
+ez ADV ; !"not"
+ezik ADV ; !"otherwise"
+fisikoki ADV ;
+
+gainera ADV ; !"additionally"
+gehiago ADV ; !"more"
+gero ADV ;
+gaur ADV ;
+gogotsu ADV ; !"enthusiastically"
+gora ADV ; !"up"
+
+hain ADV ;
+hainbeste ADV ; !"so much"
+Herenegun ADV ; !"day# before# yesterday"
+ia ADV ; !"almost"
+iaz ADV ; !"last# year"
+konektatuta ADV ;
+konforme ADV ;
+
+lehen ADV ; !"before"
+nola ADV ; !"how"
+ondo ADV ; !"well"
+ongi ADV ; !"well"
+orain ADV ;
+oraindik ADV ; !"still"
+orduan ADV ;
+oso ADV ; !"very"
+
+pixkanaka ADV ;
+pozik ADV ; !"happy"
+urtero ADV ;
+zergatik+Adv+Interr:zergatik # ;
+
+LEXICON Adjectives
+afrikar:afrikarr An ;
+altu Areg ; 
+azkar:azkarr Areg ; !"quick"
+azken An ; !"last"
+beltz Areg ; !"black"
+berandu Areg ; !"late"
+berdin Areg ; !"equal"
+berezi Areg ; !"special"
+berri Areg ; !"new"
+datorren Areg ; !"next"
+dezente Areg ; !"decent"
+
+ederki Areg ;
+errusiar:errusiarr Areg ; !"Russian"
+euskal Areg ; !"Basque"
+ezberdin An ; !"unequal"
+ezohiko Areg ; !"unusual"
+
+garrantzitsu Areg ; !"important"
+gogor:gogorr Areg ; !"hard"
+gogotsu Areg ; !"enthusiastic"
+gutxi Areg ; !"little"
+handi Areg ; !"big"
+hurrengo Areg ; !"next"
+ipar Areg ; !"northern"
+
+kritiko Areg ; !"crictical"
+larri Areg ; !"grave"
+literario Areg ; !"literary"
+luze Areg ; !"long"
+
+nabarmen Areg ; !"evident"
+nazioarteko Areg ; !"international"
+on Areg ; !"good"
+
+paregabe Areg ;
+posible Areg ;
+turkiar:turkiarr Areg ; !"Turkish"
+txukun Areg ; !"clean"
+tonto Areg ; !"stupid"
+urduri Areg ; !"nervous"
+zail Areg ; !"dificult"
+zehatz Areg ; !"exact"
+zehazki Areg ;
+zurbil Areg ; !"pale"
+zuri Areg ; !"white"
+zuzen An ; !"correct"
+
+
+LEXICON Verbs
+
+aberatstu:abera%{t%}s Tu ; !"get# rich"
+abestu:abes Tu ; !"sing"
+abiatu:abia Tu ; !"start"
+adierazadierazi:adieraz I ; !"declare"
+afaldu:afal Du ;
+agertu:ager AGERTU ; !"appear"
+!agertu:ager Tu ; !"appear"
+agindu:agin Du ; !"order"
+agurtu:agur Tu ; !"greet"
+ahal Sinmas ; !"can"
+ahaztu:ahaz Tu ; !"forget"
+akusatu:akusa Tu ;
+aldatu:alda Tu ; !"change"
+amaitu:amai AMAITU ; !"finnish"
+!amaitu:amai Tu ; !"finnish"
+animatu:anima Tu ;
+areagotu:areago Tu ; !"increase"
+argitu:argi Tu ; !"clear"
+aritu:ari Tu ; !"busy# oneself"
+asmatu:asma ASMATU ; !"invent"
+!asmatu:asma Tu ; !"invent"
+atera ATERA ; !"go out"
+!atera Sinmas ; !"go out"
+atxilotu:atxilo Tu ; !"arrest"
+aukeratu:aukera Tu ; !"choose"
+aurkitu:aurki Tu ; !"find"
+aurreikusi:aurreikus I ; !"forsee"
+aurreratu:aurrera Tu ; !"advance"
+azaldu:azal Du ;
+
+baieztatu:baiezta Tu ; !"confirm"
+baloratu:balora Tu ; !"value"
+banandu:banan Du ; !"differ"
+baztertu:bazter Tu ; !"retreat"
+begiratu:begira Tu ; !"look"
+behar Sinmas ; !"must"
+behartu:behar Tu ;
+bete Sinmas ; !"complete"
+bilakatu:bilaka Tu ; !"turn# into"
+bilatu:bila Tu ;
+bildu:bil Du ;
+bisitatu:bisita Tu ; !"visit"
+borrokatu:borroka Tu ; !"fight"
+bota Sinmas ;
+burutu:buru Tu ;
+
+deitu:dei DEITU ; !"call"
+!deitu:dei Tu ; !"call"
+defenditu:defendi Tu ; !"defend"
+deklaratu:deklara Tu ; !"declare"
+derrigortu:derrigor Tu ; !"force" 
+
+edan Sinmas ; !"drink"
+eduki: EDUKI ; !"have"
+egin:egi N ; !"do" 
+egokitu:egoki Tu ; !"adapt"
+egon: EGON ; ! ; !"be"
+ehizatu:ehiza Tu ; !"hunt"
+ekarri:ekarr I ; !"bring"
+ekidin:ekidi N ; !"avoid"
+elkartu:elkar Tu ; !"meet"
+eman EMAN ; !"give" 
+!eman Sinmas ; !"give" 
+entzun Sinmas ; !"hear"
+erabili:erabil I ; !"use"
+eraman: ERAMAN ; !"bring"
+eragin:eragi N ; !"oblige"
+erakutsi:erakuts I ;
+erantzun Sinmas ; !"answer"
+erre Sinmas ; !"burn"
+errapatu:errapa Tu ; !"realize"
+errespetu:erraspe Tu ; !"respect"
+esan: ESAN ; !"say"
+eskaini:eskain I ; !"offer"
+eskatu:eska Tu ; !"order"
+ekarri: EKARRI ; !"bring"
+eraso: Sinmas ; !"attack"
+eskaini:eskain I ; !"offer"
+etorri:etor ETORRI ; !"come" ! adding : to avoid etorrnator
+existitu:existi Tu ;
+ezin Sinmas ; !"can not"
+ezkondu:ezkon Du ;
+
+faltatu:falta Tu ; !"miss"
+flotatu:flota Tu ;
+
+gainditu:gaindi Tu ; !"pass"
+galdetu:galde Tu ; !"ask"
+gehitu:gehi Tu ; !"increase"
+gelditu:geldi Tu ; !"stay"
+gezurtatu:gezurta Tu ; !"lie"
+grabatu:graba Tu ; !"record"
+gertatu:gerta Tu ; !"happen"
+gonbidatu:gonbida Tu ; !"invite"
+gosaldu:gosal Du ; !"breakfast"
+gozatu:goza Tu ; !"enjoy"
+grabatu:graba Tu ; !"tape"
+
+handitu:handi Tu ; !"grow"
+hartu:har Tu ; !"take"
+haserretu:haserre Tu ; !"get angry"
+hasi:has I ; !"begin"
+hautatu:hauta Tu ; !"choose"
+hautsi:hauts I ;
+hazi:haz I ;
+! hil Sinmas ; !"die"
+hil HIL ; !"die"
+hitzartu:hitzar Tu ; !"agree"
+hondatu:honda Tu ; !"destroy"
+hornitu:horni Tu ;
+hustu:hus Tu ;
+
+ibili: IBILI ; !"walk"
+igo Sinmas ; !"ascend"
+ikasi:ikas I ; !"learn"
+ikusi:ikus I ; !"see"
+inputatu:inputa Tu ;
+irabazi:irabaz I ; !"earn"
+irakin Sinmas ; !"boil"
+irauli:iraul I ; !"turn# over"
+iraun:irau N ; !"last"
+iritsi:irits I ; !"arrive"
+irten:irte N ; !"leave"
+iruditu: IRUDITU ; !"seem"
+islatu:isla Tu ;
+isuri:isur I ; !"flow"
+itxi:itx I ; !"close"
+!itxaron ; !"wait" ! commented out, waiting for contlex
+izan: AuxIzan ; !"be" 
+
+jaitsi:jaits I ; !"go# down"
+jan Sinmas ; !"eat"
+jarri:jarr I ; !"put" !R
+jakin: JAKIN ; !"know"
+jasan:jasa N ;
+jaso Sinmas ;
+jaurtitu:jaurti Tu ; !"throw"
+jipoitu:jipoi Tu ; !"beat# up"
+jo Sinmas ;
+joan: JOAN ; !"go"
+jokatu:joka Tu ; !"play"
+jolastu:jolas Tu ;
+juzkatu:juzka Tu ;
+
+kezkatu:kezka Tu ; !"worry"
+kokatu:koka Tu ;
+konparatu:konpara Tu ; !"compare"
+konpondu:konpon Du ; !"resolve"
+kontatu:konta Tu ; !"tell"
+kontrolatu:kontrola Tu ; !"control"
+konturatu:kontura Tu ; !"notice"
+
+landu:lan Du ;
+landatu:landa Tu ; !"plant"
+laztanddu:laztand Du ;
+lortu:lor Tu ; !"achieve";
+lotu:lo Tu ; !"tie"
+
+maitemindu:maitemin Du ; !"fall# in love"
+manifestatu:manifesta Tu ;
+mimatu:mima Tu ;
+mintzatu:mintza Tu ; !"talk"
+moldatu:molda Tu ;
+moztu:moz Tu ; !"cut"
+mugitu:mugi Tu ;
+
+nahastu:nahas Tu ; !"mix"
+nahi Sinmas ; !"want"
+nozitu:nozi Tu ; !"suffer"
+onartu:onar Tu ; !"accept"
+oparitu:opari Tu ; !"give"
+otu:o Tu ; !"occur"
+onartu:onar Tu ; !"admit"
+oroitu:oroi Tu ;
+osatu:osa Tu ; !"complete"
+pasatu:pasa Tu ; !"happen"
+prestatu:presta Tu ; !"prepare" 
+
+saiatu:saia Tu ; !"try"
+sartu:sar Tu ; !"enter"
+segitu:segi Tu ; 
+sortu:sor Tu ;
+topatu:topa Tu ; !"meet" 
+ukan: AuxUkan ; !"be"
+ukitu:uki Tu ; !"touch"
+ulertu:uler Tu ; !"understand"
+utzi:utz I ; !"leave"
+
+zabaldu:zabal Du ; !"widen"
+zaindu:zain Du ; !"take# care"
+zauritu:zauri Tu ; !"be# injured"
+zeharkatu:zerharka Tu ; !"cross" 
+zintzilikatu:zintzilika Tu ; !"hang"
+ziurtatu:ziurta Tu ; !"secure"
+zorabiatu:zorabia Tu ; !"faint"
+zuritu:zuri Tu ; !"hurt"
+
+LEXICON Postposition
+arabera POSTP ;
+artean POSTP ;
+arte POSTP ;
+aurrean POSTP ;
+azpitik POSTP ;
+buruz POSTP ;
+gabe POSTP ;
+kontra POSTP ;
+menpe POSTP ;
+ondoren POSTP ;
+
+LEXICON POSTP
+
++Po: # ;
++Po: GENLOC ;
+
+LEXICON GENLOC
+
++GenL:ko # ;
++GenL:go # ;
++GenL+Art:koa # ;
+
+
+LEXICON Conjunctions
+
+arren CONJ ;
+edo CONJ ;
+eta CONJ ;
+baina CONJ ;
+nahiz% eta CONJ ;
+
+LEXICON CONJ
++CC: # ;
+
+LEXICON NUMBAT
+
++Num: SgCases1 ;
+
+LEXICON NUM
+
++Num: SgCases1 ;
++Num+Ord:%>garren SgCases1 ;
++Num+Ord+Art:%>garren%>a SgCases1 ;
+
+LEXICON Numerals
+bat NUMBAT ; !"one"
+bi NUM ; !"two"
+hiru NUM ; !"hiru"
+lau NUM ; !"lau"
+bost NUM ; !"five"
+sei NUM ; !"six"
+zazpi NUM ; !"seven"
+zortzi NUM ; !"eight"
+bederatzi NUM ; !"nine"
+hamar NUM ; !"ten"
+hogeita NUM ; !"twenty"
+berogeita NUM ; !"forty"
+hirurogeita NUM ; !"sitxty"
+laurogeita NUM ; !"eighty"
+ehun NUM ; !"hundred"
+
+
+LEXICON CLB
+
++CLB: # ;
+
+
+
+LEXICON Punctuation
+
+! Clause boundary symbols
+
+%,+CLB:%, # ;
+%.+CLB:%. # ;
+%.%.+CLB:%.%. # ;
+%.%.%.+CLB:%.%.%. # ;
+%:+CLB:%: # ;
+%;+CLB:%;	 # ;
+ ^excl+CLB+Use/Circ:%!	 # ;	!
+ %?+CLB:%?	 # ; !Question mark
+…+CLB:…		 # ;
+ ¿+CLB:¿		 # ;	! Only seen as noise.
+ ¶+CLB:¶		 # ;	! This sign is for titles, it is introduced by the
+			! catxml script, and may be changed if it interferes 
+			! with real pilcrow signs.
+
+! Miscellaneous symbols, abbreviation symbols 
+ 
+ §+N+ABBR+Use/Circ:§ PUNCTconnector ; 
+ §§+N+ABBR+Use/Circ:§§ PUNCTconnector ; 
+ $+N+ABBR+Use/Circ:$ PUNCTconnector ; 
+ €+N+ABBR+Use/Circ:€ PUNCTconnector ; 
+ £+N+ABBR+Use/Circ:£ PUNCTconnector ; 
+®+N+ABBR:® # ;
+©+N+ABBR:© # ;
+
+
+! Single punctuation marks
+
+ •+PUNCT:• # ; !U
+ ●+PUNCT:● # ; !U
+ ·+PUNCT:· # ; !U
+ ּ+PUNCT:ּ # ; !U
+ ·+PUNCT:· # ; !U
+ -+PUNCT:- # ; !hyphen
+ --+PUNCT:-- # ; !double hyphen
+ –+PUNCT:– # ; !endash
+ —+PUNCT:— # ; !emdash
+ ―+PUNCT:― # ; !horizontal bar U
+=+PUNCT:= # ;
+≈+PUNCT:≈ # ;
+%%+PUNCT:%% # ;
+&+PUNCT:& # ;
+%"+PUNCT:%" # ;
+%*+PUNCT:%* # ;
+++PUNCT:+ # ;
+±+PUNCT:± # ;
+`+PUNCT:` # ;
+´+PUNCT:´ # ;
+/+PUNCT:/ # ; 
++/-+PUNCT:+/- # ;
+%~+PUNCT:%~	 # ;
+
+
+! Paired punctuation marks
+
+%«+PUNCT+LEFT:%« # ;
+%»+PUNCT+RIGHT:%» # ;
+%“+PUNCT+LEFT:%“ # ;
+%”+PUNCT+RIGHT:%” # ;
+%‘+PUNCT+LEFT:%‘ # ;
+%’+PUNCT+RIGHT:%’ # ;
+%„+PUNCT+LEFT:%„ # ;
+%‹+PUNCT+LEFT:%‹ # ;
+%›+PUNCT+RIGHT:%› # ;
+%(+PUNCT+LEFT:%( # ;
+%)+PUNCT+RIGHT:%) # ;
+%[+PUNCT+LEFT:%[ # ;
+%]+PUNCT+RIGHT:%] # ;
+%{+PUNCT+LEFT:%{ # ;
+%}+PUNCT+RIGHT:%} # ;
+%<+PUNCT+LEFT:%< # ;
+%>+PUNCT+LEFT:%> # ;
+
+
+
+LEXICON PUNCTconnector 
+ +Sg+Nom+Use/Circ: K ;	
+ +Use/Sub+Use/Circ: PUNCTsuff ;	
+ +Use/Circ:%: PUNCTsuff ;	
+ +Use/Sub+Use/Circ:%- PUNCTsuff ;	
+ +Use/Sub+Use/Circ:%' PUNCTsuff ;	
+ 
+LEXICON PUNCTsuff
+ # ;
+ 
+! sami ! ! K ;		! § 14 (no case on the bare §). Oh, yes. Case.
+! sami ! +Sg+Gen: K ;	! § (case suffix on the rest, in case of explicit
+! sami ! +Sg+Acc: K ;	! suffix)
+! sami ! +Sg+Gen+Use/Sub:a K ;	! §:a (case suffix on the rest, in case of explicit !
+! sami ! +Sg+Acc+Use/Sub:a K ;	! suffix) !
+! sami ! +Sg+Ill+Use/Sub:ij K ; ! !
+! sami ! +Sg+Ill:i K ; !
+! sami ! +Sg+Loc:s K ; ! §:s
+! sami ! +Sg+Loc+Use/Sub:as K ; ! §:as !
+! sami ! +Sg+Com:in K ;
+! sami ! +Ess:n K ;
+! sami ! +Ess+Use/Sub:an K ; !
+! sami ! +Pl+Nom:t K ;
+! sami ! +Pl+Gen:id K ;
+! sami ! +Pl+Acc:id K ;
+! sami ! +Pl+Ill:ide K ;
+! sami ! +Pl+Loc:in K ;
+! sami ! +Pl+Com:igujn K ;
+! sami ! +Pl+Nom+Use/Sub:at K ; !
+! sami ! +Pl+Gen+Use/Sub:ajd K ; !
+! sami ! +Pl+Acc+Use/Sub:ajd K ; !
+! sami ! +Pl+Ill+Use/Sub:ajde K ; !
+! sami ! +Pl+Loc+Use/Sub:ajn K ; !
+! sami ! +Pl+Com+Use/Sub:ajgujn K ; !
+
+

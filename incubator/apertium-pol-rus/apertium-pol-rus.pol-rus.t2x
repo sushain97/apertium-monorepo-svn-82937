@@ -1,0 +1,169 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<interchunk>
+  <section-def-cats>
+    <def-cat n="SN">
+      <cat-item tags="SN"/>
+      <cat-item tags="SN.*"/>
+    </def-cat>
+    <def-cat n="COP.pres">
+      <cat-item tags="COP.pres"/>
+    </def-cat>
+    <def-cat n="SN-NOM">
+      <cat-item tags="SN.*.*.*.nom"/>
+    </def-cat>
+    <def-cat n="PRED">
+      <cat-item tags="PRED.*"/>
+    </def-cat>
+    <def-cat n="IMET">
+      <cat-item lemma="imet" tags="PRED.*"/>
+    </def-cat>
+    <def-cat n="PERS">
+      <cat-item lemma="pers" tags="SN.*"/>
+    </def-cat>
+  </section-def-cats>
+
+  <section-def-attrs>
+    <def-attr n="a_nbr">
+      <attr-item tags="sg"/>
+      <attr-item tags="pl"/>
+    </def-attr>
+    <def-attr n="a_gen">
+      <attr-item tags="m"/>
+      <attr-item tags="f"/>
+      <attr-item tags="nt"/>
+      <attr-item tags="GD"/>
+    </def-attr>
+   <def-attr n="a_cas">
+      <attr-item tags="nom"/>
+      <attr-item tags="acc"/>
+      <attr-item tags="gen"/>
+      <attr-item tags="gen.pprep"/>
+      <attr-item tags="dat"/>
+      <attr-item tags="ins"/>
+      <attr-item tags="loc"/>
+      <attr-item tags="prp"/>
+      <attr-item tags="voc"/>
+    </def-attr>
+  </section-def-attrs>
+
+  <section-def-vars>
+    <def-var n="number"/>
+  </section-def-vars>
+
+  <section-def-macros>
+    <def-macro n="test1" npar="1">
+      <let>
+        <var n="number"/>
+        <lit v=""/>
+      </let>
+    </def-macro>
+  </section-def-macros>
+
+  <section-rules>
+    <rule comment="REGLA: SN">
+      <pattern>
+        <pattern-item n="SN"/>
+      </pattern>
+      <action>
+        <out>
+          <chunk>
+            <clip pos="1" part="lem"/>
+            <clip pos="1" part="tags"/>
+            <clip pos="1" part="chcontent"/>
+          </chunk>
+        </out>
+      </action>
+    </rule>
+
+    <rule comment="REGLA: PERS IMET">
+      <pattern>
+        <pattern-item n="PERS"/>
+        <pattern-item n="IMET"/>
+      </pattern>
+      <action>
+        <let>
+          <clip pos="1" part="a_cas"/>
+          <concat>
+            <lit-tag v="gen"/><lit-tag v="pprep"/> 
+          </concat>
+        </let>  
+        <out>
+          <chunk><lit v="u"/><lit-tag v="ADP"/><lit v="{^у"/><lit-tag v="pr"/><lit v="$}"/></chunk>
+          <b pos="1"/>
+          <chunk>
+            <clip pos="1" part="lem"/>
+            <clip pos="1" part="tags"/>
+            <clip pos="1" part="chcontent"/>
+          </chunk>
+        </out>
+      </action>
+    </rule>
+
+
+    <rule comment="REGLA: SN-NOM">
+      <pattern>
+        <pattern-item n="SN-NOM"/>
+        <pattern-item n="PRED"/>
+      </pattern>
+      <action>
+        <choose>
+          <when><test><equal>
+            <clip pos="2" part="a_gen"/>
+            <lit-tag v="GD"/></equal></test>
+            <let><clip pos="2" part="a_gen"/><clip pos="1" part="a_gen"/></let>
+          </when>
+        </choose>
+        <out>
+          <chunk>
+            <clip pos="1" part="lem"/>
+            <clip pos="1" part="tags"/>
+            <clip pos="1" part="chcontent"/>
+          </chunk>
+          <b pos="1"/>
+          <chunk>
+            <clip pos="2" part="lem"/>
+            <clip pos="2" part="tags"/>
+            <clip pos="2" part="chcontent"/>
+          </chunk>
+        </out>
+      </action>
+    </rule>
+
+    <rule comment="REGLA: COP PRASE">
+      <pattern>
+        <pattern-item n="COP.pres"/>
+        <pattern-item n="SN"/>
+      </pattern>
+      <action>
+        <let>
+          <clip pos="2" part="a_cas"/><lit-tag v="nom"/>
+        </let>  
+        <out>
+          <chunk>
+            <clip pos="1" part="lem"/>
+            <clip pos="1" part="tags"/>
+            <clip pos="1" part="chcontent"/>
+          </chunk>
+          <b/>
+            <chunk>
+            <clip pos="2" part="lem"/>
+            <clip pos="2" part="tags"/>
+            <clip pos="2" part="chcontent"/>
+          </chunk>
+        </out>
+      </action>
+    </rule>
+
+
+  </section-rules>
+</interchunk>
+
+<!--
+Resources:
+    http://wiki.apertium.org/wiki/Chunking:_A_full_example
+    http://wiki.apertium.org/wiki/Chunking
+    http://wiki.apertium.org/wiki/Apertium_New_Language_Pair_HOWTO#Transfer_rules
+    http://wiki.apertium.org/wiki/A_long_introduction_to_transfer_rules
+    http://wiki.apertium.org/wiki/Transfer#Adding_structural_transfer_.28grammar.29_rules
+-->
+

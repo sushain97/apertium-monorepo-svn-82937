@@ -1,0 +1,229 @@
+<modes>
+
+
+  <mode name="isl-rus" install="yes">
+    <pipeline>
+      <program name="lt-proc -w">
+        <file name="isl-rus.automorf.bin"/>
+      </program>
+      <program name="cg-proc  -n -w -1">
+        <file name="isl-rus.rlx.bin"/>
+      </program>
+      <program name="apertium-pretransfer"/>
+      <program name="lt-proc -b">
+        <file name="isl-rus.autobil.bin"/>
+      </program>
+      <program name="lrx-proc">
+        <file name="isl-rus.autolex.bin"/>
+      </program>
+      <program name="apertium-transfer -b">
+        <file name="apertium-isl-rus.isl-rus.t1x"/>
+        <file name="isl-rus.t1x.bin"/>
+      </program>
+      <program name="apertium-interchunk">
+        <file name="apertium-isl-rus.isl-rus.t2x"/>
+        <file name="isl-rus.t2x.bin"/>
+      </program>
+      <program name="apertium-postchunk">
+        <file name="apertium-isl-rus.isl-rus.t3x"/>
+        <file name="isl-rus.t3x.bin"/>
+      </program>
+      <program name="lt-proc $1">
+        <file name="isl-rus.autogen.bin"/>
+      </program>
+      <program name="lt-proc -p">
+        <file name="isl-rus.autopgen.bin"/>
+      </program>
+    </pipeline>
+  </mode>
+
+  <mode name="isl-rus-debug" install="no">
+    <pipeline>
+      <program name="lt-proc -w">
+        <file name="isl-rus.automorf.bin"/>
+      </program>
+      <program name="cg-proc  -n -w -1">
+        <file name="isl-rus.rlx.bin"/>
+      </program>
+      <program name="apertium-pretransfer"/>
+      <program name="lt-proc -b">
+        <file name="isl-rus.autobil.bin"/>
+      </program>
+      <program name="lrx-proc">
+        <file name="isl-rus.autolex.bin"/>
+      </program>
+      <program name="apertium-transfer -b">
+        <file name="apertium-isl-rus.isl-rus.t1x"/>
+        <file name="isl-rus.t1x.bin"/>
+      </program>
+      <program name="apertium-interchunk">
+        <file name="apertium-isl-rus.isl-rus.t2x"/>
+        <file name="isl-rus.t2x.bin"/>
+      </program>
+      <program name="apertium-postchunk">
+        <file name="apertium-isl-rus.isl-rus.t3x"/>
+        <file name="isl-rus.t3x.bin"/>
+      </program>
+      <program name="lt-proc -d">
+        <file name="isl-rus.autogen.bin"/>
+      </program>
+    </pipeline>
+  </mode>
+
+  <mode name="isl-rus-disam" install="no">
+    <pipeline>
+      <program name="lt-proc -w">
+        <file name="isl-rus.automorf.bin"/>
+      </program>
+      <program name="cg-conv -a"/>
+      <program name="vislcg3 --trace --grammar">
+        <file name="isl-rus.rlx.bin"/>
+      </program>
+    </pipeline>
+  </mode>
+
+  <mode name="isl-rus-tagger" install="no">
+    <pipeline>
+      <program name="lt-proc -w">
+        <file name="isl-rus.automorf.bin"/>
+      </program>
+      <program name="cg-proc  -n -w -1">
+        <file name="isl-rus.rlx.bin"/>
+      </program>
+    </pipeline>
+  </mode>
+
+  <mode name="isl-rus-biltrans" install="no">
+    <pipeline>
+      <program name="lt-proc -w">
+        <file name="isl-rus.automorf.bin"/>
+      </program>
+      <program name="cg-proc  -n -w -1">
+        <file name="isl-rus.rlx.bin"/>
+      </program>
+      <program name="apertium-pretransfer"/>
+      <program name="lt-proc -b">
+        <file name="isl-rus.autobil.bin"/>
+      </program>
+
+    </pipeline>
+  </mode>
+
+
+
+
+  <!-- == -->
+
+  <mode name="rus-isl" install="yes">
+    <pipeline>
+      <program name="lt-proc -w">
+        <file name="rus-isl.automorf.bin"/>
+      </program>
+      <program name="cg-proc  -n -w -1">
+        <file name="rus-isl.rlx.bin"/>
+      </program>
+      <program name="apertium-pretransfer"/>
+      <program name="lt-proc -b">
+        <file name="rus-isl.autobil.bin"/>
+      </program>
+      <program name="lrx-proc">
+        <file name="rus-isl.autolex.bin"/>
+      </program>
+      <program name="apertium-transfer -b">
+        <file name="apertium-isl-rus.rus-isl.t1x"/>
+        <file name="rus-isl.t1x.bin"/>
+      </program>
+      <program name="apertium-interchunk">
+        <file name="apertium-isl-rus.rus-isl.t2x"/>
+        <file name="rus-isl.t2x.bin"/>
+      </program>
+      <program name="apertium-postchunk">
+        <file name="apertium-isl-rus.rus-isl.t3x"/>
+        <file name="rus-isl.t3x.bin"/>
+      </program>
+      <program name="lt-proc $1">
+        <file name="rus-isl.autogen.bin"/>
+      </program>
+<!--
+      <program name="lt-proc -p">
+        <file name="rus-isl.autopgen.bin"/>
+      </program>
+-->
+    </pipeline>
+  </mode>
+
+  <mode name="rus-isl-debug" install="no">
+    <pipeline>
+      <program name="lt-proc -w">
+        <file name="rus-isl.automorf.bin"/>
+      </program>
+      <program name="cg-proc  -n -w -1">
+        <file name="rus-isl.rlx.bin"/>
+      </program>
+      <program name="apertium-pretransfer"/>
+      <program name="lt-proc -b">
+        <file name="rus-isl.autobil.bin"/>
+      </program>
+      <program name="lrx-proc">
+        <file name="rus-isl.autolex.bin"/>
+      </program>
+      <program name="apertium-transfer -b">
+        <file name="apertium-isl-rus.rus-isl.t1x"/>
+        <file name="rus-isl.t1x.bin"/>
+      </program>
+      <program name="apertium-interchunk">
+        <file name="apertium-isl-rus.rus-isl.t2x"/>
+        <file name="rus-isl.t2x.bin"/>
+      </program>
+      <program name="apertium-postchunk">
+        <file name="apertium-isl-rus.rus-isl.t3x"/>
+        <file name="rus-isl.t3x.bin"/>
+      </program>
+      <program name="lt-proc -d">
+        <file name="rus-isl.autogen.bin"/>
+      </program>
+    </pipeline>
+  </mode>
+
+  <mode name="rus-isl-disam" install="no">
+    <pipeline>
+      <program name="lt-proc -w">
+        <file name="rus-isl.automorf.bin"/>
+      </program>
+      <program name="cg-conv -a"/>
+      <program name="vislcg3 --trace --grammar">
+        <file name="rus-isl.rlx.bin"/>
+      </program>
+    </pipeline>
+  </mode>
+
+  <mode name="rus-isl-tagger" install="no">
+    <pipeline>
+      <program name="lt-proc -w">
+        <file name="rus-isl.automorf.bin"/>
+      </program>
+      <program name="cg-proc  -n -w -1">
+        <file name="rus-isl.rlx.bin"/>
+      </program>
+    </pipeline>
+  </mode>
+
+  <mode name="rus-isl-biltrans" install="no">
+    <pipeline>
+      <program name="lt-proc -w">
+        <file name="rus-isl.automorf.bin"/>
+      </program>
+      <program name="cg-proc  -n -w -1">
+        <file name="rus-isl.rlx.bin"/>
+      </program>
+      <program name="apertium-pretransfer"/>
+      <program name="lt-proc -b">
+        <file name="rus-isl.autobil.bin"/>
+      </program>
+
+    </pipeline>
+  </mode>
+
+
+
+</modes>

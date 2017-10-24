@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<postchunk>
+  <section-def-cats>
+    <def-cat n="nominal">
+      <cat-item name="n"/>
+      <cat-item name="p"/>
+      <cat-item name="itg"/>
+      <cat-item name="pers"/>
+      <cat-item name="rel"/>
+      <cat-item name="z"/>
+    </def-cat>
+    <def-cat n="sent">
+      <cat-item name="punt"/>
+    </def-cat>
+  </section-def-cats>
+
+  <section-def-attrs>
+    <def-attr n="a_anim">
+      <attr-item tags="an"/>
+      <attr-item tags="aa"/>
+      <attr-item tags="nn"/>
+      <attr-item tags="AD"/>
+    </def-attr>
+    <def-attr n="pprep">
+      <attr-item tags="pprep"/>
+    </def-attr>
+    <def-attr n="nbr">
+      <attr-item tags="sg"/>
+    </def-attr>
+    <def-attr n="a_cas">
+      <attr-item tags="nom"/>
+      <attr-item tags="gen"/>
+      <attr-item tags="acc"/>
+      <attr-item tags="ins"/>
+      <attr-item tags="prp"/>
+      <attr-item tags="gen"/>
+    </def-attr>
+  </section-def-attrs>
+
+  <section-def-vars>
+    <def-var n="paraula"/>
+  </section-def-vars>
+
+  <section-rules>
+
+    <rule comment="CHUNK:">
+      <pattern>
+        <pattern-item n="nominal"/>
+      </pattern>
+      <action>
+        <choose>
+          <when>
+            <test><and><equal><clip pos="1" part="a_anim"/><lit-tag v="AD"/></equal>
+                       <equal><clip pos="1" part="a_cas"/><lit-tag v="acc"/></equal></and></test>
+            <let><clip pos="1" part="a_anim"/><lit-tag v="nn"/></let>
+          </when>
+        </choose>
+
+        <choose>
+          <when>
+            <test><equal><clip pos="1" part="a_pprep"/><lit-tag v="pprep"/></equal></test>
+            <let>
+              <clip pos="1" part="a_cas"/>
+              <concat><clip pos="1" part="a_cas"/><lit-tag v="pprep"/></concat>
+           </let>
+          </when>
+        </choose>
+
+        <out>
+          <lu>
+            <clip pos="1" part="whole"/>
+          </lu>
+        </out>
+      </action>
+    </rule>
+
+    <rule comment="CHUNK:">
+      <pattern>
+        <pattern-item n="sent"/>
+      </pattern>
+      <action>
+        <out>
+          <lu>
+            <clip pos="1" part="whole"/>
+          </lu>
+        </out>
+      </action>
+    </rule>
+
+  </section-rules>
+</postchunk>
+
+<!--
+Resources:
+    http://wiki.apertium.org/wiki/Chunking:_A_full_example
+    http://wiki.apertium.org/wiki/Chunking
+    http://wiki.apertium.org/wiki/Apertium_New_Language_Pair_HOWTO#Transfer_rules
+    http://wiki.apertium.org/wiki/A_long_introduction_to_transfer_rules
+    http://wiki.apertium.org/wiki/Transfer#Adding_structural_transfer_.28grammar.29_rules
+-->
+

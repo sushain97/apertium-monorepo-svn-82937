@@ -1,0 +1,24 @@
+#!/usr/bin/php5
+<?php
+
+function rule($str) {
+	if (strpos($str, "`") !== false) {
+		$str = str_replace("'", "", $str);
+		$str = str_replace("`", "'", $str);
+	}
+	return str_replace("'", "\xCC\x81", $str);
+}
+
+$fp = fopen("php://stdin", 'r');
+if ($fp) {
+    while (!feof($fp)) {
+        $line = fgets($fp);
+	if ($line) {
+		list($inflected_forms, $lexeme) = explode(":", rtrim($line));
+		echo (rule($inflected_forms)).":".(rule($lexeme))."\n";
+	}
+    }
+    fclose($fp);
+}
+
+?>

@@ -1,0 +1,2211 @@
+<?xml version="1.0" encoding="utf-8"?>
+<transfer default="chunk">
+  <section-def-cats>
+    <def-cat n="sent">
+      <cat-item tags="sent"/>
+    </def-cat>
+    <def-cat n="prn_subj">
+      <cat-item lemma="prpers" tags="prn.subj.*"/>
+      <cat-item lemma="prpers" tags="prn.*"/>
+    </def-cat>
+    <def-cat n="prn_ref">
+      <cat-item tags="prn.ref.*"/>
+    </def-cat>
+    <def-cat n="verbcj">
+      <cat-item tags="vblex.past"/>
+      <cat-item tags="vblex.pres"/>
+      <cat-item tags="vblex.pri"/>
+      <cat-item tags="vblex.past.*"/>
+      <cat-item tags="vblex.pres.*"/>
+      <cat-item tags="vblex.pri.*"/>
+    </def-cat>
+    <def-cat n="art">
+      <cat-item tags="det.def.*"/>
+    </def-cat>
+    <def-cat n="det">
+      <cat-item tags="det.ind.*"/>
+      <cat-item tags="det.dem.*"/>
+      <cat-item tags="det.gen.*"/>
+      <cat-item tags="det.pos.*"/>
+      <cat-item tags="det.ord.*"/>
+      <cat-item tags="det.itg.*"/>
+    </def-cat>
+    <def-cat n="pr">
+      <cat-item tags="pr"/>
+    </def-cat>
+    <def-cat n="num">
+      <cat-item tags="num.*"/>
+    </def-cat>
+    <def-cat n="nom">
+      <cat-item tags="n.*"/>
+      <cat-item tags="np.*"/>
+    </def-cat>
+    <def-cat n="adj">
+      <cat-item tags="adj"/>
+      <cat-item tags="adj.*"/>
+    </def-cat>
+    <def-cat n="adv">
+      <cat-item tags="adv"/>
+      <cat-item tags="adv.*"/>
+      <cat-item tags="preadv"/>
+      <cat-item tags="preadv.*"/>
+      <cat-item tags="cnjadv"/>
+      <cat-item tags="cnjadv.*"/>
+    </def-cat>
+    <def-cat n="genitive">
+      <cat-item tags="gen"/>
+    </def-cat>
+    <def-cat n="vblex">
+      <cat-item tags="vblex.*"/>
+    </def-cat>
+    
+    <def-cat n="vbser">
+      <cat-item tags="vbser.*"/>
+    </def-cat>
+	<!--to be verb, present indefinite -->
+    <def-cat n="vbser_pri">
+      <cat-item tags="vbser.pri"/>
+      <cat-item tags="vbser.pri.*"/>
+      <cat-item tags="vbser.pres"/>
+      <cat-item tags="vbser.pres.*"/>
+    </def-cat>
+    <def-cat n="vbser_past">
+      <cat-item tags="vbser.past"/>
+      <cat-item tags="vbser.past.*"/>
+    </def-cat>
+
+    <def-cat n="vbhaver">
+      <cat-item tags="vbhaver.*"/>
+      <cat-item tags="vbhaver.pres"/>
+    </def-cat>
+    <def-cat n="vaux">
+      <cat-item tags="vaux.*"/>
+    </def-cat>
+
+    <def-cat n="ftaux">
+      <cat-item lemma="shall" tags="vaux.inf"/>
+      <cat-item lemma="will" tags="vaux.inf"/>
+    </def-cat>
+
+    <def-cat n="be">
+      <cat-item lemma="be" tags="vbser.inf"/>
+    </def-cat>
+    <def-cat n="been">
+      <cat-item lemma="been" tags="vbser.pp"/>
+      <cat-item lemma="been" tags="vblex.pp"/>
+    </def-cat>
+
+	<!--do verb-->
+    <def-cat n="vbdo">
+      <cat-item tags="vbdo.*"/>
+    </def-cat>
+
+	<!--gerund-->
+    <def-cat n="vbger">
+      <cat-item tags="vblex.ger"/>
+      <cat-item tags="vblex.ger.*"/>
+    </def-cat>
+    
+  </section-def-cats>
+
+  <section-def-attrs>
+    <def-attr n="a_nom">
+      <attr-item tags="n"/>
+      <attr-item tags="np.ant"/>
+      <attr-item tags="np.top"/>
+      <attr-item tags="np.org"/>
+      <attr-item tags="np.al"/>
+    </def-attr>
+    <def-attr n="a_prn">
+      <attr-item tags="prn"/>
+    </def-attr>
+    <def-attr n="a_post">
+      <attr-item tags="post"/>
+    </def-attr>
+    <def-attr n="tipus_prn">
+      <attr-item tags="ref"/>
+      <attr-item tags="subj"/>
+      <attr-item tags="obj"/>
+      <attr-item tags="dem"/>
+    </def-attr>
+    <def-attr n="anim">
+      <attr-item tags="an"/>
+      <attr-item tags="nn"/>
+      <attr-item tags="aa"/>
+      <attr-item tags="el"/>
+      <attr-item tags="hu"/>
+    </def-attr>
+    <def-attr n="gen">
+      <attr-item tags="m"/>
+      <attr-item tags="f"/>
+      <attr-item tags="nt"/>
+      <attr-item tags="mf"/>
+      <attr-item tags="GD"/>
+    </def-attr>
+    <def-attr n="nbr">
+      <attr-item tags="sg"/>
+      <attr-item tags="pl"/>
+      <attr-item tags="sp"/>
+      <attr-item tags="ND"/>
+    </def-attr>
+    <def-attr n="pers">
+      <attr-item tags="p1"/>
+      <attr-item tags="p2"/>
+      <attr-item tags="p3"/>
+      <attr-item tags="PD"/>
+    </def-attr>
+    <def-attr n="temps">
+      <attr-item tags="pres"/>
+      <attr-item tags="pres.smpl"/>
+      <attr-item tags="pres.cnt"/>
+      <attr-item tags="past"/>
+      <attr-item tags="past.smpl"/>
+      <attr-item tags="past.cnt"/>  
+      <attr-item tags="ft"/>
+      <attr-item tags="ft.smpl"/>
+      <attr-item tags="ft.cnt"/> 
+      <attr-item tags="prft"/>     
+      <attr-item tags="plprft"/>     
+      <attr-item tags="ger"/>  
+      <attr-item tags="inf"/>
+      <!-- present indefinite? -->
+      <attr-item tags="pri"/>
+      <!-- past participle? -->
+      <attr-item tags="pp"/>
+      <attr-item tags="TD"/>
+    </def-attr>
+    
+    <!-- Adjective Attributes -->
+    <def-attr n="a_adj">          
+      <attr-item tags="adj"/>
+      <attr-item tags="adj.psint"/>
+      <attr-item tags="adj.psint.sup"/>
+      <attr-item tags="adj.sint.comp"/>
+      <attr-item tags="adj.sint"/>
+      <attr-item tags="adj.sint.sup"/>
+    </def-attr>
+
+     <def-attr n="a_adv">
+      <attr-item tags="adv"/>
+    </def-attr>
+
+     <def-attr n="a_art">
+      <attr-item tags="det.def"/>
+    </def-attr>
+
+     <def-attr n="a_det">
+      <attr-item tags="det.ind"/>
+      <attr-item tags="det.dem"/>
+      <attr-item tags="det.gen"/>
+      <attr-item tags="det.pos"/>
+      <attr-item tags="det.ord"/>
+    </def-attr>
+    
+     <def-attr n="a_num">
+      <attr-item tags="num"/>
+      <attr-item tags="num.hu"/>
+    </def-attr>
+
+    <!-- Vblex Attribute -->
+    <def-attr n="a_vblex">
+      <attr-item tags="ger"/>
+    </def-attr>
+
+  </section-def-attrs>
+
+  <section-def-vars>
+    <def-var n="number"/>
+    <def-var n="case" v="&lt;nom&gt;"/>
+    <def-var n="genere"/>
+    <def-var n="person"/>
+    <def-var n="determiner"/>
+    <def-var n="temp"/>
+    <def-var n="EOS"/>
+  </section-def-vars>
+
+  <section-def-lists>
+
+    <def-list n="possessiveverb"><!--forces the subject to be of genitive/possessive case-->
+      <list-item v="have"/>	
+      <list-item v="need"/>	
+    </def-list>
+
+  </section-def-lists>
+
+
+  <!--macros here-->
+  <section-def-macros>
+
+  	<def-macro n="set_third_person" npar="0">
+  		<let>
+		  <var n="person"/>
+		  <concat>
+			<lit-tag v="p3"/>
+			<lit-tag v="infml"/>
+		  </concat>
+		</let>
+  	</def-macro>
+		
+	<!--set the correct person attribute in the "person" variable specially for "prn_subj"-->
+  	<def-macro n="set_person" npar="1">
+		<choose>
+		<when>
+			<test>
+			  <equal>
+				<clip pos="1" side="tl" part="pers"/>
+				<lit-tag v="p1"/>
+			  </equal>
+			</test>   
+			<let>
+			  <var n="person"/>
+			  <clip pos="1" side="tl" part="pers"/>
+			</let>
+		  </when>
+		  <when>
+			<test>
+			  <equal>
+				<clip pos="1" side="tl" part="pers"/>
+				<lit-tag v="p2"/>
+			  </equal>
+			</test>   
+			<let>
+			  <var n="person"/>
+			  <concat>
+				<clip pos="1" side="tl" part="pers"/>
+				<lit-tag v="fam"/>
+			  </concat>
+			</let>
+		  </when>
+		  <otherwise>
+			<let>
+			  <var n="person"/>
+			  <concat>
+				<clip pos="1" side="tl" part="pers"/>
+				<lit-tag v="infml"/>
+			  </concat>
+			</let>
+		  </otherwise>  
+		</choose>
+		<let>
+		  <clip pos="1" side="tl" part="pers"/>
+		  <var n="person"/>
+		</let>
+  	</def-macro>
+
+	<!--replace the "pri" to "pres" and "past" to "past.plprft"-->
+  	<def-macro n="fix_vbser_temps" npar="1">
+        <choose>
+          <when>
+            <test>
+  				<or>
+	  				<equal>
+	  					<clip pos="1" side="sl" part="temps"/>
+						<lit-tag v="pri"/>
+	  				</equal>
+	  				<equal>
+	  					<clip pos="1" side="sl" part="temps"/>
+						<lit-tag v="pres"/>
+	  				</equal>
+  				</or>
+            </test>
+            <let>
+                <!-- replace 'pri' with 'pres.smpl' -->
+                <clip pos="1" side="tl" part="temps"/>
+				<concat>
+                	<lit-tag v="pres"/>
+				</concat>
+            </let>
+          </when>
+          <when>
+            <test>
+			  <or>
+              <equal> 
+                <clip pos="1" side="sl" part="temps"/>
+                <lit-tag v="past"/>
+              </equal>
+              <equal> 
+                <clip pos="1" side="sl" part="temps"/>
+                <lit-tag v="pp"/>
+              </equal>
+			  </or>
+            </test>
+            <let>
+                <clip pos="1" side="tl" part="temps"/>
+                <concat>
+                <lit-tag v="past"/>
+                <lit-tag v="plprft"/>
+                </concat>
+            </let>
+          </when>
+        </choose>
+  	</def-macro>
+
+	<!--replace the "pri" or "pres" to "prft" and "past" to "plprft"-->
+  	<def-macro n="fix_vbhaver_temps" npar="1">
+      	<choose>
+      		<when>
+      			<test>
+      				<or>
+		  				<equal>
+		  					<clip pos="1" side="sl" part="temps"/>
+							<lit-tag v="pri"/>
+		  				</equal>
+		  				<equal>
+		  					<clip pos="1" side="sl" part="temps"/>
+							<lit-tag v="pres"/>
+		  				</equal>
+      				</or>
+      			</test>
+      			<let>
+      				<clip pos="1" side="tl" part="temps"/>
+					<lit-tag v="prft"/>
+      			</let>
+      		</when>
+      		<when>
+      			<test>
+      				<equal>
+      					<clip pos="1" side="tl" part="temps"/>
+						<lit-tag v="past"/>
+      				</equal>
+      			</test>
+      			<let>
+      				<clip pos="1" side="tl" part="temps"/>
+					<lit-tag v="plprft"/>
+      			</let>
+      		</when>
+      	</choose>
+  	</def-macro>
+  	
+	<!--replaces 'cnt' for 'ger'-->
+  	<def-macro n="fix_ger_cnt" npar="2">
+        <choose>
+          <when>
+            <test>
+              <equal>
+                <!-- if the verb has gerund tag -->
+                <clip pos="2" side="sl" part="a_vblex"/>
+                <lit-tag v="ger"/>
+              </equal>
+            </test>
+            <let>
+              <!-- add cnt tag -->
+              <clip pos="1" side="tl" part="temps"/>
+              <concat>
+                <clip pos="1" side="tl" part="temps"/>
+                <lit-tag v="cnt"/>
+              </concat>
+            </let>
+          </when>
+        </choose>
+  	</def-macro>
+
+
+	<!--append 'smpl' to indefinite tenses of source part-->
+  	<def-macro n="cond_si_sl" npar="1">
+      	<choose>	
+          <!-- Condition for simple present -->
+          <when>
+            <test>
+              <equal> 
+                <clip pos="1" side="sl" part="temps"/>
+                <lit-tag v="pres"/>
+              </equal>
+            </test>
+            <let>
+              <clip pos="1" side="sl" part="temps"/>
+              <concat>
+                <clip pos="1" side="sl" part="temps"/>
+                <lit-tag v="smpl"/>
+              </concat>
+            </let>
+          </when>
+
+          <!-- Condition for present indefinite -->
+          <when>
+            <test>
+              <equal> 
+                <clip pos="1" side="sl" part="temps"/>
+                <lit-tag v="pri"/>
+              </equal>
+            </test>
+            <let>
+              <clip pos="1" side="sl" part="temps"/>
+              <concat>
+                <lit-tag v="pres"/>
+                <lit-tag v="smpl"/>
+              </concat>
+            </let>
+          </when>
+
+          <!-- Condition for past indefinitie -->
+          <when>
+            <test>
+              <equal> 
+                <clip pos="1" side="sl" part="temps"/>
+                <lit-tag v="past"/>
+              </equal>
+            </test>
+            <let>
+              <clip pos="1" side="sl" part="temps"/>
+              <concat>
+                <clip pos="1" side="sl" part="temps"/>
+                <lit-tag v="smpl"/>
+              </concat>
+            </let>
+          </when>
+        </choose>
+  	</def-macro>
+
+	<!--append 'smpl' to indefinite tenses of target part-->
+  	<def-macro n="cond_si_tl" npar="1">
+      	<choose>	
+          <!-- Condition for simple present -->
+          <when>
+            <test>
+              <equal> 
+                <clip pos="1" side="sl" part="temps"/>
+                <lit-tag v="pres"/>
+              </equal>
+            </test>
+            <let>
+              <clip pos="1" side="tl" part="temps"/>
+              <concat>
+                <clip pos="1" side="tl" part="temps"/>
+                <lit-tag v="smpl"/>
+              </concat>
+            </let>
+          </when>
+
+          <!-- Condition for present indefinite -->
+          <when>
+            <test>
+              <equal> 
+                <clip pos="1" side="sl" part="temps"/>
+                <lit-tag v="pri"/>
+              </equal>
+            </test>
+            <let>
+              <clip pos="1" side="tl" part="temps"/>
+              <concat>
+                <lit-tag v="pres"/>
+                <lit-tag v="smpl"/>
+              </concat>
+            </let>
+          </when>
+
+          <!-- Condition for past indefinitie -->
+          <when>
+            <test>
+              <equal> 
+                <clip pos="1" side="sl" part="temps"/>
+                <lit-tag v="past"/>
+              </equal>
+            </test>
+            <let>
+              <clip pos="1" side="tl" part="temps"/>
+              <concat>
+                <clip pos="1" side="tl" part="temps"/>
+                <lit-tag v="smpl"/>
+              </concat>
+            </let>
+          </when>
+        </choose>
+  	</def-macro>
+
+
+	<!--mainly appends animacy to এক<num>-->
+  	<def-macro n="fix_determiner" npar="2">
+	<choose>
+		<when>
+		<!--if the determiner is a<det><ind><sg> append animacy of nom to the এক<num>-->
+			<test>
+				<and>
+					<equal> 
+						<clip pos="1" side="sl" part="a_det"/>
+						<lit-tag v="det.ind"/>
+					</equal>
+					<equal> 
+						<clip pos="1" side="sl" part="nbr"/>
+						<lit-tag v="sg"/>
+					</equal>
+				</and>
+			</test>
+			<let>
+				<var n="determiner"/>
+				<concat>
+					<clip pos="1" side="tl" part="lemh"/>
+					<concat>
+						<concat>
+							<clip pos="1" side="tl" part="a_num"/>
+							<clip pos="2" side="tl" part="anim"/>
+						</concat>
+						<clip pos="1" side="tl" part="lemq"/>
+					</concat>
+				</concat>
+			</let>
+		</when>
+		<!--in all oher cases just put the determiner attribute-->
+		<otherwise>
+			<let>
+				<var n="determiner"/>
+				<clip pos="1" side="tl" part="whole"/>
+			</let>
+		</otherwise>
+		</choose>
+  	</def-macro>
+
+	<!--puts 'def' tag to the 'temp' variable for singular nominals-->
+  	<def-macro n="add_def" npar="1">
+		<choose>
+			<!--when nominal is noun and singular add "def" tag-->
+			<when>
+				<test>
+					<and>
+						<equal>
+							<clip pos="1" side="tl" part="nbr"/>
+							<lit-tag v="sg"/>
+						</equal>
+						<equal>
+							<clip pos="1" side="tl" part="a_nom"/>
+							<lit-tag v="n"/>
+						</equal>
+					</and>
+				</test>
+				<let>
+					<var n="temp"/>
+					<lit-tag v="def"/>
+				</let>
+			</when>
+		</choose>
+  	  </def-macro>
+
+  </section-def-macros>  
+
+
+
+
+
+
+<!--rules here-->
+  <section-rules>
+
+    <!-- Sintagmas nominales -->
+    <rule comment="REGLA: NOM">
+      <pattern>
+        <pattern-item n="nom"/>
+      </pattern>
+      <action>
+		<!--by deafult, 3rd person informal-->
+		<call-macro n="set_third_person"/>
+        <out>
+          <chunk name="nom" case="caseFirstWord">
+            <tags>
+              <tag><lit-tag v="SN"/></tag>
+              <tag><clip pos="1" side="tl" part="gen"/></tag>
+              <tag><clip pos="1" side="tl" part="nbr"/></tag>
+              <tag><lit-tag v="nom"/></tag>
+              <tag><var n="person"/></tag>
+            </tags>
+            <lu>
+              <clip pos="1" side="tl" part="lemh"/>
+              <clip pos="1" side="tl" part="a_nom"/>
+              <clip pos="1" side="tl" part="gen" link-to="2"/> 
+              <clip pos="1" side="tl" part="anim"/> 
+              <clip pos="1" side="tl" part="nbr" link-to="3"/>
+              <lit-tag v="4"/>
+              <clip pos="1" side="tl" part="lemq"/>
+            </lu>
+          </chunk>
+        </out>
+      </action>
+    </rule>
+
+    <!-- New rule for ADJ NOM -->
+    <rule comment="RELGA: GERUND NOM">
+      <pattern>
+        <pattern-item n="vbger"/>
+        <pattern-item n="nom"/>
+      </pattern>
+      <action>
+        <out>
+          <chunk name="ger_nom" case="caseFirstWord">
+            <tags>
+              <tag><lit-tag v="SN"/></tag>
+              <tag><clip pos="2" side="tl" part="gen"/></tag>
+              <tag><clip pos="2" side="tl" part="nbr"/></tag>
+              <tag><lit-tag v="nom"/></tag>
+              <tag><var n="person"/></tag>
+            </tags>
+            <lu>
+              <clip pos="2" side="tl" part="lemh"/>
+              <clip pos="2" side="tl" part="a_nom"/>
+              <clip pos="2" side="tl" part="gen" link-to="2"/> 
+              <clip pos="2" side="tl" part="anim"/> 
+              <clip pos="2" side="tl" part="nbr" link-to="3"/>
+              <lit-tag v="4"/>
+              <clip pos="2" side="tl" part="lemq"/>
+            </lu>
+            <b pos="1"/>
+			<lu>
+              <clip pos="1" side="tl" part="lemh"/>
+              <lit-tag v="vblex"/>
+              <lit-tag v="ger"/>        
+              <clip pos="1" side="tl" part="lemq"/>
+			</lu>
+          </chunk>
+        </out>
+      </action>
+    </rule>
+
+    <!-- New rule for ADJ NOM -->
+    <rule comment="RELGA: ADJ NOM">
+      <pattern>
+        <pattern-item n="adj"/>
+        <pattern-item n="nom"/>
+      </pattern>
+      <action>
+        <out>
+          <chunk name="adj_nom" case="caseFirstWord">
+            <tags>
+              <tag><lit-tag v="SN"/></tag>
+              <tag><clip pos="2" side="tl" part="gen"/></tag>
+              <tag><clip pos="2" side="tl" part="nbr"/></tag>
+              <tag><lit-tag v="nom"/></tag>
+              <tag><var n="person"/></tag>
+            </tags>
+            <lu>
+              <clip pos="1" side="tl" part="lemh"/>
+              <clip pos="1" side="tl" part="a_adj"/>
+              <clip pos="1" side="tl" part="gen"/>        
+              <clip pos="1" side="tl" part="lemq"/>
+            </lu>
+            <b pos="1"/>
+            <lu>
+              <clip pos="2" side="tl" part="lemh"/>
+              <clip pos="2" side="tl" part="a_nom"/>
+              <clip pos="2" side="tl" part="gen" link-to="2"/> 
+              <clip pos="2" side="tl" part="anim"/> 
+              <clip pos="2" side="tl" part="nbr" link-to="3"/>
+              <lit-tag v="4"/>
+              <clip pos="2" side="tl" part="lemq"/>
+            </lu>
+          </chunk>
+        </out>
+      </action>
+    </rule>
+
+
+    <!-- New rule for ADJ NOM with adverb -->
+    <rule comment="RELGA: ADV ADJ NOM">
+      <pattern>
+        <pattern-item n="adv"/>
+        <pattern-item n="adj"/>
+        <pattern-item n="nom"/>
+      </pattern>
+      <action>
+        <out>
+          <chunk name="adv_adj_nom" case="caseFirstWord">
+            <tags>
+              <tag><lit-tag v="SN"/></tag>
+              <tag><clip pos="3" side="tl" part="gen"/></tag>
+              <tag><clip pos="3" side="tl" part="nbr"/></tag>
+              <tag><lit-tag v="nom"/></tag>
+              <tag><var n="person"/></tag>
+            </tags>
+			<lu>
+              <clip pos="1" side="tl" part="whole"/>
+			</lu>
+            <b pos="1"/>
+            <lu>
+              <clip pos="2" side="tl" part="lemh"/>
+              <clip pos="2" side="tl" part="a_adj"/>
+              <clip pos="2" side="tl" part="gen"/>        
+              <clip pos="2" side="tl" part="lemq"/>
+            </lu>
+            <b pos="2"/>
+            <lu>
+              <clip pos="3" side="tl" part="lemh"/>
+              <clip pos="3" side="tl" part="a_nom"/>
+              <clip pos="3" side="tl" part="gen" link-to="2"/> 
+              <clip pos="3" side="tl" part="anim"/> 
+              <clip pos="3" side="tl" part="nbr" link-to="3"/>
+              <lit-tag v="4"/>
+              <clip pos="3" side="tl" part="lemq"/>
+            </lu>
+          </chunk>
+        </out>
+      </action>
+    </rule>
+
+
+    <rule comment="RELGA: ADJ">
+      <pattern>
+        <pattern-item n="adj"/>
+      </pattern>
+      <action>
+        <out>
+          <chunk name="adj" case="caseFirstWord">
+            <tags>
+              <tag><lit-tag v="SN"/></tag>
+              <tag><clip pos="1" side="tl" part="a_adj"/></tag>
+              <tag><clip pos="1" side="tl" part="gen"/></tag>
+            </tags>
+            <lu>
+              <clip pos="1" side="tl" part="lemh"/>
+              <clip pos="1" side="tl" part="a_adj" link-to="2"/>
+              <clip pos="1" side="tl" part="a_adj" link-to="3"/>
+              <clip pos="1" side="tl" part="gen" link-to="4"/>
+              <clip pos="1" side="tl" part="lemq"/>
+            </lu>
+          </chunk>
+        </out>
+      </action>
+    </rule>
+
+    <rule comment="RELGA: ADV">
+      <pattern>
+        <pattern-item n="adv"/>
+      </pattern>
+      <action>
+        <out>
+          <chunk name="adv" case="caseFirstWord">
+            <tags>
+              <tag><lit-tag v="ADV"/></tag>
+              <tag><clip pos="1" side="tl" part="a_adv"/></tag>
+            </tags>
+            <lu>
+              <clip pos="1" side="tl" part="lemh"/>
+			  <clip pos="1" side="tl" part="a_adv"/>
+              <clip pos="1" side="tl" part="lemq"/>
+            </lu>
+          </chunk>
+        </out>
+      </action>
+    </rule>
+
+    <rule comment="RELGA: ADV ADJ">
+      <pattern>
+        <pattern-item n="adv"/>
+        <pattern-item n="adj"/>
+      </pattern>
+      <action>
+        <out>
+          <chunk name="adv_adj" case="caseFirstWord">
+            <tags>
+              <tag><lit-tag v="SN"/></tag>
+              <tag><clip pos="2" side="tl" part="a_adj"/></tag>
+              <tag><clip pos="2" side="tl" part="gen"/></tag>
+            </tags>
+			<lu>
+              <clip pos="1" side="tl" part="whole"/>
+			</lu>
+            <b pos="1"/>
+            <lu>
+              <clip pos="2" side="tl" part="lemh"/>
+              <clip pos="2" side="tl" part="a_adj" link-to="2"/>
+              <clip pos="2" side="tl" part="a_adj" link-to="3"/>
+              <clip pos="2" side="tl" part="gen" link-to="4"/>
+              <clip pos="2" side="tl" part="lemq"/>
+            </lu>
+          </chunk>
+        </out>
+      </action>
+    </rule>
+
+    <rule comment="REGLA: ART NOM">
+      <pattern>
+        <pattern-item n="art"/>
+        <pattern-item n="nom"/>
+      </pattern>
+      <action>
+		<!--by deafult, 3rd person informal-->
+		<call-macro n="set_third_person"/>
+		<let>
+		  	<var n="temp"/>
+			<lit-tag v=""/>
+		</let>
+		<call-macro n="add_def">
+			<with-param pos="2"/>
+		</call-macro>
+        <out>
+          <chunk name="art_nom" case="caseFirstWord">
+            <tags>
+              <tag><lit-tag v="SN"/></tag>
+              <tag><clip pos="2" side="tl" part="gen"/></tag>
+              <tag><clip pos="2" side="tl" part="nbr"/></tag>
+              <tag><lit-tag v="nom"/></tag>
+              <tag><var n="temp"/></tag><!--'def' tag when singular-->
+              <tag><var n="person"/></tag>
+            </tags>
+            <lu>
+              <clip pos="2" side="tl" part="lemh"/>
+              <clip pos="2" side="tl" part="a_nom"/>
+              <clip pos="2" side="tl" part="gen" link-to="2"/> 
+              <clip pos="2" side="tl" part="anim"/> 
+              <clip pos="2" side="tl" part="nbr" link-to="3"/>
+              <lit-tag v="4"/>
+              <lit-tag v="5"/>
+              <clip pos="2" side="tl" part="lemq"/>
+            </lu>
+          </chunk>
+        </out>
+      </action>
+    </rule>
+
+    <rule comment="REGLA: ART NOM NOM">
+      <pattern>
+        <pattern-item n="art"/>
+        <pattern-item n="nom"/>
+        <pattern-item n="nom"/>
+      </pattern>
+      <action>
+		<!--by deafult, 3rd person informal-->
+		<call-macro n="set_third_person"/>
+		<let>
+		  	<var n="temp"/>
+			<lit-tag v=""/>
+		</let>
+		<call-macro n="add_def">
+			<with-param pos="3"/>
+		</call-macro>
+        <out>
+          <chunk name="art_nom_nom" case="caseFirstWord">
+            <tags>
+              <tag><lit-tag v="SN"/></tag>
+              <tag><clip pos="3" side="tl" part="gen"/></tag>
+              <tag><clip pos="3" side="tl" part="nbr"/></tag>
+              <tag><lit-tag v="nom"/></tag>
+              <!--tag><var n="temp"/></tag--><!--'def' tag when singular-->
+              <tag><var n="person"/></tag>
+            </tags>
+            <lu>
+              <clip pos="2" side="tl" part="lemh"/>
+              <clip pos="2" side="tl" part="a_nom"/>
+              <clip pos="2" side="tl" part="gen"/> 
+              <clip pos="2" side="tl" part="anim"/> 
+              <clip pos="2" side="tl" part="nbr"/>
+			  <lit-tag v="4"/>
+              <clip pos="2" side="tl" part="lemq"/>
+            </lu>
+            <b pos="1"/>
+            <lu>
+              <clip pos="3" side="tl" part="lemh"/>
+              <clip pos="3" side="tl" part="a_nom"/>
+              <clip pos="3" side="tl" part="gen" link-to="2"/> 
+              <clip pos="3" side="tl" part="anim"/> 
+              <clip pos="3" side="tl" part="nbr" link-to="3"/>
+              <lit-tag v="4"/>
+              <clip pos="3" side="tl" part="lemq"/>
+            </lu>
+          </chunk>
+        </out>
+      </action>
+    </rule>
+
+
+    <rule comment="REGLA: ART ADJ NOM">
+      <pattern>
+        <pattern-item n="art"/>
+        <pattern-item n="adj"/>
+        <pattern-item n="nom"/>
+      </pattern>
+      <action>
+		<!--by deafult, 3rd person informal-->
+		<call-macro n="set_third_person"/>
+		<let>
+		  	<var n="temp"/>
+			<lit-tag v=""/>
+		</let>
+		<choose>
+			<!--when nominal is noun and singular add "def" tag-->
+			<when>
+				<test>
+					<and>
+						<equal>
+							<clip pos="3" side="tl" part="nbr"/>
+							<lit-tag v="sg"/>
+						</equal>
+						<equal>
+							<clip pos="3" side="tl" part="a_nom"/>
+							<lit-tag v="n"/>
+						</equal>
+					</and>
+				</test>
+				<let>
+					<var n="temp"/>
+					<lit-tag v="def"/>
+				</let>
+			</when>
+		</choose>
+        <out>
+          <chunk name="art_adj_nom" case="caseFirstWord">
+            <tags>
+              <tag><lit-tag v="SN"/></tag>
+              <tag><clip pos="3" side="tl" part="gen"/></tag>
+              <tag><clip pos="3" side="tl" part="nbr"/></tag>
+              <tag><lit-tag v="nom"/></tag>
+              <tag><var n="temp"/></tag><!--'def' tag when singular-->
+              <tag><var n="person"/></tag>
+            </tags>
+			<lu>
+              <clip pos="2" side="tl" part="whole"/>
+			</lu>
+            <b pos="1"/>
+            <lu>
+              <clip pos="3" side="tl" part="lemh"/>
+              <clip pos="3" side="tl" part="a_nom"/>
+              <clip pos="3" side="tl" part="gen" link-to="2"/> 
+              <clip pos="3" side="tl" part="anim"/> 
+              <clip pos="3" side="tl" part="nbr" link-to="3"/>
+              <lit-tag v="4"/>
+              <lit-tag v="5"/>
+              <clip pos="3" side="tl" part="lemq"/>
+            </lu>
+          </chunk>
+        </out>
+      </action>
+    </rule>
+
+
+    <rule comment="REGLA: DET NOM">
+      <pattern>
+        <pattern-item n="det"/>
+        <pattern-item n="nom"/>
+      </pattern>
+      <action>
+		<!--assign proper determiner tag into the variable 'determiner'-->
+		<call-macro n="fix_determiner">
+			<with-param pos="1"/>
+			<with-param pos="2"/>
+		</call-macro>
+  		<!--by deafult, 3rd person informal-->
+		<call-macro n="set_third_person"/>
+        <out>
+          <chunk name="det_nom" case="caseFirstWord">
+            <tags>
+              <tag><lit-tag v="SN"/></tag>
+              <tag><clip pos="2" side="tl" part="gen"/></tag>
+              <tag><clip pos="2" side="tl" part="nbr"/></tag>
+              <tag><lit-tag v="nom"/></tag>
+              <tag><var n="person"/></tag>
+            </tags>
+            <lu>
+              <var n="determiner"/>     
+            </lu>
+            <b pos="1"/>
+            <lu>
+              <clip pos="2" side="tl" part="lemh"/>
+              <clip pos="2" side="tl" part="a_nom"/>
+              <clip pos="2" side="tl" part="gen" link-to="2"/> 
+              <clip pos="2" side="tl" part="anim"/> 
+              <clip pos="2" side="tl" part="nbr" link-to="3"/>
+              <lit-tag v="4"/>
+              <clip pos="2" side="tl" part="lemq"/>
+            </lu>
+          </chunk>
+        </out>
+      </action>
+    </rule>
+
+
+    <rule comment="REGLA: DET ADJ NOM">
+      <pattern>
+        <pattern-item n="det"/>
+        <pattern-item n="adj"/>
+        <pattern-item n="nom"/>
+      </pattern>
+      <action>
+		<call-macro n="fix_determiner">
+			<with-param pos="1"/>
+			<with-param pos="3"/>
+		</call-macro>
+		<!--by deafult, 3rd person informal-->
+		<call-macro n="set_third_person"/>
+        <out>
+          <chunk name="det_adj_nom" case="caseFirstWord">
+            <tags>
+              <tag><lit-tag v="SN"/></tag>
+              <tag><clip pos="3" side="tl" part="gen"/></tag>
+              <tag><clip pos="3" side="tl" part="anim"/></tag>
+              <tag><clip pos="3" side="tl" part="nbr"/></tag>
+              <tag><lit-tag v="nom"/></tag>
+              <tag><var n="person"/></tag>
+            </tags>
+            <lu>
+              <var n="determiner"/>     
+            </lu>
+            <b pos="1"/>
+            <lu>
+              <clip pos="2" side="tl" part="lemh"/>
+              <clip pos="2" side="tl" part="a_adj"/>
+              <clip pos="2" side="tl" part="gen"/>        
+              <clip pos="2" side="tl" part="lemq"/>
+            </lu>
+            <b pos="2"/>
+            <lu>
+              <clip pos="3" side="tl" part="lemh"/>
+              <clip pos="3" side="tl" part="a_nom"/>
+              <clip pos="3" side="tl" part="gen" link-to="2"/> 
+              <clip pos="3" side="tl" part="anim" link-to="3"/> 
+              <clip pos="3" side="tl" part="nbr" link-to="4"/>
+              <lit-tag v="5"/>
+              <clip pos="3" side="tl" part="lemq"/>
+            </lu>
+          </chunk>
+        </out>
+      </action>
+    </rule>
+
+
+    <rule comment="REGLA: GERUND DET ADJ NOM; [Getting] [a] [good] [job]">
+      <pattern>
+        <pattern-item n="vbger"/>
+        <pattern-item n="det"/>
+        <pattern-item n="adj"/>
+        <pattern-item n="nom"/>
+      </pattern>
+      <action>
+		<call-macro n="fix_determiner">
+			<with-param pos="2"/>
+			<with-param pos="4"/>
+		</call-macro>
+		<!--by deafult, 3rd person informal-->
+		<call-macro n="set_third_person"/>
+        <out>
+          <chunk name="vbger_det_adj_nom" case="caseFirstWord">
+            <tags>
+              <tag><lit-tag v="SN"/></tag>
+              <tag><clip pos="4" side="tl" part="gen"/></tag>
+              <tag><clip pos="4" side="tl" part="anim"/></tag>
+              <tag><clip pos="4" side="tl" part="nbr"/></tag>
+              <tag><lit-tag v="nom"/></tag>
+              <tag><var n="person"/></tag>
+            </tags>
+            <lu>
+              <var n="determiner"/>     
+            </lu>
+            <b pos="1"/>
+            <lu>
+              <clip pos="3" side="tl" part="lemh"/>
+              <clip pos="3" side="tl" part="a_adj"/>
+              <clip pos="3" side="tl" part="gen"/>        
+              <clip pos="3" side="tl" part="lemq"/>
+            </lu>
+            <b pos="2"/>
+            <lu>
+              <clip pos="4" side="tl" part="lemh"/>
+              <clip pos="4" side="tl" part="a_nom"/>
+              <clip pos="4" side="tl" part="gen" link-to="2"/> 
+              <clip pos="4" side="tl" part="anim" link-to="3"/> 
+              <clip pos="4" side="tl" part="nbr" link-to="4"/>
+              <lit-tag v="5"/>
+              <clip pos="4" side="tl" part="lemq"/>
+            </lu>
+            <b pos="3"/>
+			<lu>
+              <clip pos="1" side="tl" part="lemh"/>
+              <lit-tag v="vblex"/>
+              <lit-tag v="ger"/>        
+              <clip pos="1" side="tl" part="lemq"/>
+			</lu>
+
+          </chunk>
+        </out>
+      </action>
+    </rule>
+
+
+
+    <rule comment="REGLA: DET ADV ADJ NOM">
+      <pattern>
+        <pattern-item n="det"/>
+        <pattern-item n="adv"/>
+        <pattern-item n="adj"/>
+        <pattern-item n="nom"/>
+      </pattern>
+      <action>
+		<call-macro n="fix_determiner">
+			<with-param pos="1"/>
+			<with-param pos="4"/>
+		</call-macro>
+		<!--by deafult, 3rd person informal-->
+		<call-macro n="set_third_person"/>
+        <out>
+          <chunk name="det_adv_adj_nom" case="caseFirstWord">
+            <tags>
+              <tag><lit-tag v="SN"/></tag>
+              <tag><clip pos="4" side="tl" part="gen"/></tag>
+              <tag><clip pos="4" side="tl" part="anim"/></tag>
+              <tag><clip pos="4" side="tl" part="nbr"/></tag>
+              <tag><lit-tag v="nom"/></tag>
+              <tag><var n="person"/></tag>
+            </tags>
+            <lu>
+              <var n="determiner"/>     
+            </lu>
+            <b pos="1"/>
+			<lu>
+              <clip pos="2" side="tl" part="whole"/>
+			</lu>
+            <b pos="2"/>
+            <lu>
+              <clip pos="3" side="tl" part="lemh"/>
+              <clip pos="3" side="tl" part="a_adj"/>
+              <clip pos="3" side="tl" part="gen"/>        
+              <clip pos="3" side="tl" part="lemq"/>
+            </lu>
+            <b pos="3"/>
+            <lu>
+              <clip pos="4" side="tl" part="lemh"/>
+              <clip pos="4" side="tl" part="a_nom"/>
+              <clip pos="4" side="tl" part="gen" link-to="2"/> 
+              <clip pos="4" side="tl" part="anim" link-to="3"/> 
+              <clip pos="4" side="tl" part="nbr" link-to="4"/>
+              <lit-tag v="5"/>
+              <clip pos="4" side="tl" part="lemq"/>
+            </lu>
+          </chunk>
+        </out>
+      </action>
+    </rule>
+
+
+
+    <rule comment="REGLA: NUM NOM">
+      <pattern>
+        <pattern-item n="num"/>
+        <pattern-item n="nom"/>
+      </pattern>
+      <action>
+		<call-macro n="set_third_person"/>
+        <out>
+          <chunk name="num_nom" case="caseFirstWord">
+            <tags>
+              <tag><lit-tag v="SN"/></tag>
+              <tag><clip pos="2" side="tl" part="gen"/></tag>
+              <tag><clip pos="2" side="tl" part="nbr"/></tag>
+              <tag><lit-tag v="nom"/></tag>
+              <tag><var n="person"/></tag>
+            </tags>
+            <lu>
+              <clip pos="1" side="tl" part="lemh"/>
+              <clip pos="1" side="tl" part="a_num"/>
+              <clip pos="2" side="tl" part="anim"/> 
+              <clip pos="1" side="tl" part="lemq"/>
+            </lu>
+            <b pos="1"/>
+            <lu>
+              <clip pos="2" side="tl" part="lemh"/>
+              <clip pos="2" side="tl" part="a_nom"/>
+              <clip pos="2" side="tl" part="gen" link-to="2"/> 
+              <clip pos="2" side="tl" part="anim"/> 
+              <lit-tag v="sg"/>
+              <lit-tag v="4"/>
+              <clip pos="2" side="tl" part="lemq"/>
+            </lu>
+          </chunk>
+        </out>
+      </action>
+    </rule>
+
+
+    <rule comment="REGLA: PRNSUBJ">
+      <pattern>
+        <pattern-item n="prn_subj"/>
+      </pattern>
+      <action>
+        <choose>
+          <when>
+            <test>
+			<!--if not demostrative-->
+              <not>
+                <equal>
+                  <clip pos="1" side="tl" part="tipus_prn"/>
+                  <lit-tag v="dem"/>
+                </equal>
+              </not>
+            </test>
+			<!--assign the appropriate person tag into "person" variable-->
+			<call-macro n="set_person">
+				<with-param pos="1"/>
+			</call-macro>
+          </when>
+        </choose>
+        <out>
+          <chunk name="prnsubj" case="caseFirstWord">
+            <tags>
+              <tag><lit-tag v="SN"/></tag>
+              <tag><clip pos="1" side="tl" part="gen"/></tag>
+              <tag><clip pos="1" side="tl" part="nbr"/></tag>
+              <tag><lit-tag v="nom"/></tag>
+              <tag><var n="person"/></tag>
+            </tags>
+            <lu>
+              <lit v="prpers"/>
+              <clip pos="1" side="tl" part="a_prn"/>
+              <clip pos="1" side="tl" part="pers" link-to="5"/>
+              <clip pos="1" side="tl" part="pers" link-to="6"/>
+              <clip pos="1" side="tl" part="anim"/>
+              <clip pos="1" side="tl" part="gen"/>
+              <clip pos="1" side="tl" part="nbr"/>
+              <lit-tag v="4"/>
+              <clip pos="1" side="tl" part="lemq"/>
+            </lu>
+          </chunk>
+        </out>
+      </action>
+    </rule>
+
+    <rule comment="REGLA: PRNREF">
+      <pattern>
+        <pattern-item n="prn_ref"/>
+      </pattern>
+      <action>
+        <out>
+          <chunk name="prnref" case="caseFirstWord">
+            <tags>
+              <tag><lit-tag v="SN"/></tag>
+              <tag><clip pos="1" side="tl" part="gen"/></tag>
+              <tag><clip pos="1" side="tl" part="nbr"/></tag>
+              <tag><var n="case"/></tag>
+            </tags>
+            <lu>
+              <clip pos="1" side="tl" part="lemh"/>
+              <clip pos="1" side="tl" part="a_prn"/>
+              <clip pos="1" side="tl" part="tipus_prn"/>
+              <clip pos="1" side="tl" part="pers"/>
+              <clip pos="1" side="tl" part="gen"/>
+              <clip pos="1" side="tl" part="nbr"/>
+              <lit-tag v="4"/>
+              <clip pos="1" side="tl" part="lemq"/>
+            </lu>
+          </chunk>
+        </out>
+      </action>
+    </rule>
+
+
+	<!--principle "am"/"is"; just passes the SVP chunk to ignore in t2x-->
+    <rule comment="REGLA: VBSER PRES">
+      <pattern>
+        <pattern-item n="vbser_pri"/>
+      </pattern>
+      <action>
+		<!--fix the temps for bn-->
+		<call-macro n="cond_si_tl">
+			<with-param pos="1"/>
+		</call-macro>
+        <out>
+          <chunk name="vbser_pri" case="caseFirstWord">
+            <tags>
+              <tag><lit-tag v="SVPR"/></tag>
+              <tag><lit-tag v="pres"/></tag>
+              <tag><lit-tag v="PD"/></tag>
+            </tags>
+            <lu>
+              <clip pos="1" side="tl" part="lemh"/>
+              <lit-tag v="vblex"/>
+              <clip pos="1" side="tl" part="temps"/>
+              <clip pos="1" side="tl" part="temps" link-to="3"/>
+              <clip pos="1" side="tl" part="temps" link-to="4"/>
+              <clip pos="1" side="tl" part="lemq"/>
+            </lu>
+          </chunk>
+        </out>
+      </action>
+   </rule>
+
+	<!--principle "was", "were"-->
+    <rule comment="REGLA: VBSER PAST">
+      <pattern>
+        <pattern-item n="vbser_past"/>
+      </pattern>
+      <action>
+        <out>
+          <chunk name="vbser_past" case="caseFirstWord">
+            <tags>
+              <tag><lit-tag v="SVPS"/></tag>
+              <tag><clip pos="1" side="sl" part="temps"/></tag>
+              <tag><lit-tag v="PD"/></tag>
+            </tags>
+            <lu>
+              <clip pos="1" side="tl" part="lemh"/>
+              <lit-tag v="vblex"/>
+              <clip pos="1" side="tl" part="temps"/>
+              <clip pos="1" side="tl" part="temps" link-to="3"/>
+              <clip pos="1" side="tl" part="temps" link-to="4"/>
+              <clip pos="1" side="tl" part="lemq"/>
+            </lu>
+          </chunk>
+        </out>
+      </action>
+   </rule>
+
+
+	<!--verb to have-->
+    <rule comment="REGLA: VBHAVER">
+      <pattern>
+        <pattern-item n="vbhaver"/>
+      </pattern>
+      <action>
+		<!--fix the temps for bn-->
+		<call-macro n="fix_vbhaver_temps">
+			<with-param pos="1"/>
+		</call-macro>
+        <out>
+          <chunk name="vbhaver" case="caseFirstWord">
+            <tags>
+              <tag><lit-tag v="SVH"/></tag>
+              <tag><clip pos="1" side="tl" part="temps"/></tag>
+            </tags>
+            <lu>
+              <clip pos="1" side="tl" part="whole"/>
+              <!--lit-tag v="vbhaver"/>
+              <clip pos="1" side="tl" part="temps"/>
+              <clip pos="1" side="tl" part="lemq"/-->
+            </lu>
+          </chunk>
+        </out>
+      </action>
+   </rule>
+
+
+
+	<!--have been, had been-->
+    <rule comment="REGLA: VBHAVER VBSER">
+      <pattern>
+        <pattern-item n="vbhaver"/>
+        <pattern-item n="vbser"/>
+      </pattern>
+      <action>
+		<call-macro n="fix_vbhaver_temps">
+			<with-param pos="1"/>
+		</call-macro>
+        <out>
+          <chunk name="vbhaver_vbser" case="caseFirstWord">
+            <tags>
+              <tag><lit-tag v="SVHB"/></tag>
+              <tag><clip pos="1" side="tl" part="temps"/></tag>
+			  <tag><lit-tag v="PD"/></tag>
+            </tags>
+            <lu>
+              <lit v="আছ"/>
+              <lit-tag v="vblex"/>
+              <clip pos="1" side="tl" part="temps" link-to="2"/>
+              <clip pos="1" side="tl" part="temps" link-to="3"/>
+              <clip pos="1" side="tl" part="temps" link-to="4"/>
+              <clip pos="1" side="tl" part="lemq"/>
+            </lu>
+          </chunk>
+        </out>
+      </action>
+   </rule>
+
+
+
+	<!--perfect continuous-->
+    <rule comment="REGLA: VBHAVER VBSER VBLEX">
+      <pattern>
+        <pattern-item n="vbhaver"/>
+        <pattern-item n="vbser"/>
+        <pattern-item n="vblex"/>
+      </pattern>
+      <action>
+		<call-macro n="fix_vbser_temps">
+			<with-param pos="1"/>
+		</call-macro>
+		<call-macro n="fix_ger_cnt">
+			<with-param pos="1"/>
+			<with-param pos="3"/>
+		</call-macro>
+        <out>
+          <chunk name="vbhaver_vbser_vblex" case="caseFirstWord">
+            <tags>
+              <tag><lit-tag v="SV"/></tag>
+              <tag><clip pos="1" side="tl" part="temps"/></tag>
+              <tag><lit-tag v="PD"/></tag>
+            </tags>
+            <lu>
+              <clip pos="3" side="tl" part="lemh"/>
+              <lit-tag v="vblex"/>
+              <clip pos="1" side="tl" part="temps" link-to="2"/>
+              <clip pos="1" side="tl" part="temps" link-to="3"/>
+              <clip pos="1" side="tl" part="temps" link-to="4"/>
+              <clip pos="1" side="tl" part="temps" link-to="5"/>
+              <clip pos="3" side="tl" part="lemq"/>
+            </lu>
+          </chunk>
+        </out>
+      </action>
+   </rule>
+
+	<!--perfect continuous with adv-->
+    <rule comment="REGLA: VBHAVER VBSER VBLEX ADV">
+      <pattern>
+        <pattern-item n="vbhaver"/>
+        <pattern-item n="vbser"/>
+        <pattern-item n="vblex"/>
+        <pattern-item n="adv"/>
+      </pattern>
+      <action>
+		<call-macro n="fix_vbser_temps">
+			<with-param pos="1"/>
+		</call-macro>
+		<call-macro n="fix_ger_cnt">
+			<with-param pos="1"/>
+			<with-param pos="3"/>
+		</call-macro>
+        <out>
+          <chunk name="vbhaver_vbser_vblex_adv" case="caseFirstWord">
+            <tags>
+              <tag><lit-tag v="SV"/></tag>
+              <tag><clip pos="1" side="tl" part="temps"/></tag>
+              <tag><lit-tag v="PD"/></tag>
+            </tags>
+			<lu>
+              <clip pos="4" side="tl" part="whole"/>
+			</lu>
+            <b pos="1"/>
+            <lu>
+              <clip pos="3" side="tl" part="lemh"/>
+              <lit-tag v="vblex"/>
+              <clip pos="1" side="tl" part="temps" link-to="2"/>
+              <clip pos="1" side="tl" part="temps" link-to="3"/>
+              <clip pos="1" side="tl" part="temps" link-to="4"/>
+              <clip pos="1" side="tl" part="temps" link-to="5"/>
+              <clip pos="3" side="tl" part="lemq"/>
+            </lu>
+          </chunk>
+        </out>
+      </action>
+   </rule>
+
+	<!--"shall be", "will be"-->
+    <rule comment="REGLA: FTAUX BE">
+      <pattern>
+        <pattern-item n="ftaux"/>
+        <pattern-item n="be"/>
+      </pattern>
+      <action>
+        <out>
+          <chunk name="ftaux_be" case="caseFirstWord">
+            <tags>
+              <tag><lit-tag v="SVF"/></tag>
+              <tag><lit-tag v="ft.smpl"/></tag>
+              <tag><lit-tag v="PD"/></tag>
+            </tags>
+            <lu>
+              <lit v="হ"/>
+              <lit-tag v="vblex"/>
+              <clip pos="1" side="tl" part="temps" link-to="2"/>
+              <clip pos="1" side="tl" part="temps" link-to="3"/>
+              <clip pos="1" side="tl" part="temps" link-to="4"/>
+              <clip pos="1" side="tl" part="temps" link-to="5"/>
+              <clip pos="1" side="tl" part="lemq"/>
+            </lu>
+          </chunk>
+        </out>
+      </action>
+   </rule>
+
+	<!--future continuous-->
+    <rule comment="REGLA: FTAUX BE VBLEX">
+      <pattern>
+        <pattern-item n="ftaux"/>
+        <pattern-item n="be"/>
+        <pattern-item n="vblex"/>
+      </pattern>
+      <action>
+        <choose>
+          <when>
+            <test>
+              <equal>
+                <!-- if the verb has gerund tag -->
+                <clip pos="3" side="sl" part="a_vblex"/>
+                <lit-tag v="ger"/>
+              </equal>
+            </test>
+            <let>
+              <!-- add cnt tag -->
+              <clip pos="2" side="tl" part="temps"/>
+               <lit-tag v="ft.cnt"/>
+            </let>
+          </when>
+        </choose>
+        <out>
+          <chunk name="ftaux_be_vblex" case="caseFirstWord">
+            <tags>
+              <tag><lit-tag v="SV"/></tag>
+              <tag><clip pos="2" side="tl" part="temps"/></tag>
+              <tag><lit-tag v="PD"/></tag>
+            </tags>
+            <lu>
+              <clip pos="3" side="tl" part="lemh"/>
+              <lit-tag v="vblex"/>
+              <clip pos="2" side="tl" part="temps" link-to="2"/>
+              <clip pos="2" side="tl" part="temps" link-to="3"/>
+              <clip pos="2" side="tl" part="temps" link-to="4"/>
+              <clip pos="2" side="tl" part="temps" link-to="5"/>
+              <clip pos="3" side="tl" part="lemq"/>
+            </lu>
+          </chunk>
+        </out>
+      </action>
+   </rule>
+
+	<!--future continuous with adverb-->
+    <rule comment="REGLA: FTAUX BE VBLEX ADV">
+      <pattern>
+        <pattern-item n="ftaux"/>
+        <pattern-item n="be"/>
+        <pattern-item n="vblex"/>
+        <pattern-item n="adv"/>
+      </pattern>
+      <action>
+        <choose>
+          <when>
+            <test>
+              <equal>
+                <!-- if the verb has gerund tag -->
+                <clip pos="3" side="sl" part="a_vblex"/>
+                <lit-tag v="ger"/>
+              </equal>
+            </test>
+            <let>
+              <!-- add cnt tag -->
+              <clip pos="2" side="tl" part="temps"/>
+               <lit-tag v="ft.cnt"/>
+            </let>
+          </when>
+        </choose>
+        <out>
+          <chunk name="ftaux_be_vblex_adv" case="caseFirstWord">
+            <tags>
+              <tag><lit-tag v="SV"/></tag>
+              <tag><clip pos="2" side="tl" part="temps"/></tag>
+              <tag><lit-tag v="PD"/></tag>
+            </tags>
+			<lu>
+              <clip pos="4" side="tl" part="whole"/>
+			</lu>
+            <b pos="1"/>
+            <lu>
+              <clip pos="3" side="tl" part="lemh"/>
+              <lit-tag v="vblex"/>
+              <clip pos="2" side="tl" part="temps" link-to="2"/>
+              <clip pos="2" side="tl" part="temps" link-to="3"/>
+              <clip pos="2" side="tl" part="temps" link-to="4"/>
+              <clip pos="2" side="tl" part="temps" link-to="5"/>
+              <clip pos="3" side="tl" part="lemq"/>
+            </lu>
+          </chunk>
+        </out>
+      </action>
+   </rule>
+
+	<!--future perfect-->
+    <rule comment="REGLA: FTAUX VBHAVER VBLEX">
+      <pattern>
+        <pattern-item n="ftaux"/>
+        <pattern-item n="vbhaver"/>
+        <pattern-item n="vblex"/>
+      </pattern>
+      <action>
+		<let>
+			<clip pos="2" side="tl" part="temps"/>
+			<concat>
+				<lit-tag v="ft"/>
+				<lit-tag v="smpl"/>
+			</concat>
+		</let>
+        <out>
+          <chunk name="ftaux_vbhaver_vblex" case="caseFirstWord">
+            <tags>
+              <tag><lit-tag v="SV"/></tag>
+              <tag><clip pos="2" side="tl" part="temps"/></tag>
+              <tag><lit-tag v="PD"/></tag>
+            </tags>
+            <lu>
+              <clip pos="3" side="tl" part="lemh"/>
+              <lit-tag v="vblex"/>
+              <clip pos="2" side="tl" part="temps" link-to="2"/>
+              <clip pos="2" side="tl" part="temps" link-to="3"/>
+              <clip pos="2" side="tl" part="temps" link-to="4"/>
+              <clip pos="2" side="tl" part="temps" link-to="5"/>
+              <clip pos="3" side="tl" part="lemq"/>
+            </lu>
+          </chunk>
+        </out>
+      </action>
+   </rule>
+   
+	<!--future perfect continuous-->
+    <rule comment="REGLA: FTAUX VBHAVER VBSER VBLEX">
+      <pattern>
+        <pattern-item n="ftaux"/>
+        <pattern-item n="vbhaver"/>
+        <pattern-item n="vbser"/>
+        <pattern-item n="vblex"/>
+      </pattern>
+      <action>
+        <choose>
+          <when>
+            <test>
+              <equal>
+                <!-- if the verb has gerund tag -->
+                <clip pos="4" side="sl" part="a_vblex"/>
+                <lit-tag v="ger"/>
+              </equal>
+            </test>
+            <let>
+              <!-- add cnt tag -->
+              <clip pos="2" side="tl" part="temps"/>
+               <lit-tag v="ft.cnt"/>
+            </let>
+          </when>
+        </choose>
+        <out>
+          <chunk name="ftaux_vbhaver_vbser_vblex" case="caseFirstWord">
+            <tags>
+              <tag><lit-tag v="SV"/></tag>
+              <tag><clip pos="2" side="tl" part="temps"/></tag>
+              <tag><lit-tag v="PD"/></tag>
+            </tags>
+            <lu>
+              <clip pos="4" side="tl" part="lemh"/>
+              <lit-tag v="vblex"/>
+              <clip pos="2" side="tl" part="temps" link-to="2"/>
+              <clip pos="2" side="tl" part="temps" link-to="3"/>
+              <clip pos="2" side="tl" part="temps" link-to="4"/>
+              <clip pos="2" side="tl" part="temps" link-to="5"/>
+              <clip pos="4" side="tl" part="lemq"/>
+            </lu>
+          </chunk>
+        </out>
+      </action>
+   </rule>
+
+	<!--present/past continuous-->
+    <rule comment="REGLA: VBSER VBLEX">
+      <pattern>
+        <pattern-item n="vbser"/>
+        <pattern-item n="vblex"/>
+      </pattern>
+      <action>
+		<!--fix the temps for bn-->
+		<call-macro n="fix_vbser_temps">
+			<with-param pos="1"/>
+		</call-macro>
+		<call-macro n="fix_ger_cnt">
+			<with-param pos="1"/>
+			<with-param pos="2"/>
+		</call-macro>
+        <out>
+          <chunk name="vbser_vblex" case="caseFirstWord">
+            <tags>
+              <tag><lit-tag v="SV"/></tag>
+              <tag><clip pos="1" side="tl" part="temps"/></tag>
+              <tag><lit-tag v="PD"/></tag>
+            </tags>
+            <lu>
+              <clip pos="2" side="tl" part="lemh"/>
+              <lit-tag v="vblex"/>
+              <clip pos="1" side="tl" part="temps" link-to="2"/>
+              <clip pos="1" side="tl" part="temps" link-to="3"/>
+              <clip pos="1" side="tl" part="temps" link-to="4"/>
+              <clip pos="1" side="tl" part="temps" link-to="5"/>
+              <clip pos="2" side="tl" part="lemq"/>
+            </lu>
+          </chunk>
+        </out>
+      </action>
+   </rule>
+
+	<!--present/past continuous with adverb-->
+    <rule comment="REGLA: VBSER VBLEX ADV">
+      <pattern>
+        <pattern-item n="vbser"/>
+        <pattern-item n="vblex"/>
+        <pattern-item n="adv"/>
+      </pattern>
+      <action>
+		<!--fix the temps for bn-->
+		<call-macro n="fix_vbser_temps">
+			<with-param pos="1"/>
+		</call-macro>
+		<call-macro n="fix_ger_cnt">
+			<with-param pos="1"/>
+			<with-param pos="2"/>
+		</call-macro>
+        <out>
+          <chunk name="vbser_vblex_adv" case="caseFirstWord">
+            <tags>
+              <tag><lit-tag v="SV"/></tag>
+              <tag><clip pos="1" side="tl" part="temps"/></tag>
+              <tag><lit-tag v="PD"/></tag>
+            </tags>
+			<lu>
+              <clip pos="3" side="tl" part="whole"/>
+			</lu>
+            <b pos="1"/>
+            <lu>
+              <clip pos="2" side="tl" part="lemh"/>
+              <lit-tag v="vblex"/>
+              <clip pos="1" side="tl" part="temps" link-to="2"/>
+              <clip pos="1" side="tl" part="temps" link-to="3"/>
+              <clip pos="1" side="tl" part="temps" link-to="4"/>
+              <clip pos="1" side="tl" part="temps" link-to="5"/>
+              <clip pos="2" side="tl" part="lemq"/>
+            </lu>
+          </chunk>
+        </out>
+      </action>
+   </rule>
+
+	<!--perfect-->
+    <rule comment="REGLA: VBHAVER VBLEX">
+      <pattern>
+        <pattern-item n="vbhaver"/>
+        <pattern-item n="vblex"/>
+      </pattern>
+      <action>
+		<call-macro n="fix_vbhaver_temps">
+			<with-param pos="1"/>
+		</call-macro>
+        <out>
+          <chunk name="vbhaver_vblex" case="caseFirstWord">
+            <tags>
+              <tag><lit-tag v="SV"/></tag>
+              <tag><clip pos="1" side="tl" part="temps"/></tag>
+              <tag><lit-tag v="PD"/></tag>
+            </tags>
+            <lu>
+              <clip pos="2" side="tl" part="lemh"/>
+              <lit-tag v="vblex"/>
+              <clip pos="1" side="tl" part="temps" link-to="2"/>
+              <clip pos="1" side="tl" part="temps" link-to="3"/>
+              <clip pos="1" side="tl" part="temps" link-to="4"/>
+              <clip pos="2" side="tl" part="lemq"/>
+            </lu>
+          </chunk>
+        </out>
+      </action>
+   </rule>
+
+	<!--perfect with adverb-->
+    <rule comment="REGLA: VBHAVER VBLEX ADV">
+      <pattern>
+        <pattern-item n="vbhaver"/>
+        <pattern-item n="vblex"/>
+        <pattern-item n="adv"/>
+      </pattern>
+      <action>
+		<call-macro n="fix_vbhaver_temps">
+			<with-param pos="1"/>
+		</call-macro>
+        <out>
+          <chunk name="vbhaver_vblex_adv" case="caseFirstWord">
+            <tags>
+              <tag><lit-tag v="SV"/></tag>
+              <tag><clip pos="1" side="tl" part="temps"/></tag>
+              <tag><lit-tag v="PD"/></tag>
+            </tags>
+			<lu>
+              <clip pos="3" side="tl" part="whole"/>
+			</lu>
+            <b pos="1"/>
+            <lu>
+              <clip pos="2" side="tl" part="lemh"/>
+              <lit-tag v="vblex"/>
+              <clip pos="1" side="tl" part="temps" link-to="2"/>
+              <clip pos="1" side="tl" part="temps" link-to="3"/>
+              <clip pos="1" side="tl" part="temps" link-to="4"/>
+              <clip pos="2" side="tl" part="lemq"/>
+            </lu>
+          </chunk>
+        </out>
+      </action>
+   </rule>
+
+	<!--simple future-->
+    <rule comment="REGLA: FTAUX VBLEX">
+      <pattern>
+        <pattern-item n="ftaux"/>
+        <pattern-item n="vblex"/>
+      </pattern>
+      <action>
+		<let>
+			<clip pos="1" side="tl" part="temps"/>
+			<lit-tag v="ft.smpl"/>
+		</let>
+        <out>
+          <chunk name="vaux_vblex" case="caseFirstWord">
+            <tags>
+              <tag><lit-tag v="SV"/></tag>
+              <tag><clip pos="1" side="tl" part="temps"/></tag>
+              <tag><lit-tag v="PD"/></tag>
+            </tags>
+            <lu>
+              <clip pos="2" side="tl" part="lemh"/>
+              <lit-tag v="vblex"/>
+              <clip pos="1" side="tl" part="temps" link-to="2"/>
+              <clip pos="1" side="tl" part="temps" link-to="3"/>
+              <clip pos="1" side="tl" part="temps" link-to="4"/>
+              <clip pos="1" side="tl" part="temps" link-to="5"/>
+              <clip pos="2" side="tl" part="lemq"/>
+            </lu>
+          </chunk>
+        </out>
+      </action>
+   </rule>
+
+	<!--simple future-->
+    <rule comment="REGLA: FTAUX VBLEX ADV">
+      <pattern>
+        <pattern-item n="ftaux"/>
+        <pattern-item n="vblex"/>
+        <pattern-item n="adv"/>
+      </pattern>
+      <action>
+		<let>
+			<clip pos="1" side="tl" part="temps"/>
+			<lit-tag v="ft.smpl"/>
+		</let>
+        <out>
+          <chunk name="vaux_vblex_adv" case="caseFirstWord">
+            <tags>
+              <tag><lit-tag v="SV"/></tag>
+              <tag><clip pos="1" side="tl" part="temps"/></tag>
+              <tag><lit-tag v="PD"/></tag>
+            </tags>
+			<lu>
+              <clip pos="3" side="tl" part="whole"/>
+			</lu>
+            <lu>
+            <b pos="1"/>
+              <clip pos="2" side="tl" part="lemh"/>
+              <lit-tag v="vblex"/>
+              <clip pos="1" side="tl" part="temps" link-to="2"/>
+              <clip pos="1" side="tl" part="temps" link-to="3"/>
+              <clip pos="1" side="tl" part="temps" link-to="4"/>
+              <clip pos="1" side="tl" part="temps" link-to="5"/>
+              <clip pos="2" side="tl" part="lemq"/>
+            </lu>
+          </chunk>
+        </out>
+      </action>
+   </rule>
+
+
+	<!--single principle verb-->
+    <rule comment="REGLA: VERB CONJ">
+      <pattern>
+        <pattern-item n="verbcj"/>
+      </pattern>
+      <action>
+		<call-macro n="cond_si_tl">
+			<with-param pos="1"/>
+		</call-macro>
+		<let>
+            <var n="temp"/>
+            <lit v=""/>
+		</let>
+		<choose>
+			<when>
+				<test>
+					<in caseless="yes">
+					  <clip pos="1" side="sl" part="lemh"/>
+					  <list n="possessiveverb"/>
+					</in>
+				</test>
+				<let>
+					<var n="temp"/>
+					<lit-tag v="vpos"/>
+				</let>
+			</when>
+		</choose>
+        <!-- Actual output -->
+        <out>
+          <chunk name="verbcj" case="caseFirstWord">
+            <tags>
+              <tag><lit-tag v="SV"/></tag>
+              <tag><clip pos="1" side="tl" part="temps"/></tag>
+			  <tag><lit-tag v="PD"/></tag>
+			  <tag><var n="temp"/></tag>
+            </tags>
+            <lu>
+              <clip pos="1" side="tl" part="lemh"/>
+              <lit-tag v="vblex"/>
+              <clip pos="1" side="tl" part="temps" link-to="2"/>
+              <clip pos="1" side="tl" part="temps" link-to="3"/>
+              <clip pos="1" side="tl" part="temps" link-to="4"/>
+              <clip pos="1" side="tl" part="temps" link-to="5"/>
+              <clip pos="1" side="tl" part="lemq"/>
+            </lu>
+          </chunk>
+        </out>
+      </action>
+    </rule>
+
+	<!--principle verb with adverb-->
+    <rule comment="REGLA: VERB ADV">
+      <pattern>
+        <pattern-item n="verbcj"/>
+        <pattern-item n="adv"/>
+      </pattern>
+      <action>
+		<call-macro n="cond_si_tl">
+			<with-param pos="1"/>
+		</call-macro>
+        <!-- Actual output -->
+        <out>
+          <chunk name="verbcj_adv" case="caseFirstWord">
+            <tags>
+              <tag><lit-tag v="SV"/></tag>
+              <tag><clip pos="1" side="tl" part="temps"/></tag>
+			  <tag><lit-tag v="PD"/></tag>
+            </tags>
+			<lu>
+              <clip pos="2" side="tl" part="whole"/>
+			</lu>
+            <b pos="1"/>
+            <lu>
+              <clip pos="1" side="tl" part="lemh"/>
+              <lit-tag v="vblex"/>
+              <clip pos="1" side="tl" part="temps" link-to="2"/>
+              <clip pos="1" side="tl" part="temps" link-to="3"/>
+              <clip pos="1" side="tl" part="temps" link-to="4"/>
+              <clip pos="1" side="tl" part="temps" link-to="5"/>
+              <clip pos="1" side="tl" part="lemq"/>
+            </lu>
+          </chunk>
+        </out>
+      </action>
+    </rule>
+
+	<!--interrogative with do/did-->
+    <rule comment="REGLA: VBDO">
+      <pattern>
+        <pattern-item n="vbdo"/>
+      </pattern>
+      <action>
+		<call-macro n="cond_si_sl">
+			<with-param pos="1"/>
+		</call-macro>
+        <out>
+          <chunk name="vbdo" case="caseFirstWord">
+            <tags>
+              <tag><lit-tag v="SVD"/></tag>
+              <tag><clip pos="1" side="sl" part="temps"/></tag>
+            </tags>
+            <lu>
+              <clip pos="1" side="tl" part="whole"/>
+            </lu>
+          </chunk>
+        </out>
+      </action>
+   </rule>
+
+	<!--question with prefix 'do'-->
+    <rule comment="REGLA: VBDO VBLEX">
+      <pattern>
+        <pattern-item n="vbdo"/>
+        <pattern-item n="vblex"/>
+      </pattern>
+      <action>
+		<call-macro n="cond_si_sl">
+			<with-param pos="1"/>
+		</call-macro>
+        <out>
+          <chunk name="vbdo_vblex" case="caseFirstWord">
+            <tags>
+              <tag><lit-tag v="SV"/></tag>
+              <tag><clip pos="1" side="sl" part="temps"/></tag>
+              <tag><lit-tag v="PD"/></tag>
+            </tags>
+            <lu>
+              <clip pos="2" side="tl" part="lemh"/>
+              <lit-tag v="vblex"/>
+              <clip pos="1" side="sl" part="temps" link-to="2"/>
+              <clip pos="1" side="sl" part="temps" link-to="3"/>
+              <clip pos="1" side="sl" part="temps" link-to="4"/>
+              <clip pos="1" side="sl" part="temps" link-to="5"/>
+              <clip pos="2" side="tl" part="lemq"/>
+            </lu>
+          </chunk>
+        </out>
+      </action>
+   </rule>
+
+	<!--question with prefix 'do'-->
+    <rule comment="REGLA: VBDO VBLEX ADV">
+      <pattern>
+        <pattern-item n="vbdo"/>
+        <pattern-item n="vblex"/>
+        <pattern-item n="adv"/>
+      </pattern>
+      <action>
+		<call-macro n="cond_si_sl">
+			<with-param pos="1"/>
+		</call-macro>
+        <out>
+          <chunk name="vbdo_vblex_adv" case="caseFirstWord">
+            <tags>
+              <tag><lit-tag v="SV"/></tag>
+              <tag><clip pos="1" side="sl" part="temps"/></tag>
+              <tag><lit-tag v="PD"/></tag>
+            </tags>
+			<lu>
+              <clip pos="3" side="tl" part="whole"/>
+			</lu>
+            <b pos="1"/>
+            <lu>
+              <clip pos="2" side="tl" part="lemh"/>
+              <lit-tag v="vblex"/>
+              <clip pos="1" side="sl" part="temps" link-to="2"/>
+              <clip pos="1" side="sl" part="temps" link-to="3"/>
+              <clip pos="1" side="sl" part="temps" link-to="4"/>
+              <clip pos="1" side="sl" part="temps" link-to="5"/>
+              <clip pos="2" side="tl" part="lemq"/>
+            </lu>
+          </chunk>
+        </out>
+      </action>
+   </rule>
+
+	<!--gerund-->
+    <rule comment="REGLA: GERUND">
+      <pattern>
+        <pattern-item n="vbger"/>
+      </pattern>
+      <action>
+        <out>
+          <chunk name="vbger" case="caseFirstWord">
+            <tags>
+              <tag><lit-tag v="SVG"/></tag>
+              <tag><lit-tag v="TD"/></tag>
+              <tag><lit-tag v="PD"/></tag>
+            </tags>
+            <lu>
+              <clip pos="1" side="tl" part="lemh"/>
+              <lit-tag v="vblex"/>
+              <clip pos="1" side="sl" part="temps" link-to="2"/>
+              <clip pos="1" side="sl" part="temps" link-to="3"/>
+              <clip pos="1" side="sl" part="temps" link-to="4"/>
+              <clip pos="1" side="sl" part="temps" link-to="5"/>
+              <clip pos="1" side="tl" part="lemq"/>
+            </lu>
+          </chunk>
+        </out>
+      </action>
+   </rule>
+
+	<!--gerund-->
+    <rule comment="REGLA: GERUND ADV">
+      <pattern>
+        <pattern-item n="vbger"/>
+        <pattern-item n="adv"/>
+      </pattern>
+      <action>
+        <out>
+          <chunk name="vbger_adv" case="caseFirstWord">
+            <tags>
+              <tag><lit-tag v="SVG"/></tag>
+              <tag><lit-tag v="TD"/></tag>
+              <tag><lit-tag v="PD"/></tag>
+            </tags>
+			<lu>
+              <clip pos="2" side="tl" part="whole"/>
+			</lu>
+            <b pos="1"/>
+            <lu>
+              <clip pos="1" side="tl" part="lemh"/>
+              <lit-tag v="vblex"/>
+              <clip pos="1" side="sl" part="temps" link-to="2"/>
+              <clip pos="1" side="sl" part="temps" link-to="3"/>
+              <clip pos="1" side="sl" part="temps" link-to="4"/>
+              <clip pos="1" side="sl" part="temps" link-to="5"/>
+              <clip pos="1" side="tl" part="lemq"/>
+            </lu>
+          </chunk>
+        </out>
+      </action>
+   </rule>
+
+	<!--pre/post positions-->
+    <rule comment="REGLA: POST">
+      <pattern>
+        <pattern-item n="pr"/>
+      </pattern>
+      <action>
+        <out>
+          <chunk name="post" case="caseFirstWord">
+            <tags>
+              <tag><lit-tag v="POST"/></tag>
+              <tag><clip pos="1" side="tl" part="a_post"/></tag>
+            </tags>
+            <lu>
+              <clip pos="1" side="tl" part="whole"/>
+            </lu>
+          </chunk>
+        </out>
+      </action>
+   </rule>
+
+    <rule>
+<!-- REGLA: reset variables-->
+      <pattern>
+        <pattern-item n="sent"/>
+      </pattern>
+      <action>
+        <let>
+          <var n="number"/>
+          <lit-tag v="sg"/>
+        </let>
+        <let>
+          <var n="genere"/>
+          <lit-tag v="m"/>
+        </let>
+        <let>
+          <var n="case"/>
+          <lit-tag v="nom"/>
+        </let>
+        <choose>
+          <when>
+            <test>
+              <not>
+                <or>
+                  <equal>
+                    <clip pos="1" side="sl" part="lem"/>
+                    <lit v=";"/>
+                  </equal>
+                  <equal>
+                    <clip pos="1" side="sl" part="lem"/>
+                    <lit v=":"/>
+                  </equal>
+                </or>
+              </not>
+            </test>
+            <let>
+              <var n="EOS"/>
+              <lit v="true"/>
+            </let>
+          </when>
+        </choose>
+        <out>
+          <chunk name="punt">
+            <tags>
+              <tag>
+                <lit-tag v="sent"/>
+              </tag>
+            </tags>
+            <lu>
+              <clip pos="1" side="tl" part="whole"/>
+            </lu>
+          </chunk>
+        </out>
+      </action>
+   </rule>
+
+  </section-rules>
+</transfer>

@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<dictionary>
+  <alphabet/>
+  <sdefs/>
+
+  <section id="main" type="standard">
+    <!-- Transfer у → ў  -->
+    <!-- Stage 1. -->
+
+    <!-- 
+      "~<WORD_END_WITH_VOWEL> ~у<...>" → "~<WORD_END_WITH_VOWEL> ~ў<...>"
+      "~<WORD_END_WITH_VOWEL><QUOTES> ~у<...>" → "~<WORD_END_WITH_VOWEL><QUOTES> ~ў<...>"
+    -->
+    <e>
+      <p><l><a/></l><r><a/></r></p>
+      <re>[АБВГДЕЁЖЗІЙКЛМНОПРСТУЎФХЦЧШЫЬЭЮЯабвгдеёжзійклмнопрстуўфхцчшыьэюя']*[АУЕОЫЭЯЮІауеоыэяюі]</re>
+      <re>["]*</re>
+      <p>
+        <l><b/><a/>у</l>
+        <r><b/><a/>ў</r>
+      </p>
+      <re>[АБВГДЕЁЖЗІЙКЛМНОПРСТУЎФХЦЧШЫЬЭЮЯабвгдеёжзійклмнопрстуўфхцчшыьэюя']*| </re>
+    </e>
+
+    <!-- 
+      "~<WORD_END_WITH_VOWEL> ~<...>" → "~<WORD_END_WITH_VOWEL> ~<...>"
+    -->
+    <e>
+      <p><l><a/></l><r><a/></r></p>
+      <re>[АБВГДЕЁЖЗІЙКЛМНОПРСТУЎФХЦЧШЫЬЭЮЯабвгдеёжзійклмнопрстуўфхцчшыьэюя']*[АУЕОЫЭЯЮІауеоыэяюі]</re>
+      <p>
+        <l><b/><a/></l>
+        <r><b/><a/></r>
+      </p>
+    </e>
+
+    <!-- Just word. -->
+    <e>
+      <p><l><a/></l><r><a/></r></p>
+      <re>.+</re>
+    </e>
+  </section>
+</dictionary>
+

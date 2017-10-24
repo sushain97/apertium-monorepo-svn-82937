@@ -1,0 +1,345 @@
+
+###############################################################################
+
+DELIMITERS = "<.>" "<!>" "<?>" "<..>" "<...>" "<¶>" ;
+SOFT-DELIMITERS = "<,>" ;
+OPTIONS += no-inline-sets no-inline-templates ;
+
+SUBREADINGS = LTR ; # Alternate, left-to-right (main reading on the left)
+
+###############################################################################
+
+SETS
+
+LIST BOS = (>>>) ;
+LIST EOS = (<<<) ;
+
+LIST V = v ;
+LIST A = adj ;
+LIST N = n ;
+LIST Prop = np ; 
+LIST Adv = adv ;
+LIST Det = det ;
+LIST Num = num ;
+LIST Pron = prn ; 
+LIST Post = post ; 
+LIST Cop = cop ; 
+LIST Mod = mod ;
+LIST Abbr = abbr ;
+
+LIST Aux = vaux ; 
+LIST Qst = qst ;
+
+LIST Subst = subst ;
+LIST Attr = attr ; 
+
+LIST Coop = coop ;
+
+LIST Acc = acc ;
+LIST Gen = gen ; 
+LIST Nom = nom ;
+LIST Loc = loc ;
+LIST Dat = dat ;
+LIST Abl = abl ;
+LIST All = all ;
+
+LIST Px1Sg = px1sg ;
+LIST Px2Sg = px2sg ;
+LIST Px3Sp = px3sp ;
+LIST Px1Pl = px1pl ;
+LIST Px2Pl = px1pl ;
+LIST Px3Pl = px3pl ;
+
+LIST TV = tv ; 
+LIST IV = iv ;
+
+LIST Ger/Aor = ger_aor ; 
+LIST Ger/Past = ger_past ; 
+
+LIST Gpr/Aor = gpr_aor ; 
+LIST Gpr/Past = gpr_past ; 
+
+LIST Gna/Past = gna_past ;
+
+LIST Prc/Aor = prc_aor ;
+LIST Prc/Impf = prc_impf ;
+LIST Prc/Perf = prc_perf ;
+
+LIST Past = past ; 
+LIST Aor = aor ; 
+LIST Imper = imp ; 
+
+LIST Ant = ant ; 
+LIST Cog = cog ;
+LIST Pat = pat ;
+
+LIST CC = cnjcoo ;
+
+LIST Guio = "-" ;
+LIST Cm = "," ; 
+LIST Ques = "?" ;
+LIST Sent = "." ".." "..." ;
+LIST Elip = "..." ;
+LIST Excl = "!" ;
+LIST Quot = lquot rquot quot ;
+
+LIST Title/Word = ("<[А-ЯҢӨҮA-Z][а-яңөүa-z]+>"r) ;
+LIST Maj/Word = ("<[А-ЯҢӨҮA-Z]+>"r) ;
+LIST Min/Word = ("<[а-яңөүa-z]+>"r) ;
+
+LIST Title/Dict = ("[А-ЯҢӨҮA-Z][а-яңөүa-z]+"r) ;
+LIST Maj/Dict = ("[А-ЯҢӨҮA-Z]+"r) ;
+LIST Min/Dict = ("[а-яңөүa-z]+"r) ;
+
+LIST Year = "чыл" "ч." ;
+LIST Month = "ай" ; 
+LIST Months = "январь" "февраль" "март" "апрел" "май" "июнь" "июль" "август" "сентябрь" "октябрь" "ноябрь" "декябр" ; 
+LIST Measure = "кг" "мм" ;
+
+LIST Bol = ("бол" v iv) ;
+LIST Bar = ("бар" adj) ;
+LIST Beer = "бээр" ;
+
+###############################################################################
+
+SET Gpr = Gpr/Aor | Gpr/Past ; 
+
+SET Prc = Prc/Aor | Prc/Perf | Prc/Impf ; 
+
+SET Gna = Gna/Past ;
+
+SET Ger = Ger/Aor | Ger/Past ; 
+
+SET Fin = Past | Aor | Imper ; 
+
+SET Local = Loc | Dat | Abl | All ;
+
+SET Poss = Px1Sg | Px2Sg | Px3Sp | Px1Pl | Px2Pl | Px3Pl ; 
+
+SET Nominal = Pron | Subst | N | Prop ; 
+
+SET Modifier = A - Subst | Det | Num - Subst | Gpr | Gen ;
+
+SET Punct = Guio | Cm | Sent | Ques | Elip | Excl | Quot ;
+
+SET Name = Ant | Cog | Pat ;
+
+SET Copula = Cop | Bol ; 
+
+SET ABL-POST = Beer ;
+
+###############################################################################
+
+SECTION
+
+REMOVE Gpr IF (1 EOS) ; 
+ ## Ол сеңээ бүзүрээр.
+
+SELECT Aux IF (-1C Prc);
+
+REMOVE Aux IF (NOT -1 Prc) ;
+   ## Ол кижи биске бо номну берген.
+
+SELECT Qst IF (1 Ques) ;
+   ## Олар ол кино көргени ол бе?
+
+REMOVE Attr IF (1C* Fin BARRIER (*) - Prc) ;
+
+REMOVE Attr IF (1C Post) ;
+
+REMOVE Prc (NOT 1 Prc OR Aux)  ;
+
+REMOVE Attr IF (1C Poss) (NOT -1 Gen) ;
+
+REMOVE Attr IF (1 EOS) ;
+
+REMOVE Attr IF (1C Det) ;
+
+REMOVE Attr IF (1 Prc OR Cop) ; 
+   ## Картофельде соланин деп ногаанзымаар өңнүг, хоранныг бүдүмел бар.
+
+REMOVE Attr IF (1 Cm) ;
+
+##REMOVE Poss IF (-1 Cm) ;
+##   ## Оон аңгыда, кижини ооң хамааржып турары күрүнениң азы девискээрниң политиктиг, хоойлу-дүрүм ...
+## This is a terrible rule -JNW
+
+REMOVE Poss IF (-1 Local) ;
+
+REMOVE Fin IF (0 Fin OR Subst) (1C Local + Poss) ;
+   ## Ол ышкаш үүлгедигниң болган үезинде берип болур турган кеземчеден аар кеземче бээри болдунмас.
+
+REMOVE Imper IF (1 Cm) ;
+   ## Олар бадыланышканынга хамаарыштыр, бадылалдыг турган үезинде база ону күш чок деп санаан үезинде дең эргелерни ажыглаар.
+
+REMOVE Poss IF (-1 BOS) ;
+
+REMOVE SUB:* Qst IF (1 Punct) (NOT 1 Ques) ;
+   ## 30 чүүл.
+
+SELECT Title/Dict IF (NOT -1 BOS) (0 Title/Word) ;
+   ## Абакан биле Кызылдың аразы.
+
+REMOVE SUB:* Cop IF (NOT 1 EOS) ;
+
+REMOVE Imper IF (NOT 1* Excl) ;
+
+SELECT Attr IF (0C Nom OR Attr) (1 Guio LINK 1 N) ;
+   ## 
+
+SELECT SUB:* Cop IF (1 EOS) (NOT 0 Fin) (NOT -1* Fin) ;
+   ## Азамат биле Айгуль садта.
+
+REMOVE Num + Subst IF (1C N + Nom) ;
+
+SELECT Attr IF (0C Ant OR Pat) (1C Cog) ;
+
+SELECT Attr IF (0C Ant) (1C Pat OR Cog) ;
+
+SELECT Cog IF (-1C Abbr) (0 Cog OR Ant) ;
+
+SELECT Attr IF (0 Months) (1 Month) ;
+
+SELECT Fin IF (0 Aux) (-1C Prc) (1 EOS) ;
+
+REMOVE Subst IF (0 Bar) (1 EOS) ;
+
+SELECT CC IF (0 CC OR Gna) (NOT 1 Cm OR V) ;
+
+REMOVE Prc IF (0 CC OR Prc) (1 Nominal) ;
+# биле
+
+SELECT Post IF (0C Beer) (-1 Abl) ;
+
+SELECT Abl IF (1 ABL-POST) ;
+
+###############################################################################
+
+SECTION
+
+REMOVE Coop IF (0C Coop OR V - Coop) ;
+
+###############################################################################
+
+#SECTION 
+
+#LIST @csubj = @csubj ;
+#LIST @cmpnd = @cmpnd ;
+#LIST @amod = @amod ;
+#LIST @advmod = @advmod ;
+#LIST @det = @det ; 
+#LIST @acl = @acl ;
+#LIST @acl:relcl = @acl:relcl ;
+#LIST @obj = @obj ;
+#LIST @case = @case ;
+#LIST @punct = @punct ;
+#LIST @conj = @conj ;
+#LIST @cc = @cc ;
+#LIST @root = @root ;
+#LIST @aux = @aux ;
+#LIST @cop = @cop ;
+#LIST @disc = @disc ;
+#LIST @nmod = @nmod ;
+#LIST @nmod:poss = @nmod:poss ;
+#LIST @nummod = @nummmod ;
+#LIST @name = @name ;
+#LIST @ccomp = @ccomp ;
+#LIST @advcl = @advcl ;
+#LIST @nsubj = @nsubj ;
+
+#MAP @cc TARGET CC ; 
+
+#MAP @cmpnd TARGET Attr - Name ;
+
+#MAP @amod TARGET A - Subst (NOT 0/* Cop) ;
+
+#MAP @det TARGET Det ; 
+
+#MAP (@obj @nsubj) TARGET Acc ;
+
+#MAP @nmod:poss TARGET Nominal + Gen - Subst ;
+
+#MAP @nmod TARGET Nominal + Local - Subst ;
+
+#MAP @case TARGET Post ; 
+
+#MAP @punct TARGET Punct ;
+
+#MAP @root TARGET Fin IF (NOT 0 Aux OR Copula) ; 
+
+#MAP @root TARGET Bar IF (1 EOS) (0/* Cop) ;
+
+#MAP @advmod TARGET Adv ; 
+
+#MAP @aux TARGET Aux + Fin;
+
+#MAP @root TARGET Prc IF (1C Fin + @aux) (NOT 0 Aux) ;
+
+#MAP @cop TARGET Copula ; 
+
+#MAP SUB:* @cop TARGET Cop ; 
+
+#MAP @disc TARGET Mod OR Qst ; 
+
+#MAP SUB:* @disc TARGET Mod OR Qst ; 
+
+#MAP @nummod TARGET Num - Subst (NOT 1 Year) ;
+
+#MAP @amod TARGET Num - Subst (1 Year) ;
+
+#MAP @name TARGET Name + Attr ;
+
+#MAP (@nsubj @obj @nmod:poss @nmod) TARGET Nominal + Nom ;
+
+#MAP @acl:relcl TARGET Gpr - Aux ; 
+
+#MAP @aux TARGET Aux ; 
+
+#MAP (@advcl @ccomp) TARGET Ger + Dat ;
+
+#MAP @name TARGET Abbr (1C* Cog BARRIER (*) - Abbr) ;
+
+#MAP @advcl TARGET Ger + Local - Cop ; 
+
+#MAP @ccomp TARGET Ger + Acc - Cop ;
+
+#MAP @acl TARGET Ger + Gen - Cop ;
+
+#MAP (@csubj @acl) TARGET Ger + Nom - Cop ;
+
+
+
+################################################################################
+
+#SECTION
+
+#SELECT @root IF (0 @root) (1 EOS) ;
+
+#REMOVE @nummod IF (1C Fin) ;
+
+#SELECT @amod IF (0 A - Subst) (1 A OR N) ;
+
+#REMOVE @nsubj IF (1C @case) ;
+
+#REMOVE @obj IF (1C @case) ;
+
+#SELECT @amod IF (0C Num) (1 Year + Local) ;
+
+#SELECT @nummod IF (0C Num) (1 Measure) ;
+
+#REMOVE @cmpnd IF (1 Cm) ;
+
+#SELECT @nmod:poss IF (1C Poss) ;
+
+#REMOVE @nsubj IF (0C Acc) (NOT 1* V - @root) ;
+
+#REMOVE @cmpnd IF (1 @root) ;
+
+#REMOVE @nmod:poss IF (1 @case) ;
+
+#REMOVE @nmod:poss IF (NOT 1* Poss) ;
+
+#REMOVE @name IF (1C N) ;
+
+#REMOVE @obj IF (NOT 1* TV) ;
+

@@ -1,0 +1,16 @@
+<rules>
+  <rule>
+    <match lemma="эт" tags="n.*"><select lemma="köpek" tags="n.*"/></match>
+  </rule>
+
+  <rule>
+    <match lemma="уңай" tags="adj.*"><select lemma="olumlu" tags="adj.*"/></match>
+    <match lemma="җавап" tags="n.*"/>
+  </rule>
+
+  <rule>
+    <or><match tags="num"/><match tags="num.*"/></or>
+    <match lemma="мәртәбә" tags="n.*"><select lemma="defa" tags="n.*"/></match>
+  </rule>
+
+</rules>

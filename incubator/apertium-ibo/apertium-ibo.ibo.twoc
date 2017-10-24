@@ -1,0 +1,38 @@
+Alphabet 
+
+ a ǎ â b c ç d ɛ e é ə f g h i ı j k l m n ŋ o ô ɔ p q r s t u ú v w x y z ɑ ʉ 
+ A Ǎ Â B C Ç D Ɛ E É Ə F G H   I J K L M N Ŋ O Ô Ɔ P Q R S T U Ú V W X Y Z Ɑ Ʉ 
+
+%<v%> 
+
+%[%+A%]:0
+%[%+i%]:0
+
+; 
+
+Sets 
+
+Verb = %<v%>  ; 
+
+Rules
+
+"Morphotactics for participle A- I"
+%[%+A%]:0 /<= _  ;
+   except
+       _ (:*) %[%+prc%]:0 ; 
+
+"Morphotactics for participle A- II"
+%[%+prc%]:0 /<= _  ;
+   except 
+       %[%+A%]:0 (:*) _  ;
+
+"Morphotactics for infinitive i- I"
+%[%+i%]:0 /<= _  ;
+   except
+       _ (:*) %[%+inf%]:0 ; 
+
+"Morphotactics for infinitive i- II"
+%[%+inf%]:0 /<= _  ;
+   except 
+       %[%+i%]:0 (:*) _  ;
+

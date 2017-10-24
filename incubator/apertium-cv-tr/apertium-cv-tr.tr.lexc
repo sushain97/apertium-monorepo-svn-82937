@@ -1,0 +1,6340 @@
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!! !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+!!   M O R P H O L O G I C A L · T R A N S D U C E R · F O R · TURKISH     !!
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+
+! See http://wiki.apertium.org/wiki/Turkic_lexicon
+
+Multichar_Symbols
+! Followed http://wiki.apertium.org/wiki/Turkic_languages
+
+! Part of speech categories
+%<n%>          ! Noun                       
+%<np%>         ! Proper noun                
+%<adj%>        ! Adjective                  
+%<num%>        ! Numeral                    
+%<prn%>        ! Pronoun                    
+%<det%>        ! Determiner                 
+%<v%>          ! Verb                       
+%<vaux%>       ! Auxilary verb              
+%<adv%>        ! Adverb                     
+%<post%>       ! Postposition               
+%<postadv%>    ! Postadverb                 
+%<cnjcoo%>     ! Co-ordinating conjunction  
+%<cnjsub%>     ! Sub-ordinating conjunction 
+%<cnjadv%>     ! Adverbial conjunction      
+%<part%>       ! Particle                   
+%<ij%>         ! Interjection               
+%<abbr%>       ! Abbreviation               
+%<cop%>        ! Copula                     
+%<qst%>        ! Question particle
+!%<ideo%>       ! Ideophone                  
+
+! Proper noun types
+%<top%>            
+%<ant%>            
+%<cog%>            
+%<org%>            
+%<al%>             
+
+%<p1%>
+%<p2%>
+%<p3%>
+
+!! gender of anthroponyms 
+%<m%>              ! Masculine    
+%<f%>              ! Feminine     
+
+! "Syntactic" tags. Attributive use of non-adjectives etc. !!!!! NOT SURE I WANT THIS !!!!
+%<attr%>           ! Attributive
+%<subst%>          ! Substantive
+%<advl%>           ! Adverbial
+
+! Number ! Сан ! Число
+%<sg%>             ! Singular  
+%<pl%>             ! Plural    
+%<sp%>             ! Singular/Plural (used for formal personal pronoun)
+
+! Possessives 
+%<px1sg%>          ! First person singular
+%<px2sg%>          ! Second person singular
+%<px3sp%>          ! Third person singular/plural
+%<px1pl%>          ! First person plural
+%<px2pl%>          ! Second person singular
+%<px%>             ! General possessive           ! NOT SURE I WANT THIS
+                   ! - Bu hangi kapı ? Evinki ya da barakanınkı ?
+                   !   "which door is that?  the house's or the shed's?"
+
+! Cases ! "Case is a lie!" (quot.)
+
+%<nom%>            
+%<gen%>            
+%<dat%>            
+%<acc%>            
+%<abl%>            
+%<loc%>            
+%<ins%>            ! Instrumental=comitative 
+
+
+! Pronoun types ! Алмашлык төрләре ! Виды местоимений
+%<pers%>           ! Personal
+! Pronoun and determiner types
+%<dem%>            ! Demonstrative
+%<ind%>            ! Indefinite
+%<itg%>            ! Interrogative
+%<qnt%>            ! Quantifier
+%<neg%>            ! Negative    ! NOTE: also used to denote negation in verbs ! what do you mean firespeaker??
+%<ref%>            ! Reflexive
+
+!! Numeral types
+%<ord%>            ! Ordinal
+%<coll%>           ! Collective
+%<dist%>           ! Distibutive
+
+! Tense, aspect, mood
+%<imp%>            ! Imperative
+%<cond%>           ! Conditional  ! Шарт  ! Условное  !! -с{A}
+%<caus%>           ! Causative
+%<pass%>           ! Passive
+%<coop%>           ! Cooperative
+
+%<pres%>           ! -{A}
+%<past%>           ! -{D}{I} 
+%<evi%>            ! -m{I}s 
+%<fut%>		   ! -{A}C{A}{K}
+%<pcont%>          ! 
+
+%<ger1%>           !
+%<ger2%>           !
+%<ger3%>           !
+%<ger4%>           !
+%<ger5%>           !
+%<ger6%>           !
+
+%{A%}              ! Becomes 'a' or 'e' 
+%{I%}              ! Becomes 'i', 'ı' 'ü", or "u"
+%{D%}		   ! Becomes "d" or "t" - fistikci sahap
+%{L%}              ! 
+
+
+%{n%}		   ! Becomes "n" after a vowel, otherwise null
+%{y%}		   ! Becomes "y" after a vowel, otherwise null
+%{s%}		   ! Becomes "s" after a vowel, otherwise null
+%{i%}		   ! Becomes as "i" after a consonant, otherwise null
+%{pN%}		   ! Becomes "n" before dat abl loc and after 3p poss, otherwise null
+%{e%}
+%{a%}
+
+%{fö%}             ! Enforce rounded front harmony
+%{fi%}             ! Enforce unrounded front harmony
+
+%{p%}              ! Last consonant unvoiced (Cnsdev)
+%{b%}              ! Last consonant voiced
+
+%{o%}              ! Back round
+%{ı%}              ! Back unround
+%{ö%}              ! Front round
+%{ii%}             ! Front unround
+
+%{u%}              ! Harmonising "deletion/insertion vowel"
+
+%{v%}              ! Apply voicing rules
+
+%>
+%+
+% 
+%~
+
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+!!!                       M O R P H O T A C T I C S                         !!!
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+
+LEXICON Root
+
+ModalParticles ; 
+Copula ; 
+Conjunctions ; 
+Postpositions ; 
+Postadverbs ;
+Pronouns ; 
+Determiners ; 
+Numerals ; 
+Nouns ; 
+ProperNouns ;
+Adjectives ; 
+Adverbs ; 
+Verbs ; 
+Interjections ; 
+Abbreviations ; 
+Punctuation ; 
+Digits ;  ! Use/Circ
+
+
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+!!!!
+!!!!                            N U M E R A L S 
+!!!!
+!!!! WARNING: This section should not be modified without consultation. 
+!!!!          Test cases are in dev/numerals.
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+
+
+LEXICON SQRD
+! This lexicon includes common ways of writing squared, cubed etc.
+
+²%<num%>:2 # ;  ! Dir/LR
+³%<num%>:3 # ;  ! Dir/LR
+²%<num%>:² # ;
+³%<num%>:³ # ;
+%<num%>: # ;
+
+LEXICON NUM-DIGIT
+
+%<num%>: # ;
+%<num%>%<subst%>%<nom%>: # ;
+%<num%>%<subst%>:%' SUBST-NONOM ;
+%<num%>%<subst%>: SUBST-NONOM ; ! Dir/LR
+
+%<num%>%<ord%>:%'%{i%}nc%{I%} # ;
+%<num%>%<ord%>%<subst%>%<nom%>:%'%{I%}nc%{I%} # ;
+%<num%>%<ord%>%<subst%>:%'%{I%}nc%{i%} SUBST-NONOM ;
+
+!%<num%>%<coll%>%<advl%>:%-%{A%}у # ;
+!%<num%>%<coll%>%<nom%>:%-%{A%}у # ;
+!%<num%>%<coll%>:%-%{A%}у SUBST-NONOM ;
+
+!%<num%>%<percent%>:%% # ;
+!%<num%>%<percent%>%<subst%>%<nom%>:%% # ;
+!%<num%>%<percent%>%<subst%>:%%{а%}%{з%}%- SUBST-NONOM ;
+
+
+!°С%<num%>:°С # ;
+!°С%<num%>%<subst%>%<nom%>:°С # ;
+!°С%<num%>%<subst%>:°С%{а%}%{с%}%- SUBST-NONOM ;
+!°С%<num%>%<subst%>:°С%{э%}%{с%}%- SUBST-NONOM ; ! Dir/LR
+!°С%<num%>:ºС # ; ! Dir/LR
+!°С%<num%>%<subst%>%<nom%>:ºС # ; ! Dir/LR
+!°С%<num%>%<subst%>:ºС%{а%}%{с%}%- SUBST-NONOM ; ! Dir/LR
+!°С%<num%>%<subst%>:ºС%{э%}%{с%}%- SUBST-NONOM ; ! Dir/LR
+!°С%<num%>:С # ; ! Dir/LR
+!°С%<num%>%<subst%>%<nom%>:С # ; ! Dir/LR
+!°С%<num%>%<subst%>:С%{а%}%{с%}%- SUBST-NONOM ; ! Dir/LR
+!°С%<num%>%<subst%>:С%{э%}%{с%}%- SUBST-NONOM ; ! Dir/LR
+
+! Measurement units
+
+km:km SQRD ;
+mm:mm SQRD ;
+sm:sm SQRD ;
+m:m SQRD ;
+
+LEXICON LASTDIGIT
+
+1:1%{ii%}%{b%}           NUM-DIGIT ; ! "bir"
+2:2%{ii%}                NUM-DIGIT ; ! "iki"
+3:3%{ö%}%{p%}           NUM-DIGIT ; ! "üç"
+4:4%{ö%}%{p%}           NUM-DIGIT ; ! "dört"
+5:5%{ii%}%{p%}           NUM-DIGIT ; ! "beş"
+6:6%{ı%}                NUM-DIGIT ; ! "altı"
+7:7%{ii%}                NUM-DIGIT ; ! "yedi"
+8:8%{ii%}%{b%}           NUM-DIGIT ; ! "sekiz"
+9:9%{o%}%{b%}           NUM-DIGIT ; ! "dokuz"
+
+LEXICON LASTDIGIT-REST
+
+1%0:1%0%{o%}%{b%}       NUM-DIGIT ; ! "on"
+2%0:2%0%{ii%}            NUM-DIGIT ; ! "yirmi"
+3%0:3%0%{o%}%{b%}       NUM-DIGIT ; ! "otuz"
+4%0:4%0%{ı%}%{p%}       NUM-DIGIT ; ! "kırk"
+5%0:5%0%{ii%}            NUM-DIGIT ; ! "elli"
+6%0:6%0%{ı%}%{p%}       NUM-DIGIT ; ! "altmış"
+7%0:7%0%{ii%}%{p%}       NUM-DIGIT ; ! "yetmiş"
+8%0:8%0%{ii%}%{b%}       NUM-DIGIT ; ! "seksen"
+9%0:9%0%{ı%}%{b%}       NUM-DIGIT ; ! "doksan"
+
+LEXICON POWERS
+%0%0:%0%0%{ö%}%{b%}     NUM-DIGIT ; ! "yüz"
+%0%0%0:%0%0%0%{ii%}%{b%} NUM-DIGIT ; ! "bin"
+
+LEXICON LOOP
+
+%,:%, DIGITLEX ;
+%.:%. DIGITLEX ;
+%,:%, LASTDIGIT ;
+%.:%. LASTDIGIT ;
+%,:%, LASTDIGIT-REST ;
+%.:%. LASTDIGIT-REST ;
+%,:%, POWERS ;
+%.:%. POWERS ;
+      DIGITLEX ;
+      LASTDIGIT ;
+      LASTDIGIT-REST ;
+      POWERS ;
+
+LEXICON DIGITLEX
+
+%0:%0 LOOP ;
+1:1   LOOP ;
+2:2   LOOP ;
+3:3   LOOP ;
+4:4   LOOP ;
+5:5   LOOP ;
+6:6   LOOP ;
+7:7   LOOP ;
+8:8   LOOP ;
+9:9   LOOP ;
+
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+!!!!       N U M E R A L     L E X I C O N     E N D S     H E R E 
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+
+
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+!! Clitics 
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+
+LEXICON CLIT
+
+%+mı%<qst%>:% m%{I%} PERS3 ; 
+# ;  !! This is the end of word marker.
+
+LEXICON CLIT-NOPERS
+
+%+mı%<qst%>:% m%{I%} # ; 
+# ;  !! This is the end of word marker.
+
+
+LEXICON V-PERS-COP
+
+%+i%<cop%>%<pres%>: V-PERS-COP-G2-NOSG3-FINAL ;
+%+i%<cop%>%<past%>:%>{D%}%{I%} PERS3 ;
+
+LEXICON V-NOPERS-COP
+
+%+i%<cop%>%<pres%>: V-PERS-COP-G2-NOSG3-FINAL ;
+%+i%<cop%>%<past%>:%>{D%}%{I%} PERS3 ;
+
+LEXICON CLIT-GENERAL    ! Includes personal copula suffixes, therefore appears only
+                        ! after nominal parts of speech (and only after some cases).
+                        ! FIXME: to be checked whether leads to any overgeneration
+CLIT ;
+V-PERS-COP ;
+
+LEXICON CLIT-NOPERS
+
+CLIT-NOPERS ;
+V-NOPERS-COP ;
+
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+!! Personal suffixes
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+
+!!! FIXME: Move from VERBS here.
+
+
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+
+LEXICON ATTR ! Adjective inflection
+
+CLIT ;
+# ;
+
+LEXICON ATTR-SUBST
+
+%<attr%>: CLIT ;
+%<subst%>: CASE ;
+%<subst%>%<pl%>:%>%{L%}%{A%}r CASE ;
+
+!!!!!!!!!!!!!!!!!!!!!!     NOMINAL INFLECTION (N-INFL-COMMON)!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+
+LEXICON CASE-NONOM
+
+%<gen%>:%>%{n%}%{I%}n CLIT ;      
+%<dat%>:%>%{y%}%{A%} CLIT ;   
+%<acc%>:%>%{y%}%{I%} CLIT ;
+%<loc%>:%>%{D%}%{A%} CLIT-GENERAL ;   
+%<abl%>:%>%{D%}%{A%}n CLIT-GENERAL ;  
+%<ins%>:%>%{y%}l%{A%} CLIT-GENERAL ;     
+
+LEXICON GENPOSS-ETC-NONOM
+
+%<px%>:%>%{n%}%{I%}ki%{pN%} CASE-NONOM ;
+%<loc%>:%>%{D%}%{A%}ki ATTR-SUBST ;
+
+CASE-NONOM ;
+
+LEXICON CASE-ETC-NONOM
+
+CASE-NONOM ;
+GENPOSS-ETC-NONOM ;
+
+LEXICON N-INFL-COMMON-NONOM
+
+POSS-REAL ;
+CASE-ETC-NONOM ;
+!ABE-ETC ;
+ 
+LEXICON CASE 
+
+%<nom%>: CLIT-GENERAL ;               
+%<gen%>:%>%{n%}%{I%}n CLIT ;      
+%<dat%>:%>%{y%}%{A%} CLIT ;   
+%<acc%>:%>%{y%}%{I%} CLIT ;
+%<loc%>:%>%{D%}%{A%} CLIT-GENERAL ;   
+%<abl%>:%>%{D%}%{A%}n CLIT-GENERAL ;  
+%<ins%>:%>%{y%}l%{A%} CLIT-GENERAL ;     
+
+!!!! POSSESSIVES
+
+LEXICON GENPOSS-ETC 
+
+%<px%>:%>%{n%}%{I%}ki%{pN%} CASE ;
+%<loc%>:%>%{D%}%{A%}ki ATTR-SUBST ;
+
+CASE ;
+
+LEXICON CASE-ETC
+
+CASE ;
+GENPOSS-ETC ;
+  
+LEXICON POSS-REAL
+
+%<px1sg%>:%>%{i%}m CASE-ETC ;                
+%<px2sg%>:%>%{i%}n CASE-ETC ;                 
+%<px3sp%>:%>%{s%}%{I%}%{pN%} CASE-ETC ; 
+%<px1pl%>:%>%{i%}m%{I%}z CASE-ETC ;           
+%<px2pl%>:%>%{i%}n%{I%}z CASE-ETC ;      
+%<px3pl%>:%>l%{A%}r%{I%}%{pN%} CASE-ETC ;  
+
+LEXICON N-INFL-COMMON
+
+POSS-REAL ;
+CASE-ETC ;
+!ABE-ETC ;
+
+LEXICON SUBST-NONOM
+
+N-INFL-COMMON-NONOM ; 
+%<pl%>:%>l%{A%}r N-INFL-COMMON ;
+
+LEXICON SUBST
+
+N-INFL-COMMON ; 
+%<pl%>:%>l%{A%}r N-INFL-COMMON ;
+
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+!! Noun paradigms
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+
+LEXICON N1 ! Generic noun paradigm.
+           ! e.g. ev, kitap, ...
+
+%<n%>: SUBST ; 
+%<n%>%<attr%>: # ;  
+%<n%>%<abe%>:%>s%{I%}z # ;
+%<n%>%<abe%>%<subst%>:%>s%{I%}z SUBST ;
+
+LEXICON N2 ! Compound nouns with compulsory possession. 
+           ! e.g. dikiş makinası, dikiş makinaları, ...
+
+%<n%>: POSS-REAL ; 
+%<n%>%<pl%>:%>l%{A%}r POSS-REAL ; 
+
+LEXICON N3 ! Nationalities which can form language, etc.
+           ! e.g. turk, turkçe
+
+%<n%>: SUBST ; 
+
+LEXICON N4 ! Nouns with usage as postpositions. 
+           ! We separate these in case they have some different morphotactics.
+           ! e.g. arka: arkasına, iç: içinde
+
+%<n%>: SUBST ; 
+
+LEXICON N5
+
+%<n%>%<nom%>: # ;
+%<n%>:%' N-INFL-COMMON-NONOM ;
+%<n%>%<attr%>: # ;
+
+LEXICON N6 ! Languages which aren't nationalities
+           ! e.g. 
+
+%<n%>: SUBST ; 
+%<n%>%<attr%>: # ;
+%<n%>%<advl%>: # ;
+
+
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+
+LEXICON NP1-TOP
+
+%<np%>%<top%>%<nom%>: # ;
+%<np%>%<top%>:%' N-INFL-COMMON-NONOM ;
+%<np%>%<top%>%<attr%>: # ;
+
+LEXICON NP2-TOP
+
+%<np%>%<top%>%<px3sp%>%<nom%>: # ;
+%<np%>%<top%>%<px3sp%>:%'%{pN%} CASE-ETC-NONOM ;
+
+LEXICON NP3-TOP
+
+%<np%>%<top%>%<pl%>%<px3sp%>%<nom%>: # ;
+%<np%>%<top%>%<pl%>%<px3sp%>:%'%{pN%} CASE-ETC-NONOM ;
+
+LEXICON NP4-TOP
+
+%<np%>%<top%>%<pl%>%<nom%>: # ;
+%<np%>%<top%>%<pl%>:%' N-INFL-COMMON-NONOM ;
+
+
+LEXICON NP1-ORG
+
+%<np%>%<org%>%<nom%>: # ;
+%<np%>%<org%>:%' N-INFL-COMMON-NONOM ;
+%<np%>%<org%>%<attr%>: # ;
+
+LEXICON NP2-ORG
+
+%<np%>%<org%>%<px3sp%>%<nom%>: # ;
+%<np%>%<org%>%<px3sp%>:%'%{pN%} N-INFL-COMMON-NONOM ;
+
+
+LEXICON NP1-ANT-M
+
+%<np%>%<ant%>%<m%>%<nom%>: # ;
+%<np%>%<ant%>%<m%>:%' N-INFL-COMMON-NONOM ;
+%<np%>%<ant%>%<m%>%<attr%>: # ;
+
+LEXICON NP1-ANT-F
+
+%<np%>%<ant%>%<f%>%<nom%>: # ;
+%<np%>%<ant%>%<f%>:%' N-INFL-COMMON-NONOM ;
+%<np%>%<ant%>%<f%>%<attr%>: # ;
+
+LEXICON NP1-COG-MF
+
+%<np%>%<cog%>%<mf%>%<nom%>: # ;
+%<np%>%<cog%>%<mf%>:%' N-INFL-COMMON-NONOM ;
+%<np%>%<cog%>%<mf%>%<attr%>: # ;
+
+
+
+LEXICON NP1-AL
+
+%<np%>%<al%>%<nom%>: # ;
+%<np%>%<al%>:%' N-INFL-COMMON-NONOM ;
+%<np%>%<al%>%<attr%>: # ;
+
+
+
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+
+LEXICON PRON-PERS
+
+ben%<prn%>%<pers%>%<p1%>%<sg%>%<nom%>:ben CLIT ; 
+ben%<prn%>%<pers%>%<p1%>%<sg%>%<gen%>:benim CLIT ; 
+ben%<prn%>%<pers%>%<p1%>%<sg%>%<dat%>:bana CLIT ; 
+ben%<prn%>%<pers%>%<p1%>%<sg%>%<acc%>:beni CLIT ; 
+ben%<prn%>%<pers%>%<p1%>%<sg%>%<loc%>:bende CLIT ; 
+ben%<prn%>%<pers%>%<p1%>%<sg%>%<abl%>:benden CLIT ; 
+ben%<prn%>%<pers%>%<p1%>%<sg%>%<px%>:benimki CASE ; 
+ben%<prn%>%<pers%>%<p1%>%<sg%>%<loc%>:bendeki ATTR-SUBST ; 
+ben%<prn%>%<pers%>%<p1%>%<sg%>%<adv%>:bence CLIT ; 
+ben%<prn%>%<pers%>%<p1%>%<sg%>%<com%>:benimle # ; 
+
+
+sen%<prn%>%<pers%>%<p2%>%<sg%>%<nom%>:sen CLIT ; 
+sen%<prn%>%<pers%>%<p2%>%<sg%>%<gen%>:senin CLIT ; 
+sen%<prn%>%<pers%>%<p2%>%<sg%>%<dat%>:sana CLIT ; 
+sen%<prn%>%<pers%>%<p2%>%<sg%>%<acc%>:seni CLIT ; 
+sen%<prn%>%<pers%>%<p2%>%<sg%>%<loc%>:sende CLIT ; 
+sen%<prn%>%<pers%>%<p2%>%<sg%>%<abl%>:senden CLIT ; 
+sen%<prn%>%<pers%>%<p2%>%<sg%>%<px%>:seninki CASE ; 
+sen%<prn%>%<pers%>%<p2%>%<sg%>%<loc%>:sendeki ATTR-SUBST ; 
+sen%<prn%>%<pers%>%<p2%>%<sg%>%<adv%>:sence CLIT ; 
+sen%<prn%>%<pers%>%<p1%>%<sg%>%<com%>:seninle # ; 
+
+
+o%<prn%>%<pers%>%<p3%>%<sg%>%<nom%>:o CLIT ; 
+o%<prn%>%<pers%>%<p3%>%<sg%>%<gen%>:onun CLIT ; 
+o%<prn%>%<pers%>%<p3%>%<sg%>%<dat%>:ona CLIT ; 
+o%<prn%>%<pers%>%<p3%>%<sg%>%<acc%>:onu CLIT ; 
+o%<prn%>%<pers%>%<p3%>%<sg%>%<loc%>:onda CLIT ; 
+o%<prn%>%<pers%>%<p3%>%<sg%>%<abl%>:ondan CLIT ; 
+o%<prn%>%<pers%>%<p3%>%<sg%>%<px%>:onunki CASE ; 
+o%<prn%>%<pers%>%<p3%>%<sg%>%<loc%>:ondeki ATTR-SUBST ; 
+o%<prn%>%<pers%>%<p3%>%<sg%>%<adv%>:once CLIT ; 
+o%<prn%>%<pers%>%<p1%>%<sg%>%<com%>:onunla # ; 
+
+biz%<prn%>%<pers%>%<p1%>%<pl%>%<nom%>:biz CLIT ; 
+biz%<prn%>%<pers%>%<p1%>%<pl%>%<gen%>:bizim CLIT ; 
+biz%<prn%>%<pers%>%<p1%>%<pl%>%<dat%>:bize CLIT ; 
+biz%<prn%>%<pers%>%<p1%>%<pl%>%<acc%>:bizi CLIT ; 
+biz%<prn%>%<pers%>%<p1%>%<pl%>%<loc%>:bizde CLIT ; 
+biz%<prn%>%<pers%>%<p1%>%<pl%>%<abl%>:bizdiz CLIT ; 
+biz%<prn%>%<pers%>%<p1%>%<pl%>%<px%>:bizimki CASE ; 
+biz%<prn%>%<pers%>%<p1%>%<pl%>%<loc%>:bizdeki ATTR-SUBST ; 
+biz%<prn%>%<pers%>%<p1%>%<pl%>%<adv%>:bizce CLIT ; 
+biz%<prn%>%<pers%>%<p1%>%<sg%>%<com%>:bizimle # ; 
+
+
+siz%<prn%>%<pers%>%<p2%>%<pl%>%<nom%>:siz CLIT ; 
+siz%<prn%>%<pers%>%<p2%>%<pl%>%<gen%>:sizin CLIT ; 
+siz%<prn%>%<pers%>%<p2%>%<pl%>%<dat%>:size CLIT ; 
+siz%<prn%>%<pers%>%<p2%>%<pl%>%<acc%>:sizi CLIT ; 
+siz%<prn%>%<pers%>%<p2%>%<pl%>%<loc%>:sizde CLIT ; 
+siz%<prn%>%<pers%>%<p2%>%<pl%>%<abl%>:sizdiz CLIT ; 
+siz%<prn%>%<pers%>%<p2%>%<pl%>%<px%>:sizinki CASE ; 
+siz%<prn%>%<pers%>%<p2%>%<pl%>%<loc%>:sizdeki ATTR-SUBST ; 
+siz%<prn%>%<pers%>%<p2%>%<pl%>%<adv%>:sizce CLIT ; 
+siz%<prn%>%<pers%>%<p1%>%<sg%>%<com%>:sizinle # ; 
+
+
+onlar%<prn%>%<pers%>%<p3%>%<pl%>%<nom%>:onlar CLIT ; 
+onlar%<prn%>%<pers%>%<p3%>%<pl%>%<gen%>:onların CLIT ; 
+onlar%<prn%>%<pers%>%<p3%>%<pl%>%<dat%>:onlara CLIT ; 
+onlar%<prn%>%<pers%>%<p3%>%<pl%>%<acc%>:onları CLIT ; 
+onlar%<prn%>%<pers%>%<p3%>%<pl%>%<loc%>:onlarda CLIT ; 
+onlar%<prn%>%<pers%>%<p3%>%<pl%>%<abl%>:onlardan CLIT ; 
+onlar%<prn%>%<pers%>%<p3%>%<pl%>%<px%>:onlarınki CASE ; 
+onlar%<prn%>%<pers%>%<p3%>%<pl%>%<loc%>:onlardeki ATTR-SUBST ; 
+onlar%<prn%>%<pers%>%<p3%>%<pl%>%<adv%>:onlarca CLIT ; 
+onlar%<prn%>%<pers%>%<p1%>%<sg%>%<com%>:onlarınla # ; 
+
+
+LEXICON PRON-DEM-BU
+
+%<prn%>%<dem%>%<nom%>: CLIT-GENERAL ;
+%<prn%>%<dem%>%<gen%>:nun CLIT ;
+%<prn%>%<dem%>%<dat%>:na CLIT ;
+%<prn%>%<dem%>%<acc%>:nu CLIT ;
+%<prn%>%<dem%>%<abl%>:ndan CLIT-GENERAL ;
+%<prn%>%<dem%>%<loc%>:nda CLIT-GENERAL ;
+%<prn%>%<dem%>%<px%>:nuki%{pN%} CASE ;
+%<prn%>%<dem%>%<loc%>%<attr%>:ndaki ATTR-SUBST ;
+%<prn%>%<dem%>%<com%>:nunla # ;
+
+!bu%<prn%>%<dem%>%<sim%>:мондый CASE ;
+!bu%<prn%>%<dem%>%<sim%>%<px3sp%>:мондые%{n%} CASE ; ! FIXME CHECK мондый%{I%}%{n%} instead?
+!bu%<prn%>%<dem%>%<sim%>%<pl%>:мондыйлар CASE ;
+!bu%<prn%>%<dem%>%<sim%>%<pl%>%<px3sp%>:мондыйлары%{n%} CASE ;
+!bu%<prn%>%<dem%>%<adv%>:болай CLIT-GENERAL ;
+!bu%<prn%>%<dem%>%<qnt%>:bu% кадәр CLIT ;
+!bu%<prn%>%<dem%>%<qnt%>:монча CLIT ; ! Dir/LR
+%<prn%>%<dem%>%<px3sp%>:nu%{pN%} CASE ;
+
+%<prn%>%<dem%>%<pl%>:nlar CASE-ETC ;
+%<prn%>%<dem%>%<pl%>%<px3sp%>:nları%{pN%} CASE ;
+
+LEXICON PRON-ITG-NERE
+
+%<prn%>%<itg%>%<gen%>:%>nin # ;
+%<prn%>%<itg%>%<dat%>:%>ye #  ;
+%<prn%>%<itg%>%<acc%>:%>yi # ;
+%<prn%>%<itg%>%<abl%>:%>den # ;
+%<prn%>%<itg%>%<loc%>:%>de # ;
+%<prn%>%<itg%>%<px%>:%>si CASE ;
+%<prn%>%<itg%>%<loc%>:%>deki ATTR-SUBST ;
+
+LEXICON PRON-IND
+
+%<prn%>%<ind%>: N-INFL-COMMON ; ! FIXME: Check contlex
+
+LEXICON PRON-ITG-INFL
+
+%<prn%>%<itg%>: SUBST ;
+
+LEXICON PRON-ITG 
+
+ne:ne PRON-ITG-INFL ; ! "what"
+neyi:neyi PRON-ITG-INFL ; ! "what"
+niye:niye PRON-ITG-INFL ; ! "what"
+kim:kim PRON-ITG-INFL ; ! "who"
+hangi:hangi PRON-ITG-INFL ; ! "which"
+
+nere:nere PRON-ITG-NERE ; ! ""
+
+LEXICON PRON-QNT
+
+%<prn%>%<qnt%>: N-INFL-COMMON ; ! FIXME: Check contlex
+
+LEXICON PRON-NEG
+
+%<prn%>%<neg%>: CASE ;
+
+LEXICON PRON-REF-ADV
+
+CASE-ETC ;
+%<adv%>:ç%{A%} CLIT ;
+
+LEXICON PRON-REF
+
+! FIXME:
+! Listing all forms here because of overgeneration with *өздерім,
+! *өздеріміз, *өзіңдер etc while linking to POSS-REAL. This was the idea.
+! Now they are handled more like personal pronouns (the same tags in the same
+! order), so they should pass transfer without any trouble.
+!-----
+! A remaining problem with reflexive pronoun is that it takes personal copula
+! suffixes "selectively": e.g. prn.refl.px1sg would take only cop.px1sg
+! (prn.ref.px3sp seems to take all of them though).
+! A little bit of overgeneration won't hurt anyone :), but I think that odd
+! forms could be filtered out somehow later. Don't know how to do it./04Aug, IS/
+
+! FIXME DISCUSS Write full forms for the lower side and put only PRON-DEF in the
+! Root Lexicon
+
+
+%<prn%>%<ref%>%<p1%>%<sg%>:%>%{I%}m PRON-REF-ADV ;
+%<prn%>%<ref%>%<p2%>%<sg%>:%>%{I%}n PRON-REF-ADV ;
+%<prn%>%<ref%>%<p3%>%<sg%>:%>%{s%}%{I%}%{pN%} PRON-REF-ADV ;
+%<prn%>%<ref%>%<p1%>%<pl%>:%>%{I%}m%{I%}z PRON-REF-ADV ;
+%<prn%>%<ref%>%<p2%>%<pl%>:%>%{I%}n%{I%}z PRON-REF-ADV ;
+%<prn%>%<ref%>%<p3%>%<pl%>:%>l%{A%}r%>%{I%}%{pN%} PRON-REF-ADV ;
+%<prn%>%<ref%>: # ;
+
+LEXICON PRON-ADV 
+
+%<prn%>%<adv%>: CASE-NONOM ; 
+
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+!!!!!!!!	CONJUNCTIONS, CAUSE EVEN SENTENCES AND WORDS WANNA BE TOGETHER !!!!!!!!!!!
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+
+LEXICON CA
+
+%<cnjadv%>: # ;
+
+LEXICON CS 
+
+%<cnjsub%>: # ;
+
+LEXICON CC 
+
+%<cnjcoo%>: # ;
+
+
+
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+!! Numeral paradigms
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+
+LEXICON NUM
+
+%<num%>: # ;                                        ! Beş evi görüyorum.
+%<num%>%<ord%>:%>%{i%}nc%{I%} # ;                   ! Beşinci evi görüyorum.
+%<num%>%<ord%>%<subst%>:%>%{i%}nc%{I%} SUBST ;      ! Beşinciyi görüyorum.
+%<num%>%<subst%>: SUBST ;                           ! Beşi görüyorum.
+
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+!! Adverb paradigms
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+
+LEXICON ADV1
+
+%<adv%>: # ; ! this is for when the adverb is used as an adverb
+%<adv%>%<subst%>: SUBST ;
+%<adv%>%<attr%>: # ;
+
+LEXICON ADV2
+
+%<adv%>: # ;
+%<adv%>%<attr%>: # ;
+
+LEXICON ADV3
+
+%<adv%>: # ;
+
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+!! Adjective paradigms
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+
+LEXICON A1
+
+%<adj%>: # ; 
+%<adj%>%<subst%>: SUBST ;
+%<adj%>%<advl%>: # ;
+
+LEXICON A2
+
+%<adj%>: # ;
+%<adj%>%<subst%>: SUBST ;
+
+LEXICON A3
+
+%<adj%>: # ;
+%<adj%>%<advl%>: # ;
+
+LEXICON A4
+
+%<adj%>: CLIT-NOPERS ; ! FIXME: Check for overgeneration e.g. vardiyim
+
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+!! Verb paradigms
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+
+
+LEXICON V-PERS-COP-G2-NOSG3-FINAL
+
+%<p1%>%<sg%>:%>%{y%}%{I%}m  # ;
+%<p2%>%<sg%>:%>s%{I%}n  # ;
+!%<p3%>%<sg%>:%>  # ;
+%<p3%>%<frm%>%<sg%>:%>{D%}%{I%}r  # ;
+%<p1%>%<pl%>:%>%{y%}%{I%}z  # ;
+%<p2%>%<pl%>:%>s%{I%}n%{I%}z  # ;
+%<p3%>%<pl%>:%>l%{A%}r  # ;
+
+
+LEXICON PERS1-NO3PL 
+
+%<p1%>%<sg%>:%>%{I%}m  CLIT ;
+%<p2%>%<sg%>:%>s%{I%}n  CLIT ;
+%<p3%>%<sg%>:%>  CLIT ;
+%<p3%>%<frm%>%<sg%>:%>{D%}%{I%}r  CLIT ;
+%<p1%>%<pl%>:%>%{y%}%{I%}z  CLIT ;
+%<p2%>%<pl%>:%>s%{I%}n%{I%}z  CLIT ;
+
+LEXICON PERS1  !!!USED FOR CONT, FUT, AOR, EVID
+
+%<p3%>%<pl%>:%>l%{A%}r  CLIT ;
+%<p3%>%<pl%>%<frm%>:%>l%{A%}r%{D%}%{I%}r   CLIT ;
+PERS1-NO3PL ;
+
+LEXICON PERS2  !!!USED FOR PAST and CONDITIONAL
+
+%<p1%>%<sg%>:%>m  CLIT ;
+%<p2%>%<sg%>:%>n  CLIT ;
+%<p3%>%<sg%>:%>  CLIT ;
+%<p3%>%<frm%>%<sg%>:%>{D%}%{I%}r  CLIT ;
+%<p1%>%<pl%>:%>k  CLIT ;
+%<p2%>%<pl%>:%>%{i%}n%{I%}z  CLIT ;
+%<p3%>%<pl%>:%>l%{A%}r  CLIT ;
+
+LEXICON PERS2-NO3PL 
+
+%<p1%>%<sg%>:%>m  # ;
+%<p2%>%<sg%>:%>n  # ;
+%<p3%>%<sg%>:%>  # ;
+%<p3%>%<frm%>%<sg%>:%>{D%}%{I%}r  CLIT ;
+%<p1%>%<pl%>:%>k  # ;
+%<p2%>%<pl%>:%>%{i%}n%{I%}z  # ;
+
+LEXICON PERS3  !!!USED FOR NECESSITATIVE
+
+%<p1%>%<sg%>:%>%{y%}%{I%}m  CLIT ;
+%<p2%>%<sg%>:%>s%{I%}n  CLIT ;
+%<p3%>%<sg%>:%>  CLIT ;
+%<p3%>%<frm%>%<sg%>:%>{D%}%{I%}r  CLIT ;
+%<p1%>%<pl%>:%>%{y%}%{I%}z  CLIT ;
+%<p2%>%<pl%>:%>s%{I%}n%{I%}z  CLIT ;
+%<p3%>%<pl%>:%>l%{A%}r  CLIT ;
+
+LEXICON PERS3-PAST
+%<p1%>%<sg%>:%>%{y%}d%{I%}m # ;                
+%<p2%>%<sg%>:%>%{y%}d%{I%}n # ;                
+%<p3%>%<sg%>:%>%{y%}d%{I%} # ;
+%<p1%>%<pl%>:%>%{y%}d%{I%}k # ;                
+%<p2%>%<pl%>:%>%{y%}d%{I%}n%{I%}z # ;                
+%<p3%>%<pl%>:%>%{y%}d%{I%}l%{A%}r # ;  
+
+LEXICON PERS4  !!!USED FOR IMPERATIVE
+%<p2%>%<sg%>:%>  # ;
+%<p2%>%<frm%>:%>y%{I%}n # ;
+%<p2%>%<pl%>:%>s%{A%}n%{A%}  # ;
+
+LEXICON PERS5  !!!USED FOR negative aorist and abil
+%<p1%>%<sg%>:%>m%{A%}m  CLIT ;
+%<p2%>%<sg%>:%>m%{A%}zs%{I%}n  CLIT ;
+%<p3%>%<sg%>:%>m%{A%}z CLIT ;
+%<p3%>%<frm%>%<sg%>:%>m%{A%}z%{D%}%{I%}r  CLIT ;
+%<p1%>%<pl%>:%>m%{A%}y%{I%}z  CLIT ;
+%<p2%>%<pl%>:%>m%{A%}zs%{I%}n%{I%}z  CLIT ;
+%<p3%>%<pl%>:%>m%{A%}zl%{A%}r  CLIT ;
+
+LEXICON PERS6 !!! USED By Exhortative
+
+%<p1%>%<sg%>:%>%{y%}%{A%}y%{I%}m  CLIT ;
+%<p1%>%<pl%>:%>%{y%}%{A%}l%{I%}m  CLIT ;
+
+LEXICON KEN !!! ADVERBIAL FORM 
+
+%<ken%>:%>ken # ;
+
+
+
+LEXICON REC-DIR-AR
+
+%<rec%>:%>%{i%}ş CAUS-DIR-AR ;
+%<rec%>:%>%{i%}ş NECE ;
+CAUS-DIR-AR ;
+NECE ;
+
+LEXICON REC-T-AR
+
+%<rec%>:%>%{i%}ş CAUS-DIR-AR ;
+%<rec%>:%>%{i%}ş NECE ;
+CAUS-T-AR ;
+NECE ;
+
+LEXICON REC-T-AR
+
+%<rec%>:%>%{i%}ş CAUS-DIR-IR ;
+%<rec%>:%>%{i%}ş NECE ;
+CAUS-T-IR ;
+NECE ;
+
+LEXICON REF-DIR-AR
+%<ref%>:%>%{i%}n CAUS-DIR-AR ;
+%<ref%>:%>%{i%}n NECE ;
+CAUS-DIR-AR ;
+NECE ;
+
+LEXICON REF-T-AR
+%<ref%>:%>%{i%}n CAUS-T-AR ;
+%<ref%>:%>%{i%}n NECE ;
+CAUS-T-AR ;
+NECE ;
+
+LEXICON REF-T-IR
+%<ref%>:%>%{i%}n CAUS-T-IR ;
+%<ref%>:%>%{i%}n NECE ;
+CAUS-T-IR ;
+NECE ;
+
+
+LEXICON IV-REC-DIR-AR
+
+%<rec%>:%>%{i%}ş IV-CAUS-DIR-AR ;
+%<rec%>:%>%{i%}ş NECE ;
+IV-CAUS-DIR-AR ;
+NECE ;
+
+LEXICON IV-REF-DIR-AR
+%<ref%>:%>%{i%}n IV-CAUS-DIR-AR ;
+%<ref%>:%>%{i%}n NECE ;
+IV-CAUS-DIR-AR ;
+NECE ;
+
+
+LEXICON PASS-DIR-AR
+
+%<pass%>:%>%{i%}%{L%} NECE ;
+%<pass%>:%>%{i%}%{L%} NON-FINITE ;
+%<pass%>:%>%{i%}%{L%} GERUND ;
+%<pass%>:%>%{i%}%{L%} ABIL-AR ;
+%<pass%>:%>%{i%}%{L%} NEG ;
+%<pass%>:%>%{i%}%{L%} AOR-IR ;
+%<pass%>:%>%{i%}%{L%} AOR-IR-CONDITIONAL ;
+%<pass%>:%>%{i%}%{L%} FINITE-VERBS-IR ;
+
+
+CAUS-DIR-AR ;
+NECE ;
+NON-FINITE ;
+GERUND ;
+ABIL-AR ;
+NEG ;
+AOR-AR ;
+AOR-AR-CONDITIONAL ;
+
+LEXICON PASS-T-AR
+
+%<pass%>:%>%{i%}%{L%} NECE ;
+%<pass%>:%>%{i%}%{L%} NON-FINITE ;
+%<pass%>:%>%{i%}%{L%} GERUND ;
+%<pass%>:%>%{i%}%{L%} ABIL-AR ;
+%<pass%>:%>%{i%}%{L%} NEG ;
+%<pass%>:%>%{i%}%{L%} AOR-AR ;
+%<pass%>:%>%{i%}%{L%} AOR-IR-CONDITIONAL ;
+%<pass%>:%>%{i%}%{L%} FINITE-VERBS-IR ;
+
+CAUS-T-AR ;
+NECE ;
+NON-FINITE ;
+GERUND ;
+ABIL-AR ;
+NEG ;
+AOR-AR ;
+AOR-AR-CONDITIONAL ;
+
+LEXICON PASS-T-IR
+
+%<pass%>:%>%{i%}%{L%} NECE ;
+%<pass%>:%>%{i%}%{L%} NON-FINITE ;
+%<pass%>:%>%{i%}%{L%} GERUND ;
+%<pass%>:%>%{i%}%{L%} ABIL-IR ;
+%<pass%>:%>%{i%}%{L%} NEG ;
+%<pass%>:%>%{i%}%{L%} AOR-IR ;
+%<pass%>:%>%{i%}%{L%} AOR-IR-CONDITIONAL ;
+%<pass%>:%>%{i%}%{L%} FINITE-VERBS-IR ;
+
+CAUS-T-IR ;
+NECE ;
+NON-FINITE ;
+GERUND ;
+ABIL-IR ;
+NEG ;
+AOR-IR ;
+AOR-IR-CONDITIONAL ;
+
+
+LEXICON REC-DIR-IR
+
+%<rec%>:%>%{i%}ş CAUS-DIR-IR ;
+%<rec%>:%>%{i%}ş NECE ;
+CAUS-DIR-IR ;
+NECE ;
+
+LEXICON REF-DIR-IR
+%<ref%>:%>%{i%}n CAUS-DIR-IR ;
+%<ref%>:%>%{i%}n NECE ;
+CAUS-DIR-IR ;
+NECE ;
+
+LEXICON IV-REC-DIR-IR
+
+%<rec%>:%>%{i%}ş IV-CAUS-DIR-IR ;
+%<rec%>:%>%{i%}ş NECE ;
+IV-CAUS-DIR-IR ;
+NECE ;
+
+LEXICON IV-REF-DIR-IR
+%<ref%>:%>%{i%}n IV-CAUS-DIR-IR ;
+%<ref%>:%>%{i%}n NECE ;
+IV-CAUS-DIR-IR ;
+NECE ;
+
+LEXICON PASS-DIR-IR
+
+%<pass%>:%>%{i%}%{L%} NECE ;
+%<pass%>:%>%{i%}%{L%} NON-FINITE ;
+%<pass%>:%>%{i%}%{L%} FINITE-VERBS-IR ;
+
+%<pass%>:%>%{i%}%{L%} GERUND ;
+%<pass%>:%>%{i%}%{L%} ABIL-IR ;
+%<pass%>:%>%{i%}%{L%} NEG ;
+%<pass%>:%>%{i%}%{L%} AOR-IR ;
+%<pass%>:%>%{i%}%{L%} AOR-IR-CONDITIONAL ;
+
+AOR-IR-CONDITIONAL ;
+CAUS-DIR-IR ;
+NECE ;
+NON-FINITE ;
+GERUND ;
+ABIL-IR ;
+NEG ;
+AOR-IR ;
+
+LEXICON CAUS-DIR-IR
+%<caus%>:%>%{D%}%{I%}r NEG ;
+%<caus%>:%>%{D%}%{I%}r FINITE-VERBS-IR ;
+%<caus%>:%>%{D%}%{I%}r ABIL-IR ;
+%<caus%>:%>%{D%}%{I%}r NECE ;
+%<caus%>:%>%{D%}%{I%}r NON-FINITE ;
+%<caus%>:%>%{D%}%{I%}r PASS-DIR-IR ;
+PASS-DIR-IR ;
+NEG ;
+FINITE-VERBS-IR ;
+ABIL-IR ;
+NECE ;
+NON-FINITE ;
+
+LEXICON CAUS-IR-AR
+
+%<caus%>:%>%{i%}r NEG ;
+%<caus%>:%>%{i%}r FINITE-VERBS-AR ;
+%<caus%>:%>%{i%}r ABIL-IR ;
+%<caus%>:%>%{i%}r NECE ;
+%<caus%>:%>%{i%}r NON-FINITE ;
+%<caus%>:%>%{i%}r PASS-DIR-IR ;
+PASS-DIR-IR ;
+NEG ;
+FINITE-VERBS-AR ;
+ABIL-IR ;
+NECE ;
+NON-FINITE ;
+
+
+
+LEXICON IV-CAUS-DIR-IR
+%<caus%>:%>%{D%}%{I%}r NEG ;
+%<caus%>:%>%{D%}%{I%}r FINITE-VERBS-IR ;
+%<caus%>:%>%{D%}%{I%}r ABIL-IR ;
+%<caus%>:%>%{D%}%{I%}r NECE ;
+%<caus%>:%>%{D%}%{I%}r NON-FINITE ;
+%<caus%>:%>%{D%}%{I%}r PASS-DIR-IR ;
+
+NEG ;
+FINITE-VERBS-IR ;
+ABIL-IR ;
+NECE ;
+NON-FINITE ;
+
+LEXICON CAUS-DIR-AR
+%<caus%>:%>%{D%}%{I%}r NEG ;
+%<caus%>:%>%{D%}%{I%}r FINITE-VERBS-IR ;
+%<caus%>:%>%{D%}%{I%}r ABIL-IR ;
+%<caus%>:%>%{D%}%{I%}r NECE ;
+%<caus%>:%>%{D%}%{I%}r NON-FINITE ;
+%<caus%>:%>%{D%}%{I%}r PASS-DIR-AR ;
+NEG ;
+FINITE-VERBS-AR ;
+ABIL-AR ;
+NECE ;
+NON-FINITE ;
+PASS-DIR-AR ;
+
+LEXICON IV-CAUS-DIR-AR
+%<caus%>:%>%{D%}%{I%}r NEG ;
+%<caus%>:%>%{D%}%{I%}r FINITE-VERBS-IR ;
+%<caus%>:%>%{D%}%{I%}r ABIL-IR ;
+%<caus%>:%>%{D%}%{I%}r NECE ;
+%<caus%>:%>%{D%}%{I%}r NON-FINITE ;
+%<caus%>:%>%{D%}%{I%}r PASS-DIR-AR ;
+NEG ;
+FINITE-VERBS-AR ;
+ABIL-AR ;
+NECE ;
+NON-FINITE ;
+
+
+LEXICON CAUS-T-AR
+%<caus%>:%>t NEG ;
+%<caus%>:%>t FINITE-VERBS-IR ;
+%<caus%>:%>t ABIL-IR ;
+%<caus%>:%>t NECE ;
+%<caus%>:%>t NON-FINITE ;
+NEG ;
+FINITE-VERBS-AR ;
+ABIL-IR ;
+NECE ;
+NON-FINITE ;
+
+LEXICON CAUS-T-IR
+%<caus%>:%>t NEG ;
+%<caus%>:%>t FINITE-VERBS-IR ;
+%<caus%>:%>t ABIL-IR ;
+%<caus%>:%>t NECE ;
+%<caus%>:%>t NON-FINITE ;
+NEG ;
+FINITE-VERBS-IR ;
+ABIL-IR ;
+NECE ;
+NON-FINITE ;
+
+LEXICON IMPERFECTIVE
+%<imper%>:%>m%{A%}kt%{A%} PERS3 ;
+%<imperp%>:%>m%{A%}kt%{A%} PERS3-PAST ;
+
+
+LEXICON NEG
+%<neg%>:%>m%{a%} REGULAR-NEGATIVE ;
+
+LEXICON AOR-AR
+%<aor%>:%>%{A%}r PERS1 ;
+%<neg%>%<aor%>:%> PERS5;
+%<aor%>:%>%{A%}r KEN ;
+%<neg%>%<aor%>:%>m%{A%}z KEN ;
+
+LEXICON AOR-IR
+%<aor%>:%>%{i%}r PERS1 ;
+%<neg%>%<aor%>:%> PERS5;
+%<aor%>:%>%{i%}r KEN ;
+%<neg%>%<aor%>:%>m%{A%}z KEN;
+
+LEXICON AOR-IR-CONDITIONAL
+%<aorcond%>:%>%{i%}rs%{A%} PERS2-NO3PL  ;
+%<aorcond%>%<p3%>%<pl%>:%>%{i%}r%>l%{A%}r%>%s%{A%} # ; 
+%<neg%>%<aorcond%>:%>m%{A%}z%>s%{A%} PERS2-NO3PL ;
+%<neg%>%<aorcond%>%<p3%>%<pl%>:%>m%{A%}z%>l%{A%}r%>s%{A%} # ;
+
+LEXICON AOR-AR-CONDITIONAL
+%<aorcond%>:%>%{A%}rs%{A%} PERS2-NO3PL  ;
+%<aorcond%>%<p3%>%<pl%>:%>%{A%}r%>l%{A%}r%>s%{A%} # ; 
+%<neg%>%<aorcond%>:%>m%{A%}z%>s%{A%} PERS2-NO3PL ;
+%<neg%>%<aorcond%>%<p3%>%<pl%>:%>m%{A%}z%>l%{A%}r%>s%{A%} # ;
+
+
+
+
+LEXICON ABIL-AR
+%<abil%>:%>%{y%}%{A%}bil FINITE-VERBS-IR ;
+%<neg%>%<abil%>:%>%{y%}%{A%}m%{a%} FINITE-VERBS-IR ;
+%<abil%>:%>%{y%}%{A%}bil GERUND ;
+%<neg%>%<abil%>:%>%{y%}%{A%}m%{A%} GERUND ;
+%<abil%>:%>%{y%}%{A%}bil NON-FINITE ;
+%<neg%>%<abil%>:%>%{A%} NON-FINITE ;
+%<neg%>%<abil%>:%>%{y%}%{A%}m%{a%} PERS5 ;
+NON-FINITE ;
+
+GERUND ;
+
+LEXICON ABIL-AR-CONDITIONAL
+
+%<abil%>%<cond%>:%>%{A%}bilse PERS2  ;
+%<neg%>%<abil%>%<cond%>:%>%{y%}%{A%}m%{A%}z%>s%{A%} PERS2-NO3PL ;
+%<neg%>%<abil%>%<cond%>%<p3%>%<pl%>:%>%{y%}%{A%}m%{A%}z%>l%{A%}r%>s%{A%} # ;
+
+LEXICON ABIL-IR
+%<abil%>:%>%{y%}%{A%}bil FINITE-VERBS-IR ;
+%<neg%>%<abil%>:%>%{y%}%{A%}m%{a%} FINITE-VERBS-IR ;
+%<abil%>:%>%{y%}%{A%}bil GERUND ;
+%<neg%>%<abil%>:%>%{y%}%{A%}m%{A%} GERUND ;
+%<abil%>:%>%{y%}%{A%}bil NON-FINITE ;
+%<neg%>%<abil%>:%>%{y%}%{A%}m%{A%} NON-FINITE ;
+%<neg%>%<abil%>:%>%{y%}%{A%} PERS5 ;
+NON-FINITE ;
+FINITE-VERBS-IR ;
+GERUND ;
+
+LEXICON PRESENT-CONTINUOUS
+
+%<pcont%>:%>%{I%}yor PERS1 ;
+%<pcont%>:%>%{I%}yor KEN ;
+
+LEXICON PAST-CONTINUOUS
+
+%<pastcnt%>:%>%{I%}yord%{I%} PERS2-NO3PL ;
+%<pastcnt%>%<p3%>%<pl%>:%>%{I%}yord%{I%}%>l%{A%}r # ; ! Dir/LR
+%<pastcnt%>%<p3%>%<pl%>:%>%{I%}yor%>l%{A%}r%>d%{I%} # ; 
+
+LEXICON CONDITIONAL-CONTINUOUS
+
+%<condcnt%>:%>%{I%}yors%{A%} PERS2 ;
+
+LEXICON EVIDENTIAL-CONTINUOUS 
+
+%<evidcnt%>:%>%{I%}yorm%{I%}ş PERS1-NO3PL ;
+%<evidcnt%>%<p3%>%<pl%>:%>%{I%}yorm%{I%}ş%>d%{I%}%>l%{A%}r # ; ! Dir/LR
+%<evidcnt%>%<p3%>%<pl%>:%>%{I%}yorm%{I%}ş%>l%{A%}r%>%d%{I%} # ; 
+
+LEXICON FUTURE
+
+%<fut%>:%>%{y%}%{A%}c%{A%}k PERS1 ;
+
+LEXICON FUTURE-PERFECT
+
+%<futp%>:%>%{y%}%{A%}c%{A%}kt%{I%} PERS2-NO3PL ;
+%<futp%>%<p3%>%<pl%>:%>%{y%}%{A%}c%{A%}k%>l%{A%}r%>d%{I%}  # ; ! Dir/LR
+
+
+LEXICON FUTURE-EVIDENTIAL
+
+%<fute%>:%>%{y%}%{A%}c%{A%}km%{I%}ş PERS1 ;
+%<fute%>:%>%{y%}%{A%}c%{A%}km%{I%}ş CONDITIONAL ;
+
+
+LEXICON FUTURE-CONDITIONAL
+
+%<futc%>:%>%{y%}%{A%}c%{A%}ks%{A%} PERS2 ;
+
+LEXICON PAST
+
+%<past%>:%>%{D%}%{I%} PERS2 ;
+
+LEXICON PAST-CONDITIONAL
+
+%<pastc%>:%>d%{I%}ys%{A%} PERS2 ;
+
+LEXICON EVIDENTIAL-PAST
+
+%<evid%>:%>m%{I%}ş PERS1 ;
+%<evid%>:%>m%{I%}ş KEN ;
+
+
+LEXICON DOUBLE-EVIDENTIAL
+
+%<evid2%>:%>m%{I%}şm%{I%}ş PERS1 ;
+%<neg%>%<evid2%>:%>m%{A%}m%{I%}şm%{I%}ş PERS1 ;
+
+LEXICON EVIDENTIAL-PERFECT
+
+%<evidp%>:%>m%{I%}şt%{I%} PERS2 ;
+
+LEXICON AORIST-AR-PERFECT
+
+%<aorp%>:%>%{A%}rd%{I%} PERS2-NO3PL  ;
+%<aorp%>%<p3%>%<pl%>:%>%{A%}r%>l%{A%}r%>d%{I%} # ; 
+%<neg%>%<aorp%>:%>m%{A%}zd%{I%} PERS2-NO3PL ;
+%<neg%>%<aorp%>:%>m%{A%}zl%{A%}rd%{I%} PERS2 ;
+
+LEXICON AORIST-IR-PERFECT
+
+%<aorp%>:%>%{i%}rd%{I%} PERS2-NO3PL  ;
+%<aorp%>%<p3%>%<pl%>:%>%{i%}r%>l%{A%}r%>d%{I%} # ; 
+%<neg%>%<aorp%>:%>m%{A%}zd%{I%} PERS2-NO3PL ;
+%<neg%>%<aorp%>:%>m%{A%}zl%{A%}rd%{I%} PERS2 ;
+
+LEXICON EVIDENTIAL-CONDITIONAL
+
+%<evidc%>:%>m%{I%}şs%{A%} PERS2 ;
+
+LEXICON CONDITIONAL
+
+%<cond%>:%>s%{A%} PERS2 ;
+
+LEXICON CONDITIONAL-PAST
+
+%<condp%>:%>s%{A%}yd%{I%} PERS2 ;
+
+LEXICON CONDITIONAL-EVIDENTIAL
+
+%<conde%>:%>s%{A%}ym%{I%}ş PERS1 ;
+
+LEXICON NECE
+
+%<nece%>:%>m%{A%}l%{I%} PERS3 ;             ! prc, + copula
+%<necepast%>:%>m%{A%}l%{I%} PERS3-PAST ;
+
+LEXICON JUSSIVE
+
+%<juss%>%<p3%>%<sg%>:%>s%{I%}n # ;
+%<juss%>%<p3%>%<pl%>:%>s%{I%}nl%{A%}r # ;
+
+LEXICON IMPERATIVE
+
+%<imp%>:%> PERS4 ;
+
+LEXICON EXHORTATIVE
+
+%<exh%>:%> PERS6 ;
+
+LEXICON GERUND
+
+%<ger1%>:%>m%{A%} SUBST ;
+%<ger2%>:%>%{D%}%{I%}k%{v%} SUBST ;
+%<ger3%>:%>%{I%}ş SUBST ;
+%<ger4%>:%>%{y%}%{A%}c%{A%}k%{v%} SUBST ;
+%<ger5%>:%>%{y%}%{A%}n SUBST ;
+%<ger6%>:%>m%{A%}k%{v%} SUBST ;
+
+LEXICON NON-FINITE
+
+%<inf%>:%>m%{A%}k # ;
+
+
+
+%<prc1%>:%>%{y%}%{A%}n ATTR ;
+
+%<gna1%>:%>%{y%}%{A%}r%{A%}k # ;
+%<gna2%>:%>%{y%}%{I%}p # ;
+
+LEXICON CONDITIONAL
+
+%<cond%>:%>s%{A%} PERS2 ;
+
+
+LEXICON FINITE-VERBS-AR
+
+AOR-AR ;
+AORIST-AR-PERFECT ;
+AOR-AR-CONDITIONAL ;
+IMPERATIVE ;
+CONDITIONAL-CONTINUOUS ;
+CONDITIONAL-EVIDENTIAL ;
+CONDITIONAL-PAST ; 
+EVIDENTIAL-CONDITIONAL ;
+EVIDENTIAL-CONTINUOUS ;
+EVIDENTIAL-PAST ;
+EVIDENTIAL-PERFECT ;
+FUTURE ;
+FUTURE-CONDITIONAL ;
+FUTURE-PERFECT ;
+IMPERFECTIVE ;
+PAST ;
+PAST-CONDITIONAL ;
+PAST-CONTINUOUS ;
+PRESENT-CONTINUOUS ;
+FUTURE-EVIDENTIAL ;
+CONDITIONAL;
+
+LEXICON FINITE-VERBS-IR
+
+AOR-IR ;
+AORIST-IR-PERFECT ;
+AOR-IR-CONDITIONAL ;
+IMPERATIVE ;
+CONDITIONAL-CONTINUOUS ;
+CONDITIONAL-EVIDENTIAL ;
+CONDITIONAL-PAST ; 
+EVIDENTIAL-CONDITIONAL ;
+EVIDENTIAL-CONTINUOUS ;
+EVIDENTIAL-PAST ;
+EVIDENTIAL-PERFECT ;
+FUTURE ;
+FUTURE-CONDITIONAL ;
+FUTURE-PERFECT ;
+IMPERFECTIVE ;
+PAST ;
+PAST-CONDITIONAL ;
+PAST-CONTINUOUS ;
+PRESENT-CONTINUOUS ;
+FUTURE-EVIDENTIAL ;
+CONDITIONAL;
+
+LEXICON REGULAR-NEGATIVE 
+
+NECE ;
+CONDITIONAL ;
+NON-FINITE ;
+GERUND ;
+IMPERATIVE ;
+CONDITIONAL-CONTINUOUS ;
+CONDITIONAL-EVIDENTIAL ;
+CONDITIONAL-PAST ; 
+EVIDENTIAL-CONDITIONAL ;
+EVIDENTIAL-CONTINUOUS ;
+EVIDENTIAL-PAST ;
+EVIDENTIAL-PERFECT ;
+FUTURE ;
+FUTURE-CONDITIONAL ;
+FUTURE-EVIDENTIAL ;
+FUTURE-PERFECT ;
+IMPERFECTIVE ;
+PAST ;
+PAST-CONDITIONAL ;
+PAST-CONTINUOUS ;
+PRESENT-CONTINUOUS ;
+
+
+LEXICON V-TV-DIR-IR
+! Ex. al>mak - al>ır>ım - al>dır>mak
+
+%<v%>%<tv%>: CAUS-DIR-IR ;
+%<v%>%<tv%>: AOR-IR ;
+
+%<v%>%<tv%>: REC-DIR-IR ;
+%<v%>%<tv%>: PASS-DIR-IR ;
+%<v%>%<tv%>: REF-DIR-IR ;
+
+%<v%>%<tv%>: ABIL-IR ;
+
+%<v%>%<tv%>: FINITE-VERBS-IR ;
+
+%<v%>%<tv%>: NEG ;
+%<v%>%<tv%>: NECE ;
+%<v%>%<tv%>: CONDITIONAL ;
+%<v%>%<tv%>: NON-FINITE ;
+%<v%>%<tv%>: GERUND ;
+%<v%>%<tv%>: IMPERATIVE ;
+%<v%>%<tv%>: CONDITIONAL-CONTINUOUS ;
+%<v%>%<tv%>: CONDITIONAL-EVIDENTIAL ;
+%<v%>%<tv%>: CONDITIONAL-PAST ; 
+%<v%>%<tv%>: EVIDENTIAL-CONDITIONAL ;
+%<v%>%<tv%>: EVIDENTIAL-CONTINUOUS ;
+%<v%>%<tv%>: EVIDENTIAL-PAST ;
+%<v%>%<tv%>: EVIDENTIAL-PERFECT ;
+%<v%>%<tv%>: FUTURE ;
+%<v%>%<tv%>: FUTURE-CONDITIONAL ;
+%<v%>%<tv%>: FUTURE-PERFECT ;
+%<v%>%<tv%>: IMPERFECTIVE ;
+%<v%>%<tv%>: PAST ;
+%<v%>%<tv%>: PAST-CONDITIONAL ;
+%<v%>%<tv%>: PAST-CONTINUOUS ;
+%<v%>%<tv%>: PRESENT-CONTINUOUS ;
+%<v%>%<tv%>: FUTURE-EVIDENTIAL ;
+%<v%>%<tv%>: AOR-IR-CONDITIONAL ;
+%<v%>%<tv%>: AORIST-IR-PERFECT ;
+%<v%>%<tv%>: EXHORTATIVE ;
+%<v%>%<tv%>: JUSSIVE ;
+%<v%>%<tv%>: DOUBLE-EVIDENTIAL;
+
+
+
+LEXICON V-TV-IR-AR
+
+
+%<v%>%<tv%>: CAUS-IR-AR ;
+%<v%>%<tv%>: AOR-IR ;
+
+%<v%>%<tv%>: REC-DIR-IR ;
+%<v%>%<tv%>: PASS-DIR-IR ;
+%<v%>%<tv%>: REF-DIR-IR ;
+
+%<v%>%<tv%>: ABIL-IR ;
+
+%<v%>%<tv%>: FINITE-VERBS-IR ;
+
+%<v%>%<tv%>: NEG ;
+%<v%>%<tv%>: NECE ;
+%<v%>%<tv%>: CONDITIONAL ;
+%<v%>%<tv%>: NON-FINITE ;
+%<v%>%<tv%>: GERUND ;
+%<v%>%<tv%>: IMPERATIVE ;
+%<v%>%<tv%>: CONDITIONAL-CONTINUOUS ;
+%<v%>%<tv%>: CONDITIONAL-EVIDENTIAL ;
+%<v%>%<tv%>: CONDITIONAL-PAST ; 
+%<v%>%<tv%>: EVIDENTIAL-CONDITIONAL ;
+%<v%>%<tv%>: EVIDENTIAL-CONTINUOUS ;
+%<v%>%<tv%>: EVIDENTIAL-PAST ;
+%<v%>%<tv%>: EVIDENTIAL-PERFECT ;
+%<v%>%<tv%>: FUTURE ;
+%<v%>%<tv%>: FUTURE-CONDITIONAL ;
+%<v%>%<tv%>: FUTURE-PERFECT ;
+%<v%>%<tv%>: IMPERFECTIVE ;
+%<v%>%<tv%>: PAST ;
+%<v%>%<tv%>: PAST-CONDITIONAL ;
+%<v%>%<tv%>: PAST-CONTINUOUS ;
+%<v%>%<tv%>: PRESENT-CONTINUOUS ;
+%<v%>%<tv%>: FUTURE-EVIDENTIAL ;
+%<v%>%<tv%>: AOR-IR-CONDITIONAL ;
+%<v%>%<tv%>: AORIST-IR-PERFECT ;
+%<v%>%<tv%>: EXHORTATIVE ;
+%<v%>%<tv%>: JUSSIVE ;
+%<v%>%<tv%>: DOUBLE-EVIDENTIAL;
+
+
+LEXICON V-IV-DIR-IR
+
+%<v%>%<iv%>: IV-CAUS-DIR-IR ;
+%<v%>%<iv%>: AOR-IR ;
+%<v%>%<iv%>: IV-REC-DIR-IR ;
+%<v%>%<iv%>: IV-REF-DIR-IR ;
+%<v%>%<iv%>: ABIL-IR ;
+%<v%>%<iv%>: FINITE-VERBS-IR ;
+%<v%>%<iv%>: NEG ;
+%<v%>%<iv%>: NECE ;
+%<v%>%<iv%>: CONDITIONAL ;
+%<v%>%<iv%>: NON-FINITE ;
+%<v%>%<iv%>: GERUND ;
+%<v%>%<iv%>: IMPERATIVE ;
+%<v%>%<iv%>: CONDITIONAL-CONTINUOUS ;
+%<v%>%<iv%>: CONDITIONAL-EVIDENTIAL ;
+%<v%>%<iv%>: CONDITIONAL-PAST ; 
+%<v%>%<iv%>: EVIDENTIAL-CONDITIONAL ;
+%<v%>%<iv%>: EVIDENTIAL-CONTINUOUS ;
+%<v%>%<iv%>: EVIDENTIAL-PAST ;
+%<v%>%<iv%>: EVIDENTIAL-PERFECT ;
+%<v%>%<iv%>: FUTURE ;
+%<v%>%<iv%>: FUTURE-CONDITIONAL ;
+%<v%>%<iv%>: FUTURE-PERFECT ;
+%<v%>%<iv%>: IMPERFECTIVE ;
+%<v%>%<iv%>: PAST ;
+%<v%>%<iv%>: PAST-CONDITIONAL ;
+%<v%>%<iv%>: PAST-CONTINUOUS ;
+%<v%>%<iv%>: PRESENT-CONTINUOUS ;
+%<v%>%<iv%>: FUTURE-EVIDENTIAL ;
+%<v%>%<iv%>: AOR-IR-CONDITIONAL ;
+%<v%>%<iv%>: AORIST-IR-PERFECT ;
+%<v%>%<iv%>: EXHORTATIVE ;
+%<v%>%<iv%>: JUSSIVE ;
+%<v%>%<iv%>: DOUBLE-EVIDENTIAL;
+
+
+
+LEXICON V-TV-DIR-AR 
+! Ex. yap>mak - yap>ar>ım - yap>dır>mak
+
+%<v%>%<tv%>: CAUS-DIR-AR ;
+%<v%>%<tv%>: AOR-AR ;
+%<v%>%<tv%>: REC-DIR-AR ;
+%<v%>%<tv%>: PASS-DIR-AR ;
+%<v%>%<tv%>: REF-DIR-AR ;
+%<v%>%<tv%>: AOR-AR-CONDITIONAL ;
+%<v%>%<tv%>: ABIL-AR ;
+%<v%>%<tv%>: FINITE-VERBS-AR ;
+%<v%>%<tv%>: NEG ;
+%<v%>%<tv%>: NECE ;
+%<v%>%<tv%>: CONDITIONAL ;
+%<v%>%<tv%>: NON-FINITE ;
+%<v%>%<tv%>: GERUND ;
+%<v%>%<tv%>: IMPERATIVE ;
+%<v%>%<tv%>: CONDITIONAL-CONTINUOUS ;
+%<v%>%<tv%>: CONDITIONAL-EVIDENTIAL ;
+%<v%>%<tv%>: CONDITIONAL-PAST ; 
+%<v%>%<tv%>: EVIDENTIAL-CONDITIONAL ;
+%<v%>%<tv%>: EVIDENTIAL-CONTINUOUS ;
+%<v%>%<tv%>: EVIDENTIAL-PAST ;
+%<v%>%<tv%>: EVIDENTIAL-PERFECT ;
+%<v%>%<tv%>: FUTURE ;
+%<v%>%<tv%>: FUTURE-CONDITIONAL ;    
+%<v%>%<tv%>: FUTURE-PERFECT ;
+%<v%>%<tv%>: IMPERFECTIVE ;
+%<v%>%<tv%>: PAST ;
+%<v%>%<tv%>: PAST-CONDITIONAL ;
+%<v%>%<tv%>: PAST-CONTINUOUS ;
+%<v%>%<tv%>: PRESENT-CONTINUOUS ;
+%<v%>%<tv%>: FUTURE-EVIDENTIAL ;
+%<v%>%<tv%>: EXHORTATIVE ;
+%<v%>%<tv%>: JUSSIVE ;
+%<v%>%<tv%>: AORIST-AR-PERFECT ;
+%<v%>%<tv%>: ABIL-AR-CONDITIONAL;
+%<v%>%<tv%>: DOUBLE-EVIDENTIAL;
+
+
+LEXICON V-TV-T-AR 
+
+%<v%>%<tv%>: CAUS-T-AR ;
+%<v%>%<tv%>: AOR-AR ;
+%<v%>%<tv%>: REC-T-AR ;
+%<v%>%<tv%>: PASS-T-AR ;
+%<v%>%<tv%>: REF-T-AR ;
+%<v%>%<tv%>: AOR-AR-CONDITIONAL ;
+%<v%>%<tv%>: ABIL-AR ;
+%<v%>%<tv%>: FINITE-VERBS-AR ;
+%<v%>%<tv%>: NEG ;
+%<v%>%<tv%>: NECE ;
+%<v%>%<tv%>: CONDITIONAL ;
+%<v%>%<tv%>: NON-FINITE ;
+%<v%>%<tv%>: GERUND ;
+%<v%>%<tv%>: IMPERATIVE ;
+%<v%>%<tv%>: CONDITIONAL-CONTINUOUS ;
+%<v%>%<tv%>: CONDITIONAL-EVIDENTIAL ;
+%<v%>%<tv%>: CONDITIONAL-PAST ; 
+%<v%>%<tv%>: EVIDENTIAL-CONDITIONAL ;
+%<v%>%<tv%>: EVIDENTIAL-CONTINUOUS ;
+%<v%>%<tv%>: EVIDENTIAL-PAST ;
+%<v%>%<tv%>: EVIDENTIAL-PERFECT ;
+%<v%>%<tv%>: FUTURE ;
+%<v%>%<tv%>: FUTURE-CONDITIONAL ;
+%<v%>%<tv%>: FUTURE-PERFECT ;
+%<v%>%<tv%>: IMPERFECTIVE ;
+%<v%>%<tv%>: PAST ;
+%<v%>%<tv%>: PAST-CONDITIONAL ;
+%<v%>%<tv%>: PAST-CONTINUOUS ;
+%<v%>%<tv%>: PRESENT-CONTINUOUS ;
+%<v%>%<tv%>: FUTURE-EVIDENTIAL ;
+%<v%>%<tv%>: EXHORTATIVE ;
+%<v%>%<tv%>: JUSSIVE ;
+%<v%>%<tv%>: AORIST-AR-PERFECT ;
+%<v%>%<tv%>: ABIL-AR-CONDITIONAL;
+%<v%>%<tv%>: DOUBLE-EVIDENTIAL;
+
+
+LEXICON V-IV-T-IR 
+
+%<v%>%<iv%>: CAUS-T-IR ;
+%<v%>%<iv%>: AOR-IR;
+%<v%>%<iv%>: REC-T-IR ;
+%<v%>%<iv%>: REF-T-IR ;
+%<v%>%<iv%>: AOR-IR-CONDITIONAL ;
+%<v%>%<iv%>: ABIL-IR ;
+%<v%>%<iv%>: FINITE-VERBS-IR ;
+%<v%>%<iv%>: NEG ;
+%<v%>%<iv%>: NECE ;
+%<v%>%<iv%>: CONDITIONAL ;
+%<v%>%<iv%>: NON-FINITE ;
+%<v%>%<iv%>: GERUND ;
+%<v%>%<iv%>: IMPERATIVE ;
+%<v%>%<iv%>: CONDITIONAL-CONTINUOUS ;
+%<v%>%<iv%>: CONDITIONAL-EVIDENTIAL ;
+%<v%>%<iv%>: CONDITIONAL-PAST ; 
+%<v%>%<iv%>: EVIDENTIAL-CONDITIONAL ;
+%<v%>%<iv%>: EVIDENTIAL-CONTINUOUS ;
+%<v%>%<iv%>: EVIDENTIAL-PAST ;
+%<v%>%<iv%>: EVIDENTIAL-PERFECT ;
+%<v%>%<iv%>: FUTURE ;
+%<v%>%<iv%>: FUTURE-CONDITIONAL ;
+%<v%>%<iv%>: FUTURE-PERFECT ;
+%<v%>%<iv%>: IMPERFECTIVE ;
+%<v%>%<iv%>: PAST ;
+%<v%>%<iv%>: PAST-CONDITIONAL ;
+%<v%>%<iv%>: PAST-CONTINUOUS ;
+%<v%>%<iv%>: PRESENT-CONTINUOUS ;
+%<v%>%<iv%>: FUTURE-EVIDENTIAL ;
+%<v%>%<iv%>: EXHORTATIVE ;
+%<v%>%<iv%>: JUSSIVE ;
+%<v%>%<iv%>: AORIST-AR-PERFECT ;
+%<v%>%<iv%>: ABIL-AR-CONDITIONAL;
+%<v%>%<iv%>: DOUBLE-EVIDENTIAL;
+
+
+
+
+LEXICON V-TV-T-IR 
+
+%<v%>%<tv%>: CAUS-T-IR ;
+%<v%>%<tv%>: AOR-IR;
+%<v%>%<tv%>: REC-T-IR ;
+%<v%>%<tv%>: PASS-T-IR ;
+%<v%>%<tv%>: REF-T-IR ;
+%<v%>%<tv%>: AOR-IR-CONDITIONAL ;
+%<v%>%<tv%>: ABIL-IR ;
+%<v%>%<tv%>: FINITE-VERBS-IR ;
+%<v%>%<tv%>: NEG ;
+%<v%>%<tv%>: NECE ;
+%<v%>%<tv%>: CONDITIONAL ;
+%<v%>%<tv%>: NON-FINITE ;
+%<v%>%<tv%>: GERUND ;
+%<v%>%<tv%>: IMPERATIVE ;
+%<v%>%<tv%>: CONDITIONAL-CONTINUOUS ;
+%<v%>%<tv%>: CONDITIONAL-EVIDENTIAL ;
+%<v%>%<tv%>: CONDITIONAL-PAST ; 
+%<v%>%<tv%>: EVIDENTIAL-CONDITIONAL ;
+%<v%>%<tv%>: EVIDENTIAL-CONTINUOUS ;
+%<v%>%<tv%>: EVIDENTIAL-PAST ;
+%<v%>%<tv%>: EVIDENTIAL-PERFECT ;
+%<v%>%<tv%>: FUTURE ;
+%<v%>%<tv%>: FUTURE-CONDITIONAL ;
+%<v%>%<tv%>: FUTURE-PERFECT ;
+%<v%>%<tv%>: IMPERFECTIVE ;
+%<v%>%<tv%>: PAST ;
+%<v%>%<tv%>: PAST-CONDITIONAL ;
+%<v%>%<tv%>: PAST-CONTINUOUS ;
+%<v%>%<tv%>: PRESENT-CONTINUOUS ;
+%<v%>%<tv%>: FUTURE-EVIDENTIAL ;
+%<v%>%<tv%>: EXHORTATIVE ;
+%<v%>%<tv%>: JUSSIVE ;
+%<v%>%<tv%>: AORIST-AR-PERFECT ;
+%<v%>%<tv%>: ABIL-AR-CONDITIONAL;
+%<v%>%<tv%>: DOUBLE-EVIDENTIAL;
+
+
+
+LEXICON V-IV-DIR-AR 
+
+%<v%>%<iv%>: IV-CAUS-DIR-IR ;
+%<v%>%<iv%>: AOR-AR ;
+%<v%>%<iv%>: IV-REC-DIR-AR ;
+%<v%>%<iv%>: IV-REF-DIR-AR ;
+%<v%>%<iv%>: AOR-AR-CONDITIONAL ;
+%<v%>%<iv%>: ABIL-AR ;
+%<v%>%<iv%>: FINITE-VERBS-AR ;
+%<v%>%<iv%>: NEG ;
+%<v%>%<iv%>: NECE ;
+%<v%>%<iv%>: CONDITIONAL ;
+%<v%>%<iv%>: NON-FINITE ;
+%<v%>%<iv%>: GERUND ;
+%<v%>%<iv%>: IMPERATIVE ;
+%<v%>%<iv%>: CONDITIONAL-CONTINUOUS ;
+%<v%>%<iv%>: CONDITIONAL-EVIDENTIAL ;
+%<v%>%<iv%>: CONDITIONAL-PAST ; 
+%<v%>%<iv%>: EVIDENTIAL-CONDITIONAL ;
+%<v%>%<iv%>: EVIDENTIAL-CONTINUOUS ;
+%<v%>%<iv%>: EVIDENTIAL-PAST ;
+%<v%>%<iv%>: EVIDENTIAL-PERFECT ;
+%<v%>%<iv%>: FUTURE ;
+%<v%>%<iv%>: FUTURE-CONDITIONAL ;
+%<v%>%<iv%>: FUTURE-PERFECT ;
+%<v%>%<iv%>: IMPERFECTIVE ;
+%<v%>%<iv%>: PAST ;
+%<v%>%<iv%>: PAST-CONDITIONAL ;
+%<v%>%<iv%>: PAST-CONTINUOUS ;
+%<v%>%<iv%>: PRESENT-CONTINUOUS ;
+%<v%>%<iv%>: FUTURE-EVIDENTIAL ;
+%<v%>%<iv%>: EXHORTATIVE ;
+%<v%>%<iv%>: JUSSIVE ;
+%<v%>%<iv%>: AORIST-AR-PERFECT ;
+%<v%>%<iv%>: ABIL-AR-CONDITIONAL ;
+%<v%>%<iv%>: DOUBLE-EVIDENTIAL ;
+
+
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+
+LEXICON INTERJ
+
+%<ij%>: # ;
+
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+
+LEXICON POST
+
+%<post%>: # ;
+
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+
+LEXICON DET-DEM
+
+%<det%>%<dem%>: # ;
+
+LEXICON DET-QNT
+
+%<det%>%<qnt%>: # ;
+
+LEXICON DET-IND
+
+%<det%>%<ind%>: # ;
+
+LEXICON DET-ITG
+
+%<det%>%<itg%>: # ;
+
+LEXICON DET-NEG
+
+%<det%>%<neg%>: # ;
+
+LEXICON DET-REF
+
+%<det%>%<ref%>: # ;
+
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+!! Stem lexica
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+
+LEXICON Postpositions
+
+gibi:gibi POST ; ! ""
+kadar:kadar POST ; ! ""
+halinde:halinde POST ; ! "ın case of"
+boyunca:boyunca POST ; ! "during"
+ardından:ardından POST ; ! ""
+göre:göre POST ; ! ""
+kadar:kadar POST ; ! ""
+karşı:karşı POST ; ! ""
+rağmen:rağmen POST ; ! ""
+başka:başka POST ; ! ""
+beri:beri POST ; ! ""
+dolayı:dolayı POST ; ! ""
+ötürü:ötürü POST ; ! ""
+sonra:sonra POST ; ! ""
+ilgili:ilgili POST ; ! "regarding"
+
+LEXICON  Conjunctions
+
+ve:ve CC ; ! "and"
+ama:ama CC ; ! "but"
+ile:İle CC ; ! "and" ! Dir/LR
+ile:ile CC ; ! "and"
+ya:ya CC ; ! "either/or"
+ye:ye CC ; ! "either/or"
+veya:veya CC ; ! "either/or"
+ne:ne CC ; ! "neither/nor"
+da:da CC ; ! ""
+da:de CC ; ! "" ! Dir/LR
+fakat:fakat CC ; ! ""
+ya% da:ya% da CC ; ! ""
+ya% da:ya% da CC ; 
+ancak:ancak CC ; 
+ve:ve CC ; 
+çünkü:çünkü CC ; 
+fakat:fakat CC ; 
+ha:ha CC ; 
+hem:hem CC ; 
+ila:ila CC ; 
+lakin:lakin CC ; 
+ne:ne CC ; 
+veya:veya CC ; 
+veyahut:veyahut CC ; 
+ya:ya CC ; 
+için:için CC ; 
+gerek:gerek CC ; 
+ha:ha CC ; 
+kah:kah CC ; 
+ne:ne CC ; 
+
+ki:ki CS ; 
+diye:diye CS ; 
+olarak:olarak CS ; 
+gibi:gibi CS ; 
+eğer:eğer CS ; 
+şayet:şayet CS ; 
+nedeniyle:nedeniyle CS ; 
+
+nispeten:nispeten CA ; 
+adeta:adeta CA ; 
+aksine:aksine CA ; 
+!ama:ama CA ; 
+ancak:ancak CA ; 
+bari:bari CA ; 
+belki:belki CA ; 
+bilakis:bilakis CA ; 
+bile:bile CA ; 
+çünkü:çünkü CA ; 
+dahası:dahası CA ; 
+demek:demek CA ; 
+dolayısıyla:dolayısıyla CA ; 
+fakat:fakat CA ; 
+halbuki:halbuki CA ; 
+hani:hani CA ; 
+hatta:hatta CA ; 
+hele:hele CA ; 
+işte:işte CA ; 
+ister:ister CA ; 
+keşke:keşke CA ; 
+keza:keza CA ; 
+ki:ki CA ; 
+kısacası:kısacası CA ; 
+lakin:lakin CA ; 
+mamafih:mamafih CA ; 
+meğer:meğer CA ; 
+meğerki:meğerki CA ; 
+meğerse:meğerse CA ; 
+mesela:mesela CA ; 
+nasılsa:nasılsa CA ; 
+neyse:neyse CA ; 
+nitekim:nitekim CA ; 
+olsun:olsun CA ; 
+örneğin:örneğin CA ; 
+öyleyse:öyleyse CA ; 
+oysa:oysa CA ; 
+oysa% ki:oysa% ki CA ; 
+oysaki:oysaki CA ; 
+peki:peki CA ; 
+sonra:sonra CA ; 
+sözgelişi:sözgelişi CA ; 
+tersine:tersine CA ; 
+üstelik:üstelik CA ; 
+velhasıl:velhasıl CA ; 
+veya:veya CA ; 
+veyahut:veyahut CA ; 
+ya:ya CA ; 
+günkü:günkü CA ; 
+
+yalnız:yalnız CA ; 
+yani:yani CA ; 
+yeter:yeter CA ; 
+yok:yok CA ; 
+zaten:zaten CA ; 
+zira:zira CA ; 
+tabii% ki:tabii% ki CA ; 
+hiç% olmazsa:hiç% olmazsa CA ; 
+yok% mu:yok% mu CA ; 
+var% ya:var% ya CA ; 
+ne% de% olsa:ne% de% olsa CA ; 
+o% halde:o% halde CA ; 
+yeter% ki:yeter% ki CA ; 
+bunun% üzerine:bunun% üzerine CA ; 
+demek% ki:demek% ki CA ; 
+daha% doğrusu:daha% doğrusu CA ; 
+şöyle% ki:şöyle% ki CA ; 
+başka% bir% deyişle:başka% bir% deyişle CA ; 
+nasıl% ki:nasıl% ki CA ; 
+ne% var% ki:ne% var% ki CA ; 
+ya% da:ya% da CA ; 
+bundan% dolayı:bundan% dolayı CA ; 
+yoksa:yoksa CA ; 
+
+LEXICON Pronouns
+
+PRON-PERS ; 
+
+PRON-ITG ; 
+
+bu:bu PRON-DEM-BU ; ! "this"
+şu:şu PRON-DEM-BU ; ! "this"
+o:o PRON-DEM-BU ; ! "this"
+
+başka:başka PRON-IND ; ! "other"
+
+
+hiçbir% şey:hiçbirşey PRON-NEG ; ! "nothing" ! Dir/LR
+hiçbir% şey:hiç% birşey PRON-NEG ; ! "nothing" ! Dir/LR
+hiçbir% şey:hiçbir% şey PRON-NEG ; ! "nothing"
+hiç% kimse:hiç% kimse PRON-NEG ; ! "nobody"
+herkes:herkes PRON-QNT ; ! "everybody"
+kimse:kimse PRON-QNT ; ! "nobody"
+birisi:birisi PRON-QNT ; ! "somebody"
+bazıları:bazıları PRON-QNT ; ! "some of them"
+
+birbirine:birbirine PRON-REF ; ! "each other" @@@@ CHeCK
+öz:öz PRON-REF ; ! "self"
+kendi:kendi PRON-REF ; ! "self"
+
+ora:ora PRON-ADV ; 
+bura:bura PRON-ADV ; 
+şura:şura PRON-ADV ; 
+
+LEXICON Determiners
+
+bu:bu DET-DEM ; ! "this"
+şu:şu DET-DEM ; ! "this"
+o:o DET-DEM ; ! "this"
+
+hep:hep DET-QNT ; ! "no"
+bütün:bütün DET-QNT ; ! "every"
+
+bir:bir DET-IND ; ! "a, one"
+birkaç:birkaç DET-IND ; ! "some"
+
+hiç% bir:hiç% bir DET-NEG ; ! ""
+
+birkaç% tane:birkaç% tane DET-QNT ; ! "some units"
+birtakım:birtakım DET-QNT ; ! "several"
+birçok:birçok DET-QNT ; ! "a lot of"
+biraz:biraz DET-QNT ; ! "a bit"
+bir% miktar:bir% miktar DET-QNT ; ! "some measures"
+bazı:bazı DET-QNT ; ! "some"
+kimi:kimi DET-QNT ; ! "some (people)"
+bir% kısım:bir% kısım DET-QNT ; ! "some"
+bu% kadar:bu% kadar DET-QNT ; ! "this much"
+şu% kadar:şu% kadar DET-QNT ; ! "that much"
+o% kadar:o% kadar DET-QNT ; ! "this much"
+çok:çok DET-QNT ; ! "many"
+çoğu:çoğu DET-QNT ; ! "many" 
+!az:az DET-QNT ; ! "a little"
+!fazla:fazla DET-QNT ; ! "a lot"
+hiçbir:hiçbir DET-QNT ; ! "nothing"
+her:her DET-DEM ; ! "every"
+bütün:bütün DET-DEM ; ! "the whole"
+tüm:tüm DET-DEM ; ! "the whole"
+aynı:aynı DET-DEM ; ! "the same"
+öteki:öteki DET-DEM ; ! "the other"
+öbür:öbür DET-DEM ; !  "the other"
+tek:tek DET-IND ; ! "a" 
+herhangi:herhangi DET-IND ; ! "any"
+herhangi% bir:herhangi% bir DET-IND ; ! "anyone"
+ne% kadar:ne% kadar DET-ITG ; ! "how much"
+
+
+!!!!TO BE REVIEWED !!!!
+
+binlerce:binlerce DET-QNT ; ! "thousands of"
+yüzlerce:yüzlerce DET-QNT ; ! "hundreds of"
+
+
+LEXICON Numerals
+
+bir:bir NUM ; ! "one"
+iki:İki NUM ; ! "two" ! Dir/LR
+iki:iki NUM ; ! "two"
+üç:üç NUM ; ! "three"
+dört:dört%{v%} NUM ; ! "four"
+beş:beş NUM ; ! "five"
+altı:altı NUM ; ! "six"
+yedi:yedi NUM ; ! "seven"
+sekiz:sekiz NUM ; ! "eight"
+dokuz:dokuz NUM ; ! "nine"
+on:on NUM ; ! "ten"
+
+yüz:yüz NUM ; ! "hundred"
+bin:bin NUM ; ! "thousand"
+milyon:milyon NUM ; ! "million"
+milyar:milyar NUM ; ! "milliard"
+bilyon:bilyon NUM ; ! "billion"
+trilyon:trilyon NUM ; ! "trillion"
+katrilyon:katrilyon NUM ; ! ""
+
+LEXICON Nouns
+
+ek:ek%{v%} N1 ; ! Dir/LR
+ek:ek N1 ; ! ""
+akademisyen:akademisyen N1 ; ! "academician"
+öfke:öfke N1 ; ! "anger"
+risk:risk N1 ; ! "risk"
+subay:subay N1 ; ! "military officer"
+temdit:temdit N1 ; ! "continuance"
+yerleşim:yerleşim N1 ; ! "settlement"
+zorluk:zorluk%{v%} N1 ; ! "difficulty"
+trafik:trafik N1 ; ! "trafik" 
+rüşvet:rüşvet N1 ; ! "bribe"
+zemin:zemin N1 ; ! "ground"
+önlem:önlem N1 ; ! "measure"
+varlık:varlık%{v%} N1 ; ! "existence, capital"
+otomobil:otomobil N1 ; ! "car"
+şikayet:şikayet N1 ; ! "complaint"
+ücret:ücret N1 ; ! "price"
+bahçe:bahçe N1 ; ! "garden"
+operatör:operatör N1 ; ! "operator"
+onay:onay N1 ; ! "approval"
+takip:takip%{v%} N1 ; ! "pursuit"
+tavır:tavır N1 ; ! "attitude"
+ekip:ekip%{v%} N1 ; ! "team"
+yazar:yazar N1 ; ! "author"
+patika:patika N1 ; ! "path"
+doğrultu:doğrultu N1 ; ! "direction"
+ithal:ithal N1 ; ! "importation"
+üstünlük:üstünlük%{v%} N1 ; ! "superiority"
+rekor:rekor N1 ; ! "record"
+tazminat:tazminat N1 ; ! "compensation"
+yatırım:yatırım N1 ; ! "investment"
+sonbahar:sonbahar N1 ; ! "autumn"
+görevli:görevli N1 ; ! "functionary"
+personel:personel N1 ; ! "staff"
+başsavcı:başsavcı N1 ; ! "general procurator"
+sergi:sergi N1 ; ! "show"
+şeffaflık:şeffaflık%{v%} N1 ; ! " transparency"
+ofis:ofis N1 ; ! "office"
+saldırı:saldırı N1 ; ! "attack"
+umut:umut%{v%} N1 ; ! "hope"
+yetki:yetki N1 ; ! "authorization"
+sahne:sahne N1 ; ! "stage"
+fikir:fikir N1 ; ! "idea"
+örnek:örnek%{v%} N1 ; ! "representative"
+dikkat:dikkat N1 ; ! "attention"
+olanak:olanak%{v%} N1 ; ! "possibility"
+yardım:yardım N1 ; ! "help"
+rakam:rakam N1 ; ! "figure"
+bank:bank N1 ; ! "Bank"
+teknoloji:teknoloji N1 ; ! "technology"
+ödül:ödül N1 ; ! "award"
+özgürlük:özgürlük%{v%} N1 ; ! "freedom"
+öğrenci:öğrenci N1 ; ! "student"
+öğretim:öğretim N1 ; ! "study"
+askı:askı N1 ; ! "rack"
+üretim:üretim N1 ; ! "production"
+değişiklik:değişiklik%{v%} N1 ; ! "change"
+bağımsızlık:bağımsızlık%{v%} N1 ; ! "indipendence"
+seyahat:seyahat N1 ; ! "travel"
+teklif:teklif N1 ; ! "proposal"
+saygı:saygı N1 ; ! "respect"
+tedbir:tedbir N1 ; ! "precaution"
+grup:grup%{v%} N1 ; ! "group"
+strateji:strateji N1 ; ! "strategy"
+tavsiye:tavsiye N1 ; ! "suggestion"
+uzman:uzman N1 ; ! "expert"
+tiyatro:tiyatro N1 ; ! "teatro"
+tanık:tanık%{v%} N1 ; ! "witness"
+temsilci:temsilci N1 ; ! "agent"
+okul:okul N1 ; ! "school"
+öncelik:öncelik%{v%} N1 ; ! "priority"
+soykırım:soykırım N1 ; ! "genocide"
+zafer:zafer N1 ; ! "triumph"
+şans:şans N1 ; ! "chance"
+sanat:sanat N1 ; ! "art"
+temas:temas N1 ; ! "contact"
+tasarruf:tasarruf N1 ; ! "possession"
+sorumluluk:sorumluluk%{v%} N1 ; ! "commitment"
+yasa:yasa N1 ; ! "law"
+etkinlik:etkinlik%{v%}  N1 ; ! "activity"
+seviye:seviye N1 ; ! "level"
+tehlike:tehlike N1 ; ! "danger"
+olasılık:olasılık%{v%} N1 ; ! "probability"
+saye:saye N1 ; ! "help"
+festival:festival%{ii%} N1 ; ! "festival"
+ün:ün N1 ; ! "reputation"
+yürürlük:yürürlük%{v%} N1 ; ! "operation"
+tepki:tepki N1 ; ! "reaction"
+tahmin:tahmin N1 ; ! "extimation"
+tarım:tarım N1 ; ! "agriculture"
+övgü:övgü N1 ; ! "praise"
+takım:takım N1 ; ! "team"
+işsizlik:işsizlik%{v%} N1 ; ! "unemployment"
+rekabet:rekabet N1 ; ! "competition"
+yanıt:yanıt N1 ; ! "answer"
+uygulama:uygulama N1 ; ! "application"
+diyalog:diyalog%{v%} N1 ; ! "dialogue"
+şart:şart N1 ; ! "condition"
+siyaset:siyaset N1 ; ! "politics"
+örgüt:örgüt N1 ; ! "organization"
+ihlal:ihlal N1 ; ! "invasion"
+olay:olay N1 ; ! "event"
+röportaj:röportajda N1 ; ! "reportage"
+puan:puan N1 ; ! "score"
+verici:verici N1 ; ! "donor"
+arşiv:arşiv N1 ; ! "archive"
+milletvekil:milletvekil N2 ; ! "MP"
+diplomasi:diplomasi N1 ; ! "diplomacy"
+tur:tur N1 ; ! "tour"
+yanlış:yanlış%{v%} N1 ; ! "mistake"
+radyo:radyo N1 ; ! "radio"
+vize:vize N1 ; ! "visa"
+spor:spor N1 ; ! "sport"
+rol:rol N1 ; ! "role"
+şiddet:şiddet N1 ; ! "violence"
+sahip:sahip%{v%} N1 ; ! "owner"
+tür:tür N1 ; ! "type" 
+şirket:şirket N1 ; ! "company"
+yolsuzluk:yolsuzluk%{v%} N1 ; ! "corruption"
+sandalye:sandalye N1 ; ! "chair"
+başbakan:başbakan N1 ; ! "Prime minister"
+üyelik:üyelik%{v%} N1 ; ! "membership"
+güvenlik:güvenlik%{v%} N1 ; ! "security"
+ziyaret:ziyaret N1 ; ! "vısıt"
+hükümet:hükümet N1 ; ! "government"
+karar:karar N1 ; ! "decısıon"
+yardımcı:yardımcı N1 ; ! "deputy"
+sayı:sayı N1 ; ! "number"
+ortaklık:ortaklık%{v%} N1 ; ! "assocıatıon"
+teslim:teslim N1 ; ! "delivery"
+avro:avro N1 ; ! "euro"
+yargı:yargı N1 ; ! "justıce or judgement"
+sözcü:sözcü N1 ; ! "spokesman"
+yurt:yurt%{v%} N1 ; ! ""
+art:art%{v%} N1 ; ! ""
+para:para N1 ; ! "money"
+üyelik:üyelik%{v%} N1 ; ! 'membershıp'
+üye:üye N1 ; ! 'member'
+tehdit:tehdit%{v%} N1 ; ! "menace"
+şiddet:şiddet N1 ; ! "violence"
+talep:talep%{v%} N1 ; ! "request"
+yönetim:yönetim N1 ; ! "administration"
+oran:oran N1 ; ! "proportion"
+teşvik:teşvik N1 ; ! "urge"
+sandalye:sandalye N1 ; ! "chair"
+oğlan:oğlan N1 ; ! "boy"
+soru:soru N1 ; ! "problem"
+abaküs:abaküs N1 ; ! "abacus"
+abi:abi N1 ; ! "elder brother"
+abla:abla N1 ; ! "elder sister"
+abluka:abluka N1 ; ! "blockade"
+abone:abone N1 ; ! "subscriber"
+acente:acente N1 ; ! "agency"
+acente:acente N1 ; ! "agent"
+aciliyet:aciliyet N1 ; ! "urgency"
+ada:ada N1 ; ! "island"
+ad:ad N1 ; ! "name"
+adale:adale N1 ; ! "muscle"
+adalet:adalet N1 ; ! "justice"
+adam:adam N1 ; ! "man"
+adaş:adaş N1 ; ! "namesake"
+aday:aday N1 ; ! "applicant"
+adet:adet N1 ; ! "custom"
+adet:adet N1 ; ! "item"
+adıl:adıl N1 ; ! "pronoun"
+adım:adım N1 ; ! "step"
+adliye:adliye N1 ; ! "court house"
+adres:adres N1 ; ! "address"
+af:af N1 ; ! "forgiveness"
+afet:afet N1 ; ! "disaster"
+afiş:afiş N1 ; ! "poster"
+afyon:afyon N1 ; ! "poppy"
+ağa:ağa N1 ; ! "landlord"
+ağabey:ağabey N1 ; ! "big brother"
+ağabey:ağabey N1 ; ! "brother"
+ağ:ağ N1 ; ! "net"
+ağı:ağı N1 ; ! "poison"
+ağıl:ağıl N1 ; ! "yard"
+ağırlık:ağırlık%{v%} N1 ; ! "weight"
+ağrı:ağrı N1 ; ! "ache"
+ahbap:ahbap N1 ; ! "friend"
+ahır:ahır N1 ; ! "barn"
+ahlak:ahlak N1 ; ! "morality"
+ahşap:ahşap N1 ; ! "wooden"
+ahtapot:ahtapot N1 ; ! "octopus"
+ahududu:ahududu N1 ; ! "raspberry"
+aile:aile N1 ; ! "family"
+ajan:ajan N1 ; ! "agent"
+ajan:ajan N1 ; ! "spy"
+ajanda:ajanda N1 ; ! "agenda"
+ajans:ajans N1 ; ! "agency"
+akademi:akademi N1 ; ! "academy"
+akarsu:akarsu N1 ; ! "river"
+akaryakıt:akaryakıt N1 ; ! "fuel"
+akasya:akasya N1 ; ! "locust tree"
+akciğer:akciğer N1 ; ! "lung"
+akıbet:akıbet N1 ; ! "event"
+akide:akide N1 ; ! "belief"
+akıl:akıl N1 ; ! "mente"
+akım:akım N1 ; ! "flow"
+akıntı:akıntı N1 ; ! "current"
+akraba:akraba N1 ; ! "relative"
+akran:akran N1 ; ! "peer"
+akrep:akrep N1 ; ! "scorpion"
+akrobasi:akrobasi N1 ; ! "acrobatics"
+akrobat:akrobat N1 ; ! "acrobat"
+akşam:akşam N1 ; ! "eve"
+akşam:akşam N1 ; ! "evening"
+aksilik:aksilik%{v%} N1 ; ! "misfortune"
+aksiyon:aksiyon N1 ; ! "action"
+aksu:aksu N1 ; ! "cataract"
+aktivite:aktivite N1 ; ! "activity"
+aktör:aktör N1 ; ! "actor"
+aktris:aktris N1 ; ! "actress"
+akvaryum:akvaryum N1 ; ! "aquarium"
+alacak:alacak N1 ; ! "demand"
+alaka:alaka N1 ; ! "interest"
+alamet:alamet N1 ; ! "sign"
+alan:alan N1 ; ! "area"
+alarm:alarm N1 ; ! "alarm"
+alay:alay N1 ; ! "irony"
+aldatma:aldatma N1 ; ! "cheat"
+alet:alet N1 ; ! "tool"
+alev:alev N1 ; ! "flame"
+alfabe:alfabe N1 ; ! "alphabet"
+alım:alım N1 ; ! "admittance"
+alıntı:alıntı N1 ; ! "quotation"
+alışkanlık:alışkanlık%{v%} N1 ; ! "habit"
+alıştırma:alıştırma N1 ; ! "practice"
+alışveriş:alışveriş N1 ; ! "shopping"
+alkol:alkol N1 ; ! "alcohol"
+alternatif:alternatif N1 ; ! "alternative"
+altın:altın N1 ; ! "gold"
+altyapı:altyapı N1 ; ! "basis"
+alüminyum:alüminyum N1 ; ! "aluminum"
+amatör:amatör N1 ; ! "amateur"
+ambar:ambar N1 ; ! "storage"
+ambargo:ambargo N1 ; ! "embargo"
+ambulans:ambulans N1 ; ! "ambulance"
+amca:amca N1 ; ! "uncle"
+amele:amele N1 ; ! "worker"
+yapı:yapı N1 ; ! "structure"
+döviz:döviz N1 ; ! "currency exchange"
+paket:paket N1 ; ! "package"
+arkadaş:arkadaş%{v%} N1 ; ! "friend""
+ameliyat:ameliyat N1 ; ! "surgeon"
+ana:ana N1 ; ! "mother"
+anahtar:anahtar N1 ; ! "key"
+anakara:anakara N1 ; ! "continent"
+analiz:analiz N1 ; ! "analysis"
+an:an N1 ; ! "moment"
+anaokulu:anaokulu N1 ; ! "kindergarden"
+anayasa:anayasa N1 ; ! "constitution"
+anı:anı N1 ; ! "memory"
+animasyon:animasyon N1 ; ! "animation"
+anıt:anıt N1 ; ! "monument"
+anket:anket N1 ; ! "questionnaire"
+anlam:anlam N1 ; ! "denotation"
+anlaşma:anlaşma N1 ; ! "deal"
+anlaşmazlık:anlaşmazlık%{v%} N1 ; ! "conflict"
+anlayış:anlayış N1 ; ! "understanding"
+anne:anne N1 ; ! "mother"
+anons:anons N1 ; ! "announcement"
+ansiklopedi:ansiklopedi N1 ; ! "encyclopedia"
+ant:ant N1 ; ! "oath"
+anten:anten N1 ; ! "satellite"
+antika:antika N1 ; ! "antique"
+antilop:antilop N1 ; ! "antelope"
+araba:araba N1 ; ! "car"
+arı:arı N1 ; ! "bee"
+armut:armut N1 ; ! "pear"
+artırım:artırım N1 ; ! "saving"
+arz:arz N1 ; ! "offer"
+arzu:arzu N1 ; ! "desire"
+asa:asa N1 ; ! "stick"
+aşağı:aşağı N1 ; ! "hedge"
+asalak:asalak N1 ; ! "leech"
+aşama:aşama N1 ; ! "grade"
+as:as N1 ; ! "ace"
+aş:aş N1 ; ! "eatings"
+asayiş:asayiş N1 ; ! "order"
+aşı:aşı N1 ; ! "vaccine"
+aşiret:aşiret N1 ; ! "tribe"
+aşk:aşk N1 ; ! "love"
+asker:asker N1 ; ! "soldier"
+askerlik:askerlik%{v%} N1 ; ! "military"
+aslan:aslan N1 ; ! "lion"
+ata:ata N1 ; ! "ancestor"
+atak:atak N1 ; ! "militant"
+at:at N1 ; ! "horse"
+ateş:ateş N1 ; ! "fire"
+ateşkes:ateşkes N1 ; ! "armistice"
+atılım:atılım N1 ; ! "progress"
+atlas:atlas N1 ; ! "atlas"
+atlet:atlet N1 ; ! "athlete"
+atmaca:atmaca N1 ; ! "hawk"
+atmosfer:atmosfer N1 ; ! "atmosphere"
+atölye:atölye N1 ; ! "atelier"
+atom:atom N1 ; ! "atom"
+avans:avans N1 ; ! "advance payment"
+avantaj:avantaj N1 ; ! "advantage"
+av:av N1 ; ! "hunt"
+avcı:avcı N1 ; ! "hunter"
+avlu:avlu N1 ; ! "garden"
+avukat:avukat N1 ; ! "lawyer"
+ayak:ayak%{v%} N1 ; ! "foot"
+ayakkabı:ayakkabı N1 ; ! "shoe"
+ay:ay N1 ; ! "moon"
+ayaz:ayaz N1 ; ! "block frost"
+aydınlık:aydınlık%{v%} N1 ; ! "light"
+aygır:aygır N1 ; ! "stallion"
+ayı:ayı N1 ; ! "bear"
+ayin:ayin N1 ; ! "ritual"
+ayıp:ayıp N1 ; ! "slur"
+aylık:aylık%{v%} N1 ; ! "salary"
+ayna:ayna N1 ; ! "mirror"
+ayran:ayran N1 ; ! "ayran"
+ayrıcalık:ayrıcalık%{v%} N1 ; ! "privilege"
+ayrım:ayrım N1 ; ! "difference"
+azap:azap N1 ; ! "ache"
+azar:azar N1 ; ! "lesson"
+azık:azık N1 ; ! "food"
+azim:azim N1 ; ! "determination"
+azınlık:azınlık%{v%} N1 ; ! "minority"
+aziz:aziz N1 ; ! "saint"
+azot:azot N1 ; ! "nitrogen"
+babaanne:babaanne N1 ; ! "grandmother"
+baba:baba N1 ; ! "father"
+baca:baca N1 ; ! "chimney"
+bacak:bacak N1 ; ! "leg"
+bagaj:bagaj N1 ; ! "baggage"
+bağ:bağ N1 ; ! "bond"
+bağcık:bağcık N1 ; ! "shoelace"
+bağırsak:bağırsak N1 ; ! "intestine"
+bağırtı:bağırtı N1 ; ! "shout"
+bağış:bağış N1 ; ! "grant"
+bağlama:bağlama N1 ; ! "junction"
+bağlam:bağlam N1 ; ! "context"
+bağlantı:bağlantı N1 ; ! "connection"
+bağlaşık:bağlaşık N1 ; ! "allied"
+bağlılık:bağlılık%{v%} N1 ; ! "commitment"
+bahane:bahane N1 ; ! "excuse"
+baharat:baharat N1 ; ! "spice"
+bahar:bahar N1 ; ! "spring"
+baht:baht N1 ; ! "luck"
+bakan:bakan N1 ; ! "minister"
+bakanlık:bakanlık%{v%} N1 ; ! "ministry"
+bakım:bakım N1 ; ! "maintenance"
+bakır:bakır N1 ; ! "copper"
+bakış:bakış N1 ; ! "look"
+bakteri:bakteri N1 ; ! "bacteria"
+balans:balans N1 ; ! "balance"
+bal:bal N1 ; ! "honey"
+baldır:baldır N1 ; ! "calf"
+baldız:baldız N1 ; ! "sister-in-law"
+bale:bale N1 ; ! "ballet"
+balerin:balerin N1 ; ! "ballerina"
+balet:balet N1 ; ! "ballet"
+balık:balık%{v%} N1 ; ! "fish"
+balina:balina N1 ; ! "whale"
+balo:balo N1 ; ! "dance"
+balon:balon N1 ; ! "balloon"
+balta:balta N1 ; ! "axe"
+balya:balya N1 ; ! "bundle"
+balyoz:balyoz N1 ; ! "sledge"
+bambu:bambu N1 ; ! "bamboo"
+bandaj:bandaj N1 ; ! "bandage"
+bandrol:bandrol N1 ; ! "package"
+banka:banka N1 ; ! "bank"
+banker:banker N1 ; ! "broker"
+banknot:banknot N1 ; ! "note"
+banliyö:banliyö N1 ; ! "suburb"
+bant:bant N1 ; ! "adhesive"
+banyo:banyo N1 ; ! "bathroom"
+baraj:baraj N1 ; ! "dam"
+baraka:baraka N1 ; ! "barrack"
+bar:bar N1 ; ! "bar"
+bardak:bardak N1 ; ! "glass"
+barikat:barikat N1 ; ! "barricade"
+barınak:barınak N1 ; ! "sanctuary"
+barış:barış N1 ; ! "peace"
+baro:baro N1 ; ! "bench"
+barut:barut N1 ; ! "gun powder"
+barut:barut N1 ; ! "powder"
+başak:başak N1 ; ! "head"
+basamak:basamak N1 ; ! "stair"
+başarı:başarı N1 ; ! "success"
+baş:baş N1 ; ! "head"
+başbuğ:başbuğ N1 ; ! "leader"
+basım:basım N1 ; ! "printing"
+basın:basın N1 ; ! "press"
+başkan:başkan N1 ; ! "başkan"
+başkent:başkent N1 ; ! "capital"
+basketbol:basketbol N1 ; ! "basketball"
+baskı:baskı N1 ; ! "oppression"
+baskı:baskı N1 ; ! "pressure"
+baskın:baskın N1 ; ! "raid"
+baskül:baskül N1 ; ! "bascule"
+başlık:başlık%{v%} N1 ; ! "title"
+basma:basma N1 ; ! "basma"
+başörtü:başörtü N1 ; ! "head scarf"
+baston:baston N1 ; ! "stick"
+başucu:başucu N1 ; ! "head"
+başvuru:başvuru N1 ; ! "application"
+batı:batı N1 ; ! "west"
+battaniye:battaniye N1 ; ! "blanket"
+bavul:bavul N1 ; ! "suitcase"
+bayan:bayan N1 ; ! "lady"
+bayır:bayır N1 ; ! "descent"
+baykuş:baykuş N1 ; ! "owl"
+bayrak:bayrak N1 ; ! "flag"
+bayram:bayram N1 ; ! "festival"
+baz:baz N1 ; ! "base"
+bebek:bebek%{v%} N1 ; ! "baby"
+beceri:beceri N1 ; ! "skill"
+beddua:beddua N1 ; ! "curse"
+beden:beden N1 ; ! "body"
+beğeni:beğeni N1 ; ! "like"
+beklenti:beklenti N1 ; ! "expectation"
+bela:bela N1 ; ! "trouble"
+bel:bel N1 ; ! "back"
+belediye:belediye N1 ; ! "municipality"
+belge:belge N1 ; ! "document"
+bellek:bellek N1 ; ! "memory"
+benzerlik:benzerlik%{v%} N1 ; ! "similarity"
+benzin:benzin N1 ; ! "petrol"
+berat:berat N1 ; ! "warrant"
+bereket:bereket N1 ; ! "richness"
+beşik:beşik N1 ; ! "cradle"
+beste:beste N1 ; ! "melody"
+betim:betim N1 ; ! "image"
+beton:beton N1 ; ! "concrete"
+beyanat:beyanat N1 ; ! "speech"
+beyan:beyan N1 ; ! "declaration"
+beyanname:beyanname N1 ; ! "statement"
+bey:bey N1 ; ! "governor"
+beygir:beygir N1 ; ! "horse"
+beylik:beylik%{v%} N1 ; ! "principality"
+bez:bez N1 ; ! "cloth"
+bezelye:bezelye N1 ; ! "pea"
+biber:biber N1 ; ! "pepper"
+biberon:biberon N1 ; ! "baby bottle"
+bigudi:bigudi N1 ; ! "roller"
+bilardo:bilardo N1 ; ! "billiard"
+bildirge:bildirge N1 ; ! "advice"
+bildiri:bildiri N1 ; ! "notice"
+bildirim:bildirim N1 ; ! "statement"
+bilek:bilek N1 ; ! "wrist"
+bileşen:bileşen N1 ; ! "component"
+bilet:bilet N1 ; ! "ticket"
+bilezik:bilezik N1 ; ! "bracelet"
+bilgi:bilgi N1 ; ! "information"
+bilgisayar:bilgisayar N1 ; ! "computer"
+bilim:bilim N1 ; ! "science"
+bilmece:bilmece N1 ; ! "puzzle"
+bilye:bilye N1 ; ! "marble"
+bina:bina N1 ; ! "building"
+bira:bira N1 ; ! "beer"
+birey:birey N1 ; ! "individual"
+birikim:birikim N1 ; ! "saving"
+birikinti:birikinti N1 ; ! "deposit"
+birim:birim N1 ; ! "unit"
+birleşik:birleşik N1 ; ! "combination"
+birlik:birlik%{v%} N1 ; ! "union, unity"
+birliktelik:birliktelik%{v%} N1 ; ! "association"
+bisiklet:bisiklet N1 ; ! "bicycle"
+bisküvi:bisküvi N1 ; ! "biscuit"
+bit:bit N1 ; ! "pediculous" "bit"
+bitim:bitim N1 ; ! "conclusion"
+bitki:bitki N1 ; ! "plant"
+bıyık:bıyık N1 ; ! "moustache"
+biyografi:biyografi N1 ; ! "biography"
+biyoloji:biyoloji N1 ; ! "biology"
+blok:blok%{v%} N1 ; ! "block, complex"
+bobin:bobin N1 ; ! "bobina"
+böbrek:böbrek N1 ; ! "kidney"
+böcek:böcek N1 ; ! "insect"
+bodrum:bodrum N1 ; ! "cellarage"
+boğa:boğa N1 ; ! "bull"
+boğaz:boğaz N1 ; ! "throat"
+boğum:boğum N1 ; ! "joint"
+boğumlanma:boğumlanma N1 ; ! "pronunciation"
+böğürtlen:böğürtlen N1 ; ! "blackberry"
+boks:boks N1 ; ! "boxing"
+boksör:boksör N1 ; ! "boxer"
+bölge:bölge N1 ; ! "environs"
+bölge:bölge N1 ; ! "region"
+bölge:bölge N1 ; ! "zone"
+bolluk:bolluk%{v%} N1 ; ! "affluence"
+bölme:bölme N1 ; ! "booth"
+bölük:bölük%{v%} N1 ; ! "part"
+bölük:bölük%{v%} N1 ; ! "troop"
+bölüm:bölüm N1 ; ! "chapter"
+bomba:bomba N1 ; ! "bomb"
+bombardıman:bombardıman N1 ; ! "bombing"
+bonbon:bonbon N1 ; ! "candy"
+boncuk:boncuk N1 ; ! "bead"
+bono:bono N1 ; ! "bill"
+boran:boran N1 ; ! "thunderstorm"
+bordro:bordro N1 ; ! "bordereau"
+bordro:bordro N1 ; ! "payroll"
+börek:börek N1 ; ! "pie"
+borsa:borsa N1 ; ! "stock market"
+boru:boru N1 ; ! "funnel"
+boşluk:boşluk%{v%} N1 ; ! "emptiness"
+bostan:bostan N1 ; ! "garden ware"
+bot:bot N1 ; ! "boat"
+bot:bot N1 ; ! "boot"
+boya:boya N1 ; ! "colour"
+boya:boya N1 ; ! "paint"
+boy:boy N1 ; ! "height"
+boy:boy N1 ; ! "length"
+boynuz:boynuz N1 ; ! "horn"
+boyun:boyun N1 ; ! "neck"
+boyunduruk:boyunduruk N1 ; ! "bow"
+boyut:boyut N1 ; ! "dimension"
+bozkır:bozkır N1 ; ! "desert"
+branş:branş N1 ; ! "branche"
+brifing:brifing N1 ; ! "briefing"
+briket:briket N1 ; ! "brick"
+bronz:bronz N1 ; ! "bronze"
+broşür:broşür N1 ; ! "brochure"
+büfe:büfe N1 ; ! "kiosk"
+buğday:buğday N1 ; ! "wheat"
+buğu:buğu N1 ; ! "vapor"
+bugün:bugün N1 ; ! "today"
+buhar:buhar N1 ; ! "steam"
+bukle:bukle N1 ; ! "curl"
+bükük:bükük N1 ; ! "twisted"
+bülbül:bülbül N1 ; ! "nightingale"
+buldozer:buldozer N1 ; ! "bulldozer"
+bulgu:bulgu N1 ; ! "discovery"
+bulmaca:bulmaca N1 ; ! "crossword"
+bulmaca:bulmaca N1 ; ! "puzzle"
+bülten:bülten N1 ; ! "bulletin"
+buluş:buluş N1 ; ! "invention"
+bulut:bulut N1 ; ! "cloud"
+bünye:bünye N1 ; ! "fabric"
+bünye:bünye N1 ; ! "structure"
+büro:büro N1 ; ! "office"
+bürokrasi:bürokrasi N1 ; ! " bureaucracy"
+burs:burs N1 ; ! "scholarship"
+buruşuk:buruşuk N1 ; ! "crease"
+but:but N1 ; ! "rump"
+buyruk:buyruk N1 ; ! "order"
+büyü:büyü N1 ; ! "magic"
+büyücü:büyücü N1 ; ! "wizard"
+büyükanne:büyükanne N1 ; ! "grandmother"
+büyükşehir:büyükşehir N1 ; ! "metropolitan"
+buzağı:buzağı N1 ; ! "calf"
+buz:buz N1 ; ! "ice"
+buzul:buzul N1 ; ! "glacier"
+cadde:cadde N1 ; ! "avenue"
+cam:cam N1 ; ! "glass"
+camia:camia N1 ; ! "community"
+cami:cami N1 ; ! "mosque"
+can:can N1 ; ! "life"
+cani:cani N1 ; ! "murderer"
+cariye:cariye N1 ; ! "concubine"
+casus:casus N1 ; ! "spy"
+cazibe:cazibe N1 ; ! "appeal"
+cehalet:cehalet N1 ; ! "illiteracy"
+cehennem:cehennem N1 ; ! "hell"
+ceket:ceket N1 ; ! "jacket"
+ceviz:ceviz N1 ; ! "walnut"
+ceylan:ceylan N1 ; ! "antelope"
+ceza:ceza N1 ; ! "punishment"
+ciğer:ciğer N1 ; ! "lung"
+cila:cila N1 ; ! "polish"
+cilt:cilt N1 ; ! "skin"
+cımbız:cımbız N1 ; ! "pincer"
+cinayet:cinayet N1 ; ! "criminal"
+cinnet:cinnet N1 ; ! "insanity"
+cins:cins N1 ; ! "kind"
+cinsiyet:cinsiyet N1 ; ! "sex"
+cip:cip N1 ; ! "jeep"
+cırcır:cırcır N1 ; ! "diarrhea"
+cıva:cıva N1 ; ! "mercury"
+civciv:civciv N1 ; ! "chick"
+coğrafya:coğrafya N1 ; ! "geography"
+dağ:dağ N1 ; ! "mountain"
+dağıtım:dağıtım N1 ; ! "distribution"
+dahi:dahi N1 ; ! "genius"
+daire:daire N1 ; ! "circle"
+dakika:dakika N1 ; ! "minute"
+dalaş:dalaş N1 ; ! "quarrel"
+dal:dal N1 ; ! "branch"
+dalga:dalga N1 ; ! "wave"
+dama:dama N1 ; ! "checker"
+damar:damar N1 ; ! "vessel"
+damat:damat N1 ; ! "groom"
+dam:dam N1 ; ! "stable"
+damga:damga N1 ; ! "stamp"
+damla:damla N1 ; ! "drop"
+dana:dana N1 ; ! "calf"
+danışman:danışman N1 ; ! "adviser"
+dans:dans N1 ; ! "dance"
+dantel:dantel N1 ; ! "lace"
+darbe:darbe N1 ; ! "impact"
+darı:darı N1 ; ! "corn"
+dava:dava N1 ; ! "case"
+davet:davet N1 ; ! "invitation"
+davetiye:davetiye N1 ; ! "invitation letter"
+davul:davul N1 ; ! "drum"
+dayak:dayak N1 ; ! "beating"
+dayanak:dayanak N1 ; ! "base"
+dayanışma:dayanışma N1 ; ! "solidarity"
+dayı:dayı N1 ; ! "uncle"
+debi:debi N1 ; ! "capacity"
+dede:dede N1 ; ! "grandfather"
+dedektif:dedektif N1 ; ! "detective"
+dedikodu:dedikodu N1 ; ! "gossip"
+defa:defa N1 ; ! "time"
+defans:defans N1 ; ! "defence"
+define:define N1 ; ! "treasure"
+defter:defter N1 ; ! "notebook"
+değer:değer N1 ; ! "worth"
+değirmen:değirmen N1 ; ! "mill"
+değişim:değişim N1 ; ! "alteration"
+değişke:değişke N1 ; ! "variant"
+değnek:değnek N1 ; ! "staff"
+deha:deha N1 ; ! "brillance"
+dehliz:dehliz N1 ; ! "passage"
+dehşet:dehşet N1 ; ! "terror"
+dekan:dekan N1 ; ! "dean"
+deklarasyon:deklarasyon N1 ; ! "declaration"
+dekorasyon:dekorasyon N1 ; ! "decoration"
+dekor:dekor N1 ; ! "decor"
+delegasyon:delegasyon N1 ; ! "delegation"
+delege:delege N1 ; ! "representative"
+deli:deli N1 ; ! "mad"
+delikanlı:delikanlı N1 ; ! "boy"
+delik:delik%{v%} N1 ; ! "hole"
+delil:delil N1 ; ! "evidence"
+delilik:delilik%{v%} N1 ; ! "insanity"
+demet:demet N1 ; ! "bunch"
+demirci:demirci N1 ; ! "blacksmith"
+demir:demir N1 ; ! "iron"
+demlik:demlik%{v%} N1 ; ! "pot"
+demokrasi:demokrasi N1 ; ! "democracy"
+deneme:deneme N1 ; ! "attempt"
+denetim:denetim N1 ; ! "supervision"
+deney:deney N1 ; ! "experiment"
+deneyim:deneyim N1 ; ! "experience"
+denge:denge N1 ; ! "balance"
+denizaltı:denizaltı N1 ; ! "submarine"
+deniz:deniz N1 ; ! "sea"
+departman:departman N1 ; ! "department"
+depo:depo N1 ; ! "storage"
+deprem:deprem N1 ; ! "earthquake"
+depresyon:depresyon N1 ; ! "depression"
+derece:derece N1 ; ! "degree"
+dere:dere N1 ; ! "brook"
+dergi:dergi N1 ; ! "journal"
+deri:deri N1 ; ! "leather"
+dernek:dernek%{v%} N1 ; ! "corporation"
+ders:ders N1 ; ! "lesson"
+dert:dert N1 ; ! "bother"
+desen:desen N1 ; ! "pattern"
+deste:deste N1 ; ! "package"
+destek:destek%{v%} N1 ; ! "support"
+devalüasyon:devalüasyon N1 ; ! "devaluation"
+devam:devam N1 ; ! "attendance"
+dev:dev N1 ; ! "giant"
+deve:deve N1 ; ! "camel"
+devinim:devinim N1 ; ! "action"
+devir:devir N1 ; ! "era"
+devlet:devlet N1 ; ! "government"
+devre:devre N1 ; ! "period"
+devrim:devrim N1 ; ! "revolution"
+devriye:devriye N1 ; ! "patrol"
+devşirme:devşirme N1 ; ! "gathering"
+deyim:deyim N1 ; ! "idiom"
+dezavantaj:dezavantaj N1 ; ! "disadvantage"
+dikdörtgen:dikdörtgen N1 ; ! "rectangle"
+dikiş:dikiş N1 ; ! "sewing"
+dikkat:dikkat%{fi%} N1 ; ! "caution"
+diktatör:diktatör N1 ; ! "dictator"
+dikte:dikte N1 ; ! "dictation"
+dil:dil N1 ; ! "tongue"
+dilek:dilek N1 ; ! "wish"
+dilenci:dilenci N1 ; ! "beggar"
+dilim:dilim N1 ; ! "slice"
+dinamo:dinamo N1 ; ! "dynamo"
+din:din N1 ; ! "religion"
+dingil:dingil N1 ; ! "shaft"
+dip:dip N1 ; ! "bottom"
+diploma:diploma N1 ; ! "diploma"
+diplomat:diplomat N1 ; ! "diplomat"
+direk:direk N1 ; ! "pylon"
+direktif:direktif N1 ; ! "order"
+direktör:direktör N1 ; ! "director"
+dirsek:dirsek N1 ; ! "elbow"
+dışarı:dışarı N1 ; ! "outside"
+diş:diş N1 ; ! "tooth"
+dişi:dişi N1 ; ! "female"
+disiplin:disiplin N1 ; ! "discipline"
+disk:disk N1 ; ! "disc"
+dışkı:dışkı N1 ; ! "feces"
+diyet:diyet N1 ; ! "regime"
+dizel:dizel N1 ; ! "diesel"
+doğa:doğa N1 ; ! "nature"
+doğan:doğan N1 ; ! "falcon"
+doğru:doğru N1 ; ! "line"
+doğu:doğu N1 ; ! "east"
+doğum:doğum N1 ; ! "birth"
+doktor:doktor N1 ; ! "doctor"
+dokuma:dokuma N1 ; ! "knitted"
+doküman:doküman N1 ; ! "document"
+dokunulmazlık:dokunulmazlık%{v%} N1 ; ! "immunity"
+dolap:dolap N1 ; ! "cupboard"
+dolaşım:dolaşım N1 ; ! "currency"
+dolay:dolay N1 ; ! "surroundings"
+domates:domates N1 ; ! "tomato"
+domuz:domuz N1 ; ! "pig"
+donanım:donanım N1 ; ! "equipment"
+donatım:donatım N1 ; ! "outfit"
+dondurma:dondurma N1 ; ! "ice cream"
+dönem:dönem N1 ; ! "period"
+döngü:döngü N1 ; ! "cycle"
+döş:döş N1 ; ! "bosom"
+döşek:döşek N1 ; ! "bed"
+döşeme:döşeme N1 ; ! "furniture"
+dost:dost N1 ; ! "ally"
+dost:dost N1 ; ! "dude"
+dost:dost N1 ; ! "friend"
+dosya:dosya N1 ; ! "file"
+dövüş:dövüş N1 ; ! "fight"
+dozaj:dozaj N1 ; ! "dosage"
+doz:doz N1 ; ! "dose"
+dram:dram N1 ; ! "drama"
+dudak:dudak N1 ; ! "lip"
+düdük:düdük N1 ; ! "whistle"
+düğme:düğme N1 ; ! "button"
+düğüm:düğüm N1 ; ! "knot"
+düğün:düğün N1 ; ! "marriage"
+dükkan:dükkan N1 ; ! "shop"
+dul:dul N1 ; ! "widow"
+duman:duman N1 ; ! "smoke"
+dünya:dünya N1 ; ! "world"
+durak:durak N1 ; ! "station"
+durum:durum N1 ; ! "state"
+düş:düş N1 ; ! "dream"
+duş:duş N1 ; ! "shower"
+düşman:düşman N1 ; ! "challenger"
+düşman:düşman N1 ; ! "enemy"
+düşman:düşman N1 ; ! "opponent"
+düşünce:düşünce N1 ; ! "idea"
+düşünce:düşünce N1 ; ! "notion"
+düşünce:düşünce N1 ; ! "opinion"
+düşünce:düşünce N1 ; ! "thought"
+duvar:duvar N1 ; ! "wall"
+duygu:duygu N1 ; ! "emotion"
+duyu:duyu N1 ; ! "sense"
+duyum:duyum N1 ; ! "sensation"
+duyuru:duyuru N1 ; ! "announcement"
+duyuru:duyuru N1 ; ! "notice"
+düzen:düzen N1 ; ! "order"
+düzey:düzey N1 ; ! "level"
+düzine:düzine N1 ; ! "dozen"
+düzlük:düzlük%{v%} N1 ; ! "plain"
+ebe:ebe N1 ; ! "wise woman"
+ebeveyn:ebeveyn N1 ; ! "parents"
+ecel:ecel N1 ; ! "death"
+ecel:ecel N1 ; ! "ending"
+edebiyat:edebiyat N1 ; ! "literature"
+eder:eder N1 ; ! "worth"
+editör:editör N1 ; ! "editor"
+efendi:efendi N1 ; ! "sir"
+efsane:efsane N1 ; ! "legend"
+eğilim:eğilim N1 ; ! "inclination"
+eğim:eğim N1 ; ! "slope"
+eğitim:eğitim N1 ; ! "education"
+eğitmen:eğitmen N1 ; ! "educator"
+eğlence:eğlence N1 ; ! "amusement"
+eğlence:eğlence N1 ; ! "entertainment"
+eğlence:eğlence N1 ; ! "festivity"
+eğri:eğri N1 ; ! "curve"
+egzersiz:egzersiz N1 ; ! "exercise"
+ehliyet:ehliyet N1 ; ! "driving licence"
+ejderha:ejderha N1 ; ! "dragon"
+ekip:ekip N1 ; ! "team"
+ekipman:ekipman N1 ; ! "equipment"
+eklem:eklem N1 ; ! "joint"
+ekmek:ekmek N1 ; ! "bread"
+ekonomi:ekonomi N1 ; ! "economy"
+ekonomist:ekonomist N1 ; ! "economist"
+ekran:ekran N1 ; ! "ekran"
+eksen:eksen N1 ; ! "axis"
+eksi:eksi N1 ; ! "minus"
+elbise:elbise N1 ; ! "dress"
+eldiven:eldiven N1 ; ! "glove"
+elebaşı:elebaşı N1 ; ! "promoter"
+elektrik:elektrik N1 ; ! "electricity"
+el:el N1 ; ! "hand"
+eleman:eleman N1 ; ! "staff member"
+elem:elem N1 ; ! "pain"
+eleştiri:eleştiri N1 ; ! "criticism"
+eleştirmen:eleştirmen N1 ; ! "commentator"
+elma:elma N1 ; ! "apple"
+elmas:elmas N1 ; ! "diamond"
+elyaf:elyaf N1 ; ! "fiber"
+emel:emel N1 ; ! "ambition"
+emel:emel N1 ; ! "dream"
+emin:emin N1 ; ! "sure"
+emir:emir N1 ; ! "order"
+emlak:emlak N1 ; ! "property"
+emniyet:emniyet N1 ; ! "safety"
+endam:endam N1 ; ! "figure"
+endeks:endeks N1 ; ! "index"
+endişe:endişe N1 ; ! "anxiety"
+endişe:endişe N1 ; ! "concern"
+endüstri:endüstri N1 ; ! "industry"
+en:en N1 ; ! "width"
+enerji:enerji N1 ; ! "energy"
+enfeksiyon:enfeksiyon N1 ; ! "infection"
+enflasyon:enflasyon N1 ; ! "inflation"
+enformasyon:enformasyon N1 ; ! "information"
+engel:engel N1 ; ! "barrier"
+enişte:enişte N1 ; ! "brother-in-law"
+enjektör:enjektör N1 ; ! "injector"
+enjektör:enjektör N1 ; ! "needle"
+enkaz:enkaz N1 ; ! "wreckage"
+enstitü:enstitü N1 ; ! "institution"
+enstrüman:enstrüman N1 ; ! "instrument"
+entegre:entegre N1 ; ! "integration"
+entrika:entrika N1 ; ! "conspiracy"
+er:er N1 ; ! "soldier"
+erik:erik N1 ; ! "plum"
+erişim:erişim N1 ; ! "access"
+erkek:erkek N1 ; ! "male"
+erk:erk N1 ; ! "energy"
+eroin:eroin N1 ; ! "heroin"
+erzak:erzak N1 ; ! "supply"
+esaret:esaret N1 ; ! "captivity"
+eşarp:eşarp N1 ; ! "scarf"
+esas:esas N1 ; ! "main"
+eşek:eşek N1 ; ! "donkey"
+eser:eser N1 ; ! "production"
+eş:eş N1 ; ! "spouse"
+şey:şey N1 ; ! "thıng"
+eşik:eşik N1 ; ! "threshold"
+esinti:esinti N1 ; ! "puff"
+esir:esir N1 ; ! "slave"
+eşkıya:eşkıya N1 ; ! "bandit"
+esrar:esrar N1 ; ! "weed"
+eşya:eşya N1 ; ! "stuff"
+etek:etek N1 ; ! "skirt"
+etik:etik N1 ; ! "morality"
+etken:etken N1 ; ! "consideration"
+etki:etki N1 ; ! "effect"
+etkileşim:etkileşim N1 ; ! "interaction"
+etmen:etmen N1 ; ! "consideration"
+etraf:etraf N1 ; ! "vicinity"
+ev:ev N1 ; ! "house"
+evlat:evlat N1 ; ! "descent"
+evlilik:evlilik%{v%} N1 ; ! "marriage"
+evre:evre N1 ; ! "step"
+evren:evren N1 ; ! "world"
+evrim:evrim N1 ; ! "evolution"
+eyalet:eyalet N1 ; ! "principality"
+eylem:eylem N1 ; ! "act"
+eziyet:eziyet N1 ; ! "punishment"
+faaliyet:faaliyet N1 ; ! "activity"
+fabl:fabl N1 ; ! "fable"
+fabrika:fabrika N1 ; ! "factory"
+facia:facia N1 ; ! "disaster"
+faiz:faiz N1 ; ! "interest"
+faktör:faktör N1 ; ! "element"
+fakülte:fakülte N1 ; ! "faculty"
+fantezi:fantezi N1 ; ! "fantasy"
+fare:fare N1 ; ! "mouse"
+far:far N1 ; ! "light"
+fark:fark N1 ; ! "difference"
+faşizm:faşizm N1 ; ! "fascism"
+fasulye:fasulye N1 ; ! "bean"
+fatura:fatura N1 ; ! "bill"
+favori:favori N1 ; ! "favorite"
+fayda:fayda N1 ; ! "benefit"
+fazilet:fazilet N1 ; ! "excellence"
+federasyon:federasyon N1 ; ! "federation"
+felaket:felaket N1 ; ! "disaster"
+felsefe:felsefe N1 ; ! "philosophy"
+fener:fener N1 ; ! "torch"
+feribot:feribot N1 ; ! "ferry"
+fert:fert N1 ; ! "person"
+feryat:feryat N1 ; ! "scream"
+festival:festival N1 ; ! "festival"
+fidye:fidye N1 ; ! "ransom"
+figür:figür N1 ; ! "figure"
+fihrist:fihrist N1 ; ! "catalogue"
+fiil:fiil N1 ; ! "verb"
+fıkra:fıkra N1 ; ! "joke"
+fil:fil N1 ; ! "elephant"
+film:film N1 ; ! "film"
+final:final N1 ; ! "final"
+finans:finans N1 ; ! "finance"
+finansman:finansman N1 ; ! "finance"
+fincan:fincan N1 ; ! "cup"
+fındık:fındık N1 ; ! "nut"
+firar:firar N1 ; ! "escape"
+fırın:fırın N1 ; ! "oven"
+firkateyn:firkateyn N1 ; ! "frigate"
+firma:firma N1 ; ! "firm"
+fırsat:fırsat N1 ; ! "opportunity"
+fırtına:fırtına N1 ; ! "storm"
+fişek:fişek N1 ; ! "firework"
+fiske:fiske N1 ; ! "flip"
+fıskiye:fıskiye N1 ; ! "fountain"
+fıtık:fıtık N1 ; ! "hernia"
+fiyat:fiyat N1 ; ! "price"
+fizik:fizik N1 ; ! "physics"
+flamingo:flamingo N1 ; ! "flamingo"
+folklor:folklor N1 ; ! "folklore"
+fon:fon N1 ; ! "fund"
+fonksiyon:fonksiyon N1 ; ! "function"
+forma:forma N1 ; ! "uniform"
+form:form N1 ; ! "form"
+formül:formül N1 ; ! "formula"
+forum:forum N1 ; ! "forum"
+fosil:fosil N1 ; ! "fossil"
+fotoğraf:fotoğraf N1 ; ! "photograph"
+frekans:frekans N1 ; ! "frequency"
+fren:fren N1 ; ! "brake"
+fuar:fuar N1 ; ! "fair"
+fünye:fünye N1 ; ! "fuse"
+futbol:futbol N1 ; ! "football"
+füze:füze N1 ; ! "rocket"
+gaga:gaga N1 ; ! "beak"
+galeri:galeri N1 ; ! "gallery"
+galibiyet:galibiyet N1 ; ! "win"
+galoş:galoş N1 ; ! "galosh"
+garaj:garaj N1 ; ! "garage"
+garanti:garanti N1 ; ! "guarantee"
+gardiyan:gardiyan N1 ; ! "guardian"
+gar:gar N1 ; ! "station"
+garnizon:garnizon N1 ; ! "garrison"
+gasp:gasp N1 ; ! "seizure"
+gayda:gayda N1 ; ! "pipe"
+gayret:gayret N1 ; ! "effort"
+gayret:gayret N1 ; ! "study"
+gayret:gayret N1 ; ! "vigor"
+gazete:gazete N1 ; ! "gazette"
+gaz:gaz N1 ; ! "gas"
+gece:gece N1 ; ! "night"
+gecelik:gecelik%{v%} N1 ; ! "pajamas"
+gedik:gedik N1 ; ! "rift"
+geğirti:geğirti N1 ; ! "burp"
+gelecek:gelecek N1 ; ! "future"
+gelenek:gelenek N1 ; ! "custom"
+gelenek:gelenek N1 ; ! "folkway"
+gelenek:gelenek N1 ; ! "tradition"
+gelincik:gelincik N1 ; ! "poppy"
+gelin:gelin N1 ; ! "bride"
+gelir:gelir N1 ; ! "income"
+gem:gem N1 ; ! "bridle"
+gemi:gemi N1 ; ! "ship"
+genelkurmay:genelkurmay N1 ; ! "command"
+general:general N1 ; ! "general"
+gen:gen N1 ; ! "gene"
+genişlik:genişlik%{v%} N1 ; ! "width"
+geometri:geometri N1 ; ! "geometry"
+gerdanlık:gerdanlık%{v%} N1 ; ! "necklace"
+gereksinim:gereksinim N1 ; ! "necessity"
+gergedan:gergedan N1 ; ! "rhino"
+gerilim:gerilim N1 ; ! "tension"
+geyik:geyik N1 ; ! "deer"
+gezegen:gezegen N1 ; ! "planet"
+gezgin:gezgin N1 ; ! "tourist"
+gezi:gezi N1 ; ! "tour"
+gezinti:gezinti N1 ; ! "prom"
+gezinti:gezinti N1 ; ! "ramble"
+gıcırtı:gıcırtı N1 ; ! "scratch"
+gıda:gıda N1 ; ! "food"
+gıda:gıda N1 ; ! "nourishment"
+gider:gider N1 ; ! "expense"
+gidişat:gidişat N1 ; ! "way"
+girdap:girdap N1 ; ! "whirlpool"
+girdi:girdi N1 ; ! "input"
+girinti:girinti N1 ; ! "recession"
+giriş:giriş N1 ; ! "entrance"
+girişim:girişim N1 ; ! "attempt"
+gırtlak:gırtlak N1 ; ! "throat"
+gişe:gişe N1 ; ! "booth"
+gitar:gitar N1 ; ! "guitar"
+giyecek:giyecek N1 ; ! "clothes"
+giysi:giysi N1 ; ! "dress"
+gizem:gizem N1 ; ! "mystery"
+giz:giz N1 ; ! "secrecy"
+göbek:göbek N1 ; ! "belly"
+gocuk:gocuk N1 ; ! "cloak"
+göğüs:göğüs N1 ; ! "breast"
+göğüs:göğüs N1 ; ! "chest"
+gök:gök N1 ; ! "heaven"
+gök:gök N1 ; ! "sky"
+gökyüzü:gökyüzü N1 ; ! "sky"
+gölet:gölet N1 ; ! "lake"
+golf:golf N1 ; ! "golf"
+gölge:gölge N1 ; ! "dark"
+gölge:gölge N1 ; ! "shadow"
+gol:gol N1 ; ! "goal"
+göl:göl N1 ; ! "lake"
+gömlek:gömlek N1 ; ! "shirt"
+gömü:gömü N1 ; ! "treasure"
+gonca:gonca N1 ; ! "rosebud"
+gönder:gönder N1 ; ! "fragpole"
+gönül:gönül N1 ; ! "heart"
+gönül:gönül N1 ; ! "soul"
+görev:görev N1 ; ! "assignment"
+görev:görev N1 ; ! "duty"
+görev:görev N1 ; ! "job"
+görev:görev N1 ; ! "task"
+görgü:görgü N1 ; ! "manner"
+goril:goril N1 ; ! "gorilla"
+görkem:görkem N1 ; ! "brillance"
+görümce:görümce N1 ; ! "sister-in-law"
+görüntü:görüntü N1 ; ! "image"
+görünüm:görünüm N1 ; ! "appearance"
+görünüş:görünüş N1 ; ! "appearance"
+görünüş:görünüş N1 ; ! "appereance"
+görünüş:görünüş N1 ; ! "aspect"
+görünüş:görünüş N1 ; ! "face"
+görünüş:görünüş N1 ; ! "figure"
+görünüş:görünüş N1 ; ! "image"
+görüşme:görüşme N1 ; ! "conversation"
+gösterge:gösterge N1 ; ! "indicator"
+gösteri:gösteri N1 ; ! "show"
+gösterim:gösterim N1 ; ! "indication"
+gösteriş:gösteriş N1 ; ! "pride"
+gövde:gövde N1 ; ! "body"
+gözaltı:gözaltı N1 ; ! "custody"
+gözcü:gözcü N1 ; ! "watchman"
+gözetim:gözetim N1 ; ! "surveillance"
+göz:göz N1 ; ! "eye"
+göz:göz N1 ; ! "eyehole"
+gözleme:gözleme N1 ; ! "observation"
+gözleme:gözleme N1 ; ! "pancake"
+gözlem:gözlem N1 ; ! "observation"
+gözlem:gözlem N1 ; ! "survey"
+gözlük:gözlük%{v%} N1 ; ! "eyeglasses"
+grafik:grafik N1 ; ! "graphic"
+gramer:gramer N1 ; ! "grammar"
+gram:gram N1 ; ! "gram"
+gramofon:gramofon N1 ; ! "gramophone"
+gres:gres N1 ; ! "grease"
+grev:grev N1 ; ! "strike"
+gri:gri N1 ; ! "grey"
+grip:grip N1 ; ! "flue"
+grup:grup N1 ; ! "group"
+guatr:guatr N1 ; ! "goitre"
+gübre:gübre N1 ; ! "manure"
+güdü:güdü N1 ; ! "incentive"
+güğüm:güğüm N1 ; ! "billycan"
+gül:gül N1 ; ! "rose"
+gülle:gülle N1 ; ! "cannon ball"
+gümbürtü:gümbürtü N1 ; ! "boom"
+gümrük:gümrük N1 ; ! "customs"
+gümüş:gümüş N1 ; ! "silver"
+günah:günah N1 ; ! "blame"
+günah:günah N1 ; ! "evil"
+günah:günah N1 ; ! "foul"
+günah:günah N1 ; ! "sin"
+gündem:gündem N1 ; ! "order"
+güneş:güneş N1 ; ! "sun"
+güneybatı:güneybatı N1 ; ! "southwest"
+güneydoğu:güneydoğu N1 ; ! "southeast"
+güney:güney N1 ; ! "south"
+gün:gün N1 ; ! "day"
+günlük:günlük%{v%} N1 ; ! "diary"
+gurbet:gurbet N1 ; ! "abroad"
+gurbet:gurbet N1 ; ! "absence from home"
+güreş:güreş N1 ; ! "wrestling"
+güruh:güruh N1 ; ! "the mass"
+gürültü:gürültü N1 ; ! "noise"
+gürültü:gürültü N1 ; ! "stramash"
+gurur:gurur N1 ; ! "honour"
+gurur:gurur N1 ; ! "pride"
+güve:güve N1 ; ! "moth"
+güvence:güvence N1 ; ! "assurance"
+güven:güven N1 ; ! "confidence"
+güven:güven N1 ; ! "trust"
+güvensizlik:güvensizlik%{v%} N1 ; ! "disbelief"
+güvercin:güvercin N1 ; ! "dove"
+güvercin:güvercin N1 ; ! "pigeon"
+güz:güz N1 ; ! "fall"
+haber:haber N1 ; ! "announcement"
+haber:haber N1 ; ! "message"
+haber:haber N1 ; ! "news"
+hacı:hacı N1 ; ! "pilgrim"
+hacim:hacim N1 ; ! "volume"
+hadise:hadise N1 ; ! "event"
+hafıza:hafıza N1 ; ! "memory"
+hafta:hafta N1 ; ! "week"
+hakan:hakan N1 ; ! "khan"
+hakaret:hakaret N1 ; ! "curse"
+hakem:hakem N1 ; ! "referee"
+hak:hak N1 ; ! "right"
+haki:haki N1 ; ! "khaki"
+hakimiyet:hakimiyet N1 ; ! "dominance"
+hala:hala N1 ; ! "aunt"
+halat:halat N1 ; ! "rope"
+halef:halef N1 ; ! "successor"
+hal:hal N1 ; ! "aspect"
+hal:hal N1 ; ! "condition"
+hal:hal N1 ; ! "situation"
+hal:hal N1 ; ! "state"
+halı:halı N1 ; ! "carpet"
+halka:halka N1 ; ! "ring"
+halk:halk N1 ; ! "community"
+halk:halk N1 ; ! "people"
+halk:halk N1 ; ! "public"
+halter:halter N1 ; ! "dumbbell"
+hamal:hamal N1 ; ! "carrier"
+hamam:hamam N1 ; ! "bathhouse"
+hamil:hamil N1 ; ! "bearer"
+hamle:hamle N1 ; ! "rush"
+hammadde:hammadde N1 ; ! "raw materials"
+hamur:hamur N1 ; ! "dough"
+hanedan:hanedan N1 ; ! "noble family"
+hane:hane N1 ; ! "house"
+hangar:hangar N1 ; ! "shed"
+han:han N1 ; ! "khan"
+hanım:hanım N1 ; ! "lady"
+hanım:hanım N1 ; ! "wife"
+hanım:hanım N1 ; ! "woman"
+hapishane:hapishane N1 ; ! "prison"
+hapis:hapis N1 ; ! "prison"
+hararet:hararet N1 ; ! "fervency"
+hararet:hararet N1 ; ! "fervour"
+hararet:hararet N1 ; ! "heat"
+hardal:hardal N1 ; ! "mustard"
+harekat:harekat N1 ; ! "operation"
+hareket:hareket N1 ; ! "motion"
+hareket:hareket N1 ; ! "move"
+hareket:hareket N1 ; ! "movement"
+haris:haris N1 ; ! "greed"
+harita:harita N1 ; ! "map"
+harman:harman N1 ; ! "harvest"
+harp:harp N1 ; ! "battle"
+harp:harp N1 ; ! "war"
+hasar:hasar N1 ; ! "damage"
+hasar:hasar N1 ; ! "hurt"
+haşhaş:haşhaş N1 ; ! "hashish"
+haşhaş:haşhaş N1 ; ! "poppy"
+hasır:hasır N1 ; ! "mat"
+hasret:hasret N1 ; ! "longing"
+hassasiyet:hassasiyet N1 ; ! "sensibility"
+hastalık:hastalık%{v%} N1 ; ! "illness"
+hastalık:hastalık%{v%} N1 ; ! "sickness"
+hastane:hastane N1 ; ! "hospital"
+hata:hata N1 ; ! "error"
+hata:hata N1 ; ! "mistake"
+hat:hat N1 ; ! "line"
+hatıra:hatıra N1 ; ! "memory"
+hatıra:hatıra N1 ; ! "recollection"
+hatıra:hatıra N1 ; ! "remembrance"
+hatır:hatır N1 ; ! "influence"
+havadis:havadis N1 ; ! "news"
+havadis:havadis N1 ; ! "rumor"
+hava:hava N1 ; ! "air"
+havale:havale N1 ; ! "convulsion"
+havale:havale N1 ; ! "money order"
+havan:havan N1 ; ! "garlic press"
+havan:havan N1 ; ! "mortar"
+havari:havari N1 ; ! "apostle"
+havlu:havlu N1 ; ! "towel"
+havuz:havuz N1 ; ! "basin"
+havuz:havuz N1 ; ! "pool"
+havuz:havuz N1 ; ! "receptacle"
+havza:havza N1 ; ! "basin"
+hayal:hayal N1 ; ! "dream"
+hayal:hayal N1 ; ! "imagination"
+hayat:hayat N1 ; ! "life"
+hayat:hayat N1 ; ! "living"
+hayat:hayat N1 ; ! "porch"
+hayat:hayat N1 ; ! "race"
+haydut:haydut N1 ; ! "bandit"
+haydut:haydut N1 ; ! "banditti"
+hayır:hayır N1 ; ! "charity"
+hayır:hayır N1 ; ! "no"
+hayır:hayır N1 ; ! "prosperity"
+hayran:hayran N1 ; ! "admirer"
+hayran:hayran N1 ; ! "fan"
+hayret:hayret N1 ; ! "amazement"
+hayret:hayret N1 ; ! "astonishment"
+hayvan:hayvan N1 ; ! "animal"
+haz:haz N1 ; ! "elation"
+haz:haz N1 ; ! "satisfaction"
+haz:haz N1 ; ! "zest"
+hazine:hazine N1 ; ! "treasure"
+hazırlık:hazırlık%{v%} N1 ; ! "preparation"
+hedef:hedef N1 ; ! "target"
+hediye:hediye N1 ; ! "gift"
+hediye:hediye N1 ; ! "present"
+hekim:hekim N1 ; ! "doctor"
+hekim:hekim N1 ; ! "leech"
+helikopter:helikopter N1 ; ! "helicopter"
+hemşire:hemşire N1 ; ! "nurse"
+hemşire:hemşire N1 ; ! "sister"
+hendek:hendek N1 ; ! "ditch"
+hendek:hendek N1 ; ! "drain"
+hendek:hendek N1 ; ! "pit"
+hentbol:hentbol N1 ; ! "handball"
+hesap:hesap N1 ; ! "account"
+hesap:hesap N1 ; ! "bill"
+hesap:hesap N1 ; ! "calculation"
+heves:heves N1 ; ! "inclination"
+heves:heves N1 ; ! "keenness"
+heves:heves N1 ; ! "kick"
+heves:heves N1 ; ! "stomach"
+heybe:heybe N1 ; ! "bag"
+heybe:heybe N1 ; ! "packsack"
+heybe:heybe N1 ; ! "saddlebag"
+heyecan:heyecan N1 ; ! "excitement"
+heyecan:heyecan N1 ; ! "fire"
+heyet:heyet N1 ; ! "board"
+heyet:heyet N1 ; ! "commission"
+heyet:heyet N1 ; ! "committee"
+heykel:heykel N1 ; ! "sculpture"
+heykeltıraş:heykeltıraş N1 ; ! "sculptor"
+hibe:hibe N1 ; ! "grant"
+hiciv:hiciv N1 ; ! "irony"
+hiddet:hiddet N1 ; ! "anger"
+hiddet:hiddet N1 ; ! "rage"
+hidrojen:hidrojen N1 ; ! "hydrogen"
+hijyen:hijyen N1 ; ! "hygiene"
+hikaye:hikaye N1 ; ! "narration"
+hikaye:hikaye N1 ; ! "recital"
+hikaye:hikaye N1 ; ! "story"
+hikaye:hikaye N1 ; ! "tale"
+hikmet:hikmet N1 ; ! "mystery"
+hikmet:hikmet N1 ; ! "philosophy"
+hikmet:hikmet N1 ; ! "reason"
+hile:hile N1 ; ! "cheat"
+hile:hile N1 ; ! "trick"
+himaye:himaye N1 ; ! "defense"
+himaye:himaye N1 ; ! "guard"
+himaye:himaye N1 ; ! "maintenance"
+himaye:himaye N1 ; ! "protection"
+himaye:himaye N1 ; ! "sponsor"
+hin:hin N1 ; ! "cunning person"
+hırdavat:hırdavat N1 ; ! "scrups"
+hırgür:hırgür N1 ; ! "quarrel"
+hırıltı:hırıltı N1 ; ! "murmur"
+hırs:hırs N1 ; ! "ambition"
+hırsız:hırsız N1 ; ! "robber"
+hırsızlık:hırsızlık%{v%} N1 ; ! "robbery"
+his:his N1 ; ! "consciousness"
+his:his N1 ; ! "emotion"
+his:his N1 ; ! "feeling"
+his:his N1 ; ! "perception"
+his:his N1 ; ! "sensation"
+his:his N1 ; ! "sense"
+hışım:hışım N1 ; ! "anger"
+hısım:hısım N1 ; ! "relative"
+hışırtı:hışırtı N1 ; ! "crackle"
+hışırtı:hışırtı N1 ; ! "rustle"
+hışırtı:hışırtı N1 ; ! "rustling"
+hışırtı:hışırtı N1 ; ! "swish"
+hissedar:hissedar N1 ; ! "shareholder"
+hissedar:hissedar N1 ; ! "stockholder"
+hisse:hisse N1 ; ! "lot"
+hisse:hisse N1 ; ! "ration"
+hisse:hisse N1 ; ! "slice"
+hitap:hitap N1 ; ! "address"
+hıyar:hıyar N1 ; ! "cucumber"
+hızar:hızar N1 ; ! "saw"
+hız:hız N1 ; ! "pace"
+hız:hız N1 ; ! "speed"
+hız:hız N1 ; ! "swiftness"
+hizmet:hizmet N1 ; ! "function"
+hizmet:hizmet N1 ; ! "service"
+hizmetli:hizmetli N1 ; ! "employee"
+hoca:hoca N1 ; ! "master"
+hokka:hokka N1 ; ! "inkpot"
+holding:holding N1 ; ! "holding"
+homurtu:homurtu N1 ; ! "mutter"
+horoz:horoz N1 ; ! "rooster"
+hortum:hortum N1 ; ! "hortum"
+horultu:horultu N1 ; ! "snort"
+hoşgörü:hoşgörü N1 ; ! "understanding"
+hububat:hububat N1 ; ! "cereal"
+hücre:hücre N1 ; ! "cell"
+hücum:hücum N1 ; ! "attack"
+hücum:hücum N1 ; ! "charge"
+hudut:hudut N1 ; ! "border"
+hudut:hudut N1 ; ! "boundary"
+hudut:hudut N1 ; ! "edge"
+hukuk:hukuk N1 ; ! "friendship"
+hukuk:hukuk N1 ; ! "law"
+hukuk:hukuk N1 ; ! "legal system"
+hükümdar:hükümdar N1 ; ! "emperor"
+hükümdar:hükümdar N1 ; ! "ruler"
+hükümet:hükümet N1 ; ! "government"
+hüküm:hüküm N1 ; ! "provision"
+huni:huni N1 ; ! "cone"
+huni:huni N1 ; ! "funnel"
+hurda:hurda N1 ; ! "wreckage"
+hürriyet:hürriyet N1 ; ! "freedom"
+hüsran:hüsran N1 ; ! "defeat"
+hüsran:hüsran N1 ; ! "disappointment"
+husus:husus N1 ; ! "question"
+husus:husus N1 ; ! "respect"
+husus:husus N1 ; ! "subject"
+huy:huy N1 ; ! "characteristic"
+huy:huy N1 ; ! "habit"
+huy:huy N1 ; ! "temper"
+hüzün:hüzün N1 ; ! "melancholy"
+huzur:huzur N1 ; ! "peace"
+iade:iade N1 ; ! "return"
+ibadet:ibadet N1 ; ! "worship"
+ibraz:ibraz N1 ; ! "display"
+ibraz:ibraz N1 ; ! "submission"
+icat:icat N1 ; ! "invention"
+icra:icra N1 ; ! "fulfilment"
+idame:idame N1 ; ! "maintenance"
+idam:idam N1 ; ! "execution"
+idare:idare N1 ; ! "administration"
+iddia:iddia N1 ; ! "assertion"
+iddia:iddia N1 ; ! "claim"
+iddianame:iddianame N1 ; ! "accusation"
+ideoloji:ideoloji N1 ; ! "ideology"
+idman:idman N1 ; ! "practice"
+idman:idman N1 ; ! "training"
+idrak:idrak N1 ; ! "intelligence"
+idrar:idrar N1 ; ! "urine"
+ifade:ifade N1 ; ! "statement"
+iflas:iflas N1 ; ! "bankrupt"
+ifşa:ifşa N1 ; ! "revelation"
+iftira:iftira N1 ; ! "slander"
+iğne:iğne N1 ; ! "injection"
+iğne:iğne N1 ; ! "needle"
+ihale:ihale N1 ; ! "auction"
+ihanet:ihanet N1 ; ! "betrayal"
+ihbar:ihbar N1 ; ! "notice"
+ihbar:ihbar N1 ; ! "notification"
+ihbarname:ihbarname N1 ; ! "notification"
+ihmal:ihmal N1 ; ! "negligence"
+ihracat:ihracat N1 ; ! "exportation"
+ihtilaf:ihtilaf N1 ; ! "collision"
+ihtilal:ihtilal N1 ; ! "revolution"
+ihtimal:ihtimal N1 ; ! "possibility"
+ihtiras:ihtiras N1 ; ! "passion"
+ihtiyat:ihtiyat N1 ; ! "caution"
+ikamet:ikamet N1 ; ! "residence"
+ikilem:ikilem N1 ; ! "dilemma"
+iklim:iklim N1 ; ! "climate"
+ikna:ikna N1 ; ! "persuasion"
+iktidar:İktidar N1 ; ! "potency, potential" ! Dir/LR
+iktidar:iktidar N1 ; ! "potency, potential"
+iktisat:iktisat N1 ; ! "economics"
+ilah:ilah N1 ; ! "god"
+ilan:ilan N1 ; ! "announcement"
+ilave:ilave N1 ; ! "addition"
+iletişim:iletişim N1 ; ! "communication"
+ilgi:ilgi N1 ; ! "attention"
+ilgi:ilgi N1 ; ! "interest"
+ilik:ilik%{v%} N1 ; ! "buttonhole"
+ilim:ilim N1 ; ! "science"
+ilişki:ilişki N1 ; ! "connection"
+ilişki:ilişki N1 ; ! "relation"
+ilişki:ilişki N1 ; ! "relationship"
+ilkbahar:ilkbahar N1 ; ! "spring"
+ilke:ilke N1 ; ! "principle"
+ilkokul:ilkokul N1 ; ! "primary school"
+illet:illet N1 ; ! "illness"
+ilmek:ilmek N1 ; ! "knot"
+iltica:iltica N1 ; ! "asylum"
+iltihap:iltihap N1 ; ! "infection"
+ima:ima N1 ; ! "implication"
+imaj:imaj N1 ; ! "image"
+imalathane:imalathane N1 ; ! "factory"
+imalat:imalat N1 ; ! "manufacture"
+imal:imal N1 ; ! "vintage"
+imam:imam N1 ; ! "imam"
+imar:imar N1 ; ! "reconstruction"
+imge:imge N1 ; ! "image"
+imha:imha N1 ; ! "annihilation"
+imik:imik N1 ; ! "throat"
+imkan:imkan N1 ; ! "opportunity"
+imla:imla N1 ; ! "dictation"
+imza:imza N1 ; ! "signature"
+inan:İnan N1 ; ! "belief" ! Dir/LR
+inan:inan N1 ; ! "belief"
+inat:inat N1 ; ! "obstinacy"
+inci:inci N1 ; ! "pearl"
+indirim:indirim N1 ; ! "discount"
+inek:inek N1 ; ! "cow"
+infaz:infaz N1 ; ! "execution"
+inisiyatif:inisiyatif N1 ; ! "initiative"
+inkar:inkar N1 ; ! "denial"
+inşaat:inşaat N1 ; ! "construction"
+inşa:inşa N1 ; ! "construction"
+insan:İnsan N1 ; ! "human" ! Dir/LR
+insan:insan N1 ; ! "human"
+insanoğlu:insanoğlu N1 ; ! "mortal"
+insiyak:insiyak N1 ; ! "incentive"
+internet:İnternet N1 ; ! "internet" ! Dir/LR
+internet:internet N1 ; ! "internet"
+intihar:intihar N1 ; ! "suicide"
+intikam:intikam N1 ; ! "revenge"
+intikam:intikam N1 ; ! "vengeance"
+ipek:ipek N1 ; ! "silk"
+ip:ip N1 ; ! "rope"
+iptal:iptal N1 ; ! "cancellation"
+iptal:iptal N1 ; ! "termination"
+irade:irade N1 ; ! "will"
+ırk:ırk N1 ; ! "race"
+ırmak:ırmak N1 ; ! "flood"
+ırmak:ırmak N1 ; ! "river"
+ırmak:ırmak N1 ; ! "stream"
+ironi:ironi N1 ; ! "irony"
+irtibat:irtibat N1 ; ! "communication"
+irtibat:irtibat N1 ; ! "connection"
+irtibat:irtibat N1 ; ! "contact"
+irtibat:irtibat N1 ; ! "liaison"
+irtibat:irtibat N1 ; ! "link"
+irtifa:irtifa N1 ; ! "altitude"
+irtifa:irtifa N1 ; ! "elevation"
+işaret:işaret N1 ; ! "clue"
+işaret:işaret N1 ; ! "ensign"
+işaret:işaret N1 ; ! "hint"
+işaret:işaret N1 ; ! "indicator"
+işaret:işaret N1 ; ! "marking"
+işaret:işaret N1 ; ! "remark"
+işaret:işaret N1 ; ! "sign"
+işaret:işaret N1 ; ! "signal"
+işaret:işaret N1 ; ! "trace"
+işgal:işgal N1 ; ! "invasion"
+işgal:işgal N1 ; ! "occupation"
+ısı:ısı N1 ; ! "temperature"
+ışık:ışık%{v%} N1 ; ! "beam, light"
+ışın:ışın N1 ; ! "beam"
+is:is N1 ; ! "black, fume"
+iş:İş N1 ; ! "business, job, occupation, work" ! Dir/LR
+iş:iş N1 ; ! "business, job, occupation, work"
+iskan:iskan N1 ; ! "location"
+iskan:iskan N1 ; ! "settlement"
+ıskarta:ıskarta N1 ; ! "discard"
+ıskarta:ıskarta N1 ; ! "refusal"
+ıskarta:ıskarta N1 ; ! "reject"
+ıskarta:ıskarta N1 ; ! "rejection"
+iskele:iskele N1 ; ! "seaport"
+iskele:iskele N1 ; ! "stage"
+iskelet:iskelet N1 ; ! "skeleton"
+iskemle:iskemle N1 ; ! "chair"
+iskemle:iskemle N1 ; ! "seat"
+iskemle:iskemle N1 ; ! "stool"
+işkence:işkence N1 ; ! "persecution"
+işkence:işkence N1 ; ! "torment"
+işkence:işkence N1 ; ! "torture"
+ıslahat:ıslahat N1 ; ! "improvement"
+ıslahat:ıslahat N1 ; ! "reform"
+ıslah:ıslah N1 ; ! "improvement"
+işlem:işlem N1 ; ! "operation"
+işlem:işlem N1 ; ! "transaction"
+işlem:işlem N1 ; ! "treatment"
+işletmeci:işletmeci N1 ; ! "manager"
+işletme:işletme N1 ; ! "management"
+işlev:işlev N1 ; ! "function"
+ısrar:ısrar N1 ; ! "insistence"
+istasyon:istasyon N1 ; ! "depot"
+istasyon:istasyon N1 ; ! "station"
+istatistik:istatistik N1 ; ! "statistics"
+istek:istek N1 ; ! "desire"
+istek:istek N1 ; ! "wish"
+istem:istem N1 ; ! "request"
+istem:istem N1 ; ! "will"
+istifa:istifa N1 ; ! "resignation"
+istihbarat:istihbarat N1 ; ! "intelligence"
+istihdam:istihdam N1 ; ! "employment"
+istihkam:istihkam N1 ; ! "fortress"
+istikrar:İstİkrar N1 ; ! "stability" ! Dir/LR
+istikrar:istikrar N1 ; ! "stability"
+istikrar:istikrar N1 ; ! "steady"
+istila:istila N1 ; ! "invasion"
+ıstırap:ıstırap N1 ; ! "misery"
+ıstırap:ıstırap N1 ; ! "pain"
+istişare:istişare N1 ; ! "consultation"
+istismar:istismar N1 ; ! "draft"
+istismar:istismar N1 ; ! "exploitation"
+istisna:istisna N1 ; ! "exception"
+işveren:işveren N1 ; ! "employer"
+işveren:işveren N1 ; ! "principal"
+isyan:isyan N1 ; ! "rebellion"
+isyan:isyan N1 ; ! "revolt"
+itfaiye:itfaiye N1 ; ! "fire station"
+ithalat:ithalat N1 ; ! "import"
+itham:itham N1 ; ! "accusation"
+itibar:itibar N1 ; ! "reputation"
+itiraf:itiraf N1 ; ! "confession"
+itiraz:itiraz N1 ; ! "objection"
+itiraz:itiraz N1 ; ! "protest"
+it:it N1 ; ! "dog"
+ittifak:İttifak N1 ; ! "alliance, confederation"
+ittifak:ittifak N1 ; ! "alliance, confederation"
+izahat:izahat N1 ; ! "instruction"
+izin:izin N1 ; ! "licence"
+izin:izin N1 ; ! "permission"
+iz:iz N1 ; ! "mark"
+iz:iz N1 ; ! "trace"
+iz:iz N1 ; ! "trag"
+izlenim:izlenim N1 ; ! "impression"
+izolasyon:izolasyon N1 ; ! "isolation"
+jaguar:jaguar N1 ; ! "jaguar"
+jant:jant N1 ; ! "rim"
+jeneratör:jeneratör N1 ; ! "generator"
+jeoloji:jeoloji N1 ; ! "geology"
+jest:jest N1 ; ! "gesture"
+jet:jet N1 ; ! "jet"
+jeton:jeton N1 ; ! "token"
+jimnastik:jimnastik N1 ; ! "gym"
+jöle:jöle N1 ; ! "jell"
+jübile:jübile N1 ; ! "jubilee"
+judo:judo N1 ; ! "judo"
+jüri:jüri N1 ; ! "jury"
+kabahat:kabahat N1 ; ! "fault"
+kabak:kabak N1 ; ! "pumpkin"
+kabak:kabak N1 ; ! "squash"
+kabartı:kabartı N1 ; ! "puff"
+kabile:kabile N1 ; ! "clan"
+kabile:kabile N1 ; ! "family"
+kabile:kabile N1 ; ! "tribe"
+kabiliyet:kabiliyet N1 ; ! "ability"
+kabiliyet:kabiliyet N1 ; ! "gift"
+kabiliyet:kabiliyet N1 ; ! "talent"
+kabine:kabine N1 ; ! "cabinet"
+kabin:kabin N1 ; ! "cabin"
+kablo:kablo N1 ; ! "cable"
+kabuk:kabuk N1 ; ! "scab"
+kabuk:kabuk N1 ; ! "shell"
+kabul:kabul N1 ; ! "admittance"
+kabul:kabul N1 ; ! "approval"
+kabza:kabza N1 ; ! "handle"
+kadeh:kadeh N1 ; ! "glass"
+kadeh:kadeh N1 ; ! "goblet"
+kademe:kademe N1 ; ! "grade"
+kademe:kademe N1 ; ! "rank"
+kademe:kademe N1 ; ! "vel"
+kader:kader N1 ; ! "destiny"
+kader:kader N1 ; ! "fate"
+kadın:kadın N1 ; ! "woman"
+kadro:kadro N1 ; ! "personnel"
+kadro:kadro N1 ; ! "staff"
+kafa:kafa N1 ; ! "head"
+kafa:kafa N1 ; ! "mind"
+kafa:kafa N1 ; ! "skull"
+kafes:kafes N1 ; ! "cage"
+kafeterya:kafeterya N1 ; ! "cafeteria"
+kafiye:kafiye N1 ; ! "rhyme"
+kağan:kağan N1 ; ! "khan"
+kağıt:kağıt N1 ; ! "paper"
+kahkaha:kahkaha N1 ; ! "laughter"
+kahraman:kahraman N1 ; ! "hero"
+kahvaltı:kahvaltı N1 ; ! "breakfast"
+kahve:kahve N1 ; ! "cafe"
+kahve:kahve N1 ; ! "coffee"
+kaide:kaide N1 ; ! "base"
+kakao:kakao N1 ; ! "cocoa"
+kalabalık:kalabalık%{v%} N1 ; ! "crowd"
+kalafat:kalafat N1 ; ! "cock"
+kale:kale N1 ; ! "castle"
+kalem:kalem N1 ; ! "pencil"
+kalıntı:kalıntı N1 ; ! "remaining"
+kalıp:kalıp N1 ; ! "model"
+kalıp:kalıp N1 ; ! "pattern"
+kalite:kalite N1 ; ! "quality"
+kalori:kalori N1 ; ! "calorie"
+kalp:kalp N1 ; ! "heart"
+kamara:kamara N1 ; ! "chamber"
+kamera:kamera N1 ; ! "camera"
+kamış:kamış N1 ; ! "bamboo"
+kampanya:kampanya N1 ; ! "campaign"
+kamp:kamp N1 ; ! "camp"
+kampüs:kampüs N1 ; ! "campus"
+kamu:kamu N1 ; ! "community"
+kamyon:kamyon N1 ; ! "lorry"
+kanca:kanca N1 ; ! "hook"
+kandil:kandil N1 ; ! "candle"
+kanepe:kanepe N1 ; ! "sofa"
+kanguru:kanguru N1 ; ! "kangaroo"
+kanı:kanı N1 ; ! "sense"
+kanıt:kanıt N1 ; ! "evidence"
+kan:kan N1 ; ! "blood"
+kano:kano N1 ; ! "canoe"
+kanser:kanser N1 ; ! "cancer"
+kanun:kanun N1 ; ! "law"
+kaos:kaos N1 ; ! "chaos"
+kapak:kapak N1 ; ! "valve"
+kapan:kapan N1 ; ! "trap"
+kapasite:kapasite N1 ; ! "capacity"
+kapı:kapı N1 ; ! "door"
+kapı:kapı N1 ; ! "entrance"
+kapitalizm:kapitalizm N1 ; ! "capitalism"
+kapital:kapital N1 ; ! "capital"
+kap:kap N1 ; ! "case"
+kap:kap N1 ; ! "vessel"
+kaplan:kaplan N1 ; ! "tiger"
+kaplumbağa:kaplumbağa N1 ; ! "tortoise"
+kaplumbağa:kaplumbağa N1 ; ! "turtle"
+kapris:kapris N1 ; ! "caprice"
+kapsam:kapsam N1 ; ! "range"
+kaptan:kaptan N1 ; ! "captain"
+karaborsa:karaborsa N1 ; ! "black market"
+karaciğer:karaciğer N1 ; ! "liver"
+karakol:karakol N1 ; ! "police station"
+karakteristik:karakteristik N1 ; ! "characteristic"
+karakter:karakter N1 ; ! "character"
+karalama:karalama N1 ; ! "draft"
+karanfil:karanfil N1 ; ! "clove"
+karbonat:karbonat N1 ; ! "soda"
+karbon:karbon N1 ; ! "carbon"
+kardeş:kardeş N1 ; ! "sibling"
+kare:kare N1 ; ! "square"
+karga:karga N1 ; ! "crow"
+kargaşa:kargaşa N1 ; ! "disorder"
+kargaşa:kargaşa N1 ; ! "disturbance"
+kargo:kargo N1 ; ! "cargo"
+karides:karides N1 ; ! "shrimp"
+karı:karı N1 ; ! "wife"
+karikatür:karikatür N1 ; ! "cartoon"
+karınca:karınca N1 ; ! "ant"
+karın:karın N1 ; ! "stomach"
+karışım:karışım N1 ; ! "mixture"
+karış:karış N1 ; ! "span"
+kariyer:kariyer N1 ; ! "career"
+kar:kar N1 ; ! "profit"
+kar:kar N1 ; ! "snow"
+karnaval:karnaval N1 ; ! "carnival"
+karpuz:karpuz N1 ; ! "watermelon"
+karşılık:karşılık%{v%} N1 ; ! "provision"
+kartal:kartal N1 ; ! "eagle"
+kasaba:kasaba N1 ; ! "town"
+kasa:kasa N1 ; ! "safe"
+kasatura:kasatura N1 ; ! "bayonet"
+kase:kase N1 ; ! "bowl"
+kaset:kaset N1 ; ! "tape"
+kaşık:kaşık N1 ; ! "spoon"
+kaşıntı:kaşıntı N1 ; ! "itch"
+kasırga:kasırga N1 ; ! "hurricane"
+kasiyer:kasiyer N1 ; ! "cashier"
+kaş:kaş N1 ; ! "eyebrow"
+kas:kas N1 ; ! "muscle"
+kasket:kasket N1 ; ! "cap"
+kasvet:kasvet N1 ; ! "gloom"
+kategori:kategori N1 ; ! "category"
+katılım:katılım N1 ; ! "attendance"
+katil:katil N1 ; ! "killer"
+kat:kat N1 ; ! "layer"
+katkı:katkı N1 ; ! "addition"
+katliam:katliam N1 ; ! "massacre"
+katman:katman N1 ; ! "layer"
+katran:katran N1 ; ! "tar"
+kaval:kaval N1 ; ! "reed"
+kavanoz:kavanoz N1 ; ! "jar"
+kavga:kavga N1 ; ! "fight"
+kavis:kavis N1 ; ! "curve"
+kavram:kavram N1 ; ! "notion"
+kavşak:kavşak N1 ; ! "crossroad"
+kaya:kaya N1 ; ! "rock"
+kayak:kayak N1 ; ! "ski"
+kaygı:kaygı N1 ; ! "anxiety"
+kayık:kayık N1 ; ! "boat"
+kayınbaba:kayınbaba N1 ; ! "father-in-law"
+kayınbirader:kayınbirader N1 ; ! "brother-in-law"
+kayın:kayın N1 ; ! "brother-in-law"
+kayınvalide:kayınvalide N1 ; ! "mother-in-law"
+kayış:kayış N1 ; ! "band "
+kayıt:kayıt N1 ; ! "registration"
+kaymak:kaymak N1 ; ! "cream"
+kaynak:kaynak%{v%} N1 ; ! "source"
+kaynana:kaynana N1 ; ! "mother-in-law"
+kaypak:kaypak N1 ; ! "sleek"
+kaza:kaza N1 ; ! "accident"
+kazak:kazak N1 ; ! "sweater"
+kazanım:kazanım N1 ; ! "acquisition"
+kazan:kazan N1 ; ! "boiler"
+kazı:kazı N1 ; ! "excavation"
+kaz:kaz N1 ; ! "goose"
+keder:keder N1 ; ! "grief"
+keder:keder N1 ; ! "sorrow"
+kedi:kedi N1 ; ! "cat"
+kefalet:kefalet N1 ; ! "bail"
+kefalet:kefalet N1 ; ! "warrant"
+kefil:kefil N1 ; ! "bail"
+kek:kek N1 ; ! "cake"
+kelebek:kelebek N1 ; ! "butterfly"
+kelime:kelime N1 ; ! "word"
+kelle:kelle N1 ; ! "head"
+keman:keman N1 ; ! "violin"
+kemer:kemer N1 ; ! "belt"
+kemik:kemik%{v%} N1 ; ! "bone"
+kenar:kenar N1 ; ! "edge"
+kene:kene N1 ; ! "tick"
+kent:kent N1 ; ! "city"
+kent:kent N1 ; ! "city"
+kepek:kepek N1 ; ! "chaff"
+kere:kere N1 ; ! "time"
+kereste:kereste N1 ; ! "lumber"
+kertenkele:kertenkele N1 ; ! "lizard"
+kervan:kervan N1 ; ! "caravan"
+kese:kese N1 ; ! "pocket"
+keşif:keşif N1 ; ! "discovery"
+keşif:keşif N1 ; ! "exploration"
+kesik:kesik N1 ; ! "cut"
+kesim:kesim N1 ; ! "fashion"
+kesim:kesim N1 ; ! "part"
+kesim:kesim N1 ; ! "slaughter"
+kesinti:kesinti N1 ; ! "decution"
+kesinti:kesinti N1 ; ! "deduction"
+keşiş:keşiş N1 ; ! "priest"
+keyif:keyif N1 ; ! "joy"
+keyif:keyif N1 ; ! "pleasure"
+kibir:kibir N1 ; ! "arrogance"
+kibrit:kibrit N1 ; ! "match"
+kıkırdak:kıkırdak N1 ; ! "cartilage"
+kılavuz:kılavuz N1 ; ! "guide"
+kiler:kiler N1 ; ! "cellar"
+kılıf:kılıf N1 ; ! "sleeve"
+kılık:kılık%{v%} N1 ; ! "appearance"
+kilise:kilise N1 ; ! "church"
+kil:kil N1 ; ! "clay"
+kıl:kıl N1 ; ! "hair"
+kilogram:kilogram N1 ; ! "kilogram"
+kilometre:kilometre N1 ; ! "kilometer"
+kilovat:kilovat N1 ; ! "kilovat"
+kimlik:kimlik%{v%} N1 ; ! "identity"
+kimya:kimya N1 ; ! "chemistry"
+kinaye:kinaye N1 ; ! "hint"
+kın:kın N1 ; ! "steath"
+kip:kip N1 ; ! "model"
+kırağı:kırağı N1 ; ! "hoarfrost"
+kira:kira N1 ; ! "hire"
+kırıntı:kırıntı N1 ; ! "piece"
+kırışık:kırışık N1 ; ! "crease"
+kiriş:kiriş N1 ; ! "beam"
+kırkı:kırkı N1 ; ! "shearing"
+kir:kir N1 ; ! "dirt"
+kırma:kırma N1 ; ! "break"
+kirpi:kirpi N1 ; ! "porcupine"
+kişi:kişi N1 ; ! "person"
+kişilik:kişilik%{v%} N1 ; ! "personality"
+kısım:kısım N1 ; ! "part"
+kışın:kışın N1 ; ! "in winter"
+kış:kış N1 ; ! "winter"
+kışla:kışla N1 ; ! "barracks"
+kısmet:kısmet N1 ; ! "chance"
+kısmet:kısmet N1 ; ! "luck"
+kitabevi:kitabevi N1 ; ! "bookstore"
+kıta:kıta N1 ; ! "continent"
+kitap:kitap%{v%} N1 ; ! "book"
+kitle:kitle N1 ; ! "population"
+kıtlık:kıtlık%{v%} N1 ; ! "famine"
+kıvılcım:kıvılcım N1 ; ! "sparkle"
+kıvrım:kıvrım N1 ; ! "curve"
+kıyafet:kıyafet N1 ; ! "dress"
+kıyafet:kıyafet N1 ; ! "outfit"
+kıyamet:kıyamet N1 ; ! "resurrection"
+kıyı:kıyı N1 ; ! "shore"
+kıymet:kıymet N1 ; ! "value"
+kıymık:kıymık N1 ; ! "splint"
+kızak:kızak N1 ; ! "sled"
+kız:kız N1 ; ! "girl"
+klakson:klakson N1 ; ! "horn"
+klasik:klasik N1 ; ! "classic"
+klasman:klasman N1 ; ! "classification"
+klinik:klinik N1 ; ! "clinic"
+klüp:klüp N1 ; ! "cub"
+koalisyon:koalisyon N1 ; ! "coalition"
+kocakarı:kocakarı N1 ; ! "old woman"
+koca:koca N1 ; ! "husband"
+kod:kod N1 ; ! "code"
+koğuş:koğuş N1 ; ! "ward"
+köken:köken N1 ; ! "origin"
+kök:kök N1 ; ! "root"
+koku:koku N1 ; ! "smell"
+kolan:kolan N1 ; ! "belt"
+köle:köle N1 ; ! "slave"
+koleksiyon:koleksiyon N1 ; ! "collection"
+kolera:kolera N1 ; ! "cholera"
+koli:koli N1 ; ! "package"
+koli:koli N1 ; ! "parcel"
+kol:kol N1 ; ! "arm"
+koloni:koloni N1 ; ! "colony"
+kolon:kolon N1 ; ! "column"
+koltuk:koltuk N1 ; ! "armchair"
+koltuk:koltuk N1 ; ! "sofa"
+komedi:komedi N1 ; ! "comedy"
+komedya:komedya N1 ; ! "comedy"
+komedyen:komedyen N1 ; ! "comedian"
+komiser:komiser N1 ; ! "commissar"
+komisyon:komisyon N1 ; ! "commission"
+komite:komite N1 ; ! "committe"
+komplo:komplo N1 ; ! "conspiracy"
+kompozisyon:kompozisyon N1 ; ! "composition"
+komşu:komşu N1 ; ! "neighbor"
+komünist:komünist N1 ; ! "communist"
+komünizm:komünizm N1 ; ! "communism"
+kömür:kömür N1 ; ! "coal"
+komuta:komuta N1 ; ! "control"
+komutan:komutan N1 ; ! "commander"
+komut:komut N1 ; ! "command"
+komut:komut N1 ; ! "instruction"
+konfederasyon:konfederasyon N1 ; ! "confederation"
+konferans:konferans N1 ; ! "conference"
+konfor:konfor N1 ; ! "comfort"
+kongre:kongre N1 ; ! "congress"
+konsept:konsept N1 ; ! "concept"
+konser:konser N1 ; ! "concert"
+konsey:konsey N1 ; ! "council"
+konsolos:konsolos N1 ; ! "consul"
+kontak:kontak N1 ; ! "contact"
+konteyner:konteyner N1 ; ! "container"
+kontrol:kontrol N1 ; ! "control"
+konuk:konuk N1 ; ! "guest"
+konu:konu N1 ; ! "issue"
+konu:konu N1 ; ! "subject"
+konum:konum N1 ; ! "location"
+konum:konum N1 ; ! "position"
+konuşmacı:konuşmacı N1 ; ! "speaker"
+konut:konut N1 ; ! "residence"
+kooperatif:kooperatif N1 ; ! "cooperative"
+koordinasyon:koordinasyon N1 ; ! "coordination"
+köpek:köpek%{v%} N1 ; ! "dog"
+köprü:köprü N1 ; ! "bridge"
+köpük:köpük N1 ; ! "foam"
+kopya:kopya N1 ; ! "copy"
+kordon:kordon N1 ; ! "cord"
+körfez:körfez N1 ; ! "gulf"
+korgeneral:korgeneral N1 ; ! "lieutenant general"
+koridor:koridor N1 ; ! "corridor"
+kor:kor N1 ; ! "embers"
+kor:kor N1 ; ! "flame"
+korku:korku N1 ; ! "affright"
+korku:korku N1 ; ! "horror"
+korku:korku N1 ; ! "thrill"
+korniş:korniş N1 ; ! "ledge"
+koro:koro N1 ; ! "choir"
+korsan:korsan N1 ; ! "pirate"
+koru:koru N1 ; ! "grove"
+korunak:korunak N1 ; ! "shelter"
+köşe:köşe N1 ; ! "corner"
+kösele:kösele N1 ; ! "leather"
+kostüm:kostüm N1 ; ! "costume"
+koşu:koşu N1 ; ! "run"
+koşul:koşul N1 ; ! "condition"
+koşul:koşul N1 ; ! "provision"
+koşul:koşul N1 ; ! "requirement"
+koşum:koşum N1 ; ! "harness"
+kota:kota N1 ; ! "quota"
+kötülük:kötülük%{v%} N1 ; ! "badness, evil"
+kova:kova N1 ; ! "bucket"
+koy:koy N1 ; ! "bay"
+köy:köy N1 ; ! "village"
+koyun:koyun N1 ; ! "arms"
+koyun:koyun N1 ; ! "breast"
+koyun:koyun N1 ; ! "sheep"
+kozalak:kozalak N1 ; ! "pine cone"
+koz:koz N1 ; ! "ammnution"
+kraliyet:kraliyet N1 ; ! "kingdom"
+kral:kral N1 ; ! "king"
+kravat:kravat N1 ; ! "tie"
+kredi:kredi N1 ; ! "credit"
+kreş:kreş N1 ; ! "nursery"
+kriko:kriko N1 ; ! "jack"
+kriter:kriter N1 ; ! "measure"
+kriz:kriz N1 ; ! "crisis"
+kroki:kroki N1 ; ! "sketch"
+kuaför:kuaför N1 ; ! "hairdresser"
+kucak:kucak N1 ; ! "lap"
+kudret:kudret N1 ; ! "ability"
+kudret:kudret N1 ; ! "capacity"
+kuduz:kuduz N1 ; ! "rabid"
+küf:küf N1 ; ! "rot"
+küfür:küfür N1 ; ! "impiety"
+küfür:küfür N1 ; ! "invective"
+küfür:küfür N1 ; ! "profanity"
+kuğu:kuğu N1 ; ! "swan"
+kukla:kukla N1 ; ! "puppet"
+kükürt:kükürt N1 ; ! "sulphur"
+kulak:kulak%{v%} N1 ; ! "ear"
+kula:kula N1 ; ! "bay"
+kule:kule N1 ; ! "tower"
+külfet:külfet N1 ; ! "bother"
+kulis:kulis N1 ; ! "lobby"
+kül:kül N1 ; ! "ash"
+kul:kul N1 ; ! "man"
+kul:kul N1 ; ! "slave"
+kullanım:kullanım N1 ; ! "usage"
+kült:kült N1 ; ! "cult"
+kültür:kültür N1 ; ! "culture"
+kulübe:kulübe N1 ; ! "cabin"
+kulübe:kulübe N1 ; ! "cottage"
+kulüp:kulüp N1 ; ! "club"
+kumanda:kumanda N1 ; ! "controller"
+kumarhane:kumarhane N1 ; ! "casino"
+kumar:kumar N1 ; ! "gamble"
+kumaş:kumaş N1 ; ! "fabric"
+küme:küme N1 ; ! "lump"
+kümes:kümes N1 ; ! "pen"
+kum:kum N1 ; ! "sand"
+kumpanya:kumpanya N1 ; ! "company"
+kundak:kundak N1 ; ! "bundle"
+kundura:kundura N1 ; ! "shoe"
+kunduz:kunduz N1 ; ! "beaver"
+kupa:kupa N1 ; ! "cup"
+küpe:küpe N1 ; ! "earring"
+küp:küp N1 ; ! "cube"
+kupon:kupon N1 ; ! "coupon"
+kurabiye:kurabiye N1 ; ! "cookie"
+kura:kura N1 ; ! "lot"
+kural:kural N1 ; ! "rule"
+kuram:kuram N1 ; ! "theory"
+kurbağa:kurbağa N1 ; ! "frog"
+kurban:kurban N1 ; ! "victim"
+kürek:kürek N1 ; ! "shovel"
+kurgu:kurgu N1 ; ! "speculation"
+kürk:kürk N1 ; ! "fur"
+kurmay:kurmay N1 ; ! "staff"
+kursak:kursak N1 ; ! "stomach"
+kurs:kurs N1 ; ! "course"
+kürsü:kürsü N1 ; ! "pulpit"
+kurşun:kurşun N1 ; ! "bullet"
+kürtaj:kürtaj N1 ; ! "abortion"
+kurt:kurt N1 ; ! "wolf"
+kurul:kurul N1 ; ! "board"
+kurul:kurul N1 ; ! "commission"
+kuruluş:kuruluş N1 ; ! "association"
+kurum:kurum N1 ; ! "foundation"
+kurye:kurye N1 ; ! "carrier"
+kuşak:kuşak N1 ; ! "generation"
+kuşku:kuşku N1 ; ! "doubt"
+kuş:kuş N1 ; ! "bird"
+kusur:kusur N1 ; ! "defect"
+kusur:kusur N1 ; ! "fault"
+kütle:kütle N1 ; ! "mass"
+kütük:kütük N1 ; ! "log"
+kutu:kutu N1 ; ! "box"
+kütüphane:kütüphane N1 ; ! "library"
+kutup:kutup N1 ; ! "pole"
+kuvvet:kuvvet N1 ; ! "force"
+kuyruk:kuyruk N1 ; ! "tail"
+kuyu:kuyu N1 ; ! "well"
+kuzen:kuzen N1 ; ! "cousin"
+kuzeybatı:kuzeybatı N1 ; ! "northwest"
+kuzeydoğu:kuzeydoğu N1 ; ! "northeast"
+kuzey:kuzey N1 ; ! "north"
+kuzgun:kuzgun N1 ; ! "raven"
+kuzu:kuzu N1 ; ! "lamb"
+laf:laf N1 ; ! "statement"
+lahana:lahana N1 ; ! "cabbage"
+lakap:lakap N1 ; ! "nickname"
+lake:lake N1 ; ! "lacquer"
+lakırdı:lakırdı N1 ; ! "nonsense"
+lamba:lamba N1 ; ! "lamp"
+lanet:lanet N1 ; ! "curse"
+lastik:lastik N1 ; ! "rubber"
+leğen:leğen N1 ; ! "basin"
+leh:leh N1 ; ! "pole"
+lejyon:lejyon N1 ; ! "legion"
+leke:leke N1 ; ! "stain"
+leş:leş N1 ; ! "carcass"
+leş:leş N1 ; ! "stiff"
+levha:levha N1 ; ! "tablet"
+lezzet:lezzet N1 ; ! "taste"
+lider:lider N1 ; ! "leader"
+lif:lif N1 ; ! "fiber"
+likör:likör N1 ; ! "liquor"
+liman:liman N1 ; ! "harbor"
+limit:limit N1 ; ! "limit"
+limon:limon N1 ; ! "lemon"
+lira:lira N1 ; ! "lira"
+lisan:lisan N1 ; ! "language"
+lisans:lisans N1 ; ! "degree"
+lisans:lisans N1 ; ! "licence"
+lise:lise N1 ; ! "high school"
+liste:liste N1 ; ! "list"
+loca:loca N1 ; ! "chamber"
+loca:loca N1 ; ! "lodge"
+lokanta:lokanta N1 ; ! "restaurant"
+lokma:lokma N1 ; ! "chew"
+lokma:lokma N1 ; ! "morsel"
+lokomotif:lokomotif N1 ; ! "engine"
+lüle:lüle N1 ; ! "roll"
+lütuf:lütuf N1 ; ! "favor"
+lütuf:lütuf N1 ; ! "mercy"
+maaş:maaş N1 ; ! "salary"
+maaş:maaş N1 ; ! "wage"
+macun:macun N1 ; ! "chief"
+madalya:madalya N1 ; ! "medal"
+madde:madde N1 ; ! "item"
+maden:maden N1 ; ! "metal"
+mağara:mağara N1 ; ! "cave"
+mağaza:mağaza N1 ; ! "shop"
+mağaza:mağaza N1 ; ! "store"
+magazin:magazin N1 ; ! "magazine"
+mağlubiyet:mağlubiyet N1 ; ! "defeat"
+mahalle:mahalle N1 ; ! "district"
+mahalle:mahalle N1 ; ! "neighborhood"
+mahalle:mahalle N1 ; ! "street"
+mahal:mahal N1 ; ! "location"
+mahal:mahal N1 ; ! "station"
+maharet:maharet N1 ; ! "address"
+maharet:maharet N1 ; ! "mastery"
+mahkeme:mahkeme N1 ; ! "court"
+mahkumiyet:mahkumiyet N1 ; ! "sentence"
+mahremiyet:mahremiyet N1 ; ! "privacy"
+mahzen:mahzen N1 ; ! "vault"
+makale:makale N1 ; ! "article"
+makale:makale N1 ; ! "essay"
+makam:makam N1 ; ! "office"
+makara:makara N1 ; ! "barrel"
+makarna:makarna N1 ; ! "macaroni"
+makas:makas N1 ; ! "scissors"
+makat:makat N1 ; ! "anus"
+makat:makat N1 ; ! "rear"
+makbuz:makbuz N1 ; ! "warrant"
+makina:makina N1 ; ! "machine"
+maksat:maksat N1 ; ! "intention"
+mala:mala N1 ; ! "float"
+malik:malik%{v%} N1 ; ! "owner"
+malik:malik%{v%} N1 ; ! "tenant"
+maliye:maliye N1 ; ! "finance"
+maliyet:maliyet N1 ; ! "cost"
+mal:mal N1 ; ! "goods"
+malzeme:malzeme N1 ; ! "equipment"
+malzeme:malzeme N1 ; ! "material"
+mama:mama N1 ; ! "feed"
+mana:mana N1 ; ! "meaning"
+manastır:manastır N1 ; ! "abbey"
+mandal:mandal N1 ; ! "latch"
+manevra:manevra N1 ; ! "manoeuvre"
+manşet:manşet N1 ; ! "headline"
+mantar:mantar N1 ; ! "mushroom"
+mantık:mantık N1 ; ! "logic"
+manzara:manzara N1 ; ! "scenery"
+marangoz:marangoz N1 ; ! "carpenter"
+marka:marka N1 ; ! "brand"
+market:market N1 ; ! "market"
+mark:mark N1 ; ! "german mark"
+marş:marş N1 ; ! "march"
+martı:martı N1 ; ! "seagull"
+maruz:maruz N1 ; ! "exposition"
+masal:masal N1 ; ! "tale"
+masa:masa N1 ; ! "table"
+maşa:maşa N1 ; ! "tool"
+maskara:maskara N1 ; ! "rascal"
+maske:maske N1 ; ! "mask"
+masraf:masraf N1 ; ! "expenditure"
+masraf:masraf N1 ; ! "expense"
+maşrapa:maşrapa N1 ; ! "pitcher"
+masura:masura N1 ; ! "bobbin"
+matematik:matematik N1 ; ! "mathematics"
+materyalist:materyalist N1 ; ! "materialistic"
+materyalizm:materyalizm N1 ; ! "materialism"
+matkap:matkap N1 ; ! "drill"
+mavna:mavna N1 ; ! "barge"
+maydanoz:maydanoz N1 ; ! "parsley"
+maymun:maymun N1 ; ! "monkey"
+mazeret:mazeret N1 ; ! "excuse"
+meblağ:meblağ N1 ; ! "amount"
+mecburiyet:mecburiyet N1 ; ! "obligation"
+meclis:meclis N1 ; ! "assembly"
+meclis:meclis N1 ; ! "council"
+medeniyet:medeniyet N1 ; ! "civilization"
+medrese:medrese N1 ; ! "madrassah"
+medya:medya N1 ; ! "media"
+mekanik:mekanik N1 ; ! "mechanics"
+mekanizma:mekanizma N1 ; ! "mechanism"
+mekan:mekan N1 ; ! "environment"
+mekan:mekan N1 ; ! "location"
+mekan:mekan N1 ; ! "residence"
+mektup:mektup N1 ; ! "letter"
+melankoli:melankoli N1 ; ! "melancholy"
+melodi:melodi N1 ; ! "melody"
+meme:meme N1 ; ! "breast"
+memleket:memleket N1 ; ! "country"
+memnuniyet:memnuniyet N1 ; ! "joy"
+memnuniyet:memnuniyet N1 ; ! "pleasure"
+memnuniyet:memnuniyet N1 ; ! "satisfaction"
+memuriyet:memuriyet N1 ; ! "employment"
+memuriyet:memuriyet N1 ; ! "service"
+memur:memur N1 ; ! "civil servant"
+mendil:mendil N1 ; ! "handkierchief"
+mendil:mendil N1 ; ! "napkin"
+mengene:mengene N1 ; ! "clamp"
+mengene:mengene N1 ; ! "mangle"
+mensubiyet:mensubiyet N1 ; ! "connection"
+mensup:mensup N1 ; ! "member"
+menü:menü N1 ; ! "menu"
+merak:merak N1 ; ! "curiosity"
+merasim:merasim N1 ; ! "ceremony"
+mercan:mercan N1 ; ! "coral"
+merci:merci N1 ; ! "reference"
+merdiven:merdiven N1 ; ! "ladder"
+merhamet:merhamet N1 ; ! "mercy"
+merhum:merhum N1 ; ! "deceased"
+merkez:merkez N1 ; ! "center"
+mermi:mermi N1 ; ! "bullet"
+mesafe:mesafe N1 ; ! "distance"
+mesaj:mesaj N1 ; ! "message"
+meşale:meşale N1 ; ! "torch"
+mesane:mesane N1 ; ! "bladder"
+mesele:mesele N1 ; ! "matter"
+meşe:meşe N1 ; ! "oak"
+meşgale:meşgale N1 ; ! "pursuit"
+meşguliyet:meşguliyet N1 ; ! "occupation"
+meşin:meşin N1 ; ! "leather"
+meslek:meslek N1 ; ! "job"
+meslek:meslek N1 ; ! "occupation"
+meslektaş:meslektaş N1 ; ! "colleague"
+meşruiyet:meşruiyet N1 ; ! "legality"
+metal:metal N1 ; ! "metal"
+metalurji:metalurji N1 ; ! "metallurgy"
+metin:metin N1 ; ! "copy"
+metin:metin N1 ; ! "firm"
+metin:metin N1 ; ! "text"
+metot:metot N1 ; ! "method"
+metrekare:metrekare N1 ; ! "square meter"
+metreküp:metreküp N1 ; ! "cubic meter"
+metre:metre N1 ; ! "metre"
+metro:metro N1 ; ! "subway"
+mevcut:mevcut N1 ; ! "store"
+mevcut:mevcut N1 ; ! "supply"
+mevduat:mevduat N1 ; ! "deposit"
+mevki:mevki N1 ; ! "degree"
+mevki:mevki N1 ; ! "place"
+mevsim:mevsim N1 ; ! "season"
+meydan:meydan N1 ; ! "square"
+meyil:meyil N1 ; ! "inclination"
+meyve:meyve N1 ; ! "fruit"
+mezar:mezar N1 ; ! "grave"
+meze:meze N1 ; ! "starter"
+mezhep:mezhep N1 ; ! "creed"
+meziyet:meziyet N1 ; ! "quality"
+mezun:mezun N1 ; ! "graduate"
+mide:mide N1 ; ! "stomach"
+mıh:mıh N1 ; ! "nail"
+mıknatıs:mıknatıs N1 ; ! "magnet"
+mikrop:mikrop N1 ; ! "microbe"
+mikroskop:mikroskop N1 ; ! "microscope"
+mikser:mikser N1 ; ! "mixer"
+miktar:miktar N1 ; ! "amount"
+miktar:miktar N1 ; ! "number"
+miktar:miktar N1 ; ! "quantity"
+milat:milat N1 ; ! "milestone"
+miligram:miligram N1 ; ! "miligram"
+milimetre:milimetre N1 ; ! "milimeter"
+millet:millet N1 ; ! "nation"
+millet:millet N1 ; ! "people"
+milliyet:milliyet N1 ; ! "nationality"
+mil:mil N1 ; ! "mile"
+mimari:mimari N1 ; ! "architecture"
+mimar:mimar N1 ; ! "architect"
+mineral:mineral N1 ; ! "mineral"
+minnet:minnet N1 ; ! "indebtedness"
+mıntıka:mıntıka N1 ; ! "district"
+mıntıka:mıntıka N1 ; ! "zone"
+miras:miras N1 ; ! "heritage"
+mırıltı:mırıltı N1 ; ! "mumble"
+mırıltı:mırıltı N1 ; ! "murmure"
+misafir:misafir N1 ; ! "guest"
+mısır:mısır N1 ; ! "corn"
+miting:miting N1 ; ! "demonstration"
+mızrak:mızrak N1 ; ! "javelin"
+mobilya:mobilya N1 ; ! "furniture"
+moda:moda N1 ; ! "fashion"
+model:model N1 ; ! "model"
+modernizasyon:modernizasyon N1 ; ! "modernization"
+mola:mola N1 ; ! "break"
+molekül:molekül N1 ; ! "molecule"
+molla:molla N1 ; ! "mullah"
+montaj:montaj N1 ; ! "montage"
+moral:moral N1 ; ! "morale"
+motif:motif N1 ; ! "design"
+motif:motif N1 ; ! "motive"
+motivasyon:motivasyon N1 ; ! "motivation"
+motor:motor N1 ; ! "motor"
+motosiklet:motosiklet N1 ; ! "motorcycle"
+mozaik:mozaik N1 ; ! "mosaic"
+muafiyet:muafiyet N1 ; ! "exemption"
+muamele:muamele N1 ; ! "conduct"
+muavin:muavin N1 ; ! "adjunct"
+muayene:muayene N1 ; ! "examination"
+mücadele:mücadele N1 ; ! "scramble"
+mücadele:mücadele N1 ; ! "struggle"
+mücahit:mücahit N1 ; ! "fighter"
+mücevher:mücevher N1 ; ! "jewel"
+mucit:mucit N1 ; ! "creator"
+mucize:mucize N1 ; ! "miracle"
+müdahale:müdahale N1 ; ! "intervention"
+müdür:müdür N1 ; ! "director"
+müdür:müdür N1 ; ! "president"
+müfettiş:müfettiş N1 ; ! "inspector"
+muhabbet:muhabbet N1 ; ! "chat"
+muhabbet:muhabbet N1 ; ! "conversation"
+muhabir:muhabir N1 ; ! "correspondent"
+muhafaza:muhafaza N1 ; ! "conservation"
+muhafız:muhafız N1 ; ! "guardian"
+muhafız:muhafız N1 ; ! "keeper"
+muhafız:muhafız N1 ; ! "warden"
+muhakeme:muhakeme N1 ; ! "trial"
+muhalefet:muhalefet N1 ; ! "opposition"
+muhalif:muhalif N1 ; ! "opponent"
+muharebe:muharebe N1 ; ! "battle"
+muhasebe:muhasebe N1 ; ! "accounting"
+mühendis:mühendis N1 ; ! "engineer"
+mühimmat:mühimmat N1 ; ! "ammunition"
+mühlet:mühlet N1 ; ! "time limitation"
+muhtariyet:muhtariyet N1 ; ! "autonomy"
+muhtar:muhtar N1 ; ! "chief"
+muhtıra:muhtıra N1 ; ! "memorial"
+mühür:mühür N1 ; ! "signet"
+mukabele:mukabele N1 ; ! "retaliation"
+mukavele:mukavele N1 ; ! "convention"
+mukus:mukus N1 ; ! "mucus"
+mülkiyet:mülkiyet N1 ; ! "ownership"
+mülk:mülk N1 ; ! "asset"
+mülk:mülk N1 ; ! "domain"
+mülk:mülk N1 ; ! "estate"
+mülk:mülk N1 ; ! "possession"
+mülteci:mülteci N1 ; ! "refugee"
+mümessil:mümessil N1 ; ! "representative"
+mum:mum N1 ; ! "candle"
+münakaşa:münakaşa N1 ; ! "contention"
+münakaşa:münakaşa N1 ; ! "hassle"
+münasebet:münasebet N1 ; ! "liaison"
+münasip:münasip N1 ; ! "convenient"
+münasip:münasip N1 ; ! "eligible"
+murat:murat N1 ; ! "desire"
+murat:murat N1 ; ! "goal"
+murat:murat N1 ; ! "intention"
+mürettebat:mürettebat N1 ; ! "crew"
+mürit:mürit N1 ; ! "disciple"
+müsabaka:müsabaka N1 ; ! "competition"
+muşamba:muşamba N1 ; ! "oilcloth"
+musluk:musluk%{v%} N1 ; ! "tap"
+müstemleke:müstemleke N1 ; ! "colony"
+müşteri:müşteri N1 ; ! "client"
+müşteri:müşteri N1 ; ! "customer"
+müsteşar:müsteşar N1 ; ! "undersecretary"
+cevap:cevap%{v%} N1 ; ! "answer"
+polis:polis N1 ; ! "police"
+parti:parti N1 ; ! "party"
+reform:reform N1 ; ! "reform"
+parlamento:parlamento N1 ; ! "parlament
+sekreter:sekreter N1 ; ! "secretary"
+pazar:pazar N1 ; ! "Sunday or market"
+terör:terör N1 ; ! "terror"
+terörist:terörist N1 ; ! "terrorist"
+sektör:sektör N1 ; ! "sector"
+statü:statü N1 ; ! "status" ! FIXME: Check
+boykot:boykot N1 ; ! "boycot"
+program:program N1 ; ! "program"
+sistem:sistem N1 ; ! "system"
+festival:festival%{fi%} N1 ; ! "festival"
+televizyon:televizyon N1 ; ! "television"
+üniversite:üniversite N1 ; ! "university"
+referandum:referandum N1 ; ! "referendum"
+ordu:ordu N1 ; ! "army"
+proje:proje N1 ; ! "project"
+turizm:turizm N1 ; ! "tourism"
+plan:plan N1 ; ! "plan"
+politika:politika N1 ; ! "policy" FIXME: Check
+cep:cep N1 ; ! "pocket"
+şef:şef N1 ; ! "head/boss"
+entegrasyon:entegrasyon N1 ; ! "" 
+operasyon:operasyon N1 ; ! "" 
+misyon:misyon N1 ; ! "" 
+organizasyon:organizasyon N1 ; ! "" 
+turist:turist N1 ; ! "" 
+analist:analist N1 ; ! "" 
+mutabakat:mutabakat N1 ; ! "agreement"
+mutabakat:mutabakat N1 ; ! "commitment"
+müteahhit:müteahhit N1 ; ! "building contractor"
+mutfak:mutfak N1 ; ! "kitchen"
+müthiş:müthiş N1 ; ! "wonderful"
+mutluluk:mutluluk%{v%} N1 ; ! "happiness"
+muvazene:muvazene N1 ; ! "stability"
+müvekkil:müvekkil N1 ; ! "principal"
+müzakere:müzakere N1 ; ! "negotiation"
+müze:müze N1 ; ! "museum"
+müzik:müzik N1 ; ! "music"
+müzisyen:müzisyen N1 ; ! "musician"
+muz:muz N1 ; ! "banana"
+naaş:naaş N1 ; ! "corpse"
+nabız:nabız N1 ; ! "pulse"
+nafaka:nafaka N1 ; ! "alimony"
+nahiye:nahiye N1 ; ! "commune"
+nakarat:nakarat N1 ; ! "repeat"
+nakil:nakil N1 ; ! "transport"
+nakış:nakış N1 ; ! "decoration"
+nakit:nakit N1 ; ! "cash"
+tercih:tercih N1 ; ! "preference" 
+nakliyat:nakliyat N1 ; ! "transport"
+nakliye:nakliye N1 ; ! "transport"
+nal:nal N1 ; ! "horseshoe"
+namaz:namaz N1 ; ! "salaah"
+namlu:namlu N1 ; ! "barrel"
+nam:nam N1 ; ! "reputation"
+namus:namus N1 ; ! "purity"
+nane:nane N1 ; ! "mint"
+nara:nara N1 ; ! "yell"
+nasihat:nasihat N1 ; ! "advice"
+nasip:nasip N1 ; ! "luck"
+nasır:nasır N1 ; ! "verruca"
+naylon:naylon N1 ; ! "nylon"
+nefes:nefes N1 ; ! "breath"
+nefes:nefes N1 ; ! "breathe"
+nefret:nefret N1 ; ! "hatred"
+nehir:nehir N1 ; ! "river"
+nem:nem N1 ; ! "moisture"
+nem:nem N1 ; ! "wet"
+nem:nem N1 ; ! "wetness"
+neşe:neşe N1 ; ! "cheer"
+nesil:nesil N1 ; ! "breed"
+nesil:nesil N1 ; ! "generation"
+nesir:nesir N1 ; ! "prose"
+nesne:nesne N1 ; ! "object"
+netice:netice N1 ; ! "consequence"
+nezaket:nezaket N1 ; ! "courtesy"
+nezaret:nezaret N1 ; ! "inspection"
+nezle:nezle N1 ; ! "cold"
+nine:nine N1 ; ! "grandmum"
+nişan:nişan N1 ; ! "engagement"
+nişasta:nişasta N1 ; ! "starch"
+niş:niş N1 ; ! "recess"
+nitelik:nitelik%{v%} N1 ; ! "quality"
+nitrojen:nitrojen N1 ; ! "nitrogen"
+niyet:niyet N1 ; ! "intent"
+nizam:nizam N1 ; ! "array"
+nöbet:nöbet N1 ; ! "shift"
+nöbet:nöbet N1 ; ! "watch"
+noksan:noksan N1 ; ! "lack"
+nokta:nokta N1 ; ! "point"
+norm:norm N1 ; ! "norm"
+nosyon:nosyon N1 ; ! "notion"
+nota:nota N1 ; ! "note"
+noter:noter N1 ; ! "notary"
+not:not N1 ; ! "not"
+nova:nova N1 ; ! "nova"
+nüans:nüans N1 ; ! "tone"
+nüfus:nüfus N1 ; ! "inhabitant"
+nüfus:nüfus N1 ; ! "population"
+nüfuz:nüfuz N1 ; ! "power"
+numara:numara N1 ; ! "number"
+nümayiş:nümayiş N1 ; ! "show"
+numune:numune N1 ; ! "sample"
+nüsha:nüsha N1 ; ! "sample"
+ömür:ömür N1 ; ! "life"
+omuz:omuz N1 ; ! "shoulder"
+ot:ot N1 ; ! "grass"
+portal:portal N1 ; ! "portal"
+restoran:restoran N1 ; ! "restaurant"
+ret:ret N1 ; ! "refuse"
+rüzgar:rüzgar N1 ; ! "wind"
+sabah:sabah N1 ; ! "morning"
+sağlık:sağlık%{v%} N1 ; ! "health"
+sahip:sahip N1 ; ! "owner"
+sanayi:sanayi N1 ; ! "industry"
+şarkı:şarkı N1 ; ! "song"
+savaş:savaş N1 ; ! "war"
+sebep:sebep N1 ; ! "reason"
+şeker:şeker N1 ; ! "sugar"
+selam:selam N1 ; ! "greeting"
+şenlik:şenlik%{v%} N1 ; ! "festival"
+servis:servis N1 ; ! "service"
+sıcaklık:sıcaklık%{v%} N1 ; ! "warmth"
+sigara:sigara N1 ; ! "cigarette"
+şilte:şilte N1 ; ! "mattress"
+sinek:sinek N1 ; ! "fly"
+sınır:sınır N1 ; ! "border"
+sıra:sıra N1 ; ! "turn"
+son:son N1 ; ! "end"
+sorun:sorun N1 ; ! "problem"
+soy:soy N1 ; ! "breed"
+söz:söz N1 ; ! "word"
+sükunet:sükunet N1 ; ! "quietness"
+süpürge:süpürge N1 ; ! "broom"
+tablo:tablo N1 ; ! "table"
+tanım:tanım N1 ; ! "definition"
+tarih:tarih N1 ; ! "history"
+tatil:tatil N1 ; ! "holiday"
+tat:tat N1 ; ! "taste"
+telefon:telefon N1 ; ! "phone"
+telekomünikasyon:telekomünikasyon N1 ; ! "telecommunication"
+tepe:tepe N1 ; ! "hill"
+tereddüt:tereddüt N1 ; ! "compunction"
+tereddüt:tereddüt N1 ; ! "doubt"
+tipi:tipi N1 ; ! "blizzard"
+tırnak:tırnak N1 ; ! "nail"
+tomurcuk:tomurcuk N1 ; ! "gemma"
+toprak:toprak N1 ; ! "earth"
+ülke:ülke N1 ; ! "country"
+uydu:uydu N1 ; ! "satellite"
+vadi:vadi N1 ; ! "valley"
+vatandaş:vatandaş N1 ; ! "citizen"
+vücut:vücut N1 ; ! "body"
+yaban:yaban N1 ; ! "wild"
+yalan:yalan N1 ; ! "lie"
+yazı:yazı N1 ; ! "writing"
+yetenek:yetenek N1 ; ! "ability"
+yılan:yılan N1 ; ! "snake"
+yıldırım:yıldırım N1 ; ! "thunder"
+yıl:yıl N1 ; ! "year"
+yüzyıl:yüzyıl N1 ; ! "century"
+zaman:zaman N1 ; ! "time"
+renk:renk%{v%} N1 ; ! "colour"
+saat:saat%{fi%} N1 ; ! "time" "Watch" "hour"
+petrol:petrol%{fö%} N1 ; ! "oil" as in "Saudi Arabia is full of oil"
+yaş:yaş N1 ; ! "age"
+ses:ses N1 ; ! "voice, sound"
+pencere:pencere N1 ; ! "window" 
+yer:yer N1 ; ! "window" 
+su:su N1 ; ! "water" @@@@ SPECIAL CASE FOR MANY CASES
+süre:süre N1 ; ! 'tıme perıod'
+yol:yol N1 ; ! 'way'
+hale:hale N1 ; ! '???'
+temel:temel N1 ; ! "base"
+bağımsızlık:bağımsızlık%{v%} N1 ; ! "indipendence"
+cumhuriyet:cumhuriyet N1 ; ! "republic"
+zam:zam N1 ; ! "raise"
+sermaye:sermaye N1 ; ! "capital"
+öneri:öneri N1 ; ! "offer"
+ilişki:ilişki N1 ; ! "relation"
+yangın:yangın N1 ; ! "fire"
+orman:orman N1 ; ! "woods"
+işletme:işletme N1 ; ! "management"
+işletme:İşletme N1 ; ! "management"
+ormanlık:ormanlık%{v%} N1 ; ! "woods"
+belde:belde N1 ; ! "town" 
+müdürlük:müdürlük%{v%} N1 ; ! "direction"
+mezarlık:mezarlık%{v%} N1 ; ! "cemetery"
+yükümlülük:yükümlülük%{v%} N1 ; ! "liability"
+yıldönüm:yıldönüm N2 ; ! "anniversary"
+demiryol:demiryol N2 ; ! "railway"
+rejim:rejim N1 ; ! "regime"
+zanlı:zanlı N1 ; ! 'culprıt'
+ticaret:ticaret N1 ; !  "commerce"
+toplum:toplum N1 ; ! "society"
+vergi:vergi N1 ; ! "tax"
+kez:kez N1 ; ! "time"
+toplantı:toplantı N1 ; ! "meeting"
+dizi:dizi N1 ; ! "series"
+önem:önem N1 ; ! "importance"
+zarar:zarar N1 ; ! "injury"
+euro:euro N1 ; ! "euro"
+rapor:rapor N1 ; ! "report"
+teşkil:teşkil N1 ; ! "organization"
+sol:sol N1 ; ! "left"
+protesto:protesto N1 ; ! " protest"
+silah:silah N1 ; ! "weapon"
+gazeteci:gazeteci N1 ; ! "journalist"
+zirve:zirve N1 ; ! "summit"
+yönetici:yönetici N1 ; ! "administrator"
+santral:santral N1 ; ! "operator"
+patlak:patlak N1 ; ! "burst"
+uyarı:uyarı N1 ; ! "advice"
+olimpiyat:olimpiyat N1 ; ! "olympics"
+tutum:tutum N1 ; ! "manner"
+eksiklik:eksiklik%{v%} N1 ; ! "lack"
+oyuncu:oyuncu N1 ; ! "player"
+havayol:havayol N2 ; ! "airway"
+yoksulluk:yoksulluk%{v%} N1 ; ! "need"
+oyun:oyun N1 ; ! "game"
+vade:vade N1 ; ! "term of payment"
+oda:oda N1 ; ! "room"
+tesis:tesis N1 ; ! "facility"
+tören:tören N1 ; ! "ceremony"
+kâr:kâr N1 ; ! "profit"
+ürün:ürün N1 ; ! "product"
+pazarlık:pazarlık%{v%} N1 ; ! "commerce/contractation"
+cesaret:cesaret N1 ; ! "courage"
+yaklaşım:yaklaşım N1 ; ! "approach"
+fikri:fikri N1 ; ! "intellectual"
+dolar:dolar N1 ; ! "dollar"
+iyileşme:iyileşme N1 ; ! "recover"
+karayol:karayol N2 ; ! "highway"
+öğrenim:öğrenim N1 ; ! "study"
+veto:veto N1 ; ! "veto"
+şüphe:şüphe N1 ; ! "doubt"
+teşkilat:teşkilat N1 ; ! "governance"
+kırıklık:kırıklık%{v%} N1 ; ! "weakness"
+emir:em%{u%}r N1 ; ! "order"
+taşımacılık:taşımacılık%{v%} N1 ; ! "transportation"
+piyasa:piyasa N1 ; ! "piazza" as in the market 
+pratik:pratik N1 ; ! "practice"
+haftalık:haftalık%{v%} N1 ; ! "week"
+yolcu:yolcu N1 ; ! "passenger"
+sene:sene N1 ; ! "year"
+pilot:pilot N1 ; ! "pilot""
+yorum:yorum N1 ; ! "interpretation"
+pay:pay N1 ; ! "share"
+şebeke:şebeke N1 ; ! "network"
+alt:alt N4 ; ! "base"
+yüz:yüz N4 ; ! "face"
+arka:arka N4 ; ! "back"
+sıra:sıra N4 ; ! "turn"
+ara:ara N4 ; ! "space"
+taraf:taraf N4 ; ! ""
+üst:üst N4 ; ! ""
+etraf:etraf N4 ; ! ""
+ön:ön N4 ; !
+ön:ön N4 ; !
+yön:yön N4 ; ! "on"
+Türk:Türk N3 ; ! "Turk"
+iklim:iklim N1 ; ! "climate"
+iklim:İklim N1 ; ! "climate" ! MT USE / Hack
+ocak:ocak%{v%} N1 ; ! "furnace"
+şube:şube N1 ; ! "site/location"
+ulaşım:ulaşım N1 ; ! "transportation"
+kanalizasyon:kanalizasyon N1 ; ! "sewer"
+asfalt:asfalt N1 ; ! "asphalt"
+albüm:albüm N1 ; ! "album"
+sezon:sezon N1 ; ! "season"
+transfer:transfer N1 ; ! "transfer"
+site:site N1 ; ! "site"
+sinema:sinema N1 ; ! "cinema"
+resim:resim N1 ; ! "picture"
+profil:profil N1 ; ! "profile"
+video:video N1 ; ! "video"
+sayfa:sayfa N1 ; ! "page"
+şair:şair N1 ; ! "poet"
+roman:roman N1 ; ! "novel"
+final:final N1 ; ! "final"
+ton:ton N1 ; ! "ton"
+şekil:şek%{u%}l N1 ; ! "shape"
+burun:bur%{u%}n N1 ; ! "nose"
+şehir:şeh%{u%}r N1 ; ! "city"
+
+LEXICON ProperNouns
+
+Sırbistan:Sırbistan NP1-TOP ; ! "Serbia"
+Arnavutluk:Arnavutluk NP1-TOP ; ! "Albania"
+Abhazya:Abhazya NP1-TOP ; ! ""
+Afganistan:Afganistan NP1-TOP ; ! ""
+Afganistan:Afganistan NP1-TOP ; ! ""
+Afrika:Afrika NP1-TOP ; ! ""
+Almanya:Almanya NP1-TOP ; ! ""
+Amsterdam:Amsterdam NP1-TOP ; ! ""
+Angola:Angola NP1-TOP ; ! ""
+Asya:Asya NP1-TOP ; ! ""
+Atina:Atina NP1-TOP ; ! ""
+Atina:ATİNA NP1-TOP ; ! "" ! Dir/LR
+Avrupa:Avrupa NP1-TOP ; ! ""
+Avrupa:Avrupa NP1-TOP ; ! ""
+Avustralya:Avustralya NP1-TOP ; ! ""
+Avusturya:Avusturya NP1-TOP ; ! ""
+Avusturya:Avusturya NP1-TOP ; ! ""
+Azerbaycan:Azerbaycan NP1-TOP ; ! ""
+Bağdat:Bağdat NP1-TOP ; ! ""
+Bakü:Bakü NP1-TOP ; ! ""
+Bangladeş:Bangladeş NP1-TOP ; ! ""
+Belgrad:Belgrad NP1-TOP ; ! ""
+Berlin:BERLİN NP1-TOP ; ! "" ! Dir/LR
+Berlin:Berlin NP1-TOP ; ! ""
+Bişkek:Bişkek NP1-TOP ; ! ""
+Bolivya:Bolivya NP1-TOP ; ! ""
+Brezilya:Brezilya NP1-TOP ; ! ""
+Budapeşte:Budapeşte NP1-TOP ; ! ""
+Bükreş:Bükreş NP1-TOP ; ! ""
+Danimarka:Danimarka NP1-TOP ; ! ""
+Ekvador:Ekvador NP1-TOP ; ! ""
+Endonezya:Endonezya NP1-TOP ; ! ""
+Erivan:Erivan NP1-TOP ; ! ""
+Ermenistan:Ermenistan NP1-TOP ; ! ""
+Etiyopya:Etiyopya NP1-TOP ; ! ""
+Finlandiya:Finlandiya NP1-TOP ; ! ""
+Frankfurt:Frankfurt NP1-TOP ; ! ""
+Fransa:Fransa NP1-TOP ; ! ""
+Fransa:Fransa NP1-TOP ; ! ""
+Gabon:Gabon NP1-TOP ; ! ""
+Gana:Gana NP1-TOP ; ! ""
+Hamburg:Hamburg NP1-TOP ; ! ""
+Helsinki:Helsinki NP1-TOP ; ! ""
+Hindistan:Hindistan NP1-TOP ; ! ""
+Hollanda:Hollanda NP1-TOP ; ! ""
+İngiltere:İngiltere NP1-TOP ; ! ""
+Irak:Irak NP1-TOP ; ! ""
+İran:İran NP1-TOP ; ! ""
+İspanya:İspanya NP1-TOP ; ! ""
+İsrail:İsrail NP1-TOP ; ! ""
+İstanbul:İstanbul NP1-TOP ; ! ""
+İstanbul:İstanbul NP1-TOP ; ! ""
+İtalya:İtalya NP1-TOP ; ! ""
+Japonya:Japonya NP1-TOP ; ! ""
+Kamerun:Kamerun NP1-TOP ; ! ""
+Kanada:Kanada NP1-TOP ; ! ""
+Karadağ:Karadağ NP1-TOP ; ! ""
+Karadağ:Karadağ NP1-TOP ; ! ""
+Kazakistan:Kazakistan NP1-TOP ; ! ""
+Kazakistan:Kazakistan NP1-TOP ; ! ""
+Kenya:Kenya NP1-TOP ; ! ""
+Kıbrıs:Kıbrıs NP1-TOP ; ! ""
+Kırgızistan:Kırgızistan NP1-TOP ; ! ""
+Kopenhag:Kopenhag NP1-TOP ; ! ""
+Kosova:Kosova NP1-TOP ; ! ""
+Küba:Küba NP1-TOP ; ! ""
+Letonya:Letonya NP1-TOP ; ! ""
+Libya:Libya NP1-TOP ; ! ""
+Litvanya:Litvanya NP1-TOP ; ! ""
+Lizbon:Lizbon NP1-TOP ; ! ""
+Londra:Londra NP1-TOP ; ! ""
+Lüksemburg:Lüksemburg NP1-TOP ; ! ""
+Macaristan:Macaristan NP1-TOP ; ! ""
+Madagaskar:Madagaskar NP1-TOP ; ! ""
+Madrid:MADRİD NP1-TOP ; ! "" ! Dir/LR
+Madrid:Madrid NP1-TOP ; ! ""
+Makedonya:Makedonya NP1-TOP ; ! ""
+Malezya:Malezya NP1-TOP ; ! ""
+Malta:Malta NP1-TOP ; ! ""
+Meksika:Meksika NP1-TOP ; ! ""
+Moğolistan:Moğolistan NP1-TOP ; ! ""
+Moskova:Moskova NP1-TOP ; ! ""
+Nepal:Nepal NP1-TOP ; ! ""
+Panama:Panama NP1-TOP ; ! ""
+Podgorica:Podgorica NP1-TOP ; ! ""
+Polonya:Polonya NP1-TOP ; ! ""
+Romanya:Romanya NP1-TOP ; ! ""
+Rusya:Rusya NP1-TOP ; ! ""
+Saraybosna:Saraybosna NP1-TOP ; ! ""
+Saraybosna:Saraybosna NP1-TOP ; ! ""
+Slovakya:Slovakya NP1-TOP ; ! ""
+Slovakya:Slovakya NP1-TOP ; ! ""
+Slovenya:Slovenya NP1-TOP ; ! ""
+Sofya:Sofya NP1-TOP ; ! ""
+Türkiye:Türkiye NP1-TOP ; ! ""
+Ukrayna:Ukrayna NP1-TOP ; ! ""
+Üsküp:Üsküp NP1-TOP ; ! ""
+Yugoslavya:Yugoslavya NP1-TOP ; ! ""
+Yunanistan:Yunanistan NP1-TOP ; ! ""
+Zagreb:Zagreb NP1-TOP ; ! ""
+Avrasya:Avrasya NP1-TOP ; ! ""
+İstanbul:İstanbul NP1-TOP ; ! ""
+Volga:Volga NP1-TOP ; ! ""
+Barcelona:Barcelona NP1-ORG ; ! ""
+Vikipedi:Vikipedi NP1-AL ; ! ""
+Ahmet:Ahmet NP1-ANT-M ; ! ""
+Andrei:Andrei NP1-ANT-M ; ! ""
+Dmitry:Dmitry NP1-ANT-M ; ! ""
+James:James NP1-ANT-M ; ! ""
+Vladimir:Vladimir NP1-ANT-M ; ! ""
+Anna:Anna NP1-ANT-F ; ! ""
+Putin:Putin NP1-COG-MF ; ! ""
+
+LEXICON Adjectives
+
+sağlıklı:sağlıklı A4 ; ! "healthy"
+sayılı:sayılı A4 ; ! "limited"
+yoksul:yoksul A2 ; ! "poor"
+maddi:maddi A2 ; ! "concrete"
+süreli:süreli A2 ; ! "transitory periodic"
+sınırlı:sınırlı A2 ; ! "qualified"
+uyumlu:uyumlu A2 ; ! "compatible"
+şüpheli:şüpheli A2 ; ! "suspect"
+vadeli:vadeli A4 ; ! "deferred"
+tarihli:tarihli A4 ; ! "historical"
+kararlı:kararlı A4 ; ! "decided"
+memnun:memnun A4 ; ! "happy"
+güvenli:güvenli A4 ; ! "secure"
+toplu:toplu A4 ; ! "collective"
+zorlu:zorlu A4 ; ! "challenging"
+istikrarlı:istikrarlı A4 ; ! "stable"
+var:var A4 ; ! "existing" 
+yok:yok A4 ; ! "non-existing"
+önceki:önceki A4 ; ! "previous"
+sonraki:sonraki A4 ; ! "next"
+iyi:İyi A1 ; ! "good" ! Dir/LR
+iyi:iyi A1 ; ! "good"
+yeni:yeni A1 ; ! "new"
+büyük:büyük A1 ; ! "big"
+eski:eski A1 ; ! "old"
+güzel:güzel A1 ; ! "pretty, beautiful"
+ölü:ölü A2 ; ! "dead"
+yıllık:yıllık A2 ; ! "annual"
+yaklaşık:yaklaşık A2 ; ! "approximate"
+ortak:ortak%{v%} A2 ; ! ""
+dış:dış A2 ; ! "partner"
+ana:ana A4 ; ! "main"
+milli:milli A4 ; ! "national"
+tam:tam A4 ; ! 'exact'
+ekonomik:ekonomik A4 ; ! "economic"
+soğuk:soğuk A1 ; ! "cold'
+zor:zor A1 ; ! "hard"
+organize:organize A2 ; ! "organized"
+fena:fena A3 ;  ! "evil, bad, foul"
+bedava:bedava A3 ;  ! "free"
+gebe:gebe A4 ;  ! "pregnant"
+pembe:pembe A2 ;  ! "pink"
+kekeme:kekeme A4 ;  ! "stutturer"
+avare:avare A4 ;  ! "vagrant"
+saf:saf A2 ;  ! "pure"
+pasif:pasif A2 ;  ! "nonactive, passive"
+federatif:federatif A4 ;  ! "federative"
+aktif:aktif A2 ;  ! "active"
+radyoaktif:radyoaktif A4 ;  ! "radioactive"
+objektif:objektif A2 ;  ! "objective"
+sağ:sağ A2 ;  ! "alive"
+sıkıcı:sıkıcı A4 ;  ! "boring"
+kalıcı:kalıcı A4 ;  ! "permenant"
+eğlendirici:eğlendirici A4 ;  ! "amusing"
+tiksindirici:tiksindirici A4 ;  ! "abominevole"
+yumuşatıcı:yumuşatıcı A2 ;  ! "softening"
+bunaltıcı:bunaltıcı A4 ;  ! "depressing, suffocating"
+devrimci:devrimci A2 ;  ! "revolutionist"
+ısrarcı:ısrarcı A4 ;  ! "persistent"
+ciddi:ciddi A3 ;  ! "serious"
+kahverengi:kahverengi A2 ;  ! "brown"
+fırtınalı:fırtınalı A4 ;  ! "stormy"
+düşünceli:düşünceli A4 ;  ! "thoughtful"
+neşeli:neşeli A4 ;  ! "joyous"
+cilveli:cilveli A4 ;  ! "flirtatious"
+keyifli:keyifli A4 ;  ! "cheerful"
+yağlı:yağlı A4 ;  ! "greasy"
+etkili:etkili A4 ;  ! "influential"
+yetkili:yetkili A2 ;  ! "authorized"
+başarılı:başarılı A4 ;  ! "successful, successful"
+meraklı:meraklı A4 ;  ! "curious, curious"
+gerekli:gerekli A4 ;  ! "necessary, necessary"
+dayanıklı:dayanıklı A4 ;  ! "enduring, durable, durable"
+becerikli:becerikli A4 ;  ! "talented"
+yakışıklı:yakışıklı A4 ;  ! "handsome"
+mantıklı:mantıklı A4 ;  ! "reasonable"
+renkli:renkli A4 ;  ! "colourful"
+dallı:dallı A4 ;  ! "branched"
+akıllı:akıllı A1 ;  ! "intelligent, smart, clever"
+killi:killi A4 ;  ! "loamy"
+kıllı:kıllı A4 ;  ! "hairy"
+milli:milli A4 ;  ! "national"
+anlamlı:anlamlı A4 ;  ! "meaningful"
+namlı:namlı A4 ;  ! "renowned"
+kapsamlı:kapsamlı A4 ;  ! "comprehensive"
+görkemli:görkemli A4 ;  ! "magnificient"
+sistemli:sistemli A4 ;  ! "systematic"
+bağımlı:bağımlı A4 ;  ! "addict"
+ılımlı:ılımlı A2 ;  ! "moderate"
+verimli:verimli A4 ;  ! "fertile, fruitfull"
+deneyimli:deneyimli A4 ;  ! "experienced"
+azimli:azimli A4 ;  ! "strong minded"
+canlı:canlı A1 ;  ! "alive, alive"
+kanlı:kanlı A2 ;  ! "bloody"
+düzenli:düzenli A4 ;  ! "ordered, ordered"
+karlı:karlı A4 ;  ! "snowy"
+yararlı:yararlı A4 ;  ! "beneficial"
+tutarlı:tutarlı A4 ;  ! "consistent"
+kederli:kederli A4 ;  ! "sorrowful"
+kibirli:kibirli A4 ;  ! "arrogant, arrogant"
+sihirli:sihirli A4 ;  ! "magical"
+kirli:kirli A4 ;  ! "dirty, dirty"
+yaşlı:yaşlı A4 ;  ! "old"
+güneşli:güneşli A4 ;  ! "sunny"
+sesli:sesli A4 ;  ! "noisy"
+elverişli:elverişli A4 ;  ! "convenient"
+kaprisli:kaprisli A4 ;  ! "capricious"
+dikkatli:dikkatli A4 ;  ! "attentive"
+şiddetli:şiddetli A4 ;  ! "severe, violent"
+etli:etli A4 ;  ! "fleshy"
+bereketli:bereketli A4 ;  ! "fertile, fertile"
+merhametli:merhametli A4 ;  ! "kind"
+kıymetli:kıymetli A4 ;  ! "valuable"
+ücretli:ücretli A2 ;  ! "salaried, paid"
+dehşetli:dehşetli A4 ;  ! "terrifying"
+kasvetli:kasvetli A4 ;  ! "gloomy"
+kuvvetli:kuvvetli A4 ;  ! "powerful"
+lezzetli:lezzetli A4 ;  ! "tasty"
+samimi:samimi A4 ;  ! "sincere"
+kısmi:kısmi A4 ;  ! "partial"
+ani:ani A4 ;  ! "sudden"
+insani:insani A4 ;  ! "humanistic"
+sarı:sarı A2 ;  ! "yellow"
+eğri:eğri A1 ;  ! "skew, curve"
+cimri:cimri A4 ;  ! "mean"
+vahşi:vahşi A4 ;  ! "wild"
+aksi:aksi A4 ;  ! "agressive"
+mavi:mavi A2 ;  ! "blue"
+kırmızı:kırmızı A2 ;  ! "red"
+sıcak:sıcak A2 ;  ! "hot"
+ahmak:ahmak A4 ;  ! "fool, fool, fool"
+oynak:oynak A4 ;  ! "playing"
+kurak:kurak A4 ;  ! "arid"
+uzak:uzak A2 ;  ! "far"
+titrek:titrek A4 ;  ! "quavering"
+gevrek:gevrek A2 ;  ! "crusty, rusk"
+tek:tek A1 ;  ! "single, only"
+spesifik:spesifik A4 ;  ! "specific"
+eğik:eğik A4 ;  ! "skewed"
+enerjik:enerjik A4 ;  ! "energetic"
+komik:komik A4 ;  ! "funny"
+karmaşık:karmaşık A4 ;  ! "complicated"
+atik:atik A4 ;  ! "quick"
+yatık:yatık A2 ;  ! "sloping"
+layık:layık A4 ;  ! "worth"
+günlük:günlük%{v%} A2 ;  ! "daily"
+soluk:soluk A2 ;  ! "pale"
+sönük:sönük A4 ;  ! "pale"
+büyük:büyük A2 ;  ! "big"
+bozuk:bozuk A4 ;  ! "out of order, broken"
+global:global  A4 ;  ! "global"
+topal:topal A4 ;  ! "lame"
+federal:federal A4 ;  ! "federal"
+yasal:yasal A4 ;  ! "legal"
+kutupsal:kutupsal A4 ;  ! "polar"
+kutsal:kutsal A4 ;  ! "holy"
+aptal:aptal A4 ;  ! "fool"
+genel:genel A2 ;  ! "general"
+özgür:özgür A4 ; ! "free"
+normal:normal A3 ; ! "normal"
+ayrıntılı:ayrıntılı A4 ; ! "elaborate"
+rasyonel:rasyonel A4 ;  ! "rationale"
+nesnel:nesnel A4 ;  ! "objective"
+yerel:yerel A4 ;  ! "local"
+kültürel:kültürel A1 ;  ! "cultural"
+kişisel:kişisel A4 ;  ! "personal"
+bilimsel:bilimsel A4 ;  ! "scientific, scientific"
+yüzeysel:yüzeysel A4 ;  ! "surfical"
+özel:özel A4 ;  ! "special, private"
+acil:acil A4 ;  ! "emergency"
+yeşil:yeşil A2 ;  ! "green"
+kızıl:kızıl A2 ;  ! "red"
+bol:bol A4 ;  ! "loose, baggy"
+meşgul:meşgul A4 ;  ! "busy"
+sağlam:sağlam A4 ;  ! "unharmed, intact"
+zalim:zalim A4 ;  ! "cruel"
+kaygan:kaygan A4 ;  ! "slippery"
+yapışkan:yapışkan A4 ;  ! "adhesive, sticky"
+konuşkan:konuşkan A4 ;  ! "communicative"
+somurtkan:somurtkan A4 ;  ! "surly"
+pişman:pişman A4 ;  ! "regretful"
+engin:engin A4 ;  ! "offing, immense"
+metin:metin A4 ;  ! "hard"
+solgun:solgun A4 ;  ! "pale"
+uygun:uygun A4 ;  ! "appropriate, suitable, appropriate"
+garip:garip A4 ;  ! "poor, weird"
+dar:dar A4 ;  ! "narrow"
+eşdeğer:eşdeğer A4 ;  ! "equivalent"
+popüler:popüler A4 ;  ! "popular"
+otoriter:otoriter A4 ;  ! "authoritative"
+güvenilir:güvenilir A4 ;  ! "dependable, trustable"
+anlaşılır:anlaşılır A4 ;  ! "understandable"
+cesur:cesur A4 ;  ! "brave, brave"
+nefis:nefis A4 ;  ! "scrumptious"
+pis:pis A4 ;  ! "dirty"
+lüks:lüks A2 ;  ! "molting"
+hoş:hoş A3 ;  ! "nice, nice"
+ters:ters A1 ;  ! "adverse"
+mat:mat A4 ;  ! "pale"
+pat:pat A4 ;  ! "flat"
+yiğit:yiğit A2;  ! "spunky, spartan"
+standart:standart A2 ;  ! "standart"
+cömert:cömert A4 ;  ! "generous"
+serbest:serbest A3 ;  ! "free"
+kumlu:kumlu A4 ;  ! "sandy"
+dolu:dolu A2 ;  ! "full"
+bulutlu:bulutlu A4 ;  ! "cloudy"
+kuşkulu:kuşkulu A4 ;  ! "doubtful"
+gürültülü:gürültülü A4 ;  ! "noisy"
+tuzlu:tuzlu A4 ;  ! "salty"
+kolay:kolay A1 ;  ! "easy"
+kurnaz:kurnaz A4 ;  ! "subtle"
+beyaz:beyaz A2 ;  ! "white"
+cılız:cılız A4 ;  ! "puny"
+temiz:temiz A3 ;  ! "clean"
+faydasız:faydasız A1 ;  ! "useless"
+acımasız:acımasız A1 ;  ! "cruel, ruthless"
+havasız:havasız A1 ;  ! "airless"
+tarafsız:tarafsız A1 ;  ! "objective"
+ilgisiz:ilgisiz A1 ;  ! "uninterested"
+kaygısız:kaygısız A1 ;  ! "careless"
+etkisiz:etkisiz A1 ;  ! "inoperative, noneffective"
+başarısız:başarısız A1 ;  ! "unsuccessful"
+aralıksız:aralıksız A1 ;  ! "non-stop"
+beceriksiz:beceriksiz A1 ;  ! "awkward, clumsy, clumsy"
+eksiksiz:eksiksiz A1 ;  ! "whole, complete"
+mantıksız:mantıksız A1 ;  ! "illogical"
+dilsiz:dilsiz A1 ;  ! "tongueless"
+anlamsız:anlamsız A1 ;  ! "meaningless, meaningless, meaningless"
+cansız:cansız A1 ;  ! "spiritless"
+tutarsız:tutarsız A1 ;  ! "inconsistent"
+değersiz:değersiz A1 ;  ! "valueless"
+sabırsız:sabırsız A1 ;  ! "impatient"
+belirsiz:belirsiz A1 ;  ! "ambigous, indefinite"
+sınırsız:sınırsız A1 ;  ! "limitless"
+eşsiz:eşsiz A1 ;  ! "unique"
+gösterişsiz:gösterişsiz A1 ;  ! "simple"
+elverişsiz:elverişsiz A1 ;  ! "inconvenient"
+işsiz:işsiz A1 ;  ! "unemployed"
+merhametsiz:merhametsiz A1 ;  ! "ruthless"
+titiz:titiz A1 ;  ! "rigorous"
+olumsuz:olumsuz A1 ;  ! "negative"
+sonsuz:sonsuz A1 ;  ! "forever"
+uygunsuz:uygunsuz A1 ;  ! "inappropriate"
+kanunsuz:kanunsuz A1 ;  ! "illegal"
+duygusuz:duygusuz A1 ;  ! "emotionless"
+kurmaca:kurmaca A2 ;  ! ""
+başlıca:başlıca A4 ;  ! ""
+hovarda:hovarda A2 ;  ! ""
+tenha:tenha A4 ;  ! ""
+harika:harika A4 ;  ! ""
+sıska:sıska A4 ;  ! ""
+ala:ala A2 ;  ! ""
+fazla:fazla A1 ;  ! ""
+hoppa:hoppa A4 ;  ! ""
+kapkara:kapkara A3 ;  ! ""
+maskara:maskara A4 ;  ! ""
+devasa:devasa A4 ;  ! ""
+orta:orta A2 ;  ! ""
+hasta:hasta A4 ;  ! ""
+ince:ince A4 ;  ! ""
+yüce:yüce A4 ;  ! ""
+nadide:nadide A4 ;  ! ""
+hamile:hamile A4 ;  ! ""
+izole:izole A4 ;  ! ""
+şahane:şahane A4 ;  ! ""
+körpe:körpe A1 ;  ! ""
+sahte:sahte A4 ;  ! ""
+taze:taze A3 ;  ! ""
+taptaze:taptaze A3 ;  ! ""
+geveze:geveze A4 ;  ! ""
+tuhaf:tuhaf A4 ;  ! ""
+hafif:hafif A4 ;  ! ""
+zarif:zarif A4 ;  ! ""
+negatif:negatif A4 ;  ! ""
+zayıf:zayıf A4 ;  ! ""
+sığ:sığ A4 ;  ! ""
+küstah:küstah A4 ;  ! ""
+şuh:şuh A4 ;  ! ""
+asabi:asabi A3 ;  ! ""
+tıbbi:tıbbi A4 ;  ! ""
+acı:acı A4 ;  ! ""
+feci:feci A4 ;  ! ""
+sahici:sahici A4 ;  ! ""
+yırtıcı:yırtıcı A4 ;  ! ""
+yabancı:yabancı A4 ;  ! ""
+ivedi:ivedi A4 ;  ! ""
+coğrafi:coğrafi A4 ;  ! ""
+izafi:izafi A4 ;  ! ""
+ahlaki:ahlaki A4 ;  ! ""
+zeki:zeki A4 ;  ! ""
+sıkı:sıkı A1 ;  ! ""
+eski:eski A2 ;  ! ""
+pahalı:pahalı A4 ;  ! ""
+kapalı:kapalı A4 ;  ! ""
+adli:adli A4 ;  ! ""
+tehlikeli:tehlikeli A4 ;  ! ""
+bağlı:bağlı A4 ;  ! ""
+sevgili:sevgili A2 ;  ! ""
+sürekli:sürekli A3 ;  ! ""
+acıklı:acıklı A4 ;  ! ""
+farklı:farklı A4 ;  ! ""
+sevimli:sevimli A4 ;  ! ""
+yeterli:yeterli A4 ;  ! ""
+yerli:yerli A4 ;  ! ""
+belirli:belirli A4 ;  ! ""
+ağırbaşlı:ağırbaşlı A4 ;  ! ""
+dişli:dişli A4 ;  ! ""
+kullanışlı:kullanışlı A4 ;  ! ""
+tatlı:tatlı A1 ;  ! ""
+müstevli:müstevli A1 ;  ! ""
+gizli:gizli A3 ;  ! ""
+hızlı:hızlı A3 ;  ! ""
+yarı:yarı A1 ;  ! ""
+seferi:seferi A2 ;  ! ""
+askeri:askeri A4 ;  ! ""
+diri:diri A4 ;  ! ""
+favori:favori A2 ;  ! ""
+sivri:sivri A2 ;  ! ""
+uluslararası:uluslararası A4 ;  ! ""
+dişi:dişi A2 ;  ! ""
+ekşi:ekşi A2 ;  ! ""
+yassı:yassı A4 ;  ! ""
+pinti:pinti A4 ;  ! ""
+mütevazi:mütevazi A4 ;  ! ""
+kıpkırmızı:kıpkırmızı A2 ;  ! ""
+ufak:ufak A4 ;  ! ""
+parlak:parlak A4 ;  ! ""
+ıslak:ıslak A4 ;  ! ""
+mutlak:mutlak A3 ;  ! ""
+berrak:berrak A4 ;  ! ""
+yumuşak:yumuşak A4 ;  ! ""
+erkek:erkek A2 ;  ! ""
+ürkek:ürkek A4 ;  ! ""
+işlek:işlek A4 ;  ! ""
+dönek:dönek A4 ;  ! ""
+esnek:esnek A4 ;  ! ""
+yüksek:yüksek A2 ;  ! ""
+gevşek:gevşek A3 ;  ! ""
+sıcacık:sıcacık A4 ;  ! ""
+dik:dik A4 ;  ! ""
+otobiyografik:otobiyografik A4 ;  ! ""
+müşfik:müşfik A4 ;  ! ""
+trajik:trajik A4 ;  ! ""
+stratejik:stratejik A4 ;  ! ""
+ideolojik:ideolojik A4 ;  ! ""
+jeolojik:jeolojik A4 ;  ! ""
+arkeolojik:arkeolojik A4 ;  ! ""
+ekolojik:ekolojik A4 ;  ! ""
+psikolojik:psikolojik A4 ;  ! ""
+teknolojik:teknolojik A4 ;  ! ""
+biyolojik:biyolojik A4 ;  ! ""
+ılık:ılık A4 ;  ! ""
+akademik:akademik A4 ;  ! ""
+ekonomik:ekonomik A4 ;  ! ""
+makroekonomik:makroekonomik A4 ;  ! ""
+ritmik:ritmik A4 ;  ! ""
+organik:organik A4 ;  ! ""
+sanık:sanık%{v%} A1 ;  ! ""
+uyanık:uyanık A4 ;  ! ""
+dağınık:dağınık A4 ;  ! ""
+ironik:ironik A4 ;  ! ""
+etnik:etnik A4 ;  ! ""
+tipik:tipik A4 ;  ! ""
+şımarık:şımarık A4 ;  ! ""
+kırık:kırık A4 ;  ! ""
+teorik:teorik A4 ;  ! ""
+geometrik:geometrik A1 ;  ! ""
+dolaşık:dolaşı%{k%} A1 ;  ! ""
+bileşik:bileşi%{k%} A1 ;  ! ""
+karışık:karışık A4 ;  ! ""
+dramatik:dramatik A4 ;  ! ""
+sistematik:sistematik A4 ;  ! ""
+diplomatik:diplomatik A4 ;  ! ""
+fanatik:fanatik A4 ;  ! ""
+demokratik:demokratik A4 ;  ! ""
+bürokratik:bürokratik A4 ;  ! ""
+nazik:nazik A2 ;  ! ""
+ilk:ilk A1 ;  ! ""
+donuk:donuk A4 ;  ! ""
+uyuşuk:uyuşuk A4 ;  ! ""
+faal:faal A4 ;  ! ""
+radikal:radikal A2 ;  ! ""
+liberal:liberal A3 ;  ! ""
+sosyal:sosyal A4 ;  ! ""
+anayasal:anayasal A4 ;  ! ""
+kimyasal:kimyasal A4 ;  ! ""
+finansal:finansal A4 ;  ! ""
+şapşal:şapşal A4 ;  ! ""
+ulusal:ulusal A4 ;  ! ""
+uysal:uysal A4 ;  ! ""
+hantal:hantal A4 ;  ! ""
+müstakbel:müstakbel A4 ;  ! ""
+tembel:tembel A4 ;  ! ""
+kel:ke4 A1 ;  ! ""
+ilkel:ilke4 A1 ;  ! ""
+muhtemel:muhtemel A4 ;  ! ""
+mükemmel:mükemmel A4 ;  ! ""
+operasyonel:operasyonel A4 ;  ! ""
+profesyonel:profesyonel A4 ;  ! ""
+öznel:öznel A4 ;  ! ""
+güzel:güzel A1 ;  ! ""
+evcil:evcil A4 ;  ! ""
+yemyeşil:yemyeşil A2 ;  ! ""
+sivil:sivil A4 ;  ! ""
+rezil:rezil A4 ;  ! ""
+tombul:tombul A4 ;  ! ""
+ölümcül:ölümcül A4 ;  ! ""
+yoksul:yoksul A4 ;  ! ""
+ham:ham A4 ;  ! ""
+muazzam:muazzam A4 ;  ! ""
+maksimum:maksimum A4 ;  ! ""
+afacan:afacan A4 ;  ! ""
+sıradan:sıradan A4 ;  ! ""
+olağan:olağan A4 ;  ! ""
+sarılgan:sarılgan A4 ;  ! ""
+kırılgan:kırılgan A4 ;  ! ""
+saldırgan:saldırgan A4 ;  ! ""
+doğurgan:doğurgan A4 ;  ! ""
+akışkan:akışkan A4 ;  ! ""
+unutkan:unutkan A4 ;  ! ""
+kocaman:kocaman A4 ;  ! ""
+kahraman:kahraman A2 ;  ! ""
+ılıman:ılıman A4 ;  ! ""
+şişman:şişman A4 ;  ! ""
+perişan:perişan A4 ;  ! ""
+yavan:yavan A4 ;  ! ""
+yayvan:yayvan A4 ;  ! ""
+lafazan:lafazan A4 ;  ! ""
+sevecen:sevecen A4 ;  ! ""
+sürüngen:sürüngen A4 ;  ! ""
+üretken:üretken A4 ;  ! ""
+hain:hain A4 ;  ! ""
+salgın:salgın A4 ;  ! ""
+yılgın:yılgın A4 ;  ! ""
+zengin:zengin A1 ;  ! ""
+gergin:gergin A4 ;  ! ""
+belirgin:belirgin A4 ;  ! ""
+yaygın:yaygın A4 ;  ! ""
+kızgın:kızgın A4 ;  ! ""
+sakin:sakin A4 ;  ! ""
+yakın:yakın A1 ;  ! ""
+taşkın:taşkın A2 ;  ! ""
+keskin:keskin A4 ;  ! ""
+ilişkin:ilişkin A4 ;  ! ""
+miskin:miskin A4 ;  ! ""
+şişkin:şişkin A4 ;  ! ""
+yatkın:yatkın A4 ;  ! ""
+emin:emin A2 ;  ! ""
+narin:narin A4 ;  ! ""
+derin:derin A4 ;  ! ""
+serin:serin A4 ;  ! ""
+şirin:şirin A2 ;  ! ""
+kesin:kesin A3 ;  ! ""
+rutin:rutin A4 ;  ! ""
+hazin:hazin A4 ;  ! ""
+son:son A2 ;  ! ""
+modern:modern A4 ;  ! ""
+dolgun:dolgun A4 ;  ! ""
+olgun:olgun A4 ;  ! ""
+yoğun:yoğun A4 ;  ! ""
+yorgun:yorgun A4 ;  ! ""
+durgun:durgun A4 ;  ! ""
+özgün:özgün A4 ;  ! ""
+düzgün:düzgün A4 ;  ! ""
+üzgün:üzgün A4 ;  ! ""
+mümkün:mümkün A4 ;  ! ""
+tutkun:tutkun A4 ;  ! ""
+uzun:uzun A3 ;  ! ""
+şişko:şişko A4 ;  ! ""
+sarp:sarp A4 ;  ! ""
+mensup:mensup A4 ;  ! ""
+kibar:kibar A4 ;  ! ""
+kindar:kindar A4 ;  ! ""
+mundar:mundar A4 ;  ! ""
+ender:ender A4 ;  ! ""
+muzaffer:muzaffer A4 ;  ! ""
+saygıdeğer:saygıdeğer A4 ;  ! ""
+süper:süper A4 ;  ! ""
+iyimser:iyimser A4 ;  ! ""
+üniter:üniter A4 ;  ! ""
+nadir:nadir A3 ;  ! ""
+ağır:ağır A1 ;  ! ""
+fakir:fakir A2 ;  ! ""
+hazır:hazır A3 ;  ! ""
+nankör:nankör A4 ;  ! ""
+kör:kör A4 ;  ! ""
+garantör:garantör A4 ;  ! ""
+obur:obur A4 ;  ! ""
+bodur:bodur A4 ;  ! ""
+gür:gür A4 ;  ! ""
+meşhur:meşhur A4 ;  ! ""
+mağrur:mağrur A4 ;  ! ""
+has:has A2 ;  ! ""
+hassas:hassas A4 ;  ! ""
+yavaş:yavaş A3 ;  ! ""
+halis:halis A4 ;  ! ""
+geniş:geniş A4 ;  ! ""
+mütehassıs:mütehassıs A4 ;  ! ""
+kompleks:kompleks A2 ;  ! ""
+boş:boş A3 ;  ! ""
+nahoş:nahoş A4 ;  ! ""
+sarhoş:sarhoş A3 ;  ! ""
+berbat:berbat A4 ;  ! ""
+sakat:sakat A4 ;  ! ""
+hamarat:hamarat A4 ;  ! ""
+demokrat:demokrat A4 ;  ! ""
+basit:basit A4 ;  ! ""
+zıt:zıt A4 ;  ! ""
+alt:alt A2 ;  ! ""
+sert:sert A3 ;  ! ""
+emperyalist:emperyalist A2 ;  ! ""
+hümanist:hümanist A4 ;  ! ""
+dürüst:dürüst A4 ;  ! ""
+somut:somut A2 ;  ! ""
+uyuşturucu:uyuşturucu A2 ;  ! ""
+kumlu:kumlu A4 ;  ! ""
+sorumlu:sorumlu A4 ;  ! ""
+sorumlu:sorumlu A4 ;  ! ""
+zorunlu:zorunlu A4 ;  ! ""
+ölü:ölü A2 ;  ! ""
+türlü:türlü A2 ;  ! ""
+uslu:uslu A3 ;  ! ""
+mutlu:mutlu A4 ;  ! ""
+ulu:ulu A4 ;  ! ""
+köylü:köylü A2 ;  ! ""
+soylu:soylu A4 ;  ! ""
+sözlü:sözlü A4 ;  ! ""
+doğru:doğru A1 ;  ! ""
+doru:doru A4 ;  ! ""
+meşru:meşru A4 ;  ! ""
+kuru:kuru A4 ;  ! ""
+kötü:kötü A1 ;  ! ""
+koyu:koyu A4 ;  ! ""
+yapay:yapay A4 ;  ! ""
+dikey:dikey A4 ;  ! ""
+düşey:düşey A4 ;  ! ""
+düzenbaz:düzenbaz A4 ;  ! ""
+pisboğaz:pisboğaz A4 ;  ! ""
+haylaz:haylaz A4 ;  ! ""
+yaramaz:yaramaz A4 ;  ! ""
+vurdumduymaz:vurdumduymaz A4 ;  ! ""
+ahraz:ahraz A4 ;  ! ""
+az:az A1 ;  ! ""
+esrarengiz:esrarengiz A4 ;  ! ""
+temiz:temiz A3 ;  ! ""
+mızmız:mızmız A4 ;  ! ""
+yalnız:yalnız A1 ;  ! ""
+kimsesiz:kimsesiz A3;  ! ""
+bağımsız:bağımsız A2 ;  ! ""
+yetersiz:yetersiz A4 ;  ! ""
+sessiz:sessiz A1 ;  ! ""
+ayrı:ayrı A4 ; ! ""
+ucuz:ucuz A4 ;  ! ""
+dümdüz:dümdüz A4 ;  ! ""
+öksüz:öksüz A4 ;  ! ""
+mutsuz:mutsuz A4 ;  ! ""
+yüzsüz:yüzsüz A4 ;  ! ""
+kısa:kısa A1 ; ! "short"
+değerli:değerli A1 ; ! "different"
+
+LEXICON Adverbs 
+
+mutlaka:mutlaka ADV3 ; ! "certainly"
+acilen:acilen ADV3 ; ! "promtply"
+yeterince:yeterince ADV3 ; ! "enough"
+dikkatlice:dikkatlice ADV3 ; ! "with attention"
+özellikle:özellikle ADV3 ; ! "especially
+akşamleyin:akşamleyin ADV3 ; ! "at night"
+aksine:aksine ADV3 ; ! "on the contrary"
+ansızın:ansızın ADV3 ; ! "suddenly" "abruptly"
+arasıra:arasıra ADV3 ; ! "sometimes"
+artık:artık ADV3 ; ! "anymore"
+asla:asla ADV3 ; ! "never"
+aslında:aslında ADV3 ; ! "actually"
+aylarca:aylarca ADV3 ; ! "for months"
+ayrıca:ayrıca ADV3 ; ! "also"
+bari:bari ADV3 ; ! "at least"
+baştan:baştan ADV3 ; ! "anew"
+belki:belki ADV3 ; ! "perhaps"
+beraber:beraber ADV3 ; ! "together"
+birden:birden ADV3 ; ! "suddenly"
+birdenbire:birdenbire ADV3 ; ! "all of a sudden"
+birlikte:birlikte ADV3 ; ! "together"
+bizzat:bizzat ADV3 ; ! "in person"
+böylece:böylece ADV3 ; ! "so that"
+böylelikle:böylelikle ADV3 ; ! "in this manner"
+büsbütün:büsbütün ADV3 ; ! "altogether"
+cidden:cidden ADV3 ; ! "Seriously"
+daha:daha ADV3 ; ! "more" @@SPECIAL
+daima:daima ADV3 ; ! "forever"
+derhal:derhal ADV3 ; ! "immediately"
+derinlemesine:derinlemesine ADV3 ; ! "inward"
+dörtnala:dörtnala ADV3 ; ! "galopping"
+dostane:dostane ADV3 ; ! "friendly"
+ebediyen:ebediyen ADV3 ; ! "forever"
+en:en ADV3 ; ! "the most"
+erken:erken ADV3 ; ! "early"
+eskiden:eskiden ADV3 ; ! "formerly"
+evvel:evvel ADV3 ; ! "before" @@@ possibly postp
+fiilen:fiilen ADV3 ; ! "actually" "de facto"
+galiba:galiba ADV3 ; ! "presumably"
+gayet:gayet ADV3 ; ! "Very much"
+geceleri:geceleri ADV3 ; ! "at nights"
+geceleyin:geceleyin ADV3 ; ! "usually at night"
+gene:gene ADV3 ; ! "again"
+genelde:genelde ADV3 ; ! "mostly" "generally"
+genellikle:genellikle ADV3 ; ! "generally"
+gitgide:gitgide ADV3 ; ! "gradually"
+gıyaben:gıyaben ADV3 ; ! "in absentia"
+günlerce:günlerce ADV3 ; ! "for days"
+güya:güya ADV3 ; ! "so to speak"
+hakikaten:hakikaten ADV3 ; ! "in fact"
+hala:hala ADV3 ; ! "still"
+hemen:hemen ADV3 ; ! "soon"
+henüz:henüz ADV3 ; ! "just"
+hep:hep ADV3 ; ! "every"
+hepten:hepten ADV3 ; ! "completely"
+herhalde:herhalde ADV3 ; ! "in any case"
+ileri:ileri ADV3 ; ! "forward"
+ilkin:ilkin ADV3 ; ! "firstly"
+istinaden:istinaden ADV3 ; ! "based on " @@@
+itibaren:itibaren ADV3 ; ! "as of"
+ivedilikle:ivedilikle ADV3 ; ! "urgently"
+kasten:kasten ADV3 ; ! "intentionally"
+kazara:kazara ADV3 ; ! "accidentally"
+kışın:kışın ADV3 ; ! "in winter"
+layıkıyla:layıkıyla ADV3 ; ! "correctly"
+maalesef:maalesef ADV3 ; ! "unfortunately" @@@ also interj.
+muhtemelen:muhtemelen ADV3 ; ! "magnificently"
+aşağı:aşağı  ADV2 ; ! "lowly"
+bilhassa:bilhassa  ADV2 ; ! "specially"
+düpedüz:düpedüz  ADV2 ; ! "palpably"
+epey:epey  ADV2 ; ! "reasonably"
+geri:geri  ADV2 ; ! "back""inverted"
+gitgide:gitgide  ADV2 ; ! "gradually"
+gıyaben:gıyaben  ADV2 ; ! "inabsentia"
+kısmen:kısmen ADV2 ; ! "partly" "tolerable"
+zor:zor ADV2 ; ! "hard"
+neredeyse:neredeyse ADV3 ; ! "almost"
+kesinlikle:kesinlikle ADV3 ; ! "absolutely"
+önce:önce ADV1 ; ! "previously" @@@@ postp
+öyle:öyle ADV1 ; ! "thusly"
+pek:pek ADV3 ; ! "scarcely"
+sabahleyin:sabahleyin ADV3 ; ! "in the morning"
+sadece:sadece ADV3 ; ! "only"
+sanki:sanki ADV3 ; ! "in a manner, nearly"
+sonra:sonra ADV3 ; ! "after, afterwards" @@@ also postp
+sonradan:sonradan ADV3 ; ! "later on"
+sonunda:sonunda ADV3 ; ! "at the end"
+şöyle:şöyle ADV3 ; ! "in that way"
+sürekli:sürekli ADV3 ; ! "always"
+tamamen:tamamen ADV3 ; ! "completely"
+tesadüfen:tesadüfen ADV3 ; ! "accidentally"
+toptan:toptan ADV3 ; ! "collectively"
+yakında:yakında ADV3 ; ! "soon"
+yalnızca:yalnızca ADV3 ; ! "only"
+yarın:yarın ADV3 ; ! "tomorrow"
+yavaş:yavaş ADV3 ; ! "slowly"
+yeniden:yeniden ADV3 ; ! "again"
+yine:yine ADV3 ; ! "again"
+zaten:zaten ADV3 ; ! "already"
+tekrar:tekrar ADV3 ; ! "again"
+
+LEXICON Verbs 
+
+al:al V-TV-DIR-IR ; ! "take, buy"
+al:al V-TV-DIR-IR ; ! "take, buy"
+al:al V-TV-DIR-IR ; ! "take, buy"
+yap:yap V-TV-DIR-AR ; ! "make, do"
+yap:yap V-TV-DIR-AR ; ! "make, do"
+gel:gel V-IV-DIR-IR ; ! "come"
+gel:gel V-IV-DIR-IR ; ! "come"
+yayınlan:yayınlan V-IV-DIR-IR ; ! "issue"
+yayınla:yayınla V-TV-T-IR ; ! "publish"
+kes:kes V-TV-DIR-AR ; ! "cut"
+et:et%{v%} V-TV-DIR-AR ; ! "make"
+et:et%{v%} V-TV-DIR-AR ; ! "make"
+eş:eş V-TV-DIR-AR ; ! "scratch"
+kabul% et:kabul% et%{v%} V-TV-DIR-AR ; ! "admit, acknowledge" ! Use/MT
+kes:kes V-TV-DIR-AR  ; ! "cut"
+keşfet:keşfet V-TV-DIR-AR  ; ! "discover"
+kıl:kıl V-TV-DIR-AR  ; ! "make"
+kıl:kıl V-TV-DIR-AR  ; ! "make"
+kır:kır V-TV-DIR-AR  ; ! "break"
+kirlet:kirlet V-TV-DIR-IR  ; ! "dirty"
+kıs:kıs V-TV-DIR-AR  ; ! "put down, reduce"
+kıy:kıy V-TV-DIR-AR  ; ! "chop up"
+kov:kov V-TV-DIR-AR  ; ! "repel"
+koy:koy V-TV-DIR-AR  ; ! "put"
+koy:koy V-TV-DIR-AR  ; ! "put"
+kullan:kullan V-TV-DIR-IR  ; ! "use"
+kullan:kullan V-TV-DIR-IR  ; ! "use"
+kur:kur V-TV-DIR-AR  ; ! "set"
+kur:kur V-TV-DIR-AR  ; ! "set"
+kuşan:kuşan V-TV-DIR-IR  ; ! "gird oneself with"
+kuşat:kuşat V-TV-DIR-IR  ; ! "hedge round"
+kuşat:kuşat V-TV-DIR-IR  ; ! "hedge round"
+mahvet:mahvet V-TV-DIR-AR  ; ! "ruin"
+naklet:naklet V-TV-DIR-AR  ; ! "recount, transport"
+öğren:öğren V-TV-DIR-IR  ; ! "learn"
+öğren:öğren V-TV-DIR-IR  ; ! "learn"
+öğret:öğret V-TV-DIR-IR  ; ! "teach"
+öğüt:öğüt V-TV-DIR-IR  ; ! "digest"
+öp:öp V-TV-DIR-AR  ; ! "kiss"
+ör:ör V-TV-DIR-IR  ; ! "knit"
+ört:ört V-TV-DIR-AR  ; ! "cover"
+ov:ov V-TV-DIR-AR  ; ! "rub"
+öv:öv V-TV-DIR-AR  ; ! "praise"
+öv:öv V-TV-DIR-AR  ; ! "praise"
+oy:oy V-TV-DIR-AR  ; ! "carve"
+özen:özen V-TV-DIR-IR  ; ! "imitate someone"
+paylaş:paylaş V-TV-DIR-IR  ; ! "share"
+reddet:reddet%{v%} V-TV-DIR-AR  ; ! "refuse"
+reddet:reddet%{v%} V-TV-DIR-AR  ; ! "refuse"
+sal:sal V-TV-DIR-AR  ; ! "release"
+salıver:salıver V-TV-DIR-IR  ; ! "demobilise"
+sar:sar V-TV-DIR-AR  ; ! "cover"
+sat:sat V-TV-DIR-AR  ; ! "sell"
+sav:sav V-TV-DIR-AR  ; ! "ward off"
+savun:savun V-TV-DIR-IR  ; ! "defend"
+say:say V-TV-DIR-AR  ; ! "count"
+ser:ser V-TV-DIR-AR  ; ! "spread over"
+serp:serp V-TV-DIR-AR  ; ! "sprinkle"
+serp:serp V-TV-DIR-AR  ; ! "sprinkle"
+sev:sev V-TV-DIR-AR  ; ! "love"
+seyret:seyret%{v%} V-TV-DIR-AR  ; ! "watch"
+sez:sez V-TV-DIR-AR  ; ! "perceive"
+sık:sık V-TV-DIR-AR  ; ! "squeeze"
+sil:sil V-TV-DIR-AR  ; ! "erase, delete"
+silk:silk V-TV-DIR-AR  ; ! "shake something out"
+sok:sok V-TV-DIR-AR  ; ! "thrust"
+sök:sök V-TV-DIR-AR  ; ! "rip"
+sor:sor V-TV-DIR-AR  ; ! "ask"
+soy:soy V-TV-DIR-AR  ; ! "rob ,  strip"
+sun:sun V-TV-DIR-AR  ; ! "compere"
+süpür:süpür V-TV-DIR-IR  ; ! "sweep"
+sür:sür V-TV-DIR-AR  ; ! "drive"
+süz:süz V-TV-DIR-AR  ; ! "filter"
+tak:tak V-TV-DIR-AR  ; ! "affix"
+tart:tart V-TV-DIR-AR  ; ! "weigh"
+tartış:tartış V-TV-DIR-IR  ; ! "dispute"
+tartış:tartış V-TV-DIR-IR  ; ! "dispute"
+tat:tat V-TV-DIR-AR  ; ! "taste"
+temsil% et:temsil% et%{v%} V-TV-DIR-AR  ; ! "symbolise"
+temsil% et:temsil% et%{v%} V-TV-DIR-AR  ; ! "symbolise"
+terket:terket V-TV-DIR-AR  ; ! "leave"
+terket:terket V-TV-DIR-AR  ; ! "leave"
+terk% et:terk% et%{v%} V-TV-DIR-AR  ; ! "leave someone"
+tüket:tüket V-TV-DIR-IR  ; ! "consume"
+tut:tut V-TV-DIR-AR  ; ! "keep"
+tut:tut V-TV-DIR-AR  ; ! "keep"
+um:um V-TV-DIR-AR  ; ! "expect"
+umut% et:umut% et%{v%} V-TV-DIR-AR  ; ! "hope"
+unut:unut V-TV-DIR-IR  ; ! "unutmak"
+üret:üret V-TV-DIR-IR  ; ! "produce"
+üstlen:üstlen V-TV-DIR-IR  ; ! "undertake"
+uyar:uyar V-TV-DIR-IR  ; ! "warn"
+üz:üz V-TV-DIR-AR  ; ! "upset"
+varsay:varsay V-TV-DIR-AR  ; ! "assume"
+ver:ver V-TV-DIR-IR  ; ! "give up"
+ver:ver V-TV-DIR-IR  ; ! "give up"
+vur:vur V-TV-DIR-IR  ; ! "hit"
+vur:vur V-TV-DIR-IR  ; ! "hit"
+yak:yak V-TV-DIR-AR  ; ! "burn"
+yalıt:yalıt V-TV-DIR-IR  ; ! "isolate"
+yar:yar V-TV-DIR-AR  ; ! "split"
+yay:yay V-TV-DIR-AR  ; ! "spread"
+yaz:yaz V-TV-DIR-AR  ; ! "write"
+ye:y%{e%} V-TV-DIR-IR  ; ! "ear"
+yen:yen V-TV-DIR-IR  ; ! "win"
+yığ:yığ V-TV-DIR-AR  ; ! "accumulate"
+yığ:yığ V-TV-DIR-AR  ; ! "accumulate"
+yık:yık V-TV-DIR-AR  ; ! "demolish"
+yıprat:yıprat V-TV-DIR-IR  ; ! "wear out"
+yırt:yırt V-TV-DIR-AR  ; ! "tear"
+yırt:yırt V-TV-DIR-AR  ; ! "tear"
+yoğur:yoğur V-TV-DIR-IR  ; ! "knead"
+yol:yol V-TV-DIR-AR  ; ! "strip bare"
+yönet:yönet V-TV-DIR-IR  ; ! "manage"
+yönet:yönet V-TV-DIR-IR  ; ! "manage"
+yont:yont V-TV-DIR-IR  ; ! "sculp"
+yor:yor V-TV-DIR-AR  ; ! "ascribe"
+yut:yut V-TV-DIR-AR  ; ! "swallow"
+affet:affet V-TV-DIR-AR ; ! "forgive"
+ak:ak V-TV-DIR-AR ; ! "flow, leak"
+ak:ak V-TV-DIR-AR ; ! "flow, leak"
+aktar:aktar V-TV-DIR-IR ; ! "transfer"
+aktar:aktar V-TV-DIR-IR ; ! "transfer"
+al:al V-TV-DIR-IR ; ! "take, buy"
+al:al V-TV-DIR-IR ; ! "take, buy"
+al:al V-TV-DIR-IR ; ! "take, buy"
+alevlen:alevlen V-TV-DIR-IR ; ! "catch on fire"
+alıkoy:alıkoy V-TV-DIR-AR ; ! "detain, stop"
+alış:alış V-TV-DIR-IR ; ! "familiarise with"
+an:an V-TV-DIR-AR ; ! "make mention of, remind"
+as:as V-TV-DIR-AR ; ! "hang, suspend"
+aş:aş V-TV-DIR-AR ; ! "overcome??"
+aş:aş V-TV-DIR-AR ; ! "overcome??"
+aş:aş V-TV-DIR-AR ; ! "overcome??"
+at:at V-TV-DIR-AR ; ! "throw"
+at:at V-TV-DIR-AR ; ! "throw"
+aydınlat:aydınlat V-TV-DIR-IR ; ! "enlighten"
+bahset:bahset V-TV-DIR-AR ; ! "talk about"
+bahset:bahset V-TV-DIR-AR ; ! "talk about"
+bak:bak V-TV-DIR-AR ; ! "look at"
+ban:ban V-TV-DIR-AR ; ! "dip into"
+bas:bas V-TV-DIR-AR ; ! "press"
+bas:bas V-TV-DIR-AR ; ! "press"
+başar:başar V-TV-DIR-IR ; ! "success"
+başar:başar V-TV-DIR-IR ; ! "success"
+başvur:başvur V-TV-DIR-IR ; ! "apply"
+başvur:başvur V-TV-DIR-IR ; ! "apply"
+bat:bat V-TV-DIR-AR ; ! "sink, go bankrupt"
+bat:bat V-TV-DIR-AR ; ! "sink, go bankrupt"
+becer:becer V-TV-DIR-IR ; ! "accomplish"
+beğen:beğen V-TV-DIR-IR ; ! "like, advire"
+beğen:beğen V-TV-DIR-IR ; ! "like, advire"
+belir:belir V-TV-T-IR ; ! "appear"
+belir:belir V-TV-T-IR ; ! "appear"
+belirt:belirt V-TV-DIR-IR ; ! "make appear"﻿
+artır:artır V-TV-T-IR ; ! "help"
+bil:bil V-TV-DIR-IR ; ! "know"
+bildir:bildir V-TV-DIR-IR ; ! "state, notify"
+bin:bin V-TV-DIR-AR ; ! "mount, ride"
+bin:bin V-TV-DIR-AR ; ! "mount, ride"
+bırak:bırak V-TV-DIR-IR ; ! "leave, give up"
+birleş:birleş V-TV-DIR-IR ; ! "unite"
+birleş:birleş V-TV-DIR-IR ; ! "unite"
+boğ:boğ V-TV-DIR-AR ; ! "choke"
+böl:böl V-TV-DIR-AR ; ! "divide"
+boşal:boşal V-TV-DIR-IR ; ! "be emptied"
+boz:boz V-TV-DIR-AR ; ! "break down"
+bük:bük V-TV-DIR-AR ; ! "bend"
+bük:bük V-TV-DIR-AR ; ! "bend"
+bul:bul V-TV-DIR-IR ; ! "find"
+bulan:bulan V-TV-DIR-IR ; ! "cloud"
+büz:büz V-TV-DIR-AR ; ! "constrict"
+cezbet:cezbet V-TV-DIR-AR ; ! "attract"
+cezbet:cezbet V-TV-DIR-AR ; ! "attract"
+dağıt:dağıt V-TV-DIR-IR ; ! "distribute"
+dal:dal V-TV-DIR-AR ; ! "dive"
+damıt:damıt V-TV-DIR-IR ; ! "distill"
+değ:değ V-TV-DIR-AR ; ! "touch"
+değ:değ V-TV-DIR-AR ; ! "touch"
+değin:değin V-TV-DIR-IR ; ! "mention"
+değin:değin V-TV-DIR-IR ; ! "mention"
+değiş:değiş V-TV-DIR-IR ; ! "change"
+değiş:değiş V-TV-DIR-IR ; ! "change"
+del:del V-TV-DIR-AR ; ! "drill"
+devir:devir V-TV-DIR-IR ; ! "cut down"
+devret:devret V-TV-DIR-AR ; ! "assign"
+dik:dik V-TV-DIR-AR ; ! "sew"
+diz:diz V-TV-DIR-AR ; ! "align"
+diz:diz V-TV-DIR-AR ; ! "align"
+dök:dök V-TV-DIR-AR ; ! "pour"
+dök:dök V-TV-DIR-AR ; ! "pour"
+dolaş:dolaş V-TV-DIR-IR ; ! "walk around"
+dolaş:dolaş V-TV-DIR-IR ; ! "walk around"
+döv:döv V-TV-DIR-AR ; ! "hit"
+döv:döv V-TV-DIR-AR ; ! "hit"
+doyur:doyur V-TV-DIR-IR ; ! "feed"
+düşün:düşün V-TV-DIR-IR ; ! "think"
+duy:duy V-TV-DIR-AR ; ! "hear"
+duy:duy V-TV-DIR-AR ; ! "hear"
+duyur:duyur V-TV-DIR-IR ; ! "announce"
+düz:düz V-TV-DIR-AR ; ! "prepare"
+edin:edin V-TV-DIR-IR ; ! "obtain"
+edin:edin V-TV-DIR-IR ; ! "obtain"
+eğit:eğit V-TV-DIR-IR ; ! "teach"
+ek:ek V-TV-DIR-AR ; ! "plant"
+eleştir:eleştir V-TV-DIR-IR ; ! "cricitize"
+em:em V-TV-DIR-AR ; ! "lick"
+emret:emret V-TV-DIR-AR ; ! "command"
+emret:emret V-TV-DIR-AR ; ! "command"
+endişelen:endişelen V-TV-DIR-IR ; ! "worry about"
+endişelen:endişelen V-TV-DIR-IR ; ! "worry about"
+es:es V-TV-DIR-AR ; ! "blow"
+eş:eş V-TV-DIR-AR ; ! "dig up"
+ez:ez V-TV-DIR-AR ; ! "crush"
+ez:ez V-TV-DIR-AR ; ! "crush"
+geliş:geliş V-TV-DIR-IR ; ! "develop"
+geliş:geliş V-TV-DIR-IR ; ! "develop"
+ger:ger V-TV-DIR-AR ; ! "stretch"
+getir:getir V-TV-DIR-IR ; ! "bring"
+gider:gider V-TV-DIR-IR ; ! "supply"
+giy:giy V-TV-DIR-AR ; ! "wear"
+giy:giy V-TV-DIR-AR ; ! "wear"
+göm:göm V-TV-DIR-AR ; ! "bury"
+gönder:gönder V-TV-DIR-IR ; ! "send"
+gör:gör V-TV-DIR-IR ; ! "see"
+göster:göster V-TV-DIR-IR ; ! "show"
+götür:götür V-TV-DIR-IR ; ! "carry"
+gücen:gücen V-TV-DIR-IR ; ! "be hurt"
+gücen:gücen V-TV-DIR-IR ; ! "be hurt"
+güt:güt V-TV-DIR-AR ; ! "shepherd"
+güven:güven V-TV-DIR-IR ; ! "trust"
+hapset:hapset V-TV-DIR-AR ; ! "put in prison"
+haşla:haşla V-TV-DIR-IR ; ! "boil"
+havalan:havalan V-TV-DIR-IR ; ! "take off"
+havalan:havalan V-TV-DIR-IR ; ! "take off"
+haykır:haykır V-TV-DIR-IR ; ! "yell"
+haykır:haykır V-TV-DIR-IR ; ! "yell"
+hisset:hisset V-TV-DIR-AR ; ! "feel"
+hükmet:hükmet V-TV-DIR-AR ; ! "rule over"
+iade% et:iade% et%{v%} V-TV-DIR-AR ; ! "give back"
+iade% et:iade% et%{v%} V-TV-DIR-AR ; ! "give back"
+iade% et:iade% et%{v%} V-TV-DIR-AR ; ! "give back"
+iç:iç V-TV-DIR-AR ; ! "drink"
+ilet:ilet V-TV-DIR-IR ; ! "send"
+in:in V-TV-DIR-AR ; ! "go down"
+incin:incin V-TV-DIR-IR ; ! "hurt"
+incit:incit V-TV-DIR-IR ; ! "hurt"
+incit:incit V-TV-DIR-IR ; ! "hurt"
+ısır:ısır V-TV-DIR-IR ; ! "bite"
+işit:işit V-TV-DIR-IR ; ! "hear"
+ısıt:ısıt V-TV-DIR-IR ; ! "heat"
+it:it V-TV-DIR-AR ; ! "push"
+kabullen:kabullen V-TV-DIR-IR ; ! "confess"
+kapış:kapış V-TV-DIR-IR ; ! "compete"
+kapsa:kapsa V-TV-DIR-IR ; ! "include"
+kar:kar V-TV-DIR-AR ; ! "mix"
+kas:kas V-TV-DIR-AR ; ! "strain"
+kat:kat V-TV-DIR-AR ; ! "add"
+kavur:kavur V-TV-DIR-IR ; ! "roast"
+kaybet:kaybet V-TV-DIR-AR ; ! "lose"
+kaybet:kaybet V-TV-DIR-AR ; ! "lose"
+kaydet:kaydet%{v%} V-TV-DIR-AR ; ! "save"
+kaz:kaz V-TV-DIR-AR ; ! "dig"
+kazan:kazan V-TV-DIR-IR ; ! "win"
+iç:iç V-TV-IR-AR ; ! "drink"
+aş:aş V-TV-IR-AR ; ! "go beyond / exaggerate"
+aş:aş V-TV-IR-AR ; ! "go beyond / exaggerate"
+aş:aş V-TV-IR-AR ; ! "go beyond / exaggerate"
+şaş:şaş V-TV-IR-AR ; ! "wonder"
+oku:oku V-TV-T-IR ; ! "read"
+oku:oku V-TV-T-IR ; ! "read"
+söyle:söyle V-TV-T-IR ; ! "say"
+söyle:söyle V-TV-T-IR ; ! "say"
+bekle:bekle V-TV-T-IR ; ! "wait"
+düzenle:düzenle V-TV-T-IR ; ! "straight"
+kaldır:kaldır V-TV-T-IR ; ! "raise"
+aktar:aktar V-TV-T-IR ; ! "transfer"
+aktar:aktar V-TV-T-IR ; ! "transfer"
+alazla:alazla V-TV-T-IR ; ! "scorch"
+algıla:algıla V-TV-T-IR ; ! "perceive"
+algıla:algıla V-TV-T-IR ; ! "perceive"
+alıştır:alıştır V-TV-T-IR ; ! "adjust"
+anla:anla V-TV-T-IR ; ! "understand"
+anımsa:anımsa V-TV-T-IR ; ! "remember"
+araştır:araştır V-TV-T-IR ; ! "seek"
+ardıl:ardıl V-TV-T-IR ; ! "pester"
+atıl:atıl V-TV-T-IR ; ! "rush"
+atıl:atıl V-TV-T-IR ; ! "rush"
+atıştır:atıştır V-TV-T-IR ; ! "stoke"
+ayarla:ayarla V-TV-T-IR ; ! "adjust"
+ayrıl:ayrıl V-TV-T-IR ; ! "leave"
+ayrıl:ayrıl V-TV-T-IR ; ! "leave"
+ayır:ayır V-TV-T-IR ; ! "separate"
+aşır:aşır V-TV-T-IR ; ! "steal"
+besle:besle V-TV-T-IR ; ! "feed"
+demle:demle V-TV-T-IR ; ! "brew"
+dene:dene V-TV-T-IR ; ! "try"
+dene:dene V-TV-T-IR ; ! "try"
+denetle:denetle V-TV-T-IR ; ! "check"
+dengele:dengele V-TV-T-IR ; ! "balance"
+depola:depola V-TV-T-IR ; ! "deposit"
+depola:depola V-TV-T-IR ; ! "deposit"
+derle:derle V-TV-T-IR ; ! "compile"
+destekle:destekle V-TV-T-IR ; ! "support"
+devir:devir V-TV-T-IR ; ! "upset"
+devral:devral V-TV-T-IR ; ! "take over"
+devral:devral V-TV-T-IR ; ! "take over"
+deşele:deşele V-TV-T-IR ; ! "research"
+dile:dile V-TV-T-IR ; ! "wish"
+dile:dile V-TV-T-IR ; ! "wish"
+dizginle:dizginle V-TV-T-IR ; ! "restrain"
+dişle:dişle V-TV-T-IR ; ! "dent"
+doku:doku V-TV-T-IR ; ! "knit"
+dola:dola V-TV-T-IR ; ! "coil up"
+dolandır:dolandır V-TV-T-IR ; ! "swindle"
+dosyala:dosyala V-TV-T-IR ; ! "file"
+doyur:doyur V-TV-T-IR ; ! "saturate"
+doğra:doğra V-TV-T-IR ; ! "chop"
+doğrula:doğrula V-TV-T-IR ; ! "confirm"
+doğrula:doğrula V-TV-T-IR ; ! "confirm"
+doğur:doğur V-TV-T-IR ; ! "cause" / "have a baby"
+durula:durula V-TV-T-IR ; ! "hesitate"
+duyur:duyur V-TV-T-IR ; ! "announce"
+dölle:dölle V-TV-T-IR ; ! "inseminate"
+döşe:döşe V-TV-T-IR ; ! "furnish"
+döşe:döşe V-TV-T-IR ; ! "furnish"
+düzenle:düzenle V-TV-T-IR ; ! "order" "sort"
+düzle:düzle V-TV-T-IR ; ! "even"
+düğmele:düğmele V-TV-T-IR ; ! "button up"
+düğümle:düğümle V-TV-T-IR ; ! "loop"
+dışla:dışla V-TV-T-IR ; ! "to ostracize"
+dışla:dışla V-TV-T-IR ; ! "to ostracize"
+dışla:dışla V-TV-T-IR ; ! "to ostracize"
+kemir:kemir V-TV-T-IR  ; ! "nibble"
+kenetle:kenetle V-TV-T-IR  ; ! "clamp"
+kilitle:kilitle V-TV-T-IR  ; ! "lock"
+kına:kına V-TV-T-IR  ; ! "censure"
+kına:kına V-TV-T-IR  ; ! "censure"
+kirala:kirala V-TV-T-IR  ; ! "rent, hire"
+kısıtla:kısıtla V-TV-T-IR  ; ! "restrict"
+kısıtla:kısıtla V-TV-T-IR  ; ! "restrict"
+kıyasla:kıyasla V-TV-T-IR  ; ! "compare"
+kokla:kokla V-TV-T-IR  ; ! "nose, smell"
+kopar:kopar V-TV-T-IR  ; ! "pull apart"
+kopar:kopar V-TV-T-IR  ; ! "pull apart"
+koru:koru V-TV-T-IR  ; ! "save, protect"
+koru:koru V-TV-T-IR  ; ! "save, protect"
+körükle:körükle V-TV-T-IR  ; ! "rush up"
+köstekle:köstekle V-TV-T-IR  ; ! "clog"
+kötüle:kötüle V-TV-T-IR  ; ! "revile"
+kovala:kovala V-TV-T-IR  ; ! "chase"
+kovuştur:kovuştur V-TV-T-IR  ; ! "prosecute"
+kovuştur:kovuştur V-TV-T-IR  ; ! "prosecute"
+kucakla:kucakla V-TV-T-IR  ; ! "embrace"
+kümele:kümele V-TV-T-IR  ; ! "heap up"
+kümele:kümele V-TV-T-IR  ; ! "heap up"
+kundakla:kundakla V-TV-T-IR  ; ! "swaddle"
+kurcala:kurcala V-TV-T-IR  ; ! "rake up"
+kurtar:kurtar V-TV-T-IR  ; ! "rescue"
+kurula:kurula V-TV-T-IR  ; ! "dry something"
+kutla:kutla V-TV-T-IR  ; ! "celebrate"
+kutsa:kutsa V-TV-T-IR  ; ! "bless"
+lekele:lekele V-TV-T-IR  ; ! "stain"
+mayala:mayala V-TV-T-IR  ; ! "ferment"
+mühürle:mühürle V-TV-T-IR  ; ! "seal"
+müjdele:müjdele V-TV-T-IR  ; ! "harbinger"
+nitele:nitele V-TV-T-IR  ; ! "describe"
+nitelendir:nitelendir V-TV-T-IR  ; ! "qualify"
+nitelendir:nitelendir V-TV-T-IR  ; ! "qualify"
+odakla:odakla V-TV-T-IR  ; ! "focus"
+odakla:odakla V-TV-T-IR  ; ! "focus"
+öde:öde V-TV-T-IR  ; ! "pay"
+oku:oku V-TV-T-IR  ; ! "read"
+oku:oku V-TV-T-IR  ; ! "read"
+ona:ona V-TV-T-IR  ; ! "assent"
+ona:ona V-TV-T-IR  ; ! "assent"
+onar:onar V-TV-T-IR  ; ! "repair"
+onayla:onayla V-TV-T-IR  ; ! "confirm"
+onayla:onayla V-TV-T-IR  ; ! "confirm"
+önemse:önemse V-TV-T-IR  ; ! "care"
+öner:öner V-TV-T-IR  ; ! "offer"
+önle:önle V-TV-T-IR  ; ! "prevent"
+önle:önle V-TV-T-IR  ; ! "prevent"
+örgütle:örgütle V-TV-T-IR  ; ! "organise"
+örgütle:örgütle V-TV-T-IR  ; ! "organise"
+örnekle:örnekle V-TV-T-IR  ; ! "ensample"
+ortala:ortala V-TV-T-IR  ; ! "center"
+ovala:ovala V-TV-T-IR  ; ! "rub"
+oyla:oyla V-TV-T-IR  ; ! "vote"
+oyna:oyna V-TV-T-IR  ; ! "play"
+oyna:oyna V-TV-T-IR  ; ! "play"
+özetle:özetle V-TV-T-IR  ; ! "summary"
+özle:özle V-TV-T-IR  ; ! "miss"
+özle:özle V-TV-T-IR  ; ! "miss"
+parala:parala V-TV-T-IR  ; ! "rip up"
+payla:payla V-TV-T-IR  ; ! "rag"
+payla:payla V-TV-T-IR  ; ! "rag"
+planla:planla V-TV-T-IR  ; ! "plan"
+pohpohla:pohpohla V-TV-T-IR  ; ! "palaver"
+pompala:pompala V-TV-T-IR  ; ! "pomp"
+rendele:rendele V-TV-T-IR  ; ! "plane"
+resimle:resimle V-TV-T-IR  ; ! "illustrate"
+sağla:sağla V-TV-T-IR  ; ! "provide"
+sakatla:sakatla V-TV-T-IR  ; ! "injure"
+sakla:sakla V-TV-T-IR  ; ! "hide"
+salgıla:salgıla V-TV-T-IR  ; ! "secreter"
+salla:salla V-TV-T-IR  ; ! "jounce"
+salla:salla V-TV-T-IR  ; ! "jounce"
+sapla:sapla V-TV-T-IR  ; ! "stick"
+şartla:şartla V-TV-T-IR  ; ! "condition"
+savla:savla V-TV-T-IR  ; ! "assert"
+savur:savur V-TV-T-IR  ; ! "scatter"
+savur:savur V-TV-T-IR  ; ! "scatter"
+selamla:selamla V-TV-T-IR  ; ! "salute"
+sergile:sergile V-TV-T-IR  ; ! "exhibit"
+sergile:sergile V-TV-T-IR  ; ! "exhibit"
+serpiştir:serpiştir V-TV-T-IR  ; ! "sprinkle"
+sigortala:sigortala V-TV-T-IR  ; ! "insure"
+silkele:silkele V-TV-T-IR  ; ! "shake something out"
+simgele:simgele V-TV-T-IR  ; ! "symbolise"
+sına:sına V-TV-T-IR  ; ! "put to the proof"
+sınırla:sınırla V-TV-T-IR  ; ! "limit"
+sınırla:sınırla V-TV-T-IR  ; ! "limit"
+sırala:sırala V-TV-T-IR  ; ! "array"
+sırala:sırala V-TV-T-IR  ; ! "array"
+sıva:sıva V-TV-T-IR  ; ! "parget"
+sıyır:sıyır V-TV-T-IR  ; ! "abrade"
+soğur:soğur V-TV-T-IR  ; ! "absorb"
+sömür:sömür V-TV-T-IR  ; ! "exploit"
+sorgula:sorgula V-TV-T-IR  ; ! "interrogate"
+sorgula:sorgula V-TV-T-IR  ; ! "interrogate"
+soruştur:soruştur V-TV-T-IR  ; ! "investigate"
+söyle:söyle V-TV-T-IR  ; ! "tell"
+söyle:söyle V-TV-T-IR  ; ! "tell"
+sula:sula V-TV-T-IR  ; ! "water"
+sürü:sürü V-TV-T-IR  ; ! "drag along"
+sürükle:sürükle V-TV-T-IR  ; ! "drag along"
+süsle:süsle V-TV-T-IR  ; ! "decorate"
+tamamla:tamamla V-TV-T-IR  ; ! "complete"
+tanı:tanı V-TV-T-IR  ; ! "recognise"
+tanımla:tanımla V-TV-T-IR  ; ! "describe"
+tanımla:tanımla V-TV-T-IR  ; ! "describe"
+tara:tara V-TV-T-IR  ; ! "comb"
+tasarla:tasarla V-TV-T-IR  ; ! "design"
+taşı:taşı V-TV-T-IR  ; ! "carry"
+tazele:tazele V-TV-T-IR  ; ! "freshen up"
+tekmele:tekmele V-TV-T-IR  ; ! "kick"
+tekmele:tekmele V-TV-T-IR  ; ! "kick"
+tekrarla:tekrarla V-TV-T-IR  ; ! "repeat"
+tekrarla:tekrarla V-TV-T-IR  ; ! "repeat"
+temizle:temizle V-TV-T-IR  ; ! "clean"
+tıka:tıka V-TV-T-IR  ; ! "stuff up"
+tıkla:tıkla V-TV-T-IR  ; ! "click"
+tırpanla:tırpanla V-TV-T-IR  ; ! "scythe"
+tokatla:tokatla V-TV-T-IR  ; ! "slap"
+toparla:toparla V-TV-T-IR  ; ! "rake together"
+topla:topla V-TV-T-IR  ; ! "pick up, total"
+topla:topla V-TV-T-IR  ; ! "pick up, total"
+tütsüle:tütsüle V-TV-T-IR  ; ! "kipper"
+tutukla:tutukla V-TV-T-IR  ; ! "arrest"
+tuzla:tuzla V-TV-T-IR  ; ! "salt down"
+uğurla:uğurla V-TV-T-IR  ; ! "see off"
+üstele:üstele V-TV-T-IR  ; ! "persist"
+uyarla:uyarla V-TV-T-IR  ; ! "adjust, adapt"
+vurgula:vurgula V-TV-T-IR  ; ! "emphasise"
+vurgula:vurgula V-TV-T-IR  ; ! "emphasise"
+yağla:yağla V-TV-T-IR  ; ! "anoint"
+yağmala:yağmala V-TV-T-IR  ; ! "plunder"
+yakala:yakala V-TV-T-IR  ; ! "catch"
+yala:yala V-TV-T-IR  ; ! "lick"
+yalanla:yalanla V-TV-T-IR  ; ! "contradict"
+yalpala:yalpala V-TV-T-IR  ; ! "stagger"
+yalpala:yalpala V-TV-T-IR  ; ! "stagger"
+yanıtla:yanıtla V-TV-T-IR  ; ! "answer"
+yarala:yarala V-TV-T-IR  ; ! "injure"
+yargıla:yargıla V-TV-T-IR  ; ! "judge"
+yaşa:yaşa V-TV-T-IR  ; ! "live"
+yaşa:yaşa V-TV-T-IR  ; ! "live"
+yasakla:yasakla V-TV-T-IR  ; ! "forbid"
+yasakla:yasakla V-TV-T-IR  ; ! "forbid"
+yasla:yasla V-TV-T-IR  ; ! "prop"
+yayımla:yayımla V-TV-T-IR  ; ! "publish"
+yayımla:yayımla V-TV-T-IR  ; ! "publish"
+yeğle:yeğle V-TV-T-IR  ; ! "prefer"
+yenile:yenile V-TV-T-IR  ; ! "renew"
+yıka:yıka V-TV-T-IR  ; ! "wash"
+yinele:yinele V-TV-T-IR  ; ! "renew"
+yinele:yinele V-TV-T-IR  ; ! "renew"
+yokla:yokla V-TV-T-IR  ; ! "fumble for"
+yolla:yolla V-TV-T-IR  ; ! "send"
+yorumla:yorumla V-TV-T-IR  ; ! "comment"
+yükle:yükle V-TV-T-IR  ; ! "load"
+yumrukla:yumrukla V-TV-T-IR  ; ! "pound, punch, pommel"
+yuvala:yuvala V-TV-T-IR  ; ! "nest"
+yuvarla:yuvarla V-TV-T-IR  ; ! "roll"
+zincirle:zincirle V-TV-T-IR  ; ! "enchain"
+zorla:zorla V-TV-T-IR  ; ! "compel"
+ağrı:ağrı V-TV-T-IR ; ! "ache"
+aksa:aksa V-TV-T-IR ; ! "limp"
+algıla:algıla V-TV-T-IR ; ! "comprehend"
+algıla:algıla V-TV-T-IR ; ! "comprehend"
+anımsa:anımsa V-TV-T-IR ; ! "recall"
+anla:anla V-TV-T-IR ; ! "understand"
+ara:ara V-TV-T-IR ; ! "seek, search, look for"
+ara:ara V-TV-T-IR ; ! "seek, search, look for"
+ara:ara V-TV-T-IR ; ! "seek, search, look for"
+ayarla:ayarla V-TV-T-IR ; ! "adjust, set"
+ayıpla:ayıpla V-TV-T-IR ; ! "blame"
+ayıpla:ayıpla V-TV-T-IR ; ! "blame"
+ayır:ayır V-TV-T-IR ; ! "seperate"
+başla:başla V-TV-T-IR ; ! "start"
+başla:başla V-TV-T-IR ; ! "start"
+bekle:bekle V-TV-T-IR ; ! "wait"
+belirle:belirle V-TV-T-IR ; ! "indicate"
+belirle:belirle V-TV-T-IR ; ! "indicate"
+benimse:benimse V-TV-T-IR ; ! "embark on"
+benimse:benimse V-TV-T-IR ; ! "embark on"
+benze:benze V-TV-T-IR ; ! "resemble"
+benze:benze V-TV-T-IR ; ! "resemble"
+besle:besle V-TV-T-IR ; ! "feed"
+beze:beze V-TV-T-IR ; ! "decorate"
+bombala:bombala V-TV-T-IR ; ! "to bomb"
+boya:boya V-TV-T-IR ; ! "to paint"
+buda:buda V-TV-T-IR ; ! "prune"
+bula:bula V-TV-T-IR ; ! "cover"
+büyüle:büyüle V-TV-T-IR ; ! "ensorcel, bewitch"
+cevapla:cevapla V-TV-T-IR ; ! "answer"
+cevap% ver:cevap% ver V-TV-T-IR ; ! "answer" ! Use/MT ! FIXME: Check
+cilala:cilala V-TV-T-IR ; ! "polish"
+damgala:damgala V-TV-T-IR ; ! "imprint"
+damgala:damgala V-TV-T-IR ; ! "imprint"
+de:d%{e%} V-TV-T-IR ; ! "say"
+de:d%{e%} V-TV-T-IR ; ! "say"
+dene:dene V-TV-T-IR ; ! "try"
+dene:dene V-TV-T-IR ; ! "try"
+denetle:denetle V-TV-T-IR ; ! "check"
+dengele:dengele V-TV-T-IR ; ! "equalise"
+depola:depola V-TV-T-IR ; ! "store"
+depola:depola V-TV-T-IR ; ! "store"
+derle:derle V-TV-T-IR ; ! "compile"
+devral:devral V-TV-T-IR ; ! "take over"
+devral:devral V-TV-T-IR ; ! "take over"
+devril:devril V-TV-T-IR ; ! "overthrown"
+devril:devril V-TV-T-IR ; ! "overthrown"
+dile:dile V-TV-T-IR ; ! "wish"
+dile:dile V-TV-T-IR ; ! "wish"
+dinle:dinl%{e%} V-TV-T-IR ; ! "listen"
+dişle:dişle V-TV-T-IR ; ! "nibble"
+dizginle:dizginle V-TV-T-IR ; ! "bridle"
+doğra:doğra V-TV-T-IR ; ! "chop up"
+doğrula:doğrula V-TV-T-IR ; ! "confirm"
+doğrula:doğrula V-TV-T-IR ; ! "confirm"
+doku:doku V-TV-T-IR ; ! "knit"
+dola:dola V-TV-T-IR ; ! "whirl"
+dölle:dölle V-TV-T-IR ; ! "fertilize"
+dosyala:dosyala V-TV-T-IR ; ! "file"
+düğümle:düğümle V-TV-T-IR ; ! "knot"
+durakla:durakla V-TV-T-IR ; ! "pause"
+düzenle:düzenle V-TV-T-IR ; ! "arrange"
+ekle:ekle V-TV-T-IR ; ! "add"
+ekle:ekle V-TV-T-IR ; ! "add"
+ele:ele V-TV-T-IR ; ! "eliminate"
+ele:ele V-TV-T-IR ; ! "eliminate"
+engelle:engelle V-TV-T-IR ; ! "block"
+eri:eri V-TV-T-IR ; ! "melt down"
+ertele:ertele V-TV-T-IR ; ! "postpone"
+esirge:esirge V-TV-T-IR ; ! "be sparing"
+esirge:esirge V-TV-T-IR ; ! "be sparing"
+eşitle:eşitle V-TV-T-IR ; ! "make equal"
+etkile:etkile V-TV-T-IR ; ! "impress"
+etkile:etkile V-TV-T-IR ; ! "impress"
+eyle:eyle V-TV-T-IR ; ! "make"
+frenle:frenle V-TV-T-IR ; ! "brake"
+gammazla:gammazla V-TV-T-IR ; ! "inform agains"
+genişle:genişle V-TV-T-IR ; ! "expand"
+genişle:genişle V-TV-T-IR ; ! "expand"
+gevele:gevele V-TV-T-IR ; ! "mumble"
+gizle:gizle V-TV-T-IR ; ! "hide"
+gizle:gizle V-TV-T-IR ; ! "hide"
+gölgele:gölgele V-TV-T-IR ; ! "shadow"
+gözetle:gözetle V-TV-T-IR ; ! "observe"
+gözle:gözle V-TV-T-IR ; ! "watch"
+gözlemle:gözlemle V-TV-T-IR ; ! "observe"
+harca:harca V-TV-T-IR ; ! "spend"
+hatırla:hatırla V-TV-T-IR ; ! "remember"
+hazırla:hazırla V-TV-T-IR ; ! "prepare"
+hedefle:hedefle V-TV-T-IR ; ! "aim"
+hedefle:hedefle V-TV-T-IR ; ! "aim"
+hesapla:hesapla V-TV-T-IR ; ! "work out"
+hesapla:hesapla V-TV-T-IR ; ! "work out"
+hırpala:hırpala V-TV-T-IR ; ! "beat"
+imzala:imzala V-TV-T-IR ; ! "sign"
+incele:incele V-TV-T-IR ; ! "analyse"
+indirge:indirge V-TV-T-IR ; ! "degrade"
+işaretle:işaretle V-TV-T-IR ; ! "mark"
+işle:işle V-TV-T-IR ; ! "commit"
+ısmarla:ısmarla V-TV-T-IR ; ! "treat"
+iste:İste V-TV-T-IR ; ! "want" ! Dir/LR
+iste:iste V-TV-T-IR ; ! "want"
+izle:izle V-TV-T-IR ; ! "watch"
+kalıpla:kalıpla V-TV-T-IR ; ! "block"
+kanıtla:kanıtla V-TV-T-IR ; ! "prove"
+kapa:kapa V-TV-T-IR ; ! "close"
+kapla:kapla V-TV-T-IR ; ! "cover"
+karala:karala V-TV-T-IR ; ! "scrawl"
+karışla:karışla V-TV-T-IR ; ! "span"
+karşıla:karşıla V-TV-T-IR ; ! "meet"
+katla:katla V-TV-T-IR ; ! "fold"
+kavra:kavra V-TV-T-IR ; ! "comprehend"
+kazı:kazı V-TV-T-IR ; ! "scrape"
+kazı:kazı V-TV-T-IR ; ! "scrape"
+gir:gir V-IV-DIR-AR ; ! enter"
+git:git%{v%} V-IV-DIR-AR ; ! "go"
+öl:öl V-IV-DIR-IR ; ! "die"
+de:d%{e%} V-IV-DIR-IR ; ! "say"
+de:d%{e%} V-IV-DIR-IR ; ! "say"
+ol:ol V-IV-DIR-IR ; ! "be"
+ol:ol V-IV-DIR-IR ; ! "be"
+ol:ol V-IV-DIR-IR ; ! "be"
+don:don V-IV-DIR-AR ; ! "freeze"
+eş:eş V-IV-DIR-AR ; ! "scratch"
+yak:yak V-IV-DIR-AR ; ! "fire"
+yan:yan V-IV-DIR-AR ; ! "burn, be on fire"
+kal:kal V-IV-DIR-IR ; ! "stay"
+yat:yat V-IV-DIR-AR  ; ! "lie up"
+kirlen:kirlen V-IV-DIR-IR  ; ! "be raped"
+kız:kız V-IV-DIR-AR  ; ! "be angry"
+kızış:kızış V-IV-DIR-IR  ; ! "rut"
+kokuş:kokuş V-IV-DIR-IR  ; ! "putrefy"
+kokuş:kokuş V-IV-DIR-IR  ; ! "putrefy"
+kon:kon V-IV-DIR-AR  ; ! "perch"
+konuş:konuş V-IV-DIR-IR  ; ! "talk"
+konuş:konuş V-IV-DIR-IR  ; ! "talk"
+kop:kop V-IV-DIR-AR  ; ! "shear off"
+koş:koş V-IV-DIR-AR  ; ! "run"
+küfret:küfret V-IV-DIR-AR  ; ! "revile"
+küfret:küfret V-IV-DIR-AR  ; ! "revile"
+kus:kus V-IV-DIR-AR  ; ! "vomit"
+küs:küs V-IV-DIR-AR  ; ! "become stunted"
+kuşkulan:kuşkulan V-IV-DIR-IR  ; ! "suspect"
+kuvvetlen:kuvvetlen V-IV-DIR-IR  ; ! "strengthen"
+mahvol:mahvol V-IV-DIR-IR  ; ! "be spoiled"
+neşelen:neşelen V-IV-DIR-IR  ; ! "rejoice"
+niyetlen:niyetlen V-IV-DIR-IR  ; ! "intend, plan"
+niyetlen:niyetlen V-IV-DIR-IR  ; ! "intend, plan"
+nükset:nükset V-IV-DIR-AR  ; ! "recur"
+öfkelen:öfkelen V-IV-DIR-IR  ; ! "be furious"
+öfkelen:öfkelen V-IV-DIR-IR  ; ! "be furious"
+öl:öl V-IV-DIR-IR  ; ! "die"
+oluş:oluş V-IV-DIR-IR  ; ! "come into existence"
+öt:öt V-IV-DIR-AR  ; ! "warble"
+öt:öt V-IV-DIR-AR  ; ! "warble"
+övün:övün V-IV-DIR-IR  ; ! "brag about"
+oy% al:oy% al V-IV-DIR-IR  ; ! "receive vote"
+oy% ver:oy% ver V-IV-DIR-IR  ; ! "vote"
+pekiş:pekiş V-IV-DIR-IR  ; ! "solidify"
+piş:piş V-IV-DIR-AR  ; ! "cook"
+sakın:sakın V-IV-DIR-IR  ; ! "aboid"
+san:san V-IV-DIR-AR  ; ! "suppose"
+san:san V-IV-DIR-AR  ; ! "suppose"
+sap:sap V-IV-DIR-AR  ; ! "deviate"
+sap:sap V-IV-DIR-AR  ; ! "deviate"
+şaş:şaş V-IV-DIR-AR  ; ! "amaze"
+sataş:sataş V-IV-DIR-IR  ; ! "tease"
+sataş:sataş V-IV-DIR-IR  ; ! "tease"
+savaş:savaş V-IV-DIR-IR  ; ! "battle, fight"
+savaş:savaş V-IV-DIR-IR  ; ! "battle, fight"
+sek:sek V-IV-DIR-AR  ; ! "rebound"
+şekillen:şekillen V-IV-DIR-IR  ; ! "take shape-form"
+şiddetlen:şiddetlen V-IV-DIR-IR  ; ! "become stronger"
+sığ:sığ V-IV-DIR-AR  ; ! "fit into"
+sığın:sığın V-IV-DIR-IR  ; ! "refuge"
+silahlan:silahlan V-IV-DIR-IR  ; ! "arm"
+silahsızlan:silahsızlan V-IV-DIR-IR  ; ! "be disarmed"
+silkin:silkin V-IV-DIR-IR  ; ! "shake oneself"
+sin:sin V-IV-DIR-AR  ; ! "permeate"
+sın:sın V-IV-DIR-AR  ; ! "feel frightened"
+sinirlen:sinirlen V-IV-DIR-IR  ; ! "get angry"
+şiş:şiş V-IV-DIR-AR  ; ! "swell"
+sız:sız V-IV-DIR-AR  ; ! "leak"
+sokul:sokul V-IV-DIR-IR  ; ! "sidle up to"
+sol:sol V-IV-DIR-AR  ; ! "fade"
+sol:sol V-IV-DIR-AR  ; ! "fade"
+sön:sön V-IV-DIR-AR  ; ! "be deflated"
+soyun:soyun V-IV-DIR-IR  ; ! "strip"
+soyun:soyun V-IV-DIR-IR  ; ! "strip"
+sözleş:sözleş V-IV-DIR-IR  ; ! "promise each other"
+şükret:şükret V-IV-DIR-AR  ; ! "render thanks"
+şüphelen:şüphelen V-IV-DIR-IR  ; ! "suspect"
+sürtüş:sürtüş V-IV-DIR-IR  ; ! "dispute"
+sus:sus V-IV-DIR-AR  ; ! "to be quiet"
+tanış:tanış V-IV-DIR-IR  ; ! "meet"
+tap:tap V-IV-DIR-AR  ; ! "worship"
+taş:taş V-IV-DIR-AR  ; ! "pour out"
+taş:taş V-IV-DIR-AR  ; ! "pour out"
+tatlan:tatlan V-IV-DIR-IR  ; ! "sweeten"
+tepin:tepin V-IV-DIR-IR  ; ! "kick and stamp"
+tiksin:tiksin V-IV-DIR-IR  ; ! "be disgusted"
+tırman:tırman V-IV-DIR-IR  ; ! "climb"
+tozlan:tozlan V-IV-DIR-IR  ; ! "get dusty"
+tüken:tüken V-IV-DIR-IR  ; ! "be exhausted"
+tüt:tüt V-IV-DIR-AR  ; ! "fumatory"
+tutun:tutun V-IV-DIR-IR  ; ! "adsorb"
+tutuş:tutuş V-IV-DIR-IR  ; ! "ignite"
+tutuş:tutuş V-IV-DIR-IR  ; ! "ignite"
+uğraş:uğraş V-IV-DIR-IR  ; ! "strive"
+uğraş:uğraş V-IV-DIR-IR  ; ! "strive"
+ulaş:ulaş V-IV-DIR-IR  ; ! "reach"
+ulaş:ulaş V-IV-DIR-IR  ; ! "reach"
+ürk:ürk V-IV-DIR-AR  ; ! "scare"
+ürper:ürper V-IV-DIR-IR  ; ! "shudder"
+usan:usan V-IV-DIR-IR  ; ! "be collected"
+usan:usan V-IV-DIR-IR  ; ! "be collected"
+utan:utan V-IV-DIR-IR  ; ! "shy"
+uyan:uyan V-IV-DIR-IR  ; ! "wake up"
+uyuş:uyuş V-IV-DIR-IR  ; ! "run in with"
+uzlaş:uzlaş V-IV-DIR-IR  ; ! "make a deal"
+uzlaş:uzlaş V-IV-DIR-IR  ; ! "make a deal"
+var:var V-IV-DIR-IR  ; ! "arrive"
+yağ:yağ V-IV-DIR-AR  ; ! "rain down on"
+yakış:yakış V-IV-DIR-IR  ; ! "become, befit"
+yaklaş:yaklaş V-IV-DIR-IR  ; ! "approach"
+yaklaş:yaklaş V-IV-DIR-IR  ; ! "approach"
+yan:yan V-IV-DIR-AR  ; ! "burn, take fire"
+yanaş:yanaş V-IV-DIR-IR  ; ! "lend oneself to"
+yapış:yapış V-IV-DIR-IR  ; ! "adhere"
+yapış:yapış V-IV-DIR-IR  ; ! "adhere"
+yararlan:yararlan V-IV-DIR-IR  ; ! "benefit from"
+yaşlan:yaşlan V-IV-DIR-IR  ; ! "get old"
+yatış:yatış V-IV-DIR-IR  ; ! "quiet down"
+yerin:yerin V-IV-DIR-IR  ; ! "be sorry"
+yerleş:yerleş V-IV-DIR-IR  ; ! "settle"
+yer% ver:yer% ver V-IV-DIR-IR  ; ! "give place to"
+yet:yet V-IV-DIR-AR  ; ! "suffice"
+yetiş:yetiş V-IV-DIR-IR  ; ! "catch up with"
+yetiş:yetiş V-IV-DIR-IR  ; ! "catch up with"
+yıpran:yıpran V-IV-DIR-IR  ; ! "rub off"
+yit:yit V-IV-DIR-AR  ; ! "be lost"
+yoğrul:yoğrul V-IV-DIR-IR  ; ! "be kneaded"
+yönel:yönel V-IV-DIR-IR  ; ! "tend towards"
+yücel:yücel V-IV-DIR-IR  ; ! "be exalted"
+yüksel:yüksel V-IV-DIR-IR  ; ! "rise"
+zulmet:zulmet V-IV-DIR-AR  ; ! "oppress"
+zulmet:zulmet V-IV-DIR-AR  ; ! "oppress"
+ağar:ağar V-IV-DIR-IR ; ! "get white"
+aldan:aldan V-IV-DIR-IR ; ! "be deceived, tricked"
+aldat:aldat V-IV-DIR-IR ; ! "cheat"
+anlaş:anlaş V-IV-DIR-IR ; ! "agree"
+anlaş:anlaş V-IV-DIR-IR ; ! "agree"
+art:art V-IV-DIR-AR ; ! "increase"
+aşın:aşın V-IV-DIR-IR ; ! "rub off"
+atış:atış V-IV-DIR-IR ; ! "bicker"
+atış:atış V-IV-DIR-IR ; ! "bicker"
+avun:avun V-IV-DIR-IR ; ! "solace"
+aydınlan:aydınlan V-IV-DIR-IR ; ! "light up"
+ayıl:ayıl V-IV-DIR-IR ; ! "regain consciousness"
+az:az V-IV-DIR-AR ; ! "to rut"
+az:az V-IV-DIR-AR ; ! "to rut"
+bağdaş:bağdaş V-IV-DIR-IR ; ! "agree with"
+bağır:bağır V-IV-DIR-IR ; ! "shout"
+bağır:bağır V-IV-DIR-IR ; ! "shout"
+barış:barış V-IV-DIR-IR ; ! "reunite"
+barış:barış V-IV-DIR-IR ; ! "reunite"
+bay:bay V-IV-DIR-AR ; ! "turn somebody off"
+bez:bez V-IV-DIR-AR ; ! "fed up"
+bık:bık V-IV-DIR-AR ; ! "fed up"
+bık:bık V-IV-DIR-AR ; ! "fed up"
+bileş:bileş V-IV-DIR-IR ; ! "consist"
+bilin:bilin V-IV-DIR-IR ; ! "be known"
+bit:bit V-IV-DIR-AR ; ! "finish"
+böbürlen:böbürlen V-IV-DIR-IR ; ! "brag"
+bozul:bozul V-IV-DIR-IR ; ! "be destroyed"
+bozul:bozul V-IV-DIR-IR ; ! "be destroyed"
+bulaş:bulaş V-IV-DIR-IR ; ! "be mixed up"
+bulaş:bulaş V-IV-DIR-IR ; ! "be mixed up"
+bunal:bunal V-IV-DIR-IR ; ! "get bored"
+buy:buy V-IV-DIR-IR ; ! "enjoin"
+buyur:buyur V-IV-DIR-IR ; ! "command"
+buyur:buyur V-IV-DIR-IR ; ! "command"
+canlan:canlan V-IV-DIR-IR ; ! "to ignite"
+cesaretlen:cesaretlen V-IV-DIR-IR ; ! "take courage"
+coş:coş V-IV-DIR-AR ; ! "emotionalise"
+dalgalan:dalgalan V-IV-DIR-IR ; ! "wave"
+dalgalan:dalgalan V-IV-DIR-IR ; ! "wave"
+davran:davran V-IV-DIR-IR ; ! "act, treat"
+dayan:dayan V-IV-DIR-IR ; ! "bear"
+dayan:dayan V-IV-DIR-IR ; ! "bear"
+değerlen:değerlen V-IV-DIR-IR ; ! "increase in value"
+din:din V-IV-DIR-AR ; ! "quiet down"
+diril:diril V-IV-DIR-IR ; ! "revive"
+doğ:doğ V-IV-DIR-AR ; ! "born"
+doğrul:doğrul V-IV-DIR-IR ; ! "straighten up"
+dokun:dokun V-IV-DIR-IR ; ! "touch"
+dokun:dokun V-IV-DIR-IR ; ! "touch"
+dol:dol V-IV-DIR-AR ; ! "fill up"
+dolan:dolan V-IV-DIR-IR ; ! "ramble"
+dolan:dolan V-IV-DIR-IR ; ! "ramble"
+don:don V-IV-DIR-AR ; ! "freeze"
+dön:dön V-IV-DIR-AR ; ! "turn"
+dönüş:dönüş V-IV-DIR-IR ; ! "return to"
+dönüş:dönüş V-IV-DIR-IR ; ! "return to"
+doy:doy V-IV-DIR-AR ; ! "be full up"
+dur:dur V-IV-DIR-IR ; ! "stop"
+dur:dur V-IV-DIR-IR ; ! "stop"
+dürt:dürt V-IV-DIR-AR ; ! "poke"
+düş:düş V-IV-DIR-AR ; ! "fall"
+düş:düş V-IV-DIR-AR ; ! "fall"
+duy:duy V-IV-DIR-AR ; ! "hear"
+duy:duy V-IV-DIR-AR ; ! "hear"
+düzel:düzel V-IV-DIR-IR ; ! "get better"
+düzel:düzel V-IV-DIR-IR ; ! "get better"
+eğ:eğ V-IV-DIR-AR ; ! "bend"
+eğ:eğ V-IV-DIR-AR ; ! "bend"
+eğil:eğil V-IV-DIR-IR ; ! "incline"
+eğil:eğil V-IV-DIR-IR ; ! "incline"
+eğlen:eğlen V-IV-DIR-IR ; ! "have fun"
+eğlen:eğlen V-IV-DIR-IR ; ! "have fun"
+er:er V-IV-DIR-AR ; ! "attain"
+eriş:eriş V-IV-DIR-IR ; ! "reach"
+evlen:evlen V-IV-DIR-IR ; ! "marry"
+gecik:gecik V-IV-DIR-IR ; ! "delay, be late"
+gel:gel V-IV-DIR-IR ; ! "come to a stop"
+gerek:gerek V-IV-DIR-IR ; ! "require"
+gerek:gerek V-IV-DIR-IR ; ! "require"
+geril:geril V-IV-DIR-IR ; ! "strain"
+gez:gez V-IV-DIR-AR ; ! "go around"
+gezin:gezin V-IV-DIR-IR ; ! "hang around"
+gir:gir V-IV-DIR-AR ; ! "enter"
+giriş:giriş V-IV-DIR-IR ; ! "proceed"
+giriş:giriş V-IV-DIR-IR ; ! "proceed"
+giriş:giriş V-IV-DIR-IR ; ! "proceed"
+git:git%{v%} V-IV-DIR-AR ; ! "go"
+görün:görün V-IV-DIR-IR ; ! "appear"
+gözük:gözük V-IV-DIR-IR ; ! "to be seem"
+gül:gül V-IV-DIR-AR ; ! "laugh"
+gururlan:gururlan V-IV-DIR-IR ; ! "be proud of"
+hareketlen:hareketlen V-IV-DIR-IR ; ! "get move"
+hastalan:hastalan V-IV-DIR-IR ; ! "get ill"
+heyecanlan:heyecanlan V-IV-DIR-IR ; ! "get excited"
+heyecanlan:heyecanlan V-IV-DIR-IR ; ! "get excited"
+hızlan:hızlan V-IV-DIR-IR ; ! "gain speed"
+homurdan:homurdan V-IV-DIR-IR ; ! "murmur"
+hoşlan:hoşlan V-IV-DIR-IR ; ! "like"
+hoşlan:hoşlan V-IV-DIR-IR ; ! "like"
+iliş:iliş V-IV-DIR-IR ; ! "perch"
+iliş:iliş V-IV-DIR-IR ; ! "perch"
+imren:imren V-IV-DIR-IR ; ! "envy"
+inan:inan V-IV-DIR-IR ; ! "believe"
+inan:inan V-IV-DIR-IR ; ! "believe"
+incel:incel V-IV-DIR-AR ; ! "get thinner"
+ısın:ısın V-IV-DIR-IR ; ! "get warmer"
+kabar:kabar V-IV-DIR-IR ; ! "puff"
+kal:kal V-IV-DIR-IR ; ! "stay"
+kalk:kalk V-IV-DIR-AR ; ! "get up"
+kapıl:kapıl V-IV-DIR-IR ; ! "be carried away"
+karar:karar V-IV-DIR-IR ; ! "darken"
+karış:karış V-IV-DIR-IR ; ! "mix in"
+karış:karış V-IV-DIR-IR ; ! "mix in"
+karşılaş:karşılaş V-IV-DIR-IR ; ! "confront"
+katıl:katıl V-IV-DIR-IR ; ! "join in"
+kavuş:kavuş V-IV-DIR-IR ; ! "rejoin"
+kay:kay V-IV-DIR-AR ; ! "slide"
+kaybol:kaybol V-IV-DIR-IR ; ! "get lost"
+kaydol:kaydol V-IV-DIR-IR ; ! "sign in"
+kaynaklan:kaynaklan V-IV-DIR-IR ; ! "arise from"
+kaynaş:kaynaş V-IV-DIR-IR ; ! "teem"
+git:git%{v%} V-IV-AR-AR ; ! "go"
+art:art V-IV-IR-AR ; ! "increase"
+bat:bat V-IV-IR-AR ; ! "sink/fail"
+bat:bat V-IV-IR-AR ; ! "sink/fail"
+doğ:doğ V-IV-IR-AR ; ! "rise" "be born"
+taş:taş V-IV-IR-AR ; ! "run over"
+taş:taş V-IV-IR-AR ; ! "run over"
+yit:yit V-IV-IR-AR ; ! "vanish"
+şiş:şiş V-IV-IR-AR ; ! "swell"
+kımılda:kımılda V-IV-T-IR  ; ! "budge"
+kımılda:kımılda V-IV-T-IR  ; ! "budge"
+kıpırda:kıpırda V-IV-T-IR  ; ! "budge"
+kıpırda:kıpırda V-IV-T-IR  ; ! "budge"
+kısal:kısal V-IV-T-IR  ; ! "got shorter"
+kızar:kızar V-IV-T-IR  ; ! "blush ,  be roasted"
+konakla:konakla V-IV-T-IR  ; ! "stop over"
+külle:külle V-IV-T-IR  ; ! "cover with ashes"
+kurtul:kurtul V-IV-T-IR  ; ! "ve rescued"
+kurtul:kurtul V-IV-T-IR  ; ! "ve rescued"
+kuru:kuru V-IV-T-IR  ; ! "dry"
+kuru:kuru V-IV-T-IR  ; ! "dry"
+miyavla:miyavla V-IV-T-IR  ; ! "meow"
+morar:morar V-IV-T-IR  ; ! "become bruised"
+otur:otur V-IV-T-IR  ; ! "sit"
+otur:otur V-IV-T-IR  ; ! "sit"
+parılda:parılda V-IV-T-IR  ; ! "gleam"
+parla:parla V-IV-T-IR  ; ! "shine"
+patla:patla V-IV-T-IR  ; ! "explode"
+püskür:püskür V-IV-T-IR  ; ! "spout"
+püskür:püskür V-IV-T-IR  ; ! "spout"
+rahatla:rahatla V-IV-T-IR  ; ! "relax"
+rastla:rastla V-IV-T-IR  ; ! "encounter"
+rastla:rastla V-IV-T-IR  ; ! "encounter"
+sendele:sendele V-IV-T-IR  ; ! "stumble"
+serinle:serinle V-IV-T-IR  ; ! "cool off, become cooler?"
+sersemle:sersemle V-IV-T-IR  ; ! "stagger"
+seyrel:seyrel V-IV-T-IR  ; ! "become rare"
+şişmanla:şişmanla V-IV-T-IR  ; ! "put on weight"
+sıyrıl:sıyrıl V-IV-T-IR  ; ! "squirm out of"
+soğu:soğu V-IV-T-IR  ; ! "get cold"
+solu:solu V-IV-T-IR  ; ! "breathe"
+terle:terle V-IV-T-IR  ; ! "sweat"
+tökezle:tökezle V-IV-T-IR  ; ! "stumble"
+tükür:tükür V-IV-T-IR  ; ! "spit"
+türe:türe V-IV-T-IR  ; ! "derive"
+ucuzla:ucuzla V-IV-T-IR  ; ! "become cheap"
+ufal:ufal V-IV-T-IR  ; ! "become smaller"
+uğra:uğra V-IV-T-IR  ; ! "make a brief visit to"
+üre:üre V-IV-T-IR  ; ! "procreate"
+üre:üre V-IV-T-IR  ; ! "procreate"
+uyu:uyu V-IV-T-IR  ; ! "sleep"
+uyukla:uyukla V-IV-T-IR  ; ! "snooze"
+uza:uza V-IV-T-IR  ; ! "get longer"
+yalvar:yalvar V-IV-T-IR  ; ! "invoke"
+yanıl:yanıl V-IV-T-IR  ; ! "be mistaken"
+yansı:yansı V-IV-T-IR  ; ! "be reflected"
+yansı:yansı V-IV-T-IR  ; ! "be reflected"
+yara:yara V-IV-T-IR  ; ! "benefit from"
+yavaşla:yavaşla V-IV-T-IR  ; ! "slow down"
+yeşer:yeşer V-IV-T-IR  ; ! "come into leaf"
+yumuşa:yumuşa V-IV-T-IR  ; ! "soften"
+yürü:yürü V-IV-T-IR  ; ! "walk"
+yürüt:yürüt V-TV-DIR-AR ; ! "perform"
+zayıfla:zayıfla V-IV-T-IR  ; ! "lose weight"
+zayıfla:zayıfla V-IV-T-IR  ; ! "lose weight"
+zıpla:zıpla V-IV-T-IR  ; ! "jump"
+acı:acı V-IV-T-IR ; ! "pity something"
+acı:acı V-IV-T-IR ; ! "pity something"
+ağla:ağla V-IV-T-IR ; ! "cry, weep"
+alkışla:alkışla V-IV-T-IR ; ! "clap"
+alkışla:alkışla V-IV-T-IR ; ! "clap"
+atla:atla V-IV-T-IR ; ! "jump"
+ayrıl:ayrıl V-IV-T-IR ; ! "leave"
+ayrıl:ayrıl V-IV-T-IR ; ! "leave"
+azal:azal V-IV-T-IR ; ! "decrease"
+azal:azal V-IV-T-IR ; ! "decrease"
+bocala:bocala V-IV-T-IR ; ! "falter"
+büyü:büyü V-IV-T-IR ; ! "grow up"
+dağıl:dağıl V-IV-T-IR ; ! "disperse"
+dağıl:dağıl V-IV-T-IR ; ! "disperse"
+daral:daral V-IV-T-IR ; ! "narrow"
+daya:daya V-IV-T-IR ; ! "lean"
+daya:daya V-IV-T-IR ; ! "lean"
+defol:defol V-IV-T-IR ; ! "go away"
+destekle:destekle V-IV-T-IR ; ! "support"
+dire:dire V-IV-T-IR ; ! "resist"
+dışla:dışla V-IV-T-IR ; ! "externalise"
+dışla:dışla V-IV-T-IR ; ! "externalise"
+dışla:dışla V-IV-T-IR ; ! "externalise"
+döşe:döşe V-IV-T-IR ; ! "spread"
+döşe:döşe V-IV-T-IR ; ! "spread"
+duraksa:duraksa V-IV-T-IR ; ! "come to a stop"
+eksil:eksil V-IV-T-IR ; ! "decrease"
+eski:eski V-IV-T-IR ; ! "become old"
+fırla:fırla V-IV-T-IR ; ! "shoot ahead"
+fırla:fırla V-IV-T-IR ; ! "shoot ahead"
+gecele:gecele V-IV-T-IR ; ! "spend the night"
+gerile:gerile V-IV-T-IR ; ! "retrograde"
+gerile:gerile V-IV-T-IR ; ! "retrograde"
+gevşe:gevşe V-IV-T-IR ; ! "relax"
+gülümse:gülümse V-IV-T-IR ; ! "smile"
+havla:havla V-IV-T-IR ; ! "bark"
+havuzla:havuzla V-IV-T-IR ; ! "drydock"
+hopla:hopla V-IV-T-IR ; ! "jump"
+horla:horla V-IV-T-IR ; ! "snore"
+ihtiyarla:ihtiyarla V-IV-T-IR ; ! "get old"
+ilerle:ilerle V-IV-T-IR ; ! "proceed"
+inle:inle V-IV-T-IR ; ! "sough"
+inle:inle V-IV-T-IR ; ! "sough"
+ışılda:ışılda V-IV-T-IR ; ! "shine"
+kara:kara V-IV-T-IR ; ! "brown"
+kayna:kayna V-IV-T-IR ; ! "boil"
+
+LEXICON Interjections 
+
+evet:evet INTERJ ; ! "yes"
+hayır:hayır INTERJ ; ! "no"
+
+
+LEXICON Punctuation
+
+.%<sent%>:. # ;
+..%<sent%>:.. # ;
+...%<sent%>:... # ;
+%;%<sent%>:%; # ;
+%:%<sent%>:%: # ;
+%!%<sent%>:%! # ;
+%-%<guio%>:%- # ;
+%—%<guio%>:%— # ;
+,%<cm%>:, # ;
+%?%<sent%>:%? # ; 
+%'%<apos%>:%' # ;
+%"%<sent%>:%" # ;
+%«%<lquot%>:%« # ;
+%»%<rquot%>:%» # ;
+%”%<rquot%>:%” # ;
+%“%<lquot%>:%“ # ;
+%(%<lpar%>:%( # ;
+%]%<rpar%>:%] # ;
+%[%<lpar%>:%[ # ;
+%)%<rpar%>:%) # ;
+\%<sent%>:\ # ;
+/%<sent%>:/ # ;
+
+!==============!
+ LEXICON Digits ! Use/Circ
+!==============!
+
+
+%0:%0 NUM ;  ! Use/Circ
+№:№ DIGITLEX ;  ! Use/Circ
+DIGITLEX ; ! Use/Circ
+LASTDIGIT ; ! Use/Circ
+LASTDIGIT-REST ; ! Use/Circ
+
+! FIXME: We probably need a flag diacritic here, or an alternative '<percent>' lexicon
+%%:%% DIGITLEX ;  ! Use/Circ
+

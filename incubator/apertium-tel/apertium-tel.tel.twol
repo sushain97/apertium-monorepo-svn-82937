@@ -1,0 +1,40 @@
+! Telugu TWOLC file
+
+Alphabet
+
+  క  ఖ  గ  ఘ  ఙ  చ  ఛ  జ  ఝ  ఞ   ట  ఠ  డ  ఢ  ణ  త  థ  ద  ధ  న 
+  ప  ఫ  బ  భ  మ  య  ర  ల  వ  ళ  శ  ష  స  హ  ఱ 
+
+  అ  ఆ   ఇ  ఈ  ఉ  ఊ  ఋ  ౠ  ఌ  ౡ  ఎ  ఏ  ఐ  ఒ  ఓ  ఔ  అం  అః 
+
+్  ు  ి 
+
+  %{u%}:్ 
+  %>:0  ;
+
+Sets
+
+Achiphonemes = %{u%} ; 
+
+Cns =   క  ఖ  గ  ఘ  ఙ  చ  ఛ  జ  ఝ  ఞ   ట  ఠ  డ  ఢ  ణ  త  థ  ద  ధ  న 
+  ప  ఫ  బ  భ  మ  య  ర  ల  వ  ళ  శ  ష  స  హ  ఱ  ; 
+
+Vow =   అ  ఆ   ఇ  ఈ  ఉ  ఊ  ఋ  ౠ  ఌ  ౡ  ఎ  ఏ  ఐ  ఒ  ఓ  ఔ  అం  అః  ;
+
+Rules
+
+"{u} appears word final"
+%{u%}:ు <=> _ .#. ;
+
+"TT DD shortening in Plural"
+Cx:0 <=> Cx ్:  _ %{u%}: %>: ల ; 
+    where Cx in ( ట డ ) ;
+ ! Teststring:
+ ! ట ్ట%{u%}%>ల
+    
+"Double Halant Deletion"
+%{u%}:0 <=>  ్:  ట:0  _   ;  !  Trying to delete the second halant
+ ! ్:0 <=> _ ట:0    %{u%}: ;  !  Trying to delete the first halant
+
+ ! Teststring:
+ !    ్ట%{u%}%>ల

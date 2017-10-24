@@ -1,0 +1,33 @@
+Config:
+  hfst:
+    App: hfst-lookup
+    Gen: ../../kaz.autogen.hfst
+    Morph: ../../kaz.automorf.hfst
+
+
+Tests:
+  "[twol] verb with epenthetic vowel realised":
+    қорық<v><iv><ifi><p1><sg> : қорықтым
+    қорық<v><iv><past><p1><sg> : қорыққанмын
+
+  "[twol] verb with epenthetic vowel unrealised":
+    қорық<v><iv><ger><nom> : қорқу
+    қорық<v><iv><aor><p1><sg> : қорқамын
+
+  "[twol] nouns with epenthetic vowel unrealised":
+    мұрын<n><px1sg><nom> : мұрным
+    мұрын<n><px3sp><gen> : мұрнының
+    мүлік<n><px1sg><nom> : мүлкім
+    мүлік<n><px3sp><gen> : мүлкінің
+
+  "[twol] noun with epenthetic back vowel realised":
+    мұрын<n><nom> : мұрын
+    мұрын<n><gen> : мұрынның
+
+  "[twol] noun with epenthetic front vowel realised":
+    мүлік<n><nom> : мүлік
+    мүлік<n><gen> : мүліктің
+
+  "[twol] noun with forced front-vowel realised":
+    қауіп<n><px3sp><nom> : қаупі
+    қауіп<n><nom> : қауіп

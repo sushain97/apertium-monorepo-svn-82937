@@ -1,0 +1,103 @@
+DELIMITERS = "<.>" "<!>" "<?>" "<...>" "<¶>" "<:>";
+SOFT-DELIMITERS = "<,>";
+
+LIST Divisions = "өяз" "карья" "волос" "волость" "губерна" "вилаят" "авыл" "шәһәр";
+LIST Professions = "мулла" "сәүдәгәр" "мещан" "дворянин" "имам" "купес" "дамелла" "хатыйп" "мөдәррис" "хаҗи" "потомственный почетный гражданин" "личный почетный гражданин" "почетный граджанин" "второй гильдий купес" "второй гильдий купец" "подданный" "потомственный дворянин" "народный учитель" "билетный солдат" "1 нче гильдии купец" "второй гильдии купец" "губернский секретарь" "фәрманачы" "подполковник" "чәчкәче" "мелла";
+LIST Punct = "[" "]" ;
+LIST Father = "ата" "вәләд";
+LIST Mother = "әнкә" "ана";
+LIST FatherNames = Father (np ant m) ;
+
+SECTION
+
+#MAP (@paternal_grandfather_name) TARGET (np ant m) IF ((-1 ("ибн")) OR (-1 ("бин")));
+#MAP (@father_name) TARGET (np ant m) IF ((1 ("ибн")) OR (-1 ("вәләд")) OR (-1 ("ата" n px3sp)) OR (-1 ("әткә" n px3sp)));
+#MAP (@father_name) TARGET (np ant m) IF (1 ("ул" n px3sp));
+#MAP (@father_name) TARGET (np ant m) IF
+#	((1 ("ибн")) OR (-1 ("вәләд")) OR (-1 ("ата" n px3sp)) OR (-1 ("әткә" n px3sp)) OR (1 ("ул" n px3sp)));
+MAP (@father_name) TARGET (np ant m) IF
+	( (-1 ("вәләд")) OR (-1 ("ата" n px3sp)) OR (-1 ("әткә" n px3sp)) );
+MAP (@paternal_grandfather_name) TARGET (np ant m) IF
+	(( (-1 ("ибн")) OR (-1 ("бин")) OR (1 ("ул" n px3sp)) OR (-1 (@father_name)) LINK -1* Father BARRIER Mother));
+MAP (@family_name) TARGET (np cog m) IF
+	( (1 ("ул" n px3sp)) );
+
+MAP (@residence_awyl) TARGET (np top nom) IF (1 ("авыл" n px3sp));
+MAP (@residence_uyezd) TARGET (np top nom) IF (1 ("өяз" n px3sp));
+MAP (@residence_qarya) TARGET (np top nom) IF (1 ("карья" n px3sp));
+MAP (@residence_volos) TARGET (np top nom) IF ((1 ("волос" n px3sp)) OR (1 ("волость" n px3sp)));
+MAP (@residence_gubernya) TARGET (np top nom) IF (1 ("губерна" n px3sp));
+
+
+MAP (@mother_name) TARGET (np ant f) IF ((-1 ("әнкә" n px3sp)) OR (-1 ("ана" n px3sp)) OR (-1 ("кыз" n px3sp)) );
+MAP (@maternal_grandfather_lastname) TARGET (np cog m) IF (1 ("кыз" n px3sp));
+
+#MAP (@maternal_grandfather_name) TARGET (np ant m) IF (-1* Mother BARRIER FatherNames);
+MAP (@maternal_grandfather_name) TARGET (np ant m) IF ((-1 ("бинт" n px3sp)) OR (-1 (@mother_name)));
+MAP (@mother_name) TARGET (np ant f) IF (1 (@maternal_grandfather_name));
+MAP (@maternal_grandfather_name) TARGET (np ant m) IF ((1 ("кыз" n px3sp)) OR (1 (@maternal_grandfather_lastname)));
+
+MAP (@maternal_greatgrandfather_name) TARGET (np ant m) IF
+	(-1* Mother BARRIER FatherNames)
+	(1* (@maternal_grandfather_name) BARRIER ("кыз"));
+	
+
+MAP (@family_name) TARGET (np cog m) IF (-1 (@paternal_grandfather_name));
+MAP (@family_name) TARGET (np cog m) IF (-1 ("ул" n px3sp));
+
+MAP (@paternal_grandfather_origin) TARGET (np top nom) IF ((-1 (@paternal_grandfather_name)) OR (-1 (@family_name)));
+MAP (@paternal_grandfather_profession) TARGET Professions IF
+	((-1 (@paternal_grandfather_origin)) OR ((-1 (@family_name))) OR (-1 (@paternal_grandfather_name)) );
+MAP (@paternal_grandfather_profession) TARGET Professions IF
+	( (-1 (@paternal_grandfather_profession)) );
+MAP (@family_name) TARGET (np cog m) IF (-1 (@paternal_grandfather_profession));
+
+MAP (@father_profession) TARGET Professions IF (-1 (np top)) (NOT -2* Mother) ;
+MAP (@father_profession) TARGET Professions IF ((-1 (@family_name)) OR (-1 (@father_name)));
+MAP (@maternal_grandfather_profession) TARGET Professions IF
+	((1 (@maternal_grandfather_name)) ); # OR (1 (@maternal_grandfather_profession)) );
+MAP (@maternal_greatgrandfather_profession) TARGET Professions IF
+	((1 (@maternal_greatgrandfather_name)) );
+MAP (@maternal_grandfather_profession) TARGET Professions IF
+	(1 (@maternal_greatgrandfather_profession) )
+	(2 (@maternal_greatgrandfather_name) )
+	(3* (@maternal_grandfather_name) BARRIER ("кыз" n px3sp) ) ;
+
+MAP (@father_origin) TARGET (np top nom) IF (1 (@father_profession)) ;
+MAP (@father_name) TARGET (np ant m) IF (1 (@paternal_grandfather_name)) ;
+MAP (@paternal_grandfather_name) TARGET (np ant m) IF (1 (@family_name)) ;
+MAP (@maternal_greatgrandfather_name) TARGET (np ant m) IF
+	(1 ("ул" n px3sp))
+	(-1 (@maternal_grandfather_name)) ;
+MAP (@maternal_greatgreatgrandfather_name) TARGET (np ant m) IF
+	(1 ("ул" n px3sp))
+	(-1 (@maternal_greatgrandfather_name)) ;
+MAP (@maternal_grandfather_origin) TARGET (np top) IF (1 (@maternal_grandfather_profession));
+
+MAP (@family_name) TARGET (np cog m) IF
+	( (-1 (@father_name)) OR (-1 (@paternal_grandfather_name)) OR (1 ("әнкә" n px3sp)) OR (1 ("ана" n px3sp)) );
+
+
+REMOVE ("и" cop) ;
+REMOVE (attr) ;
+REMOVE (top) IF (NOT 1 Professions OR Divisions) ;
+
+
+#### GUESSER FUNCTIONS ####
+
+MAP (@guess_ANT-M) TARGET ("\\*.*"r) IF ((1 ("кыз" n px3sp)) OR (1 ("ул" n px3sp)));
+MAP (@guess_ANT-M) TARGET ("\\*.*"r) IF ((-1 ("бинт" n px3sp)) OR (-1 ("ибн" n px3sp)) OR (-1 ("вәләд")) OR (-1 ("бин")));
+
+#MAP (@guess_ANT-F) TARGET ("\\*.*"r) IF (((-1 ("әнкә" n px3sp)) OR (-1 ("ана" n px3sp))) (0 NOT Punct));
+MAP (@guess_ANT-F) TARGET ("\\*.*"r) IF (-1 ("әнкә" n px3sp) OR ("ана" n px3sp)) (NOT 0 Punct);
+
+MAP (@guess_COG-M) TARGET ("\\*[А-Я].*[ое]в"r);
+
+MAP (@guess_TOP) TARGET ("\\*.*"r) IF (1 Divisions) (1 (n px3sp));
+
+
+AFTER-SECTIONS
+
+# this stuff removes readings that don't have @tags on words that otherwise got them
+MAP (@X) TARGET (*);
+REMOVE (@X);

@@ -1,0 +1,1992 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<transfer default="chunk">
+  <section-def-cats>
+    <def-cat n="opt">
+      <cat-item tags="v.*.opt.*"/>
+      <cat-item tags="v.*.*.opt.*"/>
+    </def-cat>
+    <def-cat n="past">
+      <cat-item tags="v.*.past.*"/>
+      <cat-item tags="v.*.*.past.*"/>
+      <cat-item tags="vaux.past.*"/>
+      <cat-item tags="vaux.*.past.*"/>
+    </def-cat>
+     <def-cat n="bil">
+      <cat-item lemma="bil" tags="v.*"/>
+    </def-cat>     
+    <def-cat n="iste">
+      <cat-item lemma="iste" tags="v.*"/>
+    </def-cat>
+    <def-cat n="percent">
+      <cat-item tags="num.percent"/>
+      <cat-item tags="num.percent.*"/>
+    </def-cat>
+    <def-cat n="içün">
+      <cat-item lemma="içün" tags="post"/>
+    </def-cat>
+      <def-cat n="bil_ifi">
+      <cat-item lemma="bil" tags="v.*.ifi.*"/>
+    </def-cat>
+    <def-cat n="bil_ger_fut2">
+      <cat-item lemma="bil" tags="v.*.*.ger_fut2.*"/>
+    </def-cat>
+    <def-cat n="bil_ger_fut2_ins">
+      <cat-item lemma="bil" tags="v.*.*.ger_fut2.*.ıns"/>
+    </def-cat>
+     <def-cat n="bil_ger_past">
+      <cat-item lemma="bil" tags="v.*.ger_past.*"/>
+    </def-cat>
+ 
+     <def-cat n="vaux_ger_past">
+      <cat-item lemma="e" tags="vaux.ger_past.nom"/>
+    </def-cat>
+     <def-cat n="bil_ger">
+      <cat-item lemma="bil" tags="v.*.ger.*"/>
+    </def-cat>
+    <def-cat n="ekende">
+      <cat-item lemma="e" tags="cop.ger_past.loc"/>
+      <cat-item lemma="e" tags="vaux.ger_past.loc"/>
+      <cat-item lemma="e" tags="cop.gpr_past.subst.loc"/>
+      <cat-item lemma="e" tags="vaux.gpr_past.subst.loc"/>
+    </def-cat>
+    <def-cat n="ifi">
+      <cat-item tags="v.*.ifi.*"/>
+      <cat-item tags="v.*.ifi"/>
+      <cat-item tags="vaux.ifi.*"/>
+      <cat-item tags="vaux.ifi"/>
+      <cat-item tags="vaux.*.ifi.*"/>
+      <cat-item tags="vaux.*.ifi"/>
+    </def-cat>
+
+    <def-cat n="ve">
+      <cat-item lemma="ve" tags="cnjcoo"/>
+    </def-cat>
+ 
+    <def-cat n="ilâhre">
+      <cat-item lemma="ilâhre" tags="adv"/>
+    </def-cat>
+
+    <def-cat n="prc_fut">
+      <cat-item tags="v.*.prc_fut"/>
+      <cat-item tags="v.*.*.prc_fut"/>
+      <cat-item tags="vaux.*.prc_fut"/>
+      <cat-item tags="vaux.prc_fut"/>
+      <cat-item tags="v.*.prc_fut.*"/>
+      <cat-item tags="v.*.*.prc_fut.*"/>
+      <cat-item tags="vaux.*.prc_fut.*"/>
+      <cat-item tags="vaux.prc_fut.*"/>
+    </def-cat>
+
+    <def-cat n="np_non_cog">
+      <cat-item tags="np.top.*"/>
+      <cat-item tags="np.al.*"/>
+      <cat-item tags="np.org.*"/>
+    </def-cat>
+
+    <def-cat n="er">
+      <cat-item tags="v.*.prc_fut"/>
+      <cat-item tags="v.*.gpr_fut"/>
+      <cat-item tags="vaux.prc_fut"/>
+      <cat-item tags="vaux.gpr_fut"/>
+    </def-cat>
+
+     <def-cat n="eken">
+      <cat-item lemma="e" tags="cop.aor.evid.*"/>
+      <cat-item lemma="e" tags="vaux.aor.evid.*"/>
+      <cat-item lemma="e" tags="cop.ger_past"/>
+      <cat-item lemma="e" tags="cop.ger_past.*"/>
+      <cat-item lemma="e" tags="vaux.ger_past"/>
+      <cat-item lemma="e" tags="vaux.ger_past.*"/>
+    </def-cat>  
+    <def-cat n="dep">
+      <cat-item lemma="de" tags="v.*.gna_perf"/>
+      <cat-item lemma="de" tags="v.*.gna_perf.*"/>
+    </def-cat>
+    <def-cat n="bil_cond">
+      <cat-item lemma="bil" tags="v.tv.gna_cond.*"/>
+      <cat-item lemma="bil" tags="v.tv.prc_cond.*"/>
+    </def-cat>
+    <def-cat n="cond">
+      <cat-item tags="v.*.gna_cond.*"/>
+      <cat-item tags="v.*.prc_cond.*"/>
+      <cat-item tags="v.*.*.gna_cond.*"/>
+      <cat-item tags="v.*.*.prc_cond.*"/>
+      <cat-item tags="vaux.prc_cond.*"/>
+      <cat-item tags="vaux.gna_cond.*"/>
+    </def-cat>
+    <def-cat n="aor">
+      <cat-item tags="v.*.aor.*"/>
+      <cat-item tags="v.*.*.aor.*"/>
+      <cat-item tags="vaux.aor.*"/>
+      <cat-item tags="vaux.*.aor.*"/>
+      <cat-item tags="v.*.*.*.aor.*"/>
+    </def-cat>
+    <def-cat n="prog">
+      <cat-item tags="v.*.prog.*"/>
+      <cat-item tags="v.*.*.prog.*"/>
+      <cat-item tags="vaux.prog.*"/>
+    </def-cat>
+    <def-cat n="fut">
+      <cat-item tags="v.*.fut.*"/>
+      <cat-item tags="v.*.fut2.*"/>
+      <cat-item tags="v.*.fut.*"/>
+      <cat-item tags="v.*.fut2.*"/>
+      <cat-item tags="v.*.*.fut.*"/>
+      <cat-item tags="v.*.*.fut2.*"/>
+      <cat-item tags="v.*.*.*.fut.*"/>
+      <cat-item tags="v.*.*.*.fut2.*"/>
+      <cat-item tags="vaux.fut.*"/>
+      <cat-item tags="vaux.fut2.*"/>
+      <cat-item tags="vaux.fut.*"/>
+      <cat-item tags="vaux.fut2.*"/>
+      <cat-item tags="vaux.*.fut.*"/>
+      <cat-item tags="vaux.*.fut2.*"/>
+      <cat-item tags="vaux.*.*.fut.*"/>
+      <cat-item tags="vaux.*.*.fut2.*"/>
+    </def-cat>
+    <def-cat n="nom">
+      <cat-item tags="n.*"/>
+    </def-cat>
+    <def-cat n="nomin">
+      <cat-item tags="n.nom"/>
+    </def-cat>
+    <def-cat n="gen">
+      <cat-item tags="n.*.gen"/>
+      <cat-item tags="n.gen"/>
+      <cat-item tags="prn.*.gen"/>
+    </def-cat>
+    <def-cat n="perc">
+      <cat-item lemma="fayız" tags="n.*"/>
+    </def-cat>
+    <def-cat n="num">
+      <cat-item tags="num.*"/>
+      <cat-item tags="num"/>
+    </def-cat>
+    <def-cat n="cop-aor-evid">
+      <cat-item lemma="e" tags="cop.aor.evid.*"/>
+      <cat-item lemma="e" tags="vaux.aor.evid.*"/>
+    </def-cat>
+    <def-cat n="cop-ifi">
+      <cat-item lemma="e" tags="cop.ifi.*"/>
+      <cat-item lemma="e" tags="vaux.ifi.*"/>
+    </def-cat>
+
+    <def-cat n="prc_past">
+      <cat-item tags="v.*.prc_past"/>
+      <cat-item tags="v.*.prc_past.*"/>
+      <cat-item tags="v.*.*.prc_past"/>
+      <cat-item tags="v.*.*.prc_past.*"/>
+      <cat-item tags="v.*.*.*.prc_past"/>
+      <cat-item tags="v.*.*.*.prc_past.*"/>
+      <cat-item tags="vaux.prc_past"/>
+      <cat-item tags="vaux.*.prc_past"/>
+      <cat-item tags="vaux.*.*.prc_past"/>
+    </def-cat>
+
+    <def-cat n="prc_cond">
+      <cat-item tags="v.*.prc_cond"/>
+      <cat-item tags="v.*.prc_cond.*"/>
+      <cat-item tags="v.*.*.prc_cond"/>
+      <cat-item tags="v.*.*.prc_cond.*"/>
+      <cat-item tags="vaux.prc_cond"/>
+      <cat-item tags="vaux.*.prc_cond"/>
+    </def-cat>
+
+
+    <def-cat n="prc_impf">
+      <cat-item tags="v.*.prc_impf"/>
+      <cat-item tags="v.*.prc_impf.*"/>
+      <cat-item tags="v.*.*.prc_impf"/>
+      <cat-item tags="v.*.*.prc_impf.*"/>
+      <cat-item tags="vaux.prc_impf"/>
+      <cat-item tags="vaux.*.prc_impf"/>
+      <cat-item tags="vaux.*.*.prc_impf"/>
+    </def-cat>
+
+
+    <def-cat n="prc_impf_neg">
+      <cat-item tags="v.*.neg.prc_impf"/>
+      <cat-item tags="v.*.neg.prc_impf.*"/>
+      <cat-item tags="v.*.*.neg.prc_impf"/>
+      <cat-item tags="v.*.*.neg.prc_impf.*"/>
+      <cat-item tags="vaux.neg.prc_impf"/>
+    </def-cat>
+
+
+    <def-cat n="prc_perf">
+      <cat-item tags="v.*.prc_perf"/>
+      <cat-item tags="v.*.prc_perf.*"/>
+      <cat-item tags="v.*.*.prc_perf"/>
+      <cat-item tags="v.*.*.prc_perf.*"/>
+      <cat-item tags="vaux.prc_perf"/>
+      <cat-item tags="vaux.prc_perf.*"/>
+      <cat-item tags="vaux.*.prc_perf"/>
+      <cat-item tags="vaux.*.*.prc_perf"/>
+      <cat-item tags="vaux.*.prc_perf.*"/>
+      <cat-item tags="vaux.*.*.prc_perf.*"/>
+    </def-cat>
+
+    <def-cat n="ger_fut_neg">
+      <cat-item tags="v.*.neg.ger_fut"/>
+      <cat-item tags="v.*.neg.ger_fut.*"/>
+      <cat-item tags="v.*.*.neg.ger_fut"/>
+      <cat-item tags="v.*.*.neg.ger_fut.*"/>
+      <cat-item tags="vaux.*.neg.ger_fut.*"/>
+      <cat-item tags="vaux.neg.ger_fut.*"/>
+      <cat-item tags="vaux.*.neg.ger_fut"/>
+      <cat-item tags="vaux.neg.ger_fut"/>
+    </def-cat>
+
+
+
+    <def-cat n="gpr_fut2">
+      <cat-item tags="v.*.gpr_fut2"/>
+      <cat-item tags="v.*.gpr_fut2.*"/>
+      <cat-item tags="v.*.*.gpr_fut2"/>
+      <cat-item tags="v.*.*.gpr_fut2.*"/>
+      <cat-item tags="v.*.prc_fut2"/>
+      <cat-item tags="v.*.prc_fut2.*"/>
+      <cat-item tags="v.*.*.prc_fut2"/>
+      <cat-item tags="v.*.*.prc_fut2.*"/>
+      <cat-item tags="vaux.gpr_fut2"/>
+      <cat-item tags="vaux.gpr_fut2.*"/>
+      <cat-item tags="vaux.*.gpr_fut2"/>
+      <cat-item tags="vaux.*.gpr_fut2.*"/>
+      <cat-item tags="vaux.prc_fut2"/>
+      <cat-item tags="vaux.prc_fut2.*"/>
+      <cat-item tags="vaux.*.prc_fut2"/>
+      <cat-item tags="vaux.*.prc_fut2.*"/>
+    </def-cat>
+
+
+    <def-cat n="gpr_fut">
+      <cat-item tags="v.*.gpr_fut"/>
+      <cat-item tags="v.*.gpr_fut.*"/>
+      <cat-item tags="v.*.*.gpr_fut"/>
+      <cat-item tags="v.*.*.gpr_fut.*"/>
+      <cat-item tags="v.*.prc_fut"/>
+      <cat-item tags="v.*.prc_fut.*"/>
+      <cat-item tags="v.*.*.prc_fut"/>
+      <cat-item tags="v.*.*.prc_fut.*"/>
+      <cat-item tags="vaux.gpr_fut"/>
+      <cat-item tags="vaux.gpr_fut.*"/>
+      <cat-item tags="vaux.*.gpr_fut"/>
+      <cat-item tags="vaux.*.gpr_fut.*"/>
+      <cat-item tags="vaux.prc_fut"/>
+      <cat-item tags="vaux.prc_fut.*"/>
+      <cat-item tags="vaux.*.prc_fut"/>
+      <cat-item tags="vaux.*.prc_fut.*"/>
+    </def-cat>
+
+    <def-cat n="gpr_past">
+      <cat-item tags="v.*.gpr_past"/>
+      <cat-item tags="v.*.*.gpr_past"/>
+    </def-cat>
+
+    <def-cat n="ger_sim">
+      <cat-item tags="v.*.ger.sim"/>
+      <cat-item tags="vaux.ger.sim"/>
+    </def-cat>
+
+    <def-cat n="ger-nom">
+      <cat-item tags="v.*.ger-nom"/>
+      <cat-item tags="v.*.ger.nom.*"/>
+      <cat-item tags="v.*.*.ger.nom"/>
+      <cat-item tags="v.*.*.ger.nom.*"/>
+    </def-cat>
+ 
+
+    <def-cat n="ger-dat">
+      <cat-item tags="v.*.ger.dat"/>
+      <cat-item tags="v.*.ger.dat.*"/>
+      <cat-item tags="v.*.*.ger.dat"/>
+      <cat-item tags="v.*.*.ger.dat.*"/>
+    </def-cat>
+ 
+    <def-cat n="ger-loc">
+      <cat-item tags="v.*.ger.loc"/>
+      <cat-item tags="v.*.ger.loc.*"/>
+      <cat-item tags="v.*.*.ger.loc"/>
+      <cat-item tags="v.*.*.ger.loc.*"/>
+    </def-cat>
+    <def-cat n="ger_abst">
+      <cat-item tags="v.*.ger_abst.*"/>
+      <cat-item tags="v.*.*.ger_abst.*"/>
+    </def-cat>
+    <def-cat n="ger_past">
+      <cat-item tags="v.*.ger_past.*"/>
+      <cat-item tags="v.*.*.ger_past.*"/>
+      <cat-item tags="vaux.ger_past.*"/>
+      <cat-item tags="vaux.*.ger_past.*"/>
+    </def-cat>
+    <def-cat n="ger_fut2">
+      <cat-item tags="v.*.ger_fut2.*"/>
+      <cat-item tags="vaux.ger_fut2.*"/>
+      <cat-item tags="vaux.ger_fut2"/>
+      <cat-item tags="vaux.*.ger_fut2.*"/>
+      <cat-item tags="vaux.*.ger_fut2"/>
+      <cat-item tags="v.*.*.ger_fut2.*"/>
+    </def-cat>
+
+
+    <def-cat n="sent">
+      <cat-item tags="sent"/>
+    </def-cat>
+  </section-def-cats>
+
+  <section-def-attrs>
+    <def-attr n="a_sim">
+      <attr-item tags="sim"/>
+    </def-attr>
+    <def-attr n="a_abil">
+      <attr-item tags="abil"/>
+    </def-attr>
+    <def-attr n="a_percent">
+      <attr-item tags="percent"/>
+    </def-attr>
+    <def-attr n="a_err">
+      <attr-item tags="err_orth"/>
+    </def-attr>
+    <def-attr n="a_tra">
+      <attr-item tags="iv"/>
+      <attr-item tags="tv"/>
+    </def-attr>
+    <def-attr n="a_xd">
+      <attr-item tags="XD"/>
+    </def-attr>
+    <def-attr n="a_subst">
+      <attr-item tags="subst"/>
+    </def-attr>
+    <def-attr n="a_poss">
+      <attr-item tags="px1sg"/>
+      <attr-item tags="px2sg"/>
+      <attr-item tags="px3sp"/>
+      <attr-item tags="px1pl"/>
+      <attr-item tags="px2pl"/>
+    </def-attr>
+    <def-attr n="a_cas">
+      <attr-item tags="nom"/>
+      <attr-item tags="gen"/>
+      <attr-item tags="dat"/>
+      <attr-item tags="loc"/>
+      <attr-item tags="ins"/>
+      <attr-item tags="abl"/>
+      <attr-item tags="acc"/>
+    </def-attr>
+    <def-attr n="a_neg">
+      <attr-item tags="neg"/>
+    </def-attr>
+    <def-attr n="a_fin">
+      <attr-item tags="imp"/>
+      <attr-item tags="opt"/>
+      <attr-item tags="fut"/>
+      <attr-item tags="fut2"/>
+      <attr-item tags="aor"/>
+      <attr-item tags="ifi"/>
+      <attr-item tags="past"/>
+      <attr-item tags="pres"/>
+    </def-attr>
+    <def-attr n="a_non_fin">
+      <attr-item tags="ger_past"/>
+      <attr-item tags="ger_fut2"/>
+      <attr-item tags="ger_fut"/>
+      <attr-item tags="ger_abst"/>
+      <attr-item tags="ger"/>
+
+      <attr-item tags="gpr_past"/>
+      <attr-item tags="gpr_fut"/>
+      <attr-item tags="gpr_fut2"/>
+
+      <attr-item tags="gna_cond"/>
+
+      <attr-item tags="prc_cond"/>
+      <attr-item tags="prc_past"/>
+      <attr-item tags="prc_fut"/>
+      <attr-item tags="prc_impf"/>
+      <attr-item tags="prc_perf"/>
+    </def-attr>
+    <def-attr n="a_pl">
+      <attr-item tags="pl"/>
+    </def-attr>
+    <def-attr n="a_pers_nbr">
+      <attr-item tags="p1.sg"/>
+      <attr-item tags="p2.sg"/>
+      <attr-item tags="p3.sg"/>
+      <attr-item tags="p1.pl"/>
+      <attr-item tags="p2.pl"/>
+      <attr-item tags="p3.pl"/>
+	  <attr-item tags="p2.frm.sg"/> 
+    </def-attr>
+  </section-def-attrs>
+
+  <section-def-vars>
+    <def-var n="pers-nbr"/>
+    <def-var n="number"/>
+    <def-var n="px"/>
+    <def-var n="verb-lemma"/>
+  </section-def-vars>
+
+  <section-def-macros>
+
+    <def-macro n="f_strip_tags" npar="1">
+          <let>
+            <clip pos="1" side="tl" part="a_err"/>
+            <lit v=""/>
+          </let>
+    </def-macro>
+    <def-macro n="f_poss_xd1" npar="1">
+        <choose>
+         <when><test><equal><clip pos="1" side="tl" part="a_poss"/><lit v=""/></equal></test>
+        <let><clip pos="1" side="tl" part="a_xd"/><lit-tag v="px3sp"/></let>
+        </when>
+        <otherwise>
+        <let><clip pos="1" side="tl" part="a_xd"/><lit v=""/></let>
+        </otherwise></choose>
+    </def-macro>
+
+    <def-macro n="f_3sg_if_empty1" npar="1">
+      <let><var n="pers-nbr"/><lit v=""/></let>
+      <choose>
+        <when><test><equal><clip pos="1" side="tl" part="a_pers_nbr"/><lit v=""/></equal></test>
+              <let><var n="pers-nbr"/><lit-tag v="p3.sg"/></let></when>
+        <otherwise>
+              <let><var n="pers-nbr"/><clip pos="1" side="tl" part="a_pers_nbr"/></let>
+        </otherwise>
+      </choose>
+    </def-macro>
+
+    <def-macro n="f_fut2_fut1" npar="1">
+ <choose>
+   <when>
+       <!-- IF: a_fin = fut2 -->
+      <test><equal><clip pos="1" side="tl" part="a_fin"/> 
+                             <lit-tag v="fut2"/></equal></test>
+        <!-- THEN: LET a_fin be fut -->
+      <let><clip pos="1" side="tl" part="a_fin"/><lit-tag v="fut"/></let>
+    </when>
+</choose>
+    </def-macro>
+
+  </section-def-macros>
+
+  <section-rules>
+
+    <rule comment="REGLA: ve ilâhre ">
+      <pattern>
+        <pattern-item n="ve"/>
+        <pattern-item n="ilâhre"/>
+      </pattern>
+      <action>
+      <call-macro n="f_strip_tags"><with-param pos="1"/></call-macro>
+        <let>
+          <clip pos="1" side="tl" part="a_non_fin"/><lit-tag v="dub.aor"/>
+        </let>
+        <let>
+          <clip pos="1" side="tl" part="a_cas"/><lit-tag v="p3.sg"/>
+        </let>
+        <out>
+          <chunk name="n" case="caseSecondWord">
+            <tags>
+              <tag><lit-tag v="SV"/></tag>
+            </tags>
+            <lu>
+              <clip pos="2" side="tl" part="whole"/>
+            </lu>
+          </chunk>
+        </out>
+      </action>
+    </rule>
+
+    <rule comment="REGLA: vaux_ger_past ">
+      <pattern>
+        <pattern-item n="vaux_ger_past"/>
+      </pattern>
+      <action>
+      <call-macro n="f_strip_tags"><with-param pos="1"/></call-macro>
+        <let>
+          <clip pos="1" side="tl" part="a_non_fin"/><lit-tag v="dub.aor"/>
+        </let>
+        <let>
+          <clip pos="1" side="tl" part="a_cas"/><lit-tag v="p3.sg"/>
+        </let>
+        <out>
+          <chunk name="n" case="caseSecondWord">
+            <tags>
+              <tag><lit-tag v="SV"/></tag>
+            </tags>
+            <lu>
+              <clip pos="1" side="tl" part="whole"/>
+            </lu>
+          </chunk>
+        </out>
+      </action>
+    </rule>
+
+    <rule comment="REGLA: ifi cop-ifi">
+      <pattern>
+        <pattern-item n="ifi"/>
+        <pattern-item n="cop-ifi"/>
+      </pattern>
+      <action>
+      <call-macro n="f_strip_tags"><with-param pos="1"/></call-macro>
+        <let>
+          <clip pos="1" side="tl" part="a_tags"/>
+<concat><lit-tag v="v"/><clip pos="1" side="tl" part="a_tra"/><lit-tag v="past"/></concat>
+        </let>
+        <out>
+          <chunk namefrom="v" case="caseFirstWord">
+            <tags>
+              <tag><lit-tag v="SV"/></tag>
+              <tag><clip pos="1" side="tl" part="a_fin"/></tag>
+            </tags>
+            <lu>
+              <clip pos="1" side="tl" part="whole"/>
+            </lu>
+          </chunk>
+        </out>
+      </action>
+    </rule>
+
+
+    <rule comment="REGLA: er eken ">
+      <pattern>
+        <pattern-item n="er"/>
+        <pattern-item n="eken"/>
+      </pattern>
+      <action>
+      <call-macro n="f_strip_tags"><with-param pos="1"/></call-macro>
+        <let>
+          <clip pos="1" side="tl" part="a_non_fin"/><lit-tag v="ger_aor"/>
+        </let>
+        <let>
+          <clip pos="1" side="tl" part="whole"/>
+          <concat><clip pos="1" side="tl" part="whole"/><lit-tag v="nom"/></concat>
+        </let>
+        <let>
+          <clip pos="2" side="tl" part="whole"/>
+          <concat><lit v="+i"/><lit-tag v="cop.gna_ken"/></concat>
+        </let>
+        <out>
+          <chunk name="v" case="caseFirstWord">
+            <tags>
+              <tag><lit-tag v="SV"/></tag>
+            </tags>
+            <lu>
+              <clip pos="1" side="tl" part="whole"/>
+              <clip pos="2" side="tl" part="whole"/>
+            </lu>
+          </chunk>
+        </out>
+      </action>
+    </rule>
+
+
+
+
+    <rule comment="REGLA: opt">
+      <pattern>
+        <pattern-item n="opt"/>
+      </pattern>
+      <action>
+      <call-macro n="f_strip_tags"><with-param pos="1"/></call-macro>
+<choose>
+   <when>
+       <!-- IF: a_pers_nbr IS p2.frm.sg -->
+      <test><equal><clip pos="1" side="tl" part="a_pers_nbr"/> 
+                             <lit-tag v="p2.frm.sg"/></equal></test>
+        <!-- THEN: LET a_pers_nbr BE p2.pl -->
+      <let><clip pos="1" side="tl" part="a_pers_nbr"/><lit-tag v="p2.pl"/></let>
+    </when>
+</choose>
+        <let>
+          <clip pos="1" side="tl" part="a_fin"/><lit-tag v="imp"/>
+        </let>
+        <out>
+          <chunk name="v" case="caseFirstWord">
+            <tags>
+              <tag><lit-tag v="SV"/></tag>
+            </tags>
+            <lu>
+              <clip pos="1" side="tl" part="whole"/>
+            </lu>
+          </chunk>
+        </out>
+      </action>
+    </rule>
+
+    <rule comment="REGLA: past">
+      <pattern>
+        <pattern-item n="past"/>
+      </pattern>
+      <action>
+      <call-macro n="f_strip_tags"><with-param pos="1"/></call-macro>
+<choose>
+   <when>
+       <!-- IF: a_pers_nbr IS p2.frm.sg -->
+      <test><equal><clip pos="1" side="tl" part="a_pers_nbr"/> 
+                             <lit-tag v="p2.frm.sg"/></equal></test>
+        <!-- THEN: LET a_pers_nbr BE p2.pl -->
+      <let><clip pos="1" side="tl" part="a_pers_nbr"/><lit-tag v="p2.pl"/></let>
+    </when>
+</choose>
+        <let>
+          <clip pos="1" side="tl" part="a_pers_nbr"/>
+          <concat><lit v="+i"/><lit-tag v="cop.aor"/><clip pos="1" side="tl" part="a_pers_nbr"/></concat>
+        </let>
+        <out>
+          <chunk name="v" case="caseFirstWord">
+            <tags>
+              <tag><lit-tag v="SV"/></tag>
+            </tags>
+            <lu>
+              <clip pos="1" side="tl" part="whole"/>
+            </lu>
+          </chunk>
+        </out>
+      </action>
+    </rule>
+
+    <rule comment="REGLA: ger sim">
+      <pattern>
+        <pattern-item n="ger_sim"/>
+      </pattern>
+      <action>
+      <call-macro n="f_strip_tags"><with-param pos="1"/></call-macro>
+        <let>
+          <clip pos="1" side="tl" part="a_non_fin"/><lit-tag v="gna_impf"/>
+        </let>
+        <let>
+          <clip pos="1" side="tl" part="a_sim"/><lit v=""/>
+        </let>
+        <out>
+          <chunk name="n" case="caseSecondWord">
+            <tags>
+              <tag><lit-tag v="SV"/></tag>
+            </tags>
+            <lu>
+              <clip pos="1" side="tl" part="whole"/>
+            </lu>
+          </chunk>
+        </out>
+      </action>
+    </rule>
+
+
+
+    <rule comment="REGLA: ger içün">
+      <pattern>
+        <pattern-item n="ger-nom"/>
+        <pattern-item n="içün"/>
+      </pattern>
+      <action>
+      <call-macro n="f_strip_tags"><with-param pos="1"/></call-macro>
+        <let>
+          <clip pos="1" side="tl" part="a_non_fin"/><lit-tag v="ger_inf"/>
+        </let>
+        <out>
+          <chunk name="n" case="caseSecondWord">
+            <tags>
+              <tag><lit-tag v="SV"/></tag>
+            </tags>
+            <lu>
+              <clip pos="1" side="tl" part="whole"/>
+            </lu>
+	<b pos="1"/>
+            <lu>
+              <clip pos="2" side="tl" part="whole"/>
+            </lu>
+          </chunk>
+        </out>
+      </action>
+    </rule>
+
+
+    <rule comment="REGLA: perc">
+      <pattern>
+        <pattern-item n="num"/>
+        <pattern-item n="perc"/>
+      </pattern>
+      <action>
+      <call-macro n="f_strip_tags"><with-param pos="1"/></call-macro>
+        <let>
+          <clip pos="1" side="tl" part="tags"/><lit-tag v="num.subst.px3sp.nom"/>
+        </let>
+        <let>
+          <clip pos="2" side="tl" part="whole"/>
+          <concat><lit v="yüz"/><lit-tag v="num.subst.loc"/></concat>
+        </let>
+        <out>
+          <chunk name="n" case="caseSecondWord">
+            <tags>
+              <tag><lit-tag v="SV"/></tag>
+            </tags>
+            <lu>
+              <clip pos="2" side="tl" part="whole"/>
+            </lu>
+	<b pos="1"/>
+            <lu>
+              <clip pos="1" side="tl" part="whole"/>
+            </lu>
+          </chunk>
+        </out>
+      </action>
+    </rule>
+
+
+
+    <rule comment="REGLA: fut">
+      <pattern>
+        <pattern-item n="fut"/>
+      </pattern>
+      <action>
+      <call-macro n="f_strip_tags"><with-param pos="1"/></call-macro>
+<choose>
+   <when>
+       <!-- IF: a_pers_nbr IS p2.frm.sg -->
+      <test><equal><clip pos="1" side="tl" part="a_pers_nbr"/> 
+                             <lit-tag v="p2.frm.sg"/></equal></test>
+        <!-- THEN: LET a_pers_nbr BE p2.pl -->
+      <let><clip pos="1" side="tl" part="a_pers_nbr"/><lit-tag v="p2.pl"/></let>
+    </when>
+</choose>
+        <let>
+          <clip pos="1" side="tl" part="a_fin"/><lit-tag v="fut"/>
+        </let>
+        <let>
+          <clip pos="1" side="tl" part="a_pers_nbr"/>
+          <concat><lit v="+i"/><lit-tag v="cop.aor"/><clip pos="1" side="tl" part="a_pers_nbr"/></concat>
+        </let>
+        <let><var n="verb-lemma"/><clip pos="1" side="tl" part="lem"/></let>
+        <out>
+          <chunk namefrom="verb-lemma" case="caseFirstWord">
+            <tags>
+              <tag><lit-tag v="SV"/></tag>
+              <tag><clip pos="1" side="tl" part="a_fin"/></tag>
+            </tags>
+            <lu>
+              <clip pos="1" side="tl" part="whole"/>
+            </lu>
+          </chunk>
+        </out>
+        <let><var n="verb-lemma"/><lit v=""/></let>
+      </action>
+    </rule>
+
+    <rule comment="REGLA: PROG">
+      <pattern>
+        <pattern-item n="prog"/>
+      </pattern>
+      <action>
+      <call-macro n="f_strip_tags"><with-param pos="1"/></call-macro>
+<choose>
+   <when>
+       <!-- IF: a_pers_nbr IS p2.frm.sg -->
+      <test><equal><clip pos="1" side="tl" part="a_pers_nbr"/> 
+                             <lit-tag v="p2.frm.sg"/></equal></test>
+        <!-- THEN: LET a_pers_nbr BE p2.pl -->
+      <let><clip pos="1" side="tl" part="a_pers_nbr"/><lit-tag v="p2.pl"/></let>
+    </when>
+</choose>
+<let>
+<clip pos="1" side="tl" part="a_aspect"/><lit-tag v="prog"/>
+</let>
+        <let>
+          <clip pos="1" side="tl" part="a_pers_nbr"/>
+          <concat><lit v="+i"/><lit-tag v="cop.aor"/><clip pos="1" side="tl" part="a_pers_nbr"/></concat>
+        </let>
+        <let><var n="verb-lemma"/><clip pos="1" side="tl" part="lem"/></let>
+        <out>
+          <chunk namefrom="verb-lemma" case="caseFirstWord">
+            <tags>
+              <tag><lit-tag v="SV"/></tag>
+            </tags>
+            <lu>
+              <clip pos="1" side="tl" part="whole"/>
+            </lu>
+          </chunk>
+        </out>
+        <let><var n="verb-lemma"/><lit v=""/></let>
+      </action>
+    </rule>
+
+
+    <rule comment="REGLA: AOR">
+      <pattern>
+        <pattern-item n="aor"/>
+      </pattern>
+      <action>
+      <call-macro n="f_strip_tags"><with-param pos="1"/></call-macro>
+<choose>
+   <when>
+       <!-- IF: a_pers_nbr IS p2.frm.sg -->
+      <test><equal><clip pos="1" side="tl" part="a_pers_nbr"/> 
+                             <lit-tag v="p2.frm.sg"/></equal></test>
+        <!-- THEN: LET a_pers_nbr BE p2.pl -->
+      <let><clip pos="1" side="tl" part="a_pers_nbr"/><lit-tag v="p2.pl"/></let>
+    </when>
+</choose>
+<let>
+<clip pos="1" side="tl" part="a_aspect"/><lit-tag v="prog"/>
+</let>
+        <let>
+          <clip pos="1" side="tl" part="a_pers_nbr"/>
+          <concat><lit v="+i"/><lit-tag v="cop.aor"/><clip pos="1" side="tl" part="a_pers_nbr"/></concat>
+        </let>
+        <let><var n="verb-lemma"/><clip pos="1" side="tl" part="lem"/></let>
+        <out>
+          <chunk namefrom="verb-lemma" case="caseFirstWord">
+            <tags>
+              <tag><lit-tag v="SV"/></tag>
+            </tags>
+            <lu>
+              <clip pos="1" side="tl" part="whole"/>
+            </lu>
+          </chunk>
+        </out>
+        <let><var n="verb-lemma"/><lit v=""/></let>
+      </action>
+    </rule>
+
+
+    <rule comment="REGLA: gpr_fut cop-ifi ">
+      <pattern>
+        <pattern-item n="gpr_fut"/>
+        <pattern-item n="cop-ifi"/>
+      </pattern>
+      <action>
+      <call-macro n="f_strip_tags"><with-param pos="1"/></call-macro>
+<choose>
+   <when>
+       <!-- IF: a_pers_nbr IS p2.frm.sg -->
+      <test><equal><clip pos="2" side="tl" part="a_pers_nbr"/> 
+                             <lit-tag v="p2.frm.sg"/></equal></test>
+        <!-- THEN: LET a_pers_nbr BE p2.pl -->
+      <let><clip pos="2" side="tl" part="a_pers_nbr"/><lit-tag v="p2.pl"/></let>
+    </when>
+</choose>
+        <let>
+          <clip pos="1" side="tl" part="a_non_fin"/><lit-tag v="aor"/>
+        </let>
+        <let>
+          <clip pos="2" side="tl" part="whole"/>
+          <concat><lit v="+i"/><lit-tag v="cop.ifi"/><clip pos="2" side="tl" part="a_pers_nbr"/></concat>
+        </let>
+        <out>
+          <chunk name="v" case="caseFirstWord">
+            <tags>
+              <tag><lit-tag v="SV"/></tag>
+            </tags>
+            <lu>
+              <clip pos="1" side="tl" part="whole"/>
+              <clip pos="2" side="tl" part="whole"/>
+            </lu>
+          </chunk>
+        </out>
+      </action>
+    </rule>
+
+    <rule comment="REGLA: prc_past cop-ifi ">
+      <pattern>
+        <pattern-item n="prc_past"/>
+        <pattern-item n="cop-ifi"/>
+      </pattern>
+      <action>
+      <call-macro n="f_strip_tags"><with-param pos="1"/></call-macro>
+<choose>
+   <when>
+       <!-- IF: a_pers_nbr IS p2.frm.sg -->
+      <test><equal><clip pos="2" side="tl" part="a_pers_nbr"/> 
+                             <lit-tag v="p2.frm.sg"/></equal></test>
+        <!-- THEN: LET a_pers_nbr BE p2.pl -->
+      <let><clip pos="2" side="tl" part="a_pers_nbr"/><lit-tag v="p2.pl"/></let>
+    </when>
+</choose>
+        <let>
+          <clip pos="1" side="tl" part="a_non_fin"/><lit-tag v="past"/>
+        </let>
+        <let>
+          <clip pos="2" side="tl" part="whole"/>
+          <concat><lit v="+i"/><lit-tag v="cop.ifi"/><clip pos="2" side="tl" part="a_pers_nbr"/></concat>
+        </let>
+        <out>
+          <chunk name="v" case="caseFirstWord">
+            <tags>
+              <tag><lit-tag v="SV"/></tag>
+            </tags>
+            <lu>
+              <clip pos="1" side="tl" part="whole"/>
+              <clip pos="2" side="tl" part="whole"/>
+            </lu>
+          </chunk>
+        </out>
+      </action>
+    </rule>
+
+
+    <rule comment="REGLA: gen nomin ">
+      <pattern>
+        <pattern-item n="gen"/>
+        <pattern-item n="nomin"/>
+      </pattern>
+      <action>
+      <call-macro n="f_strip_tags"><with-param pos="1"/></call-macro>
+      <let><var n="px"/><lit-tag v="px3sp"/></let>
+      <choose>
+    <when><test><equal><clip pos="1" side="sl" part="a_pers_nbr"/><lit-tag v="p1.sg"/></equal></test>
+            <let><var n="px"/><lit-tag v="px1sg"/></let></when>
+
+    <when><test><equal><clip pos="1" side="sl" part="a_pers_nbr"/><lit-tag v="p1.pl"/></equal></test>
+            <let><var n="px"/><lit-tag v="px1pl"/></let></when>
+
+    <when><test><equal><clip pos="1" side="sl" part="a_pers_nbr"/><lit-tag v="p2.sg"/></equal></test>
+            <let><var n="px"/><lit-tag v="px2sg"/></let></when>
+
+    <when><test><equal><clip pos="1" side="sl" part="a_pers_nbr"/><lit-tag v="p2.pl"/></equal></test>
+            <let><var n="px"/><lit-tag v="px2pl"/></let></when>
+      </choose>
+
+        <let>
+          <clip pos="1" side="tl" part="a_non_fin"/><lit-tag v="past"/>
+        </let>
+        <let>
+          <clip pos="2" side="tl" part="a_cas"/>
+	  <concat><var n="px"/><clip pos="2" side="tl" part="a_cas"/></concat>
+        </let>
+        <let><clip pos="2" side="tl" part="a_xd"/><lit v=""/></let>
+      <call-macro n="f_poss_xd1"><with-param pos="1"/></call-macro>
+        <out>
+          <chunk name="n" case="caseFirstWord">
+            <tags>
+              <tag><lit-tag v="SN"/></tag>
+            </tags>
+            <lu>
+              <clip pos="1" side="tl" part="whole"/>
+            </lu>
+	<b pos="1"/>
+            <lu>
+              <clip pos="2" side="tl" part="whole"/>
+            </lu>
+          </chunk>
+        </out>
+      </action>
+    </rule>
+
+    <rule comment="REGLA: Abil-cond-cop">
+      <pattern>
+        <pattern-item n="prc_impf"/>
+        <pattern-item n="bil_cond"/>
+        <pattern-item n="cop-ifi"/>
+      </pattern>
+      <action>
+      <call-macro n="f_strip_tags"><with-param pos="1"/></call-macro>
+        <let>
+      <clip pos="1" side="tl" part="a_non_fin"/><lit-tag v="abil.cond"/></let>
+        <let>
+      <clip pos="3" side="tl" part="lem"/><lit v="+i"/>
+	</let>
+        <out>
+          <chunk name="v" case="caseFirstWord">
+            <tags>
+              <tag><lit-tag v="SV"/></tag>
+            </tags>
+            <lu>
+              <clip pos="1" side="tl" part="whole"/>
+              <clip pos="3" side="tl" part="whole"/>
+            </lu>
+          </chunk>
+        </out>
+      </action>
+    </rule>
+
+
+    <rule comment="REGLA: Abil-cond">
+      <pattern>
+        <pattern-item n="prc_impf"/>
+        <pattern-item n="bil_cond"/>
+      </pattern>
+      <action>
+      <call-macro n="f_strip_tags"><with-param pos="1"/></call-macro>
+        <let>
+      <clip pos="1" side="tl" part="a_non_fin"/>
+	<concat><lit-tag v="abil.cond"/><clip pos="2" side="tl" part="a_pers_nbr"/></concat>
+        </let>
+        <out>
+          <chunk name="v" case="caseFirstWord">
+            <tags>
+              <tag><lit-tag v="SV"/></tag>
+            </tags>
+            <lu>
+              <clip pos="1" side="tl" part="whole"/>
+            </lu>
+          </chunk>
+        </out>
+      </action>
+    </rule>
+
+    <rule comment="REGLA: Abil-ger_past">
+      <pattern>
+        <pattern-item n="prc_impf"/>
+        <pattern-item n="bil_ger_past"/>
+      </pattern>
+      <action>
+      <call-macro n="f_strip_tags"><with-param pos="1"/></call-macro>
+        <let>
+      <clip pos="1" side="tl" part="tags"/>
+	<concat><lit-tag v="v"/><clip pos="1" side="tl" part="a_tra"/><lit-tag v="abil.ger"/>
+	<clip pos="2" side="tl" part="a_pl"/>
+	<clip pos="2" side="tl" part="a_poss"/>
+<clip pos="2" side="tl" part="a_cas"/>
+	</concat>
+        </let>
+        <out>
+          <chunk name="v" case="caseFirstWord">
+            <tags>
+              <tag><lit-tag v="SV"/></tag>
+            </tags>
+            <lu>
+              <clip pos="1" side="tl" part="whole"/>
+            </lu>
+          </chunk>
+        </out>
+      </action>
+    </rule>
+
+
+
+
+
+
+    <rule comment="REGLA: Abil-ger">
+      <pattern>
+        <pattern-item n="prc_impf"/>
+        <pattern-item n="bil_ger"/>
+      </pattern>
+      <action>
+      <call-macro n="f_strip_tags"><with-param pos="1"/></call-macro>
+        <let>
+      <clip pos="1" side="tl" part="tags"/>
+	<concat><lit-tag v="v"/><clip pos="1" side="tl" part="a_tra"/><lit-tag v="abil.ger"/>
+	<clip pos="2" side="tl" part="a_pl"/>
+	<clip pos="2" side="tl" part="a_poss"/>
+<clip pos="2" side="tl" part="a_cas"/>
+	</concat>
+        </let>
+        <out>
+          <chunk name="v" case="caseFirstWord">
+            <tags>
+              <tag><lit-tag v="SV"/></tag>
+            </tags>
+            <lu>
+              <clip pos="1" side="tl" part="whole"/>
+            </lu>
+          </chunk>
+        </out>
+      </action>
+    </rule>
+
+
+
+    <rule comment="REGLA: Abil-ger_fut2_ins ">
+      <pattern>
+        <pattern-item n="prc_impf"/>
+        <pattern-item n="bil_ger_fut2_ins"/>
+      </pattern>
+      <action>
+      <call-macro n="f_strip_tags"><with-param pos="1"/></call-macro>
+      <let>
+	      <clip pos="1" side="tl" part="a_neg"/><lit v=""/>
+      </let>
+      <let>
+	      <clip pos="1" side="tl" part="a_non_fin"/>
+		<concat><lit-tag v="pot"/><clip pos="1" side="sl" part="a_neg"/><lit-tag v="ger_fut"/></concat>
+      </let>
+	<let>
+	      <clip pos="1" side="tl" part="whole"/>
+<concat><clip pos="1" side="tl" part="whole"/><clip pos="2" side="tl" part="a_pl"/><clip pos="2" side="tl" part="a_poss"/><lit-tag v="dat"/></concat>
+	</let>
+       <out>
+          <chunk name="v" case="caseFirstWord">
+            <tags>
+              <tag><lit-tag v="SV"/></tag>
+            </tags>
+            <lu>
+              <clip pos="1" side="tl" part="whole"/>
+            </lu>
+          </chunk>
+        </out>
+      </action>
+    </rule>
+
+
+
+
+
+
+    <rule comment="REGLA: Abil-ger_fut2 ">
+      <pattern>
+        <pattern-item n="prc_impf"/>
+        <pattern-item n="bil_ger_fut2"/>
+      </pattern>
+      <action>
+      <call-macro n="f_strip_tags"><with-param pos="1"/></call-macro>
+ <choose>
+   <when>
+       <!-- IF: a_fin = fut2 -->
+      <test><equal><clip pos="2" side="tl" part="a_fin"/> 
+                             <lit-tag v="fut2"/></equal></test>
+        <!-- THEN: LET a_fin be fut -->
+      <let><clip pos="2" side="tl" part="a_fin"/><lit-tag v="fut"/></let>
+    </when>
+</choose>
+      <let>
+	      <clip pos="1" side="tl" part="a_neg"/><lit v=""/>
+      </let>
+      <let>
+	      <clip pos="1" side="tl" part="a_non_fin"/>
+		<concat><lit-tag v="pot"/><clip pos="1" side="sl" part="a_neg"/><lit-tag v="ger_fut"/></concat>
+      </let>
+	<let>
+	      <clip pos="1" side="tl" part="whole"/>
+<concat><clip pos="1" side="tl" part="whole"/><clip pos="2" side="tl" part="a_pl"/><clip pos="2" side="tl" part="a_poss"/><clip pos="2" side="tl" part="a_cas"/></concat>
+	</let>
+       <out>
+          <chunk name="v" case="caseFirstWord">
+            <tags>
+              <tag><lit-tag v="SV"/></tag>
+            </tags>
+            <lu>
+              <clip pos="1" side="tl" part="whole"/>
+            </lu>
+          </chunk>
+        </out>
+      </action>
+    </rule>
+
+
+
+
+    <rule comment="REGLA: Abil-ifi ">
+      <pattern>
+        <pattern-item n="prc_impf"/>
+        <pattern-item n="bil_ifi"/>
+      </pattern>
+      <action>
+      <call-macro n="f_strip_tags"><with-param pos="1"/></call-macro>
+ <choose>
+   <when>
+       <!-- IF: a_fin = fut2 -->
+      <test><equal><clip pos="2" side="tl" part="a_fin"/> 
+                             <lit-tag v="fut2"/></equal></test>
+        <!-- THEN: LET a_fin be fut -->
+      <let><clip pos="2" side="tl" part="a_fin"/><lit-tag v="fut"/></let>
+    </when>
+</choose>
+      <let>
+	      <clip pos="1" side="tl" part="a_non_fin"/><lit-tag v="abil.ifi"/>
+      </let>
+	<let>
+	      <clip pos="1" side="tl" part="whole"/>
+	      <concat><clip pos="1" side="tl" part="whole"/><clip pos="2" side="tl" part="a_pers_nbr"/></concat>
+	</let>
+       <out>
+          <chunk name="v" case="caseFirstWord">
+            <tags>
+              <tag><lit-tag v="SV"/></tag>
+            </tags>
+            <lu>
+              <clip pos="1" side="tl" part="whole"/>
+            </lu>
+          </chunk>
+        </out>
+      </action>
+    </rule>
+
+    <rule comment="REGLA: Abil_neg ">
+      <pattern>
+        <pattern-item n="prc_impf_neg"/>
+        <pattern-item n="bil"/>
+      </pattern>
+      <action>
+      <call-macro n="f_strip_tags"><with-param pos="1"/></call-macro>
+ <choose>
+   <when>
+       <!-- IF: a_fin = fut2 -->
+      <test><equal><clip pos="2" side="tl" part="a_fin"/> 
+                             <lit-tag v="fut2"/></equal></test>
+        <!-- THEN: LET a_fin be fut -->
+      <let><clip pos="2" side="tl" part="a_fin"/><lit-tag v="fut"/></let>
+    </when>
+</choose>
+      <let>
+	      <clip pos="1" side="tl" part="a_neg"/><lit v=""/>
+      </let>
+      <let>
+	      <clip pos="1" side="tl" part="a_non_fin"/><lit-tag v="pot.neg"/>
+      </let>
+	<let>
+	      <clip pos="1" side="tl" part="whole"/>
+	      <concat><clip pos="1" side="tl" part="whole"/><clip pos="2" side="tl" part="a_fin"/></concat>
+	</let>
+	<!-- The rule needs some kind of conditional for certain tenses -->
+	<let>
+          <clip pos="2" side="tl" part="whole"/>
+          <concat><lit v="+i"/><lit-tag v="cop.aor"/><clip pos="2" side="tl" part="a_pers_nbr"/></concat>
+  </let> 
+       <out>
+          <chunk name="v" case="caseFirstWord">
+            <tags>
+              <tag><lit-tag v="SV"/></tag>
+            </tags>
+            <lu>
+              <clip pos="1" side="tl" part="whole"/>
+              <clip pos="2" side="tl" part="whole"/>
+            </lu>
+          </chunk>
+        </out>
+      </action>
+    </rule>
+
+
+
+    <rule comment="REGLA: Abil ">
+      <pattern>
+        <pattern-item n="prc_impf"/>
+        <pattern-item n="bil"/>
+      </pattern>
+      <action>
+      <call-macro n="f_strip_tags"><with-param pos="1"/></call-macro>
+      <call-macro n="f_3sg_if_empty1"><with-param pos="2"/></call-macro>
+ <choose>
+   <when>
+       <!-- IF: a_fin = fut2 -->
+      <test><equal><clip pos="2" side="tl" part="a_fin"/> 
+                             <lit-tag v="fut2"/></equal></test>
+        <!-- THEN: LET a_fin be fut -->
+      <let><clip pos="2" side="tl" part="a_fin"/><lit-tag v="fut"/></let>
+    </when>
+</choose>
+      <let>
+	      <clip pos="1" side="tl" part="a_non_fin"/><lit-tag v="abil"/>
+      </let>
+	<let>
+	      <clip pos="1" side="tl" part="whole"/>
+	      <concat><clip pos="1" side="tl" part="whole"/><lit-tag v="aor"/></concat> <!-- Other tenses -->
+	</let>
+	<!-- The rule needs some kind of conditional for certain tenses -->
+	<let>
+          <clip pos="2" side="tl" part="whole"/>
+          <concat><lit v="+i"/><lit-tag v="cop.aor"/><var n="pers-nbr"/></concat>
+  </let> 
+       <out>
+          <chunk name="v" case="caseFirstWord">
+            <tags>
+              <tag><lit-tag v="SV"/></tag>
+            </tags>
+            <lu>
+              <clip pos="1" side="tl" part="whole"/>
+              <clip pos="2" side="tl" part="whole"/>
+            </lu>
+          </chunk>
+        </out>
+      </action>
+    </rule>
+
+    <rule comment="REGLA: prc_impf bil cop-ifi">
+      <pattern>
+        <pattern-item n="prc_impf"/>
+        <pattern-item n="bil"/>
+        <pattern-item n="cop-ifi"/>
+      </pattern>
+      <action>
+      <call-macro n="f_strip_tags"><with-param pos="1"/></call-macro>
+      <call-macro n="f_fut2_fut1"><with-param pos="3"/></call-macro>
+      <call-macro n="f_3sg_if_empty1"><with-param pos="3"/></call-macro>
+      <choose>
+        <when><test><equal><clip pos="1" side="tl" part="a_neg"/><lit-tag v="neg"/></equal></test>
+              <let><clip pos="1" side="tl" part="a_neg"/><lit v=""/></let>
+              <let><clip pos="1" side="tl" part="a_non_fin"/><lit-tag v="pot.neg"/></let></when>
+        <otherwise>
+              <let><clip pos="1" side="tl" part="a_non_fin"/><lit-tag v="abil"/></let>
+        </otherwise>
+      </choose>
+
+      <let>
+	      <clip pos="1" side="tl" part="whole"/>
+	      <!--<concat><clip pos="1" side="tl" part="whole"/><clip pos="3" side="tl" part="a_fin"/></concat>-->
+	      <concat><clip pos="1" side="tl" part="whole"/><lit-tag v="aor"/></concat> <!-- tenses -->
+	</let>
+	<!-- The rule needs some kind of conditional for certain tenses -->
+	<let>
+          <clip pos="1" side="tl" part="whole"/>
+          <concat><clip pos="1" side="tl" part="whole"/><lit v="+i"/><lit-tag v="cop.ifi"/><var n="pers-nbr"/></concat>
+  </let> 
+       <out>
+          <chunk name="abil" case="caseFirstWord">
+            <tags>
+              <tag><lit-tag v="SV"/></tag>
+            </tags>
+            <lu>
+              <clip pos="1" side="tl" part="whole"/>
+            </lu>
+          </chunk>
+        </out>
+      </action>
+    </rule>
+
+
+
+     <rule comment="REGLA: np_non_cog">
+      <pattern>
+        <pattern-item n="np_non_cog"/>
+      </pattern>
+      <action>
+      <call-macro n="f_strip_tags"><with-param pos="1"/></call-macro>
+        <let>
+      <clip pos="1" side="tl" part="a_pl"/><lit v=""/>
+        </let>
+        <out>
+          <chunk name="v" case="caseFirstWord">
+            <tags>
+              <tag><lit-tag v="SV"/></tag>
+            </tags>
+            <lu>
+              <clip pos="1" side="tl" part="whole"/>
+            </lu>
+          </chunk>
+        </out>
+      </action>
+    </rule>
+
+
+    <rule comment="REGLA: prc_fut">
+      <pattern>
+        <pattern-item n="prc_fut"/>
+      </pattern>
+      <action>
+      <call-macro n="f_strip_tags"><with-param pos="1"/></call-macro>
+        <let>
+      <clip pos="1" side="tl" part="a_non_fin"/><lit-tag v="gna_aor"/>
+        </let>
+        <out>
+          <chunk name="v" case="caseFirstWord">
+            <tags>
+              <tag><lit-tag v="SV"/></tag>
+            </tags>
+            <lu>
+              <clip pos="1" side="tl" part="whole"/>
+            </lu>
+          </chunk>
+        </out>
+      </action>
+    </rule>
+
+
+    <rule comment="REGLA: prc_past ">
+      <pattern>
+        <pattern-item n="prc_past"/>
+      </pattern>
+      <action>
+      <call-macro n="f_strip_tags"><with-param pos="1"/></call-macro>
+        <let>
+      <clip pos="1" side="tl" part="a_non_fin"/><lit-tag v="gpr_rsub"/>
+        </let>
+        <out>
+          <chunk name="v" case="caseFirstWord">
+            <tags>
+              <tag><lit-tag v="SV"/></tag>
+            </tags>
+            <lu>
+              <clip pos="1" side="tl" part="whole"/>
+            </lu>
+          </chunk>
+        </out>
+      </action>
+    </rule>
+
+    <rule comment="REGLA: prc_impf ekende">
+      <pattern>
+        <pattern-item n="prc_impf"/>
+        <pattern-item n="ekende"/>
+      </pattern>
+      <action>
+      <call-macro n="f_strip_tags"><with-param pos="1"/></call-macro>
+	<let>
+		<clip pos="1" side="tl" part="a_non_fin"/><lit-tag v="ger_aor.nom"/>
+	</let>
+	<let>
+		<clip pos="2" side="tl" part="whole"/>
+<concat><lit v="+i"/><lit-tag v="cop.gna_ken"/></concat>
+	</let>
+        <out>
+          <chunk name="ekende" case="caseFirstWord">
+            <tags>
+              <tag><lit-tag v="SV"/></tag>
+            </tags>
+            <lu>
+              <clip pos="1" side="tl" part="whole"/>
+              <clip pos="2" side="tl" part="whole"/>
+            </lu>
+          </chunk>
+        </out>
+      </action>
+    </rule>
+
+    <rule comment="REGLA: prc_past eken ">
+      <pattern>
+        <pattern-item n="prc_past"/>
+        <pattern-item n="eken"/>
+      </pattern>
+      <action>
+        <call-macro n="f_strip_tags"><with-param pos="1"/></call-macro>
+        <call-macro n="f_3sg_if_empty1"><with-param pos="2"/></call-macro>
+        <let><clip pos="1" side="tl" part="a_non_fin"/><lit-tag v="past"/></let>
+        <let>
+          <clip pos="2" side="tl" part="whole"/>
+          <concat><lit v="+i"/><lit-tag v="cop.ifi"/><var n="pers-nbr"/></concat>
+        </let>
+        <out>
+          <chunk name="v" case="caseFirstWord">
+            <tags>
+              <tag><lit-tag v="SV"/></tag>
+            </tags>
+            <lu>
+              <clip pos="1" side="tl" part="whole"/>
+              <clip pos="2" side="tl" part="whole"/>
+            </lu>
+          </chunk>
+        </out>
+      </action>
+    </rule>
+
+
+    <rule comment="REGLA: prc_impf eken ">
+      <pattern>
+        <pattern-item n="prc_impf"/>
+        <pattern-item n="eken"/>
+      </pattern>
+      <action>
+      <call-macro n="f_strip_tags"><with-param pos="1"/></call-macro>
+        <call-macro n="f_3sg_if_empty1"><with-param pos="2"/></call-macro>
+        <let>
+      <clip pos="1" side="tl" part="a_non_fin"/><lit-tag v="past"/>
+        </let>
+        <let>
+      <clip pos="2" side="tl" part="whole"/>
+          <concat><lit v="+i"/><lit-tag v="cop.aor"/><var n="pers-nbr"/></concat>
+        </let>
+        <out>
+          <chunk name="v" case="caseFirstWord">
+            <tags>
+              <tag><lit-tag v="SV"/></tag>
+            </tags>
+            <lu>
+              <clip pos="1" side="tl" part="whole"/>
+              <clip pos="2" side="tl" part="whole"/>
+            </lu>
+          </chunk>
+        </out>
+      </action>
+    </rule>
+
+
+    <rule comment="REGLA: prc_impf cop-ifi ">
+      <pattern>
+        <pattern-item n="prc_impf"/>
+        <pattern-item n="cop-ifi"/>
+      </pattern>
+      <action>
+      <call-macro n="f_strip_tags"><with-param pos="1"/></call-macro>
+        <let>
+      <clip pos="1" side="tl" part="a_non_fin"/><lit-tag v="gna_perf"/>
+        </let>
+        <out>
+          <chunk name="v" case="caseFirstWord">
+            <tags>
+              <tag><lit-tag v="SV"/></tag>
+            </tags>
+            <lu>
+              <clip pos="1" side="tl" part="whole"/>
+            </lu>
+          </chunk>
+        </out>
+      </action>
+    </rule>
+
+    <rule comment="REGLA: gpr_fut2 cop-ifi ">
+      <pattern>
+        <pattern-item n="gpr_fut2"/>
+        <pattern-item n="cop-ifi"/>
+      </pattern>
+      <action>
+      <call-macro n="f_strip_tags"><with-param pos="1"/></call-macro>
+<choose>
+   <when>
+       <!-- IF: a_pers_nbr IS p2.frm.sg -->
+      <test><equal><clip pos="2" side="tl" part="a_pers_nbr"/> 
+                             <lit-tag v="p2.frm.sg"/></equal></test>
+        <!-- THEN: LET a_pers_nbr BE p2.pl -->
+      <let><clip pos="2" side="tl" part="a_pers_nbr"/><lit-tag v="p2.pl"/></let>
+    </when>
+</choose>
+        <let>
+          <clip pos="1" side="tl" part="a_non_fin"/><lit-tag v="fut"/>
+        </let>
+        <let>
+          <clip pos="2" side="tl" part="whole"/>
+          <concat><lit v="+i"/><lit-tag v="cop.ifi"/><clip pos="2" side="tl" part="a_pers_nbr"/></concat>
+        </let>
+        <out>
+          <chunk name="v" case="caseFirstWord">
+            <tags>
+              <tag><lit-tag v="SV"/></tag>
+            </tags>
+            <lu>
+              <clip pos="1" side="tl" part="whole"/>
+              <clip pos="2" side="tl" part="whole"/>
+            </lu>
+          </chunk>
+        </out>
+      </action>
+    </rule>
+
+
+    <rule comment="REGLA: cond">
+      <pattern>
+        <pattern-item n="cond"/>
+      </pattern>
+      <action>
+      <call-macro n="f_strip_tags"><with-param pos="1"/></call-macro>
+        <let>
+          <clip pos="1" side="tl" part="a_non_fin"/>
+	<lit-tag v="gna_cond"/>
+        </let>
+        <out>
+          <chunk name="v" case="caseFirstWord">
+            <tags>
+              <tag><lit-tag v="SV"/></tag>
+            </tags>
+            <lu>
+              <clip pos="1" side="tl" part="whole"/>
+            </lu>
+          </chunk>
+        </out>
+      </action>
+    </rule>
+
+
+
+    <rule comment="REGLA: cond cop-ifi ">
+      <pattern>
+        <pattern-item n="cond"/>
+        <pattern-item n="cop-ifi"/>
+      </pattern>
+      <action>
+      <call-macro n="f_strip_tags"><with-param pos="1"/></call-macro>
+        <let><clip pos="1" side="tl" part="a_pers_nbr"/><lit v=""/></let>
+        <let><clip pos="1" side="tl" part="a_non_fin"/><lit-tag v="cond"/></let>
+        <let>
+          <clip pos="2" side="tl" part="whole"/>
+          <concat><lit v="+i"/><lit-tag v="cop.ifi"/><clip pos="2" side="tl" part="a_pers_nbr"/></concat>
+        </let>
+        <out>
+          <chunk name="v" case="caseFirstWord">
+            <tags>
+              <tag><lit-tag v="SV"/></tag>
+            </tags>
+            <lu>
+              <clip pos="1" side="tl" part="whole"/>
+              <clip pos="2" side="tl" part="whole"/>
+            </lu>
+          </chunk>
+        </out>
+      </action>
+    </rule>
+
+
+
+    <rule comment="REGLA: prc_impf">
+      <pattern>
+        <pattern-item n="prc_impf"/>
+      </pattern>
+      <action>
+      <call-macro n="f_strip_tags"><with-param pos="1"/></call-macro>
+        <let><clip pos="1" side="tl" part="a_non_fin"/><lit-tag v="gna_impf"/></let>
+        <out>
+          <chunk name="v" case="caseFirstWord">
+            <tags>
+              <tag><lit-tag v="SV"/></tag>
+            </tags>
+            <lu>
+              <clip pos="1" side="tl" part="whole"/>
+            </lu>
+          </chunk>
+        </out>
+      </action>
+    </rule>
+
+
+    <rule comment="REGLA: prc_perf ">
+      <pattern>
+        <pattern-item n="prc_perf"/>
+      </pattern>
+      <action>
+      <call-macro n="f_strip_tags"><with-param pos="1"/></call-macro>
+        <let><clip pos="1" side="tl" part="a_non_fin"/><lit-tag v="gna_perf"/></let>
+        <out>
+          <chunk name="v" case="caseFirstWord">
+            <tags>
+              <tag><lit-tag v="SV"/></tag>
+            </tags>
+            <lu>
+              <clip pos="1" side="tl" part="whole"/>
+            </lu>
+          </chunk>
+        </out>
+      </action>
+    </rule>
+
+
+
+
+
+    <rule comment="REGLA: gpr_fut2">
+      <pattern>
+        <pattern-item n="gpr_fut2"/>
+      </pattern>
+      <action>
+      <call-macro n="f_strip_tags"><with-param pos="1"/></call-macro>
+        <let>
+          <clip pos="1" side="tl" part="a_non_fin"/>
+          <lit-tag v="gpr_fut"/>
+        </let>
+        <out>
+          <chunk name="v" case="caseFirstWord">
+            <tags>
+              <tag><lit-tag v="SV"/></tag>
+            </tags>
+            <lu>
+              <clip pos="1" side="tl" part="whole"/>
+            </lu>
+          </chunk>
+        </out>
+      </action>
+    </rule>
+
+
+
+    <rule comment="REGLA: ger_fut2">
+      <pattern>
+        <pattern-item n="ger_fut2"/>
+      </pattern>
+      <action>
+      <call-macro n="f_strip_tags"><with-param pos="1"/></call-macro>
+        <let>
+          <clip pos="1" side="tl" part="a_non_fin"/>
+          <lit-tag v="ger_fut"/>
+        </let>
+        <out>
+          <chunk name="v" case="caseFirstWord">
+            <tags>
+              <tag><lit-tag v="SV"/></tag>
+            </tags>
+            <lu>
+              <clip pos="1" side="tl" part="whole"/>
+            </lu>
+          </chunk>
+        </out>
+      </action>
+    </rule>
+
+
+    <rule comment="REGLA: ger-loc">
+      <pattern>
+        <pattern-item n="ger-loc"/>
+      </pattern>
+      <action>
+      <call-macro n="f_strip_tags"><with-param pos="1"/></call-macro>
+        <let>
+          <clip pos="1" side="tl" part="a_non_fin"/>
+          <lit-tag v="ger_inf"/>
+        </let>
+        <out>
+          <chunk name="v" case="caseFirstWord">
+            <tags>
+              <tag><lit-tag v="SV"/></tag>
+            </tags>
+            <lu>
+              <clip pos="1" side="tl" part="whole"/>
+            </lu>
+          </chunk>
+        </out>
+      </action>
+    </rule>
+
+    <rule comment="REGLA: ger_abst">
+      <pattern>
+        <pattern-item n="ger_abst"/>
+      </pattern>
+      <action>
+      <call-macro n="f_strip_tags"><with-param pos="1"/></call-macro>
+        <let>
+          <clip pos="1" side="tl" part="a_non_fin"/>
+          <lit-tag v="ger"/>
+        </let>
+        <out>
+          <chunk name="v" case="caseFirstWord">
+            <tags>
+              <tag><lit-tag v="SV"/></tag>
+            </tags>
+            <lu>
+              <clip pos="1" side="tl" part="whole"/>
+            </lu>
+          </chunk>
+        </out>
+      </action>
+    </rule>
+
+
+
+    <rule comment="REGLA: ger_fut_neg">
+      <pattern>
+        <pattern-item n="ger_fut_neg"/>
+      </pattern>
+      <action>
+      <call-macro n="f_strip_tags"><with-param pos="1"/></call-macro>
+		<let>
+          <clip pos="1" side="tl" part="a_neg"/><lit v=""/>
+		</let>
+		<let>
+          <clip pos="1" side="tl" part="a_non_fin"/>
+		  <lit-tag v="gpr_aor.neg.subst"/>	
+		</let>
+        <out>
+          <chunk name="v" case="caseFirstWord">
+            <tags>
+              <tag><lit-tag v="SV"/></tag>
+            </tags>
+            <lu>
+              <clip pos="1" side="tl" part="whole"/>
+            </lu>
+          </chunk>
+        </out>
+      </action>
+    </rule>
+
+
+    <rule comment="REGLA: ekende">
+      <pattern>
+        <pattern-item n="ekende"/>
+      </pattern>
+      <action>
+      <call-macro n="f_strip_tags"><with-param pos="1"/></call-macro>
+        <out>
+          <chunk name="ekende" case="caseFirstWord">
+            <tags>
+              <tag><lit-tag v="SV"/></tag>
+            </tags>
+            <lu>
+              <get-case-from pos="1"><lit v="i"/></get-case-from><lit-tag v="cop.gna_ken"/>
+            </lu>
+          </chunk>
+        </out>
+      </action>
+    </rule>
+
+
+
+    <rule comment="REGLA: ger_past">
+      <pattern>
+        <pattern-item n="ger_past"/>
+      </pattern>
+      <action>
+      <call-macro n="f_strip_tags"><with-param pos="1"/></call-macro>
+		<let>
+          <clip pos="1" side="tl" part="a_non_fin"/>
+		 <lit-tag v="gpr_past.subst"/>
+		</let>
+        <out>
+          <chunk name="v" case="caseFirstWord">
+            <tags>
+              <tag><lit-tag v="SV"/></tag>
+            </tags>
+            <lu>
+              <clip pos="1" side="tl" part="whole"/>
+            </lu>
+          </chunk>
+        </out>
+      </action>
+    </rule>
+
+
+    <rule comment="REGLA: nom">
+      <pattern>
+        <pattern-item n="nom"/>
+      </pattern>
+      <action>
+      <call-macro n="f_strip_tags"><with-param pos="1"/></call-macro>
+      <call-macro n="f_poss_xd1"><with-param pos="1"/></call-macro>
+        <out>
+          <chunk name="n" case="caseFirstWord">
+            <tags>
+              <tag><lit-tag v="SN"/></tag>
+            </tags>
+            <lu>
+              <clip pos="1" side="tl" part="whole"/>
+            </lu>
+          </chunk>
+        </out>
+      </action>
+    </rule>
+
+
+    <rule comment="REGLA: gpr_past">
+      <pattern>
+        <pattern-item n="gpr_past"/>
+      </pattern>
+      <action>
+      <call-macro n="f_strip_tags"><with-param pos="1"/></call-macro>
+        <let>
+          <clip pos="1" side="tl" part="whole"/>
+          <concat>
+          <clip pos="1" side="tl" part="whole"/>
+			<lit-tag v="subst.px3sp.nom"/>
+			</concat>
+        </let>
+        <out>
+          <chunk name="v" case="caseFirstWord">
+            <tags>
+              <tag><lit-tag v="SV"/></tag>
+            </tags>
+            <lu>
+              <clip pos="1" side="tl" part="whole"/>
+            </lu>
+          </chunk>
+        </out>
+      </action>
+    </rule>
+
+
+    <rule comment="REGLA: dep">
+      <pattern>
+        <pattern-item n="dep"/>
+      </pattern>
+      <action>
+      <call-macro n="f_strip_tags"><with-param pos="1"/></call-macro>
+        <out>
+          <chunk name="dep" case="caseFirstWord">
+            <tags>
+              <tag><lit-tag v="SV"/></tag>
+            </tags>
+            <lu>
+              <get-case-from pos="1"><lit v="diye"/></get-case-from><lit-tag v="cnjsub"/>
+            </lu>
+          </chunk>
+        </out>
+      </action>
+    </rule>
+
+
+    <rule comment="REGLA: cop-aor-evid">
+      <pattern>
+        <pattern-item n="eken"/>
+      </pattern>
+      <action>
+      <call-macro n="f_strip_tags"><with-param pos="1"/></call-macro>
+      <call-macro n="f_3sg_if_empty1"><with-param pos="1"/></call-macro>
+        <out>
+          <chunk name="eken" case="caseFirstWord">
+            <tags>
+              <tag><lit-tag v="SV"/></tag>
+            </tags>
+            <lu>
+              <get-case-from pos="1"><lit v="i"/></get-case-from><lit-tag v="cop.dub.aor"/>
+              <var n="pers-nbr"/>
+            </lu>
+          </chunk>
+        </out>
+      </action>
+    </rule>
+
+
+
+    <rule comment="REGLA: ger-dat">
+      <pattern>
+        <pattern-item n="ger-dat"/>
+      </pattern>
+      <action>
+      <call-macro n="f_strip_tags"><with-param pos="1"/></call-macro>
+      <let><clip pos="1" side="tl" part="a_non_fin"/><lit-tag v="2"/></let>
+      <let><clip pos="1" side="tl" part="a_cas"/><lit-tag v="3"/></let>
+        <out>
+          <chunk name="ger" case="caseFirstWord">
+            <tags>
+              <tag><lit-tag v="SV"/></tag>
+              <tag><clip pos="1" side="sl" part="a_non_fin"/></tag>
+              <tag><clip pos="1" side="sl" part="a_cas"/></tag>
+            </tags>
+            <lu>
+              <clip pos="1" side="tl" part="whole"/>
+            </lu>
+          </chunk>
+        </out>
+      </action>
+    </rule>
+
+
+    <rule comment="REGLA: percent">
+      <pattern>
+        <pattern-item n="percent"/>
+      </pattern>
+      <action>
+      <call-macro n="f_strip_tags"><with-param pos="1"/></call-macro>
+      <let><clip pos="1" side="tl" part="a_percent"/><lit v=""/></let>
+        <out>
+          <chunk name="yuzde_z" case="caseFirstWord">
+            <tags>
+              <tag><lit-tag v="SN"/></tag>
+            </tags>
+            <!--<lu><lit v="yüz"/><lit-tag v="num.subst.loc"/></lu>-->
+            <lu><lit v="yüzde"/><lit-tag v="sym"/></lu> <!-- This is a hack until the lt-print compilation thing is sorted -->
+            <lu>
+              <clip pos="1" side="tl" part="whole"/>
+            </lu>
+          </chunk>
+        </out>
+      </action>
+    </rule>
+
+
+
+
+    <rule comment="REGLA: SENT">
+      <pattern>
+        <pattern-item n="sent"/>
+      </pattern>
+      <action>
+      <call-macro n="f_strip_tags"><with-param pos="1"/></call-macro>
+        <out>
+          <chunk name="sent" case="caseFirstWord">
+            <tags>
+              <tag><lit-tag v="SENT"/></tag>
+            </tags>
+            <lu>
+              <clip pos="1" side="tl" part="whole"/>
+            </lu>
+          </chunk>
+        </out>
+      </action>
+    </rule>
+
+
+  </section-rules>
+</transfer>
+
+<!--
+Resources:
+    http://wiki.apertium.org/wiki/Chunking:_A_full_example
+    http://wiki.apertium.org/wiki/Chunking
+    http://wiki.apertium.org/wiki/Apertium_New_Language_Pair_HOWTO#Transfer_rules
+    http://wiki.apertium.org/wiki/A_long_introduction_to_transfer_rules
+    http://wiki.apertium.org/wiki/Transfer#Adding_structural_transfer_.28grammar.29_rules
+-->
+

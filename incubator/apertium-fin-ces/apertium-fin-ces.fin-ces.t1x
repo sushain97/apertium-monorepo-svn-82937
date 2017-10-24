@@ -1,0 +1,919 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- -*- nxml -*- -->
+<transfer default="chunk">
+  <section-def-cats>
+
+    <def-cat n="neg-verb"> <!-- ei vblex.neg.p3.sg -->
+      <cat-item lemma="ei" tags="vblex.neg.*"/>
+      <cat-item lemma="ei" tags="vblex.neg.actv.p3.sg.@\+FAUXV"/>
+    </def-cat>
+
+    <def-cat n="conneg"> <!-- tietää vblex.actv.pres.conneg -->
+      <cat-item tags="vblex.*.*.conneg"/>
+      <cat-item tags="vblex.*.*.conneg.*"/>
+    </def-cat>
+    <def-cat n="cop-conneg">
+      <cat-item lemma="olla" tags="*.*.*.conneg"/>
+      <cat-item lemma="olla" tags="*.*.*.conneg.*"/>
+    </def-cat>
+    <def-cat n="conneg_nottable"> 
+      <cat-item lemma="voida" tags="*.*.*.conneg"/>
+      <cat-item lemma="voida" tags="*.*.*.conneg.*"/>
+    </def-cat>
+    <def-cat n="adneg">
+        <cat-item lemma="koskaan" tags="adv"/>
+    </def-cat>
+    <def-cat n="adv">
+        <cat-item tags="adv"/>
+    </def-cat>
+    <def-cat n="cnjcoo">
+        <cat-item tags="cnjcoo"/>
+        <cat-item tags="cnjcoo.*"/>
+    </def-cat>
+    <def-cat n="necessive">
+        <cat-item lemma="täytyä" tags="vaux.*"/>
+    </def-cat>
+    <def-cat n="gen-subj">
+        <cat-item tags="*.*.gen"/>
+        <cat-item tags="*.*.*.*.*.gen"/>
+    </def-cat>
+    <def-cat n="adv-misc">
+        <cat-item tags="adv.*"/>
+    </def-cat>
+    <def-cat n="pron-misc">
+        <cat-item tags="prn.*"/>
+    </def-cat>
+    <def-cat n="pron-pers">
+        <cat-item tags="prn.pers.*"/>
+    </def-cat>
+    <def-cat n="habitive">
+        <cat-item tags="n.*.ade"/>
+        <cat-item tags="np.*.ade"/>
+        <cat-item tags="np.*.*.ade"/>
+        <cat-item tags="np.*.*.*.ade"/>
+        <cat-item tags="prn.*.*.ade"/>
+        <cat-item tags="prn.*.*.*.ade"/>
+    </def-cat>
+    <def-cat n="possessional">
+        <cat-item lemma="olla" tags="vblex.actv.*.p3.sg"/>
+    </def-cat>
+    <def-cat n="sint-pers">
+        <cat-item tags="vblex.*.*.p1.*"/>
+        <cat-item tags="vblex.*.*.p2.*"/>
+    </def-cat>
+    <def-cat n="infma-ine">
+      <cat-item tags="vblex.actv.infma.sg.ine"/>
+    </def-cat>
+    <def-cat n="just-inf">
+      <cat-item tags="vblex.actv.infa.sg"/>
+      <cat-item tags="vblex.actv.infma.sg.ill"/>
+    </def-cat>
+    <def-cat n="vbneg">
+        <cat-item tags="vblex.neg.*.*.*"/>
+    </def-cat>
+    <def-cat n="post">
+      <cat-item tags="post"/>
+    </def-cat>
+    <def-cat n="num">
+      <cat-item tags="num.*"/>
+    </def-cat>
+    <def-cat n="adj">
+      <cat-item tags="adj"/>
+      <cat-item tags="adj.*"/>
+      <cat-item tags="adj.*.*"/>
+    </def-cat>
+    <def-cat n="prn">
+      <cat-item tags="prn.*"/>
+    </def-cat>
+    <def-cat n="verb-mood">
+      <cat-item tags="vblex.*.cond.*"/>
+      <cat-item tags="vblex.*.imp.*"/>
+      <cat-item tags="vblex.*.pot.*"/>
+      <cat-item tags="vaux.*.cond.*"/>
+      <cat-item tags="vaux.*.imp.*"/>
+      <cat-item tags="vaux.*.pot.*"/>
+    </def-cat>
+    <def-cat n="cm">
+      <cat-item tags="cm"/>
+    </def-cat>
+    <def-cat n="nom">
+      <cat-item tags="n.*"/>
+      <cat-item tags="np.*"/>
+    </def-cat>
+    <def-cat n="sent">
+      <cat-item tags="sent"/>
+    </def-cat>
+
+    <def-cat n="verb-past">
+        <cat-item tags="vblex.*.past.*"/>
+    </def-cat>
+    <def-cat n="verb-pres">
+        <cat-item tags="vblex.*.pres.*"/>
+    </def-cat>
+    <def-cat n="vbolla">
+        <cat-item lemma="olla" tags="vblex.*"/>
+    </def-cat>
+  </section-def-cats>
+  <section-def-attrs>
+    <def-attr n="a_verb">
+      <attr-item tags="vblex"/>
+      <attr-item tags="vblex.impf"/>
+      <attr-item tags="vblex.impf.tv"/>
+      <attr-item tags="vblex.impf.iv"/>
+      <attr-item tags="vblex.impf.ref"/>
+      <attr-item tags="vblex.perf"/>
+      <attr-item tags="vblex.perf.tv"/>
+      <attr-item tags="vblex.perf.iv"/>
+      <attr-item tags="vblex.perf.ref"/>
+      <attr-item tags="vbser"/>
+      <attr-item tags="vbser.clt"/>
+      <attr-item tags="vbhaver"/>
+      <attr-item tags="vbmod"/>
+      <attr-item tags="vaux"/>
+    </def-attr>
+    <def-attr n="voice">
+     <attr-item tags="pass"/>
+     <attr-item tags="actv"/>
+    </def-attr>
+    <def-attr n="person">
+      <attr-item tags="p1"/>
+      <attr-item tags="p2"/>
+      <attr-item tags="p3"/>
+    </def-attr>
+    <def-attr n="moodtense">
+      <attr-item tags="past"/>
+      <attr-item tags="pres"/>
+      <attr-item tags="cond"/>
+      <attr-item tags="imp"/>
+      <attr-item tags="pot"/>
+    </def-attr>
+    <def-attr n="a_adv">
+        <attr-item tags="adv"/>
+        <attr-item tags="adv.pst"/>
+        <attr-item tags="adv.itg"/>
+    </def-attr>
+    <def-attr n="a_nom">
+      <attr-item tags="n"/>
+      <attr-item tags="n.nt"/>
+      <attr-item tags="n.f"/>
+      <attr-item tags="n.m"/>
+      <attr-item tags="n.ma"/>
+      <attr-item tags="vblex.subst"/>
+      <attr-item tags="np"/>
+      <attr-item tags="np.ant"/>
+      <attr-item tags="np.ant.f"/>
+      <attr-item tags="np.ant.m"/>
+      <attr-item tags="prn"/>
+      <attr-item tags="prn.p1"/>
+      <attr-item tags="prn.p1.m"/>
+      <attr-item tags="prn.p1.f"/>
+      <attr-item tags="prn.p2"/>
+      <attr-item tags="prn.p3"/>
+      <attr-item tags="prn.p3.f"/>
+      <attr-item tags="prn.p3.nt"/>
+      <attr-item tags="prn.p3.ma"/>
+      <attr-item tags="prn.p3.mf"/>
+    </def-attr>
+    <def-attr n="a_gender">
+      <attr-item tags="nt"/>
+      <attr-item tags="ut"/>
+    </def-attr>
+    <def-attr n="a_adj">
+      <attr-item tags="adj"/>
+      <attr-item tags="adj.sint"/>
+      <attr-item tags="adj.sint.m"/>
+      <attr-item tags="adj.sint.f"/>
+      <attr-item tags="adj.sint.nt"/>
+      <attr-item tags="adj.m"/>
+      <attr-item tags="adj.f"/>
+      <attr-item tags="adj.nt"/>
+    </def-attr>
+    <def-attr n="a_prn">
+      <attr-item tags="prn.pers"/>
+      <attr-item tags="prn.dem"/>
+    </def-attr>
+    <def-attr n="a_num">
+      <attr-item tags="num"/>
+      <attr-item tags="num.un"/>
+      <attr-item tags="num.un.sg"/>
+      <attr-item tags="num.un.pl"/>
+    </def-attr>
+    <def-attr n="a_nbr">
+      <attr-item tags="sp"/>
+      <attr-item tags="sg"/>
+      <attr-item tags="pl"/>
+    </def-attr>
+    <def-attr n="a_pers">
+      <attr-item tags="p1"/>
+      <attr-item tags="p2"/>
+      <attr-item tags="p3"/>
+    </def-attr>
+    <def-attr n="a_gen">
+      <attr-item tags="m"/>
+      <attr-item tags="nt"/>
+      <attr-item tags="f"/>
+    </def-attr>
+    <def-attr n="a_cas">
+      <attr-item tags="abl"/>
+      <attr-item tags="acc"/>
+      <attr-item tags="ade"/>
+      <attr-item tags="ela"/>
+      <attr-item tags="gen"/>
+      <attr-item tags="all"/>
+      <attr-item tags="ill"/>
+      <attr-item tags="ine"/>
+      <attr-item tags="ins"/>
+      <attr-item tags="nom"/>
+      <attr-item tags="abe"/>
+      <attr-item tags="com"/>
+      <attr-item tags="ess"/>
+      <attr-item tags="par"/>
+      <attr-item tags="loc"/>
+      <attr-item tags="dat"/>
+    </def-attr>
+    <def-attr n="a_poss">
+        <attr-item tags="px1sg"/>
+        <attr-item tags="px2sg"/>
+        <attr-item tags="px3sg"/>
+        <attr-item tags="px1pl"/>
+        <attr-item tags="px2pl"/>
+        <attr-item tags="px3pl"/>
+        <attr-item tags="px3sp"/>
+    </def-attr>
+    <def-attr n="a_neg">
+        <attr-item tags="part.neg"/>
+    </def-attr>
+    <def-attr n="synfunc">
+      <attr-item tags="CLB"/>
+      <attr-item tags="@\+FAUXV"/>
+      <attr-item tags="@\+FMAINV"/>
+      <attr-item tags="@-FADVL"/>
+      <attr-item tags="@-FAUXV"/>
+      <attr-item tags="@-FMAINV"/>
+      <attr-item tags="@-FOBJ→"/>
+      <attr-item tags="@-FSUBJ→"/>
+      <attr-item tags="@-F←OBJ"/>
+      <attr-item tags="@ADVL"/>
+      <attr-item tags="@ADVL←"/>
+      <attr-item tags="@ADVL→"/>
+      <attr-item tags="@COMP-CS←"/>
+      <attr-item tags="@HAB"/>
+      <attr-item tags="@CNP"/>
+      <attr-item tags="@CVP"/>
+      <attr-item tags="@HNOUN"/>
+      <attr-item tags="@INTERJ"/>
+      <attr-item tags="@NEC-S"/>
+      <attr-item tags="@NF-S"/>
+      <attr-item tags="@Num←"/>
+      <attr-item tags="@N←"/>
+      <attr-item tags="@OBJ"/>
+      <attr-item tags="@OBJ"/>
+      <attr-item tags="@OBJ→"/>
+      <attr-item tags="@OPRED"/>
+      <attr-item tags="@OPRED→"/>
+      <attr-item tags="@PC"/>
+      <attr-item tags="@PCLE"/>
+      <attr-item tags="@Pron←"/>
+      <attr-item tags="@P←"/>
+      <attr-item tags="@P→"/>
+      <attr-item tags="@SPRED"/>
+      <attr-item tags="@SPRED←OBJ"/>
+      <attr-item tags="@SPRED→"/>
+      <attr-item tags="@SUBJ"/>
+      <attr-item tags="@SUBJ"/>
+      <attr-item tags="@SUBJ→"/>
+      <attr-item tags="@←ADVL"/>
+      <attr-item tags="@←OBJ"/>
+      <attr-item tags="@←OPRED"/>
+      <attr-item tags="@←P"/>
+      <attr-item tags="@←SPRED"/>
+      <attr-item tags="@←SUBJ"/>
+      <attr-item tags="@→A"/>
+      <attr-item tags="@→ADVL"/>
+      <attr-item tags="@→N"/>
+      <attr-item tags="@→Num"/>
+      <attr-item tags="@→P"/>
+      <attr-item tags="@→Pron"/>
+    </def-attr>
+
+
+  </section-def-attrs>
+  <section-def-vars>
+    <def-var n="number"/>
+    <def-var n="sntype"/>
+    <def-var n="current_verb"/>
+    <def-var n="definiteness"/>
+    <def-var n="verb_stuff"/>
+  </section-def-vars>
+  <section-def-macros>
+ 
+    <def-macro n="proc-synlabel1" npar="1">
+          <let><clip pos="1" side="tl" part="synfunc"/><lit v=""/></let>
+    </def-macro>
+
+    <def-macro n="proc-synlabel3" npar="3">
+        <call-macro n="proc-synlabel1"> 
+          <with-param pos="1"/>
+        </call-macro> 
+        <call-macro n="proc-synlabel1"> 
+          <with-param pos="2"/>
+        </call-macro> 
+        <call-macro n="proc-synlabel1"> 
+          <with-param pos="3"/>
+        </call-macro> 
+    </def-macro>
+
+
+    <def-macro n="mood-handler1" npar="1">
+          <let><clip pos="1" side="tl" part="synfunc"/><lit v=""/></let>
+          <choose>
+            <when>
+              <test><or> 
+                <equal><clip pos="1" side="sl" part="moodtense"/><lit-tag v="cond"/></equal>
+                <equal><clip pos="1" side="sl" part="moodtense"/><lit-tag v="imp"/></equal>
+                <equal><clip pos="1" side="sl" part="moodtense"/><lit-tag v="pot"/></equal>
+        </or></test>
+
+              <let><clip pos="1" side="tl" part="moodtense"/><lit-tag v="pres"/></let>
+            </when>
+        </choose>
+    </def-macro>
+
+    <def-macro n="case-handler1" npar="1">
+          <let><clip pos="1" side="tl" part="synfunc"/><lit v=""/></let>
+          <choose>
+            <when>
+              <test><or>
+                <equal><clip pos="1" side="sl" part="a_cas"/><lit-tag v="ine"/></equal>
+                <equal><clip pos="1" side="sl" part="a_cas"/><lit-tag v="ela"/></equal>
+                <equal><clip pos="1" side="sl" part="a_cas"/><lit-tag v="ill"/></equal>
+                <equal><clip pos="1" side="sl" part="a_cas"/><lit-tag v="ade"/></equal>
+                <equal><clip pos="1" side="sl" part="a_cas"/><lit-tag v="abl"/></equal>
+                <equal><clip pos="1" side="sl" part="a_cas"/><lit-tag v="all"/></equal>
+            </or></test>
+              <let><clip pos="1" side="tl" part="a_cas"/><lit-tag v="loc"/></let>
+              <let><var n="sntype"/><lit-tag v="SN"/></let>
+          </when>
+          <when>
+              <test><or>
+                <equal><clip pos="1" side="sl" part="a_cas"/><lit-tag v="par"/></equal>
+                <equal><clip pos="1" side="sl" part="a_cas"/><lit-tag v="abe"/></equal>
+                <equal><clip pos="1" side="sl" part="a_cas"/><lit-tag v="ins"/></equal>
+                <equal><clip pos="1" side="sl" part="a_cas"/><lit-tag v="com"/></equal>
+                <equal><clip pos="1" side="sl" part="a_cas"/><lit-tag v="ess"/></equal>
+        </or></test>
+
+              <let><clip pos="1" side="tl" part="a_cas"/><lit-tag v="nom"/></let>
+              <let><var n="sntype"/><lit-tag v="SN"/></let>
+            </when>
+        </choose>
+    </def-macro>
+
+
+ </section-def-macros>
+  <section-rules>
+
+
+
+
+
+    <rule comment="REGLA: adv-misc">
+      <pattern>
+        <pattern-item n="adv-misc"/>
+      </pattern>
+      <action>
+        <call-macro n="case-handler1"> 
+          <with-param pos="1"/>
+        </call-macro>
+        <call-macro n="proc-synlabel1"> 
+          <with-param pos="1"/>
+        </call-macro>
+        <out>
+          <chunk name="adv" case="caseFirstWord">
+            <tags>
+                <tag><lit-tag v="SN"/></tag>
+              <tag><clip pos="1" side="sl" part="a_cas"/></tag>
+            </tags>
+            <lu>
+                <clip pos="1" side="tl" part="lem"/>
+                <clip pos="1" side="tl" part="a_adv"/> 
+            </lu>
+          </chunk>
+        </out>
+      </action>
+    </rule>
+
+    <rule comment="REGLA: pron-misc">
+      <pattern>
+        <pattern-item n="pron-misc"/>
+      </pattern>
+      <action>
+        <call-macro n="case-handler1"> 
+          <with-param pos="1"/>
+        </call-macro>
+        <call-macro n="proc-synlabel1"> 
+          <with-param pos="1"/>
+        </call-macro>
+        <out>
+          <chunk name="pron" case="caseFirstWord">
+            <tags>
+              <tag><lit-tag v="SN"/></tag>
+              <tag><clip pos="1" side="sl" part="a_cas"/></tag>
+            </tags>
+            <lu>
+              <clip pos="1" side="tl" part="whole"/>
+            </lu>
+          </chunk>
+        </out>
+      </action>
+    </rule>
+
+
+
+
+    <rule comment="REGLA: pron-pers">
+      <pattern>
+        <pattern-item n="pron-pers"/>
+      </pattern>
+      <action>
+        <call-macro n="case-handler1"> 
+          <with-param pos="1"/>
+        </call-macro>
+        <call-macro n="proc-synlabel1"> 
+          <with-param pos="1"/>
+        </call-macro>
+        <out>
+          <chunk name="pron" case="caseFirstWord">
+            <tags>
+              <tag><lit-tag v="SN"/></tag>
+              <tag><clip pos="1" side="sl" part="a_cas"/></tag>
+            </tags>
+            <lu>
+              <clip pos="1" side="tl" part="whole"/>
+            </lu>
+          </chunk>
+        </out>
+      </action>
+    </rule>
+
+    <rule comment="REGLA: habitive stuff">
+      <pattern>
+          <pattern-item n="habitive"/>
+          <pattern-item n="possessional"/>
+      </pattern>
+      <action>
+        <call-macro n="proc-synlabel1"> 
+          <with-param pos="2"/>
+        </call-macro>
+        <out>
+          <chunk name="verb phrase" case="caseFirstWord">
+            <tags>
+              <tag><lit-tag v="SV"/></tag>
+            </tags>
+            <lu>
+                <clip pos="1" side="tl" part="lem"/>
+                <clip pos="1" side="tl" part="a_nom"/>
+                <clip pos="1" side="tl" part="a_nbr"/>
+                <lit-tag v="nom"/>
+            </lu>
+            <b pos="1"/>
+            <lu>
+                <lit v="mít"/>
+                <lit-tag v="vbhaver.impf"/>
+                <clip pos="2" side="tl" part="moodtense"/> <!-- pres -->
+                <clip pos="2" side="tl" part="a_pers"/> <!--  -->
+                <clip pos="2" side="tl" part="a_nbr"/> <!--  -->
+            </lu>
+          </chunk>
+        </out>
+      </action>
+    </rule>
+
+    <rule comment="REGLA: NOM">
+      <pattern>
+        <pattern-item n="nom"/>
+      </pattern>
+      <action>
+        <call-macro n="case-handler1"> 
+          <with-param pos="1"/>
+        </call-macro>
+        <call-macro n="proc-synlabel1"> 
+          <with-param pos="1"/>
+        </call-macro>
+        <out>
+          <chunk name="n" case="caseFirstWord">
+            <tags>
+              <tag><var n="sntype"/></tag>
+              <tag><clip pos="1" side="sl" part="a_cas"/></tag>
+              <tag><clip pos="1" side="sl" part="a_poss"/></tag>
+            </tags>
+            <lu>
+              <clip pos="1" side="tl" part="lemh"/>
+              <clip pos="1" side="tl" part="a_nom"/>
+              <clip pos="1" side="tl" part="a_nbr"/>
+              <var n="definiteness"/>
+              <clip pos="1" side="tl" part="a_cas"/>
+              <clip pos="1" side="tl" part="lemq"/>
+            </lu>
+          </chunk>
+        </out>
+      </action>
+    </rule>
+
+    <rule comment="REGLA: adj">
+      <pattern>
+        <pattern-item n="adj"/>
+      </pattern>
+      <action>
+        <call-macro n="proc-synlabel1"> 
+          <with-param pos="1"/>
+        </call-macro>
+        <call-macro n="case-handler1"> 
+          <with-param pos="1"/>
+        </call-macro>
+        <out>
+          <chunk name="j" case="caseFirstWord">
+            <tags>
+              <tag><lit-tag v="SA"/></tag>
+            </tags>
+            <lu>
+              <clip pos="1" side="tl" part="lemh"/>
+              <clip pos="1" side="tl" part="a_adj"/>
+              <clip pos="1" side="tl" part="a_nbr"/>
+              <clip pos="1" side="tl" part="a_cas"/>
+              <clip pos="1" side="tl" part="lemq"/>
+            </lu>
+          </chunk>
+        </out>
+      </action>
+    </rule>
+
+
+
+    <rule comment="REGLA: vbolla">
+      <pattern>
+         <pattern-item n="vbolla"/>
+        <pattern-item n="infma-ine"/>
+      </pattern>
+      <action>
+        <call-macro n="mood-handler1"> 
+          <with-param pos="1"/>
+        </call-macro>
+        <out> 
+          <chunk name="cop" case="caseFirstWord">
+            <tags>
+                <tag><lit-tag v="SV.COP"/></tag>
+                <tag><clip pos="1" part="moodtense" side="sl"/></tag>
+            </tags>
+          <lu>
+            <clip pos="2" side="tl" part="lem"/> <!-- know --> 
+            <clip pos="2" side="tl" part="a_verb"/> <!-- vblex -->
+            <clip pos="1" side="tl" part="moodtense"/> <!-- pres -->
+            <clip pos="1" side="tl" part="a_pers"/> <!-- pres -->
+            <clip pos="1" side="tl" part="a_nbr"/> <!-- pres -->
+            <clip pos="2" side="tl" part="lemq"/>
+          </lu>
+          </chunk>
+        </out>      
+      </action>
+    </rule>
+
+
+
+    <rule comment="REGLA: infma-ine">
+      <pattern>
+        <pattern-item n="infma-ine"/>
+      </pattern>
+      <action>
+        <out>
+          <chunk name="ger" case="caseFirstWord">
+            <tags>
+              <tag><lit-tag v="SN"/></tag>
+            </tags>
+            <lu>
+              <clip pos="1" side="tl" part="lem"/>
+              <clip pos="1" side="tl" part="a_verb"/>
+            </lu>
+          </chunk>
+        </out>
+      </action>
+    </rule>
+
+
+    <rule comment="REGLA: just-inf">
+      <pattern>
+         <pattern-item n="just-inf"/>
+      </pattern>
+      <action>
+        <out> 
+          <chunk name="inf" case="caseFirstWord">
+            <tags>
+                <tag><lit-tag v="INFV"/></tag>
+            </tags>
+            <lu>
+                <clip pos="1" side="tl" part="lem"/>
+                <clip pos="1" side="tl" part="a_verb"/>
+                <lit-tag v="inf"/>
+            </lu>
+          </chunk>
+        </out>      
+      </action>
+    </rule>
+
+    <rule comment="REGLA: verb-past">
+      <pattern>
+         <pattern-item n="verb-past"/>
+      </pattern>
+      <action>
+        <out> 
+          <chunk name="v" case="caseFirstWord">
+            <tags>
+              <tag><lit-tag v="SV"/></tag>
+            </tags>
+            <lu>
+            <clip pos="1" side="tl" part="lem"/> <!-- know --> 
+            <clip pos="1" side="tl" part="a_verb"/> <!-- vblex -->
+            <lit-tag v="pres"/>
+            <clip pos="1" side="sl" part="person"/>
+            <clip pos="1" side="sl" part="a_nbr"/>
+          </lu>
+          </chunk>
+        </out>      
+      </action>
+    </rule>
+
+    <rule comment="REGLA: verb-pres">
+      <pattern>
+         <pattern-item n="verb-pres"/>
+      </pattern>
+      <action>
+     
+        <out> 
+          <chunk name="v" case="caseFirstWord">
+            <tags>
+              <tag><lit-tag v="SV"/></tag>
+            </tags>
+          <lu>
+            <clip pos="1" side="tl" part="lem"/> <!-- know --> 
+            <clip pos="1" side="tl" part="a_verb"/> <!-- vblex-->
+            <clip pos="1" side="tl" part="moodtense"/> <!-- pres -->
+            <clip pos="1" side="sl" part="person"/>
+            <clip pos="1" side="sl" part="a_nbr"/>
+          </lu>
+          </chunk>
+        </out>      
+      </action>
+    </rule>
+
+    <rule comment="REGLA: moody verb">
+      <pattern>
+         <pattern-item n="verb-mood"/>
+      </pattern>
+      <action>
+        <call-macro n="mood-handler1"> 
+          <with-param pos="1"/>
+        </call-macro>
+        <out> 
+          <chunk name="v" case="caseFirstWord">
+            <tags>
+              <tag><lit-tag v="SV"/></tag>
+              <tag><clip pos="1" side="sl" part="moodtense"/></tag>
+            </tags>
+          <lu>
+            <clip pos="1" side="tl" part="lem"/> <!-- know --> 
+            <clip pos="1" side="tl" part="a_verb"/> <!-- vblex -->
+            <clip pos="1" side="tl" part="moodtense"/> <!-- pres -->
+            <clip pos="1" side="tl" part="voice"/> <!-- vblex -->
+            <clip pos="1" side="sl" part="person"/>
+            <clip pos="1" side="sl" part="a_nbr"/>
+          </lu>
+          </chunk>
+        </out>      
+      </action>
+    </rule>
+
+    <rule comment="REGLA: num">
+      <pattern>
+        <pattern-item n="num"/>
+      </pattern>
+      <action>
+        <out>
+          <chunk name="num" case="caseFirstWord">
+            <tags>
+              <tag><lit-tag v="NUM"/></tag>
+            </tags>
+            <lu>
+              <clip pos="1" side="tl" part="lem"/>
+              <clip pos="1" side="tl" part="a_num"/>
+            </lu>
+          </chunk>
+        </out>
+      </action>
+    </rule>
+
+
+
+    <rule comment="REGLA: num nom">
+      <pattern>
+        <pattern-item n="num"/>
+        <pattern-item n="nom"/>
+      </pattern>
+      <action>
+        <call-macro n="case-handler1"> 
+          <with-param pos="2"/>
+        </call-macro>
+        <out>
+          <chunk name="num" case="caseFirstWord">
+            <tags>
+              <tag><lit-tag v="NUM"/></tag>
+            </tags>
+            <lu>
+              <clip pos="1" side="tl" part="lem"/>
+              <clip pos="1" side="tl" part="a_num"/>
+            </lu>
+            <b pos="1"/>
+            <lu>
+              <clip pos="2" side="tl" part="lem"/>
+              <clip pos="2" side="tl" part="a_nom"/>
+              <clip pos="2" side="tl" part="a_nbr"/>
+              <clip pos="2" side="tl" part="a_cas"/>
+            </lu>
+          </chunk>
+        </out>
+      </action>
+    </rule>
+
+
+    <rule comment="REGLA: POST">
+      <pattern>
+        <pattern-item n="post"/>
+      </pattern>
+      <action>
+        <call-macro n="proc-synlabel1"> 
+          <with-param pos="1"/>
+        </call-macro>
+        <out>
+          <chunk name="post" case="caseFirstWord">
+            <tags>
+              <tag><lit-tag v="POST"/></tag>
+            </tags>
+            <lu>
+              <clip pos="1" side="tl" part="whole"/>
+            </lu>
+          </chunk>
+        </out>
+      </action>
+    </rule>
+
+    <rule comment="REGLA: ADV">
+      <pattern>
+        <pattern-item n="adv"/>
+      </pattern>
+      <action>
+        <call-macro n="proc-synlabel1"> 
+          <with-param pos="1"/>
+        </call-macro>
+        <out>
+          <chunk name="adv" case="caseFirstWord">
+            <tags>
+              <tag><lit-tag v="ADV"/></tag>
+            </tags>
+            <lu>
+              <clip pos="1" side="tl" part="whole"/>
+            </lu>
+          </chunk>
+        </out>
+      </action>
+    </rule>
+
+    <rule comment="REGLA: Necessrary">
+      <pattern>
+        <pattern-item n="gen-subj"/>
+        <pattern-item n="necessive"/>
+      </pattern>
+      <action>
+        <call-macro n="case-handler1"> 
+          <with-param pos="1"/>
+        </call-macro>
+        <out>
+          <chunk name="NECESSIVE" case="caseFirstWord">
+            <tags>
+              <tag><lit-tag v="NP-NEC"/></tag>
+            </tags>
+            <lu>
+                <clip pos="1" side="tl" part="whole"/>
+          </lu>
+          <b pos="1"/>
+            <lu>
+                <lit v=""/>
+                <lit-tag v="vaux"/>
+                <clip pos="2" side="tl" part="moodtense"/>
+                <clip pos="2" side="tl" part="voice"/>
+            </lu>
+          </chunk>
+        </out>
+      </action>
+    </rule>
+    
+    <rule comment="REGLA: gen owner">
+      <pattern>
+        <pattern-item n="gen-subj"/>
+        <pattern-item n="nom"/>
+      </pattern>
+      <action>
+        <call-macro n="case-handler1"> 
+          <with-param pos="2"/>
+        </call-macro>
+        <let><clip pos="2" side="tl" part="a_poss"/><lit v=""/></let>
+        <out>
+          <chunk name="REALGEN" case="caseFirstWord">
+            <tags>
+              <tag><lit-tag v="NP-GEN"/></tag>
+            </tags>
+            <lu>
+              <clip pos="1" side="tl" part="lemh"/>
+              <clip pos="1" side="tl" part="a_nom"/>
+              <clip pos="1" side="tl" part="a_nbr"/>
+              <clip pos="1" side="tl" part="a_cas"/>
+              <clip pos="1" side="tl" part="lemq"/>
+            </lu>
+                <b pos="1"/>
+            <lu>
+              <clip pos="2" side="tl" part="lemh"/>
+              <clip pos="2" side="tl" part="a_nom"/>
+              <clip pos="2" side="tl" part="a_nbr"/>
+              <clip pos="2" side="tl" part="a_cas"/>
+              <clip pos="2" side="tl" part="lemq"/>
+            </lu>
+          </chunk>
+        </out>
+      </action>
+  </rule>
+
+    <rule comment="REGLA: cnjcoo">
+      <pattern>
+        <pattern-item n="cnjcoo"/>
+      </pattern>
+      <action>
+        <call-macro n="proc-synlabel1"> 
+          <with-param pos="1"/>
+        </call-macro>
+        <out>
+          <chunk name="cc" case="caseFirstWord">
+            <tags>
+              <tag><lit-tag v="CC"/></tag>
+            </tags>
+            <lu>
+                <!-- because CG introduces CLB tag for cnjcoo -->
+                <clip pos="1" side="tl" part="lem"/>
+                <lit-tag v="cnjcoo"/>
+            </lu>
+            </chunk>
+        </out>
+      </action>
+    </rule>
+
+    <rule comment="sääntö: negatiivinen verbi">
+      <pattern>
+        <pattern-item n="neg-verb"/>
+      </pattern>
+      <action>
+        <out>
+          <chunk name="negv">
+            <tags>
+              <tag><lit-tag v="NEGV"/></tag>
+            </tags>
+              <lu>
+                <clip pos="1" side="tl" part="lemh"/>
+                <clip pos="1" side="tl" part="a_neg"/>
+              </lu>
+          </chunk>
+        </out>
+      </action>
+    </rule>
+
+ 
+    <rule comment="REGLA: SENT">
+      <pattern>
+        <pattern-item n="sent"/>
+      </pattern>
+      <action>
+        <call-macro n="proc-synlabel1"> 
+          <with-param pos="1"/>
+        </call-macro>
+        <out>
+          <chunk name="sent" case="caseFirstWord">
+            <tags>
+              <tag><lit-tag v="SENT"/></tag>
+            </tags>
+            <lu>
+              <clip pos="1" side="tl" part="whole"/>
+            </lu>
+          </chunk>
+        </out>
+      </action>
+    </rule>
+
+
+  </section-rules>
+</transfer>

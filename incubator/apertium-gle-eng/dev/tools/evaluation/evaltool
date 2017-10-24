@@ -1,0 +1,49 @@
+#!/bin/bash
+# 
+# Quick handy shortcuts for evaluating dictioanry coverage
+
+
+# All words in the test text
+
+all_words() {
+    lt-proc en-ga.ga.automorf.bin < "$testtext" | sed 's/\$\W*\^/$\n^/g'
+}
+
+# All words recognized from the dictionary
+known_words() {
+    all_words | grep -v '\*'
+}
+
+# All words not recognized from the dictionary
+unknown_words() {
+    all_words | grep '\*'
+}
+
+# Number of words in the test text
+total_wc() {
+    all_words | wc -l
+}
+
+# Number of words recognized from the dictionary
+known_wc() {
+    known_words | wc -l
+}
+
+# Number of words not recognized from the dictionary 
+unknown_wc() {
+    unknown_words | wc -l
+}
+
+usage() {
+    cat > /dev/stderr <<EOF
+    Usage: $0 <operation> <input filename>
+EOF
+    exit 1
+}
+
+[ $# -eq 2 ] || usage
+
+operation="$1"
+testtext="$2"
+
+"$operation" "$testtext"

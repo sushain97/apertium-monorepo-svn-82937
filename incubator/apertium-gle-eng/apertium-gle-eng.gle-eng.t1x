@@ -1,0 +1,121 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- -*- nxml -*- -->
+<!-- 
+  This program is free software: you can redistribute it and/or modify
+  it under the terms of the GNU General Public License as published by
+  the Free Software Foundation, either version 3 of the License.
+
+  This program is distributed in the hope that it will be useful,
+  but WITHOUT ANY WARRANTY; without even the implied warranty of
+  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+  GNU General Public License for more details.
+
+  You should have received a copy of the GNU General Public License
+  along with this program.  If not, see <http://www.gnu.org/licenses/>.
+-->
+<transfer default="chunk">
+  <section-def-cats>
+
+    <def-cat n="sent">
+      <cat-item tags="sent"/>
+    </def-cat>
+
+  </section-def-cats>
+  <section-def-attrs>
+    <def-attr n="a_voice">
+      <attr-item tags="actv"/>
+      <attr-item tags="pasv"/>
+    </def-attr>
+
+    <def-attr n="synfunc">
+      <attr-item tags="CLB"/>
+      <attr-item tags="@\+FAUXV"/>
+      <attr-item tags="@\+FMAINV"/>
+      <attr-item tags="@-FADVL"/>
+      <attr-item tags="@-FAUXV"/>
+      <attr-item tags="@-FMAINV"/>
+      <attr-item tags="@-FOBJ→"/>
+      <attr-item tags="@-FSUBJ→"/>
+      <attr-item tags="@-F←OBJ"/>
+      <attr-item tags="@ADVL"/>
+      <attr-item tags="@ADVL←"/>
+      <attr-item tags="@ADVL→"/>
+      <attr-item tags="@COMP-CS←"/>
+      <attr-item tags="@HAB"/>
+      <attr-item tags="@CNP"/>
+      <attr-item tags="@CVP"/>
+      <attr-item tags="@HNOUN"/>
+      <attr-item tags="@INTERJ"/>
+      <attr-item tags="@NEC-S"/>
+      <attr-item tags="@NF-S"/>
+      <attr-item tags="@Num←"/>
+      <attr-item tags="@N←"/>
+      <attr-item tags="@OBJ"/>
+      <attr-item tags="@OBJ"/>
+      <attr-item tags="@OBJ→"/>
+      <attr-item tags="@OPRED"/>
+      <attr-item tags="@OPRED→"/>
+      <attr-item tags="@PC"/>
+      <attr-item tags="@PCLE"/>
+      <attr-item tags="@Pron←"/>
+      <attr-item tags="@P←"/>
+      <attr-item tags="@P→"/>
+      <attr-item tags="@SPRED"/>
+      <attr-item tags="@SPRED←OBJ"/>
+      <attr-item tags="@SPRED→"/>
+      <attr-item tags="@SUBJ"/>
+      <attr-item tags="@SUBJ"/>
+      <attr-item tags="@SUBJ→"/>
+      <attr-item tags="@←ADVL"/>
+      <attr-item tags="@←OBJ"/>
+      <attr-item tags="@←OPRED"/>
+      <attr-item tags="@←P"/>
+      <attr-item tags="@←SPRED"/>
+      <attr-item tags="@←SUBJ"/>
+      <attr-item tags="@→A"/>
+      <attr-item tags="@→ADVL"/>
+      <attr-item tags="@→N"/>
+      <attr-item tags="@→Num"/>
+      <attr-item tags="@→P"/>
+      <attr-item tags="@→Pron"/>
+    </def-attr>
+
+
+  </section-def-attrs>
+  <section-def-vars>
+    <def-var n="number"/>
+    <def-var n="sntype"/>
+    <def-var n="current_verb"/>
+  </section-def-vars>
+  <section-def-macros>
+ 
+    <def-macro n="proc-synlabel1" npar="1">
+          <let><clip pos="1" side="tl" part="synfunc"/><lit v=""/></let>
+    </def-macro>
+
+
+ </section-def-macros>
+  <section-rules>
+
+
+    <rule comment="REGLA: SENT">
+      <pattern>
+        <pattern-item n="sent"/>
+      </pattern>
+      <action>
+        <out>
+          <chunk name="sent" case="caseFirstWord">
+            <tags>
+              <tag><lit-tag v="SENT"/></tag>
+            </tags>
+            <lu>
+              <clip pos="1" side="tl" part="whole"/>
+            </lu>
+          </chunk>
+        </out>
+      </action>
+    </rule>
+
+
+  </section-rules>
+</transfer>

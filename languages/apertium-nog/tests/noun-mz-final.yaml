@@ -1,0 +1,10 @@
+Config:
+  hfst:
+    App: hfst-lookup
+    Gen: ../nog.autogen.hfst
+    Morph: ../nog.automorf.hfst
+
+Tests:
+  "[twol] nom":
+    председатель<n><nom> : председатель 
+    председатель<n><px3sp><nom> : председатели

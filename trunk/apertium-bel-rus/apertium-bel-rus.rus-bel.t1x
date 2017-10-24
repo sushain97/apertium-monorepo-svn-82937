@@ -1,0 +1,812 @@
+<?xml version="1.0" encoding="utf-8"?>
+<transfer default="chunk">
+
+<section-def-cats>
+  <def-cat n="nom">
+     <cat-item tags="n.*"/>
+     <cat-item tags="np.*"/>
+  </def-cat>
+  <def-cat n="n">
+     <cat-item tags="n.*"/>
+  </def-cat>
+  <def-cat n="np">
+     <cat-item tags="np.*"/>
+  </def-cat>
+  <def-cat n="num">
+     <cat-item tags="num"/>
+     <cat-item tags="num.*"/>
+  </def-cat>
+  <def-cat n="vb">
+     <cat-item tags="vblex.*"/>
+     <cat-item tags="vbser.*"/>
+     <cat-item tags="vbmod.*"/>
+     <cat-item tags="vbhaver.*"/>
+  </def-cat>
+  <def-cat n="vb_short">
+    <cat-item tags="vblex.*.short.*"/>
+    <cat-item tags="vbmod.*.short.*"/>
+    <cat-item tags="vbser.*.short.*"/>
+    <cat-item tags="vbhaver.*.short.*"/>
+  </def-cat>
+  <def-cat n="perfpres">
+    <cat-item tags="vblex.*.perf.*.pres.*"/>
+    <cat-item tags="vbmod.*.perf.*.pres.*"/>
+    <cat-item tags="vbser.*.perf.*.pres.*"/>
+    <cat-item tags="vbhaver.*.perf.*.pres.*"/>
+  </def-cat>
+  <def-cat n="ipp">
+    <cat-item tags="vblex.impf.*.pp.adv"/>
+    <cat-item tags="vbmod.impf.*.pp.adv"/>
+    <cat-item tags="vbser.impf.*.pp.adv"/>
+    <cat-item tags="vbhaver.impf.*.pp.adv"/>
+  </def-cat>
+  <def-cat n="pprs_pasv">
+     <cat-item tags="vblex.*.pprs.pasv.*"/>
+     <cat-item tags="vbhaver.*.pprs.pasv.*"/>
+     <cat-item tags="vbser.pprs.pasv.*"/>
+     <cat-item tags="vbmod.*.pprs.pasv.*"/>
+  </def-cat>
+  <def-cat n="pp_actv">
+     <cat-item tags="vblex.*.pp.actv.*"/>
+     <cat-item tags="vbhaver.*.pp.actv.*"/>
+     <cat-item tags="vbser.pp.actv.*"/>
+     <cat-item tags="vbmod.*.pp.actv.*"/>
+  </def-cat>
+  <def-cat n="pprs_actv">
+     <cat-item tags="vblex.*.pprs.actv.*"/>
+     <cat-item tags="vbhaver.*.pprs.actv.*"/>
+     <cat-item tags="vbser.pprs.actv.*"/>
+     <cat-item tags="vbmod.*.pprs.actv.*"/>
+  </def-cat>
+  <def-cat n="prn">
+     <cat-item tags="prn.dem.*"/>
+     <cat-item tags="prn.itg.*"/>
+     <cat-item tags="prn.rel.*"/>
+     <cat-item tags="prn.ind.*"/>
+     <cat-item tags="prn.def.*"/>
+     <cat-item tags="prn.ref.*"/>
+     <cat-item tags="prn.neg.*"/>
+     <cat-item tags="prn.pers.*"/>
+  </def-cat>
+  <def-cat n="cnj">
+     <cat-item tags="cnjcoo"/>
+     <cat-item tags="cnjadv"/>
+     <cat-item tags="cnjsub"/>
+     <cat-item tags="cnjcoo.*"/>
+     <cat-item tags="cnjadv.*"/>
+     <cat-item tags="cnjsub.*"/>
+  </def-cat>
+  <def-cat n="adj">
+     <cat-item tags="adj.*"/>
+  </def-cat>
+  <def-cat n="adj_short">
+     <cat-item tags="adj.*.short"/>
+     <cat-item tags="adj.*.short.*"/>
+     <cat-item tags="adj.short.*"/>
+  </def-cat>
+  <def-cat n="adj_comp">
+     <cat-item tags="adj.sint.comp"/>
+     <cat-item tags="adj.*.comp"/>
+  </def-cat>
+  <def-cat n="pr">
+     <cat-item tags="pr"/>
+  </def-cat>
+  <def-cat n="adv">
+     <cat-item tags="adv"/>
+  </def-cat>
+  <def-cat n="det">
+     <cat-item tags="det"/>
+     <cat-item tags="det.*"/>
+  </def-cat>
+  <def-cat n="adj_det">
+     <cat-item tags="adj.*"/>
+     <cat-item tags="det"/>
+     <cat-item tags="det.*"/>
+  </def-cat>
+</section-def-cats>
+
+<section-def-attrs>
+  <def-attr n="a_n">
+     <attr-item tags="n"/>
+  </def-attr>
+
+  <def-attr n="a_np">
+     <attr-item tags="np"/>
+     <attr-item tags="np.ant"/>
+     <attr-item tags="np.al"/>
+     <attr-item tags="np.org"/>
+     <attr-item tags="np.hyd"/>
+     <attr-item tags="np.top"/>
+     <attr-item tags="np.cog"/>
+  </def-attr>
+  <def-attr n="a_cnj">
+     <attr-item tags="cnjcoo"/>
+     <attr-item tags="cnjsub"/>
+     <attr-item tags="cnjadv"/>
+  </def-attr>
+
+  <def-attr n="a_nom">
+     <attr-item tags="n"/>
+     <attr-item tags="np"/>
+     <attr-item tags="np.ant"/>
+     <attr-item tags="np.al"/>
+     <attr-item tags="np.org"/>
+     <attr-item tags="np.hyd"/>
+     <attr-item tags="np.top"/>
+     <attr-item tags="np.cog"/>
+  </def-attr>
+
+  <def-attr n="a_prp">
+     <attr-item tags="pr"/>
+  </def-attr>
+
+  <def-attr n="a_adj">
+     <attr-item tags="adj"/>
+     <attr-item tags="adj.sint"/>
+  </def-attr>
+
+  <def-attr n="a_cmp">
+     <attr-item tags="cmp"/>
+  </def-attr>
+
+  <def-attr n="a_vrb">
+     <attr-item tags="vblex"/>
+     <attr-item tags="vbmod"/>
+     <attr-item tags="vbser"/>
+     <attr-item tags="vbhaver"/>
+  </def-attr>
+
+  <def-attr n="asp">
+     <attr-item tags="impf"/>
+     <attr-item tags="dual"/>
+     <attr-item tags="perf"/>
+  </def-attr>
+
+  <def-attr n="tns">
+     <attr-item tags="inf"/>
+     <attr-item tags="pp.pasv"/>
+     <attr-item tags="pp.actv"/>
+     <attr-item tags="pp.adv"/>
+     <attr-item tags="pprs.pasv"/>
+     <attr-item tags="pprs.actv"/>
+     <attr-item tags="pprs.adv"/>
+     <attr-item tags="fut"/>
+     <attr-item tags="pres"/>
+     <attr-item tags="imp"/>
+     <attr-item tags="past"/>
+  </def-attr>
+
+  <def-attr n="prsn">
+     <attr-item tags="p1"/>
+     <attr-item tags="p2"/>
+     <attr-item tags="p3"/>
+  </def-attr>
+
+  <def-attr n="a_prn">
+     <attr-item tags="prn"/>
+     <attr-item tags="prn.itg"/>
+     <attr-item tags="prn.pers"/>
+     <attr-item tags="prn.neg"/>
+     <attr-item tags="prn.def"/>
+     <attr-item tags="prn.ref"/>
+     <attr-item tags="prn.ind"/>
+     <attr-item tags="prn.dem"/>
+     <attr-item tags="prn.rel"/>
+     <attr-item tags="prn.qnt"/>
+  </def-attr>
+
+  <def-attr n="a_det">
+     <attr-item tags="det"/>
+     <attr-item tags="det.ord"/>
+     <attr-item tags="det.pos"/>
+     <attr-item tags="det.dem"/>
+     <attr-item tags="det.ind"/>
+     <attr-item tags="det.itg"/>
+  </def-attr>
+
+  <def-attr n="a_sint">
+    <attr-item tags="sint"/>
+  </def-attr>
+
+  <def-attr n="a_fac">
+     <attr-item tags="fac"/>
+  </def-attr>
+
+  <def-attr n="a_pass">
+     <attr-item tags="pass"/>
+  </def-attr>
+
+  <def-attr n="gen">
+     <attr-item tags="m"/>
+     <attr-item tags="f"/>
+     <attr-item tags="nt"/>
+     <attr-item tags="mf"/>
+     <attr-item tags="mfn"/>
+  </def-attr>
+
+  <def-attr n="prs">
+     <attr-item tags="p1"/>
+     <attr-item tags="p2"/>
+     <attr-item tags="p3"/>
+  </def-attr>
+
+  <def-attr n="anim">
+     <attr-item tags="nn"/>
+     <attr-item tags="aa"/>
+     <attr-item tags="an"/>
+  </def-attr>
+
+
+  <def-attr n="nbr">
+     <attr-item tags="sg"/>
+     <attr-item tags="sp"/>
+     <attr-item tags="pl"/>
+  </def-attr>
+
+  <def-attr n="cas">
+     <attr-item tags="nom"/>
+     <attr-item tags="acc"/>
+     <attr-item tags="dat"/>
+     <attr-item tags="gen"/>
+     <attr-item tags="loc"/>
+     <attr-item tags="ins"/>
+     <attr-item tags="voc"/>
+     <attr-item tags="prp"/>
+  </def-attr>
+</section-def-attrs>
+
+<section-def-vars>
+  <def-var n="animacy_pp"/>
+</section-def-vars>
+
+<section-def-macros>
+  <!-- Case adapter: prp (rus) → loc (bel) -->
+  <def-macro n="case_adapter1" npar="1">
+    <let><clip pos="1" side="tl" part="a_fac"/><lit v=""/></let> <!-- no pass or fac tags exist in belarussian dic -->
+    <let><clip pos="1" side="tl" part="a_pass"/><lit v=""/></let>
+    <choose>
+      <when>
+        <test><equal><clip pos="1" side="tl" part="cas"/><lit-tag v="prp"/></equal></test>
+        <let><clip pos="1" side="tl" part="cas"/><lit-tag v="loc"/></let>
+      </when>
+    </choose>
+  </def-macro>
+  <!-- Transfer gender, number, case -->
+  <def-macro n="case_adapter_n" npar="2">
+    <choose>
+      <when>
+        <test>
+          <and>
+            <equal><clip pos="1" side="tl" part="nbr"/><lit-tag v="sg"/></equal>
+            <equal><clip pos="2" side="tl" part="nbr"/><lit-tag v="sg"/></equal>
+          </and>
+        </test>
+        <let>
+          <clip pos="1" side="tl" part="gen"/>
+          <clip pos="2" side="tl" part="gen"/>
+        </let>
+      </when>
+      <when>
+        <test>
+          <equal><clip pos="2" side="tl" part="nbr"/><lit-tag v="pl"/></equal>
+        </test>
+        <let>
+          <clip pos="1" side="tl" part="nbr"/>
+          <clip pos="2" side="tl" part="nbr"/>
+        </let>
+        <let>
+          <clip pos="1" side="tl" part="gen"/>
+          <lit-tag v="mfn"/>
+        </let>
+      </when>
+    </choose>
+  </def-macro>
+
+</section-def-macros>
+
+<section-rules>
+
+  <rule comment="RULE: Determiner → Determiner">
+    <pattern>
+      <pattern-item n="det"/>
+    </pattern>
+    <action>
+      <call-macro n="case_adapter1"><with-param pos="1"/></call-macro>
+      <out>
+        <chunk name="det" case="caseFirstWord">
+          <tags>
+            <tag><lit-tag v="DET"/></tag>
+          </tags>
+          <lu>
+            <clip pos="1" side="tl" part="whole"/>
+          </lu>
+        </chunk>
+      </out>
+    </action>
+  </rule>
+
+  <rule comment="RULE: Numeral → Numeral">
+    <pattern>
+      <pattern-item n="num"/>
+    </pattern>
+    <action>
+      <call-macro n="case_adapter1"><with-param pos="1"/></call-macro>
+      <out>
+        <chunk name="num" case="caseFirstWord">
+          <tags>
+            <tag><lit-tag v="NUM"/></tag>
+          </tags>
+          <lu>
+            <clip pos="1" side="tl" part="whole"/>
+          </lu>
+        </chunk>
+      </out>
+    </action>
+  </rule>
+
+  <rule comment="RULE: Pronoun → Pronoun">
+    <pattern>
+      <pattern-item n="prn"/>
+    </pattern>
+    <action>
+      <call-macro n="case_adapter1"><with-param pos="1"/></call-macro>
+      <out>
+        <chunk name="prn" case="caseFirstWord">
+          <tags>
+            <tag><lit-tag v="PRN"/></tag>
+          </tags>
+          <lu>
+            <clip pos="1" side="tl" part="whole"/>
+          </lu>
+        </chunk>
+      </out>
+    </action>
+  </rule>
+
+  <rule comment="RULE: Noun → Noun">
+    <pattern>
+      <pattern-item n="n"/>
+    </pattern>
+    <action>
+      <call-macro n="case_adapter1"><with-param pos="1"/></call-macro>
+      <out>
+        <chunk name="n" case="caseFirstWord">
+          <tags>
+            <tag><lit-tag v="SN"/></tag>
+          </tags>
+          <lu>
+            <clip pos="1" side="tl" part="whole"/>
+          </lu>
+        </chunk>
+      </out>
+    </action>
+  </rule>
+  
+
+  <rule comment="RULE: Proper Noun → Proper Noun">
+    <pattern>
+      <pattern-item n="np"/>
+    </pattern>
+    <action>
+      <call-macro n="case_adapter1"><with-param pos="1"/></call-macro>
+      <out>
+        <chunk name="np" case="caseFirstWord">
+          <tags>
+            <tag><lit-tag v="SN"/></tag>
+          </tags>
+          <lu>
+            <clip pos="1" side="tl" part="lemh"/>
+            <clip pos="1" side="tl" part="a_np"/>
+            <clip pos="1" side="tl" part="gen"/>
+            <clip pos="1" side="tl" part="nbr"/>
+            <clip pos="1" side="tl" part="cas"/>
+            <clip pos="1" side="tl" part="lemq"/>
+          </lu>
+        </chunk>
+      </out>
+    </action>
+  </rule>
+
+  <rule comment="verb short → long">
+    <pattern>
+      <pattern-item n="vb_short"/>
+    </pattern>
+    <action>
+      <let><clip pos="1" side="tl" part="cas"/><lit v=""/></let>
+      <choose>
+        <when>
+          <test><equal><clip pos="1" side="tl" part="anim"/><lit-tag v=""/></equal></test>
+          <let><clip pos="1" side="tl" part="anim"/><lit-tag v="an"/></let>
+        </when>
+      </choose>
+      <out>
+        <lu>
+          <clip pos="1" side="tl" part="a_vrb"/>
+          <clip pos="1" side="tl" part="asp"/>
+          <clip pos="1" side="tl" part="tns"/>
+          <clip pos="1" side="tl" part="gen"/>
+          <clip pos="1" side="tl" part="anim"/>
+          <clip pos="1" side="tl" part="nbr"/>
+          <lit-tag v="nom"/>
+        </lu>
+      </out>
+    </action>
+  </rule>
+
+  <!--
+    Examples: 
+      рекомендуемая литература → рэкамендаваная літаратура
+      предполагаемый результат → меркаваны вынік
+  -->
+  <!-- TODO: tests -->
+  <rule comment="RULE: Present passive participle → Past passive participle">
+    <pattern>
+      <pattern-item n="pprs_pasv"/>
+    </pattern>
+    <action>
+      <call-macro n="case_adapter1"><with-param pos="1"/></call-macro>
+      <choose>
+        <when>
+          <test><equal><clip pos="1" side="tl" part="anim"/><lit-tag v=""/></equal></test>
+          <let><clip pos="1" side="tl" part="anim"/><lit-tag v="an"/></let>
+        </when>
+      </choose>
+      <choose>
+        <when>
+          <test><equal><clip pos="1" side="tl" part="cas"/><lit-tag v=""/></equal></test>
+          <let><clip pos="1" side="tl" part="cas"/><lit-tag v="nom"/></let>
+        </when>
+      </choose>
+       <out>
+        <chunk name="prtcpl" case="caseFirstWord">
+          <tags>
+            <tag><lit-tag v="SA"/></tag>
+          </tags>
+          <lu>
+            <clip pos="1" side="tl" part="lemh"/>
+            <clip pos="1" side="tl" part="a_vrb"/>
+            <clip pos="1" side="tl" part="asp"/>
+            <lit-tag v="pp.pasv"/>
+            <clip pos="1" side="tl" part="gen"/>
+            <clip pos="1" side="tl" part="anim"/>
+            <clip pos="1" side="tl" part="nbr"/>
+            <clip pos="1" side="tl" part="cas"/>
+            <clip pos="1" side="tl" part="lemq"/>
+          </lu>
+        </chunk>
+      </out>
+    </action>
+  </rule>
+
+  <!--
+    Examples: 
+      играющий → які гуляе
+  -->
+  <rule comment="RULE: Present active participle → Pronoun 'як' + Verb">
+    <pattern>
+      <pattern-item n="pprs_actv"/>
+    </pattern>
+    <action>
+      <call-macro n="case_adapter1"><with-param pos="1"/></call-macro>
+      <out>
+        <chunk name="pprs_actv" case="caseFirstWord">
+          <tags>
+            <tag><lit-tag v="SRel"/></tag>
+          </tags>
+             <lu>
+                 <lit v="які"/>
+                 <lit-tag v="prn.itg"/>
+                 <clip pos="1" side="tl" part="gen"/>
+                 <clip pos="1" side="tl" part="anim"/>
+                 <clip pos="1" side="tl" part="nbr"/>
+                 <clip pos="1" side="tl" part="cas"/>
+             </lu>
+             <b/>
+             <lu>
+                <clip pos="1" side="tl" part="lemh"/>
+                <clip pos="1" side="tl" part="a_vrb"/>
+                <clip pos="1" side="tl" part="asp"/>
+                <lit-tag v="pres.p3"/>
+                <clip pos="1" side="tl" part="nbr"/>
+                <clip pos="1" side="tl" part="lemq"/>
+             </lu>
+        </chunk>
+      </out>
+    </action>
+  </rule>
+
+  <!--
+    Examples: 
+      игравший → які гуляў
+  -->
+  <rule comment="RULE: Past active participle → Pronoun 'як' + Verb">
+    <pattern>
+      <pattern-item n="pp_actv"/>
+    </pattern>
+    <action>
+      <call-macro n="case_adapter1"><with-param pos="1"/></call-macro>
+      <out>
+        <chunk name="pp_actv" case="caseFirstWord">
+          <tags>
+            <tag><lit-tag v="SRel"/></tag>
+          </tags>
+             <lu>
+                 <lit v="які"/>
+                 <lit-tag v="prn.itg"/>
+                 <clip pos="1" side="tl" part="gen"/>
+                 <clip pos="1" side="tl" part="anim"/>
+                 <clip pos="1" side="tl" part="nbr"/>
+                 <clip pos="1" side="tl" part="cas"/>
+             </lu>
+             <b/>
+             <lu>
+                <clip pos="1" side="tl" part="lemh"/>
+                <clip pos="1" side="tl" part="a_vrb"/>
+                <clip pos="1" side="tl" part="asp"/>
+                <lit-tag v="past"/>
+                <clip pos="1" side="tl" part="gen"/>
+                <clip pos="1" side="tl" part="nbr"/>
+                <clip pos="1" side="tl" part="lemq"/>
+             </lu>
+        </chunk>
+      </out>
+    </action>
+  </rule>
+
+  <rule comment="RULE: Past active participle + Noun → {Pronoun 'як' + Verb} + {Noun}, transfer noun's gender to verb">
+    <pattern>
+      <pattern-item n="pp_actv"/>
+      <pattern-item n="nom"/>
+    </pattern>
+    <action>
+      <call-macro n="case_adapter1"><with-param pos="1"/></call-macro>
+      <call-macro n="case_adapter1"><with-param pos="2"/></call-macro>
+      <call-macro n="case_adapter_n"><with-param pos="1"/><with-param pos="2"/></call-macro>
+      <out>
+        <chunk name="pp_actv" case="caseFirstWord">
+          <tags>
+            <tag><lit-tag v="SRel"/></tag>
+          </tags>
+             <lu>
+                 <lit v="які"/>
+                 <lit-tag v="prn.itg"/>
+                 <clip pos="1" side="tl" part="gen"/>
+                 <clip pos="1" side="tl" part="anim"/>
+                 <clip pos="1" side="tl" part="nbr"/>
+                 <clip pos="1" side="tl" part="cas"/>
+             </lu>
+             <b/>
+             <lu>
+                <clip pos="1" side="tl" part="lemh"/>
+                <clip pos="1" side="tl" part="a_vrb"/>
+                <clip pos="1" side="tl" part="asp"/>
+                <lit-tag v="past"/>
+                <clip pos="1" side="tl" part="gen"/>
+                <clip pos="1" side="tl" part="nbr"/>
+                <clip pos="1" side="tl" part="lemq"/>
+             </lu>
+        </chunk>
+        <chunk name="nom" case="caseFirstWord">
+          <tags>
+            <tag><lit-tag v="SN"/></tag>
+          </tags>
+             <lu>
+                <clip pos="2" side="tl" part="whole"/>
+             </lu>
+        </chunk>
+      </out>
+    </action>
+  </rule>
+
+
+  <rule comment="RULE: imperfective adverbial past participle">
+    <pattern>
+      <pattern-item n="ipp"/>
+    </pattern>
+    <action>
+      <out>
+        <chunk name="vipp" case="caseFirstWord">
+          <tags>
+            <tag><lit-tag v="VIPP"/></tag>  <!-- ask about tag names -->
+          </tags>
+          <lu>
+            <lit v="пасля таго, як"/>
+            <lit-tag v="cnjadv"/>
+          </lu>
+          <lu>
+            <clip pos="1" side="tl" part="lemh"/>
+            <clip pos="1" side="tl" part="a_vrb"/>
+            <clip pos="1" side="tl" part="asp"/>
+            <lit-tag v="past"/>
+            <lit-tag v="m"/>
+            <lit-tag v="sg"/>
+          </lu>
+        </chunk>
+      </out>
+    </action>
+  </rule>
+
+
+  <rule comment="RULE: Verb → Verb">
+    <pattern>
+      <pattern-item n="vb"/>
+    </pattern>
+    <action>
+      <call-macro n="case_adapter1"><with-param pos="1"/></call-macro>
+      <choose>
+        <when>
+          <test>
+            <and>
+              <equal><clip pos="1" side="tl" part="asp"/><lit-tag v="impf"/></equal>
+              <equal><clip pos="1" side="tl" part="tns"/><lit-tag v="fut"/></equal>
+            </and>
+          </test>          
+          <let><clip pos="1" side="tl" part="tns"/><lit-tag v="pres"/></let>
+        </when>
+        <when>
+          <test>
+            <and>
+              <equal><clip pos="1" side="tl" part="asp"/><lit-tag v="perf"/></equal>
+              <equal><clip pos="1" side="tl" part="tns"/><lit-tag v="pres"/></equal>
+            </and>
+          </test>          
+          <let><clip pos="1" side="tl" part="tns"/><lit-tag v="fut"/></let>
+        </when>
+      </choose>
+      <out>
+        <chunk name="vb" case="caseFirstWord">
+          <tags>
+            <tag><lit-tag v="SV"/></tag>
+          </tags>
+          <lu>
+            <clip pos="1" side="tl" part="whole"/>
+          </lu>
+        </chunk>
+      </out>
+    </action>
+  </rule>
+
+
+  <!--
+    Examples: 
+      Он был беден. → Ён быў бедны.
+  -->
+  <rule comment="RULE: Short adjective → Adjective">
+     <pattern>
+       <pattern-item n="adj_short"/>
+     </pattern>
+     <action>
+      <choose>
+        <when>
+          <test><equal><clip pos="1" side="sl" part="a_cmp"/><lit-tag v="cmp"/></equal></test> 
+          <let><clip pos="1" side="sl" part="a_cmp"/><lit-tag v=""/></let>
+          <let><clip pos="1" side="tl" part="whole"/><concat><clip pos="1" side="tl" part="whole"/><lit-tag v="m.an.sg.nom"/></concat></let>
+        </when>
+        <otherwise>
+          <let><clip pos="1" side="tl" part="tags"/><concat><lit-tag v="adj"/><clip pos="1" side="sl" part="gen"/><lit-tag v="an"/><clip pos="1" side="sl" part="nbr"/><lit-tag v="nom"/></concat></let>
+        </otherwise>
+      </choose>
+     <out>
+         <chunk name="adj" case="caseFirstWord">
+           <tags>
+             <tag><lit-tag v="SA"/></tag>
+           </tags>
+           <lu>
+              <clip pos="1" side="tl" part="whole"/>
+           </lu>
+         </chunk>
+     </out>
+     </action>
+  </rule>
+
+  <!--
+    Examples: 
+      сильнее → больш моцны
+  -->
+  <!-- TODO: Belarusian has comparable adjectives, but there is no sources for import them. -->
+  <rule comment="RULE: Comparable adjective → Adverb 'больш' + Adjective">
+     <pattern>
+       <pattern-item n="adj_comp"/>
+     </pattern>
+     <action>
+       <out>
+           <chunk name="comp_adj" case="caseFirstWord">
+             <tags>
+               <tag><lit-tag v="SA"/></tag>
+             </tags>
+             <lu>
+                 <lit v="больш"/>
+                 <lit-tag v="adv"/>
+             </lu>
+             <b/>
+             <lu>
+                 <clip pos="1" side="tl" part="lem"/>
+                 <clip pos="1" side="tl" part="a_adj"/>
+                 <lit-tag v="m.an.sg.nom"/>
+             </lu>
+           </chunk>
+       </out>
+     </action>
+  </rule>
+
+  <rule comment="RULE: Adjective → Adjective">
+    <pattern>
+      <pattern-item n="adj"/>
+    </pattern>
+    <action>
+      <choose>
+          <when>
+            <test>
+              <and>
+                <equal><clip pos="1" side="tl" part="anim"/><lit-tag v="nn"/></equal>
+                <equal><clip pos="1" side="tl" part="gen"/><lit-tag v="f"/></equal>
+                <equal><clip pos="1" side="tl" part="cas"/><lit-tag v="acc"/></equal>
+              </and>
+            </test>
+            <let>
+              <clip pos="1" side="tl" part="anim"/><lit-tag v="an"/>
+            </let>
+          </when>
+      </choose>
+      <call-macro n="case_adapter1"><with-param pos="1"/></call-macro>
+      <out>
+        <chunk name="adj" case="caseFirstWord">
+          <tags>
+            <tag><lit-tag v="SA"/></tag>
+          </tags>
+          <lu>
+            <clip pos="1" side="tl" part="whole"/>
+          </lu>
+        </chunk>
+      </out>
+    </action>
+  </rule>
+
+  <rule comment="RULE: Adjective/Determiner + Noun, transfer noun's gender to adjective/determiner">
+    <pattern>
+      <pattern-item n="adj_det"/>
+      <pattern-item n="nom"/>
+    </pattern>
+    <action>
+      <call-macro n="case_adapter1"><with-param pos="1"/></call-macro>
+      <call-macro n="case_adapter1"><with-param pos="2"/></call-macro>
+      <call-macro n="case_adapter_n"><with-param pos="1"/><with-param pos="2"/></call-macro>
+      <out>
+        <chunk name="adj_det_n" case="caseFirstWord">
+          <tags>
+            <tag><lit-tag v="SN"/></tag>
+          </tags>
+          <lu>
+            <clip pos="1" side="tl" part="whole"/>
+          </lu>
+          <b/>
+          <lu>
+            <clip pos="2" side="tl" part="whole"/>
+          </lu>
+        </chunk>
+      </out>
+    </action>
+  </rule>
+
+  <!-- TODO: fix it -->
+  <rule comment="RULE: Conjunction, truncate CNP/CVP">
+    <pattern>
+      <pattern-item n="cnj"/>
+    </pattern>
+    <action>
+      <out>
+        <chunk name="cnj" case="caseFirstWord">
+          <tags>
+            <tag><lit-tag v="CN"/></tag>
+          </tags>
+          <lu>
+            <clip pos="1" side="tl" part="lem"/>
+            <clip pos="1" side="tl" part="a_cnj"/>
+          </lu>
+        </chunk>
+      </out>
+    </action>
+  </rule>
+</section-rules>
+
+</transfer>

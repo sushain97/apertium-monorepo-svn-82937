@@ -1,0 +1,178 @@
+<modes>
+  <mode name="hye-eng-morph">
+    <pipeline>
+      <program name="lt-proc -w">
+        <file name="hye-eng.automorf.bin"/>
+      </program>
+    </pipeline>
+  </mode>
+
+  <mode name="hye-eng-disam">
+    <pipeline>
+      <program name="lt-proc -w">
+        <file name="hye-eng.automorf.bin"/>
+      </program>
+      <program name="cg-conv -a"/>
+      <program name="vislcg3 --trace --grammar">
+        <file name="hye-eng.rlx.bin"/>
+      </program>
+      <program name="apertium-pretransfer"/>
+    </pipeline>
+  </mode>
+  <mode name="hye-eng-tagger">
+    <pipeline>
+      <program name="lt-proc -w">
+        <file name="hye-eng.automorf.bin"/>
+      </program>
+      <program name="cg-proc -n -w -1">
+        <file name="hye-eng.rlx.bin"/>
+      </program>
+      <program name="apertium-pretransfer"/>
+    </pipeline>
+  </mode>
+  <mode name="hye-eng-biltrans">
+    <pipeline>
+      <program name="lt-proc -w">
+        <file name="hye-eng.automorf.bin"/>
+      </program>
+      <program name="cg-proc -n -w -1">
+        <file name="hye-eng.rlx.bin"/>
+      </program>
+      <program name="apertium-pretransfer"/>
+      <program name="lt-proc -b">
+        <file name="hye-eng.autobil.bin"/>
+      </program>
+    </pipeline>
+  </mode>
+  <mode name="hye-eng-lextor">
+    <pipeline>
+      <program name="lt-proc -w">
+        <file name="hye-eng.automorf.bin"/>
+      </program>
+      <program name="cg-proc -n -w -1">
+        <file name="hye-eng.rlx.bin"/>
+      </program>
+      <program name="apertium-pretransfer"/>
+      <program name="lt-proc -b">
+        <file name="hye-eng.autobil.bin"/>
+      </program>
+      <program name="lrx-proc -t">
+        <file name="hye-eng.autolex.bin"/>
+      </program>
+    </pipeline>
+  </mode>
+
+
+  <mode name="hye-eng-chunker">
+    <pipeline>
+      <program name="lt-proc -w">
+        <file name="hye-eng.automorf.bin"/>
+      </program>
+      <program name="cg-proc -n -w -1">
+        <file name="hye-eng.rlx.bin"/>
+      </program>
+      <program name="apertium-pretransfer"/>
+      <program name="lt-proc -b">
+        <file name="hye-eng.autobil.bin"/>
+      </program>
+      <program name="lrx-proc">
+        <file name="hye-eng.autolex.bin"/>
+      </program>
+      <program name="apertium-transfer -b">
+        <file name="apertium-hye-eng.hye-eng.t1x"/>
+        <file name="hye-eng.t1x.bin"/>
+      </program>
+    </pipeline>
+  </mode>
+  <mode name="hye-eng-interchunk">
+    <pipeline>
+      <program name="lt-proc -w">
+        <file name="hye-eng.automorf.bin"/>
+      </program>
+      <program name="cg-proc -n -w -1">
+        <file name="hye-eng.rlx.bin"/>
+      </program>
+      <program name="apertium-pretransfer"/>
+      <program name="lt-proc -b">
+        <file name="hye-eng.autobil.bin"/>
+      </program>
+      <program name="lrx-proc">
+        <file name="hye-eng.autolex.bin"/>
+      </program>
+      <program name="apertium-transfer -b">
+        <file name="apertium-hye-eng.hye-eng.t1x"/>
+        <file name="hye-eng.t1x.bin"/>
+      </program>
+      <program name="apertium-interchunk">
+        <file name="apertium-hye-eng.hye-eng.t2x"/>
+        <file name="hye-eng.t2x.bin"/>
+      </program>
+    </pipeline>
+  </mode>
+  <mode name="hye-eng-postchunk">
+    <pipeline>
+      <program name="lt-proc -w">
+        <file name="hye-eng.automorf.bin"/>
+      </program>
+      <program name="cg-proc -n -w -1">
+        <file name="hye-eng.rlx.bin"/>
+      </program>
+      <program name="apertium-pretransfer"/>
+      <program name="lt-proc -b">
+        <file name="hye-eng.autobil.bin"/>
+      </program>
+      <program name="lrx-proc">
+        <file name="hye-eng.autolex.bin"/>
+      </program>
+      <program name="apertium-transfer -b">
+        <file name="apertium-hye-eng.hye-eng.t1x"/>
+        <file name="hye-eng.t1x.bin"/>
+      </program>
+      <program name="apertium-interchunk">
+        <file name="apertium-hye-eng.hye-eng.t2x"/>
+        <file name="hye-eng.t2x.bin"/>
+      </program>
+      <program name="apertium-postchunk">
+        <file name="apertium-hye-eng.hye-eng.t3x"/>
+        <file name="hye-eng.t3x.bin"/>
+      </program>
+    </pipeline>
+  </mode>
+  <mode name="hye-eng">
+    <pipeline>
+      <program name="lt-proc -w">
+        <file name="hye-eng.automorf.bin"/>
+      </program>
+      <program name="cg-proc -n -w -1">
+        <file name="hye-eng.rlx.bin"/>
+      </program>
+      <program name="apertium-pretransfer"/>
+      <program name="lt-proc -b">
+        <file name="hye-eng.autobil.bin"/>
+      </program>
+      <program name="lrx-proc">
+        <file name="hye-eng.autolex.bin"/>
+      </program>
+      <program name="apertium-transfer -b">
+        <file name="apertium-hye-eng.hye-eng.t1x"/>
+        <file name="hye-eng.t1x.bin"/>
+      </program>
+      <program name="apertium-interchunk">
+        <file name="apertium-hye-eng.hye-eng.t2x"/>
+        <file name="hye-eng.t2x.bin"/>
+      </program>
+      <program name="apertium-postchunk">
+        <file name="apertium-hye-eng.hye-eng.t3x"/>
+        <file name="hye-eng.t3x.bin"/>
+      </program>
+      <program name="lt-proc -d">
+        <file name="hye-eng.autogen.bin"/>
+      </program>
+      
+    </pipeline>
+  </mode>
+
+
+
+
+</modes>

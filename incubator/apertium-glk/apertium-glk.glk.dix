@@ -1,0 +1,812 @@
+<?xml version="1.0" encoding="UTF-8"?><!-- -*-nxml-*- -->
+<dictionary>
+  <alphabet>ؤئاآأٰبپتثجچحخدذرزژسشصضطظعغفقکگلمنهوی</alphabet>
+  <!-- symbols -->
+  <sdefs>
+    <sdef n="acr"/>
+    <sdef n="predet"/>
+    <sdef n="detnt"/>
+    <sdef n="loc"/>
+    <sdef n="ant"/>
+    <sdef n="al"/>
+    <sdef n="cog"/>
+    <sdef n="atn"/>
+    <sdef n="enc"/>
+    <sdef n="pro"/>
+    <sdef n="tn"/>
+    <sdef n="n"/>
+    <sdef n="np"/>
+    <sdef n="adj"/>
+    <sdef n="f"/>
+    <sdef n="m"/>
+    <sdef n="mf"/>
+    <sdef n="sg"/>
+    <sdef n="pl"/>
+    <sdef n="adv"/>
+    <sdef n="preadv"/>
+    <sdef n="pr"/>
+    <sdef n="prn"/>
+    <sdef n="rel"/>
+    <sdef n="nn"/>
+    <sdef n="an"/>
+    <sdef n="aa"/>
+    <sdef n="ind"/>
+    <sdef n="itg"/>
+    <sdef n="det"/>
+    <sdef n="dem"/>
+    <sdef n="def"/>
+    <sdef n="cnjcoo"/>
+    <sdef n="cnjsub"/>
+    <sdef n="cnjadv"/>
+    <sdef n="nt"/>
+    <sdef n="vbser"/>
+    <sdef n="vbhaver"/>
+    <sdef n="vblex"/>
+    <sdef n="vbmod"/>
+    <sdef n="inf"/>
+    <sdef n="ger"/>
+    <sdef n="pp"/>
+    <sdef n="pri"/>
+    <sdef n="p1"/>
+    <sdef n="p2"/>
+    <sdef n="p3"/>
+    <sdef n="pii"/>
+    <sdef n="ifi"/>
+    <sdef n="fti"/>
+    <sdef n="cni"/>
+    <sdef n="prs"/>
+    <sdef n="pis"/>
+    <sdef n="fts"/>
+    <sdef n="imp"/>
+    <sdef n="pos"/>
+    <sdef n="sp"/>
+    <sdef n="ref"/>
+    <sdef n="sup"/>
+    <sdef n="ord"/>
+    <sdef n="qnt"/>
+    <sdef n="num"/>
+    <sdef n="pron"/>
+    <sdef n="ij"/>
+    <sdef n="sent"/>
+    <sdef n="cm"/>
+    <sdef n="lpar"/>
+    <sdef n="rpar"/>
+    <sdef n="lquest"/>
+    <sdef n="web"/>
+    <sdef n="apos"/>
+    <sdef n="percent"/>
+    <sdef n="time"/>
+    <sdef n="guio"/>
+    <sdef n="past"/>
+    <sdef n="sep"/>
+    <sdef n="sint"/>
+    <sdef n="email"/>
+    <sdef n="obj"/>
+    <sdef n="prs"/>
+    <sdef n="subs"/>
+    <sdef n="pprs"/>
+    <sdef n="gen"/>
+    <sdef n="comp"/>
+    <sdef n="pri"/>
+    <sdef n="vaux"/>
+    <sdef n="ND"/>
+    <sdef n="GD"/>
+    <sdef n="neg"/>
+  </sdefs>
+  
+  <pardefs>
+
+    <!-- SECTION: Nouns -->
+    <pardef n="کیتاب__n">
+      <e><p><l/><r><s n="n"/><s n="sg"/></r></p></e>
+      <e><p><l>أن</l><r><s n="n"/><s n="pl"/></r></p></e>
+    </pardef>
+
+    <!-- SECTION: Verbs -->
+    <pardef n="imp_endings">
+      <e><p><l/><r><s n="p2"/><s n="sg"/></r></p></e>
+      <e><p><l>یم</l><r><s n="p1"/><s n="pl"/></r></p></e>
+      <e><p><l>ید</l><r><s n="p2"/><s n="pl"/></r></p></e>
+    </pardef>
+
+    <pardef n="imp_endings2">
+      <e><p><l/><r><s n="p2"/><s n="sg"/></r></p></e>
+      <e><p><l>ییم</l><r><s n="p1"/><s n="pl"/></r></p></e>
+      <e><p><l>یید</l><r><s n="p2"/><s n="pl"/></r></p></e>
+    </pardef>
+
+    <pardef n="imp_endings_1/2pl">
+      <e><p><l>یم</l><r><s n="p1"/><s n="pl"/></r></p></e>
+      <e><p><l>ید</l><r><s n="p2"/><s n="pl"/></r></p></e>
+    </pardef>
+
+    <pardef n="pers-1-1sg">
+      <e><p><l>م</l><r><s n="p1"/><s n="sg"/></r></p></e>
+    </pardef>
+
+    <pardef n="pers-1-3sg">
+      <e><p><l>ه</l><r><s n="p3"/><s n="sg"/></r></p></e>
+    </pardef>
+    <pardef n="pers-1-pp">
+      <e><p><l>ه</l><r></r></p></e>
+    </pardef>
+
+    <pardef n="pers-2-3sg">
+      <e><p><l>ی</l><r><s n="p3"/><s n="sg"/></r></p></e>
+    </pardef>
+
+    <pardef n="pers-3-3sg">
+      <e><p><l></l><r><s n="p3"/><s n="sg"/></r></p></e>
+    </pardef>
+
+    <pardef n="pers-1-rest">
+      <e><p><l>ی</l><r><s n="p2"/><s n="sg"/></r></p></e>
+      <e><p><l>یم</l><r><s n="p1"/><s n="pl"/></r></p></e>
+      <e><p><l>یدی</l><r><s n="p2"/><s n="pl"/></r></p></e>
+      <e><p><l>یدی</l><r><s n="p3"/><s n="pl"/></r></p></e>
+    </pardef>
+
+    <pardef n="کون__vblex" c="present">
+      <e><p><l></l><r><s n="vblex"/><s n="pri"/></r></p><par n="pers-1-1sg"/></e>
+      <e><p><l></l><r><s n="vblex"/><s n="pri"/></r></p><par n="pers-1-3sg"/></e>
+      <e><p><l></l><r><s n="vblex"/><s n="pri"/></r></p><par n="pers-1-rest"/></e>
+    </pardef>
+    
+    <pardef n="اَ__vblex" c="present, a-vowel stem end">
+      <e><p><l>ی</l><r><s n="vblex"/><s n="pri"/></r></p><par n="pers-1-1sg"/></e>
+      <e><p><l>ی</l><r><s n="vblex"/><s n="pri"/></r></p><par n="pers-1-3sg"/></e>
+      <e><p><l>ی</l><r><s n="vblex"/><s n="pri"/></r></p><par n="pers-1-rest"/></e>
+    </pardef>
+    
+    <pardef n="بوکون__vblex" c="present subjunctive">
+      <e><p><l></l><r><s n="vblex"/><s n="prs"/></r></p><par n="pers-1-1sg"/></e>
+      <e><p><l></l><r><s n="vblex"/><s n="prs"/></r></p><par n="pers-1-3sg"/></e>
+      <e><p><l></l><r><s n="vblex"/><s n="prs"/></r></p><par n="pers-1-rest"/></e>
+      <e><p><l></l><r><s n="vblex"/><s n="imp"/></r></p><par n="imp_endings"/></e>
+    </pardef>
+    
+    <pardef n="باَ__vblex" c="present subjunctive, a-vowel stem end, note: no imperative">
+      <e><p><l>ی</l><r><s n="vblex"/><s n="prs"/></r></p><par n="pers-1-1sg"/></e>
+      <e><p><l>ی</l><r><s n="vblex"/><s n="prs"/></r></p><par n="pers-1-3sg"/></e>
+      <e><p><l>ی</l><r><s n="vblex"/><s n="prs"/></r></p><par n="pers-1-rest"/></e>
+    </pardef>
+    
+    <pardef n="بد__vblex" c="present subjunctive for stems with vowels ending in a, with a special imperative 2sg">
+      <e><p><l></l><r><s n="vblex"/><s n="prs"/></r></p><par n="pers-1-1sg"/></e>
+      <e><p><l></l><r><s n="vblex"/><s n="prs"/></r></p><par n="pers-1-3sg"/></e>
+      <e><p><l></l><r><s n="vblex"/><s n="prs"/></r></p><par n="pers-1-rest"/></e>
+      <e><p><l>ن</l><r><s n="vblex"/><s n="imp"/><s n="p2"/><s n="sg"/></r></p></e>  
+      <e><p><l></l><r><s n="vblex"/><s n="imp"/></r></p><par n="imp_endings_1/2pl"/></e>
+    </pardef>
+    
+    <pardef n="ببه__vblex" c="present subjunctive 1sg/3sg for verb with i-vowel harmony">
+      <e><p><l></l><r><s n="vblex"/><s n="prs"/></r></p><par n="pers-1-1sg"/></e>
+      <e><p><l></l><r><s n="vblex"/><s n="prs"/></r></p><par n="pers-1-3sg"/></e>
+    </pardef>
+    
+    <pardef n="بیبی__vblex" c="present subjunctive other endings for verb with i-vowel harmony">
+      <e><p><l></l><r><s n="vblex"/><s n="prs"/></r></p><par n="pers-1-rest"/></e>
+      <e><p><l></l><r><s n="vblex"/><s n="imp"/></r></p><par n="imp_endings"/></e>
+    </pardef>
+    
+    <pardef n="بیشی__vblex" c="special present subjunctive for شوئون because it has an irregular 2sg imperative which isn't built off this stem. See بوشو/ئون__vblex ">
+      <e><p><l></l><r><s n="vblex"/><s n="prs"/></r></p><par n="pers-1-rest"/></e>
+      <e><p><l></l><r><s n="vblex"/><s n="imp"/></r></p><par n="imp_endings_1/2pl"/></e>
+    </pardef>      
+    
+    <pardef n="نوکون__vblex" c="negative present/subjunctive">
+      <e><p><l></l><r><s n="vblex"/><s n="neg"/><s n="pri"/></r></p><par n="pers-1-1sg"/></e>
+      <e><p><l></l><r><s n="vblex"/><s n="neg"/><s n="pri"/></r></p><par n="pers-1-3sg"/></e>
+      <e><p><l></l><r><s n="vblex"/><s n="neg"/><s n="pri"/></r></p><par n="pers-1-rest"/></e>
+      <e><p><l></l><r><s n="vblex"/><s n="neg"/><s n="prs"/></r></p><par n="pers-1-1sg"/></e>
+      <e><p><l></l><r><s n="vblex"/><s n="neg"/><s n="prs"/></r></p><par n="pers-1-3sg"/></e>
+      <e><p><l></l><r><s n="vblex"/><s n="neg"/><s n="prs"/></r></p><par n="pers-1-rest"/></e>
+      <e><p><l></l><r><s n="vblex"/><s n="neg"/><s n="imp"/></r></p><par n="imp_endings"/></e>
+    </pardef>
+    
+    <pardef n="ناَ__vblex" c="negative present/subjunctive, a-vowel stem end, note: no imperative">
+      <e><p><l>ی</l><r><s n="vblex"/><s n="neg"/><s n="pri"/></r></p><par n="pers-1-1sg"/></e>
+      <e><p><l>ی</l><r><s n="vblex"/><s n="neg"/><s n="pri"/></r></p><par n="pers-1-3sg"/></e>
+      <e><p><l>ی</l><r><s n="vblex"/><s n="neg"/><s n="pri"/></r></p><par n="pers-1-rest"/></e>
+      <e><p><l>ی</l><r><s n="vblex"/><s n="neg"/><s n="prs"/></r></p><par n="pers-1-1sg"/></e>
+      <e><p><l>ی</l><r><s n="vblex"/><s n="neg"/><s n="prs"/></r></p><par n="pers-1-3sg"/></e>
+      <e><p><l>ی</l><r><s n="vblex"/><s n="neg"/><s n="prs"/></r></p><par n="pers-1-rest"/></e>
+    </pardef>
+    
+    <pardef n="ند__vblex" c="negative present/subjunctive for stems with vowels ending in a with a special negative imperative 2sg">
+      <e><p><l></l><r><s n="vblex"/><s n="neg"/><s n="pri"/></r></p><par n="pers-1-1sg"/></e>
+      <e><p><l></l><r><s n="vblex"/><s n="neg"/><s n="pri"/></r></p><par n="pers-1-3sg"/></e>
+      <e><p><l></l><r><s n="vblex"/><s n="neg"/><s n="pri"/></r></p><par n="pers-1-rest"/></e>
+      <e><p><l></l><r><s n="vblex"/><s n="neg"/><s n="prs"/></r></p><par n="pers-1-1sg"/></e>
+      <e><p><l></l><r><s n="vblex"/><s n="neg"/><s n="prs"/></r></p><par n="pers-1-3sg"/></e>
+      <e><p><l></l><r><s n="vblex"/><s n="neg"/><s n="prs"/></r></p><par n="pers-1-rest"/></e>
+      <e><p><l>ن</l><r><s n="vblex"/><s n="neg"/><s n="imp"/><s n="p2"/><s n="sg"/></r></p></e>
+      <e><p><l></l><r><s n="vblex"/><s n="neg"/><s n="imp"/></r></p><par n="imp_endings_1/2pl"/></e>
+    </pardef>
+    
+    <pardef n="نبه__vblex" c="negative present/subjunctive 1sg/3sg for verb with i-vowel harmony">
+      <e><p><l></l><r><s n="vblex"/><s n="neg"/><s n="pri"/></r></p><par n="pers-1-1sg"/></e>
+      <e><p><l></l><r><s n="vblex"/><s n="neg"/><s n="pri"/></r></p><par n="pers-1-3sg"/></e>
+      <e><p><l></l><r><s n="vblex"/><s n="neg"/><s n="prs"/></r></p><par n="pers-1-1sg"/></e>
+      <e><p><l></l><r><s n="vblex"/><s n="neg"/><s n="prs"/></r></p><par n="pers-1-3sg"/></e>
+    </pardef>
+    
+    <pardef n="نیبی__vblex" c="negative present/subjunctive other endings for verb with i-vowel harmony">
+      <e><p><l></l><r><s n="vblex"/><s n="neg"/><s n="pri"/></r></p><par n="pers-1-rest"/></e>
+      <e><p><l></l><r><s n="vblex"/><s n="neg"/><s n="prs"/></r></p><par n="pers-1-rest"/></e>
+      <e><p><l></l><r><s n="vblex"/><s n="neg"/><s n="imp"/></r></p><par n="imp_endings"/></e>
+    </pardef>
+    
+    <pardef n="نیشی__vblex" c="special negative present/subjunctive for شوئون because it has an irregular 2sg imperative which isn't built off this stem. See نوشو/ئون__vblex ">
+      <e><p><l></l><r><s n="vblex"/><s n="neg"/><s n="pri"/></r></p><par n="pers-1-rest"/></e>
+      <e><p><l></l><r><s n="vblex"/><s n="neg"/><s n="prs"/></r></p><par n="pers-1-rest"/></e>
+      <e><p><l></l><r><s n="vblex"/><s n="neg"/><s n="imp"/></r></p><par n="imp_endings_1/2pl"/></e>
+    </pardef>
+    
+    <pardef n="بوکود/ن__vblex" c="preterite (past)">
+      <e><p><l></l><r>ن<s n="vblex"/><s n="past"/></r></p><par n="pers-1-1sg"/></e>
+      <e><p><l></l><r>ن<s n="vblex"/><s n="past"/></r></p><par n="pers-1-3sg"/></e>
+      <e><p><l></l><r>ن<s n="vblex"/><s n="past"/></r></p><par n="pers-1-rest"/></e>
+      <e><p><l></l><r>ن<s n="vblex"/><s n="pp"/></r></p><par n="pers-1-pp"/></e>
+    </pardef>
+    
+    <pardef n="بوشو__vblex" c="preterite (past) o-vowel stem end.">
+      <e><p><l></l><r><s n="vblex"/><s n="past"/></r></p><par n="pers-1-1sg"/></e>
+      <e><p><l></l><r><s n="vblex"/><s n="past"/></r></p><par n="pers-3-3sg"/></e>
+      <e><p><l>ی</l><r><s n="vblex"/><s n="past"/></r></p><par n="pers-1-rest"/></e>
+      <e><p><l></l><r><s n="vblex"/><s n="pp"/></r></p></e>
+    </pardef>
+    
+    <pardef n="بز/ِئن__vblex" c="preterite (past) e-vowel stem end">
+      <e><p><l></l><r>ِئن<s n="vblex"/><s n="past"/></r></p><par n="pers-1-1sg"/></e>
+      <e><p><l></l><r>ِئن<s n="vblex"/><s n="past"/></r></p><par n="pers-1-3sg"/></e>
+      <e><p><l>ه‌ی</l><r>ِئن<s n="vblex"/><s n="past"/></r></p><par n="pers-1-rest"/></e>
+      <e><p><l></l><r>ِئن<s n="vblex"/><s n="pp"/></r></p><par n="pers-1-pp"/></e>
+    </pardef>
+    
+    <pardef n="بدَ/ئن__vblex" c="preterite (past) a-vowel stem end">
+      <e><p><l></l><r>ئن<s n="vblex"/><s n="past"/></r></p><par n="pers-1-1sg"/></e>
+      <e><p><l></l><r>ئن<s n="vblex"/><s n="past"/></r></p><par n="pers-1-3sg"/></e>
+      <e><p><l>ی</l><r>ئن<s n="vblex"/><s n="past"/></r></p><par n="pers-1-rest"/></e>
+      <e><p><l></l><r>ئن<s n="vblex"/><s n="pp"/></r></p><par n="pers-1-pp"/></e>
+    </pardef>
+    
+    <pardef n="کود/ن__vblex" c="imperfect (past cont.)">
+      <e><p><l>ی</l><r>ن<s n="vblex"/><s n="pii"/></r></p><par n="pers-1-1sg"/></e>
+      <e><p><l></l><r>ن<s n="vblex"/><s n="pii"/></r></p><par n="pers-2-3sg"/></e>
+      <e><p><l></l><r>ن<s n="vblex"/><s n="pii"/></r></p><par n="pers-1-rest"/></e>
+      <e><p><l>ن</l><r>ن<s n="vblex"/><s n="inf"/></r></p></e>
+    </pardef>
+
+    <pardef n="شو__vblex" c="imperfect (past cont.) o-vowel stem end">
+      <e><p><l>یی</l><r><s n="vblex"/><s n="pii"/></r></p><par n="pers-1-1sg"/></e>
+      <e><p><l>ی</l><r><s n="vblex"/><s n="pii"/></r></p><par n="pers-2-3sg"/></e>
+      <e><p><l>ی</l><r><s n="vblex"/><s n="pii"/></r></p><par n="pers-1-rest"/></e>
+      <e><p><l>ئون</l><r><s n="vblex"/><s n="inf"/></r></p></e>
+    </pardef>
+
+    <pardef n="ز/ِئن__vblex" c="imperfect (past cont.) e-vowel stem end">
+      <e><p><l>ه‌یی</l><r>ِئن<s n="vblex"/><s n="pii"/></r></p><par n="pers-1-1sg"/></e>
+      <e><p><l>ه‌ی</l><r>ِئن<s n="vblex"/><s n="pii"/></r></p><par n="pers-2-3sg"/></e>
+      <e><p><l>ه‌ی</l><r>ِئن<s n="vblex"/><s n="pii"/></r></p><par n="pers-1-rest"/></e>
+      <e><p><l>ِئن</l><r>ِئن<s n="vblex"/><s n="inf"/></r></p></e>
+    </pardef>
+
+    <pardef n="دَ/ئن__vblex" c="imperfect (past cont.) a-vowel stem end">
+      <e><p><l>یی</l><r>ئن<s n="vblex"/><s n="pii"/></r></p><par n="pers-1-1sg"/></e>
+      <e><p><l>ی</l><r>ئن<s n="vblex"/><s n="pii"/></r></p><par n="pers-2-3sg"/></e>
+      <e><p><l>ی</l><r>ئن<s n="vblex"/><s n="pii"/></r></p><par n="pers-1-rest"/></e>
+      <e><p><l>ئن</l><r>ئن<s n="vblex"/><s n="inf"/></r></p></e>
+    </pardef>
+
+    <pardef n="نوکود/ن__vblex" c="negative preterite (past)">
+      <e><p><l></l><r>ن<s n="vblex"/><s n="neg"/><s n="past"/></r></p><par n="pers-1-1sg"/></e>
+      <e><p><l></l><r>ن<s n="vblex"/><s n="neg"/><s n="past"/></r></p><par n="pers-1-3sg"/></e>
+      <e><p><l></l><r>ن<s n="vblex"/><s n="neg"/><s n="past"/></r></p><par n="pers-1-rest"/></e>
+      <e><p><l></l><r>ن<s n="vblex"/><s n="neg"/><s n="pp"/></r></p><par n="pers-1-pp"/></e>
+
+      <e><p><l>ی</l><r>ن<s n="vblex"/><s n="neg"/><s n="pii"/></r></p><par n="pers-1-1sg"/></e>
+      <e><p><l></l><r>ن<s n="vblex"/><s n="neg"/><s n="pii"/></r></p><par n="pers-2-3sg"/></e>
+      <e><p><l></l><r>ن<s n="vblex"/><s n="neg"/><s n="pii"/></r></p><par n="pers-1-rest"/></e>
+      <e><p><l>ن</l><r>ن<s n="vblex"/><s n="neg"/><s n="inf"/></r></p></e>
+    </pardef>
+    
+    <pardef n="نوشو__vblex" c="negative preterite (past) o-vowel stem end.">
+      <e><p><l></l><r><s n="vblex"/><s n="neg"/><s n="past"/></r></p><par n="pers-1-1sg"/></e>
+      <e><p><l></l><r><s n="vblex"/><s n="neg"/><s n="past"/></r></p><par n="pers-3-3sg"/></e>
+      <e><p><l>ی</l><r><s n="vblex"/><s n="neg"/><s n="past"/></r></p><par n="pers-1-rest"/></e>
+      <e><p><l></l><r><s n="vblex"/><s n="neg"/><s n="pp"/></r></p></e>
+
+      <e><p><l>یی</l><r><s n="vblex"/><s n="neg"/><s n="pii"/></r></p><par n="pers-1-1sg"/></e>
+      <e><p><l>ی</l><r><s n="vblex"/><s n="neg"/><s n="pii"/></r></p><par n="pers-2-3sg"/></e>
+      <e><p><l>ی</l><r><s n="vblex"/><s n="neg"/><s n="pii"/></r></p><par n="pers-1-rest"/></e>
+      <e><p><l>ئون</l><r><s n="vblex"/><s n="neg"/><s n="inf"/></r></p></e>
+    </pardef>
+    
+    <pardef n="نز/ِئن__vblex" c="negative preterite (past) e-vowel stem end">
+      <e><p><l></l><r>ئن<s n="vblex"/><s n="neg"/><s n="past"/></r></p><par n="pers-1-1sg"/></e>
+      <e><p><l></l><r>ئن<s n="vblex"/><s n="neg"/><s n="past"/></r></p><par n="pers-1-3sg"/></e>
+      <e><p><l>ه‌ی</l><r>ئن<s n="vblex"/><s n="neg"/><s n="past"/></r></p><par n="pers-1-rest"/></e>
+      <e><p><l></l><r>ئن<s n="vblex"/><s n="neg"/><s n="pp"/></r></p><par n="pers-1-pp"/></e>
+
+      <e><p><l>ه‌یی</l><r>ئن<s n="vblex"/><s n="neg"/><s n="pii"/></r></p><par n="pers-1-1sg"/></e>
+      <e><p><l>ه‌ی</l><r>ئن<s n="vblex"/><s n="neg"/><s n="pii"/></r></p><par n="pers-2-3sg"/></e>
+      <e><p><l>ه‌ی</l><r>ئن<s n="vblex"/><s n="neg"/><s n="pii"/></r></p><par n="pers-1-rest"/></e>
+      <e><p><l>ِئن</l><r>ِئن<s n="vblex"/><s n="neg"/><s n="inf"/></r></p></e>
+    </pardef>
+    
+    <pardef n="ندَ/ئن__vblex" c="negative preterite (past) a-vowel stem end">
+      <e><p><l></l><r>ئون<s n="vblex"/><s n="neg"/><s n="past"/></r></p><par n="pers-1-1sg"/></e>
+      <e><p><l></l><r>ئون<s n="vblex"/><s n="neg"/><s n="past"/></r></p><par n="pers-1-3sg"/></e>
+      <e><p><l>ی</l><r>ئون<s n="vblex"/><s n="neg"/><s n="past"/></r></p><par n="pers-1-rest"/></e>
+      <e><p><l></l><r>ئون<s n="vblex"/><s n="neg"/><s n="pp"/></r></p><par n="pers-1-pp"/></e>
+
+      <e><p><l>یی</l><r>ئون<s n="vblex"/><s n="neg"/><s n="pii"/></r></p><par n="pers-1-1sg"/></e>
+      <e><p><l>ی</l><r>ئون<s n="vblex"/><s n="neg"/><s n="pii"/></r></p><par n="pers-2-3sg"/></e>
+      <e><p><l>ی</l><r>ئون<s n="vblex"/><s n="neg"/><s n="pii"/></r></p><par n="pers-1-rest"/></e>
+      <e><p><l>ئن</l><r>ئن<s n="vblex"/><s n="neg"/><s n="inf"/></r></p></e>
+    </pardef>
+  </pardefs>
+  <section id="main" type="standard">
+
+    <!-- SECTION: Nouns -->
+    <e lm="کیتاب"><i>کیتاب</i><par n="کیتاب__n"/></e>
+
+    <!-- SECTION: Verbs -->
+    <e lm="کودن"><p><l>کود</l><r>کود</r></p><par n="کود/ن__vblex"/></e>
+    <e lm="کودن"><p><l>بوکود</l><r>کود</r></p><par n="بوکود/ن__vblex"/></e>
+    <e lm="کودن"><p><l>نوکود</l><r>کود</r></p><par n="نوکود/ن__vblex"/></e>
+    <e lm="کودن"><p><l>کون</l><r>کودن</r></p><par n="کون__vblex"/></e>
+    <e lm="کودن"><p><l>بوکون</l><r>کودن</r></p><par n="بوکون__vblex"/></e>
+    <e lm="کودن"><p><l>نوکون</l><r>کودن</r></p><par n="نوکون__vblex"/></e>
+    
+    <e lm="بوستن"><p><l>بوست</l><r>بوست</r></p><par n="کود/ن__vblex"/></e>
+    <e lm="بوستن"><p><l>بوبوست</l><r>بوست</r></p><par n="بوکود/ن__vblex"/></e>
+    <e lm="بوستن"><p><l>نوبوست</l><r>بوست</r></p><par n="نوکود/ن__vblex"/></e>
+    <e lm="بوستن"><p><l>ب</l><r>بوستن</r></p><par n="کون__vblex"/></e>
+    <e lm="بوستن"><p><l>بب</l><r>بوستن</r></p><par n="ببه__vblex"/></e>
+    <e lm="بوستن"><p><l>بیب</l><r>بوستن</r></p><par n="بیبی__vblex"/></e>
+    <e lm="بوستن"><p><l>نب</l><r>بوستن</r></p><par n="نبه__vblex"/></e>
+    <e lm="بوستن"><p><l>نیب</l><r>بوستن</r></p><par n="نیبی__vblex"/></e>
+    
+    <e lm="فیگیفتن"><p><l>فیگیفت</l><r>فیگیفت</r></p><par n="کود/ن__vblex"/></e>
+    <e lm="فیگیفتن"><p><l>فیگیفت</l><r>فیگیفت</r></p><par n="بوکود/ن__vblex"/></e>
+    <e lm="فیگیفتن"><p><l>فینگیفت</l><r>فینگیفت</r></p><par n="نوکود/ن__vblex"/></e>
+    <e lm="فیگیفتن"><p><l>فیگیر</l><r>فیگیفتن</r></p><par n="کون__vblex"/></e>
+    <e lm="فیگیفتن"><p><l>فیگیر</l><r>فیگیفتن</r></p><par n="بوکون__vblex"/></e>
+    <e lm="فیگیفتن"><p><l>فینگیر</l><r>فیگیفتن</r></p><par n="نوکون__vblex"/></e>
+    
+    <e lm="شوئون"><p><l>شو</l><r>شوئون</r></p><par n="شو__vblex"/></e>
+    <e lm="شوئون"><p><l>بوشو</l><r>شوئون</r></p><par n="بوشو__vblex"/></e>
+    <e lm="شوئون"><p><l>نوشو</l><r>شوئون</r></p><par n="نوشو__vblex"/></e>
+    <!--Idiosyncratic imperative 2sg forms-->
+    <e lm="شوئون"><p><l>بوشو</l><r>شوئون<s n="vblex"/><s n="imp"/><s n="p2"/><s n="sg"/></r></p></e>
+    <e lm="شوئون"><p><l>بوشو</l><r>شوئون<s n="vblex"/><s n="neg"/><s n="imp"/><s n="p2"/><s n="sg"/></r></p></e>
+    <e lm="شوئون"><p><l>ش</l><r>شوئون</r></p><par n="کون__vblex"/></e>
+    <e lm="شوئون"><p><l>بش</l><r>شوئون</r></p><par n="ببه__vblex"/></e>
+    <e lm="شوئون"><p><l>بیش</l><r>شوئون</r></p><par n="بیشی__vblex"/></e>
+    <e lm="شوئون"><p><l>نش</l><r>شوئون</r></p><par n="نبه__vblex"/></e>
+    <e lm="شوئون"><p><l>نیش</l><r>شوئون</r></p><par n="نیشی__vblex"/></e>
+    
+    <e lm="زِئن"><p><l>ز</l><r>ز</r></p><par n="ز/ِئن__vblex"/></e>
+    <e lm="زِئن"><p><l>بز</l><r>ز</r></p><par n="بز/ِئن__vblex"/></e>
+    <e lm="زِئن"><p><l>نز</l><r>ز</r></p><par n="نز/ِئن__vblex"/></e>
+    <e lm="زِئن"><p><l>زن</l><r>زِئن</r></p><par n="کون__vblex"/></e>
+    <e lm="زِئن"><p><l>بزن</l><r>زِئن</r></p><par n="بوکون__vblex"/></e>
+    <e lm="زِئن"><p><l>نزن</l><r>زِئن</r></p><par n="نوکون__vblex"/></e>
+    
+    <e lm="دَئن"><p><l>دَ</l><r>دَ</r></p><par n="دَ/ئن__vblex"/></e>
+    <e lm="دَئن"><p><l>بدَ</l><r>دَ</r></p><par n="بدَ/ئن__vblex"/></e>
+    <e lm="دَئن"><p><l>ندَ</l><r>دَ</r></p><par n="ندَ/ئن__vblex"/></e>
+    <!--Present form intentionally left blank because it does not occur, فدن forms are used instead-->
+    <e lm="دَئن"><p><l>بد</l><r>دَئن</r></p><par n="بد__vblex"/></e>
+    <e lm="دَئن"><p><l>ند</l><r>دَئن</r></p><par n="ند__vblex"/></e>
+
+    <e lm="اَمون"><p><l>اَمو</l><r>اَمون</r></p><par n="شو__vblex"/></e>
+    <e lm="اَمون"><p><l>بَمو</l><r>اَمون</r></p><par n="بوشو__vblex"/></e>
+    <e lm="اَمون"><p><l>نَمو</l><r>اَمون</r></p><par n="نوشو__vblex"/></e>
+    <e lm="اَمون"><p><l>اَ</l><r>اَمون</r></p><par n="اَ__vblex"/></e>
+    <e lm="اَمون"><p><l>بأ</l><r>اَمون</r></p><par n="باَ__vblex"/></e>
+    <e lm="اَمون"><p><l>نأ</l><r>اَمون</r></p><par n="ناَ__vblex"/></e>
+    <!--Idiosyncratic imperative forms-->
+    <e lm="اَمون"><p><l>بیأ</l><r>اَمون<s n="vblex"/><s n="imp"/></r></p><par n="imp_endings2"/></e>
+    <e lm="اَمون"><p><l>نیأ</l><r>اَمون<s n="vblex"/><s n="neg"/><s n="imp"/></r></p><par n="imp_endings2"/></e>
+    
+    <e lm="گفتن"><p><l>گ</l><r>گفتن</r></p><par n="کون__vblex"/></e>
+    <e lm="گفتن"><p><l>بگ</l><r>گفتن</r></p><par n="ببه__vblex"/></e>
+    <e lm="گفتن"><p><l>بیگی</l><r>گفتن</r></p><par n="بیبی__vblex"/></e>
+    <e lm="گفتن"><p><l>نگ</l><r>گفتن</r></p><par n="نبه__vblex"/></e>
+    <e lm="گفتن"><p><l>نیگی</l><r>گفتن</r></p><par n="نیبی__vblex"/></e>
+    <e lm="گفتن"><p><l>گفت</l><r>گفت</r></p><par n="کود/ن__vblex"/></e>
+    <e lm="گفتن"><p><l>بوگفت</l><r>گفت</r></p><par n="بوکود/ن__vblex"/></e>
+    <e lm="گفتن"><p><l>نوگفت</l><r>گفت</r></p><par n="نوکود/ن__vblex"/></e>
+    
+    <!--Verbs imported from FLEx-->
+    <e lm="اوسَدن"><p><l>اوسَد</l><r>اوسَد</r></p><par n="بوکود/ن__vblex"/></e>
+    <e lm="اوسَدن"><p><l>اوسَد</l><r>اوسَد</r></p><par n="کود/ن__vblex"/></e>
+    <e lm="اوسَدن"><p><l>اوسَن</l><r>اوسَدن</r></p><par n="بوکون__vblex"/></e>
+    <e lm="اوسَدن"><p><l>اوسَن</l><r>اوسَدن</r></p><par n="کون__vblex"/></e>
+    <e lm="اوسَدن"><p><l>اونسَد</l><r>اوسَد</r></p><par n="نوکود/ن__vblex"/></e>
+    <e lm="اوسَدن"><p><l>اونسَن</l><r>اوسَدن</r></p><par n="نوکون__vblex"/></e>
+    <e lm="اَوردن"><p><l>اَور</l><r>اَوردن</r></p><par n="کون__vblex"/></e>
+    <e lm="اَوردن"><p><l>اَورد</l><r>اَورد</r></p><par n="کود/ن__vblex"/></e>
+    <e lm="اَوردن"><p><l>بأور</l><r>اَوردن</r></p><par n="بوکون__vblex"/></e>
+    <e lm="اَوردن"><p><l>بأورد</l><r>اَورد</r></p><par n="بوکود/ن__vblex"/></e>
+    <e lm="اَوردن"><p><l>نأور</l><r>اَوردن</r></p><par n="نوکون__vblex"/></e>
+    <e lm="اَوردن"><p><l>نأورد</l><r>اَورد</r></p><par n="نوکود/ن__vblex"/></e>
+    <e lm="ایسَن"><p><l>ایس</l><r>ایسَن</r></p><par n="کون__vblex"/></e>
+    <e lm="ایسَن"><p><l>ایسَه</l><r>ایس</r></p><par n="دَ/ئن__vblex"/></e>
+    <e lm="ایسَن"><p><l>بِیس</l><r>ایسَن</r></p><par n="بوکون__vblex"/></e>
+    <e lm="ایسَن"><p><l>بِیسَه</l><r>ایس</r></p><par n="بدَ/ئن__vblex"/></e>
+    <e lm="ایسَن"><p><l>نِیس</l><r>ایسَن</r></p><par n="نوکون__vblex"/></e>
+    <e lm="ایسَن"><p><l>نِیسَه</l><r>ایس</r></p><par n="ندَ/ئن__vblex"/></e>
+    <e lm="ایسپردن"><p><l>ایسپرد</l><r>ایسپرد</r></p><par n="کود/ن__vblex"/></e>
+    <e lm="ایسپردن"><p><l>بیسپرد</l><r>ایسپرد</r></p><par n="بوکود/ن__vblex"/></e>
+    <e lm="ایسپردن"><p><l>نیسپرد</l><r>ایسپرد</r></p><par n="نوکود/ن__vblex"/></e>
+    <e lm="ایشنَوستن"><p><l>ایشنَو</l><r>ایشنَوستن</r></p><par n="کون__vblex"/></e>
+    <e lm="ایشنَوستن"><p><l>ایشنَوست</l><r>ایشنَوست</r></p><par n="کود/ن__vblex"/></e>
+    <e lm="ایشنَوستن"><p><l>بیشنَو</l><r>ایشنَوستن</r></p><par n="بوکون__vblex"/></e>
+    <e lm="ایشنَوستن"><p><l>بیشنَوست</l><r>ایشنَوست</r></p><par n="بوکود/ن__vblex"/></e>
+    <e lm="ایشنَوستن"><p><l>نیشنَو</l><r>ایشنَوستن</r></p><par n="نوکون__vblex"/></e>
+    <e lm="ایشنَوستن"><p><l>نیشنَوست</l><r>ایشنَوست</r></p><par n="نوکود/ن__vblex"/></e>
+    <e lm="بارستن"><p><l>بارست</l><r>بارست</r></p><par n="کود/ن__vblex"/></e>
+    <e lm="بارستن"><p><l>ببارست</l><r>بارست</r></p><par n="بوکود/ن__vblex"/></e>
+    <e lm="بارستن"><p><l>ببر</l><r>بارستن</r></p><par n="بوکون__vblex"/></e>
+    <e lm="بارستن"><p><l>بر</l><r>بارستن</r></p><par n="کون__vblex"/></e>
+    <e lm="بارستن"><p><l>نبارست</l><r>بارست</r></p><par n="نوکود/ن__vblex"/></e>
+    <e lm="بارستن"><p><l>نبر</l><r>بارستن</r></p><par n="نوکون__vblex"/></e>
+    <e lm="بافتن"><p><l>بافت</l><r>بافت</r></p><par n="کود/ن__vblex"/></e>
+    <e lm="بافتن"><p><l>ببافت</l><r>بافت</r></p><par n="بوکود/ن__vblex"/></e>
+    <e lm="بافتن"><p><l>نبافت</l><r>بافت</r></p><par n="نوکود/ن__vblex"/></e>
+    <e lm="بخشن"><p><l>ببخش</l><r>بخش</r></p><par n="بوکود/ن__vblex"/></e>
+    <e lm="بخشن"><p><l>ببخش</l><r>بخشن</r></p><par n="بوکون__vblex"/></e>
+    <e lm="بخشن"><p><l>بخش</l><r>بخش</r></p><par n="کود/ن__vblex"/></e>
+    <e lm="بخشن"><p><l>بخش</l><r>بخشن</r></p><par n="کون__vblex"/></e>
+    <e lm="بخشن"><p><l>نبخش</l><r>بخش</r></p><par n="نوکود/ن__vblex"/></e>
+    <e lm="بخشن"><p><l>نبخش</l><r>بخشن</r></p><par n="نوکون__vblex"/></e>
+    <e lm="بردن"><p><l>ببر</l><r>بردن</r></p><par n="بوکون__vblex"/></e>
+    <e lm="بردن"><p><l>ببرد</l><r>برد</r></p><par n="بوکود/ن__vblex"/></e>
+    <e lm="بردن"><p><l>بر</l><r>بردن</r></p><par n="کون__vblex"/></e>
+    <e lm="بردن"><p><l>برد</l><r>برد</r></p><par n="کود/ن__vblex"/></e>
+    <e lm="بردن"><p><l>نبر</l><r>بردن</r></p><par n="نوکون__vblex"/></e>
+    <e lm="بردن"><p><l>نبرد</l><r>برد</r></p><par n="نوکود/ن__vblex"/></e>
+    <e lm="بیگدن"><p><l>بیبیگد</l><r>بیگد</r></p><par n="بوکود/ن__vblex"/></e>
+    <e lm="بیگدن"><p><l>بیگد</l><r>بیگد</r></p><par n="کود/ن__vblex"/></e>
+    <e lm="بیگدن"><p><l>نیبیگد</l><r>بیگد</r></p><par n="نوکود/ن__vblex"/></e>
+    <e lm="تأنستن"><p><l>بتأن</l><r>تأنستن</r></p><par n="بوکون__vblex"/></e>
+    <e lm="تأنستن"><p><l>بتأنست</l><r>تأنست</r></p><par n="بوکود/ن__vblex"/></e>
+    <e lm="تأنستن"><p><l>تأن</l><r>تأنستن</r></p><par n="کون__vblex"/></e>
+    <e lm="تأنستن"><p><l>تأنست</l><r>تأنست</r></p><par n="کود/ن__vblex"/></e>
+    <e lm="تأنستن"><p><l>نتأن</l><r>تأنستن</r></p><par n="نوکون__vblex"/></e>
+    <e lm="تأنستن"><p><l>نتأنست</l><r>تأنست</r></p><par n="نوکود/ن__vblex"/></e>
+    <e lm="ترسئن"><p><l>بترس</l><r>ترسئن</r></p><par n="بوکون__vblex"/></e>
+    <e lm="ترسئن"><p><l>بترسه</l><r>ترس</r></p><par n="بز/ِئن__vblex"/></e>
+    <e lm="ترسئن"><p><l>ترس</l><r>ترسئن</r></p><par n="کون__vblex"/></e>
+    <e lm="ترسئن"><p><l>ترسه</l><r>ترس</r></p><par n="ز/ِئن__vblex"/></e>
+    <e lm="ترسئن"><p><l>نترس</l><r>ترسئن</r></p><par n="نوکون__vblex"/></e>
+    <e lm="ترسئن"><p><l>نترسه</l><r>ترس</r></p><par n="نز/ِئن__vblex"/></e>
+    <e lm="ترَشتن"><p><l>بترَشت</l><r>ترَشت</r></p><par n="بوکود/ن__vblex"/></e>
+    <e lm="ترَشتن"><p><l>ترَشت</l><r>ترَشت</r></p><par n="کود/ن__vblex"/></e>
+    <e lm="ترَشتن"><p><l>نترَشت</l><r>ترَشت</r></p><par n="نوکود/ن__vblex"/></e>
+    <e lm="ترکستن"><p><l>بترک</l><r>ترکستن</r></p><par n="بوکون__vblex"/></e>
+    <e lm="ترکستن"><p><l>بترکست</l><r>ترکست</r></p><par n="بوکود/ن__vblex"/></e>
+    <e lm="ترکستن"><p><l>ترک</l><r>ترکستن</r></p><par n="کون__vblex"/></e>
+    <e lm="ترکستن"><p><l>ترکست</l><r>ترکست</r></p><par n="کود/ن__vblex"/></e>
+    <e lm="ترکستن"><p><l>نترک</l><r>ترکستن</r></p><par n="نوکون__vblex"/></e>
+    <e lm="ترکستن"><p><l>نترکست</l><r>ترکست</r></p><par n="نوکود/ن__vblex"/></e>
+    <e lm="تَوَدن"><p><l>تَنودَه</l><r>تَوَ</r></p><par n="ندَ/ئن__vblex"/></e>
+    <e lm="تَوَدن"><p><l>تَنوَد</l><r>تَوَدن</r></p><par n="نوکون__vblex"/></e>
+    <e lm="تَوَدن"><p><l>تَودَه</l><r>تَوَ</r></p><par n="بدَ/ئن__vblex"/></e>
+    <e lm="تَوَدن"><p><l>تَودَه</l><r>تَوَ</r></p><par n="دَ/ئن__vblex"/></e>
+    <e lm="تَوَدن"><p><l>تَوَد</l><r>تَوَدن</r></p><par n="بوکون__vblex"/></e>
+    <e lm="تَوَدن"><p><l>تَوَد</l><r>تَوَدن</r></p><par n="کون__vblex"/></e>
+    <e lm="تکأندن"><p><l>تنکأند</l><r>تکأند</r></p><par n="نوکود/ن__vblex"/></e>
+    <e lm="تکأندن"><p><l>تکأند</l><r>تکأند</r></p><par n="بوکود/ن__vblex"/></e>
+    <e lm="تکأندن"><p><l>تکأند</l><r>تکأند</r></p><par n="کود/ن__vblex"/></e>
+    <e lm="جستن"><p><l>بجست</l><r>جست</r></p><par n="بوکود/ن__vblex"/></e>
+    <e lm="جستن"><p><l>جست</l><r>جست</r></p><par n="کود/ن__vblex"/></e>
+    <e lm="جستن"><p><l>نجست</l><r>جست</r></p><par n="نوکود/ن__vblex"/></e>
+    <e lm="جنگن"><p><l>بجنگ</l><r>جنگ</r></p><par n="بوکود/ن__vblex"/></e>
+    <e lm="جنگن"><p><l>جنگ</l><r>جنگ</r></p><par n="کود/ن__vblex"/></e>
+    <e lm="جنگن"><p><l>نجنگ</l><r>جنگ</r></p><par n="نوکود/ن__vblex"/></e>
+    <e lm="جیلیسکستن"><p><l>جیلنیسکست</l><r>جیلیسکست</r></p><par n="نوکود/ن__vblex"/></e>
+    <e lm="جیلیسکستن"><p><l>جیلیسکست</l><r>جیلیسکست</r></p><par n="بوکود/ن__vblex"/></e>
+    <e lm="جیلیسکستن"><p><l>جیلیسکست</l><r>جیلیسکست</r></p><par n="کود/ن__vblex"/></e>
+    <e lm="خوأستن"><p><l>بخوأ</l><r>خوأستن</r></p><par n="باَ__vblex"/></e>
+    <e lm="خوأستن"><p><l>بخوأست</l><r>خوأست</r></p><par n="بوکود/ن__vblex"/></e>
+    <e lm="خوأستن"><p><l>خوأ</l><r>خوأستن</r></p><par n="اَ__vblex"/></e>
+    <e lm="خوأستن"><p><l>خوأست</l><r>خوأست</r></p><par n="کود/ن__vblex"/></e>
+    <e lm="خوأستن"><p><l>نخوأ</l><r>خوأستن</r></p><par n="ناَ__vblex"/></e>
+    <e lm="خوأستن"><p><l>نخوأست</l><r>خوأست</r></p><par n="نوکود/ن__vblex"/></e>
+    <e lm="خوأندن"><p><l>بخوأن</l><r>خوأندن</r></p><par n="بوکون__vblex"/></e>
+    <e lm="خوأندن"><p><l>بخوأند</l><r>خوأند</r></p><par n="بوکود/ن__vblex"/></e>
+    <e lm="خوأندن"><p><l>خوأن</l><r>خوأندن</r></p><par n="کون__vblex"/></e>
+    <e lm="خوأندن"><p><l>خوأند</l><r>خوأند</r></p><par n="کود/ن__vblex"/></e>
+    <e lm="خوأندن"><p><l>نخوأن</l><r>خوأندن</r></p><par n="نوکون__vblex"/></e>
+    <e lm="خوأندن"><p><l>نخوأند</l><r>خوأند</r></p><par n="نوکود/ن__vblex"/></e>
+    <e lm="خوردن"><p><l>بوخور</l><r>خوردن</r></p><par n="بوکون__vblex"/></e>
+    <e lm="خوردن"><p><l>بوخورد</l><r>خورد</r></p><par n="بوکود/ن__vblex"/></e>
+    <e lm="خوردن"><p><l>خور</l><r>خوردن</r></p><par n="کون__vblex"/></e>
+    <e lm="خوردن"><p><l>خورد</l><r>خورد</r></p><par n="کود/ن__vblex"/></e>
+    <e lm="خوردن"><p><l>نوخور</l><r>خوردن</r></p><par n="نوکون__vblex"/></e>
+    <e lm="خوردن"><p><l>نوخورد</l><r>خورد</r></p><par n="نوکود/ن__vblex"/></e>
+    <e lm="خوفتن"><p><l>بوخوس</l><r>خوفتن</r></p><par n="بوکون__vblex"/></e>
+    <e lm="خوفتن"><p><l>بوخوفت</l><r>خوفت</r></p><par n="بوکود/ن__vblex"/></e>
+    <e lm="خوفتن"><p><l>خوس</l><r>خوفتن</r></p><par n="کون__vblex"/></e>
+    <e lm="خوفتن"><p><l>خوفت</l><r>خوفت</r></p><par n="کود/ن__vblex"/></e>
+    <e lm="خوفتن"><p><l>نوخوس</l><r>خوفتن</r></p><par n="نوکون__vblex"/></e>
+    <e lm="خوفتن"><p><l>نوخوفت</l><r>خوفت</r></p><par n="نوکود/ن__vblex"/></e>
+    <e lm="دأشتن"><p><l>بدأر</l><r>دأشتن</r></p><par n="بوکون__vblex"/></e>
+    <e lm="دأشتن"><p><l>بدأشت</l><r>دأشت</r></p><par n="بوکود/ن__vblex"/></e>
+    <e lm="دأشتن"><p><l>دأر</l><r>دأشتن</r></p><par n="کون__vblex"/></e>
+    <e lm="دأشتن"><p><l>دأشت</l><r>دأشت</r></p><par n="کود/ن__vblex"/></e>
+    <e lm="دأشتن"><p><l>ندأر</l><r>دأشتن</r></p><par n="نوکون__vblex"/></e>
+    <e lm="دأشتن"><p><l>ندأشت</l><r>دأشت</r></p><par n="نوکود/ن__vblex"/></e>
+    <e lm="دأنستن"><p><l>بدأن</l><r>دأنستن</r></p><par n="بوکون__vblex"/></e>
+    <e lm="دأنستن"><p><l>بدأنست</l><r>دأنست</r></p><par n="بوکود/ن__vblex"/></e>
+    <e lm="دأنستن"><p><l>دأن</l><r>دأنستن</r></p><par n="کون__vblex"/></e>
+    <e lm="دأنستن"><p><l>دأنست</l><r>دأنست</r></p><par n="کود/ن__vblex"/></e>
+    <e lm="دأنستن"><p><l>ندأن</l><r>دأنستن</r></p><par n="نوکون__vblex"/></e>
+    <e lm="دأنستن"><p><l>ندأنست</l><r>دأنست</r></p><par n="نوکود/ن__vblex"/></e>
+    <e lm="دمستن"><p><l>بدمست</l><r>دمست</r></p><par n="بوکود/ن__vblex"/></e>
+    <e lm="دمستن"><p><l>دمست</l><r>دمست</r></p><par n="کود/ن__vblex"/></e>
+    <e lm="دمستن"><p><l>ندمست</l><r>دمست</r></p><par n="نوکود/ن__vblex"/></e>
+    <e lm="دوختن"><p><l>بودوخت</l><r>دوخت</r></p><par n="بوکود/ن__vblex"/></e>
+    <e lm="دوختن"><p><l>دوخت</l><r>دوخت</r></p><par n="کود/ن__vblex"/></e>
+    <e lm="دوختن"><p><l>نودوخت</l><r>دوخت</r></p><par n="نوکود/ن__vblex"/></e>
+    <e lm="دوخوأدن"><p><l>دوخوأد</l><r>دوخوأد</r></p><par n="بوکود/ن__vblex"/></e>
+    <e lm="دوخوأدن"><p><l>دوخوأد</l><r>دوخوأد</r></p><par n="کود/ن__vblex"/></e>
+    <e lm="دوخوأدن"><p><l>دوخوأن</l><r>دوخوأدن</r></p><par n="بوکون__vblex"/></e>
+    <e lm="دوخوأدن"><p><l>دوخوأن</l><r>دوخوأدن</r></p><par n="کون__vblex"/></e>
+    <e lm="دوخوأدن"><p><l>دونخوأد</l><r>دوخوأد</r></p><par n="نوکود/ن__vblex"/></e>
+    <e lm="دوخوأدن"><p><l>دونخوأن</l><r>دوخوأدن</r></p><par n="نوکون__vblex"/></e>
+    <e lm="دووستن"><p><l>دودو</l><r>دووستن</r></p><par n="بوکون__vblex"/></e>
+    <e lm="دووستن"><p><l>دودو</l><r>دووستن</r></p><par n="کون__vblex"/></e>
+    <e lm="دووستن"><p><l>دودووست</l><r>دووست</r></p><par n="بوکود/ن__vblex"/></e>
+    <e lm="دووستن"><p><l>دودووست</l><r>دووست</r></p><par n="کود/ن__vblex"/></e>
+    <e lm="دووستن"><p><l>دوندو</l><r>دووستن</r></p><par n="نوکون__vblex"/></e>
+    <e lm="دووستن"><p><l>دوندووست</l><r>دووست</r></p><par n="نوکود/ن__vblex"/></e>
+    <e lm="دَوَستن"><p><l>دَنوَد</l><r>دَوَستن</r></p><par n="نوکون__vblex"/></e>
+    <e lm="دَوَستن"><p><l>دَنوَست</l><r>دَوَست</r></p><par n="نوکود/ن__vblex"/></e>
+    <e lm="دَوَستن"><p><l>دَوَد</l><r>دَوَستن</r></p><par n="بوکون__vblex"/></e>
+    <e lm="دَوَستن"><p><l>دَوَد</l><r>دَوَستن</r></p><par n="کون__vblex"/></e>
+    <e lm="دَوَستن"><p><l>دَوَست</l><r>دَوَست</r></p><par n="بوکود/ن__vblex"/></e>
+    <e lm="دَوَستن"><p><l>دَوَست</l><r>دَوَست</r></p><par n="کود/ن__vblex"/></e>
+    <e lm="دِئن"><p><l>بده</l><r>دِ</r></p><par n="بز/ِئن__vblex"/></e>
+    <e lm="دِئن"><p><l>بیدین</l><r>دِئن</r></p><par n="بوکون__vblex"/></e>
+    <e lm="دِئن"><p><l>ده</l><r>دِ</r></p><par n="ز/ِئن__vblex"/></e>
+    <e lm="دِئن"><p><l>دین</l><r>دِئن</r></p><par n="کون__vblex"/></e>
+    <e lm="دِئن"><p><l>نده</l><r>دِ</r></p><par n="نز/ِئن__vblex"/></e>
+    <e lm="دِئن"><p><l>نیدین</l><r>دِئن</r></p><par n="نوکون__vblex"/></e>
+    <e lm="ساختن"><p><l>بساخت</l><r>ساخت</r></p><par n="بوکود/ن__vblex"/></e>
+    <e lm="ساختن"><p><l>بساز</l><r>ساختن</r></p><par n="بوکون__vblex"/></e>
+    <e lm="ساختن"><p><l>ساخت</l><r>ساخت</r></p><par n="کود/ن__vblex"/></e>
+    <e lm="ساختن"><p><l>ساز</l><r>ساختن</r></p><par n="کون__vblex"/></e>
+    <e lm="ساختن"><p><l>نساخت</l><r>ساخت</r></p><par n="نوکود/ن__vblex"/></e>
+    <e lm="ساختن"><p><l>نساز</l><r>ساختن</r></p><par n="نوکون__vblex"/></e>
+    <e lm="سوختن"><p><l>بوسوخت</l><r>سوخت</r></p><par n="بوکود/ن__vblex"/></e>
+    <e lm="سوختن"><p><l>بوسوز</l><r>سوختن</r></p><par n="بوکون__vblex"/></e>
+    <e lm="سوختن"><p><l>سوخت</l><r>سوخت</r></p><par n="کود/ن__vblex"/></e>
+    <e lm="سوختن"><p><l>سوز</l><r>سوختن</r></p><par n="کون__vblex"/></e>
+    <e lm="سوختن"><p><l>نوسوخت</l><r>سوخت</r></p><par n="نوکود/ن__vblex"/></e>
+    <e lm="سوختن"><p><l>نوسوز</l><r>سوختن</r></p><par n="نوکون__vblex"/></e>
+    <e lm="شنأختن"><p><l>بشنأخت</l><r>شنأخت</r></p><par n="بوکود/ن__vblex"/></e>
+    <e lm="شنأختن"><p><l>بشنأس</l><r>شنأختن</r></p><par n="بوکون__vblex"/></e>
+    <e lm="شنأختن"><p><l>شنأخت</l><r>شنأخت</r></p><par n="کود/ن__vblex"/></e>
+    <e lm="شنأختن"><p><l>شنأس</l><r>شنأختن</r></p><par n="کون__vblex"/></e>
+    <e lm="شنأختن"><p><l>نشنأخت</l><r>شنأخت</r></p><par n="نوکود/ن__vblex"/></e>
+    <e lm="شنأختن"><p><l>نشنأس</l><r>شنأختن</r></p><par n="نوکون__vblex"/></e>
+    <e lm="شوستن"><p><l>بوشور</l><r>شوستن</r></p><par n="بوکون__vblex"/></e>
+    <e lm="شوستن"><p><l>بوشوست</l><r>شوست</r></p><par n="بوکود/ن__vblex"/></e>
+    <e lm="شوستن"><p><l>شور</l><r>شوستن</r></p><par n="کون__vblex"/></e>
+    <e lm="شوستن"><p><l>شوست</l><r>شوست</r></p><par n="کود/ن__vblex"/></e>
+    <e lm="شوستن"><p><l>نوشور</l><r>شوستن</r></p><par n="نوکون__vblex"/></e>
+    <e lm="شوستن"><p><l>نوشوست</l><r>شوست</r></p><par n="نوکود/ن__vblex"/></e>
+    <e lm="شکافتن"><p><l>بشکافت</l><r>شکافت</r></p><par n="بوکود/ن__vblex"/></e>
+    <e lm="شکافتن"><p><l>شکافت</l><r>شکافت</r></p><par n="کود/ن__vblex"/></e>
+    <e lm="شکافتن"><p><l>نشکافت</l><r>شکافت</r></p><par n="نوکود/ن__vblex"/></e>
+    <e lm="شکستن"><p><l>ایشکنه</l><r>شکس</r></p><par n="ز/ِئن__vblex"/></e>
+    <e lm="شکستن"><p><l>بشکست</l><r>شکست</r></p><par n="بوکود/ن__vblex"/></e>
+    <e lm="شکستن"><p><l>بیشکنه</l><r>شکس</r></p><par n="بز/ِئن__vblex"/></e>
+    <e lm="شکستن"><p><l>شکست</l><r>شکست</r></p><par n="کود/ن__vblex"/></e>
+    <e lm="شکستن"><p><l>نشکست</l><r>شکست</r></p><par n="نوکود/ن__vblex"/></e>
+    <e lm="شکستن"><p><l>نیشکنه</l><r>شکس</r></p><par n="نز/ِئن__vblex"/></e>
+    <e lm="فندرستن"><p><l>فندرست</l><r>فندرست</r></p><par n="بوکود/ن__vblex"/></e>
+    <e lm="فندرستن"><p><l>فندرست</l><r>فندرست</r></p><par n="کود/ن__vblex"/></e>
+    <e lm="فندرستن"><p><l>فنندرست</l><r>فندرست</r></p><par n="نوکود/ن__vblex"/></e>
+    <e lm="فندرستن2"><p><l>فندر</l><r>فندرستن2</r></p><par n="بوکون__vblex"/></e>
+    <e lm="فندرستن2"><p><l>فندر</l><r>فندرستن2</r></p><par n="کون__vblex"/></e>
+    <e lm="فندرستن2"><p><l>فنندر</l><r>فندرستن2</r></p><par n="نوکون__vblex"/></e>
+    <e lm="فهمستن"><p><l>بفهم</l><r>فهمستن</r></p><par n="بوکون__vblex"/></e>
+    <e lm="فهمستن"><p><l>بفهمست</l><r>فهمست</r></p><par n="بوکود/ن__vblex"/></e>
+    <e lm="فهمستن"><p><l>فهم</l><r>فهمستن</r></p><par n="کون__vblex"/></e>
+    <e lm="فهمستن"><p><l>فهمست</l><r>فهمست</r></p><par n="کود/ن__vblex"/></e>
+    <e lm="فهمستن"><p><l>نفهم</l><r>فهمستن</r></p><par n="نوکون__vblex"/></e>
+    <e lm="فهمستن"><p><l>نفهمست</l><r>فهمست</r></p><par n="نوکود/ن__vblex"/></e>
+    <e lm="فوردن"><p><l>فورد</l><r>فورد</r></p><par n="بوکود/ن__vblex"/></e>
+    <e lm="فوردن"><p><l>فورد</l><r>فورد</r></p><par n="کود/ن__vblex"/></e>
+    <e lm="فوردن"><p><l>فونرد</l><r>فورد</r></p><par n="نوکود/ن__vblex"/></e>
+    <e lm="فوروختن"><p><l>بوفوروخت</l><r>فوروخت</r></p><par n="بوکود/ن__vblex"/></e>
+    <e lm="فوروختن"><p><l>بوفوروش</l><r>فوروختن</r></p><par n="بوکون__vblex"/></e>
+    <e lm="فوروختن"><p><l>فوروخت</l><r>فوروخت</r></p><par n="کود/ن__vblex"/></e>
+    <e lm="فوروختن"><p><l>فوروش</l><r>فوروختن</r></p><par n="کون__vblex"/></e>
+    <e lm="فوروختن"><p><l>نوفوروخت</l><r>فوروخت</r></p><par n="نوکود/ن__vblex"/></e>
+    <e lm="فوروختن"><p><l>نوفوروش</l><r>فوروختن</r></p><par n="نوکون__vblex"/></e>
+    <e lm="فووستن"><p><l>فونوست</l><r>فووست</r></p><par n="نوکود/ن__vblex"/></e>
+    <e lm="فووستن"><p><l>فووست</l><r>فووست</r></p><par n="بوکود/ن__vblex"/></e>
+    <e lm="فووستن"><p><l>فووست</l><r>فووست</r></p><par n="کود/ن__vblex"/></e>
+    <e lm="فووستن2"><p><l>فونو</l><r>فووستن2</r></p><par n="نوکون__vblex"/></e>
+    <e lm="فووستن2"><p><l>فوو</l><r>فووستن2</r></p><par n="بوکون__vblex"/></e>
+    <e lm="فووستن2"><p><l>فوو</l><r>فووستن2</r></p><par n="کون__vblex"/></e>
+    <e lm="فَرسن"><p><l>فَرس</l><r>فَرسن</r></p><par n="بوکون__vblex"/></e>
+    <e lm="فَرسن"><p><l>فَرس</l><r>فَرسن</r></p><par n="کون__vblex"/></e>
+    <e lm="فَرسن"><p><l>فَرسه</l><r>فَر</r></p><par n="بز/ِئن__vblex"/></e>
+    <e lm="فَرسن"><p><l>فَرسه</l><r>فَر</r></p><par n="ز/ِئن__vblex"/></e>
+    <e lm="فَرسن"><p><l>فَنرس</l><r>فَرسن</r></p><par n="نوکون__vblex"/></e>
+    <e lm="فَرسن"><p><l>فَنرسه</l><r>فَر</r></p><par n="نز/ِئن__vblex"/></e>
+    <e lm="لرزیستن"><p><l>بلرزیست</l><r>لرزیست</r></p><par n="بوکود/ن__vblex"/></e>
+    <e lm="لرزیستن"><p><l>لرزیست</l><r>لرزیست</r></p><par n="کود/ن__vblex"/></e>
+    <e lm="لرزیستن"><p><l>نلرزیست</l><r>لرزیست</r></p><par n="نوکود/ن__vblex"/></e>
+    <e lm="مألستن"><p><l>بمألست</l><r>مألست</r></p><par n="بوکود/ن__vblex"/></e>
+    <e lm="مألستن"><p><l>مألست</l><r>مألست</r></p><par n="کود/ن__vblex"/></e>
+    <e lm="مألستن"><p><l>نمألست</l><r>مألست</r></p><par n="نوکود/ن__vblex"/></e>
+    <e lm="مأنستن"><p><l>بمأنست</l><r>مأنست</r></p><par n="بوکود/ن__vblex"/></e>
+    <e lm="مأنستن"><p><l>مأنست</l><r>مأنست</r></p><par n="کود/ن__vblex"/></e>
+    <e lm="مأنستن"><p><l>نمأنست</l><r>مأنست</r></p><par n="نوکود/ن__vblex"/></e>
+    <e lm="مأنستن2"><p><l>بمأن</l><r>مأنستن2</r></p><par n="بوکون__vblex"/></e>
+    <e lm="مأنستن2"><p><l>مأن</l><r>مأنستن2</r></p><par n="کون__vblex"/></e>
+    <e lm="مأنستن2"><p><l>نمأن</l><r>مأنستن2</r></p><par n="نوکون__vblex"/></e>
+    <e lm="مردن"><p><l>بمَرد</l><r>مرد</r></p><par n="بوکود/ن__vblex"/></e>
+    <e lm="مردن"><p><l>بیمیر</l><r>مردن</r></p><par n="بوکون__vblex"/></e>
+    <e lm="مردن"><p><l>مَرد</l><r>مرد</r></p><par n="کود/ن__vblex"/></e>
+    <e lm="مردن"><p><l>میر</l><r>مردن</r></p><par n="کون__vblex"/></e>
+    <e lm="مردن"><p><l>نمَرد</l><r>مرد</r></p><par n="نوکود/ن__vblex"/></e>
+    <e lm="مردن"><p><l>نیمیر</l><r>مردن</r></p><par n="نوکون__vblex"/></e>
+    <e lm="نَئن"><p><l>بنَه</l><r>نَئ</r></p><par n="بوکود/ن__vblex"/></e>
+    <e lm="نَئن"><p><l>بنَه</l><r>نَئن</r></p><par n="بوکون__vblex"/></e>
+    <e lm="نَئن"><p><l>ننَه</l><r>نَئ</r></p><par n="نوکود/ن__vblex"/></e>
+    <e lm="نَئن"><p><l>ننَه</l><r>نَئن</r></p><par n="نوکون__vblex"/></e>
+    <e lm="نَئن"><p><l>نَه</l><r>نَئ</r></p><par n="کود/ن__vblex"/></e>
+    <e lm="نَئن"><p><l>نَه</l><r>نَئن</r></p><par n="کون__vblex"/></e>
+    <e lm="نِئن"><p><l>بنه</l><r>نِئن</r></p><par n="بوکون__vblex"/></e>
+    <e lm="نِئن"><p><l>ننه</l><r>نِئن</r></p><par n="نوکون__vblex"/></e>
+    <e lm="نِئن"><p><l>نه</l><r>نِئن</r></p><par n="کون__vblex"/></e>
+    <e lm="نیشتن"><p><l>بینیشت</l><r>نیشت</r></p><par n="بوکود/ن__vblex"/></e>
+    <e lm="نیشتن"><p><l>بینیشین</l><r>نیشتن</r></p><par n="بوکون__vblex"/></e>
+    <e lm="نیشتن"><p><l>نیشت</l><r>نیشت</r></p><par n="کود/ن__vblex"/></e>
+    <e lm="نیشتن"><p><l>نیشین</l><r>نیشتن</r></p><par n="کون__vblex"/></e>
+    <e lm="نیشتن"><p><l>نینیشت</l><r>نیشت</r></p><par n="نوکود/ن__vblex"/></e>
+    <e lm="نیشتن"><p><l>نینیشین</l><r>نیشتن</r></p><par n="نوکون__vblex"/></e>
+    <e lm="نیویشتن"><p><l>بینیویس</l><r>نیویشتن</r></p><par n="بوکون__vblex"/></e>
+    <e lm="نیویشتن"><p><l>بینیویشت</l><r>نیویشت</r></p><par n="بوکود/ن__vblex"/></e>
+    <e lm="نیویشتن"><p><l>نینیویس</l><r>نیویشتن</r></p><par n="نوکون__vblex"/></e>
+    <e lm="نیویشتن"><p><l>نینیویشت</l><r>نیویشت</r></p><par n="نوکود/ن__vblex"/></e>
+    <e lm="نیویشتن"><p><l>نیویس</l><r>نیویشتن</r></p><par n="کون__vblex"/></e>
+    <e lm="نیویشتن"><p><l>نیویشت</l><r>نیویشت</r></p><par n="کود/ن__vblex"/></e>
+    <e lm="هئن"><p><l>بهه</l><r>ه</r></p><par n="بز/ِئن__vblex"/></e>
+    <e lm="هئن"><p><l>بیهین</l><r>هئن</r></p><par n="بوکون__vblex"/></e>
+    <e lm="هئن"><p><l>نهه</l><r>ه</r></p><par n="نز/ِئن__vblex"/></e>
+    <e lm="هئن"><p><l>نیهین</l><r>هئن</r></p><par n="نوکون__vblex"/></e>
+    <e lm="هئن"><p><l>هه</l><r>ه</r></p><par n="ز/ِئن__vblex"/></e>
+    <e lm="هئن"><p><l>هین</l><r>هئن</r></p><par n="کون__vblex"/></e>
+    <e lm="هاشتن"><p><l>بهاش</l><r>هاشتن</r></p><par n="بوکون__vblex"/></e>
+    <e lm="هاشتن"><p><l>بهاشت</l><r>هاشت</r></p><par n="بوکود/ن__vblex"/></e>
+    <e lm="هاشتن"><p><l>نهاش</l><r>هاشتن</r></p><par n="نوکون__vblex"/></e>
+    <e lm="هاشتن"><p><l>نهاشت</l><r>هاشت</r></p><par n="نوکود/ن__vblex"/></e>
+    <e lm="هاشتن"><p><l>هاش</l><r>هاشتن</r></p><par n="کون__vblex"/></e>
+    <e lm="هاشتن"><p><l>هاشت</l><r>هاشت</r></p><par n="کود/ن__vblex"/></e>
+    <e lm="وَورسن"><p><l>وَنورس</l><r>وَورسن</r></p><par n="نوکون__vblex"/></e>
+    <e lm="وَورسن"><p><l>وَنورسه</l><r>وَور</r></p><par n="نز/ِئن__vblex"/></e>
+    <e lm="وَورسن"><p><l>وَورس</l><r>وَورسن</r></p><par n="بوکون__vblex"/></e>
+    <e lm="وَورسن"><p><l>وَورس</l><r>وَورسن</r></p><par n="کون__vblex"/></e>
+    <e lm="وَورسن"><p><l>وَورسه</l><r>وَور</r></p><par n="بز/ِئن__vblex"/></e>
+    <e lm="وَورسن"><p><l>وَورسه</l><r>وَور</r></p><par n="ز/ِئن__vblex"/></e>
+    <e lm="وَون"><p><l>فنو</l><r>وَو</r></p><par n="نوکود/ن__vblex"/></e>
+    <e lm="وَون"><p><l>فو</l><r>وَو</r></p><par n="بوکود/ن__vblex"/></e>
+    <e lm="وَون"><p><l>فو</l><r>وَو</r></p><par n="کود/ن__vblex"/></e>
+    <e lm="وَون"><p><l>وَنوین</l><r>وَون</r></p><par n="نوکون__vblex"/></e>
+    <e lm="وَون"><p><l>وَوین</l><r>وَون</r></p><par n="بوکون__vblex"/></e>
+    <e lm="وَون"><p><l>وَوین</l><r>وَون</r></p><par n="کون__vblex"/></e>
+    <e lm="ویریشتن"><p><l>ویریز</l><r>ویریشتن</r></p><par n="بوکون__vblex"/></e>
+    <e lm="ویریشتن"><p><l>ویریز</l><r>ویریشتن</r></p><par n="کون__vblex"/></e>
+    <e lm="ویریشتن"><p><l>ویریشت</l><r>ویریشت</r></p><par n="بوکود/ن__vblex"/></e>
+    <e lm="ویریشتن"><p><l>ویریشت</l><r>ویریشت</r></p><par n="کود/ن__vblex"/></e>
+    <e lm="ویریشتن"><p><l>وینریز</l><r>ویریشتن</r></p><par n="نوکون__vblex"/></e>
+    <e lm="ویریشتن"><p><l>وینریشت</l><r>ویریشت</r></p><par n="نوکود/ن__vblex"/></e>
+    <e lm="پختن"><p><l>بپخت</l><r>پخت</r></p><par n="بوکود/ن__vblex"/></e>
+    <e lm="پختن"><p><l>بپز</l><r>پختن</r></p><par n="بوکون__vblex"/></e>
+    <e lm="پختن"><p><l>نپخت</l><r>پخت</r></p><par n="نوکود/ن__vblex"/></e>
+    <e lm="پختن"><p><l>نپز</l><r>پختن</r></p><par n="نوکون__vblex"/></e>
+    <e lm="پختن"><p><l>پخت</l><r>پخت</r></p><par n="کود/ن__vblex"/></e>
+    <e lm="پختن"><p><l>پز</l><r>پختن</r></p><par n="کون__vblex"/></e>
+    <e lm="پرستن"><p><l>بپر</l><r>پرستن</r></p><par n="بوکون__vblex"/></e>
+    <e lm="پرستن"><p><l>بپرست</l><r>پرست</r></p><par n="بوکود/ن__vblex"/></e>
+    <e lm="پرستن"><p><l>نپر</l><r>پرستن</r></p><par n="نوکون__vblex"/></e>
+    <e lm="پرستن"><p><l>نپرست</l><r>پرست</r></p><par n="نوکود/ن__vblex"/></e>
+    <e lm="پرستن"><p><l>پر</l><r>پرستن</r></p><par n="کون__vblex"/></e>
+    <e lm="پرستن"><p><l>پرست</l><r>پرست</r></p><par n="کود/ن__vblex"/></e>
+    <e lm="پرکستن"><p><l>بپرکست</l><r>پرکست</r></p><par n="بوکود/ن__vblex"/></e>
+    <e lm="پرکستن"><p><l>نپرکست</l><r>پرکست</r></p><par n="نوکود/ن__vblex"/></e>
+    <e lm="پرکستن"><p><l>پرکست</l><r>پرکست</r></p><par n="کود/ن__vblex"/></e>
+    <e lm="چسبستن"><p><l>بچسبست</l><r>چسبست</r></p><par n="بوکود/ن__vblex"/></e>
+    <e lm="چسبستن"><p><l>نچسبست</l><r>چسبست</r></p><par n="نوکود/ن__vblex"/></e>
+    <e lm="چسبستن"><p><l>چسبست</l><r>چسبست</r></p><par n="کود/ن__vblex"/></e>
+    <e lm="چِئن"><p><l>بچه</l><r>چِ</r></p><par n="بز/ِئن__vblex"/></e>
+    <e lm="چِئن"><p><l>بیچین</l><r>چِئن</r></p><par n="بوکون__vblex"/></e>
+    <e lm="چِئن"><p><l>نچه</l><r>چِ</r></p><par n="نز/ِئن__vblex"/></e>
+    <e lm="چِئن"><p><l>نیچین</l><r>چِئن</r></p><par n="نوکون__vblex"/></e>
+    <e lm="چِئن"><p><l>چه</l><r>چِ</r></p><par n="ز/ِئن__vblex"/></e>
+    <e lm="چِئن"><p><l>چین</l><r>چِئن</r></p><par n="کون__vblex"/></e>
+    <e lm="کاشتن"><p><l>بکاشت</l><r>کاشت</r></p><par n="بوکود/ن__vblex"/></e>
+    <e lm="کاشتن"><p><l>نکاشت</l><r>کاشت</r></p><par n="نوکود/ن__vblex"/></e>
+    <e lm="کاشتن"><p><l>کاشت</l><r>کاشت</r></p><par n="کود/ن__vblex"/></e>
+    <e lm="کشن"><p><l>بکش</l><r>کشن</r></p><par n="بوکون__vblex"/></e>
+    <e lm="کشن"><p><l>بکشه</l><r>ک</r></p><par n="بز/ِئن__vblex"/></e>
+    <e lm="کشن"><p><l>نکش</l><r>کشن</r></p><par n="نوکون__vblex"/></e>
+    <e lm="کشن"><p><l>نکشه</l><r>ک</r></p><par n="نز/ِئن__vblex"/></e>
+    <e lm="کشن"><p><l>کش</l><r>کشن</r></p><par n="کون__vblex"/></e>
+    <e lm="کشن"><p><l>کشه</l><r>ک</r></p><par n="ز/ِئن__vblex"/></e>
+    <e lm="کفتن"><p><l>دنکف</l><r>کفتن</r></p><par n="نوکون__vblex"/></e>
+    <e lm="کفتن"><p><l>دنکفت</l><r>کفت</r></p><par n="نوکود/ن__vblex"/></e>
+    <e lm="کفتن"><p><l>دکف</l><r>کفتن</r></p><par n="بوکون__vblex"/></e>
+    <e lm="کفتن"><p><l>دکف</l><r>کفتن</r></p><par n="کون__vblex"/></e>
+    <e lm="کفتن"><p><l>دکفت</l><r>کفت</r></p><par n="بوکود/ن__vblex"/></e>
+    <e lm="کفتن"><p><l>دکفت</l><r>کفت</r></p><par n="کود/ن__vblex"/></e>
+    <e lm="کندن"><p><l>بکن</l><r>کندن</r></p><par n="بوکون__vblex"/></e>
+    <e lm="کندن"><p><l>بکند</l><r>کند</r></p><par n="بوکود/ن__vblex"/></e>
+    <e lm="کندن"><p><l>نکن</l><r>کندن</r></p><par n="نوکون__vblex"/></e>
+    <e lm="کندن"><p><l>نکند</l><r>کند</r></p><par n="نوکود/ن__vblex"/></e>
+    <e lm="کندن"><p><l>کن</l><r>کندن</r></p><par n="کون__vblex"/></e>
+    <e lm="کندن"><p><l>کند</l><r>کند</r></p><par n="کود/ن__vblex"/></e>
+    <e lm="کوبستن"><p><l>بوکوب</l><r>کوبستن</r></p><par n="بوکون__vblex"/></e>
+    <e lm="کوبستن"><p><l>بوکوبست</l><r>کوبست</r></p><par n="بوکود/ن__vblex"/></e>
+    <e lm="کوبستن"><p><l>نوکوب</l><r>کوبستن</r></p><par n="نوکون__vblex"/></e>
+    <e lm="کوبستن"><p><l>نوکوبست</l><r>کوبست</r></p><par n="نوکود/ن__vblex"/></e>
+    <e lm="کوبستن"><p><l>کوب</l><r>کوبستن</r></p><par n="کون__vblex"/></e>
+    <e lm="کوبستن"><p><l>کوبست</l><r>کوبست</r></p><par n="کود/ن__vblex"/></e>
+    <e lm="کوشتن"><p><l>بوکوش</l><r>کوشتن</r></p><par n="بوکون__vblex"/></e>
+    <e lm="کوشتن"><p><l>بوکوشت</l><r>کوشت</r></p><par n="بوکود/ن__vblex"/></e>
+    <e lm="کوشتن"><p><l>نوکوش</l><r>کوشتن</r></p><par n="نوکون__vblex"/></e>
+    <e lm="کوشتن"><p><l>نوکوشت</l><r>کوشت</r></p><par n="نوکود/ن__vblex"/></e>
+    <e lm="کوشتن"><p><l>کوش</l><r>کوشتن</r></p><par n="کون__vblex"/></e>
+    <e lm="کوشتن"><p><l>کوشت</l><r>کوشت</r></p><par n="کود/ن__vblex"/></e>
+    <e lm="گردستن"><p><l>بگرد</l><r>گردستن</r></p><par n="بوکون__vblex"/></e>
+    <e lm="گردستن"><p><l>بگردست</l><r>گردست</r></p><par n="بوکود/ن__vblex"/></e>
+    <e lm="گردستن"><p><l>نگرد</l><r>گردستن</r></p><par n="نوکون__vblex"/></e>
+    <e lm="گردستن"><p><l>نگردست</l><r>گردست</r></p><par n="نوکود/ن__vblex"/></e>
+    <e lm="گردستن"><p><l>گرد</l><r>گردستن</r></p><par n="کون__vblex"/></e>
+    <e lm="گردستن"><p><l>گردست</l><r>گردست</r></p><par n="کود/ن__vblex"/></e>
+    <e lm="گوذشتن"><p><l>بوگوذر</l><r>گوذشتن</r></p><par n="بوکون__vblex"/></e>
+    <e lm="گوذشتن"><p><l>بوگوذشت</l><r>گوذشت</r></p><par n="بوکود/ن__vblex"/></e>
+    <e lm="گوذشتن"><p><l>نوگوذر</l><r>گوذشتن</r></p><par n="نوکون__vblex"/></e>
+    <e lm="گوذشتن"><p><l>نوگوذشت</l><r>گوذشت</r></p><par n="نوکود/ن__vblex"/></e>
+    <e lm="گوذشتن"><p><l>گوذر</l><r>گوذشتن</r></p><par n="کون__vblex"/></e>
+    <e lm="گوذشتن"><p><l>گوذشت</l><r>گوذشت</r></p><par n="کود/ن__vblex"/></e>
+    <e lm="گیفتن"><p><l>فینگیر</l><r>گیفتن</r></p><par n="نوکون__vblex"/></e>
+    <e lm="گیفتن"><p><l>فینگیفت</l><r>گیفت</r></p><par n="نوکود/ن__vblex"/></e>
+    <e lm="گیفتن"><p><l>فیگیر</l><r>گیفتن</r></p><par n="بوکون__vblex"/></e>
+    <e lm="گیفتن"><p><l>فیگیر</l><r>گیفتن</r></p><par n="کون__vblex"/></e>
+    <e lm="گیفتن"><p><l>فیگیفت</l><r>گیفت</r></p><par n="بوکود/ن__vblex"/></e>
+    <e lm="گیفتن"><p><l>فیگیفت</l><r>گیفت</r></p><par n="کود/ن__vblex"/></e>
+    <e lm="یأفتن"><p><l>بیأفت</l><r>یأفت</r></p><par n="بوکود/ن__vblex"/></e>
+    <e lm="یأفتن"><p><l>نیأفت</l><r>یأفت</r></p><par n="نوکود/ن__vblex"/></e>
+    <e lm="یأفتن"><p><l>یأفت</l><r>یأفت</r></p><par n="کود/ن__vblex"/></e>
+
+  </section>
+
+  <section id="regex" type="standard">
+    <e><re>[MCDXLVI]+</re><p><l/><r><s n="num"/><s n="mf"/><s n="sg"/></r></p></e>
+    <e><re>[a-z.]+@[a-z.]+</re><p><l/><r><s n="web"/></r></p></e>
+<!--    <e><re>(http://|https://|ftp://)?[áéíóúàèìòùäëïöüñça-z0-9](([\-_])?[áéíóúàèìòùäëïöüñça-z0-9])*(.[áéíóúàèìòùäëïöüñça-z0-9](([\-_])?[áéíóúàèìòùäëïöüñça-z0-9])*)*(.[a-z][a-z]|.aero|.asia|.biz|.cat|.com|.coop|.edu|.gov|.info|.int|.jobs|.mil|.mobi|.museum|.name|.net|.org|.pro|.tel|.travel)(/([áéíóúàèìòùäëïöüñça-z0-9\-_\?=&amp;\*,]+(.[áéíóúàèìòùäëïöüñça-z0-9\-_\?=&amp;\*,]+)*/)*([áéíóúàèìòùäëïöüñça-z0-9\-_\?=&amp;\*,]+(.[áéíóúàèìòùäëïöüñça-z0-9\-_\?=&amp;\*,]+)*)?)?</re><p><l/><r><s n="web"/></r></p></e>-->
+  </section>
+  <section id="punct" type="inconditional">
+    <e><re>[.\?;:!]</re><p><l/><r><s n="sent"/></r></p></e>
+    <e><p><l>-</l><r>-<s n="guio"/></r></p></e>
+    <e><p><l>,</l><r>,<s n="cm"/></r></p></e>
+    <e><p><l>'</l><r>'<s n="apos"/></r></p></e>
+    <e><re>[0-9]+([.,][0-9]+)?</re><p><l/><r><s n="num"/></r></p></e>
+    <e><re>[0-9]+([.,][0-9]+)?%</re><p><l/><r><s n="num"/><s n="percent"/></r></p></e>
+    <e><re>[\(\[]</re><p><l/><r><s n="lpar"/></r></p></e>
+    <e><re>[\)\]]</re><p><l/><r><s n="rpar"/></r></p></e>
+  </section>
+</dictionary>

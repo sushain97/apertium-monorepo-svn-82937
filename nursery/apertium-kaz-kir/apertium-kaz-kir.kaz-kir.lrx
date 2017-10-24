@@ -1,0 +1,233 @@
+<rules>
+
+	<rule> 
+		<match lemma="уақыт" tags="n.*"><select lemma="убакыт" tags="n.*"/></match>
+	</rule>
+	<rule> 
+		<match lemma="анық" tags="adj"><select lemma="анык" tags="adj"/></match>
+	</rule>
+	<rule> 
+		<match lemma="анық" tags="adj.*"><select lemma="тунук" tags="adj.*"/></match>
+		<or><match lemma="есті" tags="v.*"/><match lemma="тыңда" tags="v.*"/></or>
+	</rule>
+	<rule> 
+		<match lemma="аң" tags="n.*"><select lemma="жаныбар" tags="n.*"/></match>
+	</rule>
+	<rule> 
+		<match lemma="да" tags="cnjcoo"><select lemma="да" tags="cnjcoo"/></match>
+	</rule>
+	<rule> 
+		<match lemma="екі" tags="num.coll.subst.px3sp.*"/>
+		<match lemma="да" tags="cnjcoo"><select lemma="тең" tags="postadv"/></match>
+	</rule>
+	<rule> 
+		<!-- жат- will be a more frequent translation of отыр- than отур- -->
+		<match lemma="отыр" tags="vaux.*"><select lemma="жат" tags="vaux.*"/></match>
+	</rule>
+	<rule> 
+		<!-- жат- will be a more frequent translation of жүр- than жүр- -->
+		<match lemma="жүр" tags="vaux.*"><select lemma="жат" tags="vaux.*"/></match>
+	</rule>
+	<rule>
+		<match lemma="қуанышты" tags="adj"><select lemma="кубанычтуу" tags="adj"/></match>
+	</rule>
+	<rule>
+		<match lemma="қуанышты" tags="adj.*"><select lemma="кубанычтуу" tags="adj.*"/></match>
+	</rule>
+	<rule>
+		<!-- қуанышты+copula → кубанычта+copula -->
+		<match lemma="қуанышты" tags="adj.subst.nom"><select lemma="кубаныч" tags="n.*" /></match>
+		<match lemma="е" tags="cop.*"/>
+	</rule>
+	<rule>
+		<match lemma="арнайы" tags="adj.*"><select lemma="атайын" tags="adj.*"/></match>
+	</rule>
+	<rule>
+		<match lemma="арнайы" tags="adj"><select lemma="айрыкча" tags="adj"/></match>
+		<match lemma="түр" tags="n.*"/>
+	</rule>
+	<rule>
+		<match lemma="бас" tags="v.tv.*"><select lemma="бас" tags="v.tv.*"/></match>
+	</rule>
+	<rule>
+		<or><match lemma="қолтаңба" tags="n.nom"/><match lemma="қол" tags="n.nom"/></or>
+		<match lemma="бас" tags="v.tv.*"><select lemma="кой" tags="v.tv.*"/></match>
+	</rule>
+	<rule>
+		<match lemma="жарасатындай" tags="adj.*"><select lemma="жарашыктуу" tags="adj.*"/></match>
+	</rule>
+	<rule>
+		<match lemma="жарасатындай" tags="adj"><select lemma="жарашчудай" tags="adj"/></match>
+		<match lemma="түр" tags="n.*"/>
+	</rule>
+	<rule>
+		<match lemma="сайыс" tags="v.iv.*"><select lemma="кол% кармаш" tags="v.iv"/></match>
+	</rule>
+	<rule>
+		<or><match lemma="команда" tags="n.*"/><match tags="np.org.*"/><match lemma="мен" tags="post"/></or>
+		<match lemma="сайыс" tags="v.iv.*"><select lemma="салгылаш" tags="v.iv.*"/></match>
+	</rule>
+	<rule><!-- for people -->
+		<match lemma="үлкен" tags="adj.*"><select lemma="улуу" tags="adj.*"/></match>
+	</rule>
+	<rule><!-- for things -->
+		<match lemma="үлкен" tags="adj"><select lemma="чоң" tags="adj"/></match>
+		<match lemma="қала" tags="n.*"/>
+	</rule>
+	<rule>
+		<match lemma="үлкен" tags="adj"><select lemma="чоң" tags="adj"/></match>
+		<match lemma="үй" tags="n.*"/>
+	</rule>
+
+	<rule>
+		<match lemma="қағида" tags="n.*"><select lemma="эреже" tags="n.*"/></match>
+	</rule>
+	<rule>
+		<or><match lemma="ғылыми" tags="adj.*"/><match lemma="ғылыми" tags="adj"/></or>
+		<match lemma="қағида" tags="n"><select lemma="теория" tags="n"/></match>
+	</rule>
+	<rule>
+		<or><match lemma="данышпандық" tags="adj.*"/><match lemma="данышпандық" tags="adj"/></or>
+		<match lemma="қағида" tags="n"><select lemma="теория" tags="n"/></match>
+	</rule>
+	<rule>
+		<match lemma="дұрыс" tags="adj.*">
+			<select lemma="туура" tags="adj.*"/>
+		</match>
+	</rule>
+	<rule>
+		<match lemma="дала" tags="n.*">
+			<select lemma="талаа" tags="n.*"/>
+		</match>
+	</rule>
+	<rule>
+		<match lemma="дала" tags="n.loc">
+			<select lemma="эшик" tags="n.loc"/>
+		</match>
+	</rule>
+	<rule>
+		<match lemma="дала" tags="n.abl">
+			<select lemma="эшик" tags="n.abl"/>
+		</match>
+	</rule>
+	<rule>
+		<match lemma="дала" tags="n.dat">
+			<select lemma="эшик" tags="n.dat"/>
+		</match>
+	</rule>
+
+	<rule>
+		<match lemma="бірге" tags="adv">
+			<select lemma="чогуу" tags="adv"/>
+		</match>
+	</rule>
+	<rule>
+		<match lemma="көне" tags="adj">
+			<select lemma="көөнө" tags="adj"/>
+		</match>
+	</rule>
+	<rule>
+		<match lemma="сирек" tags="adj.advl">
+			<select lemma="сейрек" tags="adj.advl"/>
+		</match>
+	</rule>
+	<rule><!-- FIXME -->
+		<match lemma="сирек" tags="adj">
+			<select lemma="сейрек кедешүүчү" tags="adj"/>
+		</match>
+	</rule>
+	<rule>
+		<match lemma="сирек" tags="adj">
+			<select lemma="суюк" tags="adj"/>
+		</match>
+		<match lemma="шаш" tags="n.*"/>
+	</rule>
+
+	<rule>
+		<match lemma="қас" tags="n.px3sp.loc">
+			<select lemma="жан" tags="n.px3sp.loc"/>
+		</match>
+	</rule>
+	<rule>
+		<match lemma="қас" tags="n.*">
+			<select lemma="каш" tags="n.*"/>
+		</match>
+	</rule>
+
+
+	<rule>
+		<match lemma="ағаш" tags="n.*">
+			<select lemma="дарак" tags="n.*"/>
+		</match>
+	</rule>
+	<rule>
+		<match lemma="ағаш" tags="n.abl">
+			<select lemma="жыгач" tags="n.abl"/>
+		</match>
+	</rule>
+	<rule>
+		<match lemma="ағаш" tags="n.attr">
+			<select lemma="жыгач" tags="n.attr"/>
+		</match>
+	</rule>
+
+
+	<rule>
+		<match lemma="салқын" tags="adj.*">
+			<select lemma="муздак" tags="adj.*"/>
+		</match>
+	</rule>
+	<rule>
+		<match lemma="салқын" tags="adj">
+			<select lemma="муздак" tags="adj"/>
+		</match>
+	</rule>
+
+	<rule>
+		<match lemma="салқын" tags="adj.*">
+			<select lemma="салкын" tags="adj.*"/>
+		</match>
+		<or><match lemma="ауа" tags="n.*"/><match lemma="ауа" tags="n"/></or>
+	</rule>
+	<rule>
+		<match lemma="салқын" tags="adj">
+			<select lemma="салкын" tags="adj"/>
+		</match>
+		<or><match lemma="ауа" tags="n.*"/><match lemma="ауа" tags="n"/></or>
+	</rule>
+	<rule>
+		<or><match lemma="ауа" tags="n.*"/><match lemma="ауа" tags="n"/></or>
+		<match lemma="салқын" tags="adj.*">
+			<select lemma="салкын" tags="adj.*"/>
+		</match>
+	</rule>
+	<rule>
+		<or><match lemma="ауа" tags="n.*"/><match lemma="ауа" tags="n"/></or>
+		<match lemma="салқын" tags="adj">
+			<select lemma="салкын" tags="adj"/>
+		</match>
+	</rule>
+
+
+	<rule> 
+		<match lemma="ми" tags="n.*"><select lemma="мээ" tags="n.*"/></match>
+	</rule>
+	<rule> 
+		<match lemma="революциялық" tags="adj"><select lemma="төңкөрүштүк" tags="adj"/></match>
+	</rule>
+	<rule> 
+		<match lemma="революциялық" tags="adj.*"><select lemma="төңкөрүштүк" tags="adj.*"/></match>
+	</rule>
+	<rule> 
+		<match lemma="революция" tags="n.*"><select lemma="төңкөрүш" tags="n.*"/></match>
+	</rule>
+
+	<rule>
+		<match lemma="жұмыс" tags="n.*"/>
+		<match lemma="істе" tags="v.*"><select lemma="кыл" tags="v.tv.*"/></match>
+	</rule>
+
+
+
+
+</rules>

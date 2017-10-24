@@ -1,0 +1,525 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<modes>
+
+  <!-- snd → hin -->
+
+  <mode name="snd-hin" install="yes">
+    <pipeline>
+      <program name="lt-proc -w">
+        <file name="snd-hin.automorf.bin"/>
+      </program>
+
+
+      <program name="cg-proc -w">
+        <file name="snd-hin.rlx.bin"/>
+      </program>
+      <program name="apertium-tagger -g $2">
+        <file name="snd-hin.prob"/>
+      </program>
+      <program name="apertium-pretransfer"/>
+      <program name="lt-proc -b">
+        <file name="snd-hin.autobil.bin"/>
+      </program>
+      <program name="lrx-proc">
+        <file name="snd-hin.autolex.bin"/>
+      </program>
+      <program name="apertium-transfer -b">
+        <file name="apertium-snd-hin.snd-hin.t1x"/>
+        <file name="snd-hin.t1x.bin"/>
+      </program>
+      <program name="apertium-interchunk">
+        <file name="apertium-snd-hin.snd-hin.t2x"/>
+        <file name="snd-hin.t2x.bin"/>
+      </program>
+      <program name="apertium-postchunk">
+        <file name="apertium-snd-hin.snd-hin.t3x"/>
+        <file name="snd-hin.t3x.bin"/>
+      </program>
+      <program name="lt-proc $1">
+        <file name="snd-hin.autogen.bin"/>
+      </program>
+
+    </pipeline>
+  </mode>
+
+  <mode name="snd-hin-dgen" install="no">
+    <pipeline>
+      <program name="lt-proc -w">
+        <file name="snd-hin.automorf.bin"/>
+      </program>
+
+
+      <program name="cg-proc -w">
+        <file name="snd-hin.rlx.bin"/>
+      </program>
+      <program name="apertium-tagger -g $2">
+        <file name="snd-hin.prob"/>
+      </program>
+      <program name="apertium-pretransfer"/>
+      <program name="lt-proc -b">
+        <file name="snd-hin.autobil.bin"/>
+      </program>
+      <program name="apertium-transfer -b">
+        <file name="apertium-snd-hin.snd-hin.t1x"/>
+        <file name="snd-hin.t1x.bin"/>
+      </program>
+      <program name="apertium-interchunk">
+        <file name="apertium-snd-hin.snd-hin.t2x"/>
+        <file name="snd-hin.t2x.bin"/>
+      </program>
+      <program name="apertium-postchunk">
+        <file name="apertium-snd-hin.snd-hin.t3x"/>
+        <file name="snd-hin.t3x.bin"/>
+      </program>
+      <program name="lt-proc -d">
+        <file name="snd-hin.autogen.bin"/>
+      </program>
+    </pipeline>
+  </mode>
+
+  <mode name="snd-hin-morph" install="no">
+    <pipeline>
+      <program name="lt-proc -w">
+        <file name="snd-hin.automorf.bin"/>
+      </program>
+    </pipeline>
+  </mode>
+
+  <mode name="snd-hin-disam" install="no">
+    <pipeline>
+      <program name="lt-proc -w">
+        <file name="snd-hin.automorf.bin"/>
+      </program>
+      <program name="cg-conv -a"/>
+      <program name="vislcg3 --trace --grammar">
+        <file name="snd-hin.rlx.bin"/>
+      </program>
+    </pipeline>
+  </mode>
+
+  <mode name="snd-hin-tagger" install="no">
+    <pipeline>
+      <program name="lt-proc -w">
+        <file name="snd-hin.automorf.bin"/>
+      </program>
+
+
+      <program name="cg-proc -w">
+        <file name="snd-hin.rlx.bin"/>
+      </program>
+      <program name="apertium-tagger -g $2">
+        <file name="snd-hin.prob"/>
+      </program>
+    </pipeline>
+  </mode>
+
+  <mode name="snd-hin-pretransfer" install="no">
+    <pipeline>
+      <program name="lt-proc -w">
+        <file name="snd-hin.automorf.bin"/>
+      </program>
+
+
+      <program name="cg-proc -w">
+        <file name="snd-hin.rlx.bin"/>
+      </program>
+      <program name="apertium-tagger -g $2">
+        <file name="snd-hin.prob"/>
+      </program>
+      <program name="apertium-pretransfer"/>
+    </pipeline>
+  </mode>
+
+  <mode name="snd-hin-biltrans" install="no">
+    <pipeline>
+      <program name="lt-proc -w">
+        <file name="snd-hin.automorf.bin"/>
+      </program>
+
+
+      <program name="cg-proc -w">
+        <file name="snd-hin.rlx.bin"/>
+      </program>
+      <program name="apertium-tagger -g $2">
+        <file name="snd-hin.prob"/>
+      </program>
+      <program name="apertium-pretransfer"/>
+      <program name="lt-proc -b">
+        <file name="snd-hin.autobil.bin"/>
+      </program>
+    </pipeline>
+  </mode>
+
+  <mode name="snd-hin-lex" install="no">
+    <pipeline>
+      <program name="lt-proc -w">
+        <file name="snd-hin.automorf.bin"/>
+      </program>
+
+
+      <program name="cg-proc -w">
+        <file name="snd-hin.rlx.bin"/>
+      </program>
+      <program name="apertium-tagger -g $2">
+        <file name="snd-hin.prob"/>
+      </program>
+      <program name="apertium-pretransfer"/>
+      <program name="lt-proc -b">
+        <file name="snd-hin.autobil.bin"/>
+      </program>
+      <program name="lrx-proc -t">
+        <file name="snd-hin.autolex.bin"/>
+      </program>
+    </pipeline>
+  </mode>
+
+  <mode name="snd-hin-transfer" install="no">
+    <pipeline>
+      <program name="lt-proc -w">
+        <file name="snd-hin.automorf.bin"/>
+      </program>
+
+
+      <program name="cg-proc -w">
+        <file name="snd-hin.rlx.bin"/>
+      </program>
+      <program name="apertium-tagger -g $2">
+        <file name="snd-hin.prob"/>
+      </program>
+      <program name="apertium-pretransfer"/>
+      <program name="lt-proc -b">
+        <file name="snd-hin.autobil.bin"/>
+      </program>
+      <program name="lrx-proc">
+        <file name="snd-hin.autolex.bin"/>
+      </program>
+      <program name="apertium-transfer -b -t">
+        <file name="apertium-snd-hin.snd-hin.t1x"/>
+        <file name="snd-hin.t1x.bin"/>
+      </program>
+    </pipeline>
+  </mode>
+
+  <mode name="snd-hin-interchunk" install="no">
+    <pipeline>
+      <program name="lt-proc -w">
+        <file name="snd-hin.automorf.bin"/>
+      </program>
+
+
+      <program name="cg-proc -w">
+        <file name="snd-hin.rlx.bin"/>
+      </program>
+      <program name="apertium-tagger -g $2">
+        <file name="snd-hin.prob"/>
+      </program>
+      <program name="apertium-pretransfer"/>
+      <program name="lt-proc -b">
+        <file name="snd-hin.autobil.bin"/>
+      </program>
+      <program name="lrx-proc">
+        <file name="snd-hin.autolex.bin"/>
+      </program>
+      <program name="apertium-transfer -b">
+        <file name="apertium-snd-hin.snd-hin.t1x"/>
+        <file name="snd-hin.t1x.bin"/>
+      </program>
+      <program name="apertium-interchunk -t">
+        <file name="apertium-snd-hin.snd-hin.t2x"/>
+        <file name="snd-hin.t2x.bin"/>
+      </program>
+    </pipeline>
+  </mode>
+
+  <mode name="snd-hin-postchunk" install="no">
+    <pipeline>
+      <program name="lt-proc -w">
+        <file name="snd-hin.automorf.bin"/>
+      </program>
+
+
+      <program name="cg-proc -w">
+        <file name="snd-hin.rlx.bin"/>
+      </program>
+      <program name="apertium-tagger -g $2">
+        <file name="snd-hin.prob"/>
+      </program>
+      <program name="apertium-pretransfer"/>
+      <program name="lt-proc -b">
+        <file name="snd-hin.autobil.bin"/>
+      </program>
+      <program name="lrx-proc">
+        <file name="snd-hin.autolex.bin"/>
+      </program>
+      <program name="apertium-transfer -b">
+        <file name="apertium-snd-hin.snd-hin.t1x"/>
+        <file name="snd-hin.t1x.bin"/>
+      </program>
+      <program name="apertium-interchunk">
+        <file name="apertium-snd-hin.snd-hin.t2x"/>
+        <file name="snd-hin.t2x.bin"/>
+      </program>
+      <program name="apertium-postchunk">
+        <file name="apertium-snd-hin.snd-hin.t3x"/>
+        <file name="snd-hin.t3x.bin"/>
+      </program>
+    </pipeline>
+  </mode>
+
+  <!-- hin → snd -->
+
+  <mode name="hin-snd" install="yes">
+    <pipeline>
+      <program name="lt-proc -w">
+        <file name="hin-snd.automorf.bin"/>
+      </program>
+
+
+      <program name="cg-proc -w">
+        <file name="hin-snd.rlx.bin"/>
+      </program>
+      <program name="apertium-tagger -g $2">
+        <file name="hin-snd.prob"/>
+      </program>
+      <program name="apertium-pretransfer"/>
+      <program name="lt-proc -b">
+        <file name="hin-snd.autobil.bin"/>
+      </program>
+      <program name="lrx-proc">
+        <file name="hin-snd.autolex.bin"/>
+      </program>
+      <program name="apertium-transfer -b">
+        <file name="apertium-snd-hin.hin-snd.t1x"/>
+        <file name="hin-snd.t1x.bin"/>
+      </program>
+      <program name="apertium-interchunk">
+        <file name="apertium-snd-hin.hin-snd.t2x"/>
+        <file name="hin-snd.t2x.bin"/>
+      </program>
+      <program name="apertium-postchunk">
+        <file name="apertium-snd-hin.hin-snd.t3x"/>
+        <file name="hin-snd.t3x.bin"/>
+      </program>
+      <program name="lt-proc $1">
+        <file name="hin-snd.autogen.bin"/>
+      </program>
+
+    </pipeline>
+  </mode>
+
+  <mode name="hin-snd-dgen" install="no">
+    <pipeline>
+      <program name="lt-proc -w">
+        <file name="hin-snd.automorf.bin"/>
+      </program>
+
+
+      <program name="cg-proc -w">
+        <file name="hin-snd.rlx.bin"/>
+      </program>
+      <program name="apertium-tagger -g $2">
+        <file name="hin-snd.prob"/>
+      </program>
+      <program name="apertium-pretransfer"/>
+      <program name="lt-proc -b">
+        <file name="hin-snd.autobil.bin"/>
+      </program>
+      <program name="apertium-transfer -b">
+        <file name="apertium-snd-hin.hin-snd.t1x"/>
+        <file name="hin-snd.t1x.bin"/>
+      </program>
+      <program name="apertium-interchunk">
+        <file name="apertium-snd-hin.hin-snd.t2x"/>
+        <file name="hin-snd.t2x.bin"/>
+      </program>
+      <program name="apertium-postchunk">
+        <file name="apertium-snd-hin.hin-snd.t3x"/>
+        <file name="hin-snd.t3x.bin"/>
+      </program>
+      <program name="lt-proc -d">
+        <file name="hin-snd.autogen.bin"/>
+      </program>
+    </pipeline>
+  </mode>
+
+  <mode name="hin-snd-morph" install="no">
+    <pipeline>
+      <program name="lt-proc -w">
+        <file name="hin-snd.automorf.bin"/>
+      </program>
+    </pipeline>
+  </mode>
+
+  <mode name="hin-snd-disam" install="no">
+    <pipeline>
+      <program name="lt-proc -w">
+        <file name="hin-snd.automorf.bin"/>
+      </program>
+      <program name="cg-conv -a"/>
+      <program name="vislcg3 --trace --grammar">
+        <file name="hin-snd.rlx.bin"/>
+      </program>
+    </pipeline>
+  </mode>
+
+  <mode name="hin-snd-tagger" install="no">
+    <pipeline>
+      <program name="lt-proc -w">
+        <file name="hin-snd.automorf.bin"/>
+      </program>
+
+
+      <program name="cg-proc -w">
+        <file name="hin-snd.rlx.bin"/>
+      </program>
+      <program name="apertium-tagger -g $2">
+        <file name="hin-snd.prob"/>
+      </program>
+    </pipeline>
+  </mode>
+
+  <mode name="hin-snd-pretransfer" install="no">
+    <pipeline>
+      <program name="lt-proc -w">
+        <file name="hin-snd.automorf.bin"/>
+      </program>
+
+
+      <program name="cg-proc -w">
+        <file name="hin-snd.rlx.bin"/>
+      </program>
+      <program name="apertium-tagger -g $2">
+        <file name="hin-snd.prob"/>
+      </program>
+      <program name="apertium-pretransfer"/>
+    </pipeline>
+  </mode>
+
+  <mode name="hin-snd-biltrans" install="no">
+    <pipeline>
+      <program name="lt-proc -w">
+        <file name="hin-snd.automorf.bin"/>
+      </program>
+
+
+      <program name="cg-proc -w">
+        <file name="hin-snd.rlx.bin"/>
+      </program>
+      <program name="apertium-tagger -g $2">
+        <file name="hin-snd.prob"/>
+      </program>
+      <program name="apertium-pretransfer"/>
+      <program name="lt-proc -b">
+        <file name="hin-snd.autobil.bin"/>
+      </program>
+    </pipeline>
+  </mode>
+
+  <mode name="hin-snd-lex" install="no">
+    <pipeline>
+      <program name="lt-proc -w">
+        <file name="hin-snd.automorf.bin"/>
+      </program>
+
+
+      <program name="cg-proc -w">
+        <file name="hin-snd.rlx.bin"/>
+      </program>
+      <program name="apertium-tagger -g $2">
+        <file name="hin-snd.prob"/>
+      </program>
+      <program name="apertium-pretransfer"/>
+      <program name="lt-proc -b">
+        <file name="hin-snd.autobil.bin"/>
+      </program>
+      <program name="lrx-proc">
+        <file name="hin-snd.autolex.bin"/>
+      </program>
+    </pipeline>
+  </mode>
+
+  <mode name="hin-snd-transfer" install="no">
+    <pipeline>
+      <program name="lt-proc -w">
+        <file name="hin-snd.automorf.bin"/>
+      </program>
+
+
+      <program name="cg-proc -w">
+        <file name="hin-snd.rlx.bin"/>
+      </program>
+      <program name="apertium-tagger -g $2">
+        <file name="hin-snd.prob"/>
+      </program>
+      <program name="apertium-pretransfer"/>
+      <program name="lt-proc -b">
+        <file name="hin-snd.autobil.bin"/>
+      </program>
+      <program name="apertium-transfer -b -t">
+        <file name="apertium-snd-hin.hin-snd.t1x"/>
+        <file name="hin-snd.t1x.bin"/>
+      </program>
+    </pipeline>
+  </mode>
+
+  <mode name="hin-snd-interchunk" install="no">
+    <pipeline>
+      <program name="lt-proc -w">
+        <file name="hin-snd.automorf.bin"/>
+      </program>
+
+
+      <program name="cg-proc -w">
+        <file name="hin-snd.rlx.bin"/>
+      </program>
+      <program name="apertium-tagger -g $2">
+        <file name="hin-snd.prob"/>
+      </program>
+      <program name="apertium-pretransfer"/>
+      <program name="lt-proc -b">
+        <file name="hin-snd.autobil.bin"/>
+      </program>
+      <program name="apertium-transfer -b">
+        <file name="apertium-snd-hin.hin-snd.t1x"/>
+        <file name="hin-snd.t1x.bin"/>
+      </program>
+      <program name="apertium-interchunk -t">
+        <file name="apertium-snd-hin.hin-snd.t2x"/>
+        <file name="hin-snd.t2x.bin"/>
+      </program>
+    </pipeline>
+  </mode>
+
+  <mode name="hin-snd-postchunk" install="no">
+    <pipeline>
+      <program name="lt-proc -w">
+        <file name="hin-snd.automorf.bin"/>
+      </program>
+
+
+      <program name="cg-proc -w">
+        <file name="hin-snd.rlx.bin"/>
+      </program>
+      <program name="apertium-tagger -g $2">
+        <file name="hin-snd.prob"/>
+      </program>
+      <program name="apertium-pretransfer"/>
+      <program name="lt-proc -b">
+        <file name="hin-snd.autobil.bin"/>
+      </program>
+      <program name="apertium-transfer -b">
+        <file name="apertium-snd-hin.hin-snd.t1x"/>
+        <file name="hin-snd.t1x.bin"/>
+      </program>
+      <program name="apertium-interchunk">
+        <file name="apertium-snd-hin.hin-snd.t2x"/>
+        <file name="hin-snd.t2x.bin"/>
+      </program>
+      <program name="apertium-postchunk">
+        <file name="apertium-snd-hin.hin-snd.t3x"/>
+        <file name="hin-snd.t3x.bin"/>
+      </program>
+    </pipeline>
+  </mode>
+</modes>
+

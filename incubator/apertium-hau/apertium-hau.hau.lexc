@@ -1,0 +1,96 @@
+! Morphological Transducer for Hausa
+
+Multichar_Symbols
+
+! Part of speech categories
+%<n%>      ! Noun
+%<pl%>     !  Plural
+%<sg%>     ! Singular
+%<m%>      ! Masculine
+%<f%>      ! Feminine
+%<mf%>     ! Masculine-Feminine
+
+%>         ! Morpheme boundary
+
+LEXICON Root
+
+Nouns ;
+
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+
+LEXICON N-SIRD
+
+%<n%>%<m%>%<sg%>:i   # ;
+%<n%>%<m%>%<pl%>:ada   # ;
+
+LEXICON N-GULBI
+
+%<n%>%<m%>%<sg%>:i   # ;
+%<n%>%<m%>%<pl%>:abe   # ;
+
+LEXICON N-KURMI
+
+%<n%>%<m%>%<sg%>:i   # ;
+%<n%>%<m%>%<pl%>:amu   # ;
+
+LEXICON N-WATA
+
+%<n%>%<m%>%<sg%>:a   # ;
+%<n%>%<m%>%<pl%>:anni   # ;
+
+LEXICON N-ZOMO
+
+%<n%>%<m%>%<sg%>:o   # ;
+%<n%>%<m%>%<pl%>:aye   # ;
+
+LEXICON N-TALAKA
+
+%<n%>%<mf%>%<sg%>:a   # ;
+%<n%>%<mf%>%<pl%>:awa  # ;
+
+LEXICON N-TABO
+
+%<n%>%<m%>%<sg%>:bo   # ;
+%<n%>%<m%>%<pl%>:bba  # ;
+
+LEXICON N-TUDU
+
+%<n%>%<m%>%<sg%>:du   # ;
+%<n%>%<m%>%<pl%>:ddai  # ;
+
+LEXICON N-TAURARO
+
+%<n%>%<m%>%<sg%>:o   # ;
+%<n%>%<m%>%<pl%>:i  # ;
+
+LEXICON N-KUJERA
+
+%<n%>%<m%>%<sg%>:a   # ;
+%<n%>%<f%>%<pl%>:u  # ;
+
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+!!!                          L E X I C O N                                  !!!
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+
+LEXICON Nouns
+
+sirdi:sird N-SIRD ; ! "saddle"
+gulbi:gulb N-GULBI ; ! "river"
+kurmi:kurm N-KURMI ; ! "forest"
+wata:wat N-WATA ; ! "moon"
+zomo:zom N-ZOMO ; ! "hare"
+talaka:talak N-TALAKA ; ! "common person, beggar"
+tabo:ta N-TABO ; ! "scar"
+tudu:tu N-TUDU ; ! "hill"
+tauraro:taurar N-TAURARO ; ! "star"
+kujera:kujer N-KUJERA ; ! "chair"
+
+! Resources:
+! http://wiki.apertium.org/wiki/Starting_a_new_language_with_HFST#Lexicon
+! http://wiki.apertium.org/wiki/Lttoolbox_and_lexc
+! http://wiki.apertium.org/wiki/Apertium-specific_conventions_for_lexc
+! https://kitwiki.csc.fi/twiki/bin/view/KitWiki/HfstHome
+! http://hfst.sourceforge.net/
+! http://www.cis.upenn.edu/~cis639/docs/lexc.html
+! http://wiki.apertium.org/wiki/Hfst
+

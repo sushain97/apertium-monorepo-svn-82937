@@ -1,0 +1,101 @@
+<rules>
+  <rule> <match lemma="måling" tags="n.*.pl.*"> <select lemma="måling"/> </match>
+  </rule>
+  <rule weight="2.0">
+    <or>
+      <match lemma="tynn"/>
+      <match lemma="oljebasert"/>
+      <match lemma="svart"/>
+      <match lemma="lag"/>
+      <match lemma="forme"/>
+    </or>
+    <match lemma="måling" tags="n.*.sg.ind">
+      <select lemma="maling"/>
+    </match>
+  </rule>
+  <rule weight="2.0">
+    <match lemma="måling" tags="n.*.sg.ind">
+      <select lemma="maling"/>
+    </match>
+    <match/>
+    <or>
+      <match lemma="altertavle"/>
+      <match lemma="vegg"/>
+      <match lemma="kunst"/>
+      <match lemma="grafisk"/>
+    </or>
+  </rule>
+
+  <!-- dei er tekne → de er tatt: -->
+  <rule weight="1.0"><match tags="adj.pp.pl"><select tags="adj.pp.mf.sg.ind"/></match></rule>
+  <rule weight="2.0">
+    <match tags="adj.pp.pl"><select tags="adj.pp.pl"/></match>
+    <match tags="n.*"/>
+  </rule>
+  <rule weight="2.0">
+    <match tags="det.*"/>
+    <match tags="adj.pp.pl"><select tags="adj.pp.pl"/></match>
+  </rule>
+
+  <rule weight="2.0">
+    <match lemma="rett" tags="n.*">
+      <select lemma="rett"/>
+    </match>
+    <match lemma="smake" tags="vblex.*"/>
+  </rule>
+  <rule weight="2.0">
+    <match lemma="tradisjonell" tags="adj.*"/>
+    <match/>
+    <match lemma="rett" tags="n.*">
+      <select lemma="rett"/>
+    </match>
+  </rule>
+  <rule weight="2.0">
+    <match lemma="tradisjonell" tags="adj.*"/>
+    <match lemma="rett" tags="n.*">
+      <select lemma="rett"/>
+    </match>
+  </rule>
+  <rule weight="2.0">
+    <match lemma="rett" tags="n.*">
+      <select lemma="rettighet"/>
+    </match>
+    <match lemma="du" tags="det.pos.*"/>
+  </rule>
+  <rule weight="2.0">
+    <match lemma="rett" tags="n.*">
+      <select lemma="rettighet"/>
+    </match>
+    <match lemma="til" tags="pr"/>
+  </rule>
+  <rule weight="2.0">
+    <match lemma="rett" tags="n.*">
+      <select lemma="rettighet"/>
+    </match>
+    <match lemma="og"/>
+    <match lemma="plikt"/>
+  </rule>
+
+  <rule weight="2.0">
+    <match lemma="verke" tags="vblex.*">
+      <select lemma="verke"/>
+    </match>
+    <match lemma="i"/>
+  </rule>
+  <rule> <match lemma="verke" tags="vblex.*"> <select lemma="virke"/> </match> </rule>
+
+  <rule weight="2.0">
+    <match lemma="tilsetje" tags="vblex.*">
+      <select lemma="tilsette"/>
+    </match>
+    <or>
+      <match lemma="i"/>
+      <match lemma="gjær"/>
+      <match lemma="syre"/>
+      <match lemma="du"/>
+      <match lemma="smak"/>
+    </or>
+  </rule>
+  <rule> <match lemma="tilsetje" tags="vblex.*"> <select lemma="ansette"/> </match>
+  </rule>
+</rules>

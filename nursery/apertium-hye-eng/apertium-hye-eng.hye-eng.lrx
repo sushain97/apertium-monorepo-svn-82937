@@ -1,0 +1,66 @@
+<rules>
+  <rule>
+    <or>
+      <match lemma="ժամ" tags="n.nn.*.*.*.px1sg"><select lemma="watch" tags="n.*"/></match>
+      <match lemma="ժամ" tags="n.nn.*.*.*.px2sg"><select lemma="watch" tags="n.*"/></match>
+    </or>
+  </rule>
+  <rule>
+    <or>
+      <match lemma="մարդ" tags="n.aa.*.*.*.px1sg"><select lemma="husband" tags="n.*"/></match>
+      <match lemma="մարդ" tags="n.aa.*.*.*.px2sg"><select lemma="husband" tags="n.*"/></match>
+    </or>
+  </rule>
+  <rule>
+    <match lemma="պահել" tags="vblex.*"><select lemma="keep" tags="vblex.*"/></match>
+  </rule>
+  <rule>
+    <match lemma="ծեծել" tags="vblex.*"><select lemma="thrash" tags="vblex.*"/></match>
+  </rule>
+  <rule>
+    <match lemma="օգտագործել" tags="vblex.*"><select lemma="use" tags="vblex.*"/></match>
+  </rule>
+  <rule>
+    <match lemma="մտածել" tags="vblex.*"><select lemma="think" tags="vblex.*"/></match>
+  </rule>
+  <rule>
+    <match lemma="ուզել" tags="vblex.*"><select lemma="want" tags="vblex.*"/></match>
+  </rule>
+  <rule>
+    <match lemma="թռչել" tags="vblex.*"><select lemma="fly" tags="vblex.*"/></match>
+  </rule>
+  <rule>
+    <match lemma="մարդկային" tags="adj.*"><select lemma="human" tags="adj"/></match>
+  </rule>
+  <rule>
+    <match lemma="միակ" tags="adj"><select lemma="only" tags="adj"/></match>
+  </rule>
+  <rule>
+    <match lemma="խելոք" tags="adj.*"><select lemma="clever" tags="adj.*"/></match>
+  </rule>
+  <rule>
+    <match lemma="հանդես" tags="n.*"><select lemma="magazine" tags="n.*"/></match>
+  </rule>
+  <rule>
+    <match lemma="պարոն" tags="n.*"><select lemma="Mr." tags="n.*"/></match>
+  </rule>
+  <rule>
+    <match lemma="երկիր" tags="n.*"><select lemma="country" tags="n.*"/></match>
+  </rule>
+  <rule>
+    <match lemma="տնային" tags="adj"><select lemma="home" tags="adj"/></match>
+    <match lemma="աշխատանք" tags="n.*"><select lemma="work" tags="n.*"/></match>
+  </rule>
+  <rule>
+    <match lemma="պեչենի" tags="n.*"><select lemma="biscuit" tags="n.*"/></match>
+  </rule>
+  <rule>
+    <match tags="prn.pers.p2.*"/>
+    <match lemma="սիրել" tags="vblex.*"><select lemma="love" tags="vblex.*"/></match>
+  </rule>
+  <rule>
+    <match tags="prn.pers.p2.*"/>
+    <match/>
+    <match lemma="սիրել" tags="vblex.*"><select lemma="love" tags="vblex.*"/></match>
+  </rule>
+</rules>

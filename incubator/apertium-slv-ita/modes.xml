@@ -1,0 +1,365 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<modes>
+  <mode name="slv-ita" install="yes">
+    <pipeline>
+      <program name="lt-proc">
+        <file name="slv-ita.automorf.bin"/>
+      </program>
+      <program name="apertium-tagger -g">
+        <file name="slv-ita.prob"/>
+      </program>
+      <program name="apertium-pretransfer"/>
+      <program name="lt-proc -b">
+        <file name="slv-ita.autobil.bin"/>
+      </program>
+      <program name="apertium-transfer -b">
+        <file name="apertium-slv-ita.slv-ita.t1x"/>
+        <file name="slv-ita.t1x.bin"/>
+      </program>
+      <program name="apertium-interchunk">
+        <file name="apertium-slv-ita.slv-ita.t2x"/>
+        <file name="slv-ita.t2x.bin"/>
+      </program>
+      <program name="apertium-postchunk">
+        <file name="apertium-slv-ita.slv-ita.t3x"/>
+        <file name="slv-ita.t3x.bin"/>
+      </program>
+      <program name="lt-proc $1">
+        <file name="slv-ita.autogen.bin"/>
+      </program>
+      <program name="lt-proc -p">
+        <file name="slv-ita.autopgen.bin"/>
+      </program>
+    </pipeline>
+  </mode>
+
+  <mode name="slv-ita-anmor">
+    <pipeline>
+      <program name="lt-proc">
+        <file name="slv-ita.automorf.bin"/>
+      </program>
+    </pipeline>
+  </mode>
+
+  <mode name="slv-ita-tagger">
+    <pipeline>
+      <program name="lt-proc">
+        <file name="slv-ita.automorf.bin"/>
+      </program>
+      <program name="apertium-tagger -g $2">
+        <file name="slv-ita.prob"/>
+      </program>
+    </pipeline>
+  </mode>
+
+  <mode name="slv-ita-pretransfer">
+    <pipeline>
+      <program name="lt-proc">
+        <file name="slv-ita.automorf.bin"/>
+      </program>
+      <program name="apertium-tagger -g $2">
+        <file name="slv-ita.prob"/>
+      </program>
+      <program name="apertium-pretransfer"/>
+    </pipeline>
+  </mode>
+
+  <mode name="slv-ita-biltrans">
+    <pipeline>
+      <program name="lt-proc">
+        <file name="slv-ita.automorf.bin"/>
+      </program>
+      <program name="apertium-tagger -g $2">
+        <file name="slv-ita.prob"/>
+      </program>
+      <program name="apertium-pretransfer"/>
+      <program name="lt-proc -b">
+        <file name="slv-ita.autobil.bin"/>
+      </program>
+    </pipeline>
+  </mode>
+
+
+  <mode name="slv-ita-chunker">
+    <pipeline>
+      <program name="lt-proc">
+        <file name="slv-ita.automorf.bin"/>
+      </program>
+      <program name="apertium-tagger -g $2">
+        <file name="slv-ita.prob"/>
+      </program>
+      <program name="apertium-pretransfer"/>
+      <program name="lt-proc -b">
+        <file name="slv-ita.autobil.bin"/>
+      </program>
+      <program name="apertium-transfer -b">
+        <file name="apertium-slv-ita.slv-ita.t1x"/>
+        <file name="slv-ita.t1x.bin"/>
+      </program>
+    </pipeline>
+  </mode>
+
+  <mode name="slv-ita-interchunk">
+    <pipeline>
+      <program name="lt-proc">
+        <file name="slv-ita.automorf.bin"/>
+      </program>
+      <program name="apertium-tagger -g $2">
+        <file name="slv-ita.prob"/>
+      </program>
+      <program name="apertium-pretransfer"/>
+      <program name="lt-proc -b">
+        <file name="slv-ita.autobil.bin"/>
+      </program>
+      <program name="apertium-transfer -b">
+        <file name="apertium-slv-ita.slv-ita.t1x"/>
+        <file name="slv-ita.t1x.bin"/>
+      </program>
+      <program name="apertium-interchunk">
+        <file name="apertium-slv-ita.slv-ita.t2x"/>
+        <file name="slv-ita.t2x.bin"/>
+      </program>
+    </pipeline>
+  </mode>
+
+  <mode name="slv-ita-postchunk">
+    <pipeline>
+      <program name="lt-proc">
+        <file name="slv-ita.automorf.bin"/>
+      </program>
+      <program name="apertium-tagger -g $2">
+        <file name="slv-ita.prob"/>
+      </program>
+      <program name="apertium-pretransfer"/>
+      <program name="lt-proc -b">
+        <file name="slv-ita.autobil.bin"/>
+      </program>
+      <program name="apertium-transfer -b">
+        <file name="apertium-slv-ita.slv-ita.t1x"/>
+        <file name="slv-ita.t1x.bin"/>
+      </program>
+      <program name="apertium-interchunk">
+        <file name="apertium-slv-ita.slv-ita.t2x"/>
+        <file name="slv-ita.t2x.bin"/>
+      </program>
+      <program name="apertium-postchunk">
+        <file name="apertium-slv-ita.slv-ita.t3x"/>
+        <file name="slv-ita.t3x.bin"/>
+      </program>
+    </pipeline>
+  </mode>
+
+  <mode name="slv-ita-generador">
+    <pipeline>
+      <program name="lt-proc">
+        <file name="slv-ita.automorf.bin"/>
+      </program>
+      <program name="apertium-tagger -g $2">
+        <file name="slv-ita.prob"/>
+      </program>
+      <program name="apertium-pretransfer"/>
+      <program name="lt-proc -b">
+        <file name="slv-ita.autobil.bin"/>
+      </program>
+      <program name="apertium-transfer -b">
+        <file name="apertium-slv-ita.slv-ita.t1x"/>
+        <file name="slv-ita.t1x.bin"/>
+      </program>
+      <program name="apertium-interchunk">
+        <file name="apertium-slv-ita.slv-ita.t2x"/>
+        <file name="slv-ita.t2x.bin"/>
+      </program>
+      <program name="apertium-postchunk">
+        <file name="apertium-slv-ita.slv-ita.t3x"/>
+        <file name="slv-ita.t3x.bin"/>
+      </program>
+      <program name="lt-proc $1">
+        <file name="slv-ita.autogen.bin"/>
+      </program>
+    </pipeline>
+  </mode>
+
+  <!-- Italian → Slovenian -->
+
+  <mode name="ita-slv" install="yes">
+    <pipeline>
+      <program name="lt-proc">
+        <file name="ita-slv.automorf.bin"/>
+      </program>
+      <program name="apertium-tagger -g">
+        <file name="ita-slv.prob"/>
+      </program>
+      <program name="apertium-pretransfer"/>
+      <program name="lt-proc -b">
+        <file name="ita-slv.autobil.bin"/>
+      </program>
+      <program name="apertium-transfer -b">
+        <file name="apertium-slv-ita.ita-slv.t1x"/>
+        <file name="ita-slv.t1x.bin"/>
+      </program>
+      <program name="apertium-interchunk">
+        <file name="apertium-slv-ita.ita-slv.t2x"/>
+        <file name="ita-slv.t2x.bin"/>
+      </program>
+      <program name="apertium-postchunk">
+        <file name="apertium-slv-ita.ita-slv.t3x"/>
+        <file name="ita-slv.t3x.bin"/>
+      </program>
+      <program name="lt-proc $1">
+        <file name="ita-slv.autogen.bin"/>
+      </program>
+      <program name="lt-proc -p">
+        <file name="ita-slv.autopgen.bin"/>
+      </program>
+    </pipeline>
+  </mode>
+
+  <mode name="ita-slv-anmor">
+    <pipeline>
+      <program name="lt-proc">
+        <file name="ita-slv.automorf.bin"/>
+      </program>
+    </pipeline>
+  </mode>
+
+  <mode name="ita-slv-tagger">
+    <pipeline>
+      <program name="lt-proc">
+        <file name="ita-slv.automorf.bin"/>
+      </program>
+      <program name="apertium-tagger -g $2">
+        <file name="ita-slv.prob"/>
+      </program>
+    </pipeline>
+  </mode>
+
+  <mode name="ita-slv-pretransfer">
+    <pipeline>
+      <program name="lt-proc">
+        <file name="ita-slv.automorf.bin"/>
+      </program>
+      <program name="apertium-tagger -g $2">
+        <file name="ita-slv.prob"/>
+      </program>
+      <program name="apertium-pretransfer"/>
+    </pipeline>
+  </mode>
+
+  <mode name="ita-slv-biltrans">
+    <pipeline>
+      <program name="lt-proc">
+        <file name="ita-slv.automorf.bin"/>
+      </program>
+      <program name="apertium-tagger -g $2">
+        <file name="ita-slv.prob"/>
+      </program>
+      <program name="apertium-pretransfer"/>
+      <program name="lt-proc -b">
+        <file name="ita-slv.autobil.bin"/>
+      </program>
+    </pipeline>
+  </mode>
+
+
+  <mode name="ita-slv-chunker">
+    <pipeline>
+      <program name="lt-proc">
+        <file name="ita-slv.automorf.bin"/>
+      </program>
+      <program name="apertium-tagger -g $2">
+        <file name="ita-slv.prob"/>
+      </program>
+      <program name="apertium-pretransfer"/>
+      <program name="lt-proc -b">
+        <file name="ita-slv.autobil.bin"/>
+      </program>
+      <program name="apertium-transfer -b">
+        <file name="apertium-slv-ita.ita-slv.t1x"/>
+        <file name="ita-slv.t1x.bin"/>
+      </program>
+    </pipeline>
+  </mode>
+
+  <mode name="ita-slv-interchunk">
+    <pipeline>
+      <program name="lt-proc">
+        <file name="ita-slv.automorf.bin"/>
+      </program>
+      <program name="apertium-tagger -g $2">
+        <file name="ita-slv.prob"/>
+      </program>
+      <program name="apertium-pretransfer"/>
+      <program name="lt-proc -b">
+        <file name="ita-slv.autobil.bin"/>
+      </program>
+      <program name="apertium-transfer -b">
+        <file name="apertium-slv-ita.ita-slv.t1x"/>
+        <file name="ita-slv.t1x.bin"/>
+      </program>
+      <program name="apertium-interchunk">
+        <file name="apertium-slv-ita.ita-slv.t2x"/>
+        <file name="ita-slv.t2x.bin"/>
+      </program>
+    </pipeline>
+  </mode>
+
+  <mode name="ita-slv-postchunk">
+    <pipeline>
+      <program name="lt-proc">
+        <file name="ita-slv.automorf.bin"/>
+      </program>
+      <program name="apertium-tagger -g $2">
+        <file name="ita-slv.prob"/>
+      </program>
+      <program name="apertium-pretransfer"/>
+      <program name="lt-proc -b">
+        <file name="ita-slv.autobil.bin"/>
+      </program>
+      <program name="apertium-transfer -b">
+        <file name="apertium-slv-ita.ita-slv.t1x"/>
+        <file name="ita-slv.t1x.bin"/>
+      </program>
+      <program name="apertium-interchunk">
+        <file name="apertium-slv-ita.ita-slv.t2x"/>
+        <file name="ita-slv.t2x.bin"/>
+      </program>
+      <program name="apertium-postchunk">
+        <file name="apertium-slv-ita.ita-slv.t3x"/>
+        <file name="ita-slv.t3x.bin"/>
+      </program>
+    </pipeline>
+  </mode>
+
+  <mode name="ita-slv-generador">
+    <pipeline>
+      <program name="lt-proc">
+        <file name="ita-slv.automorf.bin"/>
+      </program>
+      <program name="apertium-tagger -g $2">
+        <file name="ita-slv.prob"/>
+      </program>
+      <program name="apertium-pretransfer"/>
+      <program name="lt-proc -b">
+        <file name="ita-slv.autobil.bin"/>
+      </program>
+      <program name="apertium-transfer -b">
+        <file name="apertium-slv-ita.ita-slv.t1x"/>
+        <file name="ita-slv.t1x.bin"/>
+      </program>
+      <program name="apertium-interchunk">
+        <file name="apertium-slv-ita.ita-slv.t2x"/>
+        <file name="ita-slv.t2x.bin"/>
+      </program>
+      <program name="apertium-postchunk">
+        <file name="apertium-slv-ita.ita-slv.t3x"/>
+        <file name="ita-slv.t3x.bin"/>
+      </program>
+      <program name="lt-proc $1">
+        <file name="ita-slv.autogen.bin"/>
+      </program>
+    </pipeline>
+  </mode>
+
+
+
+</modes>

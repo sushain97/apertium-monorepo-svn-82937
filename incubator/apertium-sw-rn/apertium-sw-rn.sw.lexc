@@ -1,0 +1,54 @@
+Multichar_Symbols
+
+%<n%>
+%<v%>
+%<sg1%>
+%<pres%>
+%<inf%>
+
+%<III%>
+%<VI%>
+
+@P.PREFIX.ku@
+@R.PREFIX.ku@
+@D.PREFIX.ku@
+@P.PREFIX.na@
+@R.PREFIX.na@
+@D.PREFIX.na@
+
+LEXICON Root
+
+NounStems ; 
+V-Prefixes ; 
+VerbStems ; 
+
+LEXICON Nreg-VI
+
+%<n%>%<VI%>: # ;
+
+LEXICON Nreg-IX-X
+
+%<n%>%<IX-X%>: # ;
+
+
+LEXICON V-Prefixes
+
+@P.PREFIX.ku@:@P.PREFIX.ku@ku%> VerbStems ; 
+@P.PREFIX.na@:@P.PREFIX.na@na%> VerbStems ; 
+
+LEXICON Vreg 
+
+@D.PREFIX.na@@D.PREFIX.ku@%<v%>:@D.PREFIX.na@@D.PREFIX.ku@ # ;
+@R.PREFIX.ku@%<v%>%<inf%>:@R.PREFIX.ku@ # ;
+
+@R.PREFIX.na@%<v%>%<pres%>%<sg1%>:@R.PREFIX.na@ # ;
+
+LEXICON NounStems 
+
+maji Nreg-VI ; ! "water"
+bia Nreg-IX-X ; ! "beer"
+
+LEXICON VerbStems 
+
+nywa Vreg ; ! "drink"
+taka Vreg ; ! "want"

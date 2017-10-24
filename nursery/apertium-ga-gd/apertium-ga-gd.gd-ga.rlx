@@ -1,0 +1,47 @@
+DELIMITERS = "<.>" ; 
+
+LIST N = (n);
+LIST Art = (det def);
+LIST Pr = pr;
+LIST V = vblex ; 
+LIST CS = cnjsub ; 
+
+LIST Nom = nom ; 
+LIST Dat = dat ; 
+LIST Gen = gen ; 
+
+LIST Poss = (det pos);
+
+LIST Pres = pres ; 
+LIST Ger = ger ; 
+
+LIST THA = ("bi" pres);
+
+LIST LENITED  = ("<[bcdfgmpst]h.*>"r "[bcdfgmpst][^h].*"r);
+LIST ART-LENITED  = ("<[bcgmp]h.*>"r "[bcgmp][^h].*"r);
+
+SET NDG = Nom | Gen | Dat ; 
+SET CLB = CS | (".") ; 
+
+SECTION
+
+SELECT Art IF (0 ("<a'>")) (1 N) (1 ART-LENITED)
+SELECT Pr IF (0 ("<a'>")) (1 Ger)
+
+SELECT Pr IF (0 ("do")) (1C Dat);
+  # "do" is ambiguous between possessive and preposition. select the preposition
+  #      reading if it is unambiguously followed by a dative.
+
+SELECT Art + $$NDG IF (1C N + $$NDG);
+  # the definite article agrees in case with the following noun which is 
+  # unambiguously in that case.
+
+REMOVE CS IF (0 ("mar")) (NOT 1* V BARRIER CLB);
+  # "mar" is ambiguous between preposition and subordinating conjunction, 
+  #       as a subordinating conjunction should be followed by a verb.
+
+REMOVE Poss IF (0 ("a")) (1C THA);
+  # "a" can be possessive, relative and preposition.
+  #     it isn't a possessive if it is followed by 'tha'.
+
+SELECT Ger IF (-1 ("ag")) (0 V);

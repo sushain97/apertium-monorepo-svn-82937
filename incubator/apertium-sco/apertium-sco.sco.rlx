@@ -1,0 +1,14 @@
+# -*- cg-pre-pipe: "apertium -d . sco-morph|cg-conv -a 2>/dev/null" -*-
+
+DELIMITERS = "<.>" "<!>" "<?>" "<..>" "<...>" "<¶>" ;
+SOFT-DELIMITERS = "<,>" ;
+
+LIST N = n ;
+
+LIST Det = det ;
+LIST A = adj ;
+SET NP = Det OR N OR A; 
+
+SECTION
+
+"<in>" REMOVE N IF (1 NP);

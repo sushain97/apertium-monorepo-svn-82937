@@ -1,0 +1,34 @@
+<rules>
+  <rule>
+    <match lemma="par" tags="pr"><select lemma="about" tags="pr"/></match>
+  </rule>
+  <rule>
+    <match lemma="laiks" tags="n.*"><select lemma="time" tags="n.*"/></match>
+  </rule>
+  <rule>
+    <match lemma="laiks" tags="n.*"><select lemma="weather" tags="n.*"/></match>
+    <or>
+      <match lemma="prognoze" tags="n.*"/>
+      <match lemma="apstāklis" tags="n.*"><select lemma="condition" tags="n.*"/></match>
+    </or>
+  </rule>
+  <rule>
+    <match lemma="laiks" tags="n.*"><select lemma="weather" tags="n.*"/></match>
+    <match lemma="būt" tags="vbser.*"/>
+    <match lemma="jauks" tags="adj.*"/>
+  </rule>
+  <rule>
+    <match lemma="laiks" tags="n.*"><select lemma="weather" tags="n.*"/></match>
+    <match lemma="būt" tags="vbser.*"/>
+    <match/>
+    <match lemma="parādība" tags="n.*"/>
+  </rule>
+  <rule>
+    <or>
+      <match lemma="jauks" tags="adj.*"/>
+      <match lemma="labs" tags="adj.*"/>
+      <match lemma="slikts" tags="adj.*"/>
+    </or>
+    <match lemma="laiks" tags="n.*"><select lemma="weather" tags="n.*"/></match>
+  </rule>
+</rules>

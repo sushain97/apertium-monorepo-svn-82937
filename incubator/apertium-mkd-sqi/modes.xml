@@ -1,0 +1,525 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<modes>
+
+  <!-- mkd → sqi -->
+
+  <mode name="mkd-sqi" install="yes">
+    <pipeline>
+      <program name="lt-proc -w">
+        <file name="mkd-sqi.automorf.bin"/>
+      </program>
+
+
+      <program name="cg-proc -w">
+        <file name="mkd-sqi.rlx.bin"/>
+      </program>
+      <program name="apertium-tagger -g $2">
+        <file name="mkd-sqi.prob"/>
+      </program>
+      <program name="apertium-pretransfer"/>
+      <program name="lt-proc -b">
+        <file name="mkd-sqi.autobil.bin"/>
+      </program>
+      <program name="lrx-proc">
+        <file name="mkd-sqi.autolex.bin"/>
+      </program>
+      <program name="apertium-transfer -b">
+        <file name="apertium-mkd-sqi.mkd-sqi.t1x"/>
+        <file name="mkd-sqi.t1x.bin"/>
+      </program>
+      <program name="apertium-interchunk">
+        <file name="apertium-mkd-sqi.mkd-sqi.t2x"/>
+        <file name="mkd-sqi.t2x.bin"/>
+      </program>
+      <program name="apertium-postchunk">
+        <file name="apertium-mkd-sqi.mkd-sqi.t3x"/>
+        <file name="mkd-sqi.t3x.bin"/>
+      </program>
+      <program name="lt-proc $1">
+        <file name="mkd-sqi.autogen.bin"/>
+      </program>
+
+    </pipeline>
+  </mode>
+
+  <mode name="mkd-sqi-dgen" install="no">
+    <pipeline>
+      <program name="lt-proc -w">
+        <file name="mkd-sqi.automorf.bin"/>
+      </program>
+
+
+      <program name="cg-proc -w">
+        <file name="mkd-sqi.rlx.bin"/>
+      </program>
+      <program name="apertium-tagger -g $2">
+        <file name="mkd-sqi.prob"/>
+      </program>
+      <program name="apertium-pretransfer"/>
+      <program name="lt-proc -b">
+        <file name="mkd-sqi.autobil.bin"/>
+      </program>
+      <program name="apertium-transfer -b">
+        <file name="apertium-mkd-sqi.mkd-sqi.t1x"/>
+        <file name="mkd-sqi.t1x.bin"/>
+      </program>
+      <program name="apertium-interchunk">
+        <file name="apertium-mkd-sqi.mkd-sqi.t2x"/>
+        <file name="mkd-sqi.t2x.bin"/>
+      </program>
+      <program name="apertium-postchunk">
+        <file name="apertium-mkd-sqi.mkd-sqi.t3x"/>
+        <file name="mkd-sqi.t3x.bin"/>
+      </program>
+      <program name="lt-proc -d">
+        <file name="mkd-sqi.autogen.bin"/>
+      </program>
+    </pipeline>
+  </mode>
+
+  <mode name="mkd-sqi-morph" install="no">
+    <pipeline>
+      <program name="lt-proc -w">
+        <file name="mkd-sqi.automorf.bin"/>
+      </program>
+    </pipeline>
+  </mode>
+
+  <mode name="mkd-sqi-disam" install="no">
+    <pipeline>
+      <program name="lt-proc -w">
+        <file name="mkd-sqi.automorf.bin"/>
+      </program>
+      <program name="cg-conv -a"/>
+      <program name="vislcg3 --trace --grammar">
+        <file name="mkd-sqi.rlx.bin"/>
+      </program>
+    </pipeline>
+  </mode>
+
+  <mode name="mkd-sqi-tagger" install="no">
+    <pipeline>
+      <program name="lt-proc -w">
+        <file name="mkd-sqi.automorf.bin"/>
+      </program>
+
+
+      <program name="cg-proc -w">
+        <file name="mkd-sqi.rlx.bin"/>
+      </program>
+      <program name="apertium-tagger -g $2">
+        <file name="mkd-sqi.prob"/>
+      </program>
+    </pipeline>
+  </mode>
+
+  <mode name="mkd-sqi-pretransfer" install="no">
+    <pipeline>
+      <program name="lt-proc -w">
+        <file name="mkd-sqi.automorf.bin"/>
+      </program>
+
+
+      <program name="cg-proc -w">
+        <file name="mkd-sqi.rlx.bin"/>
+      </program>
+      <program name="apertium-tagger -g $2">
+        <file name="mkd-sqi.prob"/>
+      </program>
+      <program name="apertium-pretransfer"/>
+    </pipeline>
+  </mode>
+
+  <mode name="mkd-sqi-biltrans" install="no">
+    <pipeline>
+      <program name="lt-proc -w">
+        <file name="mkd-sqi.automorf.bin"/>
+      </program>
+
+
+      <program name="cg-proc -w">
+        <file name="mkd-sqi.rlx.bin"/>
+      </program>
+      <program name="apertium-tagger -g $2">
+        <file name="mkd-sqi.prob"/>
+      </program>
+      <program name="apertium-pretransfer"/>
+      <program name="lt-proc -b">
+        <file name="mkd-sqi.autobil.bin"/>
+      </program>
+    </pipeline>
+  </mode>
+
+  <mode name="mkd-sqi-lex" install="no">
+    <pipeline>
+      <program name="lt-proc -w">
+        <file name="mkd-sqi.automorf.bin"/>
+      </program>
+
+
+      <program name="cg-proc -w">
+        <file name="mkd-sqi.rlx.bin"/>
+      </program>
+      <program name="apertium-tagger -g $2">
+        <file name="mkd-sqi.prob"/>
+      </program>
+      <program name="apertium-pretransfer"/>
+      <program name="lt-proc -b">
+        <file name="mkd-sqi.autobil.bin"/>
+      </program>
+      <program name="lrx-proc -t">
+        <file name="mkd-sqi.autolex.bin"/>
+      </program>
+    </pipeline>
+  </mode>
+
+  <mode name="mkd-sqi-transfer" install="no">
+    <pipeline>
+      <program name="lt-proc -w">
+        <file name="mkd-sqi.automorf.bin"/>
+      </program>
+
+
+      <program name="cg-proc -w">
+        <file name="mkd-sqi.rlx.bin"/>
+      </program>
+      <program name="apertium-tagger -g $2">
+        <file name="mkd-sqi.prob"/>
+      </program>
+      <program name="apertium-pretransfer"/>
+      <program name="lt-proc -b">
+        <file name="mkd-sqi.autobil.bin"/>
+      </program>
+      <program name="lrx-proc">
+        <file name="mkd-sqi.autolex.bin"/>
+      </program>
+      <program name="apertium-transfer -b -t">
+        <file name="apertium-mkd-sqi.mkd-sqi.t1x"/>
+        <file name="mkd-sqi.t1x.bin"/>
+      </program>
+    </pipeline>
+  </mode>
+
+  <mode name="mkd-sqi-interchunk" install="no">
+    <pipeline>
+      <program name="lt-proc -w">
+        <file name="mkd-sqi.automorf.bin"/>
+      </program>
+
+
+      <program name="cg-proc -w">
+        <file name="mkd-sqi.rlx.bin"/>
+      </program>
+      <program name="apertium-tagger -g $2">
+        <file name="mkd-sqi.prob"/>
+      </program>
+      <program name="apertium-pretransfer"/>
+      <program name="lt-proc -b">
+        <file name="mkd-sqi.autobil.bin"/>
+      </program>
+      <program name="lrx-proc">
+        <file name="mkd-sqi.autolex.bin"/>
+      </program>
+      <program name="apertium-transfer -b">
+        <file name="apertium-mkd-sqi.mkd-sqi.t1x"/>
+        <file name="mkd-sqi.t1x.bin"/>
+      </program>
+      <program name="apertium-interchunk -t">
+        <file name="apertium-mkd-sqi.mkd-sqi.t2x"/>
+        <file name="mkd-sqi.t2x.bin"/>
+      </program>
+    </pipeline>
+  </mode>
+
+  <mode name="mkd-sqi-postchunk" install="no">
+    <pipeline>
+      <program name="lt-proc -w">
+        <file name="mkd-sqi.automorf.bin"/>
+      </program>
+
+
+      <program name="cg-proc -w">
+        <file name="mkd-sqi.rlx.bin"/>
+      </program>
+      <program name="apertium-tagger -g $2">
+        <file name="mkd-sqi.prob"/>
+      </program>
+      <program name="apertium-pretransfer"/>
+      <program name="lt-proc -b">
+        <file name="mkd-sqi.autobil.bin"/>
+      </program>
+      <program name="lrx-proc">
+        <file name="mkd-sqi.autolex.bin"/>
+      </program>
+      <program name="apertium-transfer -b">
+        <file name="apertium-mkd-sqi.mkd-sqi.t1x"/>
+        <file name="mkd-sqi.t1x.bin"/>
+      </program>
+      <program name="apertium-interchunk">
+        <file name="apertium-mkd-sqi.mkd-sqi.t2x"/>
+        <file name="mkd-sqi.t2x.bin"/>
+      </program>
+      <program name="apertium-postchunk">
+        <file name="apertium-mkd-sqi.mkd-sqi.t3x"/>
+        <file name="mkd-sqi.t3x.bin"/>
+      </program>
+    </pipeline>
+  </mode>
+
+  <!-- sqi → mkd -->
+
+  <mode name="sqi-mkd" install="yes">
+    <pipeline>
+      <program name="lt-proc -w">
+        <file name="sqi-mkd.automorf.bin"/>
+      </program>
+
+
+      <program name="cg-proc -w">
+        <file name="sqi-mkd.rlx.bin"/>
+      </program>
+      <program name="apertium-tagger -g $2">
+        <file name="sqi-mkd.prob"/>
+      </program>
+      <program name="apertium-pretransfer"/>
+      <program name="lt-proc -b">
+        <file name="sqi-mkd.autobil.bin"/>
+      </program>
+      <program name="lrx-proc">
+        <file name="sqi-mkd.autolex.bin"/>
+      </program>
+      <program name="apertium-transfer -b">
+        <file name="apertium-mkd-sqi.sqi-mkd.t1x"/>
+        <file name="sqi-mkd.t1x.bin"/>
+      </program>
+      <program name="apertium-interchunk">
+        <file name="apertium-mkd-sqi.sqi-mkd.t2x"/>
+        <file name="sqi-mkd.t2x.bin"/>
+      </program>
+      <program name="apertium-postchunk">
+        <file name="apertium-mkd-sqi.sqi-mkd.t3x"/>
+        <file name="sqi-mkd.t3x.bin"/>
+      </program>
+      <program name="lt-proc $1">
+        <file name="sqi-mkd.autogen.bin"/>
+      </program>
+
+    </pipeline>
+  </mode>
+
+  <mode name="sqi-mkd-dgen" install="no">
+    <pipeline>
+      <program name="lt-proc -w">
+        <file name="sqi-mkd.automorf.bin"/>
+      </program>
+
+
+      <program name="cg-proc -w">
+        <file name="sqi-mkd.rlx.bin"/>
+      </program>
+      <program name="apertium-tagger -g $2">
+        <file name="sqi-mkd.prob"/>
+      </program>
+      <program name="apertium-pretransfer"/>
+      <program name="lt-proc -b">
+        <file name="sqi-mkd.autobil.bin"/>
+      </program>
+      <program name="apertium-transfer -b">
+        <file name="apertium-mkd-sqi.sqi-mkd.t1x"/>
+        <file name="sqi-mkd.t1x.bin"/>
+      </program>
+      <program name="apertium-interchunk">
+        <file name="apertium-mkd-sqi.sqi-mkd.t2x"/>
+        <file name="sqi-mkd.t2x.bin"/>
+      </program>
+      <program name="apertium-postchunk">
+        <file name="apertium-mkd-sqi.sqi-mkd.t3x"/>
+        <file name="sqi-mkd.t3x.bin"/>
+      </program>
+      <program name="lt-proc -d">
+        <file name="sqi-mkd.autogen.bin"/>
+      </program>
+    </pipeline>
+  </mode>
+
+  <mode name="sqi-mkd-morph" install="no">
+    <pipeline>
+      <program name="lt-proc -w">
+        <file name="sqi-mkd.automorf.bin"/>
+      </program>
+    </pipeline>
+  </mode>
+
+  <mode name="sqi-mkd-disam" install="no">
+    <pipeline>
+      <program name="lt-proc -w">
+        <file name="sqi-mkd.automorf.bin"/>
+      </program>
+      <program name="cg-conv -a"/>
+      <program name="vislcg3 --trace --grammar">
+        <file name="sqi-mkd.rlx.bin"/>
+      </program>
+    </pipeline>
+  </mode>
+
+  <mode name="sqi-mkd-tagger" install="no">
+    <pipeline>
+      <program name="lt-proc -w">
+        <file name="sqi-mkd.automorf.bin"/>
+      </program>
+
+
+      <program name="cg-proc -w">
+        <file name="sqi-mkd.rlx.bin"/>
+      </program>
+      <program name="apertium-tagger -g $2">
+        <file name="sqi-mkd.prob"/>
+      </program>
+    </pipeline>
+  </mode>
+
+  <mode name="sqi-mkd-pretransfer" install="no">
+    <pipeline>
+      <program name="lt-proc -w">
+        <file name="sqi-mkd.automorf.bin"/>
+      </program>
+
+
+      <program name="cg-proc -w">
+        <file name="sqi-mkd.rlx.bin"/>
+      </program>
+      <program name="apertium-tagger -g $2">
+        <file name="sqi-mkd.prob"/>
+      </program>
+      <program name="apertium-pretransfer"/>
+    </pipeline>
+  </mode>
+
+  <mode name="sqi-mkd-biltrans" install="no">
+    <pipeline>
+      <program name="lt-proc -w">
+        <file name="sqi-mkd.automorf.bin"/>
+      </program>
+
+
+      <program name="cg-proc -w">
+        <file name="sqi-mkd.rlx.bin"/>
+      </program>
+      <program name="apertium-tagger -g $2">
+        <file name="sqi-mkd.prob"/>
+      </program>
+      <program name="apertium-pretransfer"/>
+      <program name="lt-proc -b">
+        <file name="sqi-mkd.autobil.bin"/>
+      </program>
+    </pipeline>
+  </mode>
+
+  <mode name="sqi-mkd-lex" install="no">
+    <pipeline>
+      <program name="lt-proc -w">
+        <file name="sqi-mkd.automorf.bin"/>
+      </program>
+
+
+      <program name="cg-proc -w">
+        <file name="sqi-mkd.rlx.bin"/>
+      </program>
+      <program name="apertium-tagger -g $2">
+        <file name="sqi-mkd.prob"/>
+      </program>
+      <program name="apertium-pretransfer"/>
+      <program name="lt-proc -b">
+        <file name="sqi-mkd.autobil.bin"/>
+      </program>
+      <program name="lrx-proc">
+        <file name="sqi-mkd.autolex.bin"/>
+      </program>
+    </pipeline>
+  </mode>
+
+  <mode name="sqi-mkd-transfer" install="no">
+    <pipeline>
+      <program name="lt-proc -w">
+        <file name="sqi-mkd.automorf.bin"/>
+      </program>
+
+
+      <program name="cg-proc -w">
+        <file name="sqi-mkd.rlx.bin"/>
+      </program>
+      <program name="apertium-tagger -g $2">
+        <file name="sqi-mkd.prob"/>
+      </program>
+      <program name="apertium-pretransfer"/>
+      <program name="lt-proc -b">
+        <file name="sqi-mkd.autobil.bin"/>
+      </program>
+      <program name="apertium-transfer -b -t">
+        <file name="apertium-mkd-sqi.sqi-mkd.t1x"/>
+        <file name="sqi-mkd.t1x.bin"/>
+      </program>
+    </pipeline>
+  </mode>
+
+  <mode name="sqi-mkd-interchunk" install="no">
+    <pipeline>
+      <program name="lt-proc -w">
+        <file name="sqi-mkd.automorf.bin"/>
+      </program>
+
+
+      <program name="cg-proc -w">
+        <file name="sqi-mkd.rlx.bin"/>
+      </program>
+      <program name="apertium-tagger -g $2">
+        <file name="sqi-mkd.prob"/>
+      </program>
+      <program name="apertium-pretransfer"/>
+      <program name="lt-proc -b">
+        <file name="sqi-mkd.autobil.bin"/>
+      </program>
+      <program name="apertium-transfer -b">
+        <file name="apertium-mkd-sqi.sqi-mkd.t1x"/>
+        <file name="sqi-mkd.t1x.bin"/>
+      </program>
+      <program name="apertium-interchunk -t">
+        <file name="apertium-mkd-sqi.sqi-mkd.t2x"/>
+        <file name="sqi-mkd.t2x.bin"/>
+      </program>
+    </pipeline>
+  </mode>
+
+  <mode name="sqi-mkd-postchunk" install="no">
+    <pipeline>
+      <program name="lt-proc -w">
+        <file name="sqi-mkd.automorf.bin"/>
+      </program>
+
+
+      <program name="cg-proc -w">
+        <file name="sqi-mkd.rlx.bin"/>
+      </program>
+      <program name="apertium-tagger -g $2">
+        <file name="sqi-mkd.prob"/>
+      </program>
+      <program name="apertium-pretransfer"/>
+      <program name="lt-proc -b">
+        <file name="sqi-mkd.autobil.bin"/>
+      </program>
+      <program name="apertium-transfer -b">
+        <file name="apertium-mkd-sqi.sqi-mkd.t1x"/>
+        <file name="sqi-mkd.t1x.bin"/>
+      </program>
+      <program name="apertium-interchunk">
+        <file name="apertium-mkd-sqi.sqi-mkd.t2x"/>
+        <file name="sqi-mkd.t2x.bin"/>
+      </program>
+      <program name="apertium-postchunk">
+        <file name="apertium-mkd-sqi.sqi-mkd.t3x"/>
+        <file name="sqi-mkd.t3x.bin"/>
+      </program>
+    </pipeline>
+  </mode>
+</modes>
+

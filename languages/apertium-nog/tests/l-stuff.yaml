@@ -1,0 +1,15 @@
+Config:
+  hfst:
+    App: hfst-lookup
+    Gen: ../nog.autogen.hfst
+    Morph: ../nog.automorf.hfst
+
+Tests:
+  "[twol] оьз":
+    оьз<prn><ref><px1sg><nom> : оьзим
+    оьз<prn><ref><px3pl><nom> : оьзлери
+    оьз<prn><ref><px3pl><gen> : оьзлерининъ
+
+  "[twol] ifi":
+    ал<v><tv><ifi><p1><sg> : алдым
+    ал<v><tv><ifi><p3><pl> : алдылар

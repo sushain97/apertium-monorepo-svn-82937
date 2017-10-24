@@ -1,0 +1,20 @@
+DELIMITERS = "<.>" ; 
+
+LIST N = n ;
+
+LIST Nom = nom ;
+
+LIST Toponim = top ;
+
+LIST PLACES = "নদী" ;
+
+SECTION
+
+SELECT N ;
+
+SECTION
+
+LIST @→N = @→N ;
+
+
+MAP @→N TARGET Toponim + Nom IF (1 PLACES);

@@ -1,0 +1,49 @@
+Alphabet
+
+ А Б В Г Д Е Ё Ж Ӝ З Ӟ И Ӥ Й К Л М Н О Ӧ П Р С Т У Ф Х Ц Ч Ӵ Ш Щ Ъ Ы Ь Э Ю Я  
+ а б в г д е ё ж ӝ з ӟ и ӥ й к л м н о ӧ п р с т у ф х ц ч ӵ ш щ ъ ы ь э ю я 
+
+ %>:0 %{j%}:ъ %{E%}:е %{I%}:и %{t%}:т %{s%}:с;
+
+Sets
+
+Glasnye = а е ё и ӥ о ӧ у ы э ю я ;
+
+Soglasnye = б в г д ж ӝ з ӟ й к л м н п р с т ф х ц ч ш щ ъ ӵ ;
+
+Zvonkie = а е ё и ӥ о ӧ у ы э ю я б г д ж ӝ з ӟ й л м н р ;
+
+Rules
+
+"Remove morpheme boundary"
+%>:0 <=> _ ;
+
+"Archiphoneme E"
+%{E%}:э <=> [ д | з | л | н | с | т | у ] %>: _ ;
+
+"Archiphoneme I"
+%{I%}:ӥ <=> [ д | з | л | н | с | т | у ] %>: _ ;
+
+"Delete soft sign"
+ь:0 <=> _ %>: [ :Glasnye | :Soglasnye ] ;
+
+"Delete short i"
+й:0 <=> _ %>: %{E%}: ;
+
+"jo after cons"
+о:ё <=> :Soglasnye %>: %{j%}: _ ;
+
+"hard sign before jotated plural"
+%{j%}:ъ <=> :Soglasnye %>: _ ;
+
+
+"after vowel"
+%{j%}:0 <=> :Glasnye %>: _ ;
+
+"t/d after zvonkie"
+%{t%}:д <=> :Zvonkie %>: _ ;
+
+"s/z after zvonkie"
+%{s%}:з <=> :Zvonkie %>: _ ;
+
+

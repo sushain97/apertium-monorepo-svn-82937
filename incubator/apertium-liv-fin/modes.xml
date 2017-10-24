@@ -1,0 +1,461 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<modes>
+  <!-- liv → fin --> 
+
+  <mode name="liv-fin" install="yes">
+    <pipeline>
+      <program name="hfst-proc -w">
+        <file name="liv-fin.automorf.hfst"/>
+      </program>
+      <program name="cg-proc -w">
+        <file name="liv-fin.rlx.bin"/>
+      </program>
+      <program name="apertium-tagger -g $2">
+        <file name="liv-fin.prob"/>
+      </program>
+      <program name="apertium-pretransfer"/>
+      <program name="lt-proc -b">
+        <file name="liv-fin.autobil.bin"/>
+      </program>
+      <program name="apertium-transfer -b">
+        <file name="apertium-liv-fin.liv-fin.t1x"/>
+        <file name="liv-fin.t1x.bin"/>
+      </program>
+      <program name="apertium-interchunk">
+        <file name="apertium-liv-fin.liv-fin.t2x"/>
+        <file name="liv-fin.t2x.bin"/>
+      </program>
+      <program name="apertium-postchunk">
+        <file name="apertium-liv-fin.liv-fin.t3x"/>
+        <file name="liv-fin.t3x.bin"/>
+      </program>
+      <program name="hfst-proc $1">
+        <file name="liv-fin.autogen.hfst"/>
+      </program>
+    </pipeline>
+  </mode>
+
+  <mode name="liv-fin-debug" install="no">
+    <pipeline>
+      <program name="hfst-proc -w">
+        <file name="liv-fin.automorf.hfst"/>
+      </program>
+      <program name="cg-proc -w">
+        <file name="liv-fin.rlx.bin"/>
+      </program>
+      <program name="apertium-tagger -g $2">
+        <file name="liv-fin.prob"/>
+      </program>
+      <program name="apertium-pretransfer"/>
+      <program name="lt-proc -b">
+        <file name="liv-fin.autobil.bin"/>
+      </program>
+      <program name="apertium-transfer -b">
+        <file name="apertium-liv-fin.liv-fin.t1x"/>
+        <file name="liv-fin.t1x.bin"/>
+      </program>
+      <program name="apertium-interchunk">
+        <file name="apertium-liv-fin.liv-fin.t2x"/>
+        <file name="liv-fin.t2x.bin"/>
+      </program>
+      <program name="apertium-postchunk">
+        <file name="apertium-liv-fin.liv-fin.t3x"/>
+        <file name="liv-fin.t3x.bin"/>
+      </program>
+      <program name="hfst-proc -d">
+        <file name="liv-fin.autogen.hfst"/>
+      </program>
+    </pipeline>
+  </mode>
+ 
+  
+  <mode name="liv-fin-morph" install="no">
+    <pipeline>
+      <program name="hfst-proc -w">
+        <file name="liv-fin.automorf.hfst"/>
+      </program>
+    </pipeline>
+  </mode>
+
+  <mode name="liv-fin-disam" install="no">
+    <pipeline>
+      <program name="hfst-proc -w">
+        <file name="liv-fin.automorf.hfst"/>
+      </program>
+      <program name="cg-conv -a"/>
+      <program name="vislcg3 --trace --grammar">
+        <file name="liv-fin.rlx.bin"/>
+      </program>
+    </pipeline>
+  </mode>
+
+
+  <mode name="liv-fin-tagger" install="no">
+    <pipeline>
+      <program name="hfst-proc -w">
+        <file name="liv-fin.automorf.hfst"/>
+      </program>
+      <program name="cg-proc -w">
+        <file name="liv-fin.rlx.bin"/>
+      </program>
+      <program name="apertium-tagger -g $2">
+        <file name="liv-fin.prob"/>
+      </program>
+      <program name="apertium-pretransfer"/>
+    </pipeline>
+  </mode>
+
+  <mode name="liv-fin-biltrans" install="no">
+    <pipeline>
+      <program name="hfst-proc -w">
+        <file name="liv-fin.automorf.hfst"/>
+      </program>
+      <program name="cg-proc -w">
+        <file name="liv-fin.rlx.bin"/>
+      </program>
+      <program name="apertium-tagger -g $2">
+        <file name="liv-fin.prob"/>
+      </program>
+      <program name="apertium-pretransfer"/>
+      <program name="lt-proc -b">
+        <file name="liv-fin.autobil.bin"/>
+      </program>
+    </pipeline>
+  </mode>
+
+  <mode name="liv-fin-lextor" install="no">
+    <pipeline>
+      <program name="hfst-proc -w">
+        <file name="liv-fin.automorf.hfst"/>
+      </program>
+      <program name="cg-proc -w">
+        <file name="liv-fin.rlx.bin"/>
+      </program>
+      <program name="apertium-tagger -g $2">
+        <file name="liv-fin.prob"/>
+      </program>
+      <program name="apertium-pretransfer"/>
+      <program name="lt-proc -b">
+        <file name="liv-fin.autobil.bin"/>
+      </program>
+      <program name="lrx-proc -t">
+        <file name="liv-fin.autolex.bin"/>
+      </program>
+    </pipeline>
+  </mode>
+
+
+  <mode name="liv-fin-transfer" install="no">
+    <pipeline>
+      <program name="hfst-proc -w">
+        <file name="liv-fin.automorf.hfst"/>
+      </program>
+      <program name="cg-proc -w">
+        <file name="liv-fin.rlx.bin"/>
+      </program>
+      <program name="apertium-tagger -g $2">
+        <file name="liv-fin.prob"/>
+      </program>
+      <program name="apertium-pretransfer"/>
+      <program name="lt-proc -b">
+        <file name="liv-fin.autobil.bin"/>
+      </program>
+      <program name="lrx-proc">
+        <file name="liv-fin.autolex.bin"/>
+      </program>
+      <program name="apertium-transfer -b">
+        <file name="apertium-liv-fin.liv-fin.t1x"/>
+        <file name="liv-fin.t1x.bin"/>
+      </program>
+    </pipeline>
+  </mode>
+
+  <mode name="liv-fin-interchunk" install="no">
+    <pipeline>
+      <program name="hfst-proc -w">
+        <file name="liv-fin.automorf.hfst"/>
+      </program>
+      <program name="cg-proc -w">
+        <file name="liv-fin.rlx.bin"/>
+      </program>
+      <program name="apertium-tagger -g $2">
+        <file name="liv-fin.prob"/>
+      </program>
+      <program name="apertium-pretransfer"/>
+      <program name="lt-proc -b">
+        <file name="liv-fin.autobil.bin"/>
+      </program>
+      <program name="lrx-proc">
+        <file name="liv-fin.autolex.bin"/>
+      </program>
+      <program name="apertium-transfer -b">
+        <file name="apertium-liv-fin.liv-fin.t1x"/>
+        <file name="liv-fin.t1x.bin"/>
+      </program>
+      <program name="apertium-interchunk">
+        <file name="apertium-liv-fin.liv-fin.t2x"/>
+        <file name="liv-fin.t2x.bin"/>
+      </program>
+    </pipeline>
+  </mode>
+
+  <mode name="liv-fin-postchunk" install="no">
+    <pipeline>
+      <program name="hfst-proc -w">
+        <file name="liv-fin.automorf.hfst"/>
+      </program>
+      <program name="cg-proc -w">
+        <file name="liv-fin.rlx.bin"/>
+      </program>
+      <program name="apertium-tagger -g $2">
+        <file name="liv-fin.prob"/>
+      </program>
+      <program name="apertium-pretransfer"/>
+      <program name="lt-proc -b">
+        <file name="liv-fin.autobil.bin"/>
+      </program>
+      <program name="lrx-proc">
+        <file name="liv-fin.autolex.bin"/>
+      </program>
+      <program name="apertium-transfer -b">
+        <file name="apertium-liv-fin.liv-fin.t1x"/>
+        <file name="liv-fin.t1x.bin"/>
+      </program>
+      <program name="apertium-interchunk">
+        <file name="apertium-liv-fin.liv-fin.t2x"/>
+        <file name="liv-fin.t2x.bin"/>
+      </program>
+      <program name="apertium-postchunk">
+        <file name="apertium-liv-fin.liv-fin.t3x"/>
+        <file name="liv-fin.t3x.bin"/>
+      </program>
+    </pipeline>
+  </mode>
+
+  <!-- fin → liv -->
+
+  <mode name="fin-liv" install="yes">
+    <pipeline>
+      <program name="hfst-proc -w">
+        <file name="fin-liv.automorf.hfst"/>
+      </program>
+      <program name="cg-proc -w">
+        <file name="fin-liv.rlx.bin"/>
+      </program>
+      <program name="apertium-tagger -g $2">
+        <file name="fin-liv.prob"/>
+      </program>
+      <program name="apertium-pretransfer"/>
+      <program name="lt-proc -b">
+        <file name="fin-liv.autobil.bin"/>
+      </program>
+      <program name="apertium-transfer -b">
+        <file name="apertium-liv-fin.fin-liv.t1x"/>
+        <file name="fin-liv.t1x.bin"/>
+      </program>
+      <program name="apertium-interchunk">
+        <file name="apertium-liv-fin.fin-liv.t2x"/>
+        <file name="fin-liv.t2x.bin"/>
+      </program>
+      <program name="apertium-postchunk">
+        <file name="apertium-liv-fin.fin-liv.t3x"/>
+        <file name="fin-liv.t3x.bin"/>
+      </program>
+      <program name="hfst-proc $1">
+        <file name="fin-liv.autogen.hfst"/>
+      </program>
+    </pipeline>
+  </mode>
+
+  <mode name="fin-liv-debug" install="no">
+    <pipeline>
+      <program name="hfst-proc -w">
+        <file name="fin-liv.automorf.hfst"/>
+      </program>
+      <program name="cg-proc -w">
+        <file name="fin-liv.rlx.bin"/>
+      </program>
+      <program name="apertium-tagger -g $2">
+        <file name="fin-liv.prob"/>
+      </program>
+      <program name="apertium-pretransfer"/>
+      <program name="lt-proc -b">
+        <file name="fin-liv.autobil.bin"/>
+      </program>
+      <program name="apertium-transfer -b">
+        <file name="apertium-liv-fin.fin-liv.t1x"/>
+        <file name="fin-liv.t1x.bin"/>
+      </program>
+      <program name="apertium-interchunk">
+        <file name="apertium-liv-fin.fin-liv.t2x"/>
+        <file name="fin-liv.t2x.bin"/>
+      </program>
+      <program name="apertium-postchunk">
+        <file name="apertium-liv-fin.fin-liv.t3x"/>
+        <file name="fin-liv.t3x.bin"/>
+      </program>
+      <program name="hfst-proc -d">
+        <file name="fin-liv.autogen.hfst"/>
+      </program>
+    </pipeline>
+  </mode>
+  
+  <mode name="fin-liv-morph" install="no">
+    <pipeline>
+      <program name="hfst-proc -w">
+        <file name="fin-liv.automorf.hfst"/>
+      </program>
+    </pipeline>
+  </mode>
+
+  <mode name="fin-liv-disam" install="no">
+    <pipeline>
+      <program name="hfst-proc -w">
+        <file name="fin-liv.automorf.hfst"/>
+      </program>
+      <program name="cg-conv -a"/>
+      <program name="vislcg3 --trace --grammar">
+        <file name="fin-liv.rlx.bin"/>
+      </program>
+    </pipeline>
+  </mode>
+
+
+  <mode name="fin-liv-tagger" install="no">
+    <pipeline>
+      <program name="hfst-proc -w">
+        <file name="fin-liv.automorf.hfst"/>
+      </program>
+      <program name="cg-proc -w">
+        <file name="fin-liv.rlx.bin"/>
+      </program>
+      <program name="apertium-tagger -g $2">
+        <file name="fin-liv.prob"/>
+      </program>
+      <program name="apertium-pretransfer"/>
+    </pipeline>
+  </mode>
+
+  <mode name="fin-liv-biltrans" install="no">
+    <pipeline>
+      <program name="hfst-proc -w">
+        <file name="fin-liv.automorf.hfst"/>
+      </program>
+      <program name="cg-proc -w">
+        <file name="fin-liv.rlx.bin"/>
+      </program>
+      <program name="apertium-tagger -g $2">
+        <file name="fin-liv.prob"/>
+      </program>
+      <program name="apertium-pretransfer"/>
+      <program name="lt-proc -b">
+        <file name="fin-liv.autobil.bin"/>
+      </program>
+    </pipeline>
+  </mode>
+
+  <mode name="fin-liv-lextor" install="no">
+    <pipeline>
+      <program name="hfst-proc -w">
+        <file name="fin-liv.automorf.hfst"/>
+      </program>
+      <program name="cg-proc -w">
+        <file name="fin-liv.rlx.bin"/>
+      </program>
+      <program name="apertium-tagger -g $2">
+        <file name="fin-liv.prob"/>
+      </program>
+      <program name="apertium-pretransfer"/>
+      <program name="lt-proc -b">
+        <file name="fin-liv.autobil.bin"/>
+      </program>
+      <program name="lrx-proc">
+        <file name="fin-liv.autolex.bin"/>
+      </program>
+    </pipeline>
+  </mode>
+
+  <mode name="fin-liv-transfer" install="no">
+    <pipeline>
+      <program name="hfst-proc -w">
+        <file name="fin-liv.automorf.hfst"/>
+      </program>
+      <program name="cg-proc -w">
+        <file name="fin-liv.rlx.bin"/>
+      </program>
+      <program name="apertium-tagger -g $2">
+        <file name="fin-liv.prob"/>
+      </program>
+      <program name="apertium-pretransfer"/>
+      <program name="lt-proc -b">
+        <file name="fin-liv.autobil.bin"/>
+      </program>
+      <program name="apertium-transfer -b">
+        <file name="apertium-liv-fin.fin-liv.t1x"/>
+        <file name="fin-liv.t1x.bin"/>
+      </program>
+    </pipeline>
+  </mode>
+
+  <mode name="fin-liv-interchunk" install="no">
+    <pipeline>
+      <program name="hfst-proc -w">
+        <file name="fin-liv.automorf.hfst"/>
+      </program>
+      <program name="cg-proc -w">
+        <file name="fin-liv.rlx.bin"/>
+      </program>
+      <program name="apertium-tagger -g $2">
+        <file name="fin-liv.prob"/>
+      </program>
+      <program name="apertium-pretransfer"/>
+      <program name="lt-proc -b">
+        <file name="fin-liv.autobil.bin"/>
+      </program>
+      <program name="apertium-transfer -b">
+        <file name="apertium-liv-fin.fin-liv.t1x"/>
+        <file name="fin-liv.t1x.bin"/>
+      </program>
+      <program name="apertium-interchunk">
+        <file name="apertium-liv-fin.fin-liv.t2x"/>
+        <file name="fin-liv.t2x.bin"/>
+      </program>
+    </pipeline>
+  </mode>
+
+  <mode name="fin-liv-postchunk" install="no">
+    <pipeline>
+      <program name="hfst-proc -w">
+        <file name="fin-liv.automorf.hfst"/>
+      </program>
+      <program name="cg-proc -w">
+        <file name="fin-liv.rlx.bin"/>
+      </program>
+      <program name="apertium-tagger -g $2">
+        <file name="fin-liv.prob"/>
+      </program>
+      <program name="apertium-pretransfer"/>
+      <program name="lt-proc -b">
+        <file name="fin-liv.autobil.bin"/>
+      </program>
+      <program name="apertium-transfer -b">
+        <file name="apertium-liv-fin.fin-liv.t1x"/>
+        <file name="fin-liv.t1x.bin"/>
+      </program>
+      <program name="apertium-interchunk">
+        <file name="apertium-liv-fin.fin-liv.t2x"/>
+        <file name="fin-liv.t2x.bin"/>
+      </program>
+      <program name="apertium-postchunk">
+        <file name="apertium-liv-fin.fin-liv.t3x"/>
+        <file name="fin-liv.t3x.bin"/>
+      </program>
+    </pipeline>
+  </mode>
+
+
+
+
+</modes>
+
+

@@ -1,0 +1,18 @@
+Config:
+  hfst:
+    App: hfst-lookup
+    Gen: ../nog.autogen.hfst
+    Morph: ../nog.automorf.hfst
+
+Tests:
+  "[twol] voicing of stem-final п":
+    тап<v><tv><aor><p1><sg> : табаман
+
+  "[twol] voicing and further lenition of stem-final п":
+    тап<v><tv><prc_perf> : тавып
+
+  "[twol] voicing of stem-final к":
+    шык<v><iv><aor><p1><sg> : шыгаман
+    шык<v><iv><prc_perf> : шыгып
+
+

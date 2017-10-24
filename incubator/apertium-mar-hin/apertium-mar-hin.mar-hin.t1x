@@ -1,0 +1,269 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- -*- nxml -*- -->
+<transfer default="chunk">
+  
+  <section-def-cats>
+    
+    <def-cat n="nom">
+      <cat-item tags="n.*"/>
+    </def-cat>
+
+    <def-cat n="nomi">
+      <cat-item tags=".*.*.*.*nom.*"/>
+    </def-cat>
+    <def-cat n="dstt">
+      <cat-item tags=".*.*.*.*.*dst.*"/>
+    </def-cat>
+    <def-cat n="dem_cat">
+      <cat-item tags="dem.*"/>
+      <cat-item tags="*.dem.*"/>
+      <cat-item tags="*.*.dem.*"/>
+      <cat-item tags="*.*.*.dem.*"/>
+      <cat-item tags="*.*.*.*.dem.*"/>
+      <cat-item tags="*.*.*.*.*.dem.*"/>
+      <cat-item tags="*.*.*.*.*.*.dem"/>
+    </def-cat>
+    <def-cat n="p3_cat">
+      <!-- <cat-item tags="p3"/> -->
+      <cat-item tags="prn.p3.*"/>
+<!--       <cat-item tags="*.p3.*"/>
+      <cat-item tags="*.p3.*"/>
+      <cat-item tags="*.p3"/>
+      <cat-item tags="*.*.p3.*"/>
+      <cat-item tags="*.*.*.p3.*"/>
+      <cat-item tags="*.*.*.*.p3.*"/>
+      <cat-item tags="*.*.*.*.*.p3.*"/>
+      <cat-item tags="*.*.*.*.*.*.p3"/>
+ -->    </def-cat>
+
+    <def-cat n="sent">
+      <cat-item tags="sent"/>
+     </def-cat>
+     <def-cat n="pres">
+       <cat-item tags="vblex.pres.*"/>
+     </def-cat>
+     <def-cat n="fut">
+       <cat-item tags="vblex.fut.*"/>
+     </def-cat>
+     <def-cat n="pronoun">
+       <cat-item tags="prn.p3.*"/>
+       <!-- <cat-item tags="prn.*"/> -->
+     </def-cat>
+      <def-cat n="iv">
+       <cat-item tags=".*iv.*"/>
+     </def-cat>
+      <def-cat n="tv">
+       <cat-item tags=".*tv.*"/>
+     </def-cat>
+
+   </section-def-cats>
+   <section-def-attrs>
+     <def-attr n="a_nom">
+       <attr-item tags="n"/>
+     </def-attr>
+     <def-attr n="a_cas">
+       <attr-item tags="nomi"/>
+       <attr-item tags="acc"/>
+       <attr-item tags="dat"/>
+       <attr-item tags="gen"/>
+       <attr-item tags="loc"/>
+       <attr-item tags="ins"/>
+       <attr-item tags="abl"/>
+     </def-attr>
+     <def-attr n="extra_1">
+       <attr-item tags="acc"/>       <!--c="accusative"/>-->
+       <attr-item tags="ins"/>       <!--c="instrumental"/>-->
+       <attr-item tags="loc"/>       <!--c="Locative"/> -->
+       <attr-item tags="rel"/>      <!--c="Relative"/>    -->
+       <attr-item tags="dem"/>      <!--c="Demonstrative"/>-->
+       <attr-item tags="prx"/>      <!--c="Proximate"/>-->
+       <attr-item tags="dst"/>      <!--c="Distant"/>          -->
+       <attr-item tags="aa" />      <!--c="Animate"/>-->
+       <attr-item tags="nn" />      <!--c="Inanimate"/>       -->
+       <attr-item tags="itg"/>      <!--c="Interrogative"/>     -->
+     </def-attr>
+
+     <def-attr n="tense">
+       <attr-item tags="fut"/>
+       <attr-item tags="present"/>
+       <attr-item tags="pres"/>
+       <attr-item tags="pros"/>
+     </def-attr>
+     <def-attr n="gender">
+       <attr-item tags="mfn"/>
+       <attr-item tags="m"/>
+       <attr-item tags="f"/>
+       <attr-item tags="mf"/>
+     </def-attr>
+     <def-attr n="number_attr">
+       <attr-item tags="sg"/>
+       <attr-item tags="pl"/>
+       <attr-item tags="sp"/>
+     </def-attr>
+     <def-attr n="person">
+       <attr-item tags="p1"/>
+       <attr-item tags="p2"/>
+       <attr-item tags="p3"/>
+     </def-attr>
+   
+     <def-attr n="lem_pos">
+       <attr-item tags="vblex"/>
+       <attr-item tags="vaux"/>
+       <attr-item tags="adv"/>
+       <attr-item tags="adj"/>
+       <attr-item tags="prn"/>
+     </def-attr>
+     <def-attr n="tviv">
+      <attr-item tags="iv"/>
+      <attr-item tags="tv"/>
+    </def-attr>
+
+   </section-def-attrs>
+   <section-def-vars>
+     <def-var n="number"/>
+     <def-var n="ex1"/>
+     <def-var n="current_verb"/>
+   </section-def-vars>
+   <section-def-lists>
+    <def-list n="prn_dem">
+      <list-item v="तो"/>
+      <list-item v="ती"/>
+      <list-item v="ते"/>
+    </def-list>
+  </section-def-lists>
+   <section-def-macros>
+    <def-macro n="reset_variables" npar="1">
+    <let><var n="ex1"/>             <lit v=""/></let>
+<!--     <let><var n="genere"/>             <lit v=""/></let>
+    <let><var n="article"/>            <lit v=""/></let>
+    <let><var n="genitiu"/>            <lit v=""/></let>
+    <let><var n="cur_adj_grau1"/>      <lit v=""/></let>
+    <let><var n="cur_adj_grau_preadv1"/><lit v=""/></let>
+    <let><var n="cur_verb_chunk_name"/><lit v=""/></let>
+    <let><var n="cur_verb_chunk_type"/><lit v=""/></let>
+    <let><var n="cur_verb_lem"/>       <lit v=""/></let>
+    <let><var n="cur_verb_fin"/>       <lit v=""/></let>
+    <let><var n="cur_subj_prn"/>       <lit v=""/></let>
+    <let><var n="cur_subj"/>           <lit v=""/></let>
+    <let><var n="cur_sent_adv"/>       <lit v=""/></let>
+    <let><var n="cur_adv_lema"/>       <lit v=""/></let>
+    <let><var n="cur_prn_lema"/>       <lit v=""/></let>
+    <let><var n="cur_prep_lema"/>      <lit v=""/></let>
+    <let><var n="cur_syn_tag"/>        <lit-tag v="@X"/></let>
+    <let><var n="EOS"/>                <lit v="true"/></let>
+ -->  </def-macro>
+     <def-macro n="test" npar="1">
+           <let>
+             <var n="number"/>
+             <lit v=""/>
+           </let>
+     </def-macro>
+   </section-def-macros>
+   <section-rules>
+ 
+     <rule comment="REGLA: SENT">
+       <pattern>
+         <pattern-item n="sent"/>
+       </pattern>
+       <action>
+         <out>
+           <chunk name="sent" case="caseFirstWord">
+             <tags>
+               <tag><lit-tag v="SENT"/></tag>
+             </tags>
+             <lu>
+               <clip pos="1" side="tl" part="whole"/>
+             </lu>
+           </chunk>
+         </out>
+          <call-macro n="reset_variables">
+          <with-param pos="1"/>
+        </call-macro>
+       </action>
+     </rule>
+     <rule>
+       <pattern>
+         <pattern-item n="fut"/>
+         <!-- <pattern-item n="tv"/> -->
+       </pattern>
+       <action>
+         <!-- <let><clip pos="1" side="tl" part="tense"/><lit-tag v="fut"/> </let> -->
+         <let><clip pos="1" side="tl" part="gender"/><lit-tag v="m"/> </let>
+        <out>
+          <chunk name="sent2" case="caseFirstWord">
+            <tags>
+               <tag><lit-tag v="SENT"/></tag>
+             </tags>
+          <lu>
+            <!-- <clip pos="1" side="tl" part="whole"/> -->
+            <clip pos="1" side="tl" part="lem"/>
+            <clip pos="1" side="tl" part="lem_pos"/>
+            <lit-tag v="tv"/>
+            <clip pos="1" side="tl" part="tense"/>
+            <clip pos="1" side="tl" part="person"/>
+            <clip pos="1" side="tl" part="gender"/>
+            <clip pos="1" side="tl" part="number_attr"/>
+        </lu>
+      </chunk>
+        </out>
+      </action>
+    </rule>
+    <rule>
+      <!-- <s n="prn"/><s n="dem"/><s n="p3"/><s n="mf"/><s n="sg"/><s n="dst"/><s n="nom"/> -->
+       <pattern>
+         <pattern-item n="pronoun"/>
+         <!-- <pattern-item n="p3_cat"/> -->
+         <!-- <pattern-item n="dem_cat"/> -->
+         <!-- <pattern-item n="nomi"/> -->
+         <!-- <pattern-item n="dstt"/> -->
+         <!-- <pattern-item n="tv"/> -->
+       </pattern>
+       <action>
+         <!-- <let><clip pos="1" side="tl" part="tense"/><lit-tag v="fut"/> </let> -->
+      <choose>
+        <when>
+          <test>
+            <in caseless="yes">
+              <clip pos="1" side="sl" part="lem"/>
+              <list n="prn_dem"/>
+            </in>
+          </test>
+          <let>
+            <var n="ex1"/>
+            <lit-tag v="dem"/>
+          </let>
+        </when>
+      </choose>
+         <let><clip pos="1" side="tl" part="gender"/><lit-tag v="mf"/> </let>
+        <out>
+          <chunk name="sent" case="caseFirstWord">
+            <tags>
+               <!-- <tag><lit-tag v="SENT"/></tag> -->
+               <tag><var n="ex1"/></tag>
+            </tags>
+            <lu>
+            <!-- <clip pos="1" side="tl" part="whole"/> -->
+            <clip pos="1" side="tl" part="lem"/>
+            <clip pos="1" side="tl" part="lem_pos"/>
+            <!-- <clip pos="1" side="tl" part="ex1"/>  -->
+            <!-- <clip  -->
+            <lit-tag v="dem"/> 
+            <!-- <clip pos="1" side="tl" part="extra_1"/> -->
+            <!-- <lit-tag v="dem"/> -->
+
+            <clip pos="1" side="tl" part="person"/>
+            <!-- <clip pos="1" side="tl" part="tense"/> -->
+            <clip pos="1" side="tl" part="gender"/>
+            <clip pos="1" side="tl" part="number_attr"/>
+            <lit-tag v="dst"/> 
+            <lit-tag v="nom"/>
+            <!-- <clip pos="1" side="tl" part=""/> -->
+
+        </lu>
+      </chunk>
+        </out>
+      </action>
+    </rule>
+    
+  </section-rules>
+</transfer>

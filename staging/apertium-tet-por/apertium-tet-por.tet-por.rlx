@@ -1,0 +1,78 @@
+DELIMITERS = "<.>" "<!>" "<?>" "<...>" "<¶>" ;
+SOFT-DELIMITERS = "<,>" ;
+
+SETS
+
+LIST N = n ; 
+LIST V = vblex ; 
+LIST A = adj ; 
+LIST Det = det ; 
+LIST Num = num ; 
+LIST Conj = cnjadv cnjsub ; 
+LIST Adv = adv ; 
+LIST Num = num ; 
+LIST Pron = prn ; 
+LIST Exist = vbhaver ; 
+LIST Vbmod = vbmod ;
+LIST Postverb = postverb ;
+LIST Toponim = (np top) ;
+LIST Preverb = preverb ;
+LIST Pr = pr ;
+LIST Cm = cm ;
+LIST Cla = cla ;
+LIST Location = "sub-distritu" "país" "distritu" "área";
+LIST Loc = "ókos" "leten" "sorin" "ninin" "le'et" ;
+LIST Pl1 = (p1n pl) (p1x pl);
+LIST Sg2 = (p2 sg);
+
+SECTION
+
+"<hotu>" SELECT Det IF (-1C Pron);
+
+"<iha>" SELECT Exist IF (-1C Vbmod);
+
+"<iha>" SELECT Exist IF (-1 Adv) (-2C Vbmod);
+
+"<iha>" SELECT Pr IF (1 ("<loron>")) (2 Num);
+
+"<iha>" SELECT Pr IF (1 Toponim OR Location);
+
+"<ho>" SELECT Pr IF (-1 ("<hamutuk>"));
+
+"<sira>" SELECT Pron IF (-1 Pr) (1 Preverb);
+
+SELECT Pr IF (0 Pr OR Exist) (1 Num) (NOT 2 N);
+
+SELECT Pl1 IF (0 Pl1 OR Sg2);
+
+SELECT Pr IF (0 Pr OR Exist) (1 N) (2 Det);
+
+SELECT Pr IF (0 Pr OR Exist) (1 N) (2 Loc);
+
+SELECT Pron IF (-1 Conj) (0 ("ida né'e"));
+
+SELECT Pron IF (-1 Cm) (0 ("né'e")) (1 V);
+
+SELECT Pron IF (-1 Pr OR V) (0 ("né'e")) (1 Pr);
+
+SELECT Det IF (-1C N) (0 ("ida né'e")) (1 Cm);
+
+SELECT Det IF (-1C N) (0 ("ida-idak")) ; 
+
+SELECT Det IF (-1C N);
+
+SELECT Det IF (-2 N) (-1 A);
+
+REMOVE V IF (-1 Pr) (0 N OR V);
+
+SELECT A IF (-1C N);
+
+SELECT V IF (-1C Preverb) (0C V OR N);
+
+SELECT V IF (-1C Pron) (0C V OR N);
+
+REMOVE Cla IF (0 Cla OR N);
+
+SELECT Conj IF (-1 Num) (0 Conj OR Adv) (1 Num);
+
+SELECT Adv IF (-1 Num) (0 Conj OR Adv);

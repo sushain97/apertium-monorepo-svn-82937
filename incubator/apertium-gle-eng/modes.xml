@@ -1,0 +1,434 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<modes>
+  <!-- gle → eng --> 
+
+  <mode name="gle-eng" install="yes">
+    <pipeline>
+      <program name="hfst-proc -e -w">
+        <file name="gle-eng.automorf.hfst"/>
+      </program>
+      <program name="cg-proc -1 -n -w">
+        <file name="gle-eng.rlx.bin"/>
+      </program>
+      <program name="apertium-pretransfer"/>
+      <program name="lt-proc -b">
+        <file name="gle-eng.autobil.bin"/>
+      </program>
+      <program name="lrx-proc -m">
+        <file name="gle-eng.autolex.bin"/>
+      </program>
+      <program name="apertium-transfer -b">
+        <file name="apertium-gle-eng.gle-eng.t1x"/>
+        <file name="gle-eng.t1x.bin"/>
+      </program>
+      <program name="apertium-interchunk">
+        <file name="apertium-gle-eng.gle-eng.t2x"/>
+        <file name="gle-eng.t2x.bin"/>
+      </program>
+      <program name="apertium-postchunk">
+        <file name="apertium-gle-eng.gle-eng.t3x"/>
+        <file name="gle-eng.t3x.bin"/>
+      </program>
+      <program name="lt-proc $1">
+        <file name="gle-eng.autogen.bin"/>
+      </program>
+    </pipeline>
+  </mode>
+
+  <mode name="gle-eng-debug" install="no">
+    <pipeline>
+      <program name="hfst-proc -e -w">
+        <file name="gle-eng.automorf.hfst"/>
+      </program>
+      <program name="cg-proc -1 -n -w">
+        <file name="gle-eng.rlx.bin"/>
+      </program>
+      <program name="apertium-pretransfer"/>
+      <program name="lt-proc -b">
+        <file name="gle-eng.autobil.bin"/>
+      </program>
+      <program name="lrx-proc -m -t">
+        <file name="gle-eng.autolex.bin"/>
+      </program>
+      <program name="apertium-transfer -b">
+        <file name="apertium-gle-eng.gle-eng.t1x"/>
+        <file name="gle-eng.t1x.bin"/>
+      </program>
+      <program name="apertium-interchunk">
+        <file name="apertium-gle-eng.gle-eng.t2x"/>
+        <file name="gle-eng.t2x.bin"/>
+      </program>
+      <program name="apertium-postchunk">
+        <file name="apertium-gle-eng.gle-eng.t3x"/>
+        <file name="gle-eng.t3x.bin"/>
+      </program>
+      <program name="lt-proc -d">
+        <file name="gle-eng.autogen.bin"/>
+      </program>
+    </pipeline>
+  </mode>
+ 
+  
+  <mode name="gle-eng-morph" install="no">
+    <pipeline>
+      <program name="hfst-proc -e -w">
+        <file name="gle-eng.automorf.hfst"/>
+      </program>
+    </pipeline>
+  </mode>
+
+  <mode name="gle-eng-disam" install="no">
+    <pipeline>
+      <program name="hfst-proc -e -w">
+        <file name="gle-eng.automorf.hfst"/>
+      </program>
+      <program name="cg-conv -a"/>
+      <program name="vislcg3 --trace --grammar">
+        <file name="gle-eng.rlx.bin"/>
+      </program>
+    </pipeline>
+  </mode>
+
+
+  <mode name="gle-eng-tagger" install="no">
+    <pipeline>
+      <program name="hfst-proc -e -w">
+        <file name="gle-eng.automorf.hfst"/>
+      </program>
+      <program name="cg-proc -1 -n -w">
+        <file name="gle-eng.rlx.bin"/>
+      </program>
+      <program name="apertium-pretransfer"/>
+    </pipeline>
+  </mode>
+
+  <mode name="gle-eng-biltrans" install="no">
+    <pipeline>
+      <program name="hfst-proc -e -w">
+        <file name="gle-eng.automorf.hfst"/>
+      </program>
+      <program name="cg-proc -1 -n -w">
+        <file name="gle-eng.rlx.bin"/>
+      </program>
+      <program name="apertium-pretransfer"/>
+      <program name="lt-proc -b">
+        <file name="gle-eng.autobil.bin"/>
+      </program>
+    </pipeline>
+  </mode>
+
+  <mode name="gle-eng-lextor" install="no">
+    <pipeline>
+      <program name="hfst-proc -e -w">
+        <file name="gle-eng.automorf.hfst"/>
+      </program>
+      <program name="cg-proc -1 -n -w">
+        <file name="gle-eng.rlx.bin"/>
+      </program>
+      <program name="apertium-pretransfer"/>
+      <program name="lt-proc -b">
+        <file name="gle-eng.autobil.bin"/>
+      </program>
+      <program name="lrx-proc -m -t">
+        <file name="gle-eng.autolex.bin"/>
+      </program>
+    </pipeline>
+  </mode>
+
+
+  <mode name="gle-eng-transfer" install="no">
+    <pipeline>
+      <program name="hfst-proc -e -w">
+        <file name="gle-eng.automorf.hfst"/>
+      </program>
+      <program name="cg-proc -1 -n -w">
+        <file name="gle-eng.rlx.bin"/>
+      </program>
+      <program name="apertium-pretransfer"/>
+      <program name="lt-proc -b">
+        <file name="gle-eng.autobil.bin"/>
+      </program>
+      <program name="lrx-proc -m">
+        <file name="gle-eng.autolex.bin"/>
+      </program>
+      <program name="apertium-transfer -t -b">
+        <file name="apertium-gle-eng.gle-eng.t1x"/>
+        <file name="gle-eng.t1x.bin"/>
+      </program>
+    </pipeline>
+  </mode>
+
+  <mode name="gle-eng-interchunk" install="no">
+    <pipeline>
+      <program name="hfst-proc -e -w">
+        <file name="gle-eng.automorf.hfst"/>
+      </program>
+      <program name="cg-proc -1 -n -w">
+        <file name="gle-eng.rlx.bin"/>
+      </program>
+      <program name="apertium-pretransfer"/>
+      <program name="lt-proc -b">
+        <file name="gle-eng.autobil.bin"/>
+      </program>
+      <program name="lrx-proc -m">
+        <file name="gle-eng.autolex.bin"/>
+      </program>
+      <program name="apertium-transfer -b">
+        <file name="apertium-gle-eng.gle-eng.t1x"/>
+        <file name="gle-eng.t1x.bin"/>
+      </program>
+      <program name="apertium-interchunk">
+        <file name="apertium-gle-eng.gle-eng.t2x"/>
+        <file name="gle-eng.t2x.bin"/>
+      </program>
+    </pipeline>
+  </mode>
+
+  <mode name="gle-eng-postchunk" install="no">
+    <pipeline>
+      <program name="hfst-proc -e -w">
+        <file name="gle-eng.automorf.hfst"/>
+      </program>
+      <program name="cg-proc -1 -n -w">
+        <file name="gle-eng.rlx.bin"/>
+      </program>
+      <program name="apertium-pretransfer"/>
+      <program name="lt-proc -b">
+        <file name="gle-eng.autobil.bin"/>
+      </program>
+      <program name="lrx-proc -m">
+        <file name="gle-eng.autolex.bin"/>
+      </program>
+      <program name="apertium-transfer -b">
+        <file name="apertium-gle-eng.gle-eng.t1x"/>
+        <file name="gle-eng.t1x.bin"/>
+      </program>
+      <program name="apertium-interchunk">
+        <file name="apertium-gle-eng.gle-eng.t2x"/>
+        <file name="gle-eng.t2x.bin"/>
+      </program>
+      <program name="apertium-postchunk">
+        <file name="apertium-gle-eng.gle-eng.t3x"/>
+        <file name="gle-eng.t3x.bin"/>
+      </program>
+    </pipeline>
+  </mode>
+
+  <!-- eng → gle -->
+
+  <mode name="eng-gle" install="yes">
+    <pipeline>
+      <program name="lt-proc -w">
+        <file name="eng-gle.automorf.bin"/>
+      </program>
+      <program name="cg-proc -1 -n -w">
+        <file name="eng-gle.rlx.bin"/>
+      </program>
+      <program name="apertium-pretransfer"/>
+      <program name="lt-proc -b">
+        <file name="eng-gle.autobil.bin"/>
+      </program>
+      <program name="lrx-proc -m">
+        <file name="eng-gle.autolex.bin"/>
+      </program>
+      <program name="apertium-transfer -b">
+        <file name="apertium-gle-eng.eng-gle.t1x"/>
+        <file name="eng-gle.t1x.bin"/>
+      </program>
+      <program name="apertium-interchunk">
+        <file name="apertium-gle-eng.eng-gle.t2x"/>
+        <file name="eng-gle.t2x.bin"/>
+      </program>
+      <program name="apertium-postchunk">
+        <file name="apertium-gle-eng.eng-gle.t3x"/>
+        <file name="eng-gle.t3x.bin"/>
+      </program>
+      <program name="hfst-proc $1">
+        <file name="eng-gle.autogen.hfst"/>
+      </program>
+    </pipeline>
+  </mode>
+
+  <mode name="eng-gle-debug" install="no">
+    <pipeline>
+      <program name="lt-proc -w">
+        <file name="eng-gle.automorf.bin"/>
+      </program>
+      <program name="cg-proc -1 -n -w">
+        <file name="eng-gle.rlx.bin"/>
+      </program>
+      <program name="apertium-pretransfer"/>
+      <program name="lt-proc -b">
+        <file name="eng-gle.autobil.bin"/>
+      </program>
+      <program name="lrx-proc -m -t">
+        <file name="eng-gle.autolex.bin"/>
+      </program>
+      <program name="apertium-transfer -b">
+        <file name="apertium-gle-eng.eng-gle.t1x"/>
+        <file name="eng-gle.t1x.bin"/>
+      </program>
+      <program name="apertium-interchunk">
+        <file name="apertium-gle-eng.eng-gle.t2x"/>
+        <file name="eng-gle.t2x.bin"/>
+      </program>
+      <program name="apertium-postchunk">
+        <file name="apertium-gle-eng.eng-gle.t3x"/>
+        <file name="eng-gle.t3x.bin"/>
+      </program>
+      <program name="hfst-proc -d">
+        <file name="eng-gle.autogen.hfst"/>
+      </program>
+    </pipeline>
+  </mode>
+  
+  <mode name="eng-gle-morph" install="no">
+    <pipeline>
+      <program name="lt-proc -w">
+        <file name="eng-gle.automorf.bin"/>
+      </program>
+    </pipeline>
+  </mode>
+
+  <mode name="eng-gle-disam" install="no">
+    <pipeline>
+      <program name="lt-proc -w">
+        <file name="eng-gle.automorf.bin"/>
+      </program>
+      <program name="cg-conv -a"/>
+      <program name="vislcg3 --trace --grammar">
+        <file name="eng-gle.rlx.bin"/>
+      </program>
+    </pipeline>
+  </mode>
+
+
+  <mode name="eng-gle-tagger" install="no">
+    <pipeline>
+      <program name="lt-proc -w">
+        <file name="eng-gle.automorf.bin"/>
+      </program>
+      <program name="cg-proc -1 -n -w">
+        <file name="eng-gle.rlx.bin"/>
+      </program>
+      <program name="apertium-pretransfer"/>
+    </pipeline>
+  </mode>
+
+  <mode name="eng-gle-biltrans" install="no">
+    <pipeline>
+      <program name="lt-proc -w">
+        <file name="eng-gle.automorf.bin"/>
+      </program>
+      <program name="cg-proc -1 -n -w">
+        <file name="eng-gle.rlx.bin"/>
+      </program>
+      <program name="apertium-pretransfer"/>
+      <program name="lt-proc -b">
+        <file name="eng-gle.autobil.bin"/>
+      </program>
+    </pipeline>
+  </mode>
+
+  <mode name="eng-gle-lextor" install="no">
+    <pipeline>
+      <program name="lt-proc -w">
+        <file name="eng-gle.automorf.bin"/>
+      </program>
+      <program name="cg-proc -1 -n -w">
+        <file name="eng-gle.rlx.bin"/>
+      </program>
+      <program name="apertium-pretransfer"/>
+      <program name="lt-proc -b">
+        <file name="eng-gle.autobil.bin"/>
+      </program>
+      <program name="lrx-proc -m">
+        <file name="eng-gle.autolex.bin"/>
+      </program>
+    </pipeline>
+  </mode>
+
+  <mode name="eng-gle-transfer" install="no">
+    <pipeline>
+      <program name="lt-proc -w">
+        <file name="eng-gle.automorf.bin"/>
+      </program>
+      <program name="cg-proc -1 -n -w">
+        <file name="eng-gle.rlx.bin"/>
+      </program>
+      <program name="apertium-pretransfer"/>
+      <program name="lt-proc -b">
+        <file name="eng-gle.autobil.bin"/>
+      </program>
+      <program name="lrx-proc -m">
+        <file name="eng-gle.autolex.bin"/>
+      </program>
+      <program name="apertium-transfer -b">
+        <file name="apertium-gle-eng.eng-gle.t1x"/>
+        <file name="eng-gle.t1x.bin"/>
+      </program>
+    </pipeline>
+  </mode>
+
+  <mode name="eng-gle-interchunk" install="no">
+    <pipeline>
+      <program name="lt-proc -w">
+        <file name="eng-gle.automorf.bin"/>
+      </program>
+      <program name="cg-proc -1 -n -w">
+        <file name="eng-gle.rlx.bin"/>
+      </program>
+      <program name="apertium-pretransfer"/>
+      <program name="lt-proc -b">
+        <file name="eng-gle.autobil.bin"/>
+      </program>
+      <program name="lrx-proc -m">
+        <file name="eng-gle.autolex.bin"/>
+      </program>
+      <program name="apertium-transfer -b">
+        <file name="apertium-gle-eng.eng-gle.t1x"/>
+        <file name="eng-gle.t1x.bin"/>
+      </program>
+      <program name="apertium-interchunk">
+        <file name="apertium-gle-eng.eng-gle.t2x"/>
+        <file name="eng-gle.t2x.bin"/>
+      </program>
+    </pipeline>
+  </mode>
+
+  <mode name="eng-gle-postchunk" install="no">
+    <pipeline>
+      <program name="lt-proc -w">
+        <file name="eng-gle.automorf.bin"/>
+      </program>
+      <program name="cg-proc -1 -n -w">
+        <file name="eng-gle.rlx.bin"/>
+      </program>
+      <program name="apertium-pretransfer"/>
+      <program name="lt-proc -b">
+        <file name="eng-gle.autobil.bin"/>
+      </program>
+      <program name="lrx-proc -m">
+        <file name="eng-gle.autolex.bin"/>
+      </program>
+      <program name="apertium-transfer -b">
+        <file name="apertium-gle-eng.eng-gle.t1x"/>
+        <file name="eng-gle.t1x.bin"/>
+      </program>
+      <program name="apertium-interchunk">
+        <file name="apertium-gle-eng.eng-gle.t2x"/>
+        <file name="eng-gle.t2x.bin"/>
+      </program>
+      <program name="apertium-postchunk">
+        <file name="apertium-gle-eng.eng-gle.t3x"/>
+        <file name="eng-gle.t3x.bin"/>
+      </program>
+    </pipeline>
+  </mode>
+
+
+
+
+</modes>
+
+

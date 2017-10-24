@@ -1,0 +1,411 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<modes>
+  <!-- fin → udm --> 
+
+  <mode name="fin-udm" install="yes">
+    <pipeline>
+      <program name="hfst-proc -w">
+        <file name="fin-udm.automorf.hfst"/>
+      </program>
+      <program name="cg-proc -w">
+        <file name="fin-udm.rlx.bin"/>
+      </program>
+      <program name="apertium-tagger -g $2">
+        <file name="fin-udm.prob"/>
+      </program>
+      <program name="apertium-pretransfer"/>
+      <program name="lt-proc -b">
+        <file name="fin-udm.autobil.bin"/>
+      </program>
+      <program name="apertium-transfer -b">
+        <file name="apertium-fin-udm.fin-udm.t1x"/>
+        <file name="fin-udm.t1x.bin"/>
+      </program>
+      <program name="apertium-interchunk">
+        <file name="apertium-fin-udm.fin-udm.t2x"/>
+        <file name="fin-udm.t2x.bin"/>
+      </program>
+      <program name="apertium-postchunk">
+        <file name="apertium-fin-udm.fin-udm.t3x"/>
+        <file name="fin-udm.t3x.bin"/>
+      </program>
+      <program name="hfst-proc $1">
+        <file name="fin-udm.autogen.hfst"/>
+      </program>
+    </pipeline>
+  </mode>
+
+  <mode name="fin-udm-debug" install="no">
+    <pipeline>
+      <program name="hfst-proc -w">
+        <file name="fin-udm.automorf.hfst"/>
+      </program>
+      <program name="cg-proc -w">
+        <file name="fin-udm.rlx.bin"/>
+      </program>
+      <program name="apertium-tagger -g $2">
+        <file name="fin-udm.prob"/>
+      </program>
+      <program name="apertium-pretransfer"/>
+      <program name="lt-proc -b">
+        <file name="fin-udm.autobil.bin"/>
+      </program>
+      <program name="apertium-transfer -b">
+        <file name="apertium-fin-udm.fin-udm.t1x"/>
+        <file name="fin-udm.t1x.bin"/>
+      </program>
+      <program name="apertium-interchunk">
+        <file name="apertium-fin-udm.fin-udm.t2x"/>
+        <file name="fin-udm.t2x.bin"/>
+      </program>
+      <program name="apertium-postchunk">
+        <file name="apertium-fin-udm.fin-udm.t3x"/>
+        <file name="fin-udm.t3x.bin"/>
+      </program>
+      <program name="hfst-proc -d">
+        <file name="fin-udm.autogen.hfst"/>
+      </program>
+    </pipeline>
+  </mode>
+ 
+  
+  <mode name="fin-udm-morph" install="no">
+    <pipeline>
+      <program name="hfst-proc -w">
+        <file name="fin-udm.automorf.hfst"/>
+      </program>
+    </pipeline>
+  </mode>
+
+  <mode name="fin-udm-tagger" install="no">
+    <pipeline>
+      <program name="hfst-proc -w">
+        <file name="fin-udm.automorf.hfst"/>
+      </program>
+      <program name="cg-proc -w">
+        <file name="fin-udm.rlx.bin"/>
+      </program>
+      <program name="apertium-tagger -g $2">
+        <file name="fin-udm.prob"/>
+      </program>
+      <program name="apertium-pretransfer"/>
+    </pipeline>
+  </mode>
+
+  <mode name="fin-udm-biltrans" install="no">
+    <pipeline>
+      <program name="hfst-proc -w">
+        <file name="fin-udm.automorf.hfst"/>
+      </program>
+      <program name="cg-proc -w">
+        <file name="fin-udm.rlx.bin"/>
+      </program>
+      <program name="apertium-tagger -g $2">
+        <file name="fin-udm.prob"/>
+      </program>
+      <program name="apertium-pretransfer"/>
+      <program name="lt-proc -b">
+        <file name="fin-udm.autobil.bin"/>
+      </program>
+    </pipeline>
+  </mode>
+
+  <mode name="fin-udm-lex" install="no">
+    <pipeline>
+      <program name="hfst-proc -w">
+        <file name="fin-udm.automorf.hfst"/>
+      </program>
+      <program name="cg-proc -w">
+        <file name="fin-udm.rlx.bin"/>
+      </program>
+      <program name="apertium-tagger -g $2">
+        <file name="fin-udm.prob"/>
+      </program>
+      <program name="apertium-pretransfer"/>
+      <program name="lt-proc -b">
+        <file name="fin-udm.autobil.bin"/>
+      </program>
+      <program name="apertium-lrx-proc -t">
+        <file name="fin-udm.lrx.bin"/>
+      </program>
+    </pipeline>
+  </mode>
+
+
+  <mode name="fin-udm-transfer" install="no">
+    <pipeline>
+      <program name="hfst-proc -w">
+        <file name="fin-udm.automorf.hfst"/>
+      </program>
+      <program name="cg-proc -w">
+        <file name="fin-udm.rlx.bin"/>
+      </program>
+      <program name="apertium-tagger -g $2">
+        <file name="fin-udm.prob"/>
+      </program>
+      <program name="apertium-pretransfer"/>
+      <program name="lt-proc -b">
+        <file name="fin-udm.autobil.bin"/>
+      </program>
+      <program name="apertium-lrx-proc">
+        <file name="fin-udm.lrx.bin"/>
+      </program>
+      <program name="apertium-transfer -b">
+        <file name="apertium-fin-udm.fin-udm.t1x"/>
+        <file name="fin-udm.t1x.bin"/>
+      </program>
+    </pipeline>
+  </mode>
+
+  <mode name="fin-udm-interchunk" install="no">
+    <pipeline>
+      <program name="hfst-proc -w">
+        <file name="fin-udm.automorf.hfst"/>
+      </program>
+      <program name="cg-proc -w">
+        <file name="fin-udm.rlx.bin"/>
+      </program>
+      <program name="apertium-tagger -g $2">
+        <file name="fin-udm.prob"/>
+      </program>
+      <program name="apertium-pretransfer"/>
+      <program name="lt-proc -b">
+        <file name="fin-udm.autobil.bin"/>
+      </program>
+      <program name="apertium-lrx-proc">
+        <file name="fin-udm.lrx.bin"/>
+      </program>
+      <program name="apertium-transfer -b">
+        <file name="apertium-fin-udm.fin-udm.t1x"/>
+        <file name="fin-udm.t1x.bin"/>
+      </program>
+      <program name="apertium-interchunk">
+        <file name="apertium-fin-udm.fin-udm.t2x"/>
+        <file name="fin-udm.t2x.bin"/>
+      </program>
+    </pipeline>
+  </mode>
+
+  <mode name="fin-udm-postchunk" install="no">
+    <pipeline>
+      <program name="hfst-proc -w">
+        <file name="fin-udm.automorf.hfst"/>
+      </program>
+      <program name="cg-proc -w">
+        <file name="fin-udm.rlx.bin"/>
+      </program>
+      <program name="apertium-tagger -g $2">
+        <file name="fin-udm.prob"/>
+      </program>
+      <program name="apertium-pretransfer"/>
+      <program name="lt-proc -b">
+        <file name="fin-udm.autobil.bin"/>
+      </program>
+      <program name="apertium-lrx-proc">
+        <file name="fin-udm.lrx.bin"/>
+      </program>
+      <program name="apertium-transfer -b">
+        <file name="apertium-fin-udm.fin-udm.t1x"/>
+        <file name="fin-udm.t1x.bin"/>
+      </program>
+      <program name="apertium-interchunk">
+        <file name="apertium-fin-udm.fin-udm.t2x"/>
+        <file name="fin-udm.t2x.bin"/>
+      </program>
+      <program name="apertium-postchunk">
+        <file name="apertium-fin-udm.fin-udm.t3x"/>
+        <file name="fin-udm.t3x.bin"/>
+      </program>
+    </pipeline>
+  </mode>
+
+  <!-- udm → fin -->
+
+  <mode name="udm-fin" install="yes">
+    <pipeline>
+      <program name="hfst-proc">
+        <file name="udm-fin.automorf.hfst"/>
+      </program>
+      <program name="apertium-tagger -g $2">
+        <file name="udm-fin.prob"/>
+      </program>
+      <program name="apertium-pretransfer"/>
+      <program name="lt-proc -b">
+        <file name="udm-fin.autobil.bin"/>
+      </program>
+      <program name="apertium-transfer -b">
+        <file name="apertium-fin-udm.udm-fin.t1x"/>
+        <file name="udm-fin.t1x.bin"/>
+      </program>
+      <program name="apertium-interchunk">
+        <file name="apertium-fin-udm.udm-fin.t2x"/>
+        <file name="udm-fin.t2x.bin"/>
+      </program>
+      <program name="apertium-postchunk">
+        <file name="apertium-fin-udm.udm-fin.t3x"/>
+        <file name="udm-fin.t3x.bin"/>
+      </program>
+      <program name="hfst-proc $1">
+        <file name="udm-fin.autogen.hfst"/>
+      </program>
+    </pipeline>
+  </mode>
+
+  <mode name="udm-fin-debug" install="no">
+    <pipeline>
+      <program name="hfst-proc">
+        <file name="udm-fin.automorf.hfst"/>
+      </program>
+      <program name="apertium-tagger -g $2">
+        <file name="udm-fin.prob"/>
+      </program>
+      <program name="apertium-pretransfer"/>
+      <program name="lt-proc -b">
+        <file name="udm-fin.autobil.bin"/>
+      </program>
+      <program name="apertium-transfer -b">
+        <file name="apertium-fin-udm.udm-fin.t1x"/>
+        <file name="udm-fin.t1x.bin"/>
+      </program>
+      <program name="apertium-interchunk">
+        <file name="apertium-fin-udm.udm-fin.t2x"/>
+        <file name="udm-fin.t2x.bin"/>
+      </program>
+      <program name="apertium-postchunk">
+        <file name="apertium-fin-udm.udm-fin.t3x"/>
+        <file name="udm-fin.t3x.bin"/>
+      </program>
+      <program name="hfst-proc -d">
+        <file name="udm-fin.autogen.hfst"/>
+      </program>
+    </pipeline>
+  </mode>
+  
+  <mode name="udm-fin-morph" install="no">
+    <pipeline>
+      <program name="hfst-proc -w">
+        <file name="udm-fin.automorf.hfst"/>
+      </program>
+    </pipeline>
+  </mode>
+
+  <mode name="udm-fin-tagger" install="no">
+    <pipeline>
+      <program name="hfst-proc">
+        <file name="udm-fin.automorf.hfst"/>
+      </program>
+      <program name="apertium-tagger -g $2">
+        <file name="udm-fin.prob"/>
+      </program>
+      <program name="apertium-pretransfer"/>
+    </pipeline>
+  </mode>
+
+  <mode name="udm-fin-biltrans" install="no">
+    <pipeline>
+      <program name="hfst-proc">
+        <file name="udm-fin.automorf.hfst"/>
+      </program>
+      <program name="apertium-tagger -g $2">
+        <file name="udm-fin.prob"/>
+      </program>
+      <program name="apertium-pretransfer"/>
+      <program name="lt-proc -b">
+        <file name="udm-fin.autobil.bin"/>
+      </program>
+    </pipeline>
+  </mode>
+
+  <mode name="udm-fin-lex" install="no">
+    <pipeline>
+      <program name="hfst-proc">
+        <file name="udm-fin.automorf.hfst"/>
+      </program>
+      <program name="apertium-tagger -g $2">
+        <file name="udm-fin.prob"/>
+      </program>
+      <program name="apertium-pretransfer"/>
+      <program name="lt-proc -b">
+        <file name="udm-fin.autobil.bin"/>
+      </program>
+      <program name="apertium-lrx-proc">
+        <file name="udm-fin.lrx.bin"/>
+      </program>
+    </pipeline>
+  </mode>
+
+  <mode name="udm-fin-transfer" install="no">
+    <pipeline>
+      <program name="hfst-proc">
+        <file name="udm-fin.automorf.hfst"/>
+      </program>
+      <program name="apertium-tagger -g $2">
+        <file name="udm-fin.prob"/>
+      </program>
+      <program name="apertium-pretransfer"/>
+      <program name="lt-proc -b">
+        <file name="udm-fin.autobil.bin"/>
+      </program>
+      <program name="apertium-transfer -b">
+        <file name="apertium-fin-udm.udm-fin.t1x"/>
+        <file name="udm-fin.t1x.bin"/>
+      </program>
+    </pipeline>
+  </mode>
+
+  <mode name="udm-fin-interchunk" install="no">
+    <pipeline>
+      <program name="hfst-proc">
+        <file name="udm-fin.automorf.hfst"/>
+      </program>
+      <program name="apertium-tagger -g $2">
+        <file name="udm-fin.prob"/>
+      </program>
+      <program name="apertium-pretransfer"/>
+      <program name="lt-proc -b">
+        <file name="udm-fin.autobil.bin"/>
+      </program>
+      <program name="apertium-transfer -b">
+        <file name="apertium-fin-udm.udm-fin.t1x"/>
+        <file name="udm-fin.t1x.bin"/>
+      </program>
+      <program name="apertium-interchunk">
+        <file name="apertium-fin-udm.udm-fin.t2x"/>
+        <file name="udm-fin.t2x.bin"/>
+      </program>
+    </pipeline>
+  </mode>
+
+  <mode name="udm-fin-postchunk" install="no">
+    <pipeline>
+      <program name="hfst-proc">
+        <file name="udm-fin.automorf.hfst"/>
+      </program>
+      <program name="apertium-tagger -g $2">
+        <file name="udm-fin.prob"/>
+      </program>
+      <program name="apertium-pretransfer"/>
+      <program name="lt-proc -b">
+        <file name="udm-fin.autobil.bin"/>
+      </program>
+      <program name="apertium-transfer -b">
+        <file name="apertium-fin-udm.udm-fin.t1x"/>
+        <file name="udm-fin.t1x.bin"/>
+      </program>
+      <program name="apertium-interchunk">
+        <file name="apertium-fin-udm.udm-fin.t2x"/>
+        <file name="udm-fin.t2x.bin"/>
+      </program>
+      <program name="apertium-postchunk">
+        <file name="apertium-fin-udm.udm-fin.t3x"/>
+        <file name="udm-fin.t3x.bin"/>
+      </program>
+    </pipeline>
+  </mode>
+
+
+
+
+</modes>
+
+

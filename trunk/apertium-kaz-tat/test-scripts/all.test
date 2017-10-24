@@ -1,0 +1,35 @@
+#!/bin/bash
+
+cd ../../languages/apertium-kaz
+make &&
+cd ../apertium-tat
+make &&
+cd ../../trunk/apertium-kaz-tat
+make &&
+t/regression-tests -u &&
+./qa kaz-tat-corp &&
+./qa tat-kaz-corp &&
+
+echo '[*@#] errors kaz-tat before:'
+grep -o '[*@#]' corpus/kaz-tat-origina.txt | wc -l
+echo '[*@#] errors kaz-tat after:'
+grep -o '[*@#]' corpus/kaz-tat-nova.txt | wc -l
+
+echo '[*@#] errors tat-kaz before:'
+grep -c '[*@#]' corpus/tat-kaz-origina.txt
+echo '[*@#] errors tat-kaz after:'
+grep -c '[*@#]' corpus/tat-kaz-nova.txt
+
+echo 'WER kaz-tat before:'
+perl ../apertium-eval-translator/apertium-eval-translator.pl -test corpus/kaz-tat-origina.txt -ref corpus/corpus.tat.txt > /tmp/kaz-tat-wer-origina.txt
+grep '(WER)' /tmp/kaz-tat-wer-origina.txt
+echo 'WER kaz-tat after:'
+perl ../apertium-eval-translator/apertium-eval-translator.pl -test corpus/kaz-tat-nova.txt -ref corpus/corpus.tat.txt > /tmp/kaz-tat-wer-nova.txt
+grep '(WER)' /tmp/kaz-tat-wer-nova.txt
+
+echo 'WER tat-kaz before:'
+perl ../apertium-eval-translator/apertium-eval-translator.pl -test corpus/tat-kaz-origina.txt -ref corpus/corpus.kaz.txt > /tmp/tat-kaz-wer-origina.txt
+grep '(WER)' /tmp/tat-kaz-wer-origina.txt
+echo 'WER tat-kaz after:'
+perl ../apertium-eval-translator/apertium-eval-translator.pl -test corpus/tat-kaz-nova.txt -ref corpus/corpus.kaz.txt > /tmp/tat-kaz-wer-nova.txt
+grep '(WER)' /tmp/tat-kaz-wer-nova.txt

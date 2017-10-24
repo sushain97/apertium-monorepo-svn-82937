@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<transfer>
+  <section-def-cats>
+    <def-cat n="uz">
+      <cat-item lemma="uz" tags="pr"/>
+    </def-cat>
+     
+    <def-cat n="nom">
+      <cat-item tags="n"/>
+      <cat-item tags="n.*"/>
+    </def-cat>
+   
+  </section-def-cats>
+  
+  <section-def-attrs>
+    
+    <def-attr n="case">
+      <attr-item tags="nom"/>
+      <attr-item tags="gen"/>
+      <attr-item tags="dat"/>
+      <attr-item tags="aku"/>
+      <attr-item tags="ins"/>
+      <attr-item tags="lok"/>
+      <attr-item tags="vok"/>
+    </def-attr>
+
+    <def-attr n="nbr">
+      <attr-item tags="sg"/>
+      <attr-item tags="pl"/>
+      <attr-item tags="ND"/>
+    </def-attr>
+       
+    <def-attr n="a_nom">
+      <attr-item tags="n"/>
+    </def-attr>
+    
+  </section-def-attrs>
+ 
+  <section-def-vars>
+    <def-var n="number"/>
+  </section-def-vars>  
+
+ 
+  <section-def-lists>
+    <def-list n="time">
+      <list-item v="gads"/>
+      <list-item v="mēnesis"/>
+      <list-item v="nedēļa"/>
+      <list-item v="diena"/>
+      <list-item v="stunda"/>
+    </def-list>
+  </section-def-lists>  
+
+  <section-rules>
+    
+    <rule comment=""> 
+      <pattern>
+        <pattern-item n="nom"/>
+      </pattern>
+      <action>
+        <out>
+          <lu>
+            <clip pos="1" side="tl" part="whole"/>
+          </lu>
+        </out>
+      </action>
+    </rule>
+ 
+    <rule comment=""> 
+      <pattern>
+        <pattern-item n="uz"/> <!-- pos=1-->
+        <pattern-item n="nom"/> <!-- pos=2-->
+      </pattern>
+      <action>
+        <choose>
+          <when>
+            <test>
+              <in caseless="yes">
+                <clip pos="2" side="sl" part="lem"/>
+                <list n="time"/> 
+              </in> 
+            </test>
+            <let>
+              <clip pos="2" side="tl" part="case"/>
+              <lit-tag v="gen"/>
+            </let>
+          </when>
+        </choose>
+        <out>
+          <lu>
+            <clip pos="1" side="tl" part="whole"/>
+          </lu>
+          <b pos="1"/>
+          <lu>
+            <clip pos="2" side="tl" part="whole"/>
+          </lu>
+        </out>
+      </action>
+    </rule>
+       
+  </section-rules>
+</transfer>

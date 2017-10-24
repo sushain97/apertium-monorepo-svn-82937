@@ -1,0 +1,238 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<modes>
+  <!-- == Marathi → English == -->
+ 
+  <mode name="mar-eng" install="yes">
+    <pipeline>
+      <program name="lt-proc">
+        <file name="mar-eng.automorf.bin"/>
+      </program>
+      <program name="cg-proc -1 -n">
+        <file name="mar-eng.rlx.bin"/>
+      </program>
+      <program name="apertium-pretransfer"/>
+      <program name="lt-proc -b">
+        <file name="mar-eng.autobil.bin"/>
+      </program>
+      <program name="lrx-proc">
+        <file name="mar-eng.autolex.bin"/>
+      </program>
+      <program name="apertium-transfer -b">
+        <file name="apertium-mar-eng.mar-eng.t1x"/>
+        <file name="mar-eng.t1x.bin"/>
+      </program>
+      <program name="apertium-interchunk">
+        <file name="apertium-mar-eng.mar-eng.t2x"/>
+        <file name="mar-eng.t2x.bin"/>
+      </program>
+      <program name="apertium-postchunk">
+        <file name="apertium-mar-eng.mar-eng.t3x"/>
+        <file name="mar-eng.t3x.bin"/>
+      </program>
+      <program name="lt-proc $1">
+        <file name="mar-eng.autogen.bin"/>
+      </program>
+      <program name="lt-proc -p">
+        <file name="mar-eng.autopgen.bin"/>
+      </program>
+    </pipeline>
+  </mode>
+
+  <mode name="mar-eng-anmor">
+    <pipeline>
+      <program name="lt-proc">
+        <file name="mar-eng.automorf.bin"/>
+      </program>
+    </pipeline>
+  </mode>
+
+  <mode name="mar-eng-tagger">
+    <pipeline>
+      <program name="lt-proc">
+        <file name="mar-eng.automorf.bin"/>
+      </program>
+      <program name="cg-proc -1 -n">
+        <file name="mar-eng.rlx.bin"/>
+      </program>
+      <program name="apertium-pretransfer"/>
+    </pipeline>
+  </mode>
+
+  <mode name="mar-eng-biltrans">
+    <pipeline>
+      <program name="lt-proc">
+        <file name="mar-eng.automorf.bin"/>
+      </program>
+      <program name="cg-proc -1 -n">
+        <file name="mar-eng.rlx.bin"/>
+      </program>
+      <program name="apertium-pretransfer"/>
+      <program name="lt-proc -b">
+        <file name="mar-eng.autobil.bin"/>
+      </program>
+    </pipeline>
+  </mode>
+ 
+  <mode name="mar-eng-lextor">
+    <pipeline>
+      <program name="lt-proc">
+        <file name="mar-eng.automorf.bin"/>
+      </program>
+      <program name="cg-proc -1 -n">
+        <file name="mar-eng.rlx.bin"/>
+      </program>
+      <program name="apertium-pretransfer"/>
+      <program name="lt-proc -b">
+        <file name="mar-eng.autobil.bin"/>
+      </program>
+      <program name="lrx-proc -t">
+        <file name="mar-eng.autolex.bin"/>
+      </program>
+    </pipeline>
+  </mode>
+  
+ 
+
+  <mode name="mar-eng-chunker">
+    <pipeline>
+      <program name="lt-proc">
+        <file name="mar-eng.automorf.bin"/>
+      </program>
+      <program name="cg-proc -1 -n">
+        <file name="mar-eng.rlx.bin"/>
+      </program>
+      <program name="apertium-pretransfer"/>
+      <program name="lt-proc -b">
+        <file name="mar-eng.autobil.bin"/>
+      </program>
+      <program name="lrx-proc">
+        <file name="mar-eng.autolex.bin"/>
+      </program>
+      <program name="apertium-transfer -b">
+        <file name="apertium-mar-eng.mar-eng.t1x"/>
+        <file name="mar-eng.t1x.bin"/>
+      </program>
+    </pipeline>
+  </mode>
+  
+  <mode name="mar-eng-interchunk">
+    <pipeline>
+      <program name="lt-proc">
+        <file name="mar-eng.automorf.bin"/>
+      </program>
+      <program name="cg-proc -1 -n">
+        <file name="mar-eng.rlx.bin"/>
+      </program>
+      <program name="apertium-pretransfer"/>
+      <program name="lt-proc -b">
+        <file name="mar-eng.autobil.bin"/>
+      </program>
+      <program name="lrx-proc">
+        <file name="mar-eng.autolex.bin"/>
+      </program>
+      <program name="apertium-transfer -b">
+        <file name="apertium-mar-eng.mar-eng.t1x"/>
+        <file name="mar-eng.t1x.bin"/>
+      </program>
+      <program name="apertium-interchunk">
+        <file name="apertium-mar-eng.mar-eng.t2x"/>
+        <file name="mar-eng.t2x.bin"/>
+      </program>
+    </pipeline>
+  </mode>
+
+  <mode name="mar-eng-postchunk">
+    <pipeline>
+      <program name="lt-proc">
+        <file name="mar-eng.automorf.bin"/>
+      </program>
+      <program name="cg-proc -1 -n">
+        <file name="mar-eng.rlx.bin"/>
+      </program>
+      <program name="apertium-pretransfer"/>
+      <program name="lt-proc -b">
+        <file name="mar-eng.autobil.bin"/>
+      </program>
+      <program name="lrx-proc">
+        <file name="mar-eng.autolex.bin"/>
+      </program>
+      <program name="apertium-transfer -b">
+        <file name="apertium-mar-eng.mar-eng.t1x"/>
+        <file name="mar-eng.t1x.bin"/>
+      </program>
+      <program name="apertium-interchunk">
+        <file name="apertium-mar-eng.mar-eng.t2x"/>
+        <file name="mar-eng.t2x.bin"/>
+      </program>
+      <program name="apertium-postchunk">
+        <file name="apertium-mar-eng.mar-eng.t3x"/>
+        <file name="mar-eng.t3x.bin"/>
+      </program>
+    </pipeline>
+  </mode>
+
+  <mode name="mar-eng-generador">
+    <pipeline>
+      <program name="lt-proc">
+        <file name="mar-eng.automorf.bin"/>
+      </program>
+      <program name="cg-proc -1 -n">
+        <file name="mar-eng.rlx.bin"/>
+      </program>
+      <program name="apertium-pretransfer"/>
+      <program name="lt-proc -b">
+        <file name="mar-eng.autobil.bin"/>
+      </program>
+      <program name="lrx-proc">
+        <file name="mar-eng.autolex.bin"/>
+      </program>
+      <program name="apertium-transfer -b">
+        <file name="apertium-mar-eng.mar-eng.t1x"/>
+        <file name="mar-eng.t1x.bin"/>
+      </program>
+      <program name="apertium-interchunk">
+        <file name="apertium-mar-eng.mar-eng.t2x"/>
+        <file name="mar-eng.t2x.bin"/>
+      </program>
+      <program name="apertium-postchunk">
+        <file name="apertium-mar-eng.mar-eng.t3x"/>
+        <file name="mar-eng.t3x.bin"/>
+      </program>
+      <program name="lt-proc $1">
+        <file name="mar-eng.autogen.bin"/>
+      </program>
+    </pipeline>
+  </mode>
+ 
+  <mode name="mar-eng-debug" install="no">
+    <pipeline>
+      <program name="lt-proc">
+        <file name="mar-eng.automorf.bin"/>
+      </program>
+      <program name="cg-proc -1 -n">
+        <file name="mar-eng.rlx.bin"/>
+      </program>
+      <program name="apertium-pretransfer"/>
+      <program name="lt-proc -b">
+        <file name="mar-eng.autobil.bin"/>
+      </program>
+      <program name="apertium-transfer -b -b">
+        <file name="apertium-mar-eng.mar-eng.t1x"/>
+        <file name="mar-eng.t1x.bin"/>
+      </program>
+      <program name="apertium-interchunk">
+        <file name="apertium-mar-eng.mar-eng.t2x"/>
+        <file name="mar-eng.t2x.bin"/>
+      </program>
+      <program name="apertium-postchunk">
+        <file name="apertium-mar-eng.mar-eng.t3x"/>
+        <file name="mar-eng.t3x.bin"/>
+      </program>
+      <program name="lt-proc -d">
+        <file name="mar-eng.autogen.bin"/>
+      </program>
+    </pipeline>
+  </mode>
+
+
+</modes>

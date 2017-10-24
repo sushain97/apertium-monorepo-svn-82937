@@ -1,0 +1,126 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<dictionary>
+<alphabet/>
+<sdefs>
+    <sdef n="aa"/>
+    <sdef n="acr"/>
+    <sdef n="hour"/>
+    <sdef n="adj"/>
+    <sdef n="neg"/>
+    <sdef n="adv"/>
+    <sdef n="al"/>
+    <sdef n="an"/>
+    <sdef n="ant"/>
+    <sdef n="cog"/>
+    <sdef n="atn"/>
+    <sdef n="cm"/>
+    <sdef n="apos"/>
+    <sdef n="cni"/>
+    <sdef n="cnjadv"/>
+    <sdef n="cnjcoo"/>
+    <sdef n="cnjsub"/>
+    <sdef n="def"/>
+    <sdef n="dem"/>
+    <sdef n="det"/>
+    <sdef n="detnt"/>
+    <sdef n="enc"/>
+    <sdef n="ord"/>
+    <sdef n="f"/>
+    <sdef n="fti"/>
+    <sdef n="fts"/>
+    <sdef n="gen"/>
+    <sdef n="ger"/>
+    <sdef n="ifi"/>
+    <sdef n="ij"/>
+    <sdef n="imp"/>
+    <sdef n="ind"/>
+    <sdef n="inf"/>
+    <sdef n="itg"/>
+    <sdef n="loc"/>
+    <sdef n="lpar"/>
+    <sdef n="lquest"/>
+    <sdef n="m"/>
+    <sdef n="mf"/>
+    <sdef n="n"/>
+    <sdef n="nn"/>
+    <sdef n="nom"/>
+    <sdef n="np"/>
+    <sdef n="nt"/>
+    <sdef n="num"/>
+    <sdef n="p1"/>
+    <sdef n="p2"/>
+    <sdef n="p3"/>
+    <sdef n="percent"/>
+    <sdef n="pii"/>
+    <sdef n="pis"/>
+    <sdef n="pl"/>
+    <sdef n="pos"/>
+    <sdef n="pp"/>
+    <sdef n="ppres"/>
+    <sdef n="pr"/>
+    <sdef n="preadv"/>
+    <sdef n="predet"/>
+    <sdef n="pri"/>
+    <sdef n="prn"/>
+    <sdef n="pro"/>
+    <sdef n="prs"/>
+    <sdef n="ref"/>
+    <sdef n="rel"/>
+    <sdef n="rpar"/>
+    <sdef n="sent"/>
+    <sdef n="sg"/>
+    <sdef n="sp"/>
+    <sdef n="sup"/>
+    <sdef n="tn"/>
+    <sdef n="vaux"/>
+    <sdef n="vbhaver"/>
+    <sdef n="vblex"/>
+    <sdef n="vbmod"/>
+    <sdef n="vbser"/>
+    <sdef n="guio"/>
+    <sdef n="ND"/>
+    <sdef n="GD"/>
+  </sdefs>
+<section id="generated" type="standard">
+<!-- @@@ -->
+<e><i>XZX</i></e>
+</section>
+  <section  id="final" type="standard">
+      <e><re>,</re><p><l><s n="cm"/></l><r><s n="cm"/></r></p></e>
+      <e><re>[\+\-]?[0-9]+([.,][0-9]+)?</re><p><l><s n="num"/></l><r><s n="num"/></r></p></e>
+      <e><re>[\+\-]?[0-9]+([.,][0-9]+)?[ ]?\-[ ]?[0-9]+([.,][0-9]+)?</re><p><l><s n="num"/></l><r><s n="num"/></r></p></e>
+      <e><re>[\+\-]?[0-9]+([.,][0-9]+)?[ ]?%</re><p><l><s n="num"/><s n="percent"/></l><r><s n="num"/><s n="percent"/></r></p></e>
+      <e><re>[\+\-]?[0-9]+([.,][0-9]+)?[ ]?\-[ ]?[0-9]+([.,][0-9]+)?([ ]?%)?</re><p><l><s n="num"/><s n="percent"/></l><r><s n="num"/><s n="percent"/></r></p></e>
+      <e><p><l>1er<s n="num"/><s n="ord"/><s n="m"/></l><r>1.º<s n="num"/><s n="ord"/><s n="m"/></r></p></e>
+      <e><p><l>1er<s n="num"/><s n="ord"/><s n="f"/></l><r>1.ª<s n="num"/><s n="ord"/><s n="f"/></r></p></e>
+      <e r="LR"><p><l>2d<s n="num"/><s n="ord"/><s n="m"/></l><r>2.º<s n="num"/><s n="ord"/><s n="m"/></r></p></e>
+      <e r="LR"><p><l>2d<s n="num"/><s n="ord"/><s n="f"/></l><r>2.ª<s n="num"/><s n="ord"/><s n="f"/></r></p></e>
+      <e><re>([0-9]+[0-9]|[02-9])</re><p><l>e<s n="num"/><s n="ord"/><s n="m"/></l><r>.º<s n="num"/><s n="ord"/><s n="m"/></r></p></e>
+      <e><re>([0-9]+[0-9]|[02-9])</re><p><l>e<s n="num"/><s n="ord"/><s n="f"/></l><r>.ª<s n="num"/><s n="ord"/><s n="f"/></r></p></e>
+      <e><re>[0-9]+([.,][0-9]+)?</re><p><l><b/>km<s n="num"/></l><r><b/>km<s n="num"/></r></p></e>
+      <e><re>[0-9]+([.,][0-9]+)?</re><p><l><b/>mm<s n="num"/></l><r><b/>mm<s n="num"/></r></p></e>
+      <e><re>[0-9]+([.,][0-9]+)?</re><p><l><b/>cm<s n="num"/></l><r><b/>cm<s n="num"/></r></p></e>
+      <e><re>[0-9]+([.,][0-9]+)?%</re><p><l><s n="num"/><s n="percent"/></l><r><s n="num"/><s n="percent"/></r></p></e>
+      <e><re>[.\?;:!]</re><p><l><s n="sent"/></l><r><s n="sent"/></r></p></e>
+      <e><re>[\(\[]</re><p><l><s n="lpar"/></l><r><s n="lpar"/></r></p></e>
+      <e><re>[\)\]]</re><p><l><s n="rpar"/></l><r><s n="rpar"/></r></p></e>
+      <e><re>¿</re><p><l><s n="lquest"/></l><r><s n="lquest"/></r></p></e>
+      <e><re>[a-z.]+@[a-z.]+</re><p><l><s n="num"/></l><r><s n="num"/></r></p></e>
+      <e>
+<!--<re>(((www.)|(http://))[a-z0-9\-]+([.][a-z]+)+(/[a-z0-9_]+)*([.][a-z]+)*)</re>-->
+    <re>(http://|https://|ftp://)?[áéíóúàèìòùäëïöüñça-z0-9](([\-_])?[áéíóúàèìòùäëïöüñça-z0-9])*(.[áéíóúàèìòùäëïöüñça-z0-9](([\-_])?[áéíóúàèìòùäëïöüñça-z0-9])*)*(.[a-z][a-z]|.aero|.asia|.biz|.cat|.com|.coop|.edu|.gov|.info|.int|.jobs|.mil|.mobi|.museum|.name|.net|.org|.pro|.tel|.travel)(/([áéíóúàèìòùäëïöüñça-z0-9\-_\?=&amp;\*,]+(.[áéíóúàèìòùäëïöüñça-z0-9\-_\?=&amp;\*,]+)*/)*([áéíóúàèìòùäëïöüñça-z0-9\-_\?=&amp;\*,]+(.[áéíóúàèìòùäëïöüñça-z0-9\-_\?=&amp;\*,]+)*)?)?</re>
+      <p><l><s n="num"/></l><r><s n="num"/></r></p></e>
+      <e><re>[0-2]?[0-9]h[0-6][0-9]</re><i><s n="num"/><s n="hour"/></i></e>
+  </section>
+
+
+
+
+<section id="main" type="standard">
+    <e><p><l>cazzo<s n="n"/></l><r>cazzo<s n="n"/></r></p></e>
+
+
+</section>
+
+</dictionary>

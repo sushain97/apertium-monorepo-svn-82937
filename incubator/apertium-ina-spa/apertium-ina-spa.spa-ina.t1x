@@ -1,0 +1,263 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<transfer default="chunk">
+    <section-def-cats>
+        <def-cat n="nom">
+            <cat-item tags="n.*"/>
+        </def-cat>
+        <def-cat n="prn">
+            <cat-item tags="prn.*"/>
+        </def-cat>
+        <def-cat n="noun">
+            <cat-item tags="n.*"/>
+            <cat-item tags="prn.*"/>
+        </def-cat>
+        <def-cat n="vrb">
+            <cat-item tags="vblex.*"/>
+            <cat-item tags="vbmod.*"/>
+            <cat-item tags="vbser.*"/>
+        </def-cat>
+        <def-cat n="det">
+            <cat-item tags="det.*"/>
+        </def-cat>
+        <def-cat n="adj">
+            <cat-item tags="adj.*"/>
+        </def-cat>
+        <def-cat n="ger">
+            <cat-item tags="*.ger"/>
+        </def-cat>
+        <def-cat n="num">
+            <cat-item tags="num.*"/>
+        </def-cat>
+        <def-cat n="sent">
+            <cat-item tags="sent"/>
+        </def-cat>
+    </section-def-cats>
+
+    <section-def-attrs>
+
+        <def-attr n="nbr">
+            <attr-item tags="sg"/>
+            <attr-item tags="pl"/>
+            <attr-item tags="sp"/>
+        </def-attr>
+        <def-attr n="a_nom">
+            <attr-item tags="n"/>
+        </def-attr>
+        <def-attr n="temps">
+            <attr-item tags="pri"/>
+            <attr-item tags="pii"/>
+            <attr-item tags="imp"/>
+            <attr-item tags="inf"/>
+            <attr-item tags="past"/>
+            <attr-item tags="fut"/>
+            <attr-item tags="fti"/>
+            <attr-item tags="cni"/>
+            <attr-item tags="pprs"/>
+            <attr-item tags="pp"/>
+            <attr-item tags="ger"/>
+
+        </def-attr>
+        <def-attr n="lem">
+            <attr-item tags="lm"/>
+        </def-attr>
+        <def-attr n="pers">
+            <attr-item tags="p1"/>
+            <attr-item tags="p2"/>
+            <attr-item tags="p3"/>
+        </def-attr>
+        <def-attr n="a_verb">
+            <attr-item tags="vblex"/>
+        </def-attr>
+        <def-attr n="case">
+            <attr-item tags="nom"/>
+        </def-attr>
+        <def-attr n="word_type">
+            <attr-item tags="prn"/>
+            <attr-item tags="vblex"/>
+            <attr-item tags="n"/>
+            <attr-item tags="det"/>
+            <attr-item tags="adj"/>
+            <attr-item tags="num"/>
+        </def-attr>
+
+        <def-attr n="gender">
+            <attr-item tags="m"/>
+            <attr-item tags="f"/>
+            <attr-item tags="mf"/>
+        </def-attr>
+
+    </section-def-attrs>
+
+    <section-def-vars>
+        <def-var n="number"/>
+    </section-def-vars>
+
+
+    <section-rules>
+        <rule comment="REGLA: SENT">
+            <pattern>
+                <pattern-item n="sent"/>
+            </pattern>
+            <action>
+                <out>
+                    <chunk name="sent" case="caseFirstWord">
+                        <tags>
+                            <tag><lit-tag v="SENT"/></tag>
+                        </tags>
+                        <lu>
+                            <clip pos="1" side="tl" part="whole"/>
+                        </lu>
+                    </chunk>
+                </out>
+            </action>
+        </rule>
+        <rule comment="RULE: gerunds">
+            <pattern>
+                <pattern-item n="ger"/>
+            </pattern>
+
+            <action>
+                <out>
+                    <chunk name="vb">
+                        <tags>
+                            <tag><lit-tag v="VB"/></tag>
+                        </tags>            
+                        <lu>
+                             <clip pos="1" side="sl" part="lem"/>
+                            <clip pos="1" side="sl" part="a_verb"/>
+                            <lit-tag v="pprs"/>
+                        </lu>
+                    </chunk>
+                </out>
+            </action>
+        </rule>  
+        <rule comment="RULE: Remove gender information for nouns">
+            <pattern>
+                <pattern-item n="nom"/>
+            </pattern>
+            <action>
+                <choose>
+                    <when>
+                        <test>
+                            <equal>
+                                <clip pos="1" side="sl" part="nbr"/>
+                                <lit-tag v="sp"/>
+                            </equal>
+                        </test>
+                        <out>
+                            <chunk name="n">
+                                <tags>
+                                    <tag><lit-tag v="SN"/></tag>
+                                </tags>
+                                <lu>
+                                    <clip pos="1" side="tl" part="lem"/>
+                                    <clip pos="1" side="tl" part="a_nom"/>
+                                    <lit-tag v="sg"/>
+                                </lu>
+                            </chunk>
+                        </out>
+                    </when>
+                    <otherwise>
+
+                        <out>
+                            <chunk name="n">
+                                <tags>
+                                    <tag><lit-tag v="SN"/></tag>
+                                </tags>
+                                <lu>
+                                    <clip pos="1" side="tl" part="lem"/>
+                                    <clip pos="1" side="tl" part="a_nom"/>
+                                    <clip pos="1" side="tl" part="nbr"/>
+                                </lu>
+                            </chunk>
+                        </out>
+                    </otherwise>
+                </choose>
+            </action>
+        </rule>
+        <rule comment="RULE: Conjugate verbs">
+            <pattern>
+                <pattern-item n="vrb"/>
+            </pattern>
+            <action>
+                <choose>
+                    <when>
+                        <test>
+                            <equal>
+                                <clip pos="1" side="sl" part="temps"/>
+                                <lit-tag v="pii"/>
+                            </equal>
+                        </test>
+                        <let>
+                            <clip pos="1" side="tl" part="temps"/>
+                            <lit-tag v="pri"/>
+                        </let>
+                    </when>
+                </choose>
+                <out>
+                    <chunk name="vb">
+                        <tags>
+                            <tag><lit-tag v="SV"/></tag>
+                        </tags>
+                        <lu>
+                            <clip pos="1" side="tl" part="lem"/>
+                            <clip pos="1" side="tl" part="a_verb"/>
+                            <clip pos="1" side="tl" part="temps"/>
+                        </lu>
+                    </chunk>
+                </out>
+            </action>
+        </rule>
+
+        
+        <rule comment="RULE: Remove gender information for adjectives">
+            <pattern>
+                <pattern-item n="adj"/>
+            </pattern>
+            <action>
+                <out>
+                    <chunk name="n">
+                        <tags>
+                            <tag><lit-tag v="SN"/></tag>
+                        </tags>
+                        <lu>
+                            <clip pos="1" side="tl" part="lem"/>
+                            <clip pos="1" side="tl" part="word_type"/>
+
+
+                        </lu>
+                    </chunk>
+                </out>
+            </action>
+        </rule>        
+        <rule comment="RULE: strip gender information for numerals">
+            <pattern>
+                <pattern-item n="num"/>
+            </pattern>
+
+            <action>
+                <out>
+                    <chunk name="adj">
+                        <tags>
+                            <tag><lit-tag v="ADJ"/></tag>
+                        </tags>            
+                        <lu>
+                            <clip pos="1" side="tl" part="lem"/>
+                            <clip pos="1" side="tl" part="word_type"/>
+                        </lu>
+                    </chunk>
+                </out>
+            </action>
+        </rule>  
+
+    </section-rules>
+</transfer>
+<!--
+Resources:
+    http://wiki.apertium.org/wiki/Chunking:_A_full_example
+    http://wiki.apertium.org/wiki/Chunking
+    http://wiki.apertium.org/wiki/Apertium_New_Language_Pair_HOWTO#Transfer_rules
+    http://wiki.apertium.org/wiki/A_long_introduction_to_transfer_rules
+    http://wiki.apertium.org/wiki/Transfer#Adding_structural_transfer_.28grammar.29_rules
+-->
+

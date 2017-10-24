@@ -1,0 +1,531 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<modes>
+
+  <!-- por → ina -->
+
+  <mode name="por-ina" install="yes">
+    <pipeline>
+      <program name="lt-proc -w">
+        <file name="por-ina.automorf.bin"/>
+      </program>
+
+
+      <program name="cg-proc -w">
+        <file name="por-ina.rlx.bin"/>
+      </program>
+      <program name="apertium-tagger -g $2">
+        <file name="por-ina.prob"/>
+      </program>
+      <program name="apertium-pretransfer"/>
+      <program name="lt-proc -b">
+        <file name="por-ina.autobil.bin"/>
+      </program>
+      <program name="lrx-proc">
+        <file name="por-ina.autolex.bin"/>
+      </program>
+      <program name="apertium-transfer -b">
+        <file name="apertium-por-ina.por-ina.t1x"/>
+        <file name="por-ina.t1x.bin"/>
+      </program>
+      <program name="apertium-interchunk">
+        <file name="apertium-por-ina.por-ina.t2x"/>
+        <file name="por-ina.t2x.bin"/>
+      </program>
+      <program name="apertium-postchunk">
+        <file name="apertium-por-ina.por-ina.t3x"/>
+        <file name="por-ina.t3x.bin"/>
+      </program>
+      <program name="lt-proc $1">
+        <file name="por-ina.autogen.bin"/>
+      </program>
+
+      <program name="lt-proc -p">
+        <file name="por-ina.autopgen.bin"/>
+      </program>
+    </pipeline>
+  </mode>
+
+  <mode name="por-ina-dgen" install="no">
+    <pipeline>
+      <program name="lt-proc -w">
+        <file name="por-ina.automorf.bin"/>
+      </program>
+
+
+      <program name="cg-proc -w">
+        <file name="por-ina.rlx.bin"/>
+      </program>
+      <program name="apertium-tagger -g $2">
+        <file name="por-ina.prob"/>
+      </program>
+      <program name="apertium-pretransfer"/>
+      <program name="lt-proc -b">
+        <file name="por-ina.autobil.bin"/>
+      </program>
+      <program name="apertium-transfer -b">
+        <file name="apertium-por-ina.por-ina.t1x"/>
+        <file name="por-ina.t1x.bin"/>
+      </program>
+      <program name="apertium-interchunk">
+        <file name="apertium-por-ina.por-ina.t2x"/>
+        <file name="por-ina.t2x.bin"/>
+      </program>
+      <program name="apertium-postchunk">
+        <file name="apertium-por-ina.por-ina.t3x"/>
+        <file name="por-ina.t3x.bin"/>
+      </program>
+      <program name="lt-proc -d">
+        <file name="por-ina.autogen.bin"/>
+      </program>
+    </pipeline>
+  </mode>
+
+  <mode name="por-ina-morph" install="no">
+    <pipeline>
+      <program name="lt-proc -w">
+        <file name="por-ina.automorf.bin"/>
+      </program>
+    </pipeline>
+  </mode>
+
+  <mode name="por-ina-disam" install="no">
+    <pipeline>
+      <program name="lt-proc -w">
+        <file name="por-ina.automorf.bin"/>
+      </program>
+      <program name="cg-conv -a"/>
+      <program name="vislcg3 --trace --grammar">
+        <file name="por-ina.rlx.bin"/>
+      </program>
+    </pipeline>
+  </mode>
+
+  <mode name="por-ina-tagger" install="no">
+    <pipeline>
+      <program name="lt-proc -w">
+        <file name="por-ina.automorf.bin"/>
+      </program>
+
+
+      <program name="cg-proc -w">
+        <file name="por-ina.rlx.bin"/>
+      </program>
+      <program name="apertium-tagger -g $2">
+        <file name="por-ina.prob"/>
+      </program>
+    </pipeline>
+  </mode>
+
+  <mode name="por-ina-pretransfer" install="no">
+    <pipeline>
+      <program name="lt-proc -w">
+        <file name="por-ina.automorf.bin"/>
+      </program>
+
+
+      <program name="cg-proc -w">
+        <file name="por-ina.rlx.bin"/>
+      </program>
+      <program name="apertium-tagger -g $2">
+        <file name="por-ina.prob"/>
+      </program>
+      <program name="apertium-pretransfer"/>
+    </pipeline>
+  </mode>
+
+  <mode name="por-ina-biltrans" install="no">
+    <pipeline>
+      <program name="lt-proc -w">
+        <file name="por-ina.automorf.bin"/>
+      </program>
+
+
+      <program name="cg-proc -w">
+        <file name="por-ina.rlx.bin"/>
+      </program>
+      <program name="apertium-tagger -g $2">
+        <file name="por-ina.prob"/>
+      </program>
+      <program name="apertium-pretransfer"/>
+      <program name="lt-proc -b">
+        <file name="por-ina.autobil.bin"/>
+      </program>
+    </pipeline>
+  </mode>
+
+  <mode name="por-ina-lex" install="no">
+    <pipeline>
+      <program name="lt-proc -w">
+        <file name="por-ina.automorf.bin"/>
+      </program>
+
+
+      <program name="cg-proc -w">
+        <file name="por-ina.rlx.bin"/>
+      </program>
+      <program name="apertium-tagger -g $2">
+        <file name="por-ina.prob"/>
+      </program>
+      <program name="apertium-pretransfer"/>
+      <program name="lt-proc -b">
+        <file name="por-ina.autobil.bin"/>
+      </program>
+      <program name="lrx-proc -t">
+        <file name="por-ina.autolex.bin"/>
+      </program>
+    </pipeline>
+  </mode>
+
+  <mode name="por-ina-transfer" install="no">
+    <pipeline>
+      <program name="lt-proc -w">
+        <file name="por-ina.automorf.bin"/>
+      </program>
+
+
+      <program name="cg-proc -w">
+        <file name="por-ina.rlx.bin"/>
+      </program>
+      <program name="apertium-tagger -g $2">
+        <file name="por-ina.prob"/>
+      </program>
+      <program name="apertium-pretransfer"/>
+      <program name="lt-proc -b">
+        <file name="por-ina.autobil.bin"/>
+      </program>
+      <program name="lrx-proc">
+        <file name="por-ina.autolex.bin"/>
+      </program>
+      <program name="apertium-transfer -b -t">
+        <file name="apertium-por-ina.por-ina.t1x"/>
+        <file name="por-ina.t1x.bin"/>
+      </program>
+    </pipeline>
+  </mode>
+
+  <mode name="por-ina-interchunk" install="no">
+    <pipeline>
+      <program name="lt-proc -w">
+        <file name="por-ina.automorf.bin"/>
+      </program>
+
+
+      <program name="cg-proc -w">
+        <file name="por-ina.rlx.bin"/>
+      </program>
+      <program name="apertium-tagger -g $2">
+        <file name="por-ina.prob"/>
+      </program>
+      <program name="apertium-pretransfer"/>
+      <program name="lt-proc -b">
+        <file name="por-ina.autobil.bin"/>
+      </program>
+      <program name="lrx-proc">
+        <file name="por-ina.autolex.bin"/>
+      </program>
+      <program name="apertium-transfer -b">
+        <file name="apertium-por-ina.por-ina.t1x"/>
+        <file name="por-ina.t1x.bin"/>
+      </program>
+      <program name="apertium-interchunk -t">
+        <file name="apertium-por-ina.por-ina.t2x"/>
+        <file name="por-ina.t2x.bin"/>
+      </program>
+    </pipeline>
+  </mode>
+
+  <mode name="por-ina-postchunk" install="no">
+    <pipeline>
+      <program name="lt-proc -w">
+        <file name="por-ina.automorf.bin"/>
+      </program>
+
+
+      <program name="cg-proc -w">
+        <file name="por-ina.rlx.bin"/>
+      </program>
+      <program name="apertium-tagger -g $2">
+        <file name="por-ina.prob"/>
+      </program>
+      <program name="apertium-pretransfer"/>
+      <program name="lt-proc -b">
+        <file name="por-ina.autobil.bin"/>
+      </program>
+      <program name="lrx-proc">
+        <file name="por-ina.autolex.bin"/>
+      </program>
+      <program name="apertium-transfer -b">
+        <file name="apertium-por-ina.por-ina.t1x"/>
+        <file name="por-ina.t1x.bin"/>
+      </program>
+      <program name="apertium-interchunk">
+        <file name="apertium-por-ina.por-ina.t2x"/>
+        <file name="por-ina.t2x.bin"/>
+      </program>
+      <program name="apertium-postchunk">
+        <file name="apertium-por-ina.por-ina.t3x"/>
+        <file name="por-ina.t3x.bin"/>
+      </program>
+    </pipeline>
+  </mode>
+
+  <!-- ina → por -->
+
+  <mode name="ina-por" install="yes">
+    <pipeline>
+      <program name="lt-proc -w">
+        <file name="ina-por.automorf.bin"/>
+      </program>
+
+
+      <program name="cg-proc -w">
+        <file name="ina-por.rlx.bin"/>
+      </program>
+      <program name="apertium-tagger -g $2">
+        <file name="ina-por.prob"/>
+      </program>
+      <program name="apertium-pretransfer"/>
+      <program name="lt-proc -b">
+        <file name="ina-por.autobil.bin"/>
+      </program>
+      <program name="lrx-proc">
+        <file name="ina-por.autolex.bin"/>
+      </program>
+      <program name="apertium-transfer -b">
+        <file name="apertium-por-ina.ina-por.t1x"/>
+        <file name="ina-por.t1x.bin"/>
+      </program>
+      <program name="apertium-interchunk">
+        <file name="apertium-por-ina.ina-por.t2x"/>
+        <file name="ina-por.t2x.bin"/>
+      </program>
+      <program name="apertium-postchunk">
+        <file name="apertium-por-ina.ina-por.t3x"/>
+        <file name="ina-por.t3x.bin"/>
+      </program>
+      <program name="lt-proc $1">
+        <file name="ina-por.autogen.bin"/>
+      </program>
+
+      <program name="lt-proc -p">
+        <file name="ina-por.autopgen.bin"/>
+      </program>
+    </pipeline>
+  </mode>
+
+  <mode name="ina-por-dgen" install="no">
+    <pipeline>
+      <program name="lt-proc -w">
+        <file name="ina-por.automorf.bin"/>
+      </program>
+
+
+      <program name="cg-proc -w">
+        <file name="ina-por.rlx.bin"/>
+      </program>
+      <program name="apertium-tagger -g $2">
+        <file name="ina-por.prob"/>
+      </program>
+      <program name="apertium-pretransfer"/>
+      <program name="lt-proc -b">
+        <file name="ina-por.autobil.bin"/>
+      </program>
+      <program name="apertium-transfer -b">
+        <file name="apertium-por-ina.ina-por.t1x"/>
+        <file name="ina-por.t1x.bin"/>
+      </program>
+      <program name="apertium-interchunk">
+        <file name="apertium-por-ina.ina-por.t2x"/>
+        <file name="ina-por.t2x.bin"/>
+      </program>
+      <program name="apertium-postchunk">
+        <file name="apertium-por-ina.ina-por.t3x"/>
+        <file name="ina-por.t3x.bin"/>
+      </program>
+      <program name="lt-proc -d">
+        <file name="ina-por.autogen.bin"/>
+      </program>
+    </pipeline>
+  </mode>
+
+  <mode name="ina-por-morph" install="no">
+    <pipeline>
+      <program name="lt-proc -w">
+        <file name="ina-por.automorf.bin"/>
+      </program>
+    </pipeline>
+  </mode>
+
+  <mode name="ina-por-disam" install="no">
+    <pipeline>
+      <program name="lt-proc -w">
+        <file name="ina-por.automorf.bin"/>
+      </program>
+      <program name="cg-conv -a"/>
+      <program name="vislcg3 --trace --grammar">
+        <file name="ina-por.rlx.bin"/>
+      </program>
+    </pipeline>
+  </mode>
+
+  <mode name="ina-por-tagger" install="no">
+    <pipeline>
+      <program name="lt-proc -w">
+        <file name="ina-por.automorf.bin"/>
+      </program>
+
+
+      <program name="cg-proc -w">
+        <file name="ina-por.rlx.bin"/>
+      </program>
+      <program name="apertium-tagger -g $2">
+        <file name="ina-por.prob"/>
+      </program>
+    </pipeline>
+  </mode>
+
+  <mode name="ina-por-pretransfer" install="no">
+    <pipeline>
+      <program name="lt-proc -w">
+        <file name="ina-por.automorf.bin"/>
+      </program>
+
+
+      <program name="cg-proc -w">
+        <file name="ina-por.rlx.bin"/>
+      </program>
+      <program name="apertium-tagger -g $2">
+        <file name="ina-por.prob"/>
+      </program>
+      <program name="apertium-pretransfer"/>
+    </pipeline>
+  </mode>
+
+  <mode name="ina-por-biltrans" install="no">
+    <pipeline>
+      <program name="lt-proc -w">
+        <file name="ina-por.automorf.bin"/>
+      </program>
+
+
+      <program name="cg-proc -w">
+        <file name="ina-por.rlx.bin"/>
+      </program>
+      <program name="apertium-tagger -g $2">
+        <file name="ina-por.prob"/>
+      </program>
+      <program name="apertium-pretransfer"/>
+      <program name="lt-proc -b">
+        <file name="ina-por.autobil.bin"/>
+      </program>
+    </pipeline>
+  </mode>
+
+  <mode name="ina-por-lex" install="no">
+    <pipeline>
+      <program name="lt-proc -w">
+        <file name="ina-por.automorf.bin"/>
+      </program>
+
+
+      <program name="cg-proc -w">
+        <file name="ina-por.rlx.bin"/>
+      </program>
+      <program name="apertium-tagger -g $2">
+        <file name="ina-por.prob"/>
+      </program>
+      <program name="apertium-pretransfer"/>
+      <program name="lt-proc -b">
+        <file name="ina-por.autobil.bin"/>
+      </program>
+      <program name="lrx-proc">
+        <file name="ina-por.autolex.bin"/>
+      </program>
+    </pipeline>
+  </mode>
+
+  <mode name="ina-por-transfer" install="no">
+    <pipeline>
+      <program name="lt-proc -w">
+        <file name="ina-por.automorf.bin"/>
+      </program>
+
+
+      <program name="cg-proc -w">
+        <file name="ina-por.rlx.bin"/>
+      </program>
+      <program name="apertium-tagger -g $2">
+        <file name="ina-por.prob"/>
+      </program>
+      <program name="apertium-pretransfer"/>
+      <program name="lt-proc -b">
+        <file name="ina-por.autobil.bin"/>
+      </program>
+      <program name="apertium-transfer -b -t">
+        <file name="apertium-por-ina.ina-por.t1x"/>
+        <file name="ina-por.t1x.bin"/>
+      </program>
+    </pipeline>
+  </mode>
+
+  <mode name="ina-por-interchunk" install="no">
+    <pipeline>
+      <program name="lt-proc -w">
+        <file name="ina-por.automorf.bin"/>
+      </program>
+
+
+      <program name="cg-proc -w">
+        <file name="ina-por.rlx.bin"/>
+      </program>
+      <program name="apertium-tagger -g $2">
+        <file name="ina-por.prob"/>
+      </program>
+      <program name="apertium-pretransfer"/>
+      <program name="lt-proc -b">
+        <file name="ina-por.autobil.bin"/>
+      </program>
+      <program name="apertium-transfer -b">
+        <file name="apertium-por-ina.ina-por.t1x"/>
+        <file name="ina-por.t1x.bin"/>
+      </program>
+      <program name="apertium-interchunk -t">
+        <file name="apertium-por-ina.ina-por.t2x"/>
+        <file name="ina-por.t2x.bin"/>
+      </program>
+    </pipeline>
+  </mode>
+
+  <mode name="ina-por-postchunk" install="no">
+    <pipeline>
+      <program name="lt-proc -w">
+        <file name="ina-por.automorf.bin"/>
+      </program>
+
+
+      <program name="cg-proc -w">
+        <file name="ina-por.rlx.bin"/>
+      </program>
+      <program name="apertium-tagger -g $2">
+        <file name="ina-por.prob"/>
+      </program>
+      <program name="apertium-pretransfer"/>
+      <program name="lt-proc -b">
+        <file name="ina-por.autobil.bin"/>
+      </program>
+      <program name="apertium-transfer -b">
+        <file name="apertium-por-ina.ina-por.t1x"/>
+        <file name="ina-por.t1x.bin"/>
+      </program>
+      <program name="apertium-interchunk">
+        <file name="apertium-por-ina.ina-por.t2x"/>
+        <file name="ina-por.t2x.bin"/>
+      </program>
+      <program name="apertium-postchunk">
+        <file name="apertium-por-ina.ina-por.t3x"/>
+        <file name="ina-por.t3x.bin"/>
+      </program>
+    </pipeline>
+  </mode>
+</modes>
+

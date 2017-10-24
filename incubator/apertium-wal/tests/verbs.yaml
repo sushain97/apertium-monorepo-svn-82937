@@ -1,0 +1,192 @@
+Config:
+  hfst:
+      App: hfst-lookup
+      Gen: ../wal.autogen.hfst
+      Morph: ../wal.automorf.hfst
+
+Tests:
+
+ "Verb aac":
+    aac<v><iv><pass><shortcnvb><p1><sing> : aacetta
+
+ "Verb arggaac":
+    arggaac<v><iv><cau><fut> : arggaacissana
+
+ "Verb aafot":
+    aafot<v><iv><cau><p3><sing><masc><neg><intr><prf> : aafotissibeennee
+    aafot<v><iv><cau><p3><sing><masc><neg><prf> : aafotissibeenna
+    aafot<v><iv><cau><p3><sing><masc><intr><prf> : aafotissidee
+    aafot<v><iv><cau><p3><sing><masc><intr><imfr> : aafotissii
+    aafot<v><iv><cau><p3><sing><masc><prf> : aafotissiis
+    aafot<v><iv><cau><p3><sing><masc><prf> : aafotissiisi
+
+ "Verb aakk":
+    aakk<v><tv><cau><rel><prf><nsub><nmlz><sing><masc><obl>+ni<post> : aasissidagaani
+    aakk<v><tv><cau><rel><prf><nsub><nmlz><sing><masc><obl>+ppe<post> : aasissidagaap$
+    aakk<v><tv><cau><rel><prf><nsub><nmlz><sing><masc><obl>+ra<post> : aasissidagaara
+    aakk<v><tv><cau><rel><prf><nsub><nmlz><sing><masc><obl>+ssi<post> : aasissidagaas$
+    aakk<v><tv><cau><rel><prf><nsub><nmlz><sing><masc><obl>+daani<post> : aasissidaga$
+    aakk<v><tv><cau><rel><prf><nsub><nmlz><sing><masc><inter> : aasissidagee
+    aakk<v><tv><cau><rel><prf><nsub><nmlz><sing><masc><nom> : aasissidagee
+    aakk<v><tv><cau><rel><prf><nsub><nmlz><sing><masc><voc> : aasissidagoo
+
+ "Verb aakk":
+    aakk<v><tv><rel><prf><nsub><nmlz><sing><fem><nom> : aassara
+    aakk<v><tv><rel><prf><nsub><nmlz><sing><fem><voc> : aassaree
+    aakk<v><tv><rel><prf><nsub><nmlz><sing><fem><inter> : aassari
+    aakk<v><tv><rel><prf><nsub><nmlz><sing><fem><obl> : aassari
+    aakk<v><tv><rel><prf><nsub><nmlz><sing><fem><obl>+kko<post> : aassarikko
+    aakk<v><tv><rel><prf><nsub><nmlz><sing><fem><obl>+ni<post> : aassarini
+    aakk<v><tv><rel><prf><nsub><nmlz><sing><fem><obl>+ppe<post> : aassarippe
+    aakk<v><tv><rel><prf><nsub><nmlz><sing><fem><obl>+ra<post> : aassarira
+    aakk<v><tv><rel><prf><nsub><nmlz><sing><fem><obl>+ssi<post> : aassarissi
+    aakk<v><tv><rel><prf><nsub><nmlz><sing><fem><obl>+daani<post> : aassaridaani
+ 
+ "Verb aal":
+    aal<v><iv><cau><rel><impf><nsub><nmlz><sing><masc><inter> : aalissiyogee
+    aal<v><iv><cau><rel><impf><nsub><nmlz><sing><masc><nom> : aalissiyogee
+    aal<v><iv><cau><rel><impf><nsub><nmlz><sing><masc><voc> : aalissiyogoo
+    aal<v><iv><cau><rel><impf><nsub><nmlz><sing><fem><nom> : aalissiyora
+    aal<v><iv><cau><rel><impf><nsub><nmlz><sing><fem><voc> : aalissiyoree
+    aal<v><iv><cau><rel><impf><nsub><nmlz><sing><fem><inter> : aalissiyori
+    aal<v><iv><cau><rel><impf><nsub><nmlz><sing><fem><obl> : aalissiyori
+    aal<v><iv><cau><rel><impf><nsub><nmlz><sing><fem><obl>+kko<post> : aalissiyorikko
+    aal<v><iv><cau><rel><impf><nsub><nmlz><sing><fem><obl>+ni<post> : aalissiyorini
+
+ "Verb aammot":
+    aammot<v><iv><rel><impf><nsub><nmlz><plr><masc><obl> : aammotiyogeetu
+    aammot<v><iv><rel><impf><nsub><nmlz><plr><masc><obl>+kko<post> : aammotiyogeetukko
+    aammot<v><iv><rel><impf><nsub><nmlz><plr><masc><obl>+ni<post> : aammotiyogeetuni
+    aammot<v><iv><rel><impf><nsub><nmlz><plr><masc><obl>+ppe<post> : aammotiyogeetuppe
+    aammot<v><iv><rel><impf><nsub><nmlz><plr><masc><obl>+ra<post> : aammotiyogeetura
+    aammot<v><iv><rel><impf><nsub><nmlz><plr><masc><obl>+ssi<post> : aammotiyogeetussi
+
+ "Verb aatt":
+    aatt<v><tv><rel><prf><sub><nmlz><sing><masc><obl>+daani<post> : aattidogaadaani
+    aatt<v><tv><rel><prf><sub><nmlz><sing><masc><inter> : aattidogee
+    aatt<v><tv><rel><prf><sub><nmlz><sing><masc><nom> : aattidogee
+    aatt<v><tv><rel><prf><sub><nmlz><sing><masc><voc> : aattidogoo
+    aatt<v><tv><rel><prf><sub><nmlz><sing><fem><nom> : aattidora
+    aatt<v><tv><rel><prf><sub><nmlz><sing><fem><voc> : aattidoree
+    aatt<v><tv><rel><prf><sub><nmlz><sing><fem><inter> : aattidori
+    aatt<v><tv><rel><prf><sub><nmlz><sing><fem><obl> : aattidori
+    aatt<v><tv><rel><prf><sub><nmlz><sing><fem><obl>+kko<post> : aattidorikko
+ 
+ "Verb aawat":
+    aawat<v><tv><rel><prf><nsub><nmlz><sing><masc><inter> : aawatagee
+    aawat<v><tv><rel><prf><nsub><nmlz><sing><masc><nom> : aawatagee
+    aawat<v><tv><rel><prf><nsub><nmlz><sing><masc><voc> : aawatagoo
+    aawat<v><tv><rel><prf><nsub><nmlz><sing><fem><nom> : aawatara
+    aawat<v><tv><rel><prf><nsub><nmlz><sing><fem><voc> : aawataree
+    aawat<v><tv><rel><prf><nsub><nmlz><sing><fem><inter> : aawatari
+    aawat<v><tv><rel><prf><nsub><nmlz><sing><fem><obl> : aawatari 
+
+ "Verb afuxx":
+    afuxx<v><iv><cau><rel><impf><sub><nmlz><plr><masc><obl>+ni<post> : afuxissiyageet$  
+    afuxx<v><iv><cau><rel><impf><sub><nmlz><plr><masc><obl>+ppe<post> : afuxissiyagee$
+    afuxx<v><iv><cau><rel><impf><sub><nmlz><plr><masc><obl>+ra<post> : afuxissiyageet$
+    afuxx<v><iv><cau><rel><impf><sub><nmlz><plr><masc><obl>+ssi<post> : afuxissiyagee$
+    afuxx<v><iv><cau><rel><impf><sub><nmlz><plr><masc><obl>+daani<post> : afuxissiyag$
+    afuxx<v><iv><cau><rel><impf><sub><nmlz><plr><masc><voc> : afuxissiyageetoo
+    afuxx<v><iv><cau><rel><impf><sub><nmlz><sing><masc><abs> : afuxissiyagaa
+    afuxx<v><iv><cau><rel><impf><sub><nmlz><sing><masc><obl> : afuxissiyagaa
+
+ "Verb ag":
+    ag<v><tv><p3><sing><masc><prf> : agiis
+
+ "Verb agg":
+    agg<v><tv><longcnvb><p1><plr> : aggidi
+    agg<v><tv><longcnvb><p2><plr> : aggidi
+    agg<v><tv><longcnvb><p3><plr> : aggidi
+    agg<v><tv><longcnvb><p3><sing><masc> : aggidi
+    agg<v><tv><p1><sing><prf> : aggaasi
+    agg<v><tv><p1><sing><prf> : aggaas
+    agg<v><tv><p1><sing><neg><intr><prf> : aggabeikkinaa
+    agg<v><tv><p1><sing><neg><prf> : aggabeikke
+    agg<v><tv><p1><sing><imfr> : aggays
+    agg<v><tv><p1><plr><imfr> : aggeettees
+    agg<v><tv><p1><plr><neg><imfr> : aggettenna
+    agg<v><tv><p1><plr><neg><intr><imfr> : aggettennee
+    agg<v><tv><p1><plr><neg><intr><prf> : aggibeettennee
+    agg<v><tv><p1><plr><neg><intr><prf> : aggibeokkonii
+
+ "Verb ak":
+    ak<v><iv><cau><rel><prf><nsub><nmlz><sing><fem><obl>+kko<post> : aissarikko
+    ak<v><iv><cau><rel><prf><nsub><nmlz><sing><fem><obl>+ni<post> : aissarini
+    ak<v><iv><cau><rel><prf><nsub><nmlz><sing><fem><obl>+ppe<post> : aissarippe
+    ak<v><iv><cau><rel><prf><nsub><nmlz><sing><fem><obl>+ra<post> : aissarira
+    ak<v><iv><cau><rel><prf><nsub><nmlz><sing><fem><obl>+ssi<post> : aissarissi
+    ak<v><iv><cau><rel><prf><nsub><nmlz><sing><fem><obl>+daani<post> : aissaridaani
+    ak<v><iv><cau><rel><prf><nsub><nmlz><sing><fem><abs> : aissaro
+    ak<v><iv><cau><rel><impf><sub><nmlz><plr><masc><abs> : aissiyageeta
+    ak<v><iv><cau><rel><impf><sub><nmlz><plr><masc><inter> : aissiyageetee
+
+ "Verb akkamm":
+    akkamm<v><tv><cau><p3><plr><prf> : akkamissidosona
+    akkamm<v><tv><cau><p3><plr><intr><imfr> : akkamissiyonaa
+    akkamm<v><tv><cau><p3><sing><masc><neg><intr><prf> : akkamissibeennee
+    akkamm<v><tv><cau><p3><sing><masc><neg><prf> : akkamissibeenna
+    akkamm<v><tv><cau><p3><sing><masc><intr><prf> : akkamissidee
+    akkamm<v><tv><cau><p3><sing><masc><intr><imfr> : akkamissii
+    akkamm<v><tv><cau><p3><sing><masc><prf> : akkamissiis
+    akkamm<v><tv><cau><p3><sing><masc><prf> : akkamissiisi
+    akkamm<v><tv><cau><p3><plr><neg><imfr> : akkamissokkona
+    akkamm<v><tv><cau><p3><plr><neg><intr><imfr> : akkamissokkonaa
+    akkamm<v><tv><cau><p3><plr><imfr> : akkamissoosona
+
+ "Verb anjj":
+    anjj<v><tv><cau><rel><impf><nsub><nmlz><plr><masc><obl>+daani<post> : anjissiyoge$
+    anjj<v><tv><cau><rel><impf><nsub><nmlz><plr><masc><voc> : anjissiyogeetoo
+    anjj<v><tv><cau><rel><impf><nsub><nmlz><sing><masc><abs> : anjissiyogaa
+    anjj<v><tv><cau><rel><impf><nsub><nmlz><sing><masc><obl> : anjissiyogaa
+    anjj<v><tv><cau><rel><impf><nsub><nmlz><sing><masc><obl>+kko<post> : anjissiyogaa$
+    anjj<v><tv><cau><rel><impf><nsub><nmlz><sing><masc><obl>+ni<post> : anjissiyogaani
+
+ "Verb att":
+    att<v><iv><p3><sing><masc><prf> : attiis
+    att<v><tv><p3><sing><masc><prf> : ashshiis
+
+ "Verb att":
+    att<v><tv><rel><impf><sub><nmlz><plr><masc><obl>+ppe<post> : ashshiyageetuppe
+    att<v><tv><rel><impf><sub><nmlz><plr><masc><obl>+ra<post> : ashshiyageetura
+    att<v><tv><rel><impf><sub><nmlz><plr><masc><obl>+ssi<post> : ashshiyageetussi
+    att<v><tv><rel><impf><sub><nmlz><plr><masc><obl>+daani<post> : ashshiyageetudaani
+    att<v><tv><rel><impf><sub><nmlz><plr><masc><voc> : ashshiyageetoo
+    att<v><tv><rel><impf><sub><nmlz><sing><masc><abs> : ashshiyagaa
+    att<v><tv><rel><impf><sub><nmlz><sing><masc><obl> : ashshiyagaa
+
+ "Verb awaajj":
+    awaajj<v><tv><p3><sing><masc><prf> : awaajjiisi
+    awaajj<v><tv><p3><plr><neg><imfr> : awaajjokkona
+    awaajj<v><tv><p3><plr><neg><intr><imfr> : awaajjokkonaa
+    awaajj<v><tv><p3><plr><imfr> : awaajjoosona
+    awaajj<v><tv><p3><sing><masc><opt> : awaajjo
+    awaajj<v><tv><p3><sing><opt> : awaajjona
+    awaajj<v><tv><p3><sing><masc><neg><opt> : awaajjoppo
+    awaajj<v><tv><p3><sing><neg><opt> : awaajjoppona
+    awaajj<v><tv><p3><sing><fem><opt> : awaajju
+    awaajj<v><tv><p3><sing><fem><neg><imfr> : awaajjukku
+    awaajj<v><tv><p3><sing><fem><neg><opt> : awaajjuppu
+
+ "Verb awcaya":
+    awcaya<v><iv><cau><rel><impf><nsub><nmlz><sing><masc><obl>+kko<post> : awcayaissi$
+    awcaya<v><iv><cau><rel><impf><nsub><nmlz><sing><masc><obl>+ni<post> : awcayaissiy$
+    awcaya<v><iv><cau><rel><impf><nsub><nmlz><sing><masc><obl>+ppe<post> : awcayaissi$
+    awcaya<v><iv><cau><rel><impf><nsub><nmlz><sing><masc><obl>+ra<post> : awcayaissiy$
+    awcaya<v><iv><cau><rel><impf><nsub><nmlz><sing><masc><obl>+ssi<post> : awcayaissi$
+
+ "Verb azalss":
+    azalss<v><tv><fut> : azalssana
+    azalss<v><tv><inf><noncon><inter> : azalssanee
+    azalss<v><tv><inf><obl> : azalssana
+    azalss<v><tv><intr><fut> : azalssanne
+    azalss<v><tv><longcnvb><p1><sing> : azalssada
+    azalss<v><tv><longcnvb><p2><sing> : azalssada
+    azalss<v><tv><longcnvb><p3><sing><fem> : azalssada
+    azalss<v><tv><longcnvb><p1><plr> : azalssidi
+    azalss<v><tv><longcnvb><p2><plr> : azalssidi
+    azalss<v><tv><longcnvb><p3><plr> : azalssidi
+    azalss<v><tv><longcnvb><p3><sing><masc> : azalssidi
+    azalss<v><tv><p1><sing><prf> : azalssaasi
+
+ 

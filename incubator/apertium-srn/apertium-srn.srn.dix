@@ -1,0 +1,3262 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<dictionary>
+
+  <!-- Define the alphabet below. -->
+  <alphabet>aAáÁăảạÆbBcCčdDÐeEéèễệfFgGhHiIíjJkKlLmMnNoOóöớpPqQrRsSšştTŢuUúüưvVwWxXyYzZ</alphabet>
+
+  <sdefs>
+    <!-- Define symbol definitions within <sdef> here. -->
+    <sdef n="n"     c="Noun"/>
+    <sdef n="np"     c="Proper noun"/>
+
+    <sdef n="sg"     c="Singular"/>
+    <sdef n="pl"     c="Plural"/>
+    <sdef n="det"   c="Determiner"/>
+    <sdef n="vbser"     c="Verb"/>
+    <sdef n="vblex"     c="Verb"/>
+    <sdef n="vbhaver"     c="Verb"/>
+    <sdef n="prn"     c="Pronoun"/>
+    <sdef n="adv"     c="Adverb"/>
+    <sdef n="aux"     c="Auxiliary"/>
+    <sdef n="cnjsub"     c="Subordinating conjunction"/>
+    <sdef n="cnjcoo"     c="Conjunction"/>
+    <sdef n="ij"     c="Interjection"/>
+    <sdef n="adj"     c="Adjective"/>
+    <sdef n="num"     c="Number"/>
+    <sdef n="pos"     c="Possessive"/>
+    <sdef n="ref"     c="Reflexive"/>
+    <sdef n="ind"     c="Indefinite"/>
+    <sdef n="itg"     c="Interrogative"/>
+    <sdef n="dem"     c="Demonstrative"/>
+    <sdef n="qnt"/>
+
+    <sdef n="p1"/>
+<sdef n="p2"/>
+      <sdef n="p3"/>
+      <sdef n="subj"/>
+      <sdef n="obj"/>
+<sdef n="pr"     c="Preposition"/>
+<sdef n="ant"     c="Anthroponym"/>
+<sdef n="vbmod"     c="Vb. mod"/>
+<sdef n="nt"     c="nt"/>
+
+  </sdefs>
+    
+
+  <pardefs>
+    <!-- Define paradigms within <pardef> here. -->
+    <pardef n="pikin__n">
+      <e><p><l></l><r><s n="n"/></r></p></e>
+   </pardef>
+    <pardef n="John__np">
+      <e><p><l></l><r><s n="np"/><s n="ant"/></r></p></e>
+   </pardef>
+    <pardef n="soigi__vblex">
+      <e><p><l></l><r><s n="vblex"/></r></p></e>
+   </pardef>
+    <pardef n="na__vbser">
+      <e><p><l></l><r><s n="vbser"/></r></p></e>
+   </pardef>
+    <pardef n="fu__pr">
+      <e><p><l></l><r><s n="pr"/></r></p></e>
+   </pardef>
+    <pardef n="efu__adv">
+      <e><p><l></l><r><s n="adv"/></r></p></e>
+   </pardef>
+    <pardef n="pe__adv">
+      <e><p><l></l><r><s n="adv"/><s n="itg"/></r></p></e>
+   </pardef>
+    <pardef n="ben__aux">
+      <e><p><l></l><r><s n="aux"/></r></p></e>
+   </pardef>
+    <pardef n="sensi__cnjsub">
+      <e><p><l></l><r><s n="cnjsub"/></r></p></e>
+   </pardef>
+    <pardef n="langi__adj">
+      <e><p><l></l><r><s n="adj"/></r></p></e>
+   </pardef>
+    <pardef n="nanga__cnjcoo">
+      <e><p><l></l><r><s n="cnjcoo"/></r></p></e>
+   </pardef>
+    <pardef n="kokodiako__ij">
+      <e><p><l></l><r><s n="ij"/></r></p></e>
+   </pardef>
+    <pardef n="san__prn">
+      <e><p><l></l><r><s n="prn"/><s n="itg"/></r></p></e>
+   </pardef>
+    <pardef n="tu__num">
+      <e><p><l></l><r><s n="num"/><s n="pl"/></r></p></e>
+   </pardef>
+    <pardef n="wan__num">
+      <e><p><l></l><r><s n="num"/><s n="sg"/></r></p></e>
+   </pardef>
+    <pardef n="misrefi__prn">
+      <e><p><l></l><r><s n="prn"/><s n="ref"/><s n="p1"/><s n="sg"/></r></p></e>
+   </pardef>
+    <pardef n="yusrefi__prn">
+      <e><p><l></l><r><s n="prn"/><s n="ref"/><s n="p2"/><s n="sg"/></r></p></e>
+   </pardef>
+    <pardef n="ensrefi__prn">
+      <e><p><l></l><r><s n="prn"/><s n="ref"/><s n="p3"/><s n="sg"/></r></p></e>
+   </pardef>
+    <pardef n="wisrefi__prn">
+      <e><p><l></l><r><s n="prn"/><s n="ref"/><s n="p1"/><s n="pl"/></r></p></e>
+   </pardef>
+    <pardef n="unusrefi__prn">
+      <e><p><l></l><r><s n="prn"/><s n="ref"/><s n="p2"/><s n="pl"/></r></p></e>
+   </pardef>
+    <pardef n="densrefi__prn">
+      <e><p><l></l><r><s n="prn"/><s n="ref"/><s n="p3"/><s n="pl"/></r></p></e>
+   </pardef>
+    <pardef n="noti__prn">
+      <e><p><l></l><r><s n="prn"/><s n="ind"/><s n="sg"/></r></p></e>
+   </pardef>
+    <pardef n="wan sani__prn">
+      <e><p><l></l><r><s n="prn"/><s n="ind"/><s n="nt"/><s n="sg"/></r></p></e>
+   </pardef>
+    <pardef n="ai__cont">
+      <e><p><l>ai</l><r>prpers<s n="prn"/><s n="subj"/><s n="p3"/>+e<s n="sg"/><s n="aux"/></r></p></e>
+   </pardef>
+    <pardef n="musu__vbmod">
+      <e><p><l></l><r><s n="vbmod"/></r></p></e>
+   </pardef>
+    <pardef n="a_trawan__prn">
+      <e>       <p><l>a</l>          <r>a<s n="prn"/><s n="dem"/><s n="sg"/></r></p></e>
+      <e>       <p><l>den</l>         <r>a<s n="prn"/><s n="dem"/><s n="pl"/></r></p></e>
+    </pardef>
+    <pardef n="PRPERS__prn">
+      <e><p><l>mi</l><r>prpers<s n="prn"/><s n="subj"/><s n="p1"/><s n="sg"/></r></p></e>
+     <e><p><l>mi</l><r>prpers<s n="prn"/><s n="obj"/><s n="p1"/><s n="sg"/></r></p></e>
+     <e><p><l>mi</l><r>prpers<s n="det"/><s n="pos"/><s n="p1"/><s n="sg"/></r></p></e>
+      <e><p><l>yu</l><r>prpers<s n="prn"/><s n="subj"/><s n="p2"/><s n="sg"/></r></p></e>
+     <e><p><l>yu</l><r>prpers<s n="prn"/><s n="obj"/><s n="p2"/><s n="sg"/></r></p></e>
+     <e><p><l>yu</l><r>prpers<s n="det"/><s n="pos"/><s n="p2"/><s n="sg"/></r></p></e>
+      <e><p><l>a</l><r>prpers<s n="prn"/><s n="subj"/><s n="p3"/><s n="sg"/></r></p></e>
+     <e><p><l>en</l><r>prpers<s n="prn"/><s n="obj"/><s n="p3"/><s n="sg"/></r></p></e>
+     <e><p><l>en</l><r>prpers<s n="det"/><s n="pos"/><s n="p3"/><s n="sg"/></r></p></e>
+      <e><p><l>wi</l><r>prpers<s n="prn"/><s n="subj"/><s n="p1"/><s n="pl"/></r></p></e>
+     <e><p><l>wi</l><r>prpers<s n="prn"/><s n="obj"/><s n="p1"/><s n="pl"/></r></p></e>
+      <e><p><l>unu</l><r>prpers<s n="prn"/><s n="subj"/><s n="p2"/><s n="pl"/></r></p></e>
+     <e><p><l>unu</l><r>prpers<s n="prn"/><s n="obj"/><s n="p2"/><s n="pl"/></r></p></e>
+      <e r="LR"><p><l>un</l><r>prpers<s n="prn"/><s n="subj"/><s n="p2"/><s n="pl"/></r></p></e>
+     <e r="LR"><p><l>un</l><r>prpers<s n="prn"/><s n="obj"/><s n="p2"/><s n="pl"/></r></p></e>
+      <e><p><l>den</l><r>prpers<s n="prn"/><s n="subj"/><s n="p3"/><s n="pl"/></r></p></e>
+     <e><p><l>den</l><r>prpers<s n="prn"/><s n="obj"/><s n="p3"/><s n="pl"/></r></p></e>
+   </pardef>
+    <pardef n="a__det">
+      <e><p><l>a</l><r>a<s n="det"/><s n="sg"/></r></p></e>
+      <e><p><l>den</l><r>a<s n="det"/><s n="pl"/></r></p></e>
+   </pardef>
+    <pardef n="wan__det">
+    <e><p><l>wan</l><r>wan<s n="det"/><s n="ind"/><s n="sg"/></r></p></e>
+   </pardef>
+      
+    <pardef n="ala__det">
+    <e><p><l></l><r><s n="det"/><s n="qnt"/><s n="pl"/></r></p></e>
+   </pardef>
+  </pardefs>
+
+  <section id="main" type="standard">
+    <!-- Define entries within <e> here. -->
+    <e lm="pikin"><i>pikin</i><par n="pikin__n"/></e>
+    <e lm="soigi"><i>soigi</i><par n="soigi__vblex"/></e>
+    <e lm="lobi"><i>lobi</i><par n="soigi__vblex"/></e>
+    <e lm="nyan"><i>nyan</i><par n="soigi__vblex"/></e>
+    <e lm="leisi"><i>leisi</i><par n="soigi__vblex"/></e>
+    <e lm="na"><i>na</i><par n="na__vbser"/></e>
+    <e lm="de"><i>de</i><par n="na__vbser"/></e>
+    <e lm="de"><i>de</i><par n="soigi__vblex"/></e>
+    <e lm="meki"><i>meki</i><par n="soigi__vblex"/></e>
+
+      <e lm="pikin"><i>pikin</i><par n="pikin__n"/></e>
+    <e lm="bigin"><i>bigin</i><par n="pikin__n"/></e>
+
+    <e lm="nen"><i>nen</i><par n="pikin__n"/></e>
+    <e lm="wortu"><i>wortu</i><par n="pikin__n"/></e>
+    <e lm="ben"><i>ben</i><par n="ben__aux"/></e>
+    <e lm="prpers"><i></i><par n="PRPERS__prn"/></e>
+
+    <e lm="man"><i>man</i><par n="pikin__n"/></e>
+<e lm="uma"><i>uma</i><par n="pikin__n"/></e>
+<e lm="manpikin"><i>manpikin</i><par n="pikin__n"/></e>
+<e lm="umapikin"><i>umapikin</i><par n="pikin__n"/></e>
+<e lm="sma"><i>sma</i><par n="pikin__n"/></e>
+      <e lm="a"><i></i><par n="a__det"/></e>
+      <e lm="fu"><i>fu</i><par n="fu__pr"/></e>
+      <e lm="na"><i>na</i><par n="fu__pr"/></e>
+      <e lm="nanga"><i>nanga</i><par n="fu__pr"/></e>
+      <e lm="efu"><i>efu</i><par n="efu__adv"/></e>
+      <e lm="sensi"><i>sensi</i><par n="sensi__cnjsub"/></e>
+      <e lm="ai" r="LR"><i></i><par n="ai__cont"/></e>
+      <e lm="wan"><i></i><par n="wan__det"/></e>
+
+    <e lm="John"><i>John</i><par n="John__np"/></e>
+
+      
+<e lm="Afrikakondre"><i>Afrikakondre</i><par n="pikin__n"/></e>
+<e lm="Akuba"><i>Akuba</i><par n="pikin__n"/></e>
+<e lm="Amerkan"><i>Amerkan</i><par n="langi__adj"/></e>
+<e lm="Amerkan"><i>Amerkan</i><par n="pikin__n"/></e>
+<e lm="Amerkankondre"><i>Amerkankondre</i><par n="pikin__n"/></e>
+<e lm="Anana"><i>Anana</i><par n="pikin__n"/></e>
+<e lm="Anansi"><i>Anansi</i><par n="pikin__n"/></e>
+<e lm="Anitri"><i>Anitri</i><par n="langi__adj"/></e>
+<e lm="Anitri"><i>Anitri</i><par n="pikin__n"/></e>
+<e lm="Arabiri"><i>Arabiri</i><par n="pikin__n"/></e>
+<e lm="Arwaka"><i>Arwaka</i><par n="langi__adj"/></e>
+<e lm="Arwaka"><i>Arwaka</i><par n="pikin__n"/></e>
+<e lm="Ba"><i>Ba</i><par n="pikin__n"/></e>
+<e lm="Bakratongo"><i>Bakratongo</i><par n="pikin__n"/></e>
+<e lm="Bedaki"><i>Bedaki</i><par n="pikin__n"/></e>
+<e lm="Bergi"><i>Bergi</i><par n="pikin__n"/></e>
+<e lm="Brasyon"><i>Brasyon</i><par n="langi__adj"/></e>
+<e lm="Brasyon"><i>Brasyon</i><par n="pikin__n"/></e>
+<e lm="Brasyonman"><i>Brasyonman</i><par n="pikin__n"/></e>
+<e lm="Busnengre"><i>Busnengre</i><par n="pikin__n"/></e>
+<e lm="Damsko"><i>Damsko</i><par n="pikin__n"/></e>
+<e lm="Doisri"><i>Doisri</i><par n="pikin__n"/></e>
+<e lm="Doisrikondre"><i>Doisrikondre</i><par n="pikin__n"/></e>
+<e lm="Doisritongo"><i>Doisritongo</i><par n="pikin__n"/></e>
+<e lm="Dyu"><i>Dyu</i><par n="pikin__n"/></e>
+<e lm="Dyuka"><i>Dyuka</i><par n="pikin__n"/></e>
+<e lm="Fedi"><i>Fedi</i><par n="pikin__n"/></e>
+<e lm="Frans'sei"><i>Frans'sei</i><par n="pikin__n"/></e>
+<e lm="Franskondre"><i>Franskondre</i><par n="pikin__n"/></e>
+<e lm="Gadobuku"><i>Gadobuku</i><par n="pikin__n"/></e>
+<e lm="Gadokondre"><i>Gadokondre</i><par n="pikin__n"/></e>
+<e lm="Gadowortu"><i>Gadowortu</i><par n="pikin__n"/></e>
+<e lm="Gayana"><i>Gayana</i><par n="pikin__n"/></e>
+<e lm="Gayanaman"><i>Gayanaman</i><par n="pikin__n"/></e>
+<e lm="Helpiman"><i>Helpiman</i><par n="pikin__n"/></e>
+<e lm="Hindustani"><i>Hindustani</i><par n="langi__adj"/></e>
+<e lm="Hindustani"><i>Hindustani</i><par n="pikin__n"/></e>
+<e lm="Ingrisman"><i>Ingrisman</i><par n="pikin__n"/></e>
+<e lm="Ingristongo"><i>Ingristongo</i><par n="pikin__n"/></e>
+<e lm="Kawna"><i>Kawna</i><par n="pikin__n"/></e>
+<e lm="Kayana"><i>Kayana</i><par n="pikin__n"/></e>
+<e lm="Korsow"><i>Korsow</i><par n="pikin__n"/></e>
+<e lm="Kresneti"><i>Kresneti</i><par n="pikin__n"/></e>
+<e lm="Kribisi"><i>Kribisi</i><par n="langi__adj"/></e>
+<e lm="Kribisi"><i>Kribisi</i><par n="pikin__n"/></e>
+<e lm="Kribisitongo"><i>Kribisitongo</i><par n="langi__adj"/></e>
+<e lm="Kribisitongo"><i>Kribisitongo</i><par n="pikin__n"/></e>
+<e lm="Lomsu"><i>Lomsu</i><par n="pikin__n"/></e>
+<e lm="Lomsukerki"><i>Lomsukerki</i><par n="pikin__n"/></e>
+<e lm="Ma"><i>Ma</i><par n="pikin__n"/></e>
+<e lm="Marienburg Maryanborgu"><i>Marienburg Maryanborgu</i><par n="pikin__n"/></e>
+<e lm="Marwina"><i>Marwina</i><par n="pikin__n"/></e>
+<e lm="Masra Gado"><i>Masra Gado</i><par n="pikin__n"/></e>
+<e lm="Matreti"><i>Matreti</i><par n="pikin__n"/></e>
+<e lm="Pa"><i>Pa</i><par n="pikin__n"/></e>
+<e lm="Palmsonde"><i>Palmsonde</i><par n="pikin__n"/></e>
+<e lm="Para"><i>Para</i><par n="pikin__n"/></e>
+<e lm="Paska"><i>Paska</i><par n="pikin__n"/></e>
+<e lm="Potogisi"><i>Potogisi</i><par n="langi__adj"/></e>
+<e lm="Potogisi"><i>Potogisi</i><par n="pikin__n"/></e>
+<e lm="Ptata"><i>Ptata</i><par n="pikin__n"/></e>
+<e lm="Sa"><i>Sa</i><par n="pikin__n"/></e>
+<e lm="Sneisi"><i>Sneisi</i><par n="langi__adj"/></e>
+<e lm="Sneisi"><i>Sneisi</i><par n="pikin__n"/></e>
+<e lm="Spanyoro"><i>Spanyoro</i><par n="langi__adj"/></e>
+<e lm="Spanyoro"><i>Spanyoro</i><par n="pikin__n"/></e>
+<e lm="Spanyorokondre"><i>Spanyorokondre</i><par n="pikin__n"/></e>
+<e lm="Sranan"><i>Sranan</i><par n="langi__adj"/></e>
+<e lm="Sranan"><i>Sranan</i><par n="pikin__n"/></e>
+<e lm="Sranankondre"><i>Sranankondre</i><par n="pikin__n"/></e>
+<e lm="Srananman"><i>Srananman</i><par n="pikin__n"/></e>
+<e lm="Sranansma"><i>Sranansma</i><par n="pikin__n"/></e>
+<e lm="Takitaki"><i>Takitaki</i><par n="pikin__n"/></e>
+<e lm="Tata"><i>Tata</i><par n="pikin__n"/></e>
+<e lm="Waka bun!"><i>Waka bun!</i><par n="kokodiako__ij"/></e>
+<e lm="Yampaneisi"><i>Yampaneisi</i><par n="langi__adj"/></e>
+<e lm="Yampaneisi"><i>Yampaneisi</i><par n="pikin__n"/></e>
+<e lm="a banti"><i>a banti</i><par n="soigi__vblex"/></e>
+<e lm="a bronflaka"><i>a bronflaka</i><par n="pikin__n"/></e>
+<e lm="a srefi pisten dati"><i>a srefi pisten dati</i><par n="efu__adv"/></e>
+<e lm="a uku"><i>a uku</i><par n="soigi__vblex"/></e>
+<e lm="a wide ondroyan"><i>a wide ondroyan</i><par n="soigi__vblex"/></e>
+<e lm="a"><i>a</i><par n="a__det"/></e>
+<e lm="abani"><i>abani</i><par n="pikin__n"/></e>
+<e lm="abi fanowdu"><i>abi fanowdu</i><par n="soigi__vblex"/></e>
+<e lm="abi heimemre"><i>abi heimemre</i><par n="langi__adj"/></e>
+<e lm="abi prisiri"><i>abi prisiri</i><par n="soigi__vblex"/></e>
+<e lm="abi"><i>abi</i><par n="soigi__vblex"/></e>
+<e lm="aboma"><i>aboma</i><par n="pikin__n"/></e>
+<e lm="abongra"><i>abongra</i><par n="pikin__n"/></e>
+<e lm="abra"><i>abra</i><par n="fu__pr"/></e>
+<e lm="abra"><i>abra</i><par n="soigi__vblex"/></e>
+<e lm="abrasei fu"><i>abrasei fu</i><par n="efu__adv"/></e>
+<e lm="abrasei fu"><i>abrasei fu</i><par n="fu__pr"/></e>
+<e lm="abrawatra"><i>abrawatra</i><par n="pikin__n"/></e>
+<e lm="adyosi"><i>adyosi</i><par n="pikin__n"/></e>
+<e lm="af'afu"><i>af'afu</i><par n="efu__adv"/></e>
+<e lm="af'pasi"><i>af'pasi</i><par n="efu__adv"/></e>
+<e lm="afdaki"><i>afdaki</i><par n="pikin__n"/></e>
+<e lm="afen"><i>afen</i><par n="kokodiako__ij"/></e>
+<e lm="afkati"><i>afkati</i><par n="pikin__n"/></e>
+<e lm="afkodrei"><i>afkodrei</i><par n="pikin__n"/></e>
+<e lm="afo"><i>afo</i><par n="pikin__n"/></e>
+<e lm="afopikin"><i>afopikin</i><par n="pikin__n"/></e>
+<e lm="afrontu"><i>afrontu</i><par n="soigi__vblex"/></e>
+<e lm="afu"><i>afu</i><par n="tu__num"/></e>
+<e lm="agen"><i>agen</i><par n="efu__adv"/></e>
+<e lm="agersitori"><i>agersitori</i><par n="pikin__n"/></e>
+<e lm="agidya"><i>agidya</i><par n="pikin__n"/></e>
+<e lm="agra"><i>agra</i><par n="pikin__n"/></e>
+<e lm="agri"><i>agri</i><par n="soigi__vblex"/></e>
+<e lm="agu"><i>agu</i><par n="pikin__n"/></e>
+<e lm="agumeti"><i>agumeti</i><par n="pikin__n"/></e>
+<e lm="agupen"><i>agupen</i><par n="pikin__n"/></e>
+<e lm="aguti"><i>aguti</i><par n="pikin__n"/></e>
+<e lm="ai buba"><i>ai buba</i><par n="pikin__n"/></e>
+<e lm="ai wiwiri"><i>ai wiwiri</i><par n="pikin__n"/></e>
+<e lm="ai"><i>ai</i><par n="pikin__n"/></e>
+<e lm="aifutu"><i>aifutu</i><par n="pikin__n"/></e>
+<e lm="aira"><i>aira</i><par n="langi__adj"/></e>
+<e lm="aira"><i>aira</i><par n="pikin__n"/></e>
+<e lm="aiti"><i>aiti</i><par n="tu__num"/></e>
+<e lm="aitidei"><i>aitidei</i><par n="pikin__n"/></e>
+<e lm="aitifi"><i>aitifi</i><par n="pikin__n"/></e>
+<e lm="aitikanti"><i>aitikanti</i><par n="pikin__n"/></e>
+<e lm="aititenti"><i>aititenti</i><par n="tu__num"/></e>
+<e lm="aka ensrefi"><i>aka ensrefi</i><par n="soigi__vblex"/></e>
+<e lm="aka"><i>aka</i><par n="pikin__n"/></e>
+<e lm="aka"><i>aka</i><par n="soigi__vblex"/></e>
+<e lm="akanswari"><i>akanswari</i><par n="pikin__n"/></e>
+<e lm="akruderi"><i>akruderi</i><par n="pikin__n"/></e>
+<e lm="akruderi"><i>akruderi</i><par n="soigi__vblex"/></e>
+<e lm="aksi"><i>aksi</i><par n="pikin__n"/></e>
+<e lm="aksi"><i>aksi</i><par n="soigi__vblex"/></e>
+<e lm="akuba-dyendyen"><i>akuba-dyendyen</i><par n="pikin__n"/></e>
+<e lm="ala sei"><i>ala sei</i><par n="efu__adv"/></e>
+<e lm="ala ten"><i>ala ten</i><par n="efu__adv"/></e>
+<e lm="ala tu"><i>ala tu</i><par n="tu__num"/></e>
+<e lm="ala"><i>ala</i><par n="langi__adj"/></e>
+<e lm="ala"><i>ala</i><par n="ala__det"/></e>
+<e lm="aladei"><i>aladei</i><par n="langi__adj"/></e>
+<e lm="aladi"><i>aladi</i><par n="nanga__cnjcoo"/></e>
+<e lm="alakondre"><i>alakondre</i><par n="langi__adj"/></e>
+<e lm="alape"><i>alape</i><par n="efu__adv"/></e>
+<e lm="alata"><i>alata</i><par n="pikin__n"/></e>
+<e lm="alatapasi"><i>alatapasi</i><par n="pikin__n"/></e>
+<e lm="alatasneki"><i>alatasneki</i><par n="pikin__n"/></e>
+<e lm="alatria"><i>alatria</i><par n="pikin__n"/></e>
+<e lm="aleisi"><i>aleisi</i><par n="pikin__n"/></e>
+<e lm="aleisimiti"><i>aleisimiti</i><par n="pikin__n"/></e>
+<e lm="alen"><i>alen</i><par n="pikin__n"/></e>
+<e lm="alenbo"><i>alenbo</i><par n="pikin__n"/></e>
+<e lm="alendyakti"><i>alendyakti</i><par n="pikin__n"/></e>
+<e lm="alenten"><i>alenten</i><par n="pikin__n"/></e>
+<e lm="altari"><i>altari</i><par n="pikin__n"/></e>
+<e lm="amaka"><i>amaka</i><par n="pikin__n"/></e>
+<e lm="amandra"><i>amandra</i><par n="pikin__n"/></e>
+<e lm="ambegi"><i>ambegi</i><par n="soigi__vblex"/></e>
+<e lm="ambeiri"><i>ambeiri</i><par n="pikin__n"/></e>
+<e lm="ambra"><i>ambra</i><par n="pikin__n"/></e>
+<e lm="ambrabasi"><i>ambrabasi</i><par n="pikin__n"/></e>
+<e lm="ameti"><i>ameti</i><par n="pikin__n"/></e>
+<e lm="anansi"><i>anansi</i><par n="pikin__n"/></e>
+<e lm="anansititei"><i>anansititei</i><par n="pikin__n"/></e>
+<e lm="anansitori"><i>anansitori</i><par n="pikin__n"/></e>
+<e lm="anbegi"><i>anbegi</i><par n="soigi__vblex"/></e>
+<e lm="and pis'pisi"><i>and pis'pisi</i><par n="soigi__vblex"/></e>
+<e lm="anga go na wan sei"><i>anga go na wan sei</i><par n="soigi__vblex"/></e>
+<e lm="anga"><i>anga</i><par n="soigi__vblex"/></e>
+<e lm="anga-anga"><i>anga-anga</i><par n="efu__adv"/></e>
+<e lm="angalampu"><i>angalampu</i><par n="pikin__n"/></e>
+<e lm="angatitei"><i>angatitei</i><par n="pikin__n"/></e>
+<e lm="angorki"><i>angorki</i><par n="pikin__n"/></e>
+<e lm="angri"><i>angri</i><par n="pikin__n"/></e>
+<e lm="angri"><i>angri</i><par n="soigi__vblex"/></e>
+<e lm="angribere"><i>angribere</i><par n="pikin__n"/></e>
+<e lm="angriten"><i>angriten</i><par n="pikin__n"/></e>
+<e lm="ankra"><i>ankra</i><par n="pikin__n"/></e>
+<e lm="ankra"><i>ankra</i><par n="soigi__vblex"/></e>
+<e lm="anu"><i>anu</i><par n="pikin__n"/></e>
+<e lm="anyisa"><i>anyisa</i><par n="pikin__n"/></e>
+<e lm="anyumara"><i>anyumara</i><par n="pikin__n"/></e>
+<e lm="aparti"><i>aparti</i><par n="efu__adv"/></e>
+<e lm="apra"><i>apra</i><par n="pikin__n"/></e>
+<e lm="apresina"><i>apresina</i><par n="pikin__n"/></e>
+<e lm="apteiki"><i>apteiki</i><par n="pikin__n"/></e>
+<e lm="arakaka"><i>arakaka</i><par n="pikin__n"/></e>
+<e lm="arki"><i>arki</i><par n="soigi__vblex"/></e>
+<e lm="arkiman"><i>arkiman</i><par n="pikin__n"/></e>
+<e lm="asaw"><i>asaw</i><par n="pikin__n"/></e>
+<e lm="asege"><i>asege</i><par n="pikin__n"/></e>
+<e lm="asema"><i>asema</i><par n="pikin__n"/></e>
+<e lm="asi"><i>asi</i><par n="pikin__n"/></e>
+<e lm="asin"><i>asin</i><par n="pikin__n"/></e>
+<e lm="asisi"><i>asisi</i><par n="pikin__n"/></e>
+<e lm="asranti"><i>asranti</i><par n="langi__adj"/></e>
+<e lm="at'oso"><i>at'oso</i><par n="pikin__n"/></e>
+<e lm="ati de na dyompo"><i>ati de na dyompo</i><par n="langi__adj"/></e>
+<e lm="ati sidon"><i>ati sidon</i><par n="langi__adj"/></e>
+<e lm="ati"><i>ati</i><par n="pikin__n"/></e>
+<e lm="atibron"><i>atibron</i><par n="pikin__n"/></e>
+<e lm="awari"><i>awari</i><par n="pikin__n"/></e>
+<e lm="awaridomri"><i>awaridomri</i><par n="pikin__n"/></e>
+<e lm="awinsi fa"><i>awinsi fa</i><par n="sensi__cnjsub"/></e>
+<e lm="awinsi"><i>awinsi</i><par n="sensi__cnjsub"/></e>
+<e lm="ayun"><i>ayun</i><par n="pikin__n"/></e>
+<e lm="baba"><i>baba</i><par n="pikin__n"/></e>
+<e lm="baba"><i>baba</i><par n="soigi__vblex"/></e>
+<e lm="babari"><i>babari</i><par n="pikin__n"/></e>
+<e lm="babatiki"><i>babatiki</i><par n="pikin__n"/></e>
+<e lm="babaw"><i>babaw</i><par n="langi__adj"/></e>
+<e lm="babawman"><i>babawman</i><par n="pikin__n"/></e>
+<e lm="babun"><i>babun</i><par n="pikin__n"/></e>
+<e lm="babun-nefi"><i>babun-nefi</i><par n="pikin__n"/></e>
+<e lm="babywagi"><i>babywagi</i><par n="pikin__n"/></e>
+<e lm="bada"><i>bada</i><par n="soigi__vblex"/></e>
+<e lm="bagasi"><i>bagasi</i><par n="pikin__n"/></e>
+<e lm="bai"><i>bai</i><par n="soigi__vblex"/></e>
+<e lm="baiman"><i>baiman</i><par n="pikin__n"/></e>
+<e lm="bak'anu"><i>bak'anu</i><par n="pikin__n"/></e>
+<e lm="bak'ati"><i>bak'ati</i><par n="pikin__n"/></e>
+<e lm="baka dati"><i>baka dati</i><par n="nanga__cnjcoo"/></e>
+<e lm="baka di"><i>baka di</i><par n="nanga__cnjcoo"/></e>
+<e lm="baka"><i>baka</i><par n="efu__adv"/></e>
+<e lm="baka"><i>baka</i><par n="fu__pr"/></e>
+<e lm="baka"><i>baka</i><par n="pikin__n"/></e>
+<e lm="baka"><i>baka</i><par n="soigi__vblex"/></e>
+<e lm="baka-iri"><i>baka-iri</i><par n="pikin__n"/></e>
+<e lm="bakabaka"><i>bakabaka</i><par n="efu__adv"/></e>
+<e lm="bakabini"><i>bakabini</i><par n="pikin__n"/></e>
+<e lm="bakabirti"><i>bakabirti</i><par n="pikin__n"/></e>
+<e lm="bakabonyo"><i>bakabonyo</i><par n="pikin__n"/></e>
+<e lm="bakabreki"><i>bakabreki</i><par n="pikin__n"/></e>
+<e lm="bakadan"><i>bakadan</i><par n="pikin__n"/></e>
+<e lm="bakadina"><i>bakadina</i><par n="pikin__n"/></e>
+<e lm="bakadyari"><i>bakadyari</i><par n="pikin__n"/></e>
+<e lm="bakafinga"><i>bakafinga</i><par n="pikin__n"/></e>
+<e lm="bakafutu"><i>bakafutu</i><par n="pikin__n"/></e>
+<e lm="bakaman"><i>bakaman</i><par n="pikin__n"/></e>
+<e lm="bakaneki"><i>bakaneki</i><par n="pikin__n"/></e>
+<e lm="bakapikin"><i>bakapikin</i><par n="pikin__n"/></e>
+<e lm="bakasei"><i>bakasei</i><par n="langi__adj"/></e>
+<e lm="bakasei"><i>bakasei</i><par n="pikin__n"/></e>
+<e lm="bakaten"><i>bakaten</i><par n="efu__adv"/></e>
+<e lm="bakatifi"><i>bakatifi</i><par n="pikin__n"/></e>
+<e lm="bakatitei"><i>bakatitei</i><par n="pikin__n"/></e>
+<e lm="bakawan"><i>bakawan</i><par n="pikin__n"/></e>
+<e lm="bakba wenkri"><i>bakba wenkri</i><par n="pikin__n"/></e>
+<e lm="bakba"><i>bakba</i><par n="pikin__n"/></e>
+<e lm="bakra"><i>bakra</i><par n="pikin__n"/></e>
+<e lm="bakrakondre"><i>bakrakondre</i><par n="pikin__n"/></e>
+<e lm="bakri-oso"><i>bakri-oso</i><par n="pikin__n"/></e>
+<e lm="bakriman"><i>bakriman</i><par n="pikin__n"/></e>
+<e lm="baksis"><i>baksis</i><par n="pikin__n"/></e>
+<e lm="balata"><i>balata</i><par n="langi__adj"/></e>
+<e lm="balata"><i>balata</i><par n="pikin__n"/></e>
+<e lm="baleta"><i>baleta</i><par n="pikin__n"/></e>
+<e lm="baleta"><i>baleta</i><par n="soigi__vblex"/></e>
+<e lm="bana"><i>bana</i><par n="pikin__n"/></e>
+<e lm="bangi"><i>bangi</i><par n="pikin__n"/></e>
+<e lm="banti"><i>banti</i><par n="langi__adj"/></e>
+<e lm="banti"><i>banti</i><par n="pikin__n"/></e>
+<e lm="banti"><i>banti</i><par n="soigi__vblex"/></e>
+<e lm="barba"><i>barba</i><par n="pikin__n"/></e>
+<e lm="bari boskopu"><i>bari boskopu</i><par n="soigi__vblex"/></e>
+<e lm="bari dreigi"><i>bari dreigi</i><par n="soigi__vblex"/></e>
+<e lm="bari kari"><i>bari kari</i><par n="soigi__vblex"/></e>
+<e lm="bari wroko"><i>bari wroko</i><par n="soigi__vblex"/></e>
+<e lm="bari"><i>bari</i><par n="pikin__n"/></e>
+<e lm="bari"><i>bari</i><par n="soigi__vblex"/></e>
+<e lm="barki"><i>barki</i><par n="pikin__n"/></e>
+<e lm="basi"><i>basi</i><par n="pikin__n"/></e>
+<e lm="basi"><i>basi</i><par n="soigi__vblex"/></e>
+<e lm="basra"><i>basra</i><par n="langi__adj"/></e>
+<e lm="baster"><i>baster</i><par n="langi__adj"/></e>
+<e lm="baster"><i>baster</i><par n="soigi__vblex"/></e>
+<e lm="basya"><i>basya</i><par n="pikin__n"/></e>
+<e lm="batra"><i>batra</i><par n="pikin__n"/></e>
+<e lm="baya"><i>baya</i><par n="kokodiako__ij"/></e>
+<e lm="bedi"><i>bedi</i><par n="pikin__n"/></e>
+<e lm="bedrigi"><i>bedrigi</i><par n="soigi__vblex"/></e>
+<e lm="bedrigiman"><i>bedrigiman</i><par n="pikin__n"/></e>
+<e lm="begi"><i>begi</i><par n="pikin__n"/></e>
+<e lm="begi"><i>begi</i><par n="soigi__vblex"/></e>
+<e lm="begiman"><i>begiman</i><par n="pikin__n"/></e>
+<e lm="beifi"><i>beifi</i><par n="soigi__vblex"/></e>
+<e lm="beifi-ati"><i>beifi-ati</i><par n="pikin__n"/></e>
+<e lm="beiri"><i>beiri</i><par n="pikin__n"/></e>
+<e lm="beitri"><i>beitri</i><par n="pikin__n"/></e>
+<e lm="beki"><i>beki</i><par n="pikin__n"/></e>
+<e lm="bemui"><i>bemui</i><par n="langi__adj"/></e>
+<e lm="bemui"><i>bemui</i><par n="soigi__vblex"/></e>
+<e lm="ben"><i>ben</i><par n="ben__aux"/></e>
+<e lm="benawtu"><i>benawtu</i><par n="langi__adj"/></e>
+<e lm="beni"><i>beni</i><par n="langi__adj"/></e>
+<e lm="beni"><i>beni</i><par n="pikin__n"/></e>
+<e lm="beni"><i>beni</i><par n="soigi__vblex"/></e>
+<e lm="ber'ati"><i>ber'ati</i><par n="pikin__n"/></e>
+<e lm="bere"><i>bere</i><par n="pikin__n"/></e>
+<e lm="berefamiri"><i>berefamiri</i><par n="pikin__n"/></e>
+<e lm="berefuru"><i>berefuru</i><par n="langi__adj"/></e>
+<e lm="bereketi"><i>bereketi</i><par n="pikin__n"/></e>
+<e lm="berekofu"><i>berekofu</i><par n="pikin__n"/></e>
+<e lm="bergi"><i>bergi</i><par n="pikin__n"/></e>
+<e lm="bergi-olo"><i>bergi-olo</i><par n="pikin__n"/></e>
+<e lm="bergibergi"><i>bergibergi</i><par n="langi__adj"/></e>
+<e lm="bergiskin"><i>bergiskin</i><par n="pikin__n"/></e>
+<e lm="beri en gi wan sma"><i>beri en gi wan sma</i><par n="soigi__vblex"/></e>
+<e lm="beri"><i>beri</i><par n="pikin__n"/></e>
+<e lm="beri"><i>beri</i><par n="soigi__vblex"/></e>
+<e lm="berpe"><i>berpe</i><par n="pikin__n"/></e>
+<e lm="besnei"><i>besnei</i><par n="langi__adj"/></e>
+<e lm="besnei"><i>besnei</i><par n="soigi__vblex"/></e>
+<e lm="besroiti"><i>besroiti</i><par n="pikin__n"/></e>
+<e lm="besroiti"><i>besroiti</i><par n="soigi__vblex"/></e>
+<e lm="beti"><i>beti</i><par n="pikin__n"/></e>
+<e lm="beti"><i>beti</i><par n="soigi__vblex"/></e>
+<e lm="betre"><i>betre</i><par n="efu__adv"/></e>
+<e lm="betre"><i>betre</i><par n="soigi__vblex"/></e>
+<e lm="beweigi"><i>beweigi</i><par n="pikin__n"/></e>
+<e lm="beweigi"><i>beweigi</i><par n="soigi__vblex"/></e>
+<e lm="bifo"><i>bifo</i><par n="nanga__cnjcoo"/></e>
+<e lm="bigi"><i>bigi</i><par n="langi__adj"/></e>
+<e lm="bigi-ai"><i>bigi-ai</i><par n="pikin__n"/></e>
+<e lm="bigidoi"><i>bigidoi</i><par n="pikin__n"/></e>
+<e lm="bigifasi"><i>bigifasi</i><par n="pikin__n"/></e>
+<e lm="bigifisi"><i>bigifisi</i><par n="pikin__n"/></e>
+<e lm="bigifutu"><i>bigifutu</i><par n="pikin__n"/></e>
+<e lm="bigimemre"><i>bigimemre</i><par n="langi__adj"/></e>
+<e lm="bigimemre"><i>bigimemre</i><par n="pikin__n"/></e>
+<e lm="bigin"><i>bigin</i><par n="pikin__n"/></e>
+<e lm="bigin"><i>bigin</i><par n="soigi__vblex"/></e>
+<e lm="bigisma"><i>bigisma</i><par n="pikin__n"/></e>
+<e lm="bika"><i>bika</i><par n="nanga__cnjcoo"/></e>
+<e lm="bimba"><i>bimba</i><par n="pikin__n"/></e>
+<e lm="birambi"><i>birambi</i><par n="pikin__n"/></e>
+<e lm="birfrow"><i>birfrow</i><par n="pikin__n"/></e>
+<e lm="biri"><i>biri</i><par n="pikin__n"/></e>
+<e lm="birman"><i>birman</i><par n="pikin__n"/></e>
+<e lm="birti"><i>birti</i><par n="pikin__n"/></e>
+<e lm="bisbisi-woron"><i>bisbisi-woron</i><par n="pikin__n"/></e>
+<e lm="bisi"><i>bisi</i><par n="pikin__n"/></e>
+<e lm="bita"><i>bita</i><par n="langi__adj"/></e>
+<e lm="bita"><i>bita</i><par n="pikin__n"/></e>
+<e lm="bitakasaba"><i>bitakasaba</i><par n="pikin__n"/></e>
+<e lm="blaka"><i>blaka</i><par n="langi__adj"/></e>
+<e lm="blaka"><i>blaka</i><par n="soigi__vblex"/></e>
+<e lm="blaka-ai pesi"><i>blaka-ai pesi</i><par n="pikin__n"/></e>
+<e lm="blaka-ede tingifowru"><i>blaka-ede tingifowru</i><par n="pikin__n"/></e>
+<e lm="blaka-uma"><i>blaka-uma</i><par n="pikin__n"/></e>
+<e lm="blakaman"><i>blakaman</i><par n="pikin__n"/></e>
+<e lm="blaw"><i>blaw</i><par n="langi__adj"/></e>
+<e lm="blesi"><i>blesi</i><par n="langi__adj"/></e>
+<e lm="blesi"><i>blesi</i><par n="pikin__n"/></e>
+<e lm="blesi"><i>blesi</i><par n="soigi__vblex"/></e>
+<e lm="blon"><i>blon</i><par n="pikin__n"/></e>
+<e lm="bo"><i>bo</i><par n="musu__vbmod"/></e>
+<e lm="bo"><i>bo</i><par n="pikin__n"/></e>
+<e lm="bobi"><i>bobi</i><par n="pikin__n"/></e>
+<e lm="bobimofo"><i>bobimofo</i><par n="pikin__n"/></e>
+<e lm="bobo"><i>bobo</i><par n="pikin__n"/></e>
+<e lm="boboi"><i>boboi</i><par n="soigi__vblex"/></e>
+<e lm="boboisturu"><i>boboisturu</i><par n="pikin__n"/></e>
+<e lm="bofru"><i>bofru</i><par n="pikin__n"/></e>
+<e lm="bogobogo"><i>bogobogo</i><par n="langi__adj"/></e>
+<e lm="boi"><i>boi</i><par n="pikin__n"/></e>
+<e lm="boigi"><i>boigi</i><par n="soigi__vblex"/></e>
+<e lm="boiti"><i>boiti</i><par n="nanga__cnjcoo"/></e>
+<e lm="boiti"><i>boiti</i><par n="pikin__n"/></e>
+<e lm="boitipresi"><i>boitipresi</i><par n="pikin__n"/></e>
+<e lm="boketi"><i>boketi</i><par n="pikin__n"/></e>
+<e lm="bokoboko"><i>bokoboko</i><par n="pikin__n"/></e>
+<e lm="bokru"><i>bokru</i><par n="langi__adj"/></e>
+<e lm="boktu"><i>boktu</i><par n="pikin__n"/></e>
+<e lm="boktuboktu"><i>boktuboktu</i><par n="langi__adj"/></e>
+<e lm="boktuboktu"><i>boktuboktu</i><par n="pikin__n"/></e>
+<e lm="bombel"><i>bombel</i><par n="pikin__n"/></e>
+<e lm="bon"><i>bon</i><par n="pikin__n"/></e>
+<e lm="bonfutu"><i>bonfutu</i><par n="pikin__n"/></e>
+<e lm="bongro"><i>bongro</i><par n="pikin__n"/></e>
+<e lm="bonk"><i>bonk</i><par n="soigi__vblex"/></e>
+<e lm="bonki"><i>bonki</i><par n="pikin__n"/></e>
+<e lm="bonkoro"><i>bonkoro</i><par n="pikin__n"/></e>
+<e lm="bontara"><i>bontara</i><par n="pikin__n"/></e>
+<e lm="bonu"><i>bonu</i><par n="soigi__vblex"/></e>
+<e lm="bonuman"><i>bonuman</i><par n="pikin__n"/></e>
+<e lm="bonuwroko"><i>bonuwroko</i><par n="pikin__n"/></e>
+<e lm="bonyo"><i>bonyo</i><par n="pikin__n"/></e>
+<e lm="bonyogron"><i>bonyogron</i><par n="pikin__n"/></e>
+<e lm="borgu"><i>borgu</i><par n="pikin__n"/></e>
+<e lm="borguman"><i>borguman</i><par n="pikin__n"/></e>
+<e lm="bori"><i>bori</i><par n="soigi__vblex"/></e>
+<e lm="boriman"><i>boriman</i><par n="pikin__n"/></e>
+<e lm="boro psa"><i>boro psa</i><par n="soigi__vblex"/></e>
+<e lm="boro"><i>boro</i><par n="langi__adj"/></e>
+<e lm="boro"><i>boro</i><par n="soigi__vblex"/></e>
+<e lm="boropasi"><i>boropasi</i><par n="pikin__n"/></e>
+<e lm="borsu"><i>borsu</i><par n="pikin__n"/></e>
+<e lm="boru"><i>boru</i><par n="pikin__n"/></e>
+<e lm="bosi"><i>bosi</i><par n="pikin__n"/></e>
+<e lm="bosi"><i>bosi</i><par n="soigi__vblex"/></e>
+<e lm="boskopu"><i>boskopu</i><par n="pikin__n"/></e>
+<e lm="boskopuman"><i>boskopuman</i><par n="pikin__n"/></e>
+<e lm="bosro"><i>bosro</i><par n="pikin__n"/></e>
+<e lm="bosro"><i>bosro</i><par n="soigi__vblex"/></e>
+<e lm="bosroko"><i>bosroko</i><par n="pikin__n"/></e>
+<e lm="bosu"><i>bosu</i><par n="pikin__n"/></e>
+<e lm="boto"><i>boto</i><par n="pikin__n"/></e>
+<e lm="boto-ede"><i>boto-ede</i><par n="pikin__n"/></e>
+<e lm="botolanki"><i>botolanki</i><par n="pikin__n"/></e>
+<e lm="botoman"><i>botoman</i><par n="pikin__n"/></e>
+<e lm="botri"><i>botri</i><par n="pikin__n"/></e>
+<e lm="botro"><i>botro</i><par n="pikin__n"/></e>
+<e lm="botro"><i>botro</i><par n="soigi__vblex"/></e>
+<e lm="botronoso"><i>botronoso</i><par n="pikin__n"/></e>
+<e lm="bow"><i>bow</i><par n="soigi__vblex"/></e>
+<e lm="bowston"><i>bowston</i><par n="pikin__n"/></e>
+<e lm="bowtu"><i>bowtu</i><par n="langi__adj"/></e>
+<e lm="bowtu"><i>bowtu</i><par n="pikin__n"/></e>
+<e lm="bowtu"><i>bowtu</i><par n="soigi__vblex"/></e>
+<e lm="brabakoto"><i>brabakoto</i><par n="langi__adj"/></e>
+<e lm="brabakoto"><i>brabakoto</i><par n="soigi__vblex"/></e>
+<e lm="brada"><i>brada</i><par n="pikin__n"/></e>
+<e lm="bradi"><i>bradi</i><par n="langi__adj"/></e>
+<e lm="bradi-edeman"><i>bradi-edeman</i><par n="pikin__n"/></e>
+<e lm="bradyari"><i>bradyari</i><par n="langi__adj"/></e>
+<e lm="brafu"><i>brafu</i><par n="pikin__n"/></e>
+<e lm="brai"><i>brai</i><par n="soigi__vblex"/></e>
+<e lm="brantimaka"><i>brantimaka</i><par n="pikin__n"/></e>
+<e lm="brantmiri"><i>brantmiri</i><par n="pikin__n"/></e>
+<e lm="brasa"><i>brasa</i><par n="pikin__n"/></e>
+<e lm="brasa"><i>brasa</i><par n="soigi__vblex"/></e>
+<e lm="brede"><i>brede</i><par n="pikin__n"/></e>
+<e lm="bredebon"><i>bredebon</i><par n="pikin__n"/></e>
+<e lm="bredefutu"><i>bredefutu</i><par n="pikin__n"/></e>
+<e lm="brei"><i>brei</i><par n="langi__adj"/></e>
+<e lm="brei"><i>brei</i><par n="soigi__vblex"/></e>
+<e lm="breiti"><i>breiti</i><par n="langi__adj"/></e>
+<e lm="breki"><i>breki</i><par n="pikin__n"/></e>
+<e lm="breki"><i>breki</i><par n="soigi__vblex"/></e>
+<e lm="brekten"><i>brekten</i><par n="pikin__n"/></e>
+<e lm="breni"><i>breni</i><par n="langi__adj"/></e>
+<e lm="brenki"><i>brenki</i><par n="langi__adj"/></e>
+<e lm="brenki"><i>brenki</i><par n="soigi__vblex"/></e>
+<e lm="bribi"><i>bribi</i><par n="pikin__n"/></e>
+<e lm="bribi"><i>bribi</i><par n="soigi__vblex"/></e>
+<e lm="bribisma"><i>bribisma</i><par n="pikin__n"/></e>
+<e lm="brifi"><i>brifi</i><par n="pikin__n"/></e>
+<e lm="brine sowt'watra"><i>brine sowt'watra</i><par n="pikin__n"/></e>
+<e lm="bro tapu"><i>bro tapu</i><par n="soigi__vblex"/></e>
+<e lm="bro"><i>bro</i><par n="pikin__n"/></e>
+<e lm="bro"><i>bro</i><par n="soigi__vblex"/></e>
+<e lm="broin"><i>broin</i><par n="langi__adj"/></e>
+<e lm="brok'ede"><i>brok'ede</i><par n="pikin__n"/></e>
+<e lm="broki"><i>broki</i><par n="pikin__n"/></e>
+<e lm="broko ede"><i>broko ede</i><par n="soigi__vblex"/></e>
+<e lm="broko kindi"><i>broko kindi</i><par n="soigi__vblex"/></e>
+<e lm="broko na pikinmoni"><i>broko na pikinmoni</i><par n="soigi__vblex"/></e>
+<e lm="broko saka"><i>broko saka</i><par n="soigi__vblex"/></e>
+<e lm="broko"><i>broko</i><par n="langi__adj"/></e>
+<e lm="broko"><i>broko</i><par n="soigi__vblex"/></e>
+<e lm="broko-oso"><i>broko-oso</i><par n="pikin__n"/></e>
+<e lm="brokobroko"><i>brokobroko</i><par n="langi__adj"/></e>
+<e lm="brokobroko"><i>brokobroko</i><par n="soigi__vblex"/></e>
+<e lm="brokodei"><i>brokodei</i><par n="pikin__n"/></e>
+<e lm="brokokowru"><i>brokokowru</i><par n="langi__adj"/></e>
+<e lm="brokokrosi"><i>brokokrosi</i><par n="pikin__n"/></e>
+<e lm="brokosaka"><i>brokosaka</i><par n="langi__adj"/></e>
+<e lm="brom"><i>brom</i><par n="pikin__n"/></e>
+<e lm="bromki"><i>bromki</i><par n="pikin__n"/></e>
+<e lm="bromkidyari"><i>bromkidyari</i><par n="pikin__n"/></e>
+<e lm="bromkipatu"><i>bromkipatu</i><par n="pikin__n"/></e>
+<e lm="bron"><i>bron</i><par n="soigi__vblex"/></e>
+<e lm="bronbere"><i>bronbere</i><par n="pikin__n"/></e>
+<e lm="bronbron"><i>bronbron</i><par n="langi__adj"/></e>
+<e lm="bronsoro"><i>bronsoro</i><par n="pikin__n"/></e>
+<e lm="bropresi"><i>bropresi</i><par n="pikin__n"/></e>
+<e lm="brotyas"><i>brotyas</i><par n="soigi__vblex"/></e>
+<e lm="brudu"><i>brudu</i><par n="pikin__n"/></e>
+<e lm="brudutitei"><i>brudutitei</i><par n="pikin__n"/></e>
+<e lm="bruku"><i>bruku</i><par n="pikin__n"/></e>
+<e lm="brukubere"><i>brukubere</i><par n="pikin__n"/></e>
+<e lm="brukufutu"><i>brukufutu</i><par n="pikin__n"/></e>
+<e lm="bruya"><i>bruya</i><par n="langi__adj"/></e>
+<e lm="bruya"><i>bruya</i><par n="pikin__n"/></e>
+<e lm="bruya"><i>bruya</i><par n="soigi__vblex"/></e>
+<e lm="buba"><i>buba</i><par n="pikin__n"/></e>
+<e lm="bubu"><i>bubu</i><par n="pikin__n"/></e>
+<e lm="bugru"><i>bugru</i><par n="pikin__n"/></e>
+<e lm="bugubugu"><i>bugubugu</i><par n="pikin__n"/></e>
+<e lm="bui"><i>bui</i><par n="pikin__n"/></e>
+<e lm="bui"><i>bui</i><par n="soigi__vblex"/></e>
+<e lm="buibui"><i>buibui</i><par n="langi__adj"/></e>
+<e lm="buku"><i>buku</i><par n="langi__adj"/></e>
+<e lm="buku"><i>buku</i><par n="pikin__n"/></e>
+<e lm="buku"><i>buku</i><par n="soigi__vblex"/></e>
+<e lm="bukuwenkri"><i>bukuwenkri</i><par n="pikin__n"/></e>
+<e lm="bulu"><i>bulu</i><par n="pikin__n"/></e>
+<e lm="bun furu"><i>bun furu</i><par n="langi__adj"/></e>
+<e lm="bun"><i>bun</i><par n="efu__adv"/></e>
+<e lm="bun"><i>bun</i><par n="langi__adj"/></e>
+<e lm="bun"><i>bun</i><par n="pikin__n"/></e>
+<e lm="bun-ati"><i>bun-ati</i><par n="langi__adj"/></e>
+<e lm="bun-ati"><i>bun-ati</i><par n="pikin__n"/></e>
+<e lm="bunfasi"><i>bunfasi</i><par n="pikin__n"/></e>
+<e lm="bunkopu seri"><i>bunkopu seri</i><par n="pikin__n"/></e>
+<e lm="bunkopu"><i>bunkopu</i><par n="langi__adj"/></e>
+<e lm="buriki"><i>buriki</i><par n="pikin__n"/></e>
+<e lm="burkaw"><i>burkaw</i><par n="pikin__n"/></e>
+<e lm="buru"><i>buru</i><par n="pikin__n"/></e>
+<e lm="buruwei"><i>buruwei</i><par n="pikin__n"/></e>
+<e lm="bus'alata"><i>bus'alata</i><par n="pikin__n"/></e>
+<e lm="bus'anansi"><i>bus'anansi</i><par n="pikin__n"/></e>
+<e lm="bus'kondre"><i>bus'kondre</i><par n="pikin__n"/></e>
+<e lm="bus'meti"><i>bus'meti</i><par n="pikin__n"/></e>
+<e lm="bus'moismoisi"><i>bus'moismoisi</i><par n="pikin__n"/></e>
+<e lm="busbusi"><i>busbusi</i><par n="langi__adj"/></e>
+<e lm="busbusi"><i>busbusi</i><par n="pikin__n"/></e>
+<e lm="busi"><i>busi</i><par n="pikin__n"/></e>
+<e lm="busikrabasi"><i>busikrabasi</i><par n="pikin__n"/></e>
+<e lm="busiswipi"><i>busiswipi</i><par n="pikin__n"/></e>
+<e lm="busititei"><i>busititei</i><par n="pikin__n"/></e>
+<e lm="buskutu"><i>buskutu</i><par n="pikin__n"/></e>
+<e lm="butsweri"><i>butsweri</i><par n="pikin__n"/></e>
+<e lm="butu"><i>butu</i><par n="pikin__n"/></e>
+<e lm="butu"><i>butu</i><par n="soigi__vblex"/></e>
+<e lm="bòks"><i>bòks</i><par n="soigi__vblex"/></e>
+<e lm="bòs"><i>bòs</i><par n="soigi__vblex"/></e>
+<e lm="covetousness gridifasi"><i>covetousness gridifasi</i><par n="pikin__n"/></e>
+<e lm="da"><i>da</i><par n="a__det"/></e>
+<e lm="dagu"><i>dagu</i><par n="pikin__n"/></e>
+<e lm="daki"><i>daki</i><par n="pikin__n"/></e>
+<e lm="dala"><i>dala</i><par n="pikin__n"/></e>
+<e lm="dalaskowtu"><i>dalaskowtu</i><par n="pikin__n"/></e>
+<e lm="dalèk"><i>dalèk</i><par n="efu__adv"/></e>
+<e lm="dampu"><i>dampu</i><par n="pikin__n"/></e>
+<e lm="dampu"><i>dampu</i><par n="soigi__vblex"/></e>
+<e lm="dan"><i>dan</i><par n="nanga__cnjcoo"/></e>
+<e lm="dan"><i>dan</i><par n="pikin__n"/></e>
+<e lm="dangra"><i>dangra</i><par n="langi__adj"/></e>
+<e lm="dangra"><i>dangra</i><par n="soigi__vblex"/></e>
+<e lm="danki"><i>danki</i><par n="pikin__n"/></e>
+<e lm="dankidanki"><i>dankidanki</i><par n="efu__adv"/></e>
+<e lm="dans'man"><i>dans'man</i><par n="pikin__n"/></e>
+<e lm="dansi"><i>dansi</i><par n="pikin__n"/></e>
+<e lm="dansi"><i>dansi</i><par n="soigi__vblex"/></e>
+<e lm="dat' meki"><i>dat' meki</i><par n="nanga__cnjcoo"/></e>
+<e lm="dat'ede"><i>dat'ede</i><par n="nanga__cnjcoo"/></e>
+<e lm="dati"><i>dati</i><par n="nanga__cnjcoo"/></e>
+<e lm="datra"><i>datra</i><par n="pikin__n"/></e>
+<e lm="datra-oso"><i>datra-oso</i><par n="pikin__n"/></e>
+<e lm="datrasiki"><i>datrasiki</i><par n="pikin__n"/></e>
+<e lm="de na en futu"><i>de na en futu</i><par n="soigi__vblex"/></e>
+<e lm="de nanga krin ai"><i>de nanga krin ai</i><par n="langi__adj"/></e>
+<e lm="de"><i>de</i><par n="soigi__vblex"/></e>
+<e lm="dede na watra"><i>dede na watra</i><par n="soigi__vblex"/></e>
+<e lm="dede"><i>dede</i><par n="langi__adj"/></e>
+<e lm="dede"><i>dede</i><par n="pikin__n"/></e>
+<e lm="dede"><i>dede</i><par n="soigi__vblex"/></e>
+<e lm="dede-ede"><i>dede-ede</i><par n="pikin__n"/></e>
+<e lm="dede-oso"><i>dede-oso</i><par n="pikin__n"/></e>
+<e lm="dedebonyo"><i>dedebonyo</i><par n="pikin__n"/></e>
+<e lm="dedeboskopu"><i>dedeboskopu</i><par n="pikin__n"/></e>
+<e lm="dedekisi"><i>dedekisi</i><par n="pikin__n"/></e>
+<e lm="dedekondre"><i>dedekondre</i><par n="pikin__n"/></e>
+<e lm="dedeskin"><i>dedeskin</i><par n="pikin__n"/></e>
+<e lm="dedewagi"><i>dedewagi</i><par n="pikin__n"/></e>
+<e lm="degedege"><i>degedege</i><par n="soigi__vblex"/></e>
+<e lm="dei"><i>dei</i><par n="pikin__n"/></e>
+<e lm="deibrede"><i>deibrede</i><par n="pikin__n"/></e>
+<e lm="deigri"><i>deigri</i><par n="pikin__n"/></e>
+<e lm="deiten"><i>deiten</i><par n="pikin__n"/></e>
+<e lm="dek'ati"><i>dek'ati</i><par n="pikin__n"/></e>
+<e lm="deki"><i>deki</i><par n="langi__adj"/></e>
+<e lm="den"><i>den</i><par n="a__det"/></e>
+<e lm="denki"><i>denki</i><par n="pikin__n"/></e>
+<e lm="denki"><i>denki</i><par n="soigi__vblex"/></e>
+<e lm="desko"><i>desko</i><par n="pikin__n"/></e>
+<e lm="desko"><i>desko</i><par n="soigi__vblex"/></e>
+<e lm="di fu aiti"><i>di fu aiti</i><par n="langi__adj"/></e>
+<e lm="di fu dri"><i>di fu dri</i><par n="langi__adj"/></e>
+<e lm="di fu feifi"><i>di fu feifi</i><par n="langi__adj"/></e>
+<e lm="di fu fo"><i>di fu fo</i><par n="langi__adj"/></e>
+<e lm="di fu neigi"><i>di fu neigi</i><par n="langi__adj"/></e>
+<e lm="di fu seibi"><i>di fu seibi</i><par n="langi__adj"/></e>
+<e lm="di fu siksi"><i>di fu siksi</i><par n="langi__adj"/></e>
+<e lm="di fu tin"><i>di fu tin</i><par n="langi__adj"/></e>
+<e lm="di fu tu"><i>di fu tu</i><par n="langi__adj"/></e>
+<e lm="di"><i>di</i><par n="nanga__cnjcoo"/></e>
+<e lm="dia"><i>dia</i><par n="pikin__n"/></e>
+<e lm="diameti"><i>diameti</i><par n="pikin__n"/></e>
+<e lm="didibri"><i>didibri</i><par n="pikin__n"/></e>
+<e lm="didibri-apra"><i>didibri-apra</i><par n="pikin__n"/></e>
+<e lm="didibrikondre"><i>didibrikondre</i><par n="pikin__n"/></e>
+<e lm="didon"><i>didon</i><par n="soigi__vblex"/></e>
+<e lm="difrenti"><i>difrenti</i><par n="langi__adj"/></e>
+<e lm="diki puru"><i>diki puru</i><par n="soigi__vblex"/></e>
+<e lm="diki suku"><i>diki suku</i><par n="soigi__vblex"/></e>
+<e lm="diki"><i>diki</i><par n="soigi__vblex"/></e>
+<e lm="dineti"><i>dineti</i><par n="efu__adv"/></e>
+<e lm="dini"><i>dini</i><par n="soigi__vblex"/></e>
+<e lm="dip'bere"><i>dip'bere</i><par n="langi__adj"/></e>
+<e lm="dipi"><i>dipi</i><par n="langi__adj"/></e>
+<e lm="dipi"><i>dipi</i><par n="soigi__vblex"/></e>
+<e lm="dir'diri"><i>dir'diri</i><par n="langi__adj"/></e>
+<e lm="diri"><i>diri</i><par n="langi__adj"/></e>
+<e lm="dirèk"><i>dirèk</i><par n="efu__adv"/></e>
+<e lm="dis'ten"><i>dis'ten</i><par n="pikin__n"/></e>
+<e lm="distrikti"><i>distrikti</i><par n="pikin__n"/></e>
+<e lm="dobru"><i>dobru</i><par n="langi__adj"/></e>
+<e lm="dobru"><i>dobru</i><par n="soigi__vblex"/></e>
+<e lm="dodoi"><i>dodoi</i><par n="soigi__vblex"/></e>
+<e lm="dofu"><i>dofu</i><par n="langi__adj"/></e>
+<e lm="doi"><i>doi</i><par n="pikin__n"/></e>
+<e lm="doifi"><i>doifi</i><par n="pikin__n"/></e>
+<e lm="doisri"><i>doisri</i><par n="pikin__n"/></e>
+<e lm="doitiki"><i>doitiki</i><par n="pikin__n"/></e>
+<e lm="doksi"><i>doksi</i><par n="pikin__n"/></e>
+<e lm="dolku"><i>dolku</i><par n="pikin__n"/></e>
+<e lm="dompu"><i>dompu</i><par n="soigi__vblex"/></e>
+<e lm="domri"><i>domri</i><par n="pikin__n"/></e>
+<e lm="domru"><i>domru</i><par n="soigi__vblex"/></e>
+<e lm="don"><i>don</i><par n="langi__adj"/></e>
+<e lm="dondru"><i>dondru</i><par n="pikin__n"/></e>
+<e lm="dondru"><i>dondru</i><par n="soigi__vblex"/></e>
+<e lm="dondruston"><i>dondruston</i><par n="pikin__n"/></e>
+<e lm="dongo"><i>dongo</i><par n="soigi__vblex"/></e>
+<e lm="doni"><i>doni</i><par n="pikin__n"/></e>
+<e lm="donkaw"><i>donkaw</i><par n="pikin__n"/></e>
+<e lm="donman"><i>donman</i><par n="pikin__n"/></e>
+<e lm="dopu"><i>dopu</i><par n="pikin__n"/></e>
+<e lm="dopu"><i>dopu</i><par n="soigi__vblex"/></e>
+<e lm="dopu-oso"><i>dopu-oso</i><par n="pikin__n"/></e>
+<e lm="dopukerki"><i>dopukerki</i><par n="pikin__n"/></e>
+<e lm="dor'ai"><i>dor'ai</i><par n="pikin__n"/></e>
+<e lm="dorfu"><i>dorfu</i><par n="soigi__vblex"/></e>
+<e lm="doro na ai"><i>doro na ai</i><par n="soigi__vblex"/></e>
+<e lm="doro"><i>doro</i><par n="efu__adv"/></e>
+<e lm="doro"><i>doro</i><par n="pikin__n"/></e>
+<e lm="doro"><i>doro</i><par n="soigi__vblex"/></e>
+<e lm="dorodoro"><i>dorodoro</i><par n="efu__adv"/></e>
+<e lm="dorodoro"><i>dorodoro</i><par n="pikin__n"/></e>
+<e lm="dorokroku"><i>dorokroku</i><par n="pikin__n"/></e>
+<e lm="dorosei kondre"><i>dorosei kondre</i><par n="pikin__n"/></e>
+<e lm="dorosei"><i>dorosei</i><par n="langi__adj"/></e>
+<e lm="dorosei"><i>dorosei</i><par n="pikin__n"/></e>
+<e lm="dorpu"><i>dorpu</i><par n="pikin__n"/></e>
+<e lm="dosen"><i>dosen</i><par n="pikin__n"/></e>
+<e lm="dosu"><i>dosu</i><par n="pikin__n"/></e>
+<e lm="dot'baki"><i>dot'baki</i><par n="pikin__n"/></e>
+<e lm="dot'doti"><i>dot'doti</i><par n="langi__adj"/></e>
+<e lm="dot'doti"><i>dot'doti</i><par n="pikin__n"/></e>
+<e lm="dot'embre"><i>dot'embre</i><par n="pikin__n"/></e>
+<e lm="dot'feba"><i>dot'feba</i><par n="pikin__n"/></e>
+<e lm="dot'fisti"><i>dot'fisti</i><par n="langi__adj"/></e>
+<e lm="dot'kisi"><i>dot'kisi</i><par n="pikin__n"/></e>
+<e lm="dot'krosi"><i>dot'krosi</i><par n="pikin__n"/></e>
+<e lm="dot'oso-waswasi"><i>dot'oso-waswasi</i><par n="pikin__n"/></e>
+<e lm="doti"><i>doti</i><par n="langi__adj"/></e>
+<e lm="doti"><i>doti</i><par n="pikin__n"/></e>
+<e lm="dow"><i>dow</i><par n="pikin__n"/></e>
+<e lm="dragi"><i>dragi</i><par n="pikin__n"/></e>
+<e lm="dragiman"><i>dragiman</i><par n="pikin__n"/></e>
+<e lm="drai baka gi"><i>drai baka gi</i><par n="soigi__vblex"/></e>
+<e lm="drai libi"><i>drai libi</i><par n="soigi__vblex"/></e>
+<e lm="drai lontu"><i>drai lontu</i><par n="soigi__vblex"/></e>
+<e lm="drai tapu"><i>drai tapu</i><par n="langi__adj"/></e>
+<e lm="drai tapu"><i>drai tapu</i><par n="soigi__vblex"/></e>
+<e lm="drai"><i>drai</i><par n="soigi__vblex"/></e>
+<e lm="drai-ede"><i>drai-ede</i><par n="pikin__n"/></e>
+<e lm="draibere"><i>draibere</i><par n="efu__adv"/></e>
+<e lm="draidrai"><i>draidrai</i><par n="soigi__vblex"/></e>
+<e lm="draikolku"><i>draikolku</i><par n="pikin__n"/></e>
+<e lm="draiwinti"><i>draiwinti</i><par n="pikin__n"/></e>
+<e lm="drape"><i>drape</i><par n="efu__adv"/></e>
+<e lm="drei"><i>drei</i><par n="langi__adj"/></e>
+<e lm="drei"><i>drei</i><par n="soigi__vblex"/></e>
+<e lm="drei-ai"><i>drei-ai</i><par n="pikin__n"/></e>
+<e lm="dreigi"><i>dreigi</i><par n="soigi__vblex"/></e>
+<e lm="dreikronto"><i>dreikronto</i><par n="pikin__n"/></e>
+<e lm="dreineki"><i>dreineki</i><par n="pikin__n"/></e>
+<e lm="dreisabana"><i>dreisabana</i><par n="pikin__n"/></e>
+<e lm="dreiwatra"><i>dreiwatra</i><par n="pikin__n"/></e>
+<e lm="dren"><i>dren</i><par n="pikin__n"/></e>
+<e lm="dren"><i>dren</i><par n="soigi__vblex"/></e>
+<e lm="dresi"><i>dresi</i><par n="pikin__n"/></e>
+<e lm="dresi"><i>dresi</i><par n="soigi__vblex"/></e>
+<e lm="dresiman"><i>dresiman</i><par n="pikin__n"/></e>
+<e lm="dri"><i>dri</i><par n="tu__num"/></e>
+<e lm="dribi"><i>dribi</i><par n="soigi__vblex"/></e>
+<e lm="dridewroko"><i>dridewroko</i><par n="pikin__n"/></e>
+<e lm="drifutu"><i>drifutu</i><par n="pikin__n"/></e>
+<e lm="driktoro"><i>driktoro</i><par n="pikin__n"/></e>
+<e lm="dringi"><i>dringi</i><par n="pikin__n"/></e>
+<e lm="dringi"><i>dringi</i><par n="soigi__vblex"/></e>
+<e lm="dritenti"><i>dritenti</i><par n="tu__num"/></e>
+<e lm="droifi"><i>droifi</i><par n="pikin__n"/></e>
+<e lm="droifibon"><i>droifibon</i><par n="pikin__n"/></e>
+<e lm="droifidyari"><i>droifidyari</i><par n="pikin__n"/></e>
+<e lm="droipi"><i>droipi</i><par n="pikin__n"/></e>
+<e lm="dromofo"><i>dromofo</i><par n="pikin__n"/></e>
+<e lm="drompu"><i>drompu</i><par n="pikin__n"/></e>
+<e lm="dron"><i>dron</i><par n="pikin__n"/></e>
+<e lm="dronbuba"><i>dronbuba</i><par n="pikin__n"/></e>
+<e lm="dronman"><i>dronman</i><par n="pikin__n"/></e>
+<e lm="drontiki"><i>drontiki</i><par n="pikin__n"/></e>
+<e lm="dropu kon in'sei"><i>dropu kon in'sei</i><par n="soigi__vblex"/></e>
+<e lm="dropu"><i>dropu</i><par n="pikin__n"/></e>
+<e lm="dropu"><i>dropu</i><par n="soigi__vblex"/></e>
+<e lm="drungu"><i>drungu</i><par n="langi__adj"/></e>
+<e lm="drungu"><i>drungu</i><par n="soigi__vblex"/></e>
+<e lm="drunguman"><i>drunguman</i><par n="pikin__n"/></e>
+<e lm="drèk"><i>drèk</i><par n="pikin__n"/></e>
+<e lm="du"><i>du</i><par n="soigi__vblex"/></e>
+<e lm="dukrun"><i>dukrun</i><par n="soigi__vblex"/></e>
+<e lm="duku"><i>duku</i><par n="pikin__n"/></e>
+<e lm="dungr'oso"><i>dungr'oso</i><par n="pikin__n"/></e>
+<e lm="dungru"><i>dungru</i><par n="pikin__n"/></e>
+<e lm="dungru"><i>dungru</i><par n="soigi__vblex"/></e>
+<e lm="dungrudungru"><i>dungrudungru</i><par n="langi__adj"/></e>
+<e lm="dusun"><i>dusun</i><par n="tu__num"/></e>
+<e lm="dweiri"><i>dweiri</i><par n="pikin__n"/></e>
+<e lm="dweiri"><i>dweiri</i><par n="soigi__vblex"/></e>
+<e lm="dwengi"><i>dwengi</i><par n="soigi__vblex"/></e>
+<e lm="dya"><i>dya</i><par n="efu__adv"/></e>
+<e lm="dyadya"><i>dyadya</i><par n="langi__adj"/></e>
+<e lm="dyaf"><i>dyaf</i><par n="soigi__vblex"/></e>
+<e lm="dyakti"><i>dyakti</i><par n="pikin__n"/></e>
+<e lm="dyam"><i>dyam</i><par n="pikin__n"/></e>
+<e lm="dyam"><i>dyam</i><par n="soigi__vblex"/></e>
+<e lm="dyamanti"><i>dyamanti</i><par n="pikin__n"/></e>
+<e lm="dyamu"><i>dyamu</i><par n="pikin__n"/></e>
+<e lm="dyango"><i>dyango</i><par n="langi__adj"/></e>
+<e lm="dyangoman"><i>dyangoman</i><par n="pikin__n"/></e>
+<e lm="dyap"><i>dyap</i><par n="pikin__n"/></e>
+<e lm="dyapwroko"><i>dyapwroko</i><par n="pikin__n"/></e>
+<e lm="dyar'pesi"><i>dyar'pesi</i><par n="pikin__n"/></e>
+<e lm="dyaranti"><i>dyaranti</i><par n="pikin__n"/></e>
+<e lm="dyari"><i>dyari</i><par n="pikin__n"/></e>
+<e lm="dyariman"><i>dyariman</i><par n="pikin__n"/></e>
+<e lm="dyarusu"><i>dyarusu</i><par n="langi__adj"/></e>
+<e lm="dyarusu"><i>dyarusu</i><par n="pikin__n"/></e>
+<e lm="dyarusufasi"><i>dyarusufasi</i><par n="pikin__n"/></e>
+<e lm="dyaso"><i>dyaso</i><par n="efu__adv"/></e>
+<e lm="dyeme"><i>dyeme</i><par n="pikin__n"/></e>
+<e lm="dyeme"><i>dyeme</i><par n="soigi__vblex"/></e>
+<e lm="dyendyen"><i>dyendyen</i><par n="pikin__n"/></e>
+<e lm="dyepsi"><i>dyepsi</i><par n="pikin__n"/></e>
+<e lm="dyindya"><i>dyindya</i><par n="pikin__n"/></e>
+<e lm="dyindyamaka"><i>dyindyamaka</i><par n="pikin__n"/></e>
+<e lm="dyinipi"><i>dyinipi</i><par n="pikin__n"/></e>
+<e lm="dyogo"><i>dyogo</i><par n="pikin__n"/></e>
+<e lm="dyomp'ati"><i>dyomp'ati</i><par n="langi__adj"/></e>
+<e lm="dyomp'ati"><i>dyomp'ati</i><par n="pikin__n"/></e>
+<e lm="dyompo gi wan sma"><i>dyompo gi wan sma</i><par n="soigi__vblex"/></e>
+<e lm="dyompo tapu wan futu"><i>dyompo tapu wan futu</i><par n="soigi__vblex"/></e>
+<e lm="dyompo"><i>dyompo</i><par n="langi__adj"/></e>
+<e lm="dyompo"><i>dyompo</i><par n="soigi__vblex"/></e>
+<e lm="dyompodyompo"><i>dyompodyompo</i><par n="langi__adj"/></e>
+<e lm="dyompofutu"><i>dyompofutu</i><par n="pikin__n"/></e>
+<e lm="dyompometi"><i>dyompometi</i><par n="pikin__n"/></e>
+<e lm="dyonki"><i>dyonki</i><par n="pikin__n"/></e>
+<e lm="dyonko"><i>dyonko</i><par n="soigi__vblex"/></e>
+<e lm="dyonsro"><i>dyonsro</i><par n="efu__adv"/></e>
+<e lm="dyote"><i>dyote</i><par n="langi__adj"/></e>
+<e lm="dyote"><i>dyote</i><par n="soigi__vblex"/></e>
+<e lm="dyoteman"><i>dyoteman</i><par n="pikin__n"/></e>
+<e lm="dyudomri"><i>dyudomri</i><par n="pikin__n"/></e>
+<e lm="dyugudyugu"><i>dyugudyugu</i><par n="langi__adj"/></e>
+<e lm="dyugudyugu"><i>dyugudyugu</i><par n="pikin__n"/></e>
+<e lm="dyukerki"><i>dyukerki</i><par n="pikin__n"/></e>
+<e lm="dyuku a rem"><i>dyuku a rem</i><par n="soigi__vblex"/></e>
+<e lm="dyuku"><i>dyuku</i><par n="soigi__vblex"/></e>
+<e lm="dyukudyuku"><i>dyukudyuku</i><par n="soigi__vblex"/></e>
+<e lm="dyèns"><i>dyèns</i><par n="soigi__vblex"/></e>
+<e lm="dòk"><i>dòk</i><par n="soigi__vblex"/></e>
+<e lm="e"><i>e</i><par n="ben__aux"/></e>
+<e lm="ed'ati"><i>ed'ati</i><par n="pikin__n"/></e>
+<e lm="ede krasi"><i>ede krasi</i><par n="langi__adj"/></e>
+<e lm="ede krasi"><i>ede krasi</i><par n="pikin__n"/></e>
+<e lm="ede"><i>ede</i><par n="pikin__n"/></e>
+<e lm="edekrabasi"><i>edekrabasi</i><par n="pikin__n"/></e>
+<e lm="edeman"><i>edeman</i><par n="pikin__n"/></e>
+<e lm="edemoni"><i>edemoni</i><par n="pikin__n"/></e>
+<e lm="edesei"><i>edesei</i><par n="pikin__n"/></e>
+<e lm="edetonton"><i>edetonton</i><par n="pikin__n"/></e>
+<e lm="edewiwiri"><i>edewiwiri</i><par n="pikin__n"/></e>
+<e lm="efu"><i>efu</i><par n="nanga__cnjcoo"/></e>
+<e lm="ei"><i>ei</i><par n="kokodiako__ij"/></e>
+<e lm="eigi"><i>eigi</i><par n="langi__adj"/></e>
+<e lm="eiginari"><i>eiginari</i><par n="pikin__n"/></e>
+<e lm="eilanti"><i>eilanti</i><par n="pikin__n"/></e>
+<e lm="eksempre"><i>eksempre</i><par n="pikin__n"/></e>
+<e lm="eksi"><i>eksi</i><par n="pikin__n"/></e>
+<e lm="eksibuba"><i>eksibuba</i><par n="pikin__n"/></e>
+<e lm="embre"><i>embre</i><par n="pikin__n"/></e>
+<e lm="empi"><i>empi</i><par n="pikin__n"/></e>
+<e lm="enki"><i>enki</i><par n="pikin__n"/></e>
+<e lm="enkipatu"><i>enkipatu</i><par n="pikin__n"/></e>
+<e lm="enkri"><i>enkri</i><par n="langi__adj"/></e>
+<e lm="erfu"><i>erfu</i><par n="tu__num"/></e>
+<e lm="es'esi"><i>es'esi</i><par n="efu__adv"/></e>
+<e lm="esbiten"><i>esbiten</i><par n="efu__adv"/></e>
+<e lm="esi"><i>esi</i><par n="efu__adv"/></e>
+<e lm="esko"><i>esko</i><par n="nanga__cnjcoo"/></e>
+<e lm="espresi"><i>espresi</i><par n="efu__adv"/></e>
+<e lm="ete wan leisi"><i>ete wan leisi</i><par n="efu__adv"/></e>
+<e lm="ete"><i>ete</i><par n="efu__adv"/></e>
+<e lm="fa"><i>fa</i><par n="efu__adv"/></e>
+<e lm="fa"><i>fa</i><par n="sensi__cnjsub"/></e>
+<e lm="fadon flaw"><i>fadon flaw</i><par n="soigi__vblex"/></e>
+<e lm="fadon"><i>fadon</i><par n="soigi__vblex"/></e>
+<e lm="fakansi"><i>fakansi</i><par n="pikin__n"/></e>
+<e lm="faki"><i>faki</i><par n="pikin__n"/></e>
+<e lm="fala"><i>fala</i><par n="soigi__vblex"/></e>
+<e lm="falawatra"><i>falawatra</i><par n="pikin__n"/></e>
+<e lm="falsi"><i>falsi</i><par n="langi__adj"/></e>
+<e lm="famiri"><i>famiri</i><par n="pikin__n"/></e>
+<e lm="famiriman"><i>famiriman</i><par n="pikin__n"/></e>
+<e lm="fanga"><i>fanga</i><par n="soigi__vblex"/></e>
+<e lm="fanowdu"><i>fanowdu</i><par n="langi__adj"/></e>
+<e lm="fara"><i>fara</i><par n="langi__adj"/></e>
+<e lm="fas'fasi"><i>fas'fasi</i><par n="soigi__vblex"/></e>
+<e lm="fasi"><i>fasi</i><par n="pikin__n"/></e>
+<e lm="fasi"><i>fasi</i><par n="soigi__vblex"/></e>
+<e lm="fasti"><i>fasti</i><par n="langi__adj"/></e>
+<e lm="fatu"><i>fatu</i><par n="langi__adj"/></e>
+<e lm="fatu"><i>fatu</i><par n="pikin__n"/></e>
+<e lm="fatu"><i>fatu</i><par n="soigi__vblex"/></e>
+<e lm="faya"><i>faya</i><par n="langi__adj"/></e>
+<e lm="faya"><i>faya</i><par n="pikin__n"/></e>
+<e lm="faya"><i>faya</i><par n="soigi__vblex"/></e>
+<e lm="fayadosu"><i>fayadosu</i><par n="pikin__n"/></e>
+<e lm="fayafaya"><i>fayafaya</i><par n="efu__adv"/></e>
+<e lm="fayafaya"><i>fayafaya</i><par n="langi__adj"/></e>
+<e lm="fayatongo"><i>fayatongo</i><par n="pikin__n"/></e>
+<e lm="fayawatra"><i>fayawatra</i><par n="pikin__n"/></e>
+<e lm="fayaworon"><i>fayaworon</i><par n="pikin__n"/></e>
+<e lm="feifi"><i>feifi</i><par n="tu__num"/></e>
+<e lm="feifitenti"><i>feifitenti</i><par n="tu__num"/></e>
+<e lm="feiri"><i>feiri</i><par n="pikin__n"/></e>
+<e lm="feiri"><i>feiri</i><par n="soigi__vblex"/></e>
+<e lm="fengrutu"><i>fengrutu</i><par n="pikin__n"/></e>
+<e lm="feni"><i>feni</i><par n="soigi__vblex"/></e>
+<e lm="fensre"><i>fensre</i><par n="pikin__n"/></e>
+<e lm="fensrebangi"><i>fensrebangi</i><par n="pikin__n"/></e>
+<e lm="ferberde"><i>ferberde</i><par n="pikin__n"/></e>
+<e lm="ferberdesiki"><i>ferberdesiki</i><par n="pikin__n"/></e>
+<e lm="ferbontu"><i>ferbontu</i><par n="pikin__n"/></e>
+<e lm="ferferi"><i>ferferi</i><par n="langi__adj"/></e>
+<e lm="ferferi"><i>ferferi</i><par n="soigi__vblex"/></e>
+<e lm="ferfi"><i>ferfi</i><par n="langi__adj"/></e>
+<e lm="ferfi"><i>ferfi</i><par n="pikin__n"/></e>
+<e lm="ferfi"><i>ferfi</i><par n="soigi__vblex"/></e>
+<e lm="ferfiman"><i>ferfiman</i><par n="pikin__n"/></e>
+<e lm="fergiti"><i>fergiti</i><par n="soigi__vblex"/></e>
+<e lm="ferleigi"><i>ferleigi</i><par n="langi__adj"/></e>
+<e lm="ferlusu"><i>ferlusu</i><par n="soigi__vblex"/></e>
+<e lm="ferlusuman"><i>ferlusuman</i><par n="pikin__n"/></e>
+<e lm="fermorsu"><i>fermorsu</i><par n="soigi__vblex"/></e>
+<e lm="ferplekti"><i>ferplekti</i><par n="pikin__n"/></e>
+<e lm="ferstan"><i>ferstan</i><par n="pikin__n"/></e>
+<e lm="ferstan"><i>ferstan</i><par n="soigi__vblex"/></e>
+<e lm="fersteri"><i>fersteri</i><par n="pikin__n"/></e>
+<e lm="fersteri"><i>fersteri</i><par n="soigi__vblex"/></e>
+<e lm="ferteri"><i>ferteri</i><par n="soigi__vblex"/></e>
+<e lm="fertrow"><i>fertrow</i><par n="soigi__vblex"/></e>
+<e lm="ferwakti"><i>ferwakti</i><par n="soigi__vblex"/></e>
+<e lm="ferwondru"><i>ferwondru</i><par n="langi__adj"/></e>
+<e lm="ferwondru"><i>ferwondru</i><par n="soigi__vblex"/></e>
+<e lm="fes'ede"><i>fes'ede</i><par n="pikin__n"/></e>
+<e lm="fes'man"><i>fes'man</i><par n="pikin__n"/></e>
+<e lm="fes'sei"><i>fes'sei</i><par n="pikin__n"/></e>
+<e lm="fes'tifi"><i>fes'tifi</i><par n="pikin__n"/></e>
+<e lm="fesa"><i>fesa</i><par n="pikin__n"/></e>
+<e lm="fesadei"><i>fesadei</i><par n="pikin__n"/></e>
+<e lm="fesi"><i>fesi</i><par n="pikin__n"/></e>
+<e lm="fesiwan"><i>fesiwan</i><par n="pikin__n"/></e>
+<e lm="feskoki"><i>feskoki</i><par n="pikin__n"/></e>
+<e lm="fet'bakru"><i>fet'bakru</i><par n="pikin__n"/></e>
+<e lm="fet'feti"><i>fet'feti</i><par n="pikin__n"/></e>
+<e lm="fet'feti"><i>fet'feti</i><par n="soigi__vblex"/></e>
+<e lm="fet'man"><i>fet'man</i><par n="pikin__n"/></e>
+<e lm="fet'musu"><i>fet'musu</i><par n="pikin__n"/></e>
+<e lm="fet'obia"><i>fet'obia</i><par n="pikin__n"/></e>
+<e lm="fet'sani"><i>fet'sani</i><par n="pikin__n"/></e>
+<e lm="fet'sipi"><i>fet'sipi</i><par n="pikin__n"/></e>
+<e lm="fet'wagi"><i>fet'wagi</i><par n="pikin__n"/></e>
+<e lm="feti baka"><i>feti baka</i><par n="soigi__vblex"/></e>
+<e lm="feti"><i>feti</i><par n="pikin__n"/></e>
+<e lm="feti"><i>feti</i><par n="soigi__vblex"/></e>
+<e lm="fetre"><i>fetre</i><par n="pikin__n"/></e>
+<e lm="feyanti"><i>feyanti</i><par n="pikin__n"/></e>
+<e lm="figa"><i>figa</i><par n="pikin__n"/></e>
+<e lm="figi puru"><i>figi puru</i><par n="soigi__vblex"/></e>
+<e lm="figi"><i>figi</i><par n="soigi__vblex"/></e>
+<e lm="figifutu"><i>figifutu</i><par n="pikin__n"/></e>
+<e lm="fin'botro"><i>fin'botro</i><par n="pikin__n"/></e>
+<e lm="fin'fini alen"><i>fin'fini alen</i><par n="pikin__n"/></e>
+<e lm="fin'fini"><i>fin'fini</i><par n="langi__adj"/></e>
+<e lm="fin'fini"><i>fin'fini</i><par n="pikin__n"/></e>
+<e lm="finga"><i>finga</i><par n="pikin__n"/></e>
+<e lm="fingamarki"><i>fingamarki</i><par n="pikin__n"/></e>
+<e lm="fini"><i>fini</i><par n="efu__adv"/></e>
+<e lm="fini"><i>fini</i><par n="langi__adj"/></e>
+<e lm="finpeiri"><i>finpeiri</i><par n="pikin__n"/></e>
+<e lm="finyoro"><i>finyoro</i><par n="pikin__n"/></e>
+<e lm="fir'firi"><i>fir'firi</i><par n="soigi__vblex"/></e>
+<e lm="firi"><i>firi</i><par n="pikin__n"/></e>
+<e lm="firi"><i>firi</i><par n="soigi__vblex"/></e>
+<e lm="fis'bonyo"><i>fis'bonyo</i><par n="pikin__n"/></e>
+<e lm="fis'boto"><i>fis'boto</i><par n="pikin__n"/></e>
+<e lm="fis'buba"><i>fis'buba</i><par n="pikin__n"/></e>
+<e lm="fis'man"><i>fis'man</i><par n="pikin__n"/></e>
+<e lm="fis'neti"><i>fis'neti</i><par n="pikin__n"/></e>
+<e lm="fisi"><i>fisi</i><par n="pikin__n"/></e>
+<e lm="fisi"><i>fisi</i><par n="soigi__vblex"/></e>
+<e lm="fisi-aka"><i>fisi-aka</i><par n="pikin__n"/></e>
+<e lm="fisiti"><i>fisiti</i><par n="pikin__n"/></e>
+<e lm="fisiti"><i>fisiti</i><par n="soigi__vblex"/></e>
+<e lm="fisti"><i>fisti</i><par n="langi__adj"/></e>
+<e lm="fiti ai"><i>fiti ai</i><par n="soigi__vblex"/></e>
+<e lm="fiti"><i>fiti</i><par n="langi__adj"/></e>
+<e lm="fiti"><i>fiti</i><par n="soigi__vblex"/></e>
+<e lm="flaka"><i>flaka</i><par n="pikin__n"/></e>
+<e lm="flaka"><i>flaka</i><par n="soigi__vblex"/></e>
+<e lm="flaw"><i>flaw</i><par n="langi__adj"/></e>
+<e lm="flaw"><i>flaw</i><par n="soigi__vblex"/></e>
+<e lm="flit"><i>flit</i><par n="pikin__n"/></e>
+<e lm="flit"><i>flit</i><par n="soigi__vblex"/></e>
+<e lm="fluku"><i>fluku</i><par n="pikin__n"/></e>
+<e lm="fluku"><i>fluku</i><par n="soigi__vblex"/></e>
+<e lm="fo"><i>fo</i><par n="tu__num"/></e>
+<e lm="fo-ai-awari"><i>fo-ai-awari</i><par n="pikin__n"/></e>
+<e lm="fodewroko"><i>fodewroko</i><par n="pikin__n"/></e>
+<e lm="fokanti"><i>fokanti</i><par n="langi__adj"/></e>
+<e lm="fokanti"><i>fokanti</i><par n="pikin__n"/></e>
+<e lm="fokofoko"><i>fokofoko</i><par n="pikin__n"/></e>
+<e lm="folku"><i>folku</i><par n="pikin__n"/></e>
+<e lm="fon nanga mofo"><i>fon nanga mofo</i><par n="soigi__vblex"/></e>
+<e lm="fon"><i>fon</i><par n="soigi__vblex"/></e>
+<e lm="fonfon"><i>fonfon</i><par n="pikin__n"/></e>
+<e lm="fonsu"><i>fonsu</i><par n="pikin__n"/></e>
+<e lm="forku"><i>forku</i><par n="pikin__n"/></e>
+<e lm="fos'fosi sani"><i>fos'fosi sani</i><par n="pikin__n"/></e>
+<e lm="fos'fosi"><i>fos'fosi</i><par n="efu__adv"/></e>
+<e lm="fosi"><i>fosi</i><par n="efu__adv"/></e>
+<e lm="fosi"><i>fosi</i><par n="langi__adj"/></e>
+<e lm="fosi"><i>fosi</i><par n="nanga__cnjcoo"/></e>
+<e lm="fosten"><i>fosten</i><par n="efu__adv"/></e>
+<e lm="fosten"><i>fosten</i><par n="langi__adj"/></e>
+<e lm="fotenti"><i>fotenti</i><par n="tu__num"/></e>
+<e lm="foto"><i>foto</i><par n="pikin__n"/></e>
+<e lm="fotosei"><i>fotosei</i><par n="pikin__n"/></e>
+<e lm="fow"><i>fow</i><par n="langi__adj"/></e>
+<e lm="fow"><i>fow</i><par n="pikin__n"/></e>
+<e lm="fow"><i>fow</i><par n="soigi__vblex"/></e>
+<e lm="fowl foot mangrasi"><i>fowl foot mangrasi</i><par n="pikin__n"/></e>
+<e lm="fowru"><i>fowru</i><par n="pikin__n"/></e>
+<e lm="fowrudoti"><i>fowrudoti</i><par n="pikin__n"/></e>
+<e lm="fowruwiwiri"><i>fowruwiwiri</i><par n="pikin__n"/></e>
+<e lm="fowtow"><i>fowtow</i><par n="pikin__n"/></e>
+<e lm="fowtu"><i>fowtu</i><par n="langi__adj"/></e>
+<e lm="fowtu"><i>fowtu</i><par n="pikin__n"/></e>
+<e lm="frafra"><i>frafra</i><par n="efu__adv"/></e>
+<e lm="fraga"><i>fraga</i><par n="pikin__n"/></e>
+<e lm="frambo"><i>frambo</i><par n="pikin__n"/></e>
+<e lm="fransman"><i>fransman</i><par n="pikin__n"/></e>
+<e lm="fransman-birambi"><i>fransman-birambi</i><par n="pikin__n"/></e>
+<e lm="frantwortu"><i>frantwortu</i><par n="langi__adj"/></e>
+<e lm="frantwortu"><i>frantwortu</i><par n="pikin__n"/></e>
+<e lm="franya"><i>franya</i><par n="pikin__n"/></e>
+<e lm="frede"><i>frede</i><par n="langi__adj"/></e>
+<e lm="frede"><i>frede</i><par n="pikin__n"/></e>
+<e lm="frede"><i>frede</i><par n="soigi__vblex"/></e>
+<e lm="fredefrede"><i>fredefrede</i><par n="langi__adj"/></e>
+<e lm="fredeman"><i>fredeman</i><par n="pikin__n"/></e>
+<e lm="frei"><i>frei</i><par n="pikin__n"/></e>
+<e lm="frei"><i>frei</i><par n="soigi__vblex"/></e>
+<e lm="freida"><i>freida</i><par n="pikin__n"/></e>
+<e lm="freide"><i>freide</i><par n="pikin__n"/></e>
+<e lm="freifrei"><i>freifrei</i><par n="pikin__n"/></e>
+<e lm="freigron"><i>freigron</i><par n="pikin__n"/></e>
+<e lm="freiri"><i>freiri</i><par n="pikin__n"/></e>
+<e lm="freiri"><i>freiri</i><par n="soigi__vblex"/></e>
+<e lm="frekti"><i>frekti</i><par n="langi__adj"/></e>
+<e lm="frekti"><i>frekti</i><par n="soigi__vblex"/></e>
+<e lm="fremusu"><i>fremusu</i><par n="pikin__n"/></e>
+<e lm="fri"><i>fri</i><par n="efu__adv"/></e>
+<e lm="fri"><i>fri</i><par n="langi__adj"/></e>
+<e lm="fri"><i>fri</i><par n="pikin__n"/></e>
+<e lm="frigi"><i>frigi</i><par n="pikin__n"/></e>
+<e lm="frikowtu"><i>frikowtu</i><par n="pikin__n"/></e>
+<e lm="fringi"><i>fringi</i><par n="soigi__vblex"/></e>
+<e lm="friyari"><i>friyari</i><par n="pikin__n"/></e>
+<e lm="friyaridei"><i>friyaridei</i><par n="pikin__n"/></e>
+<e lm="frodyadya"><i>frodyadya</i><par n="langi__adj"/></e>
+<e lm="froiti"><i>froiti</i><par n="pikin__n"/></e>
+<e lm="froiti"><i>froiti</i><par n="soigi__vblex"/></e>
+<e lm="froktu"><i>froktu</i><par n="pikin__n"/></e>
+<e lm="fromu"><i>fromu</i><par n="langi__adj"/></e>
+<e lm="fromu"><i>fromu</i><par n="soigi__vblex"/></e>
+<e lm="frow"><i>frow</i><par n="pikin__n"/></e>
+<e lm="frowa"><i>frowa</i><par n="langi__adj"/></e>
+<e lm="fru"><i>fru</i><par n="nanga__cnjcoo"/></e>
+<e lm="frudu"><i>frudu</i><par n="pikin__n"/></e>
+<e lm="fruku"><i>fruku</i><par n="efu__adv"/></e>
+<e lm="frustu"><i>frustu</i><par n="langi__adj"/></e>
+<e lm="frustu"><i>frustu</i><par n="pikin__n"/></e>
+<e lm="frustu"><i>frustu</i><par n="soigi__vblex"/></e>
+<e lm="fu di"><i>fu di</i><par n="nanga__cnjcoo"/></e>
+<e lm="fu naki dagu"><i>fu naki dagu</i><par n="langi__adj"/></e>
+<e lm="fu sanede meki"><i>fu sanede meki</i><par n="nanga__cnjcoo"/></e>
+<e lm="fu soso"><i>fu soso</i><par n="efu__adv"/></e>
+<e lm="fu soso"><i>fu soso</i><par n="langi__adj"/></e>
+<e lm="fu tru"><i>fu tru</i><par n="efu__adv"/></e>
+<e lm="fu têgo"><i>fu têgo</i><par n="efu__adv"/></e>
+<e lm="fu"><i>fu</i><par n="fu__pr"/></e>
+<e lm="fu"><i>fu</i><par n="nanga__cnjcoo"/></e>
+<e lm="fufuru"><i>fufuru</i><par n="soigi__vblex"/></e>
+<e lm="fufurubakru"><i>fufurubakru</i><par n="pikin__n"/></e>
+<e lm="fufuruman"><i>fufuruman</i><par n="pikin__n"/></e>
+<e lm="fuga"><i>fuga</i><par n="soigi__vblex"/></e>
+<e lm="fugufugu"><i>fugufugu</i><par n="langi__adj"/></e>
+<e lm="funamku"><i>funamku</i><par n="efu__adv"/></e>
+<e lm="funamku"><i>funamku</i><par n="langi__adj"/></e>
+<e lm="fundamenti"><i>fundamenti</i><par n="pikin__n"/></e>
+<e lm="fungubon"><i>fungubon</i><par n="pikin__n"/></e>
+<e lm="furu leisi"><i>furu leisi</i><par n="efu__adv"/></e>
+<e lm="furu"><i>furu</i><par n="efu__adv"/></e>
+<e lm="furu"><i>furu</i><par n="langi__adj"/></e>
+<e lm="furu"><i>furu</i><par n="soigi__vblex"/></e>
+<e lm="futu"><i>futu</i><par n="pikin__n"/></e>
+<e lm="futubangi"><i>futubangi</i><par n="pikin__n"/></e>
+<e lm="futufinga"><i>futufinga</i><par n="pikin__n"/></e>
+<e lm="futumarki"><i>futumarki</i><par n="pikin__n"/></e>
+<e lm="futupasi"><i>futupasi</i><par n="pikin__n"/></e>
+<e lm="futusei"><i>futusei</i><par n="pikin__n"/></e>
+<e lm="fyofyo"><i>fyofyo</i><par n="pikin__n"/></e>
+<e lm="gado"><i>gado</i><par n="pikin__n"/></e>
+<e lm="gadodede"><i>gadodede</i><par n="pikin__n"/></e>
+<e lm="gadomarki"><i>gadomarki</i><par n="pikin__n"/></e>
+<e lm="gagu"><i>gagu</i><par n="soigi__vblex"/></e>
+<e lm="gansi"><i>gansi</i><par n="pikin__n"/></e>
+<e lm="garden"><i>garden</i><par n="pikin__n"/></e>
+<e lm="gari"><i>gari</i><par n="langi__adj"/></e>
+<e lm="gari"><i>gari</i><par n="pikin__n"/></e>
+<e lm="gari"><i>gari</i><par n="soigi__vblex"/></e>
+<e lm="gaw"><i>gaw</i><par n="efu__adv"/></e>
+<e lm="geri kopro"><i>geri kopro</i><par n="pikin__n"/></e>
+<e lm="gersi"><i>gersi</i><par n="soigi__vblex"/></e>
+<e lm="gesontu"><i>gesontu</i><par n="efu__adv"/></e>
+<e lm="gi bere"><i>gi bere</i><par n="soigi__vblex"/></e>
+<e lm="gi bigitaki"><i>gi bigitaki</i><par n="soigi__vblex"/></e>
+<e lm="gi dyaranti"><i>gi dyaranti</i><par n="soigi__vblex"/></e>
+<e lm="gi ensrefi abra"><i>gi ensrefi abra</i><par n="soigi__vblex"/></e>
+<e lm="gi frantwortu"><i>gi frantwortu</i><par n="soigi__vblex"/></e>
+<e lm="gi grani"><i>gi grani</i><par n="soigi__vblex"/></e>
+<e lm="gi keti"><i>gi keti</i><par n="soigi__vblex"/></e>
+<e lm="gi mankeri"><i>gi mankeri</i><par n="soigi__vblex"/></e>
+<e lm="gi nyanyan"><i>gi nyanyan</i><par n="soigi__vblex"/></e>
+<e lm="gi pardon"><i>gi pardon</i><par n="soigi__vblex"/></e>
+<e lm="gi rai"><i>gi rai</i><par n="soigi__vblex"/></e>
+<e lm="gi yesi"><i>gi yesi</i><par n="soigi__vblex"/></e>
+<e lm="gi"><i>gi</i><par n="fu__pr"/></e>
+<e lm="gi"><i>gi</i><par n="soigi__vblex"/></e>
+<e lm="gitara"><i>gitara</i><par n="pikin__n"/></e>
+<e lm="go baka"><i>go baka</i><par n="pikin__n"/></e>
+<e lm="go doro"><i>go doro</i><par n="soigi__vblex"/></e>
+<e lm="go na baka"><i>go na baka</i><par n="soigi__vblex"/></e>
+<e lm="go na fesi"><i>go na fesi</i><par n="soigi__vblex"/></e>
+<e lm="go na hei"><i>go na hei</i><par n="soigi__vblex"/></e>
+<e lm="go teki"><i>go teki</i><par n="soigi__vblex"/></e>
+<e lm="go"><i>go</i><par n="soigi__vblex"/></e>
+<e lm="gogo"><i>gogo</i><par n="pikin__n"/></e>
+<e lm="gogo-olo"><i>gogo-olo</i><par n="pikin__n"/></e>
+<e lm="gogobonyo"><i>gogobonyo</i><par n="pikin__n"/></e>
+<e lm="golu"><i>golu</i><par n="pikin__n"/></e>
+<e lm="goma"><i>goma</i><par n="pikin__n"/></e>
+<e lm="goma"><i>goma</i><par n="soigi__vblex"/></e>
+<e lm="gon"><i>gon</i><par n="pikin__n"/></e>
+<e lm="gonini"><i>gonini</i><par n="pikin__n"/></e>
+<e lm="gorogoro"><i>gorogoro</i><par n="pikin__n"/></e>
+<e lm="gotro"><i>gotro</i><par n="pikin__n"/></e>
+<e lm="gotromotyo"><i>gotromotyo</i><par n="pikin__n"/></e>
+<e lm="gowt'smeti"><i>gowt'smeti</i><par n="pikin__n"/></e>
+<e lm="gowtu"><i>gowtu</i><par n="langi__adj"/></e>
+<e lm="gowtu"><i>gowtu</i><par n="pikin__n"/></e>
+<e lm="grabu"><i>grabu</i><par n="soigi__vblex"/></e>
+<e lm="grade in abra"><i>grade in abra</i><par n="soigi__vblex"/></e>
+<e lm="gran"><i>gran</i><par n="pikin__n"/></e>
+<e lm="granaki-apra"><i>granaki-apra</i><par n="pikin__n"/></e>
+<e lm="grangran"><i>grangran</i><par n="pikin__n"/></e>
+<e lm="grani"><i>grani</i><par n="langi__adj"/></e>
+<e lm="grani"><i>grani</i><par n="pikin__n"/></e>
+<e lm="grankownu"><i>grankownu</i><par n="pikin__n"/></e>
+<e lm="granmama"><i>granmama</i><par n="pikin__n"/></e>
+<e lm="granman"><i>granman</i><par n="pikin__n"/></e>
+<e lm="granpapa"><i>granpapa</i><par n="pikin__n"/></e>
+<e lm="granpikin"><i>granpikin</i><par n="pikin__n"/></e>
+<e lm="grantangi"><i>grantangi</i><par n="pikin__n"/></e>
+<e lm="gras'grasi"><i>gras'grasi</i><par n="langi__adj"/></e>
+<e lm="grasbarki"><i>grasbarki</i><par n="pikin__n"/></e>
+<e lm="grasi"><i>grasi</i><par n="pikin__n"/></e>
+<e lm="grat'fisi"><i>grat'fisi</i><par n="pikin__n"/></e>
+<e lm="grati"><i>grati</i><par n="langi__adj"/></e>
+<e lm="grati"><i>grati</i><par n="soigi__vblex"/></e>
+<e lm="grebi"><i>grebi</i><par n="pikin__n"/></e>
+<e lm="greni"><i>greni</i><par n="soigi__vblex"/></e>
+<e lm="gridi"><i>gridi</i><par n="langi__adj"/></e>
+<e lm="gridifasi"><i>gridifasi</i><par n="pikin__n"/></e>
+<e lm="gridiman"><i>gridiman</i><par n="pikin__n"/></e>
+<e lm="grit'griti"><i>grit'griti</i><par n="pikin__n"/></e>
+<e lm="griti"><i>griti</i><par n="soigi__vblex"/></e>
+<e lm="gro skin"><i>gro skin</i><par n="soigi__vblex"/></e>
+<e lm="gro"><i>gro</i><par n="soigi__vblex"/></e>
+<e lm="grofu"><i>grofu</i><par n="langi__adj"/></e>
+<e lm="gron"><i>gron</i><par n="pikin__n"/></e>
+<e lm="gronman"><i>gronman</i><par n="pikin__n"/></e>
+<e lm="grontapu"><i>grontapu</i><par n="efu__adv"/></e>
+<e lm="grontapu"><i>grontapu</i><par n="pikin__n"/></e>
+<e lm="groskin"><i>groskin</i><par n="pikin__n"/></e>
+<e lm="groto"><i>groto</i><par n="pikin__n"/></e>
+<e lm="grubagruba"><i>grubagruba</i><par n="langi__adj"/></e>
+<e lm="gruma"><i>gruma</i><par n="soigi__vblex"/></e>
+<e lm="grumagruma"><i>grumagruma</i><par n="pikin__n"/></e>
+<e lm="grumagruma"><i>grumagruma</i><par n="soigi__vblex"/></e>
+<e lm="grun"><i>grun</i><par n="langi__adj"/></e>
+<e lm="gruntu"><i>gruntu</i><par n="pikin__n"/></e>
+<e lm="grupu"><i>grupu</i><par n="pikin__n"/></e>
+<e lm="gudu"><i>gudu</i><par n="langi__adj"/></e>
+<e lm="gudu"><i>gudu</i><par n="pikin__n"/></e>
+<e lm="guyaba"><i>guyaba</i><par n="pikin__n"/></e>
+<e lm="gwasi"><i>gwasi</i><par n="pikin__n"/></e>
+<e lm="gwasiman"><i>gwasiman</i><par n="pikin__n"/></e>
+<e lm="gwe"><i>gwe</i><par n="efu__adv"/></e>
+<e lm="gwe"><i>gwe</i><par n="langi__adj"/></e>
+<e lm="gwe"><i>gwe</i><par n="soigi__vblex"/></e>
+<e lm="gwenti"><i>gwenti</i><par n="pikin__n"/></e>
+<e lm="gwenti de taki"><i>gwenti de taki</i><par n="pikin__n"/></e>
+<e lm="haira"><i>haira</i><par n="langi__adj"/></e>
+<e lm="har'hari"><i>har'hari</i><par n="pikin__n"/></e>
+<e lm="hari baka"><i>hari baka</i><par n="soigi__vblex"/></e>
+<e lm="hari bro"><i>hari bro</i><par n="soigi__vblex"/></e>
+<e lm="hari kon langa"><i>hari kon langa</i><par n="soigi__vblex"/></e>
+<e lm="hari lesi"><i>hari lesi</i><par n="soigi__vblex"/></e>
+<e lm="hari noso"><i>hari noso</i><par n="soigi__vblex"/></e>
+<e lm="hari skin"><i>hari skin</i><par n="soigi__vblex"/></e>
+<e lm="hari skowru"><i>hari skowru</i><par n="soigi__vblex"/></e>
+<e lm="hari taki"><i>hari taki</i><par n="soigi__vblex"/></e>
+<e lm="hari watra"><i>hari watra</i><par n="soigi__vblex"/></e>
+<e lm="hari"><i>hari</i><par n="langi__adj"/></e>
+<e lm="hari"><i>hari</i><par n="soigi__vblex"/></e>
+<e lm="hariman"><i>hariman</i><par n="pikin__n"/></e>
+<e lm="haswa"><i>haswa</i><par n="soigi__vblex"/></e>
+<e lm="hati"><i>hati</i><par n="soigi__vblex"/></e>
+<e lm="hebi"><i>hebi</i><par n="langi__adj"/></e>
+<e lm="hebi"><i>hebi</i><par n="pikin__n"/></e>
+<e lm="hei"><i>hei</i><par n="langi__adj"/></e>
+<e lm="hei"><i>hei</i><par n="pikin__n"/></e>
+<e lm="hei"><i>hei</i><par n="soigi__vblex"/></e>
+<e lm="heihei"><i>heihei</i><par n="langi__adj"/></e>
+<e lm="heiman"><i>heiman</i><par n="pikin__n"/></e>
+<e lm="heimel"><i>heimel</i><par n="pikin__n"/></e>
+<e lm="heimemre"><i>heimemre</i><par n="pikin__n"/></e>
+<e lm="heisi"><i>heisi</i><par n="soigi__vblex"/></e>
+<e lm="hel"><i>hel</i><par n="pikin__n"/></e>
+<e lm="helpi"><i>helpi</i><par n="soigi__vblex"/></e>
+<e lm="her'esi"><i>her'esi</i><par n="efu__adv"/></e>
+<e lm="her'heri"><i>her'heri</i><par n="efu__adv"/></e>
+<e lm="her'ipi"><i>her'ipi</i><par n="langi__adj"/></e>
+<e lm="heri"><i>heri</i><par n="efu__adv"/></e>
+<e lm="heri"><i>heri</i><par n="langi__adj"/></e>
+<e lm="hilahila"><i>hilahila</i><par n="langi__adj"/></e>
+<e lm="hipsi"><i>hipsi</i><par n="langi__adj"/></e>
+<e lm="hoigri"><i>hoigri</i><par n="soigi__vblex"/></e>
+<e lm="hoigriman"><i>hoigriman</i><par n="pikin__n"/></e>
+<e lm="hondro"><i>hondro</i><par n="tu__num"/></e>
+<e lm="howpu"><i>howpu</i><par n="pikin__n"/></e>
+<e lm="howpu"><i>howpu</i><par n="soigi__vblex"/></e>
+<e lm="huru"><i>huru</i><par n="pikin__n"/></e>
+<e lm="huru"><i>huru</i><par n="soigi__vblex"/></e>
+<e lm="hurulibi"><i>hurulibi</i><par n="pikin__n"/></e>
+<e lm="ibri"><i>ibri</i><par n="langi__adj"/></e>
+<e lm="ifrow"><i>ifrow</i><par n="pikin__n"/></e>
+<e lm="ijskasi"><i>ijskasi</i><par n="pikin__n"/></e>
+<e lm="in'bere tori"><i>in'bere tori</i><par n="pikin__n"/></e>
+<e lm="in'bere"><i>in'bere</i><par n="pikin__n"/></e>
+<e lm="in'sei"><i>in'sei</i><par n="pikin__n"/></e>
+<e lm="ingi"><i>ingi</i><par n="langi__adj"/></e>
+<e lm="ingi"><i>ingi</i><par n="pikin__n"/></e>
+<e lm="ingibangi"><i>ingibangi</i><par n="pikin__n"/></e>
+<e lm="inginoto"><i>inginoto</i><par n="pikin__n"/></e>
+<e lm="ini"><i>ini</i><par n="fu__pr"/></e>
+<e lm="ini"><i>ini</i><par n="pikin__n"/></e>
+<e lm="ini-anu"><i>ini-anu</i><par n="pikin__n"/></e>
+<e lm="iniwan ten"><i>iniwan ten</i><par n="nanga__cnjcoo"/></e>
+<e lm="insei"><i>insei</i><par n="langi__adj"/></e>
+<e lm="inspektoro"><i>inspektoro</i><par n="pikin__n"/></e>
+<e lm="ipi"><i>ipi</i><par n="langi__adj"/></e>
+<e lm="ipi"><i>ipi</i><par n="pikin__n"/></e>
+<e lm="iri"><i>iri</i><par n="pikin__n"/></e>
+<e lm="isri"><i>isri</i><par n="langi__adj"/></e>
+<e lm="isri"><i>isri</i><par n="pikin__n"/></e>
+<e lm="isrifowru"><i>isrifowru</i><par n="pikin__n"/></e>
+<e lm="iti"><i>iti</i><par n="soigi__vblex"/></e>
+<e lm="kabesa"><i>kabesa</i><par n="pikin__n"/></e>
+<e lm="kado"><i>kado</i><par n="pikin__n"/></e>
+<e lm="kafti"><i>kafti</i><par n="soigi__vblex"/></e>
+<e lm="kaiman"><i>kaiman</i><par n="pikin__n"/></e>
+<e lm="kaisoi"><i>kaisoi</i><par n="pikin__n"/></e>
+<e lm="kaka futu"><i>kaka futu</i><par n="soigi__vblex"/></e>
+<e lm="kaka"><i>kaka</i><par n="langi__adj"/></e>
+<e lm="kaka"><i>kaka</i><par n="pikin__n"/></e>
+<e lm="kaka"><i>kaka</i><par n="soigi__vblex"/></e>
+<e lm="kaka-olo"><i>kaka-olo</i><par n="pikin__n"/></e>
+<e lm="kakafowru"><i>kakafowru</i><par n="pikin__n"/></e>
+<e lm="kakalaka"><i>kakalaka</i><par n="pikin__n"/></e>
+<e lm="kakalaka-skowtu"><i>kakalaka-skowtu</i><par n="pikin__n"/></e>
+<e lm="kakaw"><i>kakaw</i><par n="pikin__n"/></e>
+<e lm="kaksi"><i>kaksi</i><par n="langi__adj"/></e>
+<e lm="kakumbe"><i>kakumbe</i><par n="pikin__n"/></e>
+<e lm="kamisa"><i>kamisa</i><par n="pikin__n"/></e>
+<e lm="kampu"><i>kampu</i><par n="pikin__n"/></e>
+<e lm="kamra"><i>kamra</i><par n="pikin__n"/></e>
+<e lm="kamrawenke"><i>kamrawenke</i><par n="pikin__n"/></e>
+<e lm="kamsoro"><i>kamsoro</i><par n="pikin__n"/></e>
+<e lm="kan"><i>kan</i><par n="pikin__n"/></e>
+<e lm="kan"><i>kan</i><par n="soigi__vblex"/></e>
+<e lm="kan"><i>kan</i><par n="musu__vbmod"/></e>
+<e lm="kanari"><i>kanari</i><par n="pikin__n"/></e>
+<e lm="kande"><i>kande</i><par n="efu__adv"/></e>
+<e lm="kandra"><i>kandra</i><par n="pikin__n"/></e>
+<e lm="kandratiki"><i>kandratiki</i><par n="pikin__n"/></e>
+<e lm="kaner'apra"><i>kaner'apra</i><par n="pikin__n"/></e>
+<e lm="kaneri"><i>kaneri</i><par n="pikin__n"/></e>
+<e lm="kankan"><i>kankan</i><par n="langi__adj"/></e>
+<e lm="kankan"><i>kankan</i><par n="pikin__n"/></e>
+<e lm="kankantri"><i>kankantri</i><par n="pikin__n"/></e>
+<e lm="kanti"><i>kanti</i><par n="pikin__n"/></e>
+<e lm="kanti"><i>kanti</i><par n="soigi__vblex"/></e>
+<e lm="kantoro"><i>kantoro</i><par n="pikin__n"/></e>
+<e lm="kanu"><i>kanu</i><par n="pikin__n"/></e>
+<e lm="kapa"><i>kapa</i><par n="pikin__n"/></e>
+<e lm="kapasi"><i>kapasi</i><par n="pikin__n"/></e>
+<e lm="kapasisneki"><i>kapasisneki</i><par n="pikin__n"/></e>
+<e lm="kapelka"><i>kapelka</i><par n="pikin__n"/></e>
+<e lm="kapten"><i>kapten</i><par n="pikin__n"/></e>
+<e lm="kapu"><i>kapu</i><par n="pikin__n"/></e>
+<e lm="kapu"><i>kapu</i><par n="soigi__vblex"/></e>
+<e lm="kapuwa"><i>kapuwa</i><par n="pikin__n"/></e>
+<e lm="kapweri"><i>kapweri</i><par n="pikin__n"/></e>
+<e lm="kar'papa"><i>kar'papa</i><par n="pikin__n"/></e>
+<e lm="kar'tiki"><i>kar'tiki</i><par n="pikin__n"/></e>
+<e lm="karafu"><i>karafu</i><par n="pikin__n"/></e>
+<e lm="karet"><i>karet</i><par n="pikin__n"/></e>
+<e lm="kari kon"><i>kari kon</i><par n="soigi__vblex"/></e>
+<e lm="kari"><i>kari</i><par n="pikin__n"/></e>
+<e lm="kari"><i>kari</i><par n="soigi__vblex"/></e>
+<e lm="karki"><i>karki</i><par n="langi__adj"/></e>
+<e lm="karki"><i>karki</i><par n="pikin__n"/></e>
+<e lm="karsin-oli"><i>karsin-oli</i><par n="pikin__n"/></e>
+<e lm="karta"><i>karta</i><par n="pikin__n"/></e>
+<e lm="karta-oso"><i>karta-oso</i><par n="pikin__n"/></e>
+<e lm="kartaman"><i>kartaman</i><par n="pikin__n"/></e>
+<e lm="karton"><i>karton</i><par n="pikin__n"/></e>
+<e lm="karu"><i>karu</i><par n="pikin__n"/></e>
+<e lm="kasaba"><i>kasaba</i><par n="pikin__n"/></e>
+<e lm="kaseri"><i>kaseri</i><par n="langi__adj"/></e>
+<e lm="kasi"><i>kasi</i><par n="pikin__n"/></e>
+<e lm="kasmoni"><i>kasmoni</i><par n="pikin__n"/></e>
+<e lm="kastroli"><i>kastroli</i><par n="pikin__n"/></e>
+<e lm="kasyu"><i>kasyu</i><par n="pikin__n"/></e>
+<e lm="katfisi"><i>katfisi</i><par n="pikin__n"/></e>
+<e lm="katibo"><i>katibo</i><par n="pikin__n"/></e>
+<e lm="katun"><i>katun</i><par n="langi__adj"/></e>
+<e lm="katun"><i>katun</i><par n="pikin__n"/></e>
+<e lm="kaw tifi"><i>kaw tifi</i><par n="soigi__vblex"/></e>
+<e lm="kaw"><i>kaw</i><par n="pikin__n"/></e>
+<e lm="kaw"><i>kaw</i><par n="soigi__vblex"/></e>
+<e lm="kawbuba"><i>kawbuba</i><par n="pikin__n"/></e>
+<e lm="kawdatra"><i>kawdatra</i><par n="pikin__n"/></e>
+<e lm="kawfrei"><i>kawfrei</i><par n="pikin__n"/></e>
+<e lm="kawmeti"><i>kawmeti</i><par n="pikin__n"/></e>
+<e lm="kba"><i>kba</i><par n="efu__adv"/></e>
+<e lm="kba"><i>kba</i><par n="langi__adj"/></e>
+<e lm="kba"><i>kba</i><par n="pikin__n"/></e>
+<e lm="kba"><i>kba</i><par n="soigi__vblex"/></e>
+<e lm="kebroiki"><i>kebroiki</i><par n="soigi__vblex"/></e>
+<e lm="kel"><i>kel</i><par n="pikin__n"/></e>
+<e lm="kenki"><i>kenki</i><par n="pikin__n"/></e>
+<e lm="kenki"><i>kenki</i><par n="soigi__vblex"/></e>
+<e lm="kensi"><i>kensi</i><par n="langi__adj"/></e>
+<e lm="kerki"><i>kerki</i><par n="pikin__n"/></e>
+<e lm="kerkibangi"><i>kerkibangi</i><par n="pikin__n"/></e>
+<e lm="kerkiman"><i>kerkiman</i><par n="pikin__n"/></e>
+<e lm="kerkisma"><i>kerkisma</i><par n="pikin__n"/></e>
+<e lm="kersi"><i>kersi</i><par n="pikin__n"/></e>
+<e lm="kesekese"><i>kesekese</i><par n="pikin__n"/></e>
+<e lm="keskesi"><i>keskesi</i><par n="pikin__n"/></e>
+<e lm="keti"><i>keti</i><par n="pikin__n"/></e>
+<e lm="keti"><i>keti</i><par n="soigi__vblex"/></e>
+<e lm="ketikoti"><i>ketikoti</i><par n="pikin__n"/></e>
+<e lm="ketre"><i>ketre</i><par n="pikin__n"/></e>
+<e lm="kfalek"><i>kfalek</i><par n="efu__adv"/></e>
+<e lm="kfalek"><i>kfalek</i><par n="langi__adj"/></e>
+<e lm="kibri"><i>kibri</i><par n="langi__adj"/></e>
+<e lm="kibri"><i>kibri</i><par n="soigi__vblex"/></e>
+<e lm="kibrifasi"><i>kibrifasi</i><par n="efu__adv"/></e>
+<e lm="kibrikibri"><i>kibrikibri</i><par n="efu__adv"/></e>
+<e lm="kibripresi"><i>kibripresi</i><par n="pikin__n"/></e>
+<e lm="kibritori"><i>kibritori</i><par n="pikin__n"/></e>
+<e lm="kilo"><i>kilo</i><par n="pikin__n"/></e>
+<e lm="kindi"><i>kindi</i><par n="pikin__n"/></e>
+<e lm="kindi"><i>kindi</i><par n="soigi__vblex"/></e>
+<e lm="kindikoko"><i>kindikoko</i><par n="pikin__n"/></e>
+<e lm="kino"><i>kino</i><par n="pikin__n"/></e>
+<e lm="kiri"><i>kiri</i><par n="efu__adv"/></e>
+<e lm="kiri"><i>kiri</i><par n="pikin__n"/></e>
+<e lm="kiri"><i>kiri</i><par n="soigi__vblex"/></e>
+<e lm="kiriman"><i>kiriman</i><par n="pikin__n"/></e>
+<e lm="kisi ensrefi"><i>kisi ensrefi</i><par n="soigi__vblex"/></e>
+<e lm="kisi"><i>kisi</i><par n="pikin__n"/></e>
+<e lm="kisi"><i>kisi</i><par n="soigi__vblex"/></e>
+<e lm="klapu ini den anu"><i>klapu ini den anu</i><par n="soigi__vblex"/></e>
+<e lm="klapu"><i>klapu</i><par n="pikin__n"/></e>
+<e lm="klapu"><i>klapu</i><par n="soigi__vblex"/></e>
+<e lm="klar'klari"><i>klar'klari</i><par n="efu__adv"/></e>
+<e lm="klari"><i>klari</i><par n="langi__adj"/></e>
+<e lm="klari"><i>klari</i><par n="soigi__vblex"/></e>
+<e lm="klarun"><i>klarun</i><par n="pikin__n"/></e>
+<e lm="kleidoti"><i>kleidoti</i><par n="pikin__n"/></e>
+<e lm="kleriman"><i>kleriman</i><par n="pikin__n"/></e>
+<e lm="kloru"><i>kloru</i><par n="pikin__n"/></e>
+<e lm="knekti"><i>knekti</i><par n="pikin__n"/></e>
+<e lm="knepa"><i>knepa</i><par n="pikin__n"/></e>
+<e lm="knopo"><i>knopo</i><par n="langi__adj"/></e>
+<e lm="knopo"><i>knopo</i><par n="pikin__n"/></e>
+<e lm="knopo"><i>knopo</i><par n="soigi__vblex"/></e>
+<e lm="knopo-olo"><i>knopo-olo</i><par n="pikin__n"/></e>
+<e lm="knoru"><i>knoru</i><par n="soigi__vblex"/></e>
+<e lm="koba"><i>koba</i><par n="pikin__n"/></e>
+<e lm="kodya"><i>kodya</i><par n="pikin__n"/></e>
+<e lm="kofi"><i>kofi</i><par n="pikin__n"/></e>
+<e lm="kofru"><i>kofru</i><par n="pikin__n"/></e>
+<e lm="kofu fadon"><i>kofu fadon</i><par n="soigi__vblex"/></e>
+<e lm="kofu"><i>kofu</i><par n="pikin__n"/></e>
+<e lm="koi"><i>koi</i><par n="pikin__n"/></e>
+<e lm="koiri"><i>koiri</i><par n="soigi__vblex"/></e>
+<e lm="koiti"><i>koiti</i><par n="pikin__n"/></e>
+<e lm="koki"><i>koki</i><par n="pikin__n"/></e>
+<e lm="koko"><i>koko</i><par n="pikin__n"/></e>
+<e lm="koko"><i>koko</i><par n="soigi__vblex"/></e>
+<e lm="kokobe"><i>kokobe</i><par n="pikin__n"/></e>
+<e lm="kokobesma"><i>kokobesma</i><par n="pikin__n"/></e>
+<e lm="kokodiako"><i>kokodiako</i><par n="kokodiako__ij"/></e>
+<e lm="kokro"><i>kokro</i><par n="pikin__n"/></e>
+<e lm="koleisi"><i>koleisi</i><par n="pikin__n"/></e>
+<e lm="koleradatra"><i>koleradatra</i><par n="pikin__n"/></e>
+<e lm="koloku"><i>koloku</i><par n="langi__adj"/></e>
+<e lm="koloku"><i>koloku</i><par n="pikin__n"/></e>
+<e lm="komandanti"><i>komandanti</i><par n="pikin__n"/></e>
+<e lm="komanderi"><i>komanderi</i><par n="pikin__n"/></e>
+<e lm="komanderi"><i>komanderi</i><par n="soigi__vblex"/></e>
+<e lm="komedi"><i>komedi</i><par n="pikin__n"/></e>
+<e lm="komediman"><i>komediman</i><par n="pikin__n"/></e>
+<e lm="komediprei"><i>komediprei</i><par n="pikin__n"/></e>
+<e lm="komki"><i>komki</i><par n="pikin__n"/></e>
+<e lm="komkomro"><i>komkomro</i><par n="pikin__n"/></e>
+<e lm="komopo"><i>komopo</i><par n="fu__pr"/></e>
+<e lm="komopo"><i>komopo</i><par n="soigi__vblex"/></e>
+<e lm="kompe"><i>kompe</i><par n="pikin__n"/></e>
+<e lm="komsarsi"><i>komsarsi</i><par n="pikin__n"/></e>
+<e lm="komtyi"><i>komtyi</i><par n="pikin__n"/></e>
+<e lm="kon bun baka"><i>kon bun baka</i><par n="soigi__vblex"/></e>
+<e lm="kon go"><i>kon go</i><par n="soigi__vblex"/></e>
+<e lm="kon makandra"><i>kon makandra</i><par n="soigi__vblex"/></e>
+<e lm="kon si"><i>kon si</i><par n="soigi__vblex"/></e>
+<e lm="kon"><i>kon</i><par n="soigi__vblex"/></e>
+<e lm="konbaka"><i>konbaka</i><par n="pikin__n"/></e>
+<e lm="kondre"><i>kondre</i><par n="pikin__n"/></e>
+<e lm="kondreman"><i>kondreman</i><par n="pikin__n"/></e>
+<e lm="konfriyari"><i>konfriyari</i><par n="pikin__n"/></e>
+<e lm="koni"><i>koni</i><par n="langi__adj"/></e>
+<e lm="koni"><i>koni</i><par n="pikin__n"/></e>
+<e lm="konkoni"><i>konkoni</i><par n="pikin__n"/></e>
+<e lm="konkonisneki"><i>konkonisneki</i><par n="pikin__n"/></e>
+<e lm="konkru"><i>konkru</i><par n="soigi__vblex"/></e>
+<e lm="konkrudosu"><i>konkrudosu</i><par n="pikin__n"/></e>
+<e lm="konkruman"><i>konkruman</i><par n="pikin__n"/></e>
+<e lm="konkrutitei"><i>konkrutitei</i><par n="pikin__n"/></e>
+<e lm="konmakandra"><i>konmakandra</i><par n="pikin__n"/></e>
+<e lm="konofroku"><i>konofroku</i><par n="pikin__n"/></e>
+<e lm="konsensi fonfon"><i>konsensi fonfon</i><par n="pikin__n"/></e>
+<e lm="konsensi"><i>konsensi</i><par n="pikin__n"/></e>
+<e lm="kontren"><i>kontren</i><par n="pikin__n"/></e>
+<e lm="kopi"><i>kopi</i><par n="pikin__n"/></e>
+<e lm="kopro"><i>kopro</i><par n="langi__adj"/></e>
+<e lm="kopro"><i>kopro</i><par n="pikin__n"/></e>
+<e lm="koprosensi"><i>koprosensi</i><par n="pikin__n"/></e>
+<e lm="koprosmeti"><i>koprosmeti</i><par n="pikin__n"/></e>
+<e lm="kor'kori"><i>kor'kori</i><par n="pikin__n"/></e>
+<e lm="kor'kori"><i>kor'kori</i><par n="soigi__vblex"/></e>
+<e lm="koranti"><i>koranti</i><par n="pikin__n"/></e>
+<e lm="kori"><i>kori</i><par n="soigi__vblex"/></e>
+<e lm="kork'ati"><i>kork'ati</i><par n="pikin__n"/></e>
+<e lm="korke"><i>korke</i><par n="pikin__n"/></e>
+<e lm="korku"><i>korku</i><par n="pikin__n"/></e>
+<e lm="korkutreki"><i>korkutreki</i><par n="pikin__n"/></e>
+<e lm="koro"><i>koro</i><par n="pikin__n"/></e>
+<e lm="korpatu"><i>korpatu</i><par n="pikin__n"/></e>
+<e lm="korpu"><i>korpu</i><par n="pikin__n"/></e>
+<e lm="korsow-alanya"><i>korsow-alanya</i><par n="pikin__n"/></e>
+<e lm="korsu"><i>korsu</i><par n="pikin__n"/></e>
+<e lm="kos'kosi"><i>kos'kosi</i><par n="soigi__vblex"/></e>
+<e lm="kosi"><i>kosi</i><par n="pikin__n"/></e>
+<e lm="kosi"><i>kosi</i><par n="soigi__vblex"/></e>
+<e lm="koso"><i>koso</i><par n="soigi__vblex"/></e>
+<e lm="kosokoso"><i>kosokoso</i><par n="pikin__n"/></e>
+<e lm="kot'loto"><i>kot'loto</i><par n="pikin__n"/></e>
+<e lm="koti abra"><i>koti abra</i><par n="soigi__vblex"/></e>
+<e lm="koti faya"><i>koti faya</i><par n="soigi__vblex"/></e>
+<e lm="koti wan luku"><i>koti wan luku</i><par n="soigi__vblex"/></e>
+<e lm="koti wan sma mofo"><i>koti wan sma mofo</i><par n="soigi__vblex"/></e>
+<e lm="koti wan trobi"><i>koti wan trobi</i><par n="soigi__vblex"/></e>
+<e lm="koti"><i>koti</i><par n="langi__adj"/></e>
+<e lm="koti"><i>koti</i><par n="soigi__vblex"/></e>
+<e lm="koto"><i>koto</i><par n="pikin__n"/></e>
+<e lm="kotoigi"><i>kotoigi</i><par n="pikin__n"/></e>
+<e lm="kotoigi"><i>kotoigi</i><par n="soigi__vblex"/></e>
+<e lm="kotomisi"><i>kotomisi</i><par n="pikin__n"/></e>
+<e lm="kownu"><i>kownu</i><par n="pikin__n"/></e>
+<e lm="kownu-oso"><i>kownu-oso</i><par n="pikin__n"/></e>
+<e lm="kownukondre"><i>kownukondre</i><par n="pikin__n"/></e>
+<e lm="kownusturu"><i>kownusturu</i><par n="pikin__n"/></e>
+<e lm="kowru"><i>kowru</i><par n="soigi__vblex"/></e>
+<e lm="kowrudresi"><i>kowrudresi</i><par n="pikin__n"/></e>
+<e lm="kowrupe"><i>kowrupe</i><par n="pikin__n"/></e>
+<e lm="kowruten"><i>kowruten</i><par n="pikin__n"/></e>
+<e lm="kowsu"><i>kowsu</i><par n="pikin__n"/></e>
+<e lm="kra"><i>kra</i><par n="pikin__n"/></e>
+<e lm="krab'dagu"><i>krab'dagu</i><par n="pikin__n"/></e>
+<e lm="krab'krabu"><i>krab'krabu</i><par n="langi__adj"/></e>
+<e lm="krab'krabu"><i>krab'krabu</i><par n="pikin__n"/></e>
+<e lm="krab'krabu"><i>krab'krabu</i><par n="soigi__vblex"/></e>
+<e lm="krab'patu"><i>krab'patu</i><par n="pikin__n"/></e>
+<e lm="krabasi"><i>krabasi</i><par n="pikin__n"/></e>
+<e lm="krabita"><i>krabita</i><par n="pikin__n"/></e>
+<e lm="krabnari"><i>krabnari</i><par n="pikin__n"/></e>
+<e lm="krabu wan olo"><i>krabu wan olo</i><par n="soigi__vblex"/></e>
+<e lm="krabu"><i>krabu</i><par n="pikin__n"/></e>
+<e lm="krabu"><i>krabu</i><par n="soigi__vblex"/></e>
+<e lm="krafana"><i>krafana</i><par n="pikin__n"/></e>
+<e lm="kragi"><i>kragi</i><par n="pikin__n"/></e>
+<e lm="kragi"><i>kragi</i><par n="soigi__vblex"/></e>
+<e lm="kraka"><i>kraka</i><par n="soigi__vblex"/></e>
+<e lm="krakatiki"><i>krakatiki</i><par n="pikin__n"/></e>
+<e lm="krakeri"><i>krakeri</i><par n="langi__adj"/></e>
+<e lm="krakeri"><i>krakeri</i><par n="soigi__vblex"/></e>
+<e lm="krakti"><i>krakti</i><par n="langi__adj"/></e>
+<e lm="krakti"><i>krakti</i><par n="pikin__n"/></e>
+<e lm="krakun"><i>krakun</i><par n="pikin__n"/></e>
+<e lm="krampu"><i>krampu</i><par n="pikin__n"/></e>
+<e lm="krape"><i>krape</i><par n="pikin__n"/></e>
+<e lm="krara"><i>krara</i><par n="pikin__n"/></e>
+<e lm="krarasneki"><i>krarasneki</i><par n="pikin__n"/></e>
+<e lm="kras'ede"><i>kras'ede</i><par n="pikin__n"/></e>
+<e lm="krasi"><i>krasi</i><par n="langi__adj"/></e>
+<e lm="krasi"><i>krasi</i><par n="soigi__vblex"/></e>
+<e lm="kraskrasi"><i>kraskrasi</i><par n="pikin__n"/></e>
+<e lm="krawasi"><i>krawasi</i><par n="pikin__n"/></e>
+<e lm="krawasi"><i>krawasi</i><par n="soigi__vblex"/></e>
+<e lm="krawkraw"><i>krawkraw</i><par n="pikin__n"/></e>
+<e lm="krebi"><i>krebi</i><par n="langi__adj"/></e>
+<e lm="kreb’ede"><i>kreb’ede</i><par n="langi__adj"/></e>
+<e lm="krefti"><i>krefti</i><par n="pikin__n"/></e>
+<e lm="krei"><i>krei</i><par n="pikin__n"/></e>
+<e lm="krei"><i>krei</i><par n="soigi__vblex"/></e>
+<e lm="kreiti"><i>kreiti</i><par n="pikin__n"/></e>
+<e lm="krempi"><i>krempi</i><par n="soigi__vblex"/></e>
+<e lm="kren"><i>kren</i><par n="soigi__vblex"/></e>
+<e lm="krenti"><i>krenti</i><par n="pikin__n"/></e>
+<e lm="kriboi"><i>kriboi</i><par n="langi__adj"/></e>
+<e lm="kriki"><i>kriki</i><par n="pikin__n"/></e>
+<e lm="krimneri"><i>krimneri</i><par n="pikin__n"/></e>
+<e lm="krin skin"><i>krin skin</i><par n="pikin__n"/></e>
+<e lm="krin"><i>krin</i><par n="efu__adv"/></e>
+<e lm="krin"><i>krin</i><par n="langi__adj"/></e>
+<e lm="krin"><i>krin</i><par n="soigi__vblex"/></e>
+<e lm="krinkrin"><i>krinkrin</i><par n="efu__adv"/></e>
+<e lm="krinkrin"><i>krinkrin</i><par n="pikin__n"/></e>
+<e lm="krioro"><i>krioro</i><par n="langi__adj"/></e>
+<e lm="krioro"><i>krioro</i><par n="pikin__n"/></e>
+<e lm="kriorosma"><i>kriorosma</i><par n="pikin__n"/></e>
+<e lm="krofaya"><i>krofaya</i><par n="pikin__n"/></e>
+<e lm="kroi"><i>kroi</i><par n="soigi__vblex"/></e>
+<e lm="kroiki"><i>kroiki</i><par n="langi__adj"/></e>
+<e lm="kroiki"><i>kroiki</i><par n="soigi__vblex"/></e>
+<e lm="kroipi"><i>kroipi</i><par n="soigi__vblex"/></e>
+<e lm="kroisi"><i>kroisi</i><par n="pikin__n"/></e>
+<e lm="kroisi"><i>kroisi</i><par n="soigi__vblex"/></e>
+<e lm="kroiti"><i>kroiti</i><par n="pikin__n"/></e>
+<e lm="kroiwagi"><i>kroiwagi</i><par n="pikin__n"/></e>
+<e lm="kroku"><i>kroku</i><par n="pikin__n"/></e>
+<e lm="kron"><i>kron</i><par n="langi__adj"/></e>
+<e lm="kron"><i>kron</i><par n="soigi__vblex"/></e>
+<e lm="kron-neki"><i>kron-neki</i><par n="pikin__n"/></e>
+<e lm="kronkron"><i>kronkron</i><par n="langi__adj"/></e>
+<e lm="kronto"><i>kronto</i><par n="pikin__n"/></e>
+<e lm="kroru"><i>kroru</i><par n="langi__adj"/></e>
+<e lm="kroru"><i>kroru</i><par n="pikin__n"/></e>
+<e lm="kroru"><i>kroru</i><par n="soigi__vblex"/></e>
+<e lm="kros'kasi"><i>kros'kasi</i><par n="pikin__n"/></e>
+<e lm="krosbei"><i>krosbei</i><par n="efu__adv"/></e>
+<e lm="krosbei"><i>krosbei</i><par n="langi__adj"/></e>
+<e lm="krosi"><i>krosi</i><par n="pikin__n"/></e>
+<e lm="kruderi"><i>kruderi</i><par n="soigi__vblex"/></e>
+<e lm="krukt'anu"><i>krukt'anu</i><par n="pikin__n"/></e>
+<e lm="kruktu"><i>kruktu</i><par n="langi__adj"/></e>
+<e lm="kruktufasi"><i>kruktufasi</i><par n="pikin__n"/></e>
+<e lm="kruktuman"><i>kruktuman</i><par n="pikin__n"/></e>
+<e lm="kruktuneki"><i>kruktuneki</i><par n="pikin__n"/></e>
+<e lm="kruktusei"><i>kruktusei</i><par n="pikin__n"/></e>
+<e lm="krumu"><i>krumu</i><par n="pikin__n"/></e>
+<e lm="krut'krutu"><i>krut'krutu</i><par n="pikin__n"/></e>
+<e lm="krut'krutu"><i>krut'krutu</i><par n="soigi__vblex"/></e>
+<e lm="krutu"><i>krutu</i><par n="pikin__n"/></e>
+<e lm="krutu"><i>krutu</i><par n="soigi__vblex"/></e>
+<e lm="krutu-oso"><i>krutu-oso</i><par n="pikin__n"/></e>
+<e lm="krutubakra"><i>krutubakra</i><par n="pikin__n"/></e>
+<e lm="krutubasi"><i>krutubasi</i><par n="pikin__n"/></e>
+<e lm="krutuman"><i>krutuman</i><par n="pikin__n"/></e>
+<e lm="krututori"><i>krututori</i><par n="pikin__n"/></e>
+<e lm="kruwa"><i>kruwa</i><par n="langi__adj"/></e>
+<e lm="kruyara"><i>kruyara</i><par n="pikin__n"/></e>
+<e lm="kruyaraman"><i>kruyaraman</i><par n="pikin__n"/></e>
+<e lm="kubi"><i>kubi</i><par n="pikin__n"/></e>
+<e lm="kugru"><i>kugru</i><par n="pikin__n"/></e>
+<e lm="kukru"><i>kukru</i><par n="pikin__n"/></e>
+<e lm="kuku"><i>kuku</i><par n="pikin__n"/></e>
+<e lm="kuku"><i>kuku</i><par n="soigi__vblex"/></e>
+<e lm="kulidroifi"><i>kulidroifi</i><par n="pikin__n"/></e>
+<e lm="kuliman"><i>kuliman</i><par n="pikin__n"/></e>
+<e lm="kulturu"><i>kulturu</i><par n="langi__adj"/></e>
+<e lm="kulturu"><i>kulturu</i><par n="pikin__n"/></e>
+<e lm="kumakoisi"><i>kumakoisi</i><par n="pikin__n"/></e>
+<e lm="kumba"><i>kumba</i><par n="pikin__n"/></e>
+<e lm="kumbatitei"><i>kumbatitei</i><par n="pikin__n"/></e>
+<e lm="kumbu"><i>kumbu</i><par n="pikin__n"/></e>
+<e lm="kundu"><i>kundu</i><par n="langi__adj"/></e>
+<e lm="kundu"><i>kundu</i><par n="pikin__n"/></e>
+<e lm="kunkun"><i>kunkun</i><par n="pikin__n"/></e>
+<e lm="kunkun"><i>kunkun</i><par n="soigi__vblex"/></e>
+<e lm="kunsu"><i>kunsu</i><par n="pikin__n"/></e>
+<e lm="kupari"><i>kupari</i><par n="pikin__n"/></e>
+<e lm="kuriaku"><i>kuriaku</i><par n="pikin__n"/></e>
+<e lm="kurkuru"><i>kurkuru</i><par n="pikin__n"/></e>
+<e lm="kusuwe"><i>kusuwe</i><par n="pikin__n"/></e>
+<e lm="kutai"><i>kutai</i><par n="pikin__n"/></e>
+<e lm="kuyake"><i>kuyake</i><par n="pikin__n"/></e>
+<e lm="kwabu"><i>kwabu</i><par n="pikin__n"/></e>
+<e lm="kwai"><i>kwai</i><par n="langi__adj"/></e>
+<e lm="kwai"><i>kwai</i><par n="pikin__n"/></e>
+<e lm="kwartyi"><i>kwartyi</i><par n="pikin__n"/></e>
+<e lm="kwasi"><i>kwasi</i><par n="pikin__n"/></e>
+<e lm="kwasibita"><i>kwasibita</i><par n="pikin__n"/></e>
+<e lm="kwaskwasi"><i>kwaskwasi</i><par n="pikin__n"/></e>
+<e lm="kwek"><i>kwek</i><par n="pikin__n"/></e>
+<e lm="kweki"><i>kweki</i><par n="soigi__vblex"/></e>
+<e lm="kwekimama"><i>kwekimama</i><par n="pikin__n"/></e>
+<e lm="kwekipapa"><i>kwekipapa</i><par n="pikin__n"/></e>
+<e lm="kwekipikin"><i>kwekipikin</i><par n="pikin__n"/></e>
+<e lm="kweri"><i>kweri</i><par n="soigi__vblex"/></e>
+<e lm="kwinsi"><i>kwinsi</i><par n="soigi__vblex"/></e>
+<e lm="la"><i>la</i><par n="pikin__n"/></e>
+<e lm="labaria"><i>labaria</i><par n="pikin__n"/></e>
+<e lm="lafu"><i>lafu</i><par n="pikin__n"/></e>
+<e lm="lafu"><i>lafu</i><par n="soigi__vblex"/></e>
+<e lm="lafufesi"><i>lafufesi</i><par n="pikin__n"/></e>
+<e lm="lafutori"><i>lafutori</i><par n="pikin__n"/></e>
+<e lm="lagadisa"><i>lagadisa</i><par n="pikin__n"/></e>
+<e lm="lagi"><i>lagi</i><par n="langi__adj"/></e>
+<e lm="lagiman"><i>lagiman</i><par n="pikin__n"/></e>
+<e lm="lai"><i>lai</i><par n="pikin__n"/></e>
+<e lm="lai"><i>lai</i><par n="soigi__vblex"/></e>
+<e lm="lala"><i>lala</i><par n="langi__adj"/></e>
+<e lm="lam"><i>lam</i><par n="pikin__n"/></e>
+<e lm="lampu"><i>lampu</i><par n="pikin__n"/></e>
+<e lm="lan"><i>lan</i><par n="langi__adj"/></e>
+<e lm="langa yu mofo"><i>langa yu mofo</i><par n="soigi__vblex"/></e>
+<e lm="langa"><i>langa</i><par n="langi__adj"/></e>
+<e lm="langa"><i>langa</i><par n="soigi__vblex"/></e>
+<e lm="langabere"><i>langabere</i><par n="langi__adj"/></e>
+<e lm="langalanga"><i>langalanga</i><par n="efu__adv"/></e>
+<e lm="langaman"><i>langaman</i><par n="pikin__n"/></e>
+<e lm="lanki"><i>lanki</i><par n="pikin__n"/></e>
+<e lm="lanman"><i>lanman</i><par n="pikin__n"/></e>
+<e lm="lanpresi"><i>lanpresi</i><par n="pikin__n"/></e>
+<e lm="lansri"><i>lansri</i><par n="pikin__n"/></e>
+<e lm="lanteri"><i>lanteri</i><par n="pikin__n"/></e>
+<e lm="lanti"><i>lanti</i><par n="langi__adj"/></e>
+<e lm="lanti"><i>lanti</i><par n="pikin__n"/></e>
+<e lm="lantibakra"><i>lantibakra</i><par n="pikin__n"/></e>
+<e lm="lantiman"><i>lantiman</i><par n="pikin__n"/></e>
+<e lm="lantimoni"><i>lantimoni</i><par n="pikin__n"/></e>
+<e lm="lapu"><i>lapu</i><par n="pikin__n"/></e>
+<e lm="lapu"><i>lapu</i><par n="soigi__vblex"/></e>
+<e lm="lasi bere"><i>lasi bere</i><par n="soigi__vblex"/></e>
+<e lm="lasi"><i>lasi</i><par n="langi__adj"/></e>
+<e lm="lasi"><i>lasi</i><par n="soigi__vblex"/></e>
+<e lm="lasiman"><i>lasiman</i><par n="pikin__n"/></e>
+<e lm="laste"><i>laste</i><par n="langi__adj"/></e>
+<e lm="lati"><i>lati</i><par n="efu__adv"/></e>
+<e lm="lati"><i>lati</i><par n="pikin__n"/></e>
+<e lm="law"><i>law</i><par n="langi__adj"/></e>
+<e lm="lawlaw"><i>lawlaw</i><par n="langi__adj"/></e>
+<e lm="lawman"><i>lawman</i><par n="pikin__n"/></e>
+<e lm="lawman-datra"><i>lawman-datra</i><par n="pikin__n"/></e>
+<e lm="lebriki"><i>lebriki</i><par n="pikin__n"/></e>
+<e lm="lefre"><i>lefre</i><par n="pikin__n"/></e>
+<e lm="legre"><i>legre</i><par n="pikin__n"/></e>
+<e lm="legwana"><i>legwana</i><par n="pikin__n"/></e>
+<e lm="lei"><i>lei</i><par n="pikin__n"/></e>
+<e lm="lei"><i>lei</i><par n="soigi__vblex"/></e>
+<e lm="leigi"><i>leigi</i><par n="langi__adj"/></e>
+<e lm="leigi"><i>leigi</i><par n="soigi__vblex"/></e>
+<e lm="leimofoman"><i>leimofoman</i><par n="pikin__n"/></e>
+<e lm="leisi boskopu"><i>leisi boskopu</i><par n="soigi__vblex"/></e>
+<e lm="leisi"><i>leisi</i><par n="pikin__n"/></e>
+<e lm="leisi"><i>leisi</i><par n="soigi__vblex"/></e>
+<e lm="leisibuku"><i>leisibuku</i><par n="pikin__n"/></e>
+<e lm="leitori"><i>leitori</i><par n="pikin__n"/></e>
+<e lm="lekdoru"><i>lekdoru</i><par n="pikin__n"/></e>
+<e lm="leki"><i>leki</i><par n="sensi__cnjsub"/></e>
+<e lm="leki"><i>leki</i><par n="pikin__n"/></e>
+<e lm="leki"><i>leki</i><par n="soigi__vblex"/></e>
+<e lm="lekti en ede"><i>lekti en ede</i><par n="soigi__vblex"/></e>
+<e lm="lekti"><i>lekti</i><par n="langi__adj"/></e>
+<e lm="lekti"><i>lekti</i><par n="soigi__vblex"/></e>
+<e lm="lekti-ede"><i>lekti-ede</i><par n="langi__adj"/></e>
+<e lm="lemki"><i>lemki</i><par n="pikin__n"/></e>
+<e lm="leni"><i>leni</i><par n="soigi__vblex"/></e>
+<e lm="lenti"><i>lenti</i><par n="pikin__n"/></e>
+<e lm="lepi"><i>lepi</i><par n="langi__adj"/></e>
+<e lm="lepi"><i>lepi</i><par n="soigi__vblex"/></e>
+<e lm="leri"><i>leri</i><par n="pikin__n"/></e>
+<e lm="leri"><i>leri</i><par n="soigi__vblex"/></e>
+<e lm="leribuba"><i>leribuba</i><par n="pikin__n"/></e>
+<e lm="leriman"><i>leriman</i><par n="pikin__n"/></e>
+<e lm="lesi"><i>lesi</i><par n="langi__adj"/></e>
+<e lm="lesi"><i>lesi</i><par n="pikin__n"/></e>
+<e lm="lespeki"><i>lespeki</i><par n="pikin__n"/></e>
+<e lm="lespeki"><i>lespeki</i><par n="soigi__vblex"/></e>
+<e lm="let'anu"><i>let'anu</i><par n="pikin__n"/></e>
+<e lm="let'opu"><i>let'opu</i><par n="efu__adv"/></e>
+<e lm="let'sei"><i>let'sei</i><par n="pikin__n"/></e>
+<e lm="leti"><i>leti</i><par n="efu__adv"/></e>
+<e lm="leti"><i>leti</i><par n="langi__adj"/></e>
+<e lm="leti"><i>leti</i><par n="pikin__n"/></e>
+<e lm="leti"><i>leti</i><par n="soigi__vblex"/></e>
+<e lm="lew"><i>lew</i><par n="pikin__n"/></e>
+<e lm="liba"><i>liba</i><par n="pikin__n"/></e>
+<e lm="libakanti"><i>libakanti</i><par n="pikin__n"/></e>
+<e lm="libasei"><i>libasei</i><par n="pikin__n"/></e>
+<e lm="libi"><i>libi</i><par n="pikin__n"/></e>
+<e lm="libi"><i>libi</i><par n="soigi__vblex"/></e>
+<e lm="libilibi"><i>libilibi</i><par n="langi__adj"/></e>
+<e lm="libimarki"><i>libimarki</i><par n="pikin__n"/></e>
+<e lm="libisani"><i>libisani</i><par n="pikin__n"/></e>
+<e lm="libisma"><i>libisma</i><par n="pikin__n"/></e>
+<e lm="libiten"><i>libiten</i><par n="pikin__n"/></e>
+<e lm="ligiligi"><i>ligiligi</i><par n="soigi__vblex"/></e>
+<e lm="lila"><i>lila</i><par n="pikin__n"/></e>
+<e lm="lin"><i>lin</i><par n="pikin__n"/></e>
+<e lm="linga"><i>linga</i><par n="pikin__n"/></e>
+<e lm="lingaworon"><i>lingaworon</i><par n="pikin__n"/></e>
+<e lm="lo"><i>lo</i><par n="langi__adj"/></e>
+<e lm="lo"><i>lo</i><par n="pikin__n"/></e>
+<e lm="lo"><i>lo</i><par n="soigi__vblex"/></e>
+<e lm="lobi"><i>lobi</i><par n="pikin__n"/></e>
+<e lm="lobi"><i>lobi</i><par n="soigi__vblex"/></e>
+<e lm="lobiwan"><i>lobiwan</i><par n="pikin__n"/></e>
+<e lm="logologo"><i>logologo</i><par n="pikin__n"/></e>
+<e lm="loi"><i>loi</i><par n="soigi__vblex"/></e>
+<e lm="loiki"><i>loiki</i><par n="pikin__n"/></e>
+<e lm="loiri"><i>loiri</i><par n="pikin__n"/></e>
+<e lm="loko"><i>loko</i><par n="pikin__n"/></e>
+<e lm="loksi"><i>loksi</i><par n="pikin__n"/></e>
+<e lm="loktu"><i>loktu</i><par n="pikin__n"/></e>
+<e lm="loli"><i>loli</i><par n="langi__adj"/></e>
+<e lm="loli"><i>loli</i><par n="pikin__n"/></e>
+<e lm="lolo"><i>lolo</i><par n="pikin__n"/></e>
+<e lm="lolo"><i>lolo</i><par n="soigi__vblex"/></e>
+<e lm="lomboto"><i>lomboto</i><par n="soigi__vblex"/></e>
+<e lm="lon abra"><i>lon abra</i><par n="soigi__vblex"/></e>
+<e lm="lon"><i>lon</i><par n="soigi__vblex"/></e>
+<e lm="lonka"><i>lonka</i><par n="pikin__n"/></e>
+<e lm="lont'ai"><i>lont'ai</i><par n="pikin__n"/></e>
+<e lm="lont'oso"><i>lont'oso</i><par n="pikin__n"/></e>
+<e lm="lontu fon"><i>lontu fon</i><par n="soigi__vblex"/></e>
+<e lm="lontu"><i>lontu</i><par n="efu__adv"/></e>
+<e lm="lontu"><i>lontu</i><par n="fu__pr"/></e>
+<e lm="lontu"><i>lontu</i><par n="langi__adj"/></e>
+<e lm="lontu"><i>lontu</i><par n="soigi__vblex"/></e>
+<e lm="losi"><i>losi</i><par n="soigi__vblex"/></e>
+<e lm="loso"><i>loso</i><par n="pikin__n"/></e>
+<e lm="loso-eksi"><i>loso-eksi</i><par n="pikin__n"/></e>
+<e lm="lostu"><i>lostu</i><par n="soigi__vblex"/></e>
+<e lm="lostuflaka"><i>lostuflaka</i><par n="pikin__n"/></e>
+<e lm="loto"><i>loto</i><par n="pikin__n"/></e>
+<e lm="lowe nengre"><i>lowe nengre</i><par n="pikin__n"/></e>
+<e lm="lowe"><i>lowe</i><par n="langi__adj"/></e>
+<e lm="lowe"><i>lowe</i><par n="soigi__vblex"/></e>
+<e lm="loweman"><i>loweman</i><par n="pikin__n"/></e>
+<e lm="luku"><i>luku</i><par n="soigi__vblex"/></e>
+<e lm="lukuman"><i>lukuman</i><par n="pikin__n"/></e>
+<e lm="lun"><i>lun</i><par n="pikin__n"/></e>
+<e lm="luru"><i>luru</i><par n="soigi__vblex"/></e>
+<e lm="lus'bere"><i>lus'bere</i><par n="pikin__n"/></e>
+<e lm="lusu wan schot"><i>lusu wan schot</i><par n="soigi__vblex"/></e>
+<e lm="lusu"><i>lusu</i><par n="soigi__vblex"/></e>
+<e lm="lusumbe"><i>lusumbe</i><par n="pikin__n"/></e>
+<e lm="m'ma"><i>m'ma</i><par n="pikin__n"/></e>
+<e lm="ma"><i>ma</i><par n="nanga__cnjcoo"/></e>
+<e lm="mahonibon"><i>mahonibon</i><par n="pikin__n"/></e>
+<e lm="mai"><i>mai</i><par n="soigi__vblex"/></e>
+<e lm="maka"><i>maka</i><par n="pikin__n"/></e>
+<e lm="makabon"><i>makabon</i><par n="pikin__n"/></e>
+<e lm="makadroifi"><i>makadroifi</i><par n="pikin__n"/></e>
+<e lm="makamaka"><i>makamaka</i><par n="langi__adj"/></e>
+<e lm="makandra"><i>makandra</i><par n="efu__adv"/></e>
+<e lm="makandra"><i>makandra</i><par n="soigi__vblex"/></e>
+<e lm="makasneki"><i>makasneki</i><par n="pikin__n"/></e>
+<e lm="makriki"><i>makriki</i><par n="langi__adj"/></e>
+<e lm="maksin"><i>maksin</i><par n="pikin__n"/></e>
+<e lm="makti"><i>makti</i><par n="pikin__n"/></e>
+<e lm="malasi"><i>malasi</i><par n="pikin__n"/></e>
+<e lm="malata"><i>malata</i><par n="pikin__n"/></e>
+<e lm="malengri"><i>malengri</i><par n="langi__adj"/></e>
+<e lm="malengri"><i>malengri</i><par n="soigi__vblex"/></e>
+<e lm="malengrisma"><i>malengrisma</i><par n="pikin__n"/></e>
+<e lm="mama"><i>mama</i><par n="pikin__n"/></e>
+<e lm="mamabere"><i>mamabere</i><par n="pikin__n"/></e>
+<e lm="mamafoto"><i>mamafoto</i><par n="pikin__n"/></e>
+<e lm="mamafowru"><i>mamafowru</i><par n="pikin__n"/></e>
+<e lm="mamakerki"><i>mamakerki</i><par n="pikin__n"/></e>
+<e lm="mamanten"><i>mamanten</i><par n="pikin__n"/></e>
+<e lm="mampira"><i>mampira</i><par n="pikin__n"/></e>
+<e lm="man"><i>man</i><par n="musu__vbmod"/></e>
+<e lm="man"><i>man</i><par n="pikin__n"/></e>
+<e lm="man-ati"><i>man-ati</i><par n="pikin__n"/></e>
+<e lm="man-nengre"><i>man-nengre</i><par n="pikin__n"/></e>
+<e lm="mandimandi"><i>mandimandi</i><par n="pikin__n"/></e>
+<e lm="mangri"><i>mangri</i><par n="langi__adj"/></e>
+<e lm="mangrimangri"><i>mangrimangri</i><par n="langi__adj"/></e>
+<e lm="maniri"><i>maniri</i><par n="pikin__n"/></e>
+<e lm="mankeri"><i>mankeri</i><par n="pikin__n"/></e>
+<e lm="mankeri"><i>mankeri</i><par n="soigi__vblex"/></e>
+<e lm="manki"><i>manki</i><par n="pikin__n"/></e>
+<e lm="manpikin"><i>manpikin</i><par n="pikin__n"/></e>
+<e lm="manpresi"><i>manpresi</i><par n="pikin__n"/></e>
+<e lm="mansma"><i>mansma</i><par n="langi__adj"/></e>
+<e lm="mansma"><i>mansma</i><par n="pikin__n"/></e>
+<e lm="manspasi"><i>manspasi</i><par n="pikin__n"/></e>
+<e lm="manwan"><i>manwan</i><par n="pikin__n"/></e>
+<e lm="manya"><i>manya</i><par n="pikin__n"/></e>
+<e lm="mara"><i>mara</i><par n="soigi__vblex"/></e>
+<e lm="maraka"><i>maraka</i><par n="pikin__n"/></e>
+<e lm="marki"><i>marki</i><par n="pikin__n"/></e>
+<e lm="marki"><i>marki</i><par n="soigi__vblex"/></e>
+<e lm="markitiki"><i>markitiki</i><par n="pikin__n"/></e>
+<e lm="markusa"><i>markusa</i><par n="pikin__n"/></e>
+<e lm="masi"><i>masi</i><par n="langi__adj"/></e>
+<e lm="masi"><i>masi</i><par n="soigi__vblex"/></e>
+<e lm="maskaderi"><i>maskaderi</i><par n="soigi__vblex"/></e>
+<e lm="maskita"><i>maskita</i><par n="pikin__n"/></e>
+<e lm="maskitaworon"><i>maskitaworon</i><par n="pikin__n"/></e>
+<e lm="masra"><i>masra</i><par n="pikin__n"/></e>
+<e lm="masyin"><i>masyin</i><par n="pikin__n"/></e>
+<e lm="mata"><i>mata</i><par n="pikin__n"/></e>
+<e lm="matamata"><i>matamata</i><par n="pikin__n"/></e>
+<e lm="matatifi"><i>matatifi</i><par n="pikin__n"/></e>
+<e lm="mati"><i>mati</i><par n="pikin__n"/></e>
+<e lm="matifasi"><i>matifasi</i><par n="pikin__n"/></e>
+<e lm="matrasi"><i>matrasi</i><par n="pikin__n"/></e>
+<e lm="matrosi"><i>matrosi</i><par n="pikin__n"/></e>
+<e lm="mayoro"><i>mayoro</i><par n="pikin__n"/></e>
+<e lm="meisje"><i>meisje</i><par n="pikin__n"/></e>
+<e lm="meki bigi"><i>meki bigi</i><par n="soigi__vblex"/></e>
+<e lm="meki futu"><i>meki futu</i><par n="soigi__vblex"/></e>
+<e lm="meki muiti"><i>meki muiti</i><par n="soigi__vblex"/></e>
+<e lm="meki prisiri"><i>meki prisiri</i><par n="soigi__vblex"/></e>
+<e lm="meki spotu nanga"><i>meki spotu nanga</i><par n="soigi__vblex"/></e>
+<e lm="meki"><i>meki</i><par n="soigi__vblex"/></e>
+<e lm="memre"><i>memre</i><par n="pikin__n"/></e>
+<e lm="memre"><i>memre</i><par n="soigi__vblex"/></e>
+<e lm="menti"><i>menti</i><par n="pikin__n"/></e>
+<e lm="meri"><i>meri</i><par n="soigi__vblex"/></e>
+<e lm="merki"><i>merki</i><par n="pikin__n"/></e>
+<e lm="merki"><i>merki</i><par n="soigi__vblex"/></e>
+<e lm="merkiman"><i>merkiman</i><par n="pikin__n"/></e>
+<e lm="mesre"><i>mesre</i><par n="langi__adj"/></e>
+<e lm="mesre"><i>mesre</i><par n="soigi__vblex"/></e>
+<e lm="mesreman"><i>mesreman</i><par n="pikin__n"/></e>
+<e lm="meti"><i>meti</i><par n="pikin__n"/></e>
+<e lm="mi gudu"><i>mi gudu</i><par n="pikin__n"/></e>
+<e lm="mi wan ai karu"><i>mi wan ai karu</i><par n="pikin__n"/></e>
+<e lm="milyun"><i>milyun</i><par n="tu__num"/></e>
+<e lm="mindri"><i>mindri</i><par n="fu__pr"/></e>
+<e lm="mindri"><i>mindri</i><par n="pikin__n"/></e>
+<e lm="mindribere"><i>mindribere</i><par n="pikin__n"/></e>
+<e lm="mindrifutu"><i>mindrifutu</i><par n="pikin__n"/></e>
+<e lm="mindriman"><i>mindriman</i><par n="pikin__n"/></e>
+<e lm="mindrineti"><i>mindrineti</i><par n="pikin__n"/></e>
+<e lm="mindrisei"><i>mindrisei</i><par n="pikin__n"/></e>
+<e lm="mira"><i>mira</i><par n="pikin__n"/></e>
+<e lm="miri"><i>miri</i><par n="pikin__n"/></e>
+<e lm="miri-oso"><i>miri-oso</i><par n="pikin__n"/></e>
+<e lm="misi futu"><i>misi futu</i><par n="soigi__vblex"/></e>
+<e lm="misi"><i>misi</i><par n="pikin__n"/></e>
+<e lm="misi"><i>misi</i><par n="soigi__vblex"/></e>
+<e lm="misrefi"><i>misrefi</i><par n="misrefi__prn"/></e>
+<e lm="miti kon na wan"><i>miti kon na wan</i><par n="soigi__vblex"/></e>
+<e lm="miti"><i>miti</i><par n="pikin__n"/></e>
+<e lm="miti"><i>miti</i><par n="soigi__vblex"/></e>
+<e lm="modo"><i>modo</i><par n="langi__adj"/></e>
+<e lm="modo"><i>modo</i><par n="pikin__n"/></e>
+<e lm="modoman"><i>modoman</i><par n="pikin__n"/></e>
+<e lm="mofina"><i>mofina</i><par n="langi__adj"/></e>
+<e lm="mofo"><i>mofo</i><par n="pikin__n"/></e>
+<e lm="mofobuba"><i>mofobuba</i><par n="pikin__n"/></e>
+<e lm="mofokoranti"><i>mofokoranti</i><par n="pikin__n"/></e>
+<e lm="mofoneti"><i>mofoneti</i><par n="pikin__n"/></e>
+<e lm="moi"><i>moi</i><par n="langi__adj"/></e>
+<e lm="moimoi"><i>moimoi</i><par n="soigi__vblex"/></e>
+<e lm="moismoisi"><i>moismoisi</i><par n="pikin__n"/></e>
+<e lm="mokro"><i>mokro</i><par n="pikin__n"/></e>
+<e lm="moksi"><i>moksi</i><par n="langi__adj"/></e>
+<e lm="moksi"><i>moksi</i><par n="soigi__vblex"/></e>
+<e lm="moksimoksi"><i>moksimoksi</i><par n="soigi__vblex"/></e>
+<e lm="momenti"><i>momenti</i><par n="pikin__n"/></e>
+<e lm="moni"><i>moni</i><par n="pikin__n"/></e>
+<e lm="monisaka"><i>monisaka</i><par n="pikin__n"/></e>
+<e lm="monitori"><i>monitori</i><par n="pikin__n"/></e>
+<e lm="monki"><i>monki</i><par n="pikin__n"/></e>
+<e lm="montyi"><i>montyi</i><par n="pikin__n"/></e>
+<e lm="monyo"><i>monyo</i><par n="soigi__vblex"/></e>
+<e lm="mormo"><i>mormo</i><par n="pikin__n"/></e>
+<e lm="moro mofo"><i>moro mofo</i><par n="langi__adj"/></e>
+<e lm="moro"><i>moro</i><par n="efu__adv"/></e>
+<e lm="moro"><i>moro</i><par n="soigi__vblex"/></e>
+<e lm="morsu"><i>morsu</i><par n="langi__adj"/></e>
+<e lm="motyo"><i>motyo</i><par n="langi__adj"/></e>
+<e lm="motyo"><i>motyo</i><par n="pikin__n"/></e>
+<e lm="motyo"><i>motyo</i><par n="soigi__vblex"/></e>
+<e lm="motyokampu"><i>motyokampu</i><par n="pikin__n"/></e>
+<e lm="motyolibi"><i>motyolibi</i><par n="pikin__n"/></e>
+<e lm="motyop'pa"><i>motyop'pa</i><par n="pikin__n"/></e>
+<e lm="motyotenti"><i>motyotenti</i><par n="pikin__n"/></e>
+<e lm="mow"><i>mow</i><par n="pikin__n"/></e>
+<e lm="mu"><i>mu</i><par n="musu__vbmod"/></e>
+<e lm="muiti"><i>muiti</i><par n="pikin__n"/></e>
+<e lm="mumui"><i>mumui</i><par n="langi__adj"/></e>
+<e lm="mun"><i>mun</i><par n="pikin__n"/></e>
+<e lm="munde"><i>munde</i><par n="pikin__n"/></e>
+<e lm="munduku"><i>munduku</i><par n="pikin__n"/></e>
+<e lm="munkenki"><i>munkenki</i><par n="pikin__n"/></e>
+<e lm="munsiki"><i>munsiki</i><par n="pikin__n"/></e>
+<e lm="muru"><i>muru</i><par n="pikin__n"/></e>
+<e lm="mus"><i>mus</i><par n="musu__vbmod"/></e>
+<e lm="musu"><i>musu</i><par n="musu__vbmod"/></e>
+<e lm="musu"><i>musu</i><par n="pikin__n"/></e>
+<e lm="na di"><i>na di</i><par n="nanga__cnjcoo"/></e>
+<e lm="na doro"><i>na doro</i><par n="pikin__n"/></e>
+<e lm="na fesi"><i>na fesi</i><par n="efu__adv"/></e>
+<e lm="na fu"><i>na fu</i><par n="soigi__vblex"/></e>
+<e lm="na"><i>na</i><par n="a__det"/></e>
+<e lm="na"><i>na</i><par n="fu__pr"/></e>
+<e lm="na tapu"><i>na<b/>tapu</i><par n="fu__pr"/></e>
+<e lm="nagri"><i>nagri</i><par n="pikin__n"/></e>
+<e lm="nai"><i>nai</i><par n="soigi__vblex"/></e>
+<e lm="nak'naki"><i>nak'naki</i><par n="soigi__vblex"/></e>
+<e lm="naki en tongo"><i>naki en tongo</i><par n="soigi__vblex"/></e>
+<e lm="naki tapu"><i>naki tapu</i><par n="soigi__vblex"/></e>
+<e lm="naki wan kofu"><i>naki wan kofu</i><par n="soigi__vblex"/></e>
+<e lm="naki"><i>naki</i><par n="soigi__vblex"/></e>
+<e lm="nanai"><i>nanai</i><par n="pikin__n"/></e>
+<e lm="nanasi"><i>nanasi</i><par n="pikin__n"/></e>
+<e lm="nanga opo mofo"><i>nanga opo mofo</i><par n="langi__adj"/></e>
+<e lm="nanga"><i>nanga</i><par n="fu__pr"/></e>
+<e lm="nanga"><i>nanga</i><par n="nanga__cnjcoo"/></e>
+<e lm="nangra"><i>nangra</i><par n="pikin__n"/></e>
+<e lm="naniwagi"><i>naniwagi</i><par n="pikin__n"/></e>
+<e lm="nat'nati"><i>nat'nati</i><par n="langi__adj"/></e>
+<e lm="nat'nati"><i>nat'nati</i><par n="soigi__vblex"/></e>
+<e lm="nati"><i>nati</i><par n="langi__adj"/></e>
+<e lm="nati"><i>nati</i><par n="soigi__vblex"/></e>
+<e lm="ne"><i>ne</i><par n="nanga__cnjcoo"/></e>
+<e lm="nefi"><i>nefi</i><par n="pikin__n"/></e>
+<e lm="nefiman"><i>nefiman</i><par n="pikin__n"/></e>
+<e lm="nefo"><i>nefo</i><par n="pikin__n"/></e>
+<e lm="neigi"><i>neigi</i><par n="tu__num"/></e>
+<e lm="neigitenti"><i>neigitenti</i><par n="tu__num"/></e>
+<e lm="neki"><i>neki</i><par n="pikin__n"/></e>
+<e lm="neki-olo"><i>neki-olo</i><par n="pikin__n"/></e>
+<e lm="nen"><i>nen</i><par n="pikin__n"/></e>
+<e lm="nene"><i>nene</i><par n="pikin__n"/></e>
+<e lm="nengre"><i>nengre</i><par n="langi__adj"/></e>
+<e lm="nengre"><i>nengre</i><par n="pikin__n"/></e>
+<e lm="nengre-uma"><i>nengre-uma</i><par n="pikin__n"/></e>
+<e lm="nengredoro"><i>nengredoro</i><par n="pikin__n"/></e>
+<e lm="nengregron"><i>nengregron</i><par n="pikin__n"/></e>
+<e lm="nengrekondre"><i>nengrekondre</i><par n="pikin__n"/></e>
+<e lm="nengresiki"><i>nengresiki</i><par n="pikin__n"/></e>
+<e lm="nengretongo"><i>nengretongo</i><par n="pikin__n"/></e>
+<e lm="nesi"><i>nesi</i><par n="pikin__n"/></e>
+<e lm="neti"><i>neti</i><par n="pikin__n"/></e>
+<e lm="niri"><i>niri</i><par n="pikin__n"/></e>
+<e lm="no kon nanga wan weri"><i>no kon nanga wan weri</i><par n="langi__adj"/></e>
+<e lm="no man si na ai"><i>no man si na ai</i><par n="soigi__vblex"/></e>
+<e lm="no wan presi"><i>no wan presi</i><par n="efu__adv"/></e>
+<e lm="no"><i>no</i><par n="efu__adv"/></e>
+<e lm="no"><i>no</i><par n="kokodiako__ij"/></e>
+<e lm="nofo"><i>nofo</i><par n="langi__adj"/></e>
+<e lm="nofotron"><i>nofotron</i><par n="efu__adv"/></e>
+<e lm="noiti"><i>noiti</i><par n="efu__adv"/></e>
+<e lm="noko"><i>noko</i><par n="pikin__n"/></e>
+<e lm="nomo"><i>nomo</i><par n="efu__adv"/></e>
+<e lm="nomonomo"><i>nomonomo</i><par n="efu__adv"/></e>
+<e lm="nomru"><i>nomru</i><par n="pikin__n"/></e>
+<e lm="noordsei"><i>noordsei</i><par n="pikin__n"/></e>
+<e lm="noso"><i>noso</i><par n="nanga__cnjcoo"/></e>
+<e lm="noso"><i>noso</i><par n="pikin__n"/></e>
+<e lm="noso-olo"><i>noso-olo</i><par n="pikin__n"/></e>
+<e lm="notarsi"><i>notarsi</i><par n="pikin__n"/></e>
+<e lm="noti"><i>noti</i><par n="noti__prn"/></e>
+<e lm="not'noti"><i>not'noti</i><par n="noti__prn"/></e>
+<e lm="notmuskati"><i>notmuskati</i><par n="pikin__n"/></e>
+<e lm="noto"><i>noto</i><par n="pikin__n"/></e>
+<e lm="now"><i>now</i><par n="efu__adv"/></e>
+<e lm="nownow"><i>nownow</i><par n="efu__adv"/></e>
+<e lm="nownowde"><i>nownowde</i><par n="efu__adv"/></e>
+<e lm="nowtu"><i>nowtu</i><par n="pikin__n"/></e>
+<e lm="nyan"><i>nyan</i><par n="soigi__vblex"/></e>
+<e lm="nyan-oli"><i>nyan-oli</i><par n="pikin__n"/></e>
+<e lm="nyangron"><i>nyangron</i><par n="pikin__n"/></e>
+<e lm="nyanman"><i>nyanman</i><par n="pikin__n"/></e>
+<e lm="nyanprei"><i>nyanprei</i><par n="soigi__vblex"/></e>
+<e lm="nyansani"><i>nyansani</i><par n="pikin__n"/></e>
+<e lm="nyanyan"><i>nyanyan</i><par n="pikin__n"/></e>
+<e lm="nyofi"><i>nyofi</i><par n="langi__adj"/></e>
+<e lm="nyoni"><i>nyoni</i><par n="langi__adj"/></e>
+<e lm="nyun"><i>nyun</i><par n="langi__adj"/></e>
+<e lm="nyunsu"><i>nyunsu</i><par n="pikin__n"/></e>
+<e lm="nyunyari"><i>nyunyari</i><par n="pikin__n"/></e>
+<e lm="nyunyun"><i>nyunyun</i><par n="langi__adj"/></e>
+<e lm="o"><i>o</i><par n="musu__vbmod"/></e>
+<e lm="o"><i>o</i><par n="efu__adv"/></e>
+<e lm="o"><i>o</i><par n="kokodiako__ij"/></e>
+<e lm="obia"><i>obia</i><par n="pikin__n"/></e>
+<e lm="obiaman"><i>obiaman</i><par n="pikin__n"/></e>
+<e lm="odi"><i>odi</i><par n="kokodiako__ij"/></e>
+<e lm="odi"><i>odi</i><par n="pikin__n"/></e>
+<e lm="odo"><i>odo</i><par n="pikin__n"/></e>
+<e lm="ofisiri"><i>ofisiri</i><par n="pikin__n"/></e>
+<e lm="ofrandi"><i>ofrandi</i><par n="pikin__n"/></e>
+<e lm="ogri"><i>ogri</i><par n="langi__adj"/></e>
+<e lm="ogri"><i>ogri</i><par n="pikin__n"/></e>
+<e lm="ogri-ai"><i>ogri-ai</i><par n="pikin__n"/></e>
+<e lm="ogri-ati"><i>ogri-ati</i><par n="langi__adj"/></e>
+<e lm="ogri-ati"><i>ogri-ati</i><par n="pikin__n"/></e>
+<e lm="ogridu"><i>ogridu</i><par n="pikin__n"/></e>
+<e lm="ogriman"><i>ogriman</i><par n="pikin__n"/></e>
+<e lm="ogriwan"><i>ogriwan</i><par n="pikin__n"/></e>
+<e lm="ogriyeye"><i>ogriyeye</i><par n="pikin__n"/></e>
+<e lm="okasi"><i>okasi</i><par n="pikin__n"/></e>
+<e lm="okro"><i>okro</i><par n="pikin__n"/></e>
+<e lm="oleif"><i>oleif</i><par n="pikin__n"/></e>
+<e lm="oli"><i>oli</i><par n="pikin__n"/></e>
+<e lm="olo"><i>olo</i><par n="pikin__n"/></e>
+<e lm="oloisi"><i>oloisi</i><par n="pikin__n"/></e>
+<e lm="oma"><i>oma</i><par n="pikin__n"/></e>
+<e lm="omu"><i>omu</i><par n="pikin__n"/></e>
+<e lm="ondro"><i>ondro</i><par n="fu__pr"/></e>
+<e lm="ondro"><i>ondro</i><par n="soigi__vblex"/></e>
+<e lm="ondro-anu"><i>ondro-anu</i><par n="pikin__n"/></e>
+<e lm="ondrobruku"><i>ondrobruku</i><par n="pikin__n"/></e>
+<e lm="ondrofeni tori"><i>ondrofeni tori</i><par n="pikin__n"/></e>
+<e lm="ondrofeni"><i>ondrofeni</i><par n="pikin__n"/></e>
+<e lm="ondrofeni"><i>ondrofeni</i><par n="soigi__vblex"/></e>
+<e lm="ondrofutu"><i>ondrofutu</i><par n="pikin__n"/></e>
+<e lm="ondrokoto"><i>ondrokoto</i><par n="pikin__n"/></e>
+<e lm="ondrokrosi"><i>ondrokrosi</i><par n="pikin__n"/></e>
+<e lm="ondrosei"><i>ondrosei</i><par n="efu__adv"/></e>
+<e lm="ondrosuku"><i>ondrosuku</i><par n="pikin__n"/></e>
+<e lm="ondrosuku"><i>ondrosuku</i><par n="soigi__vblex"/></e>
+<e lm="ondrow"><i>ondrow</i><par n="pikin__n"/></e>
+<e lm="ondrow"><i>ondrow</i><par n="soigi__vblex"/></e>
+<e lm="ondroyapon"><i>ondroyapon</i><par n="pikin__n"/></e>
+<e lm="onfu"><i>onfu</i><par n="pikin__n"/></e>
+<e lm="ongoloku"><i>ongoloku</i><par n="langi__adj"/></e>
+<e lm="ongoloku"><i>ongoloku</i><par n="pikin__n"/></e>
+<e lm="oni"><i>oni</i><par n="pikin__n"/></e>
+<e lm="onigodo"><i>onigodo</i><par n="pikin__n"/></e>
+<e lm="onti"><i>onti</i><par n="pikin__n"/></e>
+<e lm="onti"><i>onti</i><par n="soigi__vblex"/></e>
+<e lm="ontigon"><i>ontigon</i><par n="pikin__n"/></e>
+<e lm="ontiman"><i>ontiman</i><par n="pikin__n"/></e>
+<e lm="oostsei"><i>oostsei</i><par n="pikin__n"/></e>
+<e lm="opa"><i>opa</i><par n="pikin__n"/></e>
+<e lm="opo doro"><i>opo doro</i><par n="pikin__n"/></e>
+<e lm="opo"><i>opo</i><par n="langi__adj"/></e>
+<e lm="opo"><i>opo</i><par n="efu__adv"/></e>
+<e lm="opo"><i>opo</i><par n="soigi__vblex"/></e>
+<e lm="opo-opo"><i>opo-opo</i><par n="pikin__n"/></e>
+<e lm="opolangi"><i>opolangi</i><par n="pikin__n"/></e>
+<e lm="oppasser"><i>oppasser</i><par n="pikin__n"/></e>
+<e lm="opruru"><i>opruru</i><par n="langi__adj"/></e>
+<e lm="opruru"><i>opruru</i><par n="pikin__n"/></e>
+<e lm="orga"><i>orga</i><par n="pikin__n"/></e>
+<e lm="orga"><i>orga</i><par n="soigi__vblex"/></e>
+<e lm="ori baka"><i>ori baka</i><par n="soigi__vblex"/></e>
+<e lm="ori doro"><i>ori doro</i><par n="soigi__vblex"/></e>
+<e lm="ori na baka"><i>ori na baka</i><par n="soigi__vblex"/></e>
+<e lm="ori na spotu"><i>ori na spotu</i><par n="soigi__vblex"/></e>
+<e lm="ori wakti"><i>ori wakti</i><par n="soigi__vblex"/></e>
+<e lm="ori"><i>ori</i><par n="soigi__vblex"/></e>
+<e lm="oso"><i>oso</i><par n="pikin__n"/></e>
+<e lm="osofowru"><i>osofowru</i><par n="pikin__n"/></e>
+<e lm="ososkin"><i>ososkin</i><par n="pikin__n"/></e>
+<e lm="ososma"><i>ososma</i><par n="pikin__n"/></e>
+<e lm="oten"><i>oten</i><par n="efu__adv"/></e>
+<e lm="oten"><i>oten</i><par n="nanga__cnjcoo"/></e>
+<e lm="oto"><i>oto</i><par n="pikin__n"/></e>
+<e lm="owktu"><i>owktu</i><par n="efu__adv"/></e>
+<e lm="owru"><i>owru</i><par n="langi__adj"/></e>
+<e lm="owru"><i>owru</i><par n="pikin__n"/></e>
+<e lm="owru"><i>owru</i><par n="soigi__vblex"/></e>
+<e lm="owrukuku"><i>owrukuku</i><par n="pikin__n"/></e>
+<e lm="owruten"><i>owruten</i><par n="langi__adj"/></e>
+<e lm="owruyari"><i>owruyari</i><par n="pikin__n"/></e>
+<e lm="p'pa"><i>p'pa</i><par n="pikin__n"/></e>
+<e lm="pai"><i>pai</i><par n="pikin__n"/></e>
+<e lm="pai"><i>pai</i><par n="soigi__vblex"/></e>
+<e lm="paiman"><i>paiman</i><par n="pikin__n"/></e>
+<e lm="paki"><i>paki</i><par n="pikin__n"/></e>
+<e lm="pakro"><i>pakro</i><par n="pikin__n"/></e>
+<e lm="palmbon"><i>palmbon</i><par n="pikin__n"/></e>
+<e lm="palulu"><i>palulu</i><par n="pikin__n"/></e>
+<e lm="pampun"><i>pampun</i><par n="pikin__n"/></e>
+<e lm="pan"><i>pan</i><par n="pikin__n"/></e>
+<e lm="pangi"><i>pangi</i><par n="pikin__n"/></e>
+<e lm="pankuku"><i>pankuku</i><par n="pikin__n"/></e>
+<e lm="pant'oso"><i>pant'oso</i><par n="pikin__n"/></e>
+<e lm="panti"><i>panti</i><par n="pikin__n"/></e>
+<e lm="panti"><i>panti</i><par n="soigi__vblex"/></e>
+<e lm="panya opo priti opo"><i>panya opo priti opo</i><par n="langi__adj"/></e>
+<e lm="panya"><i>panya</i><par n="soigi__vblex"/></e>
+<e lm="panyapanya"><i>panyapanya</i><par n="efu__adv"/></e>
+<e lm="panyapanya"><i>panyapanya</i><par n="soigi__vblex"/></e>
+<e lm="papa"><i>papa</i><par n="langi__adj"/></e>
+<e lm="papa"><i>papa</i><par n="pikin__n"/></e>
+<e lm="papaya"><i>papaya</i><par n="pikin__n"/></e>
+<e lm="papira moni"><i>papira moni</i><par n="pikin__n"/></e>
+<e lm="papira"><i>papira</i><par n="pikin__n"/></e>
+<e lm="paranoto"><i>paranoto</i><par n="pikin__n"/></e>
+<e lm="pardon"><i>pardon</i><par n="kokodiako__ij"/></e>
+<e lm="pardon"><i>pardon</i><par n="pikin__n"/></e>
+<e lm="parelkrara"><i>parelkrara</i><par n="pikin__n"/></e>
+<e lm="pari"><i>pari</i><par n="pikin__n"/></e>
+<e lm="pari"><i>pari</i><par n="soigi__vblex"/></e>
+<e lm="pasensi"><i>pasensi</i><par n="pikin__n"/></e>
+<e lm="pasi"><i>pasi</i><par n="pikin__n"/></e>
+<e lm="pata"><i>pata</i><par n="pikin__n"/></e>
+<e lm="pataka"><i>pataka</i><par n="pikin__n"/></e>
+<e lm="patata"><i>patata</i><par n="pikin__n"/></e>
+<e lm="patataloso"><i>patataloso</i><par n="pikin__n"/></e>
+<e lm="patawa"><i>patawa</i><par n="pikin__n"/></e>
+<e lm="patron"><i>patron</i><par n="pikin__n"/></e>
+<e lm="patu"><i>patu</i><par n="pikin__n"/></e>
+<e lm="patyapatya"><i>patyapatya</i><par n="langi__adj"/></e>
+<e lm="pe"><i>pe</i><par n="pikin__n"/></e>
+<e lm="pe"><i>pe</i><par n="pe__adv"/></e>
+<e lm="peipi"><i>peipi</i><par n="pikin__n"/></e>
+<e lm="peiri"><i>peiri</i><par n="pikin__n"/></e>
+<e lm="pemba"><i>pemba</i><par n="pikin__n"/></e>
+<e lm="pen"><i>pen</i><par n="pikin__n"/></e>
+<e lm="peni"><i>peni</i><par n="langi__adj"/></e>
+<e lm="penitigri"><i>penitigri</i><par n="pikin__n"/></e>
+<e lm="pepe"><i>pepe</i><par n="pikin__n"/></e>
+<e lm="pepre"><i>pepre</i><par n="langi__adj"/></e>
+<e lm="pepre"><i>pepre</i><par n="pikin__n"/></e>
+<e lm="peprementi"><i>peprementi</i><par n="pikin__n"/></e>
+<e lm="perki"><i>perki</i><par n="pikin__n"/></e>
+<e lm="pesi"><i>pesi</i><par n="pikin__n"/></e>
+<e lm="peti"><i>peti</i><par n="pikin__n"/></e>
+<e lm="pikadu"><i>pikadu</i><par n="pikin__n"/></e>
+<e lm="piki"><i>piki</i><par n="pikin__n"/></e>
+<e lm="piki"><i>piki</i><par n="soigi__vblex"/></e>
+<e lm="pikin kaw"><i>pikin kaw</i><par n="pikin__n"/></e>
+<e lm="pikin pikin"><i>pikin pikin</i><par n="pikin__n"/></e>
+<e lm="pikin skapu"><i>pikin skapu</i><par n="pikin__n"/></e>
+<e lm="pikin"><i>pikin</i><par n="langi__adj"/></e>
+<e lm="pikin"><i>pikin</i><par n="pikin__n"/></e>
+<e lm="pikin-nengre"><i>pikin-nengre</i><par n="pikin__n"/></e>
+<e lm="pikinfowru"><i>pikinfowru</i><par n="pikin__n"/></e>
+<e lm="pikinmoni"><i>pikinmoni</i><par n="pikin__n"/></e>
+<e lm="pikinpikin"><i>pikinpikin</i><par n="langi__adj"/></e>
+<e lm="pikinsensi"><i>pikinsensi</i><par n="pikin__n"/></e>
+<e lm="pikintongo"><i>pikintongo</i><par n="pikin__n"/></e>
+<e lm="pina"><i>pina</i><par n="langi__adj"/></e>
+<e lm="pina"><i>pina</i><par n="pikin__n"/></e>
+<e lm="pina"><i>pina</i><par n="soigi__vblex"/></e>
+<e lm="pina-owrukuku"><i>pina-owrukuku</i><par n="pikin__n"/></e>
+<e lm="pinabon"><i>pinabon</i><par n="pikin__n"/></e>
+<e lm="pinakampu"><i>pinakampu</i><par n="pikin__n"/></e>
+<e lm="pinaman"><i>pinaman</i><par n="pikin__n"/></e>
+<e lm="pinaten"><i>pinaten</i><par n="pikin__n"/></e>
+<e lm="pinda"><i>pinda</i><par n="pikin__n"/></e>
+<e lm="pingi"><i>pingi</i><par n="pikin__n"/></e>
+<e lm="pingi"><i>pingi</i><par n="soigi__vblex"/></e>
+<e lm="pipa"><i>pipa</i><par n="pikin__n"/></e>
+<e lm="pipa"><i>pipa</i><par n="soigi__vblex"/></e>
+<e lm="pipel"><i>pipel</i><par n="pikin__n"/></e>
+<e lm="pipi"><i>pipi</i><par n="pikin__n"/></e>
+<e lm="pipikowsu"><i>pipikowsu</i><par n="pikin__n"/></e>
+<e lm="pir'ede"><i>pir'ede</i><par n="langi__adj"/></e>
+<e lm="pir'piri"><i>pir'piri</i><par n="langi__adj"/></e>
+<e lm="pir'tifi"><i>pir'tifi</i><par n="pikin__n"/></e>
+<e lm="piren"><i>piren</i><par n="pikin__n"/></e>
+<e lm="piri ai gi"><i>piri ai gi</i><par n="soigi__vblex"/></e>
+<e lm="piri tifi"><i>piri tifi</i><par n="soigi__vblex"/></e>
+<e lm="piri"><i>piri</i><par n="soigi__vblex"/></e>
+<e lm="pis'duku"><i>pis'duku</i><par n="pikin__n"/></e>
+<e lm="pis'patu"><i>pis'patu</i><par n="pikin__n"/></e>
+<e lm="pis'pisi"><i>pis'pisi</i><par n="pikin__n"/></e>
+<e lm="pisi"><i>pisi</i><par n="pikin__n"/></e>
+<e lm="pisi"><i>pisi</i><par n="soigi__vblex"/></e>
+<e lm="pisten"><i>pisten</i><par n="pikin__n"/></e>
+<e lm="plak"><i>plak</i><par n="soigi__vblex"/></e>
+<e lm="planga"><i>planga</i><par n="pikin__n"/></e>
+<e lm="plata broki"><i>plata broki</i><par n="pikin__n"/></e>
+<e lm="plata"><i>plata</i><par n="langi__adj"/></e>
+<e lm="plata"><i>plata</i><par n="soigi__vblex"/></e>
+<e lm="plei"><i>plei</i><par n="pikin__n"/></e>
+<e lm="plei"><i>plei</i><par n="soigi__vblex"/></e>
+<e lm="plekti"><i>plekti</i><par n="pikin__n"/></e>
+<e lm="ploi"><i>ploi</i><par n="pikin__n"/></e>
+<e lm="ploi"><i>ploi</i><par n="soigi__vblex"/></e>
+<e lm="ploiploi"><i>ploiploi</i><par n="langi__adj"/></e>
+<e lm="pluga"><i>pluga</i><par n="pikin__n"/></e>
+<e lm="poisi"><i>poisi</i><par n="pikin__n"/></e>
+<e lm="poko"><i>poko</i><par n="soigi__vblex"/></e>
+<e lm="poku"><i>poku</i><par n="pikin__n"/></e>
+<e lm="pokudosu"><i>pokudosu</i><par n="pikin__n"/></e>
+<e lm="pokugrupu"><i>pokugrupu</i><par n="pikin__n"/></e>
+<e lm="pokuman"><i>pokuman</i><par n="pikin__n"/></e>
+<e lm="pompu"><i>pompu</i><par n="pikin__n"/></e>
+<e lm="pompu"><i>pompu</i><par n="soigi__vblex"/></e>
+<e lm="pomusteri"><i>pomusteri</i><par n="pikin__n"/></e>
+<e lm="pondo"><i>pondo</i><par n="pikin__n"/></e>
+<e lm="pondo"><i>pondo</i><par n="soigi__vblex"/></e>
+<e lm="ponpon"><i>ponpon</i><par n="pikin__n"/></e>
+<e lm="pontu"><i>pontu</i><par n="pikin__n"/></e>
+<e lm="popki"><i>popki</i><par n="pikin__n"/></e>
+<e lm="popokai"><i>popokai</i><par n="pikin__n"/></e>
+<e lm="popokaisneki"><i>popokaisneki</i><par n="pikin__n"/></e>
+<e lm="popokaitongo"><i>popokaitongo</i><par n="pikin__n"/></e>
+<e lm="pori"><i>pori</i><par n="langi__adj"/></e>
+<e lm="pori"><i>pori</i><par n="soigi__vblex"/></e>
+<e lm="portmoni"><i>portmoni</i><par n="pikin__n"/></e>
+<e lm="posentri"><i>posentri</i><par n="pikin__n"/></e>
+<e lm="postu"><i>postu</i><par n="pikin__n"/></e>
+<e lm="poti faya gi"><i>poti faya gi</i><par n="soigi__vblex"/></e>
+<e lm="poti na tesi"><i>poti na tesi</i><par n="soigi__vblex"/></e>
+<e lm="poti na udubaki"><i>poti na udubaki</i><par n="soigi__vblex"/></e>
+<e lm="poti sten"><i>poti sten</i><par n="soigi__vblex"/></e>
+<e lm="poti"><i>poti</i><par n="soigi__vblex"/></e>
+<e lm="pototo"><i>pototo</i><par n="pikin__n"/></e>
+<e lm="powa"><i>powa</i><par n="pikin__n"/></e>
+<e lm="powema"><i>powema</i><par n="pikin__n"/></e>
+<e lm="powemaman"><i>powemaman</i><par n="pikin__n"/></e>
+<e lm="prakiki"><i>prakiki</i><par n="pikin__n"/></e>
+<e lm="prakseri go prakseri kon"><i>prakseri go prakseri kon</i><par n="soigi__vblex"/></e>
+<e lm="prakseri"><i>prakseri</i><par n="pikin__n"/></e>
+<e lm="prakseri"><i>prakseri</i><par n="soigi__vblex"/></e>
+<e lm="pramisi"><i>pramisi</i><par n="pikin__n"/></e>
+<e lm="pramisi"><i>pramisi</i><par n="soigi__vblex"/></e>
+<e lm="pranasi"><i>pranasi</i><par n="pikin__n"/></e>
+<e lm="prani"><i>prani</i><par n="soigi__vblex"/></e>
+<e lm="pranpran"><i>pranpran</i><par n="pikin__n"/></e>
+<e lm="pransun"><i>pransun</i><par n="pikin__n"/></e>
+<e lm="prasara"><i>prasara</i><par n="pikin__n"/></e>
+<e lm="prasarabon"><i>prasarabon</i><par n="pikin__n"/></e>
+<e lm="prasaradia"><i>prasaradia</i><par n="pikin__n"/></e>
+<e lm="prasi sisibi"><i>prasi sisibi</i><par n="pikin__n"/></e>
+<e lm="prasi"><i>prasi</i><par n="pikin__n"/></e>
+<e lm="prasoro"><i>prasoro</i><par n="pikin__n"/></e>
+<e lm="prati libi"><i>prati libi</i><par n="soigi__vblex"/></e>
+<e lm="prati"><i>prati</i><par n="pikin__n"/></e>
+<e lm="prati"><i>prati</i><par n="soigi__vblex"/></e>
+<e lm="pratifasi"><i>pratifasi</i><par n="pikin__n"/></e>
+<e lm="prefu"><i>prefu</i><par n="nanga__cnjcoo"/></e>
+<e lm="prefuru"><i>prefuru</i><par n="soigi__vblex"/></e>
+<e lm="prei"><i>prei</i><par n="soigi__vblex"/></e>
+<e lm="preiki"><i>preiki</i><par n="pikin__n"/></e>
+<e lm="preiki"><i>preiki</i><par n="soigi__vblex"/></e>
+<e lm="preikiman"><i>preikiman</i><par n="pikin__n"/></e>
+<e lm="preiprei"><i>preiprei</i><par n="efu__adv"/></e>
+<e lm="preiprei"><i>preiprei</i><par n="langi__adj"/></e>
+<e lm="preiskoro"><i>preiskoro</i><par n="pikin__n"/></e>
+<e lm="pren"><i>pren</i><par n="pikin__n"/></e>
+<e lm="prenki"><i>prenki</i><par n="pikin__n"/></e>
+<e lm="prenspari"><i>prenspari</i><par n="langi__adj"/></e>
+<e lm="presenti"><i>presenti</i><par n="pikin__n"/></e>
+<e lm="presi"><i>presi</i><par n="pikin__n"/></e>
+<e lm="pret'duku"><i>pret'duku</i><par n="pikin__n"/></e>
+<e lm="preti"><i>preti</i><par n="pikin__n"/></e>
+<e lm="prijs"><i>prijs</i><par n="pikin__n"/></e>
+<e lm="prijse"><i>prijse</i><par n="soigi__vblex"/></e>
+<e lm="primisi"><i>primisi</i><par n="pikin__n"/></e>
+<e lm="prisiri"><i>prisiri</i><par n="pikin__n"/></e>
+<e lm="prisiri"><i>prisiri</i><par n="soigi__vblex"/></e>
+<e lm="pristeri"><i>pristeri</i><par n="soigi__vblex"/></e>
+<e lm="prit'finga"><i>prit'finga</i><par n="pikin__n"/></e>
+<e lm="prit'pangi"><i>prit'pangi</i><par n="langi__adj"/></e>
+<e lm="prit'priti"><i>prit'priti</i><par n="langi__adj"/></e>
+<e lm="prit'priti"><i>prit'priti</i><par n="pikin__n"/></e>
+<e lm="priti skin"><i>priti skin</i><par n="soigi__vblex"/></e>
+<e lm="priti"><i>priti</i><par n="langi__adj"/></e>
+<e lm="priti"><i>priti</i><par n="pikin__n"/></e>
+<e lm="priti"><i>priti</i><par n="soigi__vblex"/></e>
+<e lm="problema"><i>problema</i><par n="pikin__n"/></e>
+<e lm="prodo"><i>prodo</i><par n="pikin__n"/></e>
+<e lm="prodokaka"><i>prodokaka</i><par n="pikin__n"/></e>
+<e lm="prodoman"><i>prodoman</i><par n="pikin__n"/></e>
+<e lm="profeiti"><i>profeiti</i><par n="pikin__n"/></e>
+<e lm="pruberi"><i>pruberi</i><par n="soigi__vblex"/></e>
+<e lm="psa marki"><i>psa marki</i><par n="efu__adv"/></e>
+<e lm="psa"><i>psa</i><par n="fu__pr"/></e>
+<e lm="psa"><i>psa</i><par n="soigi__vblex"/></e>
+<e lm="puiri"><i>puiri</i><par n="pikin__n"/></e>
+<e lm="puiri"><i>puiri</i><par n="soigi__vblex"/></e>
+<e lm="puru bere"><i>puru bere</i><par n="soigi__vblex"/></e>
+<e lm="puru taki"><i>puru taki</i><par n="soigi__vblex"/></e>
+<e lm="puru"><i>puru</i><par n="soigi__vblex"/></e>
+<e lm="puspusi"><i>puspusi</i><par n="pikin__n"/></e>
+<e lm="pusu"><i>pusu</i><par n="soigi__vblex"/></e>
+<e lm="pî"><i>pî</i><par n="langi__adj"/></e>
+<e lm="pôti"><i>pôti</i><par n="langi__adj"/></e>
+<e lm="rafru"><i>rafru</i><par n="pikin__n"/></e>
+<e lm="rai"><i>rai</i><par n="pikin__n"/></e>
+<e lm="rai"><i>rai</i><par n="soigi__vblex"/></e>
+<e lm="raiman"><i>raiman</i><par n="pikin__n"/></e>
+<e lm="raitori"><i>raitori</i><par n="pikin__n"/></e>
+<e lm="rasper"><i>rasper</i><par n="pikin__n"/></e>
+<e lm="redi kopro"><i>redi kopro</i><par n="pikin__n"/></e>
+<e lm="redi"><i>redi</i><par n="langi__adj"/></e>
+<e lm="redidia"><i>redidia</i><par n="pikin__n"/></e>
+<e lm="reditere"><i>reditere</i><par n="pikin__n"/></e>
+<e lm="reditigri"><i>reditigri</i><par n="pikin__n"/></e>
+<e lm="refrensi"><i>refrensi</i><par n="pikin__n"/></e>
+<e lm="refrensi"><i>refrensi</i><par n="soigi__vblex"/></e>
+<e lm="rei"><i>rei</i><par n="soigi__vblex"/></e>
+<e lm="rigeri"><i>rigeri</i><par n="soigi__vblex"/></e>
+<e lm="rosen"><i>rosen</i><par n="pikin__n"/></e>
+<e lm="rostu"><i>rostu</i><par n="pikin__n"/></e>
+<e lm="rostu"><i>rostu</i><par n="soigi__vblex"/></e>
+<e lm="row toko"><i>row toko</i><par n="pikin__n"/></e>
+<e lm="row"><i>row</i><par n="pikin__n"/></e>
+<e lm="row"><i>row</i><par n="soigi__vblex"/></e>
+<e lm="rowsu"><i>rowsu</i><par n="pikin__n"/></e>
+<e lm="rutu puru"><i>rutu puru</i><par n="soigi__vblex"/></e>
+<e lm="rutu"><i>rutu</i><par n="pikin__n"/></e>
+<e lm="sa"><i>sa</i><par n="musu__vbmod"/></e>
+<e lm="sa"><i>sa</i><par n="pikin__n"/></e>
+<e lm="sa"><i>sa</i><par n="soigi__vblex"/></e>
+<e lm="sabadei"><i>sabadei</i><par n="pikin__n"/></e>
+<e lm="sabaku"><i>sabaku</i><par n="pikin__n"/></e>
+<e lm="sabana"><i>sabana</i><par n="pikin__n"/></e>
+<e lm="sabanadia"><i>sabanadia</i><par n="pikin__n"/></e>
+<e lm="sabi"><i>sabi</i><par n="pikin__n"/></e>
+<e lm="sabi"><i>sabi</i><par n="soigi__vblex"/></e>
+<e lm="sabiman"><i>sabiman</i><par n="pikin__n"/></e>
+<e lm="safri"><i>safri</i><par n="efu__adv"/></e>
+<e lm="safri-ati"><i>safri-ati</i><par n="langi__adj"/></e>
+<e lm="safri-ati"><i>safri-ati</i><par n="pikin__n"/></e>
+<e lm="safrifasi"><i>safrifasi</i><par n="pikin__n"/></e>
+<e lm="safrisafri"><i>safrisafri</i><par n="efu__adv"/></e>
+<e lm="safu"><i>safu</i><par n="langi__adj"/></e>
+<e lm="safu"><i>safu</i><par n="soigi__vblex"/></e>
+<e lm="sai"><i>sai</i><par n="soigi__vblex"/></e>
+<e lm="sak'duku"><i>sak'duku</i><par n="pikin__n"/></e>
+<e lm="saka kindi"><i>saka kindi</i><par n="soigi__vblex"/></e>
+<e lm="saka"><i>saka</i><par n="pikin__n"/></e>
+<e lm="saka"><i>saka</i><par n="soigi__vblex"/></e>
+<e lm="saka-anyisa"><i>saka-anyisa</i><par n="pikin__n"/></e>
+<e lm="sakafasi"><i>sakafasi</i><par n="langi__adj"/></e>
+<e lm="sakafasi"><i>sakafasi</i><par n="pikin__n"/></e>
+<e lm="sakasaka"><i>sakasaka</i><par n="pikin__n"/></e>
+<e lm="sakasaka"><i>sakasaka</i><par n="soigi__vblex"/></e>
+<e lm="sakasneki"><i>sakasneki</i><par n="pikin__n"/></e>
+<e lm="saksi"><i>saksi</i><par n="pikin__n"/></e>
+<e lm="salfu"><i>salfu</i><par n="pikin__n"/></e>
+<e lm="salfu"><i>salfu</i><par n="soigi__vblex"/></e>
+<e lm="sali"><i>sali</i><par n="pikin__n"/></e>
+<e lm="samasama"><i>samasama</i><par n="pikin__n"/></e>
+<e lm="san"><i>san</i><par n="san__prn"/></e>
+<e lm="sanede"><i>sanede</i><par n="efu__adv"/></e>
+<e lm="sanede"><i>sanede</i><par n="nanga__cnjcoo"/></e>
+<e lm="sangabanga"><i>sangabanga</i><par n="soigi__vblex"/></e>
+<e lm="sani"><i>sani</i><par n="pikin__n"/></e>
+<e lm="sani"><i>sani</i><par n="soigi__vblex"/></e>
+<e lm="santa"><i>santa</i><par n="langi__adj"/></e>
+<e lm="santi"><i>santi</i><par n="langi__adj"/></e>
+<e lm="santi"><i>santi</i><par n="pikin__n"/></e>
+<e lm="sapakara"><i>sapakara</i><par n="pikin__n"/></e>
+<e lm="sar'ati"><i>sar'ati</i><par n="pikin__n"/></e>
+<e lm="sarasara"><i>sarasara</i><par n="pikin__n"/></e>
+<e lm="sargi"><i>sargi</i><par n="efu__adv"/></e>
+<e lm="sargi"><i>sargi</i><par n="langi__adj"/></e>
+<e lm="sari"><i>sari</i><par n="efu__adv"/></e>
+<e lm="sari"><i>sari</i><par n="langi__adj"/></e>
+<e lm="sari"><i>sari</i><par n="pikin__n"/></e>
+<e lm="sari"><i>sari</i><par n="soigi__vblex"/></e>
+<e lm="sarki"><i>sarki</i><par n="pikin__n"/></e>
+<e lm="sasi"><i>sasi</i><par n="soigi__vblex"/></e>
+<e lm="satra"><i>satra</i><par n="pikin__n"/></e>
+<e lm="sawarinoto"><i>sawarinoto</i><par n="pikin__n"/></e>
+<e lm="se"><i>se</i><par n="pikin__n"/></e>
+<e lm="sedre"><i>sedre</i><par n="pikin__n"/></e>
+<e lm="sei"><i>sei</i><par n="fu__pr"/></e>
+<e lm="sei"><i>sei</i><par n="pikin__n"/></e>
+<e lm="seibere"><i>seibere</i><par n="pikin__n"/></e>
+<e lm="seibi"><i>seibi</i><par n="tu__num"/></e>
+<e lm="seibitenti"><i>seibitenti</i><par n="tu__num"/></e>
+<e lm="seibowtu"><i>seibowtu</i><par n="pikin__n"/></e>
+<e lm="seifesi"><i>seifesi</i><par n="pikin__n"/></e>
+<e lm="seigi"><i>seigi</i><par n="pikin__n"/></e>
+<e lm="seigi"><i>seigi</i><par n="soigi__vblex"/></e>
+<e lm="seiri"><i>seiri</i><par n="pikin__n"/></e>
+<e lm="seiri"><i>seiri</i><par n="soigi__vblex"/></e>
+<e lm="seiriboto"><i>seiriboto</i><par n="pikin__n"/></e>
+<e lm="seirisaka"><i>seirisaka</i><par n="pikin__n"/></e>
+<e lm="seisei"><i>seisei</i><par n="pikin__n"/></e>
+<e lm="sek'seki mofo"><i>sek'seki mofo</i><par n="pikin__n"/></e>
+<e lm="sek'seki"><i>sek'seki</i><par n="pikin__n"/></e>
+<e lm="sek'seki"><i>sek'seki</i><par n="soigi__vblex"/></e>
+<e lm="sek'watra"><i>sek'watra</i><par n="pikin__n"/></e>
+<e lm="sekanti"><i>sekanti</i><par n="pikin__n"/></e>
+<e lm="seki ede"><i>seki ede</i><par n="soigi__vblex"/></e>
+<e lm="seki mofo"><i>seki mofo</i><par n="soigi__vblex"/></e>
+<e lm="seki"><i>seki</i><par n="soigi__vblex"/></e>
+<e lm="sekrepatu"><i>sekrepatu</i><par n="pikin__n"/></e>
+<e lm="sekretarsi"><i>sekretarsi</i><par n="pikin__n"/></e>
+<e lm="seku"><i>seku</i><par n="pikin__n"/></e>
+<e lm="semprefisi"><i>semprefisi</i><par n="pikin__n"/></e>
+<e lm="seni"><i>seni</i><par n="soigi__vblex"/></e>
+<e lm="sensi"><i>sensi</i><par n="nanga__cnjcoo"/></e>
+<e lm="sensi"><i>sensi</i><par n="pikin__n"/></e>
+<e lm="senwe"><i>senwe</i><par n="pikin__n"/></e>
+<e lm="seri"><i>seri</i><par n="soigi__vblex"/></e>
+<e lm="seriman"><i>seriman</i><par n="pikin__n"/></e>
+<e lm="seryusu"><i>seryusu</i><par n="langi__adj"/></e>
+<e lm="seti"><i>seti</i><par n="soigi__vblex"/></e>
+<e lm="setkoiri"><i>setkoiri</i><par n="pikin__n"/></e>
+<e lm="si"><i>si</i><par n="soigi__vblex"/></e>
+<e lm="sibi"><i>sibi</i><par n="soigi__vblex"/></e>
+<e lm="sibibusi"><i>sibibusi</i><par n="pikin__n"/></e>
+<e lm="sidon"><i>sidon</i><par n="soigi__vblex"/></e>
+<e lm="sidonpresi"><i>sidonpresi</i><par n="pikin__n"/></e>
+<e lm="sigara"><i>sigara</i><par n="pikin__n"/></e>
+<e lm="sika"><i>sika</i><par n="pikin__n"/></e>
+<e lm="siki"><i>siki</i><par n="langi__adj"/></e>
+<e lm="siki"><i>siki</i><par n="pikin__n"/></e>
+<e lm="sikibedi"><i>sikibedi</i><par n="pikin__n"/></e>
+<e lm="sikisiki"><i>sikisiki</i><par n="langi__adj"/></e>
+<e lm="siksi"><i>siksi</i><par n="tu__num"/></e>
+<e lm="siksikanti"><i>siksikanti</i><par n="pikin__n"/></e>
+<e lm="siksitenti"><i>siksitenti</i><par n="tu__num"/></e>
+<e lm="siksiyuru"><i>siksiyuru</i><par n="pikin__n"/></e>
+<e lm="sili"><i>sili</i><par n="pikin__n"/></e>
+<e lm="singi"><i>singi</i><par n="pikin__n"/></e>
+<e lm="singi"><i>singi</i><par n="soigi__vblex"/></e>
+<e lm="singiman"><i>singiman</i><par n="pikin__n"/></e>
+<e lm="sinsin"><i>sinsin</i><par n="pikin__n"/></e>
+<e lm="sipi"><i>sipi</i><par n="pikin__n"/></e>
+<e lm="sipiman"><i>sipiman</i><par n="pikin__n"/></e>
+<e lm="siri"><i>siri</i><par n="pikin__n"/></e>
+<e lm="siri-bredebon"><i>siri-bredebon</i><par n="pikin__n"/></e>
+<e lm="sisa"><i>sisa</i><par n="pikin__n"/></e>
+<e lm="sisei"><i>sisei</i><par n="pikin__n"/></e>
+<e lm="sisibi"><i>sisibi</i><par n="pikin__n"/></e>
+<e lm="skafu"><i>skafu</i><par n="pikin__n"/></e>
+<e lm="skafu"><i>skafu</i><par n="soigi__vblex"/></e>
+<e lm="skapu"><i>skapu</i><par n="pikin__n"/></e>
+<e lm="skapububa"><i>skapububa</i><par n="pikin__n"/></e>
+<e lm="skapuman"><i>skapuman</i><par n="pikin__n"/></e>
+<e lm="skapupen"><i>skapupen</i><par n="pikin__n"/></e>
+<e lm="skedrei"><i>skedrei</i><par n="pikin__n"/></e>
+<e lm="skefti"><i>skefti</i><par n="langi__adj"/></e>
+<e lm="skefti"><i>skefti</i><par n="soigi__vblex"/></e>
+<e lm="skempi"><i>skempi</i><par n="soigi__vblex"/></e>
+<e lm="skepi"><i>skepi</i><par n="soigi__vblex"/></e>
+<e lm="sker'ai"><i>sker'ai</i><par n="pikin__n"/></e>
+<e lm="sketnoto"><i>sketnoto</i><par n="pikin__n"/></e>
+<e lm="skin"><i>skin</i><par n="pikin__n"/></e>
+<e lm="skin-ati"><i>skin-ati</i><par n="pikin__n"/></e>
+<e lm="skiti"><i>skiti</i><par n="pikin__n"/></e>
+<e lm="skoifi"><i>skoifi</i><par n="soigi__vblex"/></e>
+<e lm="skoifineki"><i>skoifineki</i><par n="pikin__n"/></e>
+<e lm="skoins'ai"><i>skoins'ai</i><par n="pikin__n"/></e>
+<e lm="skoinsi"><i>skoinsi</i><par n="langi__adj"/></e>
+<e lm="skopu"><i>skopu</i><par n="pikin__n"/></e>
+<e lm="skopu"><i>skopu</i><par n="soigi__vblex"/></e>
+<e lm="skoro"><i>skoro</i><par n="soigi__vblex"/></e>
+<e lm="skoro-ifrow"><i>skoro-ifrow</i><par n="pikin__n"/></e>
+<e lm="skoromati"><i>skoromati</i><par n="pikin__n"/></e>
+<e lm="skoromeister"><i>skoromeister</i><par n="pikin__n"/></e>
+<e lm="skoropapira"><i>skoropapira</i><par n="pikin__n"/></e>
+<e lm="skoropikin"><i>skoropikin</i><par n="pikin__n"/></e>
+<e lm="skoroprasi"><i>skoroprasi</i><par n="pikin__n"/></e>
+<e lm="skotriki"><i>skotriki</i><par n="pikin__n"/></e>
+<e lm="skotu lontu"><i>skotu lontu</i><par n="soigi__vblex"/></e>
+<e lm="skotu"><i>skotu</i><par n="pikin__n"/></e>
+<e lm="skotu"><i>skotu</i><par n="soigi__vblex"/></e>
+<e lm="skowru"><i>skowru</i><par n="pikin__n"/></e>
+<e lm="skowtu"><i>skowtu</i><par n="pikin__n"/></e>
+<e lm="skrati"><i>skrati</i><par n="pikin__n"/></e>
+<e lm="skreki"><i>skreki</i><par n="pikin__n"/></e>
+<e lm="skreki"><i>skreki</i><par n="soigi__vblex"/></e>
+<e lm="skrifi"><i>skrifi</i><par n="soigi__vblex"/></e>
+<e lm="skrifiman"><i>skrifiman</i><par n="pikin__n"/></e>
+<e lm="skrobu"><i>skrobu</i><par n="soigi__vblex"/></e>
+<e lm="skropu"><i>skropu</i><par n="pikin__n"/></e>
+<e lm="skrufu"><i>skrufu</i><par n="pikin__n"/></e>
+<e lm="skuma"><i>skuma</i><par n="pikin__n"/></e>
+<e lm="skuma"><i>skuma</i><par n="soigi__vblex"/></e>
+<e lm="skuru"><i>skuru</i><par n="soigi__vblex"/></e>
+<e lm="skwala"><i>skwala</i><par n="pikin__n"/></e>
+<e lm="sma"><i>sma</i><par n="pikin__n"/></e>
+<e lm="smara"><i>smara</i><par n="langi__adj"/></e>
+<e lm="smenti"><i>smenti</i><par n="pikin__n"/></e>
+<e lm="smeri"><i>smeri</i><par n="pikin__n"/></e>
+<e lm="smeri"><i>smeri</i><par n="soigi__vblex"/></e>
+<e lm="smeti"><i>smeti</i><par n="pikin__n"/></e>
+<e lm="smoko"><i>smoko</i><par n="langi__adj"/></e>
+<e lm="smoko"><i>smoko</i><par n="pikin__n"/></e>
+<e lm="smoko"><i>smoko</i><par n="soigi__vblex"/></e>
+<e lm="smuru"><i>smuru</i><par n="pikin__n"/></e>
+<e lm="smuru"><i>smuru</i><par n="soigi__vblex"/></e>
+<e lm="smèlter"><i>smèlter</i><par n="soigi__vblex"/></e>
+<e lm="sneiri"><i>sneiri</i><par n="pikin__n"/></e>
+<e lm="sneisi"><i>sneisi</i><par n="pikin__n"/></e>
+<e lm="sneisitaya"><i>sneisitaya</i><par n="pikin__n"/></e>
+<e lm="snek'fisi"><i>snek'fisi</i><par n="pikin__n"/></e>
+<e lm="sneki"><i>sneki</i><par n="pikin__n"/></e>
+<e lm="snoifi"><i>snoifi</i><par n="soigi__vblex"/></e>
+<e lm="snorku"><i>snorku</i><par n="soigi__vblex"/></e>
+<e lm="snuku"><i>snuku</i><par n="pikin__n"/></e>
+<e lm="so"><i>so</i><par n="efu__adv"/></e>
+<e lm="so"><i>so</i><par n="nanga__cnjcoo"/></e>
+<e lm="sodro"><i>sodro</i><par n="pikin__n"/></e>
+<e lm="sofasi"><i>sofasi</i><par n="nanga__cnjcoo"/></e>
+<e lm="soi"><i>soi</i><par n="langi__adj"/></e>
+<e lm="soifri"><i>soifri</i><par n="langi__adj"/></e>
+<e lm="soigi gwe"><i>soigi gwe</i><par n="soigi__vblex"/></e>
+<e lm="soigi"><i>soigi</i><par n="soigi__vblex"/></e>
+<e lm="soktu"><i>soktu</i><par n="pikin__n"/></e>
+<e lm="soktu"><i>soktu</i><par n="soigi__vblex"/></e>
+<e lm="solanga"><i>solanga</i><par n="nanga__cnjcoo"/></e>
+<e lm="solfru"><i>solfru</i><par n="langi__adj"/></e>
+<e lm="solfru"><i>solfru</i><par n="pikin__n"/></e>
+<e lm="solfrusmeti"><i>solfrusmeti</i><par n="pikin__n"/></e>
+<e lm="son leisi"><i>son leisi</i><par n="efu__adv"/></e>
+<e lm="son"><i>son</i><par n="pikin__n"/></e>
+<e lm="sonde"><i>sonde</i><par n="pikin__n"/></e>
+<e lm="sondro"><i>sondro</i><par n="efu__adv"/></e>
+<e lm="sondu"><i>sondu</i><par n="pikin__n"/></e>
+<e lm="sondusma"><i>sondusma</i><par n="pikin__n"/></e>
+<e lm="sonte"><i>sonte</i><par n="efu__adv"/></e>
+<e lm="sopi"><i>sopi</i><par n="pikin__n"/></e>
+<e lm="sopiman"><i>sopiman</i><par n="pikin__n"/></e>
+<e lm="sopo skuma"><i>sopo skuma</i><par n="pikin__n"/></e>
+<e lm="sopo watra"><i>sopo watra</i><par n="pikin__n"/></e>
+<e lm="sopo"><i>sopo</i><par n="pikin__n"/></e>
+<e lm="sorgu"><i>sorgu</i><par n="pikin__n"/></e>
+<e lm="sori"><i>sori</i><par n="soigi__vblex"/></e>
+<e lm="soro"><i>soro</i><par n="langi__adj"/></e>
+<e lm="soro"><i>soro</i><par n="pikin__n"/></e>
+<e lm="soromarki"><i>soromarki</i><par n="pikin__n"/></e>
+<e lm="sorosoro"><i>sorosoro</i><par n="pikin__n"/></e>
+<e lm="sortu"><i>sortu</i><par n="pikin__n"/></e>
+<e lm="soso"><i>soso</i><par n="efu__adv"/></e>
+<e lm="soso"><i>soso</i><par n="langi__adj"/></e>
+<e lm="sosofutu"><i>sosofutu</i><par n="efu__adv"/></e>
+<e lm="sososani"><i>sososani</i><par n="pikin__n"/></e>
+<e lm="sososkin"><i>sososkin</i><par n="langi__adj"/></e>
+<e lm="sosrefi"><i>sosrefi</i><par n="nanga__cnjcoo"/></e>
+<e lm="sote"><i>sote</i><par n="efu__adv"/></e>
+<e lm="sowan"><i>sowan</i><par n="langi__adj"/></e>
+<e lm="sowsu"><i>sowsu</i><par n="pikin__n"/></e>
+<e lm="sowt'meti"><i>sowt'meti</i><par n="pikin__n"/></e>
+<e lm="sowtu"><i>sowtu</i><par n="langi__adj"/></e>
+<e lm="sowtu"><i>sowtu</i><par n="pikin__n"/></e>
+<e lm="sowtu"><i>sowtu</i><par n="soigi__vblex"/></e>
+<e lm="span"><i>span</i><par n="langi__adj"/></e>
+<e lm="span"><i>span</i><par n="pikin__n"/></e>
+<e lm="span"><i>span</i><par n="soigi__vblex"/></e>
+<e lm="spansfrow"><i>spansfrow</i><par n="pikin__n"/></e>
+<e lm="spari"><i>spari</i><par n="pikin__n"/></e>
+<e lm="speri"><i>speri</i><par n="langi__adj"/></e>
+<e lm="speri"><i>speri</i><par n="pikin__n"/></e>
+<e lm="spesrei"><i>spesrei</i><par n="pikin__n"/></e>
+<e lm="spesrei"><i>spesrei</i><par n="soigi__vblex"/></e>
+<e lm="spesrutu"><i>spesrutu</i><par n="efu__adv"/></e>
+<e lm="spesrutu"><i>spesrutu</i><par n="langi__adj"/></e>
+<e lm="spikri"><i>spikri</i><par n="pikin__n"/></e>
+<e lm="spikri"><i>spikri</i><par n="soigi__vblex"/></e>
+<e lm="spiti"><i>spiti</i><par n="pikin__n"/></e>
+<e lm="spiti"><i>spiti</i><par n="soigi__vblex"/></e>
+<e lm="spoiti"><i>spoiti</i><par n="pikin__n"/></e>
+<e lm="spoiti"><i>spoiti</i><par n="soigi__vblex"/></e>
+<e lm="sponsu"><i>sponsu</i><par n="pikin__n"/></e>
+<e lm="spot'popki"><i>spot'popki</i><par n="pikin__n"/></e>
+<e lm="spotu"><i>spotu</i><par n="pikin__n"/></e>
+<e lm="spotuman"><i>spotuman</i><par n="pikin__n"/></e>
+<e lm="sprenka"><i>sprenka</i><par n="pikin__n"/></e>
+<e lm="sproiti"><i>sproiti</i><par n="soigi__vblex"/></e>
+<e lm="spun"><i>spun</i><par n="pikin__n"/></e>
+<e lm="spun"><i>spun</i><par n="soigi__vblex"/></e>
+<e lm="spuru"><i>spuru</i><par n="soigi__vblex"/></e>
+<e lm="srafu"><i>srafu</i><par n="pikin__n"/></e>
+<e lm="srakti"><i>srakti</i><par n="soigi__vblex"/></e>
+<e lm="srakti-oso"><i>srakti-oso</i><par n="pikin__n"/></e>
+<e lm="sraktiman"><i>sraktiman</i><par n="pikin__n"/></e>
+<e lm="sranga"><i>sranga</i><par n="efu__adv"/></e>
+<e lm="srapu"><i>srapu</i><par n="efu__adv"/></e>
+<e lm="srapu"><i>srapu</i><par n="langi__adj"/></e>
+<e lm="srapu"><i>srapu</i><par n="soigi__vblex"/></e>
+<e lm="srefi"><i>srefi</i><par n="efu__adv"/></e>
+<e lm="srefi"><i>srefi</i><par n="langi__adj"/></e>
+<e lm="srefidensi"><i>srefidensi</i><par n="pikin__n"/></e>
+<e lm="srefsrefi"><i>srefsrefi</i><par n="efu__adv"/></e>
+<e lm="srepi"><i>srepi</i><par n="soigi__vblex"/></e>
+<e lm="sriba"><i>sriba</i><par n="pikin__n"/></e>
+<e lm="sribi"><i>sribi</i><par n="pikin__n"/></e>
+<e lm="sribi"><i>sribi</i><par n="soigi__vblex"/></e>
+<e lm="sribi-papaya"><i>sribi-papaya</i><par n="pikin__n"/></e>
+<e lm="sribikamra"><i>sribikamra</i><par n="pikin__n"/></e>
+<e lm="sribikrosi"><i>sribikrosi</i><par n="pikin__n"/></e>
+<e lm="sribipresi"><i>sribipresi</i><par n="pikin__n"/></e>
+<e lm="sribisani"><i>sribisani</i><par n="pikin__n"/></e>
+<e lm="sroisi"><i>sroisi</i><par n="pikin__n"/></e>
+<e lm="sroiti"><i>sroiti</i><par n="langi__adj"/></e>
+<e lm="sroto"><i>sroto</i><par n="langi__adj"/></e>
+<e lm="sroto"><i>sroto</i><par n="pikin__n"/></e>
+<e lm="sroto"><i>sroto</i><par n="soigi__vblex"/></e>
+<e lm="srudati"><i>srudati</i><par n="pikin__n"/></e>
+<e lm="stampu"><i>stampu</i><par n="langi__adj"/></e>
+<e lm="stampu"><i>stampu</i><par n="pikin__n"/></e>
+<e lm="stampu"><i>stampu</i><par n="soigi__vblex"/></e>
+<e lm="stari"><i>stari</i><par n="pikin__n"/></e>
+<e lm="stegre"><i>stegre</i><par n="soigi__vblex"/></e>
+<e lm="steifi"><i>steifi</i><par n="langi__adj"/></e>
+<e lm="sten"><i>sten</i><par n="pikin__n"/></e>
+<e lm="sterapra"><i>sterapra</i><par n="pikin__n"/></e>
+<e lm="stesre"><i>stesre</i><par n="langi__adj"/></e>
+<e lm="stesre"><i>stesre</i><par n="soigi__vblex"/></e>
+<e lm="stimofo"><i>stimofo</i><par n="pikin__n"/></e>
+<e lm="stof'sani"><i>stof'sani</i><par n="pikin__n"/></e>
+<e lm="stofu"><i>stofu</i><par n="langi__adj"/></e>
+<e lm="stofu"><i>stofu</i><par n="soigi__vblex"/></e>
+<e lm="stoipi"><i>stoipi</i><par n="pikin__n"/></e>
+<e lm="stoipi-siki"><i>stoipi-siki</i><par n="pikin__n"/></e>
+<e lm="ston"><i>ston</i><par n="langi__adj"/></e>
+<e lm="ston"><i>ston</i><par n="pikin__n"/></e>
+<e lm="stonbanti"><i>stonbanti</i><par n="pikin__n"/></e>
+<e lm="stonpopki"><i>stonpopki</i><par n="pikin__n"/></e>
+<e lm="stotu"><i>stotu</i><par n="soigi__vblex"/></e>
+<e lm="stowtu"><i>stowtu</i><par n="soigi__vblex"/></e>
+<e lm="straf'man"><i>straf'man</i><par n="pikin__n"/></e>
+<e lm="straf'oso"><i>straf'oso</i><par n="pikin__n"/></e>
+<e lm="strafu"><i>strafu</i><par n="pikin__n"/></e>
+<e lm="strafu"><i>strafu</i><par n="soigi__vblex"/></e>
+<e lm="strati"><i>strati</i><par n="pikin__n"/></e>
+<e lm="strei"><i>strei</i><par n="pikin__n"/></e>
+<e lm="strei"><i>strei</i><par n="soigi__vblex"/></e>
+<e lm="streilon"><i>streilon</i><par n="pikin__n"/></e>
+<e lm="strepi"><i>strepi</i><par n="langi__adj"/></e>
+<e lm="strepi"><i>strepi</i><par n="pikin__n"/></e>
+<e lm="strepi"><i>strepi</i><par n="soigi__vblex"/></e>
+<e lm="strepistrepi"><i>strepistrepi</i><par n="langi__adj"/></e>
+<e lm="stroistroi"><i>stroistroi</i><par n="soigi__vblex"/></e>
+<e lm="strun"><i>strun</i><par n="pikin__n"/></e>
+<e lm="struntyi"><i>struntyi</i><par n="pikin__n"/></e>
+<e lm="stuka"><i>stuka</i><par n="soigi__vblex"/></e>
+<e lm="stupu"><i>stupu</i><par n="pikin__n"/></e>
+<e lm="sturu"><i>sturu</i><par n="pikin__n"/></e>
+<e lm="stèm"><i>stèm</i><par n="soigi__vblex"/></e>
+<e lm="sukru"><i>sukru</i><par n="langi__adj"/></e>
+<e lm="sukru"><i>sukru</i><par n="pikin__n"/></e>
+<e lm="sukru"><i>sukru</i><par n="soigi__vblex"/></e>
+<e lm="sukrukandra"><i>sukrukandra</i><par n="pikin__n"/></e>
+<e lm="sukrupatu"><i>sukrupatu</i><par n="pikin__n"/></e>
+<e lm="sukrusani"><i>sukrusani</i><par n="pikin__n"/></e>
+<e lm="sukruskrati"><i>sukruskrati</i><par n="pikin__n"/></e>
+<e lm="suku mofo"><i>suku mofo</i><par n="langi__adj"/></e>
+<e lm="suku mofo"><i>suku mofo</i><par n="soigi__vblex"/></e>
+<e lm="suku"><i>suku</i><par n="soigi__vblex"/></e>
+<e lm="sula"><i>sula</i><par n="pikin__n"/></e>
+<e lm="sungu"><i>sungu</i><par n="soigi__vblex"/></e>
+<e lm="sunsaka"><i>sunsaka</i><par n="pikin__n"/></e>
+<e lm="supu"><i>supu</i><par n="pikin__n"/></e>
+<e lm="supuwiwiri"><i>supuwiwiri</i><par n="pikin__n"/></e>
+<e lm="susu"><i>susu</i><par n="pikin__n"/></e>
+<e lm="sutu faya gi"><i>sutu faya gi</i><par n="soigi__vblex"/></e>
+<e lm="sutu"><i>sutu</i><par n="soigi__vblex"/></e>
+<e lm="swa en fesi"><i>swa en fesi</i><par n="soigi__vblex"/></e>
+<e lm="swa"><i>swa</i><par n="langi__adj"/></e>
+<e lm="swa"><i>swa</i><par n="soigi__vblex"/></e>
+<e lm="swagri"><i>swagri</i><par n="pikin__n"/></e>
+<e lm="swai"><i>swai</i><par n="soigi__vblex"/></e>
+<e lm="swaki"><i>swaki</i><par n="langi__adj"/></e>
+<e lm="swaki"><i>swaki</i><par n="pikin__n"/></e>
+<e lm="swakifasi"><i>swakifasi</i><par n="pikin__n"/></e>
+<e lm="swampu"><i>swampu</i><par n="pikin__n"/></e>
+<e lm="swarfu"><i>swarfu</i><par n="pikin__n"/></e>
+<e lm="swarfudosu"><i>swarfudosu</i><par n="pikin__n"/></e>
+<e lm="swarfutiki"><i>swarfutiki</i><par n="pikin__n"/></e>
+<e lm="swari"><i>swari</i><par n="soigi__vblex"/></e>
+<e lm="swasani"><i>swasani</i><par n="pikin__n"/></e>
+<e lm="swen"><i>swen</i><par n="soigi__vblex"/></e>
+<e lm="swenman"><i>swenman</i><par n="pikin__n"/></e>
+<e lm="sweri"><i>sweri</i><par n="langi__adj"/></e>
+<e lm="sweri"><i>sweri</i><par n="pikin__n"/></e>
+<e lm="sweri"><i>sweri</i><par n="soigi__vblex"/></e>
+<e lm="sweti"><i>sweti</i><par n="pikin__n"/></e>
+<e lm="sweti"><i>sweti</i><par n="soigi__vblex"/></e>
+<e lm="swipi"><i>swipi</i><par n="pikin__n"/></e>
+<e lm="swit'bonki"><i>swit'bonki</i><par n="pikin__n"/></e>
+<e lm="swit'kasaba"><i>swit'kasaba</i><par n="pikin__n"/></e>
+<e lm="swit'sani"><i>swit'sani</i><par n="pikin__n"/></e>
+<e lm="swit'smeri"><i>swit'smeri</i><par n="pikin__n"/></e>
+<e lm="swit'smeri-oli"><i>swit'smeri-oli</i><par n="pikin__n"/></e>
+<e lm="switi"><i>switi</i><par n="efu__adv"/></e>
+<e lm="switi"><i>switi</i><par n="langi__adj"/></e>
+<e lm="switi"><i>switi</i><par n="pikin__n"/></e>
+<e lm="syabisyabi"><i>syabisyabi</i><par n="langi__adj"/></e>
+<e lm="syant"><i>syant</i><par n="pikin__n"/></e>
+<e lm="syatu"><i>syatu</i><par n="langi__adj"/></e>
+<e lm="syatu"><i>syatu</i><par n="soigi__vblex"/></e>
+<e lm="syen"><i>syen</i><par n="langi__adj"/></e>
+<e lm="syen"><i>syen</i><par n="pikin__n"/></e>
+<e lm="syinsyart"><i>syinsyart</i><par n="pikin__n"/></e>
+<e lm="syobu"><i>syobu</i><par n="soigi__vblex"/></e>
+<e lm="syoro"><i>syoro</i><par n="pikin__n"/></e>
+<e lm="syow"><i>syow</i><par n="pikin__n"/></e>
+<e lm="syow"><i>syow</i><par n="soigi__vblex"/></e>
+<e lm="syowman"><i>syowman</i><par n="pikin__n"/></e>
+<e lm="syurkoro"><i>syurkoro</i><par n="pikin__n"/></e>
+<e lm="syusyu"><i>syusyu</i><par n="pikin__n"/></e>
+<e lm="syusyu"><i>syusyu</i><par n="soigi__vblex"/></e>
+<e lm="syòt"><i>syòt</i><par n="pikin__n"/></e>
+<e lm="sèm"><i>sèm</i><par n="langi__adj"/></e>
+<e lm="tabaka"><i>tabaka</i><par n="pikin__n"/></e>
+<e lm="tabiki"><i>tabiki</i><par n="pikin__n"/></e>
+<e lm="tafra"><i>tafra</i><par n="pikin__n"/></e>
+<e lm="tai"><i>tai</i><par n="langi__adj"/></e>
+<e lm="tai"><i>tai</i><par n="soigi__vblex"/></e>
+<e lm="taigi"><i>taigi</i><par n="soigi__vblex"/></e>
+<e lm="taitai"><i>taitai</i><par n="pikin__n"/></e>
+<e lm="tak'taki"><i>tak'taki</i><par n="pikin__n"/></e>
+<e lm="tak'taki"><i>tak'taki</i><par n="soigi__vblex"/></e>
+<e lm="taki baka"><i>taki baka</i><par n="soigi__vblex"/></e>
+<e lm="taki odi"><i>taki odi</i><par n="soigi__vblex"/></e>
+<e lm="taki tangi"><i>taki tangi</i><par n="soigi__vblex"/></e>
+<e lm="taki"><i>taki</i><par n="nanga__cnjcoo"/></e>
+<e lm="taki"><i>taki</i><par n="pikin__n"/></e>
+<e lm="taki"><i>taki</i><par n="soigi__vblex"/></e>
+<e lm="takiman"><i>takiman</i><par n="pikin__n"/></e>
+<e lm="takru"><i>takru</i><par n="langi__adj"/></e>
+<e lm="takru-ati"><i>takru-ati</i><par n="langi__adj"/></e>
+<e lm="takruboi"><i>takruboi</i><par n="pikin__n"/></e>
+<e lm="takrudu"><i>takrudu</i><par n="pikin__n"/></e>
+<e lm="takrufasi"><i>takrufasi</i><par n="pikin__n"/></e>
+<e lm="takrusani"><i>takrusani</i><par n="pikin__n"/></e>
+<e lm="takrusiki"><i>takrusiki</i><par n="pikin__n"/></e>
+<e lm="takruyeye"><i>takruyeye</i><par n="pikin__n"/></e>
+<e lm="tamalen"><i>tamalen</i><par n="pikin__n"/></e>
+<e lm="tamara"><i>tamara</i><par n="pikin__n"/></e>
+<e lm="tan abra"><i>tan abra</i><par n="soigi__vblex"/></e>
+<e lm="tan aka"><i>tan aka</i><par n="soigi__vblex"/></e>
+<e lm="tan na baka"><i>tan na baka</i><par n="soigi__vblex"/></e>
+<e lm="tan"><i>tan</i><par n="soigi__vblex"/></e>
+<e lm="tanga"><i>tanga</i><par n="pikin__n"/></e>
+<e lm="tangi"><i>tangi</i><par n="pikin__n"/></e>
+<e lm="tangitangi"><i>tangitangi</i><par n="efu__adv"/></e>
+<e lm="tanpresi"><i>tanpresi</i><par n="pikin__n"/></e>
+<e lm="tanta"><i>tanta</i><par n="pikin__n"/></e>
+<e lm="tanteri"><i>tanteri</i><par n="soigi__vblex"/></e>
+<e lm="tap'ai-wiwiri"><i>tap'ai-wiwiri</i><par n="pikin__n"/></e>
+<e lm="tap'futu"><i>tap'futu</i><par n="pikin__n"/></e>
+<e lm="tap'sei"><i>tap'sei</i><par n="efu__adv"/></e>
+<e lm="tap'sei"><i>tap'sei</i><par n="pikin__n"/></e>
+<e lm="tapu pasi"><i>tapu pasi</i><par n="soigi__vblex"/></e>
+<e lm="tapu skreki"><i>tapu skreki</i><par n="soigi__vblex"/></e>
+<e lm="tapu"><i>tapu</i><par n="fu__pr"/></e>
+<e lm="tapu"><i>tapu</i><par n="langi__adj"/></e>
+<e lm="tapu"><i>tapu</i><par n="pikin__n"/></e>
+<e lm="tapu"><i>tapu</i><par n="soigi__vblex"/></e>
+<e lm="tapun"><i>tapun</i><par n="pikin__n"/></e>
+<e lm="tara"><i>tara</i><par n="pikin__n"/></e>
+<e lm="taratara"><i>taratara</i><par n="langi__adj"/></e>
+<e lm="taya"><i>taya</i><par n="pikin__n"/></e>
+<e lm="te leki"><i>te leki</i><par n="fu__pr"/></e>
+<e lm="te"><i>te</i><par n="fu__pr"/></e>
+<e lm="te"><i>te</i><par n="nanga__cnjcoo"/></e>
+<e lm="te"><i>te</i><par n="pikin__n"/></e>
+<e lm="teki abra"><i>teki abra</i><par n="soigi__vblex"/></e>
+<e lm="teki prati"><i>teki prati</i><par n="soigi__vblex"/></e>
+<e lm="teki refrensi"><i>teki refrensi</i><par n="soigi__vblex"/></e>
+<e lm="teki"><i>teki</i><par n="soigi__vblex"/></e>
+<e lm="temre"><i>temre</i><par n="soigi__vblex"/></e>
+<e lm="temreman"><i>temreman</i><par n="pikin__n"/></e>
+<e lm="ten"><i>ten</i><par n="pikin__n"/></e>
+<e lm="tenti"><i>tenti</i><par n="pikin__n"/></e>
+<e lm="tentiboto"><i>tentiboto</i><par n="pikin__n"/></e>
+<e lm="tere"><i>tere</i><par n="pikin__n"/></e>
+<e lm="teri luku"><i>teri luku</i><par n="soigi__vblex"/></e>
+<e lm="teri"><i>teri</i><par n="soigi__vblex"/></e>
+<e lm="tesi"><i>tesi</i><par n="pikin__n"/></e>
+<e lm="tesi"><i>tesi</i><par n="soigi__vblex"/></e>
+<e lm="the nosolinga"><i>the nosolinga</i><par n="pikin__n"/></e>
+<e lm="the skrufu"><i>the skrufu</i><par n="pikin__n"/></e>
+<e lm="tide neti"><i>tide neti</i><par n="efu__adv"/></e>
+<e lm="tide"><i>tide</i><par n="pikin__n"/></e>
+<e lm="tifi"><i>tifi</i><par n="pikin__n"/></e>
+<e lm="tifi-ati"><i>tifi-ati</i><par n="pikin__n"/></e>
+<e lm="tifidatra"><i>tifidatra</i><par n="pikin__n"/></e>
+<e lm="tigri"><i>tigri</i><par n="pikin__n"/></e>
+<e lm="tigri"><i>tigri</i><par n="soigi__vblex"/></e>
+<e lm="tigrikati"><i>tigrikati</i><par n="pikin__n"/></e>
+<e lm="tiki"><i>tiki</i><par n="pikin__n"/></e>
+<e lm="tikotiko"><i>tikotiko</i><par n="pikin__n"/></e>
+<e lm="tin-na-aiti"><i>tin-na-aiti</i><par n="tu__num"/></e>
+<e lm="tin-na-dri"><i>tin-na-dri</i><par n="tu__num"/></e>
+<e lm="tin-na-feifi"><i>tin-na-feifi</i><par n="tu__num"/></e>
+<e lm="tin-na-fo"><i>tin-na-fo</i><par n="tu__num"/></e>
+<e lm="tin-na-neigi"><i>tin-na-neigi</i><par n="tu__num"/></e>
+<e lm="tin-na-seibi"><i>tin-na-seibi</i><par n="tu__num"/></e>
+<e lm="tin-na-siksi"><i>tin-na-siksi</i><par n="tu__num"/></e>
+<e lm="tingatinga"><i>tingatinga</i><par n="soigi__vblex"/></e>
+<e lm="tingi"><i>tingi</i><par n="langi__adj"/></e>
+<e lm="tingi"><i>tingi</i><par n="pikin__n"/></e>
+<e lm="tingi"><i>tingi</i><par n="soigi__vblex"/></e>
+<e lm="tingifowru"><i>tingifowru</i><par n="pikin__n"/></e>
+<e lm="tinkoko"><i>tinkoko</i><par n="pikin__n"/></e>
+<e lm="tinpasi"><i>tinpasi</i><par n="pikin__n"/></e>
+<e lm="tiri"><i>tiri</i><par n="efu__adv"/></e>
+<e lm="tiri"><i>tiri</i><par n="langi__adj"/></e>
+<e lm="tiri"><i>tiri</i><par n="pikin__n"/></e>
+<e lm="tiri"><i>tiri</i><par n="soigi__vblex"/></e>
+<e lm="tiriman"><i>tiriman</i><par n="pikin__n"/></e>
+<e lm="titei"><i>titei</i><par n="pikin__n"/></e>
+<e lm="titei"><i>titei</i><par n="soigi__vblex"/></e>
+<e lm="tnapu"><i>tnapu</i><par n="soigi__vblex"/></e>
+<e lm="tobo"><i>tobo</i><par n="pikin__n"/></e>
+<e lm="todo"><i>todo</i><par n="pikin__n"/></e>
+<e lm="todobere"><i>todobere</i><par n="pikin__n"/></e>
+<e lm="todoprasoro"><i>todoprasoro</i><par n="pikin__n"/></e>
+<e lm="tofru"><i>tofru</i><par n="soigi__vblex"/></e>
+<e lm="tofruman"><i>tofruman</i><par n="pikin__n"/></e>
+<e lm="tofruwroko"><i>tofruwroko</i><par n="pikin__n"/></e>
+<e lm="toitoi"><i>toitoi</i><par n="pikin__n"/></e>
+<e lm="toke"><i>toke</i><par n="pikin__n"/></e>
+<e lm="toko"><i>toko</i><par n="pikin__n"/></e>
+<e lm="tokotoko"><i>tokotoko</i><par n="langi__adj"/></e>
+<e lm="tokotoko"><i>tokotoko</i><par n="pikin__n"/></e>
+<e lm="toku"><i>toku</i><par n="efu__adv"/></e>
+<e lm="toli"><i>toli</i><par n="pikin__n"/></e>
+<e lm="tomati"><i>tomati</i><par n="pikin__n"/></e>
+<e lm="tompu"><i>tompu</i><par n="pikin__n"/></e>
+<e lm="tonbangi"><i>tonbangi</i><par n="pikin__n"/></e>
+<e lm="tongo"><i>tongo</i><par n="pikin__n"/></e>
+<e lm="tongo"><i>tongo</i><par n="soigi__vblex"/></e>
+<e lm="tonki"><i>tonki</i><par n="pikin__n"/></e>
+<e lm="tonton"><i>tonton</i><par n="pikin__n"/></e>
+<e lm="tori"><i>tori</i><par n="pikin__n"/></e>
+<e lm="tori"><i>tori</i><par n="soigi__vblex"/></e>
+<e lm="toriman"><i>toriman</i><par n="pikin__n"/></e>
+<e lm="tra dei"><i>tra dei</i><par n="efu__adv"/></e>
+<e lm="tra fasi"><i>tra fasi</i><par n="efu__adv"/></e>
+<e lm="tra"><i>tra</i><par n="langi__adj"/></e>
+<e lm="tranga"><i>tranga</i><par n="efu__adv"/></e>
+<e lm="tranga"><i>tranga</i><par n="langi__adj"/></e>
+<e lm="tranga"><i>tranga</i><par n="soigi__vblex"/></e>
+<e lm="tranga-ede"><i>tranga-ede</i><par n="langi__adj"/></e>
+<e lm="trangabere"><i>trangabere</i><par n="pikin__n"/></e>
+<e lm="trangatranga"><i>trangatranga</i><par n="efu__adv"/></e>
+<e lm="trangatranga"><i>trangatranga</i><par n="langi__adj"/></e>
+<e lm="trangayesi"><i>trangayesi</i><par n="langi__adj"/></e>
+<e lm="trangayesi"><i>trangayesi</i><par n="pikin__n"/></e>
+<e lm="trap'trapu"><i>trap'trapu</i><par n="langi__adj"/></e>
+<e lm="trap'trapu"><i>trap'trapu</i><par n="soigi__vblex"/></e>
+<e lm="trapu"><i>trapu</i><par n="pikin__n"/></e>
+<e lm="trapu"><i>trapu</i><par n="soigi__vblex"/></e>
+<e lm="trarki"><i>trarki</i><par n="pikin__n"/></e>
+<e lm="tratra"><i>tratra</i><par n="langi__adj"/></e>
+<e lm="a trawan"><i></i><par n="a_trawan__prn"/><p><l><b/>trawan</l><r><g><b/>trawan</g></r></p></e>
+<e lm="trefu"><i>trefu</i><par n="pikin__n"/></e>
+<e lm="triki"><i>triki</i><par n="pikin__n"/></e>
+<e lm="triki"><i>triki</i><par n="soigi__vblex"/></e>
+<e lm="triki-isri"><i>triki-isri</i><par n="pikin__n"/></e>
+<e lm="trikiplanga"><i>trikiplanga</i><par n="pikin__n"/></e>
+<e lm="trobi"><i>trobi</i><par n="pikin__n"/></e>
+<e lm="trobi"><i>trobi</i><par n="soigi__vblex"/></e>
+<e lm="trobiman"><i>trobiman</i><par n="pikin__n"/></e>
+<e lm="tromu"><i>tromu</i><par n="pikin__n"/></e>
+<e lm="tron"><i>tron</i><par n="pikin__n"/></e>
+<e lm="tron"><i>tron</i><par n="soigi__vblex"/></e>
+<e lm="trotro"><i>trotro</i><par n="pikin__n"/></e>
+<e lm="trow"><i>trow</i><par n="langi__adj"/></e>
+<e lm="trow"><i>trow</i><par n="pikin__n"/></e>
+<e lm="trow"><i>trow</i><par n="soigi__vblex"/></e>
+<e lm="trow-oso"><i>trow-oso</i><par n="pikin__n"/></e>
+<e lm="trow-uma"><i>trow-uma</i><par n="pikin__n"/></e>
+<e lm="trowfrow"><i>trowfrow</i><par n="pikin__n"/></e>
+<e lm="trowlibi"><i>trowlibi</i><par n="pikin__n"/></e>
+<e lm="trowmasra"><i>trowmasra</i><par n="pikin__n"/></e>
+<e lm="trowmisi"><i>trowmisi</i><par n="pikin__n"/></e>
+<e lm="trowstu"><i>trowstu</i><par n="pikin__n"/></e>
+<e lm="trowstu"><i>trowstu</i><par n="soigi__vblex"/></e>
+<e lm="tru sani"><i>tru sani</i><par n="pikin__n"/></e>
+<e lm="tru"><i>tru</i><par n="langi__adj"/></e>
+<e lm="tru"><i>tru</i><par n="pikin__n"/></e>
+<e lm="trusu"><i>trusu</i><par n="soigi__vblex"/></e>
+<e lm="trutru"><i>trutru</i><par n="efu__adv"/></e>
+<e lm="trutru"><i>trutru</i><par n="langi__adj"/></e>
+<e lm="tu"><i>tu</i><par n="efu__adv"/></e>
+<e lm="tu"><i>tu</i><par n="tu__num"/></e>
+<e lm="tudewroko"><i>tudewroko</i><par n="pikin__n"/></e>
+<e lm="tuka"><i>tuka</i><par n="soigi__vblex"/></e>
+<e lm="tuma"><i>tuma</i><par n="soigi__vblex"/></e>
+<e lm="tumofo gon"><i>tumofo gon</i><par n="pikin__n"/></e>
+<e lm="tumsi"><i>tumsi</i><par n="efu__adv"/></e>
+<e lm="turtle sekrepatu"><i>turtle sekrepatu</i><par n="pikin__n"/></e>
+<e lm="tutenti"><i>tutenti</i><par n="tu__num"/></e>
+<e lm="tutu"><i>tutu</i><par n="pikin__n"/></e>
+<e lm="tutu"><i>tutu</i><par n="soigi__vblex"/></e>
+<e lm="twarfu"><i>twarfu</i><par n="tu__num"/></e>
+<e lm="twenti"><i>twenti</i><par n="tu__num"/></e>
+<e lm="tyapu"><i>tyapu</i><par n="pikin__n"/></e>
+<e lm="tyapu"><i>tyapu</i><par n="soigi__vblex"/></e>
+<e lm="tyari go lasi"><i>tyari go lasi</i><par n="soigi__vblex"/></e>
+<e lm="tyari go"><i>tyari go</i><par n="soigi__vblex"/></e>
+<e lm="tyari kon na krin"><i>tyari kon na krin</i><par n="soigi__vblex"/></e>
+<e lm="tyari kon na wan"><i>tyari kon na wan</i><par n="soigi__vblex"/></e>
+<e lm="tyari kon"><i>tyari kon</i><par n="soigi__vblex"/></e>
+<e lm="tyari"><i>tyari</i><par n="soigi__vblex"/></e>
+<e lm="tyasneti"><i>tyasneti</i><par n="pikin__n"/></e>
+<e lm="tyawa"><i>tyawa</i><par n="pikin__n"/></e>
+<e lm="tye"><i>tye</i><par n="kokodiako__ij"/></e>
+<e lm="tyen"><i>tyen</i><par n="pikin__n"/></e>
+<e lm="tyep'tyepi"><i>tyep'tyepi</i><par n="langi__adj"/></e>
+<e lm="tyepi"><i>tyepi</i><par n="langi__adj"/></e>
+<e lm="tyepi"><i>tyepi</i><par n="pikin__n"/></e>
+<e lm="tyepi"><i>tyepi</i><par n="soigi__vblex"/></e>
+<e lm="tyerfi"><i>tyerfi</i><par n="soigi__vblex"/></e>
+<e lm="tyityi"><i>tyityi</i><par n="soigi__vblex"/></e>
+<e lm="tyokro"><i>tyokro</i><par n="soigi__vblex"/></e>
+<e lm="tyopu"><i>tyopu</i><par n="soigi__vblex"/></e>
+<e lm="tyuku"><i>tyuku</i><par n="pikin__n"/></e>
+<e lm="têgo"><i>têgo</i><par n="langi__adj"/></e>
+<e lm="tòf"><i>tòf</i><par n="langi__adj"/></e>
+<e lm="udu"><i>udu</i><par n="langi__adj"/></e>
+<e lm="udu"><i>udu</i><par n="pikin__n"/></e>
+<e lm="uduloso"><i>uduloso</i><par n="pikin__n"/></e>
+<e lm="uku"><i>uku</i><par n="pikin__n"/></e>
+<e lm="ukutifi"><i>ukutifi</i><par n="pikin__n"/></e>
+<e lm="ukutiki"><i>ukutiki</i><par n="pikin__n"/></e>
+<e lm="uma"><i>uma</i><par n="pikin__n"/></e>
+<e lm="umapikin"><i>umapikin</i><par n="pikin__n"/></e>
+<e lm="umapresi"><i>umapresi</i><par n="pikin__n"/></e>
+<e lm="umasma"><i>umasma</i><par n="langi__adj"/></e>
+<e lm="umasma"><i>umasma</i><par n="pikin__n"/></e>
+<e lm="umasma-datra"><i>umasma-datra</i><par n="pikin__n"/></e>
+<e lm="umawan"><i>umawan</i><par n="pikin__n"/></e>
+<e lm="upru"><i>upru</i><par n="pikin__n"/></e>
+<e lm="urei"><i>urei</i><par n="kokodiako__ij"/></e>
+<e lm="wagi"><i>wagi</i><par n="pikin__n"/></e>
+<e lm="wagiman"><i>wagiman</i><par n="pikin__n"/></e>
+<e lm="wai"><i>wai</i><par n="kokodiako__ij"/></e>
+<e lm="wai"><i>wai</i><par n="soigi__vblex"/></e>
+<e lm="waiwai"><i>waiwai</i><par n="langi__adj"/></e>
+<e lm="waiwai"><i>waiwai</i><par n="pikin__n"/></e>
+<e lm="waka"><i>waka</i><par n="soigi__vblex"/></e>
+<e lm="wakaman"><i>wakaman</i><par n="pikin__n"/></e>
+<e lm="wakatiki"><i>wakatiki</i><par n="pikin__n"/></e>
+<e lm="wakawaka"><i>wakawaka</i><par n="langi__adj"/></e>
+<e lm="wakawaka"><i>wakawaka</i><par n="soigi__vblex"/></e>
+<e lm="wakti"><i>wakti</i><par n="pikin__n"/></e>
+<e lm="wakti"><i>wakti</i><par n="soigi__vblex"/></e>
+<e lm="wakti-oso"><i>wakti-oso</i><par n="pikin__n"/></e>
+<e lm="waktiman"><i>waktiman</i><par n="pikin__n"/></e>
+<e lm="wan dei"><i>wan dei</i><par n="efu__adv"/></e>
+<e lm="wan lo"><i>wan lo</i><par n="langi__adj"/></e>
+<e lm="wan presi"><i>wan presi</i><par n="efu__adv"/></e>
+<e lm="wan sani"><i>wan sani</i><par n="wan sani__prn"/></e>
+<e lm="wan"><i>wan</i><par n="wan__det"/></e>
+<e lm="wan"><i>wan</i><par n="efu__adv"/></e>
+<e lm="wan"><i>wan</i><par n="langi__adj"/></e>
+<e lm="wan"><i>wan</i><par n="wan__num"/></e>
+<e lm="wana"><i>wana</i><par n="pikin__n"/></e>
+<e lm="wani taki"><i>wani taki</i><par n="soigi__vblex"/></e>
+<e lm="wani"><i>wani</i><par n="musu__vbmod"/></e>
+<e lm="wani"><i>wani</i><par n="pikin__n"/></e>
+<e lm="wani"><i>wani</i><par n="soigi__vblex"/></e>
+<e lm="wanti"><i>wanti</i><par n="nanga__cnjcoo"/></e>
+<e lm="wantron so"><i>wantron so</i><par n="efu__adv"/></e>
+<e lm="wantron"><i>wantron</i><par n="efu__adv"/></e>
+<e lm="wantu"><i>wantu</i><par n="tu__num"/></e>
+<e lm="waran"><i>waran</i><par n="langi__adj"/></e>
+<e lm="waran"><i>waran</i><par n="soigi__vblex"/></e>
+<e lm="warana"><i>warana</i><par n="pikin__n"/></e>
+<e lm="warimbo"><i>warimbo</i><par n="pikin__n"/></e>
+<e lm="warskow"><i>warskow</i><par n="pikin__n"/></e>
+<e lm="warskow"><i>warskow</i><par n="soigi__vblex"/></e>
+<e lm="warti"><i>warti</i><par n="langi__adj"/></e>
+<e lm="warti"><i>warti</i><par n="pikin__n"/></e>
+<e lm="was' go"><i>was' go</i><par n="soigi__vblex"/></e>
+<e lm="was'baki"><i>was'baki</i><par n="pikin__n"/></e>
+<e lm="was'beki"><i>was'beki</i><par n="pikin__n"/></e>
+<e lm="was'duku"><i>was'duku</i><par n="pikin__n"/></e>
+<e lm="was'frow"><i>was'frow</i><par n="pikin__n"/></e>
+<e lm="was'oso"><i>was'oso</i><par n="pikin__n"/></e>
+<e lm="was'uma"><i>was'uma</i><par n="pikin__n"/></e>
+<e lm="wasi"><i>wasi</i><par n="soigi__vblex"/></e>
+<e lm="waswasi"><i>waswasi</i><par n="pikin__n"/></e>
+<e lm="watra"><i>watra</i><par n="langi__adj"/></e>
+<e lm="watra"><i>watra</i><par n="pikin__n"/></e>
+<e lm="watra-agu"><i>watra-agu</i><par n="pikin__n"/></e>
+<e lm="watra-ai"><i>watra-ai</i><par n="pikin__n"/></e>
+<e lm="watrakan"><i>watrakan</i><par n="pikin__n"/></e>
+<e lm="watrakaw"><i>watrakaw</i><par n="pikin__n"/></e>
+<e lm="watramama"><i>watramama</i><par n="pikin__n"/></e>
+<e lm="watramofo"><i>watramofo</i><par n="pikin__n"/></e>
+<e lm="watramun"><i>watramun</i><par n="pikin__n"/></e>
+<e lm="watrasei"><i>watrasei</i><par n="pikin__n"/></e>
+<e lm="wawan"><i>wawan</i><par n="efu__adv"/></e>
+<e lm="we"><i>we</i><par n="kokodiako__ij"/></e>
+<e lm="wefi"><i>wefi</i><par n="pikin__n"/></e>
+<e lm="wega"><i>wega</i><par n="pikin__n"/></e>
+<e lm="wegi go wegi kon"><i>wegi go wegi kon</i><par n="soigi__vblex"/></e>
+<e lm="wegi"><i>wegi</i><par n="pikin__n"/></e>
+<e lm="wegi"><i>wegi</i><par n="soigi__vblex"/></e>
+<e lm="wei"><i>wei</i><par n="pikin__n"/></e>
+<e lm="weigri"><i>weigri</i><par n="soigi__vblex"/></e>
+<e lm="weisi-oso"><i>weisi-oso</i><par n="pikin__n"/></e>
+<e lm="weisipikin"><i>weisipikin</i><par n="pikin__n"/></e>
+<e lm="wenkri"><i>wenkri</i><par n="pikin__n"/></e>
+<e lm="wenkriman"><i>wenkriman</i><par n="pikin__n"/></e>
+<e lm="wenweni"><i>wenweni</i><par n="soigi__vblex"/></e>
+<e lm="wer'ede"><i>wer'ede</i><par n="langi__adj"/></e>
+<e lm="wer'ede"><i>wer'ede</i><par n="pikin__n"/></e>
+<e lm="werder"><i>werder</i><par n="langi__adj"/></e>
+<e lm="weri skin"><i>weri skin</i><par n="pikin__n"/></e>
+<e lm="weri"><i>weri</i><par n="langi__adj"/></e>
+<e lm="weri"><i>weri</i><par n="soigi__vblex"/></e>
+<e lm="westsei"><i>westsei</i><par n="pikin__n"/></e>
+<e lm="wetfisi"><i>wetfisi</i><par n="pikin__n"/></e>
+<e lm="weti"><i>weti</i><par n="langi__adj"/></e>
+<e lm="weti"><i>weti</i><par n="pikin__n"/></e>
+<e lm="weti-aira"><i>weti-aira</i><par n="pikin__n"/></e>
+<e lm="wetweti"><i>wetweti</i><par n="pikin__n"/></e>
+<e lm="wiki"><i>wiki</i><par n="langi__adj"/></e>
+<e lm="wiki"><i>wiki</i><par n="pikin__n"/></e>
+<e lm="wiki"><i>wiki</i><par n="soigi__vblex"/></e>
+<e lm="win"><i>win</i><par n="pikin__n"/></e>
+<e lm="wini"><i>wini</i><par n="pikin__n"/></e>
+<e lm="wini"><i>wini</i><par n="soigi__vblex"/></e>
+<e lm="winiman"><i>winiman</i><par n="pikin__n"/></e>
+<e lm="winsi"><i>winsi</i><par n="pikin__n"/></e>
+<e lm="winsi"><i>winsi</i><par n="soigi__vblex"/></e>
+<e lm="winti"><i>winti</i><par n="pikin__n"/></e>
+<e lm="wipi"><i>wipi</i><par n="pikin__n"/></e>
+<e lm="wipi"><i>wipi</i><par n="soigi__vblex"/></e>
+<e lm="wisi"><i>wisi</i><par n="pikin__n"/></e>
+<e lm="wisi"><i>wisi</i><par n="soigi__vblex"/></e>
+<e lm="wisiman"><i>wisiman</i><par n="pikin__n"/></e>
+<e lm="wiswasi"><i>wiswasi</i><par n="langi__adj"/></e>
+<e lm="wiwiri"><i>wiwiri</i><par n="pikin__n"/></e>
+<e lm="wolku"><i>wolku</i><par n="pikin__n"/></e>
+<e lm="wondru"><i>wondru</i><par n="pikin__n"/></e>
+<e lm="woron"><i>woron</i><par n="pikin__n"/></e>
+<e lm="wortu"><i>wortu</i><par n="pikin__n"/></e>
+<e lm="wortubuku"><i>wortubuku</i><par n="pikin__n"/></e>
+<e lm="wowoyo"><i>wowoyo</i><par n="pikin__n"/></e>
+<e lm="wraak"><i>wraak</i><par n="pikin__n"/></e>
+<e lm="wrifi"><i>wrifi</i><par n="soigi__vblex"/></e>
+<e lm="wroko moni"><i>wroko moni</i><par n="soigi__vblex"/></e>
+<e lm="wroko skin"><i>wroko skin</i><par n="soigi__vblex"/></e>
+<e lm="wroko"><i>wroko</i><par n="pikin__n"/></e>
+<e lm="wroko"><i>wroko</i><par n="soigi__vblex"/></e>
+<e lm="wrokobakru"><i>wrokobakru</i><par n="pikin__n"/></e>
+<e lm="wrokobasi"><i>wrokobasi</i><par n="pikin__n"/></e>
+<e lm="wrokobere"><i>wrokobere</i><par n="pikin__n"/></e>
+<e lm="wrokodei"><i>wrokodei</i><par n="pikin__n"/></e>
+<e lm="wrokoman"><i>wrokoman</i><par n="pikin__n"/></e>
+<e lm="wrokomati"><i>wrokomati</i><par n="pikin__n"/></e>
+<e lm="wrokope"><i>wrokope</i><par n="pikin__n"/></e>
+<e lm="wrokosani"><i>wrokosani</i><par n="pikin__n"/></e>
+<e lm="wunwun"><i>wunwun</i><par n="pikin__n"/></e>
+<e lm="wunyuwunyu"><i>wunyuwunyu</i><par n="pikin__n"/></e>
+<e lm="wán"><i>wán</i><par n="langi__adj"/></e>
+<e lm="wèt"><i>wèt</i><par n="pikin__n"/></e>
+<e lm="yagi"><i>yagi</i><par n="soigi__vblex"/></e>
+<e lm="yaneifri"><i>yaneifri</i><par n="pikin__n"/></e>
+<e lm="yapon"><i>yapon</i><par n="pikin__n"/></e>
+<e lm="yapyapi"><i>yapyapi</i><par n="pikin__n"/></e>
+<e lm="yari"><i>yari</i><par n="pikin__n"/></e>
+<e lm="yarsin"><i>yarsin</i><par n="pikin__n"/></e>
+<e lm="yayo"><i>yayo</i><par n="soigi__vblex"/></e>
+<e lm="yayo-uma"><i>yayo-uma</i><par n="pikin__n"/></e>
+<e lm="yayolibi"><i>yayolibi</i><par n="pikin__n"/></e>
+<e lm="yayoman"><i>yayoman</i><par n="pikin__n"/></e>
+<e lm="yepi wan anu"><i>yepi wan anu</i><par n="soigi__vblex"/></e>
+<e lm="yepi"><i>yepi</i><par n="pikin__n"/></e>
+<e lm="yepi"><i>yepi</i><par n="soigi__vblex"/></e>
+<e lm="yere skin"><i>yere skin</i><par n="langi__adj"/></e>
+<e lm="yere"><i>yere</i><par n="soigi__vblex"/></e>
+<e lm="yes'ati"><i>yes'ati</i><par n="pikin__n"/></e>
+<e lm="yesi"><i>yesi</i><par n="pikin__n"/></e>
+<e lm="yesibuba"><i>yesibuba</i><par n="pikin__n"/></e>
+<e lm="yesidoti"><i>yesidoti</i><par n="pikin__n"/></e>
+<e lm="yesilinga"><i>yesilinga</i><par n="pikin__n"/></e>
+<e lm="yesimama"><i>yesimama</i><par n="pikin__n"/></e>
+<e lm="yeye"><i>yeye</i><par n="pikin__n"/></e>
+<e lm="yoisti"><i>yoisti</i><par n="langi__adj"/></e>
+<e lm="yoku"><i>yoku</i><par n="soigi__vblex"/></e>
+<e lm="yongu"><i>yongu</i><par n="langi__adj"/></e>
+<e lm="yongu"><i>yongu</i><par n="pikin__n"/></e>
+<e lm="yorkaberi"><i>yorkaberi</i><par n="pikin__n"/></e>
+<e lm="yosyosi"><i>yosyosi</i><par n="langi__adj"/></e>
+<e lm="yosyosi"><i>yosyosi</i><par n="pikin__n"/></e>
+<e lm="yosyosi-skoro"><i>yosyosi-skoro</i><par n="pikin__n"/></e>
+<e lm="yowka"><i>yowka</i><par n="pikin__n"/></e>
+<e lm="yuru"><i>yuru</i><par n="pikin__n"/></e>
+<e lm="yuru"><i>yuru</i><par n="soigi__vblex"/></e>
+<e lm="yuruten"><i>yuruten</i><par n="pikin__n"/></e>
+<e lm="yèrè"><i>yèrè</i><par n="kokodiako__ij"/></e>
+<e lm="zuidsei"><i>zuidsei</i><par n="pikin__n"/></e>
+<e lm="zuster"><i>zuster</i><par n="pikin__n"/></e>
+<e lm="èn"><i>èn</i><par n="nanga__cnjcoo"/></e>
+
+
+
+  </section>
+
+</dictionary>
+
+<!-- 
+Resources: 
+    http://wiki.apertium.org/wiki/Monodix_basics
+    http://wiki.apertium.org/wiki/Apertium_New_Language_Pair_HOWTO#Monolingual_dictionaries
+-->
+

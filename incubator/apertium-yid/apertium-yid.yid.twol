@@ -1,0 +1,31 @@
+Alphabet
+ ·ּ ־ א אַ אָ ב בֿ ג ד ה ו וּ ז ח חּ ט י יִ ך כ כּ ל ם מ ן נ ס ע ף פ פּ פֿ ץ צ ק ר ש שׂ ת תּ װ ױ ײ ײַ ׳ ״
+ %{ь%}:0 %>:0  ;
+
+Sets
+
+Vowel = א אַ אָ יִ י ו וּ ע ױ ײ ײַ ;
+
+Cons = ב בֿ ג ד ה ז ח חּ ט י ך כ כּ ל ם מ ן נ ס ף פ פּ פֿ ץ צ ק ר ש שׂ ת תּ װ ;
+
+Rules 
+
+"Remove suffix vowel with vowel-ending stem"
+i:0 <=> Vow %{VSUF%}:0 _ [ m | n ] ;
+
+! Resources:
+! http://wiki.apertium.org/wiki/Starting_a_new_language_with_HFST#Enter_twol
+! https://kitwiki.csc.fi/twiki/bin/view/KitWiki/HfstHome
+! http://hfst.sourceforge.net/
+! http://wiki.apertium.org/wiki/Twol
+! http://wiki.apertium.org/wiki/Hfst
+
+!!!!!!!! UMLAUT RULES !!!!!!!!
+
+"Main vowel umlaut rule, for plural forms"
+Vx:Vy <=> _ :Cons* %>: %{ь%}:0 ;
+      where
+          Vx in ( א אַ אָ יִ י ו וּ ע ױ ײ ײַ )
+          Vy in ( ע ע ע יִ י י י ע ײַ ײ ײַ )
+          !!! FIXME: ױ sometimes → ײ
+      matched ;

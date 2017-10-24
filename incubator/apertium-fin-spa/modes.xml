@@ -1,0 +1,419 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<modes>
+  <!-- fin → spa --> 
+
+  <mode name="fin-spa" install="yes">
+    <pipeline>
+      <program name="hfst-proc -e -w">
+        <file name="fin-spa.automorf.hfst"/>
+      </program>
+      <program name="cg-proc -1 -n -w">
+        <file name="fin-spa.rlx.bin"/>
+      </program>
+      <program name="apertium-pretransfer"/>
+      <program name="lt-proc -b">
+        <file name="fin-spa.autobil.bin"/>
+      </program>
+      <program name="lrx-proc -m">
+        <file name="fin-spa.autolex.bin"/>
+      </program>
+      <program name="apertium-transfer -b">
+        <file name="apertium-fin-spa.fin-spa.t1x"/>
+        <file name="fin-spa.t1x.bin"/>
+      </program>
+      <program name="apertium-interchunk">
+        <file name="apertium-fin-spa.fin-spa.t2x"/>
+        <file name="fin-spa.t2x.bin"/>
+      </program>
+      <program name="apertium-postchunk">
+        <file name="apertium-fin-spa.fin-spa.t3x"/>
+        <file name="fin-spa.t3x.bin"/>
+      </program>
+      <program name="lt-proc $1">
+        <file name="fin-spa.autogen.bin"/>
+      </program>
+    </pipeline>
+  </mode>
+
+  <mode name="fin-spa-debug" install="no">
+    <pipeline>
+      <program name="hfst-proc -e -w">
+        <file name="fin-spa.automorf.hfst"/>
+      </program>
+      <program name="cg-proc -1 -n -w">
+        <file name="fin-spa.rlx.bin"/>
+      </program>
+      <program name="apertium-pretransfer"/>
+      <program name="lt-proc -b">
+        <file name="fin-spa.autobil.bin"/>
+      </program>
+      <program name="lrx-proc -m -t">
+        <file name="fin-spa.autolex.bin"/>
+      </program>
+      <program name="apertium-transfer -b">
+        <file name="apertium-fin-spa.fin-spa.t1x"/>
+        <file name="fin-spa.t1x.bin"/>
+      </program>
+      <program name="apertium-interchunk">
+        <file name="apertium-fin-spa.fin-spa.t2x"/>
+        <file name="fin-spa.t2x.bin"/>
+      </program>
+      <program name="apertium-postchunk">
+        <file name="apertium-fin-spa.fin-spa.t3x"/>
+        <file name="fin-spa.t3x.bin"/>
+      </program>
+      <program name="lt-proc -d">
+        <file name="fin-spa.autogen.bin"/>
+      </program>
+    </pipeline>
+  </mode>
+ 
+  
+  <mode name="fin-spa-morph" install="no">
+    <pipeline>
+      <program name="hfst-proc -e -w">
+        <file name="fin-spa.automorf.hfst"/>
+      </program>
+    </pipeline>
+  </mode>
+
+  <mode name="fin-spa-disam" install="no">
+    <pipeline>
+      <program name="hfst-proc -e -w">
+        <file name="fin-spa.automorf.hfst"/>
+      </program>
+      <program name="cg-conv -a"/>
+      <program name="vislcg3 --trace --grammar">
+        <file name="fin-spa.rlx.bin"/>
+      </program>
+    </pipeline>
+  </mode>
+
+
+  <mode name="fin-spa-tagger" install="no">
+    <pipeline>
+      <program name="hfst-proc -e -w">
+        <file name="fin-spa.automorf.hfst"/>
+      </program>
+      <program name="cg-proc -1 -n -w">
+        <file name="fin-spa.rlx.bin"/>
+      </program>
+      <program name="apertium-pretransfer"/>
+    </pipeline>
+  </mode>
+
+  <mode name="fin-spa-biltrans" install="no">
+    <pipeline>
+      <program name="hfst-proc -e -w">
+        <file name="fin-spa.automorf.hfst"/>
+      </program>
+      <program name="cg-proc -1 -n -w">
+        <file name="fin-spa.rlx.bin"/>
+      </program>
+      <program name="apertium-pretransfer"/>
+      <program name="lt-proc -b">
+        <file name="fin-spa.autobil.bin"/>
+      </program>
+    </pipeline>
+  </mode>
+
+  <mode name="fin-spa-lextor" install="no">
+    <pipeline>
+      <program name="hfst-proc -e -w">
+        <file name="fin-spa.automorf.hfst"/>
+      </program>
+      <program name="cg-proc -1 -n -w">
+        <file name="fin-spa.rlx.bin"/>
+      </program>
+      <program name="apertium-pretransfer"/>
+      <program name="lt-proc -b">
+        <file name="fin-spa.autobil.bin"/>
+      </program>
+      <program name="lrx-proc -m -t">
+        <file name="fin-spa.autolex.bin"/>
+      </program>
+    </pipeline>
+  </mode>
+
+
+  <mode name="fin-spa-transfer" install="no">
+    <pipeline>
+      <program name="hfst-proc -e -w">
+        <file name="fin-spa.automorf.hfst"/>
+      </program>
+      <program name="cg-proc -1 -n -w">
+        <file name="fin-spa.rlx.bin"/>
+      </program>
+      <program name="apertium-pretransfer"/>
+      <program name="lt-proc -b">
+        <file name="fin-spa.autobil.bin"/>
+      </program>
+      <program name="lrx-proc -m">
+        <file name="fin-spa.autolex.bin"/>
+      </program>
+      <program name="apertium-transfer -t -b">
+        <file name="apertium-fin-spa.fin-spa.t1x"/>
+        <file name="fin-spa.t1x.bin"/>
+      </program>
+    </pipeline>
+  </mode>
+
+  <mode name="fin-spa-interchunk" install="no">
+    <pipeline>
+      <program name="hfst-proc -e -w">
+        <file name="fin-spa.automorf.hfst"/>
+      </program>
+      <program name="cg-proc -1 -n -w">
+        <file name="fin-spa.rlx.bin"/>
+      </program>
+      <program name="apertium-pretransfer"/>
+      <program name="lt-proc -b">
+        <file name="fin-spa.autobil.bin"/>
+      </program>
+      <program name="lrx-proc -m">
+        <file name="fin-spa.autolex.bin"/>
+      </program>
+      <program name="apertium-transfer -b">
+        <file name="apertium-fin-spa.fin-spa.t1x"/>
+        <file name="fin-spa.t1x.bin"/>
+      </program>
+      <program name="apertium-interchunk">
+        <file name="apertium-fin-spa.fin-spa.t2x"/>
+        <file name="fin-spa.t2x.bin"/>
+      </program>
+    </pipeline>
+  </mode>
+
+  <mode name="fin-spa-postchunk" install="no">
+    <pipeline>
+      <program name="hfst-proc -e -w">
+        <file name="fin-spa.automorf.hfst"/>
+      </program>
+      <program name="cg-proc -1 -n -w">
+        <file name="fin-spa.rlx.bin"/>
+      </program>
+      <program name="apertium-pretransfer"/>
+      <program name="lt-proc -b">
+        <file name="fin-spa.autobil.bin"/>
+      </program>
+      <program name="lrx-proc -m">
+        <file name="fin-spa.autolex.bin"/>
+      </program>
+      <program name="apertium-transfer -b">
+        <file name="apertium-fin-spa.fin-spa.t1x"/>
+        <file name="fin-spa.t1x.bin"/>
+      </program>
+      <program name="apertium-interchunk">
+        <file name="apertium-fin-spa.fin-spa.t2x"/>
+        <file name="fin-spa.t2x.bin"/>
+      </program>
+      <program name="apertium-postchunk">
+        <file name="apertium-fin-spa.fin-spa.t3x"/>
+        <file name="fin-spa.t3x.bin"/>
+      </program>
+    </pipeline>
+  </mode>
+
+  <!-- spa → fin -->
+
+  <mode name="spa-fin" install="yes">
+    <pipeline>
+      <program name="lt-proc -e -w">
+        <file name="spa-fin.automorf.bin"/>
+      </program>
+      <program name="cg-proc -1 -n -w">
+        <file name="spa-fin.rlx.bin"/>
+      </program>
+      <program name="apertium-pretransfer"/>
+      <program name="lt-proc -b">
+        <file name="spa-fin.autobil.bin"/>
+      </program>
+      <program name="apertium-transfer -b">
+        <file name="apertium-fin-spa.spa-fin.t1x"/>
+        <file name="spa-fin.t1x.bin"/>
+      </program>
+      <program name="apertium-interchunk">
+        <file name="apertium-fin-spa.spa-fin.t2x"/>
+        <file name="spa-fin.t2x.bin"/>
+      </program>
+      <program name="apertium-postchunk">
+        <file name="apertium-fin-spa.spa-fin.t3x"/>
+        <file name="spa-fin.t3x.bin"/>
+      </program>
+      <program name="hfst-proc $1">
+        <file name="spa-fin.autogen.hfst"/>
+      </program>
+    </pipeline>
+  </mode>
+
+  <mode name="spa-fin-debug" install="no">
+    <pipeline>
+      <program name="lt-proc -e -w">
+        <file name="spa-fin.automorf.bin"/>
+      </program>
+      <program name="cg-proc -1 -n -w">
+        <file name="spa-fin.rlx.bin"/>
+      </program>
+      <program name="apertium-pretransfer"/>
+      <program name="lt-proc -b">
+        <file name="spa-fin.autobil.bin"/>
+      </program>
+      <program name="apertium-transfer -b">
+        <file name="apertium-fin-spa.spa-fin.t1x"/>
+        <file name="spa-fin.t1x.bin"/>
+      </program>
+      <program name="apertium-interchunk">
+        <file name="apertium-fin-spa.spa-fin.t2x"/>
+        <file name="spa-fin.t2x.bin"/>
+      </program>
+      <program name="apertium-postchunk">
+        <file name="apertium-fin-spa.spa-fin.t3x"/>
+        <file name="spa-fin.t3x.bin"/>
+      </program>
+      <program name="hfst-proc -d">
+        <file name="spa-fin.autogen.hfst"/>
+      </program>
+    </pipeline>
+  </mode>
+  
+  <mode name="spa-fin-morph" install="no">
+    <pipeline>
+      <program name="lt-proc -e -w">
+        <file name="spa-fin.automorf.bin"/>
+      </program>
+    </pipeline>
+  </mode>
+
+  <mode name="spa-fin-disam" install="no">
+    <pipeline>
+      <program name="lt-proc -e -w">
+        <file name="spa-fin.automorf.bin"/>
+      </program>
+      <program name="cg-conv -a"/>
+      <program name="vislcg3 --trace --grammar">
+        <file name="spa-fin.rlx.bin"/>
+      </program>
+    </pipeline>
+  </mode>
+
+
+  <mode name="spa-fin-tagger" install="no">
+    <pipeline>
+      <program name="lt-proc -e -w">
+        <file name="spa-fin.automorf.bin"/>
+      </program>
+      <program name="cg-proc -1 -n -w">
+        <file name="spa-fin.rlx.bin"/>
+      </program>
+      <program name="apertium-pretransfer"/>
+    </pipeline>
+  </mode>
+
+  <mode name="spa-fin-biltrans" install="no">
+    <pipeline>
+      <program name="lt-proc -e -w">
+        <file name="spa-fin.automorf.bin"/>
+      </program>
+      <program name="cg-proc -1 -n -w">
+        <file name="spa-fin.rlx.bin"/>
+      </program>
+      <program name="apertium-pretransfer"/>
+      <program name="lt-proc -b">
+        <file name="spa-fin.autobil.bin"/>
+      </program>
+    </pipeline>
+  </mode>
+
+  <mode name="spa-fin-lextor" install="no">
+    <pipeline>
+      <program name="lt-proc -e -w">
+        <file name="spa-fin.automorf.bin"/>
+      </program>
+      <program name="cg-proc -1 -n -w">
+        <file name="spa-fin.rlx.bin"/>
+      </program>
+      <program name="apertium-pretransfer"/>
+      <program name="lt-proc -b">
+        <file name="spa-fin.autobil.bin"/>
+      </program>
+      <program name="lrx-proc -m">
+        <file name="spa-fin.autolex.bin"/>
+      </program>
+    </pipeline>
+  </mode>
+
+  <mode name="spa-fin-transfer" install="no">
+    <pipeline>
+      <program name="lt-proc -e -w">
+        <file name="spa-fin.automorf.bin"/>
+      </program>
+      <program name="cg-proc -1 -n -w">
+        <file name="spa-fin.rlx.bin"/>
+      </program>
+      <program name="apertium-pretransfer"/>
+      <program name="lt-proc -b">
+        <file name="spa-fin.autobil.bin"/>
+      </program>
+      <program name="apertium-transfer -b">
+        <file name="apertium-fin-spa.spa-fin.t1x"/>
+        <file name="spa-fin.t1x.bin"/>
+      </program>
+    </pipeline>
+  </mode>
+
+  <mode name="spa-fin-interchunk" install="no">
+    <pipeline>
+      <program name="lt-proc -e -w">
+        <file name="spa-fin.automorf.bin"/>
+      </program>
+      <program name="cg-proc -1 -n -w">
+        <file name="spa-fin.rlx.bin"/>
+      </program>
+      <program name="apertium-pretransfer"/>
+      <program name="lt-proc -b">
+        <file name="spa-fin.autobil.bin"/>
+      </program>
+      <program name="apertium-transfer -b">
+        <file name="apertium-fin-spa.spa-fin.t1x"/>
+        <file name="spa-fin.t1x.bin"/>
+      </program>
+      <program name="apertium-interchunk">
+        <file name="apertium-fin-spa.spa-fin.t2x"/>
+        <file name="spa-fin.t2x.bin"/>
+      </program>
+    </pipeline>
+  </mode>
+
+  <mode name="spa-fin-postchunk" install="no">
+    <pipeline>
+      <program name="lt-proc -e -w">
+        <file name="spa-fin.automorf.bin"/>
+      </program>
+      <program name="cg-proc -1 -n -w">
+        <file name="spa-fin.rlx.bin"/>
+      </program>
+      <program name="apertium-pretransfer"/>
+      <program name="lt-proc -b">
+        <file name="spa-fin.autobil.bin"/>
+      </program>
+      <program name="apertium-transfer -b">
+        <file name="apertium-fin-spa.spa-fin.t1x"/>
+        <file name="spa-fin.t1x.bin"/>
+      </program>
+      <program name="apertium-interchunk">
+        <file name="apertium-fin-spa.spa-fin.t2x"/>
+        <file name="spa-fin.t2x.bin"/>
+      </program>
+      <program name="apertium-postchunk">
+        <file name="apertium-fin-spa.spa-fin.t3x"/>
+        <file name="spa-fin.t3x.bin"/>
+      </program>
+    </pipeline>
+  </mode>
+
+
+
+
+</modes>
+
+

@@ -1,0 +1,153 @@
+DELIMITERS = "<.>" "<!>" "<?>" "<...>" "<¶>" ;
+SOFT-DELIMITERS = "<,>" ;
+SUBREADINGS = LTR ; 
+#SUBREADINGS = RTL ; 
+
+LIST EOS = (>>>) sent ; 
+LIST BOS = (<<<) sent ; 
+
+LIST N = n ; 
+LIST V = vblex ; 
+LIST A = adj ; 
+LIST Adv = adv ; 
+LIST Post = post ; 
+LIST Pron = prn ; 
+LIST Det = det ;
+
+LIST Pers = pers ; 
+LIST Dem = dem ; 
+
+LIST Nom = nom ; 
+LIST Erg = erg ; 
+LIST Gen = gen ; 
+LIST Dat = dat ; 
+LIST Loc = loc ; 
+LIST All = all ; 
+LIST Abl = abl ; 
+LIST Tra = tra ; 
+
+LIST PrcPrf = gpr1 ;
+LIST PrcPres = gpr2 ;
+LIST PrcFut = gpr3 ;
+
+LIST Ger = ger ; 
+
+LIST Pres = pres ; 
+LIST Past = past ; 
+
+LIST Aor = aor ; 
+LIST Fut = fut ;
+
+LIST Masc = m ; 
+LIST Fem = f ; 
+LIST Neut = nt ; 
+LIST Mfn = mfn ; 
+LIST Pl = pl ; 
+
+LIST IV = iv "букӏине" ; 
+LIST TV = tv ; 
+
+LIST Top = top ; 
+LIST Cog = cog ; 
+LIST Ant = ant ; 
+
+LIST Place = "шагьар" "район" "росу" ; 
+
+LIST Attr = attr ;
+
+LIST Class = m f nt pl ; 
+LIST Case = nom erg gen dat all abl tra ; 
+
+LIST LocPost = "цебе" "нахъа" "жаниб" "хадуб" "цадахъ" "данде" ;
+LIST AblPost = "хадуб" "нахъе" 
+LIST GenPost = "хӏакъалъулъ" ;
+
+LIST LocSubj = "кӏезе" ;
+
+SET LOC-CASES = Loc | Abl | All | Tra ; 
+
+SET NOT-GEN-ERG = Case - (gen) ;
+
+SET CLB = (sent) ; 
+
+SECTION
+
+SELECT Attr IF (0 Top) (1 Place) ; 
+
+SELECT Attr IF (0 Ant) (1 Cog) ; 
+
+SELECT A IF (0C A OR N) (1C N) ;
+
+SELECT N IF (0C V OR N) (1C V) ;
+
+REMOVE Post IF (0C N OR Post) (-1 V) ;   
+    ## Дун вукIине вуго ахихъан.
+
+SELECT Det IF (0C Det OR Pron) (0C $$Class) (1C N + $$Class) ; 
+    ## Кинаб батIалъи бугеб реализмалда ва романтизмалда гьоркьоб?
+
+REMOVE Pron + Nom IF (-1C Pron + Nom) (0C Det OR Pron) ;
+    ## Гьадинаб чIухIигун ана дов гьаб ракьалдаса.
+
+REMOVE Pron + Nom IF (-1* Pron + Nom) (0C Det OR Pron) ; 
+    ## ГьанжелъизегӀан гьев хӀалтӀулев вукӀун вуго гьеб гӀуцӀиялъул бетӀерав бухгалтерлъун.
+
+REMOVE Det IF (NOT 1 N OR A) ;
+    ## ГьанжелъизегӀан гьев хӀалтӀулев вукӀун вуго гьеб гӀуцӀиялъул бетӀерав бухгалтерлъун.
+
+SELECT TV IF (1C* Erg BARRIER CLB) ; 
+    ## Къецал тӀоритӀана Россиялъул Грэпплингалъул федерациялъ.
+
+SELECT Fut IF (0C Aor OR Fut) ; 
+    ##  Лъаларо, бажариладай дуда гьеб хIалтIи гьабун.
+
+SELECT Post IF (-1C Loc) (0C Adv OR Post); 
+
+SELECT Neut IF (0C Pron) (0C Fem OR Neut) (0C LOC-CASES) ;
+
+SELECT N IF (0C N OR V) (-1 Gen) (1 EOS) ; 
+    ## Масала, ЦӀунтӀа районалда вищизе вуго районалъул нухмалъулев.
+
+REMOVE Dem + Nom IF (1C* Nom BARRIER CLB) ;
+    ## Гьеб хъулухъалде кандидатура лъун буго микьго чияс.
+
+SELECT $$Class (0C N) (0C Masc OR Fem) (1 Ant + $$Class) (2 Cog + $$Class) ;
+    ## Гьал къояз «Дагъгазалъул» директорзабазул советалъ хӀукму гьабун буго жидерго директорлъун ГӀабдулхаликъ Ражабов вищизе.
+
+SELECT Top IF (0C N OR Top) (0 ("<[А-ЯӀI][а-яӀI].*>"r));
+    ## Батасуна Испаниялда бугеб Басказул улкаялда 1978 соналда, диктатор Франко хун хадуб гӀуцӀцӀун букӀана.
+
+SELECT ("рагӏал") IF (0C ("рагӏ") OR ("рагӏал")) (0C All) ;
+    ## Жеги рагIалде бахъун гьечIо дунялалъул тарихчагIаз гьел «бищунго талихIал гIадамазул» хIакъикъияб история лъазелъун гьебулеб цIех-рех.
+
+SELECT PrcPrf IF (0C PrcPrf OR PrcFut) (1 Past) ; 
+
+SELECT PrcPrf IF (0C PrcPrf OR PrcFut) (1 Pres) ; 
+    ## "Россиялъул Федерациялъул №131 законалда рекъон, гьанже росабазул администрациязде гӀарац биччалеб буго гьелъул ракьалда гӀумру гьабулел гӀадамазул ва школалде хьвадулел цӀалдохъабазул къадаралъухъ балагьун.
+
+SELECT N IF (0C N OR Ger) ;
+    ## Кинаб батIалъи бугеб реализмалда ва романтизмалда гьоркьоб?
+
+SECTION
+
+LIST @SUBJ→ = @SUBJ→ ; 
+LIST @←SUBJ = @←SUBJ ; 
+
+MAP @SUBJ→ TARGET Nom IF (1C IV) (0C Pers) ;
+MAP @SUBJ→ TARGET Nom IF (1C IV) (0 Masc OR Fem OR Neut) (1 Mfn);
+MAP @SUBJ→ TARGET Nom IF (1C IV)  (0 $$Class) (-1 $$Class);
+
+MAP @SUBJ→ TARGET Erg IF (1C TV) (0C Pers) ;
+MAP @SUBJ→ TARGET Loc IF (1C IV) (1C LocSubj) (0C Pers) (0C Loc);
+
+MAP @←SUBJ TARGET Nom IF (-1C IV) (0C Pers) ;
+MAP @←SUBJ TARGET Nom IF (-1C IV)  (0 $$Class) (-1 $$Class);
+MAP @←SUBJ TARGET Nom IF (-1C IV)  (0 Masc OR Fem OR Neut) (-1 Mfn);
+
+MAP @←SUBJ TARGET Erg IF (-1C TV) (0C Pers) ;
+
+MAP @←SUBJ TARGET Erg IF (-1* TV BARRIER NOT-GEN-ERG) (0C Erg)  ;
+
+AFTER-SECTIONS
+
+REMOVE  SUB:1 (*) ;

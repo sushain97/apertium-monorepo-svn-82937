@@ -1,0 +1,271 @@
+# -*- cg-pre-pipe: "apertium -d . swe-morph|cg-conv -a 2>/dev/null" -*-
+
+DELIMITERS = "<.>" "<!>" "<?>" "<...>" "<¶>" "<:>";
+SOFT-DELIMITERS = "<,>" cm ;
+
+SETS
+
+LIST N = n ;
+LIST Adv = adv ;
+LIST Pr = pr ;
+LIST Det = det ;
+LIST Num = num ;
+LIST Num/Qnt/årstalet = num qnt ("[0-9]+-tal"ri def) ;
+LIST A = adj ;
+LIST Prop = np ;
+LIST V = vblex vbser vbmod vaux vbhaver ;
+LIST Prn = prn ;
+LIST Cnjsub = cnjsub ;
+LIST Cnjcoo = cnjcoo ;
+LIST Ij = Ij ;
+
+LIST Dem = dem ;
+LIST Qnt = qnt ;
+LIST Emph = emph ;
+
+LIST Cop = "vara¹" "bli";
+
+LIST Sg1 = (p1 sg) ;
+LIST Sg2 = (p2 sg) ;
+LIST Sg3 = (p3 sg) ;
+LIST Pl1 = (p1 pl) ;
+LIST Pl2 = (p2 pl) ;
+LIST Pl3 = (p3 pl) ;
+
+LIST Inf = inf ;
+LIST Pasv = pasv ;
+LIST Supn = supn ;
+LIST PrsPrc = pprs ;
+LIST Pp = pp ;
+
+LIST Poss = pos ;
+
+LIST Interr = itg ;
+
+LIST Nom = nom ;
+LIST Acc = acc ;
+LIST Gen = gen ;
+
+LIST Def = def ;
+LIST Ind = ind ;
+
+LIST Masc = ut m ;
+LIST Fem = f fn ut ;
+LIST Neut = nt fn ;
+
+LIST Pres = pres ;
+LIST Imp = imp ;
+LIST Past = past ;
+
+LIST Sg = sg ;
+LIST Pl = pl ;
+LIST Sp = sp ;
+
+LIST Comma = cm;
+
+LIST Var = "<var>"i ;
+LIST Här = "<här>"i ;
+LIST Den = "den" ;
+
+LIST IndA = (adj ind) (adj comp) ;
+
+LIST EOS = <<<;
+LIST BOS = >>>;
+
+LIST Aux = "kunna" "måste" "vara¹" "bli" "ha" ;
+
+SET Nomen = N or Prop;
+
+LIST Possessed = (n ind) (a sup);
+
+SET Fin = Pres | Past | Imp ;
+
+SET Number = Pl | Sg ;
+SET Gender = Masc | Fem | Neut ;
+
+SET NotAdv = (*) - Adv ;
+SET NotA = (*) - A ;
+SET NotIndA = (*) - IndA ;
+
+LIST farliga-N = "<mitt>"i "<vad>"i "<med>"i "<sedan>"i "<sitter>"i;
+LIST farliga-V = "<vart>"i "<sakta>"i;
+
+###############################################################################
+#  Morphological disambiguation
+#
+
+SECTION frequent;
+
+SELECT:hon Prn IF (0 ("<hon>"i)) ; # any safe contexts for the noun?
+SELECT:jag Prn IF (0 ("<jag>"i)) (NOT -1 ("<ett>"i)) ;
+
+REMOVE:med N IF (0 ("<med>"i)) (NOT *0 ("<släde>"i)) ;
+
+
+SELECT Num IF (0 ("sex"i)) (1 N) ;
+
+"<en>" REMOVE:en-fast-idé N OR Adv IF (1 A OR N);
+
+"<för>" SELECT:för-att Pr IF (1 ("att")) ;
+"<sedan>" SELECT:sedan-1926 Pr IF (1 Num/Qnt/årstalet) ;
+"<sedan>" SELECT:sedan-1926 Pr IF (1 ("år")) (2 Num/Qnt/årstalet) ;
+
+"<fast>" SELECT:stod-fast Adv IF (-1 ("stå") OR ("slå")) ;
+"<fast>" SELECT:en-fast-idé A IF (-1C Det OR Prn) (1C N OR Prop) ;
+
+"<sina>" REMOVE:sina V IF (*0 V);
+
+
+SECTION grammatical;
+
+SELECT:som-bryter Cnjsub IF (NOT -1 BOS) (0 Adv) (1 Fin) ;
+
+SELECT Adv IF (0 Var) (1 Fin) ;
+SELECT Adv IF (0 Var) (2C Fin) ;
+
+SELECT V IF (0 Var) (NOT 1 Fin) ;
+
+SELECT:den-totala-kostnaden A + Def IF
+        (-1 Det + Def)
+        (1C N + Def)
+        ;
+
+REMOVE Det IF (1C Fin) ;
+
+SELECT:sina-händer Det IF (0C Det OR Prn) (0C Poss) (1 N - Def) ;
+
+SELECT Past IF (0 Var) (-1 N OR Prn) ;
+
+
+SELECT Inf IF (-1 Aux) ;
+SELECT:att Inf IF (-1 ("att")) ;
+
+SELECT:kan-ses Inf + Pasv IF (*-1 Aux BARRIER Fin OR Cnjsub) ;
+
+REMOVE:en-blå-kon N + Def IF (0 N + Ind) (*-1 Det + Ind CBARRIER NotIndA) ;
+
+SELECT Supn IF (-1* ("ha") BARRIER (*) - Adv) ;
+
+SELECT:en-dansk-ö N + $$Number IF
+        (-1 A + $$Number)
+        (-1C A OR N)
+        ;
+
+SELECT:en-dansk-ö N + $$Gender IF
+        (-1 A + $$Gender)
+        (-1C A OR N)
+        ;
+
+SELECT:en-dansk-ö A + $$Number IF
+        (1C N + $$Number)
+        (0C A OR N)
+        ;
+
+REMOVE A IF (0 V) (1 Pr);
+
+REMOVE Prn IF (0 Det + Masc) (1C N + Masc);
+REMOVE Prn IF (0 Det + Fem)  (1C N + Fem);
+REMOVE Prn IF (0 Det + Neut) (1C N + Neut);
+
+SELECT:dina-barn-skriker N + $$Number IF
+        (-1 Det LINK 0C $$Number)
+        (NEGATE 0 V LINK -1 Prn)
+        (NEGATE 0 Ind LINK -1 Dem)
+        (NEGATE 0 A OR Det LINK 1 N)
+        (NEGATE 0 A OR Det LINK 1 A LINK 1 N)
+        ;
+
+SELECT:en-oberoende-ideell-förening A + Ind + $$Number + $$Gender IF
+        (-1 Det LINK 0C $$Number)
+        (1 A + Ind + $$Number + $$Gender LINK 1 N)
+        (NEGATE 0 V LINK -1 Prn)
+        ;
+
+SELECT:mycket-låg Adv IF
+        (0C Adv OR A OR Prn)
+        (1 A)
+        ;
+
+SELECT:äpplena-är-ätna A + $$Number IF
+        (*-1 N + $$Number BARRIER (*) - V LINK *1 Cop)
+        (NEGATE 0 Adv LINK 1 A)
+        ;
+
+REMOVE:Han+berättade+mig Pp + $$Number IF
+        (0 V)
+        (NEGATE *1 N + $$Number BARRIER NotA)
+        (NEGATE *-1 Cop BARRIER NotAdv LINK *-1 N + $$Number BARRIER NotAdv)
+        ;
+
+REMOVE:sex-år N IF
+        (0C N OR Det)
+        (1C N)
+        ;
+
+SELECT:flygledarnas-händer Possessed IF
+        (0C Possessed OR V OR A)
+        (-1C Gen)
+        ;
+
+REMOVE ("stadion") IF (0 ("stadium"));
+
+"<vid>" SELECT:vid-behov Pr IF (1 ("behov")) ;
+"<vid>" SELECT:i-vid-mening A IF (-1 ("<i>")) (1 N + Ind) ;
+
+#SELECT:r1 Def IF (0 A) (0 Pl) (1C N) (1C Def) ;
+#SELECT:r3 Vbser IF (0 ("<vara>")) (NOT -1 ("<en>")) ;
+
+#SELECT A IF (0 A OR PrsPrc OR N) (1 N)  ;
+
+#SELECT A + $$Number IF (0 A) (NOT 0 Pr) (1 N + $$Number) ;
+
+SELECT:sina-egna Emph IF (-1 ("sin"));
+
+"<de>" REMOVE Prop IF (NEGATE -1 Prop) ;
+
+REMOVE:alla-de-ämnen Prn IF (-1 Qnt OR ("båda") OR ("bägge")) (0 Dem + $$Number) (1 N + $$Number) ;
+
+REMOVE:stora-barn Def IF
+        (0C A)
+        (1C N)
+        (NOT 1 Def)
+        ;
+
+SECTION heuristic;
+
+SELECT Pr OR A IF (1 N) ;
+SELECT Pr IF (1 Nomen) (NOT 0 A) ;
+
+SELECT Pr IF (0 ("<i>"i)) ;
+
+SELECT Pr IF (0 ("<av>"i)) ;
+
+"<dess>" SELECT:sedan Adv (-1 ("sedan"));
+
+"<båda>" REMOVE:båda V OR N;
+
+
+REMOVE:farliga-N N + farliga-N;
+REMOVE:farliga-V V + farliga-V;
+
+REMOVE ("vara²") ;
+
+SELECT:Tala-om-för-mig Imp IF (0C V) (-1 BOS) (0 ("<[A-ZÄÖÅ].*>"r)) (NOT *1 ("?")) ;
+REMOVE Imp;
+REMOVE Ij;
+
+"<vara>" REMOVE:det-vara N IF (NOT -1 Det + Ind);
+
+"<er>" SELECT Acc IF (NOT 1 N + Ind);
+
+"<för>" SELECT Pr ;
+
+"<sina>" REMOVE:sina V;
+
+SELECT Cnjcoo IF (0 ("<fast>"i)) (-1 BOS) (NOT *1 Comma);
+SELECT Cnjsub IF (0 ("<fast>"i)) (*0 Comma);
+
+REMOVE N IF (0 Här) (-1 Den + Neut) ;
+
+REMOVE:why Def IF (0 Prop) ;
+# example?

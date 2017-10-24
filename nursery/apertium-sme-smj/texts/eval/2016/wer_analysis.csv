@@ -1,0 +1,529 @@
+Error classification
+
+Categories for classification:
+1 = lexical selection
+2 = error in generation (different shape of wordform)
+3 = error in choice of form (different wordform selected)
+4 = word order changed
+5 = punctuation
+6 = word added
+7 = word deleted
+
+Eval1:
+
+1        Buore	 |	Vuogas
+1        stuovijdum	 <
+-        /	 <
+1        ållo	 |	enap
+4,3      merrasáme	 <
+-        	 >	merrasámij 
+6        	 >	dáfojn
+4,3      ulmusjlåhko	 |	lassánimev
+4,1      lassán	 |	ulmusjlågon       
+1        Dav	 |	Boados
+4,3      guoradallama <
+-        		>	guoradallamin		
+1        vuosedi	  |	boahtá
+6        >	åvddån
+3        maj	|	majt  
+2        sámedikkeráde	 |	Sámedikkeráde
+1        huj	 |	ihkeva
+7        dájna	 <
+1        divna	 |	gájkka
+1        gæhttjap	 |	guoradallap
+1        buorre	 |	positijvva
+4        sáme	 <
+4,3      dáfoj	 <
+-        	 >	sáme
+-        	 >	dáfojn
+6        	 >	Jagen
+7        dan	 <
+1        positijvva	 |	positijvalattjat
+6        	 >	åvddånam
+7        Dat <	 
+2        vuoset	|	Vuoset 
+1,4      gæssut	|	ájnnasa
+1        rijkaoassesådjo	 |	rijkkaájggedáhpe
+4,2      vájkut	 <
+- 	        	 >	vájkkut
+1        måråstam	 |	mårålasj
+6        	 >	jagen
+4        Muotka	 <
+-        	 >	Muotka
+1        ájnnasit	 |	sierraláhkáj
+1        måråstam	 |	mårålattja
+3        oasse	 |	oase
+2        la	 |	le
+4 		  	>	ájggedáhpe
+3        rijka	 |	rijkan
+-        sådjo	 <
+7        danen	 <
+2        la	 |	le
+1        stuorep	 |	alep
+1        prosænntaoasse	 |	prosænnta
+1        guollijiddje	 |	guollára
+1        ednamdoalle	 |	bånndura
+1        ælloniehke	 |	ællobargge
+5        ,	 
+7        de	 <
+2        la	  |	le
+1        binnomin |	vuollánimen	 
+1        båhtusa |	vájkkudus
+1        stuorep	  |	stuoráp
+4,1      Danen	 <	
+-				 >  dajnas 
+1        gæhttjal |	barggá	 
+7        oadtjot	< 
+1        buoreduvvat	 |	báredimijn
+1        valla	 |	huoman
+1        dárbaha	 |	le
+1,3      iehpedit	 |	guoktáladdam
+1        ållo	 |	måhtijn
+7        daj	 <
+1        nanna	 |	birra
+5        ,	 <
+4        Muotka	 <
+-        	 >	Muotka
+1        Vierttit	 |	Vuorudit
+7        rahtjat	 <
+3        barggosajij	 |	barggosajijt
+4,3        	 >	Barggosaje (barggosajij)
+4        	 >	priváhta (priváhta)
+4,3       	 >	æládusiellemin (æládusiellema)
+4        	 >	sáme
+4        	 >	dáfojn
+4,3        	 >	li (la)
+6        	 >	jagen
+-        la	 <
+-        priváhta	 <
+-        æládusiellema	 < 
+-        barggosajij	 < 
+7        låhko	 < 
+-        sáme	 <
+-        dáfojn	 <
+4        		 > hiebaduvvam
+-		 hiebaduvvam <
+7        majna	 < 
+7        la	< 
+3        oahppo	 |	oahpujn
+3        måvtåstuhttep	 |	måvtåstuhttet
+1        rahtjamav	 |	vuorodibmáj
+1        vijddásap	 |	vijddásapgárvedibme
+7        dahkamijn	 <
+
+
+Eval2:
+        
+1        åvddånimvejulasjvuoda	 |	åvddånahttemvejulasjvuoda
+1        sáme	 |	sámijguovlojn
+7        dáfojn	 < 
+5        .	 <
+3        vidán	 |	vidá
+3        jagen	 |	jage
+2        la	 |	le
+1        sáme	 |	sámijguovlojn
+7        dáfojn	 <
+-        /	 |	
+1        stuovijduvvam	 
+5        ,	 |	.
+6        		>	Ja
+1        dasi	 | vil
+1        lassen	 |	duodden
+7        ållo	 <
+1,4,3    merrasáme	 <
+4        vásedi < 
+-			  	>	vásedi
+-        	 >	merrasámijguovlojn 
+4        vuosedi	 <
+-        	     > vuosedi
+3        maj	 |	majt     	 	
+2        sámedikkeráde	 |	Sámedikkeráde
+1        åvddånimijn	 |	åvddånahttemijn
+6        	 >	aktan
+1        åvddånibme	 |	åvddånahttem
+6        sáme	 <
+1,4,3    dáfoj	 | sámijguovlojn 
+4,1      tsieggiduvvam	 <
+-       	 >	ásaduvvam
+7        dan	 <
+1        vuordeduvvam	 |	vuordedahtte
+2        la	 |	le
+1        positijvva	 |	vuogas
+4,3      Telemarksforskninga <	
+2        rappårttå | Rappårttå	
+6        		> majt
+-        	  >	Telemarksforskning
+5        	> ,
+2        la	 |	le	 
+2        vájkudit	 |	vájkkudit
+1        sáme	 |	sámijguovlojn
+7        dáfojn	 <
+1        sáme	 |	sámijguovlo
+7        dáfo	 <
+1        gæssut	 |	miellagiddisa
+1        Negatijva	 |	Negatijvvalasj
+1        rijkaoassesådjo	 |	ájggedáhpe
+6        	 >	rijkan
+2        vájkut	 |	vájkkut
+1,4      sáme	 |	sámijgiovlojn 
+6        dáfojda	 <
+5        .	 <
+7        lav	 <
+3        måråstam |	måråstav	 
+-        	 >	guoradallama
+1,4        	 >	vuosedi
+4        guoradallama	 <
+-        milta	 <
+2        teknihkalasj	 |	teknihkkalasj #typo
+1        prosentajn | %      	 
+4        		>	binnum
+-        binnum	 <
+4        Muotka	 <
+-        	 >	Muotka
+7        Mij	 <	
+7        lip	 <
+1,2      ájnnasit | Sierraláhkáj
+2        måråstam | måråstip
+3        oasse	 |	oase
+1,3      sáme	 |	sámijguovlojn 
+7        dáfoj	 <
+7        æládusiellemin	 <
+2        la	 |	le
+1,4        	 >	ájggedáhpe
+3        rijka	 |	rijkan
+-        sådjo	 <
+7        danen	 <
+1        sáme	 |	sámijguovlojn
+7        dáfojn	< 
+2        la	|	le
+1        stuorep	 |	stuoráp
+1        prosænntaoasse	 |	oasse
+1,3      guollijiddje	 |	guollárijs
+1,3      ednamdoalle	 |	bånndurijs
+1,3      ælloniehke	 |	ællobarggijs
+5        ,	 <
+1        la	 |	sjaddi
+7        binnomin <	 
+1        båhtusa	 |	vájkkudusá
+4,3      stuorep  < 
+-        	>	stuorábu
+1,3      sáme	 |	sámijguovlojn 
+7        dáfojda	 <
+6        	 >	de
+1        oadtjot	 |	báredit
+7        buoreduvvat	 <
+1        dárbaha	 |	galga
+1        ållo	 |	ietjá
+1        dæddo	 |	rahtjamus
+7        ja	 <
+7        gilpustallam	 <
+7        daj	 <
+3        ma	 |	majda
+1        dárbahuvvi	 |	l
+6        	 >	darbbo
+3        vuodoæládusájda	 |	vuodoæládusájn
+4        Muotka	 <
+-        	 >	Muotka
+3        barggosajij	 |	barggosajijt
+5        .	 <
+3        la	 |	li
+1        æládusiellema	 |	æládus
+3        barggosajij	 |	barggosaje
+4        låhko	<
+-        		> sámijguovlojn
+2        4	 |	nielje
+2        prosentajn	 |	%
+1,4      sáme	 <
+7        dáfojn	 <
+2        la	 |	le
+1        læhkám	 |	lassánam
+7        ålles	 <
+7        lassánibme	 <
+1        stuora	 |	stuorra
+3        barggon	 |	barggo
+4,2        	>	hiebadum
+-        hiebaduvvam	< 
+1,2      majna	 |	gejn
+3        måvtåstuhttep	 |	måvtåstuhttet
+1        ådå	 |	ietjá
+1        suorgijn	 |	æládussuorgijn
+1,3      rahtjamav	 |	åvdedibme
+3        kultuvrraæládusáj	 |	kultuvrraæládusájdi # different form not norm
+6        	 >	dagu	
+3        mannoæládusáj | mannoæládus 
+1,3      designijn	 |	hábmedibme
+3        duojijn	 |	duodje
+3        biebmujn	 |	biebbmo
+1,3      dahkamijn	 |	gárvedibme
+6        	 >	li
+3        suorggen	 |	suorge
+7        ådådahkuj	 <
+7        ja	 <
+
+Eval3:        
+        
+3        Buore	 |	Buorre
+1,3        dáfojn	 |	guovlon
+5        .	 <
+3        vidán	 |	vihtta
+3        jagen	 |	jage
+1,3        dáfojn	 |	guovlon
+-        /	 <
+7        stuovijduvvam	 <
+1        dasi	 |	ja
+1        lassen	 |	duodden
+7        ållo	 
+4        |	vásedi
+-        vásedi	 
+1        |	lassánimev
+7        ulmusjlåhko	 <
+-        lassán	 <
+4,3        Dav	 
+4        |	Telemarkforskninga
+1        vuosedi	 
+1        |	baktu        maj	 <
+-        Telemarksforskning	 <
+7        la	 <
+7        tjadádam	 <
+-        	 >	dá
+6        	 >	lågo
+-        	 >	ilmoduvvi       	 
+3        sámedikkeráde	 |	Sámedikkeráde
+7        dájna	 <
+1,4        Gå	 |	|	hárráj 
+7        divna	
+3        æládusájt	 Æládusáj
+7        gæhttjap	|	åbbålattjat 
+5        ,	 <
+7        de	 <
+4        	 >	aj
+-        aj	 <
+3        dáfoj	 |	dáfojn
+7        æládusiellemin	 <
+6        	 >	Jages
+7        rájes	 <
+3        tsieggiduvvam	 |	ihtám
+7        gå	 
+7        dan	
+3        mij	 |	majt
+1        lij	  |	luluj
+3        vuordeduvvam	|	vuordijma
+1        positijvva	 |	buorre
+1        Telemarksforskninga	 |	Telemarkforskninga
+1        rappårttå	 |	diedádusá
+1        vuoset	 |	milta
+1        vejulasj	 |	máhttelis
+2,4        vájkudit	 
+-        |	æládusájt
+1        æládusiellema	 
+-        |	vájkkudit
+1,3        åvddånimev	 |	lassánittjat
+1        Dat	 |	Guoradallam
+1        dáfo	 |	guovlo
+1        gæssut	 |	hiebalgis
+1        rijkaoassesådjo	 |	ájggedáhpe
+6        	 >	rijkav
+6        	 >	miehtáj
+3,4        vájkut	 <
+1,3        dáfojda	 |	guovlojt
+-        	vájkkut
+5        	.	 |
+6        Huoman	 |	Valla
+-        	 >	huoman
+5        ,	 <
+4        17	 
+4,3        prosentajn	 <
+1,4        rájes	 < |	jages
+-        	 >	17
+-        	 >	prosenta
+7        Mij	 
+7        lip	 
+1        ájnnasit |	Sierraláhkáj
+6        |	dan	 
+6        |	diehti
+7        måråstam	 <
+1,4        guovdásj |	duodaj
+7        diehtep	 <  
+3        li	   	|	la 
+7        ja	 <
+1,4        	 >	æladusás æládusiellemin	 <
+1        dáfoj	 |	guovlojn
+7        Dát	 
+1        la	 |	guosská
+3        rijka	 |	rijkav
+1,4        sådjo	 < |	Ájggedáhpe
+7        danen	 <
+1        dáfojn	 |	guovlojn
+3        la	 |	li
+2        stuorep	 |	stuorap
+1        prosænntaoasse	 |	prosentalasj
+6         >	oasse
+1,3        guollijiddje	 |		guollarijs
+1,3        ednamdoalle	 |	båndurijs
+1,3        ælloniehke	 |	ællosujttárijs
+1        binnomin	 |	vuollánimen
+1        stuorep	 |	duodalap
+1,4        Danen	 |	dan
+6        >	diehti
+3        Sámedigge	 |	Sámedikke
+1        gæhttjal	 |	ájggu
+7         oadtjot	< 
+1        rámmaævtojt	 |	ålgoldisævtojt
+1,4        buoreduvvat	 |	nannit
+1        ij	 |	avtabuohta
+7        dárbaha	 <
+7        iehpedit	 <
+7        jut	 <
+7        ållo	 <
+7        bájkijn	 <
+1        stuora	 |	stuorra
+1        gilpustallam	 |	gilppom
+7        daj	 <
+2        areálaj	 |	arealaj
+1        nanna	 |	gaktuj
+3        ma	 |	mij
+1       dárbahuvvi	 |	la
+3        vuodoæládusájda	 |	vuodoæládusáj
+1        	 >	dárbulattjan
+4        Muotka	 <
+-        	 >	Muotka
+1        Vierttit	 |	Hæhttup
+1        rahtjat	 |	vuorodit
+5        ,	 <
+3        barggosajij	 |	barggosajijt
+5        .	 <
+4,3        sáme	 |	Sáme
+4,1        dáfojn	 	 |	guovlojn
+3        priváhta	 |	privatalasj
+1        æládusiellema	 |	æládusá
+1        barggosajij	 |	barggosadjelåhko
+7        låhko	 <
+3        prosentajn	 |	prosentaj
+4,1        rájes |	jages
+4        2000	 |	2000       
+1,4        Ålles	 |	åbbålattjat
+1        rijkan	 |	Vuonarijkan
+1        farra	 |	vas
+7        læhkám	 <
+7        ålles	
+1        %		|	prosentaj 
+1,4        lassánibme	 |	lassánam
+1        la	 |	hæhttup
+7        miján	< 
+7        stuora	 <
+7        barggon	 <
+1        åttjudit	|	dahkat 
+1        ienep	 |	ådå
+7        majna	 <
+7        la	 <
+1,4        oahppo	|	åhpadum
+1        avtabuohta	 |	duooden
+1,4        vuododittjat	 <
+2        æládusájt	 |	æláudsájt
+-        	 >	ásadittjat
+1        rahtjamav	 |	vuorodibme
+3        kultuvrraæládusáj	 |	kulturæládusájs
+3        mannoæládusáj	 |	mannoæládusás
+3        designijn	|	designas
+3        duojijn	 
+5        	 >	,
+-        	 >	duojes
+3        biebmujn	 |	biebmos
+1        	 >	,
+7        vijddásap	 
+1        dahkamijn	|	gárvedimes 
+6        |	la
+1        suorggen	 |	suorge
+3        ådådahkuj	 |	ådådahkos
+3        ådåásadimijda	 |	ådåásadimes
+        
+        
+Sandra:
+
+        Buore	 |	Buorre
+        stuovijdum	 <
+        /	 <
+        dasi	 |	duodden
+        lassen	 |	vásedi
+        ållo	 |	moadda
+        vásedi	 <
+        lassán	 |	l
+        	 >	lassánime
+        guoradallama	 |	vuoset
+        vuosedi	 |	guoradallam
+        maj	 |	majt
+        tjadádam	 <
+        	 >	tjadádam
+        sámedikkeráde	 |	Sámedikkeráde
+        tsieggiduvvam	 |	åttjuduvvam
+        dan	 |	dav
+        Dat	 |	Vuoset
+        vuoset	 |	æládusåvddånibme
+        	 >	gæssu
+        dáfo	 |	dáfojda
+        li	 <
+        gæssut	 <
+        æládusåvddånibmáj	 <
+        rijkaoassesådjo	 |	rijkaájggedáhpe
+        ¶	 <
+        	 >	binnum
+        binnum	 <
+        ájnnasit	 |	sierraláhkáj
+        æládusiellemin	 |	æládusiellemis
+        .	 <
+        Dát	 <
+        la	 <
+        ålles	 <
+        rijka	 <
+        sådjo	 <
+        ,	 <
+        valla	 <
+        danen	 <
+        gå	 <
+        sáme	 <
+        dáfojn	 <
+        la	 <
+        stuorep	 <
+        prosænntaoasse	 <
+        guollijiddje	 <
+        ,	 <
+        ednamdoalle	 <
+        ja	 <
+        ælloniehke	 <
+        ,	 <
+        de	 <
+        la	 <
+        binnomin	 <
+        stuorep	 <
+        båhtusa	 <
+        sáme	 <
+        dáfojda	 <
+        oadtjot	 <
+        buoreduvvat	 |	buoredahtátjit
+        stuora	 |	stuor
+        nanna	 |	gáktuj
+        ,	 <
+        dárbahuvvi	 |	li
+        	 >	dárbulattja
+        Vierttit	 |	Vierttiji
+        rahtjat	 |	vuorodit
+        barggosajij	 |	barggosajijt
+        ¶	 <
+        la	 |	le
+        barggosajij	 |	barggosadjelåhko
+        låhko	 <
+        farra	 |	vas
+        læhkám	 |	gitta
+        ålles	 <
+        lassánibme	 |	lassánam
+        miján	 |	midjij
+        stuora	 |	stuor
+        barggon	 |	barggo
+        åttjudit	 |	åttjudittjat
+        nuorajda	 <
+        majna	 |	nuorajda
+        la	 |	gejna
+        	 >	li
+        vuododittjat	 <
+        æládusájt	 |	æládusásadibmá
+

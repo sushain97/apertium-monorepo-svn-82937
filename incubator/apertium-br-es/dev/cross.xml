@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<ling-resources>
+   <name>My linguistic resources</name>
+   <description>My linguistics resources: morphological and bilingual dictionaries, cross models, corpora, etc.</description>
+  
+   <resource-set>
+
+      <name>My linguistic resources to get Breton-Spanish language pair.</name>
+      <description>Morphological and bilingual dictionaries.</description>
+
+      <!-- cross model en-es-it -->
+      <resource>
+         <property name="name" value="cross-model-br-fr-es"/>
+         <property name="type" value="cross-model"/>
+         <property name="sl" value="br"/>
+         <property name="tl" value="es"/>      
+         <property name="for-crossing" value="yes"/>
+         <property name="src" value="cross-model-br-fr-es.xml"/>
+      </resource>
+     
+      <!-- cross model it-es-en -->
+      <resource>
+         <property name="name" value="cross-model-es-fr-br"/>
+         <property name="type" value="cross-model"/>
+         <property name="sl" value="es"/>
+         <property name="tl" value="br"/>      
+         <property name="for-crossing" value="yes"/>
+         <property name="src" value="cross-model.xml"/>
+      </resource>
+     
+      <!-- 'en' morphological dictionary -->
+      <resource>
+         <property name="name" value="apertium-br"/>
+         <property name="type" value="mon"/>
+         <property name="sl" value="br"/>
+         <property name="for-crossing" value="yes"/>
+         <property name="src" value="apertium-br-fr.br.dix"/>
+      </resource>
+
+      <!-- 'it' morphological dictionary -->
+      <resource>
+         <property name="name" value="apertium-es"/>
+         <property name="type" value="mon"/>
+         <property name="sl" value="es"/>
+         <property name="for-crossing" value="yes"/>
+         <property name="src" value="apertium-fr-es.es.dix"/>
+      </resource>
+
+      <!-- 'en-es' bilingual dictionary -->
+      <resource>
+         <property name="name" value="apertium-br-fr"/>
+         <property name="type" value="bil"/>
+         <property name="sl" value="br"/>
+         <property name="tl" value="fr"/>
+         <property name="for-crossing" value="yes"/>
+         <property name="src" value="apertium-br-fr.br-fr.dix"/>
+      </resource>
+      
+      <!-- 'es-it' bilingual dictionary -->   
+      <resource>
+         <property name="name" value="apertium-fr-es"/>
+         <property name="type" value="bil"/>
+         <property name="sl" value="fr"/>
+         <property name="tl" value="es"/>
+         <property name="for-crossing" value="yes"/>
+         <property name="src" value="apertium-fr-es.fr-es.dix"/>
+      </resource>
+     
+   </resource-set>
+   
+</ling-resources>

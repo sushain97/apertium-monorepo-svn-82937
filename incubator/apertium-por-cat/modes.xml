@@ -1,0 +1,475 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<modes>
+
+  <!-- por → cat -->
+
+  <mode name="por-cat" install="yes">
+    <pipeline>
+      <program name="lt-proc -w">
+        <file name="por-cat.automorf.bin"/>
+      </program>
+
+
+      <program name="cg-proc -w">
+        <file name="por-cat.rlx.bin"/>
+      </program>
+      <program name="apertium-tagger -g $2">
+        <file name="por-cat.prob"/>
+      </program>
+      <program name="apertium-pretransfer"/>
+      <program name="lt-proc -b">
+        <file name="por-cat.autobil.bin"/>
+      </program>
+      <program name="lrx-proc">
+        <file name="por-cat.autolex.bin"/>
+      </program>
+      <program name="apertium-transfer -b">
+        <file name="apertium-por-cat.por-cat.t1x"/>
+        <file name="por-cat.t1x.bin"/>
+      </program>
+      <program name="lt-proc $1">
+        <file name="por-cat.autogen.bin"/>
+      </program>
+
+      <program name="lt-proc -p">
+        <file name="por-cat.autopgen.bin"/>
+      </program>
+    </pipeline>
+  </mode>
+
+  <mode name="por-cat-dgen" install="no">
+    <pipeline>
+      <program name="lt-proc -w">
+        <file name="por-cat.automorf.bin"/>
+      </program>
+
+
+      <program name="cg-proc -w">
+        <file name="por-cat.rlx.bin"/>
+      </program>
+      <program name="apertium-tagger -g $2">
+        <file name="por-cat.prob"/>
+      </program>
+      <program name="apertium-pretransfer"/>
+      <program name="lt-proc -b">
+        <file name="por-cat.autobil.bin"/>
+      </program>
+      <program name="apertium-transfer -b">
+        <file name="apertium-por-cat.por-cat.t1x"/>
+        <file name="por-cat.t1x.bin"/>
+      </program>
+      <program name="lt-proc -d">
+        <file name="por-cat.autogen.bin"/>
+      </program>
+    </pipeline>
+  </mode>
+
+  <mode name="por-cat-morph" install="no">
+    <pipeline>
+      <program name="lt-proc -w">
+        <file name="por-cat.automorf.bin"/>
+      </program>
+    </pipeline>
+  </mode>
+
+  <mode name="por-cat-disam" install="no">
+    <pipeline>
+      <program name="lt-proc -w">
+        <file name="por-cat.automorf.bin"/>
+      </program>
+      <program name="cg-conv -a"/>
+      <program name="vislcg3 --trace --grammar">
+        <file name="por-cat.rlx.bin"/>
+      </program>
+    </pipeline>
+  </mode>
+
+  <mode name="por-cat-tagger" install="no">
+    <pipeline>
+      <program name="lt-proc -w">
+        <file name="por-cat.automorf.bin"/>
+      </program>
+
+
+      <program name="cg-proc -w">
+        <file name="por-cat.rlx.bin"/>
+      </program>
+      <program name="apertium-tagger -g $2">
+        <file name="por-cat.prob"/>
+      </program>
+    </pipeline>
+  </mode>
+
+  <mode name="por-cat-pretransfer" install="no">
+    <pipeline>
+      <program name="lt-proc -w">
+        <file name="por-cat.automorf.bin"/>
+      </program>
+
+
+      <program name="cg-proc -w">
+        <file name="por-cat.rlx.bin"/>
+      </program>
+      <program name="apertium-tagger -g $2">
+        <file name="por-cat.prob"/>
+      </program>
+      <program name="apertium-pretransfer"/>
+    </pipeline>
+  </mode>
+
+  <mode name="por-cat-biltrans" install="no">
+    <pipeline>
+      <program name="lt-proc -w">
+        <file name="por-cat.automorf.bin"/>
+      </program>
+
+
+      <program name="cg-proc -w">
+        <file name="por-cat.rlx.bin"/>
+      </program>
+      <program name="apertium-tagger -g $2">
+        <file name="por-cat.prob"/>
+      </program>
+      <program name="apertium-pretransfer"/>
+      <program name="lt-proc -b">
+        <file name="por-cat.autobil.bin"/>
+      </program>
+    </pipeline>
+  </mode>
+
+  <mode name="por-cat-lex" install="no">
+    <pipeline>
+      <program name="lt-proc -w">
+        <file name="por-cat.automorf.bin"/>
+      </program>
+
+
+      <program name="cg-proc -w">
+        <file name="por-cat.rlx.bin"/>
+      </program>
+      <program name="apertium-tagger -g $2">
+        <file name="por-cat.prob"/>
+      </program>
+      <program name="apertium-pretransfer"/>
+      <program name="lt-proc -b">
+        <file name="por-cat.autobil.bin"/>
+      </program>
+      <program name="lrx-proc -t">
+        <file name="por-cat.autolex.bin"/>
+      </program>
+    </pipeline>
+  </mode>
+
+  <mode name="por-cat-transfer" install="no">
+    <pipeline>
+      <program name="lt-proc -w">
+        <file name="por-cat.automorf.bin"/>
+      </program>
+
+
+      <program name="cg-proc -w">
+        <file name="por-cat.rlx.bin"/>
+      </program>
+      <program name="apertium-tagger -g $2">
+        <file name="por-cat.prob"/>
+      </program>
+      <program name="apertium-pretransfer"/>
+      <program name="lt-proc -b">
+        <file name="por-cat.autobil.bin"/>
+      </program>
+      <program name="lrx-proc">
+        <file name="por-cat.autolex.bin"/>
+      </program>
+      <program name="apertium-transfer -b -t">
+        <file name="apertium-por-cat.por-cat.t1x"/>
+        <file name="por-cat.t1x.bin"/>
+      </program>
+
+    </pipeline>
+  </mode>
+
+  <mode name="por-cat-interchunk" install="no">
+    <pipeline>
+      <program name="lt-proc -w">
+        <file name="por-cat.automorf.bin"/>
+      </program>
+
+
+      <program name="cg-proc -w">
+        <file name="por-cat.rlx.bin"/>
+      </program>
+      <program name="apertium-tagger -g $2">
+        <file name="por-cat.prob"/>
+      </program>
+      <program name="apertium-pretransfer"/>
+      <program name="lt-proc -b">
+        <file name="por-cat.autobil.bin"/>
+      </program>
+      <program name="lrx-proc">
+        <file name="por-cat.autolex.bin"/>
+      </program>
+      <program name="apertium-transfer -b">
+        <file name="apertium-por-cat.por-cat.t1x"/>
+        <file name="por-cat.t1x.bin"/>
+      </program>
+    </pipeline>
+  </mode>
+
+  <mode name="por-cat-postchunk" install="no">
+    <pipeline>
+      <program name="lt-proc -w">
+        <file name="por-cat.automorf.bin"/>
+      </program>
+      <program name="cg-proc -w">
+        <file name="por-cat.rlx.bin"/>
+      </program>
+      <program name="apertium-tagger -g $2">
+        <file name="por-cat.prob"/>
+      </program>
+      <program name="apertium-pretransfer"/>
+      <program name="lt-proc -b">
+        <file name="por-cat.autobil.bin"/>
+      </program>
+      <program name="lrx-proc">
+        <file name="por-cat.autolex.bin"/>
+      </program>
+      <program name="apertium-transfer -b">
+        <file name="apertium-por-cat.por-cat.t1x"/>
+        <file name="por-cat.t1x.bin"/>
+      </program>
+    </pipeline>
+  </mode>
+
+  <!-- cat → por -->
+
+  <mode name="cat-por" install="yes">
+    <pipeline>
+      <program name="lt-proc -w">
+        <file name="cat-por.automorf.bin"/>
+      </program>
+
+
+      <program name="cg-proc -w">
+        <file name="cat-por.rlx.bin"/>
+      </program>
+      <program name="apertium-tagger -g $2">
+        <file name="cat-por.prob"/>
+      </program>
+      <program name="apertium-pretransfer"/>
+      <program name="lt-proc -b">
+        <file name="cat-por.autobil.bin"/>
+      </program>
+      <program name="lrx-proc">
+        <file name="cat-por.autolex.bin"/>
+      </program>
+      <program name="apertium-transfer -b">
+        <file name="apertium-por-cat.cat-por.t1x"/>
+        <file name="cat-por.t1x.bin"/>
+      </program>
+      <program name="lt-proc $1">
+        <file name="cat-por.autogen.bin"/>
+      </program>
+
+      <program name="lt-proc -p">
+        <file name="cat-por.autopgen.bin"/>
+      </program>
+    </pipeline>
+  </mode>
+
+  <mode name="cat-por-dgen" install="no">
+    <pipeline>
+      <program name="lt-proc -w">
+        <file name="cat-por.automorf.bin"/>
+      </program>
+
+
+      <program name="cg-proc -w">
+        <file name="cat-por.rlx.bin"/>
+      </program>
+      <program name="apertium-tagger -g $2">
+        <file name="cat-por.prob"/>
+      </program>
+      <program name="apertium-pretransfer"/>
+      <program name="lt-proc -b">
+        <file name="cat-por.autobil.bin"/>
+      </program>
+      <program name="apertium-transfer -b">
+        <file name="apertium-por-cat.cat-por.t1x"/>
+        <file name="cat-por.t1x.bin"/>
+      </program>
+      <program name="lt-proc -d">
+        <file name="cat-por.autogen.bin"/>
+      </program>
+    </pipeline>
+  </mode>
+
+  <mode name="cat-por-morph" install="no">
+    <pipeline>
+      <program name="lt-proc -w">
+        <file name="cat-por.automorf.bin"/>
+      </program>
+    </pipeline>
+  </mode>
+
+  <mode name="cat-por-disam" install="no">
+    <pipeline>
+      <program name="lt-proc -w">
+        <file name="cat-por.automorf.bin"/>
+      </program>
+      <program name="cg-conv -a"/>
+      <program name="vislcg3 --trace --grammar">
+        <file name="cat-por.rlx.bin"/>
+      </program>
+    </pipeline>
+  </mode>
+
+  <mode name="cat-por-tagger" install="no">
+    <pipeline>
+      <program name="lt-proc -w">
+        <file name="cat-por.automorf.bin"/>
+      </program>
+
+
+      <program name="cg-proc -w">
+        <file name="cat-por.rlx.bin"/>
+      </program>
+      <program name="apertium-tagger -g $2">
+        <file name="cat-por.prob"/>
+      </program>
+    </pipeline>
+  </mode>
+
+  <mode name="cat-por-pretransfer" install="no">
+    <pipeline>
+      <program name="lt-proc -w">
+        <file name="cat-por.automorf.bin"/>
+      </program>
+
+
+      <program name="cg-proc -w">
+        <file name="cat-por.rlx.bin"/>
+      </program>
+      <program name="apertium-tagger -g $2">
+        <file name="cat-por.prob"/>
+      </program>
+      <program name="apertium-pretransfer"/>
+    </pipeline>
+  </mode>
+
+  <mode name="cat-por-biltrans" install="no">
+    <pipeline>
+      <program name="lt-proc -w">
+        <file name="cat-por.automorf.bin"/>
+      </program>
+
+
+      <program name="cg-proc -w">
+        <file name="cat-por.rlx.bin"/>
+      </program>
+      <program name="apertium-tagger -g $2">
+        <file name="cat-por.prob"/>
+      </program>
+      <program name="apertium-pretransfer"/>
+      <program name="lt-proc -b">
+        <file name="cat-por.autobil.bin"/>
+      </program>
+    </pipeline>
+  </mode>
+
+  <mode name="cat-por-lex" install="no">
+    <pipeline>
+      <program name="lt-proc -w">
+        <file name="cat-por.automorf.bin"/>
+      </program>
+
+
+      <program name="cg-proc -w">
+        <file name="cat-por.rlx.bin"/>
+      </program>
+      <program name="apertium-tagger -g $2">
+        <file name="cat-por.prob"/>
+      </program>
+      <program name="apertium-pretransfer"/>
+      <program name="lt-proc -b">
+        <file name="cat-por.autobil.bin"/>
+      </program>
+      <program name="lrx-proc">
+        <file name="cat-por.autolex.bin"/>
+      </program>
+    </pipeline>
+  </mode>
+
+  <mode name="cat-por-transfer" install="no">
+    <pipeline>
+      <program name="lt-proc -w">
+        <file name="cat-por.automorf.bin"/>
+      </program>
+
+
+      <program name="cg-proc -w">
+        <file name="cat-por.rlx.bin"/>
+      </program>
+      <program name="apertium-tagger -g $2">
+        <file name="cat-por.prob"/>
+      </program>
+      <program name="apertium-pretransfer"/>
+      <program name="lt-proc -b">
+        <file name="cat-por.autobil.bin"/>
+      </program>
+      <program name="apertium-transfer -b -t">
+        <file name="apertium-por-cat.cat-por.t1x"/>
+        <file name="cat-por.t1x.bin"/>
+      </program>
+    </pipeline>
+  </mode>
+
+  <mode name="cat-por-interchunk" install="no">
+    <pipeline>
+      <program name="lt-proc -w">
+        <file name="cat-por.automorf.bin"/>
+      </program>
+
+
+      <program name="cg-proc -w">
+        <file name="cat-por.rlx.bin"/>
+      </program>
+      <program name="apertium-tagger -g $2">
+        <file name="cat-por.prob"/>
+      </program>
+      <program name="apertium-pretransfer"/>
+      <program name="lt-proc -b">
+        <file name="cat-por.autobil.bin"/>
+      </program>
+      <program name="apertium-transfer -b">
+        <file name="apertium-por-cat.cat-por.t1x"/>
+        <file name="cat-por.t1x.bin"/>
+      </program>
+    </pipeline>
+  </mode>
+
+  <mode name="cat-por-postchunk" install="no">
+    <pipeline>
+      <program name="lt-proc -w">
+        <file name="cat-por.automorf.bin"/>
+      </program>
+
+
+      <program name="cg-proc -w">
+        <file name="cat-por.rlx.bin"/>
+      </program>
+      <program name="apertium-tagger -g $2">
+        <file name="cat-por.prob"/>
+      </program>
+      <program name="apertium-pretransfer"/>
+      <program name="lt-proc -b">
+        <file name="cat-por.autobil.bin"/>
+      </program>
+      <program name="apertium-transfer -b">
+        <file name="apertium-por-cat.cat-por.t1x"/>
+        <file name="cat-por.t1x.bin"/>
+      </program>
+
+    </pipeline>
+  </mode>
+</modes>
+

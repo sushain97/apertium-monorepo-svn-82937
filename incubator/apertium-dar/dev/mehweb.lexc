@@ -1,0 +1,185 @@
+Multichar_Symbols
+
+%<n%>
+%<prn%>
+%<adv%>
+%<num%>
+%<det%>
+%<np%>
+
+%<asrt%>
+%<emph%>
+
+%<pers%>
+%<resm%>
+
+%<ant%>
+
+%<m%>
+%<f%>
+%<nt%>
+
+%<p1%>
+%<p2%>
+%<p3%>
+
+%<sg%>
+%<pl%>
+
+%<erg%>
+%<abs%>
+
+%{и%}
+%{т%}
+%{б%}
+%{а%}
+
+%>
+%+
+
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+
+LEXICON Root
+
+Miscellaneous ;
+Pronouns ;
+Determiners ;
+Numerals ;
+Nouns ; 
+ProperNouns ;
+Adverbs ; 
+
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+
+LEXICON K 
+
+%+вал%<emph%>:%>вал # ; 
+# ; 
+
+LEXICON CASE 
+
+%<abs%>: # ;
+%<erg%>:%>ни # ;
+
+LEXICON N-DUBURA 
+
+%<n%>%<sg%>: CASE ; 
+%<n%>%<pl%>:%>%{т%} CASE ; 
+
+LEXICON N-UQNA
+
+%<n%>%<sg%>: CASE ; 
+%<n%>%<pl%>:%>р CASE ; 
+
+LEXICON N-URŠI
+
+%<n%>%<sg%>: CASE ; 
+%<n%>%<pl%>:%>%{б%}е CASE ; 
+
+LEXICON N-ADAJ
+
+%<n%>%<sg%>: CASE ; 
+%<n%>%<pl%>:%>хъалэ CASE ;
+
+LEXICON N-UL
+
+%<n%>%<sg%>: CASE ; 
+%<n%>%<pl%>:%>хъэ CASE ; ! FIXME: Check -э 
+
+LEXICON N-KUNG
+
+%<n%>%<sg%>: CASE ; 
+%<n%>%<pl%>:%>%{а%}не CASE ; 
+
+LEXICON N-MAŠINKA
+
+%<n%>%<sg%>%<abs%>: # ; 
+%<n%>%<sg%>%<erg%>:%>ли%>ни # ; 
+
+LEXICON N-UNCLASSIFIED 
+
+%<n%>%<sg%>%<abs%>: # ; 
+
+LEXICON NP-ANT-M 
+
+%<np%>%<ant%>%<m%>%<sg%>:%>%{и%} CASE ;
+
+LEXICON PRON-PERS-NU
+
+%<prn%>%<pers%>%<p1%>%<sg%>%<abs%>:у K ;
+%<prn%>%<pers%>%<p1%>%<sg%>%<erg%>:уни # ;
+%<prn%>%<pers%>%<p1%>%<sg%>%<dat%>:аб # ;
+
+LEXICON PRON-PERS-ĦU
+
+%<prn%>%<pers%>%<p2%>%<sg%>%<abs%>:у K ;
+!%<prn%>%<pers%>%<p2%>%<sg%>%<erg%>:уни # ;
+!%<prn%>%<pers%>%<p2%>%<sg%>%<dat%>:аб # ;
+
+LEXICON PRON-RESM-ČU
+
+%<prn%>%<resm%>%<pl%>%<dat%>:с # ;
+
+LEXICON NUM 
+
+%<num%>: # ;
+%<num%>%<attr%>:%>ли # ;
+
+LEXICON DET-DEM 
+
+%<det%>%<dem%>: # ;
+
+LEXICON ADV
+
+%<adv%>: # ;
+
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+
+LEXICON Miscellaneous
+
+гва%<asrt%>:гва # ; 
+
+LEXICON Pronouns 
+
+ну:н PRON-PERS-NU ; ! "я"
+хӏу:хӏ PRON-PERS-ĦU ; ! "ты"
+
+чу:чу PRON-RESM-ČU ; ! ""
+
+LEXICON Determiners 
+
+гьэш:гьэш DET-DEM ; ! ""
+
+LEXICON Numerals 
+
+цай:цай NUM ; ! ""
+
+LEXICON Nouns 
+
+дубура:дубура N-DUBURA ;  ! ""
+бургьала:бургьала N-DUBURA ;  ! "" 
+устар:устар N-DUBURA ;  ! ""
+гӏабул:гӏабул N-DUBURA ; ! "лошадь"
+ухъна:ухъна N-UQNA ; ! "старик"
+адай:адай N-ADAJ ; ! "папа"
+абай:абай N-ADAJ ; ! "мама"
+замари:замари N-DUBURA ; 
+
+ул:ул N-UL ; ! "ребёнок"
+
+кунг:кунг N-KUNG ; ! "книга"
+
+урши:урши N-URŠI ; ! "сын, мальчик"
+
+машинка:машинка N-MAŠINKA ; ! ""
+
+муцӏур:муцӏур N-UNCLASSIFIED ; ! ""
+
+LEXICON ProperNouns 
+
+ГӀали:ГӀали NP-ANT-M ; ! ""
+Махӏмуд:Махӏмуд NP-ANT-M ; ! ""
+
+LEXICON Adverbs 
+
+гьанна:гьанна ADV ; ! "сейчас"

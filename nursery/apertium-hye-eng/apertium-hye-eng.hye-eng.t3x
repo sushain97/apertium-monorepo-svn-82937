@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- -*- nxml -*- -->
+<postchunk>
+  <section-def-cats>
+    <def-cat n="default">
+      <cat-item name="default"/>
+    </def-cat>
+    <def-cat n="sent">
+      <cat-item name="punt"/>
+    </def-cat>
+  </section-def-cats>
+  <section-def-attrs>
+    <def-attr n="temps">
+      <attr-item tags="aor"/>
+      <attr-item tags="pres"/>
+    </def-attr>
+    <def-attr n="pers">
+      <attr-item tags="p1"/>
+      <attr-item tags="p2"/>
+      <attr-item tags="p3"/>
+      <attr-item tags="PD"/>
+    </def-attr>
+    <def-attr n="nbr">
+      <attr-item tags="sg"/>
+      <attr-item tags="pl"/>
+      <attr-item tags="sp"/>
+      <attr-item tags="ND"/>
+    </def-attr>
+  </section-def-attrs>
+  <section-def-vars>
+    <def-var n="paraula"/>
+  </section-def-vars>
+  <section-def-macros>
+    <def-macro n="conj_vbser" npar="1">
+        <choose>
+          <when>
+            <test>
+              <and>
+                  <equal><clip pos="1" part="temps"/><lit-tag v="pres"/></equal>
+                  <or> 
+                    <and>
+                      <equal><clip pos="1" part="pers"/><lit-tag v="p2"/></equal>
+                      <equal><clip pos="1" part="nbr"/><lit-tag v="sg"/></equal>
+                    </and>
+                    <equal><clip pos="1" part="nbr"/><lit-tag v="pl"/></equal>
+                  </or>
+              </and>
+            </test>
+            <let><clip pos="1" part="nbr"/><lit v=""/></let>
+            <let><clip pos="1" part="pers"/><lit v=""/></let>
+          </when>
+        </choose>
+    </def-macro>
+  </section-def-macros>
+  <section-rules>
+    <rule comment="CHUNK:">
+      <pattern>
+        <pattern-item n="default"/>
+      </pattern>
+      <action>
+        <call-macro n="conj_vbser"> 
+          <with-param pos="1"/>
+        </call-macro>
+        <choose>
+          <when>
+            <test><equal><clip pos="1" part="nbr"/><lit-tag v="ND"/></equal></test>
+            <let><clip pos="1" part="nbr"/><lit-tag v="sg"/></let>
+          </when>
+        </choose>
+        <out>
+          <lu>
+            <clip pos="1" part="whole"/>
+          </lu>
+        </out>
+      </action>
+    </rule>
+
+    <rule comment="CHUNK:">
+      <pattern>
+        <pattern-item n="sent"/>
+      </pattern>
+      <action>
+        <out>
+          <lu>
+            <clip pos="1" part="whole"/>
+          </lu>
+        </out>
+      </action>
+    </rule>
+
+  </section-rules>
+</postchunk>

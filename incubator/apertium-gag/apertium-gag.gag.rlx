@@ -1,0 +1,11 @@
+# Firstly, we need to define what tags should be considered sentence delimiters. For this example, only full stop is set as delimiter.
+DELIMITERS = "<.>" ;
+
+LIST Err/Orth = err_orth ; 
+
+SECTION
+
+REMOVE SUB:1 Err/Orth ;
+
+REMOVE Err/Orth ;
+

@@ -1,0 +1,81 @@
+DELIMITERS = "<.>" "<!>" "<?>" "<...>" "<¶>" ;
+SOFT-DELIMITERS = "<,>" ;
+
+LIST BOS = (>>>) ; 
+LIST EOS = (<<<) ; 
+
+LIST V = vblex vbser vbhaver vbmod vaux ;
+LIST VAUX = vaux ; 
+LIST VMOD = vbmod ; 
+LIST Pron = prn ;
+LIST Pr = pr ; 
+LIST N = n ;
+LIST Prop = np ;
+LIST Det = det ;
+LIST Subj = subj ;
+LIST Obj = obj ;
+LIST Fin = pres past ;
+LIST Inf = inf ;
+LIST Imper = imp ;
+LIST Sg1 = (p1 sg); 
+LIST CSA = cnjcoo cnjsub cnjadv ;
+LIST Cm = "," ;
+
+
+LIST NP-HEAD = n np (prn subj) ; 
+LIST NUMBER = sg pl ;
+LIST PERS = p1 p2 p3  ; 
+LIST CLB = sent subj ; 
+
+
+SECTION
+
+REMOVE Imper IF (0 VMOD);
+
+SELECT Subj IF (0C Subj OR Obj) (-1 BOS);
+
+SELECT Subj IF (0C Subj OR Obj) (-1 CSA LINK -1 BOS);
+
+SELECT $$NUMBER IF (0 NP-HEAD + $$NUMBER) (1C Fin + $$NUMBER);
+
+SELECT $$NUMBER IF (-1C NP-HEAD + $$NUMBER) (1 Fin + $$NUMBER);
+
+REMOVE Subj + $$NUMBER IF (1 Fin) (NOT 1 Fin + $$NUMBER);
+
+REMOVE Subj + $$NUMBER IF (2 Fin) (NOT 2 Fin + $$NUMBER);
+
+REMOVE Subj + $$NUMBER IF (3 Fin) (NOT 3 Fin + $$NUMBER);
+
+REMOVE Fin + $$PERS IF (-1 Subj) (NOT -1 Subj + $$PERS);
+
+SELECT Pron IF (0C Pron OR Det) (-1 BOS) (1C V);
+
+REMOVE Det IF (1C Pr);
+
+REMOVE Det IF (1C Fin);
+
+REMOVE Det IF (0C Fin OR Det) (-1C Subj);
+
+SELECT Det IF (0 Det or Pron) (1C N);
+
+REMOVE Inf IF (NOT -1* Fin BARRIER BOS) (0C Fin OR Inf) (NOT 1* Fin BARRIER EOS);
+
+SELECT Imper IF (1* ("!") BARRIER CLB);
+
+REMOVE Imper IF ((-1 NP-HEAD) OR (1 NP-HEAD));
+
+REMOVE Fin IF (0 Sg1) (NOT -1* Subj + Sg1 BARRIER CLB) (NOT 1* Subj + Sg1 BARRIER CLB);
+  ## Zeg me waar hij is !
+
+REMOVE Inf IF (0 Inf OR Det) (1C N);
+  ## Dan ziet ze ook een kleine hand en als ze dichterbij loopt ziet ze ook zijn hoofd!
+
+REMOVE Inf IF (-1C Subj) ;
+  ## Ze zijn allebei blij en gaan naar het huis, het is tijd om te eten en wat water te drinken.
+
+REMOVE Obj IF (0C Subj OR Obj) (-1C VAUX) (-2 BOS OR Cm);
+
+SELECT Subj + $$PERS IF (-1C VAUX + $$PERS) (0C Subj);
+
+SELECT Subj + $$NUMBER IF (-1C VAUX + $$NUMBER) (0C Subj);
+

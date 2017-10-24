@@ -1,0 +1,13 @@
+DELIMITERS = "<.>" "<!>" "<?>" "<...>" "<¶>" ;
+SOFT-DELIMITERS = "<,>" ;
+
+SETS
+
+LIST Interr = itg ;
+
+LIST CLB = "." "?" "!" ;
+
+SECTION
+
+SELECT Interr IF (1* ("?") BARRIER CLB) ;
+  ## 

@@ -1,0 +1,329 @@
+<rules>
+  <rule weight="0.8" v="val">
+    <match lemma="maïs" tags="n.*"><select lemma="dacsa" tags="n.*"/></match>
+  </rule>
+  <rule weight="1.0" v="cat">
+    <match lemma="maïs" tags="n.*"><select lemma="blat# de moro" tags="n.*"/></match>
+  </rule>
+  <rule weight="1.0"> <!-- 15.04.2017 sembla que la v="cat" no està funcionant. Se selecciona "dacsa" però està restringit en aperitum-cat -->
+    <match lemma="maïs" tags="n.*"><select lemma="blat# de moro" tags="n.*"/></match>
+  </rule>
+
+  <rule weight="0.8" v="val">
+    <match lemma="fille" tags="n.*"><select lemma="xic" tags="n.*"/></match>
+  </rule>
+  <rule weight="1.0" v="cat">
+    <match lemma="fille" tags="n.*"><select lemma="noi" tags="n.*"/></match>
+  </rule>
+
+  <rule weight="0.8" v="val">
+    <match lemma="garçon" tags="n.*"><select lemma="xic" tags="n.*"/></match>
+  </rule>
+  <rule weight="1.0" v="cat">
+    <match lemma="garçon" tags="n.*"><select lemma="noi" tags="n.*"/></match>
+  </rule>
+
+  <rule weight="0.8" v="val">
+    <match lemma="cheminée" tags="n.*"><select lemma="ximenera" tags="n.*"/></match>
+  </rule>
+  <rule weight="1.0" v="cat">
+    <match lemma="cheminée" tags="n.*"><select lemma="xemeneia" tags="n.*"/></match>
+  </rule>
+
+  <rule weight="0.8" v="val">
+    <match lemma="citron" tags="n.*"><select lemma="llimó" tags="n.*"/></match>
+  </rule>
+  <rule weight="1.0" v="cat">
+    <match lemma="citron" tags="n.*"><select lemma="llimona" tags="n.*"/></match>
+  </rule>
+
+  <rule weight="0.8" v="val">
+    <match lemma="soustraction" tags="n.*"><select lemma="sostració" tags="n.*"/></match>
+  </rule>
+  <rule weight="1.0" v="cat">
+    <match lemma="soustraction" tags="n.*"><select lemma="substracció" tags="n.*"/></match>
+  </rule>
+  <rule weight="0.8" v="val">
+    <match lemma="chauffer" tags="vblex.*"><select lemma="calfar" tags="vblex.*"/></match>
+  </rule>
+  <rule weight="1.0" v="cat">
+    <match lemma="chauffer" tags="vblex.*"><select lemma="escalfar" tags="vblex.*"/></match>
+  </rule>
+  <rule weight="0.8" v="val">
+    <match lemma="vernir" tags="vblex.*"><select lemma="envernissar" tags="vblex.*"/></match>
+  </rule>
+  <rule weight="1.0" v="cat">
+    <match lemma="vernir" tags="vblex.*"><select lemma="vernissar" tags="vblex.*"/></match>
+  </rule>
+
+  <rule weight="1.0">
+    <match lemma="beau" tags="adj.*"><select lemma="bonic" tags="adj.*"/></match>
+  </rule>
+  <rule weight="0.3">
+    <match lemma="beau" tags="adj.*"><select lemma="bell" tags="adj.*"/></match>
+  </rule>
+  <rule weight="0.6">
+    <match lemma="beau" tags="adj.*"><select lemma="bo" tags="adj.*"/></match>
+  </rule>
+  <rule weight="1.0">
+    <match lemma="faire" tags="vblex.*"/>
+    <match lemma="beau" tags="adj.*"><select lemma="bo" tags="adj.*"/></match>
+  </rule>
+
+  <rule weight="1.0">
+    <match lemma="être" tags="vblex.*"><select lemma="ser" tags="vbser.*"/></match>
+  </rule>
+  <rule weight="1.0">
+    <match lemma="être" tags="vblex.*"><select lemma="estar" tags="vblex.*"/></match>
+  </rule>
+  <rule weight="1.0">
+    <match lemma="être" tags="vblex.*"><select lemma="ser" tags="vbser.*"/></match>
+    <match lemma="dans" tags="pr"><select lemma="a" tags="pr"/></match>
+  </rule>
+
+  <rule weight="1.0">
+    <match lemma="argent" tags="n.*"><select lemma="diners" tags="n.*"/></match>
+  </rule>
+
+  <!-- 
+    pour >> per, per a
+  -->
+  <rule weight="0.8">
+    <match lemma="pour" tags="pr"><select lemma="per a"/></match>
+  </rule>
+  <rule weight="1.0">
+    <match lemma="pour" tags="pr"><select lemma="per"/></match>
+    <match tags="*.inf"/>
+  </rule>
+  <rule weight="1.0">
+    <match lemma="avoir" tags="*.ger"/>
+    <match lemma="pour" tags="pr"><select lemma="per"/></match>
+  </rule>
+
+  <!-- 
+    en >> en, a
+  -->
+  <rule weight="0.8">
+    <match lemma="en" tags="pr"><select lemma="en"/></match>
+  </rule>
+  <rule weight="1.0">
+    <match lemma="en" tags="pr"><select lemma="a"/></match>
+    <or>
+      <match lemma="Catalogne"/>
+      <match lemma="Aragon"/>
+      <match lemma="Castille"/>
+      <match lemma="Andalousie"/>
+      <match lemma="Occitanie"/>
+      <match lemma="Provence"/>
+      <match lemma="Catalogne"/>
+      <match lemma="Espagne"/>
+      <match lemma="France"/>
+      <match lemma="Alemagne"/>
+      <match lemma="Suède"/>
+      <match lemma="Norvège"/>
+      <match lemma="Finlande"/>
+      <match lemma="Islande"/>
+      <match lemma="Italie"/>
+      <match lemma="Belgique"/>
+      <match lemma="Holande"/>
+      <match lemma="Suisse"/>
+      <match lemma="Autriche"/>
+      <match lemma="Hongrie"/>
+      <match lemma="Slovaquie"/>
+      <match lemma="Pologne"/>
+      <match lemma="Lituanie"/>
+      <match lemma="Lettonie"/>
+      <match lemma="Estonie"/>
+      <match lemma="Biélorussie"/>
+      <match lemma="Grèce"/>
+      <match lemma="Angleterre"/>
+      <match lemma="Écosse"/>
+      <match lemma="Russie"/>
+      <match lemma="Ucraine"/>
+      <match lemma="Bosnie"/>
+      <match lemma="Croace"/>
+      <match lemma="Sèrbie"/>
+      <match lemma="Chine"/>
+      <match lemma="Inde"/>
+      <match lemma="Turquie"/>
+      <match lemma="Irak"/>
+      <match lemma="Iraq"/>
+      <match lemma="Iran"/>
+      <match lemma="Arabie"/>
+      <match lemma="Sirie"/>
+      <match lemma="Jordanie"/>
+      <match lemma="Israel"/>
+      <match lemma="Palestine"/>
+      <match lemma="Afrique"/>
+      <match lemma="Amérique"/>
+      <match lemma="Asie"/>
+      <match lemma="Europe"/>
+      <match lemma="Océnanie"/>
+      <match lemma="Australie"/>
+    </or>
+  </rule>
+
+  <!-- 
+    deux fois sur cinq >> dues vegades DE cinc
+  -->
+  <rule weight="1.0">
+    <match tags="num.*"/>
+    <match lemma="fois" tags="n.*"/>
+    <match lemma="sur" tags="pr"><select lemma="de" tags="pr"/></match>
+    <match tags="num.*"/>
+  </rule>
+  <rule weight="0.8">
+    <match lemma="sur" tags="pr"><select lemma="sobre" tags="pr"/></match>
+  </rule>
+
+<!-- prix >> premi / preu -->
+
+  <rule weight="1.0">
+    <match tags="adj.*"/>
+    <match lemma="prix" tags="n.*"><select lemma="preu"/></match>
+  </rule>
+  <rule weight="1.2">
+    <match lemma="grand" tags="adj.*"/>
+    <match lemma="prix" tags="n.*"><select lemma="premi"/></match>
+  </rule>
+  <rule weight="1.2">
+    <or>
+      <match lemma="premier" tags="adj.*"/>
+      <match lemma="second" tags="adj.*"/>
+      <match lemma="troisième" tags="adj.*"/>
+      <match lemma="quatrième" tags="adj.*"/>
+      <match lemma="cinquième" tags="adj.*"/>
+      <match lemma="sixième" tags="adj.*"/>
+      <match lemma="septième" tags="adj.*"/>
+      <match lemma="huitième" tags="adj.*"/>
+      <match lemma="neuvième" tags="adj.*"/>
+      <match lemma="dixième" tags="adj.*"/>
+      <match lemma="dernier" tags="adj.*"/>
+    </or>
+    <match lemma="prix" tags="n.*"><select lemma="premi"/></match>
+  </rule>
+  <rule weight="1.0">
+    <match lemma="prix" tags="n.*"><select lemma="preu"/></match>
+    <match tags="adj.*"/>
+  </rule>
+  <rule weight="1.0">
+    <match lemma="prix" tags="n.*"><select lemma="preu"/></match>
+    <match tags="adv"/>
+    <match tags="adj.*"/>
+  </rule>
+  <rule weight="1.0">
+    <match lemma="le" tags="det.*"/>
+    <match lemma="prix" tags="n.*"><select lemma="preu"/></match>
+    <match lemma="de" tags="pr"/>
+  </rule>
+  <rule weight="1.0">
+    <match lemma="à" tags="pr"/>
+    <match lemma="quel"/>
+    <match lemma="prix" tags="n.*"><select lemma="preu"/></match>
+  </rule>
+  <rule weight="1.0">
+    <match lemma="prix" tags="n.*"><select lemma="preu"/></match>
+    <match tags="vbser.*"/>
+    <match tags="adj.*"/>
+  </rule>
+  <rule weight="1.0">
+    <match lemma="prix" tags="n.*"><select lemma="preu"/></match>
+    <match tags="vbser.*"/>
+    <match tags="adv"/>
+    <match tags="adj.*"/>
+  </rule>
+  <rule weight="1.0">
+    <match lemma="prix" tags="n.*"><select lemma="preu"/></match>
+    <match tags="adv"/>
+    <match tags="vbser.*"/>
+    <match tags="adv"/>
+    <match tags="adj.*"/>
+  </rule>
+  <rule weight="1.0">
+    <match lemma="prix" tags="n.*"><select lemma="preu"/></match>
+    <match tags="adv"/>
+    <match tags="vbser.*"/>
+    <match tags="adv"/>
+    <match tags="adv"/>
+    <match tags="adj.*"/>
+  </rule>
+  <rule weight="1.0">
+    <match tags="*.pl"/>
+    <match lemma="prix" tags="n.*"><select lemma="preu" tags="n"/></match>
+  </rule>
+  <rule weight="1.0">
+    <or>
+      <match lemma="hausser"/>
+      <match lemma="baisser"/>
+    </or>
+    <match tags="det.*"/>
+    <match lemma="prix" tags="n.*"><select lemma="preu" tags="n"/></match>
+  </rule>
+  <rule weight="0.8">
+    <match lemma="prix" tags="n.*"><select lemma="premi" tags="n"/></match>
+  </rule>
+
+
+<!-- verser >> pagar / vessar -->
+
+  <rule weight="0.8">
+    <match lemma="verser" tags="vblex.*"><select lemma="pagar"/></match>
+  </rule>
+  <rule weight="1.0">
+    <match lemma="verser" tags="vblex.*"><select lemma="vessar"/></match>
+    <match lemma="de" tags="pr"/>
+    <match lemma="le" tags="det.*"/>
+    <or>
+      <match lemma="eau"/>
+      <match lemma="huile"/>
+      <match lemma="lait"/>
+      <match lemma="soupe"/>
+      <match lemma="vin"/>
+      <match lemma="bière"/>
+      <match lemma="champagne"/>
+    </or>
+  </rule>
+
+<!-- voler >> volar / robar -->
+
+  <rule weight="0.8">
+    <match lemma="voler" tags="vblex.*"><select lemma="volar"/></match>
+  </rule>
+  <rule weight="1.0">
+    <match lemma="voler" tags="vblex.*"><select lemma="robar"/></match>
+    <match tags="det.*"/>
+  </rule>
+
+<!-- garde >> guarda / guàrdia -->
+
+  <rule weight="0.8">
+    <match lemma="garde" tags="n.*"><select lemma="guàrdia"/></match>
+  </rule>
+  <rule weight="1.0">
+    <match tags="det.*.n.*"/>
+    <match lemma="garde" tags="n.*"><select lemma="guarda"/></match>
+  </rule>
+  <rule weight="1.0">
+    <match tags="adj.*.n.*"/>
+    <match lemma="garde" tags="n.*"><select lemma="guarda"/></match>
+  </rule>
+
+<!-- d'ailleurs >> d'altra banda / d'un altre lloc -->
+
+  <rule weight="0.8">
+    <match lemma="d'ailleurs" tags="adv"><select lemma="d'altra banda"/></match>
+  </rule>
+<!--
+  <rule weight="0.8">
+    <match lemma="d'ailleurs" tags="adv"><select lemma="d'un altre lloc"/></match>
+  </rule>
+  <rule weight="1.0">
+    <match lemma="D'ailleurs" tags="adv"><select lemma="d'altra banda"/></match>
+  </rule>
+  <rule weight="1.0">
+    <match tags="cm"/>
+    <match lemma="d'ailleurs" tags="adv"><select lemma="d'altra banda"/></match>
+  </rule>
+-->
+
+</rules>

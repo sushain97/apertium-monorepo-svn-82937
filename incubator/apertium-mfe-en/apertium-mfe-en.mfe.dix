@@ -1,0 +1,116 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<dictionary>
+	
+	<alphabet>ABCČĆDDžĐEFGHIJKLLjMNNjOPRSŠTUVZŽabcčćddžđefghijklljmnnjoprsštuvzžYy</alphabet>
+	
+	<sdefs>
+		
+		<sdef n = "adj" />
+		<sdef n = "adv" />
+		<sdef n = "det" />
+		<sdef n = "ind" />
+		<sdef n = "n" />
+		<sdef n = "pr" />
+		<sdef n = "sg" />
+		<sdef n = "vblex" />
+		<sdef n = "part" />
+		
+	</sdefs>
+  
+	<pardefs>
+		
+		<pardef n="pe__part">
+			<e><p><l></l><r><s n="part"/></r></p></e>
+		</pardef>
+			
+		<pardef n="an__pr">
+			<e><p><l></l><r><s n="pr"/></r></p></e>
+		</pardef>
+		
+		<pardef n="chanje__vblex">
+			<e><p><l></l><r><s n="vblex"/></r></p></e>
+		</pardef>
+		
+		<pardef n="enn__det"> 
+			<e><p><l></l><r><s n="det"/><s n="ind"/><s n="sg"/></r></p></e>
+		</pardef>
+		
+		<pardef n ="gro__adj">
+			<e><p><l></l> <r><s n="adj"/></r></p></e>
+		</pardef>
+
+		<pardef n ="color__adj">
+			<e><p><l></l><r><s n="adj"/></r></p></e>
+		</pardef>
+		
+		<pardef n="isit__adv">
+			<e><p><l></l><r><s n="adv"/></r></p></e>
+		</pardef>
+
+		<pardef n="lib__adj">
+      			<e><p><l></l><r><s n="adj"/></r></p></e>
+    		</pardef>
+		
+		<pardef n="liv__n"> 
+			<e><p><l></l><r><s n="n"/></r></p></e>
+		</pardef>
+
+	</pardefs>
+  
+   	<section id="main" type="standard">
+        
+   		<!-- Particles -->
+ 		<e lm="pe"><i>pe</i><par n="pe__part"/></e>
+   		<e lm="pou"><i>pou</i><par n="pe__part"/></e>
+   		<e lm="ti"><i>ti</i><par n="pe__part"/></e>
+   		
+   		<!-- Determiners -->
+   		<e lm="enn"><i>enn</i><par n="enn__det"/></e>
+   		
+   		<!-- Prepositions -->
+   		<e lm="anver"><i>anver</i><par n="an__pr"/></e>
+   		<e lm="dan"><i>dan</i><par n="an__pr"/></e>
+   		<e lm="dans" r="LR"><p><l>dans</l><r>dan</r></p><par n="an__pr"/></e>
+   		
+   		<!-- Adverbs -->
+   		<e lm="vit-vit"><i>vit-vit</i><par n="isit__adv"/></e>
+   		<e lm="dime"><i>dime</i><par n="isit__adv"/></e>
+   		<e lm="yer"><i>yer</i><par n="isit__adv"/></e>
+		<e lm="dusman-dusman"><i>dusman-dusman</i><par n="isit__adv"/></e> <!-- added -->
+   		
+   		<!-- Verbs -->
+   		<e lm="dormi"><i>dormi</i><par n="chanje__vblex"/></e>
+   		<e lm="galupe"><i>galupe</i><par n="chanje__vblex"/></e>
+   		<e lm="kumans"><i>kumans</i><par n="chanje__vblex"/></e>
+   		<e lm="sov"><i>sov</i><par n="chanje__vblex"/></e>
+   		<e lm="truve"><i>truve</i><par n="chanje__vblex"/></e>
+   		<e lm="vini"><i>vini</i><par n="chanje__vblex"/></e>
+		<e lm="briye"><i>briye</i><par n="chanje__vblex"/></e> <!-- added -->
+		<e lm="uver"><i>uver</i><par n="chanje__vblex"/></e> <!-- added -->
+		<e lm="trape"><i>uver</i><par n="chanje__vblex"/></e> <!-- added -->
+   		
+   		<!-- Adjectives -->
+   		<e lm="gros" r="LR"><p><l>gros</l><r>gro</r></p><par n="gro__adj"/></e><!-- Accept 'gros' as 'gro' -->
+   		<e lm="gro"><i>gro</i><par n="gro__adj"/></e>
+		<e lm="ruz"><i>ruz</i><par n="color__adj"/></e> <!-- added -->
+		<e lm="nwar"><i>nwar</i><par n="color__adj"/></e> <!-- added -->
+		<e lm="nuvo"><i>nuvo</i><par n="lib__adj"/></e> <!-- added -->
+		<e lm="vye"><i>vye</i><par n="lib__adj"/></e> <!-- added -->
+		<e lm="instab"><i>instab</i><par n="color__adj"/></e> <!-- added -->
+   		
+   		<!-- Nouns -->
+   		<e lm="lisyen"><i>lisyen</i><par n="liv__n"/></e>
+   		<e lm="panye"><i>panye</i><par n="liv__n"/></e>
+   		<e lm="sat"><i>sat</i><par n="liv__n"/></e>
+		<e lm="lakaz"><i>lakaz</i><par n="liv__n"/></e> <!-- added -->
+		<e lm="fler"><i>fler</i><par n="liv__n"/></e> <!-- added -->
+		<e lm="soley"><i>soley</i><par n="liv__n"/></e> <!-- added -->
+		<e lm="laport"><i>laport</i><par n="liv__n"/></e> <!-- added -->
+		<e lm="bato"><i>bato</i><par n="liv__n"/></e> <!-- added -->
+		<e lm="loto"><i>loto</i><par n="liv__n"/></e> <!-- added -->
+		<e lm="sato"><i>sato</i><par n="liv__n"/></e> <!-- added -->		
+		<e lm="crayon"><i>crayon</i><par n="liv__n"/></e> <!-- added -->
+   		
+   </section>
+  
+</dictionary>

@@ -1,0 +1,41 @@
+* corpus.kaz.txt
+	All Kazakh stories and texts I have been working so far.
+
+* corpus.tat.txt
+	Postedited Tatar translation of the corpus.
+
+* kaz-tat-origina.txt
+	Translation of corpus.kaz.txt with the second to last revision of apertium-kaz-tat.
+
+* kaz-tat-nova.txt
+	Translation of corpus.kaz.txt with the last revision of apertium-kaz-tat.
+
+* tat-kaz-origina.txt
+	Translation of corpus.tat.txt with the second to last revision of apertium-kaz-tat.
+
+* tat-kaz-nova.txt
+	Translation of corpus.tat.txt with the last revision of apertium-kaz-tat.
+
+------
+
+Basic workflow is like the following (IS talking to himself):
+	1) run diff on kaz-tat-origina.txt and corpus.tat.txt,
+	2) see what is to fix/to improve,
+	3) fix them and compile,
+	4) run ./qa kaz-tat-corp to see whether you really fixed them,
+	5) commit,
+	6) mv kaz-tat-nova.txt kaz-tat-origina.txt
+	
+	repeat the cycle
+
+'qa kaz-tat-corp' in apertium-kaz-tat/ gives a coloured diff of "origina" and "nova" translations.
+
+The same workflow applies for the opposite direction.
+
+------
+
+Some sentences were added to corpus.kaz.txt and corpus.tat.txt directly (they aren't in /texts).
+
+Sources of these sentences:
+
+http://www.azattyq.kz/archive/news/20140301/330/330.html?id=25281790

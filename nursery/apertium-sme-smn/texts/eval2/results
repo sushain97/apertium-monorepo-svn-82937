@@ -1,0 +1,115 @@
+
+Evaluating using the webpage:
+http://xixona.dlsi.ua.es/~fran/eval/
+
+IM:
+Number of words in first file:  616
+Number of 1-word edit operations needed : 48
+Percent error rate : 7.79%
+
+MS:
+Number of words in first file:  614
+Number of 1-word edit operations needed : 81
+Percent error rate : 13.19%
+
+PM:
+Number of words in first file:  613
+Number of 1-word edit operations needed : 78
+Percent error rate : 12.72%
+
+SM:
+Number of words in first file:  614
+Number of 1-word edit operations needed : 73
+Percent error rate : 11.88%
+
+Evaluating using the perl command:
+perl ~/apertium/trunk/apertium-eval-translator/apertium-eval-translator-line.pl -r smn_mt.txt -t MTeval_IM.txt 
+
+
+IM:
+-------------------------------------------------------
+Number of words in reference: 605
+Number of words in test: 606
+
+Results when removing unknown-word marks (stars)
+-------------------------------------------------------
+Edit distance: 48
+Word error rate (WER): 7.93 %
+Number of position-independent correct words: 560
+Position-independent word error rate (PER): 7.60 %
+
+MS:
+-------------------------------------------------------
+Number of words in reference: 605
+Number of words in test: 598
+
+Results when removing unknown-word marks (stars)
+-------------------------------------------------------
+Edit distance: 78
+Word error rate (WER): 12.89 %
+Number of position-independent correct words: 534
+Position-independent word error rate (PER): 11.74 %
+
+PM:
+-------------------------------------------------------
+Number of words in reference: 605
+Number of words in test: 603
+
+Results when removing unknown-word marks (stars)
+-------------------------------------------------------
+Edit distance: 77
+Word error rate (WER): 12.73 %
+Number of position-independent correct words: 533
+Position-independent word error rate (PER): 11.90 %
+
+SM:
+-------------------------------------------------------
+Number of words in reference: 605
+Number of words in test: 598
+
+Results when removing unknown-word marks (stars)
+-------------------------------------------------------
+Edit distance: 73
+Word error rate (WER): 12.07 %
+Number of position-independent correct words: 535
+Position-independent word error rate (PER): 11.57 %
+
+
+
+Evaluating, classifiying the errors, cf.
+wer_analysis.csv
+
+  92 1
+  55 2
+  50 3
+  35 4
+   5 5
+
+where
+1 = lexical selection
+2 = error in generation (wrong shape of wordform)
+3 = error in choice of form (wrong wordform selected)
+4 = word order (word order changed, word deleted or added)
+5 = punctuation mark added or deleted.
+
+
+Subtyypit:
+
+  76 1a
+  16 1b
+  14 2a
+  31 2b
+   7 2c
+   3 2d
+  45 3a
+   1 3b
+   4 3c
+   9 4a
+   7 4b
+  10 4c
+   1 4d
+   8 4e
+   1 5a
+   1 5b
+   2 5c
+   

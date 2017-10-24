@@ -1,0 +1,364 @@
+! Morphological Transducer for Yoruba
+
+Multichar_Symbols
+
+! Part of speech categories
+%<n%>  ! Noun
+%<pl%> ! Plural
+%<sg%> ! Singular
+%<aa%> ! Animate
+%<nn%> ! Inanimate
+%<np%> ! Proper noun
+%<ant%> ! Anthroponym
+%<loc%> ! Location
+%<vblex%> ! Verb
+
+
+
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+!!!                       M O R P H O T A C T I C S                         !!!
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+
+LEXICON Root
+
+NounRoot ;
+VerbRoot ;
+
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+!!!                          L E X I C O N                                  !!!
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+
+LEXICON NounRoot
+
+ilé ILÉ_N ; ! house
+ẹran ILÉ_N ; ! animal
+oko ILÉ_N ; ! farm
+ẹwa ILÉ_N ; ! beauty
+asán ILÉ_N ; ! vanity
+àánú ILÉ_N ; ! mercy
+owó ILÉ_N ; ! money
+omi ILÉ_N ; ! water
+àpò ILÉ_N ; ! backpack
+iṣu ILÉ_N ; ! yam
+ìwé ILÉ_N ; ! book
+àga ILÉ_N ; ! chair
+ẹran ILÉ_N ; ! animal
+orí ILÉ_N ; ! head
+ìgò ILÉ_N ; ! jar
+èpè ILÉ_N ; ! oath
+ilá ILÉ_N ; ! okra
+ìbò ILÉ_N ; ! ballot
+ata ILÉ_N ; ! pepper
+èrò ILÉ_N ; ! concept
+iyọ̀ ILÉ_N ; ! salt
+odì ILÉ_N ; ! malice
+ẹranko ILÉ_N ; ! animal
+àpótí ILÉ_N ; ! box
+ẹja ILÉ_N ; ! fish
+ara ILÉ_N ; ! body
+pápá ILÉ_N ; ! pasture
+èdè ILÉ_N ; ! language
+orí ILÉ_N ; ! head
+irun ILÉ_N ; ! hair
+imú ILÉ_N ; ! nose
+etí ILÉ_N ; ! ear
+ẹnu ILÉ_N ; ! mouth
+àgbọ̀n ILÉ_N ; ! chin
+ọrùn ILÉ_N ; ! neck
+ògo ILÉ_N ; ! glory
+ọjà ILÉ_N ; ! market
+ewúro ILÉ_N ; ! bitter leaves
+òkè ILÉ_N ; ! mountain
+ṣẹ̀ẹ̀tì ILÉ_N ; ! shirt
+kọ́ọ̀sì ILÉ_N ; ! course
+síléètì ILÉ_N ; ! slate
+kíláàsì ILÉ_N ; ! class
+ìsẹ́ ILÉ_N ; ! poverty
+ègún ILÉ_N ; ! thorn
+òkú ILÉ_N ; ! corpse
+ẹrù ILÉ_N ; ! load
+aṣẹ́ ILÉ_N ; ! sieve
+aṣọ ILÉ_N ; ! curtain
+ibi ILÉ_N ; ! place
+idì ILÉ_N ; ! eagle
+ìrì ILÉ_N ; ! mist
+òrò ILÉ_N ; ! conversation
+iṣu ILÉ_N ; ! yam
+irun ILÉ_N ; ! hair
+ọkàn ILÉ_N ; ! heart 
+
+ọmọ ỌMỌ_N ; ! child
+ìyá ỌMỌ_N ; ! mother
+ọkọ ỌMỌ_N ; ! husband
+ọmọ ỌMỌ_N ; ! child
+bàbá ỌMỌ_N ; ! father
+àwòdì ỌMỌ_N ; ! hawk
+ọba ỌMỌ_N ; ! king
+dẹ́rẹ́bà ỌMỌ_N ; ! driver
+ọ̀dẹ̀ ỌMỌ_N ; ! idiot
+ọdẹ ỌMỌ_N ; ! idiot
+ọmọkùnrin ỌMỌ_N ; ! young man
+àdàbà ỌMỌ_N ; ! proposer, dove
+àgbébọ̀ ỌMỌ_N ; ! hen
+àkàlà ỌMỌ_N ; ! vulture
+igún ỌMỌ_N ; ! vulture
+gbẹ́nọ̀gbẹ́nò ỌMỌ_N ; ! woodpecker
+àkùkọ ỌMỌ_N ; ! cockerel
+àparò ỌMỌ_N ; ! partridge
+apọ́n ỌMỌ_N ; ! red-beaked bird
+àṣá ỌMỌ_N ; ! falcon, kite
+àwòko ỌMỌ_N ; ! mockingbird
+
+Olu OLU_N ; ! 
+Ojo OLU_N ; ! 
+Jímòọ̀ OLU_N ; ! 
+Adé OLU_N ; ! 
+Adébùsọlá OLU_N ; ! 
+Adébáyo OLU_N ; ! 
+Adékúnlé OLU_N ; ! 
+Adérónkẹ OLU_N ; ! 
+Lawal OLU_N ; ! 
+Ifáṣadùn OLU_N ; ! 
+Adéyẹmọ OLU_N ; ! 
+Ọjọrá OLU_N ; ! 
+Bímpé OLU_N ; ! 
+Babalọlá OLU_N ; ! 
+Bákàrè OLU_N ; ! 
+Babátọ́lá OLU_N ; ! 
+Bínútirí OLU_N ; ! 
+Bólújọ OLU_N ; ! 
+Babárìndé OLU_N ; ! 
+Bólúwadé OLU_N ; ! 
+Bóyèdé OLU_N ; ! 
+Bọ́sẹ̀dé OLU_N ; ! 
+Béyìòkú OLU_N ; ! 
+Bímbọ́lú OLU_N ; ! 
+Bámgbálà OLU_N ; ! 
+Bádérìn OLU_N ; ! 
+Bolútifẹ́ OLU_N ; ! 
+Bọ́láwá OLU_N ; ! 
+Babawálé OLU_N ; ! 
+Bísóyè OLU_N ; ! 
+Bọláńlé OLU_N ; ! 
+Bánjí OLU_N ; ! 
+Bóorépọ̀ OLU_N ; ! 
+Bádéjí OLU_N ; ! 
+Bámgbé OLU_N ; ! 
+Bámgbé OLU_N ; ! 
+Bádéwò OLU_N ; ! 
+Bámigbáyé OLU_N ; ! 
+Bámigbáiyé OLU_N ; ! 
+Bétikú OLU_N ; ! 
+Bámgbáyé OLU_N ; ! 
+Bámgbáiyé OLU_N ; ! 
+Bùóyè OLU_N ; ! 
+Bọ́nọ̀jọ OLU_N ; ! 
+Bólújókó OLU_N ; ! 
+Bámitẹ́kọ̀ OLU_N ; ! 
+Bákindé OLU_N ; ! 
+Babáníyì OLU_N ; ! 
+Babáyẹmí OLU_N ; ! 
+Báyọ̀dé OLU_N ; ! 
+Bọ́dúndé OLU_N ; ! 
+Bámgbóṣé OLU_N ; ! 
+Bọ́lọ́rundúro OLU_N ; ! 
+Bùkáyọ̀ OLU_N ; ! 
+Bọ́dúnwá OLU_N ; ! 
+Bọ́dúnrìn OLU_N ; ! 
+Babaìta OLU_N ; ! 
+Búkóyè OLU_N ; ! 
+Babágbèmí OLU_N ; ! 
+Bọlánta OLU_N ; ! 
+Bámishílé OLU_N ; ! 
+Bámisé OLU_N ; ! 
+Babánífẹ̀sí OLU_N ; ! 
+Bárátúndé OLU_N ; ! 
+Bámimọ́rẹ́ OLU_N ; ! 
+Bólódeòkú OLU_N ; ! 
+Bọ̀dé OLU_N ; ! 
+Bámidélé OLU_N ; ! 
+Bóyèjọ OLU_N ; ! 
+Bánkólé OLU_N ; ! 
+Bọ́lájí OLU_N ; ! 
+Bándélé OLU_N ; ! 
+Bídèmí OLU_N ; ! 
+Bámiṣẹbí OLU_N ; ! 
+Bíbíire OLU_N ; ! 
+Babátúndé OLU_N ; ! 
+Bádéwá OLU_N ; ! 
+Bísólá OLU_N ; ! 
+Bámimọ́rẹ OLU_N ; ! 
+Bíbítáyò OLU_N ; ! 
+Bàbá OLU_N ; ! 
+Báyọ̀délé OLU_N ; ! 
+Báyọ̀mi OLU_N ; ! 
+Bántálẹ́ OLU_N ; ! 
+Bánkalẹ́ OLU_N ; ! 
+Bùkọ́nlá OLU_N ; ! 
+Bọlárìnwá OLU_N ; ! 
+Bámgbọ́pá OLU_N ; ! 
+Bángbọ́pá OLU_N ; ! 
+Bámigbọ́pá OLU_N ; ! 
+Bólúwadúró OLU_N ; ! 
+Bámigbọ́lá OLU_N ; ! 
+Bángbọ́lá OLU_N ; ! 
+Babátúnbọ́lá OLU_N ; ! 
+Bámikọ́láwọlé OLU_N ; ! 
+Balógun OLU_N ; ! 
+Báyọńlé OLU_N ; ! 
+Bọ́lá OLU_N ; ! 
+Bàbáoyè OLU_N ; ! 
+Bámijókó OLU_N ; ! 
+Bọ́lọ́mọpé OLU_N ; ! 
+Babańlá OLU_N ; ! 
+Bámitọ́lá OLU_N ; ! 
+Bẹ́kọ̀ OLU_N ; ! 
+Bámilóyè OLU_N ; ! 
+Bámigboyè OLU_N ; ! 
+Bíọ́lá OLU_N ; ! 
+Bísálà OLU_N ; ! 
+Bíálà OLU_N ; ! 
+Bísúgà OLU_N ; ! 
+Bánirẹ́ OLU_N ; ! 
+Bísádé OLU_N ; ! 
+Bọ́látitó OLU_N ; ! 
+Babáfẹ́mi OLU_N ; ! 
+Bùsọ́lá OLU_N ; ! 
+Bọ́lánílé OLU_N ; ! 
+Búsàrí OLU_N ; ! 
+Bádéró OLU_N ; ! 
+Bùsúyì OLU_N ; ! 
+Bamgbáde OLU_N ; ! 
+Bámigbádé OLU_N ; ! 
+Bángbádé OLU_N ; ! 
+Bùkúnmi OLU_N ; ! 
+Bíòbákú OLU_N ; ! 
+Bíléwú OLU_N ; ! 
+Bámbọ̀ OLU_N ; ! 
+Bámitẹ́fa OLU_N ; ! 
+Baṣọ̀run OLU_N ; ! 
+Báòkú OLU_N ; ! 
+Bífátifẹ́ OLU_N ; ! 
+Bùsáyọ̀ OLU_N ; ! 
+Bọ́ládé OLU_N ; ! 
+Bíntílayé OLU_N ; ! 
+Bólúwají OLU_N ; ! 
+Bángbọ́fá OLU_N ; ! 
+Bíòkú OLU_N ; ! 
+Bọ̀bádé OLU_N ; ! 
+Bántẹ́fá OLU_N ; ! 
+Bùsáyọ̀mi OLU_N ; ! 
+Babásọlá OLU_N ; ! 
+Bóyindé OLU_N ; ! 
+Bámisayọ̀ OLU_N ; ! 
+Bámisílé OLU_N ; ! 
+Bámikọ́lé OLU_N ; ! 
+Bótirí OLU_N ; ! 
+Báyetifẹ́ OLU_N ; ! 
+Bósòro OLU_N ; ! 
+Babátọ́pẹ́ OLU_N ; ! 
+Bímbọ́ OLU_N ; ! 
+Bádéjókò OLU_N ; ! 
+Babalájé OLU_N ; ! 
+Bunmi OLU_N ; ! 
+Béjidé OLU_N ; ! 
+Babábùnmi OLU_N ; ! 
+Betiku OLU_N ; ! 
+Babajamu OLU_N ; ! 
+Babájídé OLU_N ; ! 
+Babárínsá OLU_N ; ! 
+Badà OLU_N ; ! 
+Bàdàmọ́sí OLU_N ; ! 
+Bádéjọ OLU_N ; ! 
+Bájọmọ OLU_N ; ! 
+Bámgbọ́lá OLU_N ; ! 
+Bámgbóyè OLU_N ; ! 
+Bámisayé OLU_N ; ! 
+Bánjọ OLU_N ; ! 
+Bashọ̀run OLU_N ; ! 
+Bẹwàjí OLU_N ; ! 
+Bọ́lájókò́ OLU_N ; ! 
+Bọ́lákalẹ̀ OLU_N ; ! 
+Bólú OLU_N ; ! 
+Bólúwatifẹ́ OLU_N ; ! 
+Bùkọlá OLU_N ; ! 
+
+
+Ìbàdàn ÌBÀDÀN_N ; ! 
+
+
+LEXICON VerbRoot
+
+kú KÚ_VBLEX ; ! die
+kán KÚ_VBLEX ; ! drop
+fẹ́ KÚ_VBLEX ; ! love
+gbàgbé KÚ_VBLEX ; ! forget
+sáré KÚ_VBLEX ; ! race
+rà KÚ_VBLEX ; ! acquire
+wá KÚ_VBLEX ; ! be
+jẹ KÚ_VBLEX ; ! answer
+jẹun KÚ_VBLEX ; ! dine
+fẹ́ KÚ_VBLEX ; ! love
+fẹ́ràn KÚ_VBLEX ; ! love
+pè KÚ_VBLEX ; ! call
+jí KÚ_VBLEX ; ! wake
+mú KÚ_VBLEX ; ! take
+dín KÚ_VBLEX ; ! bake
+pín KÚ_VBLEX ; ! part
+sún KÚ_VBLEX ; ! nudge
+sè KÚ_VBLEX ; ! bake
+wẹ̀ KÚ_VBLEX ; ! bathe
+gbà KÚ_VBLEX ; ! take
+jẹun KÚ_VBLEX ; ! dine
+lọ KÚ_VBLEX ; ! go
+sùn KÚ_VBLEX ; ! sleep
+tẹ̀lé KÚ_VBLEX ; ! follow
+láálí KÚ_VBLEX ; ! rebuff
+ni KÚ_VBLEX ; ! consist
+sọ KÚ_VBLEX ; ! say
+se KÚ_VBLEX ; ! do, implement
+tà KÚ_VBLEX ; ! sell
+ji KÚ_VBLEX ; ! awake
+gun KÚ_VBLEX ; ! ride
+mọ KÚ_VBLEX ; ! to know
+rò KÚ_VBLEX ; ! to think
+sọ KÚ_VBLEX ; ! to say
+nifẹ KÚ_VBLEX ; ! to be in love
+fọ̀ KÚ_VBLEX ; ! wash
+tà KÚ_VBLEX ; ! sell
+kí KÚ_VBLEX ; ! greet
+wò KÚ_VBLEX ; ! see
+rẹ́rìn KÚ_VBLEX ; ! laugh
+rántí KÚ_VBLEX ; ! remember
+gbá KÚ_VBLEX ; ! walk
+rìn KÚ_VBLEX ; ! hit 
+
+LEXICON ILÉ_N
+
+%<n%>%<nn%>:   # ;
+
+LEXICON ỌMỌ_N
+
+%<n%>%<aa%>:   # ;
+
+LEXICON ÌBÀDÀN_N
+
+%<np%>%<loc%>:   # ;
+
+LEXICON OLU_N
+
+%<np%>%<ant%>:  #;
+
+LEXICON KÚ_VBLEX
+
+%<vblex%>:  #;
+
+! Resources:
+! http://wiki.apertium.org/wiki/Starting_a_new_language_with_HFST#Lexicon
+! http://wiki.apertium.org/wiki/Lttoolbox_and_lexc
+! http://wiki.apertium.org/wiki/Apertium-specific_conventions_for_lexc
+! https://kitwiki.csc.fi/twiki/bin/view/KitWiki/HfstHome
+! http://hfst.sourceforge.net/
+! http://www.cis.upenn.edu/~cis639/docs/lexc.html
+! http://wiki.apertium.org/wiki/Hfst
+

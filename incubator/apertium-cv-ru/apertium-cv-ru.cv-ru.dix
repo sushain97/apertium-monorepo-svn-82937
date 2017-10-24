@@ -1,0 +1,173 @@
+<dictionary>
+  <alphabet/>
+  <sdefs>
+    <sdef n="n"        c="Noun"/>
+    <sdef n="np"       c="Proper noun"/>
+    <sdef n="prn"      c="Pronoun"/>
+    <sdef n="post"     c="Postposition"/>
+    <sdef n="part"     c="Particle"/>
+    <sdef n="pr"       c="Preposition"/>
+    <sdef n="ij"       c="Interjection"/>
+    <sdef n="num"      c="Numeral"/>
+    <sdef n="cnjcoo"   c="Coordinating conjunction"/>
+    <sdef n="cnjsub"   c="Subordinting conjunction"/>
+
+    <sdef n="vbser"    c="Verb 'to be'"/>
+    <sdef n="vblex"    c="Verb"/>
+    <sdef n="v"        c="Verb"/>
+
+    <sdef n="adj"      c="Adjective"/>
+
+    <sdef n="adv"      c="Adverb"/>
+
+    <sdef n="p1"       c="First person"/>
+    <sdef n="p2"       c="Second person"/>
+    <sdef n="p3"       c="Third person"/>
+
+    <sdef n="nt"       c="Neuter"/>
+    <sdef n="f"        c="Feminine"/>
+    <sdef n="m"        c="Masculine"/>
+    <sdef n="mf"       c="Masculine / feminine"/>
+
+    <sdef n="ant"      c="Antroponym"/>
+    <sdef n="top"      c="Toponym"/>
+
+    <sdef n="nn"       c="Inanimate"/>
+    <sdef n="aa"       c="Animate"/>
+
+    <sdef n="sg"       c="Singular"/>
+    <sdef n="pl"       c="Plural"/>
+
+    <sdef n="al"       c="Other"/>
+
+    <sdef n="abs"      c="Absolutive"/>
+    <sdef n="ins"      c="Instrumental"/>
+    <sdef n="obj"      c="Object"/>
+
+    <sdef n="ind"      c="Indefinite"/>
+    <sdef n="dem"      c="Demonstrative"/>
+    <sdef n="pers"     c="Personal"/>
+
+    <sdef n="imperf"   c="Imperfective"/>
+    <sdef n="perf"     c="Perfective"/>
+
+    <sdef n="GD"       c="Gender to be determined"/>
+    <sdef n="ND"       c="number to be determined"/>
+
+    <sdef n="clb"      c="Clause level boundary"/>
+    <sdef n="sent"     c="End of sentence"/>
+  </sdefs>
+  <section id="main" type="standard">
+    <!-- SECTION: Conjunctions -->
+
+    <e c="  0"><p><l>тата<s n="cnjcoo"/></l><r>и<s n="cnjcoo"/></r></p></e>
+ 
+    <!-- SECTION: Postpositions -->
+    
+    <e c="  0"><p><l>валли<s n="post"/></l><r>для<s n="pr"/></r></p></e>
+    <e slr="1"><p><l>валли<s n="post"/></l><r>к<s n="pr"/></r></p></e>
+ 
+    <!-- SECTION: Pronouns -->
+
+    <e c="  0"><p><l>эпӗ<s n="prn"/><s n="pers"/><s n="p1"/><s n="sg"/></l><r>prpers<s n="prn"/><s n="p1"/><s n="mf"/><s n="sg"/></r></p></e>
+    <e c="  0"><p><l>эсӗ<s n="prn"/><s n="pers"/><s n="p2"/><s n="sg"/></l><r>prpers<s n="prn"/><s n="p2"/><s n="mf"/><s n="sg"/></r></p></e>
+    <e c="  0"><p><l>вӑл<s n="prn"/><s n="pers"/><s n="p3"/><s n="sg"/></l><r>prpers<s n="prn"/><s n="p3"/><s n="GD"/><s n="sg"/></r></p></e>
+    <e c="  0"><p><l>эпир<s n="prn"/><s n="pers"/><s n="p1"/><s n="pl"/></l><r>prpers<s n="prn"/><s n="p1"/><s n="mf"/><s n="pl"/></r></p></e>
+    <e c="  0"><p><l>эсир<s n="prn"/><s n="pers"/><s n="p2"/><s n="pl"/></l><r>prpers<s n="prn"/><s n="p2"/><s n="mf"/><s n="pl"/></r></p></e>
+    <e c="  0"><p><l>вӗсем<s n="prn"/><s n="pers"/><s n="p3"/><s n="pl"/></l><r>prpers<s n="prn"/><s n="p3"/><s n="mf"/><s n="pl"/></r></p></e>
+
+    <e c="  0"><p><l>ку<s n="prn"/><s n="dem"/></l><r>это<s n="prn"/><s n="dem"/></r></p></e>
+
+    <!-- SECTION: Determiners -->
+
+    <!-- SECTION: Numerals -->
+
+    <e c="  0"><p><l>пӗр<s n="num"/></l><r>один<s n="num"/><s n="GD"/></r></p></e>
+    <e c="  0"><p><l>иккӗ<s n="num"/></l><r>два<s n="num"/><s n="GD"/></r></p></e>
+    <e c="  0"><p><l>пилӗк<s n="num"/></l><r>пять<s n="num"/><s n="GD"/></r></p></e>
+
+    <!-- SECTION: Nouns -->
+
+    <e c="  0"><p><l>акка<s n="n"/></l><r>сестра<s n="n"/><s n="f"/><s n="aa"/></r></p></e>
+    <e c="  0"><p><l>анне<s n="n"/></l><r>мать<s n="n"/><s n="f"/><s n="aa"/></r></p></e>
+    <e c="  0"><p><l>атте<s n="n"/></l><r>отец<s n="n"/><s n="m"/><s n="aa"/></r></p></e>
+    <e c="  0"><p><l>ача<s n="n"/></l><r>ребёнок<s n="n"/><s n="m"/><s n="aa"/></r></p></e>
+    <e slr="1"><p><l>ача<s n="n"/></l><r>мальчик<s n="n"/><s n="m"/><s n="aa"/></r></p></e>
+    <e c="  0"><p><l>брать<s n="n"/></l><r>брать<s n="n"/><s n="m"/><s n="aa"/></r></p></e> <!-- @L -->
+    <e c="  0"><p><l>завод<s n="n"/></l><r>завод<s n="n"/><s n="m"/><s n="nn"/></r></p></e>
+    <e c="  0"><p><l>кил<s n="n"/></l><r>дом<s n="n"/><s n="m"/><s n="nn"/></r></p></e>
+    <e c="  0"><p><l>кино<s n="n"/></l><r>кино<s n="n"/><s n="nt"/><s n="nn"/></r></p></e>
+    <e c="  0"><p><l>кӑнтӑр<s n="n"/></l><r>юг<s n="n"/><s n="m"/><s n="nn"/></r></p></e>
+    <e c="  0"><p><l>кӗнеке<s n="n"/></l><r>книга<s n="n"/><s n="f"/><s n="nn"/></r></p></e>
+    <e c="  0"><p><l>кӗҫнерни<b/>кун<s n="n"/></l><r>четверг<s n="n"/><s n="m"/><s n="nn"/></r></p></e>
+    <e c="  0"><p><l>пичче<s n="n"/></l><r>брат<s n="n"/><s n="m"/><s n="aa"/></r></p></e> <!-- мой брат -->
+    <e c="  0"><p><l>пӳрт<s n="n"/></l><r>дом<s n="n"/><s n="m"/><s n="nn"/></r></p></e>
+    <e c="  0"><p><l>трактор<s n="n"/></l><r>трактор<s n="n"/><s n="m"/><s n="nn"/></r></p></e>
+    <e c="  0"><p><l>тус<s n="n"/></l><r>друг<s n="n"/><s n="m"/><s n="aa"/></r></p></e>
+    <e c="  0"><p><l>тӳпе<s n="n"/></l><r>небо<s n="n"/><s n="nt"/><s n="nn"/></r></p></e>
+    <e c="  0"><p><l>уй<s n="n"/></l><r>поле<s n="n"/><s n="nt"/><s n="nn"/></r></p></e>
+    <e c="  0"><p><l>улма<s n="n"/></l><r>яблоко<s n="n"/><s n="nt"/><s n="nn"/></r></p></e>
+    <e c="  0"><p><l>фабрик<s n="n"/></l><r>фабрика<s n="n"/><s n="f"/><s n="nn"/></r></p></e>
+    <e c="  0"><p><l>хваттер<s n="n"/></l><r>квартира<s n="n"/><s n="f"/><s n="nn"/></r></p></e>
+    <e c="  0"><p><l>чечек<s n="n"/></l><r>цвет<s n="n"/><s n="m"/><s n="nn"/></r></p></e>
+    <e c="  0"><p><l>чӳрече<s n="n"/></l><r>окно<s n="n"/><s n="nt"/><s n="nn"/></r></p></e>
+    <e c="  0"><p><l>шкап<s n="n"/></l><r>шкап<s n="n"/><s n="m"/><s n="nn"/></r></p></e>
+    <e c="  0"><p><l>шыв<s n="n"/></l><r>вода<s n="n"/><s n="f"/><s n="nn"/></r></p></e>
+    <e c="  0"><p><l>ял<s n="n"/></l><r>деревня<s n="n"/><s n="f"/><s n="nn"/></r></p></e>
+    <e c="  0"><p><l>ҫурт<s n="n"/></l><r>дом<s n="n"/><s n="m"/><s n="nn"/></r></p></e>
+    <e c="  0"><p><l>ҫурҫӗр<s n="n"/></l><r>север<s n="n"/><s n="m"/><s n="nn"/></r></p></e>
+    <e c="  0"><p><l>ҫӗре<s n="n"/></l><r>земля<s n="n"/><s n="f"/><s n="nn"/></r></p></e>
+    <e c="  0"><p><l>ӗҫлекен<s n="n"/></l><r>работник<s n="n"/><s n="m"/><s n="aa"/></r></p></e> <!-- @C -->
+    <e c="  0"><p><l>ӗҫ<s n="n"/></l><r>работа<s n="n"/><s n="f"/><s n="nn"/></r></p></e>
+    <e slr="1"><p><l>ӗҫ<s n="n"/></l><r>труд<s n="n"/><s n="m"/><s n="nn"/></r></p></e>
+    <e c="  0"><p><l>ир<s n="n"/></l><r>утро<s n="n"/><s n="nt"/><s n="nn"/></r></p></e>
+    <e c="  0"><p><l>юлташ<s n="n"/></l><r>друг<s n="n"/><s n="m"/><s n="aa"/></r></p></e>
+    <e c="  0"><p><l>ҫыр<s n="n"/></l><r>письмо<s n="n"/><s n="nt"/><s n="nn"/></r></p></e>
+    <e c="  0"><p><l>шкул<s n="n"/></l><r>школа<s n="n"/><s n="f"/><s n="nn"/></r></p></e>
+    <e c="  0"><p><l>урам<s n="n"/></l><r>улица<s n="n"/><s n="f"/><s n="nn"/></r></p></e>
+    <e c="  0"><p><l>ҫӗлӗк<s n="n"/></l><r>шапка<s n="n"/><s n="f"/><s n="nn"/></r></p></e>
+
+    <!-- SECTION: Proper nouns -->
+
+    <e c="  0"><p><l>Турӑ<s n="np"/></l><r>Бог<s n="n"/><s n="m"/><s n="aa"/></r></p></e>
+    <e c="  0"><p><l>Петӗр<s n="np"/><s n="ant"/><s n="m"/></l><r>Петӗр<s n="np"/><s n="ant"/><s n="m"/></r></p></e>
+    <e c="  0"><p><l>Шупашкар<s n="np"/><s n="top"/></l><r>Чебоксары<s n="np"/><s n="top"/></r></p></e>
+
+    <!-- SECTION: Adjectives -->
+
+    <e c="  0"><p><l>шӗнӗ<s n="adj"/></l><r>новый<s n="adj"/></r></p></e>
+    <e c="  0"><p><l>хавас<s n="adj"/></l><r>рад<s n="adj"/></r></p></e>
+
+    <!-- SECTION: Adverbs -->
+
+    <e c="  0"><p><l>пуҫламӑшенче<s n="adv"/></l><r>в<b/>начале<s n="adv"/></r></p></e>
+    <e c="  0"><p><l>нумай<s n="adv"/></l><r>много<s n="adv"/></r></p></e>
+    <e c="  0"><p><l>киле<s n="adv"/></l><r>домой<s n="adv"/></r></p></e>
+    <e c="  0"><p><l>пите<s n="adv"/></l><r>очень<s n="adv"/></r></p></e>
+    <e c="  0"><p><l>ыран<s n="adv"/></l><r>завтра<s n="adv"/></r></p></e>
+
+    <!-- SECTION: Verbs -->
+
+    <e c="  0"><p><l>пул<s n="v"/></l><r>быть<s n="vbser"/></r></p></e>
+    <e c="  0"><p><l>тӑва<s n="v"/></l><r>строить<s n="vblex"/><s n="imperf"/></r></p></e>
+    <e c="  0"><p><l>тат<s n="v"/></l><r>собирать<s n="vblex"/><s n="imperf"/></r></p></e>
+    <e c="  0"><p><l>кил<s n="v"/></l><r>приходить<s n="vblex"/><s n="imperf"/></r></p></e>
+    <e c="  0"><p><l>кай<s n="v"/></l><r>идти<s n="vblex"/><s n="imperf"/></r></p></e>
+    <e c="  0"><p><l>кур<s n="v"/></l><r>видеть<s n="vblex"/><s n="imperf"/></r></p></e>
+    <e c="  0"><p><l>вула<s n="v"/></l><r>читать<s n="vblex"/><s n="imperf"/></r></p></e>
+    <e c="  0"><p><l>вул<s n="v"/></l><r>читать<s n="vblex"/><s n="imperf"/></r></p></e>
+    <e c="  0"><p><l>ҫит<s n="v"/></l><r>доходить<s n="vblex"/><s n="perf"/></r></p></e>
+    <e c="  0"><p><l>ил<s n="v"/></l><r>получать<s n="vblex"/><s n="imperf"/></r></p></e>
+    <e c="  0"><p><l>тух<s n="v"/></l><r>выходить<s n="vblex"/><s n="imperf"/></r></p></e>
+
+    <!-- SECTION: Interjections -->
+
+    <e c="  0"><p><l>тавтапуҫ<s n="ij"/></l><r>спасибо<s n="ij"/></r></p></e>
+    <e c="  0"><p><l>пысак<b/>тавтапуҫ<s n="ij"/></l><r>большое<b/>спасибо<s n="ij"/></r></p></e>
+
+    <!-- SECTION: Punctuation -->
+
+    <e><re>[.!\?]</re><p><l><s n="clb"/></l><r><s n="sent"/></r></p></e>
+
+  </section>
+</dictionary>

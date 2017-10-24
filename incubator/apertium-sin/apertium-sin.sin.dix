@@ -1,0 +1,722 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<dictionary>
+	<alphabet>අආඇඈඉඊඋඌඍඎඑඒඓඔඕඖකඛගඝඞඟචඡජඣඤඥඦටඨඩඪණඬතථදධනඳපඵබභමඹයරලවශෂසහළෆ ් ා ැ ෑ ි ී ු ූ ෘ ෙ ේ ෛ ො ෝ ෞ ෟ ෲ ෳ ෴ ඃ ං</alphabet>
+	
+	<sdefs>     
+    <sdef n="n"       c="Noun"/>     
+			<sdef n="np"      c="Proper noun"/>
+			<sdef n="ant"     c="Anthroponym"/>
+			<sdef n="cog"     c="Cognomen"/>	
+			<sdef n="top"     c="Topological"/>
+			<sdef n="subj"    c="subject"/>
+			<sdef n="org"     c="Organisation"/>
+    <sdef n="num"     c="Numeral"/>     
+    <sdef n="adj"     c="Adjective"/>    
+    <sdef n="pers"    c="Personal"/>
+    <sdef n="obj"     c="Object"/>    
+    <sdef n="dat"     c="Dative"/>
+    <sdef n="abl"     c="Ablative"/>
+    <sdef n="erg"     c="Ergative"/>        
+    <sdef n="gen"     c="Genitive"/>        
+    <sdef n="adv"     c="Adverb"/>     
+    <sdef n="det"     c="Determiner"/>
+    <sdef n="dem"     c="Demonstrative"/>     
+    <sdef n="post"    c="Postposition"/>     
+    <sdef n="vblex"   c="Verb"/> 
+    <sdef n="ger"		  c="Gerund"/>    
+		<sdef n="frm"	  	c="formal"/>
+		<sdef n="def"	  	c="Definite"/>
+		<sdef n="voc"	  	c="vocal"/>
+    <sdef n="vbser"   c="Verb 'to be'"/>     
+    <sdef n="cnjcoo"  c="Co-ordinating conjunction"/>     
+    <sdef n="cnjsub"  c="Sub-ordinating conjunction"/>        
+    <sdef n="cnjadv"  c="adverbial conjunction"/>              
+    <sdef n="prn"     c="Pronoun"/>     
+    <sdef n="f"       c="Feminine"/>     
+    <sdef n="m"       c="Masculine"/>     
+    <sdef n="mf"      c="Male/Female"/>
+    <sdef n="nt"      c="Neuter"/>        
+    <sdef n="vaux"    c="Auxiliary Verb"/>     
+    <sdef n="sg"      c="Singular"/>     
+    <sdef n="pl"      c="Plural"/>     
+    <sdef n="sp"      c="Singular/Plural"/>        
+    <sdef n="itg"     c="interrogative"/>     
+    <sdef n="nom"     c="Nominative"/> 
+    <sdef n="acc"     c="Accusative"/>    
+    <sdef n="obl"     c="Oblique"/>        
+    <sdef n="pos"     c="Possesive"/> 
+    <sdef n="qnt"     c="Quantifier"/>            
+    <sdef n="ind"     c="Indefinite"/>        
+    <sdef n="pr"      c="Preposition"/>      
+    <sdef n="p1"      c="First person"/>     
+    <sdef n="p2"      c="Second person"/>     
+    <sdef n="p3"      c="Third person"/>      
+    <sdef n="inf"     c="Infinitive"/>     
+    <sdef n="pres"    c="Present tense"/>        
+    <sdef n="past"    c="Past tense"/>     
+		<sdef n="impf"    c="Imperfective participle"/>
+		<sdef n="perf"    c="Perfective participle"/>  
+		<sdef n="sint"    c="Synthetic"/>
+		<sdef n="comp"    c="Comparative"/> 
+		<sdef n="sup"     c="Superlative"/>  
+		<sdef n="tv"     	c="transitive"/> 	
+		<sdef n="iv"     	c="intransitive"/> 	
+    <sdef n="prs"    	c="Subjunctive"/>     
+    <sdef n="fut"    	c="Future"/>
+		<sdef n="imp"    	c="Imperative"/>
+		<sdef n="gna"    	c="verbal adverb"/>
+		<sdef n="agnt"    c="agentive"/>
+		<sdef n="pri"    	c="present indicative"/>	 	 
+		<sdef n="stem"  	c="stem"/>
+		<sdef n="ord"  		c="ordinal"/>
+   	<sdef n="cm"      c="Comma"/>
+    <sdef n="sent"    c="Sentence marker"/>
+    <sdef n="lpar"    c="Left parenthesis"/>
+    <sdef n="rpar"    c="Right parenthesis"/>
+    <sdef n="lquot"   c="Left quote"/>
+    <sdef n="rquot"   c="Right quote"/>
+    <sdef n="guio"    c="Hyphen"/>
+  </sdefs> 
+
+	<pardefs>
+	
+	<!-- SECTION: Numerals -->
+		<pardef n="numeros">
+			<e><re>[0-9]+([.,][0-9]+)?</re><p><l></l><r><s n="num"/></r></p></e>
+		</pardef>
+    
+		<pardef n="one__num">
+			<e><p><l></l><r><s n="num"/><s n="sg"/></r></p></e>
+		</pardef>
+
+	<pardef n="two__num">
+		<e><p><l></l><r><s n="num"/><s n="sp"/></r></p></e>
+	</pardef>
+
+	<pardef n="twenty__num">
+		<e><p><l>-එක</l><r>-එක</r></p><par n="two__num"/></e>
+		<e><p><l>-දෙක</l><r>-දෙක</r></p><par n="two__num"/></e>
+		<e><p><l>-තුන</l><r>-තුන</r></p><par n="two__num"/></e>
+		<e><p><l>-හතර</l><r>-හතර</r></p><par n="two__num"/></e>
+		<e><p><l>-පහ</l><r>-පහ</r></p><par n="two__num"/></e>
+		<e><p><l>-හය</l><r>-හය</r></p><par n="two__num"/></e>
+		<e><p><l>-හත</l><r>-හත</r></p><par n="two__num"/></e>
+		<e><p><l>-අට</l><r>-අට</r></p><par n="two__num"/></e>
+		<e><p><l>-නවය</l><r>-නවය</r></p><par n="two__num"/></e>
+	</pardef>
+		
+	
+  <!-- SECTION: Punctuation -->
+		<pardef n="separa">
+			<e><re>[.\?;:!]</re><p><l></l><r><s n="sent"/></r></p></e>
+		</pardef>
+	
+		<pardef n="guio">
+      <e><re>[—\-]+</re><p><l></l><r><s n="guio"/></r></p></e>
+    </pardef>
+
+    <pardef n="coma">
+      <e><re>,</re><p><l></l><r><s n="cm"/></r></p></e>
+    </pardef>
+
+    <pardef n="quotes">
+      <e><re>[«]+</re><p><l></l><r><s n="lquot"/></r></p></e>
+      <e><re>[»]+</re><p><l></l><r><s n="rquot"/></r></p></e>
+    </pardef>
+
+    <pardef n="paresq">
+      <e><re>[\(\[]</re><p><l></l><r><s n="lpar"/></r></p></e>
+    </pardef>
+
+    <pardef n="pardret">
+      <e><re>[\)\]]</re><p><l></l><r><s n="rpar"/></r></p></e>
+    </pardef>
+    
+    
+  	<!-- SECTION: Proper Nouns -->     
+    
+    <pardef n="ජේම්ස්/__np">
+      <e><p><l></l><r><s n="np"/><s n="ant"/><s n="m"/><s n="sg"/></r></p></e>
+      <e><p><l>ගේ</l><r><s n="np"/><s n="ant"/><s n="m"/><s n="sg"/><s n="gen"/></r></p></e>
+      <e><p><l>ට</l><r><s n="np"/><s n="ant"/><s n="m"/><s n="sg"/><s n="dat"/></r></p></e>
+      <e><p><l>ගෙන්</l><r><s n="np"/><s n="ant"/><s n="m"/><s n="sg"/><s n="abl"/></r></p></e>
+      <e><p><l>ව</l><r><s n="np"/><s n="ant"/><s n="m"/><s n="sg"/><s n="acc"/></r></p></e>
+    </pardef>  
+            
+    <pardef n="මේරි/__np">
+      <e><p><l></l><r><s n="np"/><s n="ant"/><s n="f"/><s n="sg"/></r></p></e>
+      <e><p><l>ගේ</l><r><s n="np"/><s n="ant"/><s n="f"/><s n="sg"/><s n="gen"/></r></p></e>
+      <e><p><l>ට</l><r><s n="np"/><s n="ant"/><s n="f"/><s n="sg"/><s n="dat"/></r></p></e>
+      <e><p><l>ගෙන්</l><r><s n="np"/><s n="ant"/><s n="f"/><s n="sg"/><s n="abl"/></r></p></e>
+      <e><p><l>ව</l><r><s n="np"/><s n="ant"/><s n="f"/><s n="sg"/><s n="acc"/></r></p></e>
+    </pardef>   
+    
+    <!-- SECTION: Pronouns --> 
+    
+		<pardef n="ම/ම__prn">
+    	<e><p><l>ම</l><r>ම<s n="prn"/><s n="pers"/><s n="p1"/><s n="mf"/><s n="sg"/><s n="nom"/></r></p></e>
+      <e><p><l>ගේ</l><r>ම<s n="prn"/><s n="pers"/><s n="p1"/><s n="mf"/><s n="sg"/><s n="gen"/></r></p></e>
+      <e><p><l>ට</l><r>ම<s n="prn"/><s n="pers"/><s n="p1"/><s n="mf"/><s n="sg"/><s n="dat"/></r></p></e>
+      <e><p><l>ගෙන්</l><r>ම<s n="prn"/><s n="pers"/><s n="p1"/><s n="mf"/><s n="sg"/><s n="abl"/></r></p></e>
+      <e><p><l>ාව</l><r>ම<s n="prn"/><s n="pers"/><s n="p1"/><s n="mf"/><s n="sg"/><s n="acc"/></r></p></e>
+    </pardef>
+    
+    <pardef n="අ/ප__prn">
+    	<e><p><l>පි</l><r>ප<s n="prn"/><s n="pers"/><s n="p1"/><s n="mf"/><s n="pl"/><s n="nom"/></r></p></e>
+      <e><p><l>පේ</l><r>ප<s n="prn"/><s n="pers"/><s n="p1"/><s n="mf"/><s n="pl"/><s n="gen"/></r></p></e>
+      <e><p><l>පට</l><r>ප<s n="prn"/><s n="pers"/><s n="p1"/><s n="mf"/><s n="pl"/><s n="dat"/></r></p></e>
+      <e><p><l>පෙන්</l><r>ප<s n="prn"/><s n="pers"/><s n="p1"/><s n="mf"/><s n="pl"/><s n="abl"/></r></p></e>
+      <e><p><l>ව</l><r>ප<s n="prn"/><s n="pers"/><s n="p1"/><s n="mf"/><s n="pl"/><s n="acc"/></r></p></e>
+    </pardef>
+    
+		<pardef n="ඔ/බ__prn">
+    	<e><p><l>බ</l><r>බ<s n="prn"/><s n="pers"/><s n="p2"/><s n="mf"/><s n="sg"/><s n="nom"/></r></p></e>
+      <e><p><l>බේ</l><r>බ<s n="prn"/><s n="pers"/><s n="p2"/><s n="mf"/><s n="sg"/><s n="gen"/></r></p></e>
+      <e><p><l>බට</l><r>බ<s n="prn"/><s n="pers"/><s n="p2"/><s n="mf"/><s n="sg"/><s n="dat"/></r></p></e>
+      <e><p><l>බෙන්</l><r>බ<s n="prn"/><s n="pers"/><s n="p2"/><s n="mf"/><s n="sg"/><s n="abl"/></r></p></e>
+      <e><p><l>ව</l><r>බ<s n="prn"/><s n="pers"/><s n="p2"/><s n="mf"/><s n="sg"/><s n="acc"/></r></p></e>
+    </pardef>
+    
+    <pardef n="ඔබලා/__prn">
+    	<e><p><l></l><r><s n="prn"/><s n="pers"/><s n="p2"/><s n="mf"/><s n="pl"/><s n="nom"/></r></p></e>
+      <e><p><l>ගේ</l><r><s n="prn"/><s n="pers"/><s n="p2"/><s n="mf"/><s n="pl"/><s n="gen"/></r></p></e>
+      <e><p><l>ට</l><r><s n="prn"/><s n="pers"/><s n="p2"/><s n="mf"/><s n="pl"/><s n="dat"/></r></p></e>
+      <e><p><l>ගෙන්</l><r><s n="prn"/><s n="pers"/><s n="p2"/><s n="mf"/><s n="pl"/><s n="abl"/></r></p></e>
+      <e><p><l>ව</l><r><s n="prn"/><s n="pers"/><s n="p2"/><s n="mf"/><s n="pl"/><s n="acc"/></r></p></e>
+    </pardef>
+		
+		 <!--TODO: Add for passive voice-->
+		 
+		<pardef n="ඔහු/__prn">
+    	<e><p><l></l><r><s n="prn"/><s n="pers"/><s n="p3"/><s n="m"/><s n="sg"/><s n="nom"/></r></p></e>
+      <e><p><l>ගේ</l><r><s n="prn"/><s n="pers"/><s n="p3"/><s n="m"/><s n="sg"/><s n="gen"/></r></p></e>
+      <e><p><l>ට</l><r><s n="prn"/><s n="pers"/><s n="p3"/><s n="m"/><s n="sg"/><s n="dat"/></r></p></e>
+      <e><p><l>ගෙන්</l><r><s n="prn"/><s n="pers"/><s n="p3"/><s n="m"/><s n="sg"/><s n="abl"/></r></p></e>
+      <e><p><l>ව</l><r><s n="prn"/><s n="pers"/><s n="p3"/><s n="m"/><s n="sg"/><s n="acc"/></r></p></e>
+    </pardef>
+	
+		<pardef n="ඇ/ය__prn">
+    	<e><p><l>ය</l><r>ය<s n="prn"/><s n="pers"/><s n="p3"/><s n="f"/><s n="sg"/><s n="nom"/></r></p></e>
+      <e><p><l>ගේ</l><r>ය<s n="prn"/><s n="pers"/><s n="p3"/><s n="f"/><s n="sg"/><s n="gen"/></r></p></e>
+      <e><p><l>යට</l><r>ය<s n="prn"/><s n="pers"/><s n="p3"/><s n="f"/><s n="sg"/><s n="dat"/></r></p></e>
+      <e><p><l>ගෙන්</l><r>ය<s n="prn"/><s n="pers"/><s n="p3"/><s n="f"/><s n="sg"/><s n="abl"/></r></p></e>
+      <e><p><l>ව</l><r>ය<s n="prn"/><s n="pers"/><s n="p3"/><s n="f"/><s n="sg"/><s n="acc"/></r></p></e>
+    </pardef>
+    
+    <pardef n="ඔවු/හු__prn">
+    	<e><p><l>හු</l><r>හු<s n="prn"/><s n="pers"/><s n="p3"/><s n="mf"/><s n="pl"/><s n="nom"/></r></p></e>
+      <e><p><l>න්ගේ</l><r>හු<s n="prn"/><s n="pers"/><s n="p3"/><s n="mf"/><s n="pl"/><s n="gen"/></r></p></e>
+      <e><p><l>න්ට</l><r>හු<s n="prn"/><s n="pers"/><s n="p3"/><s n="mf"/><s n="pl"/><s n="dat"/></r></p></e>
+      <e><p><l>න්ගෙන්</l><r>හු<s n="prn"/><s n="pers"/><s n="p3"/><s n="mf"/><s n="pl"/><s n="abl"/></r></p></e>
+      <e><p><l>න්ව</l><r>හු<s n="prn"/><s n="pers"/><s n="p3"/><s n="mf"/><s n="pl"/><s n="acc"/></r></p></e>
+    </pardef>
+    
+    
+   <!-- SECTION: Determiners --> 
+   <pardef n="එ/ය__det">
+    	<e><p><l>ය</l><r>ය<s n="det"/><s n="nom"/></r></p></e>
+      <e><p><l>හි</l><r>ය<s n="det"/><s n="gen"/></r></p></e>
+      <e><p><l>යට</l><r>ය<s n="det"/><s n="dat"/></r></p></e>
+      <e><p><l>යින්</l><r>ය<s n="det"/><s n="abl"/></r></p></e>
+      <e><p><l>ක</l><r>ය<s n="det"/><s n="dem"/><s n="sg"/></r></p></e>
+			<e><p><l>වා</l><r>ය<s n="det"/><s n="dem"/><s n="pl"/></r></p></e>
+    </pardef>
+    
+		<pardef n="අර/__det">
+			<e><p><l>ක</l><r><s n="det"/><s n="dem"/><s n="sg"/></r></p></e>
+			<e><p><l>වා</l><r><s n="det"/><s n="dem"/><s n="pl"/></r></p></e>
+		</pardef>
+		
+		<pardef n="යම/__det">
+			<e><p><l>ක්</l><r><s n="det"/><s n="dem"/><s n="sg"/></r></p></e>
+		</pardef>
+
+		
+		<!-- SECTION: Nouns --> 
+		
+	<pardef n="අම්මා/__n">
+		<e><p><l></l><r><s n="n"/><s n="f"/><s n="sg"/><s n="nom"/></r></p></e>
+		<e><p><l>ගේ</l><r><s n="n"/><s n="f"/><s n="sg"/><s n="gen"/></r></p></e>
+    <e><p><l>ට</l><r><s n="n"/><s n="f"/><s n="sg"/><s n="dat"/></r></p></e>
+    <e><p><l>ගෙන්</l><r><s n="n"/><s n="f"/><s n="sg"/><s n="abl"/></r></p></e>
+    <e><p><l>ව</l><r><s n="n"/><s n="f"/><s n="sg"/><s n="acc"/></r></p></e>
+    <e><p><l>වරු</l><r><s n="n"/><s n="f"/><s n="pl"/><s n="nom"/></r></p></e>
+		<e><p><l>වරුන්ගේ</l><r><s n="n"/><s n="f"/><s n="pl"/><s n="gen"/></r></p></e>
+    <e><p><l>වරුන්ට</l><r><s n="n"/><s n="f"/><s n="pl"/><s n="dat"/></r></p></e>
+    <e><p><l>වරුන්ගෙන්</l><r><s n="n"/><s n="f"/><s n="pl"/><s n="abl"/></r></p></e>
+    <e><p><l>වරුන්ව</l><r><s n="n"/><s n="f"/><s n="pl"/><s n="acc"/></r></p></e>
+	</pardef>
+	
+	<pardef n="ළම/යා__n">
+		<e><p><l>යා</l><r>යා<s n="n"/><s n="m"/><s n="sg"/><s n="def"/></r></p></e>
+		<e><p><l>යෙක්</l><r>යා<s n="n"/><s n="m"/><s n="sg"/><s n="ind"/><s n="subj"/></r></p></e>
+		<e><p><l>යෙකු</l><r>යා<s n="n"/><s n="m"/><s n="sg"/><s n="ind"/><s n="obj"/></r></p></e>
+		<e><p><l>යාගේ</l><r>යා<s n="n"/><s n="f"/><s n="sg"/><s n="gen"/></r></p></e>
+    <e><p><l>යාට</l><r>යා<s n="n"/><s n="f"/><s n="sg"/><s n="dat"/></r></p></e>
+    <e><p><l>යාගෙන්</l><r>යා<s n="n"/><s n="f"/><s n="sg"/><s n="abl"/></r></p></e>
+    <e><p><l>යාව</l><r>යා<s n="n"/><s n="f"/><s n="sg"/><s n="acc"/></r></p></e>
+		<e><p><l>යි</l><r>යා<s n="n"/><s n="m"/><s n="pl"/><s n="subj"/></r></p></e>
+		<e><p><l>යින්</l><r>යා<s n="n"/><s n="m"/><s n="pl"/><s n="obj"/></r></p></e>
+		<e><p><l>යින්ගේ</l><r>යා<s n="n"/><s n="f"/><s n="pl"/><s n="gen"/></r></p></e>
+    <e><p><l> යිින්ට</l><r>යා<s n="n"/><s n="f"/><s n="pl"/><s n="dat"/></r></p></e>
+    <e><p><l>යින්ගෙන්</l><r>යා<s n="n"/><s n="f"/><s n="pl"/><s n="abl"/></r></p></e>
+    <e><p><l>යින්ව</l><r>යා<s n="n"/><s n="f"/><s n="pl"/><s n="acc"/></r></p></e>
+	</pardef>
+	
+	<pardef n="මිනි/සා__n">
+		<e><p><l>සා</l><r>සා<s n="n"/><s n="m"/><s n="sg"/><s n="def"/></r></p></e>
+		<e><p><l>සෙක්</l><r>සා<s n="n"/><s n="m"/><s n="sg"/><s n="ind"/><s n="subj"/></r></p></e>
+		<e><p><l>සෙකු</l><r>සා<s n="n"/><s n="m"/><s n="sg"/><s n="ind"/><s n="obj"/></r></p></e>
+		<e><p><l>සාගේ</l><r>සා<s n="n"/><s n="f"/><s n="sg"/><s n="gen"/></r></p></e>
+    <e><p><l>සාට</l><r>සා<s n="n"/><s n="f"/><s n="sg"/><s n="dat"/></r></p></e>
+    <e><p><l>සාගෙන්</l><r>සා<s n="n"/><s n="f"/><s n="sg"/><s n="abl"/></r></p></e>
+    <e><p><l>සාව</l><r>සා<s n="n"/><s n="f"/><s n="sg"/><s n="acc"/></r></p></e>
+		<e><p><l>ස්සු</l><r>සා<s n="n"/><s n="m"/><s n="pl"/><s n="subj"/></r></p></e>
+		<e><p><l>සුන්</l><r>සා<s n="n"/><s n="m"/><s n="pl"/><s n="obj"/></r></p></e>
+		<e><p><l>සුන්ගේ</l><r>සා<s n="n"/><s n="f"/><s n="pl"/><s n="gen"/></r></p></e>
+    <e><p><l>සුන්ට</l><r>සා<s n="n"/><s n="f"/><s n="pl"/><s n="dat"/></r></p></e>
+    <e><p><l>සුන්ගෙන්</l><r>සා<s n="n"/><s n="f"/><s n="pl"/><s n="abl"/></r></p></e>
+    <e><p><l>සුන්ව</l><r>සා<s n="n"/><s n="f"/><s n="pl"/><s n="acc"/></r></p></e>
+	</pardef>
+	
+	<pardef n="පූස/__n">
+		<e><p><l>ා</l><r> ා<s n="n"/><s n="sg"/></r></p></e>
+		<e><p><l> ෝ</l><r> ා<s n="n"/><s n="pl"/></r></p></e>
+		<e><p><l> ෙක්</l><r> ා<s n="n"/><s n="m"/><s n="sg"/><s n="ind"/><s n="subj"/></r></p></e>
+		<e><p><l> ෙකු</l><r> ා<s n="n"/><s n="m"/><s n="sg"/><s n="ind"/><s n="obj"/></r></p></e>
+		<e><p><l> ෝ</l><r> ා<s n="n"/><s n="m"/><s n="pl"/><s n="subj"/></r></p></e>
+		<e><p><l> ෙක්</l><r><s n="n"/><s n="m"/><s n="sg"/><s n="ind"/><s n="subj"/></r></p></e>
+		<e><p><l>ාගේ</l><r><s n="n"/><s n="m"/><s n="sg"/><s n="gen"/></r></p></e>
+    <e><p><l>ාට</l><r><s n="n"/><s n="m"/><s n="sg"/><s n="dat"/></r></p></e>
+		</pardef>
+		
+	
+	<pardef n="මිදුල/__n">
+		<e><p><l></l><r><s n="n"/><s n="nt"/><s n="sg"/><s n="def"/></r></p></e>
+		<e><p><l>ක්</l><r><s n="n"/><s n="nt"/><s n="sg"/><s n="ind"/><s n="subj"/></r></p></e>
+		<e><p><l>ක</l><r><s n="n"/><s n="nt"/><s n="sg"/><s n="ind"/><s n="obj"/></r></p></e>
+		<e><p><l>ේ</l><r><s n="n"/><s n="nt"/><s n="sg"/><s n="gen"/></r></p></e>
+    <e><p><l>ට</l><r><s n="n"/><s n="nt"/><s n="sg"/><s n="dat"/></r></p></e>
+    <e><p><l>ෙන්</l><r><s n="n"/><s n="nt"/><s n="sg"/><s n="abl"/></r></p></e>
+    <e><p><l> ්</l><r><s n="n"/><s n="nt"/><s n="pl"/><s n="subj"/></r></p></e>
+	</pardef>
+	
+	<pardef n="අවුරු/ද්ද__n">
+		<e><p><l>ද්ද</l><r><s n="n"/><s n="nt"/><s n="sg"/><s n="def"/></r></p></e>
+		<e><p><l>ද්දක්</l><r><s n="n"/><s n="nt"/><s n="sg"/><s n="ind"/><s n="subj"/></r></p></e>
+		<e><p><l>ද්දක</l><r><s n="n"/><s n="nt"/><s n="sg"/><s n="ind"/><s n="obj"/></r></p></e>
+		<e><p><l>ද්දේ</l><r><s n="n"/><s n="nt"/><s n="sg"/><s n="gen"/></r></p></e>
+    <e><p><l>ද්දට</l><r><s n="n"/><s n="nt"/><s n="sg"/><s n="dat"/></r></p></e>
+    <e><p><l>ද්දෙන්</l><r><s n="n"/><s n="nt"/><s n="sg"/><s n="abl"/></r></p></e>
+    <e><p><l>දු</l><r><s n="n"/><s n="nt"/><s n="pl"/><s n="subj"/></r></p></e>
+	</pardef>
+	
+	<pardef n="ජනේල/ය__n">
+		<e><p><l>ය</l><r><s n="n"/><s n="nt"/><s n="sg"/><s n="def"/></r></p></e>
+		<e><p><l>යක්</l><r>ය<s n="n"/><s n="nt"/><s n="sg"/><s n="ind"/><s n="subj"/></r></p></e>
+		<e><p><l>යක</l><r>ය<s n="n"/><s n="nt"/><s n="sg"/><s n="ind"/><s n="obj"/></r></p></e>
+		<e><p><l>ේ</l><r>ය<s n="n"/><s n="nt"/><s n="sg"/><s n="gen"/></r></p></e>
+    <e><p><l>යට</l><r>ය<s n="n"/><s n="nt"/><s n="sg"/><s n="dat"/></r></p></e>
+    <e><p><l>ෙන්</l><r>ය<s n="n"/><s n="nt"/><s n="sg"/><s n="abl"/></r></p></e>
+    <e><p><l></l><r>ය<s n="n"/><s n="nt"/><s n="pl"/><s n="subj"/></r></p></e>
+	</pardef>
+	
+	<pardef n="ක්‍රීඩා/ව__n">
+		<e><p><l>ව</l><r>ව<s n="n"/><s n="nt"/><s n="sg"/><s n="def"/></r></p></e>
+		<e><p><l>වක්</l><r>ව<s n="n"/><s n="nt"/><s n="sg"/><s n="ind"/><s n="subj"/></r></p></e>
+		<e><p><l>වක</l><r>ව<s n="n"/><s n="nt"/><s n="sg"/><s n="ind"/><s n="obj"/></r></p></e>
+		<e><p><l>වේ</l><r>ව<s n="n"/><s n="nt"/><s n="sg"/><s n="gen"/></r></p></e>
+    <e><p><l>වට</l><r>ව<s n="n"/><s n="nt"/><s n="sg"/><s n="dat"/></r></p></e>
+    <e><p><l>වෙන්</l><r>ව<s n="n"/><s n="nt"/><s n="sg"/><s n="abl"/></r></p></e>
+    <e><p><l></l><r>ව<s n="n"/><s n="nt"/><s n="pl"/><s n="subj"/></r></p></e>
+	</pardef>
+	
+	<pardef n="නි/වස__n">
+		<e><p><l>වස</l><r>වස<s n="n"/><s n="nt"/><s n="sg"/><s n="def"/></r></p></e>
+		<e><p><l>වසක්</l><r>වස<s n="n"/><s n="nt"/><s n="sg"/><s n="ind"/><s n="subj"/></r></p></e>
+		<e><p><l>වසක</l><r>වස<s n="n"/><s n="nt"/><s n="sg"/><s n="ind"/><s n="obj"/></r></p></e>
+		<e><p><l>වසේ</l><r><s n="n"/><s n="nt"/><s n="sg"/><s n="gen"/></r></p></e>
+    <e><p><l>වසට</l><r><s n="n"/><s n="nt"/><s n="sg"/><s n="dat"/></r></p></e>
+    <e><p><l>වසෙන්</l><r><s n="n"/><s n="nt"/><s n="sg"/><s n="abl"/></r></p></e>
+		<e><p><l>වාස</l><r>වස<s n="n"/><s n="nt"/><s n="pl"/><s n="subj"/></r></p></e>
+		<e><p><l>වාසයන්</l><r>වස<s n="n"/><s n="nt"/><s n="pl"/><s n="obj"/></r></p></e>
+	</pardef>
+	
+	<pardef n="අද/__n">
+		<e><p><l></l><r><s n="n"/><s n="nt"/><s n="sg"/><s n="def"/></r></p></e>
+	</pardef>	
+	
+		<!-- SECTION: Verbs -->
+		
+		<pardef n="ක/රන__vblex">
+			<e><p><l>රන</l><r>රන<s n="vblex"/><s n="pres"/></r></p></e>
+			<e><p><l>රන්න</l><r>රන<s n="vblex"/><s n="voc"/></r></p></e>
+			<e><p><l>රමින්</l><r>රන<s n="vblex"/><s n="ger"/></r></p></e>
+			<e><p><l>රමි</l><r>රන<s n="vblex"/><s n="sg"/><s n="pres"/><s n="p1"/></r></p></e>
+			<e><p><l>‍ෙරුවෙමි</l><r>රන<s n="vblex"/><s n="sg"/><s n="past"/><s n="p1"/></r></p></e>
+			<e><p><l>රමු</l><r>රන<s n="vblex"/><s n="pl"/><s n="pres"/><s n="p1"/></r></p></e>
+			<e><p><l>ෙරුවෙමු</l><r>රන<s n="vblex"/><s n="pl"/><s n="past"/><s n="p1"/></r></p></e>
+			<e><p><l>රයි</l><r>රන<s n="vblex"/><s n="pres"/><s n="sg"/></r></p></e>
+			<e><p><l>රති</l><r>රන<s n="vblex"/><s n="pres"/><s n="pl"/></r></p></e>
+			<e><p><l>ෙරුවා</l><r>රන<s n="vblex"/><s n="past"/><s n="voc"/></r></p></e>
+			<e><p><l>ළ</l><r>රන<s n="vblex"/><s n="pres"/></r></p></e>
+		</pardef>	
+		
+		<pardef n="සිටි/න__vblex">
+			<e><p><l>න</l><r>න<s n="vblex"/><s n="pres"/></r></p></e>
+			<e><p><l>න්න</l><r>න<s n="vblex"/><s n="voc"/></r></p></e>
+			<e><p><l>මින්</l><r>න<s n="vblex"/><s n="ger"/></r></p></e>
+			<e><p><l>මි</l><r>න<s n="vblex"/><s n="sg"/><s n="pres"/><s n="p1"/></r></p></e>
+			<e><p><l>මු</l><r>න<s n="vblex"/><s n="pl"/><s n="pres"/><s n="p1"/></r></p></e>
+			<e><p><l>යි</l><r>න<s n="vblex"/><s n="pres"/><s n="sg"/></r></p></e>
+			<e><p><l>ති</l><r>න<s n="vblex"/><s n="pres"/><s n="pl"/></r></p></e>
+		</pardef>	
+		
+		<pardef n="ව/න__vblex">
+			<e><p><l>න</l><r>න<s n="vblex"/><s n="pres"/></r></p></e>
+			<e><p><l>වී</l><r>න<s n="vblex"/><s n="pres"/><s n="ger"/></r></p></e>
+			<e><p><l>න්න</l><r>න<s n="vblex"/><s n="voc"/></r></p></e>
+			<e><p><l> ෙමු</l><r>න<s n="vblex"/><s n="pl"/><s n="pres"/><s n="p1"/></r></p></e>
+			<e><p><l>ෙරුවෙමු</l><r>න<s n="vblex"/><s n="pl"/><s n="past"/><s n="p1"/></r></p></e>
+			<e><p><l> ෙයි</l><r>න<s n="vblex"/><s n="pres"/><s n="sg"/></r></p></e>
+			<e><p><l> ෙති</l><r>න<s n="vblex"/><s n="pres"/><s n="pl"/></r></p></e>
+			<e><p><l>ිය</l><r>න<s n="vblex"/><s n="past"/></r></p></e>
+			<e><p><l>ූ</l><r>න<s n="vblex"/><s n="ger"/><s n="past"/></r></p></e>
+		</pardef>
+		
+		<!-- SECTION: Auxiliary Verbs -->
+		<pardef n="හැකි/__vaux">
+			<e><p><l></l><r><s n="vaux"/></r></p></e>
+		</pardef>
+		
+		
+    <!--SECTION: Abverbs-->
+		
+		<pardef n="ඇත/__adv">
+			<e><p><l></l><r><s n="adv"/></r></p></e>
+			<e><p><l>ි</l><r><s n="obj"/></r></p></e>
+		</pardef>
+	
+		<pardef n="කොහෙ/ද__adv">
+			<e><p><l></l><r>ද<s n="obj"/></r></p></e>
+			<e><p><l>ද</l><r>ද<s n="adv"/></r></p></e>
+		</pardef>
+   
+    <pardef n="කවු/ද__adv">
+			<e><p><l>රු</l><r>ද<s n="obj"/></r></p></e>
+			<e><p><l>ද</l><r>ද<s n="adv"/></r></p></e>
+		</pardef>
+ 
+ 		<pardef n="ඉදිරිපස/__adv">
+			<e><p><l></l><r><s n="n"/><s n="gen"/></r></p></e>
+    	<e><p><l>ට</l><r><s n="n"/><s n="dat"/></r></p></e>
+    	<e><p><l>ින්</l><r><s n="n"/><s n="abl"/></r></p></e>
+		</pardef>
+		 																		
+ 		<pardef n="දැ/__adv">
+			<e><p><l>න්</l><r><s n="adv"/><s n="def"/></r></p></e>
+    	<e><p><l>නට</l><r><s n="n"/><s n="dat"/></r></p></e>
+		</pardef>
+ 		
+ 		<pardef n="එ/විට__adv">
+			<e><p><l>විට</l><r>විට<s n="adv"/><s n="def"/></r></p></e>
+		</pardef>
+ 																		
+ 		<pardef n="තු/ළ__adv">
+ 			<e><p><l>ළ</l><r>ළ<s n="adv"/><s n="def"/></r></p></e>
+			<e><p><l>ළින්</l><r>ළ<s n="adv"/><s n="def"/></r></p></e>
+    	<e><p><l>ළට</l><r>ළ<s n="n"/><s n="dat"/></r></p></e>
+		</pardef>
+		
+ 		
+ 		
+    <!-- SECTION: Conjunctions -->      
+    <pardef n="සහ/__cnjcoo">
+      <e><p><l></l><r><s n="cnjcoo"/></r></p></e>
+    </pardef>
+	  
+	  <!--SECTION: Preposition-->
+	  <pardef n="නො/__pr">
+			<e><p><l></l><r><s n="pr"/></r></p></e>
+		</pardef>
+	  
+		<!--SECTION: Postposition-->
+		<pardef n="ද/__post">
+			<e><p><l></l><r><s n="post"/></r></p></e>
+		</pardef>
+	
+	<!--CLITICS-->
+	
+	<pardef n="clitic_to">
+		<e><p><l>ට</l><r><j/>ට<s n="pr"/></r></p></e>
+	</pardef>
+	
+	<pardef n="clitic_from">
+		<e><p><l>ගෙන්</l><r><j/>ගෙන්<s n="pr"/></r></p></e>
+	</pardef>
+	
+	<pardef n="clitic_belonging_animate">
+		<e><p><l>ගේ</l><r><j/>ගේ<s n="pr"/></r></p></e>
+	</pardef>
+	
+	<pardef n="clitic_in">
+		<e><p><l> ේ</l><r><j/> ේ<s n="pr"/></r></p></e>
+	</pardef>
+	
+	
+	
+
+	<!-- Adjectives -->
+	<pardef n="අලුත්/__adj">
+		<e><p><l></l><r><s n="adj"/></r></p></e>
+		<e><p><l>ය</l><r><s n="adj"/><s n="sint"/><s n="comp"/></r></p></e>
+		<e><p><l>ම</l><r><s n="adj"/><s n="sint"/><s n="sup"/></r></p></e>
+	</pardef>
+
+    
+	<pardef n="හොඳ/__adj">
+		<e><p><l></l><r><s n="adj"/><s n="sint"/></r></p></e>
+		<e><p><l>යි</l><r><s n="adj"/><s n="sint"/><s n="comp"/></r></p></e>
+		<e><p><l>ම</l><r><s n="adj"/><s n="sint"/><s n="sup"/></r></p></e>
+	</pardef>
+	
+	<pardef n="ඉතා/__adj">
+		<e><p><l></l><r><s n="adj"/><s n="sint"/></r></p></e>
+		<e><p><l>ම</l><r><s n="adj"/><s n="sint"/><s n="comp"/><s n="sup"/></r></p></e>
+	</pardef>
+	
+	<pardef n="වඩා/__adj">
+		<e><p><l></l><r><s n="adj"/><s n="sint"/></r></p></e>
+		<e><p><l>ත්</l><r><s n="adj"/><s n="sint"/><s n="sup"/></r></p></e>
+	</pardef>
+	
+	<pardef n="පිරිමි/__adj">
+		<e><p><l></l><r><s n="adj"/></r></p></e>
+	</pardef>
+	
+	<pardef n="වේග/__adj">
+		<e><p><l>යෙන්</l><r><s n="adj"/></r></p></e>
+		<e><p><l>වත්ම</l><r><s n="adj"/><s n="sint"/><s n="comp"/></r></p></e>
+	</pardef>
+	
+	
+</pardefs>
+	
+
+	<section id="main" type="standard">
+	
+			<!--SECTION:  Numerals -->
+
+		<e lm="එක"><i>එක</i><par n="one__num"/></e>
+		<e lm="දෙක"><i>දෙක</i><par n="two__num"/></e>
+		<e lm="තුන"><i>තුන</i><par n="two__num"/></e>
+		<e lm="හතර"><i>හතර</i><par n="two__num"/></e>
+		<e lm="පහ"><i>පහ</i><par n="two__num"/></e>
+		<e lm="හය"><i>හය</i><par n="two__num"/></e>
+		<e lm="හත"><i>හත</i><par n="two__num"/></e>
+		<e lm="අට"><i>අට</i><par n="two__num"/></e>
+		<e lm="නවය"><i>නවය</i><par n="two__num"/></e>
+		<e lm="දහය"><i>දහය</i><par n="two__num"/></e>
+		<e lm="දස"><i>දස</i><par n="two__num"/></e>
+		<e lm="එකොලහ"><i>එකොලහ</i><par n="two__num"/></e>
+		<e lm="දොලහ"><i>දොලහ</i><par n="two__num"/></e>
+		<e lm="දහතුන"><i>දහතුන</i><par n="two__num"/></e>
+		<e lm="දහහතර"><i>දහහතර</i><par n="two__num"/></e>
+		<e lm="පහලොව"><i>පහලොව</i><par n="two__num"/></e>
+		<e lm="දහසය"><i>දහසය</i><par n="two__num"/></e>
+		<e lm="දහහත"><i>දහහත</i><par n="two__num"/></e>
+		<e lm="දහඅට"><i>දහඅට</i><par n="two__num"/></e>
+		<e lm="දහනවය"><i>දහනවය</i><par n="two__num"/></e>
+		<e lm="විස්ස"><i>විස්ස</i><par n="two__num"/></e>
+		<e lm="විසි"><i>විසි</i><par n="twenty__num"/></e>
+		<e lm="තිහ"><i>තිහ</i><par n="two__num"/></e>
+		<e lm="තිස්"><i>තිස්</i><par n="twenty__num"/></e>
+		<e lm="හතලිහ"><i>හතලිහ</i><par n="two__num"/></e>
+		<e lm="හතලිස්"><i>හතලිස්</i><par n="twenty__num"/></e>
+		<e lm="පණහ"><i>පණහ</i><par n="two__num"/></e>
+		<e lm="පණස්"><i>පණස්</i><par n="twenty__num"/></e>
+		<e lm="හැට"><i>හැට</i><par n="two__num"/></e>
+		<e lm="හැට"><i>හැට</i><par n="twenty__num"/></e>
+		<e lm="හැත්තෑව"><i>හැත්තෑව</i><par n="two__num"/></e>
+		<e lm="හැත්තෑ"><i>හැත්තෑ</i><par n="twenty__num"/></e>
+		<e lm="අසූව"><i>අසූව</i><par n="two__num"/></e>
+		<e lm="අසූ"><i>අසූ</i><par n="twenty__num"/></e>
+		<e lm="අනූව"><i>අනූව</i><par n="two__num"/></e>
+		<e lm="අනූ"><i>අනූ</i><par n="twenty__num"/></e>
+		<e lm="සියය"><i>සියය</i><par n="two__num"/></e>
+		<e lm="සිය"><i>සිය</i><par n="two__num"/></e>
+		<e lm="දහස"><i>දහස</i><par n="two__num"/></e>
+		<e lm="දහස්"><i>දහස්</i><par n="two__num"/></e>
+		<e lm="මිලියනය"><i>මිලියනය</i><par n="two__num"/></e>
+		<e lm="මිලියන"><i>මිලියන</i><par n="two__num"/></e>
+	
+		<!-- SECTION: Pronouns --> 
+		<e lm="ම"><i>ම</i><par n="ම/ම__prn"/></e>
+		<e lm="අ"><i>අ</i><par n="අ/ප__prn"/></e>
+		<e lm="ඔ"><i>ඔ</i><par n="ඔ/බ__prn"/></e>
+		<e lm="ඔබලා"><i>ඔබලා</i><par n="ඔබලා/__prn"/></e>
+		<e lm="ඔහු"><i>ඔහු</i><par n="ඔහු/__prn"/></e>
+		<e lm="ඇ"><i>ඇ</i><par n="ඇ/ය__prn"/></e>	
+		<e lm="ඔවු"><i>ඔවු</i><par n="ඔවු/හු__prn"/></e>
+		
+		<!-- SECTION: Determiners --> 
+		<e lm="එ"><i>එ</i><par n="එ/ය__det"/></e>
+		<e lm="මෙ"><i>මෙ</i><par n="එ/ය__det"/></e>			
+		<e lm="අර"><i>අර</i><par n="අර/__det"/></e>
+		<e lm="යම"><i>යම</i><par n="යම/__det"/></e>
+
+		
+		<!-- SECTION: Nouns -->
+		<e lm="ජේම්ස්"><i>ජේම්ස්</i><par n="ජේම්ස්/__np"/></e>
+		<e lm="මේරි"><i>මේරි</i><par n="මේරි/__np"/></e>
+		<e lm="අම්මා"><i>අම්මා</i><par n="අම්මා/__n"/></e>
+		<e lm="මිදුල"><i>මිදුල</i><par n="මිදුල/__n"/></e>
+		<e lm="නි"><i>නි</i><par n="නි/වස__n"/></e>
+		<e lm="ජනේලය"><i>ජනේල</i><par n="ජනේල/ය__n"/></e>
+		<e lm="ගස"><i>ගස</i><par n="මිදුල/__n"/></e>
+		<e lm="අද"><i>අද</i><par n="අද/__n"/></e>
+		<e lm="ඊයේ"><i>ඊයේ</i><par n="අද/__n"/></e>
+		<e lm="කාළගුණය"><i>කාළගුණය</i><par n="අද/__n"/></e>
+		<e lm="එළිමහන"><i>එළිමහන</i><par n="මිදුල/__n"/></e>
+		<e lm="අවුරුදු"><i>අවුරු</i><par n="අවුරු/ද්ද__n"/></e>
+		<e lm="ළමයා"><i>ළම</i><par n="ළම/යා__n"/></e>
+		<e lm="පූසා"><i>පූස</i><par n="පූස/__n"/></e>
+		<e lm="බල්ලා"><i>බල්ල</i><par n="පූස/__n"/></e>
+		<e lm="පිළිතුර"><i>පිළිතුර</i><par n="මිදුල/__n"/></e>
+		<e lm="හිස"><i>හිස</i><par n="මිදුල/__n"/></e>
+		<e lm="සතා"><i>සත</i><par n="පූස/__n"/></e>
+		<e lm="ශබ්දය"><i>ශබ්ද</i><par n="ජනේල/ය__n"/></e>
+		<e lm="සහෝදරිය"><i>සහෝදරිය</i><par n="පූස/__n"/></e>
+		<e lm="තැන"><i>තැන</i><par n="මිදුල/__n"/></e>
+		<e lm="වතුර"><i>වතුර</i><par n="අද/__n"/></e>
+		<e lm="වටපිට"><i>වටපිට</i><par n="අද/__n"/></e>
+		<e lm="මේසය"><i>මේස</i><par n="ජනේල/ය__n"/></e>
+		<e lm="ඇස"><i>ඇස</i><par n="මිදුල/__n"/></e>
+		<e lm="අත"><i>අත</i><par n="මිදුල/__n"/></e>
+		<e lm="මිනිසා"><i>මිනි</i><par n="මිනි/සා__n"/></e>
+		<e lm="කුරුල්ලා"><i>කුරුල්ල</i><par n="පූස/__n"/></e>
+		<e lm="දරුවා"><i>දරුව</i><par n="පූස/__n"/></e>
+		<e lm="දැරිය"><i>දැරිය</i><par n="පූස/__n"/></e>
+		<e lm="ක්‍රීඩාව"><i>ක්‍රීඩා</i><par n="ක්‍රීඩා/ව__n"/></e>
+		<e lm="කාලය"><i>කාල</i><par n="ජනේල/ය__n"/></e>
+		<e lm="ප්‍රශ්නය"><i>ප්‍රශ්න</i><par n="ජනේල/ය__n"/></e>
+		<e lm="පුටු"><i>පුටු</i><par n="ජනේල/ය__n"/></e>
+		
+		<!-- SECTION: Verbs -->
+		<e lm="කරන"><i>ක</i><par n="ක/රන__vblex"/></e>
+		<e lm="සෙල්ලම් කරන"><i>සෙල්ලම් ක</i><par n="ක/රන__vblex"/></e>
+		<e lm="සිටින"><i>සිටි</i><par n="සිටි/න__vblex"/></e>
+		<e lm="බලන"><i>බල</i><par n="සිටි/න__vblex"/></e>
+		<e lm="දකින"><i>දකි</i><par n="සිටි/න__vblex"/></e>
+		<e lm="කිය"><i>කිය</i><par n="සිටි/න__vblex"/></e>
+		<e lm="වන"><i>ව</i><par n="ව/න__vblex"/></e>
+		<e lm="දන්"><i>දන්</i><par n="සිටි/න__vblex"/></e>
+		<e lm="කතා කරන"><i>කතා ක</i><par n="ක/රන__vblex"/></e>
+		<e lm="ඇසෙන"><i>ඇසෙ</i><par n="සිටි/න__vblex"/></e>
+		<e lm="සොයන"><i>සොය</i><par n="සිටි/න__vblex"/></e>
+		<e lm="සිනාසෙන"><i>සිනාසෙ</i><par n="සිටි/න__vblex"/></e>
+		<e lm="සිතන"><i>සි</i><par n="සිටි/න__vblex"/></e>
+		<e lm="සින"><i>සි</i><par n="සිටි/න__vblex"/></e>
+		<e lm="සැග වන"><i>සැග ව</i><par n="ව/න__vblex"/></e>
+		<e lm="නිදන"><i>නිද</i><par n="සිටි/න__vblex"/></e>
+		<e lm="අසන"><i>අස</i><par n="සිටි/න__vblex"/></e>
+		<e lm="ගණන් කරන"><i>ගණන් ක</i><par n="ක/රන__vblex"/></e>
+		<e lm="දුව"><i>දුව</i><par n="සිටි/න__vblex"/></e>
+		<e lm="යන"><i>ය</i><par n="සිටි/න__vblex"/></e> <!--TODO Add for special cases-->
+		<e lm="දෙන"><i>දෙ</i><par n="ක/රන__vblex"/></e>
+		<e lm="උත්සාහ කරන"><i>උත්සාහ ක</i><par n="ක/රන__vblex"/></e>
+		<e lm="පානය කරන"><i>පානය ක</i><par n="ක/රන__vblex"/></e>
+		<e lm="පැමිණ"><i>පැමි</i><par n="සිටි/න__vblex"/></e>
+		<e lm="බලන"><i>බල</i><par n="සිටි/න__vblex"/></e>
+		<e lm="ඇවිද"><i>ඇවිද</i><par n="සිටි/න__vblex"/></e>
+		<e lm="ලබන"><i>ලබ</i><par n="සිටි/න__vblex"/></e>
+		<e lm="දුටු"><i>දුටු</i><par n="සිටි/න__vblex"/></e> <!--TODO Add for special cases-->
+		
+		<!-- SECTION: Auxiliary Verbs -->
+		<e lm="හැකි"><i>හැකි</i><par n="හැකි/__vaux"/></e>
+		<e lm="යුතු"><i>යුතු</i><par n="හැකි/__vaux"/></e>
+		<e lm="බව"><i>බව</i><par n="හැකි/__vaux"/></e>
+		<e lm="ඇයි"><i>ඇයි</i><par n="හැකි/__vaux"/></e>
+		<e lm="කුමක්"><i>කුමක්</i><par n="හැකි/__vaux"/></e>
+		<e lm="දැයි"><i>දැයි</i><par n="හැකි/__vaux"/></e>
+		<e lm="දෙස"><i>දෙස</i><par n="හැකි/__vaux"/></e>
+		
+		<!-- SECTION: Adjectives -->
+		<e lm="අලුත්"><i>අලුත්</i><par n="අලුත්/__adj"/></e>
+		<e lm="කළු"><i>කළු</i><par n="හොඳ/__adj"/></e>
+		<e lm="සුදු"><i>සුදු</i><par n="හොඳ/__adj"/></e>
+		<e lm="හොඳ"><i>හොඳ</i><par n="හොඳ/__adj"/></e>
+		<e lm="නරක"><i>නරක</i><par n="හොඳ/__adj"/></e>
+		<e lm="උස"><i>උස</i><par n="හොඳ/__adj"/></e>
+		<e lm="දිග"><i>දිග</i><par n="හොඳ/__adj"/></e>
+		<e lm="මිටි"><i>මිටි</i><par n="හොඳ/__adj"/></e>
+		<e lm="කොට"><i>කොට</i><par n="හොඳ/__adj"/></e>
+		<e lm="කුඩා"><i>කුඩා</i><par n="හොඳ/__adj"/></e>
+		<e lm="ලස්සන"><i>ලස්සන</i><par n="හොඳ/__adj"/></e>
+		<e lm="කැත"><i>කැත</i><par n="හොඳ/__adj"/></e>
+		<e lm="උණුසුම්"><i>උණුසුම්</i><par n="හොඳ/__adj"/></e>
+		<e lm="සීතල"><i>සීතල</i><par n="අලුත්/__adj"/></e>
+		<e lm="යහපත්"><i>යහපත්</i><par n="අලුත්/__adj"/></e>
+		<e lm="ඉතා"><i>ඉතා</i><par n="ඉතා/__adj"/></e>
+		<e lm="කැමැති"><i>කැමැති</i><par n="අලුත්/__adj"/></e>
+		<e lm="විශාල"><i>විශාල</i><par n="අලුත්/__adj"/></e>
+		<e lm="පිරිමි"><i>පිරිමි</i><par n="පිරිමි/__adj"/></e>
+		<e lm="ගැහැණු"><i>ගැහැණු</i><par n="පිරිමි/__adj"/></e>
+		<e lm="වේග"><i>වේග</i><par n="වේග/__adj"/></e>
+		<e lm="සෙමින්"><i>සෙමින්</i><par n="ඉතා/__adj"/></e>
+		<e lm="සාවදානව"><i>සාවදානව</i><par n="ඉතා/__adj"/></e>
+		<e lm="සත්තකින්"><i>සත්තකින්</i><par n="ඉතා/__adj"/></e>
+		<e lm="සතුට"><i>සතුට</i><par n="හොඳ/__adj"/></e>
+		<e lm="සැම"><i>සැම</i><par n="පිරිමි/__adj"/></e>
+		<e lm="වඩා"><i>වඩා</i><par n="වඩා/__adj"/></e>
+		<e lm="පරණ"><i>පරණ</i><par n="හොඳ/__adj"/></e>
+		<e lm="වෙනත්"><i>වෙනත්</i><par n="අලුත්/__adj"/></e>
+		<e lm="අවසන්"><i>අවසන්</i><par n="පිරිමි/__adj"/></e>
+		<e lm="අමතර"><i>අමතර</i><par n="පිරිමි/__adj"/></e>
+		<e lm="ටිකක්"><i>ටිකක්</i><par n="පිරිමි/__adj"/></e>
+		<e lm="ආසන්න"><i>ආසන්න</i><par n="අලුත්/__adj"/></e>
+		<e lm="කිසි"><i>කිසි</i><par n="අලුත්/__adj"/></e>
+		
+		<!-- SECTION: Adverbs -->
+		<e lm="ඉදිරිපස"><i>ඉදිරිපස</i><par n="ඉදිරිපස/__adv"/></e>
+		<e lm="පිටුපස"><i>පිටුපස</i><par n="ඉදිරිපස/__adv"/></e>
+		<e lm="කොහෙ"><i>කොහෙ</i><par n="කොහෙ/ද__adv"/></e>
+		<e lm="කොහොම"><i>කොහොම</i><par n="කොහෙ/ද__adv"/></e>
+		<e lm="කවදා"><i>කවදා</i><par n="කොහෙ/ද__adv"/></e>
+		<e lm="කීයට"><i>කීයට</i><par n="කොහෙ/ද__adv"/></e>
+		<e lm="කාට"><i>කාට</i><par n="කොහෙ/ද__adv"/></e>
+		<e lm="කවු"><i>කවු</i><par n="කවු/ද__adv"/></e>
+		<e lm="දැ"><i>දැ</i><par n="දැ/__adv"/></e>
+		<e lm="තුළ"><i>තුළ</i><par n="තු/ළ__adv"/></e> 
+		<e lm="ළග"><i>ළග</i><par n="තු/ළ__adv"/></e> 
+		<e lm="එවිට"><i>එ</i><par n="එ/විට__adv"/></e>
+		<e lm="මෙවිට"><i>මෙ</i><par n="එ/විට__adv"/></e>
+		<e lm="සැමවිට"><i>සැම</i><par n="එ/විට__adv"/></e>
+		<e lm="වෙත"><i>වෙත</i><par n="තු/ළ__adv"/></e>
+		<e lm="යට"><i>යට</i><par n="ඉදිරිපස/__adv"/></e>
+		<e lm="බොහෝවිට"><i>බොහෝ</i><par n="එ/විට__adv"/></e>
+		<e lm=""><i></i><par n="එ/විට__adv"/></e>
+		<e lm="ඇත"><i></i><par n="ඇත/__adv"/></e>
+		<e lm="නැත"><i></i><par n="ඇත/__adv"/></e>
+		<e lm="තව"><i>කාට</i><par n="කොහෙ/ද__adv"/></e>
+		
+		 <!-- SECTION: Conjunctions -->
+		 <e lm="සහ"><i>සහ</i><par n="සහ/__cnjcoo"/></e>
+		 <e lm="හා"><i>හා</i><par n="සහ/__cnjcoo"/></e>
+		 <e lm="හෝ"><i>හෝ</i><par n="සහ/__cnjcoo"/></e>
+	   <e lm="නමුත්"><i>නමුත්</i><par n="සහ/__cnjcoo"/></e>
+	   <e lm="ඉතින්"><i>ඉතින්</i><par n="සහ/__cnjcoo"/></e>
+	   <e lm="සමග"><i>සමග</i><par n="සහ/__cnjcoo"/></e>
+	   <e lm="අතර"><i>සමග</i><par n="සහ/__cnjcoo"/></e>
+	   
+	   <!--SECTION: Preposition-->
+	   <e lm="නො"><i>නො</i><par n="නො/__pr"/></e>
+	   
+	   <!--SECTION: Postposition-->
+	   <e lm="ද"><i>ද</i><par n="ද/__post"/></e>
+		 <e lm="යි"><i>ද</i><par n="ද/__post"/></e>
+		 <e lm="ය"><i>ද</i><par n="ද/__post"/></e>
+		 		
+	</section>
+
+</dictionary>

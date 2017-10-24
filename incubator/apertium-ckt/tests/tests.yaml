@@ -1,0 +1,26 @@
+Config:
+  hfst:
+      App: hfst-lookup
+      Gen: ../tyv.autogen.hfst
+      Morph: ../tyv.automorf.hfst
+
+Tests:
+
+      
+  "Nouns in -ӈы":
+    ӄораӈы<n><sp><erg> : ӄаата
+    ӄораӈы<n><sp><ins> : ӄаата
+    ӄораӈы<n><sg><abs> : ӄораӈы
+    титиӈы<n><sp><erg> : тититэ
+    титиӈы<n><sp><ins> : тититэ
+    титиӈы<n><sg><abs> : титиӈы
+
+  "Bare stem, deleted final vowel":
+    экык<n><sp><all> : аккагты
+    экык<n><sg><abs> : экык
+    экык<n><sp><erg> : эккэтэ
+    экык<n><sp><ins> : эккэтэ
+
+  "Singulative":
+    уунъыт<n><sing><sg><abs> : оонъылгын
+    

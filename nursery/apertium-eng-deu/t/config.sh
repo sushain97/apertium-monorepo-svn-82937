@@ -1,0 +1,1 @@
+PAIRS=( eng-deu )

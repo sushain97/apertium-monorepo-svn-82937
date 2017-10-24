@@ -1,0 +1,819 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- -*- nxml -*- -->
+<interchunk>
+  <section-def-cats>
+    <def-cat n="SA">
+      <cat-item tags="SA.*"/>
+    </def-cat>
+    <def-cat n="SV-GPR">
+      <cat-item tags="SV.GPR.*"/>
+    </def-cat>
+    <def-cat n="CC">
+      <cat-item tags="CC"/>
+    </def-cat>
+    <def-cat n="POST">
+      <cat-item tags="POST"/>
+      <cat-item tags="POST.*"/>
+    </def-cat>
+    <def-cat n="default">
+      <cat-item lemma="*" tags="*"/>
+    </def-cat>
+    <def-cat n="SN-ADVL">
+      <cat-item tags="SN.ADVL.*"/>
+    </def-cat>
+    <def-cat n="SN-GEN">
+      <cat-item tags="SN.GEN"/>
+      <cat-item tags="SN.GEN.*"/>
+    </def-cat>
+    <def-cat n="SN-SUBJ">
+      <cat-item tags="SN.SUBJ.*"/>
+    </def-cat>
+    <def-cat n="SN-ABS">
+      <cat-item tags="SN.ABS.*"/>
+      <cat-item tags="SN.OBL.*"/>
+    </def-cat>
+    <def-cat n="COP">
+      <cat-item tags="COP"/>
+    </def-cat>
+    <def-cat n="V-FIN">
+      <cat-item tags="SV.PRES.*"/>
+      <cat-item tags="SV.FUT.*"/>
+      <cat-item tags="SV.AOR.*"/>
+      <cat-item tags="SV.PAST.*"/>
+    </def-cat>
+    <def-cat n="SENT">
+      <cat-item tags="SENT"/>
+    </def-cat>
+  </section-def-cats>
+  <section-def-attrs>
+    <def-attr n="a_gen">
+      <attr-item tags="m"/>
+      <attr-item tags="f"/>
+      <attr-item tags="nt"/>
+      <attr-item tags="mfn"/>
+      <attr-item tags="GD"/>
+    </def-attr>
+    <def-attr n="a_anim">
+      <attr-item tags="aa"/>
+      <attr-item tags="nn"/>
+      <attr-item tags="an"/>
+      <attr-item tags="AD"/>
+    </def-attr>
+    <def-attr n="a_tens">
+      <attr-item tags="PAST"/>
+      <attr-item tags="PRES"/>
+    </def-attr>
+    <def-attr n="a_trans">
+      <attr-item tags="tv"/>
+      <attr-item tags="iv"/>
+    </def-attr>
+    <def-attr n="a_pers">
+      <attr-item tags="p1"/>
+      <attr-item tags="p2"/>
+      <attr-item tags="p3"/>
+      <attr-item tags="PD"/>
+    </def-attr>
+    <def-attr n="a_nbr">
+      <attr-item tags="sg"/>
+      <attr-item tags="pl"/>
+      <attr-item tags="sp"/>
+      <attr-item tags="ND"/>
+    </def-attr>
+    <def-attr n="a_cas">
+      <attr-item tags="nom"/>
+      <attr-item tags="acc"/>
+      <attr-item tags="dat"/>
+      <attr-item tags="gen"/>
+      <attr-item tags="ins"/>
+      <attr-item tags="loc"/>
+      <attr-item tags="abl"/>
+      <attr-item tags="prp"/>
+      <attr-item tags="CD"/>
+    </def-attr>
+  </section-def-attrs>
+  <section-def-vars>
+    <def-var n="number"/>
+  </section-def-vars>
+  <section-def-macros>
+    <def-macro n="post-govern2" npar="2">
+      <choose>
+        <when><test> 
+                  <not><equal><clip pos="1" part="a_cas"/><lit v=""/></equal></not>
+              </test>
+              <let><clip pos="2" part="a_cas"/><clip pos="1" part="a_cas"/></let>
+        </when>
+      </choose>
+
+      <choose>
+        <when><test> 
+                  <equal caseless="yes"><clip pos="1" part="lem"/><lit v="о"/></equal>
+              </test>
+              <let><clip pos="2" part="a_cas"/><lit-tag v="prp"/></let>
+        </when>
+
+        <when><test> 
+                <or>
+                  <equal caseless="yes"><clip pos="1" part="lem"/><lit v="с"/></equal>
+                  <equal caseless="yes"><clip pos="1" part="lem"/><lit v="в связи с"/></equal>
+                </or>
+              </test>
+              <let><clip pos="2" part="a_cas"/><lit-tag v="ins"/></let>
+        </when>
+
+      </choose>
+    </def-macro>
+    <def-macro n="concord-nominal2" npar="2">
+      <choose>
+        <when><test> 
+                <and>
+                    <equal><clip pos="2" part="a_nbr"/><lit-tag v="ND"/></equal>
+                    <not><equal><clip pos="1" part="a_nbr"/><lit v=""/></equal></not>
+                </and>
+              </test>
+              <let><clip pos="2" part="a_nbr"/><clip pos="1" part="a_nbr"/></let>
+        </when>
+      </choose>
+      <choose>
+        <when><test> 
+                <and>
+                    <equal><clip pos="2" part="a_cas"/><lit-tag v="CD"/></equal>
+                    <equal><clip pos="1" part="a_cas"/><lit-tag v="GEN"/></equal>
+                </and>
+              </test>
+              <let><clip pos="2" part="a_cas"/><lit-tag v="gen"/></let>
+        </when>
+
+
+        <when><test> 
+                <and>
+                    <equal><clip pos="2" part="a_cas"/><lit-tag v="CD"/></equal>
+                    <not><equal><clip pos="1" part="a_cas"/><lit v=""/></equal></not>
+                </and>
+              </test>
+              <let><clip pos="2" part="a_cas"/><clip pos="1" part="a_cas"/></let>
+        </when>
+      </choose>
+      <choose>
+
+        <when><test> 
+                <and>
+                    <equal><clip pos="2" part="a_gen"/><lit-tag v="GD"/></equal>
+                    <not><equal><clip pos="1" part="a_gen"/><lit v=""/></equal></not>
+                </and>
+              </test>
+              <let><clip pos="2" part="a_gen"/><clip pos="1" part="a_gen"/></let>
+        </when>
+
+      </choose>
+      <let><clip pos="2" part="a_anim"/><lit-tag v="an"/></let>
+
+    </def-macro>
+
+    <def-macro n="concord-pers2" npar="2">
+      <choose>
+        <when><test> 
+                <and>
+                  <or>
+                    <equal><clip pos="2" part="a_nbr"/><lit-tag v="ND"/></equal>
+                    <equal><clip pos="2" part="a_trans"/><lit-tag v="tv"/></equal>
+                  </or>
+                  <not><equal><clip pos="1" part="a_nbr"/><lit v=""/></equal></not>
+                </and>
+              </test>
+              <let><clip pos="2" part="a_nbr"/><clip pos="1" part="a_nbr"/></let>
+        </when>
+      </choose>
+    <choose>
+        <when><test> 
+                <and>
+                  <or>
+                    <equal><clip pos="2" part="a_gen"/><lit-tag v="GD"/></equal>
+                    <equal><clip pos="2" part="a_trans"/><lit-tag v="tv"/></equal>
+                  </or>
+                  <not><equal><clip pos="1" part="a_gen"/><lit v=""/></equal></not>
+                </and>
+              </test>
+              <let><clip pos="2" part="a_gen"/><clip pos="1" part="a_gen"/></let>
+        </when>
+      </choose>
+    <choose>
+        <when><test> 
+                <and>
+                  <or> 
+                    <equal><clip pos="2" part="a_pers"/><lit-tag v="PD"/></equal>
+                    <equal><clip pos="2" part="a_trans"/><lit-tag v="tv"/></equal>
+                  </or> 
+                  <not><equal><clip pos="1" part="a_pers"/><lit v=""/></equal></not>
+                </and>
+              </test>
+              <let><clip pos="2" part="a_pers"/><clip pos="1" part="a_pers"/></let>
+        </when>
+      </choose>
+      <choose>
+        <when><test> 
+                <and>
+                  <equal><clip pos="2" part="a_nbr"/><lit-tag v="pl"/></equal>
+                  <equal><clip pos="2" part="a_tens"/><lit-tag v="PAST"/></equal>
+                </and>
+              </test>
+              <let><clip pos="2" part="a_gen"/><lit-tag v="mfn"/></let>
+        </when>
+      </choose>
+
+    </def-macro>
+  </section-def-macros>
+  <section-rules>
+    <rule comment="REGLA: SN-GEN COP SN-ABS">
+      <pattern>
+        <pattern-item n="SN-GEN"/>
+        <pattern-item n="COP"/>
+        <pattern-item n="SN-ABS"/>
+      </pattern>
+      <action>
+        <out>
+          <chunk>
+            <lit v="prep"/>
+            <lit-tag v="PREP"/>
+            <lit v="{^у"/> 
+            <lit-tag v="pr"/>
+            <lit v="$}"/>
+          </chunk>
+          <b/>
+          <chunk>
+            <clip pos="1" part="lem"/>
+            <clip pos="1" part="tags"/>
+            <clip pos="1" part="chcontent"/>
+          </chunk>
+          <b pos="1"/>
+          <chunk>
+            <clip pos="2" part="lem"/>
+            <clip pos="2" part="tags"/>
+            <clip pos="2" part="chcontent"/>
+          </chunk>
+          <b pos="2"/>
+          <chunk>
+            <clip pos="3" part="lem"/>
+            <clip pos="3" part="tags"/>
+            <clip pos="3" part="chcontent"/>
+          </chunk>
+        </out>
+      </action>
+    </rule>
+
+    <rule comment="REGLA: SN-GEN SN-SUBJ V-FIN">
+      <pattern>
+        <pattern-item n="SN-GEN"/>
+        <pattern-item n="SN-SUBJ"/>
+        <pattern-item n="V-FIN"/>
+      </pattern>
+      <action>
+        <call-macro n="concord-pers2">
+          <with-param pos="2"/>
+          <with-param pos="3"/>
+        </call-macro>
+        <out>
+          <chunk>
+            <clip pos="2" part="lem"/>
+            <clip pos="2" part="tags"/>
+            <clip pos="2" part="chcontent"/>
+          </chunk>
+          <b pos="1"/>
+          <chunk>
+            <clip pos="1" part="lem"/>
+            <clip pos="1" part="tags"/>
+            <clip pos="1" part="chcontent"/>
+          </chunk>
+          <b pos="1"/>
+          <chunk>
+            <clip pos="3" part="lem"/>
+            <clip pos="3" part="tags"/>
+            <clip pos="3" part="chcontent"/>
+          </chunk>
+        </out>
+      </action>
+    </rule>
+
+
+    <rule comment="REGLA: V-FIN SN-GEN SN-SUBJ">
+      <pattern>
+        <pattern-item n="V-FIN"/>
+        <pattern-item n="SN-GEN"/>
+        <pattern-item n="SN-SUBJ"/>
+      </pattern>
+      <action>
+        <call-macro n="concord-pers2">
+          <with-param pos="3"/>
+          <with-param pos="1"/>
+        </call-macro>
+        <out>
+          <chunk>
+            <clip pos="1" part="lem"/>
+            <clip pos="1" part="tags"/>
+            <clip pos="1" part="chcontent"/>
+          </chunk>
+          <b pos="1"/>
+          <chunk>
+            <clip pos="3" part="lem"/>
+            <clip pos="3" part="tags"/>
+            <clip pos="3" part="chcontent"/>
+          </chunk>
+          <b pos="1"/>
+          <chunk>
+            <clip pos="2" part="lem"/>
+            <clip pos="2" part="tags"/>
+            <clip pos="2" part="chcontent"/>
+          </chunk>
+        </out>
+      </action>
+    </rule>
+
+
+    <rule comment="REGLA: V-FIN SN-SUBJ">
+      <pattern>
+        <pattern-item n="V-FIN"/>
+        <pattern-item n="SN-SUBJ"/>
+      </pattern>
+      <action>
+        <call-macro n="concord-pers2">
+          <with-param pos="2"/>
+          <with-param pos="1"/>
+        </call-macro>
+        <out>
+          <chunk>
+            <clip pos="1" part="lem"/>
+            <clip pos="1" part="tags"/>
+            <clip pos="1" part="chcontent"/>
+          </chunk>
+          <b pos="1"/>
+          <chunk>
+            <clip pos="2" part="lem"/>
+            <clip pos="2" part="tags"/>
+            <clip pos="2" part="chcontent"/>
+          </chunk>
+        </out>
+      </action>
+    </rule>
+
+    <rule comment="REGLA: SN-SUBJ SN-ADVL V-FIN">
+      <pattern>
+        <pattern-item n="SN-SUBJ"/>
+        <pattern-item n="SN-ADVL"/>
+        <pattern-item n="V-FIN"/>
+      </pattern>
+      <action>
+        <call-macro n="concord-pers2">
+          <with-param pos="1"/>
+          <with-param pos="3"/>
+        </call-macro>
+        <out>
+          <chunk>
+            <clip pos="1" part="lem"/>
+            <clip pos="1" part="tags"/>
+            <clip pos="1" part="chcontent"/>
+          </chunk>
+          <b pos="2"/>
+          <chunk>
+            <clip pos="2" part="lem"/>
+            <clip pos="2" part="tags"/>
+            <clip pos="2" part="chcontent"/>
+          </chunk>
+          <b pos="1"/>
+          <chunk>
+            <clip pos="3" part="lem"/>
+            <clip pos="3" part="tags"/>
+            <clip pos="3" part="chcontent"/>
+          </chunk>
+        </out>
+      </action>
+    </rule>
+
+
+    <rule comment="REGLA: SN-SUBJ SN-ABS V-FIN">
+      <pattern>
+        <pattern-item n="SN-SUBJ"/>
+        <pattern-item n="SN-ABS"/>
+        <pattern-item n="V-FIN"/>
+      </pattern>
+      <action>
+        <call-macro n="concord-pers2">
+          <with-param pos="1"/>
+          <with-param pos="3"/>
+        </call-macro>
+        <out>
+          <chunk>
+            <clip pos="1" part="lem"/>
+            <clip pos="1" part="tags"/>
+            <clip pos="1" part="chcontent"/>
+          </chunk>
+          <b pos="2"/>
+          <chunk>
+            <clip pos="2" part="lem"/>
+            <clip pos="2" part="tags"/>
+            <clip pos="2" part="chcontent"/>
+          </chunk>
+          <b pos="1"/>
+          <chunk>
+            <clip pos="3" part="lem"/>
+            <clip pos="3" part="tags"/>
+            <clip pos="3" part="chcontent"/>
+          </chunk>
+        </out>
+      </action>
+    </rule>
+
+    <rule comment="REGLA: SN-SUBJ V-FIN">
+      <pattern>
+        <pattern-item n="SN-SUBJ"/>
+        <pattern-item n="V-FIN"/>
+      </pattern>
+      <action>
+        <call-macro n="concord-pers2">
+          <with-param pos="1"/>
+          <with-param pos="2"/>
+        </call-macro>
+        <out>
+          <chunk>
+            <clip pos="1" part="lem"/>
+            <clip pos="1" part="tags"/>
+            <clip pos="1" part="chcontent"/>
+          </chunk>
+          <b pos="1"/>
+          <chunk>
+            <clip pos="2" part="lem"/>
+            <clip pos="2" part="tags"/>
+            <clip pos="2" part="chcontent"/>
+          </chunk>
+        </out>
+      </action>
+    </rule>
+
+    <rule comment="REGLA: SN-GEN SN-GEN SN-SUBJ">
+      <pattern>
+        <pattern-item n="SN-GEN"/>
+        <pattern-item n="SN-GEN"/>
+        <pattern-item n="SN-SUBJ"/>
+      </pattern>
+      <action>
+        <out>
+          <chunk>
+            <clip pos="3" part="lem"/>
+            <clip pos="3" part="tags"/>
+            <clip pos="3" part="chcontent"/>
+          </chunk>
+          <b pos="1"/>
+          <chunk>
+            <clip pos="2" part="lem"/>
+            <clip pos="2" part="tags"/>
+            <clip pos="2" part="chcontent"/>
+          </chunk>
+          <b pos="2"/>
+          <chunk>
+            <clip pos="1" part="lem"/>
+            <clip pos="1" part="tags"/>
+            <clip pos="1" part="chcontent"/>
+          </chunk>
+        </out>
+      </action>
+    </rule>
+
+
+    <rule comment="REGLA: SN-GEN SN-SUBJ">
+      <pattern>
+        <pattern-item n="SN-GEN"/>
+        <pattern-item n="SN-SUBJ"/>
+      </pattern>
+      <action>
+        <out>
+          <chunk>
+            <clip pos="2" part="lem"/>
+            <clip pos="2" part="tags"/>
+            <clip pos="2" part="chcontent"/>
+          </chunk>
+          <b pos="1"/>
+          <chunk>
+            <clip pos="1" part="lem"/>
+            <clip pos="1" part="tags"/>
+            <clip pos="1" part="chcontent"/>
+          </chunk>
+        </out>
+      </action>
+    </rule>
+
+    <rule comment="REGLA: SN-ABS SA COP">
+      <pattern>
+        <pattern-item n="SN-ABS"/>
+        <pattern-item n="SA"/>
+        <pattern-item n="COP"/>
+      </pattern>
+      <action>
+        <call-macro n="concord-nominal2">
+          <with-param pos="1"/>
+          <with-param pos="2"/>
+        </call-macro>
+        <out>
+          <chunk>
+            <clip pos="1" part="lem"/>
+            <clip pos="1" part="tags"/>
+            <clip pos="1" part="chcontent"/>
+          </chunk>
+          <b pos="1"/>
+          <chunk>
+            <clip pos="2" part="lem"/>
+            <clip pos="2" part="tags"/>
+            <clip pos="2" part="chcontent"/>
+          </chunk>
+        </out>
+      </action>
+    </rule>
+
+
+    <rule comment="REGLA: SN-GEN SN-ABS">
+      <pattern>
+        <pattern-item n="SN-GEN"/>
+        <pattern-item n="SN-ABS"/>
+      </pattern>
+      <action>
+        <out>
+          <chunk>
+            <clip pos="2" part="lem"/>
+            <clip pos="2" part="tags"/>
+            <clip pos="2" part="chcontent"/>
+          </chunk>
+          <b pos="1"/>
+          <chunk>
+            <clip pos="1" part="lem"/>
+            <clip pos="1" part="tags"/>
+            <clip pos="1" part="chcontent"/>
+          </chunk>
+        </out>
+      </action>
+    </rule>
+
+    <rule comment="REGLA: SN-GEN SN-ADVL">
+      <pattern>
+        <pattern-item n="SN-GEN"/>
+        <pattern-item n="SN-ADVL"/>
+      </pattern>
+      <action>
+        <out>
+          <chunk>
+            <clip pos="2" part="lem"/>
+            <clip pos="2" part="tags"/>
+            <clip pos="2" part="chcontent"/>
+          </chunk>
+          <b pos="1"/>
+          <chunk>
+            <clip pos="1" part="lem"/>
+            <clip pos="1" part="tags"/>
+            <clip pos="1" part="chcontent"/>
+          </chunk>
+        </out>
+      </action>
+    </rule>
+
+    <rule comment="REGLA: SN-GEN SN-ADVL POST">
+      <pattern>
+        <pattern-item n="SN-GEN"/>
+        <pattern-item n="SN-ADVL"/>
+        <pattern-item n="POST"/>
+      </pattern>
+      <action>
+        <call-macro n="post-govern2">
+          <with-param pos="3"/>
+          <with-param pos="2"/>
+        </call-macro>
+        <out>
+          <chunk>
+            <clip pos="3" part="lem"/>
+            <clip pos="3" part="tags"/>
+            <clip pos="3" part="chcontent"/>
+          </chunk>
+          <b pos="1"/>
+          <chunk>
+            <clip pos="2" part="lem"/>
+            <clip pos="2" part="tags"/>
+            <clip pos="2" part="chcontent"/>
+          </chunk>
+          <b pos="2"/>
+          <chunk>
+            <clip pos="1" part="lem"/>
+            <clip pos="1" part="tags"/>
+            <clip pos="1" part="chcontent"/>
+          </chunk>
+        </out>
+      </action>
+    </rule>
+
+
+    <rule comment="REGLA: SN-GEN SN-ABS POST">
+      <pattern>
+        <pattern-item n="SN-GEN"/>
+        <pattern-item n="SN-ABS"/>
+        <pattern-item n="POST"/>
+      </pattern>
+      <action>
+        <call-macro n="post-govern2">
+          <with-param pos="3"/>
+          <with-param pos="2"/>
+        </call-macro>
+        <out>
+          <chunk>
+            <clip pos="3" part="lem"/>
+            <clip pos="3" part="tags"/>
+            <clip pos="3" part="chcontent"/>
+          </chunk>
+          <b pos="1"/>
+          <chunk>
+            <clip pos="2" part="lem"/>
+            <clip pos="2" part="tags"/>
+            <clip pos="2" part="chcontent"/>
+          </chunk>
+          <b pos="2"/>
+          <chunk>
+            <clip pos="1" part="lem"/>
+            <clip pos="1" part="tags"/>
+            <clip pos="1" part="chcontent"/>
+          </chunk>
+        </out>
+      </action>
+    </rule>
+
+    <rule comment="REGLA: SA POST">
+      <pattern>
+        <pattern-item n="SA"/>
+        <pattern-item n="POST"/>
+      </pattern>
+      <action>
+        <call-macro n="post-govern2">
+          <with-param pos="2"/>
+          <with-param pos="1"/>
+        </call-macro>
+        <out>
+          <chunk>
+            <clip pos="2" part="lem"/>
+            <clip pos="2" part="tags"/>
+            <clip pos="2" part="chcontent"/>
+          </chunk>
+          <b pos="1"/>
+          <chunk>
+            <clip pos="1" part="lem"/>
+            <clip pos="1" part="tags"/>
+            <clip pos="1" part="chcontent"/>
+          </chunk>
+        </out>
+      </action>
+    </rule>
+
+    <rule comment="REGLA: SN-GEN POST">
+      <pattern>
+        <pattern-item n="SN-GEN"/>
+        <pattern-item n="POST"/>
+      </pattern>
+      <action>
+        <call-macro n="post-govern2">
+          <with-param pos="2"/>
+          <with-param pos="1"/>
+        </call-macro>
+        <out>
+          <chunk>
+            <clip pos="2" part="lem"/>
+            <clip pos="2" part="tags"/>
+            <clip pos="2" part="chcontent"/>
+          </chunk>
+          <b pos="1"/>
+          <chunk>
+            <clip pos="1" part="lem"/>
+            <clip pos="1" part="tags"/>
+            <clip pos="1" part="chcontent"/>
+          </chunk>
+        </out>
+      </action>
+    </rule>
+
+
+    <rule comment="REGLA: SN-ABS POST">
+      <pattern>
+        <pattern-item n="SN-ABS"/>
+        <pattern-item n="POST"/>
+      </pattern>
+      <action>
+        <call-macro n="post-govern2">
+          <with-param pos="2"/>
+          <with-param pos="1"/>
+        </call-macro>
+        <out>
+          <chunk>
+            <clip pos="2" part="lem"/>
+            <clip pos="2" part="tags"/>
+            <clip pos="2" part="chcontent"/>
+          </chunk>
+          <b pos="1"/>
+          <chunk>
+            <clip pos="1" part="lem"/>
+            <clip pos="1" part="tags"/>
+            <clip pos="1" part="chcontent"/>
+          </chunk>
+        </out>
+      </action>
+    </rule>
+
+    <rule comment="REGLA: SN-ADVL SV-GPR SN-GEN">
+      <pattern>
+        <pattern-item n="SN-ADVL"/>
+        <pattern-item n="SV-GPR"/>
+        <pattern-item n="SN-GEN"/>
+      </pattern>
+      <action>
+        <call-macro n="concord-nominal2">
+          <with-param pos="3"/>
+          <with-param pos="2"/>
+        </call-macro>
+        <out>
+          <chunk>
+            <clip pos="2" part="lem"/>
+            <clip pos="2" part="tags"/>
+            <clip pos="2" part="chcontent"/>
+          </chunk>
+          <b pos="1"/>
+          <chunk>
+            <clip pos="1" part="lem"/>
+            <clip pos="1" part="tags"/>
+            <clip pos="1" part="chcontent"/>
+          </chunk>
+          <b pos="1"/>
+          <chunk>
+            <clip pos="3" part="lem"/>
+            <clip pos="3" part="tags"/>
+            <clip pos="3" part="chcontent"/>
+          </chunk>
+        </out>
+      </action>
+    </rule>
+
+
+    <rule comment="REGLA: SN-ADVL POST">
+      <pattern>
+        <pattern-item n="SN-ADVL"/>
+        <pattern-item n="POST"/>
+      </pattern>
+      <action>
+        <call-macro n="post-govern2">
+          <with-param pos="2"/>
+          <with-param pos="1"/>
+        </call-macro>
+        <out>
+          <chunk>
+            <clip pos="2" part="lem"/>
+            <clip pos="2" part="tags"/>
+            <clip pos="2" part="chcontent"/>
+          </chunk>
+          <b pos="1"/>
+          <chunk>
+            <clip pos="1" part="lem"/>
+            <clip pos="1" part="tags"/>
+            <clip pos="1" part="chcontent"/>
+          </chunk>
+        </out>
+      </action>
+    </rule>
+
+    <rule comment="REGLA: SN-ADVL CC SN-ADVL POST">
+      <pattern>
+        <pattern-item n="SN-ADVL"/>
+        <pattern-item n="CC"/>
+        <pattern-item n="SN-ADVL"/>
+        <pattern-item n="POST"/>
+      </pattern>
+      <action>
+        <out>
+          <chunk>
+            <clip pos="4" part="lem"/>
+            <clip pos="4" part="tags"/>
+            <clip pos="4" part="chcontent"/>
+          </chunk>
+          <b pos="1"/>
+          <chunk>
+            <clip pos="3" part="lem"/>
+            <clip pos="3" part="tags"/>
+            <clip pos="3" part="chcontent"/>
+          </chunk>
+          <b pos="2"/>
+          <chunk>
+            <clip pos="2" part="lem"/>
+            <clip pos="2" part="tags"/>
+            <clip pos="2" part="chcontent"/>
+          </chunk>
+          <b pos="3"/>
+          <chunk>
+            <clip pos="1" part="lem"/>
+            <clip pos="1" part="tags"/>
+            <clip pos="1" part="chcontent"/>
+          </chunk>
+        </out>
+      </action>
+    </rule>
+
+
+  </section-rules>
+</interchunk>
+

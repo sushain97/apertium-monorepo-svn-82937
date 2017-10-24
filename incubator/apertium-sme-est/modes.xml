@@ -1,0 +1,476 @@
+      <modes>
+<!-- sme → est -->
+<mode name="sme-est" install="yes">
+<pipeline>
+<program name="hfst-proc -e -w">
+<file name="sme-est.automorf.hfst"/>
+</program>
+<program name="cg-proc">
+<file name="sme-est.mor.rlx.bin"/>
+</program>
+<program name="cg-proc -w -1 -n">
+<file name="sme-est.syn.rlx.bin"/>
+</program>
+<program name="apertium-pretransfer"/>
+<program name="lt-proc -b">
+<file name="sme-est.autobil.bin"/>
+</program>
+<program name="lrx-proc -m">
+<file name="sme-est.autolex.bin"/>
+</program>
+<program name="apertium-transfer -b">
+<file name="apertium-sme-est.sme-est.t1x"/>
+<file name="sme-est.t1x.bin"/>
+</program>
+<program name="apertium-interchunk">
+<file name="apertium-sme-est.sme-est.t2x"/>
+<file name="sme-est.t2x.bin"/>
+</program>
+<program name="apertium-postchunk">
+<file name="apertium-sme-est.sme-est.t3x"/>
+<file name="sme-est.t3x.bin"/>
+</program>
+<program name="apertium-transfer -n">
+<file name="apertium-sme-est.sme-est.t4x"/>
+<file name="sme-est.t4x.bin"/>
+</program>
+<program name="hfst-proc --weight-classes 1 $1">
+<file name="sme-est.autogen.hfst"/>
+</program>
+</pipeline>
+</mode>
+<mode name="sme-est-debug" install="no">
+<pipeline>
+<program name="hfst-proc -e -w">
+<file name="sme-est.automorf.hfst"/>
+</program>
+<program name="cg-proc">
+<file name="sme-est.mor.rlx.bin"/>
+</program>
+<program name="cg-proc -w -1 -n">
+<file name="sme-est.syn.rlx.bin"/>
+</program>
+<program name="apertium-pretransfer"/>
+<program name="lt-proc -b">
+<file name="sme-est.autobil.bin"/>
+</program>
+<program name="lrx-proc -m">
+<file name="sme-est.autolex.bin"/>
+</program>
+<program name="apertium-transfer -b">
+<file name="apertium-sme-est.sme-est.t1x"/>
+<file name="sme-est.t1x.bin"/>
+</program>
+<program name="apertium-interchunk">
+<file name="apertium-sme-est.sme-est.t2x"/>
+<file name="sme-est.t2x.bin"/>
+</program>
+<program name="apertium-postchunk">
+<file name="apertium-sme-est.sme-est.t3x"/>
+<file name="sme-est.t3x.bin"/>
+</program>
+<program name="apertium-transfer -n">
+<file name="apertium-sme-est.sme-est.t4x"/>
+<file name="sme-est.t4x.bin"/>
+</program>
+<program name="hfst-proc --weight-classes 1 -d">
+<file name="sme-est.autogen.hfst"/>
+</program>
+</pipeline>
+</mode>
+<mode name="sme-est-morph" install="no">
+<pipeline>
+<program name="hfst-proc -e -w">
+<file name="sme-est.automorf.hfst"/>
+</program>
+</pipeline>
+</mode>
+<mode name="sme-est-disam" install="no">
+<pipeline>
+<program name="hfst-proc -e -w">
+<file name="sme-est.automorf.hfst"/>
+</program>
+<program name="cg-conv -a -l"/>
+<program name="vislcg3 --trace --grammar">
+<file name="sme-est.mor.rlx.bin"/>
+</program>
+<program name="vislcg3 --trace --grammar">
+<file name="sme-est.syn.rlx.bin"/>
+</program>
+</pipeline>
+</mode>
+<mode name="sme-est-tagger" install="no">
+<pipeline>
+<program name="hfst-proc -e -w">
+<file name="sme-est.automorf.hfst"/>
+</program>
+<program name="cg-proc">
+<file name="sme-est.mor.rlx.bin"/>
+</program>
+<program name="cg-proc -w -1 -n">
+<file name="sme-est.syn.rlx.bin"/>
+</program>
+<program name="apertium-pretransfer"/>
+</pipeline>
+</mode>
+<mode name="sme-est-biltrans" install="no">
+<pipeline>
+<program name="hfst-proc -e -w">
+<file name="sme-est.automorf.hfst"/>
+</program>
+<program name="cg-proc">
+<file name="sme-est.mor.rlx.bin"/>
+</program>
+<program name="cg-proc -w -1 -n">
+<file name="sme-est.syn.rlx.bin"/>
+</program>
+<program name="apertium-pretransfer"/>
+<program name="lt-proc -b">
+<file name="sme-est.autobil.bin"/>
+</program>
+</pipeline>
+</mode>
+<mode name="sme-est-lextor" install="no">
+<pipeline>
+<program name="hfst-proc -e -w">
+<file name="sme-est.automorf.hfst"/>
+</program>
+<program name="cg-proc">
+<file name="sme-est.mor.rlx.bin"/>
+</program>
+<program name="cg-proc -w -1 -n">
+<file name="sme-est.syn.rlx.bin"/>
+</program>
+<program name="apertium-pretransfer"/>
+<program name="lt-proc -b">
+<file name="sme-est.autobil.bin"/>
+</program>
+<program name="lrx-proc -t -m">
+<file name="sme-est.autolex.bin"/>
+</program>
+</pipeline>
+</mode>
+<mode name="sme-est-chunker" install="no">
+<pipeline>
+<program name="hfst-proc -e -w">
+<file name="sme-est.automorf.hfst"/>
+</program>
+<program name="cg-proc">
+<file name="sme-est.mor.rlx.bin"/>
+</program>
+<program name="cg-proc -w -1 -n">
+<file name="sme-est.syn.rlx.bin"/>
+</program>
+<program name="apertium-pretransfer"/>
+<program name="lt-proc -b">
+<file name="sme-est.autobil.bin"/>
+</program>
+<program name="lrx-proc -m">
+<file name="sme-est.autolex.bin"/>
+</program>
+<program name="apertium-transfer -t -b">
+<file name="apertium-sme-est.sme-est.t1x"/>
+<file name="sme-est.t1x.bin"/>
+</program>
+</pipeline>
+</mode>
+<mode name="sme-est-interchunk" install="no">
+<pipeline>
+<program name="hfst-proc -e -w">
+<file name="sme-est.automorf.hfst"/>
+</program>
+<program name="cg-proc">
+<file name="sme-est.mor.rlx.bin"/>
+</program>
+<program name="cg-proc -w -1 -n">
+<file name="sme-est.syn.rlx.bin"/>
+</program>
+<program name="apertium-pretransfer"/>
+<program name="lt-proc -b">
+<file name="sme-est.autobil.bin"/>
+</program>
+<program name="lrx-proc -m">
+<file name="sme-est.autolex.bin"/>
+</program>
+<program name="apertium-transfer -b">
+<file name="apertium-sme-est.sme-est.t1x"/>
+<file name="sme-est.t1x.bin"/>
+</program>
+<program name="apertium-interchunk">
+<file name="apertium-sme-est.sme-est.t2x"/>
+<file name="sme-est.t2x.bin"/>
+</program>
+</pipeline>
+</mode>
+<mode name="sme-est-postchunk" install="no">
+<pipeline>
+<program name="hfst-proc -e -w">
+<file name="sme-est.automorf.hfst"/>
+</program>
+<program name="cg-proc">
+<file name="sme-est.mor.rlx.bin"/>
+</program>
+<program name="cg-proc -w -1 -n">
+<file name="sme-est.syn.rlx.bin"/>
+</program>
+<program name="apertium-pretransfer"/>
+<program name="lt-proc -b">
+<file name="sme-est.autobil.bin"/>
+</program>
+<program name="lrx-proc -m">
+<file name="sme-est.autolex.bin"/>
+</program>
+<program name="apertium-transfer -b">
+<file name="apertium-sme-est.sme-est.t1x"/>
+<file name="sme-est.t1x.bin"/>
+</program>
+<program name="apertium-interchunk">
+<file name="apertium-sme-est.sme-est.t2x"/>
+<file name="sme-est.t2x.bin"/>
+</program>
+<program name="apertium-postchunk">
+<file name="apertium-sme-est.sme-est.t3x"/>
+<file name="sme-est.t3x.bin"/>
+</program>
+</pipeline>
+</mode>
+<mode name="sme-est-postchunk2" install="no">
+<pipeline>
+<program name="hfst-proc -e -w">
+<file name="sme-est.automorf.hfst"/>
+</program>
+<program name="cg-proc">
+<file name="sme-est.mor.rlx.bin"/>
+</program>
+<program name="cg-proc -w -1 -n">
+<file name="sme-est.syn.rlx.bin"/>
+</program>
+<program name="apertium-pretransfer"/>
+<program name="lt-proc -b">
+<file name="sme-est.autobil.bin"/>
+</program>
+<program name="lrx-proc -m">
+<file name="sme-est.autolex.bin"/>
+</program>
+<program name="apertium-transfer -b">
+<file name="apertium-sme-est.sme-est.t1x"/>
+<file name="sme-est.t1x.bin"/>
+</program>
+<program name="apertium-interchunk">
+<file name="apertium-sme-est.sme-est.t2x"/>
+<file name="sme-est.t2x.bin"/>
+</program>
+<program name="apertium-postchunk">
+<file name="apertium-sme-est.sme-est.t3x"/>
+<file name="sme-est.t3x.bin"/>
+</program>
+<program name="apertium-transfer -n">
+<file name="apertium-sme-est.sme-est.t4x"/>
+<file name="sme-est.t4x.bin"/>
+</program>
+</pipeline>
+</mode>
+<!-- est → sme -->
+<mode name="est-sme" install="yes">
+<pipeline>
+<program name="hfst-proc -e -w">
+<file name="est-sme.automorf.hfst"/>
+</program>
+<program name="cg-proc -1 -w -n">
+<file name="est-sme.mor.rlx.bin"/>
+</program>
+<program name="apertium-pretransfer"/>
+<program name="lt-proc -b">
+<file name="est-sme.autobil.bin"/>
+</program>
+<program name="lrx-proc -m">
+<file name="est-sme.autolex.bin"/>
+</program>
+<program name="apertium-transfer -b">
+<file name="apertium-sme-est.est-sme.t1x"/>
+<file name="est-sme.t1x.bin"/>
+</program>
+<program name="apertium-interchunk">
+<file name="apertium-sme-est.est-sme.t2x"/>
+<file name="est-sme.t2x.bin"/>
+</program>
+<program name="apertium-postchunk">
+<file name="apertium-sme-est.est-sme.t3x"/>
+<file name="est-sme.t3x.bin"/>
+</program>
+<program name="hfst-proc --weight-classes 1 $1">
+<file name="est-sme.autogen.hfst"/>
+</program>
+</pipeline>
+</mode>
+<mode name="est-sme-debug" install="no">
+<pipeline>
+<program name="hfst-proc -e -w">
+<file name="est-sme.automorf.hfst"/>
+</program>
+<program name="cg-proc -1 -w -n">
+<file name="est-sme.mor.rlx.bin"/>
+</program>
+<program name="apertium-pretransfer"/>
+<program name="lt-proc -b">
+<file name="est-sme.autobil.bin"/>
+</program>
+<program name="lrx-proc -m">
+<file name="est-sme.autolex.bin"/>
+</program>
+<program name="apertium-transfer -b">
+<file name="apertium-sme-est.est-sme.t1x"/>
+<file name="est-sme.t1x.bin"/>
+</program>
+<program name="apertium-interchunk">
+<file name="apertium-sme-est.est-sme.t2x"/>
+<file name="est-sme.t2x.bin"/>
+</program>
+<program name="apertium-postchunk">
+<file name="apertium-sme-est.est-sme.t3x"/>
+<file name="est-sme.t3x.bin"/>
+</program>
+<program name="hfst-proc --weight-classes 1 -d">
+<file name="est-sme.autogen.hfst"/>
+</program>
+</pipeline>
+</mode>
+<mode name="est-sme-morph" install="no">
+<pipeline>
+<program name="hfst-proc -e -w">
+<file name="est-sme.automorf.hfst"/>
+</program>
+</pipeline>
+</mode>
+<mode name="est-sme-disam" install="no">
+<pipeline>
+<program name="hfst-proc -e -w">
+<file name="est-sme.automorf.hfst"/>
+</program>
+<program name="cg-conv -a -l"/>
+<program name="vislcg3 --trace --grammar">
+<file name="est-sme.mor.rlx.bin"/>
+</program>
+</pipeline>
+</mode>
+<mode name="est-sme-tagger" install="no">
+<pipeline>
+<program name="hfst-proc -e -w">
+<file name="est-sme.automorf.hfst"/>
+</program>
+<program name="cg-proc -1 -w -n">
+<file name="est-sme.mor.rlx.bin"/>
+</program>
+<program name="apertium-pretransfer"/>
+</pipeline>
+</mode>
+<mode name="est-sme-biltrans" install="no">
+<pipeline>
+<program name="hfst-proc -e -w">
+<file name="est-sme.automorf.hfst"/>
+</program>
+<program name="cg-proc -1 -w -n">
+<file name="est-sme.mor.rlx.bin"/>
+</program>
+<program name="apertium-pretransfer"/>
+<program name="lt-proc -b">
+<file name="est-sme.autobil.bin"/>
+</program>
+<program name="lrx-proc -m">
+<file name="est-sme.autolex.bin"/>
+</program>
+</pipeline>
+</mode>
+<mode name="est-sme-lextor" install="no">
+<pipeline>
+<program name="hfst-proc -e -w">
+<file name="est-sme.automorf.hfst"/>
+</program>
+<program name="cg-proc -1 -w -n">
+<file name="est-sme.mor.rlx.bin"/>
+</program>
+<program name="apertium-pretransfer"/>
+<program name="lt-proc -b">
+<file name="est-sme.autobil.bin"/>
+</program>
+<program name="lrx-proc -t -m">
+<file name="est-sme.autolex.bin"/>
+</program>
+</pipeline>
+</mode>
+<mode name="est-sme-chunker" install="no">
+<pipeline>
+<program name="hfst-proc -e -w">
+<file name="est-sme.automorf.hfst"/>
+</program>
+<program name="cg-proc -1 -w -n">
+<file name="est-sme.mor.rlx.bin"/>
+</program>
+<program name="apertium-pretransfer"/>
+<program name="lt-proc -b">
+<file name="est-sme.autobil.bin"/>
+</program>
+<program name="lrx-proc -m">
+<file name="est-sme.autolex.bin"/>
+</program>
+<program name="apertium-transfer -b">
+<file name="apertium-sme-est.est-sme.t1x"/>
+<file name="est-sme.t1x.bin"/>
+</program>
+</pipeline>
+</mode>
+<mode name="est-sme-interchunk" install="no">
+<pipeline>
+<program name="hfst-proc -e -w">
+<file name="est-sme.automorf.hfst"/>
+</program>
+<program name="cg-proc -1 -w -n">
+<file name="est-sme.mor.rlx.bin"/>
+</program>
+<program name="apertium-pretransfer"/>
+<program name="lt-proc -b">
+<file name="est-sme.autobil.bin"/>
+</program>
+<program name="lrx-proc -m">
+<file name="est-sme.autolex.bin"/>
+</program>
+<program name="apertium-transfer -b">
+<file name="apertium-sme-est.est-sme.t1x"/>
+<file name="est-sme.t1x.bin"/>
+</program>
+<program name="apertium-interchunk">
+<file name="apertium-sme-est.est-sme.t2x"/>
+<file name="est-sme.t2x.bin"/>
+</program>
+</pipeline>
+</mode>
+<mode name="est-sme-postchunk" install="no">
+<pipeline>
+<program name="hfst-proc -e -w">
+<file name="est-sme.automorf.hfst"/>
+</program>
+<program name="cg-proc -1 -w -n">
+<file name="est-sme.mor.rlx.bin"/>
+</program>
+<program name="apertium-pretransfer"/>
+<program name="lt-proc -b">
+<file name="est-sme.autobil.bin"/>
+</program>
+<program name="lrx-proc -m">
+<file name="est-sme.autolex.bin"/>
+</program>
+<program name="apertium-transfer -b">
+<file name="apertium-sme-est.est-sme.t1x"/>
+<file name="est-sme.t1x.bin"/>
+</program>
+<program name="apertium-interchunk">
+<file name="apertium-sme-est.est-sme.t2x"/>
+<file name="est-sme.t2x.bin"/>
+</program>
+<program name="apertium-postchunk">
+<file name="apertium-sme-est.est-sme.t3x"/>
+<file name="est-sme.t3x.bin"/>
+</program>
+</pipeline>
+</mode>
+</modes>

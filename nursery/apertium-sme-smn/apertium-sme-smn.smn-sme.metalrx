@@ -1,0 +1,20 @@
+
+<metalrx>
+
+  <def-seqs>
+    <def-seq n="foo-verbs">
+      <or>
+        <match lemma="foo"/>
+        <match lemma="bar"/>
+      </or>
+    </def-seq>
+  </def-seqs>
+
+<rules>
+ 
+  <rule weight="1.0">
+    <match lemma="säämi" tags="n.sg.*"><select lemma="sápmi" tags="n.sg.*"/></match>
+  </rule>
+
+</rules>
+</metalrx>

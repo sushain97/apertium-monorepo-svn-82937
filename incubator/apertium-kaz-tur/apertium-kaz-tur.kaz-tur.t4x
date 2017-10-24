@@ -1,0 +1,123 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- -*- nxml -*- -->
+<transfer>
+  <section-def-cats>
+    <def-cat n="lı-sız">
+      <cat-item lemma="lı" tags="post"/>
+      <cat-item lemma="sız" tags="post"/>
+    </def-cat>
+    <def-cat n="mı">
+      <cat-item lemma="mı" tags="qst"/>
+    </def-cat>
+    <def-cat n="cop-aor">
+      <cat-item lemma="i" tags="cop.aor.*"/>
+    </def-cat>
+    <def-cat n="cop-aor-ifi">
+      <cat-item lemma="i" tags="cop.aor.*"/>
+      <cat-item lemma="i" tags="cop.ifi.*"/>
+    </def-cat>
+    <def-cat n="cop-aor-sg3">
+      <cat-item lemma="i" tags="cop.aor.p3.sg"/>
+    </def-cat>
+    <def-cat n="subst">
+      <cat-item tags="n"/>
+      <cat-item tags="adj.subst"/>
+      <cat-item tags="n.*"/>
+      <cat-item tags="adj.subst.*"/>
+    </def-cat>
+    <def-cat n="default">
+      <cat-item tags="*"/>
+    </def-cat>
+  </section-def-cats>
+
+  <section-def-attrs>
+    <def-attr n="attrstub">
+      <attr-item tags="attrstub"/>
+    </def-attr>
+  </section-def-attrs>
+
+  <section-def-vars>
+    <def-var n="varstub"/>
+  </section-def-vars>
+
+  <section-rules>
+
+    <rule comment="">
+      <pattern>
+        <pattern-item n="default"/>
+        <pattern-item n="cop-aor"/>
+        <pattern-item n="mı"/>
+      </pattern>
+      <action>
+        <out>
+          <mlu>
+            <lu><clip pos="1" side="sl" part="whole"/></lu>
+            <lu><clip pos="3" side="sl" part="whole"/></lu>
+            <lu><clip pos="2" side="sl" part="whole"/></lu>
+          </mlu>
+        </out>
+      </action>
+    </rule>
+
+    <rule comment="">
+      <pattern>
+        <pattern-item n="default"/>
+        <pattern-item n="mı"/>
+      </pattern>
+      <action>
+        <out>
+          <lu><lit v="~"/></lu>
+          <lu><clip pos="1" side="sl" part="whole"/></lu>
+          <b pos="1"/>
+          <lu><clip pos="2" side="sl" part="whole"/></lu>
+        </out>
+      </action>
+    </rule>
+
+
+    <rule comment="">
+      <pattern>
+        <pattern-item n="default"/>
+        <pattern-item n="cop-aor-sg3"/>
+      </pattern>
+      <action>
+        <out>
+          <lu><clip pos="1" side="sl" part="whole"/></lu>
+        </out>
+      </action>
+    </rule>
+
+    <rule comment="">
+      <pattern>
+        <pattern-item n="subst"/>
+        <pattern-item n="lı-sız"/>
+      </pattern>
+      <action>
+        <out>
+          <mlu>
+            <lu><clip pos="1" side="sl" part="whole"/></lu>
+            <lu><clip pos="2" side="sl" part="whole"/></lu>
+          </mlu>
+        </out>
+      </action>
+    </rule>
+
+    <rule comment="">
+      <pattern>
+        <pattern-item n="default"/>
+        <pattern-item n="cop-aor-ifi"/>
+      </pattern>
+      <action>
+        <out>
+          <mlu>
+            <lu><clip pos="1" side="sl" part="whole"/></lu>
+            <lu><clip pos="2" side="sl" part="whole"/></lu>
+          </mlu>
+        </out>
+      </action>
+    </rule>
+
+
+  </section-rules>
+
+</transfer>

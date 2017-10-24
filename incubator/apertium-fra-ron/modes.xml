@@ -1,0 +1,734 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<modes>
+
+  <!-- fra → ron -->
+
+  <mode name="fra-ron" install="yes">
+    <pipeline>
+      <program name="lt-proc -w">
+        <file name="fra-ron.automorf.bin"/>
+      </program>
+      <program name="cg-proc -w">
+        <file name="fra-ron.rlx.bin"/>
+      </program>
+      <program name="apertium-tagger -g $2">
+        <file name="fra-ron.prob"/>
+      </program>
+      <program name="apertium-pretransfer"/>
+      <program name="lt-proc -b">
+        <file name="fra-ron.autobil.bin"/>
+      </program>
+      <program name="lrx-proc">
+        <file name="fra-ron.autolex.bin"/>
+      </program>
+      <program name="apertium-transfer -b">
+        <file name="apertium-fra-ron.fra-ron.t1x"/>
+        <file name="fra-ron.t1x.bin"/>
+      </program>
+      <program name="apertium-interchunk">
+        <file name="apertium-fra-ron.fra-ron.t2x"/>
+        <file name="fra-ron.t2x.bin"/>
+      </program>
+      <program name="apertium-postchunk">
+        <file name="apertium-fra-ron.fra-ron.t3x"/>
+        <file name="fra-ron.t3x.bin"/>
+      </program>
+      <program name="lt-proc $1">
+        <file name="fra-ron.autogen.bin"/>
+      </program>
+      <program name="lt-proc -p">
+        <file name="fra-ron.autopgen.bin"/>
+      </program>
+    </pipeline>
+  </mode>
+
+  <mode name="fra-ron-dgen" install="no">
+    <pipeline>
+      <program name="lt-proc -w">
+        <file name="fra-ron.automorf.bin"/>
+      </program>
+      <program name="cg-proc -w">
+        <file name="fra-ron.rlx.bin"/>
+      </program>
+      <program name="apertium-tagger -g $2">
+        <file name="fra-ron.prob"/>
+      </program>
+      <program name="apertium-pretransfer"/>
+      <program name="lt-proc -b">
+        <file name="fra-ron.autobil.bin"/>
+      </program>
+      <program name="apertium-transfer -b">
+        <file name="apertium-fra-ron.fra-ron.t1x"/>
+        <file name="fra-ron.t1x.bin"/>
+      </program>
+      <program name="apertium-interchunk">
+        <file name="apertium-fra-ron.fra-ron.t2x"/>
+        <file name="fra-ron.t2x.bin"/>
+      </program>
+      <program name="apertium-postchunk">
+        <file name="apertium-fra-ron.fra-ron.t3x"/>
+        <file name="fra-ron.t3x.bin"/>
+      </program>
+      <program name="lt-proc -d">
+        <file name="fra-ron.autogen.bin"/>
+      </program>
+    </pipeline>
+  </mode>
+
+  <mode name="fra-ron-morph" install="no">
+    <pipeline>
+      <program name="lt-proc -w">
+        <file name="fra-ron.automorf.bin"/>
+      </program>
+    </pipeline>
+  </mode>
+
+  <mode name="fra-ron-disam" install="no">
+    <pipeline>
+      <program name="lt-proc -w">
+        <file name="fra-ron.automorf.bin"/>
+      </program>
+      <program name="cg-conv -a"/>
+      <program name="vislcg3 --trace --grammar">
+        <file name="fra-ron.rlx.bin"/>
+      </program>
+    </pipeline>
+  </mode>
+
+  <mode name="fra-ron-tagger" install="no">
+    <pipeline>
+      <program name="lt-proc -w">
+        <file name="fra-ron.automorf.bin"/>
+      </program>
+      <program name="cg-proc -w">
+        <file name="fra-ron.rlx.bin"/>
+      </program>
+      <program name="apertium-tagger -g $2">
+        <file name="fra-ron.prob"/>
+      </program>
+    </pipeline>
+  </mode>
+
+  <mode name="fra-ron-pretransfer" install="no">
+    <pipeline>
+      <program name="lt-proc -w">
+        <file name="fra-ron.automorf.bin"/>
+      </program>
+      <program name="cg-proc -w">
+        <file name="fra-ron.rlx.bin"/>
+      </program>
+      <program name="apertium-tagger -g $2">
+        <file name="fra-ron.prob"/>
+      </program>
+      <program name="apertium-pretransfer"/>
+    </pipeline>
+  </mode>
+
+  <mode name="fra-ron-biltrans" install="no">
+    <pipeline>
+      <program name="lt-proc -w">
+        <file name="fra-ron.automorf.bin"/>
+      </program>
+      <program name="cg-proc -w">
+        <file name="fra-ron.rlx.bin"/>
+      </program>
+      <program name="apertium-tagger -g $2">
+        <file name="fra-ron.prob"/>
+      </program>
+      <program name="apertium-pretransfer"/>
+      <program name="lt-proc -b">
+        <file name="fra-ron.autobil.bin"/>
+      </program>
+    </pipeline>
+  </mode>
+
+  <mode name="fra-ron-lex" install="no">
+    <pipeline>
+      <program name="lt-proc -w">
+        <file name="fra-ron.automorf.bin"/>
+      </program>
+      <program name="cg-proc -w">
+        <file name="fra-ron.rlx.bin"/>
+      </program>
+      <program name="apertium-tagger -g $2">
+        <file name="fra-ron.prob"/>
+      </program>
+      <program name="apertium-pretransfer"/>
+      <program name="lt-proc -b">
+        <file name="fra-ron.autobil.bin"/>
+      </program>
+      <program name="lrx-proc -t">
+        <file name="fra-ron.autolex.bin"/>
+      </program>
+    </pipeline>
+  </mode>
+
+  <mode name="fra-ron-transfer" install="no">
+    <pipeline>
+      <program name="lt-proc -w">
+        <file name="fra-ron.automorf.bin"/>
+      </program>
+      <program name="cg-proc -w">
+        <file name="fra-ron.rlx.bin"/>
+      </program>
+      <program name="apertium-tagger -g $2">
+        <file name="fra-ron.prob"/>
+      </program>
+      <program name="apertium-pretransfer"/>
+      <program name="lt-proc -b">
+        <file name="fra-ron.autobil.bin"/>
+      </program>
+      <program name="lrx-proc">
+        <file name="fra-ron.autolex.bin"/>
+      </program>
+      <program name="apertium-transfer -b -t">
+        <file name="apertium-fra-ron.fra-ron.t1x"/>
+        <file name="fra-ron.t1x.bin"/>
+      </program>
+    </pipeline>
+  </mode>
+
+  <mode name="fra-ron-interchunk" install="no">
+    <pipeline>
+      <program name="lt-proc -w">
+        <file name="fra-ron.automorf.bin"/>
+      </program>
+      <program name="cg-proc -w">
+        <file name="fra-ron.rlx.bin"/>
+      </program>
+      <program name="apertium-tagger -g $2">
+        <file name="fra-ron.prob"/>
+      </program>
+      <program name="apertium-pretransfer"/>
+      <program name="lt-proc -b">
+        <file name="fra-ron.autobil.bin"/>
+      </program>
+      <program name="lrx-proc">
+        <file name="fra-ron.autolex.bin"/>
+      </program>
+      <program name="apertium-transfer -b">
+        <file name="apertium-fra-ron.fra-ron.t1x"/>
+        <file name="fra-ron.t1x.bin"/>
+      </program>
+      <program name="apertium-interchunk -t">
+        <file name="apertium-fra-ron.fra-ron.t2x"/>
+        <file name="fra-ron.t2x.bin"/>
+      </program>
+    </pipeline>
+  </mode>
+
+  <mode name="fra-ron-postchunk" install="no">
+    <pipeline>
+      <program name="lt-proc -w">
+        <file name="fra-ron.automorf.bin"/>
+      </program>
+      <program name="cg-proc -w">
+        <file name="fra-ron.rlx.bin"/>
+      </program>
+      <program name="apertium-tagger -g $2">
+        <file name="fra-ron.prob"/>
+      </program>
+      <program name="apertium-pretransfer"/>
+      <program name="lt-proc -b">
+        <file name="fra-ron.autobil.bin"/>
+      </program>
+      <program name="lrx-proc">
+        <file name="fra-ron.autolex.bin"/>
+      </program>
+      <program name="apertium-transfer -b">
+        <file name="apertium-fra-ron.fra-ron.t1x"/>
+        <file name="fra-ron.t1x.bin"/>
+      </program>
+      <program name="apertium-interchunk">
+        <file name="apertium-fra-ron.fra-ron.t2x"/>
+        <file name="fra-ron.t2x.bin"/>
+      </program>
+      <program name="apertium-postchunk">
+        <file name="apertium-fra-ron.fra-ron.t3x"/>
+        <file name="fra-ron.t3x.bin"/>
+      </program>
+    </pipeline>
+  </mode>
+
+  <!-- ron → fra -->
+
+  <mode name="ron-fra" install="yes">
+    <pipeline>
+      <program name="lt-proc -w">
+        <file name="ron-fra.automorf.bin"/>
+      </program>
+      <program name="cg-proc -w">
+        <file name="ron-fra.rlx.bin"/>
+      </program>
+      <program name="apertium-tagger -g $2">
+        <file name="ron-fra.prob"/>
+      </program>
+      <program name="apertium-pretransfer"/>
+      <program name="lt-proc -b">
+        <file name="ron-fra.autobil.bin"/>
+      </program>
+      <program name="lrx-proc">
+        <file name="ron-fra.autolex.bin"/>
+      </program>
+      <program name="apertium-transfer -b">
+        <file name="apertium-fra-ron.ron-fra.t1x"/>
+        <file name="ron-fra.t1x.bin"/>
+      </program>
+      <program name="apertium-interchunk">
+        <file name="apertium-fra-ron.ron-fra.t2x"/>
+        <file name="ron-fra.t2x.bin"/>
+      </program>
+      <program name="apertium-postchunk">
+        <file name="apertium-fra-ron.ron-fra.t3x"/>
+        <file name="ron-fra.t3x.bin"/>
+      </program>
+      <program name="lt-proc $1">
+        <file name="ron-fra.autogen.bin"/>
+      </program>
+      <program name="lt-proc -p">
+        <file name="ron-fra.autopgen.bin"/>
+      </program>
+    </pipeline>
+  </mode>
+
+  <mode name="ron-fra-dgen" install="no">
+    <pipeline>
+      <program name="lt-proc -w">
+        <file name="ron-fra.automorf.bin"/>
+      </program>
+      <program name="cg-proc -w">
+        <file name="ron-fra.rlx.bin"/>
+      </program>
+      <program name="apertium-tagger -g $2">
+        <file name="ron-fra.prob"/>
+      </program>
+      <program name="apertium-pretransfer"/>
+      <program name="lt-proc -b">
+        <file name="ron-fra.autobil.bin"/>
+      </program>
+      <program name="apertium-transfer -b">
+        <file name="apertium-fra-ron.ron-fra.t1x"/>
+        <file name="ron-fra.t1x.bin"/>
+      </program>
+      <program name="apertium-interchunk">
+        <file name="apertium-fra-ron.ron-fra.t2x"/>
+        <file name="ron-fra.t2x.bin"/>
+      </program>
+      <program name="apertium-postchunk">
+        <file name="apertium-fra-ron.ron-fra.t3x"/>
+        <file name="ron-fra.t3x.bin"/>
+      </program>
+      <program name="lt-proc -d">
+        <file name="ron-fra.autogen.bin"/>
+      </program>
+    </pipeline>
+  </mode>
+
+  <mode name="ron-fra-morph" install="no">
+    <pipeline>
+      <program name="lt-proc -w">
+        <file name="ron-fra.automorf.bin"/>
+      </program>
+    </pipeline>
+  </mode>
+
+  <mode name="ron-fra-disam" install="no">
+    <pipeline>
+      <program name="lt-proc -w">
+        <file name="ron-fra.automorf.bin"/>
+      </program>
+      <program name="cg-conv -a"/>
+      <program name="vislcg3 --trace --grammar">
+        <file name="ron-fra.rlx.bin"/>
+      </program>
+    </pipeline>
+  </mode>
+
+  <mode name="ron-fra-tagger" install="no">
+    <pipeline>
+      <program name="lt-proc -w">
+        <file name="ron-fra.automorf.bin"/>
+      </program>
+      <program name="cg-proc -w">
+        <file name="ron-fra.rlx.bin"/>
+      </program>
+      <program name="apertium-tagger -g $2">
+        <file name="ron-fra.prob"/>
+      </program>
+    </pipeline>
+  </mode>
+
+  <mode name="ron-fra-pretransfer" install="no">
+    <pipeline>
+      <program name="lt-proc -w">
+        <file name="ron-fra.automorf.bin"/>
+      </program>
+      <program name="cg-proc -w">
+        <file name="ron-fra.rlx.bin"/>
+      </program>
+      <program name="apertium-tagger -g $2">
+        <file name="ron-fra.prob"/>
+      </program>
+      <program name="apertium-pretransfer"/>
+    </pipeline>
+  </mode>
+
+  <mode name="ron-fra-biltrans" install="no">
+    <pipeline>
+      <program name="lt-proc -w">
+        <file name="ron-fra.automorf.bin"/>
+      </program>
+      <program name="cg-proc -w">
+        <file name="ron-fra.rlx.bin"/>
+      </program>
+      <program name="apertium-tagger -g $2">
+        <file name="ron-fra.prob"/>
+      </program>
+      <program name="apertium-pretransfer"/>
+      <program name="lt-proc -b">
+        <file name="ron-fra.autobil.bin"/>
+      </program>
+    </pipeline>
+  </mode>
+
+  <mode name="ron-fra-lex" install="no">
+    <pipeline>
+      <program name="lt-proc -w">
+        <file name="ron-fra.automorf.bin"/>
+      </program>
+      <program name="cg-proc -w">
+        <file name="ron-fra.rlx.bin"/>
+      </program>
+      <program name="apertium-tagger -g $2">
+        <file name="ron-fra.prob"/>
+      </program>
+      <program name="apertium-pretransfer"/>
+      <program name="lt-proc -b">
+        <file name="ron-fra.autobil.bin"/>
+      </program>
+      <program name="lrx-proc">
+        <file name="ron-fra.autolex.bin"/>
+      </program>
+    </pipeline>
+  </mode>
+
+  <mode name="ron-fra-transfer" install="no">
+    <pipeline>
+      <program name="lt-proc -w">
+        <file name="ron-fra.automorf.bin"/>
+      </program>
+      <program name="cg-proc -w">
+        <file name="ron-fra.rlx.bin"/>
+      </program>
+      <program name="apertium-tagger -g $2">
+        <file name="ron-fra.prob"/>
+      </program>
+      <program name="apertium-pretransfer"/>
+      <program name="lt-proc -b">
+        <file name="ron-fra.autobil.bin"/>
+      </program>
+      <program name="apertium-transfer -b -t">
+        <file name="apertium-fra-ron.ron-fra.t1x"/>
+        <file name="ron-fra.t1x.bin"/>
+      </program>
+    </pipeline>
+  </mode>
+
+  <mode name="ron-fra-interchunk" install="no">
+    <pipeline>
+      <program name="lt-proc -w">
+        <file name="ron-fra.automorf.bin"/>
+      </program>
+      <program name="cg-proc -w">
+        <file name="ron-fra.rlx.bin"/>
+      </program>
+      <program name="apertium-tagger -g $2">
+        <file name="ron-fra.prob"/>
+      </program>
+      <program name="apertium-pretransfer"/>
+      <program name="lt-proc -b">
+        <file name="ron-fra.autobil.bin"/>
+      </program>
+      <program name="apertium-transfer -b">
+        <file name="apertium-fra-ron.ron-fra.t1x"/>
+        <file name="ron-fra.t1x.bin"/>
+      </program>
+      <program name="apertium-interchunk -t">
+        <file name="apertium-fra-ron.ron-fra.t2x"/>
+        <file name="ron-fra.t2x.bin"/>
+      </program>
+    </pipeline>
+  </mode>
+
+  <mode name="ron-fra-postchunk" install="no">
+    <pipeline>
+      <program name="lt-proc -w">
+        <file name="ron-fra.automorf.bin"/>
+      </program>
+      <program name="cg-proc -w">
+        <file name="ron-fra.rlx.bin"/>
+      </program>
+      <program name="apertium-tagger -g $2">
+        <file name="ron-fra.prob"/>
+      </program>
+      <program name="apertium-pretransfer"/>
+      <program name="lt-proc -b">
+        <file name="ron-fra.autobil.bin"/>
+      </program>
+      <program name="apertium-transfer -b">
+        <file name="apertium-fra-ron.ron-fra.t1x"/>
+        <file name="ron-fra.t1x.bin"/>
+      </program>
+      <program name="apertium-interchunk">
+        <file name="apertium-fra-ron.ron-fra.t2x"/>
+        <file name="ron-fra.t2x.bin"/>
+      </program>
+      <program name="apertium-postchunk">
+        <file name="apertium-fra-ron.ron-fra.t3x"/>
+        <file name="ron-fra.t3x.bin"/>
+      </program>
+    </pipeline>
+  </mode>
+
+  <!-- ron → fra eco -->
+
+  <mode name="ron-fra_eco" install="yes">
+    <pipeline>
+      <program name="lt-proc -w">
+        <file name="ron-fra_eco.automorf.bin"/>
+      </program>
+      <program name="cg-proc -w">
+        <file name="ron-fra.rlx.bin"/>
+      </program>
+      <program name="apertium-tagger -g $2">
+        <file name="ron-fra.prob"/>
+      </program>
+      <program name="apertium-pretransfer"/>
+      <program name="lt-proc -b">
+        <file name="ron-fra_eco.autobil.bin"/>
+      </program>
+      <program name="lrx-proc">
+        <file name="ron-fra.autolex.bin"/>
+      </program>
+      <program name="apertium-transfer -b">
+        <file name="apertium-fra-ron.ron-fra.t1x"/>
+        <file name="ron-fra.t1x.bin"/>
+      </program>
+      <program name="apertium-interchunk">
+        <file name="apertium-fra-ron.ron-fra.t2x"/>
+        <file name="ron-fra.t2x.bin"/>
+      </program>
+      <program name="apertium-postchunk">
+        <file name="apertium-fra-ron.ron-fra.t3x"/>
+        <file name="ron-fra.t3x.bin"/>
+      </program>
+      <program name="lt-proc $1">
+        <file name="ron-fra.autogen.bin"/>
+      </program>
+      <program name="lt-proc -p">
+        <file name="ron-fra.autopgen.bin"/>
+      </program>
+    </pipeline>
+  </mode>
+
+  <mode name="ron-fra-dgen_eco" install="no">
+    <pipeline>
+      <program name="lt-proc -w">
+        <file name="ron-fra_eco.automorf.bin"/>
+      </program>
+      <program name="cg-proc -w">
+        <file name="ron-fra.rlx.bin"/>
+      </program>
+      <program name="apertium-tagger -g $2">
+        <file name="ron-fra.prob"/>
+      </program>
+      <program name="apertium-pretransfer"/>
+      <program name="lt-proc -b">
+        <file name="ron-fra_eco.autobil.bin"/>
+      </program>
+      <program name="apertium-transfer -b">
+        <file name="apertium-fra-ron.ron-fra.t1x"/>
+        <file name="ron-fra.t1x.bin"/>
+      </program>
+      <program name="apertium-interchunk">
+        <file name="apertium-fra-ron.ron-fra.t2x"/>
+        <file name="ron-fra.t2x.bin"/>
+      </program>
+      <program name="apertium-postchunk">
+        <file name="apertium-fra-ron.ron-fra.t3x"/>
+        <file name="ron-fra.t3x.bin"/>
+      </program>
+      <program name="lt-proc -d">
+        <file name="ron-fra.autogen.bin"/>
+      </program>
+    </pipeline>
+  </mode>
+
+  <mode name="ron-fra-morph_eco" install="no">
+    <pipeline>
+      <program name="lt-proc -w">
+        <file name="ron-fra_eco.automorf.bin"/>
+      </program>
+    </pipeline>
+  </mode>
+
+  <mode name="ron-fra-disam_eco" install="no">
+    <pipeline>
+      <program name="lt-proc -w">
+        <file name="ron-fra_eco.automorf.bin"/>
+      </program>
+      <program name="cg-conv -a"/>
+      <program name="vislcg3 --trace --grammar">
+        <file name="ron-fra.rlx.bin"/>
+      </program>
+    </pipeline>
+  </mode>
+
+  <mode name="ron-fra-tagger_eco" install="no">
+    <pipeline>
+      <program name="lt-proc -w">
+        <file name="ron-fra_eco.automorf.bin"/>
+      </program>
+      <program name="cg-proc -w">
+        <file name="ron-fra.rlx.bin"/>
+      </program>
+      <program name="apertium-tagger -g $2">
+        <file name="ron-fra.prob"/>
+      </program>
+    </pipeline>
+  </mode>
+
+  <mode name="ron-fra-pretransfer_eco" install="no">
+    <pipeline>
+      <program name="lt-proc -w">
+        <file name="ron-fra_eco.automorf.bin"/>
+      </program>
+      <program name="cg-proc -w">
+        <file name="ron-fra.rlx.bin"/>
+      </program>
+      <program name="apertium-tagger -g $2">
+        <file name="ron-fra.prob"/>
+      </program>
+      <program name="apertium-pretransfer"/>
+    </pipeline>
+  </mode>
+
+  <mode name="ron-fra-biltrans_eco" install="no">
+    <pipeline>
+      <program name="lt-proc -w">
+        <file name="ron-fra_eco.automorf.bin"/>
+      </program>
+      <program name="cg-proc -w">
+        <file name="ron-fra.rlx.bin"/>
+      </program>
+      <program name="apertium-tagger -g $2">
+        <file name="ron-fra.prob"/>
+      </program>
+      <program name="apertium-pretransfer"/>
+      <program name="lt-proc -b">
+        <file name="ron-fra_eco.autobil.bin"/>
+      </program>
+    </pipeline>
+  </mode>
+
+  <mode name="ron-fra-lex_eco" install="no">
+    <pipeline>
+      <program name="lt-proc -w">
+        <file name="ron-fra_eco.automorf.bin"/>
+      </program>
+      <program name="cg-proc -w">
+        <file name="ron-fra.rlx.bin"/>
+      </program>
+      <program name="apertium-tagger -g $2">
+        <file name="ron-fra.prob"/>
+      </program>
+      <program name="apertium-pretransfer"/>
+      <program name="lt-proc -b">
+        <file name="ron-fra_eco.autobil.bin"/>
+      </program>
+      <program name="lrx-proc">
+        <file name="ron-fra.autolex.bin"/>
+      </program>
+    </pipeline>
+  </mode>
+
+  <mode name="ron-fra-transfer_eco" install="no">
+    <pipeline>
+      <program name="lt-proc -w">
+        <file name="ron-fra_eco.automorf.bin"/>
+      </program>
+      <program name="cg-proc -w">
+        <file name="ron-fra.rlx.bin"/>
+      </program>
+      <program name="apertium-tagger -g $2">
+        <file name="ron-fra.prob"/>
+      </program>
+      <program name="apertium-pretransfer"/>
+      <program name="lt-proc -b">
+        <file name="ron-fra_eco.autobil.bin"/>
+      </program>
+      <program name="apertium-transfer -b -t">
+        <file name="apertium-fra-ron.ron-fra.t1x"/>
+        <file name="ron-fra.t1x.bin"/>
+      </program>
+    </pipeline>
+  </mode>
+
+  <mode name="ron-fra-interchunk_eco" install="no">
+    <pipeline>
+      <program name="lt-proc -w">
+        <file name="ron-fra_eco.automorf.bin"/>
+      </program>
+      <program name="cg-proc -w">
+        <file name="ron-fra.rlx.bin"/>
+      </program>
+      <program name="apertium-tagger -g $2">
+        <file name="ron-fra.prob"/>
+      </program>
+      <program name="apertium-pretransfer"/>
+      <program name="lt-proc -b">
+        <file name="ron-fra_eco.autobil.bin"/>
+      </program>
+      <program name="apertium-transfer -b">
+        <file name="apertium-fra-ron.ron-fra.t1x"/>
+        <file name="ron-fra.t1x.bin"/>
+      </program>
+      <program name="apertium-interchunk -t">
+        <file name="apertium-fra-ron.ron-fra.t2x"/>
+        <file name="ron-fra.t2x.bin"/>
+      </program>
+    </pipeline>
+  </mode>
+
+  <mode name="ron-fra-postchunk_eco" install="no">
+    <pipeline>
+      <program name="lt-proc -w">
+        <file name="ron-fra_eco.automorf.bin"/>
+      </program>
+      <program name="cg-proc -w">
+        <file name="ron-fra.rlx.bin"/>
+      </program>
+      <program name="apertium-tagger -g $2">
+        <file name="ron-fra.prob"/>
+      </program>
+      <program name="apertium-pretransfer"/>
+      <program name="lt-proc -b">
+        <file name="ron-fra_eco.autobil.bin"/>
+      </program>
+      <program name="apertium-transfer -b">
+        <file name="apertium-fra-ron.ron-fra.t1x"/>
+        <file name="ron-fra.t1x.bin"/>
+      </program>
+      <program name="apertium-interchunk">
+        <file name="apertium-fra-ron.ron-fra.t2x"/>
+        <file name="ron-fra.t2x.bin"/>
+      </program>
+      <program name="apertium-postchunk">
+        <file name="apertium-fra-ron.ron-fra.t3x"/>
+        <file name="ron-fra.t3x.bin"/>
+      </program>
+    </pipeline>
+  </mode>
+
+</modes>
+

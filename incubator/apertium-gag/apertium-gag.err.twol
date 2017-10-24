@@ -1,0 +1,99 @@
+Alphabet
+
+    A Ä Â B C Ç D E Ê F G H I İ J K L M N O Ö P R S Ş Ș T Ţ Ț U Ü V Y Z
+    a ä â b c ç d e ê f g h ı i j k l m n o ö p r s ş ș t ţ ț u ü v y z
+
+    ä:â
+    Ä:Â 
+
+    ê:e
+
+    і:і
+    i:і ! CYRILLIC SMALL LETTER BYELORUSSIAN-UKRAINIAN I
+
+    p:b
+
+  %{A%}:a %{A%}:e %{A%}:ä %{A%}:ê %{A%}:e %{A%}:â
+  %{I%}:i %{I%}:ı %{I%}:ü %{I%}:u
+  %{E%}:ê %{E%}:e %{E%}:a 
+  %{T%}:t %{T%}:d
+  %{D%}:d %{D%}:t
+
+  %{e%}:e
+
+  %{a%}:a %{a%}:e %{a%}:ä %{a%}:ê %{a%}:0
+  %{i%}:u %{i%}:i %{i%}:ı %{i%}:ü %{i%}:0
+  %{y%}:u %{y%}:i %{y%}:ı %{y%}:ü %{y%}:0
+ 
+  %{к%}:k %{к%}:g
+  %{k%}:k %{k%}:0
+  %{h%}:h %{h%}:0
+  %{й%}:y %{й%}:0
+  %{в%}:y %{в%}:0
+  %{s%}:s %{s%}:0 
+  %{n%}:n %{n%}:0
+  %{N%}:n %{N%}:0
+  %{L%}:l %{L%}:n
+  %{л%}:l %{л%}:n
+  %{и%}:0 %{и%}:i 
+
+  %{ö%}:0 ! Front rounded
+  %{o%}:0 ! Back rounded
+  %{ь%}:0 ! Front unrounded 
+  %{ъ%}:0 ! Back unrounded
+
+
+  %{·%}:0
+  %{☭%}:0
+  %{в%}:0
+  %>:0  
+  %+ % 
+
+;
+
+
+Sets
+
+
+Cns = B C Ç D  F G H  J K L M N  P R S Ş Ș T Ţ Ț V Y Z
+      b c ç d  f g h  j k l m n  p r s ş ș t ţ ț v y z ;
+
+Vowel = A E Ê Ä I O Ö U Ü Y Ý 
+        a e ê ä i o ö u ü y ý ;
+
+HardVow = A Â O I U
+          a â o ı u ;
+
+SoftVow = E Ä İ Ö Ü
+          e ä i ö ü ;
+
+RoundVow = O Ö U Ü
+           o ö u ü ;
+
+FlatVow = A Â E İ I 
+          a â e i ı ;
+ 
+CnsVcls   = F S T K Ç Ş H P 
+           f s t k ç ş h p ;
+
+Rules 
+
+"Delete morpheme boundary"
+%>:0 <=> _ ;
+
+"Delete final {n}"
+%{n%}:0 <= _ .#. ; 
+
+"Always p"
+p:p <=     _ .#. ; 
+       .#. _ ;
+           _ %{·%}: ;
+           _ :Cns ; 
+
+! Resources:
+! http://wiki.apertium.org/wiki/Starting_a_new_language_with_HFST#Enter_twol
+! https://kitwiki.csc.fi/twiki/bin/view/KitWiki/HfstHome
+! http://hfst.sourceforge.net/
+! http://wiki.apertium.org/wiki/Twol
+! http://wiki.apertium.org/wiki/Hfst
+

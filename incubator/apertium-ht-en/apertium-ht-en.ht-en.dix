@@ -1,0 +1,2115 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<dictionary>
+  <alphabet></alphabet>
+  <sdefs>
+    <sdef n="vblex"/>
+    <sdef n="vbdo"/>
+    <sdef n="vbser"/>
+    <sdef n="vbmod"/>
+    <sdef n="det"/>
+    <sdef n="cnjcoo"/>
+    <sdef n="cnjsub"/>
+    <sdef n="mf"/>
+    <sdef n="m"/>
+    <sdef n="f"/>
+    <sdef n="rel"/>
+    <sdef n="an"/>
+    <sdef n="cog"/>
+    <sdef n="nn"/>
+    <sdef n="cnjadv"/>
+    <sdef n="vbhaver"/>
+    <sdef n="vaux"/>
+    <sdef n="ind"/>
+    <sdef n="qnt"/>
+    <sdef n="dem"/>
+    <sdef n="def"/>
+    <sdef n="n"/>
+    <sdef n="sp"/>
+    <sdef n="adj"/>
+    <sdef n="ij"/>
+    <sdef n="adv"/>
+    <sdef n="itg"/>
+    <sdef n="pr"/>
+    <sdef n="prn"/>
+    <sdef n="np"/>
+    <sdef n="al"/>
+    <sdef n="org"/>
+    <sdef n="top"/>
+    <sdef n="loc"/>
+    <sdef n="sg"/>
+    <sdef n="pl"/>
+    <sdef n="num"/>
+    <sdef n="ND"/>
+    <sdef n="sint"/>
+    <sdef n="sent"/>
+    <sdef n="cm"/>
+    <sdef n="pp"/>
+    <sdef n="lpar"/>
+    <sdef n="rpar"/>
+    <sdef n="guio"/>
+    <sdef n="preadv"/>
+    <sdef n="postdet"/>
+  </sdefs>
+  <pardefs>
+    <pardef n="ND">
+      <e r="RL">
+        <p>
+          <l></l>
+          <r><s n="sg"/></r>
+        </p>
+      </e>
+      <e r="RL">
+        <p>
+          <l></l>
+          <r><s n="pl"/></r>
+        </p>
+      </e>
+      <e r="LR">
+        <p>
+          <l></l>
+          <r><s n="ND"/></r>
+        </p>
+      </e>
+    </pardef>
+    <pardef n="mil">
+      <e>
+        <p>
+          <l>mil<s n="num"/></l>
+          <r><b/>thousand<s n="num"/></r>
+        </p>
+      </e>
+      <e>
+        <p>
+          <l><s n="num"/></l>
+          <r><s n="num"/></r>
+        </p>
+      </e>
+    </pardef>
+  </pardefs>
+  <section id="main" type="standard">
+    <e><p><l>prpers<s n="prn"/></l><r>prpers<s n="prn"/></r></p></e>
+
+    <e><p><l>okenn<s n="prn"/></l><r>none<s n="prn"/></r></p></e>
+    <e><p><l>anyen<s n="prn"/></l><r>nothing<s n="prn"/></r></p></e>
+
+    <e><p><l>e<s n="cnjcoo"/></l><r>and<s n="cnjcoo"/></r></p></e>
+    <e r="LR"><p><l>ak<s n="cnjcoo"/></l><r>and<s n="cnjcoo"/></r></p></e>
+    <e r="LR"><p><l>epi<s n="cnjcoo"/></l><r>and<s n="cnjcoo"/></r></p></e>
+    <e><p><l>epi<b/>ak<s n="cnjcoo"/></l><r>as<b/>well<b/>as<s n="cnjcoo"/></r></p></e>
+    <e><p><l>oswa<s n="cnjcoo"/></l><r>or<s n="cnjcoo"/></r></p></e>
+    <e><p><l>&amp;<s n="cnjcoo"/></l><r>&amp;<s n="cnjcoo"/></r></p></e>
+    <e><p><l>ke<s n="cnjcoo"/></l><r>than<s n="cnjcoo"/></r></p></e>
+
+    <e><p><l>yon<s n="det"/><s n="ind"/></l><r>a<s n="det"/><s n="ind"/></r></p></e>
+    <e r="LR"><p><l>an<s n="det"/><s n="ind"/></l><r>a<s n="det"/><s n="ind"/></r></p></e>
+    <e><p><l>yon<b/>lòt<s n="det"/><s n="ind"/></l><r>another<s n="det"/><s n="ind"/></r></p></e>
+    <e><p><l>tout<s n="det"/><s n="ind"/></l><r>every<s n="det"/><s n="ind"/></r></p></e>
+    <e><p><l>chak<s n="det"/><s n="ind"/></l><r>each<s n="det"/><s n="ind"/></r></p></e>
+    <e><p><l>lòt<s n="det"/><s n="ind"/></l><r>other<s n="det"/><s n="ind"/></r></p></e>
+    <e><p><l>menm<s n="det"/><s n="ind"/></l><r>the<b/>same<s n="det"/><s n="ind"/></r></p></e>
+    <e c="'much' also?"><p><l>anpil<s n="det"/><s n="qnt"/></l><r>a<b/>lot<b/>of<s n="det"/><s n="qnt"/></r></p></e>
+    <e><p><l>kèk<s n="det"/><s n="qnt"/></l><r>a<b/>few<s n="det"/><s n="qnt"/></r></p></e>
+    <e><p><l>kont<s n="det"/><s n="qnt"/></l><r>enough<s n="det"/><s n="qnt"/></r></p></e>
+    <e><p><l>sa<s n="det"/><s n="dem"/></l><r>this<s n="det"/><s n="dem"/></r></p></e>
+    <e r="LR"><p><l>yo<s n="postdet"/><s n="def"/><s n="pl"/></l><r>the<s n="det"/><s n="def"/><s n="sp"/></r></p></e>
+    <e r="LR"><p><l>la<s n="postdet"/><s n="ind"/><s n="sp"/></l><r>the<s n="det"/><s n="def"/><s n="sp"/></r></p></e>
+
+    <e><p><l>liv<s n="n"/></l><r>book<s n="n"/></r></p><par n="ND"/></e>
+    <e><p><l>dlo<s n="n"/></l><r>water<s n="n"/></r></p><par n="ND"/></e>
+    <e><p><l>tant<s n="n"/></l><r>tent<s n="n"/></r></p><par n="ND"/></e>
+    <e><p><l>klas<s n="n"/></l><r>class<s n="n"/></r></p><par n="ND"/></e>
+    <e><p><l>madmwazèl<s n="n"/></l><r>miss<s n="n"/></r></p><par n="ND"/></e>
+    <e><p><l>zòn<s n="n"/></l><r>zone<s n="n"/></r></p><par n="ND"/></e>
+    <e><p><l>tèt<s n="n"/></l><r>head<s n="n"/></r></p><par n="ND"/></e>
+    <e><p><l>livrezon<s n="n"/></l><r>delivery<s n="n"/></r></p><par n="ND"/></e>
+    <e><p><l>teren<s n="n"/></l><r>ground<s n="n"/></r></p><par n="ND"/></e>
+    <e><p><l>pò<s n="n"/></l><r>port<s n="n"/></r></p><par n="ND"/></e>
+    <e><p><l>poz<s n="n"/></l><r>pause<s n="n"/></r></p><par n="ND"/></e>
+    <e><p><l>chèf<s n="n"/></l><r>chief<s n="n"/></r></p><par n="ND"/></e>
+    <e><p><l>asistan<s n="n"/></l><r>assistant<s n="n"/></r></p><par n="ND"/></e>
+    <e><p><l>listwa<s n="n"/></l><r>history<s n="n"/></r></p><par n="ND"/></e>
+    <e><p><l>anplwaye<s n="n"/></l><r>employee<s n="n"/></r></p><par n="ND"/></e>
+    <e><p><l>soukous<s n="n"/></l><r>shock<s n="n"/></r></p><par n="ND"/></e>
+    <e><p><l>lame<s n="n"/></l><r>army<s n="n"/></r></p><par n="ND"/></e>
+    <e><p><l>capital<s n="n"/></l><r>capital<s n="n"/></r></p><par n="ND"/></e>
+    <e><p><l>papye<s n="n"/></l><r>papers<s n="n"/><s n="pl"/></r></p></e>
+    <e><p><l>kòlèg<s n="n"/></l><r>colleague<s n="n"/></r></p><par n="ND"/></e>
+    <e><p><l>televizyon<s n="n"/></l><r>television<s n="n"/></r></p><par n="ND"/></e>
+    <e><p><l>ekip<s n="n"/></l><r>team<s n="n"/></r></p><par n="ND"/></e>
+    <e r="RL"><p><l>ansyen<b/>prezidan<s n="n"/></l><r>ex-president<s n="n"/></r></p><par n="ND"/></e>
+    <e><p><l>fraz<s n="n"/></l><r>phrase<s n="n"/></r></p><par n="ND"/></e>
+    <e><p><l>konvwa<s n="n"/></l><r>convoy<s n="n"/></r></p><par n="ND"/></e>
+    <e><p><l>reyinyon<s n="n"/></l><r>meeting<s n="n"/></r></p><par n="ND"/></e>
+    <e><p><l>vizit<s n="n"/></l><r>visit<s n="n"/></r></p><par n="ND"/></e>
+    <e><p><l>komunike<s n="n"/></l><r>communiqué<s n="n"/></r></p><par n="ND"/></e>
+    <e><p><l>konpreyensyon<s n="n"/></l><r>comprehension<s n="n"/></r></p><par n="ND"/></e>
+    <e><p><l>rotasyon<s n="n"/></l><r>rotation<s n="n"/></r></p><par n="ND"/></e>
+    <e><p><l>situyasyon<s n="n"/></l><r>situation<s n="n"/></r></p><par n="ND"/></e>
+    <e><p><l>ko-òdinasyon<s n="n"/></l><r>co-ordination<s n="n"/></r></p><par n="ND"/></e>
+    <e><p><l>komunikasyon<s n="n"/></l><r>communication<s n="n"/></r></p><par n="ND"/></e>
+    <e><p><l>sòlda<s n="n"/></l><r>soldier<s n="n"/></r></p><par n="ND"/></e>
+    <e><p><l>bezwen<s n="n"/></l><r>need<s n="n"/></r></p><par n="ND"/></e>
+    <e><p><l>sekretè<s n="n"/></l><r>secretary<s n="n"/></r></p><par n="ND"/></e>
+    <e><p><l>omaj<s n="n"/></l><r>homage<s n="n"/></r></p><par n="ND"/></e>
+    <e><p><l>avyon<s n="n"/></l><r>aeroplane<s n="n"/></r></p><par n="ND"/></e>
+    <e><p><l>konsèy<s n="n"/></l><r>council<s n="n"/></r></p><par n="ND"/></e>
+    <e><p><l>viktim<s n="n"/></l><r>victim<s n="n"/></r></p><par n="ND"/></e>
+    <e><p><l>bato<s n="n"/></l><r>boat<s n="n"/></r></p><par n="ND"/></e>
+    <e><p><l>elikoptè<s n="n"/></l><r>helicopter<s n="n"/></r></p><par n="ND"/></e>
+    <e><p><l>moman<s n="n"/></l><r>moment<s n="n"/></r></p><par n="ND"/></e>
+    <e><p><l>misyon<s n="n"/></l><r>mission<s n="n"/></r></p><par n="ND"/></e>
+    <e><p><l>stati<s n="n"/></l><r>status<s n="n"/></r></p><par n="ND"/></e>
+    <e><p><l>entèvyou<s n="n"/></l><r>interview<s n="n"/></r></p><par n="ND"/></e>
+    <e><p><l>palè<s n="n"/></l><r>palace<s n="n"/></r></p><par n="ND"/></e>
+    <e><p><l>tranbleman<b/>d<b/>tè<s n="n"/></l><r>earthquake<s n="n"/></r></p><par n="ND"/></e>
+    <e><p><l>lopital<s n="n"/></l><r>hospital<s n="n"/></r></p><par n="ND"/></e>
+    <e><p><l>lekòl<s n="n"/></l><r>school<s n="n"/></r></p><par n="ND"/></e>
+    <e><p><l>patnè<s n="n"/></l><r>partner<s n="n"/></r></p><par n="ND"/></e>
+    <e><p><l>systèm<s n="n"/></l><r>system<s n="n"/></r></p><par n="ND"/></e>
+    <e><p><l>chyen<s n="n"/></l><r>dog<s n="n"/></r></p><par n="ND"/></e>
+    <e><p><l>endèks<s n="n"/></l><r>index<s n="n"/></r></p><par n="ND"/></e>
+    <e><p><l>ansiklopedi<s n="n"/></l><r>encyclopaedia<s n="n"/></r></p><par n="ND"/></e>
+    <e><p><l>imaj<s n="n"/></l><r>image<s n="n"/></r></p><par n="ND"/></e>
+    <e><p><l>paj<s n="n"/></l><r>page<s n="n"/></r></p><par n="ND"/></e>
+    <e><p><l>taksi<s n="n"/></l><r>taxi<s n="n"/></r></p><par n="ND"/></e>
+    <e><p><l>ewo<s n="n"/></l><r>euro<s n="n"/></r></p><par n="ND"/></e>
+    <e><p><l>dola<s n="n"/></l><r>dollar<s n="n"/></r></p><par n="ND"/></e>
+    <e><p><l>idolatri<s n="n"/></l><r>idolatry<s n="n"/></r></p><par n="ND"/></e>
+    <e><p><l>lwa<s n="n"/></l><r>law<s n="n"/></r></p><par n="ND"/></e>
+    <e><p><l>lib<s n="n"/></l><r>pound<s n="n"/></r></p><par n="ND"/></e>
+    <e><p><l>matematik<s n="n"/></l><r>mathematics<s n="n"/></r></p><par n="ND"/></e>
+    <e><p><l>fizik<s n="n"/></l><r>physics<s n="n"/></r></p><par n="ND"/></e>
+    <e><p><l>biyoloji<s n="n"/></l><r>biology<s n="n"/></r></p><par n="ND"/></e>
+    <e><p><l>medsin<s n="n"/></l><r>medicine<s n="n"/></r></p><par n="ND"/></e>
+    <e><p><l>istwa<s n="n"/></l><r>history<s n="n"/></r></p><par n="ND"/></e>
+    <e><p><l>sosyete<s n="n"/></l><r>society<s n="n"/></r></p><par n="ND"/></e>
+    <e><p><l>edikasyon<s n="n"/></l><r>education<s n="n"/></r></p><par n="ND"/></e>
+    <e><p><l>populasyon<s n="n"/></l><r>population<s n="n"/></r></p><par n="ND"/></e>
+    <e><p><l>trajedi<s n="n"/></l><r>tragedy<s n="n"/></r></p><par n="ND"/></e>
+    <e><p><l>gwoup<s n="n"/></l><r>group<s n="n"/></r></p><par n="ND"/></e>
+    <e><p><l>òganizasyon<s n="n"/></l><r>organisation<s n="n"/></r></p><par n="ND"/></e>
+    <e><p><l>disparisyon<s n="n"/></l><r>disappearance<s n="n"/></r></p><par n="ND"/></e>
+    <e><p><l>proteksyon<s n="n"/></l><r>protection<s n="n"/></r></p><par n="ND"/></e>
+    <e><p><l>literati<s n="n"/></l><r>literature<s n="n"/></r></p><par n="ND"/></e>
+    <e><p><l>ekonomi<s n="n"/></l><r>economics<s n="n"/></r></p><par n="ND"/></e>
+    <e><p><l>biyografi<s n="n"/></l><r>biography<s n="n"/></r></p><par n="ND"/></e>
+    <e i="yes"><p><l>ebòch<s n="n"/></l><r><s n="n"/></r></p><par n="ND"/></e>
+    <e><p><l>kreyòl<s n="n"/></l><r>creole<s n="n"/></r></p><par n="ND"/></e>
+    <e><p><l>diskisyon<s n="n"/></l><r>discussion<s n="n"/></r></p><par n="ND"/></e>
+    <e><p><l>devlòpman<s n="n"/></l><r>development<s n="n"/></r></p><par n="ND"/></e>
+    <e><p><l>revolisyon<s n="n"/></l><r>revolution<s n="n"/></r></p><par n="ND"/></e>
+    <e><p><l>revelasyon<s n="n"/></l><r>revelation<s n="n"/></r></p><par n="ND"/></e>
+    <e><p><l>pwovèb<s n="n"/></l><r>proverb<s n="n"/></r></p><par n="ND"/></e>
+    <e><p><l>pwovizyon<s n="n"/></l><r>provision<s n="n"/></r></p><par n="ND"/></e>
+    <e><p><l>lèt<s n="n"/></l><r>milk<s n="n"/></r></p><par n="ND"/></e>
+    <e><p><l>lang<s n="n"/></l><r>language<s n="n"/></r></p><par n="ND"/></e>
+    <e><p><l>atansyon<s n="n"/></l><r>attention<s n="n"/></r></p><par n="ND"/></e>
+    <e><p><l>amou<s n="n"/></l><r>love<s n="n"/></r></p><par n="ND"/></e>
+    <e><p><l>jou<s n="n"/></l><r>day<s n="n"/></r></p><par n="ND"/></e>
+    <e><p><l>simèn<s n="n"/></l><r>week<s n="n"/></r></p><par n="ND"/></e>
+    <e><p><l>nonm<s n="n"/></l><r>man<s n="n"/></r></p><par n="ND"/></e>
+    <e><p><l>fanm<s n="n"/></l><r>woman<s n="n"/></r></p><par n="ND"/></e>
+    <e><p><l>an<s n="n"/></l><r>year<s n="n"/></r></p><par n="ND"/></e>
+    <e><p><l>chyen<s n="n"/></l><r>dog<s n="n"/></r></p><par n="ND"/></e>
+    <e><p><l>chat<s n="n"/></l><r>cat<s n="n"/></r></p><par n="ND"/></e>
+    <e><p><l>èd<s n="n"/></l><r>help<s n="n"/></r></p><par n="ND"/></e>
+    <e r="RL"><p><l>èd<s n="n"/></l><r>aid<s n="n"/></r></p><par n="ND"/></e>
+    <e><p><l>kay<s n="n"/></l><r>house<s n="n"/></r></p><par n="ND"/></e>
+    <e><p><l>atik<s n="n"/></l><r>article<s n="n"/></r></p><par n="ND"/></e>
+    <e><p><l>manje<s n="n"/></l><r>food<s n="n"/></r></p><par n="ND"/></e>
+    <e><p><l>lanp<s n="n"/></l><r>lamp<s n="n"/></r></p><par n="ND"/></e>
+    <e><p><l>bank<s n="n"/></l><r>bank<s n="n"/></r></p><par n="ND"/></e>
+    <e><p><l>mi<s n="n"/></l><r>wall<s n="n"/></r></p><par n="ND"/></e>
+    <e><p><l>chien<s n="n"/></l><r>dog<s n="n"/></r></p><par n="ND"/></e>
+    <e><p><l>pon<s n="n"/></l><r>bridge<s n="n"/></r></p><par n="ND"/></e>
+    <e><p><l>telefòn<s n="n"/></l><r>telephone<s n="n"/></r></p><par n="ND"/></e>
+    <e><p><l>madanm<s n="n"/></l><r>woman<s n="n"/></r></p><par n="ND"/></e>
+    <e><p><l>kontribitè<s n="n"/></l><r>contributor<s n="n"/></r></p><par n="ND"/></e>
+    <e><p><l>ide<s n="n"/></l><r>idea<s n="n"/></r></p><par n="ND"/></e>
+    <e><p><l>doktè<s n="n"/></l><r>doctor<s n="n"/></r></p><par n="ND"/></e>
+    <e><p><l>frè<s n="n"/></l><r>brother<s n="n"/></r></p><par n="ND"/></e>
+    <e><p><l>lendi<s n="n"/></l><r>monday<s n="n"/></r></p><par n="ND"/></e>
+    <e><p><l>madi<s n="n"/></l><r>tuesday<s n="n"/></r></p><par n="ND"/></e>
+    <e><p><l>mekredi<s n="n"/></l><r>wednesday<s n="n"/></r></p><par n="ND"/></e>
+    <e><p><l>jedi<s n="n"/></l><r>thursday<s n="n"/></r></p><par n="ND"/></e>
+    <e><p><l>vandredi<s n="n"/></l><r>friday<s n="n"/></r></p><par n="ND"/></e>
+    <e><p><l>samdi<s n="n"/></l><r>saturday<s n="n"/></r></p><par n="ND"/></e>
+    <e><p><l>dimanch<s n="n"/></l><r>sunday<s n="n"/></r></p><par n="ND"/></e>
+    <e><p><l>janvye<s n="n"/></l><r>January<s n="n"/></r></p><par n="ND"/></e>
+    <e><p><l>fevriye<s n="n"/></l><r>February<s n="n"/></r></p><par n="ND"/></e>
+    <e><p><l>mas<s n="n"/></l><r>March<s n="n"/></r></p><par n="ND"/></e>
+    <e><p><l>avril<s n="n"/></l><r>April<s n="n"/></r></p><par n="ND"/></e>
+    <e><p><l>me<s n="n"/></l><r>May<s n="n"/></r></p><par n="ND"/></e>
+    <e><p><l>jen<s n="n"/></l><r>June<s n="n"/></r></p><par n="ND"/></e>
+    <e><p><l>jiyè<s n="n"/></l><r>July<s n="n"/></r></p><par n="ND"/></e>
+    <e><p><l>dawon<s n="n"/></l><r>August<s n="n"/></r></p><par n="ND"/></e>
+    <e><p><l>septanm<s n="n"/></l><r>September<s n="n"/></r></p><par n="ND"/></e>
+    <e><p><l>oktòb<s n="n"/></l><r>October<s n="n"/></r></p><par n="ND"/></e>
+    <e><p><l>novanm<s n="n"/></l><r>November<s n="n"/></r></p><par n="ND"/></e>
+    <e><p><l>desanm<s n="n"/></l><r>December<s n="n"/></r></p><par n="ND"/></e>
+    <e><p><l>avètisman<s n="n"/></l><r>warning<s n="n"/></r></p><par n="ND"/></e>
+    <e><p><l>bèt<s n="n"/></l><r>animal<s n="n"/></r></p><par n="ND"/></e>
+    <e r="RL"><p><l>bèt<s n="n"/></l><r>beast<s n="n"/></r></p><par n="ND"/></e>
+    <e><p><l>maten<s n="n"/></l><r>morning<s n="n"/></r></p><par n="ND"/></e>
+    <e><p><l>benediksyon<s n="n"/></l><r>benediction<s n="n"/></r></p><par n="ND"/></e>
+    <e><p><l>latè<s n="n"/></l><r>earth<s n="n"/></r></p><par n="ND"/></e>
+    <e><p><l>fòm<s n="n"/></l><r>form<s n="n"/></r></p><par n="ND"/></e>
+    <e><p><l>fènwa<s n="n"/></l><r>darkness<s n="n"/></r></p><par n="ND"/></e>
+    <e><p><l>lannwit<s n="n"/></l><r>night<s n="n"/></r></p><par n="ND"/></e>
+    <e><p><l>larivyè<s n="n"/></l><r>river<s n="n"/></r></p><par n="ND"/></e>
+    <e><p><l>manman<s n="n"/></l><r>mother<s n="n"/></r></p><par n="ND"/></e>
+    <e><p><l>papa<s n="n"/></l><r>father<s n="n"/></r></p><par n="ND"/></e>
+    <e><p><l>prezidan<s n="n"/></l><r>president<s n="n"/></r></p><par n="ND"/></e>
+    <e><p><l>visprezidan<s n="n"/></l><r>vicepresident<s n="n"/></r></p><par n="ND"/></e>
+    <e><p><l>repiblik<s n="n"/></l><r>republic<s n="n"/></r></p><par n="ND"/></e>
+    <e><p><l>stabilite<s n="n"/></l><r>stability<s n="n"/></r></p><par n="ND"/></e>
+    <e><p><l>sekirite<s n="n"/></l><r>security<s n="n"/></r></p><par n="ND"/></e>
+    <e><p><l>faktori<s n="n"/></l><r>factory<s n="n"/></r></p><par n="ND"/></e>
+    <e><p><l>djòb<s n="n"/></l><r>job<s n="n"/></r></p><par n="ND"/></e>
+    <e><p><l>eleksyon<s n="n"/></l><r>election<s n="n"/></r></p><par n="ND"/></e>
+    <e><p><l>konstitisyon<s n="n"/></l><r>constitution<s n="n"/></r></p><par n="ND"/></e>
+    <e><p><l>kapital<s n="n"/></l><r>capital<s n="n"/></r></p><par n="ND"/></e>
+    <e><p><l>oseyan<s n="n"/></l><r>ocean<s n="n"/></r></p><par n="ND"/></e>
+    <e><p><l>ayisyen<s n="n"/></l><r>haitian<s n="n"/></r></p><par n="ND"/></e>
+    <e><p><l>gouvènman<s n="n"/></l><r>government<s n="n"/></r></p><par n="ND"/></e>
+    <e><p><l>peyi<s n="n"/></l><r>country<s n="n"/></r></p><par n="ND"/></e>
+    <e><p><l>santim<s n="n"/></l><r>centime<s n="n"/></r></p><par n="ND"/></e>
+    <e><p><l>goud<s n="n"/></l><r>gourde<s n="n"/></r></p><par n="ND"/></e>
+    <e><p><l>administrasyon<s n="n"/></l><r>administration<s n="n"/></r></p><par n="ND"/></e>
+    <e><p><l>kondisyon<s n="n"/></l><r>condition<s n="n"/></r></p><par n="ND"/></e>
+    <e><p><l>moun<s n="n"/></l><r>person<s n="n"/></r></p><par n="ND"/></e>
+    <e><p><l>dwa<s n="n"/></l><r>right<s n="n"/></r></p><par n="ND"/></e>
+    <e><p><l>dwa<b/>moun<s n="n"/></l><r>human<b/>right<s n="n"/></r></p><par n="ND"/></e>
+    <e><p><l>nimewo<s n="n"/></l><r>number<s n="n"/></r></p><par n="ND"/></e>
+    <e><p><l>tribinal<s n="n"/></l><r>tribunal<s n="n"/></r></p><par n="ND"/></e>
+    <e><p><l>wa<s n="n"/></l><r>king<s n="n"/></r></p><par n="ND"/></e>
+    <e><p><l>lespri<s n="n"/></l><r>spirit<s n="n"/></r></p><par n="ND"/></e>
+    <e><p><l>limyè<s n="n"/></l><r>light<s n="n"/></r></p><par n="ND"/></e>
+    <e><p><l>syèl<s n="n"/></l><r>sky<s n="n"/></r></p><par n="ND"/></e>
+    <e r="RL"><p><l>syèl<s n="n"/></l><r>heaven<s n="n"/></r></p><par n="ND"/></e>
+    <e><p><l>politisyen<s n="n"/></l><r>politician<s n="n"/></r></p><par n="ND"/></e>
+    <e><p><l>powèt<s n="n"/></l><r>poet<s n="n"/></r></p><par n="ND"/></e>
+    <e><p><l>ekriven<s n="n"/></l><r>writer<s n="n"/></r></p><par n="ND"/></e>
+    <e><p><l>mouvman<s n="n"/></l><r>movement<s n="n"/></r></p><par n="ND"/></e>
+    <e><p><l>kreyatè<s n="n"/></l><r>creator<s n="n"/></r></p><par n="ND"/></e>
+    <e><p><l>lidè<s n="n"/></l><r>leader<s n="n"/></r></p><par n="ND"/></e>
+    <e><p><l>pozisyon<s n="n"/></l><r>position<s n="n"/></r></p><par n="ND"/></e>
+    <e><p><l>inivèsite<s n="n"/></l><r>university<s n="n"/></r></p><par n="ND"/></e>
+    <e><p><l>kolèj<s n="n"/></l><r>college<s n="n"/></r></p><par n="ND"/></e>
+    <e><p><l>endepandans<s n="n"/></l><r>independence<s n="n"/></r></p><par n="ND"/></e>
+    <e><p><l>jistis<s n="n"/></l><r>justice<s n="n"/></r></p><par n="ND"/></e>
+    <e><p><l>kategori<s n="n"/></l><r>category<s n="n"/></r></p><par n="ND"/></e>
+    <e><p><l>definisyon<s n="n"/></l><r>definition<s n="n"/></r></p><par n="ND"/></e>
+    <e><p><l>antrepriz<s n="n"/></l><r>enterprise<s n="n"/></r></p><par n="ND"/></e>
+    <e><p><l>finans<s n="n"/></l><r>finance<s n="n"/></r></p><par n="ND"/></e>
+    <e><p><l>anviwonman<s n="n"/></l><r>environment<s n="n"/></r></p><par n="ND"/></e>
+    <e><p><l>defans<s n="n"/></l><r>defence<s n="n"/></r></p><par n="ND"/></e>
+    <e><p><l>plant<s n="n"/></l><r>plant<s n="n"/></r></p><par n="ND"/></e>
+    <e><p><l>anatomi<s n="n"/></l><r>anatomy<s n="n"/></r></p><par n="ND"/></e>
+    <e><p><l>obsèvasyon<s n="n"/></l><r>observation<s n="n"/></r></p><par n="ND"/></e>
+    <e><p><l>eksperyans<s n="n"/></l><r>experience<s n="n"/></r></p><par n="ND"/></e>
+    <e><p><l>grip<s n="n"/></l><r>flu<s n="n"/></r></p><par n="ND"/></e>
+    <e r="RL"><p><l>grip<s n="n"/></l><r>influenza<s n="n"/></r></p><par n="ND"/></e>
+    <e><p><l>grip<b/>pòsin<s n="n"/></l><r>swine<b/>flu<s n="n"/></r></p><par n="ND"/></e>
+    <e><p><l>viris<s n="n"/></l><r>virus<s n="n"/></r></p><par n="ND"/></e>
+    <e><p><l>bakteri<s n="n"/></l><r>bacterium<s n="n"/></r></p><par n="ND"/></e>
+    <e><p><l>bagay<s n="n"/></l><r>thing<s n="n"/></r></p><par n="ND"/></e>
+    <e><p><l>bannann<s n="n"/></l><r>banana<s n="n"/></r></p><par n="ND"/></e>
+    <e r="LR"><p><l>fig<s n="n"/></l><r>banana<s n="n"/></r></p><par n="ND"/></e>
+    <e><p><l>bekàn<s n="n"/></l><r>bicycle<s n="n"/></r></p><par n="ND"/></e>
+    <e><p><l>diri<s n="n"/></l><r>rice<s n="n"/></r></p><par n="ND"/></e>
+    <e><p><l>lakay<s n="n"/></l><r>house<s n="n"/></r></p><par n="ND"/></e>
+    <e><p><l>kiyèz<s n="n"/></l><r>hog<b/>banana<s n="n"/></r></p><par n="ND"/></e>
+    <e r="LR"><p><l>tchòk<s n="n"/></l><r>hog<b/>banana<s n="n"/></r></p><par n="ND"/></e>
+    <e r="LR"><p><l>poban<s n="n"/></l><r>hog<b/>banana<s n="n"/></r></p><par n="ND"/></e>
+    <e><p><l>kle<s n="n"/></l><r>key<s n="n"/></r></p><par n="ND"/></e>
+    <e r="RL"><p><l>kle<s n="n"/></l><r>wrench<s n="n"/></r></p><par n="ND"/></e>
+    <e><p><l>kle<b/>kola<s n="n"/></l><r>bottle<b/>opener<s n="n"/></r></p><par n="ND"/></e>
+    <e><p><l>konnfleks<s n="n"/></l><r>breakfast<b/>cereal<s n="n"/></r></p><par n="ND"/></e>
+    <e><p><l>kawoutchou<s n="n"/></l><r>tire<s n="n"/></r></p><par n="ND"/></e>
+    <e><p><l>lin<s n="n"/></l><r>moon<s n="n"/></r></p><par n="ND"/></e>
+    <e><p><l>makak<s n="n"/></l><r>monkey<s n="n"/></r></p><par n="ND"/></e>
+    <e><p><l>matant<s n="n"/></l><r>aunt<s n="n"/></r></p><par n="ND"/></e>
+    <e><p><l>pwa<s n="n"/></l><r>bean<s n="n"/></r></p><par n="ND"/></e>
+    <e><p><l>piman<s n="n"/></l><r>chili<b/>pepper<s n="n"/></r></p><par n="ND"/></e> <!--"a very hot pepper"-->
+    <e><p><l>chenèt<s n="n"/></l><r>mamoncillo<s n="n"/></r></p><par n="ND"/></e>
+    <e><p><l>chenèt<s n="n"/></l><r>gap<s n="n"/></r></p><par n="ND"/></e>
+    <e><p><l>tonton<s n="n"/></l><r>uncle<s n="n"/></r></p><par n="ND"/></e>
+    <e><p><l>vwazen<s n="n"/></l><r>neighbour<s n="n"/></r></p><par n="ND"/></e>
+    <e><p><l>zwazo<s n="n"/></l><r>bird<s n="n"/></r></p><par n="ND"/></e>
+    <e><p><l>je<s n="n"/></l><r>eye<s n="n"/></r></p><par n="ND"/></e>
+    <e><p><l>kòlgat<s n="n"/></l><r>toothpaste<s n="n"/></r></p><par n="ND"/></e>
+    <e><p><l>pat<s n="n"/></l><r>paste<s n="n"/></r></p><par n="ND"/></e>
+    <e><p><l>jilèt<s n="n"/></l><r>razor<s n="n"/></r></p><par n="ND"/></e>
+    <e><p><l>panpèz<s n="n"/></l><r>pamper<s n="n"/></r></p><par n="ND"/></e>
+    <e><p><l>kouchèt<s n="n"/></l><r>nappy<s n="n"/></r></p><par n="ND"/></e>
+    <e r="RL"><p><l>kouchèt<s n="n"/></l><r>diaper<s n="n"/></r></p><par n="ND"/></e>
+    <e><p><l>kodak<s n="n"/></l><r>camera<s n="n"/></r></p><par n="ND"/></e>
+    <e><p><l>frijidè<s n="n"/></l><r>refrigerator<s n="n"/></r></p><par n="ND"/></e>
+    <e><p><l>dèlko<s n="n"/></l><r>generator<s n="n"/></r></p><par n="ND"/></e>
+    <e><p><l>iglou<s n="n"/></l><r>cooler<s n="n"/></r></p><par n="ND"/></e>
+    <e r="LR"><p><l>tèmòs<s n="n"/></l><r>cooler<s n="n"/></r></p><par n="ND"/></e>
+    <e><p><l>chiklèt<s n="n"/></l><r>gum<s n="n"/></r></p><par n="ND"/></e>
+    <e><p><l>farawon<s n="n"/></l><r>pharoah<s n="n"/></r></p><par n="ND"/></e>
+    <e><p><l>kitèks<s n="n"/></l><r>nail<b/>polish<s n="n"/></r></p><par n="ND"/></e>
+    <e><p><l>djip<s n="n"/></l><r>jeep<s n="n"/></r></p><par n="ND"/></e>
+    <e r="LR"><p><l>tòchon<s n="n"/></l><r>napkin<s n="n"/></r></p><par n="ND"/></e>
+    <e><p><l>napkin<s n="n"/></l><r>napkin<s n="n"/></r></p><par n="ND"/></e>
+    <e><p><l>nèg<s n="n"/></l><r>guy<s n="n"/></r></p><par n="ND"/></e>
+    <e><p><l>blan<s n="n"/></l><r>foreigner<s n="n"/></r></p><par n="ND"/></e>
+    <e><p><l>fi<s n="n"/></l><r>girl<s n="n"/></r></p><par n="ND"/></e>
+    <e><p><l>wòb<s n="n"/></l><r>dress<s n="n"/></r></p><par n="ND"/></e>
+    <e><p><l>machin<s n="n"/></l><r>car<s n="n"/></r></p><par n="ND"/></e>
+    <e><p><l>kouto<s n="n"/></l><r>knife<s n="n"/></r></p><par n="ND"/></e>
+    <e><p><l>kravat<s n="n"/></l><r>tie<s n="n"/></r></p><par n="ND"/></e>
+    <e><p><l>lajan<s n="n"/></l><r>money<s n="n"/></r></p><par n="ND"/></e>
+    <e><p><l>fanmi<s n="n"/></l><r>family<s n="n"/></r></p><par n="ND"/></e>
+    <e><p><l>chèz<s n="n"/></l><r>chair<s n="n"/></r></p><par n="ND"/></e>
+    <e><p><l>zanmi<s n="n"/></l><r>friend<s n="n"/></r></p><par n="ND"/></e>
+    <e><p><l>kouch<s n="n"/></l><r>bed<s n="n"/></r></p><par n="ND"/></e>
+    <e><p><l>bouch<s n="n"/></l><r>mouth<s n="n"/></r></p><par n="ND"/></e>
+    <e><p><l>koko<s n="n"/></l><r>coconut<s n="n"/></r></p><par n="ND"/></e>
+    <e><p><l>machin<s n="n"/></l><r>machine<s n="n"/></r></p><par n="ND"/></e>
+    <e><p><l>pen<s n="n"/></l><r>bread<s n="n"/></r></p><par n="ND"/></e>
+    <e><p><l>enèji<s n="n"/></l><r>energy<s n="n"/></r></p><par n="ND"/></e>
+    <e><p><l>elektwonik<s n="n"/></l><r>electronics<s n="n"/></r></p><par n="ND"/></e>
+    <e><p><l>kouran<s n="n"/></l><r>current<s n="n"/></r></p><par n="ND"/></e>
+    <e><p><l>kouran<b/>elektrik<s n="n"/></l><r>electrical<b/>current<s n="n"/></r></p><par n="ND"/></e>
+    <e><p><l>òdinatè<s n="n"/></l><r>computer<s n="n"/></r></p><par n="ND"/></e>
+    <e><p><l>pwojè<s n="n"/></l><r>project<s n="n"/></r></p><par n="ND"/></e>
+    <e><p><l>vil<s n="n"/></l><r>city<s n="n"/></r></p><par n="ND"/></e>
+    <e r="RL"><p><l>vil<s n="n"/></l><r>town<s n="n"/></r></p><par n="ND"/></e>
+    <e><p><l>ameriken<s n="n"/></l><r>american<s n="n"/></r></p><par n="ND"/></e>
+    <e><p><l>ameriken<s n="adj"/></l><r>american<s n="adj"/></r></p></e>
+    <e r="LR"><p><l>veritab<s n="adj"/></l><r>real<s n="adj"/></r></p></e> <!-- TODO: Check -->
+    <e><p><l>nesesè<s n="adj"/></l><r>necessary<s n="adj"/></r></p></e>
+    <e><p><l>blese<s n="adj"/></l><r>wounded<s n="adj"/></r></p></e>
+    <e><p><l>pwovizwa<s n="adj"/></l><r>provisional<s n="adj"/></r></p></e>
+    <e><p><l>difisil<s n="adj"/></l><r>difficult<s n="adj"/></r></p></e>
+    <e><p><l>entènasyonal<s n="adj"/></l><r>international<s n="adj"/></r></p></e>
+    <e><p><l>miltinasyonal<s n="adj"/></l><r>multinational<s n="adj"/></r></p></e>
+    <e><p><l>antinasyonal<s n="adj"/></l><r>anti-national<s n="adj"/></r></p></e>
+    <e><p><l>transnasyonal<s n="adj"/></l><r>transnational<s n="adj"/></r></p></e>
+    <e><p><l>konstitisyonal<s n="adj"/></l><r>constitutional<s n="adj"/></r></p></e>
+    <e><p><l>nasyonal<s n="adj"/></l><r>national<s n="adj"/></r></p></e>
+    <e><p><l>menm<s n="adj"/></l><r>same<s n="adj"/></r></p></e>
+    <e><p><l>umanitè<s n="adj"/></l><r>humanitarian<s n="adj"/></r></p></e>
+    <e><p><l>enpotan<s n="adj"/></l><r>important<s n="adj"/></r></p></e>
+    <e><p><l>sekirite<s n="adj"/></l><r>security<s n="adj"/></r></p></e>
+    <e><p><l>chè<s n="adj"/></l><r>dear<s n="adj"/></r></p></e>
+    <e><p><l>teknik<s n="adj"/></l><r>technical<s n="adj"/></r></p></e>
+    <e><p><l>disponib<s n="adj"/></l><r>available<s n="adj"/></r></p></e>
+    <e><p><l>sivil<s n="adj"/></l><r>civil<s n="adj"/></r></p></e>
+    <e><p><l>medikal<s n="adj"/></l><r>medical<s n="adj"/></r></p></e>
+    <e><p><l>diplomatik<s n="adj"/></l><r>diplomatic<s n="adj"/></r></p></e>
+    <e><p><l>rejyonal<s n="adj"/></l><r>regional<s n="adj"/></r></p></e>
+    <e><p><l>mondyal<s n="adj"/></l><r>global<s n="adj"/></r></p></e>
+    <e><p><l>masif<s n="adj"/></l><r>massive<s n="adj"/></r></p></e>
+    <e><p><l>legal<s n="adj"/></l><r>legal<s n="adj"/></r></p></e>
+    <e><p><l>tanporè<s n="adj"/></l><r>temporary<s n="adj"/></r></p></e>
+    <e><p><l>sòs<s n="n"/></l><r>sauce<s n="n"/></r></p><par n="ND"/></e>
+    <e><p><l>pwason<s n="n"/></l><r>fish<s n="n"/></r></p><par n="ND"/></e>
+    <e><p><l>jeneral<s n="n"/></l><r>general<s n="n"/></r></p><par n="ND"/></e>
+    <e><p><l>kolonèl<s n="n"/></l><r>colonel<s n="n"/></r></p><par n="ND"/></e>
+    <e><p><l>komandè<s n="n"/></l><r>commander<s n="n"/></r></p><par n="ND"/></e>
+    <e><p><l>koloni<s n="n"/></l><r>colony<s n="n"/></r></p><par n="ND"/></e>
+    <e><p><l>bwitich<s n="adj"/></l><r>british<s n="adj"/></r></p></e>
+    <e><p><l>kolizyon<s n="n"/></l><r>collision<s n="n"/></r></p><par n="ND"/></e>
+    <e><p><l>kote<s n="n"/></l><r>side<s n="n"/></r></p><par n="ND"/></e>
+    <e><p><l>militè<s n="n"/></l><r>military<s n="n"/></r></p><par n="ND"/></e>
+    <e><p><l>militè<s n="adj"/></l><r>military<s n="adj"/></r></p></e>
+    <e><p><l>pwal<s n="n"/></l><r>hair<s n="n"/></r></p><par n="ND"/></e>
+    <e><p><l>kont<s n="n"/></l><r>story<s n="n"/></r></p><par n="ND"/></e>
+    <e><p><l>pitit<s n="n"/></l><r>child<s n="n"/></r></p><par n="ND"/></e>
+    <e><p><l>pitit<b/>fi<s n="n"/></l><r>daughter<s n="n"/></r></p><par n="ND"/></e>
+    <e><p><l>pitit<b/>fis<s n="n"/></l><r>son<s n="n"/></r></p><par n="ND"/></e>
+    <e><p><l>gason<s n="n"/></l><r>boy<s n="n"/></r></p><par n="ND"/></e>
+    <e><p><l>pèp<s n="n"/></l><r>person<s n="n"/><s n="pl"/></r></p></e>
+
+    <e c="AutoCog"><p><l>aberasyon<s n="n"/></l><r>aberration<s n="n"/></r></p><par n="ND"/></e>
+    <e c="AutoCog"><p><l>abitasyon<s n="n"/></l><r>habitation<s n="n"/></r></p><par n="ND"/></e>
+    <e c="AutoCog"><p><l>ablasyon<s n="n"/></l><r>ablation<s n="n"/></r></p><par n="ND"/></e>
+    <e c="AutoCog"><p><l>abolisyon<s n="n"/></l><r>abolition<s n="n"/></r></p><par n="ND"/></e>
+    <e c="AutoCog"><p><l>abominasyon<s n="n"/></l><r>abomination<s n="n"/></r></p><par n="ND"/></e>
+    <e c="AutoCog"><p><l>abrevyasyon<s n="n"/></l><r>abbreviation<s n="n"/></r></p><par n="ND"/></e>
+    <e c="AutoCog"><p><l>abstraksyon<s n="n"/></l><r>abstraction<s n="n"/></r></p><par n="ND"/></e>
+    <e c="AutoCog"><p><l>adaptasyon<s n="n"/></l><r>adaptation<s n="n"/></r></p><par n="ND"/></e>
+    <e c="AutoCog"><p><l>adiksyon<s n="n"/></l><r>addiction<s n="n"/></r></p><par n="ND"/></e>
+    <e c="AutoCog"><p><l>adisyon<s n="n"/></l><r>addition<s n="n"/></r></p><par n="ND"/></e>
+    <e c="AutoCog"><p><l>administrasyon<s n="n"/></l><r>administration<s n="n"/></r></p><par n="ND"/></e>
+    <e c="AutoCog"><p><l>admirasyon<s n="n"/></l><r>admiration<s n="n"/></r></p><par n="ND"/></e>
+    <e c="AutoCog"><p><l>admisyon<s n="n"/></l><r>admission<s n="n"/></r></p><par n="ND"/></e>
+    <e c="AutoCog"><p><l>adopsyon<s n="n"/></l><r>adoption<s n="n"/></r></p><par n="ND"/></e>
+    <e c="AutoCog"><p><l>adorasyon<s n="n"/></l><r>adoration<s n="n"/></r></p><par n="ND"/></e>
+    <e c="AutoCog"><p><l>afeksyon<s n="n"/></l><r>affection<s n="n"/></r></p><par n="ND"/></e>
+    <e c="AutoCog"><p><l>afektasyon<s n="n"/></l><r>affectation<s n="n"/></r></p><par n="ND"/></e>
+    <e c="AutoCog"><p><l>afilyasyon<s n="n"/></l><r>affiliation<s n="n"/></r></p><par n="ND"/></e>
+    <e c="AutoCog"><p><l>agresyon<s n="n"/></l><r>aggression<s n="n"/></r></p><par n="ND"/></e>
+    <e c="AutoCog"><p><l>ajitasyon<s n="n"/></l><r>agitation<s n="n"/></r></p><par n="ND"/></e>
+    <e c="AutoCog"><p><l>akimilasyon<s n="n"/></l><r>accumulation<s n="n"/></r></p><par n="ND"/></e>
+    <e c="AutoCog"><p><l>akizisyon<s n="n"/></l><r>acquisition<s n="n"/></r></p><par n="ND"/></e>
+    <e c="AutoCog"><p><l>akomodasyon<s n="n"/></l><r>accommodation<s n="n"/></r></p><par n="ND"/></e>
+    <e c="AutoCog"><p><l>akreditasyon<s n="n"/></l><r>accreditation<s n="n"/></r></p><par n="ND"/></e>
+    <e c="AutoCog"><p><l>akselerasyon<s n="n"/></l><r>acceleration<s n="n"/></r></p><par n="ND"/></e>
+    <e c="AutoCog"><p><l>aksyon<s n="n"/></l><r>action<s n="n"/></r></p><par n="ND"/></e>
+    <e c="AutoCog"><p><l>alegasyon<s n="n"/></l><r>allegation<s n="n"/></r></p><par n="ND"/></e>
+    <e c="AutoCog"><p><l>alokasyon<s n="n"/></l><r>allocation<s n="n"/></r></p><par n="ND"/></e>
+    <e c="AutoCog"><p><l>alterasyon<s n="n"/></l><r>alteration<s n="n"/></r></p><par n="ND"/></e>
+    <e c="AutoCog"><p><l>alyenasyon<s n="n"/></l><r>alienation<s n="n"/></r></p><par n="ND"/></e>
+    <e c="AutoCog"><p><l>amelyorasyon<s n="n"/></l><r>amelioration<s n="n"/></r></p><par n="ND"/></e>
+    <e c="AutoCog"><p><l>anflamasyon<s n="n"/></l><r>inflammation<s n="n"/></r></p><par n="ND"/></e>
+    <e c="AutoCog"><p><l>animasyon<s n="n"/></l><r>animation<s n="n"/></r></p><par n="ND"/></e>
+    <e c="AutoCog"><p><l>anpitasyon<s n="n"/></l><r>amputation<s n="n"/></r></p><par n="ND"/></e>
+    <e c="AutoCog"><p><l>anplifikasyon<s n="n"/></l><r>amplification<s n="n"/></r></p><par n="ND"/></e>
+    <e c="AutoCog"><p><l>antisipasyon<s n="n"/></l><r>anticipation<s n="n"/></r></p><par n="ND"/></e>
+    <e c="AutoCog"><p><l>aparisyon<s n="n"/></l><r>apparition<s n="n"/></r></p><par n="ND"/></e>
+    <e c="AutoCog"><p><l>apelasyon<s n="n"/></l><r>appellation<s n="n"/></r></p><par n="ND"/></e>
+    <e c="AutoCog"><p><l>aplikasyon<s n="n"/></l><r>application<s n="n"/></r></p><par n="ND"/></e>
+    <e c="AutoCog"><p><l>apresyasyon<s n="n"/></l><r>appreciation<s n="n"/></r></p><par n="ND"/></e>
+    <e c="AutoCog"><p><l>apwobasyon<s n="n"/></l><r>approbation<s n="n"/></r></p><par n="ND"/></e>
+    <e c="AutoCog"><p><l>apwoksimasyon<s n="n"/></l><r>approximation<s n="n"/></r></p><par n="ND"/></e>
+    <e c="AutoCog"><p><l>asimilasyon<s n="n"/></l><r>assimilation<s n="n"/></r></p><par n="ND"/></e>
+    <e c="AutoCog"><p><l>aspirasyon<s n="n"/></l><r>aspiration<s n="n"/></r></p><par n="ND"/></e>
+    <e c="AutoCog"><p><l>atestasyon<s n="n"/></l><r>attestation<s n="n"/></r></p><par n="ND"/></e>
+    <e c="AutoCog"><p><l>atraksyon<s n="n"/></l><r>attraction<s n="n"/></r></p><par n="ND"/></e>
+    <e c="AutoCog"><p><l>aviyasyon<s n="n"/></l><r>aviation<s n="n"/></r></p><par n="ND"/></e>
+    <e c="AutoCog"><p><l>avyasyon<s n="n"/></l><r>aviation<s n="n"/></r></p><par n="ND"/></e>
+    <e c="AutoCog"><p><l>ayerasyon<s n="n"/></l><r>aeration<s n="n"/></r></p><par n="ND"/></e>
+    <e c="AutoCog"><p><l>definisyon<s n="n"/></l><r>definition<s n="n"/></r></p><par n="ND"/></e>
+    <e c="AutoCog"><p><l>degradasyon<s n="n"/></l><r>degradation<s n="n"/></r></p><par n="ND"/></e>
+    <e c="AutoCog"><p><l>deklarasyon<s n="n"/></l><r>declaration<s n="n"/></r></p><par n="ND"/></e>
+    <e c="AutoCog"><p><l>dekolonizasyon<s n="n"/></l><r>decolonization<s n="n"/></r></p><par n="ND"/></e>
+    <e c="AutoCog"><p><l>dekonpozisyon<s n="n"/></l><r>decomposition<s n="n"/></r></p><par n="ND"/></e>
+    <e c="AutoCog"><p><l>dekontaminasyon<s n="n"/></l><r>decontamination<s n="n"/></r></p><par n="ND"/></e>
+    <e c="AutoCog"><p><l>dekorasyon<s n="n"/></l><r>decoration<s n="n"/></r></p><par n="ND"/></e>
+    <e c="AutoCog"><p><l>delegasyon<s n="n"/></l><r>delegation<s n="n"/></r></p><par n="ND"/></e>
+    <e c="AutoCog"><p><l>deliberasyon<s n="n"/></l><r>deliberation<s n="n"/></r></p><par n="ND"/></e>
+    <e c="AutoCog"><p><l>delimitasyon<s n="n"/></l><r>delimitation<s n="n"/></r></p><par n="ND"/></e>
+    <e c="AutoCog"><p><l>demobilizasyon<s n="n"/></l><r>demobilisation<s n="n"/></r></p><par n="ND"/></e>
+    <e c="AutoCog"><p><l>demokratizasyon<s n="n"/></l><r>democratisation<s n="n"/></r></p><par n="ND"/></e>
+    <e c="AutoCog"><p><l>demolisyon<s n="n"/></l><r>demolition<s n="n"/></r></p><par n="ND"/></e>
+    <e c="AutoCog"><p><l>demonstrasyon<s n="n"/></l><r>demonstration<s n="n"/></r></p><par n="ND"/></e>
+    <e c="AutoCog"><p><l>denominasyon<s n="n"/></l><r>denomination<s n="n"/></r></p><par n="ND"/></e>
+    <e c="AutoCog"><p><l>depozisyon<s n="n"/></l><r>deposition<s n="n"/></r></p><par n="ND"/></e>
+    <e c="AutoCog"><p><l>depresyasyon<s n="n"/></l><r>depreciation<s n="n"/></r></p><par n="ND"/></e>
+    <e c="AutoCog"><p><l>depresyon<s n="n"/></l><r>depression<s n="n"/></r></p><par n="ND"/></e>
+    <e c="AutoCog"><p><l>depòtasyon<s n="n"/></l><r>deportation<s n="n"/></r></p><par n="ND"/></e>
+    <e c="AutoCog"><p><l>derivasyon<s n="n"/></l><r>derivation<s n="n"/></r></p><par n="ND"/></e>
+    <e c="AutoCog"><p><l>desantralizasyon<s n="n"/></l><r>decentralisation<s n="n"/></r></p><par n="ND"/></e>
+    <e c="AutoCog"><p><l>desepsyon<s n="n"/></l><r>deception<s n="n"/></r></p><par n="ND"/></e>
+    <e c="AutoCog"><p><l>deskripsyon<s n="n"/></l><r>description<s n="n"/></r></p><par n="ND"/></e>
+    <e c="AutoCog"><p><l>destabilizasyon<s n="n"/></l><r>destabilization<s n="n"/></r></p><par n="ND"/></e>
+    <e c="AutoCog"><p><l>destinasyon<s n="n"/></l><r>destination<s n="n"/></r></p><par n="ND"/></e>
+    <e c="AutoCog"><p><l>destitisyon<s n="n"/></l><r>destitution<s n="n"/></r></p><par n="ND"/></e>
+    <e c="AutoCog"><p><l>destriksyon<s n="n"/></l><r>destruction<s n="n"/></r></p><par n="ND"/></e>
+    <e c="AutoCog"><p><l>detansyon<s n="n"/></l><r>detention<s n="n"/></r></p><par n="ND"/></e>
+    <e c="AutoCog"><p><l>detonasyon<s n="n"/></l><r>detonation<s n="n"/></r></p><par n="ND"/></e>
+    <e c="AutoCog"><p><l>detèminasyon<s n="n"/></l><r>determination<s n="n"/></r></p><par n="ND"/></e>
+    <e c="AutoCog"><p><l>detèryorasyon<s n="n"/></l><r>deterioration<s n="n"/></r></p><par n="ND"/></e>
+    <e c="AutoCog"><p><l>devalyasyon<s n="n"/></l><r>devaluation<s n="n"/></r></p><par n="ND"/></e>
+    <e c="AutoCog"><p><l>deviyasyon<s n="n"/></l><r>deviation<s n="n"/></r></p><par n="ND"/></e>
+    <e c="AutoCog"><p><l>devosyon<s n="n"/></l><r>devotion<s n="n"/></r></p><par n="ND"/></e>
+    <e c="AutoCog"><p><l>devyasyon<s n="n"/></l><r>deviation<s n="n"/></r></p><par n="ND"/></e>
+    <e c="AutoCog"><p><l>dezenfòmasyon<s n="n"/></l><r>disinformation<s n="n"/></r></p><par n="ND"/></e>
+    <e c="AutoCog"><p><l>diferansyasyon<s n="n"/></l><r>differentiation<s n="n"/></r></p><par n="ND"/></e>
+    <e c="AutoCog"><p><l>diksyon<s n="n"/></l><r>diction<s n="n"/></r></p><par n="ND"/></e>
+    <e c="AutoCog"><p><l>dilatasyon<s n="n"/></l><r>dilatation<s n="n"/></r></p><par n="ND"/></e>
+    <e c="AutoCog"><p><l>diplikasyon<s n="n"/></l><r>duplication<s n="n"/></r></p><par n="ND"/></e>
+    <e c="AutoCog"><p><l>direksyon<s n="n"/></l><r>direction<s n="n"/></r></p><par n="ND"/></e>
+    <e c="AutoCog"><p><l>diskalifikasyon<s n="n"/></l><r>disqualification<s n="n"/></r></p><par n="ND"/></e>
+    <e c="AutoCog"><p><l>diskresyon<s n="n"/></l><r>discretion<s n="n"/></r></p><par n="ND"/></e>
+    <e c="AutoCog"><p><l>diskriminasyon<s n="n"/></l><r>discrimination<s n="n"/></r></p><par n="ND"/></e>
+    <e c="AutoCog"><p><l>dispozisyon<s n="n"/></l><r>disposition<s n="n"/></r></p><par n="ND"/></e>
+    <e c="AutoCog"><p><l>distenksyon<s n="n"/></l><r>distinction<s n="n"/></r></p><par n="ND"/></e>
+    <e c="AutoCog"><p><l>distraksyon<s n="n"/></l><r>distraction<s n="n"/></r></p><par n="ND"/></e>
+    <e c="AutoCog"><p><l>distribisyon<s n="n"/></l><r>distribution<s n="n"/></r></p><par n="ND"/></e>
+    <e c="AutoCog"><p><l>disètasyon<s n="n"/></l><r>dissertation<s n="n"/></r></p><par n="ND"/></e>
+    <e c="AutoCog"><p><l>divèsyon<s n="n"/></l><r>diversion<s n="n"/></r></p><par n="ND"/></e>
+    <e c="AutoCog"><p><l>dokimantasyon<s n="n"/></l><r>documentation<s n="n"/></r></p><par n="ND"/></e>
+    <e c="AutoCog"><p><l>dominasyon<s n="n"/></l><r>domination<s n="n"/></r></p><par n="ND"/></e>
+    <e c="AutoCog"><p><l>donasyon<s n="n"/></l><r>donation<s n="n"/></r></p><par n="ND"/></e>
+    <e c="AutoCog"><p><l>edisyon<s n="n"/></l><r>edition<s n="n"/></r></p><par n="ND"/></e>
+    <e c="AutoCog"><p><l>egzajerasyon<s n="n"/></l><r>exaggeration<s n="n"/></r></p><par n="ND"/></e>
+    <e c="AutoCog"><p><l>egzaksyon<s n="n"/></l><r>exaction<s n="n"/></r></p><par n="ND"/></e>
+    <e c="AutoCog"><p><l>egzaminasyon<s n="n"/></l><r>examination<s n="n"/></r></p><par n="ND"/></e>
+    <e c="AutoCog"><p><l>egzanpsyon<s n="n"/></l><r>exemption<s n="n"/></r></p><par n="ND"/></e>
+    <e c="AutoCog"><p><l>egzekisyon<s n="n"/></l><r>execution<s n="n"/></r></p><par n="ND"/></e>
+    <e c="AutoCog"><p><l>egzòtasyon<s n="n"/></l><r>exhortation<s n="n"/></r></p><par n="ND"/></e>
+    <e c="AutoCog"><p><l>ejeksyon<s n="n"/></l><r>ejection<s n="n"/></r></p><par n="ND"/></e>
+    <e c="AutoCog"><p><l>eksepsyon<s n="n"/></l><r>exception<s n="n"/></r></p><par n="ND"/></e>
+    <e c="AutoCog"><p><l>eksitasyon<s n="n"/></l><r>excitation<s n="n"/></r></p><par n="ND"/></e>
+    <e c="AutoCog"><p><l>ekspansyon<s n="n"/></l><r>expansion<s n="n"/></r></p><par n="ND"/></e>
+    <e c="AutoCog"><p><l>ekspedisyon<s n="n"/></l><r>expedition<s n="n"/></r></p><par n="ND"/></e>
+    <e c="AutoCog"><p><l>eksperimantasyon<s n="n"/></l><r>experimentation<s n="n"/></r></p><par n="ND"/></e>
+    <e c="AutoCog"><p><l>ekspilsyon<s n="n"/></l><r>expulsion<s n="n"/></r></p><par n="ND"/></e>
+    <e c="AutoCog"><p><l>ekspirasyon<s n="n"/></l><r>expiration<s n="n"/></r></p><par n="ND"/></e>
+    <e c="AutoCog"><p><l>eksplikasyon<s n="n"/></l><r>explication<s n="n"/></r></p><par n="ND"/></e>
+    <e c="AutoCog"><p><l>eksplorasyon<s n="n"/></l><r>exploration<s n="n"/></r></p><par n="ND"/></e>
+    <e c="AutoCog"><p><l>eksplwatasyon<s n="n"/></l><r>exploitation<s n="n"/></r></p><par n="ND"/></e>
+    <e c="AutoCog"><p><l>ekspozisyon<s n="n"/></l><r>exposition<s n="n"/></r></p><par n="ND"/></e>
+    <e c="AutoCog"><p><l>ekspresyon<s n="n"/></l><r>expression<s n="n"/></r></p><par n="ND"/></e>
+    <e c="AutoCog"><p><l>ekspyasyon<s n="n"/></l><r>expiation<s n="n"/></r></p><par n="ND"/></e>
+    <e c="AutoCog"><p><l>ekspòtasyon<s n="n"/></l><r>exportation<s n="n"/></r></p><par n="ND"/></e>
+    <e c="AutoCog"><p><l>ekstansyon<s n="n"/></l><r>extension<s n="n"/></r></p><par n="ND"/></e>
+    <e c="AutoCog"><p><l>ekstèminasyon<s n="n"/></l><r>extermination<s n="n"/></r></p><par n="ND"/></e>
+    <e c="AutoCog"><p><l>ekwasyon<s n="n"/></l><r>equation<s n="n"/></r></p><par n="ND"/></e>
+    <e c="AutoCog"><p><l>ekzaksyon<s n="n"/></l><r>exaction<s n="n"/></r></p><par n="ND"/></e>
+    <e c="AutoCog"><p><l>ekzanpsyon<s n="n"/></l><r>exemption<s n="n"/></r></p><par n="ND"/></e>
+    <e c="AutoCog"><p><l>ekzekisyon<s n="n"/></l><r>execution<s n="n"/></r></p><par n="ND"/></e>
+    <e c="AutoCog"><p><l>ekzibisyon<s n="n"/></l><r>exhibition<s n="n"/></r></p><par n="ND"/></e>
+    <e c="AutoCog"><p><l>elaborasyon<s n="n"/></l><r>elaboration<s n="n"/></r></p><par n="ND"/></e>
+    <e c="AutoCog"><p><l>eleksyon<s n="n"/></l><r>election<s n="n"/></r></p><par n="ND"/></e>
+    <e c="AutoCog"><p><l>elektrifikasyon<s n="n"/></l><r>electrification<s n="n"/></r></p><par n="ND"/></e>
+    <e c="AutoCog"><p><l>elektwokisyon<s n="n"/></l><r>electrocution<s n="n"/></r></p><par n="ND"/></e>
+    <e c="AutoCog"><p><l>elevasyon<s n="n"/></l><r>elevation<s n="n"/></r></p><par n="ND"/></e>
+    <e c="AutoCog"><p><l>eliminasyon<s n="n"/></l><r>elimination<s n="n"/></r></p><par n="ND"/></e>
+    <e c="AutoCog"><p><l>emansipasyon<s n="n"/></l><r>emancipation<s n="n"/></r></p><par n="ND"/></e>
+    <e c="AutoCog"><p><l>emisyon<s n="n"/></l><r>emission<s n="n"/></r></p><par n="ND"/></e>
+    <e c="AutoCog"><p><l>emosyon<s n="n"/></l><r>emotion<s n="n"/></r></p><par n="ND"/></e>
+    <e c="AutoCog"><p><l>endikasyon<s n="n"/></l><r>indication<s n="n"/></r></p><par n="ND"/></e>
+    <e c="AutoCog"><p><l>endispozisyon<s n="n"/></l><r>indisposition<s n="n"/></r></p><par n="ND"/></e>
+    <e c="AutoCog"><p><l>endistriyalizasyon<s n="n"/></l><r>industrialisation<s n="n"/></r></p><par n="ND"/></e>
+    <e c="AutoCog"><p><l>enfeksyon<s n="n"/></l><r>infection<s n="n"/></r></p><par n="ND"/></e>
+    <e c="AutoCog"><p><l>enfiltrasyon<s n="n"/></l><r>infiltration<s n="n"/></r></p><par n="ND"/></e>
+    <e c="AutoCog"><p><l>enflamasyon<s n="n"/></l><r>inflammation<s n="n"/></r></p><par n="ND"/></e>
+    <e c="AutoCog"><p><l>enflasyon<s n="n"/></l><r>inflation<s n="n"/></r></p><par n="ND"/></e>
+    <e c="AutoCog"><p><l>enfleksyon<s n="n"/></l><r>inflection<s n="n"/></r></p><par n="ND"/></e>
+    <e c="AutoCog"><p><l>enfraksyon<s n="n"/></l><r>infraction<s n="n"/></r></p><par n="ND"/></e>
+    <e c="AutoCog"><p><l>enfòmasyon<s n="n"/></l><r>information<s n="n"/></r></p><par n="ND"/></e>
+    <e c="AutoCog"><p><l>enkizisyon<s n="n"/></l><r>inquisition<s n="n"/></r></p><par n="ND"/></e>
+    <e c="AutoCog"><p><l>enklinasyon<s n="n"/></l><r>inclination<s n="n"/></r></p><par n="ND"/></e>
+    <e c="AutoCog"><p><l>enkonpreyansyon<s n="n"/></l><r>incomprehension<s n="n"/></r></p><par n="ND"/></e>
+    <e c="AutoCog"><p><l>enplemantasyon<s n="n"/></l><r>implementation<s n="n"/></r></p><par n="ND"/></e>
+    <e c="AutoCog"><p><l>enplikasyon<s n="n"/></l><r>implication<s n="n"/></r></p><par n="ND"/></e>
+    <e c="AutoCog"><p><l>enpozisyon<s n="n"/></l><r>imposition<s n="n"/></r></p><par n="ND"/></e>
+    <e c="AutoCog"><p><l>enpresyon<s n="n"/></l><r>impression<s n="n"/></r></p><par n="ND"/></e>
+    <e c="AutoCog"><p><l>enpwovizasyon<s n="n"/></l><r>improvisation<s n="n"/></r></p><par n="ND"/></e>
+    <e c="AutoCog"><p><l>enpèfeksyon<s n="n"/></l><r>imperfection<s n="n"/></r></p><par n="ND"/></e>
+    <e c="AutoCog"><p><l>enpòtasyon<s n="n"/></l><r>importation<s n="n"/></r></p><par n="ND"/></e>
+    <e c="AutoCog"><p><l>enskripsyon<s n="n"/></l><r>inscription<s n="n"/></r></p><par n="ND"/></e>
+    <e c="AutoCog"><p><l>enspeksyon<s n="n"/></l><r>inspection<s n="n"/></r></p><par n="ND"/></e>
+    <e c="AutoCog"><p><l>enspirasyon<s n="n"/></l><r>inspiration<s n="n"/></r></p><par n="ND"/></e>
+    <e c="AutoCog"><p><l>enstalasyon<s n="n"/></l><r>installation<s n="n"/></r></p><par n="ND"/></e>
+    <e c="AutoCog"><p><l>enstitisyon<s n="n"/></l><r>institution<s n="n"/></r></p><par n="ND"/></e>
+    <e c="AutoCog"><p><l>enstrimantasyon<s n="n"/></l><r>instrumentation<s n="n"/></r></p><par n="ND"/></e>
+    <e c="AutoCog"><p><l>ensèsyon<s n="n"/></l><r>insertion<s n="n"/></r></p><par n="ND"/></e>
+    <e c="AutoCog"><p><l>entansyon<s n="n"/></l><r>intention<s n="n"/></r></p><par n="ND"/></e>
+    <e c="AutoCog"><p><l>entegrasyon<s n="n"/></l><r>integration<s n="n"/></r></p><par n="ND"/></e>
+    <e c="AutoCog"><p><l>entimidasyon<s n="n"/></l><r>intimidation<s n="n"/></r></p><par n="ND"/></e>
+    <e c="AutoCog"><p><l>entonasyon<s n="n"/></l><r>intonation<s n="n"/></r></p><par n="ND"/></e>
+    <e c="AutoCog"><p><l>entwodiksyon<s n="n"/></l><r>introduction<s n="n"/></r></p><par n="ND"/></e>
+    <e c="AutoCog"><p><l>entèdiksyon<s n="n"/></l><r>interdiction<s n="n"/></r></p><par n="ND"/></e>
+    <e c="AutoCog"><p><l>entèkonèksyon<s n="n"/></l><r>interconnection<s n="n"/></r></p><par n="ND"/></e>
+    <e c="AutoCog"><p><l>entèpelasyon<s n="n"/></l><r>interpolation<s n="n"/></r></p><par n="ND"/></e>
+    <e c="AutoCog"><p><l>entèpretasyon<s n="n"/></l><r>interpretation<s n="n"/></r></p><par n="ND"/></e>
+    <e c="AutoCog"><p><l>entèraksyon<s n="n"/></l><r>interraction<s n="n"/></r></p><par n="ND"/></e>
+    <e c="AutoCog"><p><l>entèrelasyon<s n="n"/></l><r>interrelation<s n="n"/></r></p><par n="ND"/></e>
+    <e c="AutoCog"><p><l>entèseksyon<s n="n"/></l><r>intersection<s n="n"/></r></p><par n="ND"/></e>
+    <e c="AutoCog"><p><l>entèvansyon<s n="n"/></l><r>intervention<s n="n"/></r></p><par n="ND"/></e>
+    <e c="AutoCog"><p><l>entèwogasyon<s n="n"/></l><r>interrogation<s n="n"/></r></p><par n="ND"/></e>
+    <e c="AutoCog"><p><l>envalidasyon<s n="n"/></l><r>invalidation<s n="n"/></r></p><par n="ND"/></e>
+    <e c="AutoCog"><p><l>envansyon<s n="n"/></l><r>invention<s n="n"/></r></p><par n="ND"/></e>
+    <e c="AutoCog"><p><l>envestigasyon<s n="n"/></l><r>investigation<s n="n"/></r></p><par n="ND"/></e>
+    <e c="AutoCog"><p><l>envitasyon<s n="n"/></l><r>invitation<s n="n"/></r></p><par n="ND"/></e>
+    <e c="AutoCog"><p><l>envokasyon<s n="n"/></l><r>invocation<s n="n"/></r></p><par n="ND"/></e>
+    <e c="AutoCog"><p><l>ereksyon<s n="n"/></l><r>erection<s n="n"/></r></p><par n="ND"/></e>
+    <e c="AutoCog"><p><l>eripsyon<s n="n"/></l><r>eruption<s n="n"/></r></p><par n="ND"/></e>
+    <e c="AutoCog"><p><l>espansyon<s n="n"/></l><r>expansion<s n="n"/></r></p><par n="ND"/></e>
+    <e c="AutoCog"><p><l>espedisyon<s n="n"/></l><r>expedition<s n="n"/></r></p><par n="ND"/></e>
+    <e c="AutoCog"><p><l>espesyalizasyon<s n="n"/></l><r>specialisation<s n="n"/></r></p><par n="ND"/></e>
+    <e c="AutoCog"><p><l>estabilizasyon<s n="n"/></l><r>stabilization<s n="n"/></r></p><par n="ND"/></e>
+    <e c="AutoCog"><p><l>estandadizasyon<s n="n"/></l><r>standardisation<s n="n"/></r></p><par n="ND"/></e>
+    <e c="AutoCog"><p><l>estimasyon<s n="n"/></l><r>estimation<s n="n"/></r></p><par n="ND"/></e>
+    <e c="AutoCog"><p><l>estimilasyon<s n="n"/></l><r>stimulation<s n="n"/></r></p><par n="ND"/></e>
+    <e c="AutoCog"><p><l>estèminasyon<s n="n"/></l><r>extermination<s n="n"/></r></p><par n="ND"/></e>
+    <e c="AutoCog"><p><l>evakyasyon<s n="n"/></l><r>evacuation<s n="n"/></r></p><par n="ND"/></e>
+    <e c="AutoCog"><p><l>evaliyasyon<s n="n"/></l><r>evaluation<s n="n"/></r></p><par n="ND"/></e>
+    <e c="AutoCog"><p><l>evalyasyon<s n="n"/></l><r>evaluation<s n="n"/></r></p><par n="ND"/></e>
+    <e c="AutoCog"><p><l>evolisyon<s n="n"/></l><r>evolution<s n="n"/></r></p><par n="ND"/></e>
+    <e c="AutoCog"><p><l>fabrikasyon<s n="n"/></l><r>fabrication<s n="n"/></r></p><par n="ND"/></e>
+    <e c="AutoCog"><p><l>federasyon<s n="n"/></l><r>federation<s n="n"/></r></p><par n="ND"/></e>
+    <e c="AutoCog"><p><l>fegondasyon<s n="n"/></l><r>fecundation<s n="n"/></r></p><par n="ND"/></e>
+    <e c="AutoCog"><p><l>felisitasyon<s n="n"/></l><r>felicitation<s n="n"/></r></p><par n="ND"/></e>
+    <e c="AutoCog"><p><l>fiksasyon<s n="n"/></l><r>fixation<s n="n"/></r></p><par n="ND"/></e>
+    <e c="AutoCog"><p><l>fiksyon<s n="n"/></l><r>fiction<s n="n"/></r></p><par n="ND"/></e>
+    <e c="AutoCog"><p><l>fondasyon<s n="n"/></l><r>foundation<s n="n"/></r></p><par n="ND"/></e>
+    <e c="AutoCog"><p><l>fonksyon<s n="n"/></l><r>function<s n="n"/></r></p><par n="ND"/></e>
+    <e c="AutoCog"><p><l>fragmantasyon<s n="n"/></l><r>fragmentation<s n="n"/></r></p><par n="ND"/></e>
+    <e c="AutoCog"><p><l>fraksyon<s n="n"/></l><r>fraction<s n="n"/></r></p><par n="ND"/></e>
+    <e c="AutoCog"><p><l>friksyon<s n="n"/></l><r>friction<s n="n"/></r></p><par n="ND"/></e>
+    <e c="AutoCog"><p><l>fristrasyon<s n="n"/></l><r>frustration<s n="n"/></r></p><par n="ND"/></e>
+    <e c="AutoCog"><p><l>fòmasyon<s n="n"/></l><r>formation<s n="n"/></r></p><par n="ND"/></e>
+    <e c="AutoCog"><p><l>fòmilasyon<s n="n"/></l><r>formulation<s n="n"/></r></p><par n="ND"/></e>
+    <e c="AutoCog"><p><l>fònikasyon<s n="n"/></l><r>fornication<s n="n"/></r></p><par n="ND"/></e>
+    <e c="AutoCog"><p><l>fòtifikasyon<s n="n"/></l><r>fortification<s n="n"/></r></p><par n="ND"/></e>
+    <e c="AutoCog"><p><l>generasyon<s n="n"/></l><r>generation<s n="n"/></r></p><par n="ND"/></e>
+    <e c="AutoCog"><p><l>globalizasyon<s n="n"/></l><r>globalisation<s n="n"/></r></p><par n="ND"/></e>
+    <e c="AutoCog"><p><l>gravitasyon<s n="n"/></l><r>gravitation<s n="n"/></r></p><par n="ND"/></e>
+    <e c="AutoCog"><p><l>idantifikasyon<s n="n"/></l><r>identification<s n="n"/></r></p><par n="ND"/></e>
+    <e c="AutoCog"><p><l>iliminasyon<s n="n"/></l><r>elimination<s n="n"/></r></p><par n="ND"/></e>
+    <e c="AutoCog"><p><l>ilistrasyon<s n="n"/></l><r>illustration<s n="n"/></r></p><par n="ND"/></e>
+    <e c="AutoCog"><p><l>imajinasyon<s n="n"/></l><r>imagination<s n="n"/></r></p><par n="ND"/></e>
+    <e c="AutoCog"><p><l>imigrasyon<s n="n"/></l><r>immigration<s n="n"/></r></p><par n="ND"/></e>
+    <e c="AutoCog"><p><l>imitasyon<s n="n"/></l><r>imitation<s n="n"/></r></p><par n="ND"/></e>
+    <e c="AutoCog"><p><l>inifikasyon<s n="n"/></l><r>unification<s n="n"/></r></p><par n="ND"/></e>
+    <e c="AutoCog"><p><l>inisyalizasyon<s n="n"/></l><r>initialisation<s n="n"/></r></p><par n="ND"/></e>
+    <e c="AutoCog"><p><l>inondasyon<s n="n"/></l><r>inundation<s n="n"/></r></p><par n="ND"/></e>
+    <e c="AutoCog"><p><l>inovasyon<s n="n"/></l><r>innovation<s n="n"/></r></p><par n="ND"/></e>
+    <e c="AutoCog"><p><l>irigasyon<s n="n"/></l><r>irrigation<s n="n"/></r></p><par n="ND"/></e>
+    <e c="AutoCog"><p><l>iritasyon<s n="n"/></l><r>irritation<s n="n"/></r></p><par n="ND"/></e>
+    <e c="AutoCog"><p><l>itilizasyon<s n="n"/></l><r>utilisation<s n="n"/></r></p><par n="ND"/></e>
+    <e c="AutoCog"><p><l>izolasyon<s n="n"/></l><r>isolation<s n="n"/></r></p><par n="ND"/></e>
+    <e c="AutoCog"><p><l>jeneralizasyon<s n="n"/></l><r>generalisation<s n="n"/></r></p><par n="ND"/></e>
+    <e c="AutoCog"><p><l>jenerasyon<s n="n"/></l><r>generation<s n="n"/></r></p><par n="ND"/></e>
+    <e c="AutoCog"><p><l>jenifleksyon<s n="n"/></l><r>genuflection<s n="n"/></r></p><par n="ND"/></e>
+    <e c="AutoCog"><p><l>jiridiksyon<s n="n"/></l><r>jurisdiction<s n="n"/></r></p><par n="ND"/></e>
+    <e c="AutoCog"><p><l>jistifikasyon<s n="n"/></l><r>justification<s n="n"/></r></p><par n="ND"/></e>
+    <e c="AutoCog"><p><l>kalifikasyon<s n="n"/></l><r>qualification<s n="n"/></r></p><par n="ND"/></e>
+    <e c="AutoCog"><p><l>kalkilasyon<s n="n"/></l><r>calculation<s n="n"/></r></p><par n="ND"/></e>
+    <e c="AutoCog"><p><l>kanalizasyon<s n="n"/></l><r>canalisation<s n="n"/></r></p><par n="ND"/></e>
+    <e c="AutoCog"><p><l>kannalizasyon<s n="n"/></l><r>canalisation<s n="n"/></r></p><par n="ND"/></e>
+    <e c="AutoCog"><p><l>karakterizasyon<s n="n"/></l><r>characterisation<s n="n"/></r></p><par n="ND"/></e>
+    <e c="AutoCog"><p><l>kategorizasyon<s n="n"/></l><r>categorisation<s n="n"/></r></p><par n="ND"/></e>
+    <e c="AutoCog"><p><l>kiltivasyon<s n="n"/></l><r>cultivation<s n="n"/></r></p><par n="ND"/></e>
+    <e c="AutoCog"><p><l>klarifikasyon<s n="n"/></l><r>clarification<s n="n"/></r></p><par n="ND"/></e>
+    <e c="AutoCog"><p><l>klasifikasyon<s n="n"/></l><r>classification<s n="n"/></r></p><par n="ND"/></e>
+    <e c="AutoCog"><p><l>koalisyon<s n="n"/></l><r>coalition<s n="n"/></r></p><par n="ND"/></e>
+    <e c="AutoCog"><p><l>kodifikasyon<s n="n"/></l><r>codification<s n="n"/></r></p><par n="ND"/></e>
+    <e c="AutoCog"><p><l>kolaborasyon<s n="n"/></l><r>collaboration<s n="n"/></r></p><par n="ND"/></e>
+    <e c="AutoCog"><p><l>kolasyon<s n="n"/></l><r>collation<s n="n"/></r></p><par n="ND"/></e>
+    <e c="AutoCog"><p><l>koleksyon<s n="n"/></l><r>collection<s n="n"/></r></p><par n="ND"/></e>
+    <e c="AutoCog"><p><l>kolonizasyon<s n="n"/></l><r>colonisation<s n="n"/></r></p><par n="ND"/></e>
+    <e c="AutoCog"><p><l>komemorasyon<s n="n"/></l><r>commemoration<s n="n"/></r></p><par n="ND"/></e>
+    <e c="AutoCog"><p><l>kominikasyon<s n="n"/></l><r>communication<s n="n"/></r></p><par n="ND"/></e>
+    <e c="AutoCog"><p><l>komisyon<s n="n"/></l><r>commission<s n="n"/></r></p><par n="ND"/></e>
+    <e c="AutoCog"><p><l>komèsyalizasyon<s n="n"/></l><r>commercialisation<s n="n"/></r></p><par n="ND"/></e>
+    <e c="AutoCog"><p><l>kondensasyon<s n="n"/></l><r>condensation<s n="n"/></r></p><par n="ND"/></e>
+    <e c="AutoCog"><p><l>kondiksyon<s n="n"/></l><r>conduction<s n="n"/></r></p><par n="ND"/></e>
+    <e c="AutoCog"><p><l>kondisyon<s n="n"/></l><r>condition<s n="n"/></r></p><par n="ND"/></e>
+    <e c="AutoCog"><p><l>koneksyon<s n="n"/></l><r>connection<s n="n"/></r></p><par n="ND"/></e>
+    <e c="AutoCog"><p><l>konfederasyon<s n="n"/></l><r>confederation<s n="n"/></r></p><par n="ND"/></e>
+    <e c="AutoCog"><p><l>konfeksyon<s n="n"/></l><r>confection<s n="n"/></r></p><par n="ND"/></e>
+    <e c="AutoCog"><p><l>konfigirasyon<s n="n"/></l><r>configuration<s n="n"/></r></p><par n="ND"/></e>
+    <e c="AutoCog"><p><l>konfimasyon<s n="n"/></l><r>confirmation<s n="n"/></r></p><par n="ND"/></e>
+    <e c="AutoCog"><p><l>konfiskasyon<s n="n"/></l><r>confiscation<s n="n"/></r></p><par n="ND"/></e>
+    <e c="AutoCog"><p><l>konfwontasyon<s n="n"/></l><r>confrontation<s n="n"/></r></p><par n="ND"/></e>
+    <e c="AutoCog"><p><l>kongregasyon<s n="n"/></l><r>congregation<s n="n"/></r></p><par n="ND"/></e>
+    <e c="AutoCog"><p><l>konjonksyon<s n="n"/></l><r>conjunction<s n="n"/></r></p><par n="ND"/></e>
+    <e c="AutoCog"><p><l>konneksyon<s n="n"/></l><r>connection<s n="n"/></r></p><par n="ND"/></e>
+    <e c="AutoCog"><p><l>konotasyon<s n="n"/></l><r>connotation<s n="n"/></r></p><par n="ND"/></e>
+    <e c="AutoCog"><p><l>konpansasyon<s n="n"/></l><r>compensation<s n="n"/></r></p><par n="ND"/></e>
+    <e c="AutoCog"><p><l>konpetisyon<s n="n"/></l><r>competition<s n="n"/></r></p><par n="ND"/></e>
+    <e c="AutoCog"><p><l>konpilasyon<s n="n"/></l><r>compilation<s n="n"/></r></p><par n="ND"/></e>
+    <e c="AutoCog"><p><l>konplikasyon<s n="n"/></l><r>complication<s n="n"/></r></p><par n="ND"/></e>
+    <e c="AutoCog"><p><l>konpozisyon<s n="n"/></l><r>composition<s n="n"/></r></p><par n="ND"/></e>
+    <e c="AutoCog"><p><l>konpreyansyon<s n="n"/></l><r>comprehension<s n="n"/></r></p><par n="ND"/></e>
+    <e c="AutoCog"><p><l>konsantrasyon<s n="n"/></l><r>concentration<s n="n"/></r></p><par n="ND"/></e>
+    <e c="AutoCog"><p><l>konsekrasyon<s n="n"/></l><r>consecration<s n="n"/></r></p><par n="ND"/></e>
+    <e c="AutoCog"><p><l>konsepsyon<s n="n"/></l><r>conception<s n="n"/></r></p><par n="ND"/></e>
+    <e c="AutoCog"><p><l>konsiderasyon<s n="n"/></l><r>consideration<s n="n"/></r></p><par n="ND"/></e>
+    <e c="AutoCog"><p><l>konsiltasyon<s n="n"/></l><r>consultation<s n="n"/></r></p><par n="ND"/></e>
+    <e c="AutoCog"><p><l>konsilyasyon<s n="n"/></l><r>conciliation<s n="n"/></r></p><par n="ND"/></e>
+    <e c="AutoCog"><p><l>konsolasyon<s n="n"/></l><r>consolation<s n="n"/></r></p><par n="ND"/></e>
+    <e c="AutoCog"><p><l>konsolidasyon<s n="n"/></l><r>consolidation<s n="n"/></r></p><par n="ND"/></e>
+    <e c="AutoCog"><p><l>konstelasyon<s n="n"/></l><r>constellation<s n="n"/></r></p><par n="ND"/></e>
+    <e c="AutoCog"><p><l>konstipasyon<s n="n"/></l><r>constipation<s n="n"/></r></p><par n="ND"/></e>
+    <e c="AutoCog"><p><l>konstriksyon<s n="n"/></l><r>constriction<s n="n"/></r></p><par n="ND"/></e>
+    <e c="AutoCog"><p><l>konsèvasyon<s n="n"/></l><r>conservation<s n="n"/></r></p><par n="ND"/></e>
+    <e c="AutoCog"><p><l>kontaminasyon<s n="n"/></l><r>contamination<s n="n"/></r></p><par n="ND"/></e>
+    <e c="AutoCog"><p><l>kontinyasyon<s n="n"/></l><r>continuation<s n="n"/></r></p><par n="ND"/></e>
+    <e c="AutoCog"><p><l>kontradiksyon<s n="n"/></l><r>contradiction<s n="n"/></r></p><par n="ND"/></e>
+    <e c="AutoCog"><p><l>kontraksyon<s n="n"/></l><r>contraction<s n="n"/></r></p><par n="ND"/></e>
+    <e c="AutoCog"><p><l>kontravansyon<s n="n"/></l><r>contravention<s n="n"/></r></p><par n="ND"/></e>
+    <e c="AutoCog"><p><l>kontribisyon<s n="n"/></l><r>contribution<s n="n"/></r></p><par n="ND"/></e>
+    <e c="AutoCog"><p><l>konvansyon<s n="n"/></l><r>convention<s n="n"/></r></p><par n="ND"/></e>
+    <e c="AutoCog"><p><l>konviksyon<s n="n"/></l><r>conviction<s n="n"/></r></p><par n="ND"/></e>
+    <e c="AutoCog"><p><l>konvokasyon<s n="n"/></l><r>convocation<s n="n"/></r></p><par n="ND"/></e>
+    <e c="AutoCog"><p><l>konvolisyon<s n="n"/></l><r>convolution<s n="n"/></r></p><par n="ND"/></e>
+    <e c="AutoCog"><p><l>konvèsasyon<s n="n"/></l><r>conversation<s n="n"/></r></p><par n="ND"/></e>
+    <e c="AutoCog"><p><l>konvèsyon<s n="n"/></l><r>conversion<s n="n"/></r></p><par n="ND"/></e>
+    <e c="AutoCog"><p><l>konvèzasyon<s n="n"/></l><r>conversation<s n="n"/></r></p><par n="ND"/></e>
+    <e c="AutoCog"><p><l>koreksyon<s n="n"/></l><r>correction<s n="n"/></r></p><par n="ND"/></e>
+    <e c="AutoCog"><p><l>korelasyon<s n="n"/></l><r>correlation<s n="n"/></r></p><par n="ND"/></e>
+    <e c="AutoCog"><p><l>koripsyon<s n="n"/></l><r>corruption<s n="n"/></r></p><par n="ND"/></e>
+    <e c="AutoCog"><p><l>kowalisyon<s n="n"/></l><r>coalition<s n="n"/></r></p><par n="ND"/></e>
+    <e c="AutoCog"><p><l>kreasyon<s n="n"/></l><r>creation<s n="n"/></r></p><par n="ND"/></e>
+    <e c="AutoCog"><p><l>kreyasyon<s n="n"/></l><r>creation<s n="n"/></r></p><par n="ND"/></e>
+    <e c="AutoCog"><p><l>kòporasyon<s n="n"/></l><r>corporation<s n="n"/></r></p><par n="ND"/></e>
+    <e c="AutoCog"><p><l>kòripsyon<s n="n"/></l><r>corruption<s n="n"/></r></p><par n="ND"/></e>
+    <e c="AutoCog"><p><l>labstraksyon<s n="n"/></l><r>abstraction<s n="n"/></r></p><par n="ND"/></e>
+    <e c="AutoCog"><p><l>ladmirasyon<s n="n"/></l><r>admiration<s n="n"/></r></p><par n="ND"/></e>
+    <e c="AutoCog"><p><l>lafliksyon<s n="n"/></l><r>affliction<s n="n"/></r></p><par n="ND"/></e>
+    <e c="AutoCog"><p><l>laksyon<s n="n"/></l><r>action<s n="n"/></r></p><par n="ND"/></e>
+    <e c="AutoCog"><p><l>lamantasyon<s n="n"/></l><r>lamentation<s n="n"/></r></p><par n="ND"/></e>
+    <e c="AutoCog"><p><l>lanbisyon<s n="n"/></l><r>ambition<s n="n"/></r></p><par n="ND"/></e>
+    <e c="AutoCog"><p><l>ledikasyon<s n="n"/></l><r>education<s n="n"/></r></p><par n="ND"/></e>
+    <e c="AutoCog"><p><l>lejislasyon<s n="n"/></l><r>legislation<s n="n"/></r></p><par n="ND"/></e>
+    <e c="AutoCog"><p><l>lenspirasyon<s n="n"/></l><r>inspiration<s n="n"/></r></p><par n="ND"/></e>
+    <e c="AutoCog"><p><l>lenstriksyon<s n="n"/></l><r>instruction<s n="n"/></r></p><par n="ND"/></e>
+    <e c="AutoCog"><p><l>lentansyon<s n="n"/></l><r>intention<s n="n"/></r></p><par n="ND"/></e>
+    <e c="AutoCog"><p><l>liberalizasyon<s n="n"/></l><r>liberalisation<s n="n"/></r></p><par n="ND"/></e>
+    <e c="AutoCog"><p><l>liberasyon<s n="n"/></l><r>liberation<s n="n"/></r></p><par n="ND"/></e>
+    <e c="AutoCog"><p><l>limitasyon<s n="n"/></l><r>limitation<s n="n"/></r></p><par n="ND"/></e>
+    <e c="AutoCog"><p><l>lokalizasyon<s n="n"/></l><r>localisation<s n="n"/></r></p><par n="ND"/></e>
+    <e c="AutoCog"><p><l>lokasyon<s n="n"/></l><r>location<s n="n"/></r></p><par n="ND"/></e>
+    <e c="AutoCog"><p><l>lokomosyon<s n="n"/></l><r>locomotion<s n="n"/></r></p><par n="ND"/></e>
+    <e c="AutoCog"><p><l>losyon<s n="n"/></l><r>lotion<s n="n"/></r></p><par n="ND"/></e>
+    <e c="AutoCog"><p><l>majinalizasyon<s n="n"/></l><r>marginalisation<s n="n"/></r></p><par n="ND"/></e>
+    <e c="AutoCog"><p><l>malediksyon<s n="n"/></l><r>malediction<s n="n"/></r></p><par n="ND"/></e>
+    <e c="AutoCog"><p><l>malnitrisyon<s n="n"/></l><r>malnutrition<s n="n"/></r></p><par n="ND"/></e>
+    <e c="AutoCog"><p><l>manifestasyon<s n="n"/></l><r>manifestation<s n="n"/></r></p><par n="ND"/></e>
+    <e c="AutoCog"><p><l>manipilasyon<s n="n"/></l><r>manipulation<s n="n"/></r></p><par n="ND"/></e>
+    <e c="AutoCog"><p><l>mansyon<s n="n"/></l><r>mention<s n="n"/></r></p><par n="ND"/></e>
+    <e c="AutoCog"><p><l>materyalizasyon<s n="n"/></l><r>materialisation<s n="n"/></r></p><par n="ND"/></e>
+    <e c="AutoCog"><p><l>meditasyon<s n="n"/></l><r>meditation<s n="n"/></r></p><par n="ND"/></e>
+    <e c="AutoCog"><p><l>medyasyon<s n="n"/></l><r>mediation<s n="n"/></r></p><par n="ND"/></e>
+    <e c="AutoCog"><p><l>memorizasyon<s n="n"/></l><r>memorisation<s n="n"/></r></p><par n="ND"/></e>
+    <e c="AutoCog"><p><l>migrasyon<s n="n"/></l><r>migration<s n="n"/></r></p><par n="ND"/></e>
+    <e c="AutoCog"><p><l>miltiplikasyon<s n="n"/></l><r>multiplication<s n="n"/></r></p><par n="ND"/></e>
+    <e c="AutoCog"><p><l>minisyon<s n="n"/></l><r>munition<s n="n"/></r></p><par n="ND"/></e>
+    <e c="AutoCog"><p><l>mistifikasyon<s n="n"/></l><r>mystification<s n="n"/></r></p><par n="ND"/></e>
+    <e c="AutoCog"><p><l>mitasyon<s n="n"/></l><r>mutation<s n="n"/></r></p><par n="ND"/></e>
+    <e c="AutoCog"><p><l>mobilizasyon<s n="n"/></l><r>mobilisation<s n="n"/></r></p><par n="ND"/></e>
+    <e c="AutoCog"><p><l>moderasyon<s n="n"/></l><r>moderation<s n="n"/></r></p><par n="ND"/></e>
+    <e c="AutoCog"><p><l>modifikasyon<s n="n"/></l><r>modification<s n="n"/></r></p><par n="ND"/></e>
+    <e c="AutoCog"><p><l>modilasyon<s n="n"/></l><r>modulation<s n="n"/></r></p><par n="ND"/></e>
+    <e c="AutoCog"><p><l>mosyon<s n="n"/></l><r>motion<s n="n"/></r></p><par n="ND"/></e>
+    <e c="AutoCog"><p><l>motivasyon<s n="n"/></l><r>motivation<s n="n"/></r></p><par n="ND"/></e>
+    <e c="AutoCog"><p><l>nasyon<s n="n"/></l><r>nation<s n="n"/></r></p><par n="ND"/></e>
+    <e c="AutoCog"><p><l>natiralizasyon<s n="n"/></l><r>naturalisation<s n="n"/></r></p><par n="ND"/></e>
+    <e c="AutoCog"><p><l>navigasyon<s n="n"/></l><r>navigation<s n="n"/></r></p><par n="ND"/></e>
+    <e c="AutoCog"><p><l>negasyon<s n="n"/></l><r>negation<s n="n"/></r></p><par n="ND"/></e>
+    <e c="AutoCog"><p><l>negosiyasyon<s n="n"/></l><r>negotiation<s n="n"/></r></p><par n="ND"/></e>
+    <e c="AutoCog"><p><l>negosyasyon<s n="n"/></l><r>negotiation<s n="n"/></r></p><par n="ND"/></e>
+    <e c="AutoCog"><p><l>nominasyon<s n="n"/></l><r>nomination<s n="n"/></r></p><par n="ND"/></e>
+    <e c="AutoCog"><p><l>nosyon<s n="n"/></l><r>notion<s n="n"/></r></p><par n="ND"/></e>
+    <e c="AutoCog"><p><l>notasyon<s n="n"/></l><r>notation<s n="n"/></r></p><par n="ND"/></e>
+    <e c="AutoCog"><p><l>notifikasyon<s n="n"/></l><r>notification<s n="n"/></r></p><par n="ND"/></e>
+    <e c="AutoCog"><p><l>nòmalizasyon<s n="n"/></l><r>normalisation<s n="n"/></r></p><par n="ND"/></e>
+    <e c="AutoCog"><p><l>objeksyon<s n="n"/></l><r>objection<s n="n"/></r></p><par n="ND"/></e>
+    <e c="AutoCog"><p><l>obligasyon<s n="n"/></l><r>obligation<s n="n"/></r></p><par n="ND"/></e>
+    <e c="AutoCog"><p><l>obsèvasyon<s n="n"/></l><r>observation<s n="n"/></r></p><par n="ND"/></e>
+    <e c="AutoCog"><p><l>ogmantasyon<s n="n"/></l><r>augmentation<s n="n"/></r></p><par n="ND"/></e>
+    <e c="AutoCog"><p><l>okasyon<s n="n"/></l><r>occasion<s n="n"/></r></p><par n="ND"/></e>
+    <e c="AutoCog"><p><l>omisyon<s n="n"/></l><r>omission<s n="n"/></r></p><par n="ND"/></e>
+    <e c="AutoCog"><p><l>onksyon<s n="n"/></l><r>unction<s n="n"/></r></p><par n="ND"/></e>
+    <e c="AutoCog"><p><l>operasyon<s n="n"/></l><r>operation<s n="n"/></r></p><par n="ND"/></e>
+    <e c="AutoCog"><p><l>opozisyon<s n="n"/></l><r>opposition<s n="n"/></r></p><par n="ND"/></e>
+    <e c="AutoCog"><p><l>opresyon<s n="n"/></l><r>oppression<s n="n"/></r></p><par n="ND"/></e>
+    <e c="AutoCog"><p><l>opsyon<s n="n"/></l><r>option<s n="n"/></r></p><par n="ND"/></e>
+    <e c="AutoCog"><p><l>oryantasyon<s n="n"/></l><r>orientation<s n="n"/></r></p><par n="ND"/></e>
+    <e c="AutoCog"><p><l>ospitalizasyon<s n="n"/></l><r>hospitalisation<s n="n"/></r></p><par n="ND"/></e>
+    <e c="AutoCog"><p><l>otodetèminasyon<s n="n"/></l><r>self-determination<s n="n"/></r></p><par n="ND"/></e>
+    <e c="AutoCog"><p><l>otomatizasyon<s n="n"/></l><r>automatisation<s n="n"/></r></p><par n="ND"/></e>
+    <e c="AutoCog"><p><l>otorizasyon<s n="n"/></l><r>authorisation<s n="n"/></r></p><par n="ND"/></e>
+    <e c="AutoCog"><p><l>ovilasyon<s n="n"/></l><r>ovulation<s n="n"/></r></p><par n="ND"/></e>
+    <e c="AutoCog"><p><l>palpitasyon<s n="n"/></l><r>palpitation<s n="n"/></r></p><par n="ND"/></e>
+    <e c="AutoCog"><p><l>pasyon<s n="n"/></l><r>passion<s n="n"/></r></p><par n="ND"/></e>
+    <e c="AutoCog"><p><l>patisipasyon<s n="n"/></l><r>participation<s n="n"/></r></p><par n="ND"/></e>
+    <e c="AutoCog"><p><l>patisyon<s n="n"/></l><r>partition<s n="n"/></r></p><par n="ND"/></e>
+    <e c="AutoCog"><p><l>penalizasyon<s n="n"/></l><r>penalisation<s n="n"/></r></p><par n="ND"/></e>
+    <e c="AutoCog"><p><l>penetrasyon<s n="n"/></l><r>penetration<s n="n"/></r></p><par n="ND"/></e>
+    <e c="AutoCog"><p><l>petisyon<s n="n"/></l><r>petition<s n="n"/></r></p><par n="ND"/></e>
+    <e c="AutoCog"><p><l>piblikasyon<s n="n"/></l><r>publication<s n="n"/></r></p><par n="ND"/></e>
+    <e c="AutoCog"><p><l>pilsasyon<s n="n"/></l><r>pulsation<s n="n"/></r></p><par n="ND"/></e>
+    <e c="AutoCog"><p><l>pirifikasyon<s n="n"/></l><r>purification<s n="n"/></r></p><par n="ND"/></e>
+    <e c="AutoCog"><p><l>plantasyon<s n="n"/></l><r>plantation<s n="n"/></r></p><par n="ND"/></e>
+    <e c="AutoCog"><p><l>polarizasyon<s n="n"/></l><r>polarisation<s n="n"/></r></p><par n="ND"/></e>
+    <e c="AutoCog"><p><l>polisyon<s n="n"/></l><r>pollution<s n="n"/></r></p><par n="ND"/></e>
+    <e c="AutoCog"><p><l>popilasyon<s n="n"/></l><r>population<s n="n"/></r></p><par n="ND"/></e>
+    <e c="AutoCog"><p><l>postitisyon<s n="n"/></l><r>prostitution<s n="n"/></r></p><par n="ND"/></e>
+    <e c="AutoCog"><p><l>pozisyon<s n="n"/></l><r>position<s n="n"/></r></p><par n="ND"/></e>
+    <e c="AutoCog"><p><l>predestinasyon<s n="n"/></l><r>predestination<s n="n"/></r></p><par n="ND"/></e>
+    <e c="AutoCog"><p><l>predikasyon<s n="n"/></l><r>predication<s n="n"/></r></p><par n="ND"/></e>
+    <e c="AutoCog"><p><l>prediksyon<s n="n"/></l><r>prediction<s n="n"/></r></p><par n="ND"/></e>
+    <e c="AutoCog"><p><l>prekosyon<s n="n"/></l><r>precaution<s n="n"/></r></p><par n="ND"/></e>
+    <e c="AutoCog"><p><l>preparasyon<s n="n"/></l><r>preparation<s n="n"/></r></p><par n="ND"/></e>
+    <e c="AutoCog"><p><l>preskripsyon<s n="n"/></l><r>prescription<s n="n"/></r></p><par n="ND"/></e>
+    <e c="AutoCog"><p><l>pretansyon<s n="n"/></l><r>pretension<s n="n"/></r></p><par n="ND"/></e>
+    <e c="AutoCog"><p><l>prevansyon<s n="n"/></l><r>prevention<s n="n"/></r></p><par n="ND"/></e>
+    <e c="AutoCog"><p><l>preyokipasyon<s n="n"/></l><r>preoccupation<s n="n"/></r></p><par n="ND"/></e>
+    <e c="AutoCog"><p><l>prezantasyon<s n="n"/></l><r>presentation<s n="n"/></r></p><par n="ND"/></e>
+    <e c="AutoCog"><p><l>prezèvasyon<s n="n"/></l><r>preservation<s n="n"/></r></p><par n="ND"/></e>
+    <e c="AutoCog"><p><l>privatizasyon<s n="n"/></l><r>privatisation<s n="n"/></r></p><par n="ND"/></e>
+    <e c="AutoCog"><p><l>pwobasyon<s n="n"/></l><r>probation<s n="n"/></r></p><par n="ND"/></e>
+    <e c="AutoCog"><p><l>pwodiksyon<s n="n"/></l><r>production<s n="n"/></r></p><par n="ND"/></e>
+    <e c="AutoCog"><p><l>pwofesyon<s n="n"/></l><r>profession<s n="n"/></r></p><par n="ND"/></e>
+    <e c="AutoCog"><p><l>pwogramasyon<s n="n"/></l><r>programming<s n="n"/></r></p><par n="ND"/></e>
+    <e c="AutoCog"><p><l>pwojeksyon<s n="n"/></l><r>projection<s n="n"/></r></p><par n="ND"/></e>
+    <e c="AutoCog"><p><l>pwoklamasyon<s n="n"/></l><r>proclamation<s n="n"/></r></p><par n="ND"/></e>
+    <e c="AutoCog"><p><l>pwolongasyon<s n="n"/></l><r>prolongation<s n="n"/></r></p><par n="ND"/></e>
+    <e c="AutoCog"><p><l>pwomosyon<s n="n"/></l><r>promotion<s n="n"/></r></p><par n="ND"/></e>
+    <e c="AutoCog"><p><l>pwononsiyasyon<s n="n"/></l><r>pronunciation<s n="n"/></r></p><par n="ND"/></e>
+    <e c="AutoCog"><p><l>pwononsyasyon<s n="n"/></l><r>pronunciation<s n="n"/></r></p><par n="ND"/></e>
+    <e c="AutoCog"><p><l>pwopozisyon<s n="n"/></l><r>proposition<s n="n"/></r></p><par n="ND"/></e>
+    <e c="AutoCog"><p><l>pwopòsyon<s n="n"/></l><r>proportion<s n="n"/></r></p><par n="ND"/></e>
+    <e c="AutoCog"><p><l>pwosesyon<s n="n"/></l><r>procession<s n="n"/></r></p><par n="ND"/></e>
+    <e c="AutoCog"><p><l>pwostitisyon<s n="n"/></l><r>prostitution<s n="n"/></r></p><par n="ND"/></e>
+    <e c="AutoCog"><p><l>pwoteksyon<s n="n"/></l><r>protection<s n="n"/></r></p><par n="ND"/></e>
+    <e c="AutoCog"><p><l>pwotestasyon<s n="n"/></l><r>protestation<s n="n"/></r></p><par n="ND"/></e>
+    <e c="AutoCog"><p><l>pwovisyon<s n="n"/></l><r>provision<s n="n"/></r></p><par n="ND"/></e>
+    <e c="AutoCog"><p><l>pwovokasyon<s n="n"/></l><r>provocation<s n="n"/></r></p><par n="ND"/></e>
+    <e c="AutoCog"><p><l>pèdisyon<s n="n"/></l><r>perdition<s n="n"/></r></p><par n="ND"/></e>
+    <e c="AutoCog"><p><l>pèfeksyon<s n="n"/></l><r>perfection<s n="n"/></r></p><par n="ND"/></e>
+    <e c="AutoCog"><p><l>pèforasyon<s n="n"/></l><r>perforation<s n="n"/></r></p><par n="ND"/></e>
+    <e c="AutoCog"><p><l>pèkisyon<s n="n"/></l><r>percussion<s n="n"/></r></p><par n="ND"/></e>
+    <e c="AutoCog"><p><l>pèmisyon<s n="n"/></l><r>permission<s n="n"/></r></p><par n="ND"/></e>
+    <e c="AutoCog"><p><l>pèsekisyon<s n="n"/></l><r>persecution<s n="n"/></r></p><par n="ND"/></e>
+    <e c="AutoCog"><p><l>pèsepsyon<s n="n"/></l><r>perception<s n="n"/></r></p><par n="ND"/></e>
+    <e c="AutoCog"><p><l>pòsyon<s n="n"/></l><r>portion<s n="n"/></r></p><par n="ND"/></e>
+    <e c="AutoCog"><p><l>radyasyon<s n="n"/></l><r>radiation<s n="n"/></r></p><par n="ND"/></e>
+    <e c="AutoCog"><p><l>rasyon<s n="n"/></l><r>ration<s n="n"/></r></p><par n="ND"/></e>
+    <e c="AutoCog"><p><l>ratifikasyon<s n="n"/></l><r>ratification<s n="n"/></r></p><par n="ND"/></e>
+    <e c="AutoCog"><p><l>reaksyon<s n="n"/></l><r>reaction<s n="n"/></r></p><par n="ND"/></e>
+    <e c="AutoCog"><p><l>redaksyon<s n="n"/></l><r>redaction<s n="n"/></r></p><par n="ND"/></e>
+    <e c="AutoCog"><p><l>redanmsyon<s n="n"/></l><r>redemption<s n="n"/></r></p><par n="ND"/></e>
+    <e c="AutoCog"><p><l>rediksyon<s n="n"/></l><r>reduction<s n="n"/></r></p><par n="ND"/></e>
+    <e c="AutoCog"><p><l>reenfeksyon<s n="n"/></l><r>reinfection<s n="n"/></r></p><par n="ND"/></e>
+    <e c="AutoCog"><p><l>reensèsyon<s n="n"/></l><r>reinsertion<s n="n"/></r></p><par n="ND"/></e>
+    <e c="AutoCog"><p><l>reentegrasyon<s n="n"/></l><r>reintegration<s n="n"/></r></p><par n="ND"/></e>
+    <e c="AutoCog"><p><l>refleksyon<s n="n"/></l><r>reflection<s n="n"/></r></p><par n="ND"/></e>
+    <e c="AutoCog"><p><l>refraksyon<s n="n"/></l><r>refraction<s n="n"/></r></p><par n="ND"/></e>
+    <e c="AutoCog"><p><l>refrijerasyon<s n="n"/></l><r>refrigeration<s n="n"/></r></p><par n="ND"/></e>
+    <e c="AutoCog"><p><l>regilasyon<s n="n"/></l><r>regulation<s n="n"/></r></p><par n="ND"/></e>
+    <e c="AutoCog"><p><l>rejenerasyon<s n="n"/></l><r>regeneration<s n="n"/></r></p><par n="ND"/></e>
+    <e c="AutoCog"><p><l>rekiperasyon<s n="n"/></l><r>recuperation<s n="n"/></r></p><par n="ND"/></e>
+    <e c="AutoCog"><p><l>reklamasyon<s n="n"/></l><r>reclamation<s n="n"/></r></p><par n="ND"/></e>
+    <e c="AutoCog"><p><l>rekoleksyon<s n="n"/></l><r>recollection<s n="n"/></r></p><par n="ND"/></e>
+    <e c="AutoCog"><p><l>rekonfigirasyon<s n="n"/></l><r>reconfiguration<s n="n"/></r></p><par n="ND"/></e>
+    <e c="AutoCog"><p><l>rekonsilyasyon<s n="n"/></l><r>reconciliation<s n="n"/></r></p><par n="ND"/></e>
+    <e c="AutoCog"><p><l>rekonstriksyon<s n="n"/></l><r>reconstruction<s n="n"/></r></p><par n="ND"/></e>
+    <e c="AutoCog"><p><l>rekreyasyon<s n="n"/></l><r>recreation<s n="n"/></r></p><par n="ND"/></e>
+    <e c="AutoCog"><p><l>rektifikasyon<s n="n"/></l><r>rectification<s n="n"/></r></p><par n="ND"/></e>
+    <e c="AutoCog"><p><l>rekòmandasyon<s n="n"/></l><r>recommendation<s n="n"/></r></p><par n="ND"/></e>
+    <e c="AutoCog"><p><l>relasyon<s n="n"/></l><r>relation<s n="n"/></r></p><par n="ND"/></e>
+    <e c="AutoCog"><p><l>relokasyon<s n="n"/></l><r>relocation<s n="n"/></r></p><par n="ND"/></e>
+    <e c="AutoCog"><p><l>reminerasyon<s n="n"/></l><r>remuneration<s n="n"/></r></p><par n="ND"/></e>
+    <e c="AutoCog"><p><l>renonsiyasyon<s n="n"/></l><r>renunciation<s n="n"/></r></p><par n="ND"/></e>
+    <e c="AutoCog"><p><l>renovasyon<s n="n"/></l><r>renovation<s n="n"/></r></p><par n="ND"/></e>
+    <e c="AutoCog"><p><l>reparasyon<s n="n"/></l><r>reparation<s n="n"/></r></p><par n="ND"/></e>
+    <e c="AutoCog"><p><l>repetisyon<s n="n"/></l><r>repetition<s n="n"/></r></p><par n="ND"/></e>
+    <e c="AutoCog"><p><l>repitasyon<s n="n"/></l><r>reputation<s n="n"/></r></p><par n="ND"/></e>
+    <e c="AutoCog"><p><l>represyon<s n="n"/></l><r>repression<s n="n"/></r></p><par n="ND"/></e>
+    <e c="AutoCog"><p><l>reprezantasyon<s n="n"/></l><r>representation<s n="n"/></r></p><par n="ND"/></e>
+    <e c="AutoCog"><p><l>repwodiksyon<s n="n"/></l><r>reproduction<s n="n"/></r></p><par n="ND"/></e>
+    <e c="AutoCog"><p><l>resepsyon<s n="n"/></l><r>reception<s n="n"/></r></p><par n="ND"/></e>
+    <e c="AutoCog"><p><l>respirasyon<s n="n"/></l><r>respiration<s n="n"/></r></p><par n="ND"/></e>
+    <e c="AutoCog"><p><l>restitisyon<s n="n"/></l><r>restitution<s n="n"/></r></p><par n="ND"/></e>
+    <e c="AutoCog"><p><l>restorasyon<s n="n"/></l><r>restoration<s n="n"/></r></p><par n="ND"/></e>
+    <e c="AutoCog"><p><l>restriksyon<s n="n"/></l><r>restriction<s n="n"/></r></p><par n="ND"/></e>
+    <e c="AutoCog"><p><l>retadasyon<s n="n"/></l><r>retardation<s n="n"/></r></p><par n="ND"/></e>
+    <e c="AutoCog"><p><l>retransmisyon<s n="n"/></l><r>retransmission<s n="n"/></r></p><par n="ND"/></e>
+    <e c="AutoCog"><p><l>revalorizasyon<s n="n"/></l><r>revalorisation<s n="n"/></r></p><par n="ND"/></e>
+    <e c="AutoCog"><p><l>revelasyon<s n="n"/></l><r>revelation<s n="n"/></r></p><par n="ND"/></e>
+    <e c="AutoCog"><p><l>revitalizasyon<s n="n"/></l><r>revitalisation<s n="n"/></r></p><par n="ND"/></e>
+    <e c="AutoCog"><p><l>revokasyon<s n="n"/></l><r>revocation<s n="n"/></r></p><par n="ND"/></e>
+    <e c="AutoCog"><p><l>revolisyon<s n="n"/></l><r>revolution<s n="n"/></r></p><par n="ND"/></e>
+    <e c="AutoCog"><p><l>reyabilitasyon<s n="n"/></l><r>rehabilitation<s n="n"/></r></p><par n="ND"/></e>
+    <e c="AutoCog"><p><l>reyaksyon<s n="n"/></l><r>reaction<s n="n"/></r></p><par n="ND"/></e>
+    <e c="AutoCog"><p><l>reyaktivasyon<s n="n"/></l><r>reactivation<s n="n"/></r></p><par n="ND"/></e>
+    <e c="AutoCog"><p><l>reyalizasyon<s n="n"/></l><r>realisation<s n="n"/></r></p><par n="ND"/></e>
+    <e c="AutoCog"><p><l>reyenstalasyon<s n="n"/></l><r>reinstallation<s n="n"/></r></p><par n="ND"/></e>
+    <e c="AutoCog"><p><l>reyentegrasyon<s n="n"/></l><r>reintegration<s n="n"/></r></p><par n="ND"/></e>
+    <e c="AutoCog"><p><l>reyinifikasyon<s n="n"/></l><r>reunification<s n="n"/></r></p><par n="ND"/></e>
+    <e c="AutoCog"><p><l>rezirèksyon<s n="n"/></l><r>resurrection<s n="n"/></r></p><par n="ND"/></e>
+    <e c="AutoCog"><p><l>rezolisyon<s n="n"/></l><r>resolution<s n="n"/></r></p><par n="ND"/></e>
+    <e c="AutoCog"><p><l>rezèvasyon<s n="n"/></l><r>reservation<s n="n"/></r></p><par n="ND"/></e>
+    <e c="AutoCog"><p><l>salitasyon<s n="n"/></l><r>salutation<s n="n"/></r></p><par n="ND"/></e>
+    <e c="AutoCog"><p><l>sanitasyon<s n="n"/></l><r>sanitation<s n="n"/></r></p><par n="ND"/></e>
+    <e c="AutoCog"><p><l>sanksyon<s n="n"/></l><r>sanction<s n="n"/></r></p><par n="ND"/></e>
+    <e c="AutoCog"><p><l>sanktifikasyon<s n="n"/></l><r>sanctification<s n="n"/></r></p><par n="ND"/></e>
+    <e c="AutoCog"><p><l>sansasyon<s n="n"/></l><r>sensation<s n="n"/></r></p><par n="ND"/></e>
+    <e c="AutoCog"><p><l>santralizasyon<s n="n"/></l><r>centralisation<s n="n"/></r></p><par n="ND"/></e>
+    <e c="AutoCog"><p><l>satisfaksyon<s n="n"/></l><r>satisfaction<s n="n"/></r></p><par n="ND"/></e>
+    <e c="AutoCog"><p><l>sedisyon<s n="n"/></l><r>sedition<s n="n"/></r></p><par n="ND"/></e>
+    <e c="AutoCog"><p><l>segregasyon<s n="n"/></l><r>segregation<s n="n"/></r></p><par n="ND"/></e>
+    <e c="AutoCog"><p><l>sekestrasyon<s n="n"/></l><r>sequestration<s n="n"/></r></p><par n="ND"/></e>
+    <e c="AutoCog"><p><l>sekresyon<s n="n"/></l><r>secretion<s n="n"/></r></p><par n="ND"/></e>
+    <e c="AutoCog"><p><l>seksyon<s n="n"/></l><r>section<s n="n"/></r></p><par n="ND"/></e>
+    <e c="AutoCog"><p><l>selebrasyon<s n="n"/></l><r>celebration<s n="n"/></r></p><par n="ND"/></e>
+    <e c="AutoCog"><p><l>seleksyon<s n="n"/></l><r>selection<s n="n"/></r></p><par n="ND"/></e>
+    <e c="AutoCog"><p><l>separasyon<s n="n"/></l><r>separation<s n="n"/></r></p><par n="ND"/></e>
+    <e c="AutoCog"><p><l>sesesyon<s n="n"/></l><r>cessation<s n="n"/></r></p><par n="ND"/></e>
+    <e c="AutoCog"><p><l>sibvansyon<s n="n"/></l><r>subvention<s n="n"/></r></p><par n="ND"/></e>
+    <e c="AutoCog"><p><l>sibòdinasyon<s n="n"/></l><r>subordination<s n="n"/></r></p><par n="ND"/></e>
+    <e c="AutoCog"><p><l>similasyon<s n="n"/></l><r>simulation<s n="n"/></r></p><par n="ND"/></e>
+    <e c="AutoCog"><p><l>sispansyon<s n="n"/></l><r>suspension<s n="n"/></r></p><par n="ND"/></e>
+    <e c="AutoCog"><p><l>sitasyon<s n="n"/></l><r>citation<s n="n"/></r></p><par n="ND"/></e>
+    <e c="AutoCog"><p><l>sitiyasyon<s n="n"/></l><r>situation<s n="n"/></r></p><par n="ND"/></e>
+    <e c="AutoCog"><p><l>sivilizasyon<s n="n"/></l><r>civilisation<s n="n"/></r></p><par n="ND"/></e>
+    <e c="AutoCog"><p><l>solisyon<s n="n"/></l><r>solution<s n="n"/></r></p><par n="ND"/></e>
+    <e c="AutoCog"><p><l>sètifikasyon<s n="n"/></l><r>certification<s n="n"/></r></p><par n="ND"/></e>
+    <e c="AutoCog"><p><l>tabilasyon<s n="n"/></l><r>tabulation<s n="n"/></r></p><par n="ND"/></e>
+    <e c="AutoCog"><p><l>taksasyon<s n="n"/></l><r>taxation<s n="n"/></r></p><par n="ND"/></e>
+    <e c="AutoCog"><p><l>tansyon<s n="n"/></l><r>tension<s n="n"/></r></p><par n="ND"/></e>
+    <e c="AutoCog"><p><l>telekominikasyon<s n="n"/></l><r>telecommunication<s n="n"/></r></p><par n="ND"/></e>
+    <e c="AutoCog"><p><l>televisyon<s n="n"/></l><r>television<s n="n"/></r></p><par n="ND"/></e>
+    <e c="AutoCog"><p><l>tradisyon<s n="n"/></l><r>tradition<s n="n"/></r></p><par n="ND"/></e>
+    <e c="AutoCog"><p><l>traksyon<s n="n"/></l><r>traction<s n="n"/></r></p><par n="ND"/></e>
+    <e c="AutoCog"><p><l>transaksyon<s n="n"/></l><r>transaction<s n="n"/></r></p><par n="ND"/></e>
+    <e c="AutoCog"><p><l>transfòmasyon<s n="n"/></l><r>transformation<s n="n"/></r></p><par n="ND"/></e>
+    <e c="AutoCog"><p><l>transkripsyon<s n="n"/></l><r>transcription<s n="n"/></r></p><par n="ND"/></e>
+    <e c="AutoCog"><p><l>transmisyon<s n="n"/></l><r>transmission<s n="n"/></r></p><par n="ND"/></e>
+    <e c="AutoCog"><p><l>transpirasyon<s n="n"/></l><r>transpiration<s n="n"/></r></p><par n="ND"/></e>
+    <e c="AutoCog"><p><l>transplantasyon<s n="n"/></l><r>transplantation<s n="n"/></r></p><par n="ND"/></e>
+    <e c="AutoCog"><p><l>transpozisyon<s n="n"/></l><r>transposition<s n="n"/></r></p><par n="ND"/></e>
+    <e c="AutoCog"><p><l>transpòtasyon<s n="n"/></l><r>transportation<s n="n"/></r></p><par n="ND"/></e>
+    <e c="AutoCog"><p><l>tranzaksyon<s n="n"/></l><r>transaction<s n="n"/></r></p><par n="ND"/></e>
+    <e c="AutoCog"><p><l>tranzisyon<s n="n"/></l><r>transition<s n="n"/></r></p><par n="ND"/></e>
+    <e c="AutoCog"><p><l>tribilasyon<s n="n"/></l><r>tribulation<s n="n"/></r></p><par n="ND"/></e>
+    <e c="AutoCog"><p><l>vaksinasyon<s n="n"/></l><r>vaccination<s n="n"/></r></p><par n="ND"/></e>
+    <e c="AutoCog"><p><l>vantilasyon<s n="n"/></l><r>ventilation<s n="n"/></r></p><par n="ND"/></e>
+    <e c="AutoCog"><p><l>varyasyon<s n="n"/></l><r>variation<s n="n"/></r></p><par n="ND"/></e>
+    <e c="AutoCog"><p><l>veksasyon<s n="n"/></l><r>vexation<s n="n"/></r></p><par n="ND"/></e>
+    <e c="AutoCog"><p><l>verifikasyon<s n="n"/></l><r>verification<s n="n"/></r></p><par n="ND"/></e>
+    <e c="AutoCog"><p><l>vibrasyon<s n="n"/></l><r>vibration<s n="n"/></r></p><par n="ND"/></e>
+    <e c="AutoCog"><p><l>viktimizasyon<s n="n"/></l><r>victimisation<s n="n"/></r></p><par n="ND"/></e>
+    <e c="AutoCog"><p><l>vokasyon<s n="n"/></l><r>vocation<s n="n"/></r></p><par n="ND"/></e>
+    <e c="AutoCog"><p><l>vyolasyon<s n="n"/></l><r>violation<s n="n"/></r></p><par n="ND"/></e>
+    <e c="AutoCog"><p><l>vèsyon<s n="n"/></l><r>version<s n="n"/></r></p><par n="ND"/></e>
+    <e c="AutoCog"><p><l>wotasyon<s n="n"/></l><r>rotation<s n="n"/></r></p><par n="ND"/></e>
+    <e c="AutoCog"><p><l>zonbifikasyon<s n="n"/></l><r>zombification<s n="n"/></r></p><par n="ND"/></e>
+    <e c="AutoCog"><p><l>òganizasyon<s n="n"/></l><r>organisation<s n="n"/></r></p><par n="ND"/></e>
+    <e c="AutoCog"><p><l>abilite<s n="n"/></l><r>ability<s n="n"/></r></p><par n="ND"/></e>
+    <e c="AutoCog"><p><l>advèsite<s n="n"/></l><r>adversity<s n="n"/></r></p><par n="ND"/></e>
+    <e c="AutoCog"><p><l>agresivite<s n="n"/></l><r>aggressiveness<s n="n"/></r></p><par n="ND"/></e>
+    <e c="AutoCog"><p><l>aksèsibilite<s n="n"/></l><r>accessibility<s n="n"/></r></p><par n="ND"/></e>
+    <e c="AutoCog"><p><l>aktivite<s n="n"/></l><r>activity<s n="n"/></r></p><par n="ND"/></e>
+    <e c="AutoCog"><p><l>aktyalite<s n="n"/></l><r>actuality<s n="n"/></r></p><par n="ND"/></e>
+    <e c="AutoCog"><p><l>amabilite<s n="n"/></l><r>amiability<s n="n"/></r></p><par n="ND"/></e>
+    <e c="AutoCog"><p><l>anreyalite<s n="n"/></l><r>unreality<s n="n"/></r></p><par n="ND"/></e>
+    <e c="AutoCog"><p><l>ansekirite<s n="n"/></l><r>insecurity<s n="n"/></r></p><par n="ND"/></e>
+    <e c="AutoCog"><p><l>antikite<s n="n"/></l><r>antiquity<s n="n"/></r></p><par n="ND"/></e>
+    <e c="AutoCog"><p><l>atwosite<s n="n"/></l><r>atrocity<s n="n"/></r></p><par n="ND"/></e>
+    <e c="AutoCog"><p><l>biyodivèsite<s n="n"/></l><r>biodiversity<s n="n"/></r></p><par n="ND"/></e>
+    <e c="AutoCog"><p><l>britalite<s n="n"/></l><r>brutality<s n="n"/></r></p><par n="ND"/></e>
+    <e c="AutoCog"><p><l>byodivèsite<s n="n"/></l><r>biodiversity<s n="n"/></r></p><par n="ND"/></e>
+    <e c="AutoCog"><p><l>charite<s n="n"/></l><r>charity<s n="n"/></r></p><par n="ND"/></e>
+    <e c="AutoCog"><p><l>dansite<s n="n"/></l><r>density<s n="n"/></r></p><par n="ND"/></e>
+    <e c="AutoCog"><p><l>dezabilite<s n="n"/></l><r>disability<s n="n"/></r></p><par n="ND"/></e>
+    <e c="AutoCog"><p><l>dirabilite<s n="n"/></l><r>durability<s n="n"/></r></p><par n="ND"/></e>
+    <e c="AutoCog"><p><l>disparite<s n="n"/></l><r>disparity<s n="n"/></r></p><par n="ND"/></e>
+    <e c="AutoCog"><p><l>divinite<s n="n"/></l><r>divinity<s n="n"/></r></p><par n="ND"/></e>
+    <e c="AutoCog"><p><l>divèsite<s n="n"/></l><r>diversity<s n="n"/></r></p><par n="ND"/></e>
+    <e c="AutoCog"><p><l>egalite<s n="n"/></l><r>equality<s n="n"/></r></p><par n="ND"/></e>
+    <e c="AutoCog"><p><l>ekite<s n="n"/></l><r>equity<s n="n"/></r></p><par n="ND"/></e>
+    <e c="AutoCog"><p><l>eksantrisite<s n="n"/></l><r>eccentricity<s n="n"/></r></p><par n="ND"/></e>
+    <e c="AutoCog"><p><l>eksklisivite<s n="n"/></l><r>exclusivity<s n="n"/></r></p><par n="ND"/></e>
+    <e c="AutoCog"><p><l>elastisite<s n="n"/></l><r>elasticity<s n="n"/></r></p><par n="ND"/></e>
+    <e c="AutoCog"><p><l>elektrisite<s n="n"/></l><r>electricity<s n="n"/></r></p><par n="ND"/></e>
+    <e c="AutoCog"><p><l>elijibilite<s n="n"/></l><r>eligibility<s n="n"/></r></p><par n="ND"/></e>
+    <e c="AutoCog"><p><l>elijiblite<s n="n"/></l><r>eligibility<s n="n"/></r></p><par n="ND"/></e>
+    <e c="AutoCog"><p><l>endanmnite<s n="n"/></l><r>indemnity<s n="n"/></r></p><par n="ND"/></e>
+    <e c="AutoCog"><p><l>endividyalite<s n="n"/></l><r>individuality<s n="n"/></r></p><par n="ND"/></e>
+    <e c="AutoCog"><p><l>enferyorite<s n="n"/></l><r>inferiority<s n="n"/></r></p><par n="ND"/></e>
+    <e c="AutoCog"><p><l>enfinite<s n="n"/></l><r>infinity<s n="n"/></r></p><par n="ND"/></e>
+    <e c="AutoCog"><p><l>enkapasite<s n="n"/></l><r>incapacity<s n="n"/></r></p><par n="ND"/></e>
+    <e c="AutoCog"><p><l>enkredilite<s n="n"/></l><r>incredulity<s n="n"/></r></p><par n="ND"/></e>
+    <e c="AutoCog"><p><l>enposibilite<s n="n"/></l><r>impossibility<s n="n"/></r></p><par n="ND"/></e>
+    <e c="AutoCog"><p><l>ensansibilite<s n="n"/></l><r>insensibility<s n="n"/></r></p><par n="ND"/></e>
+    <e c="AutoCog"><p><l>ensekirite<s n="n"/></l><r>insecurity<s n="n"/></r></p><par n="ND"/></e>
+    <e c="AutoCog"><p><l>enstabilite<s n="n"/></l><r>instability<s n="n"/></r></p><par n="ND"/></e>
+    <e c="AutoCog"><p><l>enstablite<s n="n"/></l><r>instability<s n="n"/></r></p><par n="ND"/></e>
+    <e c="AutoCog"><p><l>entansite<s n="n"/></l><r>intensity<s n="n"/></r></p><par n="ND"/></e>
+    <e c="AutoCog"><p><l>entegrite<s n="n"/></l><r>integrity<s n="n"/></r></p><par n="ND"/></e>
+    <e c="AutoCog"><p><l>entèlijibilite<s n="n"/></l><r>intelligibility<s n="n"/></r></p><par n="ND"/></e>
+    <e c="AutoCog"><p><l>envalidite<s n="n"/></l><r>invalidity<s n="n"/></r></p><par n="ND"/></e>
+    <e c="AutoCog"><p><l>eredite<s n="n"/></l><r>heredity<s n="n"/></r></p><par n="ND"/></e>
+    <e c="AutoCog"><p><l>espesifisite<s n="n"/></l><r>specificity<s n="n"/></r></p><par n="ND"/></e>
+    <e c="AutoCog"><p><l>espesyalite<s n="n"/></l><r>specialty<s n="n"/></r></p><par n="ND"/></e>
+    <e c="AutoCog"><p><l>espirityalite<s n="n"/></l><r>spirituality<s n="n"/></r></p><par n="ND"/></e>
+    <e c="AutoCog"><p><l>estabilite<s n="n"/></l><r>stability<s n="n"/></r></p><par n="ND"/></e>
+    <e c="AutoCog"><p><l>estipidite<s n="n"/></l><r>stupidity<s n="n"/></r></p><par n="ND"/></e>
+    <e c="AutoCog"><p><l>etènite<s n="n"/></l><r>eternity<s n="n"/></r></p><par n="ND"/></e>
+    <e c="AutoCog"><p><l>familyarite<s n="n"/></l><r>familiarity<s n="n"/></r></p><par n="ND"/></e>
+    <e c="AutoCog"><p><l>fasilite<s n="n"/></l><r>facility<s n="n"/></r></p><par n="ND"/></e>
+    <e c="AutoCog"><p><l>fatalite<s n="n"/></l><r>fatality<s n="n"/></r></p><par n="ND"/></e>
+    <e c="AutoCog"><p><l>felisite<s n="n"/></l><r>felicity<s n="n"/></r></p><par n="ND"/></e>
+    <e c="AutoCog"><p><l>fidelite<s n="n"/></l><r>fidelity<s n="n"/></r></p><par n="ND"/></e>
+    <e c="AutoCog"><p><l>finalite<s n="n"/></l><r>finality<s n="n"/></r></p><par n="ND"/></e>
+    <e c="AutoCog"><p><l>fleksibilite<s n="n"/></l><r>flexibility<s n="n"/></r></p><par n="ND"/></e>
+    <e c="AutoCog"><p><l>fleksiblite<s n="n"/></l><r>flexibility<s n="n"/></r></p><par n="ND"/></e>
+    <e c="AutoCog"><p><l>fonksyonalite<s n="n"/></l><r>functionality<s n="n"/></r></p><par n="ND"/></e>
+    <e c="AutoCog"><p><l>fratènite<s n="n"/></l><r>fraternity<s n="n"/></r></p><par n="ND"/></e>
+    <e c="AutoCog"><p><l>fòmalite<s n="n"/></l><r>formality<s n="n"/></r></p><par n="ND"/></e>
+    <e c="AutoCog"><p><l>gravite<s n="n"/></l><r>gravity<s n="n"/></r></p><par n="ND"/></e>
+    <e c="AutoCog"><p><l>idantite<s n="n"/></l><r>identity<s n="n"/></r></p><par n="ND"/></e>
+    <e c="AutoCog"><p><l>ilegalite<s n="n"/></l><r>illegality<s n="n"/></r></p><par n="ND"/></e>
+    <e c="AutoCog"><p><l>imidite<s n="n"/></l><r>humidity<s n="n"/></r></p><par n="ND"/></e>
+    <e c="AutoCog"><p><l>imilite<s n="n"/></l><r>humility<s n="n"/></r></p><par n="ND"/></e>
+    <e c="AutoCog"><p><l>imoralite<s n="n"/></l><r>immorality<s n="n"/></r></p><par n="ND"/></e>
+    <e c="AutoCog"><p><l>inegalite<s n="n"/></l><r>inequality<s n="n"/></r></p><par n="ND"/></e>
+    <e c="AutoCog"><p><l>inifòmite<s n="n"/></l><r>uniformity<s n="n"/></r></p><par n="ND"/></e>
+    <e c="AutoCog"><p><l>inikite<s n="n"/></l><r>iniquity<s n="n"/></r></p><par n="ND"/></e>
+    <e c="AutoCog"><p><l>inite<s n="n"/></l><r>unity<s n="n"/></r></p><par n="ND"/></e>
+    <e c="AutoCog"><p><l>inivèsalite<s n="n"/></l><r>universality<s n="n"/></r></p><par n="ND"/></e>
+    <e c="AutoCog"><p><l>inivèsite<s n="n"/></l><r>university<s n="n"/></r></p><par n="ND"/></e>
+    <e c="AutoCog"><p><l>intansite<s n="n"/></l><r>intensity<s n="n"/></r></p><par n="ND"/></e>
+    <e c="AutoCog"><p><l>ipèaktivite<s n="n"/></l><r>hyperactivity<s n="n"/></r></p><par n="ND"/></e>
+    <e c="AutoCog"><p><l>iregilarite<s n="n"/></l><r>irregularity<s n="n"/></r></p><par n="ND"/></e>
+    <e c="AutoCog"><p><l>iresponsabilite<s n="n"/></l><r>irresponsibility<s n="n"/></r></p><par n="ND"/></e>
+    <e c="AutoCog"><p><l>itilite<s n="n"/></l><r>utility<s n="n"/></r></p><par n="ND"/></e>
+    <e c="AutoCog"><p><l>jenewozite<s n="n"/></l><r>generosity<s n="n"/></r></p><par n="ND"/></e>
+    <e c="AutoCog"><p><l>kalamite<s n="n"/></l><r>calamity<s n="n"/></r></p><par n="ND"/></e>
+    <e c="AutoCog"><p><l>kalite<s n="n"/></l><r>quality<s n="n"/></r></p><par n="ND"/></e>
+    <e c="AutoCog"><p><l>kantite<s n="n"/></l><r>quantity<s n="n"/></r></p><par n="ND"/></e>
+    <e c="AutoCog"><p><l>kapabilite<s n="n"/></l><r>capability<s n="n"/></r></p><par n="ND"/></e>
+    <e c="AutoCog"><p><l>kapasite<s n="n"/></l><r>capacity<s n="n"/></r></p><par n="ND"/></e>
+    <e c="AutoCog"><p><l>kavite<s n="n"/></l><r>cavity<s n="n"/></r></p><par n="ND"/></e>
+    <e c="AutoCog"><p><l>kilpabilite<s n="n"/></l><r>culpability<s n="n"/></r></p><par n="ND"/></e>
+    <e c="AutoCog"><p><l>kiryozite<s n="n"/></l><r>curiosity<s n="n"/></r></p><par n="ND"/></e>
+    <e c="AutoCog"><p><l>kolektivite<s n="n"/></l><r>collectivity<s n="n"/></r></p><par n="ND"/></e>
+    <e c="AutoCog"><p><l>komodite<s n="n"/></l><r>commodity<s n="n"/></r></p><par n="ND"/></e>
+    <e c="AutoCog"><p><l>kondiktivite<s n="n"/></l><r>conductivity<s n="n"/></r></p><par n="ND"/></e>
+    <e c="AutoCog"><p><l>konfidansyalite<s n="n"/></l><r>confidentiality<s n="n"/></r></p><par n="ND"/></e>
+    <e c="AutoCog"><p><l>konfòmite<s n="n"/></l><r>conformity<s n="n"/></r></p><par n="ND"/></e>
+    <e c="AutoCog"><p><l>konpleksite<s n="n"/></l><r>complexity<s n="n"/></r></p><par n="ND"/></e>
+    <e c="AutoCog"><p><l>konplisite<s n="n"/></l><r>complicity<s n="n"/></r></p><par n="ND"/></e>
+    <e c="AutoCog"><p><l>konstitisyonalite<s n="n"/></l><r>constitutionality<s n="n"/></r></p><par n="ND"/></e>
+    <e c="AutoCog"><p><l>kredibilite<s n="n"/></l><r>credibility<s n="n"/></r></p><par n="ND"/></e>
+    <e c="AutoCog"><p><l>kreyativite<s n="n"/></l><r>creativity<s n="n"/></r></p><par n="ND"/></e>
+    <e c="AutoCog"><p><l>lamajorite<s n="n"/></l><r>majority<s n="n"/></r></p><par n="ND"/></e>
+    <e c="AutoCog"><p><l>laverite<s n="n"/></l><r>truth<s n="n"/></r></p><par n="ND"/></e>
+    <e c="AutoCog"><p><l>legalite<s n="n"/></l><r>legality<s n="n"/></r></p><par n="ND"/></e>
+    <e c="AutoCog"><p><l>lejitimite<s n="n"/></l><r>legitimacy<s n="n"/></r></p><par n="ND"/></e>
+    <e c="AutoCog"><p><l>letènite<s n="n"/></l><r>eternity<s n="n"/></r></p><par n="ND"/></e>
+    <e c="AutoCog"><p><l>lokalite<s n="n"/></l><r>locality<s n="n"/></r></p><par n="ND"/></e>
+    <e c="AutoCog"><p><l>majorite<s n="n"/></l><r>majority<s n="n"/></r></p><par n="ND"/></e>
+    <e c="AutoCog"><p><l>mantalite<s n="n"/></l><r>mentality<s n="n"/></r></p><par n="ND"/></e>
+    <e c="AutoCog"><p><l>matènite<s n="n"/></l><r>maternity<s n="n"/></r></p><par n="ND"/></e>
+    <e c="AutoCog"><p><l>minisipalite<s n="n"/></l><r>municipality<s n="n"/></r></p><par n="ND"/></e>
+    <e c="AutoCog"><p><l>minispalite<s n="n"/></l><r>municipality<s n="n"/></r></p><par n="ND"/></e>
+    <e c="AutoCog"><p><l>minorite<s n="n"/></l><r>minority<s n="n"/></r></p><par n="ND"/></e>
+    <e c="AutoCog"><p><l>mobilite<s n="n"/></l><r>mobility<s n="n"/></r></p><par n="ND"/></e>
+    <e c="AutoCog"><p><l>modalite<s n="n"/></l><r>modality<s n="n"/></r></p><par n="ND"/></e>
+    <e c="AutoCog"><p><l>modènite<s n="n"/></l><r>modernity<s n="n"/></r></p><par n="ND"/></e>
+    <e c="AutoCog"><p><l>moralite<s n="n"/></l><r>morality<s n="n"/></r></p><par n="ND"/></e>
+    <e c="AutoCog"><p><l>nasyonalite<s n="n"/></l><r>nationality<s n="n"/></r></p><par n="ND"/></e>
+    <e c="AutoCog"><p><l>nativite<s n="n"/></l><r>nativity<s n="n"/></r></p><par n="ND"/></e>
+    <e c="AutoCog"><p><l>negativite<s n="n"/></l><r>negativity<s n="n"/></r></p><par n="ND"/></e>
+    <e c="AutoCog"><p><l>nesesite<s n="n"/></l><r>necessity<s n="n"/></r></p><par n="ND"/></e>
+    <e c="AutoCog"><p><l>obesite<s n="n"/></l><r>obesity<s n="n"/></r></p><par n="ND"/></e>
+    <e c="AutoCog"><p><l>objektivite<s n="n"/></l><r>objectivity<s n="n"/></r></p><par n="ND"/></e>
+    <e c="AutoCog"><p><l>obskirite<s n="n"/></l><r>obscurity<s n="n"/></r></p><par n="ND"/></e>
+    <e c="AutoCog"><p><l>opòtinite<s n="n"/></l><r>opportunity<s n="n"/></r></p><par n="ND"/></e>
+    <e c="AutoCog"><p><l>orijinalite<s n="n"/></l><r>originality<s n="n"/></r></p><par n="ND"/></e>
+    <e c="AutoCog"><p><l>ospitalite<s n="n"/></l><r>hospitality<s n="n"/></r></p><par n="ND"/></e>
+    <e c="AutoCog"><p><l>ostilite<s n="n"/></l><r>hostility<s n="n"/></r></p><par n="ND"/></e>
+    <e c="AutoCog"><p><l>otantisite<s n="n"/></l><r>authenticity<s n="n"/></r></p><par n="ND"/></e>
+    <e c="AutoCog"><p><l>otorite<s n="n"/></l><r>authority<s n="n"/></r></p><par n="ND"/></e>
+    <e c="AutoCog"><p><l>parite<s n="n"/></l><r>parity<s n="n"/></r></p><par n="ND"/></e>
+    <e c="AutoCog"><p><l>patikilarite<s n="n"/></l><r>particularity<s n="n"/></r></p><par n="ND"/></e>
+    <e c="AutoCog"><p><l>patènite<s n="n"/></l><r>paternity<s n="n"/></r></p><par n="ND"/></e>
+    <e c="AutoCog"><p><l>piblisite<s n="n"/></l><r>publicity<s n="n"/></r></p><par n="ND"/></e>
+    <e c="AutoCog"><p><l>popilarite<s n="n"/></l><r>popularity<s n="n"/></r></p><par n="ND"/></e>
+    <e c="AutoCog"><p><l>posibilite<s n="n"/></l><r>possibility<s n="n"/></r></p><par n="ND"/></e>
+    <e c="AutoCog"><p><l>posiblite<s n="n"/></l><r>possibility<s n="n"/></r></p><par n="ND"/></e>
+    <e c="AutoCog"><p><l>posterite<s n="n"/></l><r>posterity<s n="n"/></r></p><par n="ND"/></e>
+    <e c="AutoCog"><p><l>potansyalite<s n="n"/></l><r>potentiality<s n="n"/></r></p><par n="ND"/></e>
+    <e c="AutoCog"><p><l>priyorite<s n="n"/></l><r>priority<s n="n"/></r></p><par n="ND"/></e>
+    <e c="AutoCog"><p><l>pwobabilite<s n="n"/></l><r>probability<s n="n"/></r></p><par n="ND"/></e>
+    <e c="AutoCog"><p><l>pwodiktivite<s n="n"/></l><r>productivity<s n="n"/></r></p><par n="ND"/></e>
+    <e c="AutoCog"><p><l>pwosperite<s n="n"/></l><r>prosperity<s n="n"/></r></p><par n="ND"/></e>
+    <e c="AutoCog"><p><l>pèmeyabilite<s n="n"/></l><r>permeability<s n="n"/></r></p><par n="ND"/></e>
+    <e c="AutoCog"><p><l>pèsonalite<s n="n"/></l><r>personality<s n="n"/></r></p><par n="ND"/></e>
+    <e c="AutoCog"><p><l>rapidite<s n="n"/></l><r>rapidity<s n="n"/></r></p><par n="ND"/></e>
+    <e c="AutoCog"><p><l>regilarite<s n="n"/></l><r>regularity<s n="n"/></r></p><par n="ND"/></e>
+    <e c="AutoCog"><p><l>relativite<s n="n"/></l><r>relativity<s n="n"/></r></p><par n="ND"/></e>
+    <e c="AutoCog"><p><l>responsabilite<s n="n"/></l><r>responsibility<s n="n"/></r></p><par n="ND"/></e>
+    <e c="AutoCog"><p><l>responsablite<s n="n"/></l><r>responsibility<s n="n"/></r></p><par n="ND"/></e>
+    <e c="AutoCog"><p><l>rijidite<s n="n"/></l><r>rigidity<s n="n"/></r></p><par n="ND"/></e>
+    <e c="AutoCog"><p><l>sansibilite<s n="n"/></l><r>sensibility<s n="n"/></r></p><par n="ND"/></e>
+    <e c="AutoCog"><p><l>sekirite<s n="n"/></l><r>security<s n="n"/></r></p><par n="ND"/></e>
+    <e c="AutoCog"><p><l>seksyalite<s n="n"/></l><r>sexuality<s n="n"/></r></p><par n="ND"/></e>
+    <e c="AutoCog"><p><l>selebrite<s n="n"/></l><r>celebrity<s n="n"/></r></p><par n="ND"/></e>
+    <e c="AutoCog"><p><l>senserite<s n="n"/></l><r>sincerity<s n="n"/></r></p><par n="ND"/></e>
+    <e c="AutoCog"><p><l>serenite<s n="n"/></l><r>serenity<s n="n"/></r></p><par n="ND"/></e>
+    <e c="AutoCog"><p><l>severite<s n="n"/></l><r>severity<s n="n"/></r></p><par n="ND"/></e>
+    <e c="AutoCog"><p><l>similarite<s n="n"/></l><r>similarity<s n="n"/></r></p><par n="ND"/></e>
+    <e c="AutoCog"><p><l>siperyorite<s n="n"/></l><r>superiority<s n="n"/></r></p><par n="ND"/></e>
+    <e c="AutoCog"><p><l>sivilite<s n="n"/></l><r>civility<s n="n"/></r></p><par n="ND"/></e>
+    <e c="AutoCog"><p><l>solidarite<s n="n"/></l><r>solidarity<s n="n"/></r></p><par n="ND"/></e>
+    <e c="AutoCog"><p><l>tenasite<s n="n"/></l><r>tenacity<s n="n"/></r></p><par n="ND"/></e>
+    <e c="AutoCog"><p><l>timidite<s n="n"/></l><r>timidity<s n="n"/></r></p><par n="ND"/></e>
+    <e c="AutoCog"><p><l>tonalite<s n="n"/></l><r>tonality<s n="n"/></r></p><par n="ND"/></e>
+    <e c="AutoCog"><p><l>totalite<s n="n"/></l><r>totality<s n="n"/></r></p><par n="ND"/></e>
+    <e c="AutoCog"><p><l>trankilite<s n="n"/></l><r>tranquillity<s n="n"/></r></p><par n="ND"/></e>
+    <e c="AutoCog"><p><l>trinite<s n="n"/></l><r>trinity<s n="n"/></r></p><par n="ND"/></e>
+    <e c="AutoCog"><p><l>validite<s n="n"/></l><r>validity<s n="n"/></r></p><par n="ND"/></e>
+    <e c="AutoCog"><p><l>vanite<s n="n"/></l><r>vanity<s n="n"/></r></p><par n="ND"/></e>
+    <e c="AutoCog"><p><l>verasite<s n="n"/></l><r>veracity<s n="n"/></r></p><par n="ND"/></e>
+    <e c="AutoCog"><p><l>verite<s n="n"/></l><r>verity<s n="n"/></r></p><par n="ND"/></e>
+    <e c="AutoCog"><p><l>vorasite<s n="n"/></l><r>voracity<s n="n"/></r></p><par n="ND"/></e>
+    <e c="AutoCog"><p><l>adaptatif<s n="n"/></l><r>adaptative<s n="n"/></r></p><par n="ND"/></e>
+    <e c="AutoCog"><p><l>aditif<s n="n"/></l><r>additive<s n="n"/></r></p><par n="ND"/></e>
+    <e c="AutoCog"><p><l>adjektif<s n="n"/></l><r>adjective<s n="n"/></r></p><par n="ND"/></e>
+    <e c="AutoCog"><p><l>administratif<s n="n"/></l><r>administrative<s n="n"/></r></p><par n="ND"/></e>
+    <e c="AutoCog"><p><l>adoptif<s n="n"/></l><r>adoptive<s n="n"/></r></p><par n="ND"/></e>
+    <e c="AutoCog"><p><l>adoptiv<s n="n"/></l><r>adoptive<s n="n"/></r></p><par n="ND"/></e>
+    <e c="AutoCog"><p><l>afektif<s n="n"/></l><r>affective<s n="n"/></r></p><par n="ND"/></e>
+    <e c="AutoCog"><p><l>afimatif<s n="n"/></l><r>affirmative<s n="n"/></r></p><par n="ND"/></e>
+    <e c="AutoCog"><p><l>ajektif<s n="n"/></l><r>adjective<s n="n"/></r></p><par n="ND"/></e>
+    <e c="AutoCog"><p><l>aktif<s n="n"/></l><r>active<s n="n"/></r></p><par n="ND"/></e>
+    <e c="AutoCog"><p><l>altènatif<s n="n"/></l><r>alternative<s n="n"/></r></p><par n="ND"/></e>
+    <e c="AutoCog"><p><l>altènativ<s n="n"/></l><r>alternative<s n="n"/></r></p><par n="ND"/></e>
+    <e c="AutoCog"><p><l>apwoksimatif<s n="n"/></l><r>approximative<s n="n"/></r></p><par n="ND"/></e>
+    <e c="AutoCog"><p><l>apwoksimativ<s n="n"/></l><r>approximative<s n="n"/></r></p><par n="ND"/></e>
+    <e c="AutoCog"><p><l>asistif<s n="n"/></l><r>assistive<s n="n"/></r></p><par n="ND"/></e>
+    <e c="AutoCog"><p><l>atantif<s n="n"/></l><r>attentive<s n="n"/></r></p><par n="ND"/></e>
+    <e c="AutoCog"><p><l>definitif<s n="n"/></l><r>definitive<s n="n"/></r></p><par n="ND"/></e>
+    <e c="AutoCog"><p><l>definitiv<s n="n"/></l><r>definitive<s n="n"/></r></p><par n="ND"/></e>
+    <e c="AutoCog"><p><l>dekoratif<s n="n"/></l><r>decorative<s n="n"/></r></p><par n="ND"/></e>
+    <e c="AutoCog"><p><l>dekorativ<s n="n"/></l><r>decorative<s n="n"/></r></p><par n="ND"/></e>
+    <e c="AutoCog"><p><l>demonstratif<s n="n"/></l><r>demonstrative<s n="n"/></r></p><par n="ND"/></e>
+    <e c="AutoCog"><p><l>deskriptif<s n="n"/></l><r>descriptive<s n="n"/></r></p><par n="ND"/></e>
+    <e c="AutoCog"><p><l>destriktif<s n="n"/></l><r>destructive<s n="n"/></r></p><par n="ND"/></e>
+    <e c="AutoCog"><p><l>detektif<s n="n"/></l><r>detective<s n="n"/></r></p><par n="ND"/></e>
+    <e c="AutoCog"><p><l>detektiv<s n="n"/></l><r>detective<s n="n"/></r></p><par n="ND"/></e>
+    <e c="AutoCog"><p><l>dijestif<s n="n"/></l><r>digestive<s n="n"/></r></p><par n="ND"/></e>
+    <e c="AutoCog"><p><l>direktif<s n="n"/></l><r>directive<s n="n"/></r></p><par n="ND"/></e>
+    <e c="AutoCog"><p><l>direktiv<s n="n"/></l><r>directive<s n="n"/></r></p><par n="ND"/></e>
+    <e c="AutoCog"><p><l>distribitif<s n="n"/></l><r>distributive<s n="n"/></r></p><par n="ND"/></e>
+    <e c="AutoCog"><p><l>efektif<s n="n"/></l><r>effective<s n="n"/></r></p><par n="ND"/></e>
+    <e c="AutoCog"><p><l>efektiv<s n="n"/></l><r>effective<s n="n"/></r></p><par n="ND"/></e>
+    <e c="AutoCog"><p><l>egzekitif<s n="n"/></l><r>executive<s n="n"/></r></p><par n="ND"/></e>
+    <e c="AutoCog"><p><l>egzòstif<s n="n"/></l><r>exhaustive<s n="n"/></r></p><par n="ND"/></e>
+    <e c="AutoCog"><p><l>ekzekitif<s n="n"/></l><r>executive<s n="n"/></r></p><par n="ND"/></e>
+    <e c="AutoCog"><p><l>elektif<s n="n"/></l><r>elective<s n="n"/></r></p><par n="ND"/></e>
+    <e c="AutoCog"><p><l>endikatif<s n="n"/></l><r>indicative<s n="n"/></r></p><par n="ND"/></e>
+    <e c="AutoCog"><p><l>enperatif<s n="n"/></l><r>imperative<s n="n"/></r></p><par n="ND"/></e>
+    <e c="AutoCog"><p><l>enstriktif<s n="n"/></l><r>instructive<s n="n"/></r></p><par n="ND"/></e>
+    <e c="AutoCog"><p><l>entwospektiv<s n="n"/></l><r>introspective<s n="n"/></r></p><par n="ND"/></e>
+    <e c="AutoCog"><p><l>entèaktif<s n="n"/></l><r>interactive<s n="n"/></r></p><par n="ND"/></e>
+    <e c="AutoCog"><p><l>entèraktif<s n="n"/></l><r>interactive<s n="n"/></r></p><par n="ND"/></e>
+    <e c="AutoCog"><p><l>entèwogatif<s n="n"/></l><r>interrogative<s n="n"/></r></p><par n="ND"/></e>
+    <e c="AutoCog"><p><l>esplikatif<s n="n"/></l><r>explicative<s n="n"/></r></p><par n="ND"/></e>
+    <e c="AutoCog"><p><l>fijitif<s n="n"/></l><r>fugitive<s n="n"/></r></p><par n="ND"/></e>
+    <e c="AutoCog"><p><l>inisyatif<s n="n"/></l><r>initiative<s n="n"/></r></p><par n="ND"/></e>
+    <e c="AutoCog"><p><l>inisyativ<s n="n"/></l><r>initiative<s n="n"/></r></p><par n="ND"/></e>
+    <e c="AutoCog"><p><l>inovativ<s n="n"/></l><r>innovative<s n="n"/></r></p><par n="ND"/></e>
+    <e c="AutoCog"><p><l>kalitatif<s n="n"/></l><r>qualitative<s n="n"/></r></p><par n="ND"/></e>
+    <e c="AutoCog"><p><l>kantitatif<s n="n"/></l><r>quantitative<s n="n"/></r></p><par n="ND"/></e>
+    <e c="AutoCog"><p><l>kaptif<s n="n"/></l><r>captive<s n="n"/></r></p><par n="ND"/></e>
+    <e c="AutoCog"><p><l>kimilatif<s n="n"/></l><r>cumulative<s n="n"/></r></p><par n="ND"/></e>
+    <e c="AutoCog"><p><l>kolaboratif<s n="n"/></l><r>collaborative<s n="n"/></r></p><par n="ND"/></e>
+    <e c="AutoCog"><p><l>kolektif<s n="n"/></l><r>collective<s n="n"/></r></p><par n="ND"/></e>
+    <e c="AutoCog"><p><l>kominikatif<s n="n"/></l><r>communicative<s n="n"/></r></p><par n="ND"/></e>
+    <e c="AutoCog"><p><l>komitatif<s n="n"/></l><r>commutative<s n="n"/></r></p><par n="ND"/></e>
+    <e c="AutoCog"><p><l>konbatif<s n="n"/></l><r>combative<s n="n"/></r></p><par n="ND"/></e>
+    <e c="AutoCog"><p><l>kondiktif<s n="n"/></l><r>conductive<s n="n"/></r></p><par n="ND"/></e>
+    <e c="AutoCog"><p><l>konparatif<s n="n"/></l><r>comparative<s n="n"/></r></p><par n="ND"/></e>
+    <e c="AutoCog"><p><l>konpetitif<s n="n"/></l><r>competitive<s n="n"/></r></p><par n="ND"/></e>
+    <e c="AutoCog"><p><l>konpetitiv<s n="n"/></l><r>competitive<s n="n"/></r></p><par n="ND"/></e>
+    <e c="AutoCog"><p><l>konsiltatif<s n="n"/></l><r>consultative<s n="n"/></r></p><par n="ND"/></e>
+    <e c="AutoCog"><p><l>konstriktif<s n="n"/></l><r>constrictive<s n="n"/></r></p><par n="ND"/></e>
+    <e c="AutoCog"><p><l>kontraseptif<s n="n"/></l><r>contraceptive<s n="n"/></r></p><par n="ND"/></e>
+    <e c="AutoCog"><p><l>koperatif<s n="n"/></l><r>cooperative<s n="n"/></r></p><par n="ND"/></e>
+    <e c="AutoCog"><p><l>koperativ<s n="n"/></l><r>cooperative<s n="n"/></r></p><par n="ND"/></e>
+    <e c="AutoCog"><p><l>korektif<s n="n"/></l><r>corrective<s n="n"/></r></p><par n="ND"/></e>
+    <e c="AutoCog"><p><l>kreyatif<s n="n"/></l><r>creative<s n="n"/></r></p><par n="ND"/></e>
+    <e c="AutoCog"><p><l>lejislatif<s n="n"/></l><r>legislative<s n="n"/></r></p><par n="ND"/></e>
+    <e c="AutoCog"><p><l>lejislativ<s n="n"/></l><r>legislative<s n="n"/></r></p><par n="ND"/></e>
+    <e c="AutoCog"><p><l>likratif<s n="n"/></l><r>lucrative<s n="n"/></r></p><par n="ND"/></e>
+    <e c="AutoCog"><p><l>lokatif<s n="n"/></l><r>locative<s n="n"/></r></p><par n="ND"/></e>
+    <e c="AutoCog"><p><l>lokomotiv<s n="n"/></l><r>locomotive<s n="n"/></r></p><par n="ND"/></e>
+    <e c="AutoCog"><p><l>motif<s n="n"/></l><r>motive<s n="n"/></r></p><par n="ND"/></e>
+    <e c="AutoCog"><p><l>natif<s n="n"/></l><r>native<s n="n"/></r></p><par n="ND"/></e>
+    <e c="AutoCog"><p><l>negatif<s n="n"/></l><r>negative<s n="n"/></r></p><par n="ND"/></e>
+    <e c="AutoCog"><p><l>negativ<s n="n"/></l><r>negative<s n="n"/></r></p><par n="ND"/></e>
+    <e c="AutoCog"><p><l>nòmatif<s n="n"/></l><r>normative<s n="n"/></r></p><par n="ND"/></e>
+    <e c="AutoCog"><p><l>objektif<s n="n"/></l><r>objective<s n="n"/></r></p><par n="ND"/></e>
+    <e c="AutoCog"><p><l>patisipativ<s n="n"/></l><r>participative<s n="n"/></r></p><par n="ND"/></e>
+    <e c="AutoCog"><p><l>patitif<s n="n"/></l><r>partitive<s n="n"/></r></p><par n="ND"/></e>
+    <e c="AutoCog"><p><l>positif<s n="n"/></l><r>positive<s n="n"/></r></p><par n="ND"/></e>
+    <e c="AutoCog"><p><l>pozitif<s n="n"/></l><r>positive<s n="n"/></r></p><par n="ND"/></e>
+    <e c="AutoCog"><p><l>pozitiv<s n="n"/></l><r>positive<s n="n"/></r></p><par n="ND"/></e>
+    <e c="AutoCog"><p><l>prevantif<s n="n"/></l><r>preventive<s n="n"/></r></p><par n="ND"/></e>
+    <e c="AutoCog"><p><l>prevantiv<s n="n"/></l><r>preventive<s n="n"/></r></p><par n="ND"/></e>
+    <e c="AutoCog"><p><l>prezèvatif<s n="n"/></l><r>preservative<s n="n"/></r></p><par n="ND"/></e>
+    <e c="AutoCog"><p><l>pwodiktif<s n="n"/></l><r>productive<s n="n"/></r></p><par n="ND"/></e>
+    <e c="AutoCog"><p><l>pèspektiv<s n="n"/></l><r>perspective<s n="n"/></r></p><par n="ND"/></e>
+    <e c="AutoCog"><p><l>radyoaktif<s n="n"/></l><r>radioactive<s n="n"/></r></p><par n="ND"/></e>
+    <e c="AutoCog"><p><l>relativ<s n="n"/></l><r>relative<s n="n"/></r></p><par n="ND"/></e>
+    <e c="AutoCog"><p><l>repetitif<s n="n"/></l><r>repetitive<s n="n"/></r></p><par n="ND"/></e>
+    <e c="AutoCog"><p><l>reprezantatif<s n="n"/></l><r>representative<s n="n"/></r></p><par n="ND"/></e>
+    <e c="AutoCog"><p><l>repwodiktif<s n="n"/></l><r>reproductive<s n="n"/></r></p><par n="ND"/></e>
+    <e c="AutoCog"><p><l>repwodiktiv<s n="n"/></l><r>reproductive<s n="n"/></r></p><par n="ND"/></e>
+    <e c="AutoCog"><p><l>reseptif<s n="n"/></l><r>receptive<s n="n"/></r></p><par n="ND"/></e>
+    <e c="AutoCog"><p><l>respektif<s n="n"/></l><r>respective<s n="n"/></r></p><par n="ND"/></e>
+    <e c="AutoCog"><p><l>retwoaktif<s n="n"/></l><r>retroactive<s n="n"/></r></p><par n="ND"/></e>
+    <e c="AutoCog"><p><l>reyaktiv<s n="n"/></l><r>reactive<s n="n"/></r></p><par n="ND"/></e>
+    <e c="AutoCog"><p><l>selektif<s n="n"/></l><r>selective<s n="n"/></r></p><par n="ND"/></e>
+    <e c="AutoCog"><p><l>tantativ<s n="n"/></l><r>tentative<s n="n"/></r></p><par n="ND"/></e>
+    <e c="AutoCog"><p><l>vendikatif<s n="n"/></l><r>vindicative<s n="n"/></r></p><par n="ND"/></e>
+    <e c="AutoCog"><p><l>ekstradisyon<s n="n"/></l><r>extradition<s n="n"/></r></p><par n="ND"/></e>
+    <e c="AutoCog"><p><l>asosyasyon<s n="n"/></l><r>association<s n="n"/></r></p><par n="ND"/></e>
+    <e c="AutoCog"><p><l>kondanasyon<s n="n"/></l><r>condemnation<s n="n"/></r></p><par n="ND"/></e>
+    <e><p><l>doulè<s n="n"/></l><r>pain<s n="n"/></r></p><par n="ND"/></e>
+    <e><p><l>sèks<s n="n"/></l><r>sex<s n="n"/></r></p><par n="ND"/></e>
+    <e><p><l>presizyon<s n="n"/></l><r>precision<s n="n"/></r></p><par n="ND"/></e>
+    <e><p><l>pwosesis<s n="n"/></l><r>process<s n="n"/></r></p><par n="ND"/></e>
+    <e><p><l>anbasad<s n="n"/></l><r>embassy<s n="n"/></r></p><par n="ND"/></e>
+    <e><p><l>van<s n="n"/></l><r>wind<s n="n"/></r></p></e>
+    <e><p><l>vant<s n="n"/></l><r>stomach<s n="n"/></r></p></e>
+    <e><p><l>vant-fè-mal<s n="n"/></l><r>stomach<b/>ache<s n="n"/></r></p></e>
+    <e><p><l>abitan<s n="n"/></l><r>farmer<s n="n"/></r></p></e>
+    <e><p><l>zabitan<s n="n"/></l><r>farmer<s n="n"/></r></p></e>
+    <e><p><l>afè<s n="n"/></l><r>business<s n="n"/></r></p></e>
+    <e><p><l>afranchi<s n="n"/></l><r>freedman<s n="n"/></r></p></e>
+    <e><p><l>akasan<s n="n"/></l><r>cornmeal<b/>porridge<s n="n"/></r></p></e>
+    <e><p><l>alimèt<s n="n"/></l><r>match<s n="n"/></r></p></e>
+    <e><p><l>amonika<s n="n"/></l><r>harmonica<s n="n"/></r></p></e>
+    <e><p><l>apranti<s n="n"/></l><r>apprentice<s n="n"/></r></p></e>
+    <e><p><l>aran<s n="n"/></l><r>herring<s n="n"/></r></p></e>
+    <e><p><l>asowosi<s n="n"/></l><r>bitter<b/>melon<s n="n"/></r></p></e>
+    <e><p><l>ason<s n="n"/></l><r>ritual<b/>voodoo<b/>rattle<s n="n"/></r></p></e>
+    <e><p><l>asyèt<s n="n"/></l><r>dish<s n="n"/></r></p></e>
+    <e c="todo"><p><l>atabisyon<s n="n"/></l><r>group<b/>selling<b/>a<b/>day's<b/>work<s n="n"/></r></p></e>
+    <e><p><l>avalwa<s n="n"/></l><r>down payment<s n="n"/></r></p></e>
+    <e><p><l>avni<s n="n"/></l><r>avenue<s n="n"/></r></p></e>
+    <e><p><l>awozwa<s n="n"/></l><r>hose<s n="n"/></r></p></e>
+    <e><p><l>ayopò<s n="n"/></l><r>airport<s n="n"/></r></p></e>
+    <e><p><l>andui<s n="n"/></l><r>chitterlings<s n="n"/></r></p></e>
+    <e><p><l>angrè<s n="n"/></l><r>fertilizer<s n="n"/></r></p></e>
+    <e><p><l>anmizman<s n="n"/></l><r>entertainment<s n="n"/></r></p></e>
+    <e><p><l>anperè<s n="n"/></l><r>emperor<s n="n"/></r></p></e>
+    <e><p><l>ansasen<s n="n"/></l><r>murderer<s n="n"/></r></p></e>
+    <e><p><l>antchoutchout<s n="n"/></l><r>turbulent<s n="n"/></r></p></e>
+    <e><p><l>antyoutyout<s n="n"/></l><r>turbulent<s n="n"/></r></p></e>
+    <e><p><l>antèman<s n="n"/></l><r>funeral<s n="n"/></r></p></e>
+    <e><p><l>antòs<s n="n"/></l><r>sprain<s n="n"/></r></p></e>
+    <e><p><l>bra<s n="n"/></l><r>arm<s n="n"/></r></p><par n="ND"/></e>
+    <e><p><l>dyare<s n="n"/></l><r>diarrhoea<s n="n"/></r></p><par n="ND"/></e>
+    <e><p><l>pwatrin<s n="n"/></l><r>chest<s n="n"/></r></p><par n="ND"/></e>
+    <e><p><l>alèji<s n="n"/></l><r>allergy<s n="n"/></r></p><par n="ND"/></e>
+    <e><p><l>aksidan<s n="n"/></l><r>accident<s n="n"/></r></p><par n="ND"/></e>
+    <e><p><l>anbilans<s n="n"/></l><r>ambulance<s n="n"/></r></p><par n="ND"/></e>
+    <e><p><l>apremidi<s n="n"/></l><r>afternoon<s n="n"/></r></p><par n="ND"/></e>
+    <e><p><l>aspirin<s n="n"/></l><r>aspirin<s n="n"/></r></p><par n="ND"/></e>
+    <e><p><l>dyabetik<s n="n"/></l><r>diabetic<s n="n"/></r></p><par n="ND"/></e>
+    <e><p><l>dyabetik<s n="adj"/></l><r>diabetic<s n="adj"/></r></p></e>
+    <e><p><l>prive<s n="adj"/></l><r>private<s n="adj"/></r></p></e>
+    <e><p><l>men<s n="n"/></l><r>hand<s n="n"/></r></p><par n="ND"/></e>
+    <e><p><l>alkòl<s n="n"/></l><r>alcohol<s n="n"/></r></p><par n="ND"/></e>
+    <e><p><l>degre<s n="n"/></l><r>degree<s n="n"/></r></p><par n="ND"/></e>
+    <e><p><l>lafyèv<s n="n"/></l><r>fever<s n="n"/></r></p><par n="ND"/></e>
+    <e><p><l>maladi<s n="n"/></l><r>illness<s n="n"/></r></p><par n="ND"/></e>
+    <e r="RL"><p><l>maladi<s n="n"/></l><r>sickness<s n="n"/></r></p><par n="ND"/></e>
+    <e><p><l>mesye<s n="n"/></l><r>mister<s n="n"/></r></p><par n="ND"/></e>
+    <e r="RL"><p><l>mesye<s n="n"/></l><r>sir<s n="n"/></r></p><par n="ND"/></e>
+    <e><p><l>kolestewòl<s n="n"/></l><r>cholesterol<s n="n"/></r></p><par n="ND"/></e>
+    <e><p><l>pwoblèm<s n="n"/></l><r>problem<s n="n"/></r></p><par n="ND"/></e>
+    <e><p><l>pwoblèm<b/>sante<s n="n"/></l><r>health<b/>problem<s n="n"/></r></p><par n="ND"/></e>
+    <e r="RL"><p><l>sante<s n="adj"/></l><r>health<s n="adj"/></r></p></e>
+    <e><p><l>sante<s n="adj"/></l><r>healthy<s n="adj"/><s n="sint"/></r></p></e>
+    <e><p><l>medikaman<s n="n"/></l><r>medicine<s n="n"/></r></p><par n="ND"/></e>
+    <e r="RL"><p><l>medikaman<s n="n"/></l><r>medication<s n="n"/></r></p><par n="ND"/></e>
+    <e><p><l>akizasyon<s n="n"/></l><r>accusation<s n="n"/></r></p><par n="ND"/></e>
+    <e><p><l>jijman<s n="n"/></l><r>judgement<s n="n"/></r></p><par n="ND"/></e>
+    <e><p><l>mwa<s n="n"/></l><r>month<s n="n"/></r></p><par n="ND"/></e>
+    <e><p><l>semèn<s n="n"/></l><r>week<s n="n"/></r></p><par n="ND"/></e>
+    <e><p><l>politik<s n="n"/></l><r>politics<s n="n"/></r></p><par n="ND"/></e>
+    <e><p><l>pati<b/>politik<s n="n"/></l><r>political<b/>party<s n="n"/></r></p><par n="ND"/></e>
+    <e><p><l>unyon<s n="n"/></l><r>union<s n="n"/></r></p><par n="ND"/></e>
+    <e><p><l>ansyen<b/>prezidan<b/>ameriken<s n="n"/></l><r>former<b/>American<b/>president<s n="n"/></r></p><par n="ND"/></e>
+    <e><p><l>ansyen<b/>prezidan<s n="n"/></l><r>former<b/>president<s n="n"/></r></p><par n="ND"/></e>
+    <e><p><l>ansyen<s n="adj"/></l><r>ancient<s n="adj"/></r></p></e>
+    <e r="RL"><p><l>ansyen<s n="adj"/></l><r>former<s n="adj"/></r></p></e>
+
+    <e><p><l>Ayiti<s n="np"/><s n="top"/></l><r>Haiti<s n="np"/><s n="top"/><s n="sg"/></r></p></e>
+    <e><p><l>Nouyòk<s n="np"/><s n="top"/></l><r>New<b/>York<s n="np"/><s n="top"/><s n="sg"/></r></p></e>
+    <e><p><l>Kiba<s n="np"/><s n="top"/></l><r>Cuba<s n="np"/><s n="top"/><s n="sg"/></r></p></e>
+    <e><p><l>Miyami<s n="np"/><s n="top"/></l><r>Miami<s n="np"/><s n="top"/><s n="sg"/></r></p></e>
+    <e><p><l>Unyon<b/>Ewòp<s n="np"/><s n="top"/></l><r>European<b/>Union<s n="np"/><s n="top"/><s n="sg"/></r></p></e>
+    <e><p><l>Ewòp<s n="np"/><s n="top"/></l><r>Europe<s n="np"/><s n="top"/><s n="sg"/></r></p></e>
+    <e><p><l>Azi<s n="np"/><s n="top"/></l><r>Asia<s n="np"/><s n="top"/><s n="sg"/></r></p></e>
+    <e><p><l>Edenn<s n="np"/><s n="top"/></l><r>Eden<s n="np"/><s n="top"/><s n="sg"/></r></p></e>
+    <e><p><l>Giyon<s n="np"/><s n="top"/></l><r>Gihon<s n="np"/><s n="top"/><s n="sg"/></r></p></e>
+    <e><p><l>Pòtoprens<s n="np"/><s n="top"/></l><r>Port-au-Prince<s n="np"/><s n="top"/><s n="sg"/></r></p></e>
+    <e><p><l>Oseyan<b/>Atlantik<s n="np"/><s n="top"/></l><r>Atlantic<b/>Ocean<s n="np"/><s n="top"/><s n="sg"/></r></p></e>
+    <e><p><l>Atlantik<s n="np"/><s n="top"/></l><r>Atlantic<s n="np"/><s n="top"/><s n="sg"/></r></p></e>
+    <e><p><l>Repiblik<b/>d<b/>Ayiti<s n="np"/><s n="top"/></l><r>Republic<b/>of<b/>Haiti<s n="np"/><s n="top"/><s n="sg"/></r></p></e>
+    <e><p><l>Sodòm<s n="np"/><s n="top"/></l><r>Sodom<s n="np"/><s n="top"/><s n="sg"/></r></p></e>
+    <e><p><l>Damas<s n="np"/><s n="top"/></l><r>Damascus<s n="np"/><s n="top"/><s n="sg"/></r></p></e>
+    <e><p><l>Oba<s n="np"/><s n="top"/></l><r>Hobah<s n="np"/><s n="top"/><s n="sg"/></r></p></e>
+    <e><p><l>Gomò<s n="np"/><s n="top"/></l><r>Gomorrah<s n="np"/><s n="top"/><s n="sg"/></r></p></e>
+    <e><p><l>Salèm<s n="np"/><s n="top"/></l><r>Salem<s n="np"/><s n="top"/><s n="sg"/></r></p></e>
+    <e><p><l>Izrayèl<s n="np"/><s n="top"/></l><r>Israel<s n="np"/><s n="top"/><s n="sg"/></r></p></e>
+    <e><p><l>Etazini<s n="np"/><s n="top"/></l><r>United<b/>States<s n="np"/><s n="top"/><s n="sg"/></r></p></e>
+    <e><p><l>Lejip<s n="np"/><s n="top"/></l><r>Egypt<s n="np"/><s n="top"/><s n="sg"/></r></p></e>
+    <e><p><l>Montreal<s n="np"/><s n="top"/></l><r>Montreal<s n="np"/><s n="top"/><s n="sg"/></r></p></e>
+    <e><p><l>Kanada<s n="np"/><s n="top"/></l><r>Canada<s n="np"/><s n="top"/><s n="sg"/></r></p></e>
+    <e><p><l>Bètleyèm<s n="np"/><s n="top"/></l><r>Bethlehem<s n="np"/><s n="top"/><s n="sg"/></r></p></e>
+    <e><p><l>Jerizalèm<s n="np"/><s n="top"/></l><r>Jerusalem<s n="np"/><s n="top"/><s n="sg"/></r></p></e>
+
+    <e><p><l>Noe<s n="np"/></l><r>Noah<s n="np"/></r></p></e>
+    <e><p><l>Robert<s n="np"/></l><r>Robert<s n="np"/></r></p></e>
+    <e><p><l>Mark<s n="np"/></l><r>Mark<s n="np"/></r></p></e>
+    <e><p><l>Alain<s n="np"/></l><r>Alain<s n="np"/></r></p></e>
+    <e><p><l>Luis<s n="np"/></l><r>Luis<s n="np"/></r></p></e>
+    <e><p><l>Barack<s n="np"/></l><r>Barack<s n="np"/></r></p></e>
+    <e><p><l>Bondye<s n="np"/></l><r>Yahweh<s n="np"/></r></p></e>
+    <e><p><l>Abram<s n="np"/></l><r>Abram<s n="np"/></r></p></e>
+    <e><p><l>Echkòl<s n="np"/></l><r>Eshcol<s n="np"/></r></p></e>
+    <e><p><l>Ane<s n="np"/></l><r>Aner<s n="np"/></r></p></e>
+    <e><p><l>Lòt<s n="np"/></l><r>Lot<s n="np"/></r></p></e>
+    <e><p><l>Mèlkisedèk<s n="np"/></l><r>Melchizedek<s n="np"/></r></p></e>
+    <e><p><l>Kedòlaòmè<s n="np"/></l><r>Chedorlaomer<s n="np"/></r></p></e>
+    <e><p><l>Adan<s n="np"/></l><r>Adam<s n="np"/></r></p></e>
+    <e><p><l>Pyè<s n="np"/></l><r>Pyè<s n="np"/></r></p></e>
+    <e><p><l>Pierre<s n="np"/></l><r>Pierre<s n="np"/></r></p></e>
+    <e><p><l>Jan<s n="np"/></l><r>Jan<s n="np"/></r></p></e>
+    <e><p><l>Ev<s n="np"/></l><r>Eve<s n="np"/></r></p></e>
+    <e><p><l>Chifra<s n="np"/></l><r>Shiphrah<s n="np"/></r></p></e>
+    <e><p><l>Woz<s n="np"/></l><r>Woz<s n="np"/></r></p></e>
+    <e><p><l>Mari<s n="np"/></l><r>Mari<s n="np"/></r></p></e>
+    <e><p><l>Pwa<s n="np"/></l><r>Puah<s n="np"/></r></p></e>
+    <e><p><l>George<b/>W.<b/>Bush<s n="np"/></l><r>George<b/>W.<b/>Bush<s n="np"/></r></p></e>
+    <e><p><l>Obama<s n="np"/><s n="cog"/><s n="mf"/></l><r>Obama<s n="np"/><s n="cog"/></r></p></e>
+    <e><p><l>Marino<s n="np"/><s n="cog"/><s n="mf"/></l><r>Marino<s n="np"/><s n="cog"/></r></p></e>
+    <e><p><l>Gates<s n="np"/><s n="cog"/><s n="mf"/></l><r>Gates<s n="np"/><s n="cog"/></r></p></e>
+    <e><p><l>Ki-moon<s n="np"/><s n="cog"/><s n="mf"/></l><r>Ki-moon<s n="np"/><s n="cog"/></r></p></e>
+    <e><p><l>Clinton<s n="np"/><s n="cog"/><s n="mf"/></l><r>Clinton<s n="np"/><s n="cog"/></r></p></e>
+    <e><p><l>Bush<s n="np"/><s n="cog"/><s n="mf"/></l><r>Bush<s n="np"/><s n="cog"/></r></p></e>
+    <e><p><l>Cohen<s n="np"/><s n="cog"/><s n="mf"/></l><r>Cohen<s n="np"/><s n="cog"/></r></p></e>
+
+    <e><p><l>Tant<b/>Randevou<s n="np"/></l><r>Tent<b/>of<b/>Meeting<s n="np"/></r></p></e>
+    <e><p><l>Bwat<b/>Kontra<s n="np"/></l><r>Tabernacle<b/>of<b/>the<b/>Testimony<s n="np"/></r></p></e>
+    <e><p><l>Walmart<s n="np"/></l><r>Walmart<s n="np"/></r></p></e>
+    <e><p><l>Linux<s n="np"/></l><r>Linux<s n="np"/></r></p></e>
+    <e><p><l>Nasyon<b/>Zuni<s n="np"/><s n="al"/><s n="sg"/></l><r>United<b/>Nations<s n="np"/><s n="org"/><s n="pl"/></r></p></e>
+    <e><p><l>l'ONU<s n="np"/><s n="al"/><s n="sg"/></l><r>UN<s n="np"/><s n="org"/><s n="pl"/></r></p></e>
+
+    <e><p><l>Woubenn<s n="np"/></l><r>Reuben<s n="np"/></r></p></e>
+    <e><p><l>Simeyon<s n="np"/></l><r>Simeon<s n="np"/></r></p></e>
+    <e><p><l>Levi<s n="np"/></l><r>Levi<s n="np"/></r></p></e>
+    <e><p><l>Jida<s n="np"/></l><r>Judah<s n="np"/></r></p></e>
+    <e><p><l>Isaka<s n="np"/></l><r>Issachar<s n="np"/></r></p></e>
+    <e><p><l>Zabilon<s n="np"/></l><r>Zebulun<s n="np"/></r></p></e>
+    <e><p><l>Benjamen<s n="np"/></l><r>Benjamin<s n="np"/></r></p></e>
+    <e><p><l>Dann<s n="np"/></l><r>Dan<s n="np"/></r></p></e>
+    <e><p><l>Nèftali<s n="np"/></l><r>Naphtali<s n="np"/></r></p></e>
+    <e><p><l>Gad<s n="np"/></l><r>Gad<s n="np"/></r></p></e>
+    <e><p><l>Asè<s n="np"/></l><r>Asher<s n="np"/></r></p></e>
+    <e><p><l>Jakòb<s n="np"/></l><r>Jacob<s n="np"/></r></p></e>
+    <e><p><l>Jozèf<s n="np"/></l><r>Joseph<s n="np"/></r></p></e>
+    <e><p><l>Piton<s n="np"/></l><r>Pithom<s n="np"/></r></p></e>
+    <e><p><l>Ranmsès<s n="np"/></l><r>Raamses<s n="np"/></r></p></e>
+    <e><p><l>Moyiz<s n="np"/></l><r>Moses<s n="np"/></r></p></e>
+    <e><p><l>Abraram<s n="np"/></l><r>Abraham<s n="np"/></r></p></e>
+    <e><p><l>Izarak<s n="np"/></l><r>Isaac<s n="np"/></r></p></e>
+    <e><p><l>Arawon<s n="np"/></l><r>Aaron<s n="np"/></r></p></e>
+    <e><p><l>Ayisamak<s n="np"/></l><r>Ahisamach<s n="np"/></r></p></e>
+    <e><p><l>Bezaleyèl<s n="np"/></l><r>Bezalel<s n="np"/></r></p></e>
+    <e><p><l>Ouri<s n="np"/></l><r>Uri<s n="np"/></r></p></e>
+    <e><p><l>Our<s n="np"/></l><r>Hur<s n="np"/></r></p></e>
+    <e><p><l>Jetwo<s n="np"/></l><r>Jethro<s n="np"/></r></p></e>
+    <e><p><l>Abèl<s n="np"/></l><r>Abel<s n="np"/></r></p></e>
+    <e><p><l>Kayen<s n="np"/></l><r>Cain<s n="np"/></r></p></e>
+    <e><p><l>Enòk<s n="np"/></l><r>Enoch<s n="np"/></r></p></e>
+
+    <e><p><l>divès<s n="det"/><s n="ind"/></l><r>various<s n="det"/><s n="ind"/></r></p></e>
+    <e><p><l>premye<s n="det"/></l><r>first<s n="det"/></r></p></e>
+    <e><p><l>dènye<s n="det"/></l><r>last<s n="det"/></r></p></e>
+    <e><p><l>dezyèm<s n="det"/></l><r>second<s n="det"/></r></p></e>
+    <e><p><l>twazyèm<s n="det"/></l><r>third<s n="det"/></r></p></e>
+    <e r="LR"><p><l>trwazyèm<s n="det"/></l><r>third<s n="det"/></r></p></e>
+    <e><p><l>katriyèm<s n="det"/></l><r>fourth<s n="det"/></r></p></e>
+    <e><p><l>senkyèm<s n="det"/></l><r>fifth<s n="det"/></r></p></e>
+    <e><p><l>sèzyèm<s n="det"/></l><r>sixth<s n="det"/></r></p></e>
+    <e><p><l>trantyèm<s n="det"/></l><r>thirtieth<s n="det"/></r></p></e>
+    <e><p><l>mwen<s n="det"/></l><r>my<s n="det"/></r></p></e>
+    <e><p><l>ou<s n="det"/></l><r>your<s n="det"/></r></p></e>
+    <e><p><l>nou<s n="det"/></l><r>our<s n="det"/></r></p></e>
+    <e><p><l>li<s n="det"/></l><r>his<s n="det"/></r></p></e>
+    <e r="LR"><p><l>li<s n="det"/></l><r>her<s n="det"/></r></p></e>
+    <e r="LR"><p><l>li<s n="det"/></l><r>its<s n="det"/></r></p></e>
+
+    <e><p><l>si<s n="cnjadv"/></l><r>if<s n="cnjsub"/></r></p></e>
+    <e><p><l>lè<s n="cnjadv"/></l><r>when<s n="cnjadv"/></r></p></e>
+    <e><p><l>pouri<b/>ke<s n="cnjadv"/></l><r>provided<b/>that<s n="cnjadv"/></r></p></e>
+    <e><p><l>paske<s n="cnjadv"/></l><r>because<s n="cnjadv"/></r></p></e>
+    <e r="LR"><p><l>akòz<s n="cnjadv"/></l><r>because<s n="cnjadv"/></r></p></e>
+    <e><p><l>alò<s n="cnjadv"/></l><r>then<s n="cnjadv"/></r></p></e>
+    <e><p><l>anvan<s n="cnjadv"/></l><r>before<s n="cnjadv"/></r></p></e>
+
+    <e><p><l>vle<s n="vbmod"/></l><r>want<g><b/>to</g><s n="vbmod"/></r></p></e>
+    <e><p><l>se<s n="vbser"/></l><r>be<s n="vbser"/></r></p></e>
+    <e><p><l>ka<s n="vaux"/></l><r>can<s n="vaux"/></r></p></e>
+    <e r="LR"><p><l>kapab<s n="vaux"/></l><r>can<s n="vaux"/></r></p></e>
+    <e r="LR"><p><l>kap<s n="vaux"/></l><r>can<s n="vaux"/></r></p></e>
+    <e><p><l>dwe<s n="vaux"/></l><r>must<s n="vaux"/></r></p></e>
+    <e><p><l>mèt<s n="vaux"/></l><r>might<s n="vaux"/></r></p></e>
+    <e c="todo"><p><l>ann<s n="vaux"/></l><r>let's<s n="vbhaver"/></r></p></e>
+    <e><p><l>gen<s n="vbhaver"/></l><r>have<s n="vbhaver"/></r></p></e>
+    <e r="LR"><p><l>genyen<s n="vbhaver"/></l><r>have<s n="vbhaver"/></r></p></e>
+
+    <e><p><l>chanje<s n="vblex"/></l><r>change<s n="vblex"/></r></p></e>
+    <e><p><l>pran<s n="vblex"/></l><r>take<s n="vblex"/></r></p></e>
+    <e><p><l>diminye<s n="vblex"/></l><r>diminish<s n="vblex"/></r></p></e>
+    <e><p><l>kontinye<s n="vblex"/></l><r>continue<s n="vblex"/></r></p></e>
+    <e><p><l>evakye<s n="vblex"/></l><r>evacuate<s n="vblex"/></r></p></e>
+    <e><p><l>bay<s n="vblex"/></l><r>give<s n="vblex"/></r></p></e>
+    <e><p><l>fè<s n="vblex"/></l><r>make<s n="vblex"/></r></p></e>
+    <e r="LR"><p><l>rekile<s n="vblex"/></l><r>go<g><b/>back</g><s n="vblex"/></r></p></e>
+    <e><p><l>fè<b/>bak<s n="vblex"/></l><r>go<g><b/>back</g><s n="vblex"/></r></p></e>
+    <e><p><l>fè<b/>konnen<s n="vblex"/></l><r>make<g><b/>known</g><s n="vblex"/></r></p></e>
+    <e><p><l>fè<b/>repotaj<s n="vblex"/></l><r>report<s n="vblex"/></r></p></e>
+    <e><p><l>wè<s n="vblex"/></l><r>see<s n="vblex"/></r></p></e>
+    <e><p><l>reflete<s n="vblex"/></l><r>reflect<s n="vblex"/></r></p></e>
+    <e><p><l>achte<s n="vblex"/></l><r>buy<s n="vblex"/></r></p></e>
+    <e><p><l>kreye<s n="vblex"/></l><r>create<s n="vblex"/></r></p></e>
+    <e><p><l>manje<s n="vblex"/></l><r>eat<s n="vblex"/></r></p></e>
+    <e><p><l>deside<s n="vblex"/></l><r>decide<s n="vblex"/></r></p></e>
+    <e><p><l>ale<s n="vblex"/></l><r>go<s n="vblex"/></r></p></e>
+    <e><p><l>pèmèt<s n="vblex"/></l><r>permit<s n="vblex"/></r></p></e>
+    <e><p><l>retire<s n="vblex"/></l><r>remove<s n="vblex"/></r></p></e>
+    <e><p><l>netwaye<s n="vblex"/></l><r>clean<s n="vblex"/></r></p></e>
+    <e><p><l>bloke<s n="vblex"/></l><r>block<s n="vblex"/></r></p></e>
+    <e><p><l>delivre<s n="vblex"/></l><r>deliver<s n="vblex"/></r></p></e>
+    <e><p><l>deplwaye<s n="vblex"/></l><r>deploy<s n="vblex"/></r></p></e>
+    <e><p><l>diskite<s n="vblex"/></l><r>discuss<s n="vblex"/></r></p></e>
+    <e><p><l>frape<s n="vblex"/></l><r>hit<s n="vblex"/></r></p></e>
+    <e><p><l>adore<s n="vblex"/></l><r>love<s n="vblex"/></r></p></e>
+    <e><p><l>vwayaje<s n="vblex"/></l><r>travel<s n="vblex"/></r></p></e>
+    <e><p><l>evalye<s n="vblex"/></l><r>evaluate<s n="vblex"/></r></p></e>
+    <e><p><l>reyuni<s n="vblex"/></l><r>meet<s n="vblex"/></r></p></e>
+    <e><p><l>tradui<s n="vblex"/></l><r>translate<s n="vblex"/></r></p></e>
+    <e><p><l>eksplike<s n="vblex"/></l><r>explain<s n="vblex"/></r></p></e>
+    <e><p><l>kowòdone<s n="vblex"/></l><r>coordinate<s n="vblex"/></r></p></e>
+    <e><p><l>pwoteje<s n="vblex"/></l><r>protect<s n="vblex"/></r></p></e>
+    <e><p><l>obsève<s n="vblex"/></l><r>observe<s n="vblex"/></r></p></e>
+    <e><p><l>sèvi<s n="vblex"/></l><r>serve<s n="vblex"/></r></p></e>
+    <e><p><l>konsidere<s n="vblex"/></l><r>consider<s n="vblex"/></r></p></e>
+    <e><p><l>etabli<s n="vblex"/></l><r>establish<s n="vblex"/></r></p></e>
+    <e><p><l>ofri<s n="vblex"/></l><r>offer<s n="vblex"/></r></p></e>
+    <e><p><l>soufri<s n="vblex"/></l><r>suffer<s n="vblex"/></r></p></e>
+    <e><p><l>fonde<s n="vblex"/></l><r>found<s n="vblex"/></r></p></e>
+    <e><p><l>kòmanse<s n="vblex"/></l><r>start<s n="vblex"/></r></p></e>
+    <e><p><l>ogmante<s n="vblex"/></l><r>increase<s n="vblex"/></r></p></e>
+    <e><p><l>òganize<s n="vblex"/></l><r>organise<s n="vblex"/></r></p></e>
+    <e><p><l>patisipe<s n="vblex"/></l><r>participate<s n="vblex"/></r></p></e>
+    <e><p><l>vini<s n="vblex"/></l><r>come<s n="vblex"/></r></p></e>
+    <e><p><l>egziste<s n="vblex"/></l><r>exist<s n="vblex"/></r></p></e>
+    <e><p><l>pale<s n="vblex"/></l><r>speak<s n="vblex"/></r></p></e>
+    <e r="LR"><p><l>parle<s n="vblex"/></l><r>speak<s n="vblex"/></r></p></e>
+    <e><p><l>mache<s n="vblex"/></l><r>walk<s n="vblex"/></r></p></e>
+    <e c="or beg, request, require, wonder"><p><l>mande<s n="vblex"/></l><r>ask<s n="vblex"/></r></p></e>
+    <e><p><l>mete<s n="vblex"/></l><r>put<b/>on<s n="vblex"/></r></p></e>
+    <e><p><l>ede<s n="vblex"/></l><r>help<s n="vblex"/></r></p></e>
+    <e><p><l>egzamine<s n="vblex"/></l><r>examine<s n="vblex"/></r></p></e>
+    <e><p><l>egzale<s n="vblex"/></l><r>exhale<s n="vblex"/></r></p></e>
+    <e><p><l>bliye<s n="vblex"/></l><r>forget<s n="vblex"/></r></p></e>
+    <e><p><l>jwe<s n="vblex"/></l><r>play<s n="vblex"/></r></p></e>
+    <e><p><l>antre<s n="vblex"/></l><r>enter<s n="vblex"/></r></p></e>
+    <e><p><l>dòmi<s n="vblex"/></l><r>sleep<s n="vblex"/></r></p></e>
+    <e r="LR"><p><l>kouche<s n="vblex"/></l><r>sleep<s n="vblex"/></r></p></e>
+    <e><p><l>koute<s n="vblex"/></l><r>cost<s n="vblex"/></r></p></e>
+    <e><p><l>etidye<s n="vblex"/></l><r>study<s n="vblex"/></r></p></e>
+    <e><p><l>li<s n="vblex"/></l><r>read<s n="vblex"/></r></p></e>
+    <e><p><l>di<s n="vblex"/></l><r>tell<s n="vblex"/></r></p></e>
+    <e><p><l>ekri<s n="vblex"/></l><r>write<s n="vblex"/></r></p></e>
+    <e><p><l>kouvri<s n="vblex"/></l><r>cover<s n="vblex"/></r></p></e>
+    <e><p><l>separe<s n="vblex"/></l><r>separate<s n="vblex"/></r></p></e>
+    <e><p><l>pase<s n="vblex"/></l><r>pass<s n="vblex"/></r></p></e>
+    <e><p><l>rive<s n="vblex"/></l><r>arrive<s n="vblex"/></r></p></e>
+    <e><p><l>gade<s n="vblex"/></l><r>look<s n="vblex"/></r></p></e>
+    <e><p><l>mouri<s n="vblex"/></l><r>die<s n="vblex"/></r></p></e>
+    <e r="RL"><p><l>rele<s n="vblex"/></l><r>name<s n="vblex"/></r></p></e>
+    <e><p><l>rele<s n="vblex"/></l><r>call<s n="vblex"/></r></p></e>
+    <e><p><l>fin<s n="vblex"/></l><r>finish<s n="vblex"/></r></p></e>
+    <e><p><l>travay<s n="vblex"/></l><r>work<s n="vblex"/></r></p></e>
+    <e r="LR"><p><l>trouve<s n="vblex"/></l><r>find<s n="vblex"/></r></p></e>
+    <e><p><l>twouve<s n="vblex"/></l><r>find<s n="vblex"/></r></p></e>
+    <e><p><l>pann<s n="vblex"/></l><r>hang<s n="vblex"/></r></p></e>
+    <e r="RL"><p><l>itilize<s n="vblex"/></l><r>utilise<s n="vblex"/></r></p></e>
+    <e><p><l>itilize<s n="vblex"/></l><r>use<s n="vblex"/></r></p></e>
+    <e><p><l>santi<s n="vblex"/></l><r>feel<s n="vblex"/></r></p></e>
+    <e><p><l>bwè<s n="vblex"/></l><r>drink<s n="vblex"/></r></p></e>
+    <e><p><l>pati<s n="vblex"/></l><r>leave<s n="vblex"/></r></p></e>
+    <e><p><l>konnen<s n="vblex"/></l><r>know<s n="vblex"/></r></p></e>
+    <e><p><l>negosye<s n="vblex"/></l><r>negotiate<s n="vblex"/></r></p></e>
+    <e><p><l>garanti<s n="vblex"/></l><r>guarantee<s n="vblex"/></r></p></e>
+    <e><p><l>jwenn<s n="vblex"/></l><r>find<s n="vblex"/></r></p></e>
+    <e><p><l>viv<s n="vblex"/></l><r>live<s n="vblex"/></r></p></e>
+    <e><p><l>vyeyi<s n="vblex"/></l><r>age<s n="vblex"/></r></p></e>
+    <e><p><l>voye<b/>ale<s n="vblex"/></l><r>dismiss<s n="vblex"/></r></p></e>
+    <e><p><l>voye<b/>jete<s n="vblex"/></l><r>throw<b/>away<s n="vblex"/></r></p></e>
+    <e><p><l>vwayaj<s n="vblex"/></l><r>travel<s n="vblex"/></r></p></e>
+    <e><p><l>vomi<s n="vblex"/></l><r>vomit<s n="vblex"/></r></p></e>
+    <e><p><l>vyole<s n="vblex"/></l><r>violate<s n="vblex"/></r></p></e>
+    <e><p><l>visite<s n="vblex"/></l><r>visit<s n="vblex"/></r></p></e>
+    <e><p><l>vag<s n="vblex"/></l><r>wave<s n="vblex"/></r></p></e>
+    <e><p><l>vwayaje<s n="vblex"/></l><r>travel<s n="vblex"/></r></p></e>
+    <e><p><l>vaksinen<s n="vblex"/></l><r>vaccinate<s n="vblex"/></r></p></e>
+    <e><p><l>panike<s n="vblex"/></l><r>panic<s n="vblex"/></r></p></e>
+    <e><p><l>volè<s n="vblex"/></l><r>steal<s n="vblex"/></r></p></e>
+    <e><p><l>vole<s n="vblex"/></l><r>fly<s n="vblex"/></r></p></e>
+    <e><p><l>vote<s n="vblex"/></l><r>vote<s n="vblex"/></r></p></e>
+    <e c="wsd todo"><p><l>kraze<s n="vblex"/></l><r>destroy<s n="vblex"/></r></p></e>
+    <e><p><l>voye<s n="vblex"/></l><r>send<s n="vblex"/></r></p></e>
+    <e><p><l>ranje<s n="vblex"/></l><r>fix<s n="vblex"/></r></p></e>
+    <e><p><l>vale<s n="vblex"/></l><r>swallow<s n="vblex"/></r></p></e>
+    <e><p><l>vann<s n="vblex"/></l><r>sell<s n="vblex"/></r></p></e>
+    <e><p><l>vanse<s n="vblex"/></l><r>move<b/>forward<s n="vblex"/></r></p></e>
+    <e><p><l>renmen<s n="vblex"/></l><r>like<s n="vblex"/></r></p></e>
+    <e><p><l>abiye<s n="vblex"/></l><r>get<b/>dressed<s n="vblex"/></r></p></e>
+    <e><p><l>abiye bwòdè<s n="vblex"/></l><r>be<b/>well<b/>dressed <s n="vblex"/></r></p></e>
+    <e><p><l>akouche<s n="vblex"/></l><r>give birth<s n="vblex"/></r></p></e>
+    <e><p><l>ame<s n="vblex"/></l><r>arm<s n="vblex"/></r></p></e>
+    <e><p><l>anonse<s n="vblex"/></l><r>announce<s n="vblex"/></r></p></e>
+    <e><p><l>aprann<s n="vblex"/></l><r>learn<s n="vblex"/></r></p></e>
+    <e><p><l>asepte<s n="vblex"/></l><r>accept<s n="vblex"/></r></p></e>
+    <e><p><l>avèti<s n="vblex"/></l><r>warn<s n="vblex"/></r></p></e>
+    <e><p><l>anmize<s n="vblex"/></l><r>have<b/>fun<s n="vblex"/></r></p></e>
+    <e><p><l>anpeche<s n="vblex"/></l><r>prevent<s n="vblex"/></r></p></e>
+    <e><p><l>anrimen<s n="vblex"/></l><r>have<b/>the<b/>flu<s n="vblex"/></r></p></e>
+    <e><p><l>anrimen<s n="vblex"/></l><r>have<b/>a<b/>cold<s n="vblex"/></r></p></e>
+    <e><p><l>ansasinen<s n="vblex"/></l><r>murder<s n="vblex"/></r></p></e>
+    <e><p><l>antann<s n="vblex"/></l><r>get<b/>along<s n="vblex"/></r></p></e>
+    <e><p><l>antrave<s n="vblex"/></l><r>implicate<s n="vblex"/></r></p></e>
+
+    <e><p><l>asou<s n="pr"/></l><r>on<b/>top<b/>of<s n="pr"/></r></p></e>
+    <e><p><l>an<s n="pr"/></l><r>in<s n="pr"/></r></p></e>
+    <e><p><l>alantou<s n="pr"/></l><r>around<s n="pr"/></r></p></e>
+    <e><p><l>san<s n="pr"/></l><r>without<s n="pr"/></r></p></e>
+    <e><p><l>a<s n="pr"/></l><r>at<s n="pr"/></r></p></e>
+    <e><p><l>aprè<s n="pr"/></l><r>after<s n="pr"/></r></p></e>
+    <e><p><l>anho<s n="pr"/></l><r>above<s n="pr"/></r></p></e>
+    <e><p><l>anlè<s n="pr"/></l><r>on<s n="pr"/></r></p></e>
+    <e><p><l>nan<s n="pr"/></l><r>in<s n="pr"/></r></p></e> <!-- into -->
+    <e><p><l>dan<s n="pr"/></l><r>within<s n="pr"/></r></p></e>
+    <e><p><l>dèyè<s n="pr"/></l><r>behind<s n="pr"/></r></p></e>
+    <e><p><l>akote<s n="pr"/></l><r>beside<s n="pr"/></r></p></e>
+    <e><p><l>andidan<s n="pr"/></l><r>inside<s n="pr"/></r></p></e>
+    <e><p><l>ant<s n="pr"/></l><r>between<s n="pr"/></r></p></e>
+    <e><p><l>anpami<s n="pr"/></l><r>among<s n="pr"/></r></p></e>
+    <e r="RL"><p><l>bò<s n="pr"/></l><r>by<s n="pr"/></r></p></e>
+    <e><p><l>bò<s n="pr"/></l><r>about<s n="pr"/></r></p></e>
+    <e><p><l>avèk<s n="pr"/></l><r>with<s n="pr"/></r></p></e>
+    <e><p><l>akoz<s n="pr"/></l><r>because<b/>of<s n="pr"/></r></p></e>
+    <e><p><l>pandan<s n="pr"/></l><r>during<s n="pr"/></r></p></e>
+    <e r="LR"><p><l>ak<s n="pr"/></l><r>with<s n="pr"/></r></p></e>
+    <e><p><l>d<s n="pr"/></l><r>of<s n="pr"/></r></p></e>
+    <e r="RL"><p><l>pou<s n="pr"/></l><r>in<b/>order<b/>to<s n="pr"/></r></p></e>
+    <e><p><l>pou<s n="pr"/></l><r>for<s n="pr"/></r></p></e>
+    <e><p><l>sou<s n="pr"/></l><r>under<s n="pr"/></r></p></e>
+    <e><p><l>kòm<s n="pr"/></l><r>like<s n="pr"/></r></p></e>
+    <e><p><l>anba<s n="pr"/></l><r>under<s n="pr"/></r></p></e>
+    <e><p><l>plis<b/>pase<s n="pr"/></l><r>more<b/>than<s n="pr"/></r></p></e>
+    <e><p><l>anfas<s n="pr"/></l><r>in<b/>front<b/>of<s n="pr"/></r></p></e>
+
+    <e><p><l>lib<s n="adj"/></l><r>free<s n="adj"/></r></p></e>
+    <e><p><l>alèjik<s n="adj"/></l><r>allergic<s n="adj"/></r></p></e>
+    <e><p><l>bankwout<s n="adj"/></l><r>bankrupt<s n="adj"/></r></p></e>
+    <e><p><l>ayisyen<s n="adj"/></l><r>Haitian<s n="adj"/></r></p></e>
+    <e><p><l>prensipal<s n="adj"/></l><r>principal<s n="adj"/></r></p></e>
+    <e><p><l>pèdi<s n="adj"/></l><r>lost<s n="adj"/></r></p></e>
+    <e><p><l>syantifik<s n="adj"/></l><r>scientific<s n="adj"/></r></p></e>
+    <e><p><l>espesyal<s n="adj"/></l><r>special<s n="adj"/></r></p></e>
+    <e><p><l>domestik<s n="adj"/></l><r>domestic<s n="adj"/></r></p></e>
+    <e><p><l>fèt<s n="adj"/></l><r>made<s n="adj"/></r></p></e>
+    <e><p><l>lengwistik<s n="adj"/></l><r>linguistic<s n="adj"/></r></p></e>
+    <e><p><l>franse<s n="adj"/></l><r>French<s n="adj"/></r></p></e>
+    <e><p><l>angle<s n="adj"/></l><r>English<s n="adj"/></r></p></e>
+    <e><p><l>vèt<s n="adj"/></l><r>green<s n="adj"/></r></p></e>
+    <e><p><l>nwa<s n="adj"/></l><r>black<s n="adj"/></r></p></e>
+    <e><p><l>wouj<s n="adj"/></l><r>red<s n="adj"/></r></p></e>
+    <e><p><l>oranj<s n="adj"/></l><r>orange<s n="adj"/></r></p></e>
+    <e><p><l>nouvo<s n="adj"/></l><r>new<s n="adj"/><s n="sint"/></r></p></e>
+    <e><p><l>bon<s n="adj"/></l><r>good<s n="adj"/><s n="sint"/></r></p></e>
+    <e><p><l>malad<s n="adj"/></l><r>sick<s n="adj"/><s n="sint"/></r></p></e>
+    <e><p><l>ofisyèl<s n="adj"/></l><r>official<s n="adj"/></r></p></e>
+    <e><p><l>nasyonal<s n="adj"/></l><r>national<s n="adj"/></r></p></e>
+    <e><p><l>etranje<s n="adj"/></l><r>foreign<s n="adj"/></r></p></e>
+    <e><p><l>moun<s n="adj"/></l><r>human<s n="adj"/></r></p></e>
+    <e><p><l>tris<s n="adj"/></l><r>sad<s n="adj"/><s n="sint"/></r></p></e>
+    <e><p><l>mwatye<s n="adj"/></l><r>half<s n="adj"/></r></p></e>
+    <e><p><l>gwo<s n="adj"/></l><r>large<s n="adj"/><s n="sint"/></r></p></e>
+    <e><p><l>afè<b/>pa<b/>bon<s n="adj"/></l><r>poor<s n="adj"/></r></p></e>
+    <e><p><l>alamòd<s n="adj"/></l><r>fashionable<s n="adj"/></r></p></e>
+    <e><p><l>asfalte<s n="adj"/></l><r>paved<s n="adj"/></r></p></e>
+    <e><p><l>anmè<s n="adj"/></l><r>sour<s n="adj"/></r></p></e>
+    <e><p><l>an<b/>pàn<s n="adj"/></l><r>broken<g><b/>down</g><s n="vblex"/><s n="pp"/></r></p></e>
+    <e><p><l>anplwaye<s n="adj"/></l><r>employed<s n="adj"/></r></p></e>
+    <e><p><l>angòje<s n="adj"/></l><r>water<b/>logged<s n="adj"/><s n="sint"/></r></p></e>
+    <e><p><l>vivan<s n="adj"/></l><r>living<s n="adj"/></r></p></e>
+    <e><p><l>viral<s n="adj"/></l><r>viral<s n="adj"/></r></p></e>
+    <e><p><l>amerikèn<s n="adj"/></l><r>american<s n="adj"/></r></p></e>
+    <e><p><l>ekonomik<s n="adj"/></l><r>economic<s n="adj"/></r></p></e>
+    <e c="AutoCog"><p><l>atifisyèl<s n="adj"/></l><r>artificial<s n="adj"/></r></p></e>
+    <e c="AutoCog"><p><l>biseksyèl<s n="adj"/></l><r>bisexual<s n="adj"/></r></p></e>
+    <e c="AutoCog"><p><l>egzistansyèl<s n="adj"/></l><r>existential<s n="adj"/></r></p></e>
+    <e c="AutoCog"><p><l>ekzistensyèl<s n="adj"/></l><r>existential<s n="adj"/></r></p></e>
+    <e c="AutoCog"><p><l>etewoseksyèl<s n="adj"/></l><r>heterosexual<s n="adj"/></r></p></e>
+    <e c="AutoCog"><p><l>konfidansyèl<s n="adj"/></l><r>confidential<s n="adj"/></r></p></e>
+    <e c="AutoCog"><p><l>ofisyèl<s n="adj"/></l><r>official<s n="adj"/></r></p></e>
+    <e c="AutoCog"><p><l>omoseksyèl<s n="adj"/></l><r>homosexual<s n="adj"/></r></p></e>
+    <e c="AutoCog"><p><l>potansyèl<s n="adj"/></l><r>potential<s n="adj"/></r></p></e>
+    <e c="AutoCog"><p><l>preferansyèl<s n="adj"/></l><r>preferential<s n="adj"/></r></p></e>
+    <e c="AutoCog"><p><l>prezidansyèl<s n="adj"/></l><r>presidential<s n="adj"/></r></p></e>
+    <e c="AutoCog"><p><l>pwovidansyèl<s n="adj"/></l><r>providential<s n="adj"/></r></p></e>
+    <e c="AutoCog"><p><l>rezidansyèl<s n="adj"/></l><r>residential<s n="adj"/></r></p></e>
+    <e c="AutoCog"><p><l>seksyèl<s n="adj"/></l><r>sexual<s n="adj"/></r></p></e>
+    <e c="AutoCog"><p><l>sibstansyèl<s n="adj"/></l><r>substantial<s n="adj"/></r></p></e>
+    <e c="AutoCog"><p><l>inisyal<s n="adj"/></l><r>initial<s n="adj"/></r></p></e>
+    <e c="AutoCog"><p><l>komèsyal<s n="adj"/></l><r>commercial<s n="adj"/></r></p></e>
+    <e c="AutoCog"><p><l>krisyal<s n="adj"/></l><r>crucial<s n="adj"/></r></p></e>
+    <e c="AutoCog"><p><l>miltirasyal<s n="adj"/></l><r>multiracial<s n="adj"/></r></p></e>
+    <e c="AutoCog"><p><l>rasyal<s n="adj"/></l><r>racial<s n="adj"/></r></p></e>
+    <e c="AutoCog"><p><l>sosyal<s n="adj"/></l><r>social<s n="adj"/></r></p></e>
+    <e c="AutoCog"><p><l>adaptatif<s n="adj"/></l><r>adaptative<s n="adj"/></r></p></e>
+    <e c="AutoCog"><p><l>aditif<s n="adj"/></l><r>additive<s n="adj"/></r></p></e>
+    <e c="AutoCog"><p><l>adjektif<s n="adj"/></l><r>adjective<s n="adj"/></r></p></e>
+    <e c="AutoCog"><p><l>administratif<s n="adj"/></l><r>administrative<s n="adj"/></r></p></e>
+    <e c="AutoCog"><p><l>adoptif<s n="adj"/></l><r>adoptive<s n="adj"/></r></p></e>
+    <e c="AutoCog"><p><l>adoptiv<s n="adj"/></l><r>adoptive<s n="adj"/></r></p></e>
+    <e c="AutoCog"><p><l>afektif<s n="adj"/></l><r>affective<s n="adj"/></r></p></e>
+    <e c="AutoCog"><p><l>afimatif<s n="adj"/></l><r>affirmative<s n="adj"/></r></p></e>
+    <e c="AutoCog"><p><l>ajektif<s n="adj"/></l><r>adjective<s n="adj"/></r></p></e>
+    <e c="AutoCog"><p><l>aktif<s n="adj"/></l><r>active<s n="adj"/></r></p></e>
+    <e c="AutoCog"><p><l>altènatif<s n="adj"/></l><r>alternative<s n="adj"/></r></p></e>
+    <e c="AutoCog"><p><l>altènativ<s n="adj"/></l><r>alternative<s n="adj"/></r></p></e>
+    <e c="AutoCog"><p><l>apwoksimatif<s n="adj"/></l><r>approximative<s n="adj"/></r></p></e>
+    <e c="AutoCog"><p><l>apwoksimativ<s n="adj"/></l><r>approximative<s n="adj"/></r></p></e>
+    <e c="AutoCog"><p><l>asistif<s n="adj"/></l><r>assistive<s n="adj"/></r></p></e>
+    <e c="AutoCog"><p><l>atantif<s n="adj"/></l><r>attentive<s n="adj"/></r></p></e>
+    <e c="AutoCog"><p><l>definitif<s n="adj"/></l><r>definitive<s n="adj"/></r></p></e>
+    <e c="AutoCog"><p><l>definitiv<s n="adj"/></l><r>definitive<s n="adj"/></r></p></e>
+    <e c="AutoCog"><p><l>dekoratif<s n="adj"/></l><r>decorative<s n="adj"/></r></p></e>
+    <e c="AutoCog"><p><l>dekorativ<s n="adj"/></l><r>decorative<s n="adj"/></r></p></e>
+    <e c="AutoCog"><p><l>demonstratif<s n="adj"/></l><r>demonstrative<s n="adj"/></r></p></e>
+    <e c="AutoCog"><p><l>deskriptif<s n="adj"/></l><r>descriptive<s n="adj"/></r></p></e>
+    <e c="AutoCog"><p><l>destriktif<s n="adj"/></l><r>destructive<s n="adj"/></r></p></e>
+    <e c="AutoCog"><p><l>detektif<s n="adj"/></l><r>detective<s n="adj"/></r></p></e>
+    <e c="AutoCog"><p><l>detektiv<s n="adj"/></l><r>detective<s n="adj"/></r></p></e>
+    <e c="AutoCog"><p><l>dijestif<s n="adj"/></l><r>digestive<s n="adj"/></r></p></e>
+    <e c="AutoCog"><p><l>direktif<s n="adj"/></l><r>directive<s n="adj"/></r></p></e>
+    <e c="AutoCog"><p><l>direktiv<s n="adj"/></l><r>directive<s n="adj"/></r></p></e>
+    <e c="AutoCog"><p><l>distribitif<s n="adj"/></l><r>distributive<s n="adj"/></r></p></e>
+    <e c="AutoCog"><p><l>efektif<s n="adj"/></l><r>effective<s n="adj"/></r></p></e>
+    <e c="AutoCog"><p><l>efektiv<s n="adj"/></l><r>effective<s n="adj"/></r></p></e>
+    <e c="AutoCog"><p><l>egzekitif<s n="adj"/></l><r>executive<s n="adj"/></r></p></e>
+    <e c="AutoCog"><p><l>egzòstif<s n="adj"/></l><r>exhaustive<s n="adj"/></r></p></e>
+    <e c="AutoCog"><p><l>ekzekitif<s n="adj"/></l><r>executive<s n="adj"/></r></p></e>
+    <e c="AutoCog"><p><l>elektif<s n="adj"/></l><r>elective<s n="adj"/></r></p></e>
+    <e c="AutoCog"><p><l>endikatif<s n="adj"/></l><r>indicative<s n="adj"/></r></p></e>
+    <e c="AutoCog"><p><l>enperatif<s n="adj"/></l><r>imperative<s n="adj"/></r></p></e>
+    <e c="AutoCog"><p><l>enstriktif<s n="adj"/></l><r>instructive<s n="adj"/></r></p></e>
+    <e c="AutoCog"><p><l>entwospektiv<s n="adj"/></l><r>introspective<s n="adj"/></r></p></e>
+    <e c="AutoCog"><p><l>entèaktif<s n="adj"/></l><r>interactive<s n="adj"/></r></p></e>
+    <e c="AutoCog"><p><l>entèraktif<s n="adj"/></l><r>interactive<s n="adj"/></r></p></e>
+    <e c="AutoCog"><p><l>entèwogatif<s n="adj"/></l><r>interrogative<s n="adj"/></r></p></e>
+    <e c="AutoCog"><p><l>esplikatif<s n="adj"/></l><r>explicative<s n="adj"/></r></p></e>
+    <e c="AutoCog"><p><l>fijitif<s n="adj"/></l><r>fugitive<s n="adj"/></r></p></e>
+    <e c="AutoCog"><p><l>inisyatif<s n="adj"/></l><r>initiative<s n="adj"/></r></p></e>
+    <e c="AutoCog"><p><l>inisyativ<s n="adj"/></l><r>initiative<s n="adj"/></r></p></e>
+    <e c="AutoCog"><p><l>inovativ<s n="adj"/></l><r>innovative<s n="adj"/></r></p></e>
+    <e c="AutoCog"><p><l>kalitatif<s n="adj"/></l><r>qualitative<s n="adj"/></r></p></e>
+    <e c="AutoCog"><p><l>kantitatif<s n="adj"/></l><r>quantitative<s n="adj"/></r></p></e>
+    <e c="AutoCog"><p><l>kaptif<s n="adj"/></l><r>captive<s n="adj"/></r></p></e>
+    <e c="AutoCog"><p><l>kimilatif<s n="adj"/></l><r>cumulative<s n="adj"/></r></p></e>
+    <e c="AutoCog"><p><l>kolaboratif<s n="adj"/></l><r>collaborative<s n="adj"/></r></p></e>
+    <e c="AutoCog"><p><l>kolektif<s n="adj"/></l><r>collective<s n="adj"/></r></p></e>
+    <e c="AutoCog"><p><l>kominikatif<s n="adj"/></l><r>communicative<s n="adj"/></r></p></e>
+    <e c="AutoCog"><p><l>komitatif<s n="adj"/></l><r>commutative<s n="adj"/></r></p></e>
+    <e c="AutoCog"><p><l>konbatif<s n="adj"/></l><r>combative<s n="adj"/></r></p></e>
+    <e c="AutoCog"><p><l>kondiktif<s n="adj"/></l><r>conductive<s n="adj"/></r></p></e>
+    <e c="AutoCog"><p><l>konparatif<s n="adj"/></l><r>comparative<s n="adj"/></r></p></e>
+    <e c="AutoCog"><p><l>konpetitif<s n="adj"/></l><r>competitive<s n="adj"/></r></p></e>
+    <e c="AutoCog"><p><l>konpetitiv<s n="adj"/></l><r>competitive<s n="adj"/></r></p></e>
+    <e c="AutoCog"><p><l>konsiltatif<s n="adj"/></l><r>consultative<s n="adj"/></r></p></e>
+    <e c="AutoCog"><p><l>konstriktif<s n="adj"/></l><r>constrictive<s n="adj"/></r></p></e>
+    <e c="AutoCog"><p><l>kontraseptif<s n="adj"/></l><r>contraceptive<s n="adj"/></r></p></e>
+    <e c="AutoCog"><p><l>koperatif<s n="adj"/></l><r>cooperative<s n="adj"/></r></p></e>
+    <e c="AutoCog"><p><l>koperativ<s n="adj"/></l><r>cooperative<s n="adj"/></r></p></e>
+    <e c="AutoCog"><p><l>korektif<s n="adj"/></l><r>corrective<s n="adj"/></r></p></e>
+    <e c="AutoCog"><p><l>kreyatif<s n="adj"/></l><r>creative<s n="adj"/></r></p></e>
+    <e c="AutoCog"><p><l>lejislatif<s n="adj"/></l><r>legislative<s n="adj"/></r></p></e>
+    <e c="AutoCog"><p><l>lejislativ<s n="adj"/></l><r>legislative<s n="adj"/></r></p></e>
+    <e c="AutoCog"><p><l>likratif<s n="adj"/></l><r>lucrative<s n="adj"/></r></p></e>
+    <e c="AutoCog"><p><l>lokatif<s n="adj"/></l><r>locative<s n="adj"/></r></p></e>
+    <e c="AutoCog"><p><l>lokomotiv<s n="adj"/></l><r>locomotive<s n="adj"/></r></p></e>
+    <e c="AutoCog"><p><l>motif<s n="adj"/></l><r>motive<s n="adj"/></r></p></e>
+    <e c="AutoCog"><p><l>natif<s n="adj"/></l><r>native<s n="adj"/></r></p></e>
+    <e c="AutoCog"><p><l>negatif<s n="adj"/></l><r>negative<s n="adj"/></r></p></e>
+    <e c="AutoCog"><p><l>negativ<s n="adj"/></l><r>negative<s n="adj"/></r></p></e>
+    <e c="AutoCog"><p><l>nòmatif<s n="adj"/></l><r>normative<s n="adj"/></r></p></e>
+    <e c="AutoCog"><p><l>objektif<s n="adj"/></l><r>objective<s n="adj"/></r></p></e>
+    <e c="AutoCog"><p><l>patisipativ<s n="adj"/></l><r>participative<s n="adj"/></r></p></e>
+    <e c="AutoCog"><p><l>patitif<s n="adj"/></l><r>partitive<s n="adj"/></r></p></e>
+    <e c="AutoCog"><p><l>positif<s n="adj"/></l><r>positive<s n="adj"/></r></p></e>
+    <e c="AutoCog"><p><l>pozitif<s n="adj"/></l><r>positive<s n="adj"/></r></p></e>
+    <e c="AutoCog"><p><l>pozitiv<s n="adj"/></l><r>positive<s n="adj"/></r></p></e>
+    <e c="AutoCog"><p><l>prevantif<s n="adj"/></l><r>preventive<s n="adj"/></r></p></e>
+    <e c="AutoCog"><p><l>prevantiv<s n="adj"/></l><r>preventive<s n="adj"/></r></p></e>
+    <e c="AutoCog"><p><l>prezèvatif<s n="adj"/></l><r>preservative<s n="adj"/></r></p></e>
+    <e c="AutoCog"><p><l>pwodiktif<s n="adj"/></l><r>productive<s n="adj"/></r></p></e>
+    <e c="AutoCog"><p><l>pèspektiv<s n="adj"/></l><r>perspective<s n="adj"/></r></p></e>
+    <e c="AutoCog"><p><l>radyoaktif<s n="adj"/></l><r>radioactive<s n="adj"/></r></p></e>
+    <e c="AutoCog"><p><l>relativ<s n="adj"/></l><r>relative<s n="adj"/></r></p></e>
+    <e c="AutoCog"><p><l>repetitif<s n="adj"/></l><r>repetitive<s n="adj"/></r></p></e>
+    <e c="AutoCog"><p><l>reprezantatif<s n="adj"/></l><r>representative<s n="adj"/></r></p></e>
+    <e c="AutoCog"><p><l>repwodiktif<s n="adj"/></l><r>reproductive<s n="adj"/></r></p></e>
+    <e c="AutoCog"><p><l>repwodiktiv<s n="adj"/></l><r>reproductive<s n="adj"/></r></p></e>
+    <e c="AutoCog"><p><l>reseptif<s n="adj"/></l><r>receptive<s n="adj"/></r></p></e>
+    <e c="AutoCog"><p><l>respektif<s n="adj"/></l><r>respective<s n="adj"/></r></p></e>
+    <e c="AutoCog"><p><l>retwoaktif<s n="adj"/></l><r>retroactive<s n="adj"/></r></p></e>
+    <e c="AutoCog"><p><l>reyaktiv<s n="adj"/></l><r>reactive<s n="adj"/></r></p></e>
+    <e c="AutoCog"><p><l>selektif<s n="adj"/></l><r>selective<s n="adj"/></r></p></e>
+    <e c="AutoCog"><p><l>tantativ<s n="adj"/></l><r>tentative<s n="adj"/></r></p></e>
+    <e c="AutoCog"><p><l>vendikatif<s n="adj"/></l><r>vindicative<s n="adj"/></r></p></e>
+    <e c="AutoCog"><p><l>analoji<s n="n"/></l><r>analogy<s n="n"/></r></p><par n="ND"/></e>
+    <e c="AutoCog"><p><l>antoloji<s n="n"/></l><r>anthology<s n="n"/></r></p><par n="ND"/></e>
+    <e c="AutoCog"><p><l>antwopoloji<s n="n"/></l><r>anthropology<s n="n"/></r></p><par n="ND"/></e>
+    <e c="AutoCog"><p><l>astwoloji<s n="n"/></l><r>astrology<s n="n"/></r></p><par n="ND"/></e>
+    <e c="AutoCog"><p><l>byoloji<s n="n"/></l><r>biology<s n="n"/></r></p><par n="ND"/></e>
+    <e c="AutoCog"><p><l>byoteknoloji<s n="n"/></l><r>biotechnology<s n="n"/></r></p><par n="ND"/></e>
+    <e c="AutoCog"><p><l>demagoji<s n="n"/></l><r>demagogy<s n="n"/></r></p><par n="ND"/></e>
+    <e c="AutoCog"><p><l>ekoloji<s n="n"/></l><r>ecology<s n="n"/></r></p><par n="ND"/></e>
+    <e c="AutoCog"><p><l>epidemyoloji<s n="n"/></l><r>epidemiology<s n="n"/></r></p><par n="ND"/></e>
+    <e c="AutoCog"><p><l>epistemoloji<s n="n"/></l><r>epistemology<s n="n"/></r></p><par n="ND"/></e>
+    <e c="AutoCog"><p><l>etimoloji<s n="n"/></l><r>etymology<s n="n"/></r></p><par n="ND"/></e>
+    <e c="AutoCog"><p><l>etnoloji<s n="n"/></l><r>ethnology<s n="n"/></r></p><par n="ND"/></e>
+    <e c="AutoCog"><p><l>fizyoloji<s n="n"/></l><r>physiology<s n="n"/></r></p><par n="ND"/></e>
+    <e c="AutoCog"><p><l>fonoloji<s n="n"/></l><r>phonology<s n="n"/></r></p><par n="ND"/></e>
+    <e c="AutoCog"><p><l>ideyoloji<s n="n"/></l><r>ideology<s n="n"/></r></p><par n="ND"/></e>
+    <e c="AutoCog"><p><l>iminoloji<s n="n"/></l><r>immunology<s n="n"/></r></p><par n="ND"/></e>
+    <e c="AutoCog"><p><l>jinekoloji<s n="n"/></l><r>gynecology<s n="n"/></r></p><par n="ND"/></e>
+    <e c="AutoCog"><p><l>kriminoloji<s n="n"/></l><r>criminology<s n="n"/></r></p><par n="ND"/></e>
+    <e c="AutoCog"><p><l>kwonoloji<s n="n"/></l><r>chronology<s n="n"/></r></p><par n="ND"/></e>
+    <e c="AutoCog"><p><l>metodoloji<s n="n"/></l><r>methodology<s n="n"/></r></p><par n="ND"/></e>
+    <e c="AutoCog"><p><l>mitoloji<s n="n"/></l><r>mythology<s n="n"/></r></p><par n="ND"/></e>
+    <e c="AutoCog"><p><l>mòfoloji<s n="n"/></l><r>morphology<s n="n"/></r></p><par n="ND"/></e>
+    <e c="AutoCog"><p><l>patoloji<s n="n"/></l><r>pathology<s n="n"/></r></p><par n="ND"/></e>
+    <e c="AutoCog"><p><l>pedagoji<s n="n"/></l><r>pedagogy<s n="n"/></r></p><par n="ND"/></e>
+    <e c="AutoCog"><p><l>radyoloji<s n="n"/></l><r>radiology<s n="n"/></r></p><par n="ND"/></e>
+    <e c="AutoCog"><p><l>sikoloji<s n="n"/></l><r>psychology<s n="n"/></r></p><par n="ND"/></e>
+    <e c="AutoCog"><p><l>sikopatoloji<s n="n"/></l><r>psychopathology<s n="n"/></r></p><par n="ND"/></e>
+    <e c="AutoCog"><p><l>sosyoloji<s n="n"/></l><r>sociology<s n="n"/></r></p><par n="ND"/></e>
+    <e c="AutoCog"><p><l>teknoloji<s n="n"/></l><r>technology<s n="n"/></r></p><par n="ND"/></e>
+    <e c="AutoCog"><p><l>teoloji<s n="n"/></l><r>theology<s n="n"/></r></p><par n="ND"/></e>
+    <e c="AutoCog"><p><l>teyoloji<s n="n"/></l><r>theology<s n="n"/></r></p><par n="ND"/></e>
+    <e c="AutoCog"><p><l>tipoloji<s n="n"/></l><r>typology<s n="n"/></r></p><par n="ND"/></e>
+    <e c="AutoCog"><p><l>tèminoloji<s n="n"/></l><r>terminology<s n="n"/></r></p><par n="ND"/></e>
+    <e><p><l>atis<s n="n"/></l><r>artist<s n="n"/></r></p><par n="ND"/></e>
+    <e><p><l>mizisyen<s n="n"/></l><r>musician<s n="n"/></r></p><par n="ND"/></e>
+    <e><p><l>chantè<s n="n"/></l><r>singer<s n="n"/></r></p><par n="ND"/></e>
+    <e><p><l>dat<s n="n"/></l><r>date<s n="n"/></r></p><par n="ND"/></e>
+    <e><p><l>nasans<s n="n"/></l><r>birth<s n="n"/></r></p><par n="ND"/></e>
+    <e><p><l>malad<s n="n"/></l><r>wounded<s n="n"/></r></p><par n="ND"/></e>
+    <e><p><l>efò<s n="n"/></l><r>effort<s n="n"/></r></p><par n="ND"/></e>
+    <e><p><l>resous<s n="n"/></l><r>resource<s n="n"/></r></p><par n="ND"/></e>
+    <e><p><l>volontè<s n="n"/></l><r>volunteer<s n="n"/></r></p><par n="ND"/></e>
+    <e><p><l>kouraj<s n="n"/></l><r>courage<s n="n"/></r></p><par n="ND"/></e>
+    <e><p><l>dezas<s n="n"/></l><r>disaster<s n="n"/></r></p><par n="ND"/></e>
+    <e><p><l>dat<b/>nasans<s n="n"/></l><r>date<g><b/>of<b/>birth</g><s n="n"/></r></p><par n="ND"/></e>
+    <e><p><l>peyi<b/>nasans<s n="n"/></l><r>country<g><b/>of<b/>birth</g><s n="n"/></r></p><par n="ND"/></e>
+    <e><p><l>rezilta<s n="n"/></l><r>result<s n="n"/></r></p><par n="ND"/></e>
+    <e><p><l>kolonbyen<s n="n"/></l><r>columbian<s n="n"/></r></p><par n="ND"/></e>
+    <e><p><l>kolonbyen<s n="adj"/></l><r>columbian<s n="adj"/></r></p></e>
+    <e c="or big"><p><l>gran<s n="adj"/></l><r>great<s n="adj"/></r></p></e>
+    <e><p><l>major<s n="adj"/></l><r>major<s n="adj"/></r></p></e>
+    <e><p><l>major<b/>jeneral<s n="adj"/></l><r>major<b/>general<s n="adj"/></r></p></e>
+    <e c="AutoCog"><p><l>abondans<s n="n"/></l><r>abundance<s n="n"/></r></p><par n="ND"/></e>
+    <e c="AutoCog"><p><l>absans<s n="n"/></l><r>absence<s n="n"/></r></p><par n="ND"/></e>
+    <e c="AutoCog"><p><l>abstinans<s n="n"/></l><r>abstinence<s n="n"/></r></p><par n="ND"/></e>
+    <e c="AutoCog"><p><l>adolesans<s n="n"/></l><r>adolescence<s n="n"/></r></p><par n="ND"/></e>
+    <e c="AutoCog"><p><l>akwentans<s n="n"/></l><r>acquaintance<s n="n"/></r></p><par n="ND"/></e>
+    <e c="AutoCog"><p><l>alyans<s n="n"/></l><r>alliance<s n="n"/></r></p><par n="ND"/></e>
+    <e c="AutoCog"><p><l>anbyans<s n="n"/></l><r>ambiance<s n="n"/></r></p><par n="ND"/></e>
+    <e c="AutoCog"><p><l>andirans<s n="n"/></l><r>endurance<s n="n"/></r></p><par n="ND"/></e>
+    <e c="AutoCog"><p><l>antivyolans<s n="n"/></l><r>anti-violence<s n="n"/></r></p><par n="ND"/></e>
+    <e c="AutoCog"><p><l>antrans<s n="n"/></l><r>entrance<s n="n"/></r></p><par n="ND"/></e>
+    <e c="AutoCog"><p><l>aseptans<s n="n"/></l><r>acceptance<s n="n"/></r></p><par n="ND"/></e>
+    <e c="AutoCog"><p><l>asirans<s n="n"/></l><r>assurance<s n="n"/></r></p><par n="ND"/></e>
+    <e c="AutoCog"><p><l>asistans<s n="n"/></l><r>assistance<s n="n"/></r></p><par n="ND"/></e>
+    <e c="AutoCog"><p><l>avans<s n="n"/></l><r>advance<s n="n"/></r></p><par n="ND"/></e>
+    <e c="AutoCog"><p><l>awogans<s n="n"/></l><r>arrogance<s n="n"/></r></p><par n="ND"/></e>
+    <e c="AutoCog"><p><l>balans<s n="n"/></l><r>balance<s n="n"/></r></p><par n="ND"/></e>
+    <e c="AutoCog"><p><l>belijerans<s n="n"/></l><r>belligerence<s n="n"/></r></p><par n="ND"/></e>
+    <e c="AutoCog"><p><l>chans<s n="n"/></l><r>chance<s n="n"/></r></p><par n="ND"/></e>
+    <e c="AutoCog"><p><l>dans<s n="n"/></l><r>dance<s n="n"/></r></p><par n="ND"/></e>
+    <e c="AutoCog"><p><l>defans<s n="n"/></l><r>defence<s n="n"/></r></p><par n="ND"/></e>
+    <e c="AutoCog"><p><l>defisyans<s n="n"/></l><r>deficiency<s n="n"/></r></p><par n="ND"/></e>
+    <e c="AutoCog"><p><l>dekadans<s n="n"/></l><r>decadence<s n="n"/></r></p><par n="ND"/></e>
+    <e c="AutoCog"><p><l>delenkans<s n="n"/></l><r>delinquency<s n="n"/></r></p><par n="ND"/></e>
+    <e c="AutoCog"><p><l>delivrans<s n="n"/></l><r>deliverance<s n="n"/></r></p><par n="ND"/></e>
+    <e c="AutoCog"><p><l>depandans<s n="n"/></l><r>dependence<s n="n"/></r></p><par n="ND"/></e>
+    <e c="AutoCog"><p><l>dezobeyisans<s n="n"/></l><r>disobedience<s n="n"/></r></p><par n="ND"/></e>
+    <e c="AutoCog"><p><l>diferans<s n="n"/></l><r>difference<s n="n"/></r></p><par n="ND"/></e>
+    <e c="AutoCog"><p><l>dilijans<s n="n"/></l><r>diligence<s n="n"/></r></p><par n="ND"/></e>
+    <e c="AutoCog"><p><l>distans<s n="n"/></l><r>distance<s n="n"/></r></p><par n="ND"/></e>
+    <e c="AutoCog"><p><l>divèjans<s n="n"/></l><r>divergence<s n="n"/></r></p><par n="ND"/></e>
+    <e c="AutoCog"><p><l>dominans<s n="n"/></l><r>dominance<s n="n"/></r></p><par n="ND"/></e>
+    <e c="AutoCog"><p><l>egzistans<s n="n"/></l><r>existence<s n="n"/></r></p><par n="ND"/></e>
+    <e c="AutoCog"><p><l>ekivalans<s n="n"/></l><r>equivalence<s n="n"/></r></p><par n="ND"/></e>
+    <e c="AutoCog"><p><l>ekselans<s n="n"/></l><r>excellence<s n="n"/></r></p><par n="ND"/></e>
+    <e c="AutoCog"><p><l>eksperyans<s n="n"/></l><r>experience<s n="n"/></r></p><par n="ND"/></e>
+    <e c="AutoCog"><p><l>ekstravagans<s n="n"/></l><r>extravagance<s n="n"/></r></p><par n="ND"/></e>
+    <e c="AutoCog"><p><l>ekzistans<s n="n"/></l><r>existence<s n="n"/></r></p><par n="ND"/></e>
+    <e c="AutoCog"><p><l>elokans<s n="n"/></l><r>eloquence<s n="n"/></r></p><par n="ND"/></e>
+    <e c="AutoCog"><p><l>endepandans<s n="n"/></l><r>independence<s n="n"/></r></p><par n="ND"/></e>
+    <e c="AutoCog"><p><l>endependans<s n="n"/></l><r>independence<s n="n"/></r></p><par n="ND"/></e>
+    <e c="AutoCog"><p><l>endiferans<s n="n"/></l><r>indifference<s n="n"/></r></p><par n="ND"/></e>
+    <e c="AutoCog"><p><l>enkonpetans<s n="n"/></l><r>incompetence<s n="n"/></r></p><par n="ND"/></e>
+    <e c="AutoCog"><p><l>enpasyans<s n="n"/></l><r>impatience<s n="n"/></r></p><par n="ND"/></e>
+    <e c="AutoCog"><p><l>enpridans<s n="n"/></l><r>imprudence<s n="n"/></r></p><par n="ND"/></e>
+    <e c="AutoCog"><p><l>ensistans<s n="n"/></l><r>insistence<s n="n"/></r></p><par n="ND"/></e>
+    <e c="AutoCog"><p><l>enstans<s n="n"/></l><r>instance<s n="n"/></r></p><par n="ND"/></e>
+    <e c="AutoCog"><p><l>entolerans<s n="n"/></l><r>intolerance<s n="n"/></r></p><par n="ND"/></e>
+    <e c="AutoCog"><p><l>entèdepandans<s n="n"/></l><r>interdependence<s n="n"/></r></p><par n="ND"/></e>
+    <e c="AutoCog"><p><l>entèferans<s n="n"/></l><r>interference<s n="n"/></r></p><par n="ND"/></e>
+    <e c="AutoCog"><p><l>entèlijans<s n="n"/></l><r>intelligence<s n="n"/></r></p><par n="ND"/></e>
+    <e c="AutoCog"><p><l>esperyans<s n="n"/></l><r>experience<s n="n"/></r></p><par n="ND"/></e>
+    <e c="AutoCog"><p><l>evidans<s n="n"/></l><r>evidence<s n="n"/></r></p><par n="ND"/></e>
+    <e c="AutoCog"><p><l>finans<s n="n"/></l><r>finance<s n="n"/></r></p><par n="ND"/></e>
+    <e c="AutoCog"><p><l>gouvènans<s n="n"/></l><r>governance<s n="n"/></r></p><par n="ND"/></e>
+    <e c="AutoCog"><p><l>iminodefisyans<s n="n"/></l><r>immunodeficiency<s n="n"/></r></p><par n="ND"/></e>
+    <e c="AutoCog"><p><l>inosans<s n="n"/></l><r>innocence<s n="n"/></r></p><par n="ND"/></e>
+    <e c="AutoCog"><p><l>kadans<s n="n"/></l><r>cadence<s n="n"/></r></p><par n="ND"/></e>
+    <e c="AutoCog"><p><l>klèvwayans<s n="n"/></l><r>clairvoyance<s n="n"/></r></p><par n="ND"/></e>
+    <e c="AutoCog"><p><l>koensidans<s n="n"/></l><r>coincidence<s n="n"/></r></p><par n="ND"/></e>
+    <e c="AutoCog"><p><l>konferans<s n="n"/></l><r>conference<s n="n"/></r></p><par n="ND"/></e>
+    <e c="AutoCog"><p><l>konfidans<s n="n"/></l><r>confidence<s n="n"/></r></p><par n="ND"/></e>
+    <e c="AutoCog"><p><l>konkirans<s n="n"/></l><r>concurrence<s n="n"/></r></p><par n="ND"/></e>
+    <e c="AutoCog"><p><l>konkòdans<s n="n"/></l><r>concordance<s n="n"/></r></p><par n="ND"/></e>
+    <e c="AutoCog"><p><l>konpetans<s n="n"/></l><r>competence<s n="n"/></r></p><par n="ND"/></e>
+    <e c="AutoCog"><p><l>konsekans<s n="n"/></l><r>consequence<s n="n"/></r></p><par n="ND"/></e>
+    <e c="AutoCog"><p><l>konsistans<s n="n"/></l><r>consistency<s n="n"/></r></p><par n="ND"/></e>
+    <e c="AutoCog"><p><l>konstans<s n="n"/></l><r>constance<s n="n"/></r></p><par n="ND"/></e>
+    <e c="AutoCog"><p><l>konsyans<s n="n"/></l><r>conscience<s n="n"/></r></p><par n="ND"/></e>
+    <e c="AutoCog"><p><l>konvalesans<s n="n"/></l><r>convalescence<s n="n"/></r></p><par n="ND"/></e>
+    <e c="AutoCog"><p><l>konvèjans<s n="n"/></l><r>convergence<s n="n"/></r></p><par n="ND"/></e>
+    <e c="AutoCog"><p><l>korespondans<s n="n"/></l><r>correspondence<s n="n"/></r></p><par n="ND"/></e>
+    <e c="AutoCog"><p><l>kòrespondans<s n="n"/></l><r>correspondence<s n="n"/></r></p><par n="ND"/></e>
+    <e c="AutoCog"><p><l>landirans<s n="n"/></l><r>endurance<s n="n"/></r></p><par n="ND"/></e>
+    <e c="AutoCog"><p><l>lapasyans<s n="n"/></l><r>patience<s n="n"/></r></p><par n="ND"/></e>
+    <e c="AutoCog"><p><l>lasistans<s n="n"/></l><r>assistance<s n="n"/></r></p><par n="ND"/></e>
+    <e c="AutoCog"><p><l>lasyans<s n="n"/></l><r>science<s n="n"/></r></p><par n="ND"/></e>
+    <e c="AutoCog"><p><l>lavans<s n="n"/></l><r>advance<s n="n"/></r></p><par n="ND"/></e>
+    <e c="AutoCog"><p><l>lavyolans<s n="n"/></l><r>violence<s n="n"/></r></p><par n="ND"/></e>
+    <e c="AutoCog"><p><l>lendepandans<s n="n"/></l><r>independence<s n="n"/></r></p><par n="ND"/></e>
+    <e c="AutoCog"><p><l>lensistans<s n="n"/></l><r>insistence<s n="n"/></r></p><par n="ND"/></e>
+    <e c="AutoCog"><p><l>lentelijans<s n="n"/></l><r>intelligence<s n="n"/></r></p><par n="ND"/></e>
+    <e c="AutoCog"><p><l>lobedyans<s n="n"/></l><r>obedience<s n="n"/></r></p><par n="ND"/></e>
+    <e c="AutoCog"><p><l>malfezans<s n="n"/></l><r>malfeasance<s n="n"/></r></p><par n="ND"/></e>
+    <e c="AutoCog"><p><l>maltretans<s n="n"/></l><r>mistreatment<s n="n"/></r></p><par n="ND"/></e>
+    <e c="AutoCog"><p><l>neglijans<s n="n"/></l><r>negligence<s n="n"/></r></p><par n="ND"/></e>
+    <e c="AutoCog"><p><l>nonsans<s n="n"/></l><r>nonsense<s n="n"/></r></p><par n="ND"/></e>
+    <e c="AutoCog"><p><l>obeyisans<s n="n"/></l><r>obeisance<s n="n"/></r></p><par n="ND"/></e>
+    <e c="AutoCog"><p><l>obsèvans<s n="n"/></l><r>observance<s n="n"/></r></p><par n="ND"/></e>
+    <e c="AutoCog"><p><l>odyans<s n="n"/></l><r>audience<s n="n"/></r></p><par n="ND"/></e>
+    <e c="AutoCog"><p><l>ofans<s n="n"/></l><r>offense<s n="n"/></r></p><par n="ND"/></e>
+    <e c="AutoCog"><p><l>pasyans<s n="n"/></l><r>patience<s n="n"/></r></p><par n="ND"/></e>
+    <e c="AutoCog"><p><l>penitans<s n="n"/></l><r>penitence<s n="n"/></r></p><par n="ND"/></e>
+    <e c="AutoCog"><p><l>pitans<s n="n"/></l><r>pittance<s n="n"/></r></p><par n="ND"/></e>
+    <e c="AutoCog"><p><l>polivalans<s n="n"/></l><r>poly-valency<s n="n"/></r></p><par n="ND"/></e>
+    <e c="AutoCog"><p><l>predominans<s n="n"/></l><r>predominance<s n="n"/></r></p><par n="ND"/></e>
+    <e c="AutoCog"><p><l>preferans<s n="n"/></l><r>preference<s n="n"/></r></p><par n="ND"/></e>
+    <e c="AutoCog"><p><l>prezans<s n="n"/></l><r>presence<s n="n"/></r></p><par n="ND"/></e>
+    <e c="AutoCog"><p><l>prezidans<s n="n"/></l><r>presidency<s n="n"/></r></p><par n="ND"/></e>
+    <e c="AutoCog"><p><l>pwovidans<s n="n"/></l><r>providence<s n="n"/></r></p><par n="ND"/></e>
+    <e c="AutoCog"><p><l>pèfòmans<s n="n"/></l><r>performance<s n="n"/></r></p><par n="ND"/></e>
+    <e c="AutoCog"><p><l>pèmanans<s n="n"/></l><r>permanence<s n="n"/></r></p><par n="ND"/></e>
+    <e c="AutoCog"><p><l>pèseverans<s n="n"/></l><r>perseverance<s n="n"/></r></p><par n="ND"/></e>
+    <e c="AutoCog"><p><l>pèsistans<s n="n"/></l><r>persistence<s n="n"/></r></p><par n="ND"/></e>
+    <e c="AutoCog"><p><l>referans<s n="n"/></l><r>reference<s n="n"/></r></p><par n="ND"/></e>
+    <e c="AutoCog"><p><l>rekonesans<s n="n"/></l><r>reconnaissance<s n="n"/></r></p><par n="ND"/></e>
+    <e c="AutoCog"><p><l>rekonpans<s n="n"/></l><r>recompense<s n="n"/></r></p><par n="ND"/></e>
+    <e c="AutoCog"><p><l>renesans<s n="n"/></l><r>renaissance<s n="n"/></r></p><par n="ND"/></e>
+    <e c="AutoCog"><p><l>repantans<s n="n"/></l><r>repentance<s n="n"/></r></p><par n="ND"/></e>
+    <e c="AutoCog"><p><l>reverans<s n="n"/></l><r>reverence<s n="n"/></r></p><par n="ND"/></e>
+    <e c="AutoCog"><p><l>rezidans<s n="n"/></l><r>residence<s n="n"/></r></p><par n="ND"/></e>
+    <e c="AutoCog"><p><l>rezistans<s n="n"/></l><r>resistance<s n="n"/></r></p><par n="ND"/></e>
+    <e c="AutoCog"><p><l>rezonans<s n="n"/></l><r>resonance<s n="n"/></r></p><par n="ND"/></e>
+    <e c="AutoCog"><p><l>santans<s n="n"/></l><r>sentence<s n="n"/></r></p><par n="ND"/></e>
+    <e c="AutoCog"><p><l>sekans<s n="n"/></l><r>sequence<s n="n"/></r></p><par n="ND"/></e>
+    <e c="AutoCog"><p><l>sibstans<s n="n"/></l><r>substance<s n="n"/></r></p><par n="ND"/></e>
+    <e c="AutoCog"><p><l>silans<s n="n"/></l><r>silence<s n="n"/></r></p><par n="ND"/></e>
+    <e c="AutoCog"><p><l>tandans<s n="n"/></l><r>tendency<s n="n"/></r></p><par n="ND"/></e>
+    <e c="AutoCog"><p><l>tanperans<s n="n"/></l><r>temperance<s n="n"/></r></p><par n="ND"/></e>
+    <e c="AutoCog"><p><l>telekonferans<s n="n"/></l><r>teleconference<s n="n"/></r></p><par n="ND"/></e>
+    <e c="AutoCog"><p><l>tolerans<s n="n"/></l><r>tolerance<s n="n"/></r></p><par n="ND"/></e>
+    <e c="AutoCog"><p><l>transparans<s n="n"/></l><r>transparency<s n="n"/></r></p><par n="ND"/></e>
+    <e c="AutoCog"><p><l>vakans<s n="n"/></l><r>holiday<s n="n"/></r></p><par n="ND"/></e>
+    <e c="AutoCog"><p><l>valans<s n="n"/></l><r>valance<s n="n"/></r></p><par n="ND"/></e>
+    <e c="AutoCog"><p><l>vanjans<s n="n"/></l><r>vengeance<s n="n"/></r></p><par n="ND"/></e>
+    <e c="AutoCog"><p><l>varyans<s n="n"/></l><r>variance<s n="n"/></r></p><par n="ND"/></e>
+    <e c="AutoCog"><p><l>vijilans<s n="n"/></l><r>vigilance<s n="n"/></r></p><par n="ND"/></e>
+    <e c="AutoCog"><p><l>vyolans<s n="n"/></l><r>violence<s n="n"/></r></p><par n="ND"/></e>
+    <e c="AutoCog"><p><l>womans<s n="n"/></l><r>romance<s n="n"/></r></p><par n="ND"/></e>
+
+    <e><p><l>koumon<s n="adv"/><s n="itg"/></l><r>how<s n="adv"/><s n="itg"/></r></p></e>
+    <e><p><l>èske<s n="adv"/><s n="itg"/></l><r>do<s n="vbdo"/></r></p></e>
+    <e r="LR"><p><l>èkse<s n="adv"/><s n="itg"/></l><r>do<s n="vbdo"/></r></p></e>
+    <e><p><l>kilè<s n="adv"/><s n="itg"/></l><r>when<s n="adv"/><s n="itg"/></r></p></e>
+
+    <e><p><l>kisa<s n="det"/><s n="itg"/></l><r>what<s n="det"/><s n="itg"/></r></p></e>
+    <e r="LR"><p><l>kilès<s n="det"/><s n="itg"/></l><r>which<s n="det"/><s n="itg"/></r></p></e>
+    <e><p><l>ki<s n="det"/><s n="itg"/></l><r>which<s n="det"/><s n="itg"/></r></p></e>
+
+    <e><p><l>kisa<s n="prn"/><s n="itg"/><s n="mf"/></l><r>what<s n="prn"/><s n="itg"/><s n="m"/></r></p></e>
+    <e r="LR"><p><l>kimoun<s n="prn"/><s n="itg"/><s n="mf"/></l><r>who<s n="prn"/><s n="itg"/><s n="m"/></r></p></e>
+    <e><p><l>kilès<s n="prn"/><s n="itg"/><s n="mf"/></l><r>who<s n="prn"/><s n="itg"/><s n="m"/></r></p></e>
+
+    <e r="LR"><p><l>pi<s n="preadv"/></l><r>most<s n="preadv"/></r></p></e>
+    <e><p><l>plis<s n="preadv"/></l><r>most<s n="preadv"/></r></p></e>
+    <e><p><l>trè<s n="preadv"/></l><r>very<s n="preadv"/></r></p></e>
+
+    <e><p><l>isit<s n="adv"/></l><r>here<s n="adv"/></r></p></e>
+    <e><p><l>soutou<s n="adv"/></l><r>above<b/>all<s n="adv"/></r></p></e>
+    <e><p><l>tanpri<s n="adv"/></l><r>please<s n="adv"/></r></p></e>
+    <e><p><l>anba<s n="adv"/></l><r>down<s n="adv"/></r></p></e>
+    <e><p><l>depi<s n="adv"/></l><r>since<s n="adv"/></r></p></e>
+    <e><p><l>depi<s n="pr"/></l><r>since<s n="pr"/></r></p></e>
+    <e><p><l>plis<b/>ke<s n="pr"/></l><r>more<b/>than<s n="pr"/></r></p></e>
+    <e r="RL"><p><l>depi<s n="adv"/></l><r>ago<s n="adv"/></r></p></e>
+    <e><p><l>depi<b/>kilè<s n="adv"/></l><r>how<b/>long<s n="adv"/></r></p></e>
+    <e><p><l>grav<s n="adv"/></l><r>seriously<s n="adv"/></r></p></e>
+    <e><p><l>prese-prese<s n="adv"/></l><r>quickly<s n="adv"/></r></p></e>
+    <e><p><l>egzakteman<s n="adv"/></l><r>exactly<s n="adv"/></r></p></e>
+    <e><p><l>direkteman<s n="adv"/></l><r>directly<s n="adv"/></r></p></e>
+    <e><p><l>nan<b/>apremidi<s n="adv"/></l><r>in<b/>the<b/>afternoon<s n="adv"/></r></p></e>
+    <e><p><l>kounye<b/>a<s n="adv"/></l><r>right<b/>now<s n="adv"/></r></p></e>
+    <e><p><l>mwatye<s n="adv"/></l><r>mwatye<s n="adv"/></r></p></e>
+    <e><p><l>bokou<b/>pli<s n="adv"/></l><r>much<b/>more<s n="adv"/></r></p></e>
+    <e><p><l>pa<s n="adv"/></l><r>not<s n="adv"/></r></p></e>
+    <e><p><l>lontan<s n="adv"/></l><r>for<b/>a<b/>long<b/>time<s n="adv"/></r></p></e>
+    <e><p><l>yè<s n="adv"/></l><r>yesterday<s n="adv"/></r></p></e>
+    <e><p><l>l<b/>demen<s n="adv"/></l><r>tomorrow<s n="adv"/></r></p></e>
+    <e><p><l>nan<b/>konmansman<s n="adv"/></l><r>in<b/>the<b/>beginning<s n="adv"/></r></p></e>
+    <e><p><l>non<s n="adv"/></l><r>no<s n="adv"/></r></p></e>
+    <e><p><l>wi<s n="adv"/></l><r>yes<s n="adv"/></r></p></e>
+    <e><p><l>chak<b/>fwa<s n="adv"/></l><r>every<b/>time<s n="adv"/></r></p></e>
+    <e><p><l>chak<b/>jou<s n="adv"/></l><r>every<b/>day<s n="adv"/></r></p></e>
+    <e><p><l>espesyalman<s n="adv"/></l><r>specially<s n="adv"/></r></p></e>
+    <e><p><l>la<s n="adv"/></l><r>here<s n="adv"/></r></p></e>
+    <e><p><l>deja<s n="adv"/></l><r>already<s n="adv"/></r></p></e>
+    <e><p><l>byen<s n="adv"/></l><r>well<s n="adv"/></r></p></e>
+    <e><p><l>okenn<b/>kote<s n="adv"/></l><r>nowhere<s n="adv"/></r></p></e>
+    <e><p><l>tou<b/>patou<s n="adv"/></l><r>anywhere<s n="adv"/></r></p></e>
+    <e><p><l>tou<s n="adv"/></l><r>also<s n="adv"/></r></p></e>
+    <e><p><l>sètadi<s n="adv"/></l><r>that<b/>is<b/>to<b/>say<s n="adv"/></r></p></e>
+    <e><p><l>kont<s n="adv"/></l><r>enough<s n="adv"/></r></p></e>
+    <e><p><l>konsa<s n="adv"/></l><r>like<b/>that<s n="adv"/></r></p></e>
+
+    <e c="AutoCog"><p><l>dyagonalman<s n="adv"/></l><r>diagonally<s n="adv"/></r></p></e>
+    <e c="AutoCog"><p><l>egalman<s n="adv"/></l><r>equally<s n="adv"/></r></p></e>
+    <e c="AutoCog"><p><l>entegralman<s n="adv"/></l><r>integrally<s n="adv"/></r></p></e>
+    <e c="AutoCog"><p><l>entènasyonalman<s n="adv"/></l><r>intentionally<s n="adv"/></r></p></e>
+    <e c="AutoCog" r="RL"><p><l>espesyalman<s n="adv"/></l><r>especially<s n="adv"/></r></p></e>
+    <e c="AutoCog"><p><l>finalman<s n="adv"/></l><r>finally<s n="adv"/></r></p></e>
+    <e c="AutoCog"><p><l>fondamantalman<s n="adv"/></l><r>fundamentally<s n="adv"/></r></p></e>
+    <e c="AutoCog"><p><l>globalman<s n="adv"/></l><r>globally<s n="adv"/></r></p></e>
+    <e c="AutoCog"><p><l>ilegalman<s n="adv"/></l><r>illegally<s n="adv"/></r></p></e>
+    <e c="AutoCog"><p><l>jeneralman<s n="adv"/></l><r>generally<s n="adv"/></r></p></e>
+    <e c="AutoCog"><p><l>legalman<s n="adv"/></l><r>legally<s n="adv"/></r></p></e>
+    <e c="AutoCog"><p><l>literalman<s n="adv"/></l><r>literally<s n="adv"/></r></p></e>
+    <e c="AutoCog"><p><l>lokalman<s n="adv"/></l><r>locally<s n="adv"/></r></p></e>
+    <e c="AutoCog"><p><l>lwayalman<s n="adv"/></l><r>loyally<s n="adv"/></r></p></e>
+    <e c="AutoCog"><p><l>mantalman<s n="adv"/></l><r>mentally<s n="adv"/></r></p></e>
+    <e c="AutoCog"><p><l>medikalman<s n="adv"/></l><r>medically<s n="adv"/></r></p></e>
+    <e c="AutoCog"><p><l>mizikalman<s n="adv"/></l><r>musically<s n="adv"/></r></p></e>
+    <e c="AutoCog"><p><l>mondyalman<s n="adv"/></l><r>globally<s n="adv"/></r></p></e>
+    <e c="AutoCog"><p><l>moralman<s n="adv"/></l><r>morally<s n="adv"/></r></p></e>
+    <e c="AutoCog"><p><l>nasyonalman<s n="adv"/></l><r>nationally<s n="adv"/></r></p></e>
+    <e c="AutoCog"><p><l>nòmalman<s n="adv"/></l><r>normally<s n="adv"/></r></p></e>
+    <e c="AutoCog"><p><l>oralman<s n="adv"/></l><r>orally<s n="adv"/></r></p></e>
+    <e c="AutoCog"><p><l>orijinalman<s n="adv"/></l><r>originally<s n="adv"/></r></p></e>
+    <e c="AutoCog"><p><l>orizontalman<s n="adv"/></l><r>horizontally<s n="adv"/></r></p></e>
+    <e c="AutoCog"><p><l>prensipalman<s n="adv"/></l><r>principally<s n="adv"/></r></p></e>
+    <e c="AutoCog"><p><l>radikalman<s n="adv"/></l><r>radically<s n="adv"/></r></p></e>
+    <e c="AutoCog"><p><l>santralman<s n="adv"/></l><r>centrally<s n="adv"/></r></p></e>
+    <e c="AutoCog"><p><l>sosyalman<s n="adv"/></l><r>socially<s n="adv"/></r></p></e>
+    <e c="AutoCog"><p><l>totalman<s n="adv"/></l><r>totally<s n="adv"/></r></p></e>
+    <e c="AutoCog"><p><l>vèbalman<s n="adv"/></l><r>verbally<s n="adv"/></r></p></e>
+    <e c="AutoCog"><p><l>vètikalmnan<s n="adv"/></l><r>vertically<s n="adv"/></r></p></e>
+    <e><p><l>ajenou<s n="adv"/></l><r>kneeling<s n="adv"/></r></p></e>
+    <e><p><l>a<b/>ki<b/>lè<s n="adv"/></l><r>at<b/>what<b/>time<s n="adv"/></r></p></e>
+    <e><p><l>alèkile<s n="adv"/></l><r>henceforth<s n="adv"/></r></p></e>
+    <e><p><l>alèkile<s n="adv"/></l><r>nowadays<s n="adv"/></r></p></e>
+    <e><p><l>a<b/>midi<s n="adv"/></l><r>lunchtime<s n="adv"/></r></p></e>
+    <e><p><l>apeprè<s n="adv"/></l><r>approximately<s n="adv"/></r></p></e>
+    <e><p><l>apredemen<s n="adv"/></l><r>the<b/>day<b/>after<b/>tomorrow<s n="adv"/></r></p></e>
+    <e><p><l>anvanyè<s n="adv"/></l><r>the<b/>day<b/>before<b/>yesterday<s n="adv"/></r></p></e>
+    <e><p><l>ase<s n="adv"/></l><r>enough<s n="adv"/></r></p></e>
+    <e><p><l>aswè-a<s n="adv"/></l><r>tonight<s n="adv"/></r></p></e>
+    <e><p><l>atè<s n="adv"/></l><r>on<b/>the<b/>floor<s n="adv"/></r></p></e>
+    <e c="after all, so"><p><l>atò<s n="adv"/></l><r>now<s n="adv"/></r></p></e>
+    <e><p><l>anba<b/>chal<s n="adv"/></l><r>secretly<s n="adv"/></r></p></e>
+    <e><p><l>an<b/>chantan<s n="adv"/></l><r>singing<s n="adv"/></r></p></e>
+    <e><p><l>an<b/>detay<s n="adv"/></l><r>retail<b/>sale<s n="adv"/></r></p></e>
+    <e><p><l>andeyò<s n="adv"/></l><r>in<b/>the<b/>country<s n="adv"/></r></p></e>
+    <e><p><l>an<b/>dyagonal<s n="adv"/></l><r>diagonally<s n="adv"/></r></p></e>
+    <e><p><l>anfòm<s n="adv"/></l><r>great<s n="adv"/></r></p></e>
+    <e c="anymore, no longer"><p><l>ankò<s n="adv"/></l><r>again<s n="adv"/></r></p></e>
+    <e><p><l>anlè<s n="adv"/></l><r>up<b/>high<s n="adv"/></r></p></e>
+    <e><p><l>annik<s n="adv"/></l><r>just<s n="adv"/></r></p></e>
+    <e><p><l>an<b/>rapò<s n="adv"/></l><r>in<b/>relation<b/>to<s n="adv"/></r></p></e>
+    <e><p><l>anreta<s n="adv"/></l><r>late<s n="adv"/></r></p></e>
+    <e><p><l>ansamn<s n="adv"/></l><r>together<s n="adv"/></r></p></e>
+    <e><p><l>antouka<s n="adv"/></l><r>at<b/>any<b/>rate<s n="adv"/></r></p></e>
+
+    <e><p><l>ki<s n="rel"/><s n="an"/></l><r>who<s n="rel"/><s n="an"/></r></p></e>
+    <e><p><l>kisa<s n="rel"/><s n="an"/><s n="mf"/><s n="sp"/></l><r>what<s n="rel"/><s n="nn"/><s n="mf"/><s n="sg"/></r></p></e>
+
+    <e><p><l>zewo</l><r>zero</r></p><par n="mil"/></e>
+    <e><p><l>en</l><r>one</r></p><par n="mil"/></e>
+    <e><p><l>de</l><r>two</r></p><par n="mil"/></e>
+    <e><p><l>twa</l><r>three</r></p><par n="mil"/></e>
+    <e><p><l>kat</l><r>four</r></p><par n="mil"/></e>
+    <e><p><l>senk</l><r>five</r></p><par n="mil"/></e>
+    <e><p><l>sis</l><r>six</r></p><par n="mil"/></e>
+    <e><p><l>sèt</l><r>seven</r></p><par n="mil"/></e>
+    <e><p><l>wit</l><r>eight</r></p><par n="mil"/></e>
+    <e><p><l>nèf</l><r>nine</r></p><par n="mil"/></e>
+    <e><p><l>dis</l><r>ten</r></p><par n="mil"/></e>
+    <e><p><l>onz</l><r>eleven</r></p><par n="mil"/></e>
+    <e><p><l>douz</l><r>twelve</r></p><par n="mil"/></e>
+    <e><p><l>trèz</l><r>thirteen</r></p><par n="mil"/></e>
+    <e><p><l>katòz</l><r>fourteen</r></p><par n="mil"/></e>
+    <e><p><l>kenz</l><r>fifteen</r></p><par n="mil"/></e>
+    <e><p><l>sèz</l><r>sixteen</r></p><par n="mil"/></e>
+    <e><p><l>disèt</l><r>seventeen</r></p><par n="mil"/></e>
+    <e><p><l>dizuit</l><r>eighteen</r></p><par n="mil"/></e>
+    <e><p><l>diznèf</l><r>nineteen</r></p><par n="mil"/></e>
+    <e><p><l>ven</l><r>twenty</r></p><par n="mil"/></e>
+    <e><p><l>venteyen</l><r>twenty-one</r></p><par n="mil"/></e>
+    <e><p><l>vennde</l><r>twenty-two</r></p><par n="mil"/></e>
+    <e><p><l>venntwa</l><r>twenty-three</r></p><par n="mil"/></e>
+    <e><p><l>vennkat</l><r>twenty-four</r></p><par n="mil"/></e>
+    <e><p><l>vennsenk</l><r>twenty-five</r></p><par n="mil"/></e>
+    <e><p><l>vennsis</l><r>twenty-six</r></p><par n="mil"/></e>
+    <e><p><l>vennsèt</l><r>twenty-seven</r></p><par n="mil"/></e>
+    <e><p><l>ventwit</l><r>twenty-eight</r></p><par n="mil"/></e>
+    <e><p><l>ventnèf</l><r>twenty-nine</r></p><par n="mil"/></e>
+    <e><p><l>trant</l><r>thirty</r></p><par n="mil"/></e>
+    <e><p><l>san</l><r>hundred</r></p><par n="mil"/></e>
+    <e><p><l>swasanndis</l><r>seventy</r></p><par n="mil"/></e>
+    <e><p><l>milyon<s n="num"/></l><r>million<s n="num"/></r></p></e>
+
+
+    <e><p><l>souple<s n="ij"/></l><r>please<s n="ij"/></r></p></e>
+    <e><p><l>dakò<s n="ij"/></l><r>ok<s n="ij"/></r></p></e>
+    <e r="LR"><p><l>oke<s n="ij"/></l><r>ok<s n="ij"/></r></p></e>
+    <e><p><l>bonjou<s n="ij"/></l><r>hello<s n="ij"/></r></p></e>
+    <e><p><l>bonswa<s n="ij"/></l><r>good<b/>evening<s n="ij"/></r></p></e>
+    <e><p><l>byensi<s n="ij"/></l><r>of<b/>course<s n="ij"/></r></p></e>
+    <e><p><l>apa<s n="ij"/></l><r>isn't<b/>it<s n="ij"/></r></p></e>
+  </section>
+  <section id="punct" type="standard">
+    <e><i>.<s n="sent"/></i></e>
+    <e><i>?<s n="sent"/></i></e>
+    <e><i>:<s n="sent"/></i></e>
+    <e><i>;<s n="sent"/></i></e>
+    <e><i>!<s n="sent"/></i></e>
+    <e><i>,<s n="cm"/></i></e>
+    <e><i>(<s n="lpar"/></i></e>
+    <e><i>)<s n="rpar"/></i></e>
+    <e><i>[<s n="lpar"/></i></e>
+    <e><i>]<s n="rpar"/></i></e>
+    <e><i>-<s n="guio"/></i></e>
+    <e lm="0-9"><re>[0-9]+([.,][0-9]+)?</re><i><s n="num"/></i></e>
+  </section>
+</dictionary>

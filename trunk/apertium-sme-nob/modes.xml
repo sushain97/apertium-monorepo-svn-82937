@@ -1,0 +1,142 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<modes>
+  <!-- sme-nob full and partial pipelines: -->
+  <mode name="sme-nob" install="yes" gendebug="yes">
+    <pipeline>
+      <program name="hfst-proc --weight-classes 1 -w -p">
+        <file name="sme-nob.automorf.hfst"/>
+      </program>
+      <program name="cg-proc" debug-suff="disam">
+        <file name="sme-nob.mor.rlx.bin"/>
+      </program>
+      <program name="cg-proc -1 -n -w" debug-suff="syntax">
+        <file name="sme-nob.syn.rlx.bin"/>
+      </program>
+      <program name="apertium-pretransfer"/>
+      <program name="lt-proc -b">
+        <file name="sme-nob.autobil.bin"/>
+      </program>
+      <program name="cg-proc" debug-suff="lex">
+        <file name="sme-nob.lex.bin"/>
+      </program>
+      <program name="apertium-transfer -b">
+        <file name="apertium-sme-nob.sme-nob.t1x"/>
+        <file name="sme-nob.t1x.bin"/>
+      </program>
+      <program name="apertium-interchunk" debug-suff="interchunk1">
+        <file name="apertium-sme-nob.sme-nob.t2x"/>
+        <file name="sme-nob.t2x.bin"/>
+      </program>
+      <program name="apertium-interchunk" debug-suff="interchunk2">
+        <file name="apertium-sme-nob.sme-nob.t3x"/>
+        <file name="sme-nob.t3x.bin"/>
+      </program>
+      <program name="apertium-postchunk">
+        <file name="apertium-sme-nob.sme-nob.t4x"/>
+        <file name="sme-nob.t4x.bin"/>
+      </program>
+      <program name="lt-proc $1">
+        <file name="sme-nob.autogen.bin"/>
+      </program>
+    </pipeline>
+  </mode>
+
+
+  <!-- Untrimmed (and with compounding) sme-nob: -->
+  <mode name="usme-nob" install="no" gendebug="yes">
+    <pipeline>
+      <program name="hfst-proc --weight-classes 1 -w -p">
+        <file name="sme-nob.automorf-untrimmed.hfst"/>
+      </program>
+      <program name="cg-proc" debug-suff="disam">
+        <file name="sme-nob.mor.rlx.bin"/>
+      </program>
+      <program name="cg-proc -1 -n -w" debug-suff="syntax">
+        <file name="sme-nob.syn.rlx.bin"/>
+      </program>
+      <program name="apertium-pretransfer"/>
+      <program name="lt-proc -b">
+        <file name="sme-nob.autobil.bin"/>
+      </program>
+      <program name="cg-proc" debug-suff="lex">
+        <file name="sme-nob.lex.bin"/>
+      </program>
+      <program name="apertium-transfer -b">
+        <file name="apertium-sme-nob.sme-nob.t1x"/>
+        <file name="sme-nob.t1x.bin"/>
+      </program>
+      <program name="apertium-interchunk" debug-suff="interchunk1">
+        <file name="apertium-sme-nob.sme-nob.t2x"/>
+        <file name="sme-nob.t2x.bin"/>
+      </program>
+      <program name="apertium-interchunk" debug-suff="interchunk2">
+        <file name="apertium-sme-nob.sme-nob.t3x"/>
+        <file name="sme-nob.t3x.bin"/>
+      </program>
+      <program name="apertium-postchunk">
+        <file name="apertium-sme-nob.sme-nob.t4x"/>
+        <file name="sme-nob.t4x.bin"/>
+      </program>
+      <program name="lt-proc $1">
+        <file name="sme-nob.autogen.bin"/>
+      </program>
+    </pipeline>
+  </mode>
+
+
+  <!-- Modes not used by regular sme-nob: -->
+  <mode name="sme-nob-val" install="no">
+    <pipeline>
+      <program name="hfst-proc --weight-classes 1 -w -p">
+        <file name="sme-nob.automorf.hfst"/>
+      </program>
+      <program name="cg-proc -1">
+        <file name="sme-nob.mor.rlx.bin"/>
+      </program>
+      <program name="cg-conv -a"/>
+      <program name="vislcg3 --trace --grammar">
+        <file name="sme-nob.val.bin"/>
+      </program>
+    </pipeline>
+  </mode>
+
+  <mode name="sme-nob-postchunk-from-transfer" install="no">
+    <pipeline>
+      <program name="apertium-transfer">
+        <file name="apertium-sme-nob.sme-nob.t1x"/>
+        <file name="sme-nob.t1x.bin"/>
+        <file name="sme-nob.autobil.bin"/>
+      </program>
+      <program name="apertium-interchunk">
+        <file name="apertium-sme-nob.sme-nob.t2x"/>
+        <file name="sme-nob.t2x.bin"/>
+      </program>
+      <program name="apertium-interchunk">
+        <file name="apertium-sme-nob.sme-nob.t3x"/>
+        <file name="sme-nob.t3x.bin"/>
+      </program>
+      <program name="apertium-postchunk">
+        <file name="apertium-sme-nob.sme-nob.t4x"/>
+        <file name="sme-nob.t4x.bin"/>
+      </program>
+    </pipeline>
+  </mode>
+
+  <mode name="unob-sme" install="no" gendebug="yes">
+    <pipeline>
+      <program name="lt-proc -w -e">
+        <file name="nob-sme.automorf-untrimmed.bin"/>
+      </program>
+      <program name="cg-proc  -w">
+        <file name="nob-sme.rlx.bin"/>
+      </program>
+      <program name="apertium-tagger -g">
+        <file name="nob-sme.prob"/>
+      </program>
+      <program name="apertium-pretransfer"/>
+      <!-- TODO -->
+    </pipeline>
+  </mode>
+
+
+</modes>

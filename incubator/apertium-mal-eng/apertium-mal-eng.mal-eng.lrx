@@ -1,0 +1,28 @@
+<rules>
+  <rule>
+    <match tags="adj"/>
+    <match lemma="വീട്" tags="n.*"><select lemma="house" tags="n.*"/></match>
+  </rule>
+  <rule>
+    <match lemma="പെണ്‍കുട്ടി" tags="n.*"><select lemma="girl" tags="n.*"/></match>
+  </rule>
+
+  <rule>
+    <match lemma="ഇഷ്ടം" tags="n.*"><select lemma="happiness" tags="n.*"/></match>
+  </rule>
+
+  <rule>
+    <match lemma="കളി" tags="n.*"><select lemma="game" tags="n.*"/></match>
+  </rule>
+  <rule>
+    <match lemma="മരണം" tags="n.*"><select lemma="death" tags="n.*"/></match>
+    <match lemma=":" tags="sent"/>
+  </rule>
+  <rule>
+    <match tags="num.cmp"/>
+    <match lemma="ഒരു" tags="num.*"><select lemma="one" tags="num.*"/></match>
+
+  </rule>
+
+
+</rules>

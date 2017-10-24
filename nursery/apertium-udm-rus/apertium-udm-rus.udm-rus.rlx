@@ -1,0 +1,55 @@
+DELIMITERS = "<.>" "<!>" "<?>" "<...>" "<¶>" ;
+SOFT-DELIMITERS = "<,>" ;
+
+SETS
+
+LIST N = n ; 
+LIST V = v ;
+LIST Det = det ;
+LIST Pron = prn ;
+LIST Num = num ;
+LIST A = adj ;
+LIST conneg = conneg ;
+list neg = neg ;
+
+LIST TV = tv ;
+LIST IV = iv ;
+
+LIST Sg = sg ;
+LIST Pl = pl ;
+	
+LIST p1 = p1 ;
+LIST p2 = p2 ;
+LIST p3 = p3 ;
+
+LIST Nom = nom ;
+LIST Acc = acc ;
+LIST Ine = ine ; 
+LIST Ins = ins ; 
+
+LIST Odushevljonnyj = "пинал" "нылпи" "пуны" (np ant) (n aa) ; 
+
+LIST CLB = sent ; 
+
+SET N-MOD = Det | A | Num ;
+
+SECTION
+
+SELECT Det (0 Det OR Pron) (1 N-MOD OR N);
+    ## Пунылы кельше та кык пичи нылпиосын шудыны
+
+REMOVE Ine IF (0 Odushevljonnyj);
+    ## Пунылы кельше та кык пичи нылпиосын шудыны
+
+SELECT conneg IF (*-1 neg BARRIER V OR Nom OR (","));
+
+REMOVE conneg IF (NOT *-1 neg BARRIER Nom OR (","));
+
+REMOVE Pl IF (0 V + p3 + Sg )(-1 Sg + Nom );
+REMOVE Sg IF (0 V + p3 + Pl )(-1 Pl + Nom );
+
+SELECT A IF (-1 A) (0C A OR N) (1C N) ; 
+    ## Дышетскиз Удмурт кун университетын но Москваысь литературая институтын.
+
+REMOVE Acc IF (NOT -1* TV BARRIER CLB) (NOT 1* TV BARRIER CLB);
+    ## Изь ни, зарние!

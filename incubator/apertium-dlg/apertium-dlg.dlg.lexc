@@ -1,0 +1,251 @@
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+!!!                       M O R P H O T A C T I C S                         !!!
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+
+Multichar_Symbols
+
+%<n%>          ! Noun
+%<pl%>         ! Plural
+
+%{L%}  ! л, т, н,
+%{A%}  ! а, о, э,
+%{D%}
+%{N%}  ! ы, у
+
+
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+
+LEXICON Root
+
+Copula ;
+Conjunctions ;
+Determiners ;
+Pronouns ;
+Nouns ;
+ProperNouns ;
+Adjectives ;
+Verbs ;
+
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+
+LEXICON CLITICS-NO-COP 
+
+# ;
+
+
+LEXICON CLITICS-INCL-COP 
+
+CLIT-COP ;
+ # ;
+
+LEXICON CLIT-COP
+
+%+ер%<cop%>%<aor%>: V-PERS-S1 ;
+
+# ;
+
+LEXICON CASES-COMMON
+
+%<par%>:%>%{D%}%{A%} CLITICS-NO-COP ;
+%<dat%>:%>%{G%}%{A%}р CLITICS-NO-COP ;
+%<acc%>:%>%{N%}%{I%} CLITICS-NO-COP ;
+%<ins%>:%>%{M%}%{A%}н CLITICS-NO-COP ;
+
+LEXICON CASES
+
+CASES-COMMON ;
+%<nom%>: CLITICS-INCL-COP ;
+%<abl%>:%>%{D%}%{A%}н CLITICS-INCL-COP ;
+
+LEXICON CASES-ETC
+
+CASES ;
+! GENERAL-POSSESSIVE-ETC ;
+
+LEXICON POSSESSIVES
+
+%<px1sg%>:%>%{I%}м CASES-ETC ;
+%<px2sg%>:%>%{I%}ӈ CASES-ETC ;
+%<px3sp%>:%>%{S%}%{I%}%{n%} CASES-ETC ;
+%<px1pl%>:%>%{I%}м%{I%}з CASES-ETC ;
+%<px2pl%>:%>%{I%}ӈд%{A%}р CASES-ETC ;
+
+LEXICON PLURAL
+
+%<pl%>:%>%{L%}%{A%}р CASES-ETC ;
+%<pl%>:%>%{L%}%{A%}р POSSESSIVES ;
+
+LEXICON FULL-NOMINAL-INFLECTION
+
+PLURAL ;
+CASES-ETC ;
+POSSESSIVES ;
+
+LEXICON N1
+
+%<n%>%<attr%>: # ;
+%<n%>: FULL-NOMINAL-INFLECTION ;
+
+LEXICON NP-ANT-F
+
+%<np%>%<ant%>%<f%>: CASES-ETC ;
+
+LEXICON NP-ANT-M 
+
+%<np%>%<ant%>%<m%>: CASES-ETC ;
+
+LEXICON A6 
+
+%<adj%>:ой # ; ! Dir/LR
+%<adj%>:ай # ; 
+
+LEXICON PRON-PERS-MIN 
+
+мин%<prn%>%<pers%>%<p1%>%<sg%>%<nom%>:мин # ; 
+
+LEXICON PRON-PERS-EN
+
+эн%<prn%>%<pers%>%<p2%>%<sg%>%<nom%>:эн # ; 
+
+LEXICON PRON-PERS-BIHIGI
+
+биһиги%<prn%>%<pers%>%<p1%>%<pl%>%<nom%>:биһиги # ; 
+
+LEXICON PRON-PERS-EHIGI
+
+эһиги%<prn%>%<pers%>%<p2%>%<pl%>%<nom%>:эһиги # ; 
+
+LEXICON NUM
+
+%<num%>: # ;
+
+LEXICON V-PERS-S1-NO3PERSON
+
+%<p1%>%<sg%>:%>%{M%}%{I%}н CLITICS-NO-COP ;
+%<p2%>%<sg%>:%>с%{I%}ӈ CLITICS-NO-COP ;
+%<p1%>%<pl%>:%>%{M%}%{I%}з CLITICS-NO-COP ;
+%<p2%>%<pl%>:%>с%{I%}ӈд%{A%}р CLITICS-NO-COP ;
+
+LEXICON V-PERS-S1
+
+V-PERS-S1-NO3PERSON ;
+%<p3%>%<sg%>: CLITICS-NO-COP ;
+%<p3%>%<pl%>: CLITICS-NO-COP ;
+
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+!!!                          L E X I C O N                                  !!!
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+
+LEXICON Copula 
+
+э%<cop%>%<aor%>: V-PERS-S1 ;
+э%<cop%>%<past%>:%>тэ V-PERS-S1 ;
+
+LEXICON Conjunctions 
+
+гытта:гытта # ; ! FIXME: postadv?
+
+LEXICON Pronouns 
+
+PRON-PERS-MIN ; ! "я"
+PRON-PERS-EN ; ! "ты"
+PRON-PERS-BIHIGI ; ! "мы"
+PRON-PERS-EHIGI ; ! "вы"
+
+! бэйэ-бэйэ ! "сам"
+
+ким:ким # ; ! "кто"
+
+бу:бу # ;
+ол:ол # ;
+
+LEXICON Determiners 
+
+бу:бу # ;
+ол:ол # ;
+
+LEXICON Numerals
+
+биир:биир NUM ; ! "один"
+икки:икки NUM ; ! "два"
+
+
+биэс:биэс NUM ; ! "пять"
+алта:алта NUM ; ! "шесть"
+һэттэ:һэттэ NUM ; ! "семь"
+агыс:агыс NUM ; ! "восемь"
+тогус:тогус NUM ;  ! "девять"
+уон:уон NUM ;  ! "десять"
+
+LEXICON Nouns
+
+мас:мас N1 ; ! "дерево"
+тыл:тыл N1 ; ! "язык"
+көлгаун:көлгаун N1 ; ! ""
+бөрө:бөрө N1 ; ! "волк"
+былыт:былыт N1 ; ! "облако"
+каан:каан N1 ; ! "кровь"
+каар:каар N1 ; ! "снег"
+кайа:кайа N1 ; ! "гора"
+кутурук:кутурук N1 ; ! "хвост"
+оӈуок:оӈуок N1 ; ! "кость"
+туус:туус N1 ; ! "соль"
+тыал:тыал N1 ; ! "ветер"
+уу:уу N1 ; ! "вода"
+һайын:һайын N1 ; ! "лето"
+һулус:һулус N1 ; ! "звезда"
+ас:ас N1 ; ! "еда"
+өс:өс N1 ; ! ""
+догот:догот N1 ; ! "друг"
+ый:ый N1 ; ! "месяц, луна"
+убай:убай N1 ; ! "брать"
+таба:таба N1 ; ! "олень"
+киһи:киһи N1 ; ! "человек"
+кэһии:кэһии N1 ; ! "подарок"
+уол:уол N1 ; ! "мальчик"
+кыыс:кыыс N1 ; ! "девочка"
+ага:ага N1 ; ! "отец"
+атак:атак N1 ; ! "нога"
+эмий:эмий N1 ; ! "грудь"
+эт:эт N1 ; ! "тело"
+бас:бас N1 ; ! "голова"
+дьиэ:дьиэ N1 ; ! "дом"
+ураһа:ураһа N1 ; ! "летнее жилище"
+
+
+
+
+буква:буква N1 ; ! "буква"
+телефон:телефон N1 ; ! "телефон"
+трактор:трактор N1 ; ! "трактор"
+студент:студент N1 ; ! "студент"
+бюджет:бюджет N1 ; ! "бюджет"
+звук:звук N1 ; ! "звук"
+слог:слог N1 ; ! "слог"
+
+дулгаан:дулгаан N1 ; ! "долган"
+
+LEXICON ProperNouns 
+
+Алексей:Алексей NP-ANT-M ; ! ""
+Анжела:Анжела NP-ANT-F ; ! ""
+
+LEXICON Adjectives 
+
+баар:баар # ; ! ""
+һуок:һуок # ; ! ""
+
+сельскай:сельск A6 ; ! "сельской"
+детскай:детск A6 ; ! "детский"
+
+LEXICON Verbs 
+
+буол:буол # ; ! "быть"
+
+көр:көр # ; ! "проверять"
+көт:көт # ; ! "летать"
+бар:бар # ; ! "ходить"
+кэл:кэл # ; ! "приходить"
+бил:бил # ; ! "знать"
+
+

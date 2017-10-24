@@ -1,0 +1,83 @@
+Config:
+  hfst:
+    App: hfst-lookup
+    Gen: ../cv-ru.autogen.hfst
+    Morph: ../cv-ru.automorf.hfst
+
+Tests:
+
+  "[lexc] Possessives (Back, C-stem)":
+    ывӑл<n><px1sg><abs> : ывӑлӑм
+    ывӑл<n><px2sg><abs> : ывӑлу
+    ывӑл<n><px3sg><abs> : ывӑлӗ
+    ывӑл<n><px1pl><abs> : ывӑлӑмӑр
+    ывӑл<n><px2pl><abs> : ывӑлӑр
+    ывӑл<n><px3pl><abs> : ывӑлӗ
+
+  "[lexc] Possessives (Back, V-stem)":
+    ача<n><px1sg><abs> : ачам
+    ача<n><px2sg><abs> : ачу
+    ача<n><px3sg><abs> : ачи
+    ача<n><px1pl><abs> : ачамӑр
+    ача<n><px2pl><abs> : ачӑр
+    ача<n><px3pl><abs> : ачи
+
+  "[lexc] Possessives (Front, C-stem)":
+    хӗр<n><px1sg><abs> : хӗрӗм
+    хӗр<n><px2sg><abs> : хӗрӳ
+    хӗр<n><px3sg><abs> : хӗрӗ
+    хӗр<n><px1pl><abs> : хӗрӗмӗр
+    хӗр<n><px2pl><abs> : хӗрӗр
+    хӗр<n><px3pl><abs> : хӗрӗ
+
+  "[lexc] Possessives (Front, V-stem)":
+    ӗне<n><px1sg><abs> : ӗнем
+    ӗне<n><px2sg><abs> : ӗнӳ
+    ӗне<n><px3sg><abs> : ӗни
+    ӗне<n><px1pl><abs> : ӗнемӗр
+    ӗне<n><px2pl><abs> : ӗнӗр
+    ӗне<n><px3pl><abs> : ӗни
+
+  "[lexc] Possessives (Back, U-stem)":
+    ҫыру<n><px1sg><abs> : ҫырӑвӑм
+    ҫыру<n><px2sg><abs> : ҫыраву
+    ҫыру<n><px3sg><abs> : ҫырӑвӗ
+    ҫыру<n><px1pl><abs> : ҫырӑвӑмӑр
+    ҫыру<n><px2pl><abs> : ҫырӑвӗр
+    ҫыру<n><px3pl><abs> : ҫырӑвӗ
+
+  "[lexc] Possessives (Loans, O-stem)":
+    бюро<n><px1sg><abs> : бюровӗм
+    бюро<n><px2sg><abs> : бюровӳ
+    бюро<n><px3sg><abs> : бюровӗ
+    бюро<n><px1pl><abs> : бюровӗмӗр
+    бюро<n><px2pl><abs> : бюровӗр
+    бюро<n><px3pl><abs> : бюровӗ
+
+  "[lexc] Old loanwords obeying harmony": 
+    старик<n><abs> : старик
+    старик<n><gen> : старикӗн
+    старик<n><dat> : старике
+    старик<n><ins> : старикпе
+   
+  "[lexc] New loanwords not obeying harmony": 
+    техник<n><abs> : техник
+    техник<n><gen> : техникӑн
+    техник<n><dat> : техника
+    техник<n><ins> : техникпа
+
+  "[lexc] Genitive":
+    ҫыру<n><gen> : ҫырӑвӑн                # 2
+    пӳ<n><gen> : пӗвӗн                    # 2
+    класс<n><gen> : класӑн                # 6
+    шӑши<n><gen> : шӑшин                  # 8 
+    шӑши<n><gen> : шӑшийӗн                # 8
+    кино<n><gen> : кинон                  # 10
+    власть<n><gen> : власӑн               # 11
+
+  "[lexc] Gemination in genitive":
+    пула<n><gen> : пуллӑн
+    йыта<n><gen> : йыттӑн
+
+  "[lexc] а -- ӑ alternation in -а final words":
+    библиотека<n><loc> : библиотекӑра

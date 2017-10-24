@@ -1,0 +1,23 @@
+
+Alphabet
+
+ ᠠ ᠪ ᠨ ᡣ ᡬ ᡭ ᠸ ᡫ ᠶ ᡪ ᠯ ᠮ ᡠ ᡡ ᠣ ᡝ ᡞ ᡟ ᡠ ᡡ ᡢ ᡣ ᡤ ᡥ ᡦ ᡧ ᡨ ᡩ ᡪ ᡫ ᡬ ᡭ ᡮ ᡯ ᡰ ᡱ ᡲ ᡳ ᡴ ᡵ ᡶ ᡷ 
+
+%{H%}:ᡥ %{H%}:ᡣ
+%{A%}:ᠠ %{A%}:ᡝ %{A%}:ᠪ
+
+  %>:0 ;
+
+Sets 
+
+Boundary = %> ;
+
+FrontVow = ᡞ ;
+
+Rules 
+
+"Remove morpheme boundary"
+%>:0 <=> _ ; 
+
+!"Vowel harmony"
+!%{A%}:ᡝ <=> :FrontVow :* _ ;

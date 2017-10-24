@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<ling-resources>
+   <name>My linguistic resources</name>
+   <description>My linguistics resources: morphological and bilingual dictionaries, cross models, corpora, etc.</description>
+   
+   <resource-set>
+      <name>Linguistic resources to get Occitan-French language pair.</name>
+      <description></description>
+      <resource>
+         <property name="name" value="cross-model-oc-ca-fr"/>
+         <property name="type" value="cross-model"/>
+         <property name="sl" value="oc"/>
+         <property name="tl" value="fr"/>      
+         <property name="for-crossing" value="yes"/>
+<!--         <property 
+            name="src" value="http://apertium.svn.sourceforge.net/svnroot/apertium/trunk/apertium-dixtools/schemas/cross-model.xml"/> -->
+         <property 
+            name="src" value="cross-model.xml"/> 
+         <property name="version" value="stable"/>
+      </resource>
+      
+      <!-- 'es' morphological dictionary -->
+      <resource>
+         <property name="name" value="apertium-oc"/>
+         <property name="type" value="mon"/>
+         <property name="sl" value="oc"/>
+         <property name="for-crossing" value="yes"/>
+         <property 
+            name="src" value="http://apertium.svn.sourceforge.net/svnroot/apertium/trunk/apertium-oc-ca/apertium-oc-ca.oc.metadix"/>
+         <property name="version" value="stable"/>
+      </resource>
+      
+      <resource>
+         <property name="name" value="apertium-fr"/>
+         <property name="type" value="mon"/>
+         <property name="sl" value="fr"/>
+         <property name="for-crossing" value="yes"/>
+         <property 
+            name="src" value="http://apertium.svn.sourceforge.net/svnroot/apertium/trunk/apertium-fr-ca/apertium-fr-ca.fr.metadix"/>
+         <property name="version" value="stable"/>
+      </resource>
+      <!-- 'en' morphological dictionary -->
+      <resource>
+         <property name="name" value="apertium-ca"/>
+         <property name="type" value="mon"/>
+         <property name="sl" value="ca"/>
+         <property name="for-crossing" value="yes"/>
+         <property 
+            name="src" value="http://apertium.svn.sourceforge.net/svnroot/apertium/trunk/apertium-oc-ca/apertium-oc-ca.ca.dix"/>
+         <property name="version" value="stable"/>
+      </resource>
+      
+      <resource>
+         <property name="name" value="oc-ca"/>
+         <property name="type" value="bil"/>
+         <property name="sl" value="oc"/>
+         <property name="tl" value="ca"/>
+         <property name="for-crossing" value="yes"/>
+         <property 
+            name="src" value="http://apertium.svn.sourceforge.net/svnroot/apertium/trunk/apertium-oc-ca/apertium-oc-ca.oc-ca.dix"/>
+         <property name="version" value="stable"/>
+      </resource>
+      <resource>
+         <property name="name" value="fr-ca"/>
+         <property name="type" value="bil"/>
+         <property name="sl" value="fr"/>
+         <property name="tl" value="ca"/>
+         <property name="for-crossing" value="yes"/>
+         <property 
+            name="src" value="http://apertium.svn.sourceforge.net/svnroot/apertium/trunk/apertium-fr-ca/apertium-fr-ca.fr-ca.dix"/>
+         <property name="version" value="stable"/>
+      </resource>
+   </resource-set>
+</ling-resources>
+

@@ -1,0 +1,124 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<dictionary>
+  <alphabet/>
+  <sdefs>
+    <sdef n="n" c="Noun"/>
+  </sdefs>
+  <pardefs>
+    <pardef n="с,з,ш">      
+       <e><i>с</i></e>
+       <e><i>з</i></e>
+       <e><i>ш</i></e>
+    </pardef>
+    <pardef n="у">      
+       <e><i>у</i></e>
+    </pardef>
+    <pardef n="forms_я">      
+       <e><i>мяне</i></e>
+       <e><i>мне</i></e>
+       <e><i>мною</i></e>
+       <e><i>мной</i></e>
+    </pardef>
+    <pardef n="forms_я_preposition_з">      
+       <e><i>мне</i></e>
+       <e><i>мною</i></e>
+       <e><i>мной</i></e>
+    </pardef>
+  </pardefs>
+  <section id="main" type="standard">
+    <!-- All words after post-generation should be in format "~<WORD>" for the next stages. -->
+
+    <!--
+      Preposition "у/ва":
+        "~у ~у<...>" → "~ва ~у<...>"
+    -->
+    <e>
+      <p>
+        <l><a/>у<b/></l><r><a/>ва<b/></r>
+      </p>
+      <p>
+        <l><a/></l><r><a/></r>
+      </p>
+      <par n="у"/>
+    </e>
+
+    <!--
+      Preposition "з/са":
+        "~з ~[ш|з|с]<...>" → "~са ~[ш|з|с]<...>"
+    -->
+    <e>
+      <p>
+        <l><a/>з<b/></l><r><a/>са<b/></r>
+      </p>
+      <p>
+        <l><a/></l><r><a/></r>
+      </p>
+      <par n="с,з,ш"/>
+    </e>
+
+    <!--
+      Prepositions "аб/аба", "над/нада", "пад/пада", "перад/перада".
+        RULE: preposition + form "я" → new preposition + form "я"
+    -->
+    <e>
+      <p>
+        <l><a/>аб<b/></l><r><a/>аба<b/></r>
+      </p>
+      <p>
+        <l><a/></l><r><a/></r>
+      </p>
+      <par n="forms_я"/>
+    </e>
+    <e>
+      <p>
+        <l><a/>над<b/></l><r><a/>нада<b/></r>
+      </p>
+      <p>
+        <l><a/></l><r><a/></r>
+      </p>
+      <par n="forms_я"/>
+    </e>
+    <e>
+      <p>
+        <l><a/>пад<b/></l><r><a/>пада<b/></r>
+      </p>
+      <p>
+        <l><a/></l><r><a/></r>
+      </p>
+      <par n="forms_я"/>
+    </e>
+    <e>
+      <p>
+        <l><a/>перад<b/></l><r><a/>перада<b/></r>
+      </p>
+      <p>
+        <l><a/></l><r><a/></r>
+      </p>
+      <par n="forms_я"/>
+    </e>
+
+    <!--
+      Preposition "з/са".
+        RULE: preposition + form "я" (except "мяне") → new preposition + form "я"
+    -->
+    <e>
+      <p>
+        <l><a/>з<b/></l><r><a/>са<b/></r>
+      </p>
+      <p>
+        <l><a/></l><r><a/></r>
+      </p>
+      <par n="forms_я_preposition_з"/>
+    </e>
+
+    <!--
+      "~<WORD>" → "~<WORD>"
+    -->
+    <e>
+      <p><l><a/></l><r><a/></r></p>
+      <re>[абвгдеёжзійклмнопрстуўфхцчшыьэюя1234567890']+</re>
+    </e>
+
+
+  </section>
+</dictionary>

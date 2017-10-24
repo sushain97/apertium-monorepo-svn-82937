@@ -1,0 +1,136 @@
+<dictionary>
+  <alphabet/>
+  <sdefs>
+    <sdef n="n"  c=""/>
+    <sdef n="adv"  c=""/>
+    <sdef n="adj"  c=""/>
+    <sdef n="num"  c=""/>
+    <sdef n="det"  c=""/>
+    <sdef n="adp"  c=""/>
+    <sdef n="post"  c=""/>
+    <sdef n="pr"  c=""/>
+    <sdef n="ij"  c=""/>
+    <sdef n="np"  c=""/>
+    <sdef n="qst"  c=""/>
+    <sdef n="cnjcoo"  c=""/>
+    <sdef n="cnjsub"  c=""/>
+    <sdef n="vblex"  c=""/>
+    <sdef n="part"  c=""/>
+    <sdef n="prn"  c=""/>
+    <sdef n="rr"  c=""/>
+
+    <sdef n="actv"  c=""/>
+    <sdef n="attr"  c=""/>
+    <sdef n="ND"  c=""/>
+    <sdef n="CD"  c=""/>
+
+
+    <sdef n="itg"  c=""/>
+    <sdef n="dem"  c=""/>
+    <sdef n="ref"  c=""/>
+    <sdef n="pos"  c=""/>
+    <sdef n="qnt"  c=""/>
+    <sdef n="indef"  c=""/>
+    <sdef n="neg"  c=""/>
+    <sdef n="pers"  c=""/>
+    <sdef n="card"  c=""/>
+    <sdef n="ord"  c=""/>
+    <sdef n="rel"  c=""/>
+
+    <sdef n="nom"  c=""/>
+    <sdef n="gen"  c=""/>
+
+    <sdef n="p1"  c=""/>
+    <sdef n="p2"  c=""/>
+    <sdef n="p3"  c=""/>
+
+    <sdef n="sg"  c=""/>
+    <sdef n="pl"  c=""/>
+
+    <sdef n="ine"  c=""/>
+    <sdef n="ill"  c=""/>
+    <sdef n="ela"  c=""/>
+    <sdef n="com"  c=""/>
+    <sdef n="par"  c=""/>
+
+    <sdef n="punct"  c=""/>
+    <sdef n="sent"  c=""/>
+    <sdef n="clb"  c=""/>
+    <sdef n="guio"  c=""/>
+    <sdef n="cm"  c=""/>
+    <sdef n="apos"  c=""/>
+    <sdef n="rquot"  c=""/>
+    <sdef n="lquot"  c=""/>
+    <sdef n="rpar"  c=""/>
+    <sdef n="lpar"  c=""/>
+
+
+    <sdef n="foc"  c=""/>
+
+
+  </sdefs>
+
+  <section id="main" type="standard">
+
+    <!-- SECTION: Miscellaneous -->
+
+  
+    <!-- SECTION: Conjunctions -->
+
+  
+    <!-- SECTION: Adpositions -->
+
+  
+    <!-- SECTION: Determiners -->
+
+  
+    <!-- SECTION: Pronouns -->
+
+  
+    <!-- SECTION: Numbers -->
+
+    <e><p><l>yksi<s n="num"/></l><r>üks<s n="num"/><s n="card"/></r></p></e>
+  
+    <!-- SECTION: Nouns -->
+
+    <e><p><l>kissa<s n="n"/></l><r>kass<s n="n"/></r></p></e>
+
+  
+    <!-- SECTION: Proper nouns -->
+
+    <e><p><l>Jaakko<s n="np"/></l><r>Jaakko<s n="np"/></r></p></e>
+    <e><p><l>Mary<s n="np"/></l><r>Mary<s n="np"/></r></p></e>
+    <e><p><l>Mari<s n="np"/></l><r>Mari<s n="np"/></r></p></e>
+  
+    <!-- SECTION: Adjectives -->
+
+  
+    <!-- SECTION: Adverbs -->
+
+  
+    <!-- SECTION: Verbs -->
+
+  
+    <!-- SECTION: Punctuation -->
+
+    <e><p><l>,<s n="cm"/></l><r>,<s n="cm"/></r></p></e>
+    <e><p><l>.<s n="sent"/></l><r>.<s n="sent"/></r></p></e>
+    <e><p><l>(<s n="lpar"/></l><r>(<s n="lpar"/></r></p></e>
+    <e><p><l>)<s n="rpar"/></l><r>)<s n="rpar"/></r></p></e>
+    <e><p><l>[<s n="lpar"/></l><r>[<s n="lpar"/></r></p></e>
+    <e><p><l>]<s n="rpar"/></l><r>]<s n="rpar"/></r></p></e>
+    <e><p><l>«<s n="lquot"/></l><r>«<s n="lquot"/></r></p></e>
+    <e><p><l>»<s n="rquot"/></l><r>»<s n="rquot"/></r></p></e>
+    <e><p><l>“<s n="lquot"/></l><r>“<s n="lquot"/></r></p></e>
+    <e><p><l>”<s n="rquot"/></l><r>”<s n="rquot"/></r></p></e>
+    <e><p><l>-<s n="guio"/></l><r>-<s n="guio"/></r></p></e>
+    <e><p><l>–<s n="guio"/></l><r>–<s n="guio"/></r></p></e>
+    <e><p><l>—<s n="guio"/></l><r>—<s n="guio"/></r></p></e>
+    <e><p><l>'<s n="apos"/></l><r>'<s n="apos"/></r></p></e>
+    <e><re>[\?:;!"…]+</re><p><l><s n="sent"/></l><r><s n="sent"/></r></p></e>
+    <e><re>[0-9]+([.,][0-9]+)*</re><p><l><s n="num"/><s n="card"/><s n="sg"/><s n="nom"/></l><r><s n="num"/><s n="card"/></r></p></e> 
+
+  </section>
+</dictionary>
+<!-- vim: set ft=xml: -->
+

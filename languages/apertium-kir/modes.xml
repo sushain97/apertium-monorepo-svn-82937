@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<modes>
+
+  <mode name="kir-twol" install="yes">
+    <pipeline>
+      <program name="hfst-strings2fst -S"/>
+      <program name="hfst-compose-intersect">
+        <file name=".deps/kir.twol.hfst"/>
+      </program>
+      <program name="hfst-fst2strings"/>
+    </pipeline>
+  </mode>
+
+  <mode name="kir-morph" install="yes">
+    <pipeline>
+      <program name="hfst-proc -w">
+        <file name="kir.automorf.hfst"/>
+      </program>
+    </pipeline>
+  </mode>
+
+  <mode name="kir-lexc" install="yes">
+    <pipeline>
+      <program name="hfst-proc -g">
+        <file name=".deps/kir.lexc.hfst"/>
+      </program>
+    </pipeline>
+  </mode>
+
+
+  <mode name="kir-gener" install="yes">
+    <pipeline>
+      <program name="hfst-proc -g">
+        <file name="kir.autogen.hfst"/>
+      </program>
+    </pipeline>
+  </mode>
+
+  <mode name="kir-tagger" install="yes">
+    <pipeline>
+      <program name="lt-proc -w">
+        <file name="kir.automorf.bin"/>
+      </program>
+      <program name="cg-proc -1">
+        <file name="kir.rlx.bin"/>
+      </program>
+    </pipeline>
+  </mode>
+
+  <mode name="kir-debug">
+    <pipeline>
+      <program name="lt-proc -w">
+        <file name="kir.automorf.bin"/>
+      </program>
+      <program name="cg-conv -a -l" />
+      <program name="vislcg3 --trace -g">
+        <file name="apertium-kir.kir.rlx"/>
+      </program>
+    </pipeline>
+  </mode>
+
+
+  <mode name="kir-disam" install="yes">
+    <pipeline>
+      <program name="hfst-proc -w">
+        <file name="kir.automorf.hfst"/>
+      </program>
+      <program name="cg-proc -w">
+        <file name="kir.rlx.bin"/>
+      </program>
+    </pipeline>
+  </mode>
+
+	<mode name="kir-spell" install="yes">
+		<pipeline>
+			<program name="hfst-ospell -S -n 10">
+				<file name="kir.zhfst"/>
+			</program>
+		</pipeline>
+	</mode>
+
+	<mode name="kir-tokenise" install="yes">
+		<pipeline>
+			<program name="hfst-proc">
+				<file name=".deps/acceptor.default.hfst"/>
+			</program>
+		</pipeline>
+	</mode>
+
+
+
+</modes>

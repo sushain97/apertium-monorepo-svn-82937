@@ -1,0 +1,596 @@
+<rules>
+
+<rule>
+<match lemma="осы" tags="det.dem"><select lemma="this" tags="det.dem.*"/></match>
+    <match lemma="*" tags="n"/>
+    
+ </rule>
+
+ <rule>
+     <match lemma="*" tags="num"/>
+     <match lemma="жақсы" tags="adj"><select lemma="good" tags="adj.*"/></match>
+	<match lemma="бақша" tags="n.*"/>
+ </rule>
+
+ <rule>
+     
+     <match lemma="жақсы" tags="adj"><select lemma="good" tags="adj"/></match>
+	<match lemma="бақша" tags="n.*"/>
+ </rule>
+ <rule>
+  <or>
+   <match lemma="жасыл" tags="adj"/>
+  <match lemma="көк" tags="adj"/>
+<match lemma="қызыл" tags="adj"/>
+<match lemma="сары" tags="adj"/>
+<match lemma="қара" tags="adj"/>
+<match lemma="ақ" tags="adj"/>
+<match lemma="қоңыр" tags="adj"/>
+<match lemma="сұр" tags="adj"/>
+  </or>
+   <match lemma="түс" tags="n.*"><select lemma="color" tags="n.*"/></match>
+ </rule>
+
+ <rule>
+     <match lemma="*" tags="np.ant.m.*"/>
+     <match lemma="би" tags="n.*"><select lemma="judge" tags="n.*"/></match>
+ </rule>
+
+
+ <rule>
+  <or>
+   <match lemma="*" tags="n.*"/>
+  <match lemma="*" tags="adj"/>
+
+  </or>
+   <match lemma="би" tags="n.*"><select lemma="dance" tags="n.*"/></match>
+ </rule>
+
+<rule>
+    <match lemma="*" tags="adj"/>
+    <match lemma="тіл" tags="n.px3sp.*"><select lemma="language" tags="n.*"/></match>
+ </rule>
+
+
+
+
+
+<rule>
+    <match lemma="*" tags="prn.pers.*.*.*"/>
+    <match lemma="*" tags="num"/>
+<match lemma="үй" tags="n.*"><select lemma="house" tags="n.*"/></match>
+ </rule>
+
+<rule>
+    <match lemma="көтеріліс" tags="n.*"/>
+    <match lemma="басшы" tags="n.px3sp.*"><select lemma="leader" tags="n.*"/></match>
+ </rule>
+
+<rule>
+  <or>
+   <match lemma="жүйрік" tags="n.*"/>
+  <match lemma="алғыр" tags="adj"/>
+<match lemma="тез" tags="adj"/>
+
+  </or>
+   <match lemma="ат" tags="n.px3sp.*"><select lemma="horse" tags="n.*"/></match>
+ </rule>
+
+
+<rule>
+  <or>
+   <match lemma="британ" tags="n.*"/>
+  <match lemma="студент" tags="n.*"/>
+<match lemma="Европа" tags="n.*"/>
+<match lemma="Азия" tags="n.*"/>
+<match lemma="Университет" tags="n.*"/>
+<match lemma="қала" tags="n.*"/>
+
+  </or>
+   <match lemma="кеңес" tags="n.*.*"><select lemma="council" tags="n.*"/></match>
+<match lemma="*" tags="v.*.ger.*"/> 
+
+ </rule>
+
+
+<rule>
+  <match lemma="*" tags="prn.pers.*.*.nom"/>
+<match lemma="*" tags="num.ord"/>
+<match lemma="орын" tags="n.*"><select lemma="place" tags="n.*"/></match>
+<or>
+   <match lemma="ал" tags="v.*.*.*.*"/>
+ 
+<match lemma="жең" tags="v.*.*.*.*"/>
+
+  </or>
+</rule>
+
+<rule>
+  <match lemma="үлкен" tags="adj"><select lemma="great" tags="adj.*"/></match>
+<match lemma="жұмыс" tags="n.*"/>
+</rule>
+
+<rule>
+  <match lemma="есеп" tags="n.*"/>
+<match lemma="жол" tags="n.*.*"><select lemma="method" tags="n.*"/></match>
+<match lemma="*" tags="adj"/>
+</rule>
+
+<rule>
+  <match lemma="есеп" tags="n.*"/>
+<match lemma="жол" tags="n.*.*"><select lemma="method" tags="n.*"/></match>
+<match lemma="қиын" tags="adj"><select lemma="difficult" tags="adj"/></match>
+ <match lemma="*" tags="cop.*.*.*"/>
+</rule>
+
+<rule>
+  <match lemma="бала" tags="n.*"><select lemma="kid" tags="n.*"/></match>
+<match lemma="ынта" tags="n.*"/> 
+</rule>
+
+<rule>
+<match lemma="оқы" tags="v.*.ger.*.acc"/>
+  <match lemma="бітір" tags="v.*.*.*.*"><select lemma="finish" tags="vblex.*"/></match>
+
+</rule>
+
+<rule>
+  <match lemma="кел" tags="v.*.*.*.*"><select lemma="come" tags="vblex.*.*.*"/></match>
+<match lemma="Америка" tags="np.top.dat"/> 
+</rule>
+
+<rule>
+  <match lemma="ол" tags="prn.dem.pl.gen"><select lemma="they" tags="prn.obj.p3.mf.pl"/></match>
+<match lemma="*" tags="num"/>
+<match lemma="пайыз" tags="n.*"/>
+</rule>
+
+
+<rule>
+  <match lemma="бала" tags="n.pl.*"><select lemma="kid" tags="n.*"/></match>
+
+</rule>
+
+<rule>
+<match lemma="бұл" tags="prn.dem.*"/>
+  <match lemma="қоғам" tags="n.*"><select lemma="community" tags="n.*"/></match>
+
+</rule>
+
+
+<rule>
+<match lemma="ұсыныс" tags="n.*.*"/>
+  <match lemma="қолда" tags="v.*.*.*.*"><select lemma="accept" tags="vblex.*"/></match>
+</rule>
+
+<rule>
+
+  <match lemma="жауапкершілік" tags="n.*"><select lemma="responsibility" tags="n.*"/></match>
+
+</rule>
+
+<rule>
+<match lemma="бұл" tags="prn.dem.*"><select lemma="this" tags="det.dem.*"/></match>
+</rule>
+
+<rule>
+<match lemma="сенімділік" tags="n.*"><select lemma="trust" tags="n.*"/></match>
+<match lemma="орнат" tags="v.*.*.*"><select lemma="build" tags="vblex"/></match>
+<match lemma="қатты" tags="adv"><select lemma="really" tags="adv"/></match>
+</rule>
+
+<rule>
+<match lemma="*" tags="num"/>
+<match lemma="процент" tags="n.*"/>
+  <match lemma="көп" tags="adv"><select lemma="more than" tags="preadv"/></match>
+
+</rule>
+<rule>
+<match lemma="жоқ" tags="adj.*.*"><select lemma="not" tags="adv"/></match>
+</rule>
+<rule>
+  <match lemma="әрине" tags="adv"><select lemma="of course" tags="adv"/></match>
+
+ </rule>
+
+<rule>
+  <match lemma="мен" tags="prn.pers.p1.sg.gen"><select lemma="my" tags="det.*"/></match>
+ </rule>
+
+<rule>
+  <match lemma="оқу" tags="n.*"><select lemma="education" tags="n.*"/></match>
+  <match lemma="*" tags="v.*"/>
+ </rule>
+<rule>
+  <match lemma="бар" tags="v.*"><select lemma="go" tags="vblex.*"/></match>
+ </rule>
+
+<rule>
+  <match lemma="мұғалім" tags="n.*"><select lemma="teacher" tags="n.*"/></match>
+ </rule>
+<rule>
+  <match lemma="күлкі" tags="n.*"><select lemma="laughter" tags="n.*"/></match>
+ </rule>
+ <rule>
+  <or>
+   <match lemma="қай" tags="det.*"/>
+   <match lemma="барлық" tags="det.*"/>
+  </or>
+   <match lemma="жер"><select lemma="place"/></match>
+ </rule>
+
+ <rule>
+  <match lemma="кішкентай" tags="adj"><select lemma="small" tags="adj.*"/></match>
+  
+  <match lemma="кейін" tags="post"><select lemma="after" tags="pr"/>
+</match>
+ </rule>  
+
+ <rule>
+  <match lemma="қысқа" tags="adj"><select lemma="short" tags="adj.*"/></match>
+  
+  <match lemma="бала" tags="n.*"><select lemma="kid" tags="n.*"/></match>
+ </rule>  
+
+ <rule>
+  <match lemma="осы" tags="prn.*"/>
+  
+  <match lemma="күшік" tags="n.*"><select lemma="dog" tags="n.*"/>
+</match>
+ </rule> 
+
+
+<rule>
+  <match lemma="жыл" tags="n.*"/>
+  
+  <match lemma="көлем" tags="n.px3sp.loc"><select lemma="matter" tags="n.*"/>
+</match>
+ </rule> 
+
+ <rule>
+  <match lemma="кішкентай" tags="adj"><select lemma="small" tags="adj.*"/></match>
+  <match lemma="*" tags="*"/>
+  <match lemma="күшік" tags="n.*"><select lemma="dog" tags="n.*"/>
+</match>
+ </rule>  
+
+<rule>
+  <match lemma="*" tags="prn.pers.*.*.nom"/>
+  <match lemma="түс" tags="n.*"><select lemma="dream" tags="n.*"/></match>
+  <match lemma="көр" tags="v.*.*.*.*"/>
+ </rule>
+
+ <rule>
+  <match lemma="*" tags="np.ant.m.*"/>
+  <match lemma="*" tags="*"/>
+  <match lemma="*" tags="*"/>
+  <match lemma="кішкентай" tags="adj"><select lemma="little" tags="adj"/></match>
+  <match lemma="бала" tags="n.*"><select lemma="boy" tags="n.*"/>
+</match>
+
+
+ </rule>  
+
+<rule>
+  <match lemma="кішкентай" tags="adj"><select lemma="little" tags="adj"/></match>
+
+  <match lemma="бала" tags="n.*"/>
+
+
+ </rule>
+
+
+
+
+<rule>
+  <match lemma="қайда" tags="adv.*"><select lemma="where" tags="adv.*"/></match>
+ </rule>
+
+<rule>
+  <match lemma="су" tags="adj.*"><select lemma="where" tags="adv.*"/></match>
+ </rule>
+
+
+<rule>
+  <match lemma="адам" tags="n.*"/>
+  <match lemma="бас" tags="n.*"><select lemma="head" tags="n.*"/></match>
+ </rule>
+
+
+<rule>
+  <match lemma="фильм" tags="n.*"/>
+  <match lemma="бас" tags="n.*"><select lemma="beginning" tags="n.*"/></match>
+ </rule>
+
+
+<rule>
+  <match lemma="біл" tags="v.*"><select lemma="know" tags="vblex.*"/></match>
+ </rule>
+
+
+<rule>
+  <match lemma="тап" tags="v.*"><select lemma="find" tags="vblex.*"/></match>
+ </rule>
+<rule>
+  <match lemma="Адам" tags="n.pl.*"><select lemma="People" tags="n.*"/></match>
+ </rule>
+
+<rule>
+  <match lemma="ана" tags="n.*"><select lemma="mother" tags="n.*"/></match>
+ </rule>
+ 
+<rule>
+  <match lemma="Ол" tags="prn.pers.p3.sg.nom"><select lemma="she" tags="prn.subj.p3.f.*"/></match>
+  <match lemma="қыз" tags="n.*"/>
+ </rule>
+
+<rule>
+
+  <match lemma="білім" tags="n.*"><select lemma="education" tags="n.*"/></match>
+  <match lemma="мен" tags="cnjcoo"/>
+<match lemma="денсаулық" tags="n.*"/>
+ </rule>
+<rule>
+<match lemma="осы уақытта" tags="adv"><select lemma="at that moment" tags="adv"/></match>
+<match lemma="өз" tags="det.ref"/>
+<match lemma="халық" tags="n.*.*"><select lemma="peole" tags="n.*.*"/></match>
+</rule> 
+<rule>
+  <match lemma="Ол" tags="prn.pers.p3.sg.nom"><select lemma="she" tags="prn.subj.p3.f.*"/></match>
+  <match lemma="әдемі" tags="adj"><select lemma="beautiful" tags="adj"/></match>
+  <match lemma="қыз" tags="n.*"/>
+ </rule>
+
+ <rule>
+  <match lemma="кітап" tags="n.*"/>
+  <match lemma="бет" tags="n.*.*"><select lemma="page" tags="n.*"/></match>     
+ </rule>
+
+ <rule>
+  <match lemma="минут" tags="n.*"/>
+  <match lemma="кетті" tags="v.*.*"><select lemma="past" tags="vblex.*"/></match>     
+ </rule>
+
+ <!--<rule>
+  <match lemma="он" tags="num.*"/>
+  <match lemma="минут" tags="n"/>
+  <match lemma="кетті" tags="v.*.*"><select lemma="past" tags="vblex.*"/></match>     
+ </rule>-->
+
+ <!--<rule>
+  <match lemma="сағат" tags="n.*"/>
+  <match lemma="тура" tags="n.num"><select lemma="o'clock" tags="n.*"/></match>  
+<match lemma="*" tags="num.*"/>   
+ </rule>-->
+
+ <rule>
+  <match lemma="сағат" tags="n.*"><select lemma="time" tags="n.*"/></match>
+  <match lemma="*" tags="num.*"/>
+ </rule>
+
+ <rule>
+  <match lemma="су" tags="n.*"/>
+  <match lemma="бет" tags="n.*.*"><select lemma="surface" tags="n.*"/></match>     
+ </rule>
+
+
+ <rule>
+  
+  <match lemma="Наурыз" tags="np."><select lemma="Nauryz" tags="np.*.*.*"/></match> 
+<match lemma="мейрам" tags="n.*.*"/>    
+ </rule>
+
+ <rule>
+  <match lemma="әдемі" tags="adj"><select lemma="beautiful" tags="adj"/></match>
+ </rule>
+
+ <rule>
+  <match lemma="оның" tags="prn.pers.p3.sg.gen"><select lemma="his" tags="det.pos.sp"/></match>
+ </rule>
+
+ <rule>
+  <match lemma="онымен" tags="prn.pers.p3.sg.ins"><select lemma="him" tags="prn.obj.p3.m.sg"/></match>
+ </rule>
+
+ <rule>
+  <match lemma="бар" tags="v.iv.imp.*.*"><select lemma="have" tags="vblex.pres"/></match>
+ </rule>
+
+ <rule>
+  <match lemma="арт" tags="n.PXD.loc"><select lemma="behind" tags="pr"/></match>
+ </rule>
+
+ <rule>
+  <match lemma="жас" tags="n.*.loc.*"><select lemma="year" tags="n.pl"/><select lemma="old" tags="adj.sint"/></match>
+ </rule>
+ 
+ <rule>
+  <match lemma="Ол" tags="prn.pers.p3.sg.nom"><select lemma="she" tags="prn.subj.p3.f.*"/></match>
+  <match lemma="әдемі" tags="adj"><select lemma="beautiful" tags="adj"/></match>
+  <match lemma="қыз" tags="n.*"/>
+ </rule>
+
+ <rule>
+  <match lemma="үст" tags="n.px3sp.loc"><select lemma="on" tags="pr"/></match>
+ </rule>
+
+ <rule>
+  <match lemma="аст" tags="n.px3sp.loc"><select lemma="under" tags="pr"/></match>
+ </rule>
+
+ <rule>
+  <match lemma="алд" tags="n.px3sp.loc"><select lemma="front" tags="pr"/></match>
+ </rule>
+
+<rule>
+<match lemma="ай" tags="n.*.*"><select lemma="month" tags="n.*"/></match>
+
+ </rule>
+
+
+
+ <rule>
+  <match lemma="үй" tags="n.*"><select lemma="home" tags="n.*"/></match>
+  <match lemma="*" tags="v.*.*.*.*"/>
+ </rule>
+
+ <rule>
+  <match lemma="үй" tags="n.*"><select lemma="house" tags="n.*"/></match>
+ </rule>
+
+ <rule>
+  <match lemma="арқылы" tags="post"><select lemma="through" tags="pr"/></match>
+ </rule>
+
+ <rule>
+  <or>
+   <match lemma="институт" tags="n.loc"/>
+   <match lemma="университет" tags="n.loc"/>
+  </or>
+   <match lemma="оқы" tags="v.*"><select lemma="study" tags="vblex.*"/></match>
+ </rule>
+ 
+ 			<!--NEW RULES-->
+<!--Doesn't work--> 
+<rule>
+  <match lemma="бал" tags="n.*"/>
+  <match lemma="ара" tags="n.*.*"><select lemma="bee" tags="n.*"/></match>     
+ </rule>
+
+ <!--
+ <rule>
+  <match lemma="су" tags="n.*"/>
+  <match lemma="бет" tags="n.*.*"><select lemma="surface" tags="n.*"/></match>     
+ </rule>
+ -->
+
+<rule>
+    <match lemma="интернет" tags="n.*"/>
+      <match lemma="жарнама" tags="n.*"><select lemma="banner" tags="n.*"/></match>
+ </rule>
+
+<rule>
+    <match lemma="скрипка" tags="n.*"/>
+      <match lemma="аспап" tags="n.*.*"><select lemma="instrument" tags="n.*"/></match>
+ </rule>
+
+<rule>
+    <match lemma="скрипка" tags="n.*"/>
+      <match lemma="аспап" tags="n.*.*"><select lemma="instrument" tags="n.*"/></match>
+ </rule>
+
+<rule>
+    
+      <match lemma="жер" tags="n.*"><select lemma="earth" tags="n.*"/></match>
+ </rule>
+
+<rule>
+      <match lemma="күн" tags="n.*"><select lemma="sun" tags="n.*"/></match>
+ 	<match lemma="жер" tags="n.*"><select lemma="earth" tags="n.*"/></match>
+
+</rule>
+
+<rule>
+      <match lemma="күн" tags="n.*"><select lemma="sun" tags="n.*"/></match>
+<match lemma="планета" tags="n.*.*"/>
+<match lemma="*" tags="v.*.*.*.*"/>
+ </rule>
+
+<rule>
+    <match lemma="Бостандық" tags="np.top.*"/>
+      <match lemma="аудан" tags="n.*.*"><select lemma="district" tags="n.*"/></match>
+ </rule>
+
+ <rule>
+  <or>
+   <match lemma="үшбұрыш" tags="n.*"/>
+  <match lemma="төртбұрыш" tags="n.*"/>
+<match lemma="пирамида" tags="n.*"/>
+<match lemma="трапеция" tags="n.*"/>
+<match lemma="шеңбер" tags="n.*"/>
+<match lemma="дөңгелек" tags="n.*"/>
+<match lemma="конус" tags="n.*"/>
+<match lemma="цилиндр" tags="n.*"/>
+
+  </or>
+   <match lemma="аудан" tags="n.*.*"><select lemma="square" tags="n.*"/></match>
+ </rule>
+
+<rule>
+          <match lemma="ақпарат" tags="n.*"><select lemma="press" tags="n.*"/></match>
+<match lemma="орталық" tags="n.*.*"/>
+ </rule>
+
+<rule>
+          <match lemma="әскери" tags="adj"><select lemma="military" tags="adj"/></match>
+ </rule>
+
+<rule>
+     <match lemma="жастық" tags="n.*"><select lemma="pillow" tags="n.*"/></match>
+ </rule>
+<rule>
+     <match lemma="айдаһар" tags="n.*"><select lemma="dragon" tags="n.*"/></match>
+ </rule>
+ 
+<rule>
+  <match lemma="жарнама" tags="n.*"><select lemma="advertisement" tags="n.*"/></match>
+ </rule>
+
+ <rule>
+  <or>
+   <match lemma="қаңтар" tags="n.*"/>
+  <match lemma="ақпан" tags="n.*"/>
+<match lemma="наурыз" tags="n.*"/>
+<match lemma="сәуір" tags="n.*"/>
+<match lemma="мамыр" tags="n.*"/>
+<match lemma="маусым" tags="n.*"/>
+<match lemma="шілде" tags="n.*"/>
+<match lemma="тамыз" tags="n.*"/>
+<match lemma="қыркүйек" tags="n.*"/>
+<match lemma="қазан" tags="n.*"/>
+<match lemma="қараша" tags="n.*"/>
+<match lemma="желтоқсан" tags="n.*"/>
+  </or>
+   <match lemma="ай" tags="n.px3sp.*"><select lemma="month" tags="n.*"/></match>
+ </rule>
+
+
+ <rule>
+   <match lemma="құжат" tags="n.*"/>
+   <match lemma="үлгі" tags="n.px3sp.*"><select lemma="sample" tags="n.*"/></match>
+ </rule>
+
+ <rule>
+   <match lemma="*" tags="adj"/>
+   <match lemma="ұл" tags="n.*"><select lemma="boy" tags="n.*"/></match>
+ </rule>
+
+ <rule>
+   <match lemma="математикалық" tags="adj"/>
+   <match lemma="үлгі" tags="n.*"><select lemma="model" tags="n.*"/></match>
+ </rule>
+
+<rule>
+<match lemma="бұл" tags="prn.dem.adv"/>
+<match lemma="*" tags="*"/>
+  <match lemma="жазыл" tags="v.iv.*.*"><select lemma="write" tags="vblex.*"/></match>
+ </rule>
+
+
+<rule>
+  <match lemma="шақыр" tags="v.tv.*.*"><select lemma="invite" tags="vblex.*"/></match>
+ </rule>
+
+<rule>
+  <match lemma="Сіз" tags="prn.pers.p2.*.*.gen"><select lemma="You" tags="prn.subj.p2.*.*"/></match>
+  <match lemma="*" tags="v.*.prc_vol.*.*"/>
+ </rule>
+
+
+<rule>
+  <match lemma="мен" tags="prn.pers.*"><select lemma="I" tags="prn.subj"/></match>
+  <match lemma="*" tags="v.*.prc_vol.*"/>
+ 
+ </rule>
+
+</rules>

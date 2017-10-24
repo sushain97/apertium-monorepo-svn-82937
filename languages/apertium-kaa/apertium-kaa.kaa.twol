@@ -1,0 +1,242 @@
+
+Alphabet
+
+ A B V G D E J Z İ Y K Q L M N O P R S T U W F X H I
+ a b v g d e j z i y k q l m n o p r s t u w f x h ı
+
+ %{A%}:a ! %{A%}:e
+ %{I%}:ı ! %{I%}:i 
+! %{G%}:g %{G%}:k %{G%}:q
+ %{G%}:g
+ %{N%}:n
+ %{E%}:a
+ %{K%}:q ! %{K%}:k
+ %{D%}:d ! %{D%}:t
+ %{M%}:m ! %{M%}:b %{M%}:p
+
+! %{'%}:0 %{'%}:%'
+! %{'%}:0
+ %{s%}:s ! %{s%}:0
+ %{n%}:n ! %{n%}:0
+ %{y%}:0 ! %{y%}:i %{y%}:0
+ %{l%}:l
+! %{%_%}:0  ! sometimes surfaces as '
+
+ %{❗%}:0
+ %{☭%}:0
+ %{ъ%}:0
+ %{ь%}:0
+ %{ꙑ%}:0
+
+ %{а%}:0 %{с%}:0 
+ %{э%}:0 %{з%}:0 
+ !%{т%}:0
+ %{й%}:0 %{л%}:0 %{н%}:0
+
+ %'
+ %>:0 
+ % 
+ %- ; 
+
+Sets
+
+Vow = a e i o u ı    ! a' o' u' 
+      A E İ O U I ;  ! A' O' U'
+
+FrontVow = e i       ! a' o' u'
+           E İ ;     ! A' O' U'
+
+! Vowels that are front if ' follows
+FrontableVow = a o u
+               A O U ;
+
+BackVow = a ı o u
+          A I O U ;
+
+Cns = B V G D J Z Y K P Q L M N R S T W F X H     ! N' G' 
+      b v g d j z y k p q l m n r s t w f x h ;   ! n' g'
+
+CnsRight = B V G D J Z Y K P Q L M N R S T W F X H     ! N' G' 
+      b v g d j z y k p q l m n r s t w f x h ;   ! n' g'
+
+CnsApostroph = G N
+               g n ;
+
+! these consonants are voiceless when they're at the end of a word
+VoicelessCns = b v p f d t j s g h k q x 
+               B V P F D T J S G H K Q X ; 
+
+VoicedCns = z y r l m n w
+            Z Y R L M N W ;
+
+LowSonVoicedCons = m n z
+                   M N Z ;
+
+Nasal = m n 
+        M N ;
+
+Archiphon = %{G%} %{N%} %{K%} %{D%} %{M%} ;
+
+Empty = %{ь%} %{❗%} %{ꙑ%} ;
+
+Abstract =  %{а%} %{с%} %{э%} %{з%} %{й%} %{л%} %{н%} ;
+
+AbstCons = %{й%} %{с%} %{з%} %{л%} %{н%} ;
+
+AbstVcdCns = %{й%} %{з%} %{л%} %{н%} ;
+
+AbstLowSonVcdCns = %{н%} %{л%} ;
+
+AbstVclsCns = %{с%} ;
+
+Rules
+
+"Deletion of {s} after a consonant"
+%{s%}:0 <=> [ :Cns (:%') %>: ]/:0* _  ; 
+
+!"Epenthesis in some stems"
+!%{y%}:0 <=> _ [ :Cns :Vow ]/[ :0 | %>: ] ;
+
+"{n} deletion word final"
+%{n%}:0 <=> _ (:0) .#. ;
+            _ (:0) % ;  ! also deletion in forms like pıshıq<n><px3sp><ins>, eki<num><coll><subst><px3sp><nom>+da<cnjcoo>
+
+!"Intervocalic voicing of p"
+!p:b <=> :Vow (:0) _ %>: (:0) :Vow ;
+
+"Intervocalic voicing of k/q/p"
+Cx:Cy <=> :Vow [ :0 | :%' ]* _ [ %>: :Vow ]/[ :%' | [ :0 - %>: ] ]* ;
+          ! :Vow (:0) _ %{ъ%}: %>: :0* :Vow ;
+          except
+            ! %{❗%}:0 _ ;
+            _ %{❗%}:0 ;
+          where Cx in ( k q p ) ! к қ )
+                Cy in ( g g b ) ! г ғ )
+                matched;
+
+"Forward voicing assimilation"
+Cx:Cy <=> [ :VoicelessCns - Archiphon: ]/[ %>: | %  | %{ъ%}: | [ :0 - Abstract: ] ]* _ ;
+          [ AbstVclsCns: ]/[ [ :0 - Abstract: ] | :%- ]* _ ;
+          where Cx in ( %{M%}  %{D%}  %{N%} )
+                Cy in (   p      t      t   )
+                matched;
+
+
+"{A} vowel harmony"
+%{A%}:e <=> [ [ :FrontVow | [ [ :a | :o | :u ] :%' ] ] [ :Cns* :CnsRight ]/:%' ]/[ %>: | %  | [ :0 - [ %{ꙑ%}: | Abstract: ] ] | %{ъ%}: ]* _ ;
+            [ %{ь%}: :Cns* ]/[ :0 - %{ь%}: ] _ ;
+            [ k:k :Cns* ]/:0 _ ;
+            %{э%}: [ AbstCons: | :Cns | [ :0 - Abstract: ] | :%- ]* _ ;
+
+"{I} vowel harmony"
+%{I%}:i <=> [ [ :FrontVow | [ [ :a | :o | :u ] :%' ] ] [ :Cns* :CnsRight ]/:%' ]/[ %>: | %  | [ :0 - [ %{ꙑ%}: | Abstract: ] ] | %{ъ%}: ]* _ ;
+            [ %{ь%}: :Cns* ]/[ :0 - %{ь%}: ] _ ;
+            [ k:k :Cns* ]/:0 _ ;
+            %{э%}: [ AbstCons: | :Cns | [ :0 - Abstract: ] | :%- ]* _ ;
+        except
+            [ %{n%}: %{N%}:0 ]/[ :0 - %{n%}: ]* _ .#. ; ! px3 + accusative
+            :Vow/:0 _ ;
+
+!"' is impossible after k"
+!%{'%}:0 <=> :k (:0)  _ ; 
+
+"Insert ' after g in the context of back vowels"
+%{ъ%}:%' <=> [ q:g | g:g | %{G%}:g ] _ :BackVow/[ :0 ]* ;
+         except
+             _ [ :FrontableVow :%' ]/[ :0 - %{ъ%}: ]* ;
+            [ %{ь%}: :Cns* ]/[ :0 - %{ь%}: ] _ ;
+
+!"q to g intervocalically across morpheme boundary"
+!q:g <=> _ [ %>: :Vow ]/[ :0 - %>: ] ;
+
+"{G} to q after a voiceless sound followed by back vowels"
+!%{G%}:q <=> [ :BackVow :Cns* :VoicelessCns ]/:0 _ ;
+! maybe better?
+%{G%}:q <=> :VoicelessCns/:0* _ :BackVow/[ :0 | %{ъ%}: ]* ;
+        except
+            _ [ :FrontableVow :%' ]/:0* ;
+            %{n%}:/[ :0 - %{n%}: ]* _ ;
+
+"{G} to k after a voiceless sound followed by front vowels"
+!%{G%}:k <=> [ [ :FrontVow | [ :FrontableVow :%' ] ] :Cns* :VoicelessCns ]/:0 _ ;
+! maybe better?
+%{G%}:k <=>  :VoicelessCns/:0* _ [ :FrontVow | [ :FrontableVow :%' ] ]/:0* ;
+        except
+             %{n%}:/[ :0 - %{n%}: ]* _ ;
+
+!"{G} to g after voiced cons or vowel"
+!%{G%}:g <=> [ :VoicedCns | :Vow | [ :n :%' ] ]/:0 _ ;
+
+"{E} to y after vowels"
+%{E%}:y <=> [ :Vow ]/:0 _ ;
+
+"{E} vowel harmony"
+%{E%}:e <=> [ [ :FrontVow | [ [ :a | :o | :u ] :%' ] ] :Cns* :CnsRight ]/[ %>: | % | :0 ] _ ;
+
+"{N} to d after voiced consonant"
+%{N%}:d <=> [ :VoicedCns | [ :CnsApostroph :%' ] ]/[ :0 - Abstract: ]* _ ;
+            [ AbstVcdCns: ]/[ [ :0 - Abstract: ] | :%- ] _ ;
+        except
+            :Nasal ( :%' ) :0* _ :Vow* :Nasal ; ! Nasal harmony
+            %{n%}:/[ :0 - %{n%}: ]* _ ; ! px+gen form
+            [ :VoicelessCns - Archiphon: ]/[ %>: | %  | %{ъ%}: | :0 ]* _ ;  ! Intervocalic-voicing
+
+!"{N} to t after voiceless consonant"
+!%{N%}:t <=> [ :VoicelessCns ]/:0 _ ;
+
+"{M} to b after voiced low-sonority consonat"
+%{M%}:b <=> [ :LowSonVoicedCons | [ :n :%' ] ]/[ [ :0 - Abstract: ] | %  ] _ ;
+            [ AbstLowSonVcdCns: ]/[ [ :0 - Abstract: ] | :%- ] _ ;
+        except
+            _ :Nasal/:0 ;
+            [ :Nasal ( :%' ) :0* ]/[ :0 | %  ] _ [ :Vow* :Nasal ]/[ :0 | %  ] ;  ! Nasal harmony (FMT: CHECK: ignore spaces!)
+
+"{K} to k after a front vowel"
+%{K%}:k <=> :FrontVow/:0 _ ;
+
+"Passives for verbs ending in l"
+%{l%}:n <=> :l [ :Vow | :%' ]*/[ :0 ] _ ;
+
+"Delete {I} after another vowel"
+%{I%}:0 <=> :Vow/:0 _ ;
+
+"Delete dative {G} after {n}"
+%{G%}:0 <=> %{n%}:/[ :0 - %{n%}: ]* _ ;
+            [ %{I%}: :n :%' ]/:0* _ ;
+            [ %{I%}: :m ]/:0* _ ;
+
+"Delete genitive and accusative {N} after {n}"
+%{N%}:0 <=> %{n%}:/[ :0 - %{n%}: ]* _ ;
+        except
+            [ :VoicelessCns - Archiphon: ]/[ %>: | %  | %{ъ%}: | [ :0 - Abstract: ] ]* _ ;
+            [ AbstVclsCns: ]/[ [ :0 - Abstract: ] | :%- ]* _ ;
+
+
+"Delete accusative {I} after {n}"
+%{I%}:0 <=> [ %{n%}:n %{N%}:0 ]/[ :0 - %{n%}: ]* _ .#. ;
+
+"Delete ablative {D} after {n}"
+%{D%}:0 <=> %{n%}:/[ :0 - %{n%}: ]* _ %{A%}: :n ;
+        except
+            [ :VoicelessCns - Archiphon: ]/[ %>: | %  | %{ъ%}: | [ :0 - Abstract: ] ]* _ ;
+            [ AbstVclsCns: ]/[ [ :0 - Abstract: ] | :%- ]* _ ;
+
+"{D} nasal harmony"
+%{D%}:n <=> :Nasal ( :%' ) [ :0 - Abstract: ]* _ :Vow* :Nasal ;
+            %{н%}: ( :%' | :%- ) [ :0 - Abstract: ]* _ :Vow* :Nasal ;
+        except
+            %{n%}:/[ :0 - %{n%}: ]* _ ;
+
+"Back-vowel epenthesis"
+%{y%}:ı <=> [ :BackVow [ :Cns* :Cns ]/:%' ]/:0 _ [ :Cns :Cns ]/[ :%' | :0 ] ;
+            [ :BackVow [ :Cns* :Cns ]/:%' ]/:0 _ [ :Cns :Cns* ]/[ :%' | :0 ] .#. ;
+        except
+            _ [ :Cns :Vow ]/[ :%' | :0 ] ;
+
+"Front-vowel epenthesis"
+%{y%}:i <=> [ [ :FrontVow | [ :FrontableVow :%' ] ] [ :Cns* :Cns ]/:%' ]/:0 _ [ :Cns :Cns ]/[ :%' | :0 ] ;
+            [ [ :FrontVow | [ :FrontableVow :%' ] ] [ :Cns* :Cns ]/:%' ]/:0 _ [ :Cns :Cns* ]/[ :%' | :0 ] .#. ;
+        except
+            _ [ :Cns :Vow ]/[ :%' | :0 ] ;
+
+

@@ -1,0 +1,531 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<modes>
+
+  <!-- eng → pes -->
+
+  <mode name="eng-pes" install="yes">
+    <pipeline>
+      <program name="lt-proc -w">
+        <file name="eng-pes.automorf.bin"/>
+      </program>
+
+
+      <program name="cg-proc -w">
+        <file name="eng-pes.rlx.bin"/>
+      </program>
+      <program name="apertium-tagger -g $2">
+        <file name="eng-pes.prob"/>
+      </program>
+      <program name="apertium-pretransfer"/>
+      <program name="lt-proc -b">
+        <file name="eng-pes.autobil.bin"/>
+      </program>
+      <program name="lrx-proc">
+        <file name="eng-pes.autolex.bin"/>
+      </program>
+      <program name="apertium-transfer -b">
+        <file name="apertium-eng-pes.eng-pes.t1x"/>
+        <file name="eng-pes.t1x.bin"/>
+      </program>
+      <program name="apertium-interchunk">
+        <file name="apertium-eng-pes.eng-pes.t2x"/>
+        <file name="eng-pes.t2x.bin"/>
+      </program>
+      <program name="apertium-postchunk">
+        <file name="apertium-eng-pes.eng-pes.t3x"/>
+        <file name="eng-pes.t3x.bin"/>
+      </program>
+      <program name="lt-proc $1">
+        <file name="eng-pes.autogen.bin"/>
+      </program>
+
+      <program name="lt-proc -p">
+        <file name="eng-pes.autopgen.bin"/>
+      </program>
+    </pipeline>
+  </mode>
+
+  <mode name="eng-pes-dgen" install="no">
+    <pipeline>
+      <program name="lt-proc -w">
+        <file name="eng-pes.automorf.bin"/>
+      </program>
+
+
+      <program name="cg-proc -w">
+        <file name="eng-pes.rlx.bin"/>
+      </program>
+      <program name="apertium-tagger -g $2">
+        <file name="eng-pes.prob"/>
+      </program>
+      <program name="apertium-pretransfer"/>
+      <program name="lt-proc -b">
+        <file name="eng-pes.autobil.bin"/>
+      </program>
+      <program name="apertium-transfer -b">
+        <file name="apertium-eng-pes.eng-pes.t1x"/>
+        <file name="eng-pes.t1x.bin"/>
+      </program>
+      <program name="apertium-interchunk">
+        <file name="apertium-eng-pes.eng-pes.t2x"/>
+        <file name="eng-pes.t2x.bin"/>
+      </program>
+      <program name="apertium-postchunk">
+        <file name="apertium-eng-pes.eng-pes.t3x"/>
+        <file name="eng-pes.t3x.bin"/>
+      </program>
+      <program name="lt-proc -d">
+        <file name="eng-pes.autogen.bin"/>
+      </program>
+    </pipeline>
+  </mode>
+
+  <mode name="eng-pes-morph" install="no">
+    <pipeline>
+      <program name="lt-proc -w">
+        <file name="eng-pes.automorf.bin"/>
+      </program>
+    </pipeline>
+  </mode>
+
+  <mode name="eng-pes-disam" install="no">
+    <pipeline>
+      <program name="lt-proc -w">
+        <file name="eng-pes.automorf.bin"/>
+      </program>
+      <program name="cg-conv -a"/>
+      <program name="vislcg3 --trace --grammar">
+        <file name="eng-pes.rlx.bin"/>
+      </program>
+    </pipeline>
+  </mode>
+
+  <mode name="eng-pes-tagger" install="no">
+    <pipeline>
+      <program name="lt-proc -w">
+        <file name="eng-pes.automorf.bin"/>
+      </program>
+
+
+      <program name="cg-proc -w">
+        <file name="eng-pes.rlx.bin"/>
+      </program>
+      <program name="apertium-tagger -g $2">
+        <file name="eng-pes.prob"/>
+      </program>
+    </pipeline>
+  </mode>
+
+  <mode name="eng-pes-pretransfer" install="no">
+    <pipeline>
+      <program name="lt-proc -w">
+        <file name="eng-pes.automorf.bin"/>
+      </program>
+
+
+      <program name="cg-proc -w">
+        <file name="eng-pes.rlx.bin"/>
+      </program>
+      <program name="apertium-tagger -g $2">
+        <file name="eng-pes.prob"/>
+      </program>
+      <program name="apertium-pretransfer"/>
+    </pipeline>
+  </mode>
+
+  <mode name="eng-pes-biltrans" install="no">
+    <pipeline>
+      <program name="lt-proc -w">
+        <file name="eng-pes.automorf.bin"/>
+      </program>
+
+
+      <program name="cg-proc -w">
+        <file name="eng-pes.rlx.bin"/>
+      </program>
+      <program name="apertium-tagger -g $2">
+        <file name="eng-pes.prob"/>
+      </program>
+      <program name="apertium-pretransfer"/>
+      <program name="lt-proc -b">
+        <file name="eng-pes.autobil.bin"/>
+      </program>
+    </pipeline>
+  </mode>
+
+  <mode name="eng-pes-lex" install="no">
+    <pipeline>
+      <program name="lt-proc -w">
+        <file name="eng-pes.automorf.bin"/>
+      </program>
+
+
+      <program name="cg-proc -w">
+        <file name="eng-pes.rlx.bin"/>
+      </program>
+      <program name="apertium-tagger -g $2">
+        <file name="eng-pes.prob"/>
+      </program>
+      <program name="apertium-pretransfer"/>
+      <program name="lt-proc -b">
+        <file name="eng-pes.autobil.bin"/>
+      </program>
+      <program name="lrx-proc -t">
+        <file name="eng-pes.autolex.bin"/>
+      </program>
+    </pipeline>
+  </mode>
+
+  <mode name="eng-pes-transfer" install="no">
+    <pipeline>
+      <program name="lt-proc -w">
+        <file name="eng-pes.automorf.bin"/>
+      </program>
+
+
+      <program name="cg-proc -w">
+        <file name="eng-pes.rlx.bin"/>
+      </program>
+      <program name="apertium-tagger -g $2">
+        <file name="eng-pes.prob"/>
+      </program>
+      <program name="apertium-pretransfer"/>
+      <program name="lt-proc -b">
+        <file name="eng-pes.autobil.bin"/>
+      </program>
+      <program name="lrx-proc">
+        <file name="eng-pes.autolex.bin"/>
+      </program>
+      <program name="apertium-transfer -b -t">
+        <file name="apertium-eng-pes.eng-pes.t1x"/>
+        <file name="eng-pes.t1x.bin"/>
+      </program>
+    </pipeline>
+  </mode>
+
+  <mode name="eng-pes-interchunk" install="no">
+    <pipeline>
+      <program name="lt-proc -w">
+        <file name="eng-pes.automorf.bin"/>
+      </program>
+
+
+      <program name="cg-proc -w">
+        <file name="eng-pes.rlx.bin"/>
+      </program>
+      <program name="apertium-tagger -g $2">
+        <file name="eng-pes.prob"/>
+      </program>
+      <program name="apertium-pretransfer"/>
+      <program name="lt-proc -b">
+        <file name="eng-pes.autobil.bin"/>
+      </program>
+      <program name="lrx-proc">
+        <file name="eng-pes.autolex.bin"/>
+      </program>
+      <program name="apertium-transfer -b">
+        <file name="apertium-eng-pes.eng-pes.t1x"/>
+        <file name="eng-pes.t1x.bin"/>
+      </program>
+      <program name="apertium-interchunk -t">
+        <file name="apertium-eng-pes.eng-pes.t2x"/>
+        <file name="eng-pes.t2x.bin"/>
+      </program>
+    </pipeline>
+  </mode>
+
+  <mode name="eng-pes-postchunk" install="no">
+    <pipeline>
+      <program name="lt-proc -w">
+        <file name="eng-pes.automorf.bin"/>
+      </program>
+
+
+      <program name="cg-proc -w">
+        <file name="eng-pes.rlx.bin"/>
+      </program>
+      <program name="apertium-tagger -g $2">
+        <file name="eng-pes.prob"/>
+      </program>
+      <program name="apertium-pretransfer"/>
+      <program name="lt-proc -b">
+        <file name="eng-pes.autobil.bin"/>
+      </program>
+      <program name="lrx-proc">
+        <file name="eng-pes.autolex.bin"/>
+      </program>
+      <program name="apertium-transfer -b">
+        <file name="apertium-eng-pes.eng-pes.t1x"/>
+        <file name="eng-pes.t1x.bin"/>
+      </program>
+      <program name="apertium-interchunk">
+        <file name="apertium-eng-pes.eng-pes.t2x"/>
+        <file name="eng-pes.t2x.bin"/>
+      </program>
+      <program name="apertium-postchunk">
+        <file name="apertium-eng-pes.eng-pes.t3x"/>
+        <file name="eng-pes.t3x.bin"/>
+      </program>
+    </pipeline>
+  </mode>
+
+  <!-- pes → eng -->
+
+  <mode name="pes-eng" install="yes">
+    <pipeline>
+      <program name="lt-proc -w">
+        <file name="pes-eng.automorf.bin"/>
+      </program>
+
+
+      <program name="cg-proc -w">
+        <file name="pes-eng.rlx.bin"/>
+      </program>
+      <program name="apertium-tagger -g $2">
+        <file name="pes-eng.prob"/>
+      </program>
+      <program name="apertium-pretransfer"/>
+      <program name="lt-proc -b">
+        <file name="pes-eng.autobil.bin"/>
+      </program>
+      <program name="lrx-proc">
+        <file name="pes-eng.autolex.bin"/>
+      </program>
+      <program name="apertium-transfer -b">
+        <file name="apertium-eng-pes.pes-eng.t1x"/>
+        <file name="pes-eng.t1x.bin"/>
+      </program>
+      <program name="apertium-interchunk">
+        <file name="apertium-eng-pes.pes-eng.t2x"/>
+        <file name="pes-eng.t2x.bin"/>
+      </program>
+      <program name="apertium-postchunk">
+        <file name="apertium-eng-pes.pes-eng.t3x"/>
+        <file name="pes-eng.t3x.bin"/>
+      </program>
+      <program name="lt-proc $1">
+        <file name="pes-eng.autogen.bin"/>
+      </program>
+
+      <program name="lt-proc -p">
+        <file name="pes-eng.autopgen.bin"/>
+      </program>
+    </pipeline>
+  </mode>
+
+  <mode name="pes-eng-dgen" install="no">
+    <pipeline>
+      <program name="lt-proc -w">
+        <file name="pes-eng.automorf.bin"/>
+      </program>
+
+
+      <program name="cg-proc -w">
+        <file name="pes-eng.rlx.bin"/>
+      </program>
+      <program name="apertium-tagger -g $2">
+        <file name="pes-eng.prob"/>
+      </program>
+      <program name="apertium-pretransfer"/>
+      <program name="lt-proc -b">
+        <file name="pes-eng.autobil.bin"/>
+      </program>
+      <program name="apertium-transfer -b">
+        <file name="apertium-eng-pes.pes-eng.t1x"/>
+        <file name="pes-eng.t1x.bin"/>
+      </program>
+      <program name="apertium-interchunk">
+        <file name="apertium-eng-pes.pes-eng.t2x"/>
+        <file name="pes-eng.t2x.bin"/>
+      </program>
+      <program name="apertium-postchunk">
+        <file name="apertium-eng-pes.pes-eng.t3x"/>
+        <file name="pes-eng.t3x.bin"/>
+      </program>
+      <program name="lt-proc -d">
+        <file name="pes-eng.autogen.bin"/>
+      </program>
+    </pipeline>
+  </mode>
+
+  <mode name="pes-eng-morph" install="no">
+    <pipeline>
+      <program name="lt-proc -w">
+        <file name="pes-eng.automorf.bin"/>
+      </program>
+    </pipeline>
+  </mode>
+
+  <mode name="pes-eng-disam" install="no">
+    <pipeline>
+      <program name="lt-proc -w">
+        <file name="pes-eng.automorf.bin"/>
+      </program>
+      <program name="cg-conv -a"/>
+      <program name="vislcg3 --trace --grammar">
+        <file name="pes-eng.rlx.bin"/>
+      </program>
+    </pipeline>
+  </mode>
+
+  <mode name="pes-eng-tagger" install="no">
+    <pipeline>
+      <program name="lt-proc -w">
+        <file name="pes-eng.automorf.bin"/>
+      </program>
+
+
+      <program name="cg-proc -w">
+        <file name="pes-eng.rlx.bin"/>
+      </program>
+      <program name="apertium-tagger -g $2">
+        <file name="pes-eng.prob"/>
+      </program>
+    </pipeline>
+  </mode>
+
+  <mode name="pes-eng-pretransfer" install="no">
+    <pipeline>
+      <program name="lt-proc -w">
+        <file name="pes-eng.automorf.bin"/>
+      </program>
+
+
+      <program name="cg-proc -w">
+        <file name="pes-eng.rlx.bin"/>
+      </program>
+      <program name="apertium-tagger -g $2">
+        <file name="pes-eng.prob"/>
+      </program>
+      <program name="apertium-pretransfer"/>
+    </pipeline>
+  </mode>
+
+  <mode name="pes-eng-biltrans" install="no">
+    <pipeline>
+      <program name="lt-proc -w">
+        <file name="pes-eng.automorf.bin"/>
+      </program>
+
+
+      <program name="cg-proc -w">
+        <file name="pes-eng.rlx.bin"/>
+      </program>
+      <program name="apertium-tagger -g $2">
+        <file name="pes-eng.prob"/>
+      </program>
+      <program name="apertium-pretransfer"/>
+      <program name="lt-proc -b">
+        <file name="pes-eng.autobil.bin"/>
+      </program>
+    </pipeline>
+  </mode>
+
+  <mode name="pes-eng-lex" install="no">
+    <pipeline>
+      <program name="lt-proc -w">
+        <file name="pes-eng.automorf.bin"/>
+      </program>
+
+
+      <program name="cg-proc -w">
+        <file name="pes-eng.rlx.bin"/>
+      </program>
+      <program name="apertium-tagger -g $2">
+        <file name="pes-eng.prob"/>
+      </program>
+      <program name="apertium-pretransfer"/>
+      <program name="lt-proc -b">
+        <file name="pes-eng.autobil.bin"/>
+      </program>
+      <program name="lrx-proc">
+        <file name="pes-eng.autolex.bin"/>
+      </program>
+    </pipeline>
+  </mode>
+
+  <mode name="pes-eng-transfer" install="no">
+    <pipeline>
+      <program name="lt-proc -w">
+        <file name="pes-eng.automorf.bin"/>
+      </program>
+
+
+      <program name="cg-proc -w">
+        <file name="pes-eng.rlx.bin"/>
+      </program>
+      <program name="apertium-tagger -g $2">
+        <file name="pes-eng.prob"/>
+      </program>
+      <program name="apertium-pretransfer"/>
+      <program name="lt-proc -b">
+        <file name="pes-eng.autobil.bin"/>
+      </program>
+      <program name="apertium-transfer -b -t">
+        <file name="apertium-eng-pes.pes-eng.t1x"/>
+        <file name="pes-eng.t1x.bin"/>
+      </program>
+    </pipeline>
+  </mode>
+
+  <mode name="pes-eng-interchunk" install="no">
+    <pipeline>
+      <program name="lt-proc -w">
+        <file name="pes-eng.automorf.bin"/>
+      </program>
+
+
+      <program name="cg-proc -w">
+        <file name="pes-eng.rlx.bin"/>
+      </program>
+      <program name="apertium-tagger -g $2">
+        <file name="pes-eng.prob"/>
+      </program>
+      <program name="apertium-pretransfer"/>
+      <program name="lt-proc -b">
+        <file name="pes-eng.autobil.bin"/>
+      </program>
+      <program name="apertium-transfer -b">
+        <file name="apertium-eng-pes.pes-eng.t1x"/>
+        <file name="pes-eng.t1x.bin"/>
+      </program>
+      <program name="apertium-interchunk -t">
+        <file name="apertium-eng-pes.pes-eng.t2x"/>
+        <file name="pes-eng.t2x.bin"/>
+      </program>
+    </pipeline>
+  </mode>
+
+  <mode name="pes-eng-postchunk" install="no">
+    <pipeline>
+      <program name="lt-proc -w">
+        <file name="pes-eng.automorf.bin"/>
+      </program>
+
+
+      <program name="cg-proc -w">
+        <file name="pes-eng.rlx.bin"/>
+      </program>
+      <program name="apertium-tagger -g $2">
+        <file name="pes-eng.prob"/>
+      </program>
+      <program name="apertium-pretransfer"/>
+      <program name="lt-proc -b">
+        <file name="pes-eng.autobil.bin"/>
+      </program>
+      <program name="apertium-transfer -b">
+        <file name="apertium-eng-pes.pes-eng.t1x"/>
+        <file name="pes-eng.t1x.bin"/>
+      </program>
+      <program name="apertium-interchunk">
+        <file name="apertium-eng-pes.pes-eng.t2x"/>
+        <file name="pes-eng.t2x.bin"/>
+      </program>
+      <program name="apertium-postchunk">
+        <file name="apertium-eng-pes.pes-eng.t3x"/>
+        <file name="pes-eng.t3x.bin"/>
+      </program>
+    </pipeline>
+  </mode>
+</modes>
+

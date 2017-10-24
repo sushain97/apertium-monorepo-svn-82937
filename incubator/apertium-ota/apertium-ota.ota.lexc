@@ -1,0 +1,178 @@
+! Morphological Transducer for Ottoman Turkish
+
+Multichar_Symbols
+
+! Part of speech categories
+%<n%>           ! Noun
+%<num%>         ! 
+%<det%>         !
+%<cnjcoo%>      ! 
+
+%<pl%>          ! Plural
+%<sg%>          ! Singular
+
+%<nom%>         ! 
+%<dat%>         ! 
+%<acc%>         ! 
+%<gen%>         ! 
+%<loc%>         ! 
+%<abl%>         ! 
+
+%<dem%>
+
+%{N%}
+%{I%}
+%{s%}
+%{ء%}
+%{n%}
+
+%>
+
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+!!!                       M O R P H O T A C T I C S                         !!!
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+
+LEXICON Root
+
+Conjunctions ;
+Determiners ;
+Nouns ;
+Punctuation ; 
+Digits ; 
+
+LEXICON CASES
+
+%<nom%>: # ;
+%<acc%>:%>%{N%}%{I%} # ;
+%<gen%>:%>%{N%}ڭ # ;
+%<loc%>:%>ده‎ # ;
+%<abl%>:%>دن‎ # ;
+
+LEXICON POSSESSIVES
+
+%<px3sp%>:%>%{s%}%{I%}%{n%} CASES ; 
+
+LEXICON PLURAL
+
+%<pl%>:%>لهر CASES ;
+%<pl%>:%>لهر POSSESSIVES ;
+
+LEXICON FULL-NOMINAL-INFLECTION
+
+PLURAL ;
+CASES ;
+POSSESSIVES ;
+
+LEXICON N1 
+
+%<n%>: FULL-NOMINAL-INFLECTION ; 
+
+LEXICON DET-DEM 
+
+%<det%>%<dem%>: # ;
+
+LEXICON CC
+
+%<cnjcoo%>: # ;
+
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+!!!                          L E X I C O N                                  !!!
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+
+LEXICON Conjunctions
+
+و:و CC ; ! "ve"
+
+LEXICON Determiners
+
+بو:بو DET-DEM ; ! "bu"
+
+LEXICON Nouns
+
+
+گول:گول N1 ; ! "köl"
+طاوشان:طاوشان N1 ; ! "tavşan"
+پاشا:پاشا N1 ; ! "paşa"
+
+عدالت:عدالت N1 ; ! "ʿadālet"
+عائله:عائله N1 ; ! "ʿā'ile"
+عالِم:عالِم N1 ; ! "ʿālim"
+عمل:عمل N1 ; ! "ʿamel"
+عارف:عارف N1 ; ! "ʿārif"
+عشق:عشق N1 ; ! "ʿaşḳ"
+جهالت:جهالت N1 ; ! "cehālet"
+جسد:جسد N1 ; ! "cesed"
+چشمه:چشمه N1 ; ! "çeşme"
+چوجق:چوجق N1 ; ! "çocuḳ"
+دائره:دائره N1 ; ! "dā'ire"
+دکر:دکر N1 ; ! "değer"
+دَور:دَور N1 ; ! "devr"
+دیکن:دیکن N1 ; ! "diken"
+افسانه:افسانه N1 ; ! "efsāne"
+ایلچی :ایلچی   N1 ; ! "élçi"
+اكسه:اكسه  N1 ; ! "eñse"
+أو:أو N1 ; ! "ev"
+فضیلت:فضیلت N1 ; ! "fażı̄let"
+فکر:فکر N1 ; ! "fikr"
+كیجه  :كیجه    N1 ; ! "géce"
+کوکل:کوکل N1 ; ! "göñül"
+کوز:کوز N1 ; ! "göz"
+کل:کل N1 ; ! "gül"
+حقیقت:حقیقت N1 ; ! "ḥaḳı̄ḳat"
+حاکم:حاکم N1 ; ! "ḥākim"
+هيئت:هيئت N1 ; ! "hey'et"
+حسران:حسران N1 ; ! "ḥüsrān"
+خوی:خوی N1 ; ! "ḫūy"
+انسان:انسان N1 ; ! "insān"
+عرفان:عرفان N1 ; ! "ʿirfān"
+اسهال:اسهال N1 ; ! "ishāl"
+اسم:اسم N1 ; ! "ism"
+استخدام:استخدام N1 ; ! "istiḫdām"
+استقلال:استقلال N1 ; ! "istiḳlāl"
+استقرار:استقرار N1 ; ! "istiḳrār"
+استعمال:استعمال N1 ; ! "istiʿmāl"
+اشتراك:اشتراك N1 ; ! "iştirāk"
+قبول:قبول N1 ; ! "ḳabūl"
+قلم:قلم N1 ; ! "ḳalem"
+کلمه:کلمه N1 ; ! "kelime"
+قیلیچ:قیلیچ N1 ; ! "ḳılıç"
+قرال:قرال N1 ; ! "ḳral"
+ماضی:ماضی N1 ; ! "māżı̄"
+مأمور:مأمور N1 ; ! "me'mūr"
+مبادله:مبادله N1 ; ! "mübādele"
+محاربه:محاربه N1 ; ! "muḥārebe"
+نشئه:نشئه N1 ; ! "neş'e"
+نهایت:نهایت N1 ; ! "nihāyet"
+اوك:اوك  N1 ; ! "öñ/üñ"
+اردو:اردو N1 ; ! "ordu"
+اوط:اوط N1 ; ! "oṭ"
+پیکار:پیکار N1 ; ! "pıñar"
+رأى:رأى N1 ; ! "re'y"
+سائر:سائر N1 ; ! "sā'ire"
+سفارت:سفارت N1 ; ! "sefāret"
+سما:سما N1 ; ! "semā"
+سماء:سماء N1 ; ! "semā'"
+شرف:شرف N1 ; ! "şeref"
+شیء:شی%{ء%} N1 ; ! "şey'"
+سیکیر:سیکیر N1 ; ! "siñir"
+سوز:سوز N1 ; ! "söz"
+سؤال:سؤال N1 ; ! "su'āl"
+صلح:صلح N1 ; ! "ṣulḥ"
+تمثیل:تمثیل N1 ; ! "tems̱ı̄l"
+تسجیل:تسجیل N1 ; ! "tescı̄l"
+طوپاق:طوپاق N1 ; ! "ṭopaḳ"
+وقت:وقت N1 ; ! "vaḳt"
+يأس:يأس N1 ; ! "ye's"
+ییلدیز:ییلدیز N1 ; ! "yıldız"
+زمان:زمان N1 ; ! "zamān/zemān"
+زندان:زندان N1 ; ! "zindān"
+
+
+
+LEXICON DIGIT
+
+%<num%>: # ;
+
+LEXICON Digits 
+
+<[ ۰ | ۱ | ١ | ۲ | ۳ | ۴ | ۵ | ٥ | ۶ | ۷ | ۸ | ٢ | ٦ | ۹ ]+> DIGIT ;

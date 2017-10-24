@@ -1,0 +1,3 @@
+    
+    lt-proc -w /home/fklubicka/cc/apertium-ces-hbs/ces-hbs.automorf.bin |cg-proc -w -1 -n /home/fklubicka/cc/apertium-ces-hbs/ces-hbs.rlx.bin |apertium-pretransfer|lt-proc -b /home/fklubicka/cc/apertium-ces-hbs/ces-hbs.autobil.bin |apertium-transfer -b /home/fklubicka/cc/apertium-ces-hbs/apertium-ces-hbs.ces-hbs.t1x  /home/fklubicka/cc/apertium-ces-hbs/ces-hbs.t1x.bin |apertium-interchunk /home/fklubicka/cc/apertium-ces-hbs/apertium-ces-hbs.ces-hbs.t2x  /home/fklubicka/cc/apertium-ces-hbs/ces-hbs.t2x.bin |apertium-postchunk /home/fklubicka/cc/apertium-ces-hbs/apertium-ces-hbs.ces-hbs.t3x  /home/fklubicka/cc/apertium-ces-hbs/ces-hbs.t3x.bin |lt-proc -g /home/fklubicka/cc/apertium-ces-hbs/ces-hbs_SR.autogen.bin 
+  

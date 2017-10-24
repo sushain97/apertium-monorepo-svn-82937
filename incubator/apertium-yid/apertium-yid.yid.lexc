@@ -1,0 +1,161 @@
+! Morphological Transducer for Yiddish
+
+Multichar_Symbols
+
+! Part of speech categories
+%<n%>    ! Noun
+%<pl%>   ! Plural
+%<sg%>   ! Singular
+
+! gender: for nouns, determiners, adjectives, etc.
+%<m%>    ! masculine
+%<f%>    ! feminine
+%<nt%>   ! neuter
+
+! other parts of speech
+%<det%>  ! determiner
+
+! cases: for determiners, etc.
+%<nom%>  ! nominative
+%<acc%>  ! accusative
+%<dat%>  ! dative
+
+! Escaped characters
+
+%{ь%}    ! used for umlaut of ~previous vowel
+%>       ! morpheme boundary
+
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+!!!                       M O R P H O T A C T I C S                         !!!
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+
+LEXICON Root
+
+NounRoot ;
+DetRoot ;
+
+
+!!! Format for noun lexica is N-[gender]-[class]
+!!! gender: M, F, N
+!!! class: UML, UML-ER, S, N, NULL, HEB
+
+LEXICON N-M-UML
+
+%<n%>%<m%>%<sg%>: # ;
+
+LEXICON N-F-UML
+
+%<n%>%<f%>%<sg%>: # ;
+
+LEXICON N-M-UML-ER
+
+%<n%>%<m%>%<sg%>: # ;
+%<n%>%<m%>%<pl%>:%>%{ь%}ער # ;
+
+LEXICON N-F-UML-ER
+
+%<n%>%<f%>%<sg%>: # ;
+%<n%>%<f%>%<pl%>:%>%{ь%}ער # ;
+
+LEXICON N-N-UML-ER
+
+%<n%>%<nt%>%<sg%>: # ;
+%<n%>%<nt%>%<pl%>:%>%{ь%}ער # ;
+
+LEXICON N-M-S
+
+%<n%>%<m%>%<sg%>: # ;
+
+LEXICON N-F-S
+
+%<n%>%<f%>%<sg%>: # ;
+%<n%>%<f%>%<pl%>:%>ס # ;
+
+LEXICON N-N-S
+
+%<n%>%<nt%>%<sg%>: # ;
+%<n%>%<nt%>%<pl%>:%>ס # ;
+
+LEXICON N-M-N
+
+%<n%>%<m%>%<sg%>: # ;
+%<n%>%<m%>%<pl%>:%>ס # ;
+
+LEXICON N-F-N
+
+%<n%>%<f%>%<sg%>: # ;
+
+LEXICON N-N-N
+
+%<n%>%<nt%>%<sg%>: # ;
+
+LEXICON N-M-NULL
+
+%<n%>%<m%>%<sg%>: # ;
+
+LEXICON N-F-NULL
+
+%<n%>%<f%>%<sg%>: # ;
+
+LEXICON N-N-NULL
+
+%<n%>%<nt%>%<sg%>: # ;
+
+LEXICON N-M-HEB
+
+%<n%>%<m%>%<sg%>: # ;
+
+LEXICON N-F-HEB
+
+%<n%>%<f%>%<sg%>: # ;
+
+
+LEXICON DET-DEF-M
+
+%<det%>%<m%>%<nom%>:דער # ;
+%<det%>%<m%>%<acc%>:דעם # ;
+%<det%>%<m%>%<dat%>:דעם # ;
+
+LEXICON DET-DEF-F
+
+%<det%>%<f%>%<nom%>:די # ;
+%<det%>%<f%>%<acc%>:די # ;
+%<det%>%<f%>%<dat%>:דער # ;
+
+LEXICON DET-DEF-N
+
+%<det%>%<nt%>%<nom%>:דאָס # ;
+%<det%>%<nt%>%<acc%>:דאָס # ;
+%<det%>%<nt%>%<dat%>:דעם # ;
+
+LEXICON DET-DEF-PL
+
+%<det%>%<pl%>%<nom%>:די # ;
+%<det%>%<pl%>%<acc%>:די # ;
+%<det%>%<pl%>%<dat%>:די # ;
+
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+!!!                          L E X I C O N                                  !!!
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+
+LEXICON NounRoot
+
+הױז:הױז N-N-UML-ER ; ! "house"
+אַרבעט:אַרבעט N-F-S ; ! "work"
+
+LEXICON DetRoot
+
+דער: DET-DEF-M ; ! "the"
+די: DET-DEF-F ; ! "the"
+דאָס: DET-DEF-N ; ! "the"
+די: DET-DEF-PL ; ! "the"
+
+! Resources:
+! http://wiki.apertium.org/wiki/Starting_a_new_language_with_HFST#Lexicon
+! http://wiki.apertium.org/wiki/Lttoolbox_and_lexc
+! http://wiki.apertium.org/wiki/Apertium-specific_conventions_for_lexc
+! https://kitwiki.csc.fi/twiki/bin/view/KitWiki/HfstHome
+! http://hfst.sourceforge.net/
+! http://www.cis.upenn.edu/~cis639/docs/lexc.html
+! http://wiki.apertium.org/wiki/Hfst
+

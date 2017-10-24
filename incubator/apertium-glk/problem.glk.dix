@@ -1,0 +1,317 @@
+<?xml version="1.0" encoding="UTF-8"?><!-- -*-nxml-*- -->
+<dictionary>
+  <alphabet>ؤئاآأٰبپتثجچحخدذرزژسشصضطظعغفقکگلمنهوی</alphabet>
+  <!-- symbols -->
+  <sdefs>
+    <sdef n="acr"/>
+    <sdef n="predet"/>
+    <sdef n="detnt"/>
+    <sdef n="loc"/>
+    <sdef n="ant"/>
+    <sdef n="al"/>
+    <sdef n="cog"/>
+    <sdef n="atn"/>
+    <sdef n="enc"/>
+    <sdef n="pro"/>
+    <sdef n="tn"/>
+    <sdef n="n"/>
+    <sdef n="np"/>
+    <sdef n="adj"/>
+    <sdef n="f"/>
+    <sdef n="m"/>
+    <sdef n="mf"/>
+    <sdef n="sg"/>
+    <sdef n="pl"/>
+    <sdef n="adv"/>
+    <sdef n="preadv"/>
+    <sdef n="pr"/>
+    <sdef n="prn"/>
+    <sdef n="rel"/>
+    <sdef n="nn"/>
+    <sdef n="an"/>
+    <sdef n="aa"/>
+    <sdef n="ind"/>
+    <sdef n="itg"/>
+    <sdef n="det"/>
+    <sdef n="dem"/>
+    <sdef n="def"/>
+    <sdef n="cnjcoo"/>
+    <sdef n="cnjsub"/>
+    <sdef n="cnjadv"/>
+    <sdef n="nt"/>
+    <sdef n="vbser"/>
+    <sdef n="vbhaver"/>
+    <sdef n="vblex"/>
+    <sdef n="vbmod"/>
+    <sdef n="inf"/>
+    <sdef n="ger"/>
+    <sdef n="pp"/>
+    <sdef n="pri"/>
+    <sdef n="p1"/>
+    <sdef n="p2"/>
+    <sdef n="p3"/>
+    <sdef n="pii"/>
+    <sdef n="ifi"/>
+    <sdef n="fti"/>
+    <sdef n="cni"/>
+    <sdef n="prs"/>
+    <sdef n="pis"/>
+    <sdef n="fts"/>
+    <sdef n="imp"/>
+    <sdef n="pos"/>
+    <sdef n="sp"/>
+    <sdef n="ref"/>
+    <sdef n="sup"/>
+    <sdef n="ord"/>
+    <sdef n="qnt"/>
+    <sdef n="num"/>
+    <sdef n="pron"/>
+    <sdef n="ij"/>
+    <sdef n="sent"/>
+    <sdef n="cm"/>
+    <sdef n="lpar"/>
+    <sdef n="rpar"/>
+    <sdef n="lquest"/>
+    <sdef n="web"/>
+    <sdef n="apos"/>
+    <sdef n="percent"/>
+    <sdef n="time"/>
+    <sdef n="guio"/>
+    <sdef n="past"/>
+    <sdef n="sep"/>
+    <sdef n="sint"/>
+    <sdef n="email"/>
+    <sdef n="obj"/>
+    <sdef n="prs"/>
+    <sdef n="subs"/>
+    <sdef n="pprs"/>
+    <sdef n="gen"/>
+    <sdef n="comp"/>
+    <sdef n="pri"/>
+    <sdef n="vaux"/>
+    <sdef n="ND"/>
+    <sdef n="GD"/>
+    <sdef n="neg"/>
+  </sdefs>
+  
+  <pardefs>
+
+    <!-- SECTION: Nouns -->
+    <pardef n="کیتاب__n">
+      <e><p><l/><r><s n="n"/><s n="sg"/></r></p></e>
+      <e><p><l>أن</l><r><s n="n"/><s n="pl"/></r></p></e>
+    </pardef>
+
+    <!-- SECTION: Verbs -->
+
+    <pardef n="imp_endings">
+      <e><p><l/><r><s n="p2"/><s n="sg"/></r></p></e>
+      <e><p><l>یم</l><r><s n="p1"/><s n="pl"/></r></p></e>
+      <e><p><l>ید</l><r><s n="p2"/><s n="pl"/></r></p></e>
+    </pardef>
+
+    <pardef n="pers-1-1sg">
+      <e><p><l>م</l><r><s n="p1"/><s n="sg"/></r></p></e>
+    </pardef>
+
+    <pardef n="pers-1-3sg">
+      <e><p><l>ه</l><r><s n="p3"/><s n="sg"/></r></p></e>
+    </pardef>
+    <pardef n="pers-1-pp">
+      <e><p><l>ه</l><r></r></p></e>
+    </pardef>
+
+    <pardef n="pers-2-3sg">
+      <e><p><l>ی</l><r><s n="p3"/><s n="sg"/></r></p></e>
+    </pardef>
+
+    <pardef n="pers-3-3sg">
+      <e><p><l></l><r><s n="p3"/><s n="sg"/></r></p></e>
+    </pardef>
+    <pardef n="pers-3-pp">
+      <e><p><l></l><r></r></p></e>
+    </pardef>
+
+    <pardef n="pers-1-rest">
+      <e><p><l>ی</l><r><s n="p2"/><s n="sg"/></r></p></e>
+      <e><p><l>یم</l><r><s n="p1"/><s n="pl"/></r></p></e>
+      <e><p><l>یدی</l><r><s n="p2"/><s n="pl"/></r></p></e>
+      <e><p><l>یدی</l><r><s n="p3"/><s n="pl"/></r></p></e>
+    </pardef>
+
+    <pardef n="کون__vblex" c="present">
+      <e><p><l></l><r><s n="vblex"/><s n="pri"/></r></p><par n="pers-1-1sg"/></e>
+      <e><p><l></l><r><s n="vblex"/><s n="pri"/></r></p><par n="pers-1-3sg"/></e>
+      <e><p><l></l><r><s n="vblex"/><s n="pri"/></r></p><par n="pers-1-rest"/></e>
+    </pardef>
+    
+    <pardef n="بوکون__vblex" c="present subjunctive">
+      <e><p><l></l><r><s n="vblex"/><s n="prs"/></r></p><par n="pers-1-1sg"/></e>
+      <e><p><l></l><r><s n="vblex"/><s n="prs"/></r></p><par n="pers-1-3sg"/></e>
+      <e><p><l></l><r><s n="vblex"/><s n="prs"/></r></p><par n="pers-1-rest"/></e>
+      <e><p><l></l><r><s n="vblex"/><s n="imp"/></r></p><par n="imp_endings"/></e>
+    </pardef>
+    
+    <pardef n="ببه__vblex" c="present subjunctive 1sg/3sg for verb with i-vowel harmony">
+      <e><p><l></l><r><s n="vblex"/><s n="prs"/></r></p><par n="pers-1-1sg"/></e>
+      <e><p><l></l><r><s n="vblex"/><s n="prs"/></r></p><par n="pers-1-3sg"/></e>
+    </pardef>
+    
+    <pardef n="بیبی__vblex" c="present subjunctive other endings for verb with i-vowel harmony">
+      <e><p><l></l><r><s n="vblex"/><s n="prs"/></r></p><par n="pers-1-rest"/></e>
+      <e><p><l></l><r><s n="vblex"/><s n="imp"/></r></p><par n="imp_endings"/></e>
+    </pardef>
+    
+    <pardef n="نوکون__vblex" c="negative present">
+      <e><p><l></l><r><s n="vblex"/><s n="neg"/><s n="pri"/></r></p><par n="pers-1-1sg"/></e>
+      <e><p><l></l><r><s n="vblex"/><s n="neg"/><s n="pri"/></r></p><par n="pers-1-3sg"/></e>
+      <e><p><l></l><r><s n="vblex"/><s n="neg"/><s n="pri"/></r></p><par n="pers-1-rest"/></e>
+      <e><p><l></l><r><s n="vblex"/><s n="neg"/><s n="prs"/></r></p><par n="pers-1-1sg"/></e>
+      <e><p><l></l><r><s n="vblex"/><s n="neg"/><s n="prs"/></r></p><par n="pers-1-3sg"/></e>
+      <e><p><l></l><r><s n="vblex"/><s n="neg"/><s n="prs"/></r></p><par n="pers-1-rest"/></e>
+      <e><p><l></l><r><s n="vblex"/><s n="neg"/><s n="imp"/></r></p><par n="imp_endings"/></e>
+    </pardef>
+    
+    <pardef n="نبه__vblex" c="negative present 1sg/3sg for verb with i-vowel harmony">
+      <e><p><l></l><r><s n="vblex"/><s n="neg"/><s n="prs"/></r></p><par n="pers-1-1sg"/></e>
+      <e><p><l></l><r><s n="vblex"/><s n="neg"/><s n="prs"/></r></p><par n="pers-1-3sg"/></e>
+    </pardef>
+    
+    <pardef n="نیبی__vblex" c="negative present other endings for verb with i-vowel harmony">
+      <e><p><l></l><r><s n="vblex"/><s n="neg"/><s n="prs"/></r></p><par n="pers-1-rest"/></e>
+      <e><p><l></l><r><s n="vblex"/><s n="neg"/><s n="imp"/></r></p><par n="imp_endings"/></e>
+    </pardef>
+    
+    <pardef n="بوکود/ن__vblex" c="preterite (past)">
+      <e><p><l></l><r>ن<s n="vblex"/><s n="past"/></r></p><par n="pers-1-1sg"/></e>
+      <e><p><l></l><r>ن<s n="vblex"/><s n="past"/></r></p><par n="pers-1-3sg"/></e>
+      <e><p><l></l><r>ن<s n="vblex"/><s n="past"/></r></p><par n="pers-1-rest"/></e>
+      <e><p><l></l><r>ن<s n="vblex"/><s n="pp"/></r></p><par n="pers-1-pp"/></e>
+    </pardef>
+    
+    <pardef n="بوشو/ئون__vblex" c="preterite (past) o-vowel stem end">
+      <e><p><l></l><r>ئون<s n="vblex"/><s n="past"/></r></p><par n="pers-1-1sg"/></e>
+      <e><p><l></l><r>ئون<s n="vblex"/><s n="past"/></r></p><par n="pers-3-3sg"/></e>
+      <e><p><l>ی</l><r>ئون<s n="vblex"/><s n="past"/></r></p><par n="pers-1-rest"/></e>
+      <e><p><l></l><r>ئون<s n="vblex"/><s n="pp"/></r></p><par n="pers-3-pp"/></e>
+      <e><p><l></l><r>ئون<s n="vblex"/><s n="imp"/><s n="p2"/><s n="sg"/></r></p></e>
+    </pardef>
+    
+    <pardef n="بز/ِئن__vblex" c="preterite (past) e-vowel stem end">
+      <e><p><l></l><r>ِئن<s n="vblex"/><s n="past"/></r></p><par n="pers-1-1sg"/></e>
+      <e><p><l></l><r>ِئن<s n="vblex"/><s n="past"/></r></p><par n="pers-1-3sg"/></e>
+      <e><p><l>ه‌ی</l><r>ِئن<s n="vblex"/><s n="past"/></r></p><par n="pers-1-rest"/></e>
+      <e><p><l></l><r>ِئن<s n="vblex"/><s n="pp"/></r></p><par n="pers-1-pp"/></e>
+    </pardef>
+    
+    <pardef n="بدَ/ئن__vblex" c="preterite (past) a-vowel stem end">
+      <e><p><l></l><r>ئن<s n="vblex"/><s n="past"/></r></p><par n="pers-1-1sg"/></e>
+      <e><p><l></l><r>ئن<s n="vblex"/><s n="past"/></r></p><par n="pers-1-3sg"/></e>
+      <e><p><l>ی</l><r>ئن<s n="vblex"/><s n="past"/></r></p><par n="pers-1-rest"/></e>
+      <e><p><l></l><r>ئن<s n="vblex"/><s n="pp"/></r></p><par n="pers-1-pp"/></e>
+    </pardef>
+    
+    <pardef n="کود/ن__vblex" c="imperfect (past cont.)">
+      <e><p><l>ی</l><r>ن<s n="vblex"/><s n="pii"/></r></p><par n="pers-1-1sg"/></e>
+      <e><p><l></l><r>ن<s n="vblex"/><s n="pii"/></r></p><par n="pers-2-3sg"/></e>
+      <e><p><l></l><r>ن<s n="vblex"/><s n="pii"/></r></p><par n="pers-1-rest"/></e>
+      <e><p><l>ن</l><r>ن<s n="vblex"/><s n="inf"/></r></p></e>
+    </pardef>
+
+    <pardef n="شو/ئون__vblex" c="imperfect (past cont.) o-vowel stem end">
+      <e><p><l>یی</l><r>ئون<s n="vblex"/><s n="pii"/></r></p><par n="pers-1-1sg"/></e>
+      <e><p><l>ی</l><r>ئون<s n="vblex"/><s n="pii"/></r></p><par n="pers-2-3sg"/></e>
+      <e><p><l>ی</l><r>ئون<s n="vblex"/><s n="pii"/></r></p><par n="pers-1-rest"/></e>
+      <e><p><l>ئون</l><r>ئون<s n="vblex"/><s n="inf"/></r></p></e>
+    </pardef>
+
+    <pardef n="ز/ِئن__vblex" c="imperfect (past cont.) e-vowel stem end">
+      <e><p><l>ه‌یی</l><r>ِئن<s n="vblex"/><s n="pii"/></r></p><par n="pers-1-1sg"/></e>
+      <e><p><l>ه‌ی</l><r>ِئن<s n="vblex"/><s n="pii"/></r></p><par n="pers-2-3sg"/></e>
+      <e><p><l>ه‌ی</l><r>ِئن<s n="vblex"/><s n="pii"/></r></p><par n="pers-1-rest"/></e>
+      <e><p><l>ِئن</l><r>ِئن<s n="vblex"/><s n="inf"/></r></p></e>
+    </pardef>
+
+    <pardef n="دَ/ئن__vblex" c="imperfect (past cont.) a-vowel stem end">
+      <e><p><l>یی</l><r>ئن<s n="vblex"/><s n="pii"/></r></p><par n="pers-1-1sg"/></e>
+      <e><p><l>ی</l><r>ئن<s n="vblex"/><s n="pii"/></r></p><par n="pers-2-3sg"/></e>
+      <e><p><l>ی</l><r>ئن<s n="vblex"/><s n="pii"/></r></p><par n="pers-1-rest"/></e>
+      <e><p><l>ئن</l><r>ئن<s n="vblex"/><s n="inf"/></r></p></e>
+    </pardef>
+
+    <pardef n="نوکود/ن__vblex" c="negative preterite (past)">
+      <e><p><l></l><r>ن<s n="vblex"/><s n="neg"/><s n="past"/></r></p><par n="pers-1-1sg"/></e>
+      <e><p><l></l><r>ن<s n="vblex"/><s n="neg"/><s n="past"/></r></p><par n="pers-1-3sg"/></e>
+      <e><p><l></l><r>ن<s n="vblex"/><s n="neg"/><s n="past"/></r></p><par n="pers-1-rest"/></e>
+      <e><p><l></l><r>ن<s n="vblex"/><s n="neg"/><s n="pp"/></r></p><par n="pers-1-pp"/></e>
+
+      <e><p><l>ی</l><r>ن<s n="vblex"/><s n="neg"/><s n="pii"/></r></p><par n="pers-1-1sg"/></e>
+      <e><p><l></l><r>ن<s n="vblex"/><s n="neg"/><s n="pii"/></r></p><par n="pers-2-3sg"/></e>
+      <e><p><l></l><r>ن<s n="vblex"/><s n="neg"/><s n="pii"/></r></p><par n="pers-1-rest"/></e>
+      <e><p><l>ن</l><r>ن<s n="vblex"/><s n="neg"/><s n="inf"/></r></p></e>
+    </pardef>
+    
+    <pardef n="نوشو/ئون__vblex" c="negative preterite (past) o-vowel stem end">
+      <e><p><l></l><r>ئون<s n="vblex"/><s n="neg"/><s n="past"/></r></p><par n="pers-1-1sg"/></e>
+      <e><p><l></l><r>ئون<s n="vblex"/><s n="neg"/><s n="past"/></r></p><par n="pers-3-3sg"/></e>
+      <e><p><l>ی</l><r>ئون<s n="vblex"/><s n="neg"/><s n="past"/></r></p><par n="pers-1-rest"/></e>
+      <e><p><l></l><r>ئون<s n="vblex"/><s n="neg"/><s n="pp"/></r></p><par n="pers-3-pp"/></e>
+
+      <e><p><l>یی</l><r>ئون<s n="vblex"/><s n="neg"/><s n="pii"/></r></p><par n="pers-1-1sg"/></e>
+      <e><p><l>ی</l><r>ئون<s n="vblex"/><s n="neg"/><s n="pii"/></r></p><par n="pers-2-3sg"/></e>
+      <e><p><l>ی</l><r>ئون<s n="vblex"/><s n="neg"/><s n="pii"/></r></p><par n="pers-1-rest"/></e>
+      <e><p><l>ئون</l><r>ئون<s n="vblex"/><s n="neg"/><s n="inf"/></r></p></e>
+      <e><p><l></l><r>ئون<s n="vblex"/><s n="neg"/><s n="imp"/><s n="p2"/><s n="sg"/></r></p></e>
+    </pardef>
+    
+    <pardef n="نز/ِئن__vblex" c="negative preterite (past) e-vowel stem end">
+      <e><p><l></l><r>ئن<s n="vblex"/><s n="neg"/><s n="past"/></r></p><par n="pers-1-1sg"/></e>
+      <e><p><l></l><r>ئن<s n="vblex"/><s n="neg"/><s n="past"/></r></p><par n="pers-1-3sg"/></e>
+      <e><p><l>ه‌ی</l><r>ئن<s n="vblex"/><s n="neg"/><s n="past"/></r></p><par n="pers-1-rest"/></e>
+      <e><p><l></l><r>ئن<s n="vblex"/><s n="neg"/><s n="pp"/></r></p><par n="pers-1-pp"/></e>
+
+      <e><p><l>ه‌یی</l><r>ئن<s n="vblex"/><s n="neg"/><s n="pii"/></r></p><par n="pers-1-1sg"/></e>
+      <e><p><l>ه‌ی</l><r>ئن<s n="vblex"/><s n="neg"/><s n="pii"/></r></p><par n="pers-2-3sg"/></e>
+      <e><p><l>ه‌ی</l><r>ئن<s n="vblex"/><s n="neg"/><s n="pii"/></r></p><par n="pers-1-rest"/></e>
+      <e><p><l>ِئن</l><r>ِئن<s n="vblex"/><s n="neg"/><s n="inf"/></r></p></e>
+    </pardef>
+    
+    <pardef n="ندَ/ئن__vblex" c="negative preterite (past) a-vowel stem end">
+      <e><p><l></l><r>ئون<s n="vblex"/><s n="neg"/><s n="past"/></r></p><par n="pers-1-1sg"/></e>
+      <e><p><l></l><r>ئون<s n="vblex"/><s n="neg"/><s n="past"/></r></p><par n="pers-1-3sg"/></e>
+      <e><p><l>ی</l><r>ئون<s n="vblex"/><s n="neg"/><s n="past"/></r></p><par n="pers-1-rest"/></e>
+      <e><p><l></l><r>ئون<s n="vblex"/><s n="neg"/><s n="pp"/></r></p><par n="pers-1-pp"/></e>
+
+      <e><p><l>یی</l><r>ئون<s n="vblex"/><s n="neg"/><s n="pii"/></r></p><par n="pers-1-1sg"/></e>
+      <e><p><l>ی</l><r>ئون<s n="vblex"/><s n="neg"/><s n="pii"/></r></p><par n="pers-2-3sg"/></e>
+      <e><p><l>ی</l><r>ئون<s n="vblex"/><s n="neg"/><s n="pii"/></r></p><par n="pers-1-rest"/></e>
+      <e><p><l>ئن</l><r>ئن<s n="vblex"/><s n="neg"/><s n="inf"/></r></p></e>
+    </pardef>
+  </pardefs>
+  <section id="main" type="standard">
+
+    <!-- SECTION: Nouns -->
+    <e lm="کیتاب"><i>کیتاب</i><par n="کیتاب__n"/></e>
+
+    <!-- SECTION: Verbs -->
+    <e lm="شوئون"><p><l>شو</l><r>شو</r></p><par n="شو/ئون__vblex"/></e>
+    <e lm="شوئون"><p><l>بوشو</l><r>شو</r></p><par n="بوشو/ئون__vblex"/></e>
+    <e lm="شوئون"><p><l>نوشو</l><r>شو</r></p><par n="نوشو/ئون__vblex"/></e>
+  </section>
+
+  <section id="regex" type="standard">
+    <e><re>[MCDXLVI]+</re><p><l/><r><s n="num"/><s n="mf"/><s n="sg"/></r></p></e>
+    <e><re>[a-z.]+@[a-z.]+</re><p><l/><r><s n="web"/></r></p></e>
+<!--    <e><re>(http://|https://|ftp://)?[áéíóúàèìòùäëïöüñça-z0-9](([\-_])?[áéíóúàèìòùäëïöüñça-z0-9])*(.[áéíóúàèìòùäëïöüñça-z0-9](([\-_])?[áéíóúàèìòùäëïöüñça-z0-9])*)*(.[a-z][a-z]|.aero|.asia|.biz|.cat|.com|.coop|.edu|.gov|.info|.int|.jobs|.mil|.mobi|.museum|.name|.net|.org|.pro|.tel|.travel)(/([áéíóúàèìòùäëïöüñça-z0-9\-_\?=&amp;\*,]+(.[áéíóúàèìòùäëïöüñça-z0-9\-_\?=&amp;\*,]+)*/)*([áéíóúàèìòùäëïöüñça-z0-9\-_\?=&amp;\*,]+(.[áéíóúàèìòùäëïöüñça-z0-9\-_\?=&amp;\*,]+)*)?)?</re><p><l/><r><s n="web"/></r></p></e>-->
+  </section>
+  <section id="punct" type="inconditional">
+    <e><re>[.\?;:!]</re><p><l/><r><s n="sent"/></r></p></e>
+    <e><p><l>-</l><r>-<s n="guio"/></r></p></e>
+    <e><p><l>,</l><r>,<s n="cm"/></r></p></e>
+    <e><p><l>'</l><r>'<s n="apos"/></r></p></e>
+    <e><re>[0-9]+([.,][0-9]+)?</re><p><l/><r><s n="num"/></r></p></e>
+    <e><re>[0-9]+([.,][0-9]+)?%</re><p><l/><r><s n="num"/><s n="percent"/></r></p></e>
+    <e><re>[\(\[]</re><p><l/><r><s n="lpar"/></r></p></e>
+    <e><re>[\)\]]</re><p><l/><r><s n="rpar"/></r></p></e>
+  </section>
+</dictionary>

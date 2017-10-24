@@ -1,0 +1,182 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<transfer>
+  <section-def-cats>
+    
+    <def-cat n="nom">
+      <cat-item tags="n"/>
+      <cat-item tags="n.*"/>
+    </def-cat>
+   
+    <def-cat n="vrb">
+      <cat-item tags="vblex"/>
+    </def-cat>
+   
+    <def-cat n="vrb-cont">
+      <cat-item tags="vblex.cont.*"/>
+    </def-cat>
+   
+    <def-cat n="vrb-neg-cont">
+      <cat-item tags="vblex.neg.cont.*"/>
+    </def-cat>
+   
+    <def-cat n="vrb-perfect">
+      <cat-item tags="vblex.pprf.*"/>
+    </def-cat>
+   
+    <def-cat n="vrb-neg-perfect">
+      <cat-item tags="vblex.neg.pprf.*"/>
+    </def-cat>
+   
+  </section-def-cats>
+  
+  <section-def-attrs>
+    
+    <def-attr n="case">
+      <attr-item tags="nom"/>
+      <attr-item tags="acc"/>
+      <attr-item tags="dat"/>
+      <attr-item tags="gen"/>
+      <attr-item tags="loc"/>
+      <attr-item tags="abl"/>
+    </def-attr>
+       
+    <def-attr n="poss">
+      <attr-item tags="px1sg"/>
+      <attr-item tags="px2sg"/>
+      <attr-item tags="px3sp"/>
+      <attr-item tags="px1pl"/>
+      <attr-item tags="px2pl"/>
+    </def-attr>
+
+    <def-attr n="nbr">
+      <attr-item tags="sg"/>
+      <attr-item tags="pl"/>
+      <attr-item tags="ND"/>
+    </def-attr>
+       
+    <def-attr n="per">
+      <attr-item tags="p1"/>
+      <attr-item tags="p2"/>
+      <attr-item tags="p3"/>
+    </def-attr>
+       
+    <def-attr n="tns-mood">
+      <attr-item tags="pri"/>
+      <attr-item tags="prs"/>
+      <attr-item tags="past"/>
+      <attr-item tags="pii"/>
+      <attr-item tags="pprf"/>
+      <attr-item tags="pp"/>
+      <attr-item tags="inf"/>
+    </def-attr>
+       
+    <def-attr n="asp">
+      <attr-item tags="cont"/>
+    </def-attr>
+       
+    <def-attr n="a_nom">
+      <attr-item tags="n"/>
+    </def-attr>
+    
+    <def-attr n="a_vrb">
+      <attr-item tags="vblex"/>
+    </def-attr>
+    
+    <def-attr n="a_neg">
+      <attr-item tags="neg"/>
+    </def-attr>
+    
+  </section-def-attrs>
+ 
+  <section-def-vars>
+    <def-var n="number"/>
+  </section-def-vars>  
+
+  <section-rules>
+    
+    <rule comment=""> 
+      <pattern>
+        <pattern-item n="nom"/>
+      </pattern>
+      <action>
+        <out>
+          <lu>
+            <clip pos="1" side="tl" part="whole"/>
+          </lu>
+        </out>
+      </action>
+    </rule>
+    
+    <rule comment=""> 
+      <pattern>
+        <pattern-item n="vrb-cont"/>
+      </pattern>
+      <action>
+        <out>
+          <lu>
+            <clip pos="1" side="tl" part="lem"/>
+            <clip pos="1" side="tl" part="a_vrb"/>
+            <clip pos="1" side="tl" part="tns-mood"/>
+            <clip pos="1" side="tl" part="per"/>
+            <clip pos="1" side="tl" part="nbr"/>
+          </lu>
+        </out>
+      </action>
+    </rule>
+    
+    <rule comment=""> 
+      <pattern>
+        <pattern-item n="vrb-neg-cont"/>
+      </pattern>
+      <action>
+        <out>
+          <lu>
+            <clip pos="1" side="tl" part="lem"/>
+            <clip pos="1" side="tl" part="a_vrb"/>
+            <clip pos="1" side="tl" part="a_neg"/>
+            <clip pos="1" side="tl" part="tns-mood"/>
+            <clip pos="1" side="tl" part="per"/>
+            <clip pos="1" side="tl" part="nbr"/>
+          </lu>
+        </out>
+      </action>
+    </rule>
+    
+    <rule comment=""> 
+      <pattern>
+        <pattern-item n="vrb-perfect"/>
+      </pattern>
+      <action>
+        <out>
+          <lu>
+            <clip pos="1" side="tl" part="lem"/>
+            <clip pos="1" side="tl" part="a_vrb"/>
+            <lit-tag v="past"/>
+            <clip pos="1" side="tl" part="per"/>
+            <clip pos="1" side="tl" part="nbr"/>
+          </lu>
+        </out>
+      </action>
+    </rule>
+    
+    <rule comment=""> 
+      <pattern>
+        <pattern-item n="vrb-neg-perfect"/>
+      </pattern>
+      <action>
+        <out>
+          <lu>
+            <clip pos="1" side="tl" part="lem"/>
+            <clip pos="1" side="tl" part="a_vrb"/>
+            <clip pos="1" side="tl" part="a_neg"/>
+            <lit-tag v="past"/>
+            <clip pos="1" side="tl" part="per"/>
+            <clip pos="1" side="tl" part="nbr"/>
+          </lu>
+        </out>
+      </action>
+    </rule>
+    
+  </section-rules>
+</transfer>

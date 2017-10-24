@@ -1,0 +1,274 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<modes>
+  <mode name="isl-eng" install="yes">
+    <pipeline>
+      <program name="lt-proc -w">
+        <file name="isl-eng.automorf.bin"/>
+      </program>
+      <program name="cg-proc">
+        <file name="isl-eng.rlx.bin"/>
+      </program>
+      <program name="apertium-tagger -p -g $2">
+        <file name="isl-eng.prob"/>
+      </program>
+      <program name="cg-proc -n -w">
+        <file name="isl-eng.lex.bin"/>
+      </program>
+      <program name="apertium-pretransfer"/>
+      <program name="apertium-transfer -n">
+        <file name="apertium-isl-eng.isl-eng.t0x"/>
+        <file name="isl-eng.t0x.bin"/>
+      </program>
+      <program name="apertium-transfer">
+        <file name="apertium-isl-eng.isl-eng.t1x"/>
+        <file name="isl-eng.t1x.bin"/>
+        <file name="isl-eng.autobil.bin"/>
+      </program>
+      <program name="apertium-interchunk">
+        <file name="apertium-isl-eng.isl-eng.t2x"/>
+        <file name="isl-eng.t2x.bin"/>
+      </program>
+      <program name="apertium-interchunk">
+        <file name="apertium-isl-eng.isl-eng.t3x"/>
+        <file name="isl-eng.t3x.bin"/>
+      </program>
+      <program name="apertium-postchunk">
+        <file name="apertium-isl-eng.isl-eng.t4x"/>
+        <file name="isl-eng.t4x.bin"/>
+      </program>      
+      <program name="lt-proc $1">
+        <file name="isl-eng.autogen.bin"/>
+      </program>
+      <program name="lt-proc -p">
+        <file name="isl-eng.autopgen.bin"/>
+      </program>
+    </pipeline>
+  </mode>
+
+  <mode name="isl-eng-postchunk">
+    <pipeline>
+      <program name="lt-proc -w">
+        <file name="isl-eng.automorf.bin"/>
+      </program>
+      <program name="cg-proc">
+        <file name="isl-eng.rlx.bin"/>
+      </program>
+      <program name="apertium-tagger -p -g $2">
+        <file name="isl-eng.prob"/>
+      </program>
+      <program name="cg-proc -n -w">
+        <file name="isl-eng.lex.bin"/>
+      </program>
+      <program name="apertium-pretransfer"/>
+      <program name="apertium-transfer -n">
+        <file name="apertium-isl-eng.isl-eng.t0x"/>
+        <file name="isl-eng.t0x.bin"/>
+      </program>
+      <program name="apertium-transfer">
+        <file name="apertium-isl-eng.isl-eng.t1x"/>
+        <file name="isl-eng.t1x.bin"/>
+        <file name="isl-eng.autobil.bin"/>
+      </program>
+      <program name="apertium-interchunk">
+        <file name="apertium-isl-eng.isl-eng.t2x"/>
+        <file name="isl-eng.t2x.bin"/>
+      </program>
+      <program name="apertium-interchunk">
+        <file name="apertium-isl-eng.isl-eng.t3x"/>
+        <file name="isl-eng.t3x.bin"/>
+      </program>
+      <program name="apertium-postchunk">
+        <file name="apertium-isl-eng.isl-eng.t4x"/>
+        <file name="isl-eng.t4x.bin"/>
+      </program>      
+    </pipeline>
+  </mode>
+
+  <mode name="isl-eng-interchunk2">
+    <pipeline>
+      <program name="lt-proc -w">
+        <file name="isl-eng.automorf.bin"/>
+      </program>
+      <program name="cg-proc">
+        <file name="isl-eng.rlx.bin"/>
+      </program>
+      <program name="apertium-tagger -p -g $2">
+        <file name="isl-eng.prob"/>
+      </program>
+      <program name="cg-proc -n -w">
+        <file name="isl-eng.lex.bin"/>
+      </program>
+      <program name="apertium-pretransfer"/>
+      <program name="apertium-transfer -n">
+        <file name="apertium-isl-eng.isl-eng.t0x"/>
+        <file name="isl-eng.t0x.bin"/>
+      </program>
+      <program name="apertium-transfer">
+        <file name="apertium-isl-eng.isl-eng.t1x"/>
+        <file name="isl-eng.t1x.bin"/>
+        <file name="isl-eng.autobil.bin"/>
+      </program>
+      <program name="apertium-interchunk">
+        <file name="apertium-isl-eng.isl-eng.t2x"/>
+        <file name="isl-eng.t2x.bin"/>
+      </program>
+      <program name="apertium-interchunk">
+        <file name="apertium-isl-eng.isl-eng.t3x"/>
+        <file name="isl-eng.t3x.bin"/>
+      </program>
+    </pipeline>
+  </mode>
+
+  <mode name="isl-eng-interchunk1">
+    <pipeline>
+      <program name="lt-proc -w">
+        <file name="isl-eng.automorf.bin"/>
+      </program>
+      <program name="cg-proc">
+        <file name="isl-eng.rlx.bin"/>
+      </program>
+      <program name="apertium-tagger -p -g $2">
+        <file name="isl-eng.prob"/>
+      </program>
+      <program name="cg-proc -n -w">
+        <file name="isl-eng.lex.bin"/>
+      </program>
+      <program name="apertium-pretransfer"/>
+      <program name="apertium-transfer -n">
+        <file name="apertium-isl-eng.isl-eng.t0x"/>
+        <file name="isl-eng.t0x.bin"/>
+      </program>
+      <program name="apertium-transfer">
+        <file name="apertium-isl-eng.isl-eng.t1x"/>
+        <file name="isl-eng.t1x.bin"/>
+        <file name="isl-eng.autobil.bin"/>
+      </program>
+      <program name="apertium-interchunk">
+        <file name="apertium-isl-eng.isl-eng.t2x"/>
+        <file name="isl-eng.t2x.bin"/>
+      </program>
+    </pipeline>
+  </mode>
+
+  <mode name="isl-eng-chunker">
+    <pipeline>
+      <program name="lt-proc -w">
+        <file name="isl-eng.automorf.bin"/>
+      </program>
+      <program name="cg-proc">
+        <file name="isl-eng.rlx.bin"/>
+      </program>
+      <program name="apertium-tagger -p -g $2">
+        <file name="isl-eng.prob"/>
+      </program>
+      <program name="cg-proc -n -w">
+        <file name="isl-eng.lex.bin"/>
+      </program>
+      <program name="apertium-pretransfer"/>
+      <program name="apertium-transfer -n">
+        <file name="apertium-isl-eng.isl-eng.t0x"/>
+        <file name="isl-eng.t0x.bin"/>
+      </program>
+      <program name="apertium-transfer">
+        <file name="apertium-isl-eng.isl-eng.t1x"/>
+        <file name="isl-eng.t1x.bin"/>
+        <file name="isl-eng.autobil.bin"/>
+      </program>
+    </pipeline>
+  </mode>
+
+  <mode name="isl-eng-lex">
+    <pipeline>
+      <program name="lt-proc -w">
+        <file name="isl-eng.automorf.bin"/>
+      </program>
+      <program name="cg-proc">
+        <file name="isl-eng.rlx.bin"/>
+      </program>
+      <program name="apertium-tagger -p -g $2">
+        <file name="isl-eng.prob"/>
+      </program>
+      <program name="cg-proc">
+        <file name="isl-eng.lex.bin"/>
+      </program>
+    </pipeline>
+  </mode>
+
+  <mode name="isl-eng-tagger">
+    <pipeline>
+      <program name="lt-proc -w">
+        <file name="isl-eng.automorf.bin"/>
+      </program>
+      <program name="cg-proc">
+        <file name="isl-eng.rlx.bin"/>
+      </program>
+      <program name="apertium-tagger -p -g $2">
+        <file name="isl-eng.prob"/>
+      </program>
+    </pipeline>
+  </mode>
+
+  <mode name="isl-eng-morph">
+    <pipeline>
+      <program name="lt-proc -w">
+        <file name="isl-eng.automorf.bin"/>
+      </program>
+    </pipeline>
+  </mode>
+
+  <mode name="isl-eng-cmpd-lex">
+    <pipeline>
+      <program name="lt-proc -w -e">
+        <file name="isl-eng.automorf.bin"/>
+      </program>
+      <program name="apertium-tagger -p -g $2">
+        <file name="isl-eng.prob"/>
+      </program>
+      <program name="apertium-tagger -p -g $2">
+        <file name="isl-eng.prob"/>
+      </program>
+      <program name="cg-proc -n -w">
+        <file name="isl-eng.lex.bin"/>
+      </program>
+      <program name="apertium-pretransfer"/>
+    </pipeline>
+  </mode>
+
+  <mode name="isl-eng-cmpd">
+    <pipeline>
+      <program name="lt-proc -w -e">
+        <file name="isl-eng.automorf.bin"/>
+      </program>
+      <program name="cg-proc">
+        <file name="isl-eng.rlx.bin"/>
+      </program>
+      <program name="apertium-tagger -p -g $2">
+        <file name="isl-eng.prob"/>
+      </program>
+      <program name="cg-proc -n -w">
+        <file name="isl-eng.lex.bin"/>
+      </program>
+      <program name="apertium-pretransfer"/>
+      <program name="apertium-transfer">
+        <file name="apertium-isl-eng.isl-eng.t1x"/>
+        <file name="isl-eng.t1x.bin"/>
+        <file name="isl-eng.autobil.bin"/>
+      </program>
+      <program name="apertium-interchunk">
+        <file name="apertium-isl-eng.isl-eng.t2x"/>
+        <file name="isl-eng.t2x.bin"/>
+      </program>
+      <program name="apertium-postchunk">
+        <file name="apertium-isl-eng.isl-eng.t3x"/>
+        <file name="isl-eng.t3x.bin"/>
+      </program>      
+      <program name="lt-proc $1">
+        <file name="isl-eng.autogen.bin"/>
+      </program>
+      <program name="lt-proc -p">
+        <file name="isl-eng.autopgen.bin"/>
+      </program>
+    </pipeline>
+  </mode>
+
+</modes>

@@ -1,0 +1,257 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<modes>
+  <mode name="nld-fry" install="yes">
+    <pipeline>
+      <program name="lt-proc -e">
+        <file name="nld-fry.automorf.bin"/>
+      </program>
+      <program name="cg-proc">
+        <file name="nld-fry.rlx.bin"/>
+      </program>
+      <program name="apertium-tagger -g">
+        <file name="nld-fry.prob"/>
+      </program>
+      <program name="lt-proc -b">
+        <file name="nld-fry.autobil.bin"/>
+      </program>
+      <program name="lrx-proc">
+        <file name="nld-fry.autolex.bin"/>
+      </program>
+      <program name="apertium-transfer -b">
+        <file name="apertium-nld-fry.nld-fry.t1x"/>
+        <file name="nld-fry.t1x.bin"/>
+      </program>
+      <program name="lt-proc -g">
+        <file name="nld-fry.autogen.bin"/>
+      </program>
+    </pipeline>
+  </mode>
+
+  <mode name="nld-fry-debug" install="no">
+    <pipeline>
+      <program name="lt-proc -e">
+        <file name="nld-fry.automorf.bin"/>
+      </program>
+      <program name="cg-proc">
+        <file name="nld-fry.rlx.bin"/>
+      </program>
+      <program name="apertium-tagger -g">
+        <file name="nld-fry.prob"/>
+      </program>
+      <program name="lt-proc -b">
+        <file name="nld-fry.autobil.bin"/>
+      </program>
+      <program name="lrx-proc">
+        <file name="nld-fry.autolex.bin"/>
+      </program>
+      <program name="apertium-transfer -b">
+        <file name="apertium-nld-fry.nld-fry.t1x"/>
+        <file name="nld-fry.t1x.bin"/>
+      </program>
+      <program name="lt-proc -d">
+        <file name="nld-fry.autogen.bin"/>
+      </program>
+    </pipeline>
+  </mode>
+
+
+  <mode name="nld-fry-transfer">
+    <pipeline>
+      <program name="lt-proc -e">
+        <file name="nld-fry.automorf.bin"/>
+      </program>
+      <program name="cg-proc">
+        <file name="nld-fry.rlx.bin"/>
+      </program>
+      <program name="apertium-tagger -g">
+        <file name="nld-fry.prob"/>
+      </program>
+      <program name="lt-proc -b">
+        <file name="nld-fry.autobil.bin"/>
+      </program>
+      <program name="lrx-proc">
+        <file name="nld-fry.autolex.bin"/>
+      </program>
+      <program name="apertium-transfer -b">
+        <file name="apertium-nld-fry.nld-fry.t1x"/>
+        <file name="nld-fry.t1x.bin"/>
+      </program>
+    </pipeline>
+  </mode>
+
+  <mode name="nld-fry-lextor">
+    <pipeline>
+      <program name="lt-proc -e">
+        <file name="nld-fry.automorf.bin"/>
+      </program>
+      <program name="cg-proc">
+        <file name="nld-fry.rlx.bin"/>
+      </program>
+      <program name="apertium-tagger -g">
+        <file name="nld-fry.prob"/>
+      </program>
+      <program name="lt-proc -b">
+        <file name="nld-fry.autobil.bin"/>
+      </program>
+      <program name="lrx-proc">
+        <file name="nld-fry.autolex.bin"/>
+      </program>
+    </pipeline>
+  </mode>
+
+
+  <mode name="nld-fry-biltrans">
+    <pipeline>
+      <program name="lt-proc -e">
+        <file name="nld-fry.automorf.bin"/>
+      </program>
+      <program name="cg-proc">
+        <file name="nld-fry.rlx.bin"/>
+      </program>
+      <program name="apertium-tagger -g">
+        <file name="nld-fry.prob"/>
+      </program>
+      <program name="lt-proc -b">
+        <file name="nld-fry.autobil.bin"/>
+      </program>
+    </pipeline>
+  </mode>
+
+  <mode name="nld-fry-tagger">
+    <pipeline>
+      <program name="lt-proc -e">
+        <file name="nld-fry.automorf.bin"/>
+      </program>
+      <program name="cg-proc">
+        <file name="nld-fry.rlx.bin"/>
+      </program>
+      <program name="apertium-tagger -g">
+        <file name="nld-fry.prob"/>
+      </program>
+    </pipeline>
+  </mode>
+
+  <mode name="nld-fry-disam">
+    <pipeline>
+      <program name="lt-proc -e">
+        <file name="nld-fry.automorf.bin"/>
+      </program>
+      <program name="cg-conv -a"/>
+      <program name="vislcg3 --trace --grammar">
+        <file name="nld-fry.rlx.bin"/>
+      </program>
+    </pipeline>
+  </mode>
+
+
+  <mode name="nld-fry-morph">
+    <pipeline>
+      <program name="lt-proc -e">
+        <file name="nld-fry.automorf.bin"/>
+      </program>
+    </pipeline>
+  </mode>
+
+  <!-- == West Frisian → Dutch == -->
+
+  <mode name="fry-nld" install="yes">
+    <pipeline>
+      <program name="lt-proc">
+        <file name="fry-nld.automorf.bin"/>
+      </program>
+      <program name="apertium-tagger -g">
+        <file name="fry-nld.prob"/>
+      </program>
+      <program name="lt-proc -b">
+        <file name="fry-nld.autobil.bin"/>
+      </program>
+      <program name="lrx-proc">
+        <file name="fry-nld.autolex.bin"/>
+      </program>
+      <program name="apertium-transfer -b">
+        <file name="apertium-nld-fry.fry-nld.t1x"/>
+        <file name="fry-nld.t1x.bin"/>
+      </program>
+      <program name="lt-proc -g">
+        <file name="fry-nld.autogen.bin"/>
+      </program>
+    </pipeline>
+  </mode>
+
+  <mode name="fry-nld-transfer">
+    <pipeline>
+      <program name="lt-proc">
+        <file name="fry-nld.automorf.bin"/>
+      </program>
+      <program name="apertium-tagger -g">
+        <file name="fry-nld.prob"/>
+      </program>
+      <program name="lt-proc -b">
+        <file name="fry-nld.autobil.bin"/>
+      </program>
+      <program name="lrx-proc">
+        <file name="fry-nld.autolex.bin"/>
+      </program>
+      <program name="apertium-transfer -b">
+        <file name="apertium-nld-fry.fry-nld.t1x"/>
+        <file name="fry-nld.t1x.bin"/>
+      </program>
+    </pipeline>
+  </mode>
+
+  <mode name="fry-nld-lextor">
+    <pipeline>
+      <program name="lt-proc">
+        <file name="fry-nld.automorf.bin"/>
+      </program>
+      <program name="apertium-tagger -g">
+        <file name="fry-nld.prob"/>
+      </program>
+      <program name="lt-proc -b">
+        <file name="fry-nld.autobil.bin"/>
+      </program>
+      <program name="lrx-proc">
+        <file name="fry-nld.autolex.bin"/>
+      </program>
+    </pipeline>
+  </mode>
+
+
+  <mode name="fry-nld-biltrans">
+    <pipeline>
+      <program name="lt-proc">
+        <file name="fry-nld.automorf.bin"/>
+      </program>
+      <program name="apertium-tagger -g">
+        <file name="fry-nld.prob"/>
+      </program>
+      <program name="lt-proc -b">
+        <file name="fry-nld.autobil.bin"/>
+      </program>
+    </pipeline>
+  </mode>
+
+  <mode name="fry-nld-tagger">
+    <pipeline>
+      <program name="lt-proc">
+        <file name="fry-nld.automorf.bin"/>
+      </program>
+      <program name="apertium-tagger -g">
+        <file name="fry-nld.prob"/>
+      </program>
+    </pipeline>
+  </mode>
+
+  <mode name="fry-nld-morph">
+    <pipeline>
+      <program name="lt-proc">
+        <file name="fry-nld.automorf.bin"/>
+      </program>
+    </pipeline>
+  </mode>
+
+
+
+
+</modes>

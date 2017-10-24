@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<modes>
+
+  <mode name="srn-morph">
+    <pipeline>
+      <program name="lt-proc -w">
+        <file name="srn.automorf.bin"/>
+      </program>
+    </pipeline>
+  </mode>
+
+  <mode name="srn-gener">
+    <pipeline>
+      <program name="lt-proc -g">
+        <file name="srn.autogen.bin"/>
+      </program>
+    </pipeline>
+  </mode>
+
+  <mode name="srn-tagger">
+    <pipeline>
+      <program name="lt-proc -w">
+        <file name="srn.automorf.bin"/>
+      </program>
+      <program name="cg-proc -w">
+        <file name="srn.rlx.bin"/>
+      </program>
+    </pipeline>
+  </mode>
+
+  <mode name="srn-disam">
+    <pipeline>
+      <program name="lt-proc -w">
+        <file name="srn.automorf.bin"/>
+      </program>
+      <program name="cg-conv -a -l" />
+      <program name="vislcg3 --trace -g">
+        <file name="apertium-srn.srn.rlx"/>
+      </program>
+    </pipeline>
+  </mode>
+
+</modes>
+

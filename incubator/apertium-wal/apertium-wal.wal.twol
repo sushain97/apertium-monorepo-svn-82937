@@ -1,0 +1,88 @@
+Alphabet
+
+ A B C D E F G H I J K L M N O P Q R S T U V W X Y Z     ! CH DH NH NY PH SH TS ZH 
+ a b c d e f g h i j k l m n o p q r s t u v w x y z ʼ   ! ch dh nh ny ph sh ts zh cc
+ %{tv%}:0 
+ %{V%}:0
+ %{‼%}:0  ! blocks phonology from applying, so that we can have exceptions
+
+ ;
+
+Sets
+
+Vow = A E I O U
+      a e i o u ;
+
+Cns = B C D F G H J K L M N P Q R S T V W X Y Z       ! CH DH NH NY PH SH TS ZH 
+      b c d f g h j k l m n p q r s t v w x y z ʼ ; ! ch dh nh ny ph sh ts zh ;
+
+Rules
+
+! You need a default rule to make it compile
+"Remove morpheme boundary"
+%>:0 <=> _ ;
+
+!"{e} to y after vowel"
+!%{e%}:y <=> :Vow :0* _ ;
+
+!"change cc to ccsh"
+!%{iss%}:sh <=> :cc :0* _ ;
+
+!"change c to j"
+!d:XXX =>i_:;
+
+
+"change {V} to next vowel"
+%{V%}:Vy <=> _ :0* :Vy ;
+         except
+             _ :0* :Vy :Vow ;
+         where Vy in Vow ;
+
+"degeminate consonant before -iss"
+Cx:0 <=> _ :Cx :0* :i :s :s ;
+     except
+         _ :Cx %{‼%}: ;
+         _ :c ;  ! avoid conflict with cc > sh
+     where Cx in Cns ;
+
+!! another way to write the above environment is like this:
+!!Cx:0 <=> _ :Cx [ :0 - %{‼%}: ]* :i :s :s ;
+
+"first c>s when cc > sh before -iss"
+c:s <=> _ c: :0* :i :s :s ;
+    except
+        _ c:0 ;  ! avoid conflict with degemination, etc.
+
+"second c>h when cc > sh before -iss"
+c:h <=> c: _ :0* :i :s :s ;
+
+"delete k before -iss in ak-"
+k:0 <=> .#. :a _ :0* :i :s :s ;
+! if a new word, e.g. xak- also deletes, add something like this
+!        .#. :x :a _ :0* :i :s :s ;
+
+
+!"insert h to make sh"
+!%{h%}:h <=> :s _ ;
+
+!"don't insert h to make sh"
+!%{h%}:0 <=> :t _ ;
+
+
+!cc + iss → shiss
+!CnsCns + iss → Cnsiss Exceptions: 7azall, harumm, Cimm
+!ak + iss → aiss
+!CnsCns + ett → Cnsett Exceptions: onakk
+!kacc + ett → kashett
+!medd + ett → merett
+!shaakk + ett →shaahett 
+!ott + ett → ashett
+
+
+
+! Resources:
+! http://wiki.apertium.org/wiki/Starting_a_new_language_with_HFST#Enter_twol
+! https://kitwiki.csc.fi/twiki/bin/view/KitWiki/HfstHome
+! http://hfst.sourceforge.net/
+! http://wiki.apertium.org/wiki/Twol
+! http://wiki.apertium.org/wiki/Hfst

@@ -1,0 +1,256 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<transfer default="chunk">
+  <section-def-cats>
+    <def-cat n="default">
+      <cat-item tags="*"/>
+    </def-cat>
+    <def-cat n="vaux">
+      <cat-item tags="vaux.*"/>
+    </def-cat>
+    <def-cat n="cop-past">
+      <cat-item tags="cop.ifi.*"/>
+    </def-cat>
+    <def-cat n="nom">
+      <cat-item tags="n.*"/>
+    </def-cat>
+    <def-cat n="post">
+      <cat-item tags="post"/>
+      <cat-item tags="post.*"/>
+    </def-cat>
+    <def-cat n="cop">
+      <cat-item tags="cop.*"/>
+    </def-cat>
+    <def-cat n="sent">
+      <cat-item tags="sent"/>
+    </def-cat>
+  </section-def-cats>
+
+  <section-def-attrs>
+    <def-attr n="a_verb">
+      <attr-item tags="vaux"/>
+      <attr-item tags="cop"/>
+      <attr-item tags="v.tv"/>
+      <attr-item tags="v.iv"/>
+    </def-attr>
+    <def-attr n="a_ins">
+      <attr-item tags="ins"/>
+    </def-attr>
+    <def-attr n="a_pers">
+      <attr-item tags="p1"/>
+      <attr-item tags="p2"/>
+      <attr-item tags="p2.frm"/>
+      <attr-item tags="p3"/>
+    </def-attr>
+    <def-attr n="a_cas">
+      <attr-item tags="nom"/>
+    </def-attr>
+    <def-attr n="a_temps">
+      <attr-item tags="ifi"/>
+      <attr-item tags="past"/>
+      <attr-item tags="aor"/>
+      <attr-item tags="pres"/>
+    </def-attr>
+    <def-attr n="a_syn">
+      <attr-item tags="@csubj"/>
+      <attr-item tags="@cmpnd"/>
+      <attr-item tags="@amod"/>
+      <attr-item tags="@advmod"/>
+      <attr-item tags="@det"/>
+      <attr-item tags="@acl"/>
+      <attr-item tags="@acl:relcl"/>
+      <attr-item tags="@obj"/>
+      <attr-item tags="@case"/>
+      <attr-item tags="@punct"/>
+      <attr-item tags="@conj"/>
+      <attr-item tags="@cc"/>
+      <attr-item tags="@root"/>
+      <attr-item tags="@aux"/>
+      <attr-item tags="@cop"/>
+      <attr-item tags="@disc"/>
+      <attr-item tags="@nmod"/>
+      <attr-item tags="@nmod:poss"/>
+      <attr-item tags="@nummod"/>
+      <attr-item tags="@name"/>
+      <attr-item tags="@ccomp"/>
+      <attr-item tags="@advcl"/>
+      <attr-item tags="@nsubj"/>
+
+    </def-attr>
+  </section-def-attrs>
+
+  <section-def-vars>
+    <def-var n="number"/>
+  </section-def-vars>
+
+  <section-def-macros>
+    <def-macro n="case1" npar="1">
+      <choose> <!-- Converts instrumental case to nominative+биле<post> -->
+        <when>
+          <test>
+            <equal><clip pos="1" side="sl" part="a_ins"/><lit-tag v="ins"/></equal>
+          </test>
+          <let><clip pos="1" side="tl" part="a_ins"/><concat><lit-tag v="nom"/><lit v="$ ^биле"/><lit-tag v="post"/></concat></let>
+        </when>
+      </choose>
+    </def-macro> 
+    <def-macro n="pers1" npar="1">
+        <choose>
+          <when><test><equal><clip pos="1" side="sl" part="a_pers"/><lit-tag v="p2.frm"/></equal></test>
+                <let><clip pos="1" side="tl" part="a_pers"/><lit-tag v="p2"/></let>
+          </when>
+        </choose>
+    </def-macro> 
+
+  </section-def-macros>
+
+  <section-rules>
+
+    <rule comment="REGLA: NOM">
+      <pattern>
+        <pattern-item n="nom"/>
+      </pattern>
+      <action>
+        <call-macro n="case1">
+          <with-param pos="1"/>
+        </call-macro>
+        <out>
+          <chunk name="nom" case="caseFirstWord">
+            <tags>
+              <tag><lit-tag v="nom"/></tag>
+            </tags>
+            <lu>
+              <clip pos="1" side="tl" part="whole"/>
+            </lu>
+          </chunk>
+        </out>
+      </action>
+    </rule>
+
+
+    <rule comment="REGLA: SENT">
+      <pattern>
+        <pattern-item n="sent"/>
+      </pattern>
+      <action>
+        <out>
+          <chunk name="sent" case="caseFirstWord">
+            <tags>
+              <tag><lit-tag v="SENT"/></tag>
+            </tags>
+            <lu>
+              <clip pos="1" side="tl" part="whole"/>
+            </lu>
+          </chunk>
+        </out>
+      </action>
+    </rule>
+
+    <rule comment="REGLA: COP-PAST">
+      <pattern>
+        <pattern-item n="cop-past"/>
+      </pattern>
+      <action>
+        <choose><when><test>
+           <equal><clip pos="1" side="sl" part="a_temps"/>
+                  <lit-tag v="ifi"/></equal>
+           </test>
+           <let><clip pos="1" side="tl" part="a_temps"/><lit-tag v="past"/></let>
+          </when>
+        </choose>
+
+        <call-macro n="pers1"><with-param pos="1"/></call-macro>
+        <let><clip pos="1" side="tl" part="a_syn"/><lit v=""/></let>
+        <let><clip pos="1" side="tl" part="a_verb"/><lit-tag v="v.iv"/></let>
+        <let><clip pos="1" side="tl" part="lem"/><lit v="бол"/></let>
+        <out>
+          <chunk name="cop" case="caseFirstWord">
+            <tags>
+              <tag><clip pos="1" side="sl" part="a_syn"/></tag>
+            </tags>
+            <lu>
+              <clip pos="1" side="tl" part="whole"/>
+            </lu>
+          </chunk>
+        </out>
+      </action>
+    </rule>
+
+
+    <rule comment="REGLA: POST">
+      <pattern>
+        <pattern-item n="post"/>
+      </pattern>
+      <action>
+        <let><clip pos="1" side="tl" part="a_syn"/><lit v=""/></let>
+        <out>
+          <chunk name="post" case="caseFirstWord">
+            <tags>
+              <tag><lit-tag v="POST"/></tag>
+              <tag><clip pos="1" side="sl" part="a_syn"/></tag>
+            </tags>
+            <lu>
+              <clip pos="1" side="tl" part="whole"/>
+            </lu>
+          </chunk>
+        </out>
+      </action>
+    </rule>
+
+    <rule comment="REGLA: VAUX">
+      <pattern>
+        <pattern-item n="vaux"/>
+      </pattern>
+      <action>
+        <call-macro n="pers1"><with-param pos="1"/></call-macro>
+        <choose>
+          <when><test><equal><clip pos="1" side="sl" part="a_temps"/><lit-tag v="pres"/></equal></test>
+                <let><clip pos="1" side="tl" part="a_temps"/><lit-tag v="aor"/></let>
+          </when>
+        </choose>
+        <let><clip pos="1" side="tl" part="a_syn"/><lit v=""/></let>
+        <out>
+          <chunk name="aux" case="caseFirstWord">
+            <tags>
+              <tag><clip pos="1" side="sl" part="a_syn"/></tag>
+            </tags>
+            <lu>
+              <clip pos="1" side="tl" part="whole"/>
+            </lu>
+          </chunk>
+        </out>
+      </action>
+    </rule>
+
+    <rule comment="REGLA: DEFAULT">
+      <pattern>
+        <pattern-item n="default"/>
+      </pattern>
+      <action>
+        <call-macro n="pers1"><with-param pos="1"/></call-macro>
+        <let><clip pos="1" side="tl" part="a_syn"/><lit v=""/></let>
+        <out>
+          <chunk name="default" case="caseFirstWord">
+            <tags>
+              <tag><clip pos="1" side="sl" part="a_syn"/></tag>
+            </tags>
+            <lu>
+              <clip pos="1" side="tl" part="whole"/>
+            </lu>
+          </chunk>
+        </out>
+      </action>
+    </rule>
+  </section-rules>
+
+
+</transfer>
+
+<!--
+Resources:
+    http://wiki.apertium.org/wiki/Chunking:_A_full_example
+    http://wiki.apertium.org/wiki/Chunking
+    http://wiki.apertium.org/wiki/Apertium_New_Language_Pair_HOWTO#Transfer_rules
+    http://wiki.apertium.org/wiki/A_long_introduction_to_transfer_rules
+    http://wiki.apertium.org/wiki/Transfer#Adding_structural_transfer_.28grammar.29_rules
+-->
+

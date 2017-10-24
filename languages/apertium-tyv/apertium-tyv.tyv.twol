@@ -1,0 +1,770 @@
+
+Alphabet
+
+   А Б В Г Д Е Ё Ж З И Й К Л М Н Ң О Ө П Р С Т У Ү Ф Х Ц Ч Ш Щ Ъ Ы Ь Э Ю Я
+   а б в г д е ё ж з и й к л м н ң о ө п р с т у ү ф х ц ч ш щ ъ ы ь э ю я
+
+   %{I%}:ы ! %{I%}:и %{I%}:у %{I%}:ү
+
+   %{A%}:а ! %{A%}:е
+
+   %{E%}:а ! %{A%}:е
+
+   %{D%}:д 
+ 
+   %{L%}:л 
+
+   %{N%}:н 
+ 
+   %{G%}:г ! %{G%}:к
+
+   %{Z%}:з ! %{Z%}:с
+
+   %{g%}:г
+ 
+   %{J%}:ж ! %{J%}:ч
+
+   %{B%}:б ! %{B%}:п %{B%}:м %{B%}:в
+
+   %{i%}:0 ! %{i%}:ы %{i%}:и %{i%}:у %{i%}:ү
+
+!   %{z%}:з        %{y%}:ы
+   %{n%}:н 
+   %{z%}:0 ! %{y%}:0
+
+   %{и%}:0 ! %{и%}:у %{и%}:ы 
+
+	%{y%}:0
+
+   %{к%}:к
+   %{г%}:г
+   %{н%}:0
+	%{ң%}:ң
+   %{л%}:л
+
+   ! Abstract Archiphonemes: always disappear but condition phonology
+   ! mostly for numerals and abbreviations
+
+   %{р%}:р ! Until phonology is done
+
+   %{а%}:0
+   %{с%}:0
+   %{з%}:0
+   %{й%}:0
+   !%{н%}:0
+
+   %{э%}:0 
+   %{ы%}:0
+
+   %{❗%}:0
+   %{☭%}:0
+
+   % 
+   %.
+   %-
+   %+
+   %−
+   №
+
+
+   %>:0 ; 
+
+Sets
+
+Vow = Я Ю Ё А О Ы У Э Е И Ө Ү
+      я ю ё а о ы у э е и ө ү ;
+
+BackVow    =  Я Ю Ё А О Ы У
+              я ю ё а о ы у ;
+
+FrontVow   =  Э Е И Ө Ү 
+              э е и ө ү ; 
+
+RealVow = А О Ы У Э Е И Ө Ү
+          а о ы у э е и ө ү ;
+
+AbstractVow = %{э%} %{а%} ;
+
+AbstractCns = %{с%} %{з%} %{й%} ;
+
+Cns        =  Б В Г Д Ж З Й К Л М Н Ң П Р С Т Ф Х Ц Ч Ш Щ Ъ Ь
+              б в г д ж з й к л м н ң п р с т ф х ц ч ш щ ъ ь ; 
+
+RealCns        =  Б В Г Д Ж З Й К Л М Н Ң П Р С Т Ф Х Ц Ч Ш Щ 
+                  б в г д ж з й к л м н ң п р с т ф х ц ч ш щ ; 
+
+
+Liquid     = Л 
+             л ; 
+
+HighSonCns = Р Й Г
+             р й г ;
+
+Nasals      = Н М Ң
+              н м ң ; 
+
+Velars         = Ң Г К 
+                ң г к ;
+
+VoicelessCns = к п с т ц ш ф х 
+               К П С Т Ц Ш Ф Х ; 
+
+VoicelessCnsRus = З Б В Д Ж Г
+                  з б в д ж г ;
+
+HighVow = Ү И У Ы
+          ү и у ы ;
+
+RusHighVow = И У Ы
+             и у ы ;
+
+
+Rules
+
+
+!!== Lenition ==!!
+
+"{z} surfaces after a vowel"
+%{z%}:з <=> :Vow/:0* _ ;
+        except
+            [ :Vow [ Velars: | %{ң%}: ] ]/:0* _ ;
+            г:/:0* _ ;
+
+!@ с о {ң}:0 >:0 {z}:0 {I}:о {n}:н >:0 {D}:д {A}:а
+
+"Intervocalic coronal fricative voicing at a morpheme boundary"
+Cx:Cy <=> [ :Vow (:р) ]/:0* _ %>: :Vow/:0* ;
+          :Vow/:0* _ %{y%}:Vow/:0* ; ! also do before realised epenthetic vowel stem internally
+          [ :Vow [ р: | й: ] %{y%}:0 ]/[ :0 - %{y%}:0 ]* _ %>: :Vow/:0* ; ! also do after р or й
+!!          р/:0 _ %>: :Vow ;
+!      except
+!          :р/:0* _ ;
+!except??          :VoicelessCns/:0* _ ;
+!          [ к: | р: ] _ %{и%}: ;
+
+      where Cx in ( с ш )
+            Cy in ( з ж )
+      matched ;
+
+!@ к а с:з >:0 {z}:0 {I}:ы
+
+!@ к и р {y}:0 ш:ж >:0 {i}:и п 
+!@ к и р {y}:0 ш:ж >:0 {I}:и р 
+!@ ө с к е р т >:0 {I}:и п
+
+!@ у ш:ж {y}:у л
+
+!@ к о н к у р с:з >:0 {z}:0 {I}:у {n}:н >:0 {G}:г {A}:а
+
+!@ ч у р т >:0 {z}:0 {I}:у {n}:0       
+
+
+"Intervocalic т voicing at a morpheme boundary"
+т:д <=> :Vow/:0* (:ъ) _ %>: :Vow/:0* ;
+        :Vow/:0* (:ъ) _ %{y%}:Vow/:0* ; ! also do before realised epenthetic vowel stem internally
+        [ :Vow [ р: | л: ] %{y%}:0 ]/[ :0 - %{y%}:0 ]* _ %>: :Vow/:0* ; ! also do after р, but NOT й
+    except
+        с: _ (ь:) %>: ;            ! always 0
+        _ %{❗%}: ;
+
+!@ б е т {❗}:0 >:0 {z}:0 {I}:и {n}:0
+
+"Intervocalic voicing of к at morpheme boundary in monosyllabic stems"
+к:г <=> [ .#. | %- ] [ ( :Cns* ) ( :Vow* ) :Vow ]/:0 _ %>: :Vow/:0* ;
+        :Vow _ %{☭%}: %>: :Vow/:0* ; 
+        :Vow/:0* _ %{y%}:Vow/[ :0 - %>: ]* ; ! also do before realised epenthetic vowel stem internally
+
+!@ с о о к:г >:0 {z}:0 {I}:у {n}:0
+
+!@ р ы н о к:г {☭}:0 >:0 {z}:0 {I}:у {n}:0
+
+!@ я з ы - с ө ө к:г >:0 {z}:0 {I}:ү {n}:0
+
+!@ с ө ө к:г >:0 {z}:0 {I}:ү {n}:0
+
+"Intervocalic voicing of п at a morpheme boundary"
+п:в <=> :Vow/:0* _ %>: :Vow/:0* ;
+        :Vow/:0* _ %{y%}:Vow/:0* ; ! also do before realised epenthetic vowel stem internally
+        [ :Vow р: %{y%}:0 ]/[ :0 - %{y%}:0 ]* _ %>: :Vow/:0* ; ! also do after р
+      except
+         :Vow _ %>: %{i%}: п: ;
+
+!@ к:к ы:ы п:п {y}:0 с:с >:0 {i}:ы п:п
+
+!"Intervocalic voiced velar deletion"
+!Cx:0 <=> :Vow/:0* _ %>: :Vow/:0* ;
+!     except
+!         :Vow _ %{☭%}: :Vow/:0* ; 
+!     where Cx in ( г ң ) ;
+!
+
+"Intervocalic voiced velar deletion"
+г:0 <=> :Vow/:0* _ %>: :Vow/:0* ;
+    except
+        :Vow _ %{☭%}: %>: :Vow/:0* ; 
+
+!@ э г:0 {I}:э р
+
+"Exceptional deletion of ң"
+%{ң%}:0 <=> :Vow/:0* _ %>: :Vow/:0* ;
+
+"Intervocalic voiceless velar deletion"
+к:0 <=> :Vow/:0* _ %>: :Vow/:0* ;
+     except
+         [ .#. | %- ] [ ( :Cns* ) ( :Vow* ) :Vow ]/:0 _ %>: :Vow/:0* ;
+         :Vow _ %{☭%}: %>: :Vow/:0* ;
+         !:Vow _ [ %{☭%}: :Vow ]/[ :0 -  %{☭%}: ]* ; 
+
+
+!@ ө к:г >:0 {i}:ү м
+!@ ө г:0 >:0 {i}:ө м
+!@ б е л е:э к:0 >:0 {i}:э м
+!@ б и л и:и к:0 >:0 {i}:и м
+
+"Intervocalic {G} deletion"
+%{g%}:0 <=> :Cns :Vow/:0* _ :Vow/:0* ;
+
+!@ д у ж а а >:0 {g}:г {A}:а н
+
+
+!!!== Desonorisation ==!!!
+
+"{L} desonorisation"
+%{L%}:д <=> :Liquid/[ ь | :0 ]* _ ;
+        except
+               %{с%}: (%-:) %>: _ ;
+
+!@ м е д а л ь >:0 {L}:д {A}:а р
+
+! {L} desonorisation should *not* happen here:
+!@ д а г >:0 {L}:л {A}:а р
+
+"N Desonorisation"
+%{N%}:д <=> :Liquid/[ :ь | [ :0 - %{n%}: ] ]* _ ;
+        except
+               %{с%}: (%-:) %>: _ ;
+
+
+"н desonorisation/devoicing after voiceless consonant and epenthesis"
+н:т <=> [ :VoicelessCns %{y%}:0 ]/[ :0 - %{y%}:0 ]* _ ;
+
+!@ о д:т {у}:0 н:т >:0 {i}:у п
+
+"л desonorisation/devoicing after voiceless consonant and epenthesis"
+л:т <=> [ :VoicelessCns %{y%}:0 ]/[ :0 - %{y%}:0 ]* _ ;
+
+
+
+!!== Assimilation ==!!
+
+"Forward voicing assimilation"
+Cx:Cy <=> ! :VoicelessCns/[ %>: | %  | %{☭%}:0 | %{ъ%}:0 ]* _ ;   ! why define all the :0s manually?  why not just say :0* ?
+          [ :VoicelessCns %>: ]/[ [ :0 - [ %{n%}: | AbstractCns: | %>: ] ] | %  ]* _ ;
+                               :VoicelessCnsRus %{☭%}: %>: _ ;
+                               %{с%}: (%-:) %>: _ ;
+!          AbstrVoicelessCns:/[ %-: | %>: ] _ ;
+          where Cx in ( %{M%}  %{D%}  %{L%}  %{N%}  %{G%} %{B%} %{Z%} %{J%} )
+                Cy in (   п      т      т      т      к     п     с     ч   )
+                matched;
+
+!@ с а д {☭}:0 >:0 {D}:т {A}:а
+
+!@ 5 {э}:0 {с}:0 - {G}:к {I}:и
+
+!@ о к р у г {☭}:0 >:0 {G}:к {A}:а
+
+"{J} devoices after liquids and nasals too"
+%{J%}:ч <=> [ :Liquid | :Nasals ] ( ь ) %>: _ ;
+
+"{B} nasal assimilation"
+%{B%}:м <=> :Nasals %>: _ ;
+
+"{B} after vowel "
+%{B%}:в <=> :Vow %>: _ ;
+
+"{g} voicing assimilation"
+%{g%}:к <=> :VoicelessCns/:0* _ ;
+
+"{L} nasal assimilation"
+%{L%}:н <=> :Nasals/:0* %>: _ ;
+        except
+               %{с%}: (%-:) %>: _ ;
+
+"л to н assimilation before Nasals when no epenthetic vowel"
+л:н <=> _ %{y%}:0 :Nasals ;
+    except
+        [ :VoicelessCns %{y%}: ]/[ :0 - %{y%}: ]* _ ;
+
+
+!!!== Vowel harmony ==!!!
+
+"Harmony of epenthesised vowel in some stems"
+%{y%}:Vy <=> [ :Vx :Cns* :Cns ]/[ %>: | :0 ] _ [ :Cns [ .#. | :Cns ] ]/[ :0 | %>: ] ;
+         except
+             [ [ :о | :у ] й: ]/:0* _ ;
+         where Vx in ( ү и е э ө а о ы у я ё ю )
+               Vy in ( ү и и и ү ы у ы у ы у у )
+         matched ;
+
+"Harmony of yotted %{y%}"
+%{y%}:ю <=> [ [ :о | :у ] й: ]/:0* _ ;
+        except
+            _ [ :Cns :Vow ]/:0 ;
+
+"{i} harmony"
+%{i%}:Vy <=> :Vx [ :Cns* :RealCns ]/:0* _ ;
+         except
+             [ :Vx Velars:0 ]/[ :0 - Velars: ]* _ ;
+             [ :Vx %{л%}:0 ]/[ :0 - %{л%}: ]* _ ;
+         !    :Vow/:0* _ ;
+         where Vx in ( ү и е э ө а о ы у я ё ю )
+               Vy in ( ү и и и ү ы у ы у ы у у )
+         matched ;
+
+"Normal front vowel harmony for {E}"
+%{E%}:е <=> [ :FrontVow :Cns* :RealCns ]/[ :0 | ь ]* _ ;
+!        except
+!            [ :Vow ]/[ %>: | :0 ] _ ;
+
+"Normal front vowel harmony for {A}"
+%{A%}:е <=> [ :FrontVow :Cns* :RealCns ]/[ :0 | ь ]* _ ;
+            [ %{э%}: :Cns* ]/[ :%- | [ :0 - %{э%}: ] ]* _ ;
+            [ :BackVow :Cns* :Cns :л ь: :Cns* :RealCns ]/:0* _ ;
+            [ :BackVow :Cns* :Cns :л ь:0 ]/[ :0 - [ ь: | т: ] ]* _ ;
+            [ :BackVow :Cns* ь: ]/[ :0 - [ ь: | т: ] ]* _ ;
+!            Vow: [ %>: %{G%}:0 ]/:0* _ ; ! for dative case where {G} deletes
+            [ FrontVow: й: ]/:0* _ ;  !@ ө й:0 >:0 {A}:е р
+        except
+            [ :FrontVow %{g%}:0 ]/[ :0 - %{g%}: ]* _ ;
+            _ [ %{g%}:0 %{A%}: ]/[ :0 - %{g%}: ]* ;
+            [ BackVow: й: ]/:0* _ ;
+!                                                   _ %>: %{g%}: ;
+
+!@ Т ы в а   А С С Р {э}:0 >:0 {G}:г {A}:е
+!@ р у б л ь >:0 {D}:д {A}:е н
+!@ а н с а м б л ь >:0 {D}:д {A}:е н
+!@ о б л а с т:0 ь:0 {☭}:0 >:0 {D}:т {A}:а н
+
+"yotted {A} harmony"
+%{A%}:я <=> [ BackVow: й: ]/:0* _ ;
+         except
+             ! Vow: [ %>: %{G%}:0 ]/:0* _ ; 
+             [ %{э%}: :Cns* ]/[ :%- | [ :0 - %{э%}: ] ]* _ ;
+             ! [ :FrontVow %{g%}:0 ]/[ :0 - %{g%}: ]* _ ;
+             _ [ %{g%}:0 %{A%}: ]/[ :0 - %{g%}: ]* ;
+
+"yotted {E} harmony"
+%{E%}:я <=> [ :BackVow й: ]/:0* _ ; 
+
+
+"{I} harmony"
+%{I%}:Vy <=> :Vx [ :Cns* :RealCns ]/[ :0 | %- ]* _ ;
+             .#. (RealCns:) :Vx RealCns: %>: _ ; ! Monosyllabic stems with cns deletion
+         !!    :Vx/:0* _ ;
+         except
+             [ :Vx Velars:0 ]/[ :0 - Velars: ]* _ ;
+         !    :Vow/:0* _ ;
+             [ %{n%}: %{N%}: ]/[ :0 - [ %{n%}: | %{N%}: ] ]* _ .#. ;
+
+         !!    [ :Vow :Vow ]/:0* _ ;
+             [ :Vx %{р%}:0 ]/[ :0 - %{р%}: ]* _ ;
+             [ :Vx й:0 ]/[ :0 - й: ]* _ ;
+             [ AbstractVow:0 :Cns* ]/[ :%- | :0 - AbstractVow: ]* _ ;
+             [ :BackVow :Cns* :Cns :л ь: :Cns* :RealCns ]/[ :0 - [ ь: | т: ] ]* _ ;  ! always и
+             [ :BackVow :Cns* :Cns :л ь:0 ]/[ :0 - [ ь: | т: ] ]* _ ;      ! always и
+             ! [ :BackVow :Cns* :Cns ь: ]/[ :0 - ь: ]* _ ;
+!             л ь: %>: [ :Cns | :0 ]* _ ;
+         where Vx in ( ү и е э ө а о ы у я ё ю )
+               Vy in ( ү и и и ү ы у ы у ы у у )
+         matched ;
+
+!@ о б л а с т:0 ь:0 {☭}:0 >:0 {N}:т {I}:ы ң
+
+!@ К Т Р К {а}:0 - >:0 {N}:н {I}:ы ң
+
+"{I} always front when intervening Cль"
+!%{I%}:и <=> л ь: %>: [ :Cns | :0 ]*  _ ;
+%{I%}:и <=> [ :BackVow :Cns* :Cns :л ь: :Cns* :RealCns ]/[ :0 - [ ь: | т: ] ]* _ ;
+            [ :BackVow :Cns* :Cns :л ь:0 ]/[ :0 - [ ь: | т: ] ]* _ ;
+            ! [ :BackVow :Cns* :Cns ь: ]/[ :0 - ь: ]* _ ;
+        except
+            [ %{n%}: %{N%}: ]/[ :0 - [ %{n%}: | %{N%}: ] ]* _ .#. ;
+            ! [ :BackVow с т:0 :Cns* ]/[ :0 - т: ]* _ ;
+
+!@ а н с а м б л ь:0 >:0 {z}:0 {I}:и {n}:н >:0 {G}:г {A}:е
+
+"{I} harmony immediately after short vowels"
+%{I%}:Vy <=> :Vx/:0* _ ;
+         except
+             .#. (RealCns:) :Vx RealCns: %>: _ ; ! Monosyllabic stems with cns deletion
+             [ :Vow :RealVow ]/:0* _ ;
+             [ :Vx Velars:0 ]/[ :0 - Velars: ]* _ ;
+             [ :Vx %{л%}:0 ]/[ :0 - %{л%}: ]* _ ;
+             [ :Vx %{р%}:0 ]/[ :0 - %{р%}: ]* _ ;
+             [ :Vx п:0 ]/[ :0 - п: ]* _ ;
+             [ :Vx с:0 ]/[ :0 - с: ]* _ ;
+             [ AbstractVow:0 :Cns* ]/[ :%- | :0 - AbstractVow: ]* _ ;
+             [ :BackVow :Cns* :Cns :л ь:0 ]/[ :0 - [ ь: | т: ] ]* _ ;   ! always и
+             ! [ :BackVow :Cns* :Cns ь: ]/[ :0 - ь: ]* _ ;
+         where Vx in ( ү и е э ө а о ы у я ё ю ) ! FIXME: CHECK о ө ё
+               Vy in ( ү и э э ө а о ы у а о у )
+         matched ;
+
+!@ С и б и р ь {☭}:0 >:0 {N}:н {I}:и ң
+
+"Abstract harmony for {I}"
+%{I%}:Vy <=> [ AbstractVow:0 :Cns* ]/[ :%- | [ :0 - [ %{N%}: | %{n%}: | AbstractVow: ] ]* ]* _ ;
+         except
+             ! л ь: %>: [ :Cns | :0 ]* _ ;
+             [ :BackVow :Cns* :Cns :л ь: :Cns* :RealCns ]/[ :0 - [ ь: | т: ] ]* _ ;
+             [ :BackVow :Cns* :Cns :л ь:0 ]/[ :0 - [ ь: | т: ] ]* _ ;
+             ! [ :BackVow :Cns* :Cns ь: ]/[ :0 - ь: ]* _ ;
+         where AbstractVow in ( %{э%} )
+                        Vy in (   и   )
+         matched ;
+
+"Harmony of extra {и} in some stems"
+%{и%}:Vy <=> [ :Vx :Cns* :Cns ]/:0* _ %>:/:0* ;
+         except 
+             с к _ (%{☭%}:) %>: ;   ! always :и
+             _ .#. ;                ! always :0
+             с: _ %>:0 \%{z%}: ;    ! always :0
+             !с: _ %>:0 [ ? - %{z%}: ] ;    ! always :0
+             !с: _ %>:0 [ %{N%}: | %{L%}: | %{D%}: | %{G%}: ] ;    ! always :0
+         where Vx in ( ү и е э ө а о ы у я ё ю )
+               Vy in ( ү и и и ү ы у ы у ы у у )
+         matched ;
+
+!@ ф о н д {и}:у {☭}:0 >:0 {z}:з {I}:у {n}:0
+
+"Always realise {и} as и after ск"
+%{и%}:и <=> с к _ (%{☭%}:) %>: ; 
+
+!@ к о м п л е к с:0 {и}:и >:0 {z}:з {I}:и {n}:0
+
+!@ Б е л о ц а р с к {и}:и >:0 {D}:д {A}:е н
+
+!@ п р е з и д е н т {и}:и >:0 {z}:з {I}:и {n}:0
+
+
+"Turn {E} into й after a vowel"
+%{E%}:й <=> [ :Vow ]/[ %>: | :0 - й: ] _ ;
+
+!@ т а й:0 >:0 {E}:я
+
+
+!!== Vowel-harmony-related deletion ==!!
+
+"{i} deletion after vowel"
+%{i%}:0 <=> :Vow/[ :0 - [ Velars: | %{л%}: | п: ] ]* _ ;
+        except
+            ![ Vow: [ Velars:0 | %{л%}:0 ] ]/[ :0 - [ Velars: | %{л%}: ] ]* _ ;
+            .#. :а %{л%}:0 %>: _ :п .#. ;
+            ![ \.#. :Vow %{л%}:0 ]/[ :0 - %{л%}: ]* _ ;
+            !.#. [ :Vow - :а ] %{л%}:0 _ :п .#. ;
+            !.#. :а %{л%}:0 %>: _ \:п ;
+
+"{i} deletion after {л}:0 in алып only"
+%{i%}:0 <=> .#. :а %{л%}:0 %>: _ :п .#. ;
+
+"{I} deletion after long vowels"
+%{I%}:0 <=> [ :Vow :RealVow ]/:0* _ ;
+            .#. ч: о: %{р%}:0 %>: _ р: ;
+            ! %{р%}:0/:0 _ р: ;
+        except
+            [ :Vow Velars:0 ]/[ :0 - Velars: ]* _ ;
+            [ :Vow %{л%}:0 ]/[ :0 - %{л%}: ]* _ ;
+            [ [ [ ?: :Vow ] - [ ч: о: ] ] %{р%}:0 ]/[ :0 - %{р%}: ]* _ ;
+            [ AbstractVow:0 :Cns* ]/[ :%- | :0 - AbstractVow: ]* _ ;
+            [ :BackVow :Cns* :Cns :л ь:0 ]/[ :0 - [ ь: | т: ] ]* _ ;
+            [ :BackVow :Cns* ь: ]/[ :0 - [ ь: | т: ] ]* _ ;
+
+!@ Т ы в а   А С С Р {э}:0 >:0 {N}:н {I}:и ң
+
+!@ ч у г:0 >:0 %{I}:у р
+
+!@ х ү н >:0 {z}:0 {I}:ү {n}:0
+
+
+
+!!== Vowel harmony in context of other processes ==!!
+
+"{I} harmony after deleted velar (or р or л)"
+%{I%}:Vy <=> [ Vx: Velars:0 ]/[ :0 - Velars: ]* _ ;
+             [ Vx: %{л%}:0 ]/[ :0 - %{л%}: ]* _ ;
+             [ Vx: %{р%}:0 ]/[ :0 - %{р%}: ]* _ ;
+         except
+             [ AbstractVow:0 :Cns* ]/[ :%- | :0 - AbstractVow: ]* _ ;
+             [ :BackVow :Cns* :Cns :л ь:0 ]/:[ :0 - [ ь: | т: ] ]* _ ;
+             [ :BackVow :Cns* ь: ]/[ :0 - ь: ]* _ ;
+             .#. ч: о: %{р%}:0 %>: _ р: ;
+         where Vx in ( и ү е э ө а о ы у я )
+               Vy in ( и ү э э ө а о ы у а )
+         matched ;
+
+"{i} harmony after deleted velar"
+%{i%}:Vy <=> [ Vx: Velars:0 ]/[ :0 - Velars: ]* _ ;
+             [ Vx: %{л%}:0 ]/[ :0 - %{л%}: ]* _ ;
+             [ Vx: п:0 ]/[ :0 - п: ]* _ ;
+         except
+             .#. :а %{л%}:0 %>: _ :п .#. ; !@ а л:0 >:0 {i}:0 п
+             :Vow/[ :0 - [ Velars: | %{л%}: | п: ] ]* _ ;
+         where Vx in ( и ү э е ө а о ы у я )
+               Vy in ( и ү э э ө а о ы у а )
+         matched ;
+
+"(verb)stem vowel-final assimliation before {g} deletion"
+Vx:Vy <=> _ %>: %{g%}:0 %{A%}: ;
+      where Vx in ( и ү е у ы ) ! а э  FIXME: are there other vowels a verb can dend with, besides those that don't change?
+            Vy in ( э э э а а ) ! а э
+      matched ;
+
+!!FIXME: might be able to combine with above rule?
+!! wait for rules to grow some
+!"(verb)stem vowel-final assimliation before velar deletion"
+!Vx:Vy <=> _ Velars:0 %>: [ %{I%}: | %{i%}: ]/:0* ;
+!      where Vx in ( и е а у )
+!            Vy in ( и э а у )
+!      matched ;
+
+"Fix е to э when it becomes first part of long vowel, e.g. in velar deletion"
+е:э <=> _ %{i%}:э/:0 ;
+        _ %{I%}:э/:0 ;
+!        _ %{A%}:э/:0 ;
+
+!@ н е г е:э >:0 {g}:0 {A}:э н
+
+"Vowel harmony for {A} after and before deleted {g}"
+%{A%}:э <=> [ :FrontVow %{g%}:0 ]/[ :0 - %{g%}: ]* _ ;
+            [ :FrontVow :Cns* :RealCns ]/:0* _ [ %{g%}:0 %{A%}: ]/[ :0 - %{g%}: ]* ;
+!                                                   _ %>: %{g%}: ; 
+
+!@ б и ж и:э >:0 {g}:0 {A}:э н
+
+!@ к ө р >:0 {B}:б {A}:э >:0 {g}:0 {A}:э н 
+
+
+!!== Morphological stuff ==!!
+
+"{I} deletion in px3.acc"
+%{I%}:0 <=> [ %{n%}: %{N%}: ]/[ :0 - [ %{n%}: | %{N%}: | AbstractVow: ] ]* _ .#. ;
+            %{n%}: %>: %{N%}: _ .#. ;
+        except
+            [ AbstractVow:0 :Cns* ]/[ :%- | [ :0 - [ %{N%}: | %{n%}: | AbstractVow: ] ] ]* _ ;
+            ! [ :BackVow :Cns* :Cns л ь :Cns* :RealCns ]/:0* _ ;
+            ! [ :BackVow :Cns* :Cns л ь:0 ]/:[ :0 - ь: ]* _ ;
+
+!@ р у б л ь:0 >:0 {z}:0 {I}:и {n}:0 >:0 {N}:н {I}:0
+
+"{N} is н after {n} (and default)"
+%{N%}:н <=> %{n%}:/[ :0 - %{n%}: ]* _ ;
+            :Nasals/[ :0 - %{n%}: ]* _ ;
+            [ :Vow | :HighSonCns ]/[ :ь | [ :0 - %{n%}: ] ]* _ ;
+        except
+            AbstractCns:/[ :0 - AbstractCns: ]* _ ;
+            :VoicelessCnsRus %{☭%}: %>: _ ;
+
+"Deletion of {n} word finally" ! {n} surfaces everywhere but nom, acc, gen
+%{n%}:0 <=> _ :0* .#. ;
+            _ %{N%}:н/[ :0 - AbstractCns: ]* ; 
+
+!@ б ү р ү >:0 {z}:з {I}:ү {n}:0
+
+
+!!== Misc segmental stuff ==!!
+
+"/рк/ cluster to [рт]"
+%{к%}:т <=> :р _ .#. ;
+        :р _ %>: :Cns/:0* ;
+
+"/к/ voicing intervocalically"
+%{к%}:г <=> :р _ %>: :Vow/:0* ;
+
+"{г} devoicing when syllable-final"
+%{г%}:к <=> :Vow _ [ :VoicelessCns %>: :Vow ]/:0* ;
+
+"{г} surfaces as г syllable finally before some(?) consonants"
+%{г%}:г <=> :Vow _ [ [ :Liquid | :ж ] %>: :Vow ]/:0* ;
+
+!@ о {г}:г л >:0 {i}:у м
+
+!@ д ү {г}:г {y}:0 ж >:0 {I}:ү р
+
+"{г} turns into preceding vowel when in closed syllable"
+%{г%}:Vy <=> :Vx _ :Cns/:0* .#. ;
+         :Vx _ [ :Cns %>: :Cns ]/:0* ;
+     except
+         !:Vow _ [ :VoicelessCns %>: :Vow ]/:0* ; ! needed to avoid conflicts, meh
+         :Vow _ [ :Cns %>: :Vow ]/:0* ;
+     where Vx in ( а о э ү ы )
+           Vy in ( а о э ү ы )
+     matched ;
+
+"{н} surfaces as н when syllable-finally"
+%{н%}:н <=> :Vow _ [ :Cns :Vow ]/:0* ;
+
+!"{н} deletion when part of coda cluster"
+!%{н%}:0 <=> :Vow _ [ :Cns :Cns ]/:0* ;
+!            :Vow _ :Cns/:0* .#. ;
+
+"ш to ч after certain things"
+ш:ч <=> %{н%}:н _ ;                            ! -after {н} when it surfaces
+        [ :т %{y%}:0 ]/[ :0 - %{y%}: ]* _ ;    ! after т when no epenthesis
+        [ л: %{y%}:0 ]/[ :0 - %{y%}: ]* _ ;    ! after л when no epenthesis
+        [ :н %{y%}:0 ]/[ :0 - %{y%}: ]* _ ;    ! after н when no epenthesis
+
+!@ т у л {y}:0 ш:ч >:0 {i}:у р
+
+!@ ө г л е н {y}:0 ш:ч >:0 {i}:и п
+
+"ъ deletion syllable finally before с:з"
+ъ:0 <=> :Vow _ [ с: :Vow ]/:0* ;
+
+!@ ч а ъ:0 с:з >:0 {z}:0 {I}:ы {n}:0
+!@ э ъ т:д >:0 {z}:0 {I}:и {n}:0
+
+"ь deletion at the end of a morpheme before a vowel, and in clusters"
+ь:0 <=> _ %>: :Vow/:0* ;
+        Cns:0 _ ; ! if softened consonant is also deleted
+!        Cns: Cns: _ %>: ;
+!FIXME: when in clusters?  Only before vowels, right? -JNW
+
+!! FIXME: wat?  The rule is names "ь to и", but does ь:0 ...
+!"ь to и before px3sp" 
+!ь:0 <=> _ %>: %{z%}:  ; 
+
+!@ о б л а с т:0 ь:0 >:0 {G}:к {A}:а
+
+!@ л а г е р ь:0 >:0 {z}:0 {I}:и {n}:н >:0 {G}:г {A}:е 
+
+!"р deletion in aorist"
+!р:0 <=> _ [ %>: %{I%}: р ]  ;
+
+"р deletion in aorist"
+%{р%}:0 <=> _ %>: %{I%}: р: ;
+
+!@ б а {р}:0 >:0 {I}:а р
+
+!@ б е {р} >:0 {I}:и ң {A}:е р
+
+"й deletion before yot vowels"
+й:0 <=> _ %{A%}:/:0* ;
+        _ %{y%}:ю/:0* ;
+        :BackVow/:0* _ %{E%}:/:0* ;
+
+!@ ч а й:0 >:0 {A}:я р
+!@ к у й:0 {y}:ю c
+
+
+"{л} deletion in certain forms"
+%{л%}:0 <=> _ [ %{i%}: | %{I%}: ]/[ :0 - [ %{i%}: | %{I%}: ] ]* ;
+
+!@ э к к е:э {л}:0 {i}:э п
+
+"stem-final п deletes in {i}п forms"
+п:0 <=> :Vow _ %>: %{i%}: п: ;
+
+!@ ш а п:0 >:0 {i}:а п 
+
+
+
+!!== Consonant cluster stuff ==!!
+
+!"т deletion in -ст consonant cluster"
+!т:0 <=> .#. [ Vow: | Cns: ]* с _ %>: :Cns ;
+
+!! FIXME: This needs work, also applies to other possessives
+!"consonant cluster reduction"
+!с:0 <=> Vow _ с: (%{☭%}:) %>: :Vow/:0* ; 
+
+!@ к л а с:0 с:з >:0 {z}:0 {I}:ы {n}:0
+
+!@ б о к с >:0 {z}:0 {I}:у {n}:0
+
+!@ к о н к у р с:0 {☭}:0 >:0 {z}:0 {I}:у {n}:0
+
+!@ а р т и с т:0 >:0 {L}:т {A}:е р
+
+!@ ч а ъ:0 с:з >:0 {i}:ы м
+
+!@ ч а ъ:0 с:з >:0 {i}:ы м >:0 {G}:г {A}:а
+
+"Delete {и} at end of word and between с and most morphemes"
+%{и%}:0 <=> _ .#. ; 
+            с: _ %>:0 \%{z%}: ;    ! always :0
+            !с: _ %>:0 [ ? - %{z%}: ] ;
+            !с: _ %>:0 [ %{N%}: | %{L%}: | %{D%}: | %{G%}: ] ;    ! always :0
+
+!"some clusters reduce before {и}"
+"delete с in some clusters"
+с:0 <=> [ к | р ] _ %{и%}:RusHighVow ;      ! delete с in кс, рс
+        _ с: (%{☭%}:) %>: :Vow/:0* ;        ! delete с in сс
+
+"ст cluster reduction when following morpheme"
+т:0 <=> с: _ (ь:) %{☭%}: %>: ;
+
+!@ о б л а с:з т:0 ь:0 {☭}:0 >:0 {z}:0 {I}:ы {n}:0
+!@ ү с т >:0 {z}:0 {I}:ү {n}:0
+
+
+!@ ч е ч е к >:0 {L}:т {A}:е р >:0 {D}:д {A}:е н
+!@ ө ө к:г >:0 {z}:0 {I}:ү {n}:0 
+!@ ш а к:г >:0 {z}:0 {I}:ы {n}:0 
+!@ о т >:0 {D}:т {A}:а н
+!@ к и ж и >:0 {D}:д {A}:е н
+!@ х ө й л е ң >:0 {D}:д {A}:е н
+!@ х ө й л е ң >:0 {N}:н {I}:и ң
+
+!@ а й т ы р ы г:0 >:0 {z}:0 {I}:ы {n}:0
+
+!@ б а р >:0 -:- {D}:д {I}:ы р
+
+!@ у г:0 >:0 {i}:у п
+
+!@ э г:0 >:0 {i}:э п
+
+
+
+!!== Old Rules ==!!
+
+!"D nasal harmony"
+!%{D%}:н <=> :Nasals/[ :0 - Abstract:0 ] _ :Vow :Nasals ;
+!        except 
+!            %{n%}: %>: _ ; 
+
+!"Deletion of {z} after a consonant"
+!%{z%}:0 <=> [ :Cns (:ь) | й:0 ]/[ %>: | [ :0 - й:0 ] ] _ ;
+
+!"Desonorisation after non-epenthesised vowel"
+!Cx:т <=> [ :VoicelessCns %{y%}:0 ]/[ :0 - %{y%}: ]* _ ;
+!     except
+!         [ :Nasals %{y%}:0 ]/[ :0 - %{y%}: ]* _ ;
+!     where Cx in ( л н ) ;
+
+!"Forward voicing assimilation of normal stuff"
+!Cx:Cy <=> :VoicelessCns/:0* _ ;
+!          where Cx in ( л н )
+!                Cy in ( т т )
+!                matched;
+
+!"Devoicing of some cons before unrealised epenthetic vowel"
+!Cx:Cy <=> _ %{y%}:0/[ :0 - %{y%}: ]* :VoicelessCns ;
+!      where Cx in ( д з )
+!            Cy in ( т с )
+!      matched ;
+
+!"yotted {I} harmony"
+!%{I%}:ю <=> [ [ у: | о: ] й: ]/:0* _ ;
+
+!%{I%}:Vy <=> [ Vx:0 Cns* ]/[ :%- | :0 - AbstractVow: ]* _ ;
+!         where          Vx in ( %{э%} )
+
+!"{A} stays а" ! FIXME
+!%{A%}:а <=> :BackVow/[ :0 - й: ]* _ ;
+
+!"Delete {N} after {n}"
+!%{N%}:0 <=> %{n%}: %>: _ ;
+
+!"г deletion in aorist"
+!г:0 <=> _ %>: [ %{A%}: | %{I%}: ] р ; 
+

@@ -1,0 +1,416 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- -*- nxml -*- -->
+<interchunk>
+
+  <section-def-cats>
+    <def-cat n="SN-GEN">
+      <cat-item tags="SN.GEN"/>
+      <cat-item tags="SN.GEN.*"/>
+    </def-cat>
+    <def-cat n="SN-ADE">
+      <cat-item tags="SN.ade"/>
+      <cat-item tags="SN.ade.*"/>
+    </def-cat>
+    <def-cat n="SN-NOM-PAR">
+      <cat-item tags="SN.nom"/>
+      <cat-item tags="SN.nom.*"/>
+      <cat-item tags="SN.par"/>
+      <cat-item tags="SN.par.*"/>
+    </def-cat>
+    <def-cat n="SN">
+      <cat-item tags="SN"/>
+      <cat-item tags="SN.*"/>
+    </def-cat>
+    <def-cat n="SV">
+      <cat-item tags="SV"/>
+      <cat-item tags="SV.*"/>
+      <cat-item tags="SV.*.*"/>
+    </def-cat>
+    <def-cat n="V-COP">
+      <cat-item tags="SV.COP"/>
+      <cat-item tags="SV.COP.*"/>
+    </def-cat>
+    <def-cat n="ADV">
+      <cat-item tags="ADV"/>
+    </def-cat>
+    <def-cat n="POST">
+      <cat-item tags="POST"/>
+    </def-cat>
+    <def-cat n="SENT">
+      <cat-item tags="SENT"/>
+    </def-cat>
+  </section-def-cats>
+  <section-def-attrs>
+    <def-attr n="a_nbr">
+      <attr-item tags="sg"/>
+      <attr-item tags="pl"/>
+      <attr-item tags="sp"/>
+      <attr-item tags="ND"/>
+    </def-attr>
+    <def-attr n="a_cas">
+      <attr-item tags="nom"/>
+      <attr-item tags="acc"/>
+      <attr-item tags="ine"/>
+      <attr-item tags="ela"/>
+      <attr-item tags="ill"/>
+      <attr-item tags="ade"/>
+      <attr-item tags="abl"/>
+      <attr-item tags="all"/>
+      <attr-item tags="abe"/>
+      <attr-item tags="ins"/>
+      <attr-item tags="com"/>
+    </def-attr>
+    <def-attr n="a_poss">
+      <attr-item tags="px1sg"/>
+      <attr-item tags="px2sg"/>
+      <attr-item tags="px3sg"/>
+      <attr-item tags="px1pl"/>
+      <attr-item tags="px2pl"/>
+      <attr-item tags="px3pl"/>
+      <attr-item tags="px3ps"/>
+    </def-attr>
+    <def-attr n="a_prs">
+      <attr-item tags="p1.sg"/>
+      <attr-item tags="p2.sg"/>
+      <attr-item tags="p3.sg"/>
+      <attr-item tags="p1.pl"/>
+      <attr-item tags="p2.pl"/>
+      <attr-item tags="p3.pl"/>
+    </def-attr>
+    <def-attr n="a_mood">
+      <attr-item tags="cond"/>
+      <attr-item tags="pot"/>
+      <attr-item tags="imp"/>
+    </def-attr>
+  </section-def-attrs>
+  <section-def-vars>
+    <def-var n="number"/>
+    <def-var n="PREP"/>
+    <def-var n="POSS"/>
+    <def-var n="PRS"/>
+    <def-var n="NOT"/>
+    <def-var n="AUX"/>
+  </section-def-vars>
+  <section-def-macros>
+    <def-macro n="insert-prep1" npar="1">
+      <let>
+        <var n="PREP"/>
+        <lit v=""/>
+      </let>
+      <choose>
+        <when>
+          <test><equal><clip pos="1" part="a_cas"/><lit-tag v="abe"/></equal></test>
+          <let><var n="PREP"/>
+               <concat><lit v="^prep"/><lit-tag v="PREP"/><lit v="{^"/><lit-tag v="pr"/><lit v="$}$ "/></concat>
+          </let>
+        </when>
+        <when>
+          <test><equal><clip pos="1" part="a_cas"/><lit-tag v="ins"/></equal></test>
+        <let><var n="PREP"/>
+               <concat><lit v="^prep"/><lit-tag v="PREP"/><lit v="{^"/><lit-tag v="pr"/><lit v="$}$ "/></concat>
+          </let>
+        </when>
+        <when>
+          <test><equal><clip pos="1" part="a_cas"/><lit-tag v="com"/></equal></test>
+          <let><var n="PREP"/>
+               <concat><lit v="^prep"/><lit-tag v="PREP"/><lit v="{^"/><lit-tag v="pr"/><lit v="$}$ "/></concat>
+          </let>
+        </when>
+        <when>
+          <test><equal><clip pos="1" part="a_cas"/><lit-tag v="ine"/></equal></test>
+          <let><var n="PREP"/>
+               <concat><lit v="^prep"/><lit-tag v="PREP"/><lit v="{^en"/><lit-tag v="pr"/><lit v="$}$ "/></concat>
+          </let>
+        </when>
+      </choose>
+    </def-macro>
+    <def-macro n="insert-poss1" npar="1">
+      <let>
+        <var n="POSS"/>
+        <lit v=""/>
+      </let>
+      <choose>
+        <when>
+          <test><equal><clip pos="1" part="a_poss"/><lit-tag v="px1sg"/></equal></test>
+          <let><var n="POSS"/>
+               <concat><lit v="^poss"/><lit-tag v="POSS"/><lit v="{^"/><lit-tag v="prn.pers.p1.un.sg.gen"/><lit v="$}$ "/></concat>
+          </let>
+        </when>
+        <when>
+          <test><equal><clip pos="1" part="a_poss"/><lit-tag v="px2sg"/></equal></test>
+          <let><var n="POSS"/>
+               <concat><lit v="^poss"/><lit-tag v="POSS"/><lit v="{^"/><lit-tag v="prn.pers.p2.un.sg.gen"/><lit v="$}$ "/></concat>
+          </let>
+        </when>
+        <when>
+          <test><equal><clip pos="1" part="a_poss"/><lit-tag v="px3sg"/></equal></test>
+          <let><var n="POSS"/>
+               <concat><lit v="^poss"/><lit-tag v="POSS"/><lit v="{^"/><lit-tag v="prn.pers.p3.un.sg.gen"/><lit v="$}$ "/></concat>
+          </let>
+        </when>
+        <when>
+          <test><equal><clip pos="1" part="a_poss"/><lit-tag v="px1pl"/></equal></test>
+          <let><var n="POSS"/>
+               <concat><lit v="^poss"/><lit-tag v="POSS"/><lit v="{^"/><lit-tag v="prn.pers.p1.un.pl.gen"/><lit v="$}$ "/></concat>
+          </let>
+        </when>
+        <when>
+          <test><equal><clip pos="1" part="a_poss"/><lit-tag v="px2pl"/></equal></test>
+          <let><var n="POSS"/>
+               <concat><lit v="^poss"/><lit-tag v="POSS"/><lit v="{^"/><lit-tag v="prn.pers.p2.un.pl.gen"/><lit v="$}$ "/></concat>
+          </let>
+        </when>
+        <when>
+          <test><equal><clip pos="1" part="a_poss"/><lit-tag v="px3pl"/></equal></test>
+          <let><var n="POSS"/>
+               <concat><lit v="^poss"/><lit-tag v="POSS"/><lit v="{^"/><lit-tag v="prn.pers.p3.un.pl.gen"/><lit v="$}$ "/></concat>
+          </let>
+        </when>
+        <when>
+          <test><equal><clip pos="1" part="a_poss"/><lit-tag v="px3sp"/></equal></test>
+          <let><var n="POSS"/>
+               <concat><lit v="^poss"/><lit-tag v="POSS"/><lit v="{^"/><lit-tag v="prn.pers.p3.un.pl.gen"/><lit v="$}$ "/></concat>
+          </let>
+        </when>
+      </choose>
+    </def-macro>
+    <def-macro n="insert-prs1" npar="1">
+      <let>
+        <var n="PRS"/>
+        <lit v=""/>
+      </let>
+      <choose>
+        <when>
+          <test><equal><clip pos="1" part="a_prs"/><lit-tag v="p1.sg"/></equal></test>
+          <let><var n="PRS"/>
+               <concat><lit v="^prs"/><lit-tag v="PRS"/><lit v="{^"/><lit-tag v="prn.pers.p1.un.sg.nom"/><lit v="$}$ "/></concat>
+          </let>
+        </when>
+        <when>
+          <test><equal><clip pos="1" part="a_prs"/><lit-tag v="p2.sg"/></equal></test>
+          <let><var n="PRS"/>
+               <concat><lit v="^prs"/><lit-tag v="PRS"/><lit v="{^"/><lit-tag v="prn.pers.p2.un.sg.nom"/><lit v="$}$ "/></concat>
+          </let>
+        </when>
+        <when>
+          <test><equal><clip pos="1" part="a_prs"/><lit-tag v="p1.pl"/></equal></test>
+          <let><var n="PRS"/>
+               <concat><lit v="^prs"/><lit-tag v="PRS"/><lit v="{^"/><lit-tag v="prn.pers.p1.un.pl.nom"/><lit v="$}$ "/></concat>
+          </let>
+        </when>
+        <when>
+          <test><equal><clip pos="1" part="a_prs"/><lit-tag v="p2.pl"/></equal></test>
+          <let><var n="PRS"/>
+               <concat><lit v="^prs"/><lit-tag v="PRS"/><lit v="{^"/><lit-tag v="prn.pers.p2.un.pl.nom"/><lit v="$}$ "/></concat>
+          </let>
+        </when>
+        <when>
+          <test><equal><clip pos="1" part="a_prs"/><lit-tag v="p3.pl"/></equal></test>
+          <let><var n="PRS"/>
+               <concat><lit v="^prs"/><lit-tag v="PRS"/><lit v="{^"/><lit-tag v="prn.pers.p3.un.pl.nom"/><lit v="$}$ "/></concat>
+          </let>
+        </when>
+      </choose>
+    </def-macro>
+  </section-def-macros>
+  <section-rules>
+
+    <rule comment="REGLA: V-COP ADV SN-ADE SN-NOM-PAR">
+      <pattern>
+        <pattern-item n="V-COP"/>
+        <pattern-item n="ADV"/>
+        <pattern-item n="SN-ADE"/>
+        <pattern-item n="SN-NOM-PAR"/>
+      </pattern>
+      <action>
+        <choose><when><test><equal><clip pos="1" part="lem"/><lit v="neg-cop"/></equal></test>
+           <let><var n="NOT"/><concat>            <lit v=" ^inte"/>
+            <lit-tag v="ADV.NEG"/>
+            <lit v="{^"/>
+            <lit-tag v="adv"/>
+            <lit v="$}$"/>
+</concat></let></when></choose>
+        <out>
+          <chunk>
+            <lit v="ha"/>
+            <lit-tag v="V.HAB"/>
+            <lit v="{^"/>
+            <lit-tag v="vbhaver.pres.actv"/>
+            <lit v="$}"/>
+            </chunk>
+          <var n="NOT"/>
+          <b pos="1"/>
+          <chunk>
+            <clip pos="3" part="lem"/>
+            <clip pos="3" part="tags"/>
+            <clip pos="3" part="chcontent"/>
+          </chunk>
+          <b pos="2"/>
+          <chunk>
+            <clip pos="2" part="lem"/>
+            <clip pos="2" part="tags"/>
+            <clip pos="2" part="chcontent"/>
+          </chunk>
+          <b pos="3"/>
+          <chunk>
+            <clip pos="4" part="lem"/>
+            <clip pos="4" part="tags"/>
+            <clip pos="4" part="chcontent"/>
+          </chunk>
+        </out>
+        <let><var n="NOT"/><lit v=""/></let>
+      </action>
+    </rule>
+
+
+    <rule comment="REGLA: V-COP SN-ADE SN-NOM-PAR">
+      <pattern>
+        <pattern-item n="V-COP"/>
+        <pattern-item n="SN-ADE"/>
+        <pattern-item n="SN-NOM-PAR"/>
+      </pattern>
+      <action>
+        <choose><when><test><equal><clip pos="2" part="lem"/><lit v="neg-cop"/></equal></test>
+           <let><var n="NOT"/><concat>            <lit v=" ^inte"/>
+            <lit-tag v="ADV.NEG"/>
+            <lit v="{^"/>
+            <lit-tag v="adv"/>
+            <lit v="$}$"/>
+</concat></let></when></choose>
+
+        <out>
+          <chunk>
+            <lit v="ha"/>
+            <lit-tag v="V.HAB"/>
+            <lit v="{^"/>
+            <lit-tag v="vbhaver.pres.actv"/>
+            <lit v="$}"/>
+          </chunk>
+          <var n="NOT"/>
+          <b pos="1"/>
+          <chunk>
+            <clip pos="2" part="lem"/>
+            <clip pos="2" part="tags"/>
+            <clip pos="2" part="chcontent"/>
+          </chunk>
+          <b pos="2"/>
+          <chunk>
+            <clip pos="3" part="lem"/>
+            <clip pos="3" part="tags"/>
+            <clip pos="3" part="chcontent"/>
+          </chunk>
+        </out>
+        <let><var n="NOT"/><lit v=""/></let>
+      </action>
+    </rule>
+
+
+    <rule comment="REGLA: SN-ADE V-COP SN-NOM-PAR">
+      <pattern>
+        <pattern-item n="SN-ADE"/>
+        <pattern-item n="V-COP"/>
+        <pattern-item n="SN-NOM-PAR"/>
+      </pattern>
+      <action>
+        <choose><when><test><equal><clip pos="2" part="lem"/><lit v="neg-cop"/></equal></test>
+           <let><var n="NOT"/><concat>            <lit v=" ^inte"/>
+            <lit-tag v="ADV.NEG"/>
+            <lit v="{^"/>
+            <lit-tag v="adv"/>
+            <lit v="$}$"/>
+</concat></let></when></choose>
+
+        <out>
+          <chunk>
+            <clip pos="1" part="lem"/>
+            <clip pos="1" part="tags"/>
+            <clip pos="1" part="chcontent"/>
+          </chunk>
+          <b pos="1"/>
+          <chunk>
+            <lit v="ha"/>
+            <lit-tag v="V.HAB"/>
+            <lit v="{^"/>
+            <lit-tag v="vbhaver.pres.actv"/>
+            <lit v="$}"/>
+          </chunk>
+          <var n="NOT"/>
+          <b pos="2"/>
+          <chunk>
+            <clip pos="3" part="lem"/>
+            <clip pos="3" part="tags"/>
+            <clip pos="3" part="chcontent"/>
+          </chunk>
+        </out>
+        <let><var n="NOT"/><lit v=""/></let>
+      </action>
+    </rule>
+
+
+    <rule comment="REGLA: SN-GEN POST">
+      <pattern>
+        <pattern-item n="SN-GEN"/>
+        <pattern-item n="POST"/>
+      </pattern>
+      <action>
+        <out>
+          <chunk>
+            <clip pos="2" part="lem"/>
+            <clip pos="2" part="tags"/>
+            <clip pos="2" part="chcontent"/>
+          </chunk>
+          <b pos="1"/>
+          <chunk>
+            <clip pos="1" part="lem"/>
+            <clip pos="1" part="tags"/>
+            <clip pos="1" part="chcontent"/>
+          </chunk>
+        </out>
+      </action>
+    </rule>
+
+
+    <rule comment="REGLA: SN">
+      <pattern>
+        <pattern-item n="SN"/>
+      </pattern>
+      <action>
+        <call-macro n="insert-prep1">
+          <with-param pos="1"/>
+        </call-macro> 
+        <call-macro n="insert-poss1">
+          <with-param pos="1"/>
+        </call-macro> 
+        <out>
+          <var n="PREP"/>
+          <var n="POSS"/>
+          <chunk>
+            <clip pos="1" part="lem"/>
+            <clip pos="1" part="tags"/>
+            <clip pos="1" part="chcontent"/>
+          </chunk>
+        </out>
+      </action>
+    </rule>
+    
+    <rule comment="REGLA: SV">
+      <pattern>
+        <pattern-item n="SV"/>
+      </pattern>
+      <action>
+        <call-macro n="insert-prs1">
+          <with-param pos="1"/>
+        </call-macro> 
+        <out>
+          <var n="PRS"/>
+          <var n="AUX"/>
+          <chunk>
+            <clip pos="1" part="lem"/>
+            <clip pos="1" part="tags"/>
+            <clip pos="1" part="chcontent"/>
+          </chunk>
+        </out>
+      </action>
+    </rule>
+  </section-rules>
+</interchunk>

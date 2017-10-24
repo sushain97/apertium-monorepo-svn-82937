@@ -1,0 +1,4826 @@
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+!!   M O R P H O L O G I C A L · T R A N S D U C E R · F O R · K Y R G Y Z   !!
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+
+Multichar_Symbols
+ 
+%<n%>       ! Noun
+%<np%>      ! Proper noun
+%<adj%>     ! Adjective
+%<det%>     ! Determiner
+%<adv%>     ! Adverb
+%<num%>     ! Numeral
+%<v%>       ! Verb
+%<prn%>     ! Pronoun
+%<post%>    ! Postposition
+%<postadv%> ! Postadverb
+%<part%>    ! Particle
+%<abbr%>    ! Abbreviation
+%<ij%>      ! Interjection 
+%<cnjcoo%>  ! Coordinating conjunction
+%<cnjadv%>  ! Adverbial conjunction
+%<cnjsub%>  ! Subordinating conjunction
+
+%<iv%>      ! Intransitive 
+%<tv%>      ! Transitive
+%<TD%>      ! Transitivity to be determined
+
+%<nom%>     ! Nominative
+%<acc%>     ! Accusative
+%<dat%>     ! Dative
+%<gen%>     ! Genitive
+%<loc%>     ! Locative
+%<abl%>     ! Ablative
+
+%<rloc%>    ! Relativised locative -DAGI
+
+%<m%>       ! Masculine
+%<f%>       ! Feminine
+
+%<pers%>    ! Personal 
+%<dem%>     ! Demonstrative
+%<ind%>     ! Indefinite
+%<qnt%>     ! Quantifier
+%<itg%>     ! Interrogative
+%<ref%>     ! Reflexive
+
+%<cmpd%>    ! Compound
+
+%<sg%>      ! Singular
+%<pl%>      ! Plural
+
+%<p1%>      ! First person
+%<p2%>      ! Second person
+%<p3%>      ! Third person
+
+%<px1sg%>   ! Possessive, first person singular
+%<px2sg%>   ! Possessive, second person singular
+%<px3sg%>   ! Possessive, third person singular
+%<px1pl%>   ! Possessive, first person plural
+%<px2pl%>   ! Possessive, second person plural
+%<px3pl%>   ! Possessive, third person plural
+%<px%>      ! General possessive -ныкы
+
+%<ant%>     ! Anthroponym (name of person)
+%<cog%>     ! Cognomen (second, or family name)
+%<top%>     ! Toponym
+%<org%>     ! Organisation name
+
+%<frm%>     ! Formal
+ 
+%<dem%>     ! Demonstrative
+%<neg%>     ! Negative
+%<exi%>     ! Existential
+%<qst%>     ! Question
+
+%<cv_impf%> ! Converb imperfect, -E
+%<cv_perf%> ! Converb perfect, -Iп
+%<cv_irre%> ! Converb irrealis, -Eт
+%<cv_fut%>  ! Converb future, -Aр
+%<cv_pur%>  ! Converb purpose, -GAнI
+
+%<pres%>    ! Present tense
+%<aor%>     ! Aorist, -E
+%<cond%>    ! Conditional, -сA
+%<opt%>     ! Optative, -мAк>чI
+%<past%>    ! Past tense
+%<pih%>     ! Past habitual
+%<pot%>     ! Potential, -чUдAй
+%<ifi%>     ! Definite past 
+%<fut%>     ! Future tense, -AAр
+%<pp%>      ! Past participle, -GAн
+%<pp2%>     ! Past participle, -GAнI
+%<plist%>   ! Listing participle
+%<inf%>     ! Verbal noun, -үү
+%<inf2%>    ! Verbal noun, -иш
+
+%<sent%>    ! Sentence marker
+%<guio%>    ! Hyphen
+%<cm%>      ! Comma
+%<pst%>     ! Positive level of comparison
+%<comp%>    ! Comparative level of comparison 
+%<sup%>	    ! Superlative level of comparison 
+%<ord%>     ! Ordinal
+%<apprx%>   ! Approximal
+
+
+%{E%}       ! Realised as 'а', 'е', 'о', 'ө', 'й' 
+%{A%}       ! Realised as 'а', 'е', 'о', 'ө' 
+%{I%}       ! Realised as 'ы', 'и', 'у', 'ү'
+%{U%}       ! Realised as 'у', 'ү'
+%{G%}       ! Realised as 'г', 'к', 'ң', 'н'
+%{D%}       ! Realised as 'д', 'т', 'н'
+%{B%}       ! Realised as 'б', 'п'
+%{M%}       ! Realised as 'м', 'б', 'п'  ! In Kyrgyz?  Where??
+%{N%}       ! Realised as 'н', 'д', 'т'
+%{L%}       ! Realised as 'л', 'д', 'т'
+%{S%}       ! Realised as 'с' or ''; only used in 3rd person morphology
+%{n%}       ! Realised as 'н' or ''; only used in 3rd person morphology and -NIKI
+
+
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+!!!                  C O N T I N U A T I O N      L E X I C A               !!!
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+
+LEXICON Root
+
+!NumeralList ;
+Particles ;
+Postpositions ;
+Conjunctions ;
+Determiners ;
+Pronouns ;
+Postadverbs ;
+Numerals ;
+NounStems ;
+PropernounStems ;
+AdjecStems ;
+AdvStems ;
+VerbStems ;
+Punctuation ;
+Interjections ;
+Abbreviations ;
+
+
+LEXICON CASES-DEFAULT
+%<nom%>: # ;                 ! -     -      -
+%<gen%>:%>%{N%}%{I%}н # ;      ! -нын, -нин, -дын, -дин, -тын, -тин, -нун, -нүн, -дун, -дүн, -тун, -түн
+%<dat%>:%>%{G%}%{A%} # ;       ! -га, -ка, -ге, -ке, -го, -ко, -гө, -кө
+%<acc%>:%>%{N%}%{I%} # ;       ! -ны, -ни, -ды, -ди, -ты, -ти, -ну, -нү, -ду, -дү, -ту, -тү
+%<loc%>:%>%{D%}%{A%} # ;       ! -да, -де, -та, -те, -до, -дө, -то, -тө
+
+LEXICON CASES
+CASES-DEFAULT ;
+%<abl%>:%>%{D%}%{A%}н # ;      ! 
+
+LEXICON CASES-PX12SG
+CASES-DEFAULT ;
+%<abl%>:%>%{D%}%{A%}н # ;      ! Dir/LR 
+%<abl%>:%>%{A%}н # ;      
+
+
+!LEXICON CASES-SINGULAR-PRONOUNS
+!! %<px1sg%>%<nom%>:      ! Is this necessary?
+!! %<px1sg%>%<gen%>:%>н%{I%}н  ! Is this necessary, since it looks normal?
+!%<px1sg%>%<acc%>:%>н
+!%<px1sg%>%<abl%>:%>н%{A%}н
+!%<px1sg%>%<loc%>:%>нд%{A%}
+!%<px1sg%>%<dat%>:%>н%{A%}
+!%<px1sg%>%<rloc%>:%>нд%{A%}г%{I%}
+!
+!! %<px3sp%>%<nom%>: # ;          ! Is this necessary?
+!! %<px3sp%>%<gen%>:%>н%{I%}н # ; ! Is this necessary, since it looks normal?
+!%<px3sp%>%<acc%>:%>н # ;
+!%<px3sp%>%<abl%>:%>н%{A%}н # ;
+!%<px3sp%>%<loc%>:%>нд%{A%} # ;
+!%<px3sp%>%<dat%>:%>н%{A%} # ;
+!%<px3sp%>%<rloc%>:%>нд%{A%}г%{I%} # ;
+
+
+LEXICON GEN-POS
+CASES ;
+%<px%>:%>%{N%}%{I%}к%{I%}%{n%} CASES ; !CASES-SHORT-ACC ; 
+%<rloc%>:%>%{D%}%{A%}г%{I%} CASES ;
+
+LEXICON GEN-POS-PX12SG
+CASES-PX12SG ;
+%<px%>:%>%{N%}%{I%}к%{I%}%{n%} CASES ; !CASES-SHORT-ACC ; 
+%<rloc%>:%>%{D%}%{A%}г%{I%} CASES ;
+
+!! LEXICON GEN-POS-SHORT-ACC
+!! CASES-SHORT-ACC ;
+!! %<px%>:%>%{N%}%{I%}к%{I%} CASES-SHORT-ACC ; 
+
+LEXICON POSSESSION
+GEN-POS ;
+%<px1sg%>:%>%{I%}м GEN-POS-PX12SG ;
+%<px2sg%>:%>%{I%}ң GEN-POS-PX12SG ; 
+%<px2sg%>%<frm%>:%>%{I%}ң%{I%}з GEN-POS ; 
+%<px3sg%>:%>%{S%}%{I%}%{n%} GEN-POS ;
+%<px1pl%>:%>%{I%}б%{I%}з GEN-POS ; 
+%<px2pl%>:%>%{I%}ң%{A%}р GEN-POS ; 
+%<px2pl%>%<frm%>:%{I%}ң%{I%}зд%{A%}р GEN-POS;
+%<px3pl%>:%>%{S%}%{I%}%{n%} GEN-POS ;
+
+LEXICON N-INFL-SG
+
+%<n%>: POSSESSION ;
+
+LEXICON N-INFL
+
+%<n%>: POSSESSION ;
+%<n%>%<pl%>:%>%{L%}%{A%}р POSSESSION ;
+
+LEXICON NP-COG-MF
+
+%<np%>%<cog%>%<mf%>: CASES  ;
+
+LEXICON NP-ANT-M
+
+%<np%>%<ant%>%<m%>: CASES  ;
+
+LEXICON NP-ANT-F
+
+%<np%>%<ant%>%<f%>: CASES ;
+
+LEXICON NP-ORG
+
+%<np%>%<org%>: CASES ;
+
+LEXICON NP-TOP-ASSR
+
+%<np%>%<top%>: POSSESSION ;
+
+LEXICON NP-TOP
+
+%<np%>%<top%>: POSSESSION ;
+
+
+LEXICON ADJ-LEVELS
+
+%<pst%>: # ;
+%<comp%>:%>%{I%}р%{A%}%{A%}к # ;
+
+LEXICON ADJ
+
+%<adj%>: ADJ-LEVELS ;
+
+LEXICON ADJ-ORD
+
+%<adj%>%<ord%>: # ;
+
+LEXICON ADV-ITG
+
+%<adv%>%<itg%>: # ;
+
+LEXICON ADV
+
+%<adv%>: # ;
+
+LEXICON POST
+
+%<post%>: # ;
+
+LEXICON CA
+
+%<cnjadv%>: # ;
+
+LEXICON CS
+
+%<cnjsub%>: # ;
+
+LEXICON CC
+
+%<cnjcoo%>: # ;
+
+LEXICON POSTADV
+
+%<postadv%>: # ;
+
+LEXICON PART 
+
+%<part%>: # ;
+
+LEXICON PART-PERS-COP
+
+%<part%>: V-PERS-COP ;
+
+LEXICON PART-PERS-PAST 
+
+%<part%>: V-PERS-PAST ;
+
+LEXICON ABBR
+
+%<abbr%>: # ;
+
+LEXICON INTERJ
+
+%<ij%>: # ;
+
+
+LEXICON DET-DEM
+
+%<det%>%<dem%>: # ;
+
+LEXICON DET-IND
+
+%<det%>%<ind%>: # ;
+
+LEXICON DET-QNT
+
+%<det%>%<qnt%>: # ;
+
+LEXICON NumeralList
+
+%0 NumeralLoop ;
+1 NumeralLoop ;
+2 NumeralLoop ;
+3 NumeralLoop ;
+4 NumeralLoop ;
+5 NumeralLoop ;
+6 NumeralLoop ;
+7 NumeralLoop ;
+8 NumeralLoop ;
+9 NumeralLoop ;
+
+LEXICON NumeralLoop
+NumeralList ;
+%. NumeralList  ;
+%, NumeralList  ;
+%%%<num%>:%% CASES ;
+Num ;
+
+LEXICON NUM-ROMAN
+
+%<num%>: CASES ;
+
+LEXICON NUM
+
+%<num%>: POSSESSION ;
+%<num%>%<ord%>:%>%{I%}нч%{I%} POSSESSION ;
+%<num%>%<apprx%>:%>%{D%}%{A%}й POSSESSION ;
+
+LEXICON PRON-DEM-BUL
+
+%<prn%>%<dem%>%<sg%>%<nom%>:бул # ;
+%<prn%>%<dem%>%<sg%>%<gen%>:мунун # ;
+%<prn%>%<dem%>%<sg%>%<acc%>:муну # ;
+%<prn%>%<dem%>%<sg%>%<dat%>:буга # ;
+%<prn%>%<dem%>%<sg%>%<loc%>:мында # ;
+%<prn%>%<dem%>%<sg%>%<abl%>:мындан # ;
+
+%<prn%>%<dem%>%<pl%>:бул%>л%{A%}р CASES ;
+
+LEXICON PRON-DEM-OSOL
+
+%<prn%>%<dem%>%<sg%>%<nom%>:л # ;
+%<prn%>%<dem%>%<sg%>%<gen%>:нун # ;
+%<prn%>%<dem%>%<sg%>%<acc%>:ну # ;
+%<prn%>%<dem%>%<sg%>%<dat%>:го # ;
+%<prn%>%<dem%>%<sg%>%<loc%>:ндо # ;
+%<prn%>%<dem%>%<sg%>%<abl%>:ндон # ;
+
+%<prn%>%<dem%>%<pl%>:%>%{L%}%{A%}р CASES ;
+
+LEXICON PRON-DEM-AL
+
+%<prn%>%<dem%>%<sg%>%<nom%>:л # ;
+%<prn%>%<dem%>%<sg%>%<gen%>:нын # ;
+%<prn%>%<dem%>%<sg%>%<acc%>:ны # ;
+%<prn%>%<dem%>%<sg%>%<dat%>:га # ;
+%<prn%>%<dem%>%<sg%>%<loc%>:нда # ;
+%<prn%>%<dem%>%<sg%>%<abl%>:ндан # ;
+
+%<prn%>%<dem%>%<pl%>:%>%{L%}%{A%}р CASES ;
+
+LEXICON PRON-DEM-TIGIL
+
+%<prn%>%<dem%>%<sg%>%<nom%>:л # ;
+%<prn%>%<dem%>%<sg%>%<gen%>:нин # ;
+%<prn%>%<dem%>%<sg%>%<acc%>:ни # ;
+%<prn%>%<dem%>%<sg%>%<dat%>:ге # ;
+%<prn%>%<dem%>%<sg%>%<loc%>:нде # ;
+%<prn%>%<dem%>%<sg%>%<abl%>:нден # ;
+
+%<prn%>%<dem%>%<pl%>:%>%{L%}%{A%}р CASES ;
+
+LEXICON PRON-PERS-SEN
+
+%<nom%>:ен # ;
+%<gen%>:енин # ;
+%<acc%>:ени # ;
+%<dat%>:ага # ;
+%<loc%>:енде # ;
+%<abl%>:енден # ;
+
+LEXICON PRON-PERS-SIZ
+
+%<nom%>:из # ;
+%<gen%>:изди # ;
+%<acc%>:издин # ;
+%<dat%>:изге # ;
+%<loc%>:изде # ;
+%<abl%>:изден # ;
+
+LEXICON PRON-PERS-AL
+
+%<nom%>:л # ;
+%<gen%>:ны # ;
+%<acc%>:нын # ;
+%<dat%>:га # ;
+%<loc%>:нда # ;
+%<abl%>:ндан # ;
+
+LEXICON PRON-PERS-SILER
+
+%<nom%>: # ;
+%<gen%>:%>д%{I%} # ;
+%<acc%>:%>д%{I%}н # ;
+%<dat%>:%>г%{A%} # ;
+%<loc%>:%>д%{A%} # ;
+%<abl%>:%>д%{A%}н # ;
+
+LEXICON PRON-ITG
+
+%<prn%>%<itg%>: CASES  ;
+
+LEXICON PRON-REFL
+
+%<prn%>%<ref%>: CASES  ;
+
+LEXICON PRON-IND
+
+%<prn%>%<ind%>: CASES ;
+
+LEXICON PRON-QNT
+
+%<prn%>%<qnt%>: CASES ;
+
+
+
+LEXICON V-CLIT 
+
+%+би%<qst%>:%>%{B%}%{I%} # ;
+# ;
+
+LEXICON V-PERS-POSS ! P_2
+
+%<p1%>%<sg%>:%>м V-CLIT ; 
+%<p2%>%<sg%>:%>ң V-CLIT ; 
+%<p2%>%<frm%>%<sg%>:%>ң%{I%}з V-CLIT ; 
+%<p3%>%<sg%>:%>%{S%}%{I%} V-CLIT ; 
+%<p1%>%<pl%>:%>%б%{I%}з V-CLIT ; 
+%<p2%>%<pl%>:%>%ң%{A%}р V-CLIT ;  
+%<p2%>%<frm%>%<pl%>:%>%ң%{I%}зд%{A%}р V-CLIT ;  
+%<p3%>%<pl%>:%>%{S%}%{I%} V-CLIT ; 
+
+LEXICON V-PERS-COP ! P_3
+
+%<p1%>%<sg%>:%>м%{I%}н V-CLIT ; 
+%<p2%>%<sg%>:%>с%{I%}ң V-CLIT ; 
+%<p2%>%<frm%>%<sg%>:%>с%{I%}з V-CLIT ; 
+%<p3%>%<sg%>: V-CLIT ; 
+%<p1%>%<pl%>:%>б%{I%}з V-CLIT ; 
+%<p2%>%<pl%>:%>с%{I%}ң%{A%}р V-CLIT ;  
+%<p2%>%<frm%>%<pl%>:%>с%{I%}зд%{A%}р V-CLIT ;  
+%<p3%>%<pl%>: V-CLIT ; 
+
+LEXICON V-PERS-PAST ! P_4
+
+%<p1%>%<sg%>:%>%{I%}м V-CLIT ;
+%<p2%>%<sg%>:%>%{I%}ң V-CLIT ;
+%<p2%>%<frm%>%<sg%>:%>%{I%}ң%{I%}з V-CLIT ;
+%<p3%>%<sg%>: V-CLIT ;  
+%<p1%>%<pl%>:%>%{I%}%{K%} V-CLIT ;
+%<p2%>%<pl%>:%>%{I%}ң%{A%}р V-CLIT ;
+%<p2%>%<frm%>%<pl%>:%>%{I%}ң%{I%}зд%{A%}р V-CLIT ;
+%<p3%>%<pl%>: V-CLIT ;  
+
+LEXICON V-PERS-PRES ! P_6
+
+%<p1%>%<sg%>:%>м V-CLIT ; 
+!%<p1%>%<sg%>:%>м%{I%}н V-CLIT ; 
+%<p2%>%<sg%>:%>с%{I%}ң V-CLIT ; 
+%<p2%>%<frm%>%<sg%>:%>с%{I%}з V-CLIT ; 
+%<p3%>%<sg%>:%>т V-CLIT ; 
+%<p1%>%<pl%>:%>б%{I%}з V-CLIT ; 
+%<p2%>%<pl%>:%>с%{I%}ң%{A%}р V-CLIT ;  
+%<p2%>%<frm%>%<pl%>:%>с%{I%}зд%{A%}р V-CLIT ;  
+%<p3%>%<pl%>:%>т V-CLIT ; 
+
+!LEXICON V-PERS-IMPER ! P_6
+
+LEXICON V-INFL-COMMON
+
+! Converbs 
+%<cv_impf%>:%>%{E%} # ;                                       !
+%<cv_perf%>:%>%{I%}п # ;                                      ! -ып, -ип, -уп, -үп
+!%<cv_perf%>:%>п # ;                                      ! -ып, -ип, -уп, -үп
+%<cv_inf%>:%>м%{A%}к # ;                                      !
+%<cv_irre%>:%>%{E%}т # ;                                      !
+%<cv_fut%>:%>%{A%}р # ;                                       !
+%<cv_fut%>:%>%{A%}%{A%}р # ;                                  ! Dir/LR
+%<cv_pur%>:%>%{G%}%{A%}н%{I%} # ;                             ! 
+
+! Non-finite forms and participles
+%<pp%>:%>%{G%}%{A%}н POSSESSION ;                             ! -
+%<inf2%>:%>%{I%}ш POSSESSION ;                                ! -ыш, -иш, -уш, -үш
+%<neg%>%<pp%>:%>%{B%}%{A%}%>%{G%}%{A%}н POSSESSION ;          !
+%<neg%>%<pp2%>:%>%{B%}%{A%}%>%{G%}%{A%}н%{I%} POSSESSION ;    ! 
+%<neg%>%<inf2%>:%>%{B%}%{A%}%>%{I%}ш POSSESSION ;             !
+%<plist%>:%>м%{A%}й # ;                                       !
+
+! Finite forms
+%<pres%>:%>%{A%} V-PERS-PRES ;                                ! TODO: Check
+%<aor%>:%>%{E%} V-PERS-PRES ;                                 !
+%<fut%>:%>%{A%}р V-PERS-COP ;                                 !
+%<fut%>:%>%{A%}%{A%}р V-PERS-COP ;                            ! Dir/LR
+%<ifi%>:%>%{D%}%{I%} V-PERS-PAST ;                            ! 
+%<past%>:%>%{G%}%{A%}н V-PERS-COP ;                           ! 
+%<cond%>:%>с%{A%} V-PERS-PAST ;                               ! 
+%<opt%>:%>м%{A%}к%>ч%{I%} V-PERS-COP ;                        !   
+%<pih%>:%>ч%{U%} V-PERS-COP ;                                 ! 
+%<pot%>:%>ч%{U%}%>д%{A%}й V-PERS-COP ;                        ! 
+%<pcond%>:%>м%{A%}к V-PERS-COP ;                              ! 
+
+%<neg%>%<pres%>:%>%{B%}%{A%} V-PERS-PRES ;                    ! TODO: Check
+%<neg%>%<fut%>:%>%{B%}%{A%}%>%{A%}р V-PERS-COP ;              !
+%<neg%>%<fut%>:%>%{B%}%{A%}%>%{A%}%{A%}р V-PERS-COP ;         ! Dir/LR
+%<neg%>%<ifi%>:%>%{B%}%{A%}%>%{D%}%{I%} V-PERS-PAST ;         ! 
+%<neg%>%<aor%>:%>%{B%}%{A%}%>%{E%} V-PERS-PRES ;              !
+%<neg%>%<cond%>:%>%{B%}%{A%}%>с%{A%} V-PERS-PAST ;            ! 
+%<neg%>%<past%>:%>%{B%}%{A%}%>%{G%}%{A%}н V-PERS-COP ;        ! 
+%<neg%>%<pcond%>:%>%{B%}%{A%}%>м%{A%}к V-PERS-COP ;           ! 
+%<neg%>%<pih%>:%>%{B%}%{A%}%>ч%{U%} V-PERS-COP ;              ! 
+
+LEXICON V-INFL
+
+%<v%>%<TD%>: V-INFL-COMMON ;
+%<v%>%<TD%>%<inf%>:%>%{U%}%{U%} POSSESSION ;                    ! 
+%<v%>%<TD%>%<neg%>%<inf%>:%>%{B%}%{A%}%>%{U%}%{U%} POSSESSION ; !
+
+LEXICON V-INFL-TV-SHORT
+
+%<v%>%<tv%>: V-INFL-COMMON ;
+
+LEXICON V-INFL-IV-SHORT
+
+%<v%>%<iv%>: V-INFL-COMMON ;
+
+LEXICON V-INFL-TV
+
+%<v%>%<tv%>: V-INFL-COMMON ;
+%<v%>%<tv%>%<inf%>:%>%{U%}%{U%} POSSESSION ;                                      ! 
+%<v%>%<tv%>%<neg%>%<inf%>:%>%{B%}%{A%}%>%{U%}%{U%} POSSESSION ;                   !
+
+LEXICON V-INFL-IV
+
+%<v%>%<iv%>: V-INFL-COMMON ;
+%<v%>%<iv%>%<inf%>:%>%{U%}%{U%} POSSESSION ;                                      ! 
+%<v%>%<iv%>%<neg%>%<inf%>:%>%{B%}%{A%}%>%{U%}%{U%} POSSESSION ;                   !
+
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+!!!                  L E X I C O N    E N T R I E S                         !!!
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+
+LEXICON Particles 
+
+да PART ; ! "also, too"
+го PART ; ! "also, too"
+мына PART ; ! "here is, вот"
+эгер PART ; ! conjunction like particle "if"
+эгерде PART ; ! conjunction like particle "if"
+сыяктуу PART ; ! modal particle; adjective, usually with dative "similar to"
+экен PART ; ! non-eyewitness modal particle
+экен PART-PERS-COP ; ! non-eyewitness modal particle
+эле PART ; ! 
+эле PART-PERS-PAST ; ! 
+
+LEXICON Postadverbs 
+
+гана POSTADV ; ! "only"
+эле POSTADV ; ! "only"
+деле POSTADV ; ! "even"
+
+LEXICON Conjunctions 
+
+жана CC ; ! "and"
+да CC ; ! "and"
+же CC ; ! "or"
+менен CC ; ! "and"
+не CC ; ! "neither... nor..."
+ал CA ; ! "but"
+бирок CA ; ! "but"
+анткени CS ; ! "because"
+себеби CS ; ! "because"
+
+LEXICON Postpositions
+
+менен POST ; ! "with"
+дейре POST ; ! "up to, until"
+чейин POST ; ! "up to, until"
+кийин POST ; ! "with"
+сайын POST ; ! "every"
+үчүн POST ; ! "for" +nom
+жакка POST ; ! "toward"
+чакты POST ; ! "about, around"
+катары POST ; ! "as a" +nom
+аркылуу POST ; ! "through" +nom
+тууралуу POST ; ! "through" +nom
+ичинде POST ; ! "inside of" +gen|+nom
+жараша POST ; ! "by, in accordance with" +dat
+боюнча POST ; ! "according to" +nom
+жөнүнд POST ; ! "about" +nom
+жөнүндө POST ; ! "about" +nom
+тиешелүү POST ; ! "belonging to" +dat
+карата POST ; ! "" +dat
+
+
+LEXICON Determiners
+
+бул DET-DEM ; ! "this"
+ошол DET-DEM ; ! "that"
+ушул DET-DEM ; ! "this (visible)"
+ал DET-DEM ; ! "that"
+тигил DET-DEM ; ! "that (yonder)"
+
+айрым DET-IND ; ! "other"
+ушундай DET-IND ; ! "this kind of"
+
+кээ% бир DET-QNT ; ! "some"
+бир% нече DET-QNT ; ! "some, several"
+көптөгөн DET-QNT ; ! "many"
+
+кайсы DET-ITG ; ! "which?"
+
+LEXICON Pronouns
+
+мен%<prn%>%<pers%>%<p1%>%<sg%>:м PRON-PERS-SEN ; 
+сен%<prn%>%<pers%>%<p2%>%<sg%>:с PRON-PERS-SEN ; 
+сиз%<prn%>%<pers%>%<p2%>%<frm%>%<sg%>:с PRON-PERS-SIZ ; 
+ал%<prn%>%<pers%>%<p3%>%<sg%>:а PRON-PERS-AL ; 
+биз%<prn%>%<pers%>%<p1%>%<pl%>:б PRON-PERS-SIZ ; 
+силер%<prn%>%<pers%>%<p2%>%<pl%>:силер PRON-PERS-SILER ; 
+сиздер%<prn%>%<pers%>%<p2%>%<frm%>%<pl%>:сиздер PRON-PERS-SILER ; 
+алар%<prn%>%<pers%>%<p3%>%<pl%>:алар PRON-PERS-SILER ; 
+
+бул: PRON-DEM-BUL ; ! "this"
+ошол:ошо PRON-DEM-OSOL ; ! "that"
+ал:а PRON-DEM-AL ; ! "that"
+тигил:тиги PRON-DEM-TIGIL ; ! "that (yonder)
+
+эмне PRON-ITG ; ! "what?"
+кайсыны PRON-ITG ; ! "which?"
+ким PRON-ITG ; ! "who?"
+
+өз PRON-REFL ; ! "own/self"
+
+айрым PRON-IND ; ! "other"
+баары PRON-IND ; ! "everyone"
+
+кээ% бир PRON-QNT ; ! "some"
+бир% нече PRON-QNT ; ! "some, several"
+көптөгөн PRON-QNT ; ! "many"
+
+LEXICON Numerals 
+
+бир NUM ; ! "one"
+эки NUM ; ! "two"
+үч NUM ; ! "three"
+төрт NUM ; ! "four"
+беш NUM ; ! "five"
+алты NUM ; ! "six"
+жети NUM ; ! "seven"
+сегиз NUM ; ! "eight"
+тогуз NUM ; ! "nine"
+он NUM ; ! "ten"
+жыйырма NUM ; ! "twenty"
+отуз NUM ; ! "thirty"
+кырк NUM ; ! "forty"
+элүү NUM ; ! "fifty"
+алтымыш NUM ; ! "sixty"
+жетимиш NUM ; ! "seventy"
+сексен NUM ; ! "eighty"
+токсон NUM ; ! "ninety"
+жүз NUM ; ! "one hundred"
+миң NUM ; ! "one thousand"
+миллион NUM ; ! "one million"
+миллиард NUM ; ! "one billion"
+
+
+I NUM-ROMAN ; ! ""
+II NUM-ROMAN ; ! ""
+III NUM-ROMAN ; ! ""
+IV NUM-ROMAN ; ! ""
+V NUM-ROMAN ; ! ""
+VI NUM-ROMAN ; ! ""
+VII NUM-ROMAN ; ! ""
+VIII NUM-ROMAN ; ! ""
+IX NUM-ROMAN ; ! ""
+X NUM-ROMAN ; ! ""
+XI NUM-ROMAN ; ! ""
+XI NUM-ROMAN ; ! ""
+XII NUM-ROMAN ; ! ""
+XIII NUM-ROMAN ; ! ""
+XIV NUM-ROMAN ; ! ""
+XV NUM-ROMAN ; ! ""
+XVI NUM-ROMAN ; ! ""
+XVII NUM-ROMAN ; ! ""
+XVIII NUM-ROMAN ; ! ""
+XX NUM-ROMAN ; ! ""
+XXI NUM-ROMAN ; ! ""
+XIX NUM-ROMAN ; ! ""
+
+
+LEXICON NounStems
+аалым N-INFL ; 
+поэзия N-INFL ; 
+гвардия N-INFL ; 
+аары N-INFL ; 
+аба N-INFL ; 
+абажур N-INFL ; 
+абал N-INFL ; 
+аванс N-INFL ; 
+авто N-INFL ; 
+автобиография N-INFL ; 
+автобус N-INFL ; 
+автожол N-INFL ; 
+автомат N-INFL ; 
+автомобиль N-INFL ; 
+автоном N-INFL ; 
+автономия N-INFL ; 
+автопарк N-INFL ; 
+авторитет N-INFL ; 
+ага N-INFL ; 
+агым N-INFL ; 
+агын N-INFL ; 
+адабият N-INFL ; 
+адам N-INFL ; 
+адат N-INFL ; 
+адаш N-INFL ; 
+адеп N-INFL ; 
+адилет N-INFL ; 
+адмирал N-INFL ; 
+адрес N-INFL ; 
+адым N-INFL ; 
+ажал N-INFL ; 
+ажар N-INFL ; 
+ажы N-INFL ; 
+аза N-INFL ; 
+азан N-INFL ; 
+азап N-INFL ; 
+азат N-INFL ; 
+азиз N-INFL ; 
+азирети N-INFL ; 
+азот N-INFL ; 
+азуу N-INFL ; 
+азуу% тиш N-INFL ; 
+азык N-INFL ; 
+ай N-INFL ; 
+айбан N-INFL ; 
+айбанат N-INFL ; 
+айбат N-INFL ; 
+айгыр N-INFL ; 
+айкел N-INFL ; 
+айлык N-INFL ; 
+айран N-INFL ; 
+айтыш N-INFL ; 
+айып N-INFL ; 
+академик N-INFL ; 
+академия N-INFL ; 
+акарат N-INFL ; 
+акварель N-INFL ; 
+аквариум N-INFL ; 
+аким N-INFL ; 
+аккорд N-INFL ; 
+аккордеон N-INFL ; 
+аккумулятор N-INFL ; 
+акмак N-INFL ; 
+акробат N-INFL ; 
+аксакал N-INFL ; 
+аксессуар N-INFL ; 
+актриса N-INFL ; 
+актёр N-INFL ; 
+акустика N-INFL ; 
+акушер N-INFL ; 
+акча N-INFL ; 
+акы N-INFL ; 
+акыбет N-INFL ; 
+акыйкат N-INFL ; 
+акыл N-INFL ; 
+акыр N-INFL ; 
+ала N-INFL ; 
+алака N-INFL ; 
+алгоритм N-INFL ; 
+алды N-INFL ; 
+алкоголь N-INFL ; 
+алкыш N-INFL ; 
+аллегория N-INFL ; 
+аллергия N-INFL ; 
+алмаз N-INFL ; 
+алоо N-INFL ; 
+алтын N-INFL ; 
+алфавит N-INFL ; 
+альбом N-INFL ; 
+альпинист N-INFL ; 
+альтернатива N-INFL ; 
+алюминий N-INFL ; 
+аманат N-INFL ; 
+ананас N-INFL ; 
+анар N-INFL ; 
+англис N-INFL ; 
+анекдот N-INFL ; 
+анжыр N-INFL ; 
+анкет N-INFL ; 
+анонс N-INFL ; 
+антибиотик N-INFL ; 
+антология N-INFL ; 
+антракт N-INFL ; 
+антрополог N-INFL ; 
+апаат N-INFL ; 
+апостроф N-INFL ; 
+аппендицит N-INFL ; 
+апта N-INFL ; 
+ар N-INFL ; 
+ара N-INFL ; 
+араба N-INFL ; 
+арак N-INFL ; 
+аракет N-INFL ; 
+аралык N-INFL ; 
+арап N-INFL ;  
+арапа N-INFL ; 
+арачы N-INFL ; 
+арена N-INFL ; 
+арзуу N-INFL ; 
+арип N-INFL ; 
+аристократ N-INFL ; 
+арифметика N-INFL ; 
+арка N-INFL ; 
+арматура N-INFL ; 
+арпа N-INFL ; 
+арстан N-INFL ; 
+арт N-INFL ; 
+артист N-INFL ; 
+археолог N-INFL ; 
+архив N-INFL ; 
+арыз N-INFL ; 
+арык N-INFL ; 
+аскер N-INFL ; 
+асма N-INFL ; 
+асма% көпүрө N-INFL ; 
+асма% селкинчек N-INFL ; 
+аспирин N-INFL ; 
+ассистент N-INFL ; 
+астар N-INFL ; 
+астма N-INFL ; 
+астролог N-INFL ; 
+астронавт N-INFL ; 
+астрономия N-INFL ; 
+асфальт N-INFL ; 
+атак N-INFL ; 
+атеизм N-INFL ; 
+атеист N-INFL ; 
+ателье N-INFL ; 
+атлас N-INFL ; 
+атлет N-INFL ; 
+атмосфера N-INFL ; 
+атом N-INFL ; 
+аттракцион N-INFL ; 
+атыр N-INFL ; 
+аудитория N-INFL ; 
+аферист N-INFL ; 
+афоризм N-INFL ; 
+ахлак N-INFL ; 
+ацетон N-INFL ; 
+аш N-INFL ; 
+аюу N-INFL ; 
+аяз N-INFL ; 
+аяк N-INFL ; 
+аял N-INFL ; 
+аят N-INFL ; 
+аң N-INFL ; 
+аалам N-INFL ; ! "universe"
+аба N-INFL ; ! "air"
+абал N-INFL ; 
+адабият N-INFL ; ! "literature"
+адам N-INFL ; ! "man, human, person"
+адаш N-INFL ; 
+адрес N-INFL ; 
+азап N-INFL ; 
+азат N-INFL ; 
+азык N-INFL ; 
+ай N-INFL ; ! "month"
+айгыр N-INFL ; 
+академия N-INFL ; 
+акмак N-INFL ; 
+акча N-INFL ; 
+акыбал N-INFL ; 
+акырет N-INFL ; 
+акыркы N-INFL ; 
+акырын N-INFL ; 
+алакан N-INFL ; 
+алкыш N-INFL ; 
+алма N-INFL ; ! "apple"
+апа N-INFL ; ! "mother"
+арыз N-INFL ; 
+аскер N-INFL ; ! "soldier" 
+аста N-INFL ; 
+атак-даңк N-INFL ; 
+аферист N-INFL ; 
+аалам N-INFL ; 
+аалат N-INFL ; 
+аалим N-INFL ; 
+аалы N-INFL ; 
+аалым N-INFL ; 
+аамыят N-INFL ; 
+аар N-INFL ; 
+аары N-INFL ; 
+аба N-INFL ; 
+абад N-INFL ; 
+абаз N-INFL ; 
+абай N-INFL ; 
+абайы N-INFL ; 
+абак N-INFL ; 
+абаккана N-INFL ; 
+абал N-INFL ; 
+абалак N-INFL ; 
+абан N-INFL ; 
+абанс N-INFL ; 
+абат N-INFL ; 
+абдес N-INFL ; 
+абдесте N-INFL ; 
+абдыра N-INFL ; 
+абет N-INFL ; 
+абжип N-INFL ; 
+абжор N-INFL ; 
+абзал N-INFL ; 
+абзац N-INFL ; 
+абзел N-INFL ; 
+абийир N-INFL ; 
+абоз N-INFL ; 
+абонемент N-INFL ; 
+абонент N-INFL ; 
+аборт N-INFL ; 
+аброй N-INFL ; 
+абсолют N-INFL ; 
+абстракт N-INFL ; 
+абторой N-INFL ; 
+абуйыр N-INFL ; 
+абыгер N-INFL ; 
+абыгый N-INFL ; 
+абыдан N-INFL ; 
+абыйыр N-INFL ; 
+абылгазы N-INFL ; 
+абырак N-INFL ; 
+абырой N-INFL ; 
+абысын N-INFL ; 
+абышка N-INFL ; 
+ава N-INFL ; 
+авал N-INFL ; 
+аван N-INFL ; 
+авангард N-INFL ; 
+аванпост N-INFL ; 
+аванс N-INFL ; 
+авантюра N-INFL ; 
+аванча N-INFL ; 
+авария N-INFL ; 
+август N-INFL ;  ! "August"
+авиабаза N-INFL ; 
+авиабомба N-INFL ; 
+авиазавод N-INFL ; 
+авианосец N-INFL ; 
+авиапочта N-INFL ; 
+авиатор N-INFL ;  
+авиация N-INFL ; 
+авиз N-INFL ; 
+авли N-INFL ; 
+автобаза N-INFL ; 
+автобаян N-INFL ; 
+автобиография N-INFL ; 
+автобус N-INFL ; 
+автограф N-INFL ; 
+автозавод N-INFL ; 
+автол N-INFL ; 
+автомат N-INFL ; 
+автоматика N-INFL ; 
+автомашина N-INFL ; 
+автомобиль N-INFL ; 
+автономия N-INFL ; ! "autonomy"
+автор N-INFL ; 
+авторитет N-INFL ; 
+автотранспорт N-INFL ; 
+авыртов N-INFL ; 
+ага N-INFL ; 
+агай N-INFL ; 
+агайин N-INFL ; 
+агара N-INFL ; 
+агаркак N-INFL ; 
+агарот N-INFL ; 
+агатай N-INFL ; 
+агент N-INFL ; 
+агентство N-INFL ; 
+агентура N-INFL ; 
+агет N-INFL ; 
+агзам N-INFL ; 
+агитатор N-INFL ; 
+агитация N-INFL ; 
+агитпункт N-INFL ; 
+аголнок N-INFL ; 
+агорот N-INFL ; 
+агрегат N-INFL ; 
+агрессия N-INFL ; 
+агрессор N-INFL ; 
+агроминимум N-INFL ; 
+агроном N-INFL ; 
+агрот N-INFL ; 
+агротехника N-INFL ; 
+агүрөт N-INFL ; 
+агыл N-INFL ; 
+агылга N-INFL ; 
+агылес N-INFL ; 
+агым N-INFL ; 
+агын N-INFL ; 
+агыш N-INFL ; 
+бадан N-INFL ; 
+бажа N-INFL ; 
+байрак N-INFL ; 
+бакыт N-INFL ; 
+бала N-INFL-SG ; ! "child"
+бала%<n%>%<pl%>:балдар POSSESSION ; ! "children"
+балдыз N-INFL ; 
+балта N-INFL ; 
+балтыркан N-INFL ; 
+балчык N-INFL ; 
+баш N-INFL ; ! "head"
+башмак N-INFL ; 
+башталгыч N-INFL ; 
+баягы N-INFL ; 
+баян N-INFL ; 
+без N-INFL ; 
+бейт N-INFL ; 
+бекзаада N-INFL ; 
+бел N-INFL ; 
+белги N-INFL ; 
+бет N-INFL ; 
+бетер N-INFL ; 
+бетпак N-INFL ; 
+!беш N-INFL ; ! Not a noun --Numeral
+бешик N-INFL ; 
+билдирүү N-INFL ; 
+билек N-INFL ; 
+билерик N-INFL ; 
+билим N-INFL ; 
+бирдик N-INFL ; 
+бирөө N-INFL ; 
+бирөөсү N-INFL ; 
+бит N-INFL ; 
+борбор N-INFL ; ! "capital"
+бут N-INFL ; 
+бысмылда N-INFL ; 
+бычым N-INFL ; 
+бээ N-INFL ; ! ""
+бүлөө N-INFL ; 
+бөбөк N-INFL ; 
+бөз N-INFL ; 
+гүл N-INFL ; 
+дарак N-INFL ; 
+дарек N-INFL ; 
+дене N-INFL ; 
+дос N-INFL ; ! "" 
+дүйнө N-INFL ;  ! "world" (?)
+дүнүйө N-INFL ; ! "world" (?)
+жаз N-INFL ; ! "spring"
+жай N-INFL ; ! "summer"
+жан N-INFL ; ! "jan"
+желек N-INFL ; 
+жол N-INFL ; ! "way"
+жыгач N-INFL ; 
+жыл N-INFL ; ! "year"
+жылдыз N-INFL ; ! "star"
+!жүз N-INFL ;  Not a noun, -- Numeral
+зайып N-INFL ; 
+заң N-INFL ; ! "law"
+илим N-INFL ; 
+индустрия N-INFL ; 
+июль N-INFL ; ! "" 
+каз N-INFL ; ! "" 
+кап N-INFL ; ! "sack"
+кат N-INFL ; ! "mail"
+келесоо N-INFL ; 
+кеме N-INFL ; ! "boat"
+китеп N-INFL ; ! "book"
+кол N-INFL ; ! "hand"
+короо N-INFL ; ! ""
+коом N-INFL ; ! "community"
+кыз N-INFL ; ! "girl"
+кыйноо N-INFL ; 
+көз N-INFL ; ! "eye"
+көрсөтүү N-INFL ; 
+көрүү N-INFL ; ! "" 
+колдонуучу N-INFL ; ! "user" 
+майор N-INFL ; 
+мал N-INFL ; ! ""
+мамлекет N-INFL ; ! "state"
+мектеп N-INFL ; ! "school"
+мурун N-INFL ; ! "nose"
+наристе N-INFL ; 
+ини N-INFL ; ! "younger brother"
+омийин N-INFL ; 
+пул N-INFL ; 
+саат N-INFL ; !"watch"
+сабак N-INFL ; 
+саз N-INFL ; 
+сулуу N-INFL ; ! "" 
+сыра N-INFL ; ! "beer"
+тагдыр N-INFL ; 
+таш N-INFL ; ! "" 
+таң N-INFL ; ! "dawn"
+токой N-INFL ; 
+тоо N-INFL ; ! "" 
+топ N-INFL ; ! "ball"
+тор N-INFL ; ! "net"
+туз N-INFL ; ! "salt"
+төө N-INFL ; ! "" 
+унаа N-INFL ; ! "" 
+уу N-INFL ; 
+ууч N-INFL ; 
+үй N-INFL ; ! "house"
+чака N-INFL ; ! "bucket"
+чалап N-INFL ; 
+челек N-INFL ; ! "bucket"
+шекил N-INFL ; 
+шерменде N-INFL ; 
+шилекей N-INFL ; ! "" 
+ылай N-INFL ; 
+ыр N-INFL ; ! "song"
+ысым N-INFL ; 
+эне N-INFL ; 
+эл N-INFL ;  ! "nation"
+үй N-INFL ; ! "house, home"
+өзүмчүлдүк N-INFL ; ! "egoism, selfishness"
+өлкө N-INFL ; ! "country, land"
+өсүмдүк N-INFL ; ! "plant"
+өтүнүч N-INFL ; 
+өтүк N-INFL ; ! "shoe"
+ручка N-INFL ; ! "pen"
+банк N-INFL ; ! "bank"
+секретар N-INFL ; ! "secretary (man)"
+секретарша N-INFL ; ! "secretary (woman)"
+антрополог N-INFL ; ! "anthropologist"
+литература N-INFL ; ! "literature"
+индустрия N-INFL ; ! "industry"
+физиология N-INFL ; ! "physiology"
+экология N-INFL ; ! "ecology"
+география N-INFL ; ! "geography"
+философия N-INFL ; ! "philosophy"
+пиво N-INFL ; ! "industry"
+редактор N-INFL ; ! "editor"
+район N-INFL ; ! "rajon"
+доктор N-INFL ; ! "doctor"
+форма N-INFL ; ! "form"
+
+комитет N-INFL ;  ! "committee"
+абал N-INFL ; 
+катар N-INFL ; 
+жыгач N-INFL ; 
+дарак N-INFL ; 
+токой N-INFL ; 
+гүл N-INFL ; 
+акыркы N-INFL ; 
+адаш N-INFL ; 
+адрес N-INFL ; 
+дарек N-INFL ; 
+ысым N-INFL ; 
+атак-даңк N-INFL ; 
+аферист N-INFL ; 
+аста N-INFL ; 
+акырын N-INFL ; 
+акыркы N-INFL ; 
+тиги% дүйнө N-INFL ; 
+акмак N-INFL ; 
+эси% жок N-INFL ; 
+келесоо N-INFL ; 
+академия N-INFL ; 
+акча N-INFL ; 
+пул N-INFL ; 
+аалам N-INFL ; 
+дүйнө N-INFL ; 
+алкыш N-INFL ; 
+кол% чабуу N-INFL ; 
+омийин N-INFL ; 
+арыз N-INFL ; 
+өтүнүч N-INFL ; 
+билдирүү N-INFL ; 
+көрсөтүү N-INFL ; 
+фабрика N-INFL ; 
+завод N-INFL ; 
+сабак N-INFL ; 
+чака N-INFL ; 
+сыра N-INFL ; 
+пиво N-INFL ; 
+арык N-INFL ; 
+ууч N-INFL ; 
+алакан N-INFL ; 
+аяк N-INFL ; 
+бут N-INFL ; 
+аял N-INFL ; 
+зайып N-INFL ; 
+аят N-INFL ; 
+айгыр N-INFL ; 
+чалап N-INFL ; 
+азап N-INFL ; 
+кыйноо N-INFL ; 
+азат N-INFL ;  
+азык% түлүк N-INFL ; 
+азык N-INFL ; 
+бажа N-INFL ; 
+аң N-INFL ; 
+уу N-INFL ; 
+бакыт N-INFL ; 
+тагдыр N-INFL ; 
+балтыркан N-INFL ; 
+балдыз N-INFL ; 
+балта N-INFL ; 
+балчык N-INFL ; 
+ылай N-INFL ; 
+саз N-INFL ; 
+сормо% саз N-INFL ; 
+желек N-INFL ; 
+байрак N-INFL ; 
+башталгыч N-INFL ; 
+башмак N-INFL ; 
+бөбөк N-INFL ; 
+наристе N-INFL ; 
+бетпак N-INFL ; 
+жүзү% кара N-INFL ; 
+шерменде N-INFL ; 
+дене N-INFL ; 
+бадан N-INFL ; 
+бел N-INFL ; 
+белги N-INFL ; 
+бысмылда N-INFL ; 
+бет N-INFL ; 
+жүз N-INFL ; 
+бетер N-INFL ; 
+баян N-INFL ; 
+билдирүү N-INFL ; 
+бейт N-INFL ; 
+бекзаада N-INFL ; 
+ак N-INFL ; 
+без N-INFL ; 
+бөз N-INFL ; 
+бешик N-INFL ; 
+билек N-INFL ; 
+билерик N-INFL ; 
+бүлөө N-INFL ; 
+илим N-INFL ; 
+билим N-INFL ; 
+миң% башы N-INFL ; 
+майор N-INFL ; 
+бирөө N-INFL ; 
+кимдир% бирөө N-INFL ; 
+бирөөсү N-INFL ; 
+кимдир% бирөөсү N-INFL ; 
+бир% канча N-INFL ; 
+бирдик N-INFL ; 
+бысмылда N-INFL ; 
+бит N-INFL ; 
+бычым N-INFL ; 
+шекил N-INFL ; 
+форма N-INFL ; 
+түйүнчөк N-INFL ; 
+бок N-INFL ; 
+мончок N-INFL ; 
+бороон N-INFL ; 
+уруу N-INFL ; 
+урук N-INFL ; 
+жамаат N-INFL ; 
+боёк N-INFL ; 
+моюн N-INFL ; 
+моюнтурук N-INFL ; 
+боз N-INFL ; 
+бозо N-INFL ; 
+бука N-INFL ; 
+ноопаз N-INFL ; 
+бутак N-INFL ; 
+буу N-INFL ; 
+булак N-INFL ; 
+булут N-INFL ; 
+сан N-INFL ; 
+жоон% сан N-INFL ; 
+бут N-INFL ; 
+муз N-INFL ; 
+музоо N-INFL ; 
+буудай N-INFL ; 
+буу N-INFL ; 
+бөйрөк N-INFL ; 
+бөрк N-INFL ; 
+былтыр N-INFL ; 
+өткөн% жылы N-INFL ; 
+мыйык N-INFL ; 
+мурут N-INFL ; 
+бычак N-INFL ; 
+жаныбар N-INFL ; 
+айбан N-INFL ; 
+жар N-INFL ; 
+жапа N-INFL ; 
+азап N-INFL ; 
+кыйноо N-INFL ; 
+жакет N-INFL ; 
+пиджак N-INFL ; 
+желдет N-INFL ; 
+жамаат N-INFL ; 
+журт N-INFL ; 
+жамаат N-INFL ; 
+жаназа N-INFL ; 
+жаракат N-INFL ; 
+жасат N-INFL ; 
+дене N-INFL ; 
+тулку N-INFL ; 
+жооп N-INFL ; 
+жаза N-INFL ; 
+жихат N-INFL ; 
+жин N-INFL ; 
+жыныстык N-INFL ; 
+жокей N-INFL ; 
+география N-INFL ; 
+республика N-INFL ; 
+жумуруят N-INFL ; 
+жаңылыштык N-INFL ; 
+там N-INFL ; 
+тамыр N-INFL ; 
+тамга N-INFL ; 
+добулбас N-INFL ; 
+доолбас N-INFL ; 
+таяк N-INFL ; 
+таяныч N-INFL ; 
+тай N-INFL ; 
+таяке N-INFL ; 
+таз N-INFL ; 
+тоо N-INFL ; 
+так N-INFL ; 
+тамга N-INFL ; 
+дептер N-INFL ; 
+декан N-INFL ; 
+декларация N-INFL ; 
+декорация N-INFL ; 
+декоративдик N-INFL ; 
+делегация N-INFL ; 
+делегат N-INFL ; 
+далил N-INFL ; 
+дем N-INFL ; 
+демагог N-INFL ; 
+демагогия N-INFL ; 
+темир% жол N-INFL ; 
+демография N-INFL ; 
+демократия N-INFL ; 
+депозит N-INFL ; 
+тери N-INFL ; 
+дерматолог N-INFL ; 
+сабак N-INFL ; 
+дарс N-INFL ; 
+лекция N-INFL ; 
+дарскана N-INFL ; 
+класс N-INFL ; 
+аудитория N-INFL ; 
+оору N-INFL ; 
+дарт N-INFL ; 
+кайгы N-INFL ; 
+азап N-INFL ; 
+арман N-INFL ; 
+детектив N-INFL ; 
+детерминант N-INFL ; 
+детерминизм N-INFL ; 
+диктофон N-INFL ; 
+диктатор N-INFL ; 
+тилмеч N-INFL ; 
+динамика N-INFL ; 
+динамит N-INFL ; 
+динамизм N-INFL ; 
+түп N-INFL ; 
+диплом N-INFL ; 
+дипломатия N-INFL ; 
+дипломат N-INFL ; 
+тирек N-INFL ; 
+тирөөч N-INFL ; 
+директор N-INFL ; 
+тирилик N-INFL ; 
+тиричилик N-INFL ; 
+чыканак N-INFL ; 
+диссимиляция N-INFL ; 
+дисциплина N-INFL ; 
+дискотека N-INFL ; 
+диспансер N-INFL ; 
+диван N-INFL ; 
+диабет N-INFL ; 
+диафрагма N-INFL ; 
+диагональ N-INFL ; 
+диаграмма N-INFL ; 
+диалект N-INFL ; 
+диалог N-INFL ; 
+диапазон N-INFL ; 
+диета N-INFL ; 
+дизентерия N-INFL ; 
+ич% өткөк N-INFL ; 
+дизайн N-INFL ; 
+тиш N-INFL ; 
+догма N-INFL ; 
+доктор N-INFL ; 
+доктур N-INFL ; 
+доктрина N-INFL ; 
+документ N-INFL ; 
+документация N-INFL ; 
+домино N-INFL ; 
+допинг N-INFL ; 
+доза N-INFL ; 
+доцент N-INFL ; 
+туурам N-INFL ; 
+драма N-INFL ; 
+драмалык N-INFL ; 
+драматург N-INFL ; 
+бата N-INFL ; 
+дубляж N-INFL ; 
+дублёр N-INFL ; 
+дуэт N-INFL ; 
+тыт N-INFL ; 
+дубал N-INFL ; 
+дуушар N-INFL ; 
+душ N-INFL ; 
+төл N-INFL ; 
+төш N-INFL ; 
+төшөк N-INFL ; 
+дуэль N-INFL ; 
+дуэт N-INFL ; 
+дүрбү N-INFL ; 
+турнабай N-INFL ; 
+ажал N-INFL ; 
+адабият N-INFL ; 
+адеп N-INFL ; 
+эффект N-INFL ; 
+таасир N-INFL ; 
+эгоист N-INFL ; 
+эгоизм N-INFL ; 
+экзотика N-INFL ; 
+экология N-INFL ; 
+экономика N-INFL ; 
+экономист N-INFL ; 
+экран N-INFL ; 
+экскаватор N-INFL ; 
+экперт N-INFL ; 
+экспертиза N-INFL ; 
+экстра N-INFL ; 
+калк N-INFL ; 
+журт N-INFL ; 
+кол N-INFL ; 
+элек N-INFL ; 
+электролит N-INFL ; 
+электроника N-INFL ; 
+электроскоп N-INFL ; 
+электрод N-INFL ; 
+электрошок N-INFL ; 
+элемент N-INFL ; 
+эмбрион N-INFL ; 
+империализм N-INFL ; 
+эндогамия N-INFL ; 
+эндокрин N-INFL ; 
+эндокринология N-INFL ; 
+индустрия N-INFL ; 
+энергия N-INFL ; 
+инфекция N-INFL ; 
+инфляция N-INFL ; 
+интеллект N-INFL ; 
+интернационал N-INFL ; 
+энтомология N-INFL ; 
+интрига N-INFL ; 
+эпидемия N-INFL ; 
+эпидемиология N-INFL ; 
+өрүк N-INFL ; 
+эрк N-INFL ; 
+эркеч N-INFL ; 
+героин N-INFL ; 
+этажерка N-INFL ; 
+эталон N-INFL ; 
+этек N-INFL ; 
+юбка N-INFL ; 
+этика N-INFL ; 
+этикет N-INFL ; 
+этнограф N-INFL ; 
+этнография N-INFL ; 
+этнолог N-INFL ; 
+этнология N-INFL ; 
+этюд N-INFL ; 
+ээр N-INFL ; 
+айван N-INFL ; 
+сере N-INFL ; 
+серече N-INFL ; 
+аза N-INFL ; 
+чийин N-INFL ; 
+эшек N-INFL ; 
+эшик N-INFL ; 
+фабрика N-INFL ; 
+завод N-INFL ; 
+фактор N-INFL ; 
+факультет N-INFL ; 
+пал N-INFL ; 
+фанатизм N-INFL ; 
+фантастикалык N-INFL ; 
+фантазия N-INFL ; 
+фар N-INFL ; 
+барк N-INFL ; 
+айырма N-INFL ; 
+фармаколог N-INFL ; 
+фармакология N-INFL ; 
+парз N-INFL ; 
+парыз N-INFL ; 
+милдет N-INFL ; 
+фасон N-INFL ; 
+фасоль N-INFL ; 
+төө% буурчак N-INFL ; 
+фатализм N-INFL ; 
+фаянс N-INFL ; 
+фашизм N-INFL ; 
+федерализм N-INFL ; 
+федерация N-INFL ; 
+феминизм N-INFL ; 
+феномен N-INFL ; 
+феноменализм N-INFL ; 
+феноменология N-INFL ; 
+феодал N-INFL ; 
+феодализм N-INFL ; 
+фестиваль N-INFL ; 
+фетиш N-INFL ; 
+фетишизм N-INFL ; 
+фигура N-INFL ; 
+пикир N-INFL ; 
+ой N-INFL ; 
+пил N-INFL ; 
+филантроп N-INFL ; 
+филармония N-INFL ; 
+фильм N-INFL ; 
+филолог N-INFL ; 
+филология N-INFL ; 
+флотилия N-INFL ; 
+философ N-INFL ; 
+фильтр N-INFL ; 
+чыпка N-INFL ; 
+финал N-INFL ; 
+финалист N-INFL ; 
+финансы N-INFL ; 
+каржы N-INFL ; 
+финиш N-INFL ; 
+фараон N-INFL ; 
+фирма N-INFL ; 
+физика N-INFL ; 
+физиолог N-INFL ; 
+физиология N-INFL ; 
+физиономия N-INFL ; 
+физиотерапия N-INFL ; 
+фольклор N-INFL ; 
+фонд N-INFL ; 
+фонема N-INFL ; 
+фонетика N-INFL ; 
+функция N-INFL ; 
+фонограф N-INFL ; 
+фонография N-INFL ; 
+фонология N-INFL ; 
+форма N-INFL ; 
+формалист N-INFL ; 
+формалдуулук N-INFL ; 
+формализм N-INFL ; 
+формация N-INFL ; 
+формула N-INFL ; 
+форум N-INFL ; 
+фосфат N-INFL ; 
+фосфор N-INFL ; 
+фото N-INFL ; 
+фотокопия N-INFL ; 
+фотокөчүрмө N-INFL ; 
+фрак N-INFL ; 
+фракция N-INFL ; 
+кедей N-INFL ; 
+жарды N-INFL ; 
+букара N-INFL ; 
+футбол N-INFL ; 
+мүмкүнчүлүк N-INFL ; 
+бурсат N-INFL ; 
+пырылдак N-INFL ; 
+капилет N-INFL ; 
+кайып N-INFL ; 
+галерея N-INFL ; 
+галош N-INFL ; 
+кам N-INFL ; 
+санаа N-INFL ; 
+гамма N-INFL ; 
+гараж N-INFL ; 
+гарантия N-INFL ; 
+карып N-INFL ; 
+мусапыр N-INFL ; 
+гарнитур N-INFL ; 
+гарнизон N-INFL ; 
+гастрит N-INFL ; 
+каапыр N-INFL ; 
+газ N-INFL ; 
+керосин N-INFL ; 
+газета N-INFL ; 
+гезит N-INFL ; 
+казино N-INFL ; 
+кең N-INFL ; 
+ген N-INFL ; 
+генерал N-INFL ; 
+генетика N-INFL ; 
+геометрия N-INFL ; 
+гестапо N-INFL ; 
+кийик N-INFL ; 
+бугу N-INFL ; 
+кечит N-INFL ; 
+кечүү N-INFL ; 
+кекирик N-INFL ; 
+гитара N-INFL ; 
+гитарист N-INFL ; 
+кийим N-INFL ; 
+гладиатор N-INFL ; 
+глюкоза N-INFL ; 
+глицерин N-INFL ; 
+гол N-INFL ; 
+гольф N-INFL ; 
+горилла N-INFL ; 
+готика N-INFL ; 
+график N-INFL ; 
+графит N-INFL ; 
+грамм N-INFL ; 
+грамматика N-INFL ; 
+граммофон N-INFL ; 
+гранит N-INFL ; 
+грейпфрут N-INFL ; 
+грипп N-INFL ; 
+группа N-INFL ; 
+гуаш N-INFL ; 
+күкүк N-INFL ; 
+күрп N-INFL ; 
+үндүк N-INFL ; 
+көк N-INFL ; 
+асман N-INFL ; 
+көл N-INFL ; 
+көлөкө N-INFL ; 
+көйнөк N-INFL ; 
+көмөлдүрүк N-INFL ; 
+көңүлдөш N-INFL ; 
+санаалаш N-INFL ; 
+көңүлдөн N-INFL ; 
+көрк N-INFL ; 
+көт N-INFL ; 
+көчүк N-INFL ; 
+күйүк N-INFL ; 
+эт% ысуу N-INFL ; 
+көз N-INFL ; 
+күмүш N-INFL ; 
+күн N-INFL ; 
+күнөө N-INFL ; 
+күндөлүк N-INFL ; 
+көнүмүш N-INFL ; 
+күндүз N-INFL ; 
+күз N-INFL ; 
+күч N-INFL ; 
+кубат N-INFL ; 
+ал N-INFL ; 
+кытык N-INFL ; 
+кытыгы N-INFL ; 
+кабар N-INFL ; 
+ажы N-INFL ; 
+кажет N-INFL ; 
+керек N-INFL ; 
+акарат N-INFL ; 
+калк N-INFL ; 
+канжар N-INFL ; 
+аракет N-INFL ; 
+тамга N-INFL ; 
+арип N-INFL ; 
+карта N-INFL ; 
+касиет N-INFL ; 
+айбанаттар N-INFL ; 
+айбан N-INFL ; 
+азирети N-INFL ; 
+муун N-INFL ; 
+эже N-INFL ; ! ""
+гектар N-INFL ; 
+халва N-INFL ; 
+гепатит N-INFL ; 
+эсеп N-INFL ; 
+эсеп-кысап N-INFL ; 
+айкел N-INFL ; 
+эстелик N-INFL ; 
+икая N-INFL ; 
+аңгеме N-INFL ; 
+баян N-INFL ; 
+гипноз N-INFL ; 
+ипподром N-INFL ; 
+иерархия N-INFL ; 
+кызмат N-INFL ; 
+кызматкер N-INFL ; 
+хобби N-INFL ; 
+мугалим N-INFL ; 
+кожо N-INFL ; 
+хоккей N-INFL ; 
+короз N-INFL ; 
+укук N-INFL ; 
+курма N-INFL ; 
+ным N-INFL ; 
+өркөч N-INFL ; 
+өкүм N-INFL ; 
+өкүмдар N-INFL ; 
+өкмөт N-INFL ; 
+гуманизм N-INFL ; 
+кыянаттык N-INFL ; 
+ыктытма N-INFL ; 
+эчкирик N-INFL ; 
+идея N-INFL ; 
+ой N-INFL ; 
+идеализм N-INFL ; 
+идеолог N-INFL ; 
+идеология N-INFL ; 
+идирек N-INFL ; 
+бүлгүнгө N-INFL ; 
+банкрот N-INFL ; 
+иптар N-INFL ; 
+ооз% ачар N-INFL ; 
+ыктымал N-INFL ; 
+этияттык N-INFL ; 
+ыктыяж N-INFL ; 
+муктаждык N-INFL ; 
+чучук N-INFL ; 
+имидж N-INFL ; 
+император N-INFL ; 
+анжыр N-INFL ; 
+индекс N-INFL ; 
+инициатива N-INFL ; 
+демилге N-INFL ; 
+революция N-INFL ; 
+ыңкылап N-INFL ; 
+ынсап N-INFL ; 
+инсан N-INFL ; 
+киши N-INFL ; 
+интеграл N-INFL ; 
+интеграция N-INFL ; 
+жип N-INFL ; 
+гипнотизм N-INFL ; 
+гипноз N-INFL ; 
+гипотеза N-INFL ; 
+иридий N-INFL ; 
+скелет N-INFL ; 
+станция N-INFL ; 
+статистика N-INFL ; 
+сый N-INFL ; 
+урмат N-INFL ; 
+ээ N-INFL ; 
+ион N-INFL ; 
+йод N-INFL ; 
+из N-INFL ; 
+изоляция N-INFL ; 
+ичкилик N-INFL ; 
+ичимдик N-INFL ; 
+ийне N-INFL ; 
+иш N-INFL ; 
+жумуш N-INFL ; 
+ишарат N-INFL ; 
+сигнал N-INFL ; 
+ягуар N-INFL ; 
+жалюзи N-INFL ; 
+жандарм N-INFL ; 
+жанр N-INFL ; 
+генератор N-INFL ; 
+геодезия N-INFL ; 
+геолог N-INFL ; 
+геология N-INFL ; 
+жетон N-INFL ; 
+гимнастика N-INFL ; 
+гинеколог N-INFL ; 
+дзюдо N-INFL ; 
+тоголок% арыз N-INFL ; 
+күндөлүк N-INFL ; 
+желе N-INFL ; 
+килкилдек N-INFL ; 
+юбилей N-INFL ; 
+жюри N-INFL ; 
+кабина N-INFL ; 
+кабыр N-INFL ; 
+мүрзө N-INFL ; 
+кабык N-INFL ; 
+кабыл N-INFL ; 
+кабырга N-INFL ; 
+кадрлар N-INFL ; 
+штат N-INFL ; 
+капас N-INFL ; 
+тор N-INFL ; 
+кафетерий N-INFL ; 
+кофе N-INFL ; 
+каар N-INFL ; 
+какао N-INFL ; 
+кактус N-INFL ; 
+көкүл N-INFL ; 
+калай N-INFL ; 
+калбыр N-INFL ; 
+калпа N-INFL ; 
+калория N-INFL ; 
+тумак N-INFL ; 
+бапак N-INFL ; 
+кальций N-INFL ; 
+камера N-INFL ; 
+кампания N-INFL ; 
+камуфляж N-INFL ; 
+камчы N-INFL ; 
+камыш N-INFL ; 
+канаат N-INFL ; 
+канал N-INFL ; 
+канализация N-INFL ; 
+кандаш N-INFL ; 
+каноэ N-INFL ; 
+коньяк N-INFL ; 
+капкак N-INFL ; 
+капитал N-INFL ; 
+капиталист N-INFL ; 
+капитализм N-INFL ; 
+капитуляция N-INFL ; 
+каприз N-INFL ; 
+дымдама N-INFL ; 
+карамель N-INFL ; 
+карантин N-INFL ; 
+каратэ N-INFL ; 
+карбюратор N-INFL ; 
+бир% тууган N-INFL ; 
+кардинал N-INFL ; 
+кардиограмма N-INFL ; 
+кардиолог N-INFL ; 
+кардиология N-INFL ; 
+карга N-INFL ; 
+каргаша N-INFL ; 
+каргыш N-INFL ; 
+карикатура N-INFL ; 
+карикатурист N-INFL ; 
+карьера N-INFL ; 
+харизма N-INFL ; 
+карнавал N-INFL ; 
+картограф N-INFL ; 
+картон N-INFL ; 
+картотека N-INFL ; 
+касап N-INFL ; 
+касапчы N-INFL ; 
+касапкана N-INFL ; 
+каталог N-INFL ; 
+категория N-INFL ; 
+катмар N-INFL ; 
+катык N-INFL ; 
+качыр N-INFL ; 
+каучук N-INFL ; 
+коога N-INFL ; 
+коон N-INFL ; 
+кайгы N-INFL ; 
+кайык N-INFL ; 
+казык N-INFL ; 
+кашык N-INFL ; 
+кепил N-INFL ; 
+кекс N-INFL ; 
+жаман N-INFL ; 
+кем N-INFL ; 
+сөөк N-INFL ; 
+кене N-INFL ; 
+кебек N-INFL ; 
+ак% күп N-INFL ; 
+какач N-INFL ; 
+керебет N-INFL ; 
+кербен N-INFL ; 
+кесек N-INFL ; 
+кесик N-INFL ; 
+кетчуп N-INFL ; 
+килит N-INFL ; 
+кило N-INFL ; 
+килограмм N-INFL ; 
+километр N-INFL ; 
+киловатт N-INFL ; 
+кимоно N-INFL ; 
+химия N-INFL ; 
+кир N-INFL ; 
+булганыч N-INFL ; 
+кире N-INFL ; 
+кирпи N-INFL ; 
+кирпик N-INFL ; 
+киви N-INFL ; 
+киши N-INFL ; 
+клан N-INFL ; 
+кларнет N-INFL ; 
+класс N-INFL ; 
+классик N-INFL ; 
+клиника N-INFL ; 
+хлор N-INFL ; 
+клёш N-INFL ; 
+коалиция N-INFL ; 
+кобальт N-INFL ; 
+кобра N-INFL ; 
+код N-INFL ; 
+кодекс N-INFL ; 
+кокаин N-INFL ; 
+кол N-INFL ; 
+аскердик% топ N-INFL ; 
+колледж N-INFL ; 
+коллекция N-INFL ; 
+коллективизм N-INFL ; 
+холера N-INFL ; 
+колония N-INFL ; 
+колтук N-INFL ; 
+кресло N-INFL ; 
+комбинат N-INFL ; 
+комбинация N-INFL ; 
+комедия N-INFL ; 
+комедия N-INFL ; 
+комиссар N-INFL ; 
+комиссия N-INFL ; 
+комплимент N-INFL ; 
+кондуктор N-INFL ; 
+конфедерация N-INFL ; 
+конференция N-INFL ; 
+конгресс N-INFL ; 
+конус N-INFL ; 
+концентрация N-INFL ; 
+концерт N-INFL ; 
+консул N-INFL ; 
+контроль N-INFL ; 
+конвой N-INFL ; 
+коньяк N-INFL ; 
+конч N-INFL ; 
+координация N-INFL ; 
+коркуу N-INFL ; 
+корук N-INFL ; 
+бышпаган% жүзүм N-INFL ; 
+котлет N-INFL ; 
+косметика N-INFL ; 
+космогония N-INFL ; 
+космонавт N-INFL ; 
+космополит N-INFL ; 
+космос N-INFL ; 
+король N-INFL ; 
+кредит N-INFL ; 
+крепдешин N-INFL ; 
+криминология N-INFL ; 
+кризис N-INFL ; 
+хронология N-INFL ; 
+хронометр N-INFL ; 
+кул N-INFL ; 
+кулак N-INFL ; 
+кулач N-INFL ; 
+клуб N-INFL ; 
+кум N-INFL ; 
+кумар N-INFL ; 
+купон N-INFL ; 
+талон N-INFL ; 
+курбака N-INFL ; 
+бака N-INFL ; 
+чеп N-INFL ; 
+коргон N-INFL ; 
+курс N-INFL ; 
+курт N-INFL ; 
+бөрү N-INFL ; 
+карышкыр N-INFL ; 
+курултай N-INFL ; 
+коргошун N-INFL ; 
+ок N-INFL ; 
+кусунду N-INFL ; 
+кут N-INFL ; 
+кварц N-INFL ; 
+куйрук N-INFL ; 
+кезек N-INFL ; 
+куш N-INFL ; 
+көмүр N-INFL ; 
+көпүрө N-INFL ; 
+көбүк N-INFL ; 
+көрүк N-INFL ; 
+күкүрт N-INFL ; 
+күл N-INFL ; 
+күрөк N-INFL ; 
+китепкана N-INFL ; 
+кыбыла N-INFL ; 
+кылкан N-INFL ; 
+кебете N-INFL ; 
+кийим N-INFL ; 
+кылыч N-INFL ; 
+кымыз N-INFL ; 
+кын N-INFL ; 
+кычкач N-INFL ; 
+кысыр N-INFL ; 
+кыямат N-INFL ; 
+кыюу N-INFL ; 
+кызамык N-INFL ; 
+кыш N-INFL ; 
+кыштоо N-INFL ; 
+кыштак N-INFL ; 
+лабиринт N-INFL ; 
+лаборант N-INFL ; 
+лаборатория N-INFL ; 
+лампа N-INFL ; 
+лампочка N-INFL ; 
+лава N-INFL ; 
+легенда N-INFL ; 
+легионер N-INFL ; 
+лексикограф N-INFL ; 
+лексиколог N-INFL ; 
+лексикология N-INFL ; 
+лингвистика N-INFL ; 
+илеп N-INFL ; 
+эрин N-INFL ; 
+илегилек N-INFL ; 
+лаззат N-INFL ; 
+жыргал N-INFL ; 
+даам N-INFL ; 
+илеген N-INFL ; 
+тепши N-INFL ; 
+табак N-INFL ; 
+либерализм N-INFL ; 
+либрация N-INFL ; 
+либретто N-INFL ; 
+лидер N-INFL ; 
+лига N-INFL ; 
+ликёр N-INFL ; 
+лимит N-INFL ; 
+лимон N-INFL ; 
+лимонад N-INFL ; 
+лира N-INFL ; 
+лиризм N-INFL ; 
+лицей N-INFL ; 
+литография N-INFL ; 
+литология N-INFL ; 
+литосфера N-INFL ; 
+литр N-INFL ; 
+логарифм N-INFL ; 
+локомотив N-INFL ; 
+лосьон N-INFL ; 
+лотерея N-INFL ; 
+лунапарк N-INFL ; 
+медаль N-INFL ; 
+комуз N-INFL ;
+медал N-INFL ;
+медальон N-INFL ; 
+мадам N-INFL ; 
+магнезий N-INFL ; 
+маал N-INFL ; 
+убакыт N-INFL ; 
+мезгил N-INFL ; 
+сот N-INFL ; 
+макала N-INFL ; 
+макам N-INFL ; 
+статус N-INFL ; 
+макарон N-INFL ; 
+макет N-INFL ; 
+максат N-INFL ; 
+макияж N-INFL ; 
+мал% мүлк N-INFL ; 
+дүнүйө N-INFL ; 
+байлык N-INFL ; 
+мал N-INFL ; 
+бодо% мал N-INFL ; 
+буламык N-INFL ; 
+мандат N-INFL ; 
+мандарин N-INFL ; 
+мандолин N-INFL ; 
+манеж N-INFL ; 
+манёвр N-INFL ; 
+мануфактура N-INFL ; 
+маникюр N-INFL ; 
+манекен N-INFL ; 
+мансап N-INFL ; 
+манты N-INFL ; 
+маньяк N-INFL ; 
+маршал N-INFL ; 
+маргарин N-INFL ; 
+маркет N-INFL ; 
+мармелад N-INFL ; 
+марш N-INFL ; 
+массаж N-INFL ; 
+маска N-INFL ; 
+масон N-INFL ; 
+математика N-INFL ; 
+материал N-INFL ; 
+материалист N-INFL ; 
+материализм N-INFL ; 
+маймыл N-INFL ; 
+майонез N-INFL ; 
+мина N-INFL ; 
+матч N-INFL ; 
+магазин N-INFL ; 
+дүкөн N-INFL ; 
+мажилис N-INFL ; 
+чогулуш N-INFL ; 
+цивилизация N-INFL ; 
+медет N-INFL ; 
+жардам N-INFL ; 
+жөлөк N-INFL ; 
+медресе N-INFL ; 
+махабат N-INFL ; 
+мекен N-INFL ; 
+ата% журт N-INFL ; 
+мектеп N-INFL ; 
+мелодрама N-INFL ; 
+мама N-INFL ; 
+эмчек N-INFL ; 
+өлкө N-INFL ; 
+туулган% жер N-INFL ; 
+меридиан N-INFL ; 
+мартаба N-INFL ; 
+металл N-INFL ; 
+металлургия N-INFL ; 
+метеоролог N-INFL ; 
+метеорология N-INFL ; 
+методология N-INFL ; 
+метод N-INFL ; 
+метраж N-INFL ; 
+метро N-INFL ; 
+мөмө N-INFL ; 
+жемиш N-INFL ; 
+мейман N-INFL ; 
+конок N-INFL ; 
+азап N-INFL ; 
+мээнет N-INFL ; 
+кыйынчылык N-INFL ; 
+микрофон N-INFL ; 
+микроб N-INFL ; 
+микроскоп N-INFL ; 
+миллиметр N-INFL ; 
+милитаризм N-INFL ; 
+минимум N-INFL ; 
+мис N-INFL ; 
+жез N-INFL ; 
+мисс N-INFL ; 
+конок N-INFL ; 
+мейман N-INFL ; 
+миссия N-INFL ; 
+миссионер N-INFL ; 
+митинг N-INFL ; 
+мифология N-INFL ; 
+мебель N-INFL ; 
+эмерек N-INFL ; 
+модель N-INFL ; 
+модернизация N-INFL ; 
+модификация N-INFL ; 
+модуль N-INFL ; 
+молекула N-INFL ; 
+молдо N-INFL ; 
+монархия N-INFL ; 
+монитор N-INFL ; 
+моногамия N-INFL ; 
+монография N-INFL ; 
+монолог N-INFL ; 
+монополия N-INFL ; 
+монотеист N-INFL ; 
+монотеизм N-INFL ; 
+монотип N-INFL ; 
+монотондуу N-INFL ; 
+монтаж N-INFL ; 
+мораль N-INFL ; 
+морализм N-INFL ; 
+морфема N-INFL ; 
+морфология N-INFL ; 
+мотив N-INFL ; 
+мотор N-INFL ; 
+мотоцикл N-INFL ; 
+мамиле N-INFL ; 
+байланыш N-INFL ; 
+соода N-INFL ; 
+момун N-INFL ; 
+мумия N-INFL ; 
+муссон N-INFL ; 
+мударис N-INFL ; 
+мүдүр N-INFL ; 
+директор N-INFL ; 
+мөөр N-INFL ; 
+мүлк N-INFL ; 
+байлык N-INFL ; 
+музыка N-INFL ; 
+мүшкүл N-INFL ; 
+нафталин N-INFL ; 
+така N-INFL ; 
+наалы N-INFL ; 
+наам N-INFL ; 
+намаз N-INFL ; 
+анар N-INFL ; 
+нарк N-INFL ; 
+баа N-INFL ; 
+наркотик N-INFL ; 
+баңгизат N-INFL ; 
+наркоз N-INFL ; 
+насыйкат N-INFL ; 
+насыят N-INFL ; 
+насип N-INFL ; 
+националист N-INFL ; 
+улутчул N-INFL ; 
+национализм N-INFL ; 
+улутчулдук N-INFL ; 
+натура N-INFL ; 
+назар N-INFL ; 
+напас N-INFL ; 
+дем N-INFL ; 
+нефть N-INFL ; 
+нектар N-INFL ; 
+неологизм N-INFL ; 
+неон N-INFL ; 
+неоплазма N-INFL ; 
+нептуний N-INFL ; 
+нарцисс N-INFL ; 
+натыйжа N-INFL ; 
+жыйынтык N-INFL ; 
+невроз N-INFL ; 
+нигилизм N-INFL ; 
+нике N-INFL ; 
+никель N-INFL ; 
+никотин N-INFL ; 
+ниет N-INFL ; 
+көңүл N-INFL ; 
+нокот N-INFL ; 
+буурчак N-INFL ; 
+чекит N-INFL ; 
+номинализм N-INFL ; 
+норма N-INFL ; 
+норматив N-INFL ; 
+ностальгия N-INFL ; 
+кусалык N-INFL ; 
+нотариус N-INFL ; 
+номер N-INFL ; 
+нөөмөт N-INFL ; 
+кезек N-INFL ; 
+невролог N-INFL ; 
+неврология N-INFL ; 
+нейрон N-INFL ; 
+нюанс N-INFL ; 
+нуска N-INFL ; 
+объективизм N-INFL ; 
+облигация N-INFL ; 
+обсерватория N-INFL ; 
+обструкция N-INFL ; 
+от N-INFL ; 
+аудитория N-INFL ; 
+офис N-INFL ; 
+офтальмолог N-INFL ; 
+офтальмология N-INFL ; 
+ок N-INFL ; 
+жебе N-INFL ; 
+октава N-INFL ; 
+олигархия N-INFL ; 
+олимпиада N-INFL ; 
+ом N-INFL ; 
+омлет N-INFL ; 
+омуртка N-INFL ; 
+онкология N-INFL ; 
+ономастика N-INFL ; 
+антология N-INFL ; 
+опера N-INFL ; 
+операция N-INFL ; 
+оператор N-INFL ; 
+оппортунист N-INFL ; 
+оппортунизм N-INFL ; 
+оптимист N-INFL ; 
+оптимизм N-INFL ; 
+орангутан N-INFL ; 
+орган N-INFL ; 
+органикалык N-INFL ; 
+организм N-INFL ; 
+оргазм N-INFL ; 
+оригинал N-INFL ; 
+түпнуска N-INFL ; 
+оригиналдуу N-INFL ; 
+оркестр N-INFL ; 
+ортопедия N-INFL ; 
+ортопедист N-INFL ; 
+ориенталист N-INFL ; 
+ориентализм N-INFL ; 
+остеология N-INFL ; 
+осурак N-INFL ; 
+от N-INFL ; 
+чөп N-INFL ; 
+отель N-INFL ; 
+авто N-INFL ; 
+автобиография N-INFL ; 
+автобус N-INFL ; 
+автомат N-INFL ; 
+автоматтык N-INFL ; 
+автоматизм N-INFL ; 
+автомобиль N-INFL ; 
+автоном N-INFL ; 
+автономиялуу N-INFL ; 
+автономия N-INFL ; 
+автопарк N-INFL ; 
+авторитет N-INFL ; 
+автожол N-INFL ; 
+отурум N-INFL ; 
+ойлош N-INFL ; 
+санаалаш N-INFL ; 
+улан N-INFL ; 
+уул N-INFL ; 
+паганизм N-INFL ; 
+пакет N-INFL ; 
+пакт N-INFL ; 
+палас N-INFL ; 
+палеограф N-INFL ; 
+палеография N-INFL ; 
+палеонтология N-INFL ; 
+палладий N-INFL ; 
+пальто N-INFL ; 
+панда N-INFL ; 
+пантомима N-INFL ; 
+панель N-INFL ; 
+талкуу N-INFL ; 
+паника N-INFL ; 
+панорама N-INFL ; 
+пантеист N-INFL ; 
+пантеизм N-INFL ; 
+пантограф N-INFL ; 
+папа N-INFL ; 
+поп N-INFL ; 
+папирус N-INFL ; 
+парадокс N-INFL ; 
+параграф N-INFL ; 
+параллель N-INFL ; 
+парашют N-INFL ; 
+парк N-INFL ; 
+парламентаризм N-INFL ; 
+парламентарий N-INFL ; 
+парламент N-INFL ; 
+бармак N-INFL ; 
+манжа N-INFL ; 
+пароль N-INFL ; 
+барс N-INFL ; 
+партия N-INFL ; 
+партизан N-INFL ; 
+партнёр N-INFL ; 
+өнөк N-INFL ; 
+барча N-INFL ; 
+бөлүк N-INFL ; 
+кесим N-INFL ; 
+пассаж N-INFL ; 
+паспорт N-INFL ; 
+пастеризация N-INFL ; 
+патент N-INFL ; 
+патология N-INFL ; 
+патриарх N-INFL ; 
+пай N-INFL ; 
+үлүш N-INFL ; 
+байтакты N-INFL ; 
+борбор N-INFL ; 
+багалек N-INFL ; 
+пайча N-INFL ; 
+пашазаада N-INFL ; 
+педагог N-INFL ; 
+педагогика N-INFL ; 
+педаль N-INFL ; 
+падар N-INFL ; 
+педикюр N-INFL ; 
+пенициллин N-INFL ; 
+период N-INFL ; 
+персонал N-INFL ; 
+перспектива N-INFL ; 
+жетим% көпөлөк N-INFL ; 
+парвана N-INFL ; 
+пессимизм N-INFL ; 
+петроль N-INFL ; 
+пижама N-INFL ; 
+пикет N-INFL ; 
+пикник N-INFL ; 
+пилот N-INFL ; 
+пир N-INFL ; 
+пирамида N-INFL ; 
+епископ N-INFL ; 
+жөө N-INFL ; 
+пияда N-INFL ; 
+пианино N-INFL ; 
+пияз N-INFL ; 
+пьеса N-INFL ; 
+пляж N-INFL ; 
+план N-INFL ; 
+плантация N-INFL ; 
+пластырь N-INFL ; 
+платформа N-INFL ; 
+плюрализм N-INFL ; 
+политеист N-INFL ; 
+политеизм N-INFL ; 
+полька N-INFL ; 
+портрет N-INFL ; 
+потенциал N-INFL ; 
+поза N-INFL ; 
+позитив N-INFL ; 
+позитивизм N-INFL ; 
+прагматика N-INFL ; 
+прагматизм N-INFL ; 
+принц N-INFL ; 
+принцесса N-INFL ; 
+принцип N-INFL ; 
+пресса N-INFL ; 
+престиж N-INFL ; 
+принтер N-INFL ; 
+проблема N-INFL ; 
+программа N-INFL ; 
+пролетариат N-INFL ; 
+пропаганда N-INFL ; 
+пропагандист N-INFL ; 
+протеин N-INFL ; 
+нааразылык N-INFL ; 
+протест N-INFL ; 
+протез N-INFL ; 
+протокол N-INFL ; 
+психиатрия N-INFL ; 
+психолог N-INFL ; 
+психология N-INFL ; 
+психопат N-INFL ; 
+психоз N-INFL ; 
+пудинг N-INFL ; 
+пудра N-INFL ; 
+бут N-INFL ; 
+идол N-INFL ; 
+бутпарас N-INFL ; 
+радар N-INFL ; 
+радикализм N-INFL ; 
+радиация N-INFL ; 
+радиатор N-INFL ; 
+радио N-INFL ; 
+радиоэлектрик N-INFL ; 
+радиограмма N-INFL ; 
+радий N-INFL ; 
+арак N-INFL ; 
+рапорт N-INFL ; 
+рационалист N-INFL ; 
+рационализм N-INFL ; 
+реактор N-INFL ; 
+реализм N-INFL ; 
+редакция N-INFL ; 
+редактор N-INFL ; 
+реферанс N-INFL ; 
+рефлекс N-INFL ; 
+реформа N-INFL ; 
+регулятор N-INFL ; 
+режиссёр N-INFL ; 
+реклама N-INFL ; 
+жарнама N-INFL ; 
+ректор N-INFL ; 
+ирең N-INFL ; 
+ыраң N-INFL ; 
+репертуар N-INFL ; 
+репродукция N-INFL ; 
+продукция N-INFL ; 
+диссертация N-INFL ; 
+экспозиция N-INFL ; 
+компания N-INFL ; 
+акредитация N-INFL ; 
+биология N-INFL ; 
+археология N-INFL ; 
+коммуникация N-INFL ; 
+империя N-INFL ; 
+ресторан N-INFL ; 
+реставрация N-INFL ; 
+реставрация N-INFL ; 
+ревизия N-INFL ; 
+ревизионизм N-INFL ; 
+револьвер N-INFL ; 
+резерв N-INFL ; 
+резонанс N-INFL ; 
+ринг N-INFL ; 
+риск N-INFL ; 
+ритм N-INFL ; 
+рабаят N-INFL ; 
+робот N-INFL ; 
+родий N-INFL ; 
+ракета N-INFL ; 
+роль N-INFL ; 
+роман N-INFL ; 
+романс N-INFL ; 
+романтика N-INFL ; 
+романтизм N-INFL ; 
+ревматизм N-INFL ; 
+рубидий N-INFL ; 
+рух N-INFL ; 
+жан N-INFL ; 
+арбак N-INFL ; 
+руханият N-INFL ; 
+рулет N-INFL ; 
+репортаж N-INFL ; 
+реванш N-INFL ; 
+ырыскы N-INFL ; 
+саат N-INFL ; 
+самын N-INFL ; 
+сабыр N-INFL ; 
+садага N-INFL ; 
+сахна N-INFL ; 
+сак N-INFL ; 
+сакал N-INFL ; 
+сагызган N-INFL ; 
+салон N-INFL ; 
+салтанат N-INFL ; 
+башкаруу N-INFL ; 
+сандвич N-INFL ; 
+сенсация N-INFL ; 
+цензура N-INFL ; 
+чыгым N-INFL ; 
+сарп N-INFL ; 
+саз N-INFL ; 
+сакмал N-INFL ; 
+себеп N-INFL ; 
+сежде N-INFL ; 
+сексология N-INFL ; 
+сектор N-INFL ; 
+сел N-INFL ; 
+ташкын N-INFL ; 
+символ N-INFL ; 
+семиз N-INFL ; 
+толук N-INFL ; 
+симпатия N-INFL ; 
+сценарист N-INFL ; 
+сценарий N-INFL ; 
+сенат N-INFL ; 
+сенатор N-INFL ; 
+симфония N-INFL ; 
+цент N-INFL ; 
+синтаксис N-INFL ; 
+синтез N-INFL ; 
+себет N-INFL ; 
+сепкен N-INFL ; 
+скептицизм N-INFL ; 
+серенада N-INFL ; 
+сервис N-INFL ; 
+сооп N-INFL ; 
+саякат N-INFL ; 
+саякатнаама N-INFL ; 
+сезон N-INFL ; 
+сийдик N-INFL ; 
+сифлис N-INFL ; 
+шифон N-INFL ; 
+сыйкыр N-INFL ; 
+өчүргүч N-INFL ; 
+сүлгү N-INFL ; 
+силикон N-INFL ; 
+синагога N-INFL ; 
+циркуляция N-INFL ; 
+система N-INFL ; 
+склероз N-INFL ; 
+слайд N-INFL ; 
+смокинг N-INFL ; 
+сода N-INFL ; 
+дасторкон N-INFL ; 
+супура N-INFL ; 
+солист N-INFL ; 
+соло N-INFL ; 
+сөөлжан N-INFL ; 
+соң N-INFL ; 
+сопрано N-INFL ; 
+суроо N-INFL ; 
+сосиска N-INFL ; 
+социалист N-INFL ; 
+социализм N-INFL ; 
+социолог N-INFL ; 
+социология N-INFL ; 
+спазм N-INFL ; 
+спекуляция N-INFL ; 
+сперматозоид N-INFL ; 
+специалист N-INFL ; 
+адис N-INFL ; 
+спиритуализм N-INFL ; 
+спорт N-INFL ; 
+стадион N-INFL ; 
+стаж N-INFL ; 
+стандарт N-INFL ; 
+стенограф N-INFL ; 
+стенография N-INFL ; 
+стереоскоп N-INFL ; 
+стерилизация N-INFL ; 
+стиль N-INFL ; 
+стилистика N-INFL ; 
+стоп N-INFL ; 
+стратиграфия N-INFL ; 
+стресс N-INFL ; 
+суу N-INFL ; 
+семестр N-INFL ; 
+сөз N-INFL ; 
+субъективизм N-INFL ; 
+сүлүк N-INFL ; 
+шыпыргы N-INFL ; 
+сүт N-INFL ; 
+сыпат N-INFL ; 
+сынак N-INFL ; 
+сыноо N-INFL ; 
+сыр N-INFL ; 
+даам N-INFL ; 
+табак N-INFL ; 
+табель N-INFL ; 
+таблица N-INFL ; 
+табият N-INFL ; 
+жаратылыш N-INFL ; 
+табып N-INFL ; 
+дарыгер N-INFL ; 
+таблетка N-INFL ; 
+табуретка N-INFL ; 
+табыт N-INFL ; 
+даарат N-INFL ; 
+так N-INFL ; 
+такты N-INFL ; 
+сунуш N-INFL ; 
+такилип N-INFL ; 
+тахометр N-INFL ; 
+такси N-INFL ; 
+тактика N-INFL ; 
+талак N-INFL ; 
+талап N-INFL ; 
+далил N-INFL ; 
+тампон N-INFL ; 
+бампер N-INFL ; 
+даана N-INFL ; 
+танго N-INFL ; 
+танк N-INFL ; 
+танкер N-INFL ; 
+тарап N-INFL ; 
+жак N-INFL ; 
+тарапкер N-INFL ; 
+тарак N-INFL ; 
+тарых N-INFL ; 
+тариз N-INFL ; 
+таз N-INFL ; 
+тоок N-INFL ; 
+тоос N-INFL ; 
+павлин N-INFL ; 
+тайга N-INFL ; 
+таберик N-INFL ; 
+тажрыйба N-INFL ; 
+сунуш N-INFL ; 
+такилип N-INFL ; 
+техникум N-INFL ; 
+техник N-INFL ; 
+технология N-INFL ; 
+текстиль N-INFL ; 
+тектоника N-INFL ; 
+кооптонуу N-INFL ; 
+телефон N-INFL ; 
+телефотография N-INFL ; 
+телекоммуникация N-INFL ; 
+телеобъектив N-INFL ; 
+телепатия N-INFL ; 
+телескоп N-INFL ; 
+телекөрсөтүү N-INFL ; 
+телеграф N-INFL ; 
+дене N-INFL ; 
+тен N-INFL ; 
+беден N-INFL ; 
+танапис N-INFL ; 
+теннис N-INFL ; 
+тенор N-INFL ; 
+теократия N-INFL ; 
+теолог N-INFL ; 
+теорема N-INFL ; 
+теория N-INFL ; 
+тер N-INFL ; 
+тарбия N-INFL ; 
+терминал N-INFL ; 
+терминология N-INFL ; 
+термодинамика N-INFL ; 
+термохимия N-INFL ; 
+термос N-INFL ; 
+термостат N-INFL ; 
+тартип N-INFL ; 
+аскердеги% система N-INFL ; 
+террор N-INFL ; 
+таасир N-INFL ; 
+теспе N-INFL ; 
+тест N-INFL ; 
+таеже N-INFL ; 
+тикен N-INFL ; 
+түлкү N-INFL ; 
+тип N-INFL ; 
+типография N-INFL ; 
+тир N-INFL ; 
+тираж N-INFL ; 
+тирада N-INFL ; 
+тироксин N-INFL ; 
+титан N-INFL ; 
+театр N-INFL ; 
+тумар N-INFL ; 
+тон N-INFL ; 
+тоннаж N-INFL ; 
+топ N-INFL ; 
+топаз N-INFL ; 
+торпедо N-INFL ; 
+тост N-INFL ; 
+тотем N-INFL ; 
+тотемизм N-INFL ; 
+трагедия N-INFL ; 
+трактор N-INFL ; 
+трамвай N-INFL ; 
+трансформатор N-INFL ; 
+транзит N-INFL ; 
+транспарант N-INFL ; 
+транспорт N-INFL ; 
+унаа N-INFL ; 
+трибуна N-INFL ; 
+трико N-INFL ; 
+трикотаж N-INFL ; 
+трилогия N-INFL ; 
+тритон N-INFL ; 
+тропика N-INFL ; 
+турист N-INFL ; 
+туризм N-INFL ; 
+турна N-INFL ; 
+турникет N-INFL ; 
+турнир N-INFL ; 
+түрп N-INFL ; 
+торт N-INFL ; 
+туалет N-INFL ; 
+тузак N-INFL ; 
+тообо N-INFL ; 
+түкүрүк N-INFL ; 
+туннель N-INFL ; 
+түр N-INFL ; 
+турбина N-INFL ; 
+тыгыз N-INFL ; 
+тырмак N-INFL ; 
+ач% көздүк N-INFL ; 
+суктук N-INFL ; 
+чабарман N-INFL ; 
+ультрафиолет N-INFL ; 
+ун N-INFL ; 
+уран N-INFL ; 
+ураган N-INFL ; 
+устара N-INFL ; 
+уйку N-INFL ; 
+шайкештик N-INFL ; 
+учак N-INFL ; 
+самолёт N-INFL ; 
+ычкыр N-INFL ; 
+убада N-INFL ; 
+вагон N-INFL ; 
+убакыт N-INFL ; 
+вакуум N-INFL ; 
+валет N-INFL ; 
+вальс N-INFL ; 
+вампир N-INFL ; 
+ванадий N-INFL ; 
+ваниль N-INFL ; 
+вентилятор N-INFL ; 
+барак N-INFL ; 
+вариант N-INFL ; 
+вариация N-INFL ; 
+вазелин N-INFL ; 
+вазыйпа N-INFL ; 
+ваза N-INFL ; 
+вегетариан N-INFL ; 
+вектор N-INFL ; 
+велосипед N-INFL ; 
+веранда N-INFL ; 
+ветеринар N-INFL ; 
+вибрация N-INFL ; 
+вилаят N-INFL ; 
+вилла N-INFL ; 
+вираж N-INFL ; 
+вице% адмирал N-INFL ; 
+виски N-INFL ; 
+витамин N-INFL ; 
+виолончель N-INFL ; 
+визит N-INFL ; 
+волейбол N-INFL ; 
+вольфрам N-INFL ; 
+вольт N-INFL ; 
+вольтампер N-INFL ; 
+вольтметр N-INFL ; 
+воевода N-INFL ; 
+жамак N-INFL ; 
+жаратылыш N-INFL ; 
+жарак N-INFL ; 
+курал N-INFL ; 
+жатак N-INFL ; 
+төшөк N-INFL ; 
+жатакана N-INFL ; 
+жилет N-INFL ; 
+жем N-INFL ; 
+жеңе N-INFL ; 
+жеңилиш N-INFL ; 
+жетимкана N-INFL ; 
+жетпестик N-INFL ; 
+жээн N-INFL ; 
+жашыл% бака N-INFL ; 
+житим N-INFL ; 
+жоголуу N-INFL ; 
+жолдош N-INFL ; 
+жорум N-INFL ; 
+жупка N-INFL ; 
+жумуртка N-INFL ; 
+жүк N-INFL ; 
+жүн N-INFL ; 
+жүрөк N-INFL ; 
+жүзбашы N-INFL ; 
+кылым N-INFL ; 
+шакек N-INFL ; 
+жүзүк N-INFL ; 
+жылкы% үйүрү N-INFL ; 
+заман N-INFL ; 
+убакыт N-INFL ; 
+замандаш N-INFL ; 
+зар N-INFL ; 
+муң N-INFL ; 
+ый N-INFL ; 
+залал N-INFL ; 
+зарылдык N-INFL ; 
+зарурат N-INFL ; 
+зат N-INFL ; 
+заар N-INFL ; 
+уу N-INFL ; 
+зекет N-INFL ; 
+зилзала N-INFL ; 
+жер% титирөө N-INFL ; 
+замбирек N-INFL ; 
+зер N-INFL ; 
+алтын N-INFL ; 
+зар N-INFL ; 
+оюн% зоок N-INFL ; 
+даам N-INFL ; 
+зайтун N-INFL ; 
+зээн N-INFL ; 
+зикир N-INFL ; 
+кеп% кылуу N-INFL ; 
+чынжыр N-INFL ; 
+зындан N-INFL ; 
+зыяпат N-INFL ; 
+сый N-INFL ; 
+той N-INFL ; 
+зыярат N-INFL ; 
+учурашуу N-INFL ; 
+зоолог N-INFL ; 
+зоология N-INFL ; 
+зооспора N-INFL ; 
+зоотехника N-INFL ; 
+зулум N-INFL ; 
+сурнай N-INFL ; 
+жираф N-INFL ; 
+чатыр N-INFL ; 
+идиш N-INFL ; 
+чабуул N-INFL ; 
+чара N-INFL ; 
+амал N-INFL ; 
+айла N-INFL ; 
+чарк N-INFL ; 
+чарык N-INFL ; 
+шейшеп N-INFL ; 
+чайкана N-INFL ; 
+чеңгел N-INFL ; 
+илгич N-INFL ; 
+кайырмак N-INFL ; 
+чейрек N-INFL ; 
+төрттөн% бири N-INFL ; 
+шоколад N-INFL ; 
+чил N-INFL ; 
+цемент N-INFL ; 
+сызгыч N-INFL ; 
+чигит N-INFL ; 
+пахта% уругу N-INFL ; 
+чабан N-INFL ; 
+койчу N-INFL ; 
+шорпо N-INFL ; 
+сорпо N-INFL ; 
+темене N-INFL ; 
+жубалдыз N-INFL ; 
+чөл N-INFL ; 
+чамынды N-INFL ; 
+куурай N-INFL ; 
+таштанды N-INFL ; 
+чын N-INFL ; 
+шыңгырак N-INFL ; 
+кичинекей% коңгуроо N-INFL ; 
+чаян N-INFL ; 
+өт N-INFL ; 
+ачуу N-INFL ; 
+жин N-INFL ; 
+каар N-INFL ; 
+өгүз N-INFL ; 
+өлчөм N-INFL ; 
+өлчөө N-INFL ; 
+алды N-INFL ; 
+асты N-INFL ; 
+өрдөк N-INFL ; 
+үрп% адат N-INFL ; 
+өрнөк N-INFL ; 
+үлгү N-INFL ; 
+өрүү N-INFL ; 
+токуу N-INFL ; 
+өрүк N-INFL ; 
+өч N-INFL ; 
+кек N-INFL ; 
+үйрөнүү N-INFL ; 
+ультиматум N-INFL ; 
+ультрафиолет N-INFL ; 
+үн N-INFL ; 
+атак% даңк N-INFL ; 
+тоош N-INFL ; 
+униформа N-INFL ; 
+универсал N-INFL ; 
+университет N-INFL ; 
+урбанизм N-INFL ; 
+үркүү N-INFL ; 
+уролог N-INFL ; 
+урология N-INFL ; 
+үстү N-INFL ; 
+уста N-INFL ; 
+устат N-INFL ; 
+утопия N-INFL ; 
+утопист N-INFL ; 
+үтүк N-INFL ; 
+үзөңгү N-INFL ; 
+шат N-INFL ; 
+шак N-INFL ; 
+шакирт N-INFL ; 
+шалгам N-INFL ; 
+чалбар N-INFL ; 
+шалбар N-INFL ; 
+чемпион N-INFL ; 
+шаң N-INFL ; 
+даңаза N-INFL ; 
+шанс N-INFL ; 
+мүмкүнчүлүк N-INFL ; 
+шантаж N-INFL ; 
+тумак N-INFL ; 
+шляпа N-INFL ; 
+шарап N-INFL ; 
+шарк N-INFL ; 
+чыгыш N-INFL ; 
+шарт N-INFL ; 
+шартнаама N-INFL ; 
+шеф N-INFL ; 
+шабдалы N-INFL ; 
+шаар N-INFL ; 
+шекер N-INFL ; 
+кант N-INFL ; 
+форма N-INFL ; 
+шекил N-INFL ; 
+схема N-INFL ; 
+шербет N-INFL ; 
+шариат N-INFL ; 
+шерик N-INFL ; 
+шайтан N-INFL ; 
+шифон N-INFL ; 
+шифр N-INFL ; 
+шофер N-INFL ; 
+шок N-INFL ; 
+шоссе N-INFL ; 
+сироп N-INFL ; 
+шүгүр N-INFL ; 
+уят N-INFL ; 
+абонент N-INFL ; 
+үйрөнчүк N-INFL ; 
+бурч N-INFL ; 
+арал N-INFL ; 
+адилет N-INFL ; 
+адам N-INFL ; 
+талапкер N-INFL ; 
+даана N-INFL ; 
+ат N-INFL ; 
+ысым N-INFL ; 
+аапат N-INFL ; 
+кечирим N-INFL ; 
+афиша N-INFL ; 
+апийим N-INFL ; 
+бак N-INFL ; 
+тор N-INFL ; 
+аза N-INFL ; 
+ооз N-INFL ; 
+август N-INFL ; 
+ахлак N-INFL ; 
+үй N-INFL ; 
+таандык N-INFL ; 
+агент N-INFL ; 
+агенттик N-INFL ; 
+акыбет N-INFL ; 
+акыл N-INFL ; 
+агым N-INFL ; 
+акын N-INFL ; 
+тууган N-INFL ; 
+шам N-INFL ; 
+актер N-INFL ; 
+актриса N-INFL ; 
+акварийум N-INFL ; 
+карыз N-INFL ; 
+катнаш N-INFL ; 
+алаамат N-INFL ; 
+конгуроо N-INFL ; 
+шылдың N-INFL ; 
+гипс N-INFL ; 
+аалам N-INFL ; 
+шайман N-INFL ; 
+алоо N-INFL ; 
+алипе N-INFL ; 
+аалым N-INFL ; 
+чеке N-INFL ; 
+цитата N-INFL ; 
+көнүмүш N-INFL ; 
+спирт N-INFL ; 
+алтын N-INFL ; 
+максат N-INFL ; 
+баштапкы N-INFL ; 
+амбар N-INFL ; 
+эмблема N-INFL ; 
+байке N-INFL ; 
+операция N-INFL ; 
+эмир N-INFL ; 
+ачкыч N-INFL ; 
+тай% эне N-INFL ; 
+учур N-INFL ; 
+эстелик N-INFL ; 
+эстелик N-INFL ; 
+анкета N-INFL ; 
+маани N-INFL ; 
+апа N-INFL ; 
+антена N-INFL ; 
+ант N-INFL ; 
+антиквариат N-INFL ; 
+көп% кабат N-INFL ; 
+жинди N-INFL ; 
+келесоо N-INFL ; 
+араба N-INFL ; 
+унаа N-INFL ; 
+талаа N-INFL ; 
+четтик N-INFL ; 
+аары N-INFL ; 
+дос N-INFL ; 
+арноо N-INFL ; 
+жер N-INFL ; 
+арзуу N-INFL ; 
+асылдык N-INFL ; 
+ашама N-INFL ; 
+лифт N-INFL ; 
+ашпоз N-INFL ; 
+аш N-INFL ; 
+кутурган N-INFL ; 
+эм N-INFL ; 
+ашык N-INFL ; 
+урру N-INFL ; 
+кылым N-INFL ; 
+ашк N-INFL ; 
+кийим% илгич N-INFL ; 
+ата N-INFL ; 
+чабуул N-INFL ; 
+от N-INFL ; 
+атлас N-INFL ; 
+аң N-INFL ; 
+уу N-INFL ; 
+асма% чырак N-INFL ; 
+алакан N-INFL ; 
+аяк N-INFL ; 
+бут% кийим N-INFL ; 
+аяр N-INFL ; 
+аяз N-INFL ; 
+ай N-INFL ; 
+айуу N-INFL ; 
+уят N-INFL ; 
+туура% келбеген N-INFL ; 
+маяна N-INFL ; 
+күзгү N-INFL ; 
+бөлөк N-INFL ; 
+мүчөө N-INFL ; 
+азап N-INFL ; 
+азат N-INFL ; 
+жер N-INFL ; 
+маңдай N-INFL ; 
+март N-INFL ; 
+базар N-INFL ; 
+министирлик N-INFL ; 
+!кийин N-INFL ;  ! This is not a noun -JNW
+кабыл N-INFL ; 
+тамак N-INFL ; 
+нерсе N-INFL ; 
+телефон N-INFL ; 
+инфраструктура N-INFL ; 
+оорукана N-INFL ; 
+дүкөн N-INFL ; 
+шарап N-INFL ; 
+ресторан N-INFL ; 
+эс N-INFL ; 
+калк N-INFL ; 
+калк N-INFL ; 
+өлкө N-INFL ; 
+партия N-INFL ; 
+тема N-INFL ; 
+көрсөткүч N-INFL ; 
+кабар N-INFL ; 
+мор N-INFL ; 
+бут N-INFL ; 
+аки N-INFL ; 
+боо N-INFL ; 
+байланыш N-INFL ; 
+шылтоо N-INFL ; 
+бахарат N-INFL ; 
+бакча N-INFL ; 
+мелдеш N-INFL ; 
+бактыяр N-INFL ; 
+бактылуу N-INFL ; 
+министр N-INFL ; 
+жез N-INFL ; 
+дүкөнчө N-INFL ; 
+балык N-INFL ; 
+шар N-INFL ; 
+лента N-INFL ; 
+баня N-INFL ; 
+бараж N-INFL ; 
+стакан N-INFL ; 
+тынчтык N-INFL ; 
+ийгилик N-INFL ; 
+примиер% министр N-INFL ; 
+басым N-INFL ; 
+басма% сөз N-INFL ; 
+басма N-INFL ;
+башчы N-INFL ; 
+баш% калаа N-INFL ; 
+тема N-INFL ; 
+герб N-INFL ; 
+түйүнчөк N-INFL ; 
+аял N-INFL ; 
+мырза N-INFL ; 
+төө% куш N-INFL ; 
+бойдок N-INFL ; 
+кароолчу N-INFL ; 
+мерия N-INFL ; 
+документ N-INFL ; 
+документалдуу% тасма N-INFL ; 
+бел N-INFL ; 
+боштондук N-INFL ; 
+чач% тарач N-INFL ; 
+пендечилик N-INFL ; 
+бешик N-INFL ; 
+тоют N-INFL ; 
+обон N-INFL ; 
+бэт N-INFL ; 
+мээ N-INFL ; 
+буурчак N-INFL ; 
+калемпир N-INFL ; 
+бычак N-INFL ; 
+баланс N-INFL ; 
+билдирүү N-INFL ; 
+маалымат N-INFL ; 
+билерман N-INFL ; 
+компютер N-INFL ; 
+имарат N-INFL ; 
+мүчөө N-INFL ; 
+бирикме N-INFL ; 
+белосипед N-INFL ; 
+шайтан% араба N-INFL ; 
+бит N-INFL ; 
+өсүмдүк N-INFL ; 
+биография N-INFL ; 
+бөйрөк N-INFL ; 
+курт N-INFL ; 
+подвал N-INFL ; 
+кекиртек N-INFL ; 
+аймак N-INFL ; 
+карыз N-INFL ; 
+чот% кара N-INFL ; 
+түтүк N-INFL ; 
+таяк N-INFL ; 
+бойек N-INFL ; 
+бой N-INFL ; 
+мүйүз N-INFL ; 
+өлчөм N-INFL ; 
+тармак N-INFL ; 
+бронз N-INFL ; 
+брошюра N-INFL ; 
+буудай N-INFL ; 
+буу N-INFL ; 
+булут N-INFL ; 
+бул% жак N-INFL ; 
+жылдыз N-INFL ; 
+бюрократия N-INFL ; 
+стипендия N-INFL ; 
+мурун N-INFL ; 
+шуру N-INFL ; 
+бут N-INFL ; 
+бюджет N-INFL ; 
+сыйкыр N-INFL ; 
+лупа N-INFL ; 
+чаба N-INFL ; 
+көчө N-INFL ; 
+жескемпир N-INFL ; 
+чатыр N-INFL ; 
+заманбап N-INFL ; 
+чак N-INFL ; 
+элес N-INFL ; 
+шакал N-INFL ; 
+кир N-INFL ; 
+айнек N-INFL ; 
+карагай N-INFL ; 
+мечит N-INFL ; 
+баткак N-INFL ; 
+кесе N-INFL ; 
+ажыдаар N-INFL ; 
+жан N-INFL ; 
+желмогуз N-INFL ; 
+жан N-INFL ; 
+сумка N-INFL ; 
+диаметр N-INFL ; 
+чара N-INFL ; 
+чарык N-INFL ; 
+шейшеп N-INFL ; 
+базар N-INFL ; 
+агент N-INFL ; 
+вилка N-INFL ; 
+чай N-INFL ; 
+чайыр N-INFL ; 
+чайлак N-INFL ; 
+тартылуу N-INFL ; 
+сабатсыздык N-INFL ; 
+тозок N-INFL ; 
+тартуу N-INFL ; 
+сууругуч N-INFL ; 
+тартулуу N-INFL ; 
+данек N-INFL ; 
+тууракелбестик N-INFL ; 
+жамаат N-INFL ; 
+айлана N-INFL ; 
+жаак N-INFL ; 
+майдан N-INFL ; 
+сквозняк N-INFL ; 
+семичка N-INFL ; 
+хирург N-INFL ; 
+эрдик N-INFL ; 
+түр N-INFL ; 
+эр N-INFL ; 
+сызгыч N-INFL ; 
+каухар N-INFL ; 
+сталь N-INFL ; 
+жангак N-INFL ; 
+котормо N-INFL ; 
+элик N-INFL ; 
+чейрек N-INFL ; 
+жаза N-INFL ; 
+сыздоок N-INFL ; 
+гүл N-INFL ; 
+токтоо N-INFL ; 
+фермер N-INFL ; 
+боор N-INFL ; 
+күрткү N-INFL ; 
+дүйнө N-INFL ; 
+жихад N-INFL ; 
+чыгуу N-INFL ; 
+лак N-INFL ; 
+кулпунай N-INFL ; 
+том N-INFL ; 
+цемент N-INFL ; 
+жин N-INFL ; 
+чыны N-INFL ; 
+күкүрт N-INFL ; 
+жиндилик N-INFL ; 
+жыныс N-INFL ; 
+жыңалач N-INFL ; 
+чырак N-INFL ; 
+нерсе N-INFL ; 
+жак N-INFL ; 
+чийин N-INFL ; 
+көптүк N-INFL ; 
+көпчүлүк N-INFL ; 
+чыбык N-INFL ; 
+жоомарт N-INFL ; 
+байпак N-INFL ; 
+шорпо N-INFL ; 
+эргежээл N-INFL ; 
+жума N-INFL ; 
+ишенби N-INFL ; 
+мүшөк N-INFL ; 
+капчык N-INFL ; 
+тоо N-INFL ; 
+дайыма N-INFL ; 
+батир N-INFL ; 
+мүнөт N-INFL ; 
+чумкугуч N-INFL ; 
+бутак N-INFL ; 
+тамыр N-INFL ; 
+күйө% бала N-INFL ; 
+из N-INFL ; 
+там N-INFL ; 
+кеңешчи N-INFL ; 
+тамчы N-INFL ; 
+бий N-INFL ; 
+сокку N-INFL ; 
+таарынган N-INFL ; 
+максат N-INFL ; 
+чакыруу N-INFL ; 
+добулбас N-INFL ; 
+таяк N-INFL ; 
+чыдам N-INFL ; 
+чыдамдуу N-INFL ; 
+жардамдашуу N-INFL ; 
+таз N-INFL ; 
+чоң% ата N-INFL ; 
+ушак N-INFL ; 
+жолу N-INFL ; 
+казына N-INFL ; 
+дептер N-INFL ; 
+башкача N-INFL ; 
+алмашуучу N-INFL ; 
+таяк N-INFL ; 
+коркунуч N-INFL ; 
+!чейин N-INFL ;  ! This is not a noun -JNW
+далаалат N-INFL ; 
+делегат N-INFL ; 
+жинди N-INFL ; 
+жыртык N-INFL ; 
+далил N-INFL ; 
+дельта N-INFL ; 
+демагогия N-INFL ; 
+дэм N-INFL ; 
+темир N-INFL ; 
+текшерүүчү N-INFL ; 
+експеримент N-INFL ; 
+тажрыйба N-INFL ; 
+тең% салмактуулук N-INFL ; 
+суунун% түбү N-INFL ; 
+деңиз N-INFL ; 
+теңдеме N-INFL ; 
+склад N-INFL ; 
+зилзала N-INFL ; 
+даража N-INFL ; 
+дарыя N-INFL ; 
+журнал N-INFL ; 
+тери N-INFL ; 
+класс N-INFL ; 
+дербиш N-INFL ; 
+оймо N-INFL ; 
+дастан N-INFL ; 
+колдоо N-INFL ; 
+уланды N-INFL ; 
+төө N-INFL ; 
+дөө N-INFL ; 
+бийлик N-INFL ; 
+ынкылаб N-INFL ; 
+фразеология N-INFL ; 
+көңүл N-INFL ; 
+дилбар N-INFL ; 
+тилек N-INFL ; 
+тил N-INFL ; 
+дин N-INFL ; 
+түп N-INFL ; 
+каршылык N-INFL ; 
+сытркары N-INFL ; 
+тиш N-INFL ; 
+диван N-INFL ; 
+диета N-INFL ; 
+тизгин N-INFL ; 
+тизе N-INFL ; 
+сериал N-INFL ; 
+табият N-INFL ; 
+табийгый N-INFL ; 
+төрөт N-INFL ; 
+тери N-INFL ; 
+шкаф N-INFL ; 
+долма N-INFL ; 
+помидор N-INFL ; 
+доор N-INFL ; 
+чоку N-INFL ; 
+дос N-INFL ; 
+валюта N-INFL ; 
+доза N-INFL ; 
+дуба N-INFL ; 
+ышкырык N-INFL ; 
+түтүн N-INFL ; 
+бекет N-INFL ; 
+акыбал N-INFL ; 
+душман N-INFL ; 
+ой N-INFL ; 
+дубал N-INFL ; 
+ой-толгоо N-INFL ; 
+билдирүү N-INFL ; 
+өлчөм N-INFL ; 
+сонсуз N-INFL ; 
+апенди N-INFL ; 
+миф N-INFL ; 
+егемендик N-INFL ; 
+ийилим N-INFL ; 
+таалим N-INFL ; 
+көңүл% ачуу N-INFL ; 
+машыгуу N-INFL ; 
+уста N-INFL ; 
+ээгин N-INFL ; 
+екмек N-INFL ; 
+екран N-INFL ; 
+ок N-INFL ; 
+бөксө N-INFL ; 
+кем N-INFL ; 
+кийим N-INFL ; 
+елчи N-INFL ; 
+колкаб N-INFL ; 
+кызматчы N-INFL ; 
+кол N-INFL ; 
+алмаз N-INFL ; 
+аманат N-INFL ; 
+эмгек N-INFL ; 
+ишенимдүү N-INFL ; 
+буйрук N-INFL ; 
+коопсуздук N-INFL ; 
+сарсанаа N-INFL ; 
+тоскоолдук N-INFL ; 
+эларалык N-INFL ; 
+интрига N-INFL ; 
+эр N-INFL ; 
+эркек N-INFL ; 
+азык N-INFL ; 
+атыр N-INFL ; 
+эшек N-INFL ; 
+эсен N-INFL ; 
+чыгарма N-INFL ; 
+түгөй N-INFL ; 
+ешик N-INFL ; 
+туткун N-INFL ; 
+тең N-INFL ; 
+көрүнүш N-INFL ; 
+каракчы N-INFL ; 
+ишмер N-INFL ; 
+анаша N-INFL ; 
+оокат N-INFL ; 
+эт N-INFL ; 
+этикетка N-INFL ; 
+айлана N-INFL ; 
+евалютсия N-INFL ; 
+иш N-INFL ; 
+кырсык N-INFL ; 
+сойку N-INFL ; 
+ардактуу N-INFL ; 
+айыпкер N-INFL ; 
+үлүш N-INFL ; 
+фамилия N-INFL ; 
+чычкан N-INFL ; 
+доор N-INFL ; 
+жыл N-INFL ; 
+жеңүүчү N-INFL ; 
+эсеп N-INFL ; 
+пайда N-INFL ; 
+курман N-INFL ; 
+балакет N-INFL ; 
+майып N-INFL ; 
+филасофия N-INFL ; 
+чырак N-INFL ; 
+фен N-INFL ; 
+өздүк N-INFL ; 
+паром N-INFL ; 
+булак N-INFL ; 
+бочка N-INFL ; 
+көчөт N-INFL ; 
+азаттык N-INFL ; 
+этиш N-INFL ; 
+кыймыл N-INFL ; 
+пикир N-INFL ; 
+аңгеме N-INFL ; 
+пил N-INFL ; 
+бүчүр N-INFL ; 
+битон N-INFL ; 
+качыш N-INFL ; 
+печка N-INFL ; 
+мүмкүнчүлүк N-INFL ; 
+бороон N-INFL ; 
+салют N-INFL ; 
+чек N-INFL ; 
+ыраазы N-INFL ; 
+грыжа N-INFL ; 
+фияско N-INFL ; 
+баа N-INFL ; 
+флирт N-INFL ; 
+жарманке N-INFL ; 
+күнөө N-INFL ; 
+ракета N-INFL ; 
+маанисиз N-INFL ; 
+туура% эмес N-INFL ; 
+кайгы N-INFL ; 
+премия N-INFL ; 
+жеңиш N-INFL ; 
+жеңүү N-INFL ; 
+кам N-INFL ; 
+официант N-INFL ; 
+максат N-INFL ; 
+аракет N-INFL ; 
+терс N-INFL ; 
+ардагер N-INFL ; 
+бооз N-INFL ; 
+түн N-INFL ; 
+уранды N-INFL ; 
+өткөн N-INFL ; 
+өтмөк N-INFL ; 
+келечек N-INFL ; 
+салт N-INFL ; 
+гелин N-INFL ; 
+киреше N-INFL ; 
+кэме N-INFL ; 
+жаш N-INFL ; 
+көрсөтмө N-INFL ; 
+жалпы N-INFL ; 
+чындык N-INFL ; 
+далил N-INFL ; 
+керек N-INFL ; 
+чыңалуу N-INFL ; 
+кийик N-INFL ; 
+саякатчы N-INFL ; 
+саякат N-INFL ; 
+саякат N-INFL ; 
+азык N-INFL ; 
+чыгым N-INFL ; 
+киреше N-INFL ; 
+гириш N-INFL ; 
+касса N-INFL ; 
+кийим N-INFL ; 
+курсак N-INFL ; 
+гөч N-INFL ; 
+гөчмөн N-INFL ; 
+гөчкөн N-INFL ; 
+төш N-INFL ; 
+асман N-INFL ; 
+көлөкө N-INFL ; 
+көл N-INFL ; 
+желек N-INFL ; 
+көңүл N-INFL ; 
+милдет N-INFL ; 
+адеп N-INFL ; 
+ой-пикир N-INFL ; 
+көрсөткүч N-INFL ; 
+тулку N-INFL ; 
+азил N-INFL ; 
+күзөтчү N-INFL ; 
+көз N-INFL ; 
+боз N-INFL ; 
+кык N-INFL ; 
+гүч N-INFL ; 
+роза N-INFL ; 
+бажы N-INFL ; 
+күмүш N-INFL ; 
+күнөө N-INFL ; 
+заманбап N-INFL ; 
+күн N-INFL ; 
+күрөш N-INFL ; 
+топ N-INFL ; 
+намыс N-INFL ; 
+көгүчкөн N-INFL ; 
+ажы N-INFL ; 
+көлөм N-INFL ; 
+чек N-INFL ; 
+хадис N-INFL ; 
+эс% тутум N-INFL ; 
+апта N-INFL ; 
+хахам N-INFL ; 
+хан N-INFL ; 
+калыс N-INFL ; 
+сот N-INFL ; 
+акы N-INFL ; 
+акыйкат N-INFL ; 
+дарыгер N-INFL ; 
+дарыгерчилик N-INFL ; 
+башчы N-INFL ; 
+акыбал N-INFL ; 
+халифа N-INFL ; 
+чөйрө N-INFL ; 
+штанга N-INFL ; 
+мончо N-INFL ; 
+атырылуу N-INFL ; 
+уранды N-INFL ; 
+камыр N-INFL ; 
+канжар N-INFL ; 
+хандык N-INFL ; 
+гараж N-INFL ; 
+аял N-INFL ; 
+даары N-INFL ; 
+абак% кана N-INFL ; 
+абак N-INFL ; 
+уранды N-INFL ; 
+салык N-INFL ; 
+синегог N-INFL ; 
+каржы N-INFL ; 
+тышкары N-INFL ; 
+бөлүнгөн N-INFL ; 
+мыкты N-INFL ; 
+согуш N-INFL ; 
+кара% куурай N-INFL ; 
+чий N-INFL ; 
+кылдаттык N-INFL ; 
+ката N-INFL ; 
+линия N-INFL ; 
+хатип N-INFL ; 
+көңүл N-INFL ; 
+абаа N-INFL ; 
+сабиз N-INFL ; 
+кыял N-INFL ; 
+жашоо N-INFL ; 
+каракчы N-INFL ; 
+таң N-INFL ; 
+ибадат N-INFL ; 
+байланыштуу N-INFL ; 
+муктаждык N-INFL ; 
+ойлоп% табуу N-INFL ; 
+уруксат N-INFL ; 
+ичкилик N-INFL ; 
+мазмуун N-INFL ; 
+ички N-INFL ; 
+иш% аракет N-INFL ; 
+аткаруу N-INFL ; 
+асуу N-INFL ; 
+башкаруу N-INFL ; 
+идари N-INFL ; 
+ырастоо N-INFL ; 
+машыгуу N-INFL ; 
+идирек N-INFL ; 
+тушундуруу N-INFL ; 
+сыр% ачуу N-INFL ; 
+жалаа N-INFL ; 
+ийне N-INFL ; 
+саткындык N-INFL ; 
+соз% ташуу N-INFL ; 
+бузуу N-INFL ; 
+шалаакылык N-INFL ; 
+експорт N-INFL ; 
+эскертүү N-INFL ; 
+келбет N-INFL ; 
+этият N-INFL ; 
+оорун% элөө N-INFL ; 
+оорун N-INFL ; 
+кабар N-INFL ; 
+климат N-INFL ; 
+көндүрүү N-INFL ; 
+сый N-INFL ; 
+бийлик N-INFL ; 
+даары N-INFL ; 
+теңир N-INFL ; 
+теология N-INFL ; 
+кулактандыруу N-INFL ; 
+кошумча N-INFL ; 
+байланыш N-INFL ; 
+алака N-INFL ; 
+кызык N-INFL ; 
+илхом N-INFL ; 
+облас N-INFL ; 
+жармашкан N-INFL ; 
+катнаш N-INFL ; 
+өлкө N-INFL ; 
+илмек N-INFL ; 
+карамак N-INFL ; 
+имам N-INFL ; 
+жардам N-INFL ; 
+мүмкүнчүлүк N-INFL ; 
+ишеним N-INFL ; 
+өжөрлүк N-INFL ; 
+анжир N-INFL ; 
+арзандатуу N-INFL ; 
+уй N-INFL ; 
+өкүм N-INFL ; 
+иин N-INFL ; 
+тануу N-INFL ; 
+курулуш N-INFL ; 
+куруу N-INFL ; 
+инсан N-INFL ; 
+киши N-INFL ; 
+өзүн% өлтүрүү N-INFL ; 
+өч N-INFL ; 
+жибек N-INFL ; 
+жип N-INFL ; 
+ипотека N-INFL ; 
+жокко% чыгаруу N-INFL ; 
+эрк N-INFL ; 
+улут N-INFL ; 
+карым% катнаш N-INFL ; 
+бийиктик N-INFL ; 
+ар N-INFL ; 
+дал% кэлүү N-INFL ; 
+ишчи N-INFL ; 
+басып% алуу N-INFL ; 
+сезим N-INFL ; 
+жарык N-INFL ; 
+ысым N-INFL ; 
+жайгаштыруу N-INFL ; 
+скелет N-INFL ; 
+кыйноо N-INFL ; 
+далил N-INFL ; 
+ысрап N-INFL ; 
+каало N-INFL ; 
+отставка N-INFL ; 
+истиклал N-INFL ; 
+туруктуулук N-INFL ; 
+эс% алуу N-INFL ; 
+кеңеш N-INFL ; 
+баш% көтөрүү N-INFL ; 
+баш% ийүү N-INFL ; 
+өрт% өчүргүч N-INFL ; 
+сураныч N-INFL ; 
+етибар N-INFL ; 
+мойнуна% алуу N-INFL ; 
+биригүү N-INFL ; 
+уруксаат N-INFL ; 
+көрүнүш N-INFL ; 
+пучок N-INFL ; 
+жест N-INFL ; 
+реактивдүү N-INFL ; 
+терек N-INFL ; 
+азык% түлүк N-INFL ; 
+бир% канча N-INFL ; 
+жүзү% кара N-INFL ; 
+кимдир% бирөө N-INFL ; 
+кимдир% бирөөсү N-INFL ; 
+кол% чабуу N-INFL ; 
+миң% башы N-INFL ; 
+сормо% саз N-INFL ; 
+тиги% дүйнө N-INFL ; 
+эси% жок N-INFL ; 
+ак% сөөк N-INFL ; 
+парта N-INFL ; 
+кино N-INFL ; 
+терезе N-INFL ; 
+жүзүм N-INFL ; ! "grape"
+кулун N-INFL ; 
+кагаз N-INFL ; 
+өрт N-INFL ; 
+орус N-INFL ;
+повесть N-INFL ;
+писатель N-INFL ;
+айыл N-INFL ;
+союз N-INFL ;
+жазуучу N-INFL ;
+поэма N-INFL ;
+мүчө N-INFL ;
+түрк N-INFL ;
+тарап N-INFL ;
+тил N-INFL ;
+ич N-INFL ;
+кыргыз N-INFL ;
+орун N-INFL ;
+тоо N-INFL ;
+ардак N-INFL ;
+өз N-INFL ;
+гезит N-INFL ;
+казак N-INFL ;
+катар N-INFL ;
+негиз N-INFL ;
+маданият N-INFL ;
+мисал N-INFL ;
+тил N-INFL ;
+маани N-INFL ;
+кытай N-INFL ;
+сын N-INFL ;
+облус N-INFL ;
+бөлүм N-INFL ;
+институт N-INFL ;
+өнөр N-INFL ;
+интернет N-INFL ;
+өмүр N-INFL ;
+кабарчы N-INFL ;
+дан N-INFL ;
+чыгармачылык N-INFL ;
+кесип N-INFL ;
+катчы N-INFL ;
+илим N-INFL ;
+жетекчи N-INFL ;
+кыл N-INFL ;
+дан N-INFL ;
+калып N-INFL ;
+орто N-INFL ;
+салым N-INFL;
+орден N-INFL ;
+өзбек N-INFL ;
+жумушчу N-INFL ;
+аталыш N-INFL ;
+араб N-INFL ;
+журналист N-INFL ;
+грек N-INFL ;
+кан N-INFL ;
+мусулман N-INFL ;
+ислам N-INFL ;
+жомок N-INFL ;
+каза N-INFL ;
+окуу N-INFL ;
+совет N-INFL ; ! "Soviet"
+жыйнак N-INFL;
+жылдык N-INFL ;
+орунбасар N-INFL ;
+орун% басар N-INFL ;
+таала N-INFL ;
+баатыр N-INFL ;
+май N-INFL ;
+грамота N-INFL ;
+манасчы N-INFL ;
+профессор N-INFL ;
+окумуштуу N-INFL ;
+ырчы N-INFL ;
+окуучу N-INFL ;
+окутуучу N-INFL ;
+энциклопедия N-INFL ;
+история N-INFL ;
+түркология N-INFL ;
+антропология N-INFL ;
+фумигация N-INFL ;
+репрессия N-INFL ;
+кез N-INFL ;
+кыштак N-INFL ;
+котормочу N-INFL ;
+журналистика N-INFL ;
+маек N-INFL ;
+сөздүк N-INFL ;
+түр N-INFL ;
+уч N-INFL ; ! "tip, point"
+жооптуу N-INFL ;
+даярдоо N-INFL ;
+иштөө N-INFL ;
+жарыя N-INFL ;
+сактоо N-INFL ;
+орун%<n%>%<nom%>%<cmpd%>%+басар:орун% басар N-INFL ;
+чейинки N-INFL ; 
+
+LEXICON PropernounStems
+
+Баласагын NP-TOP ;
+Киров NP-TOP ;
+Якутия NP-TOP ;
+Жапония NP-TOP ;
+Грузия NP-TOP ;
+Византия NP-TOP ;
+София NP-TOP ;
+Евразия NP-TOP ;
+Орусия NP-TOP ;
+Орусия:Россия NP-TOP ; ! Dir/LR
+Москва NP-TOP ;
+Монголия NP-TOP ;
+Германия NP-TOP ;
+Ташкент NP-TOP ;
+Ирландия NP-TOP ;
+Италия NP-TOP ;
+Испания NP-TOP ;
+Исландия NP-TOP ;
+Израиль NP-TOP ;
+Иордания NP-TOP ;
+Улуу% Британия NP-TOP ;
+Баткен NP-TOP ;
+Фергана NP-TOP ;
+Түркия NP-TOP ;
+Кытай NP-TOP ;
+Токтогул NP-TOP ;
+Чүй NP-TOP ;
+Талас NP-TOP ;
+Ош NP-TOP ;
+Нарын NP-TOP ;
+Фрунзе NP-TOP ;
+СССР NP-TOP ;
+
+Кыргыз% ССР NP-TOP-ASSR ;
+Кыргыз% АССР NP-TOP-ASSR ;
+Туркестан% АССР NP-TOP-ASSR ; ! ""
+Казак% АССР NP-TOP-ASSR ; ! ""
+Өзбек% ССР NP-TOP-ASSR ; ! ""
+Украина% ССР NP-TOP-ASSR ; ! ""
+Тажик% ССР NP-TOP-ASSR ; ! ""
+Татар% АССР NP-TOP-ASSR ; ! ""
+Каракалпак% АССР NP-TOP-ASSR ; ! ""
+
+Aзирейил NP-TOP ; ! ""
+Tеңир NP-TOP ; ! ""
+Адам NP-TOP ; ! ""
+Алла NP-TOP ; ! ""
+Арктика NP-TOP ; ! ""
+Кудай NP-TOP ; ! ""
+Кызыл% Ай NP-TOP ; ! ""
+Кызыр NP-TOP ; ! ""
+Марс NP-TOP ; ! ""
+Нептун NP-TOP ; ! ""
+Сатурн NP-TOP ; ! ""
+Тоорат NP-TOP ; ! ""
+Уран NP-TOP ; ! ""
+Юпитер NP-TOP ; ! ""
+Абхазия NP-TOP ; ! ""
+Австралия NP-TOP ; ! ""
+Австрия NP-TOP ; ! ""
+Азербайжан NP-TOP ; ! ""
+Америка NP-TOP ; ! ""
+Амстердам NP-TOP ; ! ""
+Англия NP-TOP ; ! ""
+Ангола NP-TOP ; ! ""
+Анкара NP-TOP ; ! ""
+Антарктида NP-TOP ; ! ""
+Антарктика NP-TOP ; ! ""
+Арабистан NP-TOP ; ! ""
+Армения NP-TOP ; ! ""
+Атланта NP-TOP ; ! ""
+Афганистан NP-TOP ; ! ""
+Африка NP-TOP ; ! ""
+Багдад NP-TOP ; ! ""
+Баку NP-TOP ; ! ""
+Бангладеш NP-TOP ; ! ""
+Барселона NP-TOP ; ! ""
+Басра NP-TOP ; ! ""
+Бейрут NP-TOP ; ! ""
+Белгия NP-TOP ; ! ""
+Белград NP-TOP ; ! ""
+Берлин NP-TOP ; ! ""
+Бишкек NP-TOP ; ! ""
+Болгария NP-TOP ; ! ""
+Боливия NP-TOP ; ! ""
+Бразилия NP-TOP ; ! ""
+Брюселъ NP-TOP ; ! ""
+Будапешт NP-TOP ; ! ""
+Бухарест NP-TOP ; ! ""
+Габон NP-TOP ; ! ""
+Гамбург NP-TOP ; ! ""
+Гана NP-TOP ; ! ""
+Гватемала NP-TOP ; ! ""
+Голландия NP-TOP ; ! ""
+Гондурас NP-TOP ; ! ""
+Дания NP-TOP ; ! ""
+Дубай NP-TOP ; ! ""
+Дусселъдорф NP-TOP ; ! ""
+Европа NP-TOP ; ! ""
+Ереван NP-TOP ; ! ""
+Жакарта NP-TOP ; ! ""
+Израил NP-TOP ; ! ""
+Индия NP-TOP ; ! ""
+Индонезия NP-TOP ; ! ""
+Ирак NP-TOP ; ! ""
+Иран NP-TOP ; ! ""
+Истанбул NP-TOP ; ! ""
+Казакстан NP-TOP ; ! ""
+Казакстан NP-TOP ; ! "Kazakhstan"
+Камерун NP-TOP ; ! ""
+Канада NP-TOP ; ! ""
+Кеня NP-TOP ; ! ""
+Керкүк NP-TOP ; ! ""
+Кипр NP-TOP ; ! ""
+Колън NP-TOP ; ! ""
+Конго NP-TOP ; ! ""
+Копенгаген NP-TOP ; ! ""
+Куба NP-TOP ; ! ""
+Кыргызстан NP-TOP ; ! ""
+Кыргызстан NP-TOP ; ! "Kyrgyzstan"
+Латвия NP-TOP ; ! ""
+Либия NP-TOP ; ! ""
+Лиссабон NP-TOP ; ! ""
+Литва NP-TOP ; ! ""
+Люксембург NP-TOP ; ! ""
+Мадагаскар NP-TOP ; ! ""
+Мадагаскар NP-TOP ; ! "Madagascar"
+Мадрид NP-TOP ; ! ""
+Малазия NP-TOP ; ! ""
+Малъта NP-TOP ; ! ""
+Манхеттен NP-TOP ; ! ""
+Мезопотамия NP-TOP ; ! ""
+Мексика NP-TOP ; ! ""
+Татарстан NP-TOP ; ! "Tatarstan"
+Финландия NP-TOP ; ! ""
+Франкфурт NP-TOP ; ! ""
+Франция NP-TOP ; ! ""
+Хелсинки NP-TOP ; ! ""
+Хорватия NP-TOP ; ! ""
+Черногория NP-TOP ; ! ""
+Чехословакия NP-TOP ; ! ""
+Чеченистан NP-TOP ; ! ""
+!Экватор NP-TOP ; ! ""
+!Эрбил NP-TOP ; ! ""
+!Эфиопия NP-TOP ; ! ""
+!Эфиопия NP-TOP ; ! ""
+Япония NP-TOP ; ! ""
+Өзбекстан NP-TOP ; ! "Uzbekistan"
+Азия NP-TOP ; ! "Asia"
+Чоң% Алай NP-TOP ; ! ""
+Ташкент NP-TOP ;
+Жалал% Абад NP-TOP ;
+
+Кыргызмамбас NP-ORG ; ! ""
+Киргизгосиздат NP-ORG ; ! "" (ru)
+Ленинчил NP-ORG ; ! "" 
+Кыргызокуупедмамбас NP-ORG ; ! "Kyrgyz Pedagogical State Press"
+
+Бишкек NP-TOP ; ! "Bishkek"
+Лондон NP-TOP ; ! "London"
+Ысык% Көл NP-TOP ; ! ""
+
+Ахмет NP-ANT-M ; ! "Axmet"
+Мирлан NP-ANT-M ; ! "Mirlan"
+Болот NP-ANT-M ; ! "Bolot"
+Керим NP-ANT-M ;
+Мухаммед NP-ANT-M ;
+!Элеонора NP-ANT-F ; ! "Eleanora"
+Манас NP-ANT-M ;
+Ардак NP-ANT-M ;
+
+Мария NP-ANT-F ; ! "Marija"
+Юлия NP-ANT-F ; ! "Julija"
+София NP-ANT-F ; ! "Sofija"
+
+Ленин NP-COG-MF ; ! "Lenin"
+Ашым NP-ANT-M ; ! ""
+Фрунзе NP-COG-MF ; ! "Frunze"
+Айтматов NP-COG-MF ; ! ""
+Орокчиев NP-COG-MF ; ! ""
+Абдрахманов NP-COG-MF ; ! ""
+Абдумомунов NP-COG-MF ; ! ""
+Абдуразаков NP-COG-MF ; ! ""
+Абдыкадыров NP-COG-MF ; ! ""
+Абдыкалыков NP-COG-MF ; ! ""
+Абдырахманов NP-COG-MF ; ! ""
+Айдаров NP-COG-MF ; ! ""
+Айтматов NP-COG-MF ; ! ""
+Акматов NP-COG-MF ; ! ""
+Актанов NP-COG-MF ; ! ""
+Акунов NP-COG-MF ; ! ""
+Алагушов NP-COG-MF ; ! ""
+Алмамбетов NP-COG-MF ; ! ""
+Алымкулов NP-COG-MF ; ! ""
+Аристов NP-COG-MF ; ! ""
+Асанов NP-COG-MF ; ! ""
+Ауэзов NP-COG-MF ; ! ""
+Байжигитов NP-COG-MF ; ! ""
+Байзаков NP-COG-MF ; ! ""
+Байтемиров NP-COG-MF ; ! ""
+Бактыгулов NP-COG-MF ; ! ""
+Батырканов NP-COG-MF ; ! ""
+Баялинов NP-COG-MF ; ! ""
+Бектенов NP-COG-MF ; ! ""
+Белеков NP-COG-MF ; ! ""
+Валиханов NP-COG-MF ; ! ""
+Гамзатов NP-COG-MF ; ! ""
+Гилязетдинов NP-COG-MF ; ! ""
+Дооров NP-COG-MF ; ! ""
+Жакшылыков NP-COG-MF ; ! ""
+Жакыпбеков NP-COG-MF ; ! ""
+Жакыпов NP-COG-MF ; ! ""
+Жапаров NP-COG-MF ; ! ""
+Жигитов NP-COG-MF ; ! ""
+Жирков NP-COG-MF ; ! ""
+Жумагулов NP-COG-MF ; ! ""
+Жумакматов NP-COG-MF ; ! ""
+Жунусов NP-COG-MF ; ! ""
+Жусупов NP-COG-MF ; ! ""
+Жээнбеков NP-COG-MF ; ! ""
+Ибраимов NP-COG-MF ; ! ""
+Иванов NP-COG-MF ; ! ""
+Исаков NP-COG-MF ; ! ""
+Кадыров NP-COG-MF ; ! ""
+Каназаров NP-COG-MF ; ! ""
+Карагулов NP-COG-MF ; ! ""
+Каримов NP-COG-MF ; ! ""
+Касымбеков NP-COG-MF ; ! ""
+киргизов NP-COG-MF ; ! ""
+Киров NP-COG-MF ; ! ""
+Көбөнов NP-COG-MF ; ! ""
+Кожобеков NP-COG-MF ; ! ""
+Кудайбергенов NP-COG-MF ; ! ""
+Куров NP-COG-MF ; ! ""
+Күрүчбеков NP-COG-MF ; ! ""
+Лермонтов NP-COG-MF ; ! ""
+Ломоносов NP-COG-MF ; ! ""
+Макешов NP-COG-MF ; ! ""
+Маликов NP-COG-MF ; ! ""
+Мамбетов NP-COG-MF ; ! ""
+Мамытов NP-COG-MF ; ! ""
+Меньшиков NP-COG-MF ; ! ""
+Мифтаков NP-COG-MF ; ! ""
+Молдобасанов NP-COG-MF ; ! ""
+Молдокасымов NP-COG-MF ; ! ""
+Нааматов NP-COG-MF ; ! ""
+народов NP-COG-MF ; ! ""
+Ниязов NP-COG-MF ; ! ""
+Өмүрбеков NP-COG-MF ; ! ""
+Өмүрзаков NP-COG-MF ; ! ""
+Орозобеков NP-COG-MF ; ! ""
+Орозов NP-COG-MF ; ! ""
+Осмонкулов NP-COG-MF ; ! ""
+Осмонов NP-COG-MF ; ! ""
+Панфилов NP-COG-MF ; ! ""
+Петров NP-COG-MF ; ! ""
+Прозоров NP-COG-MF ; ! ""
+Радлов NP-COG-MF ; ! ""
+Раззаков NP-COG-MF ; ! ""
+Рыскулов NP-COG-MF ; ! ""
+Садыков NP-COG-MF ; ! ""
+Самаганов NP-COG-MF ; ! ""
+Сатылганов NP-COG-MF ; ! ""
+Сулайманов NP-COG-MF ; ! ""
+Султанов NP-COG-MF ; ! ""
+Сыдыкбеков NP-COG-MF ; ! ""
+Сыдыков NP-COG-MF ; ! ""
+Таштемиров NP-COG-MF ; ! ""
+Токтогулов NP-COG-MF ; ! ""
+Төрөбеков NP-COG-MF ; ! ""
+Турсунов NP-COG-MF ; ! ""
+Турусбеков NP-COG-MF ; ! ""
+Тыныбеков NP-COG-MF ; ! ""
+Тыныстанов NP-COG-MF ; ! ""
+Удалов NP-COG-MF ; ! ""
+Урмамбетов NP-COG-MF ; ! ""
+Урманбетов NP-COG-MF ; ! ""
+Урстанбеков NP-COG-MF ; ! ""
+Урустанбеков NP-COG-MF ; ! ""
+Усманов NP-COG-MF ; ! ""
+Усубакунов NP-COG-MF ; ! ""
+Халидов NP-COG-MF ; ! ""
+Хасанов NP-COG-MF ; ! ""
+Худяков NP-COG-MF ; ! ""
+Чехов NP-COG-MF ; ! ""
+Чокморов NP-COG-MF ; ! ""
+Шабданов NP-COG-MF ; ! ""
+Шайбеков NP-COG-MF ; ! ""
+Шеркулов NP-COG-MF ; ! ""
+Шүкүрбеков NP-COG-MF ; ! ""
+Шүкүров NP-COG-MF ; ! ""
+Эрматов NP-COG-MF ; ! ""
+Эшмамбетов NP-COG-MF ; ! ""
+Эшматов NP-COG-MF ; ! ""
+
+
+LEXICON AdjecStems
+
+алгачкы ADJ-ORD ; ! "first"
+экинчи ADJ-ORD ; ! "second"
+ушундай ADJ ;
+
+зор ADJ ;
+чейинки ADJ ;
+түз ADJ ;
+чакан ADJ ;
+улук ADJ ;
+ири ADJ ;
+расмий ADJ ;
+таза ADJ ;
+майда ADJ ;
+ыйык ADJ ;
+жогору ADJ ;
+маданий ADJ ;
+чет ADJ ;
+начар ADJ ;
+диний ADJ ;
+табигый ADJ ;
+орусча ADJ ;
+татыктуу ADJ ;
+кесиптик ADJ ;
+азыркы ADJ ; ! "modern"
+элдик ADJ ; ! "people's"
+башкы ADJ ; ! "principle 
+ылайык ADJ ; ! "appropriate"
+борбордук ADJ ; ! "central"
+улуттук ADJ ; ! "national"
+жогорку ADJ ; ! "high" (as in жогорку кеңеш "high council")
+коомдук ADJ ; ! "societal" < коом "society" + лук noun>ADJ
+саясий ADJ ; ! "political"
+зарыл ADJ ; ! "mandatory"
+көркөм ADJ ; ! "fine" (as in "fine arts")
+тарыхый ADJ ; ! "historical"
+байыркы ADJ ; ! "ancient"
+социалдык ADJ ; ! "social"
+советтик ADJ ; ! "Soviet"
+педагогикалык ADJ ; ! pedagogical
+караштуу  ADJ ! ; with dative case "belonging to"
+маанилүү ADJ ; ! "meaningful 
+мекендик ADJ ; ! usually in "ата мекендик [e.g. согуш]" = "the fatherland [e.g. war]"
+облустук ADJ ; ! "oblast [e.g., hospital]"
+жеке ADJ ; ! "personal"
+туулган ADJ ; ! "native"
+райондук ADJ ; ! "regional" (not "regional")
+республикалык ADJ ; ! "republic [e.g., hospital]"
+экономикалык ADJ ; ! ""
+макроэкономикалык ADJ ; ! ""
+техникалык ADJ ; ! "technical"
+политехникалык ADJ ; ! "polytechnic"
+материалдык ADJ ; ! ""
+радиотехникалык ADJ ; ! ""
+музыкалык ADJ ; ! ""
+хореографиялык ADJ ! ""
+энциклопедиялык ADJ ! ""
+
+чыныгы ADJ ; 
+совет ADJ ;  ! "Soviet"
+ысык ADJ ; ! "hot"
+кыргыз ADJ ; ! "Kyrgyz"
+сулуу ADJ ; ! "beautiful"
+жаман ADJ ; ! "bad"
+сом ADJ ; ! "pure"
+кыз ADJ ; ! ""
+!эң ADJ ; ! "most"	
+илимий ADJ ;
+инсанча ADJ ; 
+казак ADJ ;  ! "Kazakh"
+кишиче ADJ ; 
+сулуу ADJ ; 
+кыз ADJ ; 
+кеңири ADJ ; 
+мол ADJ ; 
+бопбош ADJ ; 
+бош ADJ ; 
+бузук ADJ ; 
+топтоло ADJ ; 
+электроникалык ADJ ; 
+эротикалык ADJ ; 
+этникалык ADJ ; 
+ийри ADJ ; 
+фантастикалык ADJ ; 
+федералдык ADJ ; 
+федеративдик ADJ ; 
+балакеттүү ADJ ; 
+функционалдык ADJ ; 
+байкоосуз ADJ ; 
+кетик ADJ ; 
+геометриялык ADJ ; 
+глобалдуу ADJ ; 
+идеологиялык ADJ ; 
+информациялык ADJ ; 
+ипичке ADJ ; 
+ичке ADJ ; 
+геологиялык ADJ ; 
+кургак ADJ ; 
+методикалык ADJ ; 
+мифологиялык ADJ ; 
+чарасыз ADJ ; 
+айласыз ADJ ; 
+объективдүү ADJ ; 
+ортопедиялык ADJ ; 
+автобиографиялык ADJ ; 
+авторитардык ADJ ; 
+ойноок ADJ ; 
+оюнкарак ADJ ; 
+пакиза ADJ ; 
+пассивдүү ADJ ; 
+патологиялык ADJ ; 
+бушайман ADJ ; 
+политехникалык ADJ ; 
+популярдуу ADJ ; 
+психологиялык ADJ ; 
+радиоактивдүү ADJ ; 
+рационалдуу ADJ ; 
+системалуу ADJ ; 
+кара ADJ ; 
+социологиялык ADJ ; 
+суук ADJ ; 
+муздак ADJ ; 
+спецификалуу ADJ ; 
+стилистикалык ADJ ; 
+стратегиялык ADJ ; 
+suyuk ADJ ; 
+субъективдүү ADJ ; 
+тантал ADJ ; 
+технологиялык ADJ ; 
+телескоптук ADJ ; 
+теориялык ADJ ; 
+титиреген ADJ ; 
+трагедиялык ADJ ; 
+тыртык ADJ ; 
+жалпак ADJ ; 
+жабышчаак ADJ ; 
+жыртык ADJ ; 
+залим ADJ ; 
+жаңы ADJ ; 
+ачык ADJ ; 
+ески ADJ ; 
+башка ADJ ; 
+бардыгы ADJ ; 
+чоң ADJ ; 
+бийик ADJ ; 
+жетиштүү ADJ ; 
+бүтүн ADJ ; 
+аскердик ADJ ; 
+орток ADJ ; 
+үнөмдүү ADJ ; 
+демократ ADJ ; 
+жоопкерчиликтүү ADJ ; 
+жакшы ADJ ; 
+жалгыз ADJ ; 
+толук ADJ ; 
+тиран ADJ ; 
+узун ADJ ; 
+социалдуу ADJ ; 
+даяр ADJ ; 
+жакын ADJ ; 
+тыш ADJ ; 
+улуу ADJ ; 
+абдан% жаман ADJ ; 
+кургак ADJ ; 
+түндүк ADJ ; 
+түштүк% чыгыш ADJ ; 
+башка ADJ ; 
+батыш ADJ ; 
+күчтүү ADJ ; 
+кичинекей ADJ ; 
+еч% бир ADJ ; 
+кээбир ADJ ; 
+орто ADJ ; 
+жат ADJ ; 
+кийинки ADJ ; 
+качкын ADJ ; 
+контрабанда ADJ ; 
+мурдагы ADJ ; 
+түрдүү ADJ ; 
+жалгыз ADJ ; 
+радикалдуу ADJ ; 
+мүмкүн ADJ ; 
+немис ADJ ; 
+техникалуу ADJ ; 
+туура ADJ ; 
+жаман ADJ ; 
+оор ADJ ; 
+кыйын ADJ ; 
+кенен ADJ ; 
+түштүк ADJ ; 
+кеч ADJ ; 
+жетиштүү ADJ ; 
+жашыруун ADJ ; 
+чыгыш ADJ ; 
+пенсионер ADJ ; 
+негизги ADJ ; 
+ич ADJ ; 
+оң ADJ ; 
+сак ADJ ; 
+коңшу ADJ ; 
+либералдуу ADJ ; 
+белгилүү ADJ ; 
+кошумча ADJ ; 
+катуу ADJ ; 
+жакын ADJ ; 
+оор ADJ ; 
+даяр ADJ ; 
+жергиликтүү ADJ ; 
+конститутсиялык ADJ ; 
+таасирдүү ADJ ; 
+тартыш ADJ ; 
+жаман ADJ ; 
+бүтүн ADJ ; 
+күмөндүү ADJ ; 
+еркек ADJ ; 
+мамлекеттик ADJ ; 
+белгилүү ADJ ; 
+көп ADJ ; 
+жашыл ADJ ; 
+ишин% билген ADJ ; 
+өлүк ADJ ; 
+бэк ADJ ; 
+койуу ADJ ; 
+алыс ADJ ; 
+туура% эмес ADJ ; 
+жасалма ADJ ; 
+жабык ADJ ; 
+жеңил ADJ ; 
+кооз ADJ ; 
+көк ADJ ; 
+саздуу ADJ ; 
+кызыл ADJ ; 
+таттуу ADJ ; 
+кең ADJ ; 
+сары ADJ ; 
+тоголок ADJ ; 
+соо ADJ ; 
+өзгөчө ADJ ; 
+аз ADJ ; 
+адабий ADJ ;
+жооптуу ADJ ;
+кыргызча ADJ ;
+
+азиялык ADJ ; ! ""
+академиялык ADJ ; ! ""
+антиколониялык ADJ ; ! ""
+археологиялык ADJ ; ! ""
+биологиялык ADJ ; ! ""
+географиялык ADJ ; ! ""
+дезинсекциялык ADJ ; ! ""
+демократиялык ADJ ; ! ""
+дипломатиялык ADJ ; ! ""
+диссертациялык ADJ ; ! ""
+индиялык ADJ ; ! ""
+италиялык ADJ ; ! ""
+конституциялык ADJ ; ! ""
+лабораториялык ADJ ; ! ""
+монархиялык ADJ ; ! ""
+орусиялык ADJ ; ! ""
+орфографиялык ADJ ; ! ""
+партиялык ADJ ; ! ""
+редакциялык ADJ ; ! ""
+россиялык ADJ ; ! ""
+симфониялык ADJ ; ! ""
+тарбиялык ADJ ; ! ""
+традициялык ADJ ; ! ""
+физиологиялык ADJ ; ! ""
+философиялык ADJ ; ! ""
+фиялык ADJ ; ! ""
+химиялык ADJ ; ! ""
+экологиялык ADJ ; ! ""
+энциклопедиялык ADJ ; ! ""
+этимологиялык ADJ ; ! ""
+этнографиялык ADJ ; ! ""
+
+
+LEXICON AdvStems
+
+эмнеге ADV-ITG ; ! "why"
+
+өтө ADV ; ! "very"
+мисалы ADV ; ! "for example"
+улам ADV ; ! "???"
+ 
+эртең ADV ; ! "tomorrow"
+эми ADV ; ! "now"
+бат ADV ; ! "fast"
+эң ADV ; ! "most"
+кээде ADV ; ! "sometimes"
+
+негизинде ADV ; ! "basically, in general"
+эртеси ADV ; 
+ошондуктан ADV ;  ! "that's why"
+өзүнчө ADV ;  ! "by oneself"
+көп ADV ; 
+жок ADV ; 
+ар% дайым ADV ; 
+кийин ADV ; 
+негизи ADV ; 
+дагы ADV ; 
+бирок ADV ; 
+кыскача ADV ; 
+мурда ADV ; 
+бирдикте ADV ; 
+каршы ADV ; 
+биринчи ADV ; 
+сырткары ADV ; 
+жаңыдан ADV ; 
+артка ADV ; 
+ашыкча ADV ; 
+ары ADV ; 
+жалгызча ADV ; 
+жана ADV ; 
+аз ADV ; 
+дагы ADV ; 
+илгери ADV ; 
+эрте ADV ; 
+соңунда ADV ; 
+бек ADV ; 
+кайрадан ADV ; 
+башы% башына ADV ; 
+азырынча ADV ; 
+болгону ADV ; 
+дагы% эле ADV ; 
+эми ADV ; 
+бери ADV ; 
+азыр ADV ; 
+дайыма ADV ; 
+толугу% менен ADV ; 
+андай ADV ; 
+мындай ADV ; 
+кеч ADV ; 
+дароо ADV ; 
+мурдатан ADV ; 
+кандай ADV ; 
+бери ADV ; 
+бат ADV ; 
+дароо ADV ; 
+эч ADV ; 
+такыр ADV ; 
+жылдардан% бери ADV ; 
+тез ADV ; 
+чынында ADV ; 
+чогуу ADV ; 
+жай ADV ; 
+жартылай ADV ; 
+тез ADV ; 
+дагы% эле ADV ; 
+көбүнчө ADV ; 
+кайакта ADV ; 
+азырынча ADV ; 
+кокустан ADV ; 
+жок ADV ; 
+ушундайча ADV ; 
+аз% да% болсо ADV ; 
+ыктымал ADV ; 
+балким ADV ; 
+ооба ADV ; 
+терсине ADV ; 
+абдан ADV ; 
+бүгүн ADV ; ! from pending list
+бираз ADV ; 
+ошентип ADV ; 
+баарыбир ADV ; 
+айлардан% бери ADV ; 
+башка ADV ; 
+жылдап ADV ; 
+айлап ADV ; 
+ылдый ADV ; 
+алыстан ADV ; 
+жогунда ADV ; 
+илгери ADV ; 
+жалгыз ADV ; 
+чогу ADV ; 
+кээде ADV ; 
+кийинчерээк ADV ; 
+сааттап ADV ; 
+өйдө ADV ; 
+жалгыз ADV ; 
+аябай ADV ; 
+тобу% менен ADV ; 
+башынан ADV ; 
+тескерисинче ADV ; 
+өзү ADV ; 
+чогуу ADV ; 
+кээбирөө ADV ; 
+көбүнчө ADV ; 
+чындыгында ADV ; 
+тез ADV ; 
+тезинен ADV ; 
+чынында ADV ; 
+канчалаган ADV ; 
+жооп% оордуна ADV ; 
+даражада ADV ; 
+досчо ADV ; 
+атайын ADV ; 
+тышкары ADV ; 
+мейли ADV ; 
+ошондой ADV ; 
+мурда ADV ; 
+караганда ADV ; 
+күндөп ADV ; 
+тереңине ADV ; 
+тездик% менен ADV ; 
+ичкери ADV ; 
+эмне% үчүн ADV ; 
+бардыгын ADV ; 
+тилеке% каршы ADV ; 
+алдында ADV ; 
+кечээ ADV ; 
+дайыма ADV ; 
+анда-санда ADV ; 
+мына ADV ; 
+күндөрдөн% бери ADV ; 
+кышында ADV ; 
+орой ADV ; 
+көрсө ADV ; 
+дээри ADV ; 
+чогуу ADV ; 
+сөзсүз ADV ; 
+кээбири ADV ; 
+түндөсү ADV ; 
+далай ADV ; 
+болоорунча ADV ; 
+өзүндөй ADV ; 
+барган% сайын ADV ; 
+көбүрөөк ADV ; 
+апачык ADV ; 
+ошондой ADV ; 
+эсе ADV ; 
+күндүзү ADV ; 
+кайра ADV ; 
+көп-көп ADV ; 
+туруптуруп ADV ; 
+анан ADV ;
+
+LEXICON VerbStems
+
+бар%<v%>%<exi%>:бар # ;
+жок%<v%>%<neg%>%<exi%>:жок # ;
+жок%<v%>%<neg%>%<exi%>:жок V-PERS-COP ;
+эмес%<v%>%<neg%>:эмес # ;
+эмес%<v%>%<neg%>:эмес V-PERS-PAST ;
+
+бол V-INFL-IV ; ! "be"
+чыгар V-INFL-TV ; ! "" 
+
+аарчы V-INFL-IV ;  ! ""
+аарчы V-INFL-TV ;  ! ""
+айлант V-INFL-TV ; ! "give headache"
+айт V-INFL-IV ; ! "tell"
+айт V-INFL-TV ; ! "tell"
+акса V-INFL-IV ; ! "limp"
+ас V-INFL-TV ; ! "hang"
+ат V-INFL-TV ; ! "shoot"
+ач V-INFL-TV ; ! "open"
+аш V-INFL-IV ; 
+бар V-INFL-IV ; ! "go"
+бил V-INFL-TV ; ! "know"
+де V-INFL-TV-SHORT ; ! "say"
+жат V-INFL-IV ; ! "come"
+же V-INFL-TV-SHORT ; ! "eat"
+жет V-INFL-IV ; 
+ич V-INFL-IV ; ! "drink"
+ич V-INFL-TV ; ! "drink"
+иште V-INFL-IV ;  ! "work"
+кел V-INFL-IV ; ! "come"
+кет V-INFL-IV ; ! "go"
+кой V-INFL-TV ; ! "put, place" 
+күл V-INFL-IV ; ! "smile, laugh"
+оку V-INFL-IV ; ! "read"
+оку V-INFL-TV ; ! "read"
+окшо V-INFL-IV ; ! "be similar to"
+саба V-INFL-TV ;  ! ""
+сүй V-INFL-TV ; ! "love"
+таң% ат V-INFL-TV ; ! "dawn"
+тур V-INFL-IV ; ! "stand, live"
+түздө V-INFL-TV ; ! ""
+ук V-INFL-IV ; ! "listen"
+ук V-INFL-TV ; ! "listen"
+укта V-INFL-IV ; ! "sleep"
+чий V-INFL-TV ; ! "draw a line"
+ач V-INFL-TV ; ! "open"
+бар V-INFL-TV ; ! "go"
+бил V-INFL-IV ; ! "know"
+
+
+отур V-INFL ; ! "sit"
+бар V-INFL ; 
+аракет% кыл V-INFL ; 
+арна V-INFL ; 
+аякта V-INFL ; 
+бак V-INFL ; 
+башта V-INFL ; 
+без V-INFL ; 
+бер V-INFL-TV ; 
+билдир V-INFL ; 
+билин V-INFL ; 
+боё V-INFL ; 
+буз V-INFL ; 
+бузул V-INFL ; 
+буйрук% бер V-INFL ; 
+була V-INFL ; 
+бурул V-INFL ; 
+бута V-INFL ; 
+буу V-INFL ; 
+буюр V-INFL ; 
+бырыштыр V-INFL ; 
+быч V-INFL ; 
+быш V-INFL ; 
+бүк V-INFL ; 
+бүктө V-INFL ; 
+бүт V-INFL-IV ; 
+бөл V-INFL ; 
+гий V-INFL ; 
+гэр V-INFL ; 
+дала V-INFL ; 
+даярда V-INFL ; 
+де V-INFL ; ! "say"
+елестет V-INFL ; 
+жаа V-INFL ; 
+жаз V-INFL-TV ; 
+жай V-INFL ; 
+жан V-INFL ; 
+жаркыра V-INFL ; 
+жарыл V-INFL ; 
+жаша V-INFL ; 
+же V-INFL ; ! "eat"
+жибер V-INFL ; 
+жинден V-INFL ; 
+жон V-INFL ; 
+жулмала V-INFL ; 
+жум V-INFL ; 
+жыгыл V-INFL ; 
+жый V-INFL ; 
+жыйнал V-INFL ; 
+жыйынтыкта V-INFL ; 
+жык V-INFL ; 
+жырт V-INFL ; 
+жытта V-INFL ; 
+жэ V-INFL ; 
+жэң V-INFL ; 
+жүктө V-INFL ; 
+илгериле V-INFL ; 
+кайнат V-INFL ; 
+кал V-INFL ; 
+кара V-INFL-IV ; 
+кара V-INFL-TV ;
+карма V-INFL ; 
+кары V-INFL ; 
+карышта V-INFL ; 
+кат V-INFL-TV ; 
+керек V-INFL ; 
+кес V-INFL ; 
+кеч V-INFL ; 
+кир V-INFL ; 
+кооздо V-INFL ; 
+корго V-INFL ; 
+кош V-INFL ; 
+кошомат% кыл V-INFL ; 
+коңурук% тарт V-INFL ; 
+кубала V-INFL ; 
+кула V-INFL ; 
+кулат V-INFL ; 
+кура V-INFL ; 
+кургат V-INFL ; 
+кучакта V-INFL ; 
+кый% ет V-INFL ; 
+кыйна V-INFL ; 
+кыл V-INFL-TV ; 
+кырк V-INFL ; 
+кыс V-INFL ; 
+күй V-INFL ; 
+күнөөлө V-INFL ; 
+көбөйт V-INFL ; 
+көр V-INFL ; 
+көрсөт V-INFL ; 
+макта V-INFL ; 
+мин V-INFL ; 
+мин V-INFL ; 
+муунт V-INFL ; 
+муунт V-INFL ; 
+мыйооло V-INFL ; 
+оз V-INFL ; 
+ойно V-INFL ; 
+окшош V-INFL ; 
+онто V-INFL ; 
+ор V-INFL ; 
+оро V-INFL ; 
+отто V-INFL ; 
+отур V-INFL ; ! "sit"
+пайда% кыл V-INFL ; 
+парала V-INFL ; 
+планда V-INFL ; 
+саба V-INFL ; 
+сагын V-INFL ; 
+сайра V-INFL ; 
+салаңда V-INFL ; 
+салкында V-INFL ; 
+сана V-INFL-TV ; 
+сез V-INFL ; 
+секир V-INFL ; 
+секир V-INFL ; 
+сик V-INFL ; 
+сиң V-INFL ; 
+сугар V-INFL ; 
+сун V-INFL ; 
+сура V-INFL ; 
+сыз V-INFL ; 
+сыйла V-INFL-TV ; 
+сыла V-INFL ; 
+сүз V-INFL ; 
+сүйлө V-INFL ; ! "speak"
+сүр V-INFL ; 
+тааныл V-INFL ; 
+таарын V-INFL ; 
+тажа V-INFL ; 
+талкала V-INFL ; 
+там V-INFL ; 
+тан% кал V-INFL ; 
+тап V-INFL ; 
+тартуула V-INFL ; 
+тартын V-INFL ; 
+ташы V-INFL ; 
+таң%кал V-INFL ; 
+теп V-INFL ; 
+терде V-INFL ; 
+теш V-INFL ; 
+тиз V-INFL ; 
+тик V-INFL ; 
+той V-INFL ; 
+токто V-INFL ; ! "stop" 
+тол V-INFL ; 
+толукта V-INFL ; 
+топто V-INFL ; 
+топтол V-INFL ; 
+тосуп% ал V-INFL ; 
+тоң V-INFL ; 
+тут V-INFL ; 
+түгөн V-INFL ; 
+түзүл V-INFL ; 
+түтө V-INFL ; 
+түш V-INFL ; 
+түш V-INFL ; 
+төк V-INFL ; 
+төлө V-INFL ; 
+узат V-INFL ; 
+ушала V-INFL ; 
+чак V-INFL ; 
+чакыр V-INFL ; 
+чал V-INFL ; 
+чарчат V-INFL ; 
+чач V-INFL ; 
+чеч V-INFL ; 
+чиймеле V-INFL ; 
+чумку V-INFL ; 
+чык V-INFL ; 
+чөк V-INFL ; 
+шайла V-INFL ; 
+шиши V-INFL ; 
+шүкүр% кыл V-INFL ; 
+ыйла V-INFL ; 
+эсте V-INFL ; 
+эш V-INFL ; 
+ээрчи% ет V-INFL ; 
+үйлө V-INFL ; 
+үр V-INFL ; 
+үрк V-INFL ; 
+өл V-INFL-IV ; 
+өлчө V-INFL ; 
+өр V-INFL ; 
+өрттө V-INFL ; 
+өч V-INFL ; 
+өчүр V-INFL ; 
+ал V-INFL-TV ;
+тарт V-INFL-IV ;
+жайгаш V-INFL-IV ;
+сиңир V-INFL ;
+ата V-INFL-TV ;
+котор V-INFL-TV ;
+эсепте V-INFL-TV ;
+жүр V-INFL-TV ;
+тааны V-INFL-TV ;
+бас V-INFL-IV ;
+өт V-INFL-TV ;
+колдон V-INFL-TV ;
+сал V-INFL-TV ;
+маектеш V-INFL ;
+жаса V-INFL-IV ;
+жарыяла V-INFL-TV ;
+түз V-INFL-IV ;
+белгиле V-INFL-TV ;
+катыш V-INFL ;
+тий V-INFL-TV ;
+сакта V-INFL-TV ;
+тый V-INFL ;
+жүргүз V-INFL ;
+кач V-INFL-IV ;
+кач V-INFL-TV ;
+көч V-INFL-IV ;
+ыйгар V-INFL ;
+
+LEXICON Abbreviations
+
+жж%. ABBR ;
+ж%. ABBR ;
+б%. ABBR ;
+ж%.б%. ABBR ; ! жана башка "etc."
+ж%.б%.:ж%.% б%. ABBR ; ! Dir/LR жана башка "etc."
+бб%. ABBR ; ! 
+б%.а%. ABBR ; ! башкача айтканда "in other words"
+б%.з%.ч%. ABBR ; ! биздин заманга чейинки "B.C.E."
+ж%.б%.у%.с%. ABBR ; ! жана башка ушул сыяктуу "and similar"
+№ ABBR ; 
+ISBN ABBR ; 
+
+LEXICON Interjections 
+
+aлбетте INTERJ ; ! "of course"
+
+LEXICON Punctuation
+
+.%<sent%>:. # ;
+%;%<sent%>:%; # ;
+%:%<sent%>:%: # ;
+%-%<guio%>:%- # ;
+,%<cm%>:, # ;
+%?%<sent%>:%? # ; 

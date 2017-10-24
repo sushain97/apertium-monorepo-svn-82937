@@ -1,0 +1,1540 @@
+Index: apertium/apertium_interchunk.cc
+===================================================================
+--- apertium/apertium_interchunk.cc	(revisión: 24177)
++++ apertium/apertium_interchunk.cc	(copia de trabajo)
+@@ -100,13 +100,14 @@
+     static struct option long_options[] =
+     {
+       {"null-flush", no_argument, 0, 'z'},
++      {"debug-rules", no_argument, 0, 'd'},
+       {"help", no_argument, 0, 'h'},
+       {0, 0, 0, 0}
+     };
+ 
+-    int c=getopt_long(argc, argv, "zh", long_options, &option_index);
++    int c=getopt_long(argc, argv, "zdh", long_options, &option_index);
+ #else
+-    int c=getopt(argc, argv, "zh");
++    int c=getopt(argc, argv, "zdh");
+ #endif
+     if (c == -1)
+       break;
+@@ -116,6 +117,10 @@
+       case 'z':
+         i.setNullFlush(true);
+         break;
++        
++       case 'd':
++      	i.setDebugRules(true);
++      	break;
+ 
+       case 'h':
+       default:
+Index: apertium/apertium_transfer.cc
+===================================================================
+--- apertium/apertium_transfer.cc	(revisión: 24177)
++++ apertium/apertium_transfer.cc	(copia de trabajo)
+@@ -110,13 +110,15 @@
+       {"extended",      required_argument, 0, 'x'},
+       {"case-sensitive", no_argument, 0, 'c'},
+       {"null-flush", no_argument, 0, 'z'},
++      {"debug-rules", no_argument, 0, 'd'},
++      {"rule-limits", no_arguments,0,'l'}
+       {"help", no_argument, 0, 'h'},
+       {0, 0, 0, 0}
+     };
+ 
+-    int c=getopt_long(argc, argv, "nx:czh", long_options, &option_index);
++    int c=getopt_long(argc, argv, "nx:czdlh", long_options, &option_index);
+ #else
+-    int c=getopt(argc, argv, "nx:czh");
++    int c=getopt(argc, argv, "nx:czdlh");
+ #endif
+     if (c==-1)
+       break;
+@@ -138,7 +140,15 @@
+       case 'z':
+         t.setNullFlush(true);
+         break;
++        
++      case 'd':
++      	t.setDebugRules(true);
++      	break;
+ 
++      case 'l':
++	t.setPrintRuleLimits(true);
++	break;
++
+       case 'h':
+       default:
+         message(argv[0]);
+Index: apertium/interchunk.cc
+===================================================================
+--- apertium/interchunk.cc	(revisión: 24177)
++++ apertium/interchunk.cc	(copia de trabajo)
+@@ -29,6 +29,7 @@
+ #include <apertium/string_utils.h>
+ #include "apertium_config.h"
+ #include <apertium/unlocked_cstdio.h>
++#include <sstream>
+ 
+ using namespace Apertium;
+ using namespace std;
+@@ -62,6 +63,8 @@
+   inword = false;
+   null_flush = false;
+   internal_null_flush = false;
++  debugRules=false;
++  debuginfo=L"";
+ }
+ 
+ Interchunk::~Interchunk()
+@@ -418,18 +421,103 @@
+ Interchunk::processChunk(xmlNode *localroot)
+ {
+   fputwc_unlocked(L'^', output);
++  if(debugRules)
++  	 debuginfo+=L"\\^";
+   
+   for(xmlNode *i = localroot->children; i != NULL; i = i->next)
+   {
+     if(i->type == XML_ELEMENT_NODE)
+     {
+-      fputws_unlocked(UtfConverter::fromUtf8(evalString(i)).c_str(), output);
++	  if(debugRules)
++	  {
++		  wstring outstr=UtfConverter::fromUtf8(evalString(i));
++		  
++		  wstring processedStr=L"";
++			wstring processedDebugStr=L"";
++			int prevPos=0,prevPosWithoutNumber=0;
++			int pos=outstr.find(L"_vmsanchez_debug_pos_",prevPos);
++			while(pos!=wstring::npos)
++			{
++				processedDebugStr+=outstr.substr(prevPos,pos-prevPos);
++				processedStr+=outstr.substr(prevPosWithoutNumber,pos-prevPosWithoutNumber);
++				prevPosWithoutNumber=outstr.find(L"-",pos)+1;
++
++				prevPos=pos+21;
++				pos=outstr.find(L"_vmsanchez_debug_pos_",prevPos);
++			}
++			processedStr+=outstr.substr(prevPosWithoutNumber);
++			processedDebugStr+=outstr.substr(prevPos);
++			
++			fputws_unlocked(processedStr.c_str(), output);
++            debuginfo+=escapeDebugInfo(processedDebugStr);
++             
++  	  }
++  	  else
++  	  {
++  	  	fputws_unlocked(UtfConverter::fromUtf8(evalString(i)).c_str(), output);
++	  }
+     }      
+   }
+   
+   fputwc_unlocked(L'$', output);
++  if(debugRules)
++  	 debuginfo+=L"\\$";
+ }
+ 
++std::wstring Interchunk::escapeDebugInfo(std::wstring &inputStr)
++{
++	std::wstring processedDebugStr(inputStr);
++	int dpos;
++	dpos=processedDebugStr.find(L"$ ^");
++	while(dpos!=wstring::npos)
++	{
++			processedDebugStr.replace(dpos,3,L"\\$ \\^");
++			dpos=processedDebugStr.find(L"$ ^",dpos+3);
++	}
++	dpos=processedDebugStr.find(L"$  ^");
++        while(dpos!=wstring::npos)
++        {
++                        processedDebugStr.replace(dpos,4,L"\\$ \\^");
++                        dpos=processedDebugStr.find(L"$  ^",dpos+4);
++        }	
++	dpos=processedDebugStr.find(L"$^");
++	while(dpos!=wstring::npos)
++	{
++			processedDebugStr.replace(dpos,2,L"\\$\\^");
++			dpos=processedDebugStr.find(L"$^",dpos+2);
++	}
++	
++	dpos=processedDebugStr.find(L"{^");
++	while(dpos!=wstring::npos)
++	{
++			processedDebugStr.replace(dpos,2,L"{\\^");
++			dpos=processedDebugStr.find(L"{^",dpos+2);
++	}
++	
++	dpos=processedDebugStr.find(L"{ ^");
++	while(dpos!=wstring::npos)
++	{
++			processedDebugStr.replace(dpos,3,L"{ \\^");
++			dpos=processedDebugStr.find(L"{ ^",dpos+3);
++	}
++	
++	dpos=processedDebugStr.find(L"$}");
++	while(dpos!=wstring::npos)
++	{
++			processedDebugStr.replace(dpos,2,L"\\$}");
++			dpos=processedDebugStr.find(L"$}",dpos+2);
++	}
++	
++	dpos=processedDebugStr.find(L"$ }");
++	while(dpos!=wstring::npos)
++	{
++			processedDebugStr.replace(dpos,3,L"\\$ }");
++			dpos=processedDebugStr.find(L"$ }",dpos+3);
++	}
++	
++	return processedDebugStr;
++}
++
+ void
+ Interchunk::processTags(xmlNode *localroot)
+ {
+@@ -1387,6 +1475,18 @@
+ }
+ 
+ bool
++Interchunk::getDebugRules(void) const
++{
++  return debugRules;
++}
++
++void
++Interchunk::setDebugRules(bool debug_rules)
++{
++  debugRules = debug_rules;
++}
++
++bool
+ Interchunk::getNullFlush(void)
+ {
+   return null_flush;
+@@ -1438,7 +1538,73 @@
+     {
+       if(lastrule != NULL)
+       {
++		  
++	bool endOfSentence=false;
++	//vmsanchez
++	if(debugRules)
++	{
++	debuginfo+=L"{interchunk-rule ";
++	
++	//stream where the output will be written
++	std::wstringstream streamVal;
++	
++	//Search the <pattern> tag
++	unsigned int numItems=0;
++	xmlNode* childOfRule=lastrule->parent->children;
++	while ( childOfRule!=NULL && !(childOfRule->type == XML_ELEMENT_NODE && !xmlStrcmp(childOfRule->name, (const xmlChar *) "pattern")))
++	{
++		childOfRule = childOfRule->next;
++	}
++
++	//print and count <pattern-item> elements
++	if(childOfRule!=NULL)
++	{
++	for(xmlNode *i = childOfRule->children; i != NULL; i = i->next)
++	  {
++		if(i->type == XML_ELEMENT_NODE)
++		{
++		  if(!xmlStrcmp(i->name, (const xmlChar *) "pattern-item"))
++		  {
++			  if(xmlHasProp(i, (const xmlChar *) "n"))
++			  {
++				streamVal << (const char *) xmlGetProp(i, (const xmlChar *) "n") <<" ";
++				numItems++;
++			  }
++		  }
++		} 
++	  }
++	 }
++	
++	if(streamVal.str()==L"fi_frase " || streamVal.str()==L"punt "  || (streamVal.str().size()>=5 && streamVal.str().substr(streamVal.str().size()-5)==L"punt " ) )
++	{
++		 endOfSentence=true;
++	}
++	streamVal << "--";
++
++	//print source words
++	unsigned int limit = tmpword.size();
++	for(unsigned int i = 0; i < limit && i<numItems; i++)
++	{
++	  streamVal <<"\\^"<<escapeDebugInfo(*tmpword[i])<<"\\$ ";
++	}
++	streamVal << "-- ";
++ 	debuginfo+=streamVal.str();
++	}
++  
+ 	applyRule();
++	
++	//vmsanchez	
++	if(debugRules)
++	{
++		debuginfo+=L" interchunk-rule}";
++		if(endOfSentence)
++		{
++			debuginfo=L"[\\[debug-interchunk "+debuginfo+L" debug-interchunk\\]]";
++			fputws_unlocked(debuginfo.c_str(),out);
++			debuginfo=L"";
++		}
++	}
++	
+ 	input_buffer.setPos(last);
+       }
+       else
+@@ -1446,8 +1612,22 @@
+ 	if(tmpword.size() != 0)
+ 	{
+           fputwc_unlocked(L'^', output);
++           if(debugRules)
++	       {
++	      	debuginfo+=(L" {isolated-word \\^"+escapeDebugInfo(*tmpword[0])+L"\\$ isolated-word} ");
++	  	   }
+           fputws_unlocked(tmpword[0]->c_str(), output);
+           fputwc_unlocked(L'$', output);
++	
++	  //New
++	  if(*tmpword[0]==L"^punt<sent>{^.<sent>$}")
++	  {
++		debuginfo=L"[\\[debug-interchunk "+debuginfo+L" debug-interchunk\\]]";
++		fputws_unlocked(debuginfo.c_str(),out);
++		debuginfo=L"";
++	  } 
++	//
++	 
+ 	  tmpword.clear();
+ 	  input_buffer.setPos(last);
+ 	  input_buffer.next();       
+@@ -1532,7 +1712,17 @@
+       blank[i-1] = new string(UtfConverter::toUtf8(*tmpblank[i-1]));
+     }
+     
+-    word[i] = new InterchunkWord(UtfConverter::toUtf8(*tmpword[i]));
++    //vmsanchez
++	if (debugRules)
++	{
++		std::wstringstream streamVal;
++		streamVal<<i;
++		word[i] = new InterchunkWord(UtfConverter::toUtf8(L"_vmsanchez_debug_pos_"+streamVal.str()+L"-"+*tmpword[i]));
++	}
++	else
++	{
++    	word[i] = new InterchunkWord(UtfConverter::toUtf8(*tmpword[i]));
++	}
+   }
+ 
+   processRule(lastrule);
+Index: apertium/postchunk.h
+===================================================================
+--- apertium/postchunk.h	(revisión: 24177)
++++ apertium/postchunk.h	(copia de trabajo)
+@@ -73,7 +73,12 @@
+   bool inword;
+   bool null_flush;
+   bool internal_null_flush;
++  
++  //debug rules
++  bool debugRules;
++  wstring debuginfo;
+ 
++  static std::wstring escapeDebugInfo(std::wstring &inputStr);
+   void copy(Postchunk const &o);
+   void destroy();
+   void readData(FILE *input);
+@@ -116,7 +121,7 @@
+   void applyWord(wstring const &word_str);
+   void applyRule();
+   TransferToken & readToken(FILE *in);
+-  static void unchunk(wstring const &chunk, FILE *output);
++  static void unchunk(wstring const &chunk, FILE *output, bool debugRules, wstring &debuginfo);
+   static vector<wstring> getVecTags(wstring const &chunk);
+   static int beginChunk(wstring const &chunk);
+   static int endChunk(wstring const &chunk);
+@@ -138,6 +143,8 @@
+   void postchunk(FILE *in, FILE *out);
+   bool getNullFlush(void);
+   void setNullFlush(bool null_flush);
++  bool getDebugRules(void) const;
++  void setDebugRules(bool debug_rules);
+ 
+ };
+ 
+Index: apertium/interchunk.h
+===================================================================
+--- apertium/interchunk.h	(revisión: 24177)
++++ apertium/interchunk.h	(copia de trabajo)
+@@ -74,6 +74,11 @@
+   bool null_flush;
+   bool internal_null_flush;
+   
++  //debug rules
++  bool debugRules;
++  wstring debuginfo;
++  
++  wstring escapeDebugInfo(wstring &inputStr);
+   void copy(Interchunk const &o);
+   void destroy();
+   void readData(FILE *input);
+@@ -130,6 +135,8 @@
+   void interchunk(FILE *in, FILE *out);
+   bool getNullFlush(void);
+   void setNullFlush(bool null_flush);
++  bool getDebugRules(void) const;
++  void setDebugRules(bool debug_rules);
+ 
+ };
+ 
+Index: apertium/apertium_pretransfer.cc
+===================================================================
+--- apertium/apertium_pretransfer.cc	(revisión: 24177)
++++ apertium/apertium_pretransfer.cc	(copia de trabajo)
+@@ -33,9 +33,15 @@
+ #endif
+ #include <apertium/string_utils.h>
+ 
++#include <sstream>
++
+ using namespace Apertium;
+ using namespace std;
+ 
++bool endOfSentence;
++int numWord;
++int numOutWords;
++
+ void readAndWriteUntil(FILE *input, FILE *output, int const charcode)
+ {
+   int mychar;
+@@ -60,7 +66,7 @@
+ {
+   int mychar;
+   wstring buffer = L"";
+-
++  
+   bool buffer_mode = false;
+   bool in_tag = false;
+   bool queuing = false;
+@@ -83,6 +89,8 @@
+       break;
+       
+     case L'>':
++      if (L"<sent"==buffer)
++      	endOfSentence=true;
+       in_tag = false;
+       break;
+       
+@@ -104,6 +112,7 @@
+       else if(in_tag == false)
+       {
+         buffer.append(L"$ ^");
++        numOutWords++;
+       }
+     }
+     else
+@@ -112,6 +121,7 @@
+       {
+         buffer.append(L"$ ^");
+         buffer_mode = true;
++        numOutWords++;
+       }
+       else 
+       {
+@@ -123,8 +133,12 @@
+   fputws_unlocked(buffer.c_str(), output);
+ }
+ 
+-void processStream(FILE *input, FILE *output, bool null_flush)
++void processStream(FILE *input, FILE *output, bool null_flush, bool debugRules)
+ {
++	wstring bufferDebug=L"";
++	endOfSentence=false;
++	numWord=0;
++	
+   while(true)
+   {
+     int mychar = fgetwc_unlocked(input);
+@@ -146,9 +160,27 @@
+         break;
+  
+       case L'^':
++	numWord++;
+         fputwc_unlocked(mychar, output);
++        numOutWords=1;
+         procWord(input, output);
+         fputwc_unlocked(L'$', output);
++        if(numOutWords>1)
++        {
++			wstringstream ss;
++			ss<<numWord<<"-"<<numOutWords<<" ";
++			bufferDebug+=ss.str();
++		}
++        if(debugRules && endOfSentence)
++        {
++			wstringstream ss;
++			ss<<numWord<<" -- ";
++			fputws_unlocked((L"[\\[debug-pretransfer "+ss.str()+bufferDebug+L" debug-pretransfer\\]]").c_str(),output);
++			endOfSentence=false;
++			bufferDebug=L"";
++			numWord=0;
++		}
++		
+         break;
+       
+       case L'\0':
+@@ -180,6 +212,7 @@
+ { 
+   LtLocale::tryToSetLocale();
+   bool null_flush = false;
++  bool debug_rules=false;
+   
+ #if HAVE_GETOPT_LONG
+   int option_index=0;
+@@ -191,12 +224,13 @@
+     {
+       {"null-flush", no_argument, 0, 'z'},
+       {"help", no_argument, 0, 'h'},
++      {"debug-rules", no_argument, 0, 'd'},
+       {0, 0, 0, 0}
+     };
+ 
+-    int c=getopt_long(argc, argv, "zh", long_options, &option_index);
++    int c=getopt_long(argc, argv, "zdh", long_options, &option_index);
+ #else
+-    int c=getopt(argc, argv, "zh");
++    int c=getopt(argc, argv, "zdh");
+ #endif
+     if (c==-1)
+       break;
+@@ -206,6 +240,10 @@
+       case 'z':
+         null_flush = true;
+         break;
++        
++      case 'd':
++      	debug_rules=true;
++      	break;
+       
+       case 'h':
+       default:
+@@ -257,5 +295,5 @@
+     _setmode(_fileno(output), _O_U8TEXT);
+ #endif
+ 
+-  processStream(input, output, null_flush);
++  processStream(input, output, null_flush, debug_rules);
+ }
+Index: apertium/postchunk.cc
+===================================================================
+--- apertium/postchunk.cc	(revisión: 24177)
++++ apertium/postchunk.cc	(copia de trabajo)
+@@ -29,7 +29,9 @@
+ #include <apertium/string_utils.h>
+ #include "apertium_config.h"
+ #include <apertium/unlocked_cstdio.h>
++#include <sstream>
+ 
++
+ using namespace Apertium;
+ using namespace std;
+ 
+@@ -62,6 +64,8 @@
+   inword = false;
+   null_flush = false;
+   internal_null_flush = false;
++  debugRules=false;
++  debuginfo=L"";
+ }
+ 
+ Postchunk::~Postchunk()
+@@ -85,6 +89,18 @@
+   return *this;
+ }
+ 
++bool
++Postchunk::getDebugRules(void) const
++{
++  return debugRules;
++}
++
++void
++Postchunk::setDebugRules(bool debug_rules)
++{
++  debugRules = debug_rules;
++}
++
+ void 
+ Postchunk::readData(FILE *in)
+ {
+@@ -413,13 +429,40 @@
+         if(myword != "")
+         {
+           fputwc_unlocked(L'^', output);
+-          fputws_unlocked(UtfConverter::fromUtf8(myword).c_str(), output);
++          if(debugRules)
++          {
++			    wstring outstr=UtfConverter::fromUtf8(myword);
++				wstring processedStr=L"";
++				wstring processedDebugStr=L"";
++				int prevPos=0,prevPosWithoutNumber=0;
++				int pos=outstr.find(L"_vmsanchez_debug_pos_",prevPos);
++				while(pos!=wstring::npos)
++				{
++						processedDebugStr+=outstr.substr(prevPos,pos-prevPos);
++						processedStr+=outstr.substr(prevPosWithoutNumber,pos-prevPosWithoutNumber);
++						prevPosWithoutNumber=outstr.find(L"-",pos)+1;
++
++						prevPos=pos+21;
++						pos=outstr.find(L"_vmsanchez_debug_pos_",prevPos);
++				}
++				processedStr+=outstr.substr(prevPosWithoutNumber);
++				processedDebugStr+=outstr.substr(prevPos);
++				
++				fputws_unlocked(processedStr.c_str(), output);
++                debuginfo+=(L"\\^"+escapeDebugInfo(processedDebugStr)+L"\\$");
++		  }
++		  else
++		  {
++          	fputws_unlocked(UtfConverter::fromUtf8(myword).c_str(), output);
++	  	  }
+           fputwc_unlocked(L'$', output);
+         }
+       }
+       else if(!xmlStrcmp(i->name, (const xmlChar *) "mlu"))
+       {
+         fputwc_unlocked(L'^', output);
++        wstring mluoutstr=L"";
++        
+         bool first_time = true;
+         for(xmlNode *j = i->children; j != NULL; j = j->next)
+         {
+@@ -438,6 +481,8 @@
+             {
+               if(myword != "")
+               {
++				if(debugRules)  
++					mluoutstr+=L"+";
+                 fputwc_unlocked('+', output);
+               }
+             }
+@@ -448,9 +493,37 @@
+ 	        first_time = false;
+               }
+ 	    }
+-	    fputws_unlocked(UtfConverter::fromUtf8(myword).c_str(), output);	      
++	      if(debugRules)
++          {
++			    wstring outstr=UtfConverter::fromUtf8(myword);
++				wstring processedStr=L"";
++				wstring processedDebugStr=L"";
++				int prevPos=0,prevPosWithoutNumber=0;
++				int pos=outstr.find(L"_vmsanchez_debug_pos_",prevPos);
++				while(pos!=wstring::npos)
++				{
++						processedDebugStr+=outstr.substr(prevPos,pos-prevPos);
++						processedStr+=outstr.substr(prevPosWithoutNumber,pos-prevPosWithoutNumber);
++						prevPosWithoutNumber=outstr.find(L"-",pos)+1;
++
++						prevPos=pos+21;
++						pos=outstr.find(L"_vmsanchez_debug_pos_",prevPos);
++				}
++				processedStr+=outstr.substr(prevPosWithoutNumber);
++				processedDebugStr+=outstr.substr(prevPos);
++				
++				fputws_unlocked(processedStr.c_str(), output);
++                mluoutstr+=(escapeDebugInfo(processedDebugStr));
++		  }
++		  else
++		  {
++          	fputws_unlocked(UtfConverter::fromUtf8(myword).c_str(), output);
++	  	  }  
+ 	  }
+         }
++        
++        if(debugRules)
++	   		debuginfo+=(L"\\^"+mluoutstr+L"\\$");
+         fputwc_unlocked(L'$', output);
+       }
+       else // 'b'
+@@ -1508,19 +1581,87 @@
+     {
+       if(lastrule != NULL)
+       {
++	bool endOfSentence=false;
++	if(debugRules)
++	{
++		debuginfo+=(L"{postchunk-rule \\^"+escapeDebugInfo(*tmpword[0])+L"\\$ -- ");
++		//stream where the output will be written
++		std::wstringstream streamVal;
++	
++		//Search the <pattern> tag
++		unsigned int numItems=0;
++		xmlNode* childOfRule=lastrule->parent->children;
++		while ( childOfRule!=NULL && !(childOfRule->type == XML_ELEMENT_NODE && !xmlStrcmp(childOfRule->name, (const xmlChar *) "pattern")))
++		{
++			childOfRule = childOfRule->next;
++		}
++
++		//print and count <pattern-item> elements
++		if(childOfRule!=NULL)
++		{
++		for(xmlNode *i = childOfRule->children; i != NULL; i = i->next)
++		  {
++			if(i->type == XML_ELEMENT_NODE)
++			{
++			  if(!xmlStrcmp(i->name, (const xmlChar *) "pattern-item"))
++			  {
++				  if(xmlHasProp(i, (const xmlChar *) "n"))
++				  {
++					streamVal << (const char *) xmlGetProp(i, (const xmlChar *) "n") <<" ";
++					numItems++;
++				  }
++			  }
++			} 
++		  }
++		 }
++	
++		if(streamVal.str()==L"sent ")
++		{
++			 endOfSentence=true;
++		}
++	}
++
+ 	applyRule();
++	if(debugRules)
++		debuginfo+=L" postchunk-rule}";
++
++	if(endOfSentence)
++	{
++		debuginfo=L"[\\[debug-postchunk "+debuginfo+L" debug-postchunk\\]]";
++		fputws_unlocked(debuginfo.c_str(),out);
++		debuginfo=L"";
++	}
+ 	input_buffer.setPos(last);
+       }
+       else
+       {
+ 	if(tmpword.size() != 0)
+ 	{
+-	  unchunk(*tmpword[0], output);
++		 if(debugRules)
++		{
++			debuginfo+=L"{norule-chunk ";
++		}
++	  unchunk(*tmpword[0], output, debugRules, debuginfo);
++	  
++	  if(debugRules)
++		{
++			debuginfo+=(L" norule-chunk}");
++			
++			//if(*tmpword[0]==L"punt<sent>{^.<sent>$}")
++			if((*tmpword[0]).size()>=10 && (*tmpword[0]).substr(0,10)==L"punt<sent>")
++			{
++				debuginfo=L"[\\[debug-postchunk "+debuginfo+L" debug-postchunk\\]]";
++				fputws_unlocked(debuginfo.c_str(),out);
++				debuginfo=L"";
++			}
++		}
++	  
+ 	  tmpword.clear();
+ 	  input_buffer.setPos(last);
+ 	  input_buffer.next();       
+ 	  last = input_buffer.getPos();
+ 	  ms.init(me->getInitial());
++	  
+ 	}
+ 	else if(tmpblank.size() != 0)
+ 	{
+@@ -1572,6 +1713,82 @@
+   }
+ }
+ 
++std::wstring Postchunk::escapeDebugInfo(std::wstring &inputStr)
++{
++	std::wstring processedDebugStr(inputStr);
++	int dpos;
++	dpos=processedDebugStr.find(L"$ ^");
++	while(dpos!=wstring::npos)
++	{
++			processedDebugStr.replace(dpos,3,L"\\$ \\^");
++			dpos=processedDebugStr.find(L"$ ^",dpos+3);
++	}
++
++	dpos=processedDebugStr.find(L"$  ^");
++        while(dpos!=wstring::npos)
++        {
++                        processedDebugStr.replace(dpos,4,L"\\$ \\^");
++                        dpos=processedDebugStr.find(L"$  ^",dpos+4);
++        }
++	
++	dpos=processedDebugStr.find(L"$^");
++	while(dpos!=wstring::npos)
++	{
++			processedDebugStr.replace(dpos,2,L"\\$\\^");
++			dpos=processedDebugStr.find(L"$^",dpos+2);
++	}
++	
++	dpos=processedDebugStr.find(L"{^");
++	while(dpos!=wstring::npos)
++	{
++			processedDebugStr.replace(dpos,2,L"{\\^");
++			dpos=processedDebugStr.find(L"{^",dpos+2);
++	}
++	
++	dpos=processedDebugStr.find(L"{ ^");
++	while(dpos!=wstring::npos)
++	{
++			processedDebugStr.replace(dpos,3,L"{ \\^");
++			dpos=processedDebugStr.find(L"{ ^",dpos+3);
++	}
++	
++	dpos=processedDebugStr.find(L"$}");
++	while(dpos!=wstring::npos)
++	{
++			processedDebugStr.replace(dpos,2,L"\\$}");
++			dpos=processedDebugStr.find(L"$}",dpos+2);
++	}
++	
++	dpos=processedDebugStr.find(L"$ }");
++	while(dpos!=wstring::npos)
++	{
++			processedDebugStr.replace(dpos,3,L"\\$ }");
++			dpos=processedDebugStr.find(L"$ }",dpos+3);
++	}
++	
++	size_t posFirstMark=processedDebugStr.find(L"^");
++	if (posFirstMark!=wstring::npos)
++	{
++		bool firstZeros=true;
++		for(int i=0; i< posFirstMark; i++)
++		{
++			if(processedDebugStr[i]!=L' ')
++			{
++				firstZeros=false;
++				break;
++			}
++		}
++		if(firstZeros)
++			processedDebugStr=L"\\"+processedDebugStr.substr(posFirstMark);
++	}
++	
++	
++	if(processedDebugStr[processedDebugStr.size()-1]==L'$')
++		processedDebugStr=processedDebugStr.substr(0,processedDebugStr.size()-1)+L"\\$";
++	
++	return processedDebugStr;
++}
++
+ void
+ Postchunk::applyRule()
+ {
+@@ -1603,7 +1820,18 @@
+       blank[i-2] = new string(UtfConverter::toUtf8(*tmpblank[i-1]));
+     }
+     
+-    word[i] = new InterchunkWord(UtfConverter::toUtf8(*tmpword[i-1]));
++    //vmsanchez
++	if (debugRules)
++	{
++		std::wstringstream streamVal;
++		streamVal<<i-1;
++		word[i] = new InterchunkWord(UtfConverter::toUtf8(L"_vmsanchez_debug_pos_"+streamVal.str()+L"-"+*tmpword[i-1]));
++	}
++	else
++	{
++    	word[i] = new InterchunkWord(UtfConverter::toUtf8(*tmpword[i-1]));
++	}
++    //word[i] = new InterchunkWord(UtfConverter::toUtf8(*tmpword[i-1]));
+   }
+ 
+   processRule(lastrule);
+@@ -1775,8 +2003,9 @@
+ }
+ 
+ void
+-Postchunk::unchunk(wstring const &chunk, FILE *output)
++Postchunk::unchunk(wstring const &chunk, FILE *output, bool debugRules, wstring &allDebugInfo)
+ {
++  wstring debuginfo;
+   vector<wstring> vectags = getVecTags(chunk);
+   wstring case_info = caseOf(pseudolemma(chunk));
+   bool uppercase_all = false;
+@@ -1795,17 +2024,28 @@
+   {
+     if(chunk[i] == L'\\')
+     {
++	  if(debugRules)
++	  	debuginfo+=L'\\';
+       fputwc_unlocked(L'\\', output);
++      
++      if(debugRules)
++	  	debuginfo+=chunk[i+1];
+       fputwc_unlocked(chunk[++i], output);
+     }
+     else if(chunk[i] == L'^')
+     {
++	  if(debugRules)
++	  	debuginfo+=L'^';
+       fputwc_unlocked(L'^', output);
+       while(chunk[++i] != L'$')
+       {
+         if(chunk[i] == L'\\')
+         {
++		  if(debugRules)
++	  		debuginfo+=L'\\';
+           fputwc_unlocked(L'\\', output);
++          if(debugRules)
++	  		debuginfo+=chunk[i+1];
+           fputwc_unlocked(chunk[++i], output);
+         }
+         else if(chunk[i] == L'<')
+@@ -1818,14 +2058,24 @@
+             //atoi(chunk.c_str()+i+1)-1;
+             if(vectags.size() > value)
+             {
++			  if(debugRules)
++	  			debuginfo+=vectags[value].c_str();
+               fputws_unlocked(vectags[value].c_str(), output);
+             }
+             while(chunk[++i] != L'>');
+           }
+           else
+           {
++			 if(debugRules)
++	  			debuginfo+=L'<';
+             fputwc_unlocked(L'<', output);
+-	    while(chunk[++i] != L'>') fputwc_unlocked(chunk[i], output);
++			while(chunk[++i] != L'>') 
++			{ 
++				if(debugRules)
++					debuginfo+=chunk[i];
++				 fputwc_unlocked(chunk[i], output); }
++			if(debugRules)
++					debuginfo+=L'>';
+             fputwc_unlocked(L'>', output);
+           }
+         }
+@@ -1833,50 +2083,73 @@
+         {
+           if(uppercase_all)
+           {
++			 if(debugRules)
++					debuginfo+=towupper(chunk[i]);
+             fputwc_unlocked(towupper(chunk[i]), output);
+           }
+           else if(uppercase_first)
+           {
+ 	    if(iswalnum(chunk[i]))
+ 	    {
++		  if(debugRules)
++					debuginfo+=towupper(chunk[i]);
+ 	      fputwc_unlocked(towupper(chunk[i]), output);
+ 	      uppercase_first = false;
+ 	    }
+             else
+ 	    {
++			 if(debugRules)
++					debuginfo+=chunk[i];
+ 	      fputwc_unlocked(chunk[i], output);
+ 	    }
+           }
+           else
+           {
++			   if(debugRules)
++					debuginfo+=chunk[i];
+             fputwc_unlocked(chunk[i], output);
+           }
+         }
+       }
++       if(debugRules)
++					debuginfo+=L'$';
+       fputwc_unlocked(L'$', output);
+     }
+     else if(chunk[i] == L'[')
+     {
++		if(debugRules)
++					debuginfo+=L'[';
+       fputwc_unlocked(L'[', output);
+       while(chunk[++i] != L']')
+       {
+         if(chunk[i] == L'\\')
+         {
++			if(debugRules)
++					debuginfo+=L'\\';
+           fputwc_unlocked(L'\\', output);
++          if(debugRules)
++					debuginfo+=chunk[i+1];
+           fputwc_unlocked(chunk[++i], output);
+         }
+         else
+         {
++			 if(debugRules)
++					debuginfo+=chunk[i];
+           fputwc_unlocked(chunk[i], output);
+         }
+       }
++       if(debugRules)
++					debuginfo+=L']';
+       fputwc_unlocked(L']', output);
+     }
+     else
+     {
++		if(debugRules)
++					debuginfo+=chunk[i];
+       fputwc_unlocked(chunk[i], output);
+     }
+   }
++  allDebugInfo+=escapeDebugInfo(debuginfo);
+ }
+ 
+ 
+Index: apertium/apertium_postchunk.cc
+===================================================================
+--- apertium/apertium_postchunk.cc	(revisión: 24177)
++++ apertium/apertium_postchunk.cc	(copia de trabajo)
+@@ -99,13 +99,14 @@
+     static struct option long_options[] =
+     {
+       {"null-flush", no_argument, 0, 'z'},
++      {"debug-rules", no_argument, 0, 'd'},
+       {"help", no_argument, 0, 'h'},
+       {0, 0, 0, 0}
+     };
+ 
+-    int c=getopt_long(argc, argv, "zh", long_options, &option_index);
++    int c=getopt_long(argc, argv, "zdh", long_options, &option_index);
+ #else
+-    int c=getopt(argc, argv, "zh");
++    int c=getopt(argc, argv, "zdh");
+ #endif
+     if (c == -1)
+       break;
+@@ -115,6 +116,10 @@
+       case 'z':
+         p.setNullFlush(true);
+         break;
++        
++      case 'd':
++      	p.setDebugRules(true);
++      	break;
+ 
+       case 'h':
+       default:
+Index: apertium/transfer.h
+===================================================================
+--- apertium/transfer.h	(revisión: 24177)
++++ apertium/transfer.h	(copia de trabajo)
+@@ -81,6 +81,13 @@
+   bool null_flush;
+   bool internal_null_flush;
+   
++//debug rules
++  bool debugRules;
++  wstring debuginfo;
++  bool printRuleLimits;
++ 
++void prepareWordOutput(string &myword, wstring &regularOutput, wstring &debugOutput);
++ 
+   void copy(Transfer const &o);
+   void destroy();
+   void readData(FILE *input);
+@@ -142,6 +149,10 @@
+   void setCaseSensitiveness(bool value);
+   bool getNullFlush(void);
+   void setNullFlush(bool null_flush);
++  bool getDebugRules(void) const;
++  void setDebugRules(bool debug_rules);
++  bool getPrintRuleLimits(void) const;
++  void setPrintRuleLimits(bool rule_limits);
+ };
+ 
+ #endif
+Index: apertium/transfer.cc
+===================================================================
+--- apertium/transfer.cc	(revisión: 24177)
++++ apertium/transfer.cc	(copia de trabajo)
+@@ -27,6 +27,7 @@
+ #include <iostream>
+ #include <stack>
+ #include <cerrno>
++#include <sstream>
+ 
+ using namespace Apertium;
+ using namespace std;
+@@ -62,6 +63,9 @@
+   isExtended = false;
+   null_flush = false;
+   internal_null_flush = false;
++  debugRules=false;
++  debuginfo=L"";
++  printRuleLimits=false;
+ }
+ 
+ Transfer::~Transfer()
+@@ -523,6 +527,37 @@
+   return evalString(element);
+ }
+ 
++void Transfer::prepareWordOutput(string &myword, wstring &regularOutput, wstring &debugOutput)
++{
++	wstring outstr=UtfConverter::fromUtf8(myword);
++	wstring processedStr=L"";
++	wstring processedDebugStr=L"";
++	int prevPos=0,prevPosWithoutNumber=0;
++	int pos=outstr.find(L"_vmsanchez_debug_pos_",prevPos);
++	while(pos!=wstring::npos)
++	{
++			processedDebugStr+=outstr.substr(prevPos,pos-prevPos);
++			processedStr+=outstr.substr(prevPosWithoutNumber,pos-prevPosWithoutNumber);
++			prevPosWithoutNumber=outstr.find(L"-",pos)+1;
++
++			prevPos=pos+21;
++			pos=outstr.find(L"_vmsanchez_debug_pos_",prevPos);
++	}
++	processedStr+=outstr.substr(prevPosWithoutNumber);
++	processedDebugStr+=outstr.substr(prevPos);
++	
++	int dpos;
++	dpos=processedDebugStr.find(L"$ ^");
++	while(dpos!=wstring::npos)
++	{
++		processedDebugStr.replace(dpos,3,L"\\$ \\^");
++		dpos=processedDebugStr.find(L"$ ^");
++	}
++	
++	regularOutput=processedStr;
++	debugOutput=processedDebugStr;
++}
++
+ void
+ Transfer::processOut(xmlNode *localroot)
+ {
+@@ -542,22 +577,35 @@
+ 	      myword.append(evalString(j));
+             }
+ 	  }
++	  
++	  wstring preparedOutput, preparedDebugOutput;
++	  if(debugRules)
++	  {
++		  prepareWordOutput(myword,preparedOutput,preparedDebugOutput);
++		  myword=UtfConverter::toUtf8 (preparedOutput);
++	  }
++
+ 	  if(myword != "")
+-	  {
++	  {	
++		 
++		 if(debugRules)
++			debuginfo+=(L"\\^"+preparedDebugOutput+L"\\$");		
+   	    fputwc_unlocked(L'^', output);
+    	    fputws_unlocked(UtfConverter::fromUtf8(myword).c_str(), output);
+ 	    fputwc_unlocked(L'$', output);
++				
+           }
+         }
+         else if(!xmlStrcmp(i->name, (const xmlChar *) "mlu"))
+         {
+ 	  fputwc_unlocked('^', output);
++	  wstring outstr=L"";
+ 	  bool first_time = true;
+ 	  for(xmlNode *j = i->children; j != NULL; j = j->next)
+ 	  {
+ 	    if(j->type == XML_ELEMENT_NODE)
+ 	    {
+-              string myword = "";
++          string myword = "";
+ 	      for(xmlNode *k = j->children; k != NULL; k = k->next)
+ 	      {
+ 	        if(k->type == XML_ELEMENT_NODE)
+@@ -566,12 +614,21 @@
+ 	        }
+ 	      }
+ 	      
++	      wstring preparedOutput, preparedDebugOutput;
++		  if(debugRules)
++		  {
++			  prepareWordOutput(myword,preparedOutput,preparedDebugOutput);
++			  myword=UtfConverter::toUtf8 (preparedOutput);
++		  }
++	      
+ 	      if(!first_time)
+ 	      {
+ 	        if(myword != "" && myword[0] != '#')  //'+#' problem
+ 	        {
+ 	          fputwc_unlocked(L'+', output);
+-                }
++			  if (debugRules)
++				outstr+=L'+';
++            }
+ 	      }
+ 	      else
+ 	      {
+@@ -580,10 +637,26 @@
+ 	          first_time = false;
+                 }
+ 	      }
+-	      fputws_unlocked(UtfConverter::fromUtf8(myword).c_str(), output);
++			if(debugRules) 
++			{ 
++            	outstr+=preparedDebugOutput;
++			}
++			fputws_unlocked(UtfConverter::fromUtf8(myword).c_str(), output);
++		
+ 	    }
+ 	  }
+ 	  fputwc_unlocked(L'$', output);
++	  if(debugRules)
++	  {
++		int dpos;
++		dpos=outstr.find(L"$ ^");
++		while(dpos!=wstring::npos)
++		{
++				outstr.replace(dpos,3,L"\\$ \\^");
++				dpos=outstr.find(L"$ ^");
++		}
++	   	debuginfo+=(L"\\^"+outstr+L"\\$");
++	}
+         }
+         else // 'b'
+         {
+@@ -612,6 +685,9 @@
+   string name = "", namefrom = "",
+          caseofchunk = "aa";
+   
++  if(debugRules)
++	debuginfo+=L"{start-chunk ";
++  
+   for(xmlAttr *i = localroot->properties; i != NULL; i = i->next)
+   {
+     if(!xmlStrcmp(i->name, (const xmlChar *) "name"))
+@@ -637,7 +713,13 @@
+     }
+     else if(namefrom != "")
+     {
+-      fputws_unlocked(UtfConverter::fromUtf8(copycase(variables[caseofchunk], variables[namefrom])).c_str(), output);
++      wstring nameToPrint=UtfConverter::fromUtf8(copycase(variables[caseofchunk], variables[namefrom]));
++      if(nameToPrint.find(L"_vmsanchez_debug_pos_")==0)
++      {
++	int posFinal=nameToPrint.find(L"-");
++	nameToPrint=nameToPrint.substr(posFinal+1);
++      }
++      fputws_unlocked(nameToPrint.c_str(), output);
+     }
+     else
+     {
+@@ -653,7 +735,14 @@
+     }
+     else if(namefrom != "")
+     {
+-      fputws_unlocked(UtfConverter::fromUtf8(variables[namefrom]).c_str(), output);
++       wstring nameToPrint=UtfConverter::fromUtf8(variables[namefrom]);
++      if(nameToPrint.find(L"_vmsanchez_debug_pos_")==0)
++      {
++	int posFinal=nameToPrint.find(L"-");
++	nameToPrint=nameToPrint.substr(posFinal+1);
++      }
++      fputws_unlocked(nameToPrint.c_str(), output);
++      fputws_unlocked(nameToPrint.c_str(), output);
+     }
+     else
+     {
+@@ -681,17 +770,31 @@
+             myword.append(evalString(j));
+           }
+         }
++        //debug
++        //cerr<<myword<<endl;
++        
++         wstring preparedOutput, preparedDebugOutput;
++		  if(debugRules)
++		  {
++			  prepareWordOutput(myword,preparedOutput,preparedDebugOutput);
++			  myword=UtfConverter::toUtf8 (preparedOutput);
++		  }
+         if(myword != "")
+-        { 
+-          fputwc_unlocked(L'^', output);
+-          fputws_unlocked(UtfConverter::fromUtf8(myword).c_str(), output);
+-          fputwc_unlocked(L'$', output);
++        {
++			 if(debugRules)	
++            	debuginfo+=(L"\\^"+preparedDebugOutput+L"\\$");
++          
++			fputwc_unlocked(L'^', output);
++			fputws_unlocked(UtfConverter::fromUtf8(myword).c_str(), output);
++			fputwc_unlocked(L'$', output);
++                
+         }
+       }
+       else if(!xmlStrcmp(i->name, (const xmlChar *) "mlu"))
+       {
+         bool first_time = true;
+         string myword = "";
++        wstring outdebug=L"";
+         for(xmlNode *j = i->children; j != NULL; j = j->next)
+         {
+           string mylocalword = "";
+@@ -704,26 +807,57 @@
+                 mylocalword.append(evalString(k));
+               }
+             }
++            //debug
++        	//cerr<<mylocalword<<endl;
++        	
++            wstring preparedOutput, preparedDebugOutput;
++			  if(debugRules)
++			  {
++				  prepareWordOutput(mylocalword,preparedOutput,preparedDebugOutput);
++				  mylocalword=UtfConverter::toUtf8 (preparedOutput);
++			  }
+           
+             if(!first_time)
+             {
+               if(mylocalword != "" && mylocalword[0] != '#')  // '+#' problem
+               {
+                 myword += '+';	
++                if(debugRules)
++                	outdebug+=L'+';
+               }
+             }
+             else
+             {
+               first_time = false;
+             }
++            
++            if(debugRules)
++             	outdebug+=preparedDebugOutput;
++            
+           }
++          
+           myword.append(mylocalword);
+         }
+         if(myword != "")
+         {
+-          fputwc_unlocked(L'^', output);
+-          fputws_unlocked(UtfConverter::fromUtf8(myword).c_str(), output);
+-          fputwc_unlocked(L'$', output);
++			
++			if(debugRules)
++			{	
++			int dpos;
++			dpos=outdebug.find(L"$ ^");
++			while(dpos!=wstring::npos)
++			{
++					outdebug.replace(dpos,3,L"\\$ \\^");
++					dpos=outdebug.find(L"$ ^");
++			}
++		  
++			debuginfo+=(L"\\^"+outdebug+L"\\$");
++			}
++
++			fputwc_unlocked(L'^', output);
++			fputws_unlocked(UtfConverter::fromUtf8(myword).c_str(), output);
++			fputwc_unlocked(L'$', output);
++                
+         }
+       }
+       else // 'b'
+@@ -733,6 +867,10 @@
+     }
+   }
+   fputws_unlocked(L"}$", output);
++  
++  if(debugRules)
++	debuginfo+=L" end-chunk}";
++  
+ }
+ 
+ void
+@@ -1724,7 +1862,31 @@
+   this->null_flush = null_flush;
+ }
+ 
++bool
++Transfer::getDebugRules(void) const
++{
++  return debugRules;
++}
++
+ void
++Transfer::setDebugRules(bool debug_rules)
++{
++  debugRules = debug_rules;
++}
++
++bool 
++Transfer::getPrintRuleLimits(void) const
++{
++  return printRuleLimits;
++}
++
++void 
++Transfer::setPrintRuleLimits(bool rule_limits)
++{
++	printRuleLimits=rule_limits;
++}
++
++void
+ Transfer::transfer_wrapper_null_flush(FILE *in, FILE *out)
+ {
+   null_flush = false;
+@@ -1764,7 +1926,92 @@
+     {
+       if(lastrule != NULL)
+       {
++		  
++bool endOfSentence=false;
++//vmsanchez
++if(debugRules)
++{
++//Print rule and which is the source word that generated each target word
++//fputws_unlocked(L"[{]",out);
++debuginfo+=L"{transfer-rule ";
++
++//stream where the output will be written
++std::wstringstream streamVal;
++
++//Search the <pattern> tag
++unsigned int numItems=0;
++xmlNode* childOfRule=lastrule->parent->children;
++while ( childOfRule!=NULL && !(childOfRule->type == XML_ELEMENT_NODE && !xmlStrcmp(childOfRule->name, (const xmlChar *) "pattern")))
++{
++	childOfRule = childOfRule->next;
++}
++
++//print and count <pattern-item> elements
++if(childOfRule!=NULL)
++{
++for(xmlNode *i = childOfRule->children; i != NULL; i = i->next)
++  {
++    if(i->type == XML_ELEMENT_NODE)
++    {
++      if(!xmlStrcmp(i->name, (const xmlChar *) "pattern-item"))
++      {
++		  if(xmlHasProp(i, (const xmlChar *) "n"))
++		  {
++        	streamVal << (const char *) xmlGetProp(i, (const xmlChar *) "n") <<" ";
++        	numItems++;
++		  }
++      }
++    } 
++  }
++ }
++ 
++ wstring wstreamval=streamVal.str();
++ size_t possentfound=wstreamval.rfind(L"sent ");
++ if(possentfound==wstreamval.size()-5 && possentfound!=wstring::npos)
++ //if(streamVal.str()==L"sent ")
++ {
++	 endOfSentence=true;
++ }
++	//streamVal << L"[\\[";
++	streamVal << "--";
++
++//print source words
++	unsigned int limit = tmpword.size();
++for(unsigned int i = 0; i < limit && i<numItems; i++)
++  {
++	  streamVal <<"\\^"<<*tmpword[i]<<"\\$ ";
++  }
++  
++  //streamVal << "\\]]";
++  streamVal << "-- ";
++  //fputws_unlocked(streamVal.str().c_str(),out);
++  debuginfo+=streamVal.str();
++}
++//
++if(printRuleLimits)
++{
++	fputws_unlocked(L"[__vmsanchez__sr__]",out);
++}
+ 	applyRule();
++
++if(printRuleLimits)
++{
++        fputws_unlocked(L"[__vmsanchez__er__]",out);
++}
++
++//vmsanchez	
++if(debugRules)
++{
++	//fputws_unlocked(L"[}]",out);
++	debuginfo+=L" transfer-rule}";
++	if(endOfSentence)
++	{
++		debuginfo=L"[\\[debug-transfer "+debuginfo+L" debug-transfer\\]]";
++		fputws_unlocked(debuginfo.c_str(),out);
++		debuginfo=L"";
++	}
++}
++//
+ 	input_buffer.setPos(last);
+       }
+       else
+@@ -1803,6 +2050,11 @@
+ 	      fputwc_unlocked(L'^', output);
+ 	      fputws_unlocked(tr.first.c_str(), output);
+ 	      fputwc_unlocked(L'$', output);
++	      
++	      if(debugRules)
++	      {
++	      	debuginfo+=(L" {isolated-word \\^"+*tmpword[0]+L"\\$--\\^"+tr.first+L"\\$ isolated-word} ");
++	  	  }
+             }
+             else
+             {
+@@ -1816,6 +2068,10 @@
+               }	        
+ 	      fputws_unlocked(tr.first.c_str(), output);
+ 	      fputws_unlocked(L"$}$", output);
++		if(debugRules)
++              {
++                debuginfo+=(L"{transfer-rule default --\\^"+*tmpword[0]+L"\\$ -- {start-chunk \\^0-"+tr.first+L"\\$ end-chunk} transfer-rule} ");
++              }
+             }
+ 	  }
+ 	  tmpword.clear();
+@@ -1879,6 +2135,8 @@
+ {
+   unsigned int limit = tmpword.size();
+   
++  int numCorrectWords=0;
++  
+   for(unsigned int i = 0; i != limit; i++)
+   {
+     if(i == 0)
+@@ -1910,10 +2168,30 @@
+     {
+       tr = pair<wstring, int>(*tmpword[i], false);
+     }
++    
++//vmsanchez
++if (debugRules)
++{
+ 
++std::wstringstream streamVal;
++streamVal<<numCorrectWords;
++//tr.first=tr.first+L"<"+streamVal.str()+L">";
++//if (tr.first[0]!=L'#')
++//{
++	if(tr.first.size()>0)
++		tr.first=L"_vmsanchez_debug_pos_"+streamVal.str()+L"-"+tr.first;
++	numCorrectWords++;
++	
++	//debug
++	//wcerr<<*tmpword[i]<<L"--"<<tr.first<<endl;
++//}
++}
++//
++
+     word[i] = new TransferWord(UtfConverter::toUtf8(*tmpword[i]), 
+ 			       UtfConverter::toUtf8(tr.first), tr.second);
+   }
++  
+ 
+   processRule(lastrule);
+   lastrule = NULL;

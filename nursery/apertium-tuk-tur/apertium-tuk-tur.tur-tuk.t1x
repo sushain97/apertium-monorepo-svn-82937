@@ -1,0 +1,342 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<transfer>
+  <section-def-cats>
+
+    <def-cat n="nom">
+      <cat-item tags="n"/>
+      <cat-item tags="n.*"/>
+      <cat-item tags="np.*"/>
+      <cat-item tags="adj.subst.*"/>
+      <cat-item tags="num.subst.*"/>
+      <cat-item tags="v.*.ger3.*"/>
+      <cat-item tags="v.*.ger1.*"/>
+    </def-cat>
+     
+    <def-cat n="adj">
+      <cat-item tags="n.attr"/>
+      <cat-item tags="n.attr.*"/>
+      <cat-item tags="adj"/>
+      <cat-item tags="adj.comp"/>
+    </def-cat>
+
+   <def-cat n="prc">
+      <cat-item tags="v.*.prc1"/>
+      <cat-item tags="v.*.*.prc1"/>
+    </def-cat>
+
+    <def-cat n="abil">
+      <cat-item tags="v.*.abil.*"/>
+    </def-cat>
+
+    <def-cat n="past">
+      <cat-item tags="v.*.past.*"/>
+      <cat-item tags="v.*.*.past.*"/>
+    </def-cat>
+
+    <def-cat n="gna">
+      <cat-item tags="v.*.gna1"/>
+      <cat-item tags="v.*.*.gna1"/>
+      <cat-item tags="v.*.gna9"/>
+      <cat-item tags="v.*.*.gna9"/>
+    </def-cat>
+
+    <def-cat n="cop">
+      <cat-item lemma="i" tags="cop.*"/>
+    </def-cat>
+
+    <def-cat n="qst">
+      <cat-item lemma="mi" tags="qst"/>
+      <cat-item lemma="mi" tags="qst.*"/>
+    </def-cat>
+        
+  </section-def-cats>
+  
+  <section-def-attrs>
+    
+    <def-attr n="a_cas">
+      <attr-item tags="nom"/>
+      <attr-item tags="acc"/>
+      <attr-item tags="dat"/>
+      <attr-item tags="gen"/>
+      <attr-item tags="ins"/>
+      <attr-item tags="loc"/>
+      <attr-item tags="abl"/>
+    </def-attr>
+       
+    <def-attr n="nbr">
+      <attr-item tags="sg"/>
+      <attr-item tags="pl"/>
+      <attr-item tags="ND"/>
+    </def-attr>
+
+    <def-attr n="a_pos">
+      <attr-item tags="px1sg"/>
+      <attr-item tags="px2sg"/>
+      <attr-item tags="px3sg"/>
+      <attr-item tags="px3sp"/>
+      <attr-item tags="px1pl"/>
+      <attr-item tags="px2pl"/>
+      <attr-item tags="px3pl"/>
+    </def-attr>
+          
+    <def-attr n="trans">
+      <attr-item tags="tv"/>
+      <attr-item tags="iv"/>
+    </def-attr>
+          
+    <def-attr n="a_gna">
+      <attr-item tags="gna1"/>
+      <attr-item tags="gna9"/>
+    </def-attr>
+         
+    <def-attr n="neg">
+      <attr-item tags="neg"/>
+    </def-attr>
+       
+    <def-attr n="deriv">
+      <attr-item tags="abil"/>
+      <attr-item tags="pass"/>
+      <attr-item tags="caus"/>
+    </def-attr>
+    
+    <def-attr n="a_nom">
+      <attr-item tags="n"/>
+      <attr-item tags="np.top"/>
+      <attr-item tags="np.ant"/>
+      <attr-item tags="np.cog"/>
+      <attr-item tags="adj.subst"/>
+      <attr-item tags="num.subst"/>
+      <attr-item tags="v.tv.ger3"/>
+      <attr-item tags="v.tv.ger1"/>
+      <attr-item tags="v.iv.ger3"/>
+    </def-attr>
+    
+  </section-def-attrs>
+ 
+  <section-def-vars>
+    <def-var n="number"/>
+    <def-var n="POST"/>
+  </section-def-vars>  
+
+  <section-def-macros>
+
+    <def-macro n="verbal_adv1" npar="1">
+      <choose>
+        <when>
+          <test>
+            <equal><clip pos="1" side="sl" part="a_gna"/><lit-tag v="gna9"/></equal>
+          </test>
+          <let><clip pos="1" side="tl" part="a_gna"/><lit-tag v="gna1"/></let>
+        </when>
+      </choose>
+    </def-macro>
+
+
+    <def-macro n="poss1" npar="1">
+      <choose>
+        <when>
+          <test>
+            <or>
+              <equal><clip pos="1" side="sl" part="a_pos"/><lit-tag v="px3sg"/></equal>
+              <equal><clip pos="1" side="sl" part="a_pos"/><lit-tag v="px3pl"/></equal>
+            </or>
+          </test>
+          <let><clip pos="1" side="tl" part="a_pos"/><lit-tag v="px3sp"/></let>
+        </when>
+      </choose>
+    </def-macro>
+
+    <def-macro n="case1" npar="1">
+      <let><var n="POST"/><lit v=""/></let>
+      <choose>
+        <when>
+          <test>
+            <equal><clip pos="1" side="sl" part="a_cas"/><lit-tag v="ins"/></equal>
+          </test>
+          <let><var n="POST"/><concat><lit v=" ^bilen"/><lit-tag v="post"/><lit v="$"/></concat></let>
+          <let><clip pos="1" side="tl" part="a_cas"/><lit v=""/></let>
+        </when>
+      </choose>
+    </def-macro>
+
+  </section-def-macros>
+
+  <section-rules>
+    
+    <rule comment=""> 
+      <pattern>
+        <pattern-item n="nom"/>
+      </pattern>
+      <action>
+        <call-macro n="poss1">
+          <with-param pos="1"/> 
+        </call-macro>
+        <call-macro n="case1">
+          <with-param pos="1"/> 
+        </call-macro>
+
+        <out>
+          <lu>
+            <clip pos="1" side="tl" part="whole"/>
+          </lu>
+          <var n="POST"/>
+        </out>
+      </action>
+    </rule>
+
+    <rule comment=""> 
+      <pattern>
+        <pattern-item n="adj"/>
+        <pattern-item n="cop"/>
+      </pattern>
+      <action>
+        <out>
+          <mlu>
+            <lu>
+              <clip pos="1" side="tl" part="whole"/>
+            </lu>
+            <lu>
+              <clip pos="2" side="tl" part="whole"/>
+            </lu>
+          </mlu>
+        </out>
+      </action>
+    </rule>
+
+     <rule comment=""> 
+      <pattern>
+        <pattern-item n="nom"/>
+        <pattern-item n="cop"/>
+      </pattern>
+      <action>
+        <call-macro n="poss1">
+          <with-param pos="1"/> 
+        </call-macro>
+
+        <out>
+          <mlu>
+            <lu>
+              <clip pos="1" side="tl" part="whole"/>
+            </lu>
+            <lu>
+              <clip pos="2" side="tl" part="whole"/>
+            </lu>
+          </mlu>
+        </out>
+      </action>
+    </rule>
+
+    <rule comment="v.abil → v bil-"> 
+      <pattern>
+        <pattern-item n="abil"/>
+      </pattern>
+      <action>
+        <let>
+          <clip pos="1" side="tl" part="deriv"/>
+          <lit v=""/>
+        </let>
+        <let>
+          <clip pos="1" side="sl" part="trans"/>
+          <clip pos="1" side="tl" part="trans"/>
+        </let>
+        <let>
+          <clip pos="1" side="tl" part="trans"/>
+          <lit-tag v="tv"/>
+        </let>
+        <out>
+            <lu>
+              <clip pos="1" side="tl" part="lemh"/>
+              <lit-tag v="v"/>
+              <clip pos="1" side="sl" part="trans"/>
+              <lit-tag v="prc1"/>
+              <clip pos="1" side="tl" part="lemq"/>
+            </lu>
+        </out>
+        <out>
+            <b/>
+            <lu>
+              <lit v="bil"/>
+              <clip pos="1" side="tl" part="tags"/>
+            </lu>
+        </out>
+      </action>
+    </rule>
+     
+    <rule comment="regla: gna"> 
+      <pattern>
+        <pattern-item n="gna"/>
+      </pattern>
+      <action>
+        <call-macro n="verbal_adv1"> 
+          <with-param pos="1"/>
+        </call-macro>
+        <out>
+            <lu>
+              <clip pos="1" side="tl" part="whole"/>
+            </lu>
+        </out>
+      </action>
+    </rule>
+ 
+
+    <rule comment=""> 
+      <pattern>
+        <pattern-item n="prc"/>
+        <pattern-item n="cop"/>
+      </pattern>
+      <action>
+        <out>
+          <mlu>
+            <lu>
+              <clip pos="1" side="tl" part="whole"/>
+            </lu>
+            <lu>
+              <clip pos="2" side="tl" part="whole"/>
+            </lu>
+          </mlu>
+        </out>
+      </action>
+    </rule>
+
+    <rule comment=""> 
+      <pattern>
+        <pattern-item n="gna"/>
+        <pattern-item n="cop"/>
+      </pattern>
+      <action>
+        <out>
+          <mlu>
+            <lu>
+              <clip pos="1" side="tl" part="whole"/>
+            </lu>
+            <lu>
+              <clip pos="2" side="tl" part="whole"/>
+            </lu>
+          </mlu>
+        </out>
+      </action>
+    </rule>
+     
+<!--
+    <rule comment=""> 
+      <pattern>
+        <pattern-item n="past"/>
+        <pattern-item n="qst"/>
+      </pattern>
+      <action>
+        <out>
+          <mlu>
+            <lu>
+              <clip pos="1" side="tl" part="whole"/>
+            </lu>
+            <lu>
+              <clip pos="2" side="tl" part="whole"/>
+            </lu>
+          </mlu>
+        </out>
+      </action>
+    </rule>
+-->      
+  </section-rules>
+</transfer>

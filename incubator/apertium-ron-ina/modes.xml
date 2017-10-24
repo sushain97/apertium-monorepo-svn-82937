@@ -1,0 +1,160 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<modes>
+  <mode name="ron-ina" install="yes">
+    <pipeline>
+      <program name="lt-proc">
+        <file name="ron-ina.automorf.bin"/>
+      </program>
+      <program name="apertium-tagger -g $2">
+        <file name="ron-ina.prob"/>
+      </program>
+      <program name="apertium-pretransfer"/>
+      <program name="apertium-transfer">
+        <file name="apertium-ron-ina.ron-ina.t1x"/>
+        <file name="ron-ina.t1x.bin"/>
+        <file name="ron-ina.autobil.bin"/>
+      </program>
+      <program name="lt-proc $1">
+        <file name="ron-ina.autogen.bin"/>
+      </program>
+    </pipeline>
+  </mode>
+  
+  <mode name="ron-ina-morph" install="no">
+    <pipeline>
+      <program name="lt-proc">
+        <file name="ron-ina.automorf.bin"/>
+      </program>
+    </pipeline>
+  </mode>
+
+  <mode name="ron-ina-tagger" install="no">
+    <pipeline>
+      <program name="lt-proc">
+        <file name="ron-ina.automorf.bin"/>
+      </program>
+      <program name="apertium-tagger -g $2">
+        <file name="ron-ina.prob"/>
+      </program>
+      <program name="apertium-pretransfer"/>
+    </pipeline>
+  </mode>
+
+  <mode name="ron-ina-transfer" install="no">
+    <pipeline>
+      <program name="lt-proc">
+        <file name="ron-ina.automorf.bin"/>
+      </program>
+      <program name="apertium-tagger -g $2">
+        <file name="ron-ina.prob"/>
+      </program>
+      <program name="apertium-pretransfer"/>
+      <program name="apertium-transfer">
+        <file name="apertium-ron-ina.ron-ina.t1x"/>
+        <file name="ron-ina.t1x.bin"/>
+        <file name="ron-ina.autobil.bin"/>
+      </program>
+    </pipeline>
+  </mode>
+
+  <mode name="ina-ron-morph" install="no">
+    <pipeline>
+      <program name="lt-proc">
+        <file name="ina-ron.automorf.bin"/>
+      </program>
+    </pipeline>
+  </mode>
+ 
+  <mode name="ina-ron-tagger" install="no">
+    <pipeline>
+      <program name="lt-proc">
+        <file name="ina-ron.automorf.bin"/>
+      </program>
+      <program name="apertium-tagger -g $2">
+        <file name="ina-ron.prob"/>
+      </program>
+    </pipeline>
+  </mode>
+
+   <mode name="ina-ron-biltrans" install="no">
+    <pipeline>
+      <program name="lt-proc">
+        <file name="ina-ron.automorf.bin"/>
+      </program>
+      <program name="apertium-tagger -g $2">
+        <file name="ina-ron.prob"/>
+      </program>
+      <program name="apertium-pretransfer"/>
+      <program name="lt-proc -b">
+        <file name="ina-ron.autobil.bin"/>
+      </program>
+    </pipeline>
+  </mode>
+ 
+   <mode name="ina-ron-transfer" install="no">
+    <pipeline>
+      <program name="lt-proc">
+        <file name="ina-ron.automorf.bin"/>
+      </program>
+      <program name="apertium-tagger -g $2">
+        <file name="ina-ron.prob"/>
+      </program>
+      <program name="apertium-pretransfer"/>
+      <program name="lt-proc -b">
+        <file name="ina-ron.autobil.bin"/>
+      </program>
+      <program name="apertium-transfer -b">
+        <file name="apertium-ron-ina.ina-ron.t1x"/>
+        <file name="ina-ron.t1x.bin"/>
+      </program>
+    </pipeline>
+  </mode>
+  
+   <mode name="ina-ron-generador" install="no">
+    <pipeline>
+      <program name="lt-proc">
+        <file name="ina-ron.automorf.bin"/>
+      </program>
+      <program name="apertium-tagger -g $2">
+        <file name="ina-ron.prob"/>
+      </program>
+      <program name="apertium-pretransfer"/>
+      <program name="lt-proc -b">
+        <file name="ina-ron.autobil.bin"/>
+      </program>
+      <program name="apertium-transfer -b">
+        <file name="apertium-ron-ina.ina-ron.t1x"/>
+        <file name="ina-ron.t1x.bin"/>
+      </program>
+      <program name="lt-proc -g">
+        <file name="ina-ron.autogen.bin"/>
+      </program>
+    </pipeline>
+  </mode>
+ 
+ 
+   <mode name="ina-ron" install="no">
+    <pipeline>
+      <program name="lt-proc">
+        <file name="ina-ron.automorf.bin"/>
+      </program>
+      <program name="apertium-tagger -g $2">
+        <file name="ina-ron.prob"/>
+      </program>
+      <program name="apertium-pretransfer"/>
+      <program name="lt-proc -b">
+        <file name="ina-ron.autobil.bin"/>
+      </program>
+      <program name="apertium-transfer -b">
+        <file name="apertium-ron-ina.ina-ron.t1x"/>
+        <file name="ina-ron.t1x.bin"/>
+      </program>
+      <program name="lt-proc -g">
+        <file name="ina-ron.autogen.bin"/>
+      </program>
+    </pipeline>
+  </mode>
+ 
+
+
+</modes>

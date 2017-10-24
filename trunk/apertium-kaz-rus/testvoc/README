@@ -1,0 +1,26 @@
+Install 
+sudo apt-get install apcalc
+
+run testvoc:
+
+bash testvoc1.sh rus-kaz
+
+
+after statistics is showed:
+
+cat /tmp/rus-kaz.testvoc  | grep '> *#'
+
+cat /tmp/kaz-rus.testvoc  | grep "#"|grep "<n>"
+
+
+get words with errors into file
+
+cat /tmp/rus-kaz.testvoc  | grep '> *#' >errors.txt
+
+
+
+cat /tmp/rus-kaz.testvoc  | grep "<adv>" |grep \#    --- is showed all "adv" words with #
+
+
+cat /tmp/rus-kaz.testvoc  | grep "<adv>" |grep \# | cut -f4 -d ">"     --- this mean cuting 
+

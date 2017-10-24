@@ -1,0 +1,23 @@
+DELIMITERS = "<.>" "<!>" "<?>" "<...>" "<¶>" ;
+SOFT-DELIMITERS = "<,>" ;
+
+SETS
+
+LIST N = n ;
+LIST V = v ;
+
+LIST kuin = ("<ko>" pr) ;
+LIST kun =  ("<ko>" cnjsub) ;
+
+LIST COMP = comp ;
+
+
+SECTION
+
+# Select noun if followed by known verb
+SELECT N IF (1C V);
+
+# Select comparitive "kuin" if preceded by comparative adjective
+SELECT kuin IF (-1 COMP);
+# Select the conjuctive otherwise
+SELECT kun;

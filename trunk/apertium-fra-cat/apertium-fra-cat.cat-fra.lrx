@@ -1,0 +1,205 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rules>
+
+<!-- PR -->
+
+  <!-- 
+    per >> par, pour
+  -->
+  <rule weight="0.8">
+    <match lemma="per" tags="pr"><select lemma="par"/></match>
+  </rule>
+  <rule weight="1.0">
+    <match lemma="per" tags="pr"><select lemma="pour"/></match>
+    <match tags="*.inf"/>
+  </rule>
+
+  <!-- 
+    a >> à, en
+  -->
+  <rule weight="0.8">
+    <match lemma="a" tags="pr"><select lemma="à"/></match>
+  </rule>
+  <rule weight="1.0">
+    <match lemma="a" tags="pr"><select lemma="en"/></match>
+    <or>
+      <match lemma="Catalunya"/>
+      <match lemma="Aragó"/>
+      <match lemma="Castella"/>
+      <match lemma="Andalusia"/>
+      <match lemma="Occitània"/>
+      <match lemma="Provença"/>
+      <match lemma="Espanya"/>
+      <match lemma="França"/>
+      <match lemma="Alemanya"/>
+      <match lemma="Suècia"/>
+      <match lemma="Noruega"/>
+      <match lemma="Finlàndia"/>
+      <match lemma="Islàndia"/>
+      <match lemma="Itàlia"/>
+      <match lemma="Bèlgica"/>
+      <match lemma="Holanda"/>
+      <match lemma="Suïssa"/>
+      <match lemma="Àustria"/>
+      <match lemma="Hongria"/>
+      <match lemma="Eslovàquia"/>
+      <match lemma="Polònia"/>
+      <match lemma="Lituània"/>
+      <match lemma="Letònia"/>
+      <match lemma="Estònia"/>
+      <match lemma="Bielorússia"/>
+      <match lemma="Grècia"/>
+      <match lemma="Anglaterra"/>
+      <match lemma="Gal·les"/>
+      <match lemma="Irlanda"/>
+      <match lemma="Rússia"/>
+      <match lemma="Ucraïna"/>
+      <match lemma="Bòsnia"/>
+      <match lemma="Croàcia"/>
+      <match lemma="Sèrbia"/>
+      <match lemma="Xina"/>
+      <match lemma="Índia"/>
+      <match lemma="Turquia"/>
+      <match lemma="Irak"/>
+      <match lemma="Iraq"/>
+      <match lemma="Iran"/>
+      <match lemma="Aràbia"/>
+      <match lemma="Síria"/>
+      <match lemma="Jordània"/>
+      <match lemma="Israel"/>
+      <match lemma="Palestina"/>
+      <match lemma="Austràlia"/>
+      <match lemma="Àfrica"/>
+      <match lemma="Amèrica"/>
+      <match lemma="Àsia"/>
+      <match lemma="Europa"/>
+      <match lemma="Oceania"/>
+    </or>
+  </rule>
+
+  <!-- 
+    en >> en, dans
+  -->
+  <rule weight="0.8">
+    <match lemma="en" tags="pr"><select lemma="dans"/></match>
+  </rule>
+  <rule weight="1.0">
+    <or>
+      <match lemma="classificar"/>
+      <match lemma="consistir"/>
+      <match lemma="dividir"/>
+      <match lemma="organitzar"/>
+      <match lemma="pensar"/>
+    </or>
+    <match lemma="en" tags="pr"><select lemma="en"/></match>
+  </rule>
+  <rule weight="1.0">
+    <match lemma="en" tags="pr"><select lemma="en"/></match>
+    <match tags="*.inf"/>
+  </rule>
+  <rule weight="1.0">
+    <match lemma="en" tags="pr"><select lemma="en"/></match>
+    <match tags="n.*"/>
+  </rule>
+  <rule weight="1.0">
+    <match lemma="en" tags="pr"><select lemma="en"/></match>
+    <match tags="adj.*"/>
+  </rule>
+  <rule weight="1.2">
+    <match lemma="en" tags="pr"><select lemma="dans"/></match>
+    <match tags="adj.ind.*"/>
+  </rule>
+
+  <!-- 
+    perquè (cnjadv) >> parce que, pour que
+  -->
+  <rule weight="0.8">
+    <match lemma="perquè" tags="cnjadv"><select lemma="parce que"/></match>
+  </rule>
+  <rule weight="1.0">
+    <match lemma="perquè" tags="cnjadv"><select lemma="pour que"/></match>
+    <or>
+      <match tags="*.prs.*"/>
+      <match tags="*.pis.*"/>
+    </or>
+  </rule>
+  <rule weight="1.0">
+    <match lemma="perquè" tags="cnjadv"><select lemma="pour que"/></match>
+    <match tags="prn.tn.*"/>
+    <or>
+      <match tags="*.prs.*"/>
+      <match tags="*.pis.*"/>
+    </or>
+  </rule>
+
+  <!-- 
+    dues vegades DE cinc >> deux fois sur cinq
+  -->
+  <rule weight="1.0">
+    <match tags="num.*"/>
+    <match lemma="vegada" tags="n.*"/>
+    <match lemma="de" tags="pr"><select lemma="sur" tags="pr"/></match>
+    <match tags="num.*"/>
+  </rule>
+  <rule weight="0.8">
+    <match lemma="de" tags="pr"><select lemma="de" tags="pr"/></match>
+  </rule>
+
+  <rule weight="0.8">
+    <match lemma="pagar" tags="vblex.*"><select lemma="payer"/></match>
+  </rule>
+  <rule weight="0.8">
+    <match lemma="canviar" tags="vblex.*"><select lemma="changer"/></match>
+  </rule>
+
+<!-- ADV -->
+
+  <!-- 
+    no >> ne, non
+  -->
+  <rule weight="0.8">
+    <match lemma="no" tags="adv"><select lemma="ne"/></match>
+  </rule>
+  <rule weight="1.0">
+    <match lemma="o" tags="cnjcoo"/>
+    <match lemma="no" tags="adv"><select lemma="non"/></match>
+    <or><match tags="cm"/><match tags="sent"/></or>
+  </rule>
+
+<!-- N -->
+
+  <!-- 
+    policia >> police, policier
+  -->
+  <rule weight="0.8">
+    <match lemma="policia" tags="n.*"><select lemma="police"/></match>
+  </rule>
+  <rule weight="1.0">
+    <match lemma="policia" tags="n.*.pl"><select lemma="policier"/></match>
+  </rule>
+  <rule weight="1.2">
+    <or>
+      <match tags="det.*.f.*"/>
+      <match tags="adj.*.f.*"/>
+    </or>
+    <match lemma="policia" tags="n.*.pl"><select lemma="police"/></match>
+  </rule>
+  <rule weight="1.2">
+    <or>
+      <match tags="det.*.m.*"/>
+      <match tags="adj.*.m.*"/>
+      <match lemma="dona" tags="n.*"/>
+    </or>
+    <match lemma="policia" tags="n.*"><select lemma="policier"/></match>
+  </rule>
+
+</rules>
+
+<!-- 
+Resources: 
+    http://wiki.apertium.org/wiki/How_to_get_started_with_lexical_selection_rules
+    http://wiki.apertium.org/wiki/Constraint-based_lexical_selection
+    http://wiki.apertium.org/wiki/Lexical_selection
+    http://wiki.apertium.org/wiki/Learning_rules_from_parallel_and_non-parallel_corpora
+-->
+

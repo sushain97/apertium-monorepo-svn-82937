@@ -1,0 +1,30 @@
+Alphabet
+ А Е Ё И О Ӧ У Ӱ Э Ю Я Б В Г Д Ж З Й К Л М Н Ҥ П Р С Т Ф Х Ц Ч Ш Щ Ь Ъ Ы ы Ӹ ӹ Ӓ
+ ӓ а е ё и о ӧ у ӱ э ю я б в г д ж з й к л м н ҥ п р с т ф х ц ч ш щ ь ъ
+
+ %{ы%}:ы %{ы%}:0 %>:0 •:0;
+
+Sets
+
+Vowel = А Э И О У Ы Я Е Ё Ю Ӧ Ӱ
+	а э и о у ы я е ё ю ӧ ӱ ;
+
+Consonant = Б В Г Д Ж З Й К Л М Н Ҥ П Р С Т Ф Х Ц Ч Ш Щ җ ң һ Җ Ң Һ Ғ ғ Ҡ ҡ
+	    б в г д ж з й к л м н ҥ п р с т ф х ц ч ш щ ;
+
+Voiceless = к т д п ф ш ч х b ;
+
+Reduced = е о ӧ;
+
+Rules 
+
+"Add ы to when adding s enclitic to consonant ending word"
+%{ы%}:ы <=> :~Vowel %>: _  ;
+
+! %{ы%}:ы <=> :Consonant %>: _  ;
+! Resources:
+! http://wiki.apertium.org/wiki/Starting_a_new_language_with_HFST#Enter_twol
+! https://kitwiki.csc.fi/twiki/bin/view/KitWiki/HfstHome
+! http://hfst.sourceforge.net/
+! http://wiki.apertium.org/wiki/Twol
+! http://wiki.apertium.org/wiki/Hfst

@@ -1,0 +1,229 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<modes>
+  <mode name="ava-rus" install="yes">
+    <pipeline>
+      <program name="lt-proc -w">
+        <file name="ava-rus.automorf.bin"/>
+      </program>
+      <program name="cg-proc  -n -w -1">
+        <file name="ava-rus.rlx.bin"/>
+      </program>
+      <program name="apertium-pretransfer"/>
+      <program name="lt-proc -b">
+        <file name="ava-rus.autobil.bin"/>
+      </program>
+      <program name="lrx-proc -m"> 
+        <file name="ava-rus.autolex.bin"/> 
+      </program> 
+      <program name="apertium-transfer -b">
+        <file name="apertium-ava-rus.ava-rus.t1x"/>
+        <file name="ava-rus.t1x.bin"/>
+      </program>
+      <program name="apertium-interchunk">
+        <file name="apertium-ava-rus.ava-rus.t2x"/>
+        <file name="ava-rus.t2x.bin"/>
+      </program>
+      <program name="apertium-postchunk">
+        <file name="apertium-ava-rus.ava-rus.t3x"/>
+        <file name="ava-rus.t3x.bin"/>
+      </program>
+      <program name="lt-proc $1">
+        <file name="ava-rus.autogen.bin"/>
+      </program>
+      <program name="lt-proc -p">
+        <file name="ava-rus.autopgen.bin"/>
+      </program>
+
+    </pipeline>
+  </mode>
+
+  <mode name="ava-rus-debug">
+    <pipeline>
+      <program name="lt-proc -w">
+        <file name="ava-rus.automorf.bin"/>
+      </program>
+      <program name="cg-proc  -n -w -1">
+        <file name="ava-rus.rlx.bin"/>
+      </program>
+      <program name="apertium-pretransfer"/>
+      <program name="lt-proc -b">
+        <file name="ava-rus.autobil.bin"/>
+      </program>
+      <program name="lrx-proc -m"> 
+        <file name="ava-rus.autolex.bin"/> 
+      </program> 
+      <program name="apertium-transfer -b">
+        <file name="apertium-ava-rus.ava-rus.t1x"/>
+        <file name="ava-rus.t1x.bin"/>
+      </program>
+      <program name="apertium-interchunk">
+        <file name="apertium-ava-rus.ava-rus.t2x"/>
+        <file name="ava-rus.t2x.bin"/>
+      </program>
+      <program name="apertium-postchunk">
+        <file name="apertium-ava-rus.ava-rus.t3x"/>
+        <file name="ava-rus.t3x.bin"/>
+      </program>
+      <program name="lt-proc -d">
+        <file name="ava-rus.autogen.bin"/>
+      </program>
+    </pipeline>
+  </mode>
+
+
+  <mode name="ava-rus-morph" install="no">
+    <pipeline>
+      <program name="lt-proc -w">
+        <file name="ava-rus.automorf.bin"/>
+      </program>
+    </pipeline>
+  </mode>
+
+  <mode name="ava-rus-disam" install="no">
+    <pipeline>
+      <program name="lt-proc -w">
+        <file name="ava-rus.automorf.bin"/>
+      </program>
+      <program name="cg-conv -a -l"/>
+      <program name="vislcg3 --trace --grammar">
+        <file name="ava-rus.rlx.bin"/>
+      </program>
+    </pipeline>
+  </mode>
+
+  <mode name="ava-rus-tagger" install="no">
+    <pipeline>
+      <program name="lt-proc -w">
+        <file name="ava-rus.automorf.bin"/>
+      </program>
+      <program name="cg-proc  -n -w -1">
+        <file name="ava-rus.rlx.bin"/>
+      </program>
+      <program name="apertium-pretransfer"/>
+    </pipeline>
+  </mode>
+
+  <mode name="ava-rus-biltrans" install="no">
+    <pipeline>
+      <program name="lt-proc -w">
+        <file name="ava-rus.automorf.bin"/>
+      </program>
+      <program name="cg-proc  -n -w -1">
+        <file name="ava-rus.rlx.bin"/>
+      </program>
+      <program name="apertium-pretransfer"/>
+      <program name="lt-proc -b">
+        <file name="ava-rus.autobil.bin"/>
+      </program>
+    </pipeline>
+  </mode>
+
+  <mode name="ava-rus-lextor" install="no">
+    <pipeline>
+      <program name="lt-proc -w">
+        <file name="ava-rus.automorf.bin"/>
+      </program>
+      <program name="cg-proc  -n -w -1">
+        <file name="ava-rus.rlx.bin"/>
+      </program>
+      <program name="apertium-pretransfer"/>
+      <program name="lt-proc -b">
+        <file name="ava-rus.autobil.bin"/>
+      </program>
+      <program name="lrx-proc -m -t">
+        <file name="ava-rus.autolex.bin"/>
+      </program>
+    </pipeline>
+  </mode>
+
+
+  <mode name="ava-rus-chunker" install="no">
+    <pipeline>
+      <program name="lt-proc -w">
+        <file name="ava-rus.automorf.bin"/>
+      </program>
+      <program name="cg-proc -n -w -1">
+        <file name="ava-rus.rlx.bin"/>
+      </program>
+      <program name="apertium-pretransfer"/>
+      <program name="lt-proc -b">
+        <file name="ava-rus.autobil.bin"/>
+      </program>
+      <program name="lrx-proc -m"> 
+        <file name="ava-rus.autolex.bin"/> 
+      </program> 
+      <program name="apertium-transfer -b -t">
+        <file name="apertium-ava-rus.ava-rus.t1x"/>
+        <file name="ava-rus.t1x.bin"/>
+      </program>
+    </pipeline>
+  </mode>
+
+  <mode name="ava-rus-interchunk" install="no">
+    <pipeline>
+      <program name="lt-proc -w">
+        <file name="ava-rus.automorf.bin"/>
+      </program>
+      <program name="cg-proc -n -w -1">
+        <file name="ava-rus.rlx.bin"/>
+      </program>
+      <program name="apertium-pretransfer"/>
+      <program name="lt-proc -b">
+        <file name="ava-rus.autobil.bin"/>
+      </program>
+      <program name="lrx-proc -m"> 
+        <file name="ava-rus.autolex.bin"/> 
+      </program> 
+      <program name="apertium-transfer -b">
+        <file name="apertium-ava-rus.ava-rus.t1x"/>
+        <file name="ava-rus.t1x.bin"/>
+      </program>
+      <program name="apertium-interchunk">
+        <file name="apertium-ava-rus.ava-rus.t2x"/>
+        <file name="ava-rus.t2x.bin"/>
+      </program>
+    </pipeline>
+  </mode>
+
+  <mode name="ava-rus-postchunk" install="no">
+    <pipeline>
+      <program name="lt-proc -w">
+        <file name="ava-rus.automorf.bin"/>
+      </program>
+      <program name="cg-proc -n -w -1">
+        <file name="ava-rus.rlx.bin"/>
+      </program>
+      <program name="apertium-pretransfer"/>
+      <program name="lt-proc -b">
+        <file name="ava-rus.autobil.bin"/>
+      </program>
+      <program name="lrx-proc -m"> 
+        <file name="ava-rus.autolex.bin"/> 
+      </program> 
+      <program name="apertium-transfer -b">
+        <file name="apertium-ava-rus.ava-rus.t1x"/>
+        <file name="ava-rus.t1x.bin"/>
+      </program>
+      <program name="apertium-interchunk">
+        <file name="apertium-ava-rus.ava-rus.t2x"/>
+        <file name="ava-rus.t2x.bin"/>
+      </program>
+      <program name="apertium-postchunk">
+        <file name="apertium-ava-rus.ava-rus.t3x"/>
+        <file name="ava-rus.t3x.bin"/>
+      </program>
+    </pipeline>
+  </mode>
+
+
+  <mode name="rus-ava-morph" install="no">
+    <pipeline>
+      <program name="lt-proc -w">
+        <file name="rus-ava.automorf.bin"/>
+      </program>
+    </pipeline>
+  </mode>
+
+</modes>
+
+

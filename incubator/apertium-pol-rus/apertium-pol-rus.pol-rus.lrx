@@ -1,0 +1,58 @@
+<rules>
+
+  <rule>
+    <match lemma="dzisiaj" tags="adv">
+      <select lemma="сегодня" tags="adv"/>
+    </match>
+  </rule>
+  <rule>
+    <match lemma="nie" tags="adv">
+      <select lemma="не" tags="adv"/>
+    </match>
+  </rule>
+  <rule>
+    <match lemma="łącznie" tags="adv">
+      <select lemma="вместе" tags="adv"/>
+    </match>
+  </rule>
+  <rule>
+    <match lemma="razem" tags="adv">
+      <select lemma="вместе" tags="adv"/>
+    </match>
+  </rule>
+  <rule>
+    <match lemma="zawsze" tags="adv">
+      <select lemma="всегда" tags="adv"/>
+    </match>
+  </rule>
+  <rule>
+    <match lemma="pies" tags="n.*">
+      <select lemma="собака" tags="n.*"/>
+    </match>
+  </rule>
+  <rule>
+    <match lemma="okno" tags="n.*">
+      <select lemma="окно" tags="n.*"/>
+    </match>
+  </rule>
+  <rule>
+      <match lemma="ładny" tags="adj.*">
+      <select lemma="хороший" tags="adj.*"/>
+    </match>
+          <match lemma="pogoda" tags="n.*"/>
+  </rule>
+    <rule>  
+      <match tags="np.top.*">    
+        <select tags="np.top.*.*.nom"/> 
+      </match>  
+    </rule>
+</rules>
+
+<!-- 
+Resources: 
+    http://wiki.apertium.org/wiki/How_to_get_started_with_lexical_selection_rules
+    http://wiki.apertium.org/wiki/Constraint-based_lexical_selection
+    http://wiki.apertium.org/wiki/Lexical_selection
+    http://wiki.apertium.org/wiki/Learning_rules_from_parallel_and_non-parallel_corpora
+-->
+

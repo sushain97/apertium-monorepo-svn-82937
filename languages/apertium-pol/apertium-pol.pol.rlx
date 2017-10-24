@@ -1,0 +1,120 @@
+DELIMITERS = "<.>" "<!>" "<?>" "<...>" "<¶>" "<:>";
+SOFT-DELIMITERS = "<,>";
+
+SETS
+
+LIST BOS = (>>>) (sent);
+LIST EOS = (<<<) (sent);
+
+LIST N = n ;
+LIST Det = det ;
+LIST Vblex = Vblex ;
+LIST Adj = adj ;
+LIST Prn = prn ;
+LIST Num = num ;
+LIST Je = "<je>"i ;
+LIST To = "<to>"i ;
+LIST Być = "być" ;
+LIST Się = "się" ;
+LIST Ref = ref ;
+
+# prepositions
+
+# with genitive
+LIST Do = "do" ;
+LIST Dla = "Dla" ;
+LIST Od = "od" ;
+LIST U = "u" ;
+LIST Obok = "obok" ;
+
+# with loc or Acc
+LIST O = "o" ;
+LIST Na = "Na" ;
+LIST W = "W" ;
+
+# with acc or ins
+LIST Pod = "Pod" ;
+LIST Za = "Za" ;
+LIST Nad = "Nad" ;
+
+LIST Przy = "Przy" ;
+
+
+LIST Nom = nom ; 
+LIST Acc = acc ; 
+LIST Gen = gen ; 
+LIST Dat = dat ; 
+LIST Ins = ins ; 
+LIST Loc = loc ; 
+LIST Voc = voc ; 
+
+LIST Pl = pl ; 
+LIST Sg = sg ;
+
+LIST F = f ;
+LIST M = m ;
+LIST Nt = nt ;
+LIST Mp = mp ;
+LIST Mi = mi ;
+LIST Ma = ma ;
+LIST Mf = mf m f ;
+LIST Relpr = rel ;
+
+LIST Fin = pres past ;
+LIST Ger = ger ;
+LIST AdjLike = adj pprs pp ;
+
+LIST Pr = pr ;
+
+LIST Cm = cm ;
+
+
+SET NAGDILV = Nom | Acc | Gen | Dat | Ins | Loc | Voc ; 
+SET NUM = Pl | Sg ; 
+SET GEND = F | M | Nt | Mp | Mi | Ma | Mf ; 
+
+
+SECTION
+
+# 1. if a word is a determiner, remove the variant with the cases the following word doesn't have
+REMOVE Det + $$NAGDILV + $$NUM + $$GEND IF (NOT 1 $$NAGDILV + $$NUM + $$GEND) ;
+# 2. if a word is a determiner and the following word is female/male/neuter, leave only the variants with this gender
+SELECT Det + $$GEND IF (1 $$GEND) ;
+# 3. if the following word is a noun, remove the pronoun readings
+# SELECT 
+# 4. if a word is a determiner and the following word is ma, remove all the readings that don't have this tag
+# 5. if a word is a noun and a previous word is a determiner, remove all the readings with cases that differ from cases in all the readings of the determiner
+REMOVE N + $$NAGDILV IF (NOT -1 $$NAGDILV) ; 
+# 6. something else
+REMOVE Acc IF (0 Je) (NEGATE -1* Fin) (NEGATE 1* Fin) (NOT -1 Pl) ;
+# 7. if there is no other verb in the sentence and there is an ambiguity between verb and pronoun, select the verb reading
+# SELECT Fin IF (NEGATE -1* Fin) (NEGATE 1* Fin) (NOT -1 Pl) ; 
+# 8. if anywhere in the sentence there is a noun with unambiguous nominative case and there is no verb być and there is ambiguity between nom and acc, 
+#remove nom
+REMOVE Nom IF (0 N) (0C* Nom) (NOT -1* Być) (NOT 1* Być) (0 Nom OR Acc) ; 
+# if there is a verb być in the sentence and there are no other nouns in the sentence and there is ambiguity between nom and acc, select nom reading
+SELECT Nom IF (NEGATE -1* N + Nom) (NEGATE 1* N + Nom) (0* Być) (0 Nom OR Acc) ;
+# if there is an adjective there is no noun after it and there is a verb być in the sentence, and it is ambiguous between nom and acc, select nom
+SELECT Nom IF (0 Adj) (NOT 1* N) (0* Być) (0 Nom OR Acc) ;
+# if the situation is like in the previous rule and there is a noun in nominative before the current word, select the reading with the gender of this noun
+SELECT $$GEND IF (0 Adj) (NOT 1* N) (0* Być) (NOT 0 Ins) (-1* N + $$GEND) ;
+# if the first word is a pronoun to and the second word is the verb być and it is ambiguous between nom and acc, select the nominative reading
+SELECT Nom IF (0 To) (0* Być) (0 Nom OR Acc) ;
+# if there is a noun and there is a preposition "o" before it, select loc
+SELECT Loc IF (0 N OR Det OR Prn OR Num) (-1 O OR Na OR W OR Przy) (0 Loc OR Voc);
+# if there is a noun and there are prepositions listed before it, select gen
+SELECT Gen IF (0 N OR Prn) (-1 Do OR U OR Dla OR Obok) ;
+# if się if position +1, select reflexive reading
+SELECT Ref IF (1 Się) ;
+# if there a verb in directly preceding position, remove verbal reading from "je"
+REMOVE Fin if (0 Je) (-1 Fin) ;
+# if there an adjective or a participle in directly preceding position, remove gerund reading
+REMOVE Ger IF (0 Ger OR N) (-1 AdjLike) ;
+
+SECTION
+
+# remove the reading with locative if there is no comma after it
+REMOVE Voc IF (NOT 1 Cm) ;
+
+
+

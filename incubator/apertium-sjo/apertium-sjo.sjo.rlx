@@ -1,0 +1,11 @@
+DELIMITERS = "<.>" "<!>" "<?>" "<...>" "<¶>" ;
+SOFT-DELIMITERS = "<,>" ;
+
+LIST EOS = (>>>) sent ; 
+LIST BOS = (<<<) sent ; 
+
+LIST N = n ; 
+
+SECTION
+
+SELECT N ;

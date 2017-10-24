@@ -1,0 +1,152 @@
+<rules>
+  <rule>
+    <match lemma="жеги" tags="adv"><select lemma="ещё"/></match>
+    <match/>
+    <match tags="vblex.*"/>
+    <match lemma="букӏине" tags="vblex.*.*.neg"/>
+  </rule>
+  <rule>
+    <or><match tags="adj"/><match tags="adj.*"/></or>
+    <match lemma="куц" tags="n.nt.sg.loc"><select lemma="взгляд"/></match>
+  </rule>
+  <rule>
+    <match lemma="хӏакъалъулъ" tags="post"><select lemma="о"/></match>
+  </rule>
+  <rule>
+    <match lemma="ДР" tags="np.top.*"><select lemma="Дагестан"/></match>
+  </rule>
+  <rule>
+    <match lemma="абизе" tags="vblex.*"><select lemma="говорить"/></match>
+    <match lemma="жакъа"/>
+  </rule>
+  <rule>
+    <match lemma="хӏинкъи" tags="n.*"><select lemma="боязнь"/></match>
+    <match lemma="букӏине"/>
+  </rule>
+  <rule>
+    <or>
+      <match lemma="къо"/>
+      <match lemma="лъагӀали"/>
+    </or>
+    <match lemma="жаниб" tags="post"><select lemma="на протяжении"/></match>
+  </rule>
+  <rule>
+    <match lemma="хьвадизе" tags="vblex.*"><select lemma="ходить"/></match>
+  </rule>
+  <rule>
+    <match lemma="гьанже" tags="adv.loc"><select lemma="сейчас"/></match>
+  </rule>
+  <rule>
+    <match lemma="кӏудияб" tags="adj.*"><select lemma="большой"/></match>
+  </rule>
+  <rule>
+    <match lemma="ахираб" tags="adj.*"><select lemma="последний"/></match>
+  </rule>
+  <rule>
+    <match lemma="вакил" tags="n.*"><select lemma="представитель"/></match>
+  </rule>
+  <rule>
+    <match lemma="къецал" tags="n.*"><select lemma="соревнование"/></match>
+  </rule>
+  <rule>
+    <match lemma="рухӏ" tags="n.*"><select lemma="душа"/></match>
+  </rule>
+  <rule>
+    <match lemma="дуниял" tags="n.*"><select lemma="мир"/></match>
+  </rule>
+  <rule>
+    <match lemma="вас" tags="n.*"><select lemma="парень"/></match>
+  </rule>
+  <rule>
+    <match lemma="талихӏ" tags="n.*"><select lemma="счастье"/></match>
+  </rule>
+  <rule>
+    <match lemma="росу" tags="n.*"><select lemma="село"/></match>
+  </rule>
+  <rule>
+    <match lemma="бахунеб" tags="adj.*"><select lemma="заразный"/></match>
+  </rule>
+  <rule>
+    <match lemma="бетӏераб" tags="adj.*"><select lemma="главный"/></match>
+  </rule>
+  <rule>
+    <match lemma="гӏуцӏи" tags="n.*"><select lemma="организация"/></match>
+  </rule>
+  <rule>
+    <match lemma="бажаризе" tags="vblex.*"><select lemma="уметь"/></match>
+  </rule>
+  <rule>
+    <match lemma="бицине" tags="vblex.*"><select lemma="говорить"/></match>
+  </rule>
+  <rule>
+    <match lemma="хъвазе" tags="vblex.*"><select lemma="писать"/></match>
+  </rule>
+  <rule weight="1.1">
+    <match lemma="хъвазе" tags="vblex.*.*.fut"><select lemma="написать"/></match>
+  </rule>
+  <rule>
+    <match lemma="батӏайиса"/>
+    <match lemma="бичӏчӏизе" tags="vblex.*"><select lemma="восприниматься"/></match>
+  </rule>
+  <rule>
+    <match lemma="кьезе" tags="vblex.*"><select lemma="давать"/></match>
+  </rule>
+  <rule>
+    <match lemma="беги" tags="vblex.*"><select lemma="ложать"/></match>
+  </rule>
+  <rule>
+    <match lemma="балагьи" tags="vblex.*"><select lemma="смотреть"/></match>
+  </rule>
+  <rule>
+    <match lemma="щай" tags="adv.itg"><select lemma="почему"/></match>
+  </rule>
+  <rule weight="2.0">
+    <match lemma="хӏукумат" tags="n.*"><select lemma="правительство"/></match>
+    <match lemma="председатель" tags="n.*" />
+  </rule>
+  <rule>
+    <match lemma="хӏукумат" tags="n.*"><select lemma="государство"/></match>
+  </rule>
+  <rule>
+    <match lemma="рахьдал" tags="adj"><select lemma="родной"/></match>
+    <match lemma="мацӏ" tags="n.*" />
+  </rule>
+  <rule>
+    <match lemma="магӏарул" tags="adj"><select lemma="аварский"/></match>
+    <match lemma="мацӏ" tags="n.*" />
+  </rule>
+  <rule>
+    <match lemma="гьеб" tags="prn.dem.m.*"><select lemma="он" tags="prn.pers.*"/></match>
+  </rule>
+  <rule>
+    <match lemma="гьеб" tags="prn.dem.f.*"><select lemma="она" tags="prn.pers.*"/></match>
+  </rule>
+  <rule>
+    <match lemma="гьеб" tags="det.dem.nt.*"><select lemma="этот" tags="det.dem.*"/></match>
+    <match lemma="го" />
+  </rule>
+  <rule>
+    <match lemma="гьеб" tags="prn.dem.nt.*"><select lemma="тот" tags="prn.dem.*"/></match>
+  </rule>
+  <rule>
+    <match lemma="гьеб" tags="prn.dem.pl.*"><select lemma="они" tags="prn.pers.*"/></match>
+  </rule>
+  <rule>
+    <match lemma="гьаб" tags="prn.dem.m.*"><select lemma="он" tags="prn.pers.*"/></match>
+  </rule>
+  <rule>
+    <match lemma="гьаб" tags="prn.dem.f.*"><select lemma="она" tags="prn.pers.*"/></match>
+  </rule>
+  <rule>
+    <match lemma="гьаб" tags="prn.dem.nt.*"><select lemma="это" tags="prn.dem.*"/></match>
+  </rule>
+  <rule>
+    <match lemma="гьаб" tags="prn.dem.pl.*"><select lemma="они" tags="prn.pers.*"/></match>
+  </rule>
+  <rule>
+    <match lemma="къадар" tags="n.*"><select lemma="количество"/></match>
+    <match/>
+    <match lemma="балагьизе"/>
+  </rule>
+
+</rules>

@@ -1,0 +1,70 @@
+<dictionary>
+  <alphabet>аАбБвВгГдДеЕжЖзЗиИйЙкКлЛмМнНоОпПрРсСтТуУфФхХцЦчЧшШщЩъЪьюЮяЯЭèѝ</alphabet>
+  <sdefs>
+    <sdef n="n"       c="Noun"/>
+    <sdef n="np"      c="Proper name"/>
+    <sdef n="pr"      c="Preposition"/>
+    <sdef n="adj"     c="Adjective"/>
+    <sdef n="vbser"   c="Verb 'to be'"/>
+    <sdef n="cnjcoo"  c="Coordinating conjunction"/>
+
+    <sdef n="top"     c="Toponym"/>
+    <sdef n="ind"     c="Indefinite"/>
+    <sdef n="def"     c="Definite"/>
+
+    <sdef n="m"       c="Masculine"/>
+    <sdef n="f"       c="Feminine"/>
+    <sdef n="nt"      c="Neuter"/>
+
+    <sdef n="sup"     c="Superlative"/>
+
+    <sdef n="p3"      c="Third person"/>
+
+    <sdef n="pri"     c="Present indicative"/>
+
+    <sdef n="sg"      c="Singular"/>
+  </sdefs>
+  <pardefs>
+    <pardef n="и__cnjcoo">
+      <e><p><l></l><r><s n="cnjcoo"/></r></p></e>
+    </pardef>
+    <pardef n="в__pr">
+      <e><p><l></l><r><s n="pr"/></r></p></e>
+    </pardef>
+    <pardef n="град__n">
+      <e><p><l></l><r><s n="n"/><s n="m"/><s n="sg"/><s n="ind"/></r></p></e>
+    </pardef>
+    <pardef n="столиц/а__n">
+      <e><p><l>а</l><r>а<s n="n"/><s n="f"/><s n="sg"/><s n="ind"/></r></p></e>
+      <e><p><l>ата</l><r>а<s n="n"/><s n="f"/><s n="sg"/><s n="def"/></r></p></e>
+    </pardef>
+    <pardef n="Сараево__np">
+      <e><p><l></l><r><s n="np"/><s n="top"/></r></p></e>
+    </pardef>
+    <pardef n="гол/ям__adj">
+      <e><p><l>ям</l><r><s n="m"/><s n="sg"/><s n="ind"/></r></p></e>
+      <e><p><l>емият</l><r><s n="m"/><s n="sg"/><s n="def"/></r></p></e>
+    </pardef>
+    <pardef n="/е__vbser">
+      <e><p><l>е</l><r>е<s n="vbser"/><s n="pri"/><s n="p3"/><s n="sg"/></r></p></e>
+    </pardef>
+  </pardefs>
+  <section id="main" type="standard">
+    <e lm="и"><i>и</i><par n="и__cnjcoo"/></e>
+
+    <e lm="на"><i>на</i><par n="в__pr"/></e>
+    <e lm="в"><i>в</i><par n="в__pr"/></e>
+
+    <e lm="град"><i>град</i><par n="град__n"/></e>
+    <e lm="столица"><i>столиц</i><par n="столиц/а__n"/></e>
+    <e lm="страна"><i>стран</i><par n="столиц/а__n"/></e>
+
+    <e lm="Сараево"><i>Сараево</i><par n="Сараево__np"/></e>
+    <e lm="Босна и Херцеговина"><i>Босна<b/>и<b/>Херцеговина</i><par n="Сараево__np"/></e>
+
+    <e lm="голям"><p><l>гол</l><r>голям<s n="adj"/></r></p><par n="гол/ям__adj"/></e>
+    <e lm="голям"><p><l>най-гол</l><r>голям<s n="adj"/><s n="sup"/></r></p><par n="гол/ям__adj"/></e>
+
+    <e lm="е"><i></i><par n="/е__vbser"/></e>
+  </section>
+</dictionary>

@@ -1,0 +1,525 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<modes>
+
+  <!-- urd → snd -->
+
+  <mode name="urd-snd" install="yes">
+    <pipeline>
+      <program name="lt-proc -w">
+        <file name="urd-snd.automorf.bin"/>
+      </program>
+
+
+      <program name="cg-proc -w">
+        <file name="urd-snd.rlx.bin"/>
+      </program>
+      <program name="apertium-tagger -g $2">
+        <file name="urd-snd.prob"/>
+      </program>
+      <program name="apertium-pretransfer"/>
+      <program name="lt-proc -b">
+        <file name="urd-snd.autobil.bin"/>
+      </program>
+      <program name="lrx-proc">
+        <file name="urd-snd.autolex.bin"/>
+      </program>
+      <program name="apertium-transfer -b">
+        <file name="apertium-urd-snd.urd-snd.t1x"/>
+        <file name="urd-snd.t1x.bin"/>
+      </program>
+      <program name="apertium-interchunk">
+        <file name="apertium-urd-snd.urd-snd.t2x"/>
+        <file name="urd-snd.t2x.bin"/>
+      </program>
+      <program name="apertium-postchunk">
+        <file name="apertium-urd-snd.urd-snd.t3x"/>
+        <file name="urd-snd.t3x.bin"/>
+      </program>
+      <program name="lt-proc $1">
+        <file name="urd-snd.autogen.bin"/>
+      </program>
+
+    </pipeline>
+  </mode>
+
+  <mode name="urd-snd-dgen" install="no">
+    <pipeline>
+      <program name="lt-proc -w">
+        <file name="urd-snd.automorf.bin"/>
+      </program>
+
+
+      <program name="cg-proc -w">
+        <file name="urd-snd.rlx.bin"/>
+      </program>
+      <program name="apertium-tagger -g $2">
+        <file name="urd-snd.prob"/>
+      </program>
+      <program name="apertium-pretransfer"/>
+      <program name="lt-proc -b">
+        <file name="urd-snd.autobil.bin"/>
+      </program>
+      <program name="apertium-transfer -b">
+        <file name="apertium-urd-snd.urd-snd.t1x"/>
+        <file name="urd-snd.t1x.bin"/>
+      </program>
+      <program name="apertium-interchunk">
+        <file name="apertium-urd-snd.urd-snd.t2x"/>
+        <file name="urd-snd.t2x.bin"/>
+      </program>
+      <program name="apertium-postchunk">
+        <file name="apertium-urd-snd.urd-snd.t3x"/>
+        <file name="urd-snd.t3x.bin"/>
+      </program>
+      <program name="lt-proc -d">
+        <file name="urd-snd.autogen.bin"/>
+      </program>
+    </pipeline>
+  </mode>
+
+  <mode name="urd-snd-morph" install="no">
+    <pipeline>
+      <program name="lt-proc -w">
+        <file name="urd-snd.automorf.bin"/>
+      </program>
+    </pipeline>
+  </mode>
+
+  <mode name="urd-snd-disam" install="no">
+    <pipeline>
+      <program name="lt-proc -w">
+        <file name="urd-snd.automorf.bin"/>
+      </program>
+      <program name="cg-conv -a"/>
+      <program name="vislcg3 --trace --grammar">
+        <file name="urd-snd.rlx.bin"/>
+      </program>
+    </pipeline>
+  </mode>
+
+  <mode name="urd-snd-tagger" install="no">
+    <pipeline>
+      <program name="lt-proc -w">
+        <file name="urd-snd.automorf.bin"/>
+      </program>
+
+
+      <program name="cg-proc -w">
+        <file name="urd-snd.rlx.bin"/>
+      </program>
+      <program name="apertium-tagger -g $2">
+        <file name="urd-snd.prob"/>
+      </program>
+    </pipeline>
+  </mode>
+
+  <mode name="urd-snd-pretransfer" install="no">
+    <pipeline>
+      <program name="lt-proc -w">
+        <file name="urd-snd.automorf.bin"/>
+      </program>
+
+
+      <program name="cg-proc -w">
+        <file name="urd-snd.rlx.bin"/>
+      </program>
+      <program name="apertium-tagger -g $2">
+        <file name="urd-snd.prob"/>
+      </program>
+      <program name="apertium-pretransfer"/>
+    </pipeline>
+  </mode>
+
+  <mode name="urd-snd-biltrans" install="no">
+    <pipeline>
+      <program name="lt-proc -w">
+        <file name="urd-snd.automorf.bin"/>
+      </program>
+
+
+      <program name="cg-proc -w">
+        <file name="urd-snd.rlx.bin"/>
+      </program>
+      <program name="apertium-tagger -g $2">
+        <file name="urd-snd.prob"/>
+      </program>
+      <program name="apertium-pretransfer"/>
+      <program name="lt-proc -b">
+        <file name="urd-snd.autobil.bin"/>
+      </program>
+    </pipeline>
+  </mode>
+
+  <mode name="urd-snd-lex" install="no">
+    <pipeline>
+      <program name="lt-proc -w">
+        <file name="urd-snd.automorf.bin"/>
+      </program>
+
+
+      <program name="cg-proc -w">
+        <file name="urd-snd.rlx.bin"/>
+      </program>
+      <program name="apertium-tagger -g $2">
+        <file name="urd-snd.prob"/>
+      </program>
+      <program name="apertium-pretransfer"/>
+      <program name="lt-proc -b">
+        <file name="urd-snd.autobil.bin"/>
+      </program>
+      <program name="lrx-proc -t">
+        <file name="urd-snd.autolex.bin"/>
+      </program>
+    </pipeline>
+  </mode>
+
+  <mode name="urd-snd-transfer" install="no">
+    <pipeline>
+      <program name="lt-proc -w">
+        <file name="urd-snd.automorf.bin"/>
+      </program>
+
+
+      <program name="cg-proc -w">
+        <file name="urd-snd.rlx.bin"/>
+      </program>
+      <program name="apertium-tagger -g $2">
+        <file name="urd-snd.prob"/>
+      </program>
+      <program name="apertium-pretransfer"/>
+      <program name="lt-proc -b">
+        <file name="urd-snd.autobil.bin"/>
+      </program>
+      <program name="lrx-proc">
+        <file name="urd-snd.autolex.bin"/>
+      </program>
+      <program name="apertium-transfer -b -t">
+        <file name="apertium-urd-snd.urd-snd.t1x"/>
+        <file name="urd-snd.t1x.bin"/>
+      </program>
+    </pipeline>
+  </mode>
+
+  <mode name="urd-snd-interchunk" install="no">
+    <pipeline>
+      <program name="lt-proc -w">
+        <file name="urd-snd.automorf.bin"/>
+      </program>
+
+
+      <program name="cg-proc -w">
+        <file name="urd-snd.rlx.bin"/>
+      </program>
+      <program name="apertium-tagger -g $2">
+        <file name="urd-snd.prob"/>
+      </program>
+      <program name="apertium-pretransfer"/>
+      <program name="lt-proc -b">
+        <file name="urd-snd.autobil.bin"/>
+      </program>
+      <program name="lrx-proc">
+        <file name="urd-snd.autolex.bin"/>
+      </program>
+      <program name="apertium-transfer -b">
+        <file name="apertium-urd-snd.urd-snd.t1x"/>
+        <file name="urd-snd.t1x.bin"/>
+      </program>
+      <program name="apertium-interchunk -t">
+        <file name="apertium-urd-snd.urd-snd.t2x"/>
+        <file name="urd-snd.t2x.bin"/>
+      </program>
+    </pipeline>
+  </mode>
+
+  <mode name="urd-snd-postchunk" install="no">
+    <pipeline>
+      <program name="lt-proc -w">
+        <file name="urd-snd.automorf.bin"/>
+      </program>
+
+
+      <program name="cg-proc -w">
+        <file name="urd-snd.rlx.bin"/>
+      </program>
+      <program name="apertium-tagger -g $2">
+        <file name="urd-snd.prob"/>
+      </program>
+      <program name="apertium-pretransfer"/>
+      <program name="lt-proc -b">
+        <file name="urd-snd.autobil.bin"/>
+      </program>
+      <program name="lrx-proc">
+        <file name="urd-snd.autolex.bin"/>
+      </program>
+      <program name="apertium-transfer -b">
+        <file name="apertium-urd-snd.urd-snd.t1x"/>
+        <file name="urd-snd.t1x.bin"/>
+      </program>
+      <program name="apertium-interchunk">
+        <file name="apertium-urd-snd.urd-snd.t2x"/>
+        <file name="urd-snd.t2x.bin"/>
+      </program>
+      <program name="apertium-postchunk">
+        <file name="apertium-urd-snd.urd-snd.t3x"/>
+        <file name="urd-snd.t3x.bin"/>
+      </program>
+    </pipeline>
+  </mode>
+
+  <!-- snd → urd -->
+
+  <mode name="snd-urd" install="yes">
+    <pipeline>
+      <program name="lt-proc -w">
+        <file name="snd-urd.automorf.bin"/>
+      </program>
+
+
+      <program name="cg-proc -w">
+        <file name="snd-urd.rlx.bin"/>
+      </program>
+      <program name="apertium-tagger -g $2">
+        <file name="snd-urd.prob"/>
+      </program>
+      <program name="apertium-pretransfer"/>
+      <program name="lt-proc -b">
+        <file name="snd-urd.autobil.bin"/>
+      </program>
+      <program name="lrx-proc">
+        <file name="snd-urd.autolex.bin"/>
+      </program>
+      <program name="apertium-transfer -b">
+        <file name="apertium-urd-snd.snd-urd.t1x"/>
+        <file name="snd-urd.t1x.bin"/>
+      </program>
+      <program name="apertium-interchunk">
+        <file name="apertium-urd-snd.snd-urd.t2x"/>
+        <file name="snd-urd.t2x.bin"/>
+      </program>
+      <program name="apertium-postchunk">
+        <file name="apertium-urd-snd.snd-urd.t3x"/>
+        <file name="snd-urd.t3x.bin"/>
+      </program>
+      <program name="lt-proc $1">
+        <file name="snd-urd.autogen.bin"/>
+      </program>
+
+    </pipeline>
+  </mode>
+
+  <mode name="snd-urd-dgen" install="no">
+    <pipeline>
+      <program name="lt-proc -w">
+        <file name="snd-urd.automorf.bin"/>
+      </program>
+
+
+      <program name="cg-proc -w">
+        <file name="snd-urd.rlx.bin"/>
+      </program>
+      <program name="apertium-tagger -g $2">
+        <file name="snd-urd.prob"/>
+      </program>
+      <program name="apertium-pretransfer"/>
+      <program name="lt-proc -b">
+        <file name="snd-urd.autobil.bin"/>
+      </program>
+      <program name="apertium-transfer -b">
+        <file name="apertium-urd-snd.snd-urd.t1x"/>
+        <file name="snd-urd.t1x.bin"/>
+      </program>
+      <program name="apertium-interchunk">
+        <file name="apertium-urd-snd.snd-urd.t2x"/>
+        <file name="snd-urd.t2x.bin"/>
+      </program>
+      <program name="apertium-postchunk">
+        <file name="apertium-urd-snd.snd-urd.t3x"/>
+        <file name="snd-urd.t3x.bin"/>
+      </program>
+      <program name="lt-proc -d">
+        <file name="snd-urd.autogen.bin"/>
+      </program>
+    </pipeline>
+  </mode>
+
+  <mode name="snd-urd-morph" install="no">
+    <pipeline>
+      <program name="lt-proc -w">
+        <file name="snd-urd.automorf.bin"/>
+      </program>
+    </pipeline>
+  </mode>
+
+  <mode name="snd-urd-disam" install="no">
+    <pipeline>
+      <program name="lt-proc -w">
+        <file name="snd-urd.automorf.bin"/>
+      </program>
+      <program name="cg-conv -a"/>
+      <program name="vislcg3 --trace --grammar">
+        <file name="snd-urd.rlx.bin"/>
+      </program>
+    </pipeline>
+  </mode>
+
+  <mode name="snd-urd-tagger" install="no">
+    <pipeline>
+      <program name="lt-proc -w">
+        <file name="snd-urd.automorf.bin"/>
+      </program>
+
+
+      <program name="cg-proc -w">
+        <file name="snd-urd.rlx.bin"/>
+      </program>
+      <program name="apertium-tagger -g $2">
+        <file name="snd-urd.prob"/>
+      </program>
+    </pipeline>
+  </mode>
+
+  <mode name="snd-urd-pretransfer" install="no">
+    <pipeline>
+      <program name="lt-proc -w">
+        <file name="snd-urd.automorf.bin"/>
+      </program>
+
+
+      <program name="cg-proc -w">
+        <file name="snd-urd.rlx.bin"/>
+      </program>
+      <program name="apertium-tagger -g $2">
+        <file name="snd-urd.prob"/>
+      </program>
+      <program name="apertium-pretransfer"/>
+    </pipeline>
+  </mode>
+
+  <mode name="snd-urd-biltrans" install="no">
+    <pipeline>
+      <program name="lt-proc -w">
+        <file name="snd-urd.automorf.bin"/>
+      </program>
+
+
+      <program name="cg-proc -w">
+        <file name="snd-urd.rlx.bin"/>
+      </program>
+      <program name="apertium-tagger -g $2">
+        <file name="snd-urd.prob"/>
+      </program>
+      <program name="apertium-pretransfer"/>
+      <program name="lt-proc -b">
+        <file name="snd-urd.autobil.bin"/>
+      </program>
+    </pipeline>
+  </mode>
+
+  <mode name="snd-urd-lex" install="no">
+    <pipeline>
+      <program name="lt-proc -w">
+        <file name="snd-urd.automorf.bin"/>
+      </program>
+
+
+      <program name="cg-proc -w">
+        <file name="snd-urd.rlx.bin"/>
+      </program>
+      <program name="apertium-tagger -g $2">
+        <file name="snd-urd.prob"/>
+      </program>
+      <program name="apertium-pretransfer"/>
+      <program name="lt-proc -b">
+        <file name="snd-urd.autobil.bin"/>
+      </program>
+      <program name="lrx-proc">
+        <file name="snd-urd.autolex.bin"/>
+      </program>
+    </pipeline>
+  </mode>
+
+  <mode name="snd-urd-transfer" install="no">
+    <pipeline>
+      <program name="lt-proc -w">
+        <file name="snd-urd.automorf.bin"/>
+      </program>
+
+
+      <program name="cg-proc -w">
+        <file name="snd-urd.rlx.bin"/>
+      </program>
+      <program name="apertium-tagger -g $2">
+        <file name="snd-urd.prob"/>
+      </program>
+      <program name="apertium-pretransfer"/>
+      <program name="lt-proc -b">
+        <file name="snd-urd.autobil.bin"/>
+      </program>
+      <program name="apertium-transfer -b -t">
+        <file name="apertium-urd-snd.snd-urd.t1x"/>
+        <file name="snd-urd.t1x.bin"/>
+      </program>
+    </pipeline>
+  </mode>
+
+  <mode name="snd-urd-interchunk" install="no">
+    <pipeline>
+      <program name="lt-proc -w">
+        <file name="snd-urd.automorf.bin"/>
+      </program>
+
+
+      <program name="cg-proc -w">
+        <file name="snd-urd.rlx.bin"/>
+      </program>
+      <program name="apertium-tagger -g $2">
+        <file name="snd-urd.prob"/>
+      </program>
+      <program name="apertium-pretransfer"/>
+      <program name="lt-proc -b">
+        <file name="snd-urd.autobil.bin"/>
+      </program>
+      <program name="apertium-transfer -b">
+        <file name="apertium-urd-snd.snd-urd.t1x"/>
+        <file name="snd-urd.t1x.bin"/>
+      </program>
+      <program name="apertium-interchunk -t">
+        <file name="apertium-urd-snd.snd-urd.t2x"/>
+        <file name="snd-urd.t2x.bin"/>
+      </program>
+    </pipeline>
+  </mode>
+
+  <mode name="snd-urd-postchunk" install="no">
+    <pipeline>
+      <program name="lt-proc -w">
+        <file name="snd-urd.automorf.bin"/>
+      </program>
+
+
+      <program name="cg-proc -w">
+        <file name="snd-urd.rlx.bin"/>
+      </program>
+      <program name="apertium-tagger -g $2">
+        <file name="snd-urd.prob"/>
+      </program>
+      <program name="apertium-pretransfer"/>
+      <program name="lt-proc -b">
+        <file name="snd-urd.autobil.bin"/>
+      </program>
+      <program name="apertium-transfer -b">
+        <file name="apertium-urd-snd.snd-urd.t1x"/>
+        <file name="snd-urd.t1x.bin"/>
+      </program>
+      <program name="apertium-interchunk">
+        <file name="apertium-urd-snd.snd-urd.t2x"/>
+        <file name="snd-urd.t2x.bin"/>
+      </program>
+      <program name="apertium-postchunk">
+        <file name="apertium-urd-snd.snd-urd.t3x"/>
+        <file name="snd-urd.t3x.bin"/>
+      </program>
+    </pipeline>
+  </mode>
+</modes>
+

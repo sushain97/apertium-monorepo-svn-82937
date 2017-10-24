@@ -1,0 +1,112 @@
+<!-- the file apertium-fin-est.fin-est.lrx -->
+
+<rules>
+  <rule weight = "0.9">
+    <match lemma="se"/>
+    <match lemma=","/>
+    <match lemma="joka"><select lemma="kes"/></match>
+  </rule>
+  <rule weight = "0.8"> <!-- need correcting in transfer -->
+    <match lemma=","/>
+    <match lemma="joka"><select lemma="mis"/></match>
+  </rule>
+  <rule weight = "0.7"> <!-- need correcting in transfer -->
+    <match lemma="joka"><select lemma="iga"/></match>
+  </rule>
+  <rule weight = "1.0">
+    <match lemma="joka" tags="prn.sg.ill"><select lemma="kuhu"/></match>
+  </rule>
+  <rule weight = "1.0">
+    <match lemma="joka" tags="prn.sg.ine"><select lemma="kus"/></match>
+  </rule>
+  <rule weight = "1.0">
+    <match lemma="joka" tags="prn.sg.ela"><select lemma="kust"/></match>
+  </rule>
+
+  <rule>
+    <match lemma="aivan" tags="adv"><select lemma="täitsa"/></match>
+    <or>
+    <match tags="adj.*"/>
+    <match tags="vblex.*.prfprc.*.*"/>
+    </or>
+  </rule>
+  <rule>
+    <match lemma="ei"/>
+    <match lemma="voida"><select lemma="tohtima"/></match>
+    <match tags="vblex.*"/>
+  </rule>
+  <rule>
+    <match lemma="ei"/>
+    <match lemma="saada"><select lemma="tohtima"/></match>
+    <match tags="vblex.*"/>
+  </rule>
+  <rule>
+    <match lemma="olla"/>
+    <match lemma="kotoisa"><select lemma="pärit"/></match>
+    <match tags="np.sg.ela"/>
+  </rule>
+  <rule>
+    <match lemma="olla"/>
+    <match lemma="kotoisa"><select lemma="pärit"/></match>
+    <match tags="n.sg.ela"/>
+  </rule>
+
+<!-- tulla -->
+  <rule weight = "1.0">
+    <match lemma="tulla"><select lemma="tulema"/></match>
+  </rule>
+
+  <rule weight = "0.5">
+    <match lemma="tulla"><select lemma="saama"/></match>
+  </rule>
+  
+  <rule weight = "0.6"> <!-- hänestä tulee kokki -->
+    <or>
+      <match tags="*.*.ela"/>
+      <match tags="prn.*.*.*.ela"/>
+    </or>
+    <match lemma="tulla"><select lemma="saama"/></match>
+  </rule>
+
+  <rule weight = "0.6">
+    <or>
+      <match tags="*.*.ela"/>
+      <match tags="prn.*.*.*.ela"/>
+    </or>
+    <match/> <!-- voi -->
+    <match lemma="tulla"><select lemma="saama"/></match>
+  </rule>
+
+  <rule weight = "0.6">
+    <or>
+      <match tags="*.*.ela"/>
+      <match tags="prn.*.*.*.ela"/>
+    </or>
+    <match/> <!-- voi -->
+    <match/> <!-- ehkä -->
+    <match lemma="tulla"><select lemma="saama"/></match>
+  </rule>
+
+  <rule weight = "0.5">
+    <match lemma="tulla"><select lemma="sattuma"/></match>
+  </rule>
+
+<!-- pitää -->
+  <rule weight = "1.0">
+    <match lemma="pitää"><select lemma="pidama"/></match>
+  </rule>
+
+  <rule weight = "0.5">
+    <match lemma="pitää"><select lemma="meeldima"/></match>
+  </rule>
+  <rule weight = "0.5">
+    <match lemma="pitää"><select lemma="hoidma"/></match>
+  </rule>
+  <rule weight = "0.5">
+    <match lemma="pitää"><select lemma="armastama"/></match>
+  </rule>
+  <rule weight = "0.5">
+    <match lemma="pitää"><select lemma="tulema"/></match>
+  </rule>
+
+</rules>

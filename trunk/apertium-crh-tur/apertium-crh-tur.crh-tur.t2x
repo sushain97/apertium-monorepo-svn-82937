@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<interchunk>
+  <section-def-cats>
+    <def-cat n="ISTE">
+      <cat-item lemma="iste" tags="SV.*"/>
+    </def-cat>
+    <def-cat n="GER-DAT">
+      <cat-item tags="SV.ger.dat"/>
+    </def-cat>
+  </section-def-cats>
+
+  <section-def-attrs>
+    <def-attr n="a_ger">
+      <attr-item tags="ger"/>
+      <attr-item tags="ger_inf"/>
+    </def-attr>
+    <def-attr n="a_cas">
+      <attr-item tags="nom"/>
+      <attr-item tags="dat"/>
+      <attr-item tags="acc"/>
+      <attr-item tags="gen"/>
+    </def-attr>
+  </section-def-attrs>
+
+  <section-def-vars>
+    <def-var n="number"/>
+  </section-def-vars>
+
+  <section-def-macros>
+    <def-macro n="test1" npar="1">
+      <let>
+        <var n="number"/>
+        <lit v=""/>
+      </let>
+    </def-macro>
+  </section-def-macros>
+
+  <section-rules>
+
+    <rule comment="REGLA: GER-DAT ISTE">
+      <pattern>
+        <pattern-item n="GER-DAT"/>
+        <pattern-item n="ISTE"/>
+      </pattern>
+      <action>
+        <let><clip pos="1" part="a_cas"/><lit-tag v="nom"/></let>
+        <let><clip pos="1" part="a_ger"/><lit-tag v="ger_inf"/></let>
+        <out>
+          <chunk>
+            <clip pos="1" part="lem"/>
+            <clip pos="1" part="tags"/>
+            <clip pos="1" part="chcontent"/>
+          </chunk>
+          <b pos="1"/>
+          <chunk>
+            <clip pos="2" part="lem"/>
+            <clip pos="2" part="tags"/>
+            <clip pos="2" part="chcontent"/>
+          </chunk>
+        </out>
+      </action>
+    </rule>
+  </section-rules>
+</interchunk>
+
+<!--
+Resources:
+    http://wiki.apertium.org/wiki/Chunking:_A_full_example
+    http://wiki.apertium.org/wiki/Chunking
+    http://wiki.apertium.org/wiki/Apertium_New_Language_Pair_HOWTO#Transfer_rules
+    http://wiki.apertium.org/wiki/A_long_introduction_to_transfer_rules
+    http://wiki.apertium.org/wiki/Transfer#Adding_structural_transfer_.28grammar.29_rules
+-->
+

@@ -1,0 +1,60 @@
+Config:
+  hfst:
+    App: hfst-lookup
+    Gen: ../nog.autogen.hfst
+    Morph: ../nog.automorf.hfst
+
+Tests:
+  "[twol] Cases for solidly front-vowel word":
+    киси<n><nom> : киси
+    киси<n><pl><px3sp><nom> : кисилери
+    киси<n><gen> : кисидинъ
+    киси<n><dat> : кисиге
+
+  "[twol] Cases for solidly back-vowel words":
+    халк<n><nom> : халк
+    халк<n><pl><px3sp><nom> : халклары
+    халк<n><gen> : халктынъ
+    халк<n><dat> : халкка
+    авыл<n><nom> : авыл
+    авыл<n><pl><px3sp><nom> : авыллары
+    авыл<n><gen> : авылдынъ
+    авыл<n><dat> : авылга
+
+
+  "[twol] Cases for potentially confusing words":
+    аьдем<n><nom> : аьдем
+    аьдем<n><pl><px3sp><nom> : аьдемлери
+    аьдем<n><gen> : аьдемнинъ
+    аьдем<n><dat> : аьдемге
+    уьй<n><nom> : уьй
+    уьй<n><pl><px3sp><nom> : уьйлери
+    уьй<n><gen> : уьйдинъ
+    уьй<n><dat> : уьйге
+
+  "[twol] Cases for orthographic exceptions":
+    юз<n><nom> : юз
+    юз<n><pl><px3sp><nom> : юзлери
+    юз<n><gen> : юздинъ
+    юз<n><dat> : юзге
+    китап<n><nom> : китап
+    китап<n><pl><px3sp><nom> : китаплери
+    китап<n><gen> : китаптинъ
+    китап<n><dat> : китапке
+
+  "Russian words ending in ь":
+    автомобиль<n><nom> : автомобиль
+    автомобиль<n><pl><nom> : автомобильдер
+    автомобиль<n><gen> : автомобильдинъ
+    автомобиль<n><px3sp><acc> : автомобилин
+    руль<n><nom> : руль
+    руль<n><pl><nom> : рульдер
+    руль<n><gen> : рульдинъ
+    руль<n><px3sp><acc> : рулин
+
+  "[twol] Russian words ending in 'voiced' consonants":
+    съезд<n><nom> : съезд
+    съезд<n><pl><px3sp><nom> : съездлери
+    съезд<n><gen> : съездтинъ
+    съезд<n><dat> : съездке
+ 

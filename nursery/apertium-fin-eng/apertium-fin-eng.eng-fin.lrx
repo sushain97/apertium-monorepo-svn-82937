@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- 
+  This program is free software: you can redistribute it and/or modify
+  it under the terms of the GNU General Public License as published by
+  the Free Software Foundation, either version 3 of the License.
+
+  This program is distributed in the hope that it will be useful,
+  but WITHOUT ANY WARRANTY; without even the implied warranty of
+  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+  GNU General Public License for more details.
+
+  You should have received a copy of the GNU General Public License
+  along with this program.  If not, see <http://www.gnu.org/licenses/>.
+-->
+<rules>
+  <!-- nouns, hand-made -->
+  <rule>
+    <match lemma="dog" tags="n.*"><select lemma="koira" tags="n.*"/></match>
+  </rule>
+  <rule>
+    <match lemma="mother" tags="n.*"><select lemma="äiti" tags="n.*"/></match>
+  </rule>
+  <rule>
+    <match lemma="garden" tags="n.*"><select lemma="puutarha" tags="n.*"/></match>
+  </rule>
+  <rule>
+    <match lemma="boy" tags="n.*"><select lemma="poika" tags="n.*"/></match>
+  </rule>
+  <rule>
+    <match lemma="girl" tags="n.*"><select lemma="tyttö" tags="n.*"/></match>
+  </rule>
+  <rule>
+    <match lemma="sister" tags="n.*"><select lemma="sisko" tags="n.*"/></match>
+  </rule>
+  <rule>
+    <match lemma="dog" tags="n.*"><select lemma="koira" tags="n.*"/></match>
+  </rule>
+  <rule>
+    <match lemma="window" tags="n.*"><select lemma="ikkuna" tags="n.*"/></match>
+  </rule>
+  <rule>
+    <match lemma="hand" tags="n.*"><select lemma="käsi" tags="n.*"/></match>
+  </rule>
+  <rule>
+    <match lemma="eye" tags="n.*"><select lemma="silmä" tags="n.*"/></match>
+  </rule>
+  <rule>
+    <match lemma="tree" tags="n.*"><select lemma="puu" tags="n.*"/></match>
+  </rule>
+  <rule>
+    <match lemma="bird" tags="n.*"><select lemma="lintu" tags="n.*"/></match>
+  </rule>
+  <rule>
+    <match lemma="head" tags="n.*"><select lemma="pää" tags="n.*"/></match>
+  </rule>
+  <rule>
+    <match lemma="house" tags="n.*"><select lemma="talo" tags="n.*"/></match>
+  </rule>
+  <rule>
+    <match lemma="friend" tags="n.*"><select lemma="ystävä" tags="n.*"/></match>
+  </rule>
+
+  <!-- adjectives -->
+  <rule>
+    <match lemma="little" tags="adj"><select lemma="pieni" tags="adj"/></match>
+  </rule>
+  <rule>
+    <match lemma="happy" tags="adj"><select lemma="iloinen" tags="adj"/></match>
+  </rule>
+  
+
+  <!-- verbs -->
+
+  <rule>
+    <match lemma="play" tags="vblex.*"><select lemma="pelata" tags="vblex.*"/></match>
+  </rule>
+
+  <!-- quick hack instead of structral ransfer -->
+  <rule>
+    <match lemma="have" tags="vblex.*"><select lemma="omistaa" tags="vblex.*"/></match>
+  </rule>
+
+  <!-- conjunctions -->
+  <rule>
+    <match lemma="but" tags="cnjsub.*"><select lemma="mutta" tags="cnjadv.*"/></match>
+  </rule>
+
+  <!-- corpus acquired rules: -->
+</rules>
+<!-- vim: set ft=xml: -->

@@ -1,0 +1,9 @@
+# Firstly, we need to define what tags should be considered sentence delimiters. For this example, only full stop is set as delimiter.
+DELIMITERS = "<.>" sent ;
+
+LIST Qst = qst ;
+LIST Qmark = "?" ;
+
+SECTION
+
+SELECT Qst IF (1 Qmark);

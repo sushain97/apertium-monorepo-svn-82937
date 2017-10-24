@@ -1,0 +1,592 @@
+<rules>
+<!-- Giannis Konstantinidis, <giankonstantinidis@gmail.com>, 2011. -->
+
+	<rule>
+          <or>
+	    <match lemma="θετική"/>
+	    <match lemma="αρνητική"/>
+          </or>
+	  <match lemma="φόρτιση" tags="n.*">
+	    <select lemma="charge" tags="n.*"/>
+	  </match>
+	</rule>
+	
+	<rule>
+          <or>
+	    <match lemma="αιολική"/>
+	    <match lemma="ηλιακή"/>
+	    <match lemma="γεωθερμική"/>
+          </or>
+	  <match lemma="ενέργεια" tags="n.*">
+	    <select lemma="power" tags="n.*"/>
+	  </match>
+	</rule>
+
+	<rule>
+          <or>
+	    <match lemma="ψηφιακή"/>
+	    <match lemma="αναλογική"/>
+          </or>
+	  <match lemma="φωτογραφία" tags="n.*">
+	    <select lemma="image" tags="n.*"/>
+	  </match>
+	</rule>
+
+	<rule>
+	  <match lemma="απαγορευμένη" tags="*"/>
+	  <match lemma="περιοχή" tags="n.*">
+	    <select lemma="area" tags="n.*"/>
+	  </match>
+	</rule>
+
+
+	<rule>
+          <or>
+	    <match lemma="αλφαβητική"/>
+	    <match lemma="τυχαία"/>
+          </or>
+	  <match lemma="σειρά" tags="n.*">
+	    <select lemma="order" tags="n.*"/>
+	  </match>
+	</rule>
+
+	<rule>
+	  <match lemma="φιλικός" tags="*"/>
+	  <match lemma="αγώνας" tags="n.*">
+	    <select lemma="match" tags="n.*"/>
+	  </match>
+	</rule>
+
+	<rule>
+          <or>
+	    <match lemma="μεγάλη"/>
+	    <match lemma="καταστροφική"/>
+          </or>
+	  <match lemma="πυργκαγιά" tags="n.*">
+	    <select lemma="fire" tags="n.*"/>
+	  </match>
+	</rule>
+
+	<rule>
+	  <match lemma="καταλυτικός" tags="*"/>
+	  <match lemma="παράγοντας" tags="n.*">
+	    <select lemma="factor" tags="n.*"/>
+	  </match>
+	</rule>
+
+	<rule>
+          <or>
+	    <match lemma="θετική"/>
+	    <match lemma="αρνητική"/>
+          </or>
+	  <match lemma="επιρροή" tags="n.*">
+	    <select lemma="influence" tags="n.*"/>
+	  </match>
+	</rule>
+
+	<rule>
+	  <match lemma="υδατικό" tags="*"/>
+	  <match lemma="διάλυμα" tags="n.*">
+	    <select lemma="solution" tags="n.*"/>
+	  </match>
+	</rule>
+
+	<rule>
+          <or>
+	    <match lemma="αργή"/>
+	    <match lemma="γρήγορη"/>
+          </or>
+	  <match lemma="ανταπόκριση" tags="n.*">
+	    <select lemma="response" tags="n.*"/>
+	  </match>
+	</rule>
+
+	<rule>
+          <or>
+	    <match lemma="ανατολική"/>
+	    <match lemma="δυτική"/>
+	    <match lemma="βόρεια"/>
+	    <match lemma="νότια"/>
+          </or>
+	  <match lemma="ακτή" tags="n.*">
+	    <select lemma="coast" tags="n.*"/>
+	  </match>
+	</rule>
+
+	<rule>
+          <or>
+	    <match lemma="άριστη"/>
+	    <match lemma="κακή"/>
+	    <match lemma="άψογη"/>
+	    <match lemma="ανάρμοστη"/>
+          </or>
+	  <match lemma="συμπεριφορά" tags="n.*">
+	    <select lemma="behaviour" tags="n.*"/>
+	  </match>
+	</rule>
+
+	<rule>
+	  <match lemma="μελλοντική" tags="*"/>
+	  <match lemma="αναφορά" tags="n.*">
+	    <select lemma="reference" tags="n.*"/>
+	  </match>
+	</rule>
+
+	<rule>
+          <or>
+	    <match lemma="ευχάριστο"/>
+	    <match lemma="άσχημο"/>
+          </or>
+	  <match lemma="συναίσθημα" tags="n.*">
+	    <select lemma="feeling" tags="n.*"/>
+	  </match>
+	</rule>
+
+	<rule>
+          <or>
+	    <match lemma="καλή"/>
+	    <match lemma="άσχημη"/>
+          </or>
+	  <match lemma="εμπειρία" tags="n.*">
+	    <select lemma="experience" tags="n.*"/>
+	  </match>
+	</rule>
+
+	<rule>
+	  <match lemma="περιορισμένη" tags="*"/>
+	  <match lemma="ισχύς" tags="n.*">
+	    <select lemma="validity" tags="n.*"/>
+	  </match>
+	</rule>
+
+	<rule>
+          <or>
+	    <match lemma="πρώτο"/>
+	    <match lemma="δεύτερο"/>
+	    <match lemma="τρίτο"/>
+	    <match lemma="τέτατρο"/>
+	    <match lemma="πέμπτο"/>
+	    <match lemma="τελευταίο"/>
+	    <match lemma="ευχάριστο"/>
+	    <match lemma="βαρετό"/>
+          </or>
+	  <match lemma="μάθημα" tags="n.*">
+	    <select lemma="course" tags="n.*"/>
+	  </match>
+	</rule>
+
+	<rule>
+	  <match lemma="στρατιωτικός" tags="*"/>
+	  <match lemma="εξοπλισμός" tags="n.*">
+	    <select lemma="equipment" tags="n.*"/>
+	  </match>
+	</rule>
+
+	<rule>
+          <or>
+	    <match lemma="διαδραστικός"/>
+	    <match lemma="λευκός"/>
+	    <match lemma="μάυρος"/>
+          </or>
+	  <match lemma="πίνακας" tags="n.*">
+	    <select lemma="board" tags="n.*"/>
+	  </match>
+	</rule>
+
+	<rule>
+	  <match lemma="μοναδική" tags="*"/>
+	  <match lemma="λύση" tags="n.*">
+	    <select lemma="solution" tags="n.*"/>
+	  </match>
+	</rule>
+
+	<rule>
+	  <match lemma="αστυνομικό" tags="*"/>
+	  <match lemma="τμήμα" tags="n.*">
+	    <select lemma="station" tags="n.*"/>
+	  </match>
+	</rule>
+
+	<rule>
+          <or>
+	    <match lemma="πλαστικό"/>
+	    <match lemma="μεταλλικό"/>
+	    <match lemma="γυάλινο"/>
+          </or>
+	  <match lemma="υλικό" tags="n.*">
+	    <select lemma="material" tags="n.*"/>
+	  </match>
+	</rule>
+
+	<rule>
+	  <match lemma="περιοδικός" tags="*"/>
+	  <match lemma="πίνακας" tags="n.*">
+	    <select lemma="table" tags="n.*"/>
+	  </match>
+	</rule>
+
+	<rule>
+          <or>
+	    <match lemma="αφαιρούμενο"/>
+	    <match lemma="αποσπώμενο"/>
+          </or>
+	  <match lemma="τμήμα" tags="n.*">
+	    <select lemma="part" tags="n.*"/>
+	  </match>
+	</rule>
+
+	<rule>
+          <or>
+	    <match lemma="εσωτερική"/>
+	    <match lemma="εμφύλια"/>
+          </or>
+	  <match lemma="διαμάχη" tags="n.*">
+	    <select lemma="conflict" tags="n.*"/>
+	  </match>
+	</rule>
+
+	<rule>
+	  <match lemma="παραγόμενος" tags="*"/>
+	  <match lemma="λόγος" tags="n.*">
+	    <select lemma="speech" tags="n.*"/>
+	  </match>
+	</rule>
+
+	<rule>
+	  <match lemma="φιλική" tags="*"/>
+	  <match lemma="συνομιλία" tags="n.*">
+	    <select lemma="talk" tags="n.*"/>
+	  </match>
+	</rule>
+
+	<rule>
+	  <match lemma="οικονομική" tags="*"/>
+	  <match lemma="διαχείριση" tags="n.*">
+	    <select lemma="management" tags="n.*"/>
+	  </match>
+	</rule>
+
+	<rule>
+	  <match lemma="οικονομική" tags="*"/>
+	  <match lemma="κρίση" tags="n.*">
+	    <select lemma="crisis" tags="n.*"/>
+	  </match>
+	</rule>
+
+	<rule>
+          <or>
+	    <match lemma="καιρικές"/>
+	    <match lemma="κλιματικές"/>
+	    <match lemma="δυσχερείς"/>
+          </or>
+	  <match lemma="συνθήκες" tags="n.*">
+	    <select lemma="conditions" tags="n.*"/>
+	  </match>
+	</rule>
+
+	<rule>
+          <or>
+	    <match lemma="μοριακό"/>
+	    <match lemma="ατομικό"/>
+          </or>
+	  <match lemma="βάρος" tags="n.*">
+	    <select lemma="weight" tags="n.*"/>
+	  </match>
+	</rule>
+
+	<rule>
+	  <match lemma="τετραγωνική" tags="*"/>
+	  <match lemma="ρίζα" tags="n.*">
+	    <select lemma="root" tags="n.*"/>
+	  </match>
+	</rule>
+
+	<rule>
+	  <match lemma="ανοιχτός" tags="*"/>
+	  <match lemma="χώρος" tags="n.*">
+	    <select lemma="space" tags="n.*"/>
+	  </match>
+	</rule>
+
+	<rule>
+	  <match lemma="ευθεία" tags="*"/>
+	  <match lemma="πορεία" tags="n.*">
+	    <select lemma="route" tags="n.*"/>
+	  </match>
+	</rule>
+
+	<rule>
+	  <match lemma="ψηφιακός" tags="*"/>
+	  <match lemma="δίσκος" tags="n.*">
+	    <select lemma="disc" tags="n.*"/>
+	  </match>
+	</rule>
+
+	<rule>
+          <or>
+	    <match lemma="ίδιο"/>
+	    <match lemma="διαφορετικό"/>
+          </or>
+	  <match lemma="επίπεδο" tags="n.*">
+	    <select lemma="level" tags="n.*"/>
+	  </match>
+	</rule>
+
+	<rule>
+	  <match lemma="εναλλακτική" tags="*"/>
+	  <match lemma="ιατρική" tags="n.*">
+	    <select lemma="medicine" tags="n.*"/>
+	  </match>
+	</rule>
+
+	<rule>
+	  <match lemma="ανα" tags="*"/>
+	  <match lemma="δίσκος" tags="n.*">
+	    <select lemma="disc" tags="n.*"/>
+	  </match>
+	</rule>
+
+	<rule>
+	  <match lemma="μέσο" tags="*"/>
+	  <match lemma="μεταφοράς" tags="n.*">
+	    <select lemma="transport" tags="n.*"/>
+	  </match>
+	</rule>
+
+	<rule>
+	  <match lemma="πλαστικό" tags="*"/>
+	  <match lemma="χρήμα" tags="n.*">
+	    <select lemma="money" tags="n.*"/>
+	  </match>
+	</rule>
+
+	<rule>
+	  <match lemma="φυσικό" tags="*"/>
+	  <match lemma="περιβάλλον" tags="n.*">
+	    <select lemma="habitat" tags="n.*"/>
+	  </match>
+	</rule>
+
+	<rule>
+	  <match lemma="κοινωνικό" tags="*"/>
+	  <match lemma="περιβάλλον" tags="n.*">
+	    <select lemma="environment" tags="n.*"/>
+	  </match>
+	</rule>
+
+	<rule>
+	  <match lemma="εργασιακό" tags="*"/>
+	  <match lemma="περιβάλλον" tags="n.*">
+	    <select lemma="workplace" tags="n.*"/>
+	  </match>
+	</rule>
+
+	<rule>
+	  <match lemma="ανα" tags="*"/>
+	  <match lemma="δίσκος" tags="n.*">
+	    <select lemma="disc" tags="n.*"/>
+	  </match>
+	</rule>
+
+	<rule>
+	  <match lemma="ηλεκτρικό" tags="*"/>
+	  <match lemma="αυτοκίνητο" tags="n.*">
+	    <select lemma="car" tags="n.*"/>
+	  </match>
+	</rule>
+
+	<rule>
+	  <match lemma="μεσογειακή" tags="*"/>
+	  <match lemma="διατροφή" tags="n.*">
+	    <select lemma="diet" tags="n.*"/>
+	  </match>
+	</rule>
+
+	<rule>
+	  <match lemma="ηλεκτρονική" tags="*"/>
+	  <match lemma="αλληλογραφία" tags="n.*">
+	    <select lemma="e-mail" tags="n.*"/>
+	  </match>
+	</rule>
+
+	<rule>
+	  <match lemma="ισορροπημένη" tags="*"/>
+	  <match lemma="δίετα" tags="n.*">
+	    <select lemma="diet" tags="n.*"/>
+	  </match>
+	</rule>
+
+	<rule>
+	  <match lemma="ανα" tags="*"/>
+	  <match lemma="δίσκος" tags="n.*">
+	    <select lemma="disc" tags="n.*"/>
+	  </match>
+	</rule>
+
+	<rule>
+	  <match lemma="υπολογιστική" tags="*"/>
+	  <match lemma="μηχανή" tags="n.*">
+	    <select lemma="device" tags="n.*"/>
+	  </match>
+	</rule>
+
+	<rule>
+          <or>
+	    <match lemma="μεταφραστική"/>
+	    <match lemma="αυτόματη"/>
+	    <match lemma="αυτόνομη"/>
+          </or>
+	  <match lemma="μηχανή" tags="n.*">
+	    <select lemma="machine" tags="n.*"/>
+	  </match>
+	</rule>
+
+	<rule>
+          <or>
+	    <match lemma="ασύρματη"/>
+	    <match lemma="παράλληλη"/>
+	    <match lemma="ταχεία"/>
+	    <match lemma="ενεργή"/>
+	    <match lemma="απομακρυσμένη"/>
+          </or>
+	  <match lemma="σύνδεση" tags="n.*">
+	    <select lemma="connection" tags="n.*"/>
+	  </match>
+	</rule>
+
+	<rule>
+	  <match lemma="κίτρινος" tags="*"/>
+	  <match lemma="τύπος" tags="n.*">
+	    <select lemma="journalism" tags="n.*"/>
+	  </match>
+	</rule>
+
+	<rule>
+	  <match lemma="ψηφιακός" tags="*"/>
+	  <match lemma="τύπος" tags="n.*">
+	    <select lemma="press" tags="n.*"/>
+	  </match>
+	</rule>
+
+	<rule>
+	  <match lemma="υγιεινή" tags="*"/>
+	  <match lemma="διατροφή" tags="n.*">
+	    <select lemma="eating" tags="n.*"/>
+	  </match>
+	</rule>
+
+	<rule>
+	  <match lemma="διεθνής" tags="*"/>
+	  <match lemma="αποστολή" tags="n.*">
+	    <select lemma="mission" tags="n.*"/>
+	  </match>
+	</rule>
+
+	<rule>
+	  <match lemma="διοικητικό" tags="*"/>
+	  <match lemma="συμβούλιο" tags="n.*">
+	    <select lemma="board" tags="n.*"/>
+	  </match>
+	</rule>
+
+	<rule>
+	  <match lemma="υγιεινή" tags="*"/>
+	  <match lemma="διατροφή" tags="n.*">
+	    <select lemma="eating" tags="n.*"/>
+	  </match>
+	</rule>
+
+	<rule>
+	  <match lemma="συνεχής" tags="*"/>
+	  <match lemma="διαδικασία" tags="n.*">
+	    <select lemma="process" tags="n.*"/>
+	  </match>
+	</rule>
+
+	<rule>
+          <or>
+	    <match lemma="ίση"/>
+	    <match lemma="άνιση"/>
+	    <match lemma="ελεύθερη"/>
+          </or>
+	  <match lemma="κατανομή" tags="n.*">
+	    <select lemma="allocation" tags="n.*"/>
+	  </match>
+	</rule>
+
+	<rule>
+          <or>
+	    <match lemma="γρήγορη"/>
+	    <match lemma="εύκολη"/>
+	    <match lemma="ελεύθερη"/>
+	    <match lemma="ταχεία"/>
+          </or>
+	  <match lemma="διανομή" tags="n.*">
+	    <select lemma="cdistribution" tags="n.*"/>
+	  </match>
+	</rule>
+
+	<rule>
+	  <match lemma="τοξικά" tags="*"/>
+	  <match lemma="απόβλητα" tags="n.*">
+	    <select lemma="waste" tags="n.*"/>
+	  </match>
+	</rule>
+
+	<rule>
+	  <match lemma="άσκοπη" tags="*"/>
+	  <match lemma="σπατάλη" tags="n.*">
+	    <select lemma="waste" tags="n.*"/>
+	  </match>
+	</rule>
+
+	<rule>
+	  <match lemma="συνεχής" tags="*"/>
+	  <match lemma="κατανάλωση" tags="n.*">
+	    <select lemma="consumption" tags="n.*"/>
+	  </match>
+	</rule>
+
+	<rule>
+	  <match lemma="θρησκευτικές" tags="*"/>
+	  <match lemma="παραδόσεις" tags="n.*">
+	    <select lemma="traditions" tags="n.*"/>
+	  </match>
+	</rule>
+
+	<rule>
+	  <match lemma="καλλιτεχνικές" tags="*"/>
+	  <match lemma="εκδηλώσεις" tags="n.*">
+	    <select lemma="events" tags="n.*"/>
+	  </match>
+	</rule>
+
+	<rule>
+	  <match lemma="δημόσιες" tags="*"/>
+	  <match lemma="σχέσεις" tags="n.*">
+	    <select lemma="affairs" tags="n.*"/>
+	  </match>
+	</rule>
+
+	<rule>
+	  <match lemma="ψηφιακό" tags="*"/>
+	  <match lemma="σήμα" tags="n.*">
+	    <select lemma="transmission" tags="n.*"/>
+	  </match>
+	</rule>
+
+	<rule>
+	  <match lemma="συνεχής" tags="*"/>
+	  <match lemma="διαδικασία" tags="n.*">
+	    <select lemma="process" tags="n.*"/>
+	  </match>
+	</rule>
+	
+</rules>
+
+
+
+
+
+
+

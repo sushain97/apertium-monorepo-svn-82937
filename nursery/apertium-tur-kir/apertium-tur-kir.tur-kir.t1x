@@ -1,0 +1,1258 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<transfer>
+  <section-def-cats>
+    <def-cat n="prog">
+      <cat-item tags="v.*.prog"/>
+      <cat-item tags="v.*.prog.*"/>
+    </def-cat>
+
+     <def-cat n="cond-fin">
+      <cat-item tags="v.*.cond.*"/>
+      <cat-item tags="v.*.*.cond.*"/>
+      <cat-item tags="v.*.*.*.cond.*"/>
+    </def-cat>
+
+     <def-cat n="aor-fin">
+      <cat-item tags="v.*.aor.p1.*"/>
+      <cat-item tags="v.*.aor.p2.*"/>
+      <cat-item tags="v.*.aor.p3.*"/>
+    </def-cat>
+
+     <def-cat n="cond">
+      <cat-item tags="v.*.cond"/>
+    </def-cat>
+
+     <def-cat n="pot">
+      <cat-item tags="v.*.pot"/>
+      <cat-item tags="v.*.pot.*"/>
+    </def-cat>
+
+     <def-cat n="imper">
+      <cat-item tags="v.*.imp.*"/>
+    </def-cat>
+
+     <def-cat n="nec">
+      <cat-item tags="v.*.nec"/>
+      <cat-item tags="v.*.nec.*"/>
+    </def-cat>
+
+     <def-cat n="aor">
+      <cat-item tags="v.*.aor"/>
+      <cat-item tags="v.*.aor.*"/>
+    </def-cat>
+
+     <def-cat n="past">
+      <cat-item tags="v.*.past"/>
+      <cat-item tags="v.*.past.*"/>
+    </def-cat>
+
+     <def-cat n="fut">
+      <cat-item tags="v.*.fut"/>
+      <cat-item tags="v.*.fut.*"/>
+    </def-cat>
+
+     <def-cat n="fut-dub">
+      <cat-item tags="v.*.fut.dub"/>
+      <cat-item tags="v.*.*.fut.dub"/>
+      <cat-item tags="v.*.*.*.fut.dub"/>
+    </def-cat>
+
+    <def-cat n="cop-aor">
+      <cat-item tags="cop.aor.*"/>
+    </def-cat>
+
+    <def-cat n="bol-past">
+      <cat-item lemma="бол" tags="v.*.past"/>
+    </def-cat>
+
+    <def-cat n="cop-cond">
+      <cat-item tags="cop.cond.*"/>
+    </def-cat>
+
+    <def-cat n="cop-ifi">
+      <cat-item tags="cop.ifi.*"/>
+    </def-cat>
+
+    <def-cat n="cop-advl">
+      <cat-item tags="cop.advl"/>
+    </def-cat>
+
+    <def-cat n="gpr-px">
+      <cat-item tags="v.*.gpr_past.px1sg"/>
+      <cat-item tags="v.*.gpr_past.px2sg"/>
+      <cat-item tags="v.*.gpr_past.px3sp"/>
+      <cat-item tags="v.*.gpr_past.px3pl"/>
+      <cat-item tags="v.*.gpr_past.px1pl"/>
+      <cat-item tags="v.*.gpr_past.px2pl"/>
+    </def-cat>
+
+    <def-cat n="gpr-rsub">
+      <cat-item tags="v.*.gpr_rsub"/>
+      <cat-item tags="v.*.gpr_rsub.*"/>
+    </def-cat>
+ 
+    <def-cat n="gpr-aor">
+      <cat-item tags="v.*.gpr_aor"/>
+      <cat-item tags="v.*.gpr_aor.*"/>
+    </def-cat>
+
+    <def-cat n="prc">
+      <cat-item tags="v.*.prc"/>
+    </def-cat>
+  
+    <def-cat n="ger-past">
+      <cat-item tags="v.*.ger_past.*"/>
+    </def-cat>
+
+    <def-cat n="ger-impf">
+      <cat-item tags="v.*.ger_impf.*"/>
+    </def-cat>
+
+    <def-cat n="ger-when">
+      <cat-item tags="v.*.ger_when.*"/>
+    </def-cat>
+
+    <def-cat n="ger-pabs">
+      <cat-item tags="v.*.ger_pabs.*"/>
+    </def-cat>
+
+    <def-cat n="ger-abst">
+      <cat-item tags="v.*.ger_abst.*"/>
+    </def-cat>
+
+    <def-cat n="ger-aor">
+      <cat-item tags="v.*.ger_aor.*"/>
+    </def-cat>
+
+    <def-cat n="ger6">
+      <cat-item tags="v.*.ger6.*"/>
+    </def-cat>
+
+    <def-cat n="gna-when">
+      <cat-item tags="v.*.gna_when"/>
+      <cat-item tags="v.*.*.gna_when"/>
+      <cat-item tags="v.*.*.*.gna_when"/>
+      <cat-item tags="v.*.*.*.*.gna_when"/>
+    </def-cat>
+
+     <def-cat n="gna-impf">
+      <cat-item tags="v.*.gna_impf"/>
+      <cat-item tags="v.*.*.gna_impf"/>
+      <cat-item tags="v.*.*.*.gna_impf"/>
+      <cat-item tags="v.*.*.*.*.gna_impf"/>
+    </def-cat>
+ 
+    <def-cat n="qst-pers">
+      <cat-item tags="qst.p1.*"/>
+      <cat-item tags="qst.p2.*"/>
+      <cat-item tags="qst.p3.*"/>
+    </def-cat>
+ 
+    <def-cat n="num-abstr">
+      <cat-item tags="num.abstr"/>
+    </def-cat>
+   
+    <def-cat n="nom">
+      <cat-item tags="n.*"/>
+      <cat-item tags="prn.*"/>
+      <cat-item tags="adj.subst.*"/>
+    </def-cat>
+    
+    <def-cat n="sent">
+      <cat-item tags="sent"/>
+    </def-cat>
+   
+  </section-def-cats>
+  
+  <section-def-attrs>
+    
+    <def-attr n="a_attr">
+      <attr-item tags="attr"/>
+    </def-attr>
+
+    <def-attr n="a_case">
+      <attr-item tags="nom"/>
+      <attr-item tags="acc"/>
+      <attr-item tags="dat"/>
+      <attr-item tags="gen"/>
+      <attr-item tags="loc"/>
+      <attr-item tags="abl"/>
+      <attr-item tags="ins"/>
+    </def-attr>
+       
+    <def-attr n="a_poss">
+      <attr-item tags="px1sg"/>
+      <attr-item tags="px2sg"/>
+      <attr-item tags="px3sp"/>
+      <attr-item tags="px3pl"/>
+      <attr-item tags="px1pl"/>
+      <attr-item tags="px2pl"/>
+    </def-attr>
+
+    <def-attr n="a_pers_nbr">
+      <attr-item tags="p1.sg"/>
+      <attr-item tags="p1.pl"/>
+      <attr-item tags="p2.sg"/>
+      <attr-item tags="p2.pl"/>
+      <attr-item tags="p2.frm.sg"/>
+      <attr-item tags="p2.frm.pl"/>
+      <attr-item tags="p3.sp"/>
+      <attr-item tags="p3.sg"/>
+      <attr-item tags="p3.pl"/>
+      <attr-item tags="p3.frm.sg"/>
+      <attr-item tags="p3.frm.pl"/>
+      <attr-item tags="PD.ND"/>
+    </def-attr>
+
+
+    <def-attr n="a_pers">
+      <attr-item tags="p1"/>
+      <attr-item tags="p2"/>
+      <attr-item tags="p2.frm"/>
+      <attr-item tags="p3"/>
+      <attr-item tags="p3.frm"/>
+      <attr-item tags="PD"/>
+    </def-attr>
+
+    <def-attr n="a_screeve">
+      <attr-item tags="past"/>
+      <attr-item tags="pcond"/>
+      <attr-item tags="cond"/>
+      <attr-item tags="aor"/>
+      <attr-item tags="prog"/>
+      <attr-item tags="ifi"/>
+      <attr-item tags="fut"/>
+      <attr-item tags="fut.dub"/>
+
+      <attr-item tags="prc_irre"/>
+      <attr-item tags="prc_perf"/>
+      <attr-item tags="prc_cond"/>
+      <attr-item tags="prc_pcond"/>
+      <attr-item tags="prc"/>
+
+      <attr-item tags="gna_impf"/>
+      <attr-item tags="gna_when"/>
+      <attr-item tags="gna_perf"/>
+
+      <attr-item tags="ger_impf"/>
+      <attr-item tags="ger_when"/>
+      <attr-item tags="ger_past"/>
+      <attr-item tags="ger_past.loc"/>
+      <attr-item tags="ger_pabs"/>
+      <attr-item tags="ger_abst"/>
+      <attr-item tags="ger_aor"/>
+      <attr-item tags="ger6"/>
+
+      <attr-item tags="gpr_rsub"/>
+      <attr-item tags="gpr_past"/>
+      <attr-item tags="gpr_aor"/>
+      <attr-item tags="gpr_fut"/>
+    </def-attr>
+
+
+    <def-attr n="a_pot">
+      <attr-item tags="pot"/>
+    </def-attr>
+
+    <def-attr n="a_nec">
+      <attr-item tags="nec"/>
+    </def-attr>
+
+
+    <def-attr n="a_trans">
+      <attr-item tags="tv"/>
+      <attr-item tags="iv"/>
+    </def-attr>
+
+    <def-attr n="a_nbr">
+      <attr-item tags="sg"/>
+      <attr-item tags="pl"/>
+      <attr-item tags="ND"/>
+    </def-attr>
+       
+    <def-attr n="a_func">
+      <attr-item tags="@HARGLE"/>
+    </def-attr>
+
+    <def-attr n="a_nom">
+      <attr-item tags="n"/>
+      <attr-item tags="adj.subst"/>
+    </def-attr>
+ 
+    <def-attr n="a_past">
+      <attr-item tags="past"/>
+      <attr-item tags="prc_past"/>
+      <attr-item tags="pcond"/>
+    </def-attr>
+    
+  </section-def-attrs>
+ 
+  <section-def-vars>
+    <def-var n="number"/>
+    <def-var n="nec-poss"/>
+    <def-var n="gpr-nom-poss"/>
+  </section-def-vars>  
+
+  <section-def-macros>
+    <def-macro n="modify-pers-nbr1" npar="1">
+      <choose>
+          <when>
+            <test><equal><clip pos="1" side="sl" part="a_pers"/><lit-tag v="p3.frm"/></equal></test>
+            <let><clip pos="1" side="tl" part="a_pers"/><lit-tag v="p3"/></let>
+          </when>
+          <when>
+            <test><equal><clip pos="1" side="sl" part="a_pers_nbr"/><lit-tag v="p2.pl"/></equal></test>
+            <let><clip pos="1" side="tl" part="a_pers_nbr"/><lit-tag v="p2.frm.pl"/></let>
+          </when>
+      </choose>
+    </def-macro>
+
+    <def-macro n="modify-poss1" npar="1">
+      <choose>
+          <when>
+            <test><equal><clip pos="1" side="sl" part="a_poss"/><lit-tag v="px3pl"/></equal></test>
+            <let><clip pos="1" side="tl" part="a_poss"/><lit-tag v="px3sp"/></let>
+          </when>
+      </choose>
+    </def-macro>
+
+    <def-macro n="set-nec-poss1" npar="1">
+      <choose>
+          <when>
+            <test><equal><clip pos="1" side="tl" part="a_pers"/><lit-tag v="p3"/></equal></test>
+            <let><var n="nec-poss"/><lit-tag v="px3sp"/></let>
+          </when>
+          <when>
+            <test><equal><clip pos="1" side="tl" part="a_pers_nbr"/><lit-tag v="p1.sg"/></equal></test>
+            <let><var n="nec-poss"/><lit-tag v="px1sg"/></let>
+          </when>
+          <when>
+            <test><equal><clip pos="1" side="tl" part="a_pers_nbr"/><lit-tag v="p2.sg"/></equal></test>
+            <let><var n="nec-poss"/><lit-tag v="px2sg"/></let>
+          </when>
+          <when>
+            <test><equal><clip pos="1" side="tl" part="a_pers_nbr"/><lit-tag v="p1.pl"/></equal></test>
+            <let><var n="nec-poss"/><lit-tag v="px1pl"/></let>
+          </when>
+          <when>
+            <test><equal><clip pos="1" side="tl" part="a_pers_nbr"/><lit-tag v="p2.pl"/></equal></test>
+            <let><var n="nec-poss"/><lit-tag v="px2pl"/></let>
+          </when>
+      </choose>
+    </def-macro>
+
+
+  </section-def-macros>
+
+  <section-rules>
+
+    <rule comment="past"> 
+      <pattern>
+        <pattern-item n="past"/>
+      </pattern>
+      <action>
+        <let><clip pos="1" side="tl" part="a_func"/><lit v=""/></let>
+        <let><clip pos="1" side="tl" part="a_screeve"/><lit-tag v="prc_perf"/></let>
+        <out>
+          <lu>
+            <clip pos="1" side="tl" part="whole"/>
+          </lu>
+        </out>
+      </action>
+    </rule>
+
+    <rule comment="prog"> 
+      <pattern>
+        <pattern-item n="prog"/>
+      </pattern>
+      <action>
+        <let><clip pos="1" side="tl" part="a_func"/><lit v=""/></let>
+        <let><clip pos="1" side="tl" part="a_screeve"/><lit-tag v="prc_perf"/></let>
+        <out>
+          <lu>
+            <clip pos="1" side="tl" part="whole"/>
+          </lu>
+        </out>
+      </action>
+    </rule>
+
+
+    <rule comment="fut"> 
+      <pattern>
+        <pattern-item n="fut"/>
+      </pattern>
+      <action>
+        <let><clip pos="1" side="tl" part="a_func"/><lit v=""/></let>
+        <let><clip pos="1" side="tl" part="a_screeve"/><lit-tag v="prc_perf"/></let>
+        <out>
+          <lu>
+            <clip pos="1" side="tl" part="whole"/>
+          </lu>
+        </out>
+      </action>
+    </rule>
+
+ 
+    <rule comment="aor"> 
+      <pattern>
+        <pattern-item n="aor"/>
+      </pattern>
+      <action>
+        <let><clip pos="1" side="tl" part="a_func"/><lit v=""/></let>
+        <let><clip pos="1" side="tl" part="a_screeve"/><lit-tag v="prc_perf"/></let>
+        <out>
+          <lu>
+            <clip pos="1" side="tl" part="whole"/>
+          </lu>
+        </out>
+      </action>
+    </rule>
+
+  
+    <rule comment="cop-advl"> 
+      <pattern>
+        <pattern-item n="cop-advl"/>
+      </pattern>
+      <action>
+        <out>
+          <lu>
+            <get-case-from pos="1"><lit v="бол"/></get-case-from>
+            <lit-tag v="v.iv.ger_past.loc"/>
+          </lu>
+        </out>
+      </action>
+    </rule>
+
+    <rule comment="imper"> 
+      <pattern>
+        <pattern-item n="imper"/>
+      </pattern>
+      <action>
+        <call-macro n="modify-pers-nbr1"> 
+          <with-param pos="1"/>
+        </call-macro>
+        <let><clip pos="1" side="tl" part="a_func"/><lit v=""/></let>
+        <out>
+          <lu>
+            <clip pos="1" side="tl" part="whole"/>
+          </lu>
+        </out>
+      </action>
+    </rule>
+
+
+
+    <rule comment="cop-aor"> 
+      <pattern>
+        <pattern-item n="cop-aor"/>
+      </pattern>
+      <action>
+        <call-macro n="modify-pers-nbr1"> 
+          <with-param pos="1"/>
+        </call-macro>
+        <let><clip pos="1" side="tl" part="a_func"/><lit v=""/></let>
+        <out>
+          <lu>
+            <clip pos="1" side="tl" part="whole"/>
+          </lu>
+        </out>
+      </action>
+    </rule>
+
+ 
+    <rule comment="cond-fin"> 
+      <pattern>
+        <pattern-item n="cond-fin"/>
+      </pattern>
+      <action>
+        <call-macro n="modify-pers-nbr1"> 
+          <with-param pos="1"/>
+        </call-macro>
+        <let><clip pos="1" side="tl" part="a_func"/><lit v=""/></let>
+        <let><clip pos="1" side="tl" part="a_screeve"/><lit-tag v="prc_cond"/></let>
+        <out>
+          <lu>
+            <clip pos="1" side="tl" part="whole"/>
+          </lu>
+        </out>
+      </action>
+    </rule>
+
+
+    <rule comment="cop-cond"> 
+      <pattern>
+        <pattern-item n="cop-cond"/>
+      </pattern>
+      <action>
+        <call-macro n="modify-pers-nbr1"> 
+          <with-param pos="1"/>
+        </call-macro>
+        <let><clip pos="1" side="tl" part="a_func"/><lit v=""/></let>
+        <out>
+          <lu>
+            <get-case-from pos="1"><lit v="бол"/></get-case-from>
+            <lit-tag v="v.iv.prc_cond"/>
+            <clip pos="1" side="tl" part="a_pers"/>
+            <clip pos="1" side="tl" part="a_nbr"/>
+          </lu>
+        </out>
+      </action>
+    </rule>
+
+    <rule comment="ger-past"> 
+      <pattern>
+        <pattern-item n="ger-past"/>
+      </pattern>
+      <action>
+        <call-macro n="modify-poss1"> 
+          <with-param pos="1"/> 
+        </call-macro>
+        <out>
+          <lu>
+            <clip pos="1" side="tl" part="whole"/>
+          </lu>
+        </out>
+      </action>
+    </rule>
+
+
+    <rule comment="ger-impf"> 
+      <pattern>
+        <pattern-item n="ger-impf"/>
+      </pattern>
+      <action>
+        <call-macro n="modify-poss1"> 
+          <with-param pos="1"/> 
+        </call-macro>
+        <let><clip pos="1" side="tl" part="a_screeve"/><lit-tag v="ger_past"/></let>
+        <out>
+          <lu>
+            <clip pos="1" side="tl" part="whole"/>
+          </lu>
+        </out>
+      </action>
+    </rule>
+
+  
+    <rule comment="ger-when"> 
+      <pattern>
+        <pattern-item n="ger-when"/>
+      </pattern>
+      <action>
+        <call-macro n="modify-poss1"> 
+          <with-param pos="1"/> 
+        </call-macro>
+        <let><clip pos="1" side="tl" part="a_screeve"/><lit-tag v="ger_past"/></let>
+        <out>
+          <lu>
+            <clip pos="1" side="tl" part="whole"/>
+          </lu>
+        </out>
+      </action>
+    </rule>
+
+
+    <rule comment="ger-pabs"> 
+      <pattern>
+        <pattern-item n="ger-pabs"/>
+      </pattern>
+      <action>
+        <call-macro n="modify-poss1"> 
+          <with-param pos="1"/> 
+        </call-macro>
+        <let><clip pos="1" side="tl" part="a_screeve"/><lit-tag v="ger_past"/></let>
+        <out>
+          <lu>
+            <clip pos="1" side="tl" part="whole"/>
+          </lu>
+        </out>
+      </action>
+    </rule>
+
+    <rule comment="ger-abst"> 
+      <pattern>
+        <pattern-item n="ger-abst"/>
+      </pattern>
+      <action>
+        <call-macro n="modify-poss1"> 
+          <with-param pos="1"/> 
+        </call-macro>
+        <let><clip pos="1" side="tl" part="a_screeve"/><lit-tag v="ger_pres"/></let>
+        <out>
+          <lu>
+            <clip pos="1" side="tl" part="whole"/>
+          </lu>
+        </out>
+      </action>
+    </rule>
+
+    <rule comment="ger-aor"> 
+      <pattern>
+        <pattern-item n="ger-aor"/>
+      </pattern>
+      <action>
+        <call-macro n="modify-poss1"> 
+          <with-param pos="1"/> 
+        </call-macro>
+        <let><clip pos="1" side="tl" part="a_screeve"/><lit-tag v="ger_pres"/></let>
+        <out>
+          <lu>
+            <clip pos="1" side="tl" part="whole"/>
+          </lu>
+        </out>
+      </action>
+    </rule>
+
+    <rule comment="ger6"> 
+      <pattern>
+        <pattern-item n="ger6"/>
+      </pattern>
+      <action>
+        <call-macro n="modify-poss1"> 
+          <with-param pos="1"/> 
+        </call-macro>
+        <let><clip pos="1" side="tl" part="a_screeve"/><lit-tag v="ger_pres"/></let>
+        <out>
+          <lu>
+            <clip pos="1" side="tl" part="whole"/>
+          </lu>
+        </out>
+      </action>
+    </rule>
+
+    <rule comment="gna-when"> 
+      <pattern>
+        <pattern-item n="gna-when"/>
+      </pattern>
+      <action>
+        <let><clip pos="1" side="tl" part="a_screeve"/><lit-tag v="ger_past.loc"/></let>
+        <out>
+          <lu>
+            <clip pos="1" side="tl" part="whole"/>
+          </lu>
+        </out>
+      </action>
+    </rule>
+
+    <rule comment="gna-impf"> 
+      <pattern>
+        <pattern-item n="gna-impf"/>
+      </pattern>
+      <action>
+        <let><clip pos="1" side="tl" part="a_screeve"/><lit-tag v="gna_perf"/></let>
+        <out>
+          <lu>
+            <clip pos="1" side="tl" part="whole"/>
+          </lu>
+        </out>
+      </action>
+    </rule>
+ 
+    <rule comment="fut-dub cop-aor"> 
+      <pattern>
+        <pattern-item n="fut-dub"/>
+        <pattern-item n="cop-aor"/>
+      </pattern>
+      <action>
+        <call-macro n="modify-pers-nbr1"> 
+          <with-param pos="2"/>
+        </call-macro>
+        <let><clip pos="1" side="tl" part="a_func"/><lit v=""/></let>
+        <let><clip pos="2" side="tl" part="a_func"/><lit v=""/></let>
+        <let><clip pos="1" side="tl" part="a_screeve"/><lit-tag v="prc_pcond"/></let>
+        <out>
+          <lu>
+            <clip pos="1" side="tl" part="whole"/>
+          </lu>
+          <b pos="1"/>
+          <lu>
+            <lit v="эле"/>
+            <lit-tag v="vaux"/>
+            <clip pos="2" side="tl" part="a_pers"/>
+            <clip pos="2" side="tl" part="a_nbr"/>
+          </lu>
+        </out>
+      </action>
+    </rule>
+
+
+    <rule comment="pot cop-aor"> 
+      <pattern>
+        <pattern-item n="pot"/>
+        <pattern-item n="cop-aor"/>
+      </pattern>
+      <action>
+        <call-macro n="modify-pers-nbr1"> 
+          <with-param pos="2"/>
+        </call-macro>
+        <let><clip pos="1" side="tl" part="a_func"/><lit v=""/></let>
+        <let><clip pos="2" side="tl" part="a_func"/><lit v=""/></let>
+        <let><clip pos="1" side="tl" part="a_pot"/><lit v=""/></let>
+        <out>
+          <lu>
+            <clip pos="1" side="tl" part="whole"/>
+            <lit-tag v="prc_cond"/>
+            <clip pos="2" side="tl" part="a_pers"/>
+            <clip pos="2" side="tl" part="a_nbr"/>
+          </lu>
+          <b/>
+          <lu>
+            <lit v="жакшы"/>
+            <lit-tag v="adj"/>
+          </lu>
+          <b pos="1"/>
+          <lu>
+            <lit v="бол"/>
+            <lit-tag v="v.iv.aor.p3.sg"/>
+          </lu>
+        </out>
+      </action>
+    </rule>
+
+
+    <rule comment="nec cop-aor"> 
+      <pattern>
+        <pattern-item n="nec"/>
+        <pattern-item n="cop-aor"/>
+      </pattern>
+      <action>
+        <call-macro n="modify-pers-nbr1"> 
+          <with-param pos="2"/>
+        </call-macro>
+        <call-macro n="set-nec-poss1"> 
+          <with-param pos="2"/>
+        </call-macro>
+        <let><clip pos="1" side="tl" part="a_func"/><lit v=""/></let>
+        <let><clip pos="2" side="tl" part="a_func"/><lit v=""/></let>
+        <let><clip pos="1" side="tl" part="a_nec"/><lit v=""/></let>
+        <let><clip pos="2" side="tl" part="a_pers"/><lit-tag v="p3"/></let>
+        <let><clip pos="2" side="tl" part="a_nbr"/><lit-tag v="sg"/></let>
+        <out>
+          <lu>
+            <clip pos="1" side="tl" part="whole"/>
+            <lit-tag v="ger_pres"/>
+            <var n="nec-poss"/>
+            <lit-tag v="nom"/>
+          </lu>
+          <b/>
+          <lu>
+            <lit v="керек"/>
+            <lit-tag v="adj"/>
+          </lu>
+          <b pos="1"/>
+          <lu>
+            <clip pos="2" side="tl" part="whole"/>
+          </lu>
+        </out>
+      </action>
+    </rule>
+
+ 
+    <rule comment="fut cop-aor"> 
+      <pattern>
+        <pattern-item n="fut"/>
+        <pattern-item n="cop-aor"/>
+      </pattern>
+      <action>
+        <call-macro n="modify-pers-nbr1"> 
+          <with-param pos="2"/>
+        </call-macro>
+        <let><clip pos="1" side="tl" part="a_func"/><lit v=""/></let>
+        <let><clip pos="2" side="tl" part="a_func"/><lit v=""/></let>
+        <let><clip pos="1" side="tl" part="a_screeve"/><lit-tag v="aor"/></let>
+        <out>
+          <lu>
+            <clip pos="1" side="tl" part="whole"/>
+            <clip pos="2" side="tl" part="a_pers"/>
+            <clip pos="2" side="tl" part="a_nbr"/>
+          </lu>
+        </out>
+      </action>
+    </rule>
+
+ 
+    <rule comment="prog cop-cond"> 
+      <pattern>
+        <pattern-item n="prog"/>
+        <pattern-item n="cop-cond"/>
+      </pattern>
+      <action>
+        <call-macro n="modify-pers-nbr1"> 
+          <with-param pos="2"/>
+        </call-macro>
+        <let><clip pos="1" side="tl" part="a_func"/><lit v=""/></let>
+        <let><clip pos="2" side="tl" part="a_func"/><lit v=""/></let>
+        <let><clip pos="2" side="tl" part="a_screeve"/><lit-tag v="prc_cond"/></let>
+        <out>
+          <lu>
+            <clip pos="1" side="tl" part="whole"/>
+            <clip pos="2" side="tl" part="a_screeve"/>
+            <clip pos="2" side="tl" part="a_pers"/>
+            <clip pos="2" side="tl" part="a_nbr"/>
+          </lu>
+        </out>
+      </action>
+    </rule>
+
+
+ 
+    <rule comment="prog cop-aor"> 
+      <pattern>
+        <pattern-item n="prog"/>
+        <pattern-item n="cop-aor"/>
+      </pattern>
+      <action>
+        <call-macro n="modify-pers-nbr1"> 
+          <with-param pos="2"/>
+        </call-macro>
+        <let><clip pos="1" side="tl" part="a_func"/><lit v=""/></let>
+        <let><clip pos="2" side="tl" part="a_func"/><lit v=""/></let>
+        <out>
+          <lu>
+            <clip pos="1" side="tl" part="whole"/>
+            <clip pos="2" side="tl" part="a_screeve"/>
+            <clip pos="2" side="tl" part="a_pers"/>
+            <clip pos="2" side="tl" part="a_nbr"/>
+          </lu>
+        </out>
+      </action>
+    </rule>
+
+    <rule comment="past cop-aor"> 
+      <pattern>
+        <pattern-item n="past"/>
+        <pattern-item n="cop-aor"/>
+      </pattern>
+      <action>
+        <call-macro n="modify-pers-nbr1"> 
+          <with-param pos="2"/>
+        </call-macro>
+        <choose>
+          <when>
+            <test><equal><clip pos="2" side="sl" part="a_func"/><lit-tag v="@HARGLE"/></equal></test>
+            <let><clip pos="1" side="tl" part="a_screeve"/><lit-tag v="gna_perf"/></let>
+            <out>
+              <lu>
+                <clip pos="1" side="tl" part="whole"/>
+              </lu>
+            </out>
+          </when>
+          <otherwise>
+            <let><clip pos="1" side="tl" part="a_func"/><lit v=""/></let>
+            <out>
+              <lu>
+                <clip pos="1" side="tl" part="whole"/>
+                <clip pos="2" side="tl" part="a_pers"/>
+                <clip pos="2" side="tl" part="a_nbr"/>
+              </lu>
+            </out>
+          </otherwise>
+        </choose>
+      </action>
+    </rule>
+
+    <rule comment="aor-fin"> 
+      <pattern>
+        <pattern-item n="aor-fin"/>
+      </pattern>
+      <action>
+        <call-macro n="modify-pers-nbr1"> 
+          <with-param pos="1"/>
+        </call-macro>
+        <let><clip pos="1" side="tl" part="a_func"/><lit v=""/></let>
+        <choose>
+          <when>
+            <test><equal><clip pos="1" side="sl" part="a_func"/><lit-tag v="@HARGLE"/></equal></test>
+            <let><clip pos="1" side="tl" part="a_screeve"/><lit-tag v="gna_perf"/></let>
+            <let><clip pos="1" side="tl" part="a_pers"/><lit v=""/></let>
+            <let><clip pos="1" side="tl" part="a_nbr"/><lit v=""/></let>
+            <out>
+              <lu>
+                <clip pos="1" side="tl" part="whole"/>
+              </lu>
+            </out>
+          </when>
+          <otherwise>
+            <let><clip pos="1" side="tl" part="a_func"/><lit v=""/></let>
+            <out>
+              <lu>
+                <clip pos="1" side="tl" part="whole"/>
+              </lu>
+            </out>
+          </otherwise>
+        </choose>
+      </action>
+    </rule>
+
+
+    <rule comment="aor cop-aor"> 
+      <pattern>
+        <pattern-item n="aor"/>
+        <pattern-item n="cop-aor"/>
+      </pattern>
+      <action>
+        <call-macro n="modify-pers-nbr1"> 
+          <with-param pos="2"/>
+        </call-macro>
+        <choose>
+          <when>
+            <test><equal><clip pos="2" side="sl" part="a_func"/><lit-tag v="@HARGLE"/></equal></test>
+            <let><clip pos="1" side="tl" part="a_screeve"/><lit-tag v="gna_perf"/></let>
+            <out>
+              <lu>
+                <clip pos="1" side="tl" part="whole"/>
+              </lu>
+            </out>
+          </when>
+          <otherwise>
+            <let><clip pos="1" side="tl" part="a_func"/><lit v=""/></let>
+            <out>
+              <lu>
+                <clip pos="1" side="tl" part="whole"/>
+                <clip pos="2" side="tl" part="a_pers"/>
+                <clip pos="2" side="tl" part="a_nbr"/>
+              </lu>
+            </out>
+          </otherwise>
+        </choose>
+      </action>
+    </rule>
+
+    <rule comment="aor cop-ifi"> 
+      <pattern>
+        <pattern-item n="aor"/>
+        <pattern-item n="cop-ifi"/>
+      </pattern>
+      <action>
+        <call-macro n="modify-pers-nbr1"> 
+          <with-param pos="2"/>
+        </call-macro>
+        <let><clip pos="1" side="tl" part="a_func"/><lit v=""/></let>
+        <let><clip pos="1" side="tl" part="a_screeve"/><lit-tag v="pcond"/></let>
+        <out>
+          <lu>
+            <clip pos="1" side="tl" part="whole"/>
+            <clip pos="2" side="tl" part="a_pers"/>
+            <clip pos="2" side="tl" part="a_nbr"/>
+          </lu>
+        </out>
+      </action>
+    </rule>
+
+    <rule comment="aor bol-past cop-aor"> 
+      <pattern>
+        <pattern-item n="aor"/>
+        <pattern-item n="bol-past"/>
+        <pattern-item n="cop-aor"/>
+      </pattern>
+      <action>
+        <call-macro n="modify-pers-nbr1"> 
+          <with-param pos="3"/>
+        </call-macro>
+        <let><clip pos="1" side="tl" part="a_func"/><lit v=""/></let>
+        <let><clip pos="2" side="tl" part="a_func"/><lit v=""/></let>
+        <let><clip pos="1" side="tl" part="a_screeve"/><lit-tag v="prc_irre"/></let>
+        <let><clip pos="2" side="tl" part="a_screeve"/><lit-tag v="ifi"/></let>
+        <out>
+          <lu>
+            <clip pos="1" side="tl" part="whole"/>
+          </lu>
+          <b pos="1"/>
+          <lu>
+            <clip pos="2" side="tl" part="whole"/>
+            <clip pos="3" side="tl" part="a_pers"/>
+            <clip pos="3" side="tl" part="a_nbr"/>
+          </lu>
+        </out>
+      </action>
+    </rule>
+
+
+
+    <rule comment="past cop-ifi"> 
+      <pattern>
+        <pattern-item n="past"/>
+        <pattern-item n="cop-ifi"/>
+      </pattern>
+      <action>
+        <call-macro n="modify-pers-nbr1"> 
+          <with-param pos="2"/>
+        </call-macro>
+        <let><clip pos="1" side="tl" part="a_func"/><lit v=""/></let>
+        <let><clip pos="2" side="tl" part="a_func"/><lit v=""/></let>
+        <let><clip pos="1" side="tl" part="a_past"/><lit-tag v="prc_past"/></let>
+        <out>
+          <lu>
+            <clip pos="1" side="tl" part="whole"/>
+          </lu>
+          <b pos="1"/>
+          <lu>
+            <clip pos="2" side="tl" part="whole"/>
+          </lu>
+        </out>
+      </action>
+    </rule>
+
+    <rule comment="gpr-rsub"> 
+      <pattern>
+        <pattern-item n="gpr-rsub"/>
+      </pattern>
+      <action>
+        <call-macro n="modify-poss1"> 
+          <with-param pos="1"/> 
+        </call-macro>
+        <let><clip pos="1" side="tl" part="a_screeve"/><lit-tag v="gpr_past"/></let>
+        <out>
+          <lu>
+            <clip pos="1" side="tl" part="whole"/>
+          </lu>
+        </out>
+      </action>
+    </rule>
+
+    <rule comment="gpr-aor"> 
+      <pattern>
+        <pattern-item n="gpr-aor"/>
+      </pattern>
+      <action>
+        <call-macro n="modify-poss1"> 
+          <with-param pos="1"/> 
+        </call-macro>
+        <let><clip pos="1" side="tl" part="a_screeve"/><lit-tag v="gpr_fut"/></let>
+        <out>
+          <lu>
+            <clip pos="1" side="tl" part="whole"/>
+          </lu>
+        </out>
+      </action>
+    </rule>
+
+
+
+    <rule comment="prc"> 
+      <pattern>
+        <pattern-item n="prc"/>
+      </pattern>
+      <action>
+        <let><clip pos="1" side="tl" part="a_func"/><lit v=""/></let>
+        <let><clip pos="1" side="tl" part="a_screeve"/><lit-tag v="ger_pres.nom"/></let>
+        <out>
+          <lu>
+            <clip pos="1" side="tl" part="whole"/>
+          </lu>
+        </out>
+      </action>
+    </rule>
+
+
+    <!-- RULES BELOW THIS LINE ARE HACKS THEY SHOULD BE EXPECTED TO BREAK -->
+
+    <rule comment="aor qst-pers"> 
+      <pattern>
+        <pattern-item n="aor"/>
+        <pattern-item n="qst-pers"/>
+      </pattern>
+      <action>
+        <call-macro n="modify-pers-nbr1"> 
+          <with-param pos="2"/>
+        </call-macro>
+        <let><clip pos="1" side="tl" part="a_func"/><lit v=""/></let>
+        <out>
+          <lu>
+            <clip pos="1" side="tl" part="whole"/>
+            <clip pos="2" side="tl" part="a_pers"/>
+            <clip pos="2" side="tl" part="a_nbr"/>
+          </lu>
+          <b pos="1"/>
+          <lu>
+            <clip pos="2" side="tl" part="lem"/>
+            <lit-tag v="qst"/>
+          </lu>
+        </out>
+      </action>
+    </rule>
+ 
+    <rule comment="nom">  
+      <pattern>
+        <pattern-item n="nom"/>
+      </pattern>
+      <action>
+        <call-macro n="modify-poss1"> 
+          <with-param pos="1"/> 
+        </call-macro>
+        <out>
+          <lu>
+            <clip pos="1" side="tl" part="whole"/>
+          </lu>
+        </out>
+      </action>
+    </rule>
+
+ 
+    <rule comment="gpr-px">  
+      <pattern>
+        <pattern-item n="gpr-px"/>
+      </pattern>
+      <action>
+        <let><clip pos="1" side="tl" part="a_poss"/><lit v=""/></let>
+        <out>
+          <lu>
+            <clip pos="1" side="tl" part="whole"/>
+          </lu>
+        </out>
+      </action>
+    </rule>
+    
+
+      
+    <rule comment="gpr-px nom">  
+      <!-- TODO: This will break if the noun has any derivational suffixes or any pattern other than n.ND.PXD.CD -->
+      <pattern>
+        <pattern-item n="gpr-px"/>
+        <pattern-item n="nom"/>
+      </pattern>
+      <action>
+        <call-macro n="modify-poss1"> 
+          <with-param pos="1"/> 
+        </call-macro>
+        <let><var n="gpr-nom-poss"/><clip pos="1" side="tl" part="a_poss"/></let>
+        <let><clip pos="1" side="tl" part="a_poss"/><lit v=""/></let>
+        <choose> 
+          <when>
+            <test><equal><clip pos="2" side="tl" part="a_attr"/><lit-tag v="attr"/></equal></test>
+            <out>
+              <lu>
+                <clip pos="1" side="tl" part="whole"/>
+              </lu>
+              <b pos="1"/>
+              <lu>
+                <clip pos="2" side="tl" part="whole"/>
+              </lu>
+            </out>
+          </when>
+          <otherwise> 
+            <out>
+              <lu>
+                <clip pos="1" side="tl" part="whole"/>
+              </lu>
+              <b pos="1"/>
+              <lu>
+                <clip pos="2" side="tl" part="lemh"/>
+                <clip pos="2" side="tl" part="a_nom"/>
+                <clip pos="2" side="tl" part="a_nbr"/>
+                <var n="gpr-nom-poss"/>
+                <clip pos="2" side="tl" part="a_case"/>
+                <clip pos="2" side="tl" part="lemq"/>
+              </lu>
+            </out>
+          </otherwise>
+        </choose>
+        <let><var n="gpr-nom-poss"/><lit-tag v=""/></let>
+      </action>
+    </rule>
+    
+    <rule comment="num-abstr"> 
+      <pattern>
+        <pattern-item n="num-abstr"/>
+      </pattern>
+      <action>
+        <out>
+          <lu>
+            <clip pos="1" side="tl" part="lem"/>
+            <lit-tag v="num"/>
+          </lu>
+          <b/>
+          <lu>
+            <lit v="жаш"/>
+            <lit-tag v="n.loc.attr"/>
+          </lu>
+        </out>
+      </action>
+    </rule>
+
+    <rule comment="cond">
+      <pattern>
+        <pattern-item n="cond"/>
+      </pattern>
+      <action>
+        <let><clip pos="1" side="tl" part="a_screeve"/><lit-tag v="prc_cond"/></let>
+        <out>
+          <lu>
+            <clip pos="1" side="tl" part="whole"/>
+            <lit-tag v="p3.sg"/>
+          </lu>
+        </out>
+      </action>
+    </rule>
+
+
+
+    <rule comment="pot">
+      <pattern>
+        <pattern-item n="pot"/>
+      </pattern>
+      <action>
+        <call-macro n="modify-pers-nbr1"> 
+          <with-param pos="2"/>
+        </call-macro>
+        <let><clip pos="1" side="tl" part="a_pot"/><lit v=""/></let>
+        <out>
+          <lu>
+            <clip pos="1" side="tl" part="whole"/>
+            <lit-tag v="prc_cond.p3.sg"/>
+          </lu>
+          <b/>
+          <lu>
+            <lit v="жакшы"/>
+            <lit-tag v="adj"/>
+          </lu>
+          <b pos="1"/>
+          <lu>
+            <lit v="бол"/>
+            <lit-tag v="v.iv.aor.p3.sg"/>
+          </lu>
+        </out>
+      </action>
+    </rule>
+
+    <rule comment="nec cop-aor"> 
+      <pattern>
+        <pattern-item n="nec"/>
+      </pattern>
+      <action>
+        <call-macro n="modify-pers-nbr1"> 
+          <with-param pos="2"/>
+        </call-macro>
+        <let><clip pos="1" side="tl" part="a_nec"/><lit v=""/></let>
+        <out>
+          <lu>
+            <clip pos="1" side="tl" part="whole"/>
+            <lit-tag v="ger_pres.px3sp.nom"/>
+          </lu>
+          <b/>
+          <lu>
+            <lit v="керек"/>
+            <lit-tag v="adj"/>
+          </lu>
+        </out>
+      </action>
+    </rule>
+
+
+
+    <rule comment="sent"> 
+      <pattern>
+        <pattern-item n="sent"/>
+      </pattern>
+      <action>
+        <out>
+          <lu>
+            <clip pos="1" side="tl" part="whole"/>
+          </lu>
+        </out>
+      </action>
+    </rule>
+    
+  </section-rules>
+</transfer>

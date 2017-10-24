@@ -1,0 +1,763 @@
+<rules>
+	<rule>
+		<match lemma="شیر" tags="n.*"><select lemma="milk" tags="n.*"/></match>
+		<or>
+		<match lemma="گاو" tags="n.*"/>
+		<match lemma="خوشمزه" tags="adj"/>
+		<match lemma="را" tags="post"/>
+		<match lemma="خور" tags="vblex.*"/>
+	</or>
+	 </rule>
+	
+	<rule>
+		<match lemma="شیر" tags="n.*"><select lemma="valve" tags="n.*"/></match>
+		<or>
+		<match lemma="دریچه" tags="n.*"/>
+		<match lemma="سوپاپ" tags="n.*"/>
+	    <match lemma="در" tags="n.*"/>
+	    <match lemma="سرپوش" tags="n.*"/>
+	    <match lemma="آب" tags="n.*"/>
+	</or>
+	</rule>
+	
+	<rule>
+		<or>
+		<match lemma="سیگار" tags="n.*"/>
+		<match lemma="را" tags="post"/>
+	    </or>
+		<match lemma="ترک کرد" tags="vblex.*"><select lemma="stop" tags="vblex.*"/></match>
+	</rule>
+    
+	<rule>
+		<or>
+		<match lemma="تلفن" tags="n.*"/>
+		<match lemma="را" tags="post"/>
+	    </or>
+		<match lemma="وصل کرد" tags="vblex.*"><select lemma="connect" tags="vblex.*"/></match>
+	</rule>
+	
+	<rule>
+		<or>
+		<match lemma="به" tags="pr"/>
+		<match lemma="هم" tags="adv"/>
+	    </or>
+		<match lemma="وصل کرد" tags="vblex.*"><select lemma="clasp" tags="vblex.*"/></match>
+	</rule>
+	
+	<rule>
+		<or>
+		<match lemma="به" tags="pr"/>
+	    </or>
+		<match lemma="هم" tags="adj"><select lemma="each other" tags="adj"/></match>
+	</rule>
+	
+	<rule>
+		<or>
+		<match lemma="هوا" tags="n.*"/>
+	    </or>
+		<match lemma="ملایم" tags="adj"><select lemma="genial" tags="adj"/></match>
+	</rule>
+	
+	<rule>
+		<or>
+		<match lemma="مرکب" tags="n.*"/>
+	   <match lemma="اسب" tags="n.*"/>
+	   </or>
+		<match lemma="سوار شد" tags="vblex.*"><select lemma="got on" tags="vblex.*"/></match>
+	</rule>
+	
+	
+	<rule>
+		<or>
+		<match lemma="لشگریان" tags="n.pl"/>
+		<match lemma="قوای" tags="n.*"/>
+	    <match lemma="قبیله" tags="n.*"/>
+		</or>
+		<match lemma="ترک" tags="n.*"><select lemma="Turkish" tags="n.*"/></match>
+	</rule>
+	
+		<rule>
+		<or>
+		<match lemma="کتاب" tags="n.*"/>
+		<match lemma="بچه" tags="n.*"/>
+		<match lemma="را" tags="post"/>
+	    </or>
+		<match lemma="برد" tags="vblex.*"><select lemma="take" tags="vblex.*"/></match>
+	</rule>
+	
+	<rule>
+		<or>
+		<match lemma="شکاف" tags="n.*"/>
+		<match lemma="رخنه" tags="n.*"/>
+	</or>
+		<match lemma="ترک" tags="n.*"><select lemma="crack" tags="n.*"/></match>
+	</rule>
+	
+	<rule>
+		
+		<match lemma="ترک" tags="n.*"><select lemma="croup" tags="n.*"/></match>
+	<or>
+		<match lemma="زین اسب" tags="n.*"/>
+	   <match lemma="سوار شدن" tags="v.*"/>
+	</or>
+	</rule>
+	
+	<rule>
+		<or>
+		<match lemma="واگذاری" tags="n.*"/>
+		<match lemma="رهاسازی" tags="n.*"/>
+	</or>
+		<match lemma="ترک" tags="n.*"><select lemma="quit" tags="n.*"/></match>
+	</rule>
+	
+	<rule>
+		<or>
+		<match lemma="ترکیه" tags="n.*"/>
+	</or>
+		<match lemma="ترک" tags="n.*"><select lemma="Turk" tags="n.*"/></match>
+	</rule>
+	
+	<rule>
+		<match lemma="واحد" tags="n.*"><select lemma="unit" tags="n.*"/></match>
+		<or>
+		<match lemma="آپارتمان" tags="n.*"/>
+		<match lemma="زندگی کرد" tags="vblex.*"/>
+	</or>
+	</rule>
+	
+	<rule>
+		<or>
+		<match lemma="ثبات" tags="n.*"/>
+		<match lemma="آرامش" tags="n.*"/>
+	</or>
+		<match lemma="قرار" tags="n.*"><select lemma="rest" tags="n.*"/></match>
+	</rule>
+	
+	<rule>
+		<match lemma="بخش" tags="n.*"><select lemma="department" tags="n.*"/></match>
+		<or>
+		<match lemma="شیمی" tags="n.*"/>
+	    <match lemma="فیزیک" tags="n.*"/>
+	    <match lemma="ریاضی" tags="n.*"/>
+	</or>
+	</rule>
+	
+	<rule>
+		<match lemma="درآمد" tags="n.*"><select lemma="introduction" tags="n.*"/></match>
+		<or>
+		<match lemma="کتاب" tags="n.*"/>
+	    <match lemma="مقاله" tags="n.*"/>
+	</or>
+	</rule>
+	
+	<rule>
+		<match lemma="حالت" tags="n.*"><select lemma="posture" tags="n.*"/></match>
+		<or>
+		<match lemma="بدن" tags="n.*"/>
+	    <match lemma="سر" tags="n.*"/>
+	    <match lemma="دست" tags="n.*"/>   
+	    <match lemma="پا" tags="n.*"/>
+	</or>
+	</rule>
+	
+	<rule>
+		<match lemma="حالت" tags="n.*"><select lemma="case" tags="n.*"/></match>
+		<or>
+		<match lemma="اسم" tags="n.*"/>
+	    <match lemma="فعل" tags="n.*"/>
+	    <match lemma="دستور" tags="n.*"/>   
+	</or>
+	</rule>
+	
+	<rule>
+		<or>
+		<match lemma="وضعیت" tags="n.*"/>
+	    <match lemma="شرایط" tags="n.*"/> 
+	</or>
+		<match lemma="حالت" tags="n.*"><select lemma="condition" tags="n.*"/></match>
+	</rule>
+	
+	<rule>
+		<or>
+		<match lemma="شهر" tags="n.*"/>
+	    <match lemma="مردم" tags="n.*"/> 
+	</or>
+		<match lemma="بافت" tags="n.*"><select lemma="Baft" tags="n.*"/></match>
+   </rule>
+	
+		<rule>
+		<match lemma="بافت" tags="n.*"><select lemma="tissue" tags="n.*"/></match>
+		<or>
+	   <match lemma="پارچه" tags="n.*"/> 
+	   <match lemma="رشته" tags="n.*"/> 
+	   <match lemma="لباس" tags="n.*"/> 
+	   <match lemma="تاروپود" tags="n.*"/>
+	</or>
+	</rule>
+	
+	<rule>
+		<match lemma="ریشه" tags="n.*"><select lemma="radical" tags="n.*"/></match>
+		<match lemma="عدد" tags="n.*"/>
+   </rule>
+	
+	<rule>
+		<match lemma="رشته" tags="n.*"><select lemma="thread" tags="n.*"/></match>
+		<or>
+	   <match lemma="نخ" tags="n.*"/> 
+	   <match lemma="ریسمان" tags="n.*"/> 
+	   <match lemma="رگه" tags="n.*"/>
+	</or>
+	</rule>
+	
+	<rule>
+		<match lemma="رشته" tags="n.*"><select lemma="series" tags="n.*"/></match>
+		<or>
+	   <match lemma="حلقه" tags="n.*"/> 
+	   <match lemma="زنجیر" tags="n.*"/> 
+	   <match lemma="سلسله" tags="n.*"/> 
+	   <match lemma="کوه" tags="n.*"/>
+	</or>
+	</rule>
+	
+	<rule>
+	  <match lemma="رشته" tags="n.*"><select lemma="field" tags="n.*"/></match>
+	  <or>
+	  <match lemma="تحصیلی" tags="adj.*"/> 
+	   <match lemma="درسی" tags="n.*"/> 
+	   <match lemma="دانشگاه" tags="n.*"/> 
+	</or>	
+	</rule>
+	
+	 <rule>
+		<match lemma="دامنه" tags="n.*"><select lemma="domain" tags="n.*"/></match>
+		<or>
+	   <match lemma="حوزه" tags="n.*"/> 
+	   <match lemma="قلمرو" tags="n.*"/> 
+	   <match lemma="ملک" tags="n.*"/>
+	</or>
+	</rule>
+	
+	 <rule>
+		<match lemma="دامنه" tags="n.*"><select lemma="amplitude" tags="n.*"/></match>
+		<or>
+	   <match lemma="نوسان" tags="n.*"/> 
+	   <match lemma="فراوانی" tags="n.*"/> 
+	</or>
+	</rule>
+	
+	<rule>
+		<match lemma="ستون" tags="n.*"><select lemma="pillar" tags="n.*"/></match>
+		<or>
+	   <match lemma="خانه" tags="n.*"/> 
+	   <match lemma="ساختمان" tags="n.*"/> 
+	   <match lemma="دیوار" tags="n.*"/>   
+	</or>
+	</rule>
+	
+	<rule>
+		<match lemma="برگ" tags="n.*"><select lemma="leaf" tags="n.*"/></match>
+	    <match lemma="درخت" tags="n.*"/> 
+	</rule>
+	
+	<rule>
+		<match lemma="بسیار" tags="adv.*"/>
+	    <match lemma="کند" tags="adj.*"><select lemma="slow" tags="adj.*"/></match> 
+	</rule>
+	
+	<rule>
+		<match lemma="توپ" tags="n.*"><select lemma="bolt" tags="n.*"/></match>
+	  <or>
+		<match lemma="تفنگ" tags="n.*"/> 
+	    <match lemma="تیراندازی" tags="n.*"/> 
+	    <match lemma="گلوله" tags="n.*"/> 
+	    <match lemma="شلیک کرد"/> 
+	</or>
+	 </rule>
+
+	<rule>
+		<match lemma="دندان" tags="n.*"/>
+	    <match lemma="لیوان" tags="n.*"/>
+		<match lemma="دست" tags="n.*"/>
+		<match lemma="شکست" tags="v.*"><select lemma="broke" tags="v.*"/></match> 
+	</rule>
+	
+	 <rule>
+		<match lemma="اثر" tags="n.*"><select lemma="effect" tags="n.*"/></match>
+		<or>
+	   <match lemma="خوب" tags="adj"/> 
+	   <match lemma="بد" tags="adj"/> 
+	   <match lemma="منفی" tags="adj"/>
+	   <match lemma="مثبت" tags="adj"/>
+	</or>
+	</rule>
+	
+	<rule>
+		<match lemma="کف" tags="n.*"><select lemma="foam" tags="n.*"/></match>
+	  <or>
+		<match lemma="حباب" tags="n.*"/> 
+	    <match lemma="سرجوش" tags="n.*"/>  
+	</or>
+	</rule>
+	
+	<rule>
+		<match lemma="کف" tags="n.*"><select lemma="floor" tags="n.*"/></match>
+	  <or>
+		<match lemma="زمین" tags="n.*"/> 
+	    <match lemma="طبقه" tags="n.*"/>  
+	    <match lemma="خیابان" tags="n.*"/>
+	   <match lemma="کشتی" tags="n.*"/>
+	   <match lemma="اتاق" tags="n.*"/>
+	</or>
+	</rule>
+	
+	<rule>
+		<match lemma="کف" tags="n.*"><select lemma="bottom" tags="n.*"/></match>
+	  <or>
+		<match lemma="پا" tags="n.*"/> 
+	    <match lemma="پایین" tags="n.*"/>  
+	    <match lemma="زیر" tags="n.*"/>
+	   <match lemma="ته" tags="n.*"/>
+	</or>
+	</rule>
+	
+	<rule>
+		<match lemma="زبان" tags="n.*"><select lemma="language" tags="n.*"/></match>
+	    <or> 
+		 <match lemma="فارسی" tags="adj"/> 
+	    <match lemma="انگلیسی" tags="adj"/> 
+	    <match lemma="عربی" tags="adj"/> 
+	   <match lemma="خواند" tags="vblex.*"/>
+	</or>
+	 </rule>
+	
+	<rule>
+		<match lemma="زبان" tags="n.*"><select lemma="language" tags="n.*"/></match>
+		<match lemma="اشاره" tags="n.*"><select lemma="sign" tags="n.*"/></match>
+     </rule>
+
+	<rule>
+		<match lemma="مبلغ" tags="n.*"><select lemma="missionary" tags="n.*"/></match>
+	    <or>
+		<match lemma="دین" tags="n.*"/> 
+	    <match lemma="مذهب" tags="n.*"/> 
+	    <match lemma="تبلیغ" tags="n.*"/> 
+	</or>
+	 </rule>
+	
+	<rule>
+		<match lemma="گرده" tags="n.*"><select lemma="kidney" tags="n.*"/></match>
+	    <or>
+		<match lemma="کلیه" tags="n.*"/> 
+	    <match lemma="قلوه" tags="n.*"/> 
+	</or>
+	 </rule>
+	
+	<rule>
+		<or>
+		<match lemma="یک" tags="num.*"/> 
+	    <match lemma="دو" tags="num.*"/> 
+        <match lemma="سه" tags="num.*"/>
+	    <match lemma="چهار" tags="num.*"/>
+	    <match lemma="نیم" tags="num.*"/>
+	</or>
+		<match lemma="ساعت" tags="n.*"><select lemma="hour" tags="n.*"/></match>
+	 </rule>
+	
+	<rule>
+		<match lemma="ساعت" tags="n.*"><select lemma="clock" tags="n.*"/></match>
+		<match lemma="دیواری" tags="adj"/> 
+	 </rule>
+	
+	<rule>
+		<match lemma="طبقه" tags="n.*"><select lemma="class" tags="n.*"/></match>
+	   <or>
+		<match lemma="رده" tags="n.*"/> 
+	    <match lemma="دسته" tags="n.*"/> 
+	    <match lemma="گروه" tags="n.*"/> 
+		<match lemma="گیاهی" tags="adj"/> 
+	    <match lemma="جانوری" tags="adj"/> 
+	 </or>
+	 </rule>
+	
+	<rule>
+		<match lemma="گونه" tags="n.*"><select lemma="species" tags="n.*"/></match>
+		  <or>
+		<match lemma="جانوری" tags="adj"/> 
+	      <match lemma="گیاهی" tags="adj"/> 
+	 </or>
+	 </rule>
+
+	<rule>
+		<match lemma="کره" tags="n.*"><select lemma="butter" tags="n.*"/></match>
+		<or>
+		 <match lemma="خوشمزه" tags="adj"/> 
+	     <match lemma="گیاهی" tags="adj"/> 
+	     <match lemma="حیوانی" tags="adj"/> 
+	     <match lemma="صبحانه" tags="n.*"/> 
+	    </or>
+	 </rule>
+	
+	<rule>
+		<match lemma="کره" tags="n.*"><select lemma="sphere" tags="n.*"/></match>
+		<match lemma="زمین" tags="n.*"/> 
+	 </rule>
+	
+	<rule>
+		<match lemma="کره" tags="n.*"><select lemma="reluctance" tags="n.*"/></match>
+		<match lemma="بی‌زاری" tags="n.*"/> 
+	    <match lemma="بی‌میلی" tags="n.*"/> 
+	 </rule>
+	
+	<rule>
+		<match lemma="کره" tags="n.*"><select lemma="offspring" tags="n.*"/></match>
+		<match lemma="فرزند" tags="n.*"/> 
+	    <match lemma="زاده" tags="n.*"/> 
+	    <match lemma="سلاله" tags="n.*"/> 
+	 </rule>
+	
+	<rule>
+		<match lemma="قطر" tags="n.*"><select lemma="diameter" tags="n.*"/></match>
+		<match lemma="دایره" tags="n.*"/> 
+	 </rule>
+	
+	<rule>
+		<match lemma="تیر" tags="n.*"><select lemma="shot" tags="n.*"/></match>
+	  <or>
+		<match lemma="تفنگ" tags="n.*"/> 
+	    <match lemma="تیراندازی" tags="n.*"/> 
+	    <match lemma="گلوله" tags="n.*"/> 
+	    <match lemma="شلیک کرد" tags="vblex.*"/> 
+	</or>
+	 </rule>
+	
+	<rule>
+		<match lemma="ماه" tags="n.*"><select lemma="month" tags="n.*"/></match>
+	  <or>
+	    <match lemma="سال" tags="n.*"/>
+	    <match lemma="روز" tags="n.*"/>
+	</or>
+	</rule>
+	
+	<rule>
+	  <or>
+	     <match lemma="مهر" tags="n"/>
+	     <match lemma="آبان" tags="n"/>
+	     <match lemma="آذر" tags="n"/>
+	     <match lemma="دی" tags="n"/>
+		 <match lemma="بهمن" tags="n"/>
+	     <match lemma="اسفند" tags="n"/>
+		 <match lemma="فروردین" tags="n"/>
+	     <match lemma="اردیبهشت" tags="n"/>
+	     <match lemma="خرداد" tags="n"/>
+	     <match lemma="تیر" tags="n"/>
+		 <match lemma="مرداد" tags="n"/>
+	     <match lemma="شهریور" tags="n"/>
+	</or>
+	<match lemma="ماه" tags="n.*"><select lemma="month" tags="n.*"/></match>
+	</rule>
+	
+	<rule>
+		<match lemma="مصالح" tags="n.*"><select lemma="materials" tags="n.*"/></match>
+	  <or>
+	    <match lemma="ساختمان" tags="n.*"/>
+	    <match lemma="خانه" tags="n.*"/>
+	</or>
+	</rule>
+	
+	<rule>
+		<match lemma="کرم" tags="n.*"><select lemma="cream" tags="n.*"/></match>
+	  <or>
+	    <match lemma="دست" tags="n.*"/>
+	    <match lemma="بدن" tags="n.*"/>
+	    <match lemma="صورت" tags="n.*"/>
+	</or>
+	</rule>
+	
+	<rule>
+		<match lemma="کرم" tags="n.*"><select lemma="bounty" tags="n.*"/></match>
+	  <or>
+	    <match lemma="بخشش" tags="n.*"/>
+	    <match lemma="نیکی" tags="n.*"/>
+	    <match lemma="احسان" tags="n.*"/>
+	</or>
+	</rule>
+	
+	<rule>
+		<match lemma="مهر" tags="n.*"><select lemma="affection" tags="n.*"/></match>
+	  <or>
+	    <match lemma="محبت" tags="n.*"/>
+	    <match lemma="مهربانی" tags="n.*"/>
+	    <match lemma="عاطفه" tags="n.*"/>
+	</or>
+	</rule>
+	
+	<rule>
+		<match lemma="مهر" tags="n"><select lemma="october" tags="n"/></match>
+	     <or>
+	    <match lemma="ماه" tags="n.*"/>
+	    <match lemma="سال" tags="n.*"/>
+	    <match lemma="روز" tags="n.*"/>
+	</or>
+	</rule>
+	
+	<rule>
+		<match lemma="پایه" tags="n.*"><select lemma="leg" tags="n.*"/></match>
+	  <or>
+	    <match lemma="میز" tags="n.*"/>
+	    <match lemma="صندلی" tags="n.*"/>
+	</or>
+	</rule>
+
+	<rule>
+		<match lemma="دفتر" tags="n.*"><select lemma="notebook" tags="n.*"/></match>
+	  <or>
+	    <match lemma="فارسی" tags="n.*"/>
+		<match lemma="کتاب" tags="n.*"/>
+	    <match lemma="نوشت" tags="vblex.*"/>
+	    <match lemma="کاغذ" tags="n.*"/>
+	</or>
+	</rule>
+	
+	<rule>
+		<match lemma="اشکال" tags="n.sg"><select lemma="difficulty" tags="n.sg"/></match>
+	  <or>
+	    <match lemma="سختی" tags="n.*"/>
+		<match lemma="دشواری" tags="n.*"/>
+	    <match lemma="زحمت" tags="n.*"/>
+	    <match lemma="مشقت" tags="n.*"/>
+	</or>
+	</rule>
+	
+	<rule>
+		<match lemma="دم" tags="n.*"><select lemma="breath" tags="n.*"/></match>
+	  <or>
+	    <match lemma="نفس" tags="n.*"/>
+		<match lemma="نیرو" tags="n.*"/>
+	    <match lemma="جان" tags="n.*"/>
+	</or>
+	</rule>
+	
+	<rule>
+		<match lemma="دم" tags="n.*"><select lemma="moment" tags="n.*"/></match>
+	  <or>
+	    <match lemma="لحظه" tags="n.*"/>
+		<match lemma="زمان" tags="n.*"/>
+	    <match lemma="موقع" tags="n.*"/>
+	</or>
+	</rule>
+	
+	<rule>
+		<match lemma="خلع" tags="n.*"><select lemma="diposal" tags="n.*"/></match>
+	  <or>
+	    <match lemma="عزل" tags="n.*"/>
+		<match lemma="برکناری" tags="n.*"/>
+	    <match lemma="اخراج" tags="n.*"/>
+	</or>
+	</rule>
+	
+	<rule>
+		<match lemma="هل" tags="n.*"><select lemma="cardamom" tags="n.*"/></match>
+	  <or>
+	    <match lemma="را" tags="post"/>
+		<match lemma="خورد" tags="vblex.*"/>
+	</or>
+	</rule>
+	
+		<rule>
+		<match lemma="خلق" tags="n.*"><select lemma="creation" tags="n.*"/></match>
+	  <or>
+	    <match lemma="ایجاد" tags="n.*"/>
+		<match lemma="خلقت" tags="n.*"/>
+	    <match lemma="آفرینش" tags="n.*"/>
+	</or>
+	</rule>
+	
+		<rule>
+		<match lemma="خلق" tags="n.*"><select lemma="temper" tags="n.*"/></match>
+	  <or>
+	    <match lemma="خوی" tags="n.*"/>
+		<match lemma="طبع" tags="n.*"/>
+	    <match lemma="نهاد" tags="n.*"/>
+	    <match lemma="سرشت" tags="n.*"/>
+	    <match lemma="خصلت" tags="n.*"/> 
+	</or>
+	</rule>
+	
+	<rule>
+		<match lemma="رحم" tags="n.*"><select lemma="uterus" tags="n.*"/></match>
+	  <or>
+	    <match lemma="بطن" tags="n.*"/>
+		<match lemma="شکم" tags="n.*"/>
+	  <match lemma="جنین" tags="n.*"/> 
+	</or>
+	</rule>
+	
+	<rule>
+		<match lemma="عصر" tags="n.*"><select lemma="evening" tags="n.*"/></match>
+	  <or>
+	    <match lemma="شب" tags="n.*"/>
+		<match lemma="غروب" tags="n.*"/>
+	</or>
+	</rule>
+	
+	<rule>
+		<match lemma="علم" tags="n.*"><select lemma="science" tags="n.*"/></match>
+	  <or>
+	    <match lemma="دانش" tags="n.*"/>
+		<match lemma="معرفت" tags="n.*"/>
+	</or>
+	</rule>
+	
+	<rule>
+		  <or>
+	    <match lemma="انتقال" tags="n.*"/>
+		<match lemma="ترابری" tags="n.*"/>
+		<match lemma="حمل" tags="n.*"/>
+	</or>
+		<match lemma="نقل" tags="n.*"><select lemma="transportation" tags="n.*"/></match>
+	</rule>
+	
+	<rule>
+		<match lemma="سحر" tags="n.*"><select lemma="dawn" tags="n.*"/></match>
+	  <or>
+	    <match lemma="بامداد" tags="n.*"/>
+		<match lemma="سپیده‌دم" tags="n.*"/>
+	    <match lemma="سحرگاه" tags="n.*"/> 
+	    <match lemma="صبح" tags="n.*"/> 
+	</or>
+	</rule>
+	
+	<rule>
+		<match lemma="سر" tags="n.*"><select lemma="mystery" tags="n.*"/></match>
+	  <or>
+	    <match lemma="راز" tags="n.*"/>
+		<match lemma="رمز" tags="n.*"/>
+	</or>
+	</rule>
+	
+	<rule>
+		<match lemma="تن" tags="n.*"><select lemma="body" tags="n.*"/></match>
+	  <or>
+	    <match lemma="بدن" tags="n.*"/>
+		<match lemma="جسم" tags="n.*"/>
+	    <match lemma="اندام" tags="n.*"/>
+	</or>
+	</rule>
+	
+	<rule>
+		<match lemma="غیبت" tags="n.*"><select lemma="absence" tags="n.*"/></match>
+	  <or>
+	    <match lemma="غیاب" tags="n.*"/>
+		<match lemma="حاضر" tags="n.*"/>
+	</or>
+	</rule>
+	
+		<rule>
+		<match lemma="بیت" tags="n.*"><select lemma="house" tags="n.*"/></match>
+	  <or>
+	    <match lemma="خانه" tags="n.*"/>
+		<match lemma="منزل" tags="n.*"/>
+	    <match lemma="مسکن" tags="n.*"/>
+	</or>
+	</rule>
+	
+	<rule>
+		<match lemma="بیت" tags="n.*"><select lemma="verse" tags="n.*"/></match>
+	  <or>
+	    <match lemma="شعر" tags="n.*"/>
+		<match lemma="مصراع" tags="n.*"/>
+	</or>
+	</rule>
+	
+	<rule>
+		<match lemma="جوش" tags="n.*"><select lemma="primple" tags="n.*"/></match>
+	  <or>
+	    <match lemma="دمل" tags="n.*"/>
+		<match lemma="التهاب" tags="n.*"/>
+	    <match lemma="کورک" tags="n.*"/>
+		<match lemma="دانه" tags="n.*"/>
+	</or>
+	</rule>
+	
+	<rule>
+		<match lemma="جوش" tags="n.*"><select lemma="weld" tags="n.*"/></match>
+	  <or>
+	    <match lemma="جوشکاری" tags="n.*"/>
+		<match lemma="لعیم" tags="n.*"/>
+	</or>
+	</rule>
+	
+	<rule>
+		<match lemma="نبش" tags="n.*"><select lemma="digging" tags="n.*"/></match>
+	  <or>
+	    <match lemma="کاوش" tags="n.*"/>
+		<match lemma="خاک‌برداری" tags="n.*"/>
+	</or>
+	</rule>
+	
+	<rule>
+		<match lemma="زنگ" tags="n.*"><select lemma="bell" tags="n.*"/></match>
+	  <or>
+	    <match lemma="ناقوس" tags="n.*"/>
+		<match lemma="هشدار" tags="n.*"/>
+	</or>
+	</rule>
+	
+		<rule>
+		<match lemma="جنگ" tags="n.*"><select lemma="collection" tags="n.*"/></match>
+	  <or>
+	    <match lemma="مجموعه" tags="n.*"/>
+		<match lemma="گلچین ادبی" tags="n.*"/>
+	</or>
+	</rule>
+	
+		<rule>
+		<match lemma="سرور" tags="n.*"><select lemma="master" tags="n.*"/></match>
+	  <or>
+	    <match lemma="استاد" tags="n.*"/>
+		<match lemma="ارباب" tags="n.*"/>
+	    <match lemma="صاحب" tags="n.*"/>
+	    <match lemma="کارفرما" tags="n.*"/>
+	</or>
+	</rule>
+	
+		<rule>
+		<match lemma="جو" tags="n.*"><select lemma="atomosphere" tags="n.*"/></match>
+	  <or>
+	    <match lemma="اتمسفر" tags="n.*"/>
+		<match lemma="هوا" tags="n.*"/>
+	</or>
+	</rule>
+	
+		<rule>
+		<or>
+	    <match lemma="دانه" tags="n.*"/>
+			</or>
+		<match lemma="جو" tags="n.*"><select lemma="barely" tags="n.*"/></match>
+	<or>
+	    <match lemma="غله" tags="n.*"/>
+	    <match lemma="حبوبات" tags="n.*"/>
+			</or>
+	</rule>
+	
+	<rule>
+		<match lemma="بهمن" tags="n.*"><select lemma="snowbreak" tags="n.*"/></match>
+	  <or>
+	    <match lemma="برف" tags="n.*"/>
+		<match lemma="سقوط" tags="n.*"/>
+	    <match lemma="ریزش" tags="n.*"/>
+	</or>
+	</rule>
+	
+	
+</rules>
+
+
+<!-- 
+Resources: 
+    http://wiki.apertium.org/wiki/How_to_get_started_with_lexical_selection_rules
+    http://wiki.apertium.org/wiki/Constraint-based_lexical_selection
+    http://wiki.apertium.org/wiki/Lexical_selection
+    http://wiki.apertium.org/wiki/Learning_rules_from_parallel_and_non-parallel_corpora
+-->
+

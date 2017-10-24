@@ -1,0 +1,156 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<tmx version="2.0" 
+   xmlns="http://www.lisa.org/tmx20"
+   xsi:schemaLocation="http://www.lisa.org/tmx20 tmx20.xsd"
+   xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+   xmlns:xyz="urn:myApps:xyz">
+   <header creationtool="Sample Creator" creationtoolversion="1.1.1" 
+      segtype="block" o-tmf="unknown" adminlang="en-US" srclang="*all*" datatype="x-sample">
+      <inline-data>
+         <tag id="id2345" endmrk="}" type="italic">{\i </tag>
+         <tag id="id457" type="lb">&lt;br/&gt;</tag>
+         <tag id="id458" type="lb">&lt;br/&gt;</tag>
+      </inline-data>
+      <segmentation>
+         <internal-file xyz:myattribute="custom rules">
+            <!-- Segmentation rules in SRX 2.0 format -->
+            <srx:srx version="2.0" xmlns:srx="http://www.lisa.org/srx20">
+               <srx:header segmentsubflows="yes" cascade="yes">
+                  <srx:formathandle type="start" include="no"/>
+                  <srx:formathandle type="end" include="yes"/>
+                  <srx:formathandle type="isolated" include="yes"/>
+               </srx:header>
+               <srx:body>
+                  <srx:languagerules>
+                     <srx:languagerule languagerulename="Default">
+                        <!-- Common rule for most languages -->
+                        <srx:rule break="yes">
+                           <srx:beforebreak>[\.\?!]+</srx:beforebreak>
+                           <srx:afterbreak>\s</srx:afterbreak>
+                        </srx:rule>
+                     </srx:languagerule>
+                  </srx:languagerules>
+                  <srx:maprules>
+                     <!-- Common breaking rules -->
+                     <srx:languagemap languagepattern=".*" 
+                       languagerulename="Default"/>
+                  </srx:maprules>
+               </srx:body>
+            </srx:srx>
+         </internal-file>
+      </segmentation>
+      <!-- Other elements -->
+      <xyz:other />
+   </header>   
+   <body>
+      <!-- Paired codes with translatable text -->
+      <tu srclang="en-US" datatype="html" tuid="sample1">
+         <tuv xml:lang="en" datatype="html">
+            <seg>link to <bpt i="1" type="link" 
+            x="1">&amp;a href="www.mysite.com" title="<sub type="x-title">my 
+            site</sub>"&gt;</bpt>my web site<ept i="1">&lt;/a&gt;,</ept>.</seg>
+         </tuv>
+         <tuv xml:lang="es" datatype="html">
+            <seg>enlace a <bpt i="1" type="link" x="1">&amp;a 
+            href="www.mysite.com/es" title="<sub type="x-title">mi 
+            sitio</sub>"&gt;</bpt>mi sitio web<ept i="1">&lt;/a&gt;,</ept>.</seg>
+         </tuv>
+      </tu>
+      <!-- Paired codes without translatable text -->
+      <tu datatype="rtf">
+         <context context-type="x-my-context">text formatting options</context>
+         <tuv xml:lang="en">
+            <seg>Text in <g xid="id2345" type="italic">italics</g>.</seg>
+         </tuv>
+         <tuv xml:lang="fr">
+            <seg>Texte en <g xid="id2345" type="italic">italiques</g>.</seg>
+         </tuv>
+      </tu>
+      <!-- Standalone sequence with translatable text -->
+      <tu datatype="html">
+         <tuv xml:lang="en-US">
+            <seg>This is <ph type="image">&lt;img src="john.gif" alt="<sub 
+            type="alt">John's picture</sub>"/&gt;</ph> John.</seg>
+         </tuv>
+         <tuv xml:lang="es">
+            <seg>Este es <ph type="image">&lt;img src="juan.gif" alt="<sub 
+            type="alt">foto de Juan</sub>"/&gt;</ph> Juan.</seg>
+         </tuv>
+      </tu>
+      <!-- Standalone sequence without translatable text -->
+      <tu>
+         <tuv xml:lang="en">
+            <seg>text displayed in <x xid="id457" type="lb" equiv-text="&#0010;"/> 
+            two lines.</seg>
+         </tuv>
+         <tuv xml:lang="es">
+            <seg>texto en <x xid="id458" type="lb" equiv-text="&#0010;"/> dos 
+            lineas.</seg>
+         </tuv>
+      </tu>
+      <!-- Notes and properties -->
+      <tu tuid="90293837" creationid="jean-claude" srclang="zh-CN" segtype="phrase">
+         <note>Salutations</note>
+         <note>Machine translation</note>
+         <prop name="mt">web translator</prop>
+         <tuv xml:lang="en">
+            <seg>Hello!</seg>
+         </tuv>         
+         <tuv o-encoding="BIG5" xml:lang="zh-CN">
+            <note>Enable Unicode support for viewing this entry.</note>
+            <prop name="srcCodePage">BIG5</prop>            
+            <seg>你好！</seg>
+         </tuv>
+      </tu>
+      <!-- Untranslatable text -->
+      <tu o-tmf="xliff" creationdate="20060125T210600Z" changedate="20060315T130700Z" 
+      creationid="ted@mail.com">
+         <tuv xml:lang="en" xml:space="default">
+            <seg><hi type="protected" comment="product name">Ultrabalancer</hi> 
+            support is excellent.</seg>
+         </tuv>
+         <tuv xml:lang="es" xml:space="default">
+            <seg>El soporte de <hi type="protected">Ultrabalancer</hi> es 
+            excelente.</seg>
+         </tuv>
+      </tu>
+      <!-- grouped segments -->
+      <tu group="numbers" g-order="1" datatype="plaintext" 
+      creationdate="20060125T210600Z">
+         <tuv xml:lang="fr">
+            <seg>un</seg>
+         </tuv>
+         <tuv xml:lang="de">
+            <seg>eine</seg>
+         </tuv>
+         <tuv xml:lang="en">
+            <seg>one</seg>
+         </tuv>
+      </tu>
+      <tu group="numbers" g-order="2" datatype="plaintext">
+         <tuv xml:lang="de">
+            <seg>zwei</seg>
+         </tuv>
+         <tuv xml:lang="fr">
+            <seg>deux</seg>
+         </tuv>
+         <tuv xml:lang="en">
+            <seg>two</seg>
+         </tuv>
+      </tu>
+      <tu group="numbers" g-order="3" datatype="plaintext">
+         <tuv xml:lang="en">
+            <seg>three</seg>
+         </tuv>
+         <tuv xml:lang="de">
+            <seg>drei</seg>
+         </tuv>
+         <tuv xml:lang="fr">
+            <seg>trois</seg>
+         </tuv>
+      </tu>
+      <!-- Foreign elements -->
+      <xyz:database>main server</xyz:database>
+      <xyz:purpose>general</xyz:purpose>
+   </body>
+</tmx>
